@@ -1,0 +1,129 @@
+.cards
+  display flex
+  flex-wrap wrap
+  justify-content space-between
+  margin-bottom -20px
+  &.oneColumn
+    .card
+      flex-basis 100%
+  &.twoColumn
+    .card
+      flex-basis calc(50% - 10px)
+  &.threeColumn
+    .card
+      flex-basis calc(33% - 10px)
+  .card
+    flex-basis calc(33% - 10px)
+    margin-bottom 20px
+    box-shadow 0px 2px 4px 0px rgba(0,0,0,0.1)
+    border-radius 10px
+    padding 20px
+    padding-left 70px
+    box-sizing border-box
+    background #F5F6FB
+    color #0f0f0f
+    font-weight 400
+    transition .2s
+    position relative
+    &:hover
+      text-decoration none !important
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.15);
+    &.dark
+      background #182E90
+      color #fff
+      i
+         color #5493F7
+      .text
+        color rgba(255,255,255, 0.75)
+      .caption
+        color rgba(255,255,255, 0.5)
+    i
+      color $primaryColor
+      font-size 30px
+      position absolute
+      top 20px
+      left 20px
+    img
+      width 28px
+      height auto
+      position absolute
+      top 20px
+      left 20px
+    .title
+      padding 0 0 5px
+      font-size 16px
+      font-weight 700
+    .text
+      font-size 14px
+      line-height 21px
+      color rgba(30,30,30, 0.75)
+    .caption
+      padding 5px 0 0
+      font-size 11px
+      font-weight 500
+      text-transform uppercase
+      color rgba(30,30,30, 0.5)
+
+    &.lg
+      text-align center
+      padding 30px
+      background #E9EDF8
+      color $primaryColor
+      &.dark
+        background #182E90
+        color #fff
+        i
+          color $accentColor
+        .text
+          color rgba(255,255,255, 1.0)
+        .caption
+          color rgba(255,255,255, 0.5)
+
+      i
+        color $primaryColor
+        float none
+        font-size 120px
+        height auto
+        line-height 140px
+        margin-right 0
+        margin-bottom 22px
+        position static
+        top unset
+        left unset
+      img
+        width auto
+        height 140px
+        margin-bottom 22px
+        position static
+        top unset
+        left unset
+      .title
+        padding 0 0 10px
+        font-size 21px
+        font-weight 700
+      .text
+        font-size 14px
+        line-height 21px
+        color rgba(32,67,181, 1.0)
+      .caption
+        padding 10px 0 0
+        font-size 11px
+        font-weight 500
+        text-transform uppercase
+        color rgba(32,67,181, 0.5)
+
+@media (max-width: $MQNarrow)
+  .cards
+    &.oneColumn
+      .card
+        flex-basis 100%
+    &.twoColumn
+      .card
+        flex-basis 100%
+    &.threeColumn
+      .card
+        flex-basis 100%
+    .card
+      flex-basis 100%
+
+      
