@@ -50,48 +50,69 @@
         </li>
       </ul>
       <ul class="developers">
-        <li>SDKs</li>
+        <li>Tools</li>
         <li>
-          <a href="https://jigu.terra.money/" target="_blank">Jigu Python SDK</a>
+          <a href="https://station.terra.money/" target="_blank">Terra Station</a>
         </li>
         <li>
-          <a href="https://terra-project.github.io/terra.js/" target="_blank">Terra.js</a>
-        </li>
-      </ul>
-      <ul class="developers">
-        <li>SDKs</li>
-        <li>
-          <a href="https://jigu.terra.money/" target="_blank">Jigu Python SDK</a>
-        </li>
-        <li>
-          <a href="https://terra-project.github.io/terra.js/" target="_blank">Terra.js</a>
+          <a href="https://finder.terra.money/" target="_blank">Terra Finder</a>
         </li>
       </ul>
       <ul class="developers">
-        <li>SDKs</li>
+        <li>Luna</li>
         <li>
-          <a href="https://jigu.terra.money/" target="_blank">Jigu Python SDK</a>
+          <a href="https://jigu.terra.money/" target="_blank">What is Luna?</a>
         </li>
         <li>
-          <a href="https://terra-project.github.io/terra.js/" target="_blank">Terra.js</a>
-        </li>
-      </ul>
-      <ul class="developers">
-        <li>SDKs</li>
-        <li>
-          <a href="https://jigu.terra.money/" target="_blank">Jigu Python SDK</a>
+          <a href="https://terra-project.github.io/terra.js/" target="_blank">Exchanges</a>
         </li>
         <li>
-          <a href="https://terra-project.github.io/terra.js/" target="_blank">Terra.js</a>
+          <a href="https://terra-project.github.io/terra.js/" target="_blank">Wallets</a>
         </li>
       </ul>
       <ul class="developers">
-        <li>SDKs</li>
+        <li>Foundation</li>
         <li>
-          <a href="https://jigu.terra.money/" target="_blank">Jigu Python SDK</a>
+          <a href="https://jigu.terra.money/" target="_blank">Team</a>
         </li>
         <li>
-          <a href="https://terra-project.github.io/terra.js/" target="_blank">Terra.js</a>
+          <a href="https://terra-project.github.io/terra.js/" target="_blank">Roadmap</a>
+        </li>
+        <li>
+          <a href="https://terra-project.github.io/terra.js/" target="_blank">Careers</a>
+        </li>
+        <li>
+          <a href="https://terra-project.github.io/terra.js/" target="_blank">Community</a>
+        </li>
+      </ul>
+      <ul class="developers">
+        <li>Developers</li>
+        <li>
+          <a href="https://jigu.terra.money/" target="_blank">Github</a>
+        </li>
+        <li>
+          <a href="https://terra-project.github.io/terra.js/" target="_blank">Documentation</a>
+        </li>
+        <li>
+          <a href="https://terra-project.github.io/terra.js/" target="_blank">SDKs</a>
+        </li>
+        <li>
+          <a href="https://terra-project.github.io/terra.js/" target="_blank">Status</a>
+        </li>
+        <li>
+          <a href="https://terra-project.github.io/terra.js/" target="_blank">Dev Program</a>
+        </li>
+      </ul>
+      <ul class="developers">
+        <li>Validators</li>
+        <li>
+          <a href="https://jigu.terra.money/" target="_blank">Validator Hub</a>
+        </li>
+        <li>
+          <a href="https://terra-project.github.io/terra.js/" target="_blank">Profiles</a>
+        </li>
+        <li>
+          <a href="https://terra-project.github.io/terra.js/" target="_blank">Support Channel</a>
         </li>
       </ul>
     </div>
