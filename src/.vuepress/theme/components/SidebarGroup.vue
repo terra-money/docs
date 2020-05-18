@@ -23,12 +23,7 @@
       <span v-if="collapsable" class="arrow" :class="open ? 'down' : 'right'" />
     </RouterLink>
 
-    <p
-      v-else
-      class="sidebar-heading"
-      :class="{ open }"
-      @click="$emit('toggle')"
-    >
+    <p v-else class="sidebar-heading" :class="{ open }" @click="$emit('toggle')">
       <span>{{ item.title }}</span>
       <span v-if="collapsable" class="arrow" :class="open ? 'down' : 'right'" />
     </p>
@@ -161,9 +156,11 @@ export default {
       display: inline-block;
       width: 12px;
       height: 12px;
-      background: url('/img/jigu_gray.svg');
+      background: url('/img/bullet_terra_gray.svg');
       background-size: 12px 12px;
       margin-right: 0.625rem;
+      vertical-align: middle;
+      margin-top: -3px;
     }
 
     &.active {
@@ -172,7 +169,7 @@ export default {
         display: inline-block;
         width: 12px;
         height: 12px;
-        background: url('/img/jigu_dark.svg');
+        background: url('/img/bullet_terra.svg');
         background-size: 12px 12px;
         margin-right: 0.625rem;
       }
@@ -214,6 +211,7 @@ export default {
     }
   }
 }
+
 @media (max-width: $MQMobile) {
   .sidebar-heading {
     font-size: 1rem;

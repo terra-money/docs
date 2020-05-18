@@ -7,7 +7,7 @@
     <SidebarLinks :depth="0" :items="items" />
     <slot name="bottom" />
     <div class="sidebar_footer">
-      <a href="https://jigu.terra.money/" target="_blank">
+      <!-- <a href="https://jigu.terra.money/" target="_blank">
         <div class="image">
           <img src="/img/jigu_dark.svg" />
         </div>
@@ -17,10 +17,10 @@
             <i class="material-icons">transit_enterexit</i>
           </div>
         </div>
-      </a>
+      </a>-->
       <a href="https://jigu.terra.money/" target="_blank">
         <div class="image">
-          <img src="/img/jigu_dark.svg" />
+          <img src="/img/jigu_logo.svg" />
         </div>
         <div class="name">
           <div>
@@ -35,7 +35,7 @@
         </div>
         <div class="name">
           <div>
-            <b>Terra</b>.js
+            <b>Terra.js</b> JS SDK
             <i class="material-icons">transit_enterexit</i>
           </div>
         </div>

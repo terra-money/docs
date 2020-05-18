@@ -17,7 +17,7 @@ Welcome to the official documentation for Terra, a decentralized financial infra
     </div>
   </a>
   <a href="/docs/data" class="card">
-    <img src="/img/icon_python.svg"/>
+    <img src="/img/icon_luna.svg"/>
     <div class="title">
       What is Luna?
     </div>
@@ -26,7 +26,7 @@ Welcome to the official documentation for Terra, a decentralized financial infra
     </div>
   </a>
   <a href="/docs/query/account" class="card">
-    <img src="/img/icon_search.svg"/>
+    <img src="/img/icon_stable.svg"/>
     <div class="title">
       Stablecoin Mechanism
     </div>
@@ -35,7 +35,7 @@ Welcome to the official documentation for Terra, a decentralized financial infra
     </div>
   </a>
   <a href="/docs/transactions/wallet.html" class="card">
-    <img src="/img/icon_transaction.svg"/>
+    <img src="/img/icon_node.svg"/>
     <div class="title">
       Running a Terra node
     </div>
@@ -44,7 +44,7 @@ Welcome to the official documentation for Terra, a decentralized financial infra
     </div>
   </a>
   <a href="/docs/blocks" class="card">
-    <img src="/img/icon_cube.svg"/>
+    <img src="/img/icon_troubleshooting.svg"/>
     <div class="title">
       Troubleshooting
     </div>
@@ -53,7 +53,7 @@ Welcome to the official documentation for Terra, a decentralized financial infra
     </div>
   </a>
   <a href="/docs/keys" class="card">
-    <i class="material-icons">vpn_key</i>
+    <img src="/img/icon_validator.svg"/>
     <div class="title">
       Running a Validator
     </div>
@@ -62,7 +62,7 @@ Welcome to the official documentation for Terra, a decentralized financial infra
     </div>
   </a>
   <a href="/docs/websockets" class="card">
-    <img src="/img/icon_websocket.svg"/>
+    <img src="/img/icon_smartcontract.svg"/>
     <div class="title">
       Smart Contracts
     </div>
@@ -71,7 +71,7 @@ Welcome to the official documentation for Terra, a decentralized financial infra
     </div>
   </a>
     <a href="/docs/#usage-inside-jupyter" class="card">
-    <img src="/img/icon_jupyter.svg"/>
+    <img src="/img/icon_innovation.svg"/>
     <div class="title">
       Innovation of Money
     </div>
@@ -87,7 +87,7 @@ The Terra SDKs provide an easy way to programmatically interact with a Terra nod
 
 <div class="cards twoColumn">
   <a href="https://jigu.terra.money/" class="card lg dark">
-    <img src="/img/logo.svg">
+    <img src="/img/jigu_logo.svg">
     <div class="title">
       Jigu
     </div>

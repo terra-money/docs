@@ -124,9 +124,11 @@ function renderExternal(h, to, text) {
       display: inline-block;
       width: 12px;
       height: 12px;
-      background: url('/img/jigu_gray.svg');
+      background: url('/img/bullet_terra_gray.svg');
       background-size: 12px 12px;
       margin-right: 0.625rem;
+      vertical-align: middle;
+      margin-top: -3px;
     }
 
     &.active {
@@ -135,7 +137,7 @@ function renderExternal(h, to, text) {
         display: inline-block;
         width: 12px;
         height: 12px;
-        background: url('/img/jigu_dark.svg');
+        background: url('/img/bullet_terra.svg');
         background-size: 12px 12px;
         margin-right: 0.625rem;
       }
@@ -171,6 +173,7 @@ a.sidebar-link {
     }
   }
 }
+
 @media (max-width: $MQMobile) {
   a.sidebar-link {
     padding: 0.375rem 0;
