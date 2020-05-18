@@ -1,11 +1,12 @@
 ---
 id: node-installation
-title: Installation
 ---
+
+# Installation
 
 This document will explain how to install and set up Terra Core (repo: [terra-project/core](https://github.com/terra-project/core/)), the official node software. Both validators and non-validator users can directly access the Terra blockchain by running a full node.
 
-Terra Core will install two command-line executables on your system, `terrad` and `terracli`. 
+Terra Core will install two command-line executables on your system, `terrad` and `terracli`.
 
 `terrad` is the daemon process that connects to Terra and communicates with peers on the network, receiving and processing blocks. When active, it initiates a full node and will attempt to download and sync the current blockchain and onto your local machine.
 
@@ -17,11 +18,11 @@ Once you've installed the node software, you'll be able to participate in the Co
 
 We recommend running the Terra node software on a machine with:
 
-* **2 or more** CPU cores
-* At least **128GB** of disk storage
-* **2.5 ~ 5Mbps** of network bandwidth*
+- **2 or more** CPU cores
+- At least **128GB** of disk storage
+- **2.5 ~ 5Mbps** of network bandwidth\*
 
-\* *more traffic may be used when `terrad` is syncing with the network*
+\* _more traffic may be used when `terrad` is syncing with the network_
 
 ## Build Terra from Source
 
@@ -31,18 +32,23 @@ We recommend running the Terra node software on a machine with:
 
 Install `go` by following the [official docs](https://golang.org/doc/install).
 
-> The build process will install the `terrad` and `terracli` binaries in your `GOPATH/bin`. 
-> Configure your `PATH` variable to include executables located in `GOPATH/bin` to directly
-> call `terrad` and `terracli` from your shell.
-> ```bash
-> export GOPATH=$HOME/go # an example
-> export PATH=$PATH:$GOPATH/bin
-> ```
-> You can place the above code in a startup script such as `~/.bash_profile` or `~/.bashrc`, etc.
-{tip}
+::: tip
+
+The build process will install the `terrad` and `terracli` binaries in your `GOPATH/bin`.
+Configure your `PATH` variable to include executables located in `GOPATH/bin` to directly
+call `terrad` and `terracli` from your shell.
+
+```bash
+export GOPATH=$HOME/go # an example
+export PATH=$PATH:$GOPATH/bin
+```
+
+You can place the above code in a startup script such as `~/.bash_profile` or `~/.bashrc`, etc.
+:::
 
 ### Step 2: Download Terra Core source code and build
-Use `git` to retrieve Terra Core from the [official repo](https://github.com/terra-project/core/), and checkout the `master` branch, which contains the latest stable release. 
+
+Use `git` to retrieve Terra Core from the [official repo](https://github.com/terra-project/core/), and checkout the `master` branch, which contains the latest stable release.
 
 ```bash
 git clone https://github.com/terra-project/core/
@@ -52,7 +58,7 @@ make
 ```
 
 > If you have issues at this step, please check that you have the latest stable version of Go installed.
-{note}
+> {note}
 
 That should install the `terrad` and `terracli` binaries. Verify that everything is OK.
 
@@ -77,7 +83,7 @@ go: go version go1.13.4 darwin/amd64
 
 Build tags indicate special features that have been enabled in the binary.
 
-| Build Tag | Description |
-| :--- | :--- |
-| netgo | Name resolution will use pure Go code |
-| ledger | Ledger devices are supported \(hardware wallets\) |
+| Build Tag | Description                                       |
+| :-------- | :------------------------------------------------ |
+| netgo     | Name resolution will use pure Go code             |
+| ledger    | Ledger devices are supported \(hardware wallets\) |

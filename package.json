@@ -7,10 +7,9 @@
     "docs:dev": "vuepress dev src",
     "docs:build": "vuepress build src"
   },
-  "name": "jigu-docs",
-  "version": "0.0.1",
-  "description": "Documentation website for Jigu",
-  "main": "index.js",
+  "name": "terra-docs",
+  "version": "2.0.0",
+  "description": "Terra Documentation V2",
   "directories": {
     "doc": "docs"
   },
@@ -839,12 +838,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/terra-project/jigu-docs.git"
+    "url": "git+https://github.com/terra-project/terra-docs.git"
   },
   "author": "Terraform Labs, PTE. LTD",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/terra-project/jigu-docs/issues"
-  },
-  "homepage": "https://github.com/terra-project/jigu-docs#readme"
+  "license": "MIT"
 }

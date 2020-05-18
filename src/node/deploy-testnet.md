@@ -12,7 +12,7 @@ This document describes 3 different ways of setting up a testnet of `terrad` nod
 Supporting code can be found in the [networks directory](https://github.com/terra-project/core/tree/develop/networks) and additionally the `local` or `remote` sub-directories.
 
 > The `remote` network bootstrapping may be out of sync with the latest releases and is not to be relied upon.
-{note}
+> {note}
 
 ## Single node, local, manual testnet
 
@@ -20,8 +20,8 @@ This guide helps you create a single validator node that runs a network locally 
 
 ### Requirements
 
-* [Install Terra](installation.md)
-* [Install `jq`](https://stedolan.github.io/jq/download/) \(optional\)
+- [Install Terra](installation.md)
+- [Install `jq`](https://stedolan.github.io/jq/download/) \(optional\)
 
 ### Create genesis file and start the network
 
@@ -58,9 +58,9 @@ From the [networks/local directory](https://github.com/terra-project/core/tree/d
 
 ### Requirements
 
-* [Install terra](installation.md)
-* [Install docker](https://docs.docker.com/engine/installation/)
-* [Install docker-compose](https://docs.docker.com/compose/install/)
+- [Install terra](installation.md)
+- [Install docker](https://docs.docker.com/engine/installation/)
+- [Install docker-compose](https://docs.docker.com/compose/install/)
 
 ### Build
 
@@ -84,12 +84,12 @@ make localnet-start
 
 This command creates a 4-node network using the terradnode image. The ports for each node are found in this table:
 
-| Node ID | P2P Port | RPC Port |
-| :--- | :--- | :--- |
-| `terranode0` | `26656` | `26657` |
-| `terranode1` | `26659` | `26660` |
-| `terranode2` | `26661` | `26662` |
-| `terranode3` | `26663` | `26664` |
+| Node ID      | P2P Port | RPC Port |
+| :----------- | :------- | :------- |
+| `terranode0` | `26656`  | `26657`  |
+| `terranode1` | `26659`  | `26660`  |
+| `terranode2` | `26661`  | `26662`  |
+| `terranode3` | `26663`  | `26664`  |
 
 To update the binary, just rebuild it and restart the nodes:
 
@@ -163,7 +163,7 @@ terracli keys list --home ./build/node0/terracli
 Now that accounts exists, you may create new accounts and send those accounts funds!
 
 > Each node's seed is located at `./build/nodeN/terracli/key_seed.json` and can be restored to the CLI using the `terracli keys add --restore` command.
-{tip}
+> {tip}
 
 ### Special binaries
 
@@ -184,9 +184,9 @@ Automated deployments are done using [Terraform](https://www.terraform.io/) to c
 
 ### Prerequisites
 
-* Install [Terraform](https://www.terraform.io/downloads.html) and [Ansible](http://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html) on a Linux machine.
-* Create an [AWS API token](https://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html) with EC2 create capability.
-* Create SSH keys
+- Install [Terraform](https://www.terraform.io/downloads.html) and [Ansible](http://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html) on a Linux machine.
+- Create an [AWS API token](https://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html) with EC2 create capability.
+- Create SSH keys
 
 ```text
 export AWS_ACCESS_KEY_ID="2345234jk2lh4234"

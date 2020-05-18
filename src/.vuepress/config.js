@@ -58,8 +58,8 @@ module.exports = {
     lastUpdated: "Updated on",
     nav: [
       { text: "Docs", link: "/" },
-      { text: "Dev Guide", link: "/devguide/" },
-      { text: "Validator", link: "/validator/" },
+      { text: "Validators", link: "/validator/" },
+      { text: "Core Devs", link: "/core/" },
       {
         text: "GitHub",
         link: "https://github.com/terra-project/core",
@@ -67,22 +67,55 @@ module.exports = {
       },
     ],
     sidebar: {
+      "/core/": [
+        "/core/",
+        {
+          title: "Module Specs",
+          children: [
+            "/core/spec-auth",
+            "/core/spec-bank",
+            "/core/spec-distribution",
+            "/core/spec-governance",
+            "/core/spec-market",
+            "/core/spec-oracle",
+            "/core/spec-slashing",
+            "/core/spec-staking",
+            "/core/spec-supply",
+            "/core/spec-treasury",
+          ],
+        },
+      ],
+      "/validator/": [
+        "/validator/",
+        "/validator/getting-started",
+        "/validator/oracle",
+        "/validator/security",
+        "/validator/troubleshooting",
+        "/validator/faq",
+      ],
       "/": [
         ["/", "Overview"],
-        ["getting-started", "Getting Started"],
+        "getting-started",
         {
           title: "Concepts",
-          collapsable: false,
           children: [
-            ["accounts", "Accounts"],
-            ["consensus", "Consensus"],
-            ["validators", "Validators"],
-            ["staking", "Staking & Luna"],
-            ["stablecoin", "Stablecoin"],
-            ["seigniorage", "Seigniorage"],
-            ["governance", "Governance"],
-            ["smart-contracts", "Smart Contracts"],
+            "accounts",
+            "consensus",
+            "validators",
+            "staking",
+            "stablecoin",
+            "seigniorage",
+            "governance",
+            "smart-contracts",
           ],
+        },
+        {
+          title: "Ecosystem",
+          children: ["core", "mantle", "station", "finder"],
+        },
+        {
+          title: "Terra Node",
+          children: ["node/installation"],
         },
         {
           title: "Other Resources",
@@ -92,7 +125,6 @@ module.exports = {
           ],
         },
       ],
-      "/devguide/": [["/devguide/", "intro"]],
     },
   },
 };

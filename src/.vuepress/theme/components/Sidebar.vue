@@ -7,7 +7,18 @@
     <SidebarLinks :depth="0" :items="items" />
     <slot name="bottom" />
     <div class="sidebar_footer">
-      <a href="https://docs.terra.money/" target="_blank">
+      <a href="https://jigu.terra.money/" target="_blank">
+        <div class="image">
+          <img src="/img/jigu_dark.svg" />
+        </div>
+        <div class="name">
+          <div>
+            Engineering Bay
+            <i class="material-icons">transit_enterexit</i>
+          </div>
+        </div>
+      </a>
+      <a href="https://jigu.terra.money/" target="_blank">
         <div class="image">
           <img src="/img/jigu_dark.svg" />
         </div>

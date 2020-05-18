@@ -67,6 +67,15 @@
           <a href="https://terra-project.github.io/terra.js/" target="_blank">Terra.js</a>
         </li>
       </ul>
+      <ul class="developers">
+        <li>SDKs</li>
+        <li>
+          <a href="https://jigu.terra.money/" target="_blank">Jigu Python SDK</a>
+        </li>
+        <li>
+          <a href="https://terra-project.github.io/terra.js/" target="_blank">Terra.js</a>
+        </li>
+      </ul>
     </div>
     <a href="https://terra.money" target="_blank" class="terramoney">terra.money</a>
   </div>
