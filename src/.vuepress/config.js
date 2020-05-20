@@ -2,10 +2,21 @@ module.exports = {
   title: "Terra Docs",
   description: "Terra Blockchain Documentation",
   plugins: [
-    "@vuepress/register-components",
-    {
-      componentsDir: "theme/components",
-    },
+    [
+      "@vuepress/register-components",
+      {
+        componentsDir: "theme/components",
+      },
+    ],
+    [
+      "vuepress-plugin-mathjax",
+      {
+        target: "svg",
+        macros: {
+          "*": "\\times",
+        },
+      },
+    ],
   ],
   head: [
     [
@@ -99,10 +110,11 @@ module.exports = {
         {
           title: "Concepts",
           children: [
+            "terra",
+            "luna",
             "accounts",
-            "consensus",
             "validators",
-            "staking",
+            "consensus",
             "stablecoin",
             "seigniorage",
             "governance",
@@ -115,7 +127,7 @@ module.exports = {
         },
         {
           title: "Terra Node",
-          children: ["node/installation"],
+          children: ["node/intro", "node/installation"],
         },
         {
           title: "Other Resources",

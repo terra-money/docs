@@ -1,3 +1,7 @@
 # Smart Contracts
 
-Starting from Columbus-4, Terra now offers support for WebAssembly **smart contracts**,
+In Columbus-4, Terra will offer support for WebAssembly (WASM) smart contracts.
+
+::: warning
+This section is under construction.
+:::
