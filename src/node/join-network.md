@@ -1,20 +1,8 @@
----
-id: node-join-network
-title: Join a Network
----
+# Joining a Network
 
-> See the [testnet repo](https://github.com/terra-project/networks) for information on the latest testnet, including the correct version of the Terra Core to use and details about the genesis file.
-{info}
-
-
-> You need to [install terra](node-installation.md) before going further.
-{note}
+After you've tried out running a simple local Terra network, you may want to participate in an existing Terra network, such as the Columbus mainnet or Soju testnet. This document will help you configure and set up your node for that.
 
 ## Setting Up a New Node
-
-
-> If you ran a full node on a previous testnet, please skip to [Upgrading From Previous Testnet](#upgrading-from-previous-testnet).
-{info}
 
 These instructions are for setting up a brand new full node from scratch.
 
@@ -24,9 +12,9 @@ First, initialize the node and create the necessary config files:
 terrad init <your_custom_moniker>
 ```
 
-> Monikers can only contain  ASCII characters.
+> Monikers can only contain ASCII characters.
 > Using Unicode characters will render your node unreachable.
-{note}
+> {note}
 
 You can edit this `moniker` later, in the `~/.terrad/config/config.toml` file:
 
@@ -69,7 +57,7 @@ Your node is now in a pristine state while keeping the original `priv_validator.
 > Do not copy the `priv_validator.json` from an old node to multiple new nodes.
 >
 > Running two nodes with the same `priv_validator.json` will cause you to double sign.
-{danger}
+> {danger}
 
 ### Software Upgrade
 
@@ -81,7 +69,7 @@ make
 ```
 
 > If you have issues at this step, please check that you have the latest stable version of GO installed.
-{info}
+> {info}
 
 Note we use `master` here since it contains the latest stable release. See the [testnet repo](https://github.com/terra-project/networks) for details on which version is needed for which testnet, and the [SDK release page](https://github.com/terra-project/core//releases) for details on each release.
 

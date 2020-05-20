@@ -127,7 +127,7 @@ module.exports = {
         },
         {
           title: "Terra Node",
-          children: ["node/installation", "node/testnet"],
+          children: ["node/installation", "node/testnet", "node/join-network"],
         },
         {
           title: "Other Resources",
