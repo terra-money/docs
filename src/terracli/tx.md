@@ -1,4 +1,4 @@
-# Query Transactions
+# Transactions
 
 ## Matching a set of tags
 
