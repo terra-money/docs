@@ -1,6 +1,7 @@
 module.exports = {
   title: "Terra Docs",
-  description: "Terra Blockchain Documentation",
+  description:
+    "Terra is the decentralized financial infrastructure powering the innovation of money. Terra provides the foundational building blocks for a new digital economy with its stablecoin protocol, oracle system, smart contracts, and plan for mass-user adoption.",
   plugins: [
     [
       "@vuepress/register-components",
