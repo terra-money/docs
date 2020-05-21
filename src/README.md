@@ -25,10 +25,15 @@ Welcome to the official documentation for Terra, a decentralized financial infra
       Learn about Luna, the native staking asset that powers the Terra ecosystem.
     </div>
   </a>
+</div>
+
+## I am a...
+
+<div class="cards twoColumn">
   <a href="/docs/query/account" class="card">
     <img src="/img/icon_stable.svg"/>
     <div class="title">
-      Stablecoin Mechanism
+      Researcher
     </div>
     <div class="text">
       Learn about how Terra achieves price-stability while ensuring steady increase in validator incentives.
@@ -37,7 +42,7 @@ Welcome to the official documentation for Terra, a decentralized financial infra
   <a href="/docs/transactions/wallet.html" class="card">
     <img src="/img/icon_node.svg"/>
     <div class="title">
-      Running a Terra node
+      Full Node Operator
     </div>
     <div class="text">
       Learn how to participate in the Terra network by running your own full Terra node.
@@ -46,7 +51,7 @@ Welcome to the official documentation for Terra, a decentralized financial infra
   <a href="/docs/blocks" class="card">
     <img src="/img/icon_troubleshooting.svg"/>
     <div class="title">
-      Troubleshooting
+      Validator
     </div>
     <div class="text">
       Figure out how to troubleshoot some common problems.
@@ -55,7 +60,7 @@ Welcome to the official documentation for Terra, a decentralized financial infra
   <a href="/docs/keys" class="card">
     <img src="/img/icon_validator.svg"/>
     <div class="title">
-      Running a Validator
+      Application Developer
     </div>
     <div class="text">
       Become a validator and earn delegation commissions in exchange for securing the network.
@@ -64,7 +69,7 @@ Welcome to the official documentation for Terra, a decentralized financial infra
   <a href="/docs/websockets" class="card">
     <img src="/img/icon_smartcontract.svg"/>
     <div class="title">
-      Smart Contracts
+      dApp Developer
     </div>
     <div class="text">
       Learn about how to write smart contracts for creating financial dApps on Terra.
@@ -73,7 +78,7 @@ Welcome to the official documentation for Terra, a decentralized financial infra
     <a href="/docs/#usage-inside-jupyter" class="card">
     <img src="/img/icon_innovation.svg"/>
     <div class="title">
-      Innovation of Money
+      Entrepreneur
     </div>
     <div class="text">
       Explore all the different applications being built on Terra.
