@@ -117,7 +117,7 @@ module.exports = {
       ],
       "/": [
         ["/", "Overview"],
-        "getting-started",
+        "quickstart",
         {
           title: "Concepts",
           children: [

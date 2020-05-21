@@ -69,7 +69,7 @@ Welcome to the official documentation for Terra, a decentralized financial infra
   <a href="/docs/websockets" class="card">
     <img src="/img/icon_smartcontract.svg"/>
     <div class="title">
-      dApp Developer
+      Terra Core Contributor
     </div>
     <div class="text">
       Learn about how to write smart contracts for creating financial dApps on Terra.
