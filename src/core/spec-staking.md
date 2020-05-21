@@ -1,10 +1,4 @@
----
-id: dev-spec-staking
-title: Staking
----
-
-> Terra's Staking module inherits from Cosmos SDK's [`staking`](https://github.com/cosmos/cosmos-sdk/tree/v0.37.4/docs/spec/staking) module. This document is a stub, and covers mainly important Terra-specific notes about how it is used.
-{note}
+# Staking
 
 The Staking module enables Terra's Proof-of-Stake functionality by requiring validators to bond Luna, the native staking asset.
 
@@ -29,9 +23,9 @@ consensus layer. Operations are as following:
   validators retrieved from the ValidatorsByPower index
 - the previous validator set is compared with the new validator set:
   - missing validators begin unbonding and their `Tokens` are transferred from the
-  `BondedPool` to the `NotBondedPool` `ModuleAccount`
+    `BondedPool` to the `NotBondedPool` `ModuleAccount`
   - new validators are instantly bonded and their `Tokens` are transferred from the
-  `NotBondedPool` to the `BondedPool` `ModuleAccount`
+    `NotBondedPool` to the `BondedPool` `ModuleAccount`
 
 In all cases, any validators leaving or entering the bonded validator set or
 changing balances and staying within the bonded validator set incur an update

@@ -1,14 +1,11 @@
----
-id: dev-spec-oracle
-title: Oracle
----
+# Oracle
 
 The Oracle module provides the Terra blockchain with an up-to-date and accurate price feed of exchange rates of Luna against various Terra pegs so that the [Market](dev-spec-market.md) may provide fair exchanges between Terra<>Terra currency pairs, as well as Terra<>Luna.
 
-As price information is extrinsic to the blockchain, the Terra network relies on validators to periodically  vote on the current Luna exchange rate, with the protocol tallying up the results once per `VotePeriod` and updating the on-chain exchange rate as the weighted median of the ballot.
+As price information is extrinsic to the blockchain, the Terra network relies on validators to periodically vote on the current Luna exchange rate, with the protocol tallying up the results once per `VotePeriod` and updating the on-chain exchange rate as the weighted median of the ballot.
 
 > Since the Oracle service is powered by validators, you may find it interesting to look at the [Staking](dev-spec-staking.md) module, which covers the logic for staking and validators.
-{note}
+> {note}
 
 ## Voting Procedure
 
@@ -18,21 +15,21 @@ Validators must first pre-commit to a exchange rate, then in the subsequent `Vot
 
 ### Prevote and Vote
 
-Let $P_t$ be the current time interval of duration defined by [`VotePeriod`](#voteperiod)(currently set to 30 seconds) during which validators must submit two messages: 
+Let $P_t$ be the current time interval of duration defined by [`VotePeriod`](#voteperiod)(currently set to 30 seconds) during which validators must submit two messages:
 
-  * A [`MsgExchangeRatePrevote`](#msgexchangerateprevote), containing the SHA256 hash of the exchange rate of Luna with respect to a Terra peg. A separate prevote must be submitted for each different denomination on which to report a Luna exchange rate.
+- A [`MsgExchangeRatePrevote`](#msgexchangerateprevote), containing the SHA256 hash of the exchange rate of Luna with respect to a Terra peg. A separate prevote must be submitted for each different denomination on which to report a Luna exchange rate.
 
-  * A [`MsgExchangeRateVote`](#msgexchangeratevote), containing the salt used to create the hash for the prevote submitted in the previous interval $P_{t-1}$.
+- A [`MsgExchangeRateVote`](#msgexchangeratevote), containing the salt used to create the hash for the prevote submitted in the previous interval $P_{t-1}$.
 
 ### Vote Tally
 
-At the end of $P_t$, the submitted votes are tallied. 
+At the end of $P_t$, the submitted votes are tallied.
 
 The submitted salt of each vote is used to verify consistency with the prevote submitted by the validator in $P_{t-1}$. If the validator has not submitted a prevote, or the SHA256 resulting from the salt does not match the hash from the prevote, the vote is dropped.
 
-For each denomination, if the total voting power of submitted votes exceeds 50%, the weighted median of the votes is recorded on-chain as the effective exchange rate for Luna against that denomination for the following `VotePeriod` $P_{t+1}$. 
+For each denomination, if the total voting power of submitted votes exceeds 50%, the weighted median of the votes is recorded on-chain as the effective exchange rate for Luna against that denomination for the following `VotePeriod` $P_{t+1}$.
 
-Denominations receiving fewer than [`VoteThreshold`](#votethreshold) total voting power have their exchange rates deleted from the store, and no swaps can be made with it during the next `VotePeriod` $P_{t+1}$. 
+Denominations receiving fewer than [`VoteThreshold`](#votethreshold) total voting power have their exchange rates deleted from the store, and no swaps can be made with it during the next `VotePeriod` $P_{t+1}$.
 
 ### Ballot Rewards
 
@@ -41,16 +38,16 @@ After the votes are tallied, the winners of the ballots are determined with [`ta
 Voters that have managed to vote within a narrow band around the weighted median, are rewarded with a portion of the collected seigniorage. See [`k.RewardBallotWinners()`](#krewardballotwinners) for more details.
 
 > Starting from Columbus-3, fees from [Market](dev-spec-market.md) swaps are no longer are included in the oracle reward pool, and are immediately burned during the swap operation.
-{note}
+> {note}
 
 #### Reward Band
 
-Let $ M $ be the weighted median, $ \sigma $ be the standard deviation of the votes in the ballot, and $ R $ be the [`RewardBand`](#rewardband) parameter. The band around the median is set to be $ \varepsilon = \max(\sigma, R/2) $. All valid (i.e. bonded and non-jailed) validators that submitted an exchange rate vote in the interval $ \left[ M - \varepsilon, M + \varepsilon \right] $ should be included in the set of winners, weighted by their relative vote power.
+Let $M$ be the weighted median, $\sigma$ be the standard deviation of the votes in the ballot, and $R$ be the [`RewardBand`](#rewardband) parameter. The band around the median is set to be $\varepsilon = \max(\sigma, R/2)$. All valid (i.e. bonded and non-jailed) validators that submitted an exchange rate vote in the interval $\left[ M - \varepsilon, M + \varepsilon \right]$ should be included in the set of winners, weighted by their relative vote power.
 
 ### Slashing
 
 > Be sure to read this section carefully as it concerns potential loss of funds.
-{important}
+> {important}
 
 A `VotePeriod` during which either of the following events occur is considered a "miss":
 
@@ -64,11 +61,10 @@ During every [`SlashWindow`](#slashwindow), participating validators must mainta
 
 A validator may abstain from voting by submitting a non-positive integer for the `ExchangeRate` field in [`MsgExchangeRateVote`](#msgexchangeratevote). Doing so will absolve them of any penalties for missing `VotePeriod`s, but also disqualify them from receiving Oracle seigniorage rewards for faithful reporting.
 
-
 ## Message Types
 
 > The control flow for vote-tallying, Luna exchange rate updates, ballot rewards and slashing happens at the end of every `VotePeriod`, and is found at the [end-block ABCI function](#end-block) rather than inside message handlers.
-{note}
+> {note}
 
 ### `MsgExchangeRatePrevote`
 
@@ -90,7 +86,7 @@ type MsgExchangeRatePrevote struct {
 
 `Denom` is the denomination of the currency for which the vote is being cast. For example, if the voter wishes to submit a prevote for the usd, then the correct `Denom` is `uusd`.
 
-The exchange rate used in the hash must be the open market exchange rate of Luna, with respect to the denomination matching `Denom`. For example, if `Denom` is `uusd` and the going exchange rate for Luna is 1 USD, then "1" must be used as the exchange rate, as `1 uluna` = `1 uusd`. 
+The exchange rate used in the hash must be the open market exchange rate of Luna, with respect to the denomination matching `Denom`. For example, if `Denom` is `uusd` and the going exchange rate for Luna is 1 USD, then "1" must be used as the exchange rate, as `1 uluna` = `1 uusd`.
 
 `Feeder` (`terra-` address) is used if the validator wishes to delegate oracle vote signing to a separate key (who "feeds" the price in lieu of the operator) to de-risk exposing their validator signing key.
 
@@ -127,12 +123,12 @@ type MsgDelegateFeedConsent struct {
 }
 ```
 
-Validators may also elect to delegate voting rights to another key to prevent the block signing key from being kept online. To do so, they must submit a `MsgDelegateFeedConsent`, delegating their oracle voting rights to a `Delegate` that sign `MsgExchangeRatePrevote` and `MsgExchangeRateVote` on behalf of the validator. 
+Validators may also elect to delegate voting rights to another key to prevent the block signing key from being kept online. To do so, they must submit a `MsgDelegateFeedConsent`, delegating their oracle voting rights to a `Delegate` that sign `MsgExchangeRatePrevote` and `MsgExchangeRateVote` on behalf of the validator.
 
-> Delegate validators will likely require you to deposit some funds (in Terra or Luna) which they can use to pay fees, sent in a separate `MsgSend`. This agreement is made off-chain and not enforced by the Terra protocol. 
-{important}
+> Delegate validators will likely require you to deposit some funds (in Terra or Luna) which they can use to pay fees, sent in a separate `MsgSend`. This agreement is made off-chain and not enforced by the Terra protocol.
+> {important}
 
-The `Operator` field contains the operator address of the validator (prefixed `terravaloper-`). The `Delegate` field is the account address (prefixed `terra-`) of the delegate account that will be submitting exchange rate related votes and prevotes on behalf of the `Operator`. 
+The `Operator` field contains the operator address of the validator (prefixed `terravaloper-`). The `Delegate` field is the account address (prefixed `terra-`) of the delegate account that will be submitting exchange rate related votes and prevotes on behalf of the `Operator`.
 
 ## State
 
@@ -194,7 +190,7 @@ This function computes the truncated SHA256 hash value from `salt:rate:denom:vot
 func tally(ctx sdk.Context, pb types.ExchangeRateBallot, rewardBand sdk.Dec) (weightedMedian sdk.Dec, ballotWinners []types.Claim)
 ```
 
-This function contains the logic for tallying up the votes for a specific ballot of a denomination, and determines the weighted median $ M $ as well as the winners of the ballot.
+This function contains the logic for tallying up the votes for a specific ballot of a denomination, and determines the weighted median $M$ as well as the winners of the ballot.
 
 ### `k.RewardBallotWinners()`
 
@@ -231,14 +227,16 @@ At the end of every block, the Oracle module checks whether it's the last block 
 2. Received votes are organized into ballots by denomination. Abstained votes, as well as votes by inactive or jailed validators are ignored
 
 3. Denominations not meeting the following requirements will be dropped:
-    - Must appear in the permitted denominations in [`Whitelist`](#whitelist)
-    - Ballot for denomination must have at least [`VoteThreshold`](#votethreshold) total vote power
+
+   - Must appear in the permitted denominations in [`Whitelist`](#whitelist)
+   - Ballot for denomination must have at least [`VoteThreshold`](#votethreshold) total vote power
 
 4. For each remaining `denom` with a passing ballot:
-    - Tally up votes and find the weighted median exchange rate and winners with [`tally()`](#tally)
-    - Iterate through winners of the ballot and add their weight to their running total
-    - Set the Luna exchange rate on the blockchain for that Luna<>`denom` with `k.SetLunaExchangeRate()`
-    - Emit a [`exchange_rate_update`](#exchange_rate_update) event
+
+   - Tally up votes and find the weighted median exchange rate and winners with [`tally()`](#tally)
+   - Iterate through winners of the ballot and add their weight to their running total
+   - Set the Luna exchange rate on the blockchain for that Luna<>`denom` with `k.SetLunaExchangeRate()`
+   - Emit a [`exchange_rate_update`](#exchange_rate_update) event
 
 5. Count up the validators who [missed](#slashing) the Oracle vote and increase the appropriate miss counters
 
@@ -255,7 +253,7 @@ The subspace for the Oracle module is `oracle`.
 ```go
 // Params oracle parameters
 type Params struct {
-	VotePeriod               int64     `json:"vote_period" yaml:"vote_period"` 
+	VotePeriod               int64     `json:"vote_period" yaml:"vote_period"`
 	VoteThreshold            sdk.Dec   `json:"vote_threshold" yaml:"vote_threshold"`
 	RewardBand               sdk.Dec   `json:"reward_band" yaml:"reward_band"`
 	RewardDistributionWindow int64     `json:"reward_distribution_window" yaml:"reward_distribution_window"`
@@ -328,33 +326,33 @@ The Oracle module emits the following events:
 
 ### `exchange_rate_update`
 
-| Key | Value |
-| :-- | :-- |
-| `"denom"` | denomination |
+| Key               | Value                                        |
+| :---------------- | :------------------------------------------- |
+| `"denom"`         | denomination                                 |
 | `"exchange_rate"` | new Luna exchange rate with respect to denom |
 
 ### `prevote`
 
-| Key | Value |
-| :-- | :-- |
-| `"denom"` | denomination |
-| `"voter"` | validator's address |
-| `"feeder"` | feeder's address |
+| Key        | Value               |
+| :--------- | :------------------ |
+| `"denom"`  | denomination        |
+| `"voter"`  | validator's address |
+| `"feeder"` | feeder's address    |
 
 ### `vote`
 
-| Key | Value |
-| :-- | :-- |
-| `"denom"` | denomination |
-| `"voter"` | validator's address |
-| `"feeder"` | feeder's address |
+| Key        | Value               |
+| :--------- | :------------------ |
+| `"denom"`  | denomination        |
+| `"voter"`  | validator's address |
+| `"feeder"` | feeder's address    |
 
 ### `feed_delegate`
 
-| Key | Value |
-| :-- | :-- |
+| Key          | Value                          |
+| :----------- | :----------------------------- |
 | `"operator"` | delegating validator's address |
-| `"feeder"` | feeder's address |
+| `"feeder"`   | feeder's address               |
 
 ## Errors
 

@@ -1,10 +1,8 @@
----
-id: dev-spec-supply
-title: Supply
----
+# Supply
 
-> Terra's Supply module inherits from Cosmos SDK's [`supply`](https://github.com/cosmos/cosmos-sdk/tree/v0.37.4/docs/spec/supply) module. This document is a stub, and covers mainly important Terra-specific notes about how it is used.
-{note}
+::: warning NOTE
+Terra's Supply module inherits from Cosmos SDK's [`supply`](https://github.com/cosmos/cosmos-sdk/tree/v0.37.4/docs/spec/supply) module. This document is a stub, and covers mainly important Terra-specific notes about how it is used.
+:::
 
 The Supply module passively tracks the total supply of all coins Terra and Luna within the blockchain, provides a way for modules to hold and interact with a balance of Coins, and introduces an invariant check to verify the Terra protocol's total supply.
 
@@ -20,9 +18,9 @@ proposal is vetoed).
 ## Module Accounts
 
 The supply module introduces a new type of `auth.Account` which can be used by
-modules to allocate tokens and in special cases mint or burn tokens.  At a base
+modules to allocate tokens and in special cases mint or burn tokens. At a base
 level these module accounts are capable of sending/receiving tokens to and from
-`auth.Account`s and other module accounts.  This design replaces previous
+`auth.Account`s and other module accounts. This design replaces previous
 alternative designs where, to hold tokens, modules would burn the incoming
 tokens from the sender account, and then track those tokens internally. Later,
 in order to send tokens, the module would need to effectively mint tokens
@@ -41,7 +39,7 @@ type ModuleAccount interface {
 ```
 
 > Any module or message handler that allows either direct or indirect sending of funds must explicitly guarantee those funds cannot be sent to module accounts (unless allowed).
-{warning}
+> {warning}
 
 The supply `Keeper` also introduces new wrapper functions for the auth `Keeper`
 and the bank `Keeper` that are related to `ModuleAccount`s in order to be able

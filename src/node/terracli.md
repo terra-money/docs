@@ -1,11 +1,6 @@
----
-id: node-terracli
-title: terracli Reference
----
+# Command Line Reference
 
-For more information on the command usage, refer to its help screen: `terracli config --help`.
-
-Here is a list of useful `terracli` commands, including usage examples.
+This document is a reference for the functions available from `terracli`, the command line interface that connects a running `terrad` process. For more information on the command usage, refer to its help screen: `terracli config --help`.
 
 ## Keys
 
@@ -13,22 +8,23 @@ Here is a list of useful `terracli` commands, including usage examples.
 
 Every Terra account is associated with different key representations, which can be deterministically generated from the account's private key.
 
-* **Address**: `terra`
-  * This is the address you give to others in order to receive funds.
-  * View this value (and its public key) with `terracli keys show <account_name>`
-  * e.g. `terra15h6vd5f0wqps26zjlwrc6chah08ryu4hzzdwhc`
+- **Address**: `terra`
 
-* **Validator Operator Address**: `terravaloper`
-  * This is the address that identifies a validator's operator (the holder of the Terra account) and is used to invoke staking commands.
-  * View this value (and its public key) with `terracli keys show <account_name> --bech=val`
-  * e.g. `terravaloper1carzvgq3e6y3z5kz5y6gxp3wpy3qdrv928vyah`
+  - This is the address you give to others in order to receive funds.
+  - View this value (and its public key) with `terracli keys show <account_name>`
+  - e.g. `terra15h6vd5f0wqps26zjlwrc6chah08ryu4hzzdwhc`
+
+- **Validator Operator Address**: `terravaloper`
+  - This is the address that identifies a validator's operator (the holder of the Terra account) and is used to invoke staking commands.
+  - View this value (and its public key) with `terracli keys show <account_name> --bech=val`
+  - e.g. `terravaloper1carzvgq3e6y3z5kz5y6gxp3wpy3qdrv928vyah`
 
 There are also keys that belong to the node, used to identify the node itself rather than the operator that runs the node.
 
-* **Validator Node Public Key** `terravalconspub`
-  * Generated when the node is created with `terrad init`, and is the Tendermint signing key.
-  * View this value with `terrad tendermint show-validator`
-  * e.g. `terravalconspub1zcjduepq0ms2738680y72v44tfyqm3c9ppduku8fs6sr73fx7m666sjztznqzp2emf`
+- **Validator Node Public Key** `terravalconspub`
+  - Generated when the node is created with `terrad init`, and is the Tendermint signing key.
+  - View this value with `terrad tendermint show-validator`
+  - e.g. `terravalconspub1zcjduepq0ms2738680y72v44tfyqm3c9ppduku8fs6sr73fx7m666sjztznqzp2emf`
 
 ### Generate Keys
 
@@ -74,7 +70,7 @@ Note that this is the Tendermint signing key, _not_ the operator key you will us
 
 > We strongly recommend **NOT** using the same passphrase for multiple keys.
 > The Terra team will not be responsible for the loss of funds.
-{warning}
+> {warning}
 
 ### Generate Multisig Public Keys
 
@@ -103,14 +99,14 @@ For more information regarding how to generate, sign and broadcast transactions 
 
 ## Fees
 
-###  Fees & Gas
+### Fees & Gas
 
 Each transaction may either supply fees or gas prices, but not both. Most users will typically provide fees as this is the cost you will end up incurring for the transaction being included in the ledger.
 
 Validator's have a minimum gas price \(multi-denom\) configuration and they use this value when determining if they should include the transaction in a block during `CheckTx`, where `gasPrices >= minGasPrices`. Note, your transaction must supply fees that are greater than or equal to **any** of the denominations the validator requires.
 
 > With such a mechanism in place, validators may start to prioritize txs by `gasPrice` in the mempool, so providing higher fees or gas prices may yield higher tx priority.
-{note}
+> {note}
 
 e.g.
 
@@ -125,6 +121,7 @@ terracli tx send ... --gas-prices=0.000001usdr
 ```
 
 ### Fees & Taxes (From Columbus-3)
+
 The tax has been changed to be included in the fees rather than automatically charged from the sender account. Users can make transaction with existing method without fees flag but with gas prices flag. It will automatically calculate tax and return fees in addition to the existing gas fees.
 
 Wallet providers can estimate fees and gas to be incurred by a transaction by querying the endpoint `/txs/estimate_fee` with `gas = "0"`.
@@ -156,12 +153,12 @@ terracli query account <account_terra>
 ```
 
 > When you query an account balance with zero tokens, you will get this error:
-> 
+>
 > `No account with address <account_terra> was found in the state`.
-> 
+>
 > This can also happen if you fund the account before your node has fully synced with the chain.
 > Both cases are to be expected.
-{important}
+> {important}
 
 ## Send Tokens
 
@@ -178,18 +175,18 @@ terracli tx send \
 where `to_address` is a key matching the format: `terra1dp0taj85ruc299rkdvzp4z5pfg6z6swaed74e6`
 
 > The `<coins>` paramter is of the format `<value|coin_name>`.
-> 
+>
 > The `<from_key_or_address>` accepts both the key name and the address as the value, but only accepts > addresses when the `--generate-only` flag is used.
-{important}
+> {important}
 
 > You may want to cap the maximum gas that can be consumed by the transaction via the `--gas` flag.
-> 
+>
 > If you pass `--gas=auto`, the gas will be automatically estimated before executing the transaction.
-> 
+>
 > Gas estimate might be inaccurate as state changes could occur in between the end of the simulation and the actual execution of a transaction, thus an adjustment is applied on top of the original estimate in order to ensure the transaction is broadcasted successfully.
-> 
+>
 > The adjustment can be controlled via the `--gas-adjustment` flag, whose default value is 1.0.
-{tip}
+> {tip}
 
 Now, view the updated balances of the origin and destination accounts:
 
@@ -273,7 +270,7 @@ terracli query txs --tags='<tag>:<value>' --page=1 --limit=20
 
 > The action tag always equals the message type returned by the `Type()` function of the relevant message.
 > You can find a list of available `tags` on each module by looking at the /tags directory of each module.
-{tip}
+> {tip}
 
 ### Matching a transaction's hash
 
@@ -356,7 +353,7 @@ where `<name>` is the name of the key you specified when you initialized `terrad
 While tokens are bonded, they are pooled with all the other bonded tokens in the network. Validators and delegators obtain a percentage of shares that equal their stake in this pool.
 
 > Don't use more LUNA than you have! You can always get more by using the [Faucet](https://faucet.terra.money/)!
-{tip}
+> {tip}
 
 **Query Delegations**
 
@@ -458,9 +455,9 @@ terracli query staking params
 
 With the above command you will get the values for:
 
-* Unbonding time
-* Maximum numbers of validators
-* Coin denomination for staking
+- Unbonding time
+- Maximum numbers of validators
+- Coin denomination for staking
 
 All these values will be subject to updates though a `governance` process by `ParameterChange` proposals.
 
@@ -474,10 +471,10 @@ terracli query staking pool
 
 With the `pool` command you will get the values for:
 
-* Not-bonded and bonded tokens
-* Token supply
-* Current annual inflation and the block in which the last inflation was processed
-* Last recorded bonded shares
+- Not-bonded and bonded tokens
+- Token supply
+- Current annual inflation and the block in which the last inflation was processed
+- Last recorded bonded shares
 
 **Query Delegations To Validator**
 
@@ -544,8 +541,8 @@ Where `proposal.json` is a file with the following schema:
 >
 > Proper vetting of a parameter change proposal should prevent this from happening
 > (no deposits should occur during the governance process), but it should be noted
-> regardless. 
-{warning}
+> regardless.
+> {warning}
 
 #### Community Pool Spend Proposal
 
@@ -896,14 +893,14 @@ terracli completion --zsh > terracli_completion
 ```
 
 > On most UNIX systems, such scripts may be loaded in `.bashrc` or `.bash_profile` to enable Bash autocompletion.
-> 
->    ```bash
->    echo '. terrad_completion' >> ~/.bashrc
->    echo '. terracli_completion' >> ~/.bashrc
->    ```
+>
+> ```bash
+> echo '. terrad_completion' >> ~/.bashrc
+> echo '. terracli_completion' >> ~/.bashrc
+> ```
 >
 > Refer to the user's manual of your interpreter provided by your operating system for information on how to enable shell autocompletion.
-{note}
+> {note}
 
 ## Oracle
 
@@ -915,7 +912,7 @@ To submit a prevote, run:
 
 ```bash
 terracli tx oracle prevote \
-  <salt> \ 
+  <salt> \
   <price> \
   <validator_address> \
   --from mykey
@@ -931,6 +928,7 @@ terracli tx oracle vote \
   --from mykey \
   --validator <validator-address>
 ```
+
 Where price is the form of Coin `8890.32ukrw`
 
 Given that oracle votes have to be submitted in a feed over short time intervals (30 seconds), prevotes and votes will need to be submitted via some persistent server daemon, and not manually. For more information on how to do this, read the [Exchange Rate Oracle](validator-oracle.md) section of the Validator Handbook, and the [Oracle Module Specification](dev-spec-oracle.md).
@@ -953,7 +951,7 @@ All currencies in the Terra ecosystem can be instantly swapped into another at t
 
 ```bash
 terracli tx market swap \
-  <offer_coin> \ 
+  <offer_coin> \
   <ask_denom>  \
   --from mykey \
 ```
@@ -1024,10 +1022,10 @@ terracli query treasury params
 
 With the above command you will get the values for:
 
-* Tax Rate update policy 
-* Reward Weight update policy
-* Seigniorage Burden Target
-* Mining Increment
-* `WindowShort` \(update parameter\)
-* `WindowLong` \(update parameter\)
-* `WindowProbation` \(update parameter\)
+- Tax Rate update policy
+- Reward Weight update policy
+- Seigniorage Burden Target
+- Mining Increment
+- `WindowShort` \(update parameter\)
+- `WindowLong` \(update parameter\)
+- `WindowProbation` \(update parameter\)

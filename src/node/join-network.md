@@ -1,6 +1,6 @@
 # Joining a Network
 
-After you've tried out running a simple local Terra network, you may want to participate in an existing Terra network, such as the Columbus mainnet or Soju testnet. This document will help you configure and set up your node for that.
+After you've tried out running a simple local Terra network, you may want to participate in an existing Terra network, such as the Columbus mainnet or Soju testnet. This document will help you configure and set up your node for just that.
 
 ## Setup
 
@@ -68,7 +68,7 @@ To verify the correctness of the configuration run:
 $ terrad start
 ```
 
-### Add seed nodes
+### Define seed nodes
 
 Your node needs to know how to find peers. You'll need to add healthy seed nodes to `~/.terrad/config/config.toml`. The `testnets` repo contains links to the seed nodes for each testnet. If you are looking to join the running testnet please [check the repository for details](https://github.com/terra-project/networks) on which nodes to use.
 
@@ -76,7 +76,9 @@ If those seeds aren't working, you can find more seeds and persistent peers on t
 
 For more information on seeds and peers, you can [read this](https://github.com/tendermint/tendermint/blob/master/docs/tendermint-core/using-tendermint.md#peers).
 
-## Running Your Node
+## Connecting to the Network
+
+### Run your node
 
 Start the full node with this command:
 
@@ -90,7 +92,13 @@ Check that everything is running smoothly:
 terracli status
 ```
 
+### Wait for node to sync
+
+Your node should now be catching up with the network by replaying all the transactions from genesis and recreating the blockchain state locally. This will take a long time, so make sure you've set it up on a stable connection so you can leave while it syncs.
+
 View the status of the network with the [Terra Finder](https://finder.terra.money). Once your full node syncs up to the current block height, you should see it appear on the [list of full nodes](https://terra.stake.id/).
+
+Congratulations! You've now successfully joined a network as a full node operator.
 
 ## Appendix
 
@@ -103,7 +111,8 @@ These instructions are for full nodes that have ran on previous testnets and wou
 First, remove the outdated files and reset the data.
 
 ```bash
-rm $HOME/.terrad/config/addrbook.json $HOME/.terrad/config/genesis.json
+rm ~/.terrad/config/genesis.json
+rm ~/.terrad/config/addrbook.json
 terrad unsafe-reset-all
 ```
 

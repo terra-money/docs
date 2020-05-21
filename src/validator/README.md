@@ -1,4 +1,4 @@
-# Validator Hub
+# Validator Guide
 
 Terra Core is based on Tendermint, which relies on a set of validators that are responsible for committing new blocks in the blockchain. These validators participate in the consensus protocol by broadcasting votes which contain cryptographic signatures signed by each validator's private key.
 

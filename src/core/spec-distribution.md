@@ -1,17 +1,16 @@
----
-id: dev-spec-distribution
-title: Distribution
----
+# Distribution
 
-> Terra's Distribution module inherits from Cosmos SDK's [`distribution`](https://github.com/cosmos/cosmos-sdk/tree/v0.37.4/docs/spec/distribution) module. This document is a stub, and covers mainly important Terra-specific notes about how it is used.
-{note}
+::: warning NOTE
+Terra's Distribution module inherits from Cosmos SDK's [`distribution`](https://github.com/cosmos/cosmos-sdk/tree/v0.37.4/docs/spec/distribution) module. This document is a stub, and covers mainly important Terra-specific notes about how it is used.
+:::
 
-The `Distribution` module describes a mechanism that keeps track of collected fees and *passively* distributes them to validators and delegators. In addition, the Distribution module also defines the [Community Pool](#community-pool), which are funds under the control of on-chain Governance.
+The `Distribution` module describes a mechanism that keeps track of collected fees and _passively_ distributes them to validators and delegators. In addition, the Distribution module also defines the [Community Pool](#community-pool), which are funds under the control of on-chain Governance.
 
 ## Validator & Delegator Rewards
 
-> Passive distribution means that validators and delegators will have to manually collect their fee rewards by submitting withdrawal transactions. Read up on how to do so with `terracli` [here](node-terracli.md#distribution).
-{important}
+::: warning IMPORTANT
+Passive distribution means that validators and delegators will have to manually collect their fee rewards by submitting withdrawal transactions. Read up on how to do so with `terracli` [here](node-terracli.md#distribution).
+:::
 
 Collected rewards are pooled globally and divided out passively to validators and delegators. Each validator has the opportunity to charge commission to the delegators on the rewards collected on behalf of the delegators. Fees are collected directly into a global reward pool and validator proposer-reward pool. Due to the nature of passive accounting, whenever changes to parameters which affect the rate of reward distribution occurs, withdrawal of rewards must also occur.
 
@@ -49,16 +48,14 @@ for fractions of coins to be received from operations like inflation.
 When coins are distributed from the pool they are truncated back to
 `sdk.Coins` which are non-decimal.
 
-
 ### Validator Distribution
 
 Validator distribution information for the relevant validator is updated each time:
 
- 1. delegation amount to a validator is updated,
- 2. a validator successfully proposes a block and receives a reward,
- 3. any delegator withdraws from a validator, or
- 4. the validator withdraws it's commission.
-
+1.  delegation amount to a validator is updated,
+2.  a validator successfully proposes a block and receives a reward,
+3.  any delegator withdraws from a validator, or
+4.  the validator withdraws it's commission.
 
 ### Delegation Distribution
 
@@ -81,13 +78,13 @@ The fees received are transferred to the Distribution `ModuleAccount`, as it's t
 The amount of proposer reward is calculated from pre-commits Tendermint messages in order to incentivize validators to wait and include additional pre-commits in the block. All provision rewards are added to a provision reward pool which validator holds individually (`ValidatorDistribution.ProvisionsRewardPool`).
 
 ```go
-func AllocateTokens(feesCollected sdk.Coins, feePool FeePool, proposer ValidatorDistribution, 
-              sumPowerPrecommitValidators, totalBondedTokens, communityTax, 
+func AllocateTokens(feesCollected sdk.Coins, feePool FeePool, proposer ValidatorDistribution,
+              sumPowerPrecommitValidators, totalBondedTokens, communityTax,
               proposerCommissionRate sdk.Dec)
 
      SendCoins(FeeCollectorAddr, DistributionModuleAccAddr, feesCollected)
      feesCollectedDec = MakeDecCoins(feesCollected)
-     proposerReward = feesCollectedDec * (0.01 + 0.04 
+     proposerReward = feesCollectedDec * (0.01 + 0.04
                        * sumPowerPrecommitValidators / totalBondedTokens)
 
      commission = proposerReward * proposerCommissionRate

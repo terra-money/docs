@@ -1,10 +1,7 @@
----
-id: dev-spec-governance
-title: Governance
----
+# Governance
 
 > Terra's Governance module inherits from Cosmos SDK's [`gov`](https://github.com/cosmos/cosmos-sdk/tree/v0.37.4/docs/spec/governance) module. This document is a stub, and covers mainly important Terra-specific notes about how it is used.
-{note}
+> {note}
 
 Governance is the process through which participants within the Terra network can effect change on the protocol by submitting petitions known as "proposals," arriving at a popular consensus when a threshold amount of support has been reached for it. The proposal structure is versatile and allows for holders of Luna (those who have an interest in the long-term viability of the network) to voice their opinion on both blockchain parameter updates as well as future development of the Terra protocol.
 
@@ -71,7 +68,7 @@ type ParamChange struct {
 ```
 
 > Parameter Change Proposals are actually located in the Params module, an internal module. It is shown here for your convenience.
-{note}
+> {note}
 
 Parameter Change Proposals are a special type of proposal which, once passed, will automaticaly go in effect by directly altering the network's parameter specified. For each module, you can find the parameters associated with it by browsing to the **Parameters** section of the module specification.
 
@@ -86,7 +83,7 @@ Defined and handled in the [`Treasury` module](dev-spec-treasury.md#governance-p
 ### Software Upgrade Proposals
 
 > Software Upgrade Proposals also exist due to inheritance from Cosmos SDK but are for the moment considered unavailable, as they have not yet been implemented. They thus share the same semantics as a simple Text Proposal. It is strongly advised to not submit these types of proposals at the risk of losing your Luna deposit.
-{warning}
+> {warning}
 
 ## Transitions
 
@@ -151,7 +148,6 @@ for finishedProposalID in GetAllFinishedProposalIDs(block.Time)
 	store(Governance, <proposalID|'proposal'>, proposal)
 ```
 
-
 ## Parameters
 
 The subspace for the Governance module is `gov`.
@@ -182,7 +178,7 @@ Minimum deposit for a proposal to enter voting period.
 
 ### `MaxDepositPeriod`
 
-Maximum period for Luna holders to deposit on a proposal. 
+Maximum period for Luna holders to deposit on a proposal.
 
 - type: `time.Duration`
 - default value: `2 months`

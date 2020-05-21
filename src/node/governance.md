@@ -1,11 +1,8 @@
----
-id: node-governance
-title: Participate in Governance
----
+# Governance
 
 Governance is the process through which participants within the Terra network can effect change for the protocol, by arriving at consensus. Software upgrades and blockchain parameters can be automatically placed in effect through proposals. Other issues like large directional changes or decisions requiring human involvement can be also be voted on, through text proposals.
 
-Proposals are submitted on the network through creating a proposal, depositing some Luna tokens, and 
+Proposals are submitted on the network through creating a proposal, depositing some Luna tokens, and
 
 Some considerations about the voting process:
 
@@ -14,8 +11,8 @@ Some considerations about the voting process:
 - Delegators inherit the vote of their validator if they don't vote
 
 - Votes are tallied at the end of the voting period (2 weeks on mainnet) where
-each address can vote multiple times to update its `Option` value (paying the transaction fee each time),
-only the most recently cast vote will count as valid
+  each address can vote multiple times to update its `Option` value (paying the transaction fee each time),
+  only the most recently cast vote will count as valid
 
 - Voters can choose between options `Yes`, `No`, `NoWithVeto` and `Abstain`
 
@@ -90,8 +87,8 @@ Where `proposal.json` contains the following:
 >
 > Proper vetting of a parameter change proposal should prevent this from happening
 > (no deposits should occur during the governance process), but it should be noted
-> regardless. 
-{warning}
+> regardless.
+> {warning}
 
 To submit a community pool spend proposal, you must provide a proposal file as its
 contents are less friendly to CLI input:
@@ -175,4 +172,4 @@ Where `proposal.json` contains the following:
 ```
 
 > The `SoftwareUpgrade` is currently not supported as it's not implemented and currently does not differ from the semantics of a `Text` proposal.
-{important}
+> {important}

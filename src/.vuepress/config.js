@@ -95,6 +95,17 @@ module.exports = {
             "/core/spec-treasury",
           ],
         },
+        {
+          title: "Other Resources",
+          collapsable: false,
+          children: [
+            [
+              "https://pkg.go.dev/github.com/terra-project/core?tab=subdirectories",
+              "Go API Reference",
+            ],
+            ["https://swagger.terra.money", "Terra REST API"],
+          ],
+        },
       ],
       "/validator/": [
         "/validator/",
@@ -130,15 +141,13 @@ module.exports = {
           children: [
             "node/installation",
             "node/testnet",
+            "node/users",
+            "node/governance",
+            "node/terracli",
+            "node/ledger",
+            "node/lcd",
             "node/join-network",
             "node/production",
-          ],
-        },
-        {
-          title: "Other Resources",
-          collapsable: false,
-          children: [
-            ["https://swagger.terra.money", "Terra REST API Reference "],
           ],
         },
       ],

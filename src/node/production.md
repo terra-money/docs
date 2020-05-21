@@ -8,7 +8,7 @@ This guide only covers general settings for a production-level full node. We rec
 
 `terrad` does not require the super user account. We **strongly** recommend using a normal user to run `terrad`. However, during the setup process you'll need super user permission to create and modify some files.
 
-## Firewall configuration
+## Firewall Configuration
 
 `terrad` uses several TCP ports for different purposes.
 
@@ -16,11 +16,11 @@ This guide only covers general settings for a production-level full node. We rec
 
 - `26657` is the default port for the RPC protocol. This port is used for querying / sending transactions. In other words, this port needs to be opened for serving queries from `terracli`. It is safe to _NOT_ to open this port to the public unless you are planning to run a public node.
 
-- `1317` is the default port for [Lite Client Daemon](node-light-client.md) (LCD), which can be executed by `terracli rest-server`. LCD provides HTTP RESTful API layer to allow applications and services to interact with your `terrad` instance through RPC. Check `https://lcd.terra.dev/swagger-ui/` for usage examples. You don't need to open this port unless you have use of it.
+- `1317` is the default port for [Lite Client Daemon](node-light-client.md) (LCD), which can be executed by `terracli rest-server`. LCD provides HTTP RESTful API layer to allow applications and services to interact with your `terrad` instance through RPC. Check the [Terra REST API](https://swagger.terra.money) for usage examples. You don't need to open this port unless you have use of it.
 
 - `26660` is the default port for interacting with the [Prometheus](https://prometheus.io) database which can be used for monitoring the environment. This port is not opened in the default configuration.
 
-## Increase maximum opened files
+## Increase Maximum Open Files
 
 `terrad` can open more than 1024 files (which is default maximum) concurrently.
 You wil want to increase this limit.
@@ -32,11 +32,11 @@ Modify `/etc/security/limits.conf` to raise the `nofile` capability.
 *                hard    nofile          65535
 ```
 
-## Running server as a daemon
+## Running Server as a Daemon
 
 There are several ways to run a node, and we recommend registering `terrad` as a `systemd` service.
 
-### Register terrad service
+### Register `terrad` service
 
 We have to make a service definition file in `/etc/systemd/system` directory.
 
@@ -67,7 +67,7 @@ After creating a service definition file, you need to execute `systemctl daemon-
 
 ### Controlling the service
 
-Use systemctl to control (start, stop, restart)
+Use `systemctl` to control (start, stop, restart)
 
 - Start: `systemctl start terrad`
 - Stop: `systemctl stop terrad`

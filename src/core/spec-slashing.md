@@ -1,10 +1,4 @@
----
-id: dev-spec-slashing
-title: Slashing
----
-
-> Terra's Slashing module inherits from Cosmos SDK's [`slashing`](https://github.com/cosmos/cosmos-sdk/tree/v0.37.4/docs/spec/slashing) module. This document is a stub, and covers mainly important Terra-specific notes about how it is used.
-> {note}
+# Slashing
 
 The Slashing module enables Terra to disincentivize any attributable action by a protocol-recognized actor with value at stake by penalizing them ("slashing"). Terra mainly uses the [`Staking`](dev-spec-staking.md) module to slash when violating validator responsibilities (such as missing too many `VotePeriod`s in the exchange rate oracle). This module deals with lower-level penalties at the Tendermint consensus level, such as double-signing.
 
