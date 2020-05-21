@@ -141,11 +141,10 @@ module.exports = {
           children: [
             "node/installation",
             "node/testnet",
-            "node/users",
-            "node/governance",
+            "node/config",
             "node/terracli",
-            "node/ledger",
             "node/lcd",
+            "node/ledger",
             "node/join-network",
             "node/production",
           ],

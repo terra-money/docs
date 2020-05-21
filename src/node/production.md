@@ -1,10 +1,12 @@
-# Production Settings
+# Production Environment
 
-This document explains how to set up your environment for running a production-quality full node. For the moment, this guide only covers RPM-based Linux distributions.
+This document explains how to set up your environment for running a production-quality full node. For the moment, this guide has only been tested against RPM-based Linux distributions.
 
-This guide only covers general settings for a production-level full node. We recommend you head over to the [Validator Handbook](validator-intro.md) section for more details on considerations for operating a validator node.
+::: warning NOTE
+This guide only covers general settings for a production-level full node. You can find further details on considerations for operating a validator node in our [Validator Guide](validator-intro.md).
+:::
 
-## User for `terrad`
+## Create a Dedicated User
 
 `terrad` does not require the super user account. We **strongly** recommend using a normal user to run `terrad`. However, during the setup process you'll need super user permission to create and modify some files.
 
@@ -34,11 +36,11 @@ Modify `/etc/security/limits.conf` to raise the `nofile` capability.
 
 ## Running Server as a Daemon
 
-There are several ways to run a node, and we recommend registering `terrad` as a `systemd` service.
+It is important to keep `terrad` running at all times. There are several ways to achieve this, and the simplest solution we recommend is to register `terrad` as a `systemd` service so that it will automatically get started upon system reboots and other events.
 
-### Register `terrad` service
+### Register terrad as a service
 
-We have to make a service definition file in `/etc/systemd/system` directory.
+First, create a service definition file in `/etc/systemd/system`.
 
 #### Sample file: `/etc/systemd/system/terrad.service`
 
@@ -60,21 +62,31 @@ WantedBy=multi-user.target
 LimitNOFILE=65535
 ```
 
-Modify the `Service` Section from the above given sample to suit your settings.
-Note that even if we raised the number of open files for a process, we still need the `LimitNOFILE` section.
+Modify the `Service` section from the given sample above to suit your settings.
+Note that even if we raised the number of open files for a process, we still need to include `LimitNOFILE`.
 
-After creating a service definition file, you need to execute `systemctl daemon-reload`.
+After creating a service definition file, you should execute `systemctl daemon-reload`.
 
 ### Controlling the service
 
 Use `systemctl` to control (start, stop, restart)
 
-- Start: `systemctl start terrad`
-- Stop: `systemctl stop terrad`
-- Restart: `systemctl restart terrad`
+```bash
+# Start
+$ systemctl start terrad
+# Stop
+$ systemctl stop terrad
+# Restart
+$ systemctl restart terrad
+```
 
-#### Accessing logs
+### Accessing logs
 
-- Entire log: `journalctl -t terrad`
-- Entire log reversed: `journalctl -t terrad -r`
-- Latest and continuous: `journalctl -t terrad -f`
+```bash
+# Entire log
+$ journalctl -t terrad
+# Entire log reversed
+$ journalctl -t terrad -r
+# Latest and continuous
+$ journalctl -t terrad -f
+```
