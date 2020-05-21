@@ -149,6 +149,16 @@ module.exports = {
             "node/production",
           ],
         },
+        {
+          title: "terracli",
+          children: [
+            "terracli/",
+            "terracli/keys",
+            "terracli/accounts",
+            "terracli/query",
+            "terracli/slashing",
+          ],
+        },
       ],
     },
   },

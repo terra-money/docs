@@ -1,6 +1,6 @@
 # Governance
 
-### Create a Governance Proposal
+## Create a Governance Proposal
 
 In order to create a governance proposal, you must submit an initial deposit
 along with a title and description. Various modules outside of governance may
