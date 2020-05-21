@@ -2,6 +2,34 @@
 
 This document is a reference for the functions available from `terracli`, the command line interface that connects a running `terrad` process. For more information on the command usage, refer to its help screen: `terracli config --help`.
 
+## Shell Auto-completion Scripts
+
+Auto-completion scripts for popular UNIX shell interpreters such as `bash` and `zsh` can be generated through the `completion` command, which is available for both `terrad` and `terracli`. This allows for a more convenient way to interact with the Terra Core endpoints when using the command-line.
+
+If you want to generate `bash` completion scripts run the following command:
+
+```bash
+terrad completion > terrad_completion
+terracli completion > terracli_completion
+```
+
+If you want to generate `zsh` completion scripts run the following command:
+
+```bash
+terrad completion --zsh > terrad_completion
+terracli completion --zsh > terracli_completion
+```
+
+> On most UNIX systems, such scripts may be loaded in `.bashrc` or `.bash_profile` to enable Bash autocompletion.
+>
+> ```bash
+> echo '. terrad_completion' >> ~/.bashrc
+> echo '. terracli_completion' >> ~/.bashrc
+> ```
+>
+> Refer to the user's manual of your interpreter provided by your operating system for information on how to enable shell autocompletion.
+> {note}
+
 ## Fees
 
 ### Fees & Gas
