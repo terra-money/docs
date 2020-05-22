@@ -140,7 +140,6 @@ module.exports = {
             "node/testnet",
             "node/config",
             "node/lcd",
-            "node/ledger",
             "node/join-network",
             "node/production",
           ],
@@ -150,6 +149,7 @@ module.exports = {
           children: [
             "terracli/",
             "terracli/keys",
+            "terracli/ledger",
             "terracli/multisig",
             "terracli/account",
             "terracli/distribution",

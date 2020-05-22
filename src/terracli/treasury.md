@@ -5,7 +5,7 @@
 Terra transactions charge a % fee on each outbound transaction from the sender's wallet. To get the effective stability fee rate, run:
 
 ```bash
-terracli query treasury tax-rate
+$ terracli query treasury tax-rate
 ```
 
 ## Query Tax Cap
@@ -13,7 +13,7 @@ terracli query treasury tax-rate
 Stability fees are capped at some fixed amount of SDT to avoid penalizing large transactions. To get the current tax cap denominated in a given denomination (micro-units), run:
 
 ```bash
-terracli query treasury tax-cap <denom>
+$ terracli query treasury tax-cap <denom>
 ```
 
 ## Query Tax Proceeds
@@ -21,7 +21,7 @@ terracli query treasury tax-cap <denom>
 To query the cumulative tax proceeds, run:
 
 ```bash
-terracli query treasury tax-proceeds
+$ terracli query treasury tax-proceeds
 ```
 
 ## Query Reward Weight
@@ -29,7 +29,7 @@ terracli query treasury tax-proceeds
 The Reward Weight is the portion of seigniorage that is designated as ballot rewards for the winners of exchange rate oracle. To query the Reward Weight, run:
 
 ```bash
-terracli query treasury reward-weight
+$ terracli query treasury reward-weight
 ```
 
 ## Query Seigniorage Proceeds
@@ -37,7 +37,7 @@ terracli query treasury reward-weight
 The treasury measures the amount of Terra seigniorage accumulated over epochs, denominated in units of `uluna`. To query the seigniorage proceeds, run:
 
 ```bash
-terracli query treasury seigniorage-proceeds
+$ terracli query treasury seigniorage-proceeds
 ```
 
 ## Query Parameters
@@ -45,7 +45,7 @@ terracli query treasury seigniorage-proceeds
 Parameters define high-level settings for the Treasury, described [here](dev-spec-treasury.md#parameters). You can get the current values by using:
 
 ```bash
-terracli query treasury params
+$ terracli query treasury params
 ```
 
 With the above command you will get the values for:
