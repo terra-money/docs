@@ -1,7 +1,7 @@
 # Validator FAQ
 
 ::: warning
-This is work in progress. Mechanisms and values are susceptible to change.
+Please read this document thoroughly before running a validator.
 :::
 
 ## General Concepts

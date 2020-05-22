@@ -1,7 +1,15 @@
 # Quickstart
 
-## Terra Network Overview
+This is a short tutorial to get quickly started with using Terra.
 
-## Create an Account
+## Download Terra Station
 
-## Making your first Transaction
+## Get Testnet Luna
+
+## Making a Transaction
+
+## Using On-Chain Swap
+
+## Delegating Luna
+
+## What's Next?

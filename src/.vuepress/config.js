@@ -126,11 +126,10 @@ module.exports = {
             "luna",
             "accounts",
             "validators",
-            "consensus",
             "stablecoin",
             "seigniorage",
             "governance",
-            "smart-contracts",
+            // "smart-contracts",
           ],
         },
         {
