@@ -61,58 +61,55 @@
       <ul class="developers">
         <li>Luna</li>
         <li>
-          <a href="https://jigu.terra.money/" target="_blank">What is Luna?</a>
+          <a href="https://docs.terra.money/luna" target="_blank">What is Luna?</a>
         </li>
         <li>
-          <a href="https://terra-project.github.io/terra.js/" target="_blank">Exchanges</a>
+          <a href="https://docs.terra.money/luna#exchanges" target="_blank">Exchanges</a>
         </li>
         <li>
-          <a href="https://terra-project.github.io/terra.js/" target="_blank">Wallets</a>
+          <a href="https://docs.terra.money/luna#wallets" target="_blank">Wallets</a>
         </li>
       </ul>
       <ul class="developers">
         <li>Foundation</li>
         <li>
-          <a href="https://jigu.terra.money/" target="_blank">Team</a>
+          <a href="https://terra.money/" target="_blank">Team</a>
         </li>
         <li>
-          <a href="https://terra-project.github.io/terra.js/" target="_blank">Roadmap</a>
+          <a href="https://terra.money/" target="_blank">Roadmap</a>
         </li>
         <li>
-          <a href="https://terra-project.github.io/terra.js/" target="_blank">Careers</a>
+          <a href="https://terra.money/" target="_blank">Careers</a>
         </li>
         <li>
-          <a href="https://terra-project.github.io/terra.js/" target="_blank">Community</a>
+          <a href="https://terra.money/" target="_blank">Community</a>
         </li>
       </ul>
       <ul class="developers">
         <li>Developers</li>
         <li>
-          <a href="https://jigu.terra.money/" target="_blank">Github</a>
+          <a href="https://github.com/terra-project" target="_blank">Github</a>
         </li>
         <li>
-          <a href="https://terra-project.github.io/terra.js/" target="_blank">Documentation</a>
+          <a href="https://docs2.terra.money/" target="_blank">Documentation</a>
         </li>
         <li>
-          <a href="https://terra-project.github.io/terra.js/" target="_blank">SDKs</a>
+          <a href="https://docs2.terra.money/#sdks-for-developers" target="_blank">SDKs</a>
         </li>
         <li>
-          <a href="https://terra-project.github.io/terra.js/" target="_blank">Status</a>
-        </li>
-        <li>
-          <a href="https://terra-project.github.io/terra.js/" target="_blank">Dev Program</a>
+          <a href="https://status.terra.money/" target="_blank">Status</a>
         </li>
       </ul>
       <ul class="developers">
         <li>Validators</li>
         <li>
-          <a href="https://jigu.terra.money/" target="_blank">Validator Hub</a>
+          <a href="https://docs2.terra.money/validator" target="_blank">Validator Hub</a>
         </li>
         <li>
-          <a href="https://terra-project.github.io/terra.js/" target="_blank">Profiles</a>
+          <a href="https://github.com/terra-project/validator-profiles" target="_blank">Profiles</a>
         </li>
         <li>
-          <a href="https://terra-project.github.io/terra.js/" target="_blank">Support Channel</a>
+          <a href="https://terra.money" target="_blank">Support Channel</a>
         </li>
       </ul>
     </div>
