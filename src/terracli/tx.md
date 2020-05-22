@@ -1,4 +1,4 @@
-# Search Transactions
+# TX Search
 
 ## Matching a set of tags
 

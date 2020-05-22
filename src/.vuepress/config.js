@@ -110,11 +110,11 @@ module.exports = {
       ],
       "/validator/": [
         "/validator/",
-        "/validator/getting-started",
+        "/validator/faq",
+        "/validator/setup",
         "/validator/oracle",
         "/validator/security",
         "/validator/troubleshooting",
-        "/validator/faq",
       ],
       "/": [
         ["/", "Overview"],
@@ -139,7 +139,6 @@ module.exports = {
             "node/installation",
             "node/testnet",
             "node/config",
-            "node/lcd",
             "node/join-network",
             "node/production",
           ],
@@ -148,9 +147,10 @@ module.exports = {
           title: "terracli",
           children: [
             "terracli/",
+            "terracli/lcd",
             "terracli/keys",
-            "terracli/ledger",
             "terracli/multisig",
+            "terracli/tx",
             "terracli/account",
             "terracli/distribution",
             "terracli/governance",
@@ -159,7 +159,6 @@ module.exports = {
             "terracli/slashing",
             "terracli/staking",
             "terracli/treasury",
-            "terracli/tx",
           ],
         },
         {

@@ -1,11 +1,8 @@
----
-id: validator-security
-title: Security Best Practices
----
+# Security Practices
 
 Each validator candidate is encouraged to run its operations independently, as diverse setups increase the resilience of the network. Validator candidates should commence their setup phase now in order to be on time for launch.
 
-## Key management - HSM
+## HSM Key Management
 
 It is mission critical that an attacker cannot steal a validator's key. If this is possible, it puts the entire stake delegated to the compromised validator at risk. Hardware security modules are an important strategy for mitigating this risk.
 
@@ -15,7 +12,7 @@ The Terra team is also working on extending our Ledger Nano S application to sup
 
 We will update this page when more key storage solutions become available.
 
-## Sentry Nodes \(DDOS Protection\)
+## Sentry Nodes for Anti-DDoS
 
 Validators are responsible for ensuring that the network can sustain denial of service attacks.
 
@@ -49,9 +46,8 @@ private_peer_ids = "ipaddress of validator nodes"
 
 By default, uppercase environment variables with the following prefixes will replace lowercase command-line flags:
 
-* `TE` \(for Terra flags\)
-* `TM` \(for Tendermint flags\)
-* `BC` \(for democli or basecli flags\)
+- `TE` \(for Terra flags\)
+- `TM` \(for Tendermint flags\)
+- `BC` \(for democli or basecli flags\)
 
 For example, the environment variable `TE_CHAIN_ID` will map to the command line flag `--chain-id`. Note that while explicit command-line flags will take precedence over environment variables, environment variables will take precedence over any of your configuration files. For this reason, it's imperative that you lock down your environment such that any critical parameters are defined as flags on the CLI or prevent modification of any environment variables.
-

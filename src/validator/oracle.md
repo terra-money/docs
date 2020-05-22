@@ -1,7 +1,4 @@
----
-id: validator-oracle
-title: Exchange Rate Oracle
----
+# Oracle Feeder
 
 This document is a basic guide for validators on how to set up an automatic system to periodically vote for the exchange rate of Luna, an important responsibility for validators.
 
@@ -13,12 +10,12 @@ With the Columbus-3 release, every active validator must participate in the Exch
 
 The Terra Core team has provided a reference implementation of a program that pulls the exchange rate of Luna from exchanges and periodically submits it in prevotes and votes following the [Voting Procedure](dev-spec-oracle.md#voting-procedure). In addition, several validators have also created alternate feeder implementations.
 
-| Software | Developer | Runtime | Notes |
-| :-- | :-- | :-- | :-- |
-| [`oracle-feeder`](https://github.com/terra-project/oracle-feeder/tree/columbus-3) | **Terra** | Node.js, Python | Official reference implementation |
-| [`terra_oracle_voter`](https://github.com/b-harvest/terra_oracle_voter) | [B-Harvest](https://bharvest.io/) | Python | |
-| [`oracle-voter`](https://github.com/stakewithus/oracle-voter) | [StakeWith.Us](https://stakewith.us) | Python | |
-| [`terra-oracle`](https://github.com/node-a-team/terra-oracle) | [Node A-Team](https://nodeateam.com/) | Go | |
+| Software                                                                          | Developer                             | Runtime         | Notes                             |
+| :-------------------------------------------------------------------------------- | :------------------------------------ | :-------------- | :-------------------------------- |
+| [`oracle-feeder`](https://github.com/terra-project/oracle-feeder/tree/columbus-3) | **Terra**                             | Node.js, Python | Official reference implementation |
+| [`terra_oracle_voter`](https://github.com/b-harvest/terra_oracle_voter)           | [B-Harvest](https://bharvest.io/)     | Python          |                                   |
+| [`oracle-voter`](https://github.com/stakewithus/oracle-voter)                     | [StakeWith.Us](https://stakewith.us)  | Python          |                                   |
+| [`terra-oracle`](https://github.com/node-a-team/terra-oracle)                     | [Node A-Team](https://nodeateam.com/) | Go              |                                   |
 
 ### Guidelines for writing your own feeder
 

@@ -39,7 +39,7 @@ Welcome to the official documentation for Terra, a decentralized financial infra
       Learn how to participate in the Terra network by running your own full Terra node.
     </div>
   </a>
-  <a href="/core" class="card">
+  <a href="/dev/" class="card">
     <img src="/img/icon_core.svg"/>
     <div class="title">
       Contribute to Core
@@ -77,7 +77,7 @@ Welcome to the official documentation for Terra, a decentralized financial infra
   </a>
 </div>
 
-## SDKs for Developers
+### SDKs for Developers
 
 The Terra SDKs provide an easy way to programmatically interact with a Terra node with popular programming languages to develop applications. Currently, we have SDKs in Python 3 and JavaScript, with support for other runtimes coming soon in the near future.
 
