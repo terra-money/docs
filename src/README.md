@@ -21,15 +21,10 @@ Welcome to the official documentation for Terra, a decentralized financial infra
       Learn about Luna, the native staking asset that powers the Terra ecosystem.
     </div>
   </a>
-</div>
-
-## I am a...
-
-<div class="cards twoColumn">
   <a href="/docs/query/account" class="card">
     <img src="/img/icon_stable.svg"/>
     <div class="title">
-      Researcher
+      Stability Mechanisms
     </div>
     <div class="text">
       Learn about how Terra achieves price-stability while ensuring steady increase in validator incentives.
@@ -38,7 +33,7 @@ Welcome to the official documentation for Terra, a decentralized financial infra
   <a href="/docs/transactions/wallet.html" class="card">
     <img src="/img/icon_node.svg"/>
     <div class="title">
-      Full Node Operator
+      Run a Full Node
     </div>
     <div class="text">
       Learn how to participate in the Terra network by running your own full Terra node.
@@ -47,25 +42,25 @@ Welcome to the official documentation for Terra, a decentralized financial infra
   <a href="/docs/blocks" class="card">
     <img src="/img/icon_troubleshooting.svg"/>
     <div class="title">
-      Validator
+      Contribute to Core
     </div>
     <div class="text">
-      Figure out how to troubleshoot some common problems.
+      Hack on the latest version of Terra Core, the node software for Terra.
     </div>
   </a>
   <a href="/docs/keys" class="card">
     <img src="/img/icon_validator.svg"/>
     <div class="title">
-      Application Developer
+      Run a Validator
     </div>
     <div class="text">
-      Become a validator and earn delegation commissions in exchange for securing the network.
+      Become a validator and earn delegation commissions in exchange for helping secure the network.
     </div>
   </a>
   <a href="/docs/websockets" class="card">
     <img src="/img/icon_smartcontract.svg"/>
     <div class="title">
-      Terra Core Contributor
+      Write Smart Contracts
     </div>
     <div class="text">
       Learn about how to write smart contracts for creating financial dApps on Terra.
@@ -74,7 +69,7 @@ Welcome to the official documentation for Terra, a decentralized financial infra
     <a href="/docs/#usage-inside-jupyter" class="card">
     <img src="/img/icon_innovation.svg"/>
     <div class="title">
-      Entrepreneur
+      Applications
     </div>
     <div class="text">
       Explore all the different applications being built on Terra.

@@ -30,8 +30,6 @@ $ terrad tendermint show-validator
 
 You'll need an account private and public key pair \(a.k.a. `sk, pk` respectively\) to be able to receive funds, send funds, creating bonding transactions, etc.
 
-### Using a Computer
-
 ::: tip
 It is more secure to perform this action on an offline computer.
 :::
@@ -96,11 +94,48 @@ We strongly recommend **NOT** using the same passphrase for multiple keys.
 The Terra team is not be responsible for the loss of funds.
 :::
 
-### With a Ledger
+## Generate Keys (Ledger)
+
+You can use the Ledger Nano S hardware wallet to store your Terra account private keys, which is considered a more secure option because the keys are kept off connected devices. The process for using a hardware wallet with `terracli` is similar to creating a normal key, except a Ledger key delegate account information displaying and signing operations to a connected Ledger hardware device instead of a encrypted key stored on the machine.
+
+### Requirements
+
+- You have [initialized your Ledger Nano S](https://support.ledgerwallet.com/hc/en-us/articles/360000613793)
+- The latest firmware is [installed](https://support.ledger.com/hc/en-us/articles/360002731113-Update-Ledger-Nano-S-firmware)
+- Ledger Live is [ready to use](https://support.ledger.com/hc/en-us/articles/360006395233-Take-your-first-steps)
+- Google Chrome is installed.
+
+### Install Terra app on Ledger Live
+
+::: danger
+To do this, it is preferable to use a brand new ledger device as there can be only one mnemonic per ledger device.
+
+If, however, you want to use a ledger that is already initialized with a seed, you can reset it by going in `Settings`>`Device`>`Reset All`.
+
+**Please note that this will wipe out the seed currently stored on the device.** > **If you have not properly secured the associated mnemonic, you could lose your funds!**
+:::
 
 ::: warning IMPORTANT
 Only use Ledger devices that you bought factory new or trust fully.
 :::
+
+1. Open the **Manager** in Ledger Live.
+
+2. Connect and unlock your Ledger Nano S.
+
+3. If asked, allow the manager on your device by pressing the right button.
+
+4. Find **Terra** in the app catalog.
+
+5. Click the Install button of the app.
+
+6. An installation window appears.
+
+7. Your device will display **Processing…**
+
+8. The app installation is confirmed.
+
+### Create a Ledger Key on terracli
 
 When you initialize your ledger, a 24-word mnemonic is generated and stored in the device. This mnemonic is compatible with Terra and Terra accounts can be derived from it. Therefore, all you have to do is make your ledger compatible with `terracli`. To learn more about how to set up your ledger for usage with Terra, head [here](./ledger).
 
