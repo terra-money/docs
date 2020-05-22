@@ -40,7 +40,7 @@ Welcome to the official documentation for Terra, a decentralized financial infra
     </div>
   </a>
   <a href="/core" class="card">
-    <img src="/img/icon_troubleshooting.svg"/>
+    <img src="/img/icon_core.svg"/>
     <div class="title">
       Contribute to Core
     </div>
@@ -57,7 +57,7 @@ Welcome to the official documentation for Terra, a decentralized financial infra
       Become a validator and earn delegation commissions in exchange for helping secure the network.
     </div>
   </a>
-  <a href="/smart-contracts" class="card">
+  <a href="/smart-contracts" class="card disabled">
     <img src="/img/icon_smartcontract.svg"/>
     <div class="title">
       Write Smart Contracts
@@ -67,7 +67,7 @@ Welcome to the official documentation for Terra, a decentralized financial infra
     </div>
   </a>
     <a href="/ecosystem" class="card">
-    <img src="/img/icon_innovation.svg"/>
+    <img src="/img/icon_apps.svg"/>
     <div class="title">
       Applications
     </div>
