@@ -1,7 +1,5 @@
 # Key Management
 
-## Key Representations
-
 Every Terra account is associated with different key representations, which can be deterministically generated from the account's private key.
 
 ### Account Address `terra-`
@@ -14,7 +12,7 @@ $ terracli keys show <account_name>
 
 ### Validator Address `terravaloper-`
 
-This is the address that uniquely identifies a validator and is used to invoke staking commands.
+This is the address that uniquely identifies a validator and is used to invoke staking commands. Each account address has a corresponding validator address, and vice-versa.
 
 ```bash
 $ terracli keys show <account_name> --bech=val
@@ -22,7 +20,7 @@ $ terracli keys show <account_name> --bech=val
 
 ### Consensus Address `terravalcons-`
 
-Generated when the node is created with `terrad init`, and serves to identify the Tendermint signing key for the node, rather than the operator.
+The consensus address is generated when the node is created with `terrad init`, and serves to identify the Tendermint signing key for the node, NOT the operator (account holder).
 
 ```bash
 $ terrad tendermint show-validator
@@ -30,9 +28,9 @@ $ terrad tendermint show-validator
 
 ## Generate Keys
 
-You'll need an account private and public key pair \(a.k.a. `sk, pk` respectively\) to be able to receive funds, send txs, bond tx, etc.
+You'll need an account private and public key pair \(a.k.a. `sk, pk` respectively\) to be able to receive funds, send funds, creating bonding transactions, etc.
 
-To generate a new _secp256k1_ key:
+To generate a new _Secp256k1_ key:
 
 ```bash
 $ terracli keys add <account_name>
@@ -62,7 +60,7 @@ You can see all your available keys by typing:
 $ terracli keys list
 ```
 
-View the validator pubkey for your node by typing:
+View the validator public key for your node by typing:
 
 ```bash
 $ terrad tendermint show-validator
@@ -75,7 +73,7 @@ We strongly recommend **NOT** using the same passphrase for multiple keys.
 The Terra team is not be responsible for the loss of funds.
 :::
 
-### Generate Multisig Public Keys
+## Generate Multisig Keys
 
 You can generate and print a multisig public key by typing:
 
@@ -85,7 +83,9 @@ $ terracli keys add --multisig=name1,name2,name3[...] --multisig-threshold=K new
 
 `K` is the minimum number of private keys that must have signed the transactions that carry the public key's address as signer.
 
-The `--multisig` flag must contain the name of public keys that will be combined into a public key that will be generated and stored as `new_key_name` in the local database. All names supplied through `--multisig` must already exist in the local database. Unless the flag `--nosort` is set, the order in which the keys are supplied on the command line does not matter, i.e. the following commands generate two identical keys:
+The `--multisig` flag must contain the name of public keys that will be combined into a public key that will be generated and stored as `new_key_name` in the local database. All names supplied through `--multisig` must already exist in the local database.
+
+Unless the flag `--nosort` is set, the order in which the keys are supplied on the command line does not matter, i.e. the following commands generate two identical keys:
 
 ```bash
 $ terracli keys add --multisig=foo,bar,baz --multisig-threshold=2 multisig_address
@@ -98,4 +98,4 @@ Multisig addresses can also be generated on-the-fly and printed through the whic
 $ terracli keys show --multisig-threshold=K name1 name2 name3 [...]
 ```
 
-For more information regarding how to generate, sign and broadcast transactions with a multi signature account see [Multisig Transactions](#multisig-transactions).
+For more information regarding how to generate, sign and broadcast transactions with a multi signature account see [Multisig Transactions](./multisig).

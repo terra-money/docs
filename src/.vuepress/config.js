@@ -134,10 +134,6 @@ module.exports = {
           ],
         },
         {
-          title: "Ecosystem",
-          children: ["core", "mantle", "station", "finder"],
-        },
-        {
           title: "Terra Node",
           children: [
             "node/installation",
@@ -154,8 +150,8 @@ module.exports = {
           children: [
             "terracli/",
             "terracli/keys",
-            "terracli/tx",
-            "terracli/accounts",
+            "terracli/multisig",
+            "terracli/account",
             "terracli/distribution",
             "terracli/governance",
             "terracli/market",
@@ -163,7 +159,12 @@ module.exports = {
             "terracli/slashing",
             "terracli/staking",
             "terracli/treasury",
+            "terracli/tx",
           ],
+        },
+        {
+          title: "Ecosystem",
+          children: ["core", "mantle", "station", "finder"],
         },
       ],
     },

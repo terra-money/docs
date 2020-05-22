@@ -5,7 +5,7 @@
 To check the current distribution parameters, run:
 
 ```bash
-terracli query distribution params
+$ terracli query distribution params
 ```
 
 ### Query Community Pool Coins
@@ -13,7 +13,7 @@ terracli query distribution params
 To query all coins in the Community Pool, which is under Governance control:
 
 ```bash
-terracli query distribution community-pool
+$ terracli query distribution community-pool
 ```
 
 ### Query Outstanding Rewards
@@ -21,7 +21,7 @@ terracli query distribution community-pool
 To check the current outstanding (un-withdrawn) rewards, run:
 
 ```bash
-terracli query distribution outstanding-rewards
+$ terracli query distribution outstanding-rewards
 ```
 
 ### Query Validator Commission
@@ -29,7 +29,7 @@ terracli query distribution outstanding-rewards
 To check the current outstanding commission for a validator, run:
 
 ```bash
-terracli query distribution commission <validator_address>
+$ terracli query distribution commission <validator_address>
 ```
 
 ### Query Validator Slashes
@@ -37,7 +37,7 @@ terracli query distribution commission <validator_address>
 To check historical slashes for a validator, run:
 
 ```bash
-terracli query distribution slashes <validator_address> <start_height> <end_height>
+$ terracli query distribution slashes <validator_address> <start_height> <end_height>
 ```
 
 ### Query Delegator Rewards
@@ -45,7 +45,7 @@ terracli query distribution slashes <validator_address> <start_height> <end_heig
 To check current rewards for a delegator (if they were to be withdrawn), run:
 
 ```bash
-terracli query distribution rewards <delegator_address> <validator_address>
+$ terracli query distribution rewards <delegator_address> <validator_address>
 ```
 
 ### Query All Delegator Rewards
@@ -53,5 +53,5 @@ terracli query distribution rewards <delegator_address> <validator_address>
 To check all current rewards for a delegator (if they were to be withdrawn), run:
 
 ```bash
-terracli query distribution rewards <delegator_address>
+$ terracli query distribution rewards <delegator_address>
 ```
