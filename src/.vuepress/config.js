@@ -71,7 +71,7 @@ module.exports = {
     nav: [
       { text: "Docs", link: "/" },
       { text: "Validators", link: "/validator/" },
-      { text: "Core Devs", link: "/core/" },
+      { text: "Core Devs", link: "/dev/" },
       {
         text: "GitHub",
         link: "https://github.com/terra-project/core",
@@ -79,21 +79,21 @@ module.exports = {
       },
     ],
     sidebar: {
-      "/core/": [
-        "/core/",
+      "/dev/": [
+        "/dev/",
         {
           title: "Module Specs",
           children: [
-            "/core/spec-auth",
-            "/core/spec-bank",
-            "/core/spec-distribution",
-            "/core/spec-governance",
-            "/core/spec-market",
-            "/core/spec-oracle",
-            "/core/spec-slashing",
-            "/core/spec-staking",
-            "/core/spec-supply",
-            "/core/spec-treasury",
+            "/dev/spec-auth",
+            "/dev/spec-bank",
+            "/dev/spec-distribution",
+            "/dev/spec-governance",
+            "/dev/spec-market",
+            "/dev/spec-oracle",
+            "/dev/spec-slashing",
+            "/dev/spec-staking",
+            "/dev/spec-supply",
+            "/dev/spec-treasury",
           ],
         },
         {
