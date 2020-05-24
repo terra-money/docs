@@ -60,7 +60,7 @@ Welcome to the official documentation for Terra, a decentralized financial infra
   <a href="/smart-contracts" class="card disabled">
     <img src="/img/icon_smartcontract.svg"/>
     <div class="title">
-      Write Smart Contracts
+      Smart Contracts
     </div>
     <div class="text">
       Learn about how to write smart contracts for creating financial dApps on Terra.
@@ -69,10 +69,10 @@ Welcome to the official documentation for Terra, a decentralized financial infra
     <a href="/ecosystem" class="card">
     <img src="/img/icon_apps.svg"/>
     <div class="title">
-      Applications
+      Integrations
     </div>
     <div class="text">
-      Explore all the different applications being built on Terra.
+      Discover novel applications and integrations with existing tools.
     </div>
   </a>
 </div>
@@ -91,7 +91,7 @@ The Terra SDKs provide an easy way to programmatically interact with a Terra nod
       Python SDK
     </div>
   </a>
-  <a href="/examples/" class="card lg">
+  <a href="https://terra-project.github.io/terra.js/" class="card lg">
     <img src="/img/terra_js.svg">
     <div class="title">
       Terra.js

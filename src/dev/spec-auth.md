@@ -12,13 +12,13 @@ The Auth module reads the current effective `TaxRate` and `TaxCap` parameters fr
 
 ### Gas Fee
 
-As with any other transaction, [`MsgSend`](dev-spec-bank.md#msgsend) and [`MsgMultiSend`](dev-spec-bank.md#msgmultisend) pay a gas fee the size of which depends on validator's preferences (each validator sets his own min-gas-fees) and the complexity of the transaction. [Notes on gas and fees](node-users.md#a-note-on-gas-and-fees) has a more detailed explanation of how gas is computed. Important detail to note here is that gas fees are specified by the sender when the transaction is outbound.
+As with any other transaction, [`MsgSend`](spec-bank.md#msgsend) and [`MsgMultiSend`](spec-bank.md#msgmultisend) pay a gas fee the size of which depends on validator's preferences (each validator sets his own min-gas-fees) and the complexity of the transaction. [Notes on gas and fees](node-users.md#a-note-on-gas-and-fees) has a more detailed explanation of how gas is computed. Important detail to note here is that gas fees are specified by the sender when the transaction is outbound.
 
 ### Stability Fee
 
 In addition to the gas fee, the ante handler charges a stability fee that is a percentage of the transaction's value only for the **Stable Coins** except **LUNA**. It reads the Tax Rate and Tax Cap parameters from the [`Treasury`](dev-spec-treasury.md) module to compute the amount of stability tax that needs to be charged.
 
-The **Tax Rate** is a parameter agreed upon by the network that specifies the percentage of payment transactions that will be collected as Tax Proceeds in the block reward, which will be distributed among the validators. The distribution model is a bit complicated and explained in detail [here](validator-faq.md#how-are-block-provisions-distributed). The taxes collected per transaction cannot exceed the specific **Tax Cap** defined for that transaction's denomination. Every epoch, the Tax Rate and Tax Caps are recalibrated automatically by the network; see [here](dev-spec-treasury.md#monetary-policy-levers) for more details.
+The **Tax Rate** is a parameter agreed upon by the network that specifies the percentage of payment transactions that will be collected as Tax Proceeds in the block reward, which will be distributed among the validators. The distribution model is a bit complicated and explained in detail [here](validator-faq.md#how-are-block-provisions-distributed). The taxes collected per transaction cannot exceed the specific **Tax Cap** defined for that transaction's denomination. Every epoch, the Tax Rate and Tax Caps are recalibrated automatically by the network; see [here](spec-treasury.md#monetary-policy-levers) for more details.
 
 For an example `MsgSend` transaction of µSDR tokens,
 

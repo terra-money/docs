@@ -98,8 +98,6 @@ For Luna swaps into Terra, the Luna that recaptured by the protocol is burned an
 
 ### `MsgSwap`
 
-#### Swap Request
-
 ```go
 // MsgSwap contains a swap request
 type MsgSwap struct {

@@ -10,8 +10,6 @@ The Bank module is the base transactional layer of the Terra blockchain: it allo
 
 ### MsgSend
 
-#### Send Coins
-
 ```go
 // MsgSend - high level transaction of the coin module
 type MsgSend struct {
@@ -25,8 +23,6 @@ The Bank module can be used to send coins from one `Account` (`terra-` prefixed 
 
 ### MsgMultiSend
 
-#### Batch Send Operations
-
 ```go
 // MsgMultiSend - high level transaction of the coin module
 type MsgMultiSend struct {
@@ -38,20 +34,3 @@ type MsgMultiSend struct {
 The Bank module can be used to send multiple transactions at once. `Inputs` contains the incoming transactions, and `Outputs` contains the outgoing transactions. The coin balance of the `Inputs` and the `Outputs` must match exactly. Batching transactions via multisend has the benefit of conserving network bandwidth and gas fees.
 
 If any of the `Accounts` fails, then taxes and fees already paid through the transaction is not refunded.
-
-## Parameters
-
-The subspace for the Bank module is `bank`.
-
-```go
-type GenesisState struct {
-	SendEnabled bool `json:"send_enabled" yaml:"send_enabled"`
-}
-```
-
-### SendEnabled
-
-Governs whether sends (`MsgSend` or `MsgMultiSend` transactions) are able to be performed.
-
-- type: `bool`
-- default value: `true`

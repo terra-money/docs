@@ -7,7 +7,9 @@ id: dev-devguide
 This document covers tips and guidelines to help you to understand how Terra works and efficiently navigate the codebase of Terra Core, the official Golang reference implementation of the Terra node software.
 
 ::: tip
-Terra Core is built using the [Cosmos SDK](https://cosmos.network/sdk), which provides a robust framework for constructing blockchains that run atop the [Tendermint](https://tendermint.com/) Consensus Protocol. It is highly recommended that you review these projects before diving into the Terra developer documentation, as they assume familiarity with concepts such as ABCI, Validators, Keepers, Message Handlers, etc.
+Terra Core is built using the [Cosmos SDK](https://cosmos.network/sdk), which provides a robust framework for constructing blockchains that run atop the [Tendermint](https://tendermint.com/) Consensus Protocol.
+
+It is highly recommended that you review these projects before diving into the Terra developer documentation, as they assume familiarity with concepts such as ABCI, Validators, Keepers, Message Handlers, etc.
 :::
 
 ## How to use the Docs
@@ -25,28 +27,28 @@ At the end, the specification lists out various module parameters alongside thei
 The node software is organized into individual modules that implement different parts of the Terra protocol. Here are they, listed in the order they are initialized during genesis:
 
 1. `genaccounts` - import & export genesis account
-2. [`distribution`](dev-spec-distribution.md): distribute rewards between validators and delegators
+2. [`distribution`](spec-distribution.md): distribute rewards between validators and delegators
    - tax and reward distribution
    - community pool
-3. [`staking`](dev-spec-staking.md): validators and Luna
-4. [`auth`](dev-spec-auth.md): ante handler
+3. [`staking`](spec-staking.md): validators and Luna
+4. [`auth`](spec-auth.md): ante handler
    - vesting accounts
    - stability layer fee
-5. [`bank`](dev-spec-bank.md) - sending funds from account to account
-6. [`slashing`](dev-spec-slashing.md) - low-level Tendermint slashing (double-signing, etc)
-7. [`supply`](dev-spec-supply.md) - Terra / Luna supplies
-8. [`oracle`](dev-spec-oracle.md) - exchange rate feed oracle
+5. [`bank`](spec-bank.md) - sending funds from account to account
+6. [`slashing`](spec-slashing.md) - low-level Tendermint slashing (double-signing, etc)
+7. [`supply`](spec-supply.md) - Terra / Luna supplies
+8. [`oracle`](spec-oracle.md) - exchange rate feed oracle
    - vote tallying weighted median
    - ballot rewards
    - slashing misbehaving oracles
-9. [`treasury`](dev-spec-treasury.md): miner incentive stabilization
+9. [`treasury`](spec-treasury.md): miner incentive stabilization
    - macroecnomic monitoring
    - monetary policy levers (Tax Rate, Reward Weight)
    - seigniorage settlement
-10. [`gov`](dev-spec-governance.md): on-chain governance
+10. [`gov`](spec-governance.md): on-chain governance
     - proposals
     - parameter updating
-11. [`market`](dev-spec-market.md): price-stabilization
+11. [`market`](spec-market.md): price-stabilization
     - Terra<>Terra spot-conversion, Tobin Tax
     - Terra<>Luna market-maker, Constant-Product spread
 12. `crisis` - reports consensus failure state with proof to halt the chain
@@ -82,8 +84,8 @@ The following processes get executed during each block transition:
 
 5. Oracle
 
-   - If at the end of `VotePeriod`, run [Voting Procedure](dev-spec-oracle.md#voting-procedure) and **update Luna Exchange Rate**.
-   - If at the end of `SlashWindow`, **penalize validators** who [missed](dev-spec-oracle.md#slashing) more `VotePeriod`s than permitted.
+   - If at the end of `VotePeriod`, run [Voting Procedure](spec-oracle.md#voting-procedure) and **update Luna Exchange Rate**.
+   - If at the end of `SlashWindow`, **penalize validators** who [missed](spec-oracle.md#slashing) more `VotePeriod`s than permitted.
 
 6. Governance
 
@@ -91,7 +93,7 @@ The following processes get executed during each block transition:
 
 7. Market
 
-   - [Replenish](dev-spec-market.md#end-block) liquidity pools, **allowing spread fees to decrease**.
+   - [Replenish](spec-market.md#end-block) liquidity pools, **allowing spread fees to decrease**.
 
 8. Treasury
 

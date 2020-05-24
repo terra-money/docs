@@ -25,9 +25,9 @@ You can edit this `moniker` later, in the `~/.terrad/config/config.toml` file:
 moniker = "<your_custom_moniker>"
 ```
 
-### Set minimum fee for transactions (optional)
+### Set minimum gas prices for transactions (optional)
 
-You can edit `~/.terrad/config/app.toml` in order to enable anti-spam by rejecting incoming transactions with less than a minimum fee:
+You can edit `~/.terrad/config/app.toml` in order to enable anti-spam by rejecting incoming transactions with implied gas price less than a specified minimum:
 
 ```toml
 # This is a TOML config file.
@@ -35,8 +35,10 @@ You can edit `~/.terrad/config/app.toml` in order to enable anti-spam by rejecti
 
 ##### main base config options #####
 
-# Validators reject any tx from the mempool with less than the minimum fee per gas.
-minimum_fees = ""
+# The minimum gas prices a validator is willing to accept for processing a
+# transaction. A transaction's fees must meet the minimum of any denomination
+# specified in this config (e.g. 0.25token1;0.0001token2).
+minimum-gas-prices = "0.015ukrw,0.015uluna"
 ```
 
 Your full node has now been initialized!
@@ -45,11 +47,11 @@ Your full node has now been initialized!
 
 You specify the network you want to join by setting the **genesis file** and **seeds**. If you need more information about past networks, check our [Networks Repo](https://github.com/terra-project/networks).
 
-| Network      | Description |                                                                                                   |           |
-| ------------ | ----------- | ------------------------------------------------------------------------------------------------- | --------- |
-| `columbus-3` | Mainnet     | [genesis](https://columbus-genesis.s3-ap-northeast-1.amazonaws.com/genesis.json)                  | [seeds]() |
-| `soju-0014`  | Testnet     | [genesis](https://raw.githubusercontent.com/terra-project/networks/master/soju-0014/genesis.json) | [seeds]() |
-| `vodka-0001` | Testnet     | [genesis]()                                                                                       | [seeds]() |
+| Network      | Description |                                                                                                    |                                                         |
+| ------------ | ----------- | -------------------------------------------------------------------------------------------------- | ------------------------------------------------------- |
+| `columbus-3` | Mainnet     | [genesis](https://columbus-genesis.s3-ap-northeast-1.amazonaws.com/genesis.json)                   | [address book](https://network.terra.dev/addrbook.json) |
+| `soju-0014`  | Testnet     | [genesis](https://raw.githubusercontent.com/terra-project/networks/master/soju-0014/genesis.json)  |                                                         |
+| `vodka-0001` | Testnet     | [genesis](https://raw.githubusercontent.com/terra-project/networks/master/vodka-0001/genesis.json) |                                                         |
 
 ### Download the genesis file
 
@@ -68,13 +70,23 @@ To verify the correctness of the configuration run:
 $ terrad start
 ```
 
+### Download address book (recommended)
+
+If you have an address book of peers, download `addrbook.json` and move it into `~/.terrad/config/addrbook.json`. This will give your node a selection of peers to dial to find other nodes.
+
 ### Define seed nodes
 
-Your node needs to know how to find peers. You'll need to add healthy seed nodes to `~/.terrad/config/config.toml`. The `testnets` repo contains links to the seed nodes for each testnet. If you are looking to join the running testnet please [check the repository for details](https://github.com/terra-project/networks) on which nodes to use.
-
-If those seeds aren't working, you can find more seeds and persistent peers on the [Terra Station](https://station.terra.money). Open the the `Full Nodes` pane and select nodes that do not have private \(`10.x.x.x`\) or [local IP addresses](https://en.wikipedia.org/wiki/Private_network). The `Persistent Peer` field contains the connection string. For best results use 4-6.
+::: warning NOTE
 
 For more information on seeds and peers, you can [read this](https://github.com/tendermint/tendermint/blob/master/docs/tendermint-core/using-tendermint.md#peers).
+
+:::
+
+Your node needs to know how to find peers. You'll need to add healthy seed nodes to `~/.terrad/config/config.toml`.
+
+```toml
+seeds = "20271e0591a7204d72280b87fdaa854f50c55e7e@106.10.59.48:26656,3b1c85b86528d10acc5475cb2c874714a69fde1e@110.234.23.153:26656,49333a4cb195d570ea244dab675a38abf97011d2@13.113.103.57:26656,7f19128de85ced9b62c3947fd2c2db2064462533@52.68.3.126:26656"
+```
 
 ## Connecting to the Network
 

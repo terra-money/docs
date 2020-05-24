@@ -160,10 +160,6 @@ module.exports = {
             "terracli/treasury",
           ],
         },
-        {
-          title: "Ecosystem",
-          children: ["core", "mantle", "station", "finder"],
-        },
       ],
     },
   },

@@ -68,8 +68,6 @@ A validator may abstain from voting by submitting a non-positive integer for the
 
 ### `MsgExchangeRatePrevote`
 
-#### Precommit to an Exchange Rate
-
 ```go
 // MsgExchangeRatePrevote - struct for prevoting on the ExchangeRateVote.
 // The purpose of prevote is to hide vote exchange rate with hash
@@ -94,8 +92,6 @@ The exchange rate used in the hash must be the open market exchange rate of Luna
 
 ### `MsgExchangeRateVote`
 
-#### Vote for Exchange Rate of Luna
-
 ```go
 // MsgExchangeRateVote - struct for voting on the exchange rate of Luna denominated in various Terra assets.
 // For example, if the validator believes that the effective exchange rate of Luna in USD is 10.39, that's
@@ -112,8 +108,6 @@ type MsgExchangeRateVote struct {
 The `MsgExchangeRateVote` contains the actual exchange rate vote. The `Salt` parameter must match the salt used to create the prevote, otherwise the voter cannot be rewarded.
 
 ### `MsgDelegateFeedConsent`
-
-#### Delegate Voting Rights
 
 ```go
 // MsgDelegateFeedConsent - struct for delegating oracle voting rights to another address.
