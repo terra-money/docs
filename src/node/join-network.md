@@ -25,14 +25,14 @@ You can edit this `moniker` later, in the `~/.terrad/config/config.toml` file:
 moniker = "<your_custom_moniker>"
 ```
 
-### Set minimum gas prices for transactions (optional)
+### Set minimum gas prices for transactions (recommended)
 
 You can edit `~/.terrad/config/app.toml` in order to enable anti-spam by rejecting incoming transactions with implied gas price less than a specified minimum:
 
 ```toml
 # The minimum gas prices a validator is willing to accept for processing a
 # transaction. A transaction's fees must meet the minimum of any denomination
-# specified in this config (e.g. 0.25token1;0.0001token2).
+# specified in this config (e.g. 0.25token1,0.0001token2).
 minimum-gas-prices = "0.015ukrw,0.015uluna"
 ```
 
