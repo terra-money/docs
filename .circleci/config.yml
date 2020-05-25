@@ -22,7 +22,7 @@ jobs:
           command: |
             git config --global user.email "engineering@terra.money"
             git config --global user.name "Terra Engineering"
-            yarn install && GIT_USER=YunSuk-Yeo ./deploy.sh
+            yarn install && ./deploy.sh
 workflows:
   version: 2
   build_and_deploy:
