@@ -73,6 +73,7 @@ module.exports = {
   themeConfig: {
     logo: "/img/docs_logo.svg",
     lastUpdated: "Updated on",
+    repo: "terra-project/terra-docs",
     editLinks: true,
     editLinkText: "Edit this page on Github.",
     docsDir: "src",
