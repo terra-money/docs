@@ -2,6 +2,10 @@
 
 This is a detailed step-by-step guide for setting up a Terra validator. Please be aware that while it is easy to set up a rudimentary validating node, running a performant production-quality validator node with a robust architecture and security features can require a non-trivial setup.
 
+::: tip
+Block42 has put together an excellent, step-by-step guide for setting up a new validator that you can find [here](https://medium.com/block42-blockchain-company/how-to-setup-a-terra-luna-validator-node-860d8ea7aea2).
+:::
+
 ## Requirements
 
 This guide starts with the following assumptions:
