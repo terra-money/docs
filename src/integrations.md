@@ -54,19 +54,53 @@
 
 ## Exchanges
 
+LUNA and Terra stablecoins are traded the following exchanges:
+
 <div class="cards twoColumn">
-  <a href="https://chai.finance/" class="card">
+  <a href="https://coinone.co.kr/" class="card">
     <img src="/img/icon_terra.svg"/>
     <div class="title">
-      CHAI
+      Coinone
     </div>
     <div class="text">
     </div>
   </a>
-  <a href="https://memechat.app/" class="card">
+  <a href="https://www.bithumb.com/" class="card">
     <img src="/img/icon_luna.svg"/>
     <div class="title">
-      MemePay
+      Bithumb
+    </div>
+    <div class="text">
+    </div>
+  </a>
+  <a href="https://www.gdac.com/" class="card">
+    <img src="/img/icon_luna.svg"/>
+    <div class="title">
+      GDAC
+    </div>
+    <div class="text">
+    </div>
+  </a>
+  <a href="https://www.kucoin.com/" class="card">
+    <img src="/img/icon_luna.svg"/>
+    <div class="title">
+      KuCoin
+    </div>
+    <div class="text">
+    </div>
+  </a>
+  <a href="http://upbit.com/" class="card">
+    <img src="/img/icon_luna.svg"/>
+    <div class="title">
+      UpBit
+    </div>
+    <div class="text">
+    </div>
+  </a>
+  <a href="https://www.gopax.co.kr/exchange/" class="card">
+    <img src="/img/icon_luna.svg"/>
+    <div class="title">
+      GOPAX
     </div>
     <div class="text">
     </div>
@@ -76,7 +110,7 @@
 ## Wallets
 
 <div class="cards twoColumn">
-  <a href="/terra" class="card">
+  <a href="https://station.terra.money/" class="card">
     <img src="/img/icon_terra.svg"/>
     <div class="title">
       Terra Station
@@ -84,7 +118,7 @@
     <div class="text">
     </div>
   </a>
-      <a href="/luna" class="card">
+      <a href="https://lunie.io/" class="card">
     <img src="/img/icon_luna.svg"/>
     <div class="title">
       Lunie
@@ -92,7 +126,7 @@
     <div class="text">
     </div>
   </a>
-  <a href="/luna" class="card">
+  <a href="#" class="card disabled">
     <img src="/img/icon_luna.svg"/>
     <div class="title">
       Harvest
