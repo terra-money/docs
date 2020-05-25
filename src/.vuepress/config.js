@@ -77,6 +77,10 @@ module.exports = {
     editLinks: true,
     editLinkText: "Edit this page on Github.",
     docsDir: "src",
+    algolia: {
+      apiKey: "5957091e293f7b97f2994bde312aed99",
+      indexName: "terra-project",
+    },
     nav: [
       { text: "Docs", link: "/" },
       { text: "Validators", link: "/validator/" },
