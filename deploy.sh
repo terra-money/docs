@@ -9,7 +9,7 @@ yarn docs:build
 # navigate into the build output directory
 cd src/.vuepress/dist
 
-echo 'docs2.terra.money' > CNAME
+echo 'docs.terra.money' > CNAME
 
 git init
 git add -A

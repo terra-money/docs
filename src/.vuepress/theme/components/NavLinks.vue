@@ -6,14 +6,14 @@
       <NavLink v-else :item="item" />
     </div>
 
-    <!-- repo link -->
+    <!-- repo link (disabled)
     <a
       v-if="repoLink"
       :href="repoLink"
       class="repo-link"
       target="_blank"
       rel="noopener noreferrer"
-    >{{ repoLabel }}</a>
+    >{{ repoLabel }}</a>-->
   </nav>
 </template>
 
@@ -114,7 +114,7 @@ export default {
     line-height: 1.4rem;
     color: $primaryColor;
     text-transform: uppercase;
-    font-size: 	0.875rem;
+    font-size: 0.875rem;
     font-weight: 500;
 
     &:hover, &.router-link-active {
@@ -146,11 +146,13 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: .2s;
+    transition: 0.2s;
+
     img {
       width: 1.125rem;
       height: 1.125rem;
     }
+
     &:hover {
       background: rgba($primaryColor, 0.15);
     }
@@ -160,6 +162,7 @@ export default {
 @media (max-width: $MQMobile) {
   .nav-links {
     align-items: flex-end;
+
     a {
       line-height: 1.1;
       color: $primaryColor;
@@ -177,6 +180,7 @@ export default {
         border-bottom: solid 3px $accentColor;
       }
     }
+
     .nav-item, .repo-link {
       margin-left: 0;
     }
@@ -188,10 +192,12 @@ export default {
       padding: 0 0.25rem;
       background: transparent;
       display: block;
+
       img {
         width: 1.125rem;
         height: 1.125rem;
       }
+
       &:hover {
         background: transparent;
       }
