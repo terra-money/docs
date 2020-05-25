@@ -10,10 +10,8 @@ aliases:
 version: 2.1
 jobs:
   deploy-website:
-    docker:
-      # specify the version you desire here
-      - image: circleci/node:10
-
+    macos:  # indicate that we are using the macOS executor
+      xcode: 11.3.0 
     steps:
       - checkout
       - run:
