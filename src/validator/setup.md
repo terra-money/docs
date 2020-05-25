@@ -106,12 +106,16 @@ Head over to [Feeder Implementations](oracle/#feeder-implementations) to install
 
 The next following steps are things you can do to help improve your visibility and make yourself known to potential delegators.
 
+### Set up a Website
+
+Set up a website so that your delegators can find you. We recommend making a custom section for Terra delegators that instructs how to delegate Luna tokens.
+
 ### Announce on Discord
 
 Join the [Terra Validators Discord](https://discord.gg/ZHBuKda) channel and introduce yourself!
 
 ### Submit a Validator Profile
 
-Get a fancy checkmark next to your name by submitting a [Validator Profile]().
+Get a fancy checkmark next to your name by submitting a [Validator Profile](https://github.com/terra-project/validator-profiles).
 
 ![validator-profile](/img/screens/validator-check.png)

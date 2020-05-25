@@ -90,13 +90,13 @@ seeds = "20271e0591a7204d72280b87fdaa854f50c55e7e@106.10.59.48:26656,3b1c85b8652
 Start the full node with this command:
 
 ```bash
-terrad start
+$ terrad start
 ```
 
 Check that everything is running smoothly:
 
 ```bash
-terracli status
+$ terracli status
 ```
 
 ### Wait for node to sync
@@ -118,9 +118,9 @@ These instructions are for full nodes that have ran on previous testnets and wou
 First, remove the outdated files and reset the data.
 
 ```bash
-rm ~/.terrad/config/genesis.json
-rm ~/.terrad/config/addrbook.json
-terrad unsafe-reset-all
+$ rm ~/.terrad/config/genesis.json
+$ rm ~/.terrad/config/addrbook.json
+$ terrad unsafe-reset-all
 ```
 
 Your node is now in a pristine state while keeping the original `priv_validator.json` and `config.toml`. If you had any sentry nodes or full nodes setup before, your node will still try to connect to them, but may fail if they haven't also been upgraded.
@@ -134,8 +134,8 @@ Make sure that every node has a unique `priv_validator.json`. Do not copy the `p
 Now it is time to upgrade the software. Go to the project directory, and run:
 
 ```bash
-git checkout master && git pull
-make
+$ git checkout master && git pull
+$ make
 ```
 
 ::: warning NOTE
@@ -151,17 +151,17 @@ Terra can dump the entire application state to a JSON file, which could be usefu
 Export state with:
 
 ```bash
-terrad export > [filename].json
+$ terrad export > [filename].json
 ```
 
 You can also export state from a particular height \(at the end of processing the block of that height\):
 
 ```bash
-terrad export --height [height] > [filename].json
+$ terrad export --height [height] > [filename].json
 ```
 
 If you plan to start a new network from the exported state, export with the `--for-zero-height` flag:
 
 ```bash
-terrad export --height [height] --for-zero-height > [filename].json
+$ terrad export --height [height] --for-zero-height > [filename].json
 ```

@@ -18,8 +18,9 @@ Wait for your full node to catch up to the latest block. Next, run the following
 terracli tx slashing unjail <terra> --chain-id=<chain_id> --from=<from>
 ```
 
-> If you don't wait for `terrad` to sync before running `unjail`, you will receive an error message telling you your validator is still jailed.
-> { warning }
+::: warning
+If you don't wait for `terrad` to sync before running `unjail`, you will receive an error message telling you your validator is still jailed.
+:::
 
 Lastly, check your validator again to see if your voting power is back.
 

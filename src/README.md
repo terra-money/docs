@@ -66,13 +66,13 @@ Welcome to the official documentation for Terra, a decentralized financial infra
       Learn about how to write smart contracts for creating financial dApps on Terra.
     </div>
   </a>
-    <a href="/ecosystem" class="card">
+    <a href="/integrations" class="card">
     <img src="/img/icon_apps.svg"/>
     <div class="title">
       Integrations
     </div>
     <div class="text">
-      Discover novel applications and integrations with existing tools.
+      Discover novel applications built on Terra and integrations with existing tools.
     </div>
   </a>
 </div>

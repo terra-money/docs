@@ -27,11 +27,3 @@ There currently exists no appropriate cloud solution for validator key managemen
 Validators should expect to equip their datacenter location with redundant power, connectivity, and storage backups. Expect to have several redundant networking boxes for fiber, firewall and switching and then small servers with redundant hard drive and failover. Hardware can be on the low end of datacenter gear to start out with.
 
 We anticipate that network requirements will be low initially. The current testnet requires minimal resources. Then bandwidth, CPU and memory requirements will rise as the network grows. Large hard drives are recommended for storing years of blockchain history.
-
-## Set Up a Website
-
-Set up a dedicated validator's website and signal your intention to become a validator by contacting Terraform Labs \(core at terra dot money\). This is important since delegators will want to have information about the entity they are delegating their Luna to.
-
-## Seek Legal Advice
-
-Seek legal advice if you intend to run a Validator.

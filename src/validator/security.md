@@ -24,7 +24,7 @@ Sentry nodes can be quickly spun up or change their IP addresses. Because the li
 
 To setup your sentry node architecture you can follow the instructions below:
 
-Validators nodes should edit their config.toml:
+Validators nodes should edit their `config.toml`:
 
 ```bash
 # Comma separated list of nodes to keep persistent connections to
@@ -35,7 +35,7 @@ persistent_peers =[list of sentry nodes]
 pex = false
 ```
 
-Sentry Nodes should edit their config.toml:
+Sentry Nodes should edit their `config.toml`:
 
 ```bash
 # Comma separated list of peer IDs to keep private (will not be gossiped to other peers)
