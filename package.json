@@ -466,7 +466,7 @@
     "minimalistic-assert": "^1.0.1",
     "minimalistic-crypto-utils": "^1.0.1",
     "minimatch": "^3.0.4",
-    "minimist": "^1.2.0",
+    "minimist": "^1.2.3",
     "minipass": "^2.9.0",
     "minizlib": "^1.3.3",
     "mississippi": "^3.0.0",
