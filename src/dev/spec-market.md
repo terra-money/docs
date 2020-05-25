@@ -70,17 +70,17 @@ This mechanism ensures liquidity and acts as a sort of low-pass filter, allowing
 
 1. Market module receives [`MsgSwap`](#msgswap) message and performs basic validation checks
 
-2. Calculate exchange rate $ask$ and $spread$ using [`k.ComputeSwap()`](#kcomputeswap)
+2. Calculate exchange rate $ask$ and $spread$ using [`k.ComputeSwap()`](#k-computeswap)
 
-3. Update `TerraPoolDelta` with [`k.ApplySwapToPool()`](#kapplyswaptopool)
+3. Update `TerraPoolDelta` with [`k.ApplySwapToPool()`](#k-applyswaptopool)
 
 4. Transfer `OfferCoin` from account to module using `supply.SendCoinsFromAccountToModule()`
 
 5. Burn offered coins, with `supply.BurnCoins()`.
 
-6. Let $ fee = spread * ask $, this is the spread fee.
+6. Let $fee = spread * ask$, this is the spread fee.
 
-7. Mint $ ask - fee $ coins of `AskDenom` with `supply.MintCoins()`. This implicitly applies the spread fee as the $ fee $ coins are burned.
+7. Mint $ask - fee$ coins of `AskDenom` with `supply.MintCoins()`. This implicitly applies the spread fee as the $fee$ coins are burned.
 
 8. Send newly minted coins to trader with `supply.SendCoinsFromModuleToAccount()`
 
@@ -96,7 +96,7 @@ For Luna swaps into Terra, the Luna that recaptured by the protocol is burned an
 
 ## Message Types
 
-### `MsgSwap`
+### MsgSwap
 
 ```go
 // MsgSwap contains a swap request
@@ -135,8 +135,9 @@ This function detects the swap type from the offer and ask denominations and ret
 
 If the `offerCoin`'s denomination is the same as `askDenom`, this will raise `ErrRecursiveSwap`.
 
-> `k.ComputeSwap()` uses `k.ComputeInternalSwap()` internally, which just contains the logic for calculating proper ask coins to exchange, without the Constant Product spread.
-> {note}
+::: warning NOTE
+`k.ComputeSwap()` uses `k.ComputeInternalSwap()` internally, which just contains the logic for calculating proper ask coins to exchange, without the Constant Product spread.
+:::
 
 ### `k.ApplySwapToPool()`
 
@@ -150,8 +151,8 @@ Terra currencies share the same liquidity pool, so `TerraPoolDelta` remains unal
 
 For Terra<>Luna swaps, the relative sizes of the pools will be different after the swap, and $\delta$ will be updated with the following formulas:
 
-- For Terra to Luna, $ \delta' = \delta + Offer_{\mu SDR} $
-- For Luna to Terra, $ \delta' = \delta - Ask_{\mu SDR} $
+- For Terra to Luna, $\delta' = \delta + Offer_{\mu SDR}$
+- For Luna to Terra, $\delta' = \delta - Ask_{\mu SDR}$
 
 ## Transitions
 
@@ -159,7 +160,6 @@ For Terra<>Luna swaps, the relative sizes of the pools will be different after t
 
 Market module calls `k.ReplenishPools()` at the end of every block, which decreases the value of `TerraPoolDelta` (which measures the difference between Terra and Luna pools) depending on `PoolRecoveryPeriod`, $pr$.
 
-$$
 This allows the network to sharply increase spread fees in during acute price fluctuations, and automatically return the spread to normal after some time when the price change is long term.
 
 ## Parameters
@@ -229,4 +229,3 @@ Called when insufficient or too large of quantity of coins are being requested f
 ### `ErrRecursiveSwap`
 
 Called when Ask and Offer coin denominations are equal.
-$$

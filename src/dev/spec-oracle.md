@@ -1,11 +1,12 @@
 # Oracle
 
-The Oracle module provides the Terra blockchain with an up-to-date and accurate price feed of exchange rates of Luna against various Terra pegs so that the [Market](dev-spec-market.md) may provide fair exchanges between Terra<>Terra currency pairs, as well as Terra<>Luna.
+The Oracle module provides the Terra blockchain with an up-to-date and accurate price feed of exchange rates of Luna against various Terra pegs so that the [Market](spec-market.md) may provide fair exchanges between Terra<>Terra currency pairs, as well as Terra<>Luna.
 
 As price information is extrinsic to the blockchain, the Terra network relies on validators to periodically vote on the current Luna exchange rate, with the protocol tallying up the results once per `VotePeriod` and updating the on-chain exchange rate as the weighted median of the ballot.
 
-> Since the Oracle service is powered by validators, you may find it interesting to look at the [Staking](dev-spec-staking.md) module, which covers the logic for staking and validators.
-> {note}
+::: warning NOTE
+Since the Oracle service is powered by validators, you may find it interesting to look at the [Staking](spec-staking.md) module, which covers the logic for staking and validators.
+:::
 
 ## Voting Procedure
 
@@ -35,10 +36,11 @@ Denominations receiving fewer than [`VoteThreshold`](#votethreshold) total votin
 
 After the votes are tallied, the winners of the ballots are determined with [`tally()`](#tally).
 
-Voters that have managed to vote within a narrow band around the weighted median, are rewarded with a portion of the collected seigniorage. See [`k.RewardBallotWinners()`](#krewardballotwinners) for more details.
+Voters that have managed to vote within a narrow band around the weighted median, are rewarded with a portion of the collected seigniorage. See [`k.RewardBallotWinners()`](#k-rewardballotwinners) for more details.
 
-> Starting from Columbus-3, fees from [Market](dev-spec-market.md) swaps are no longer are included in the oracle reward pool, and are immediately burned during the swap operation.
-> {note}
+::: warning NOTE
+Starting from Columbus-3, fees from [Market](spec-market.md) swaps are no longer are included in the oracle reward pool, and are immediately burned during the swap operation.
+:::
 
 #### Reward Band
 
@@ -46,8 +48,9 @@ Let $M$ be the weighted median, $\sigma$ be the standard deviation of the votes 
 
 ### Slashing
 
-> Be sure to read this section carefully as it concerns potential loss of funds.
-> {important}
+::: danger
+Be sure to read this section carefully as it concerns potential loss of funds.
+:::
 
 A `VotePeriod` during which either of the following events occur is considered a "miss":
 
@@ -63,10 +66,11 @@ A validator may abstain from voting by submitting a non-positive integer for the
 
 ## Message Types
 
-> The control flow for vote-tallying, Luna exchange rate updates, ballot rewards and slashing happens at the end of every `VotePeriod`, and is found at the [end-block ABCI function](#end-block) rather than inside message handlers.
-> {note}
+::: warning NOTE
+The control flow for vote-tallying, Luna exchange rate updates, ballot rewards and slashing happens at the end of every `VotePeriod`, and is found at the [end-block ABCI function](#end-block) rather than inside message handlers.
+:::
 
-### `MsgExchangeRatePrevote`
+### MsgExchangeRatePrevote
 
 ```go
 // MsgExchangeRatePrevote - struct for prevoting on the ExchangeRateVote.
@@ -90,7 +94,7 @@ The exchange rate used in the hash must be the open market exchange rate of Luna
 
 `Validator` is the validator address (`terravaloper-`) of the original validator.
 
-### `MsgExchangeRateVote`
+### MsgExchangeRateVote
 
 ```go
 // MsgExchangeRateVote - struct for voting on the exchange rate of Luna denominated in various Terra assets.
@@ -107,7 +111,7 @@ type MsgExchangeRateVote struct {
 
 The `MsgExchangeRateVote` contains the actual exchange rate vote. The `Salt` parameter must match the salt used to create the prevote, otherwise the voter cannot be rewarded.
 
-### `MsgDelegateFeedConsent`
+### MsgDelegateFeedConsent
 
 ```go
 // MsgDelegateFeedConsent - struct for delegating oracle voting rights to another address.
@@ -119,8 +123,9 @@ type MsgDelegateFeedConsent struct {
 
 Validators may also elect to delegate voting rights to another key to prevent the block signing key from being kept online. To do so, they must submit a `MsgDelegateFeedConsent`, delegating their oracle voting rights to a `Delegate` that sign `MsgExchangeRatePrevote` and `MsgExchangeRateVote` on behalf of the validator.
 
-> Delegate validators will likely require you to deposit some funds (in Terra or Luna) which they can use to pay fees, sent in a separate `MsgSend`. This agreement is made off-chain and not enforced by the Terra protocol.
-> {important}
+::: danger
+Delegate validators will likely require you to deposit some funds (in Terra or Luna) which they can use to pay fees, sent in a separate `MsgSend`. This agreement is made off-chain and not enforced by the Terra protocol.
+:::
 
 The `Operator` field contains the operator address of the validator (prefixed `terravaloper-`). The `Delegate` field is the account address (prefixed `terra-`) of the delegate account that will be submitting exchange rate related votes and prevotes on behalf of the `Operator`.
 
@@ -150,7 +155,7 @@ Oracle maintains several `KVStores`, each indexed as such:
 - `k.SetLunaExchangeRate(ctx, denom string, exchangeRate sdk.Dec)`
 - `k.DeleteLunaExchangeRate(ctx, denom string)`
 
-An `sdk.Dec` that stores the current Luna exchange rate against a given `denom`, which is used by the [`Market`](dev-spec-market.md) module for pricing swaps.
+An `sdk.Dec` that stores the current Luna exchange rate against a given `denom`, which is used by the [`Market`](spec-market.md) module for pricing swaps.
 
 You can get the active list of `denoms` trading against Luna (denominations with votes past [`VoteThreshold`](#votethreshold)) with `k.GetActiveDenoms()`.
 

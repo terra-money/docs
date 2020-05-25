@@ -11,7 +11,7 @@ This guide starts with the following assumptions:
 - You have [configured it](../node/config) properly.
 - You know your way around [terracli](../terracli).
 
-## Registering your Validator
+## Register your Validator
 
 You will need to know the consensus PubKey (`terravalconspub-`) of your node to create a new validator. You can find it with:
 
@@ -34,24 +34,84 @@ $ terracli tx staking create-validator \
     --min-self-delegation="1"
 ```
 
-**Note**: When specifying commission parameters, the `commission-max-change-rate` is used to measure % _point_ change over the `commission-rate`. E.g. 1% to 2% is a 100% rate increase, but only 1 percentage point.
+::: warning NOTE
+When specifying commission parameters, the `commission-max-change-rate` is used to measure % _point_ change over the `commission-rate`. E.g. 1% to 2% is a 100% rate increase, but only 1 percentage point.
+:::
 
-**Note**: If unspecified, `consensus_pubkey` will default to the output of `terrad tendermint show-validator`. `key_name` is the name of the private key that will be used to sign the transaction.
+::: warning NOTE
+If unspecified, `consensus_pubkey` will default to the output of `terrad tendermint show-validator`. `key_name` is the name of the private key that will be used to sign the transaction.
+:::
 
 ## Confirmation
 
 Your validator is active if the following command returns anything:
 
 ```bash
-terracli query tendermint-validator-set | grep "$(terrad tendermint show-validator)"
+$ terracli query tendermint-validator-set | grep "$(terrad tendermint show-validator)"
 ```
 
-You should also be able to see your validator on the Terra Station. You are looking for the `bech32` encoded `address` in the `~/.terrad/config/priv_validator.json` file.
+You are looking for the `bech32` encoded `address` in the `~/.terrad/config/priv_validator.json` file.
 
 ::: warning NOTE
 To be in the validator set, you need to have more total voting power than the 100th validator.
 :::
 
-## Setting up the Oracle Feeder
+## Set up Oracle Feeder
 
-## Submit Validator Profile
+Every Terra validator needs to participate in the oracle process and periodically submit a vote for the exchange rate of LUNA in all of the whitelisted denominations. Since this process occurs rather frequently (every 30 seconds), you need to set up an automated process to avoid getting slashed and jailed.
+
+### Make a new key for oracle votes
+
+You can separate the keys that are used for controlling your validator account from the ones that are submitting the oracle votes on behalf of your validator.
+
+```bash
+$ terracli keys add <feeder>
+```
+
+Show the feeder account details:
+
+```bash
+$ terracli keys show <feeder>
+```
+
+### Delegate feeder consent
+
+The account address used to submit oracle voting transactions is called a `feeder`. When you set up your oracle voting process for the first time, you must send delegate the feeder permission to an account.
+
+```bash
+$ terracli tx oracle set-feeder <feeder-address> --from=<validator>
+```
+
+### Send funds to feeder
+
+The feeder needs funds in order to pay for transaction fees to submit oracle voting messages. Note that **TerraKRW, not Luna** are used for oracle voting fees because the smallest atomic unit of TerraKRW is much cheaper than Luna. You can send TerraKRW to your feeder address, or send Luna and perform an on-chain swap:
+
+#### Sending Luna to feeder account
+
+```bash
+$ terracli tx send <from-address> <feeder-address> <luna-amount>uluna
+```
+
+#### Example of swap from feeder
+
+```bash
+$ terracli tx market swap <luna-amount>uluna ukrw --from=<feeder>
+```
+
+### Set up oracle feeder program
+
+Head over to [Feeder Implementations](oracle/#feeder-implementations) to install a program and set one up to start submitting oracle messages with your feeder account.
+
+## Court Delegations
+
+The next following steps are things you can do to help improve your visibility and make yourself known to potential delegators.
+
+### Announce on Discord
+
+Join the [Terra Validators Discord](https://discord.gg/ZHBuKda) channel and introduce yourself!
+
+### Submit a Validator Profile
+
+Get a fancy checkmark next to your name by submitting a [Validator Profile]().
+
+![validator-profile](/img/screens/validator-check.png)

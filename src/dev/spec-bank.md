@@ -4,7 +4,7 @@
 Terra's Bank module inherits from Cosmos SDK's [`bank`](https://github.com/cosmos/cosmos-sdk/tree/v0.37.4/docs/spec/bank) module. This document is a stub, and covers mainly important Terra-specific notes about how it is used.
 :::
 
-The Bank module is the base transactional layer of the Terra blockchain: it allows assets to be sent from one `Account` to another. Bank defines 2 types of Send-Transactions: `MsgSend` and `MsgMultiSend`. These messages automatically incur a stability fee, which is performed by the [ante handler in the `Auth` module](dev-spec-auth.md#stability-fee).
+The Bank module is the base transactional layer of the Terra blockchain: it allows assets to be sent from one `Account` to another. Bank defines 2 types of Send-Transactions: `MsgSend` and `MsgMultiSend`. These messages automatically incur a stability fee, which is performed by the [ante handler in the `Auth` module](spec-auth.md#stability-fee).
 
 ## Message Types
 

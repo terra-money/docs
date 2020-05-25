@@ -74,11 +74,11 @@ Parameter Change Proposals are a special type of proposal which, once passed, wi
 
 ### Community Pool Spend Proposals
 
-Defined and handled in the [`Distribution` module](dev-spec-distribution.md#governance-proposals).
+Defined and handled in the [`Distribution` module](spec-distribution.md#governance-proposals).
 
 ### Tax Rate / Reward Weight Update Proposals
 
-Defined and handled in the [`Treasury` module](dev-spec-treasury.md#governance-proposals).
+Defined and handled in the [`Treasury` module](spec-treasury.md#governance-proposals).
 
 ### Software Upgrade Proposals
 

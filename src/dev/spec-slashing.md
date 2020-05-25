@@ -1,6 +1,6 @@
 # Slashing
 
-The Slashing module enables Terra to disincentivize any attributable action by a protocol-recognized actor with value at stake by penalizing them ("slashing"). Terra mainly uses the [`Staking`](dev-spec-staking.md) module to slash when violating validator responsibilities (such as missing too many `VotePeriod`s in the exchange rate oracle). This module deals with lower-level penalties at the Tendermint consensus level, such as double-signing.
+The Slashing module enables Terra to disincentivize any attributable action by a protocol-recognized actor with value at stake by penalizing them ("slashing"). Terra mainly uses the [`Staking`](spec-staking.md) module to slash when violating validator responsibilities (such as missing too many `VotePeriod`s in the exchange rate oracle). This module deals with lower-level penalties at the Tendermint consensus level, such as double-signing.
 
 ## Transitions
 
