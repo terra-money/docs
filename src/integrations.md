@@ -9,7 +9,7 @@
       CHAI
     </div>
     <div class="text">
-      If this is your first time learning about Terra, start here.
+      Next-generation retail payments app, with cash-back from seigniorage.
     </div>
   </a>
   <a href="/luna" class="card">
@@ -18,7 +18,7 @@
       MemePay
     </div>
     <div class="text">
-      Learn about Luna, the native staking asset that powers the Terra ecosystem.
+      Integrated blockchain-based payments in a messaging application.
     </div>
   </a>
 </div>
@@ -32,6 +32,7 @@
       Terra Finder
     </div>
     <div class="text">
+      Vanilla block explorer from Terraform labs.
     </div>
   </a>
   <a href="https://hubble.figment.network/terra/chains/columbus-3" class="card">
@@ -116,6 +117,7 @@ LUNA and Terra stablecoins are traded the following exchanges:
       Terra Station
     </div>
     <div class="text">
+      Official desktop wallet from Terraform Labs.
     </div>
   </a>
       <a href="https://lunie.io/" class="card">
@@ -124,6 +126,7 @@ LUNA and Terra stablecoins are traded the following exchanges:
       Lunie
     </div>
     <div class="text">
+      Wallet with mobile support.
     </div>
   </a>
   <a href="#" class="card disabled">
