@@ -12,7 +12,7 @@
       Next-generation retail payments app, with cash-back and discounts from seigniorage.
     </div>
   </a>
-  <a href="https://memechat.app/" class="card app">
+  <a href="https://www.meme.mn/" class="card app">
     <img src="/img/apps_memepay.png"/>
     <div class="title">
       MemePay
