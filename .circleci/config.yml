@@ -10,19 +10,19 @@ aliases:
 version: 2.1
 jobs:
   deploy-website:
-    docker:
-      # specify the version you desire here
-      - image: circleci/node:12
-
+    macos:  # indicate that we are using the macOS executor
+      xcode: 11.3.0 
     steps:
       - checkout
+      - add_ssh_keys:
+          fingerprints:
+            - "66:90:61:3b:7c:e9:c2:1f:b6:82:10:d7:cd:97:0e:01"
       - run:
           name: Deploying to GitHub Pages
           command: |
             git config --global user.email "engineering@terra.money"
             git config --global user.name "Terra Engineering"
-            echo "machine github.com login Yunsuk-Yeo password $GITHUB_TOKEN" > ~/.netrc
-            yarn install && GIT_USER=Yunsuk-Yeo ./deploy.sh
+            yarn install && ./deploy.sh
 workflows:
   version: 2
   build_and_deploy:
