@@ -3,7 +3,7 @@
 ## Applications
 
 <div class="cards twoColumn">
-  <a href="/terra" class="card">
+  <a href="https://chai.finance" class="card">
     <img src="/img/icon_terra.svg"/>
     <div class="title">
       CHAI
@@ -12,7 +12,7 @@
       Next-generation retail payments app, with cash-back from seigniorage.
     </div>
   </a>
-  <a href="/luna" class="card">
+  <a href="https://memechat.app/" class="card">
     <img src="/img/icon_luna.svg"/>
     <div class="title">
       MemePay
