@@ -140,6 +140,36 @@
         font-weight 500
         text-transform uppercase
         color rgba(32,67,181, 0.5)
+    
+    &.app, &.image
+      text-align center
+      padding 30px
+      background #fff
+      border solid 1px #f0f0f0
+      box-shadow 0px 2px 4px 0px rgba(0,0,0,0.05)
+      &:hover
+        text-decoration none !important
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.1);
+      img
+        width auto
+        height 60px
+        margin-bottom 10px
+        position static
+        top unset
+        left unset
+      .title
+        font-size 17px
+      &.image
+        img
+          width 100%
+          max-width 130px
+          height auto
+          margin 0
+      &.disabled
+        box-shadow 0px 2px 4px 0px rgba(0,0,0,0.0)
+        &:after
+          color rgba(30,30,30, 1)
+          background rgba(0,0,0, 0.03)
 
 @media (max-width: $MQNarrow)
   .cards

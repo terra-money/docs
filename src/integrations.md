@@ -25,26 +25,26 @@
 
 ## Block Explorers
 
-<div class="cards twoColumn">
-  <a href="https://finder.terra.money/" class="card">
-    <img src="/img/icon_terra.svg"/>
+<div class="cards threeColumn">
+  <a href="https://finder.terra.money/" class="card app">
+    <img src="/img/expl_finder.png"/>
     <div class="title">
       Terra Finder
     </div>
     <div class="text">
-      Vanilla block explorer from Terraform labs.
+      <!-- Vanilla block explorer from Terraform labs. -->
     </div>
   </a>
-  <a href="https://hubble.figment.network/terra/chains/columbus-3" class="card">
-    <img src="/img/icon_terra.svg"/>
+  <a href="https://hubble.figment.network/terra/chains/columbus-3" class="card app">
+    <img src="/img/expl_hubble.png"/>
     <div class="title">
       Figment Hubble
     </div>
     <div class="text">
     </div>
   </a>
-  <a href="https://terra.stake.id/#/" class="card">
-    <img src="/img/icon_terra.svg"/>
+  <a href="https://terra.stake.id/#/" class="card app">
+    <img src="/img/expl_stakeid.png"/>
     <div class="title">
       Stake.id
     </div>
@@ -57,62 +57,32 @@
 
 LUNA and Terra stablecoins are traded the following exchanges:
 
-<div class="cards twoColumn">
-  <a href="https://coinone.co.kr/" class="card">
-    <img src="/img/icon_terra.svg"/>
-    <div class="title">
-      Coinone
-    </div>
-    <div class="text">
-    </div>
+<div class="cards threeColumn">
+  <a href="https://coinone.co.kr/" class="card image">
+    <img src="/img/exg_coinone.png"/>
   </a>
-  <a href="https://www.bithumb.com/" class="card">
-    <img src="/img/icon_luna.svg"/>
-    <div class="title">
-      Bithumb
-    </div>
-    <div class="text">
-    </div>
+  <a href="https://www.bithumb.com/" class="card image">
+    <img src="/img/exg_bithumb.png"/>
   </a>
-  <a href="https://www.gdac.com/" class="card">
-    <img src="/img/icon_luna.svg"/>
-    <div class="title">
-      GDAC
-    </div>
-    <div class="text">
-    </div>
+  <a href="https://www.gdac.com/" class="card image">
+    <img src="/img/exg_gdac.png"/>
   </a>
-  <a href="https://www.kucoin.com/" class="card">
-    <img src="/img/icon_luna.svg"/>
-    <div class="title">
-      KuCoin
-    </div>
-    <div class="text">
-    </div>
+  <a href="https://www.kucoin.com/" class="card image">
+    <img src="/img/exg_kucoin.png"/>
   </a>
-  <a href="http://upbit.com/" class="card">
-    <img src="/img/icon_luna.svg"/>
-    <div class="title">
-      UpBit
-    </div>
-    <div class="text">
-    </div>
+  <a href="http://upbit.com/" class="card image">
+    <img src="/img/exg_upbit.png"/>
   </a>
-  <a href="https://www.gopax.co.kr/exchange/" class="card">
-    <img src="/img/icon_luna.svg"/>
-    <div class="title">
-      GOPAX
-    </div>
-    <div class="text">
-    </div>
+  <a href="https://www.gopax.co.kr/exchange/" class="card image">
+    <img src="/img/exg_gopax.png"/>
   </a>
 </div>
 
 ## Wallets
 
 <div class="cards twoColumn">
-  <a href="https://station.terra.money/" class="card">
-    <img src="/img/icon_terra.svg"/>
+  <a href="https://station.terra.money/" class="card app">
+    <img src="/img/wallets_station.png"/>
     <div class="title">
       Terra Station
     </div>
@@ -120,8 +90,8 @@ LUNA and Terra stablecoins are traded the following exchanges:
       Official desktop wallet from Terraform Labs.
     </div>
   </a>
-      <a href="https://lunie.io/" class="card">
-    <img src="/img/icon_luna.svg"/>
+      <a href="https://lunie.io/" class="card app">
+    <img src="/img/wallets_lunie.png"/>
     <div class="title">
       Lunie
     </div>
@@ -129,13 +99,13 @@ LUNA and Terra stablecoins are traded the following exchanges:
       Wallet with mobile support.
     </div>
   </a>
-  <a href="#" class="card disabled">
-    <img src="/img/icon_luna.svg"/>
+  <!-- <a href="#" class="card disabled app">
+    <img src="/img/wallets_harvest.png"/>
     <div class="title">
       Harvest
     </div>
     <div class="text">
     </div>
-  </a>
+  </a> -->
 
 </div>
