@@ -42,6 +42,20 @@ Notice how `README.md` serves as the default root of the folder.
 
 To edit the navigation to include your new article, edit `/src/.vuepress/config.js` and add your new article in the appropriate section in `themeConfig.sidebar`, following the other paths as examples.
 
+### Test it out locally
+
+Make sure you install all the dependencies:
+
+```bash
+$ yarn install
+```
+
+Build and run locally (hot-reloading dev server):
+
+```bash
+$ yarn docs:dev
+```
+
 ## Built With
 
 - Vuepress
