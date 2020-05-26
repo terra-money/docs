@@ -57,6 +57,9 @@
         <li>
           <a href="https://finder.terra.money/" target="_blank">Terra Finder</a>
         </li>
+        <li>
+          <a href="https://status.terra.money/" target="_blank">Status</a>
+        </li>
       </ul>
       <ul class="developers">
         <li>Luna</li>
@@ -94,7 +97,7 @@
           <a href="https://docs.terra.money/#sdks-for-developers" target="_blank">SDKs</a>
         </li>
         <li>
-          <a href="https://status.terra.money/" target="_blank">Status</a>
+          <a href="https://github.com/terra-project/TIPs" target="_blank">TIPs</a>
         </li>
       </ul>
       <ul class="developers">
