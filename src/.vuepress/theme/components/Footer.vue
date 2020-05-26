@@ -67,10 +67,10 @@
           <a href="https://docs.terra.money/luna" target="_blank">What is Luna?</a>
         </li>
         <li>
-          <a href="https://docs.terra.money/integrations#exchanges" target="_blank">Exchanges</a>
+          <a href="https://docs.terra.money/integrations.html#exchanges" target="_blank">Exchanges</a>
         </li>
         <li>
-          <a href="https://docs.terra.money/integrations#wallets" target="_blank">Wallets</a>
+          <a href="https://docs.terra.money/integrations.html#wallets" target="_blank">Wallets</a>
         </li>
       </ul>
       <ul class="developers">
