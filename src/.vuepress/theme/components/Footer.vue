@@ -109,7 +109,7 @@
           <a href="https://github.com/terra-project/validator-profiles" target="_blank">Profiles</a>
         </li>
         <li>
-          <a href="https://terra.money" target="_blank">Support Channel</a>
+          <a href="https://discord.gg/ZHBuKda" target="_blank">Discord Channel</a>
         </li>
       </ul>
     </div>
