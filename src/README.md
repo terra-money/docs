@@ -3,7 +3,7 @@
 Welcome to the official documentation for Terra, a decentralized financial infrastructure powering the innovation of money. Terra provides the foundational building blocks for a new digital economy with its stablecoin protocol, oracle system, smart contracts, and plan for mass-user adoption.
 
 <div class="cards twoColumn">
-  <a href="/terra" class="card">
+  <a href="/terra.html" class="card">
     <img src="/img/icon_terra.svg"/>
     <div class="title">
       What is Terra?
@@ -12,7 +12,7 @@ Welcome to the official documentation for Terra, a decentralized financial infra
       If this is your first time learning about Terra, start here.
     </div>
   </a>
-  <a href="/luna" class="card">
+  <a href="/luna.html" class="card">
     <img src="/img/icon_luna.svg"/>
     <div class="title">
       What is Luna?
@@ -21,7 +21,7 @@ Welcome to the official documentation for Terra, a decentralized financial infra
       Learn about Luna, the native staking asset that powers the Terra ecosystem.
     </div>
   </a>
-  <a href="/stablecoin" class="card">
+  <a href="/stablecoin.html" class="card">
     <img src="/img/icon_stable.svg"/>
     <div class="title">
       Stability Mechanisms
@@ -30,7 +30,7 @@ Welcome to the official documentation for Terra, a decentralized financial infra
       Learn about how Terra achieves price-stability while ensuring steady increase in validator incentives.
     </div>
   </a>
-  <a href="/node/installation" class="card">
+  <a href="/node/installation.html" class="card">
     <img src="/img/icon_node.svg"/>
     <div class="title">
       Run a Full Node
@@ -48,7 +48,7 @@ Welcome to the official documentation for Terra, a decentralized financial infra
       Hack on the latest version of Terra Core, the node software for Terra.
     </div>
   </a>
-  <a href="/validator" class="card">
+  <a href="/validator/" class="card">
     <img src="/img/icon_validator.svg"/>
     <div class="title">
       Run a Validator
@@ -57,7 +57,7 @@ Welcome to the official documentation for Terra, a decentralized financial infra
       Become a validator and earn delegation commissions in exchange for helping secure the network.
     </div>
   </a>
-  <a href="/smart-contracts" class="card disabled">
+  <a href="/smart-contracts.html" class="card disabled">
     <img src="/img/icon_smartcontract.svg"/>
     <div class="title">
       Smart Contracts
@@ -66,7 +66,7 @@ Welcome to the official documentation for Terra, a decentralized financial infra
       Learn about how to write smart contracts for creating financial dApps on Terra.
     </div>
   </a>
-    <a href="/integrations" class="card">
+  <a href="/integrations.html" class="card">
     <img src="/img/icon_apps.svg"/>
     <div class="title">
       Integrations
