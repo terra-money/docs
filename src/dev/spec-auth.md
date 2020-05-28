@@ -42,35 +42,35 @@ type Params struct {
 }
 ```
 
-### `MaxMemoCharacters`
+### MaxMemoCharacters
 
 Maximum permitted number of characters in the memo of a transaction.
 
 - type: `uint64`
 - default value: `256`
 
-### `TxSigLimit`
+### TxSigLimit
 
 The maximum number of singers in a transaction. A single transaction can have multiple messages and multiple signers. The sig verification cost is much higher than other operations, so we limit this to 100.
 
 - type: `uint64`
 - default value: `100`
 
-### `TxSizeCostPerByte`
+### TxSizeCostPerByte
 
 Used to compute gas consumption of the transaction, `TxSizeCostPerByte * txsize`.
 
 - type: `uint64`
 - default value: `10`
 
-### `SigVerifyCostED25519`
+### SigVerifyCostED25519
 
 The gas cost for verifying ED25519 signatures.
 
 - type: `uint64`
 - default value: `590`
 
-### `SigVerifyCostSecp256k1`
+### SigVerifyCostSecp256k1
 
 The gas cost for verifying Secp256k1 signatures.
 

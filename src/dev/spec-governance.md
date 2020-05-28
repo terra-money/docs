@@ -1,7 +1,6 @@
 # Governance
 
 > Terra's Governance module inherits from Cosmos SDK's [`gov`](https://github.com/cosmos/cosmos-sdk/tree/v0.37.4/docs/spec/governance) module. This document is a stub, and covers mainly important Terra-specific notes about how it is used.
-> {note}
 
 Governance is the process through which participants within the Terra network can effect change on the protocol by submitting petitions known as "proposals," arriving at a popular consensus when a threshold amount of support has been reached for it. The proposal structure is versatile and allows for holders of Luna (those who have an interest in the long-term viability of the network) to voice their opinion on both blockchain parameter updates as well as future development of the Terra protocol.
 
@@ -82,8 +81,9 @@ Defined and handled in the [`Treasury` module](spec-treasury.md#governance-propo
 
 ### Software Upgrade Proposals
 
-> Software Upgrade Proposals also exist due to inheritance from Cosmos SDK but are for the moment considered unavailable, as they have not yet been implemented. They thus share the same semantics as a simple Text Proposal. It is strongly advised to not submit these types of proposals at the risk of losing your Luna deposit.
-> {warning}
+::: danger
+Software Upgrade Proposals also exist due to inheritance from Cosmos SDK but are for the moment considered unavailable, as they have not yet been implemented. They thus share the same semantics as a simple Text Proposal. It is strongly advised to not submit these types of proposals at the risk of losing your Luna deposit.
+:::
 
 ## Transitions
 
@@ -169,42 +169,42 @@ type VotingParams struct {
 }
 ```
 
-### `MinDeposit`
+### MinDeposit
 
 Minimum deposit for a proposal to enter voting period.
 
 - type: `sdk.Coins`
 - default value: `uluna`
 
-### `MaxDepositPeriod`
+### MaxDepositPeriod
 
 Maximum period for Luna holders to deposit on a proposal.
 
 - type: `time.Duration`
 - default value: `2 months`
 
-### `Quorum`
+### Quorum
 
 Minimum percentage of total stake needed to vote for a result to be considered valid.
 
 - type: `sdk.Dec`
 - default value: N/A
 
-### `Threshold`
+### Threshold
 
 Minimum proportion of Yes votes for proposal to pass.
 
 - type: `sdk.Dec`
 - default value: `0.5` (50%)
 
-### `Veto`
+### Veto
 
 Minimum value of Veto votes to Total votes ratio for proposal to be vetoed.
 
 - type: `sdk.Dec`
 - default value: `0.33` (1/3rd)
 
-### `VotingPeriod`
+### VotingPeriod
 
 Length of the voting period.
 

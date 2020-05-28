@@ -73,7 +73,7 @@ module.exports = {
   themeConfig: {
     logo: "/img/docs_logo.svg",
     lastUpdated: "Updated on",
-    repo: "terra-project/terra-docs",
+    repo: "terra-project/docs",
     editLinks: true,
     editLinkText: "Edit this page on Github.",
     docsDir: "src",
@@ -115,7 +115,7 @@ module.exports = {
           children: [
             [
               "https://pkg.go.dev/github.com/terra-project/core?tab=subdirectories",
-              "Go API Reference",
+              "Terra Core GoDoc",
             ],
             ["https://swagger.terra.money", "Terra REST API"],
           ],

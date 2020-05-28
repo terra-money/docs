@@ -116,18 +116,18 @@ type GenesisState struct {
 }
 ```
 
-### `CommunityTax`
+### CommunityTax
 
 - type: `sdk.Dec`
 
-### `BaseProposerReward`
+### BaseProposerReward
 
 - type: `sdk.Dec`
 
-### `BonusProposerReward`
+### BonusProposerReward
 
 - type: `sdk.Dec`
 
-### `WithdrawAddrEnabled`
+### WithdrawAddrEnabled
 
 - type: `bool`

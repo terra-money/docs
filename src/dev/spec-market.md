@@ -176,28 +176,28 @@ type Params struct {
 }
 ```
 
-### `PoolRecoveryPeriod`
+### PoolRecoveryPeriod
 
 Number of blocks it takes for the Terra & Luna pools to naturally "reset" toward equilibrium ($\delta \to 0$) through automated pool replenishing.
 
 - type: `int64`
 - default value: `core.BlocksPerDay` (1 day)
 
-### `BasePool`
+### BasePool
 
 Initial starting size of both Terra and Luna liquidity pools.
 
 - type: `sdk.Dec`
 - default value: `sdk.NewDec(250000 * core.MicroUnit)` (250,000 SDR = 250,000,000,000 µSDR)
 
-### `MinSpread`
+### MinSpread
 
 Minimum spread charged on Terra<>Luna swaps to prevent leaking value from front-running attacks.
 
 - type: `sdk.Dec`
 - default value: `sdk.NewDecWithPrec(2, 2)` (2%)
 
-### `TobinTax`
+### TobinTax
 
 A fee added on for swap between Terra currencies (spot-trading).
 
@@ -217,16 +217,3 @@ The Market module emits the following events
 | `"swap_coin"` | swapped coins    |
 | `"swap_fee"`  | spread fee       |
 
-## Errors
-
-### `ErrNoEffectivePrice`
-
-Called when a price for the asset is not registered with the oracle.
-
-### `ErrInvalidOfferCoin`
-
-Called when insufficient or too large of quantity of coins are being requested for a swap
-
-### `ErrRecursiveSwap`
-
-Called when Ask and Offer coin denominations are equal.

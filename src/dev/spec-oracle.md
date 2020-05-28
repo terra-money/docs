@@ -263,56 +263,56 @@ type Params struct {
 }
 ```
 
-### `VotePeriod`
+### VotePeriod
 
 The number of blocks during which voting takes place.
 
 - type: `int64`
 - default value: `core.BlocksPerMinute / 2` (30 seconds)
 
-### `VoteThreshold`
+### VoteThreshold
 
 The minimum percentage of votes that must be received for a ballot to pass.
 
 - type: `sdk.Dec`
 - default value: `sdk.NewDecWithPrec(50, 2)` (50%)
 
-### `RewardBand`
+### RewardBand
 
 The tolerated error from the final weighted mean exchange rate that can receive rewards.
 
 - type: `sdk.Dec`
 - default value: `sdk.NewDecWithPrec(7, 2)` (7%)
 
-### `RewardDistributionWindow`
+### RewardDistributionWindow
 
 The number of blocks during which seigniorage reward comes in and then is distributed.
 
 - type: `int64`
 - default value: `core.BlocksPerYear` (1 year window)
 
-### `Whitelist`
+### Whitelist
 
 The list of currencies that can be voted on. This is set to (µKRW, µSDR, µUSD) by default.
 
 - type: `oracle.DenomList`
 - default value: `DenomList{core.MicroKRWDenom, core.MicroSDRDenom, core.MicroUSDDenom}`
 
-### `SlashFraction`
+### SlashFraction
 
 The ratio of penalty on bonded tokens.
 
 - type: `sdk.Dec`
 - default value: `sdk.NewDecWithPrec(1, 4)` (0.01%)
 
-### `SlashWindow`
+### SlashWindow
 
 The number of blocks for slashing tallying.
 
 - type: `int64`
 - default value: `core.BlocksPerWeek` (1 week window)
 
-### `MinValidPerWindow`
+### MinValidPerWindow
 
 The ratio of minimum valid oracle votes per slash window to avoid slashing.
 
@@ -353,40 +353,3 @@ The Oracle module emits the following events:
 | `"operator"` | delegating validator's address |
 | `"feeder"`   | feeder's address               |
 
-## Errors
-
-### `ErrInvalidHashLength`
-
-Called when the given hash has invalid length.
-
-### `ErrUnknownDenomination`
-
-Called when the denomination provided is not recognized.
-
-### `ErrInvalidExchangeRate`
-
-Called when the exchange rate submitted is not valid.
-
-### `ErrVerificationFailed`
-
-Called when the given prevote has different hash from the retrieved one.
-
-### `ErrNoPrevote`
-
-Called when no prevote exists.
-
-### `ErrNoVote`
-
-Called when no vote exists.
-
-### `ErrNoVotingPermission`
-
-Called when the feeder does not have permission to submit a vote for the given operator.
-
-### `ErrNotRevealPeriod`
-
-Called when the feeder submits exchage-rate reveal vote during the wrong period.
-
-### `ErrInvalidSaltLength`
-
-Called when the salt length is not in `1~4`

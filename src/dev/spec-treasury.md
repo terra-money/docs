@@ -285,7 +285,7 @@ type Params struct {
 }
 ```
 
-### `TaxPolicy`
+### TaxPolicy
 
 - type: `PolicyConstraints`
 - default value:
@@ -301,7 +301,7 @@ DefaultTaxPolicy = PolicyConstraints{
 
 Constraints / rules for updating the [Tax Rate](#tax-rate) monetary policy lever.
 
-### `RewardPolicy`
+### RewardPolicy
 
 - type: `PolicyConstraints`
 - default value:
@@ -317,35 +317,35 @@ DefaultRewardPolicy = PolicyConstraints{
 
 Constraints / rules for updating the [Reward Weight](#reward-weight) monetary policy lever.
 
-### `SeigniorageBurdenTarget`
+### SeigniorageBurdenTarget
 
 - type: `sdk.Dec`
 - default value: `sdk.NewDecWithPrec(67, 2)` (67%)
 
 Multiplier specifying portion of burden seigniorage needed to bear the overall reward profile for Reward Weight updates during epoch transition.
 
-### `MiningIncrement`
+### MiningIncrement
 
 - type: `sdk.Dec`
 - default value: `sdk.NewDecWithPrec(107, 2)` (1.07 growth rate, 15% CAGR of $\tau$)
 
 Multiplier determining an annual growth rate for Tax Rate policy updates during epoch transition.
 
-### `WindowShort`
+### WindowShort
 
 - type: `int64`
 - default value: `4` (month = 4 weeks)
 
 A number of epochs that specifies a time interval for calculating short-term moving average.
 
-### `WindowLong`
+### WindowLong
 
 - type: `int64`
 - default value: `52` (year = 52 weeks)
 
 A number of epochs that specifies a time interval for calculating long-term moving average.
 
-### `WindowProbation`
+### WindowProbation
 
 - type: `int64`
 - default value: `12` (3 months = 12 weeks)
@@ -363,9 +363,3 @@ The Treasury module emits the following events:
 | `"tax_rate"`      | tax rate      |
 | `"reward_weight"` | reward weight |
 | `"tax_cap"`       | tax cap       |
-
-## Errors
-
-### `ErrInvalidEpoch`
-
-Called when the epoch queried exceeds the current epoch.
