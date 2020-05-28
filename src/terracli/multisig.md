@@ -64,7 +64,7 @@ $ terracli tx sign \
 
 `p1p2p3` is a 2-of-3 multisig key, therefore one additional signature is sufficient. Any the key holders can now generate the multisig transaction by combining the required signature files:
 
-```bash%
+```bash
 $ terracli tx multisign \
     unsignedTx.json \
     p1p2p3 \
