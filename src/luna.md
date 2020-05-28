@@ -29,7 +29,6 @@ Taxes are used as a stability fee, and the protocol charges a small percentage t
 Validators participate in the Luna exchange rate oracle process, and win rewards from the seigniorage pool every time they vote within the reward band, proportional to their stake.
 
 
-
 ## Phases of Luna
 
 <center>
