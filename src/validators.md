@@ -11,3 +11,17 @@ Validators play a central role in the Terra blockchain's consensus, which is bas
 In Terra's consensus model, Luna holders do not stake their tokens directly, but **delegate** their Luna to a validator. This allows normal Luna holders who don't want to set up a validator node can participate in staking rewards.
 
 A validator's **voting power** is proportional to the amount of Luna they have bonded, from all delegations (including their self-delegation). Only the **top 100** validators in voting power (and bonded Luna, by corollary) comprise the validating set, referred to hereon as **delegates**. Delegators play a vital role in this ecosystem because they determine which validators receive this designation, voting by delegating their Luna.
+
+### Slashing Risks
+
+Running validator is a big responsibility, which is why only the top 100 in bonded Luna stake are elected to sign blocks. As such, safety and liveness guarantees must be met, at the risk of having their validator's stake slashed (penalized), hurting both the validator's funds (as well as their delegator's), and their reputation. 
+
+The major slashing conditions are:
+
+- **double signing**: a validator signed two different blocks with the same chain ID at the same height 
+- **downtime**: a validator was non-responsive / couldn't be reached for more than an amount of time
+- **too many missed oracle votes**: a validator failed to report a threshold amount of votes that lie within the weighted median in the exchange rate oracle
+
+Other validators are always on the lookout for misbehaving validator nodes, and can submit **evidence** of a punishable infraction. Once discovered, the misbehaving validator node will have a small portion of their funds slashed and **jailed** (excluded from the validator set for an amount of time) in order to protect delegator funds and fix the offending issues.
+
+For delegators, staking Luna can be a rewarding activity. However, as explained above, it should not be treated as a passive activity -- they should apply due diligence and have confidence in the validator's architecture to not get slashed.
