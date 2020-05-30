@@ -1,0 +1,50 @@
+name: Build, test and deploy
+
+on:
+  push:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install and Build
+        run: |
+          npx broken-link-checker -ro http://docs:8080
+    services:
+      docs:
+        image: node:13-alpine
+        ports:
+          - 8080:8080
+        volumes:
+          - ${{ github.workspace }}:/app
+        options: --workdir /app --entrypoint "yarn && yarn docs:dev"
+        
+
+  deploy:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master' && github.event_name == 'push'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+
+      - name: Install and Build
+        run: |
+          yarn
+          yarn docs:build
+          echo 'docs.terra.money' > src/.vuepress/dist/CNAME
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          ACCESS_TOKEN: ${{ secrets.GH_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: src/.vuepress/dist
+          GIT_CONFIG_NAME: Github Actions
