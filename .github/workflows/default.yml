@@ -2,34 +2,34 @@ name: Deploy and test links
 
 on:
   push:
-    # - master
+    - master
 
 jobs:
-  # deploy:
-  #   runs-on: macos-latest
-  #   steps:
-  #     - name: Checkout
-  #       uses: actions/checkout@v2
-  #       with:
-  #         persist-credentials: false
+  deploy:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
 
-  #     - name: Build
-  #       run: |
-  #         yarn
-  #         yarn docs:build
-  #         echo 'docs.terra.money' > src/.vuepress/dist/CNAME
+      - name: Build
+        run: |
+          yarn
+          yarn docs:build
+          echo 'docs.terra.money' > src/.vuepress/dist/CNAME
 
-  #     - name: Deploy
-  #       uses: JamesIves/github-pages-deploy-action@releases/v3
-  #       with:
-  #         ACCESS_TOKEN: ${{ secrets.GH_TOKEN }}
-  #         BRANCH: gh-pages
-  #         FOLDER: src/.vuepress/dist
-  #         GIT_CONFIG_NAME: Github Actions
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          ACCESS_TOKEN: ${{ secrets.GH_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: src/.vuepress/dist
+          GIT_CONFIG_NAME: Github Actions
 
   test-links:
     runs-on: ubuntu-latest
-    # needs: deploy
+    needs: deploy
     steps:
       - name: Test dead links
         run: |
