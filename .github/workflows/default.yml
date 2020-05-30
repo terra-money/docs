@@ -26,6 +26,7 @@ jobs:
           BRANCH: gh-pages
           FOLDER: src/.vuepress/dist
           GIT_CONFIG_NAME: Github Actions
+          GIT_CONFIG_EMAIL: noreply@github.com
 
   test-links:
     runs-on: ubuntu-latest
