@@ -2,7 +2,8 @@ name: Deploy and test links
 
 on:
   push:
-    - master
+    branches:
+      - master
 
 jobs:
   deploy:
