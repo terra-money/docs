@@ -8,16 +8,16 @@ The simplest Terra network you can set up will be a local testnet with just a si
 
 ### Step 1. Create network and account
 
-First, initialize your genesis file that will bootstrap the network.
+First, initialize your genesis file that will bootstrap the network. Set a name for your local testnet, and provide a moniker to refer to your node.
 
 ```bash
-$ terrad init --chain-id=testing testing
+$ terrad init --chain-id=<testnet_name> <node_moniker>
 ```
 
 You will need a Terra account to start. You can generate one with:
 
 ```bash
-$ terracli keys add my_account
+$ terracli keys add <account_name>
 ```
 
 ### Step 2. Add account to genesis
@@ -25,9 +25,9 @@ $ terracli keys add my_account
 Next, you need to add your account to the genesis. The following commands add your account and set the initial balance:
 
 ```bash
-$ terrad add-genesis-account $(terracli keys show my_account -a) 100000000uluna,1000usd
+$ terrad add-genesis-account $(terracli keys show <account_name> -a) 100000000uluna,1000usd
 $ terrad gentx --name my_account --amount 10000000uluna
-$ terrad collect-gentx
+$ terrad collect-gentxs
 ```
 
 ### Step 3. Run Terra daemon
