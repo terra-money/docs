@@ -1,0 +1,11 @@
+name: Test links
+
+on: page_build
+
+jobs:
+  test-links:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test dead links
+        run: |
+          npx broken-link-checker -ro --filter-level 0 --exclude coinone --exclude upbit --exclude "t.me" https://docs.terra.money

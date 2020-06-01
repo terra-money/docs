@@ -1,4 +1,4 @@
-name: Deploy and test links
+name: Deploy
 
 on:
   push:
@@ -28,11 +28,3 @@ jobs:
           FOLDER: src/.vuepress/dist
           GIT_CONFIG_NAME: Github Actions
           GIT_CONFIG_EMAIL: noreply@github.com
-
-  test-links:
-    runs-on: ubuntu-latest
-    needs: deploy
-    steps:
-      - name: Test dead links
-        run: |
-          npx broken-link-checker -ro --filter-level 0 --exclude coinone --exclude upbit --exclude "t.me" https://docs.terra.money
