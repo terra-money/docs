@@ -8,4 +8,4 @@ jobs:
     steps:
       - name: Test dead links
         run: |
-          npx broken-link-checker -ro --filter-level 0 --exclude coinone --exclude upbit --exclude "t.me" https://docs.terra.money | grep -v "───OK───"
+          npx broken-link-checker -ro --filter-level 0 --exclude coinone --exclude upbit --exclude "t.me" https://docs.terra.money
