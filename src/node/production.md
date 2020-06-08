@@ -73,20 +73,20 @@ Use `systemctl` to control (start, stop, restart)
 
 ```bash
 # Start
-$ systemctl start terrad
+systemctl start terrad
 # Stop
-$ systemctl stop terrad
+systemctl stop terrad
 # Restart
-$ systemctl restart terrad
+systemctl restart terrad
 ```
 
 ### Accessing logs
 
 ```bash
 # Entire log
-$ journalctl -t terrad
+journalctl -t terrad
 # Entire log reversed
-$ journalctl -t terrad -r
+journalctl -t terrad -r
 # Latest and continuous
-$ journalctl -t terrad -f
+journalctl -t terrad -f
 ```

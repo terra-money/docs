@@ -11,7 +11,7 @@ These instructions are for setting up a brand new full node from scratch.
 First, initialize the node and create the necessary config files:
 
 ```bash
-$ terrad init <your_custom_moniker>
+terrad init <your_custom_moniker>
 ```
 
 ::: warning NOTE
@@ -53,8 +53,8 @@ You specify the network you want to join by setting the **genesis file** and **s
 You'll need to select the network you want to join and download its `genesis.json` file into your `~/.terrad/config` directory. This file specifies the genesis account balances and parameters to use when replaying transactions and syncing.
 
 ```bash
-$ mkdir -p ~/.terrad/config
-$ curl https://raw.githubusercontent.com/terra-project/launch/master/genesis.json > ~/.terrad/config/genesis.json
+mkdir -p ~/.terrad/config
+curl https://raw.githubusercontent.com/terra-project/launch/master/genesis.json > ~/.terrad/config/genesis.json
 ```
 
 Note we use the `latest` directory in the [networks repo](https://github.com/terra-project/networks) which contains details for the latest testnet. If you are connecting to a different testnet, ensure you get the right files.
@@ -62,7 +62,7 @@ Note we use the `latest` directory in the [networks repo](https://github.com/ter
 To verify the correctness of the configuration run:
 
 ```bash
-$ terrad start
+terrad start
 ```
 
 ### Download address book (recommended)
@@ -90,13 +90,13 @@ seeds = "20271e0591a7204d72280b87fdaa854f50c55e7e@106.10.59.48:26656,3b1c85b8652
 Start the full node with this command:
 
 ```bash
-$ terrad start
+terrad start
 ```
 
 Check that everything is running smoothly:
 
 ```bash
-$ terracli status
+terracli status
 ```
 
 ### Wait for node to sync
@@ -118,9 +118,9 @@ These instructions are for full nodes that have ran on previous testnets and wou
 First, remove the outdated files and reset the data.
 
 ```bash
-$ rm ~/.terrad/config/genesis.json
-$ rm ~/.terrad/config/addrbook.json
-$ terrad unsafe-reset-all
+rm ~/.terrad/config/genesis.json
+rm ~/.terrad/config/addrbook.json
+terrad unsafe-reset-all
 ```
 
 Your node is now in a pristine state while keeping the original `priv_validator.json` and `config.toml`. If you had any sentry nodes or full nodes setup before, your node will still try to connect to them, but may fail if they haven't also been upgraded.
@@ -134,8 +134,8 @@ Make sure that every node has a unique `priv_validator.json`. Do not copy the `p
 Now it is time to upgrade the software. Go to the project directory, and run:
 
 ```bash
-$ git checkout master && git pull
-$ make
+git checkout master && git pull
+make
 ```
 
 ::: warning NOTE
@@ -151,17 +151,17 @@ Terra can dump the entire application state to a JSON file, which could be usefu
 Export state with:
 
 ```bash
-$ terrad export > [filename].json
+terrad export > [filename].json
 ```
 
 You can also export state from a particular height \(at the end of processing the block of that height\):
 
 ```bash
-$ terrad export --height [height] > [filename].json
+terrad export --height [height] > [filename].json
 ```
 
 If you plan to start a new network from the exported state, export with the `--for-zero-height` flag:
 
 ```bash
-$ terrad export --height [height] --for-zero-height > [filename].json
+terrad export --height [height] --for-zero-height > [filename].json
 ```

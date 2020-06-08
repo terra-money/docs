@@ -59,7 +59,7 @@ Any participant in the network can signal their intent to become a validator by 
 - **Initial self-bond amount**: Initial amount of Luna the validator wants to self-bond.
 
 ```bash
-$ terracli tx staking create-validator
+terracli tx staking create-validator
     --pubkey terravalconspub1zcjduepqs5s0vddx5m65h5ntjzwd0x8g3245rgrytpds4ds7vdtlwx06mcesmnkzly
     --amount "2uluna"
     --from tmp

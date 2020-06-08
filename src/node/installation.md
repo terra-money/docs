@@ -23,9 +23,9 @@ If you haven't already, install Golang by following the [official docs](https://
 Use `git` to retrieve Terra Core from the [official repo](https://github.com/terra-project/core/), and checkout the `master` branch, which contains the latest stable release. That should install the `terrad` and `terracli` binaries.
 
 ```bash
-$ git clone https://github.com/terra-project/core/
-$ cd core
-$ git checkout master
+git clone https://github.com/terra-project/core/
+cd core
+git checkout master
 ```
 
 ### Step 3: Build from source
@@ -33,7 +33,7 @@ $ git checkout master
 You can now build Terra Core. Running the following command will install executables `terrad` (Terra node daemon) and `terracli` (CLI for interacting with the node) to your `GOPATH`.
 
 ```bash
-$ make install
+make install
 ```
 
 ### Step 4: Verify your installation
@@ -41,8 +41,8 @@ $ make install
 Verify that everything is OK. If you get something like the following, you've successfully installed Terra Core on your system.
 
 ```bash
-$ terrad version --long
-$ terracli version --long
+terrad version --long
+terracli version --long
 name: terra
 server_name: terrad
 client_name: terracli

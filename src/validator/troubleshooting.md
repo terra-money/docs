@@ -9,13 +9,13 @@ Your validator has become auto-unbonded. In Soju and Columbus networks, we unbon
 Here's how you can return the voting power back to your validator. First, if `terrad` is not running, start it up again:
 
 ```bash
-$ terrad start
+terrad start
 ```
 
 Wait for your full node to catch up to the latest block. Next, run the following command. Note that `<terra>` is the address of your validator account, and `<name>` is the name of the validator account. You can find this info by running `terracli keys list`.
 
 ```bash
-$ terracli tx slashing unjail <terra> --chain-id=<chain_id> --from=<from>
+terracli tx slashing unjail <terra> --chain-id=<chain_id> --from=<from>
 ```
 
 ::: warning
@@ -25,7 +25,7 @@ If you don't wait for `terrad` to sync before running `unjail`, you will receive
 Lastly, check your validator again to see if your voting power is back.
 
 ```bash
-$ terracli status
+terracli status
 ```
 
 You may notice that your voting power is less than it used to be. That's because you got slashed for downtime!

@@ -7,7 +7,7 @@ Every Terra account is associated with different key representations, which can 
 This is the address you give to others in order to receive funds, e.g. `terra15h6vd5f0wqps26zjlwrc6chah08ryu4hzzdwhc`.
 
 ```bash
-$ terracli keys show <account_name>
+terracli keys show <account_name>
 ```
 
 ### Validator Address `terravaloper-`
@@ -15,7 +15,7 @@ $ terracli keys show <account_name>
 This is the address that uniquely identifies a validator and is used to invoke staking commands. Each account address has a corresponding validator address, and vice-versa.
 
 ```bash
-$ terracli keys show <account_name> --bech=val
+terracli keys show <account_name> --bech=val
 ```
 
 ### Consensus Address `terravalcons-`
@@ -23,7 +23,7 @@ $ terracli keys show <account_name> --bech=val
 The consensus address is generated when the node is created with `terrad init`, and serves to identify the Tendermint signing key for the node, NOT the operator (account holder).
 
 ```bash
-$ terrad tendermint show-validator
+terrad tendermint show-validator
 ```
 
 ## Generate Keys
@@ -37,7 +37,7 @@ It is more secure to perform this action on an offline computer.
 To generate an account, just use the following command:
 
 ```bash
-$ terracli keys add <yourKeyName>
+terracli keys add <yourKeyName>
 ```
 
 - `<yourKeyName>` is the name of the account. It is a reference to the account number used to derive the key pair from the mnemonic. You will use this name to identify your account when you want to send a transaction.
@@ -57,8 +57,8 @@ If someone is able to gain access to your mnemonic, they will be able to gain ac
 After you have secured your mnemonic \(triple check!\), you can delete bash history to ensure no one can retrieve it.
 
 ```bash
-$ history -c
-$ rm ~/.bash_history
+history -c
+rm ~/.bash_history
 ```
 
 :::
@@ -66,7 +66,7 @@ $ rm ~/.bash_history
 You can generate more accounts from the same mnemonic using the following command:
 
 ```bash
-$ terracli keys add <yourKeyName> --recover --account 1
+terracli keys add <yourKeyName> --recover --account 1
 ```
 
 This command will prompt you to input a passphrase as well as your mnemonic. Change the account number to generate a different account.
@@ -74,19 +74,19 @@ This command will prompt you to input a passphrase as well as your mnemonic. Cha
 If you check your private keys, you'll now see `<account_name>`:
 
 ```bash
-$ terracli keys show <account_name>
+terracli keys show <account_name>
 ```
 
 View the validator operator's address via:
 
 ```bash
-$ terracli keys show <account_name> --bech=val
+terracli keys show <account_name> --bech=val
 ```
 
 You can see all your available keys by typing:
 
 ```bash
-$ terracli keys list
+terracli keys list
 ```
 
 ::: danger
@@ -142,7 +142,7 @@ When you initialize your ledger, a 24-word mnemonic is generated and stored in t
 The process is similar to the process with a computer; use the following command:
 
 ```bash
-$ terracli keys add <yourAccountName> --ledger
+terracli keys add <yourAccountName> --ledger
 ```
 
 ::: warning NOTE
@@ -156,7 +156,7 @@ This will create a key that will defer to the Ledger Hardware Wallet when being 
 If you have the mnemonic used to generate your private key, you can recover it and re-register your key. Issuing the following command will prompt you to enter your 24-word secret mnemonic phrase.
 
 ```
-$ terracli keys add <yourKeyName> --recover
+terracli keys add <yourKeyName> --recover
 ```
 
 ## Generate Multisig Keys
@@ -164,7 +164,7 @@ $ terracli keys add <yourKeyName> --recover
 You can generate and print a multisig public key by typing:
 
 ```bash
-$ terracli keys add --multisig=name1,name2,name3[...] --multisig-threshold=K new_key_name
+terracli keys add --multisig=name1,name2,name3[...] --multisig-threshold=K new_key_name
 ```
 
 `K` is the minimum number of private keys that must have signed the transactions that carry the public key's address as signer.
@@ -174,14 +174,14 @@ The `--multisig` flag must contain the name of public keys that will be combined
 Unless the flag `--nosort` is set, the order in which the keys are supplied on the command line does not matter, i.e. the following commands generate two identical keys:
 
 ```bash
-$ terracli keys add --multisig=foo,bar,baz --multisig-threshold=2 multisig_address
-$ terracli keys add --multisig=baz,foo,bar --multisig-threshold=2 multisig_address
+terracli keys add --multisig=foo,bar,baz --multisig-threshold=2 multisig_address
+terracli keys add --multisig=baz,foo,bar --multisig-threshold=2 multisig_address
 ```
 
 Multisig addresses can also be generated on-the-fly and printed through the which command:
 
 ```bash
-$ terracli keys show --multisig-threshold=K name1 name2 name3 [...]
+terracli keys show --multisig-threshold=K name1 name2 name3 [...]
 ```
 
 For more information regarding how to generate, sign and broadcast transactions with a multi signature account see [Multisig Transactions](./multisig).

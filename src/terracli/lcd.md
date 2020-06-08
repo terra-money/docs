@@ -19,7 +19,7 @@ To start the LCD, you'll need to specify the following parameters
 For example:
 
 ```bash
-$ terracli rest-server --chain-id=test \
+terracli rest-server --chain-id=test \
     --laddr=tcp://localhost:1317 \
     --node tcp://localhost:26657 \
     --trust-node=false

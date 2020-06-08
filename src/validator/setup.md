@@ -20,13 +20,13 @@ This guide starts with the following assumptions:
 You will need to know the consensus PubKey (`terravalconspub-`) of your node to create a new validator. You can find it with:
 
 ```bash
-$ terrad tendermint show-validator
+terrad tendermint show-validator
 ```
 
 Next, create your `terrad gentx` command:
 
 ```bash
-$ terracli tx staking create-validator \
+terracli tx staking create-validator \
     --amount=5000000uluna \
     --pubkey=$(terrad tendermint show-validator) \
     --moniker="choose a moniker" \
@@ -51,7 +51,7 @@ If unspecified, `consensus_pubkey` will default to the output of `terrad tenderm
 Your validator is active if the following command returns anything:
 
 ```bash
-$ terracli query tendermint-validator-set | grep "$(terrad tendermint show-validator)"
+terracli query tendermint-validator-set | grep "$(terrad tendermint show-validator)"
 ```
 
 You are looking for the `bech32` encoded `address` in the `~/.terrad/config/priv_validator.json` file.
@@ -69,13 +69,13 @@ Every Terra validator needs to participate in the oracle process and periodicall
 You can separate the keys that are used for controlling your validator account from the ones that are submitting the oracle votes on behalf of your validator.
 
 ```bash
-$ terracli keys add <feeder>
+terracli keys add <feeder>
 ```
 
 Show the feeder account details:
 
 ```bash
-$ terracli keys show <feeder>
+terracli keys show <feeder>
 ```
 
 ### Delegate feeder consent
@@ -83,7 +83,7 @@ $ terracli keys show <feeder>
 The account address used to submit oracle voting transactions is called a `feeder`. When you set up your oracle voting process for the first time, you must send delegate the feeder permission to an account.
 
 ```bash
-$ terracli tx oracle set-feeder <feeder-address> --from=<validator>
+terracli tx oracle set-feeder <feeder-address> --from=<validator>
 ```
 
 ### Send funds to feeder
@@ -93,13 +93,13 @@ The feeder needs funds in order to pay for transaction fees to submit oracle vot
 #### Sending Luna to feeder account
 
 ```bash
-$ terracli tx send <from-address> <feeder-address> <luna-amount>uluna
+terracli tx send <from-address> <feeder-address> <luna-amount>uluna
 ```
 
 #### Example of swap from feeder
 
 ```bash
-$ terracli tx market swap <luna-amount>uluna ukrw --from=<feeder>
+terracli tx market swap <luna-amount>uluna ukrw --from=<feeder>
 ```
 
 ### Set up oracle feeder program

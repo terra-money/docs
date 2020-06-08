@@ -25,7 +25,7 @@ In order to connect to the full-node, you will need an address of the following 
 In order to set up `terracli`, use the following command:
 
 ```bash
-$ terracli config <flag> <value>
+terracli config <flag> <value>
 ```
 
 It allows you to set a default value for each given flag.
@@ -34,7 +34,7 @@ First, set up the address of the full-node you want to connect to:
 
 ```bash
 # example: terracli config node https://77.87.106.33:26657
-$ terracli config node <host>:<port>
+terracli config node <host>:<port>
 ```
 
 If you run your own full-node, just use `tcp://localhost:26657` as the address.
@@ -43,13 +43,13 @@ Then, let us set the default value of the `--trust-node` flag:
 
 ```bash
 # Set to true if you run a light-client node, false otherwise
-$ terracli config trust-node false
+terracli config trust-node false
 ```
 
 Finally, let us set the `chain-id` of the blockchain we want to interact with:
 
 ```bash
-$ terracli config chain-id soju-0014
+terracli config chain-id soju-0014
 ```
 
 ## Querying Blockchain State
@@ -58,29 +58,29 @@ $ terracli config chain-id soju-0014
 
 ```bash
 # query account balances and other account-related information
-$ terracli query account
+terracli query account
 
 # query the list of validators
-$ terracli query staking validators
+terracli query staking validators
 
 # query the information of a validator given their address
-$ terracli query staking validator <validatorAddress>
+terracli query staking validator <validatorAddress>
 
 # query all delegations made from a delegator given their address
 # (note: delegator addresses are regular account addresses)
-$ terracli query staking delegations <delegatorAddress>
+terracli query staking delegations <delegatorAddress>
 
 # query a specific delegation made from a delegator to a validator
-$ terracli query staking delegation <delegatorAddress> <validatorAddress>
+terracli query staking delegation <delegatorAddress> <validatorAddress>
 
 # query the rewards of a delegator given a delegator address (e.g. terra10snjt8dmpr5my0h76xj48ty80uzwhraqalu4eg)
-$ terracli query distr rewards <delegatorAddress>
+terracli query distr rewards <delegatorAddress>
 ```
 
 For more commands, just type:
 
 ```bash
-$ terracli query
+terracli query
 ```
 
 For each command, you can use the `-h` or `--help` flag to get more information.
@@ -90,7 +90,7 @@ For each command, you can use the `-h` or `--help` flag to get more information.
 Other than querying blockchain data, `terracli` is used to interact with the blockchain, sending transactions containing module messages with state-changing directives that get processed and included in blocks. All of transaction-sending operations follow the form:
 
 ```bash
-$ terracli tx ...
+terracli tx ...
 ```
 
 Please check each module subsection in the side menu to learn more about different types of transactions you can issue.
@@ -120,7 +120,7 @@ Validators may start to prioritize transactions by `gasPrice` in the mempool, so
 To directly use fees:
 
 ```bash
-$ terracli tx send ... --fees=100000uluna
+terracli tx send ... --fees=100000uluna
 ```
 
 If you use fees, validators will calculate the implied `minGasPrices` by dividing your fee with the estimated gas consumption, to properly assign the right priority to your transaction.
@@ -146,7 +146,7 @@ The adjustment can be controlled via the `--gas-adjustment` flag, whose default 
 To get a direct fee estimation from `terracli`:
 
 ```bash
-$ terracli tx estimate-fee ...\
+terracli tx estimate-fee ...\
     --gas-prices=0.015uluna
     --gas-adjustment=1.4
 ```
@@ -154,7 +154,7 @@ $ terracli tx estimate-fee ...\
 To create and send transactions using fee-estimation, use the template below as a format:
 
 ```bash
-$ terracli tx send ... \
+terracli tx send ... \
     --gas-prices=0.015uluna
     --gas=auto
     --gas-adjustment=1.4
@@ -167,15 +167,15 @@ Auto-completion scripts for popular UNIX shell interpreters such as `bash` and `
 If you want to generate `bash` completion scripts run the following command:
 
 ```bash
-$ terrad completion > terrad_completion
-$ terracli completion > terracli_completion
+terrad completion > terrad_completion
+terracli completion > terracli_completion
 ```
 
 If you want to generate `zsh` completion scripts run the following command:
 
 ```bash
-$ terrad completion --zsh > terrad_completion
-$ terracli completion --zsh > terracli_completion
+terrad completion --zsh > terrad_completion
+terracli completion --zsh > terracli_completion
 ```
 
 ::: warning NOTE

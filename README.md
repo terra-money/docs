@@ -16,7 +16,7 @@
 If you are contributing to the repository, make sure to fork this repo, and then clone your own fork. You will need to do this to make creating pull requests easier.
 
 ```bash
-$ git clone https://github.com/<your-username>/terra-docs
+git clone https://github.com/<your-username>/terra-docs
 ```
 
 ### Adding an article
@@ -47,13 +47,13 @@ To edit the navigation to include your new article, edit `/src/.vuepress/config.
 Make sure you install all the dependencies:
 
 ```bash
-$ yarn install
+yarn install
 ```
 
 Build and run locally (hot-reloading dev server):
 
 ```bash
-$ yarn docs:dev
+yarn docs:dev
 ```
 
 ## Built With
