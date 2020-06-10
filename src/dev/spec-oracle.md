@@ -34,7 +34,7 @@ Denominations receiving fewer than [`VoteThreshold`](#votethreshold) total votin
 
 ### Ballot Rewards
 
-After the votes are tallied, the winners of the ballots are determined with [`tally()`](#tally).
+After the votes are tallied, the winners of the ballots are determined with [`Tally()`](#Tally).
 
 Voters that have managed to vote within a narrow band around the weighted median, are rewarded with a portion of the collected seigniorage. See [`k.RewardBallotWinners()`](#k-rewardballotwinners) for more details.
 
@@ -155,9 +155,17 @@ Oracle maintains several `KVStores`, each indexed as such:
 - `k.SetLunaExchangeRate(ctx, denom string, exchangeRate sdk.Dec)`
 - `k.DeleteLunaExchangeRate(ctx, denom string)`
 
-An `sdk.Dec` that stores the current Luna exchange rate against a given `denom`, which is used by the [`Market`](spec-market.md) module for pricing swaps.
+An `sdk.Dec` that stores the current Luna exchange rate against a given `denom`, which is used by the [`Market`](spec-market.md) module for Terra<>Luna pricing swaps.
 
 You can get the active list of `denoms` trading against Luna (denominations with votes past [`VoteThreshold`](#votethreshold)) with `k.GetActiveDenoms()`.
+
+### Cross Exchange Rate
+
+- `k.GetCrossExchangeRate(ctx, denom1, denom2 string) (cer CrossExchangeRate, err sdk.Error)`
+- `k.SetCrossExchangeRate(ctx, cer CrossExchangeRate)`
+- `k.DeleteCrossExchangeRate(ctx, cer CrossExchangeRate)`
+
+An `CrossExchangeRate` that stores the current cross exchange rate against a given pair of  `denom1` and `denom2` , which is used by the [`Market`](spec-market.md) module for Terra<>Terra pricing swaps.
 
 ### Oracle Delegates
 
@@ -183,13 +191,21 @@ func VoteHash(salt string, rate sdk.Dec, denom string, voter sdk.ValAddress) ([]
 
 This function computes the truncated SHA256 hash value from `salt:rate:denom:voter` for an `ExchangeRateVote`, which is submitted in an `MsgExchangeRatePrevote` in the `VotePeriod` prior.
 
-### `tally()`
+### `Tally()`
 
 ```go
-func tally(ctx sdk.Context, pb types.ExchangeRateBallot, rewardBand sdk.Dec) (weightedMedian sdk.Dec, ballotWinners []types.Claim)
+func Tally(pb types.ExchangeRateBallot, rewardBand sdk.Dec) (weightedMedian sdk.Dec, ballotWinners []types.Claim)
 ```
 
 This function contains the logic for tallying up the votes for a specific ballot of a denomination, and determines the weighted median $M$ as well as the winners of the ballot.
+
+### `TallyCrossRate()`
+
+```go
+func TallyCrossRate(ctx sdk.Context, voteMap map[string]types.ExchangeRateBallot, voteTargets map[string]sdk.Dec) (crossExchangeRates types.CrossExchangeRates)
+```
+
+This function contains the logic for tallying up the votes for calculate each cross exchange rates from each vote, and then calculate weighted median from calculated cross exchange rates, and determines the list of cross exchange rates for each active denom pair
 
 ### `k.RewardBallotWinners()`
 
@@ -232,18 +248,25 @@ At the end of every block, the Oracle module checks whether it's the last block 
 
 4. For each remaining `denom` with a passing ballot:
 
-   - Tally up votes and find the weighted median exchange rate and winners with [`tally()`](#tally)
+   - Tally up votes and find the weighted median exchange rate and winners with [`Tally()`](#Tally)
    - Iterate through winners of the ballot and add their weight to their running total
    - Set the Luna exchange rate on the blockchain for that Luna<>`denom` with `k.SetLunaExchangeRate()`
    - Emit a [`exchange_rate_update`](#exchange_rate_update) event
 
-5. Count up the validators who [missed](#slashing) the Oracle vote and increase the appropriate miss counters
+5. For each remaining `denom` with a passing ballot:
 
-6. If at the end of a [`SlashWindow`](#slashwindow), penalize validators who have missed more than the penalty threshold (submitted fewer valid votes than [`MinValidPerWindow`](#minvalidperwindow))
+   - Tally up votes and find each weighted median cross exchange rates of each vote with [`TallyCrossRate()`](#TallyCrossRate)
 
-7. Distribute rewards to ballot winners with [`k.RewardBallotWinners()`](#krewardballotwinners)
+   - Set the cross exchange rate on the blockchain for that Terra `denom1`<>Terra `denom2` with `k.SetCrossExchangeRate()`
+   - Emit a [`cross_exchange_rate_update`](#cross_exchange_rate_update) event
 
-8. Clear all prevotes (except ones for the next `VotePeriod`) and votes from the store
+6. Count up the validators who [missed](#slashing) the Oracle vote and increase the appropriate miss counters
+
+7. If at the end of a [`SlashWindow`](#slashwindow), penalize validators who have missed more than the penalty threshold (submitted fewer valid votes than [`MinValidPerWindow`](#minvalidperwindow))
+
+8. Distribute rewards to ballot winners with [`k.RewardBallotWinners()`](#krewardballotwinners)
+
+9. Clear all prevotes (except ones for the next `VotePeriod`) and votes from the store
 
 ## Parameters
 
@@ -329,6 +352,14 @@ The Oracle module emits the following events:
 | :---------------- | :------------------------------------------- |
 | `"denom"`         | denomination                                 |
 | `"exchange_rate"` | new Luna exchange rate with respect to denom |
+
+### `cross_exchange_rate_update`
+
+| Key               | Value                                                        |
+| :---------------- | :----------------------------------------------------------- |
+| `"denom1"`        | denomination 1 of pair                                       |
+| `"denom2"`        | denomination 2 of pair                                       |
+| `"exchange_rate"` | new Terra<>Terra cross exchange rate with respect to pair denom1_denom2 |
 
 ### `prevote`
 

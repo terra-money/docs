@@ -71,7 +71,7 @@ This mechanism ensures liquidity and acts as a sort of low-pass filter, allowing
 
 1. Market module receives [`MsgSwap`](#msgswap) message and performs basic validation checks
 
-2. Calculate exchange rate $ask$ and $spread$ using [`k.ComputeSwap()`](#k-computeswap)
+2. Calculate exchange rate $ask$ and $spread$ using [`k.ComputeSwap()`](#k-computeswap), if swaps between Terra currencies calculate cross exchange rate
 
 3. Update `TerraPoolDelta` with [`k.ApplySwapToPool()`](#k-applyswaptopool)
 
@@ -130,7 +130,7 @@ func (k Keeper) ComputeSwap(ctx sdk.Context, offerCoin sdk.Coin, askDenom string
 
 This function detects the swap type from the offer and ask denominations and returns:
 
-1. The amount of asked coins that should be returned for a given `offerCoin`. This is achieved by first spot-converting `offerCoin` to µSDR and then from µSDR to the desired `askDenom` with the proper exchange rate reported from by the Oracle.
+1. The amount of asked coins that should be returned for a given `offerCoin`. Terra<>Luna swaps are achieved by first spot-converting `offerCoin` to µSDR and then from µSDR to the desired `askDenom` with the proper exchange rate reported from by the Oracle. For Terra<>Terra swaps, achieved by converting `offerCoin` to the desired `askDenom` directly with the proper cross exchange rate for the pair of offer and ask denoms reported from by the Oracle
 
 2. The spread % that should be taken as a swap fee given the swap type. Terra<>Terra swaps simply have the Tobin Tax spread fee. Terra<>Luna spreads are the greater of `MinSpread` and spread from Constant Product pricing.
 
