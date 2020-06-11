@@ -79,9 +79,6 @@
           <a href="https://terra.money/about.html" target="_blank">Team</a>
         </li>
         <li>
-          <a href="#" target="_blank">Roadmap</a>
-        </li>
-        <li>
           <a href="https://terra.breezy.hr/" target="_blank">Careers</a>
         </li>
       </ul>
