@@ -2,11 +2,11 @@
 
 ## Set up a Validator
 
-Please refer to the [Validator Setup](validator-getting-started.md) section for a more complete guide on how to set up a validator-candidate.
+Please refer to the [Validator Setup](../validator/getting-started.md) section for a more complete guide on how to set up a validator-candidate.
 
 ## Delegate to a Validator
 
-On the upcoming mainnet, you can delegate LUNA to a validator. These [delegators](validator-faq.md) can receive part of the validator's fee revenue.
+On the upcoming mainnet, you can delegate LUNA to a validator. These [delegators](../validator/faq.md) can receive part of the validator's fee revenue.
 
 ## Query Validators
 

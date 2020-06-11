@@ -42,7 +42,7 @@ terracli query treasury seigniorage-proceeds
 
 ## Query Parameters
 
-Parameters define high-level settings for the Treasury, described [here](dev-spec-treasury.md#parameters). You can get the current values by using:
+Parameters define high-level settings for the Treasury, described [here](./spec-treasury.md#parameters). You can get the current values by using:
 
 ```bash
 terracli query treasury params

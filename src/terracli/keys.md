@@ -137,7 +137,7 @@ Only use Ledger devices that you bought factory new or trust fully.
 
 ### Create a Ledger Key on terracli
 
-When you initialize your ledger, a 24-word mnemonic is generated and stored in the device. This mnemonic is compatible with Terra and Terra accounts can be derived from it. Therefore, all you have to do is make your ledger compatible with `terracli`. To learn more about how to set up your ledger for usage with Terra, head [here](./ledger).
+When you initialize your ledger, a 24-word mnemonic is generated and stored in the device. This mnemonic is compatible with Terra and Terra accounts can be derived from it. Therefore, all you have to do is make your ledger compatible with `terracli`. 
 
 The process is similar to the process with a computer; use the following command:
 

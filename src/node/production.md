@@ -3,7 +3,7 @@
 This document explains how to set up your environment for running a production-quality full node. For the moment, this guide has only been tested against RPM-based Linux distributions.
 
 ::: warning NOTE
-This guide only covers general settings for a production-level full node. You can find further details on considerations for operating a validator node in our [Validator Guide](validator-intro.md).
+This guide only covers general settings for a production-level full node. You can find further details on considerations for operating a validator node in our [Validator Guide](../validator/README.md)
 :::
 
 ## Create a Dedicated User
@@ -18,7 +18,7 @@ This guide only covers general settings for a production-level full node. You ca
 
 - `26657` is the default port for the RPC protocol. This port is used for querying / sending transactions. In other words, this port needs to be opened for serving queries from `terracli`. It is safe to _NOT_ to open this port to the public unless you are planning to run a public node.
 
-- `1317` is the default port for [Lite Client Daemon](node-light-client.md) (LCD), which can be executed by `terracli rest-server`. LCD provides HTTP RESTful API layer to allow applications and services to interact with your `terrad` instance through RPC. Check the [Terra REST API](https://swagger.terra.money) for usage examples. You don't need to open this port unless you have use of it.
+- `1317` is the default port for [Lite Client Daemon](../terracli/lcd.md) (LCD), which can be executed by `terracli rest-server`. LCD provides HTTP RESTful API layer to allow applications and services to interact with your `terrad` instance through RPC. Check the [Terra REST API](https://swagger.terra.money) for usage examples. You don't need to open this port unless you have use of it.
 
 - `26660` is the default port for interacting with the [Prometheus](https://prometheus.io) database which can be used for monitoring the environment. This port is not opened in the default configuration.
 

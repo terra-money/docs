@@ -104,7 +104,7 @@ terracli tx market swap <luna-amount>uluna ukrw --from=<feeder>
 
 ### Set up oracle feeder program
 
-Head over to [Feeder Implementations](oracle/#feeder-implementations) to install a program and set one up to start submitting oracle messages with your feeder account.
+Head over to [Feeder Implementations](./oracle.md#feeder-implementations) to install a program and set one up to start submitting oracle messages with your feeder account.
 
 ## Court Delegations
 

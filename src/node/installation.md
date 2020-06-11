@@ -1,6 +1,6 @@
 # Installation
 
-This is for setting up a **full node**, a resource-intensive process that requires a persistent server. If you're just trying to _use_ Terra blockchain without downloading the entire blockchain, you're probably looking for [Terra Station](../station).
+This is for setting up a **full node**, a resource-intensive process that requires a persistent server. If you're just trying to _use_ Terra blockchain without downloading the entire blockchain, you're probably looking for [Terra Station](https://station.terra.money/).
 
 ## Hardware Requirements
 
