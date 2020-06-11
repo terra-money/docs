@@ -22,7 +22,7 @@ Gas is a fee that is added on to each transaction to avoid spamming. Validators 
 
 ### Taxes
 
-Taxes are used as a stability fee, and the protocol charges a small percentage transaction fee ranging from 0.1% to 1% on every Terra transaction, capped at 1 TerraSDR. This is paid in any Terra currency, and is disbursed pro-rata to stake at the end of every block in TerraSDR.
+Taxes are used as a stability fee, and the protocol charges a small percentage transaction fee ranging from 0.1% to 1% on every Terra transaction, capped at 1 TerraSDR. This is paid in any Terra currency, and is disbursed pro-rata to stake at the end of every block.
 
 ### Seigniorage Rewards
 
