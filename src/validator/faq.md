@@ -183,7 +183,7 @@ Each member of a validator's staking pool earns different types of revenue:
 
 - **Stability fees**: To stabilize the value of Luna, the protocol charges a small percentage transaction fee ranging from 0.1% to 1% on every Terra transaction, capped at 1 TerraSDR. This is paid in any Terra currency, and is disbursed pro-rata to stake at the end of every block in TerraSDR.
 
-- **Seigniorage rewards**: Validators that participate in the Exchange Rate [`Oracle`](./spec-oracle.md) get a portion of seigniorage if they faithfully report and win the ballot (vote within the reward band around the weighted median).
+- **Seigniorage rewards**: Validators that participate in the Exchange Rate [`Oracle`](../dev/spec-oracle.md) get a portion of seigniorage if they faithfully report and win the ballot (vote within the reward band around the weighted median).
 
 This total revenue is divided among validators' staking pools according to each validator's weight. Then, within each validator's staking pool the revenue is divided among delegators in proportion to each delegator's stake. Note that a commission on delegators' revenue is applied by the validator before it is distributed.
 
@@ -193,7 +193,7 @@ Besides revenue, there are scarcity incentives:
 
 ### What is the incentive to run a validator ?
 
-Validators earn proportionally more revenue than their delegators because of commissions, and also play a major role in determining on-chain exchange rates through the [`Oracle`](./spec-oracle.md), where they get rewarded with seigniorage for faithfully reporting the exchange rate.
+Validators earn proportionally more revenue than their delegators because of commissions, and also play a major role in determining on-chain exchange rates through the [`Oracle`](../dev/spec-oracle.md), where they get rewarded with seigniorage for faithfully reporting the exchange rate.
 
 ### What is a validator's commission?
 

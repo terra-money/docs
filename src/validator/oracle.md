@@ -1,17 +1,17 @@
 # Oracle Feeder
 
-With the Columbus-3 release, every active validator must participate in the Exchange Rate Oracle, voting periodically for the active Exchange Rate of Luna, and not participating in the Oracle process is now a [slashing condition](spec-oracle.md#slashing).
+With the Columbus-3 release, every active validator must participate in the Exchange Rate Oracle, voting periodically for the active Exchange Rate of Luna, and not participating in the Oracle process is now a [slashing condition](../dev/spec-oracle.md#slashing).
 
 ## Feeder Implementations
 
-The Terra team provides a reference implementation of a program that pulls the exchange rate of Luna from exchanges and periodically submits it in prevotes and votes following the [Voting Procedure](spec-oracle.md#voting-procedure). However, some generous validators have also provided their own implementations to the rest of the validator community:
+The Terra team provides a reference implementation of a program that pulls the exchange rate of Luna from exchanges and periodically submits it in prevotes and votes following the [Voting Procedure](../dev/spec-oracle.md#voting-procedure). However, some generous validators have also provided their own implementations to the rest of the validator community:
 
 | Software                                                                          | Developer                             | Runtime         |
 | :-------------------------------------------------------------------------------- | :------------------------------------ | :-------------- |
 | [`oracle-feeder`](https://github.com/terra-project/oracle-feeder/tree/columbus-3) | **Terra**                             | Node.js, Python | Official reference implementation |
-| [`terra_oracle_voter`](https://github.com/b-harvest/terra_oracle_voter)           | [B-Harvest](https://bharvest.io/)     | Python          |  |
-| [`oracle-voter`](https://github.com/stakewithus/oracle-voter)                     | [StakeWith.Us](https://stakewith.us)  | Python          |  |
-| [`terra-oracle`](https://github.com/node-a-team/terra-oracle)                     | [Node A-Team](https://nodeateam.com/) | Go              |  |
+| [`terra_oracle_voter`](https://github.com/b-harvest/terra_oracle_voter)           | [B-Harvest](https://bharvest.io/)     | Python          |                                   |
+| [`oracle-voter`](https://github.com/stakewithus/oracle-voter)                     | [StakeWith.Us](https://stakewith.us)  | Python          |                                   |
+| [`terra-oracle`](https://github.com/node-a-team/terra-oracle)                     | [Node A-Team](https://nodeateam.com/) | Go              |                                   |
 
 ## Custom Implementation
 
