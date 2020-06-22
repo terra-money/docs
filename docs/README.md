@@ -57,13 +57,13 @@ Welcome to the official documentation for Terra, a decentralized financial infra
       Become a validator and earn delegation commissions in exchange for helping secure the network.
     </div>
   </a>
-  <a href="/smart-contracts.html" class="card disabled">
+  <a href="/dapps/" class="card">
     <img src="/img/icon_smartcontract.svg"/>
     <div class="title">
-      Smart Contracts
+      Terra dApp Platform
     </div>
     <div class="text">
-      Learn about how to write smart contracts for creating financial dApps on Terra.
+      Build dApps that leverage the robust infrastructure for decentralized finance provided by Terra.
     </div>
   </a>
   <a href="/integrations.html" class="card">
