@@ -21,10 +21,10 @@ git clone https://github.com/<your-username>/terra-docs
 
 ### Adding an article
 
-All articles are markdown files, placed under the `/src/` directory. You can create folders underneath the `/src` directory, such as the following:
+All articles are markdown files, placed under the `/docs/` directory. You can create folders underneath the `/docs` directory, such as the following:
 
 ```
-/src
+/docs
     /dev
         README.md
         spec-auth.md
@@ -40,7 +40,7 @@ Notice how `README.md` serves as the default root of the folder.
 
 ### Editing the navigation
 
-To edit the navigation to include your new article, edit `/src/.vuepress/config.js` and add your new article in the appropriate section in `themeConfig.sidebar`, following the other paths as examples.
+To edit the navigation to include your new article, edit `/docs/.vuepress/config.js` and add your new article in the appropriate section in `themeConfig.sidebar`, following the other paths as examples.
 
 ### Test it out locally
 
@@ -53,7 +53,7 @@ yarn install
 Build and run locally (hot-reloading dev server):
 
 ```bash
-yarn docs:dev
+yarn dev
 ```
 
 ## Built With

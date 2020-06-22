@@ -17,14 +17,14 @@ jobs:
       - name: Build
         run: |
           yarn
-          yarn docs:build
-          echo 'docs.terra.money' > src/.vuepress/dist/CNAME
+          yarn build
+          echo 'docs.terra.money' > docs/.vuepress/dist/CNAME
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
           ACCESS_TOKEN: ${{ secrets.GH_TOKEN }}
           BRANCH: gh-pages
-          FOLDER: src/.vuepress/dist
+          FOLDER: docs/.vuepress/dist
           GIT_CONFIG_NAME: Github Actions
           GIT_CONFIG_EMAIL: noreply@github.com
