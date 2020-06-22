@@ -54,7 +54,7 @@ You'll need to select the network you want to join and download its `genesis.jso
 
 ```bash
 mkdir -p ~/.terrad/config
-curl https://raw.githubusercontent.com/terra-project/launch/master/genesis.json > ~/.terrad/config/genesis.json
+curl https://columbus-genesis.s3-ap-northeast-1.amazonaws.com/genesis.json > ~/.terrad/config/genesis.json
 ```
 
 Note we use the `latest` directory in the [networks repo](https://github.com/terra-project/networks) which contains details for the latest testnet. If you are connecting to a different testnet, ensure you get the right files.
@@ -68,6 +68,10 @@ terrad start
 ### Download address book (recommended)
 
 If you have an address book of peers, download `addrbook.json` and move it into `~/.terrad/config/addrbook.json`. This will give your node a selection of peers to dial to find other nodes.
+
+```bash
+curl https://network.terra.dev/addrbook.json > ~/.terrad/config/addrbook.json
+```
 
 ### Define seed nodes
 
