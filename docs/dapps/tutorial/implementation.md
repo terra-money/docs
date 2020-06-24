@@ -39,6 +39,8 @@ For our example smart contract, we will need:
 Since we are using a simple key-value store system to store our state, we'll have to implement the mappings using prefix-keys. To illustrate this, we will use a similar scheme to one where `abc["def"] = 5` would be implemented as `store("abc-def", 5)`, and `abc["eggzz"] = 5` will be: `store("abc-eggzz", 5)`.
 
 ```rust
+// src/state.rs
+
 use schemars::JsonSchema;
 use serde::{Deserialize, Serialize};
 
@@ -239,15 +241,94 @@ pub fn handle<S: Storage, A: Api, Q: Querier>(
     msg: HandleMsg,
 ) -> StdResult<HandleResponse> {
     match msg {
-        HandleMsg::Approve { spender, amount } => try_approve(deps, env, &spender, &amount),
         HandleMsg::Transfer { recipient, amount } => try_transfer(deps, env, &recipient, &amount),
-        HandleMsg::TransferFrom {
-            owner,
-            recipient,
-            amount,
-        } => try_transfer_from(deps, env, &owner, &recipient, &amount),
         HandleMsg::Burn { amount } => try_burn(deps, env, &amount),
     }
+}
+```
+
+```rust
+fn try_transfer<S: Storage, A: Api, Q: Querier>(
+    deps: &mut Extern<S, A, Q>,
+    env: Env,
+    recipient: &HumanAddr,
+    amount: &Uint128,
+) -> StdResult<HandleResponse> {
+    let sender_address_raw = &env.message.sender;
+    let recipient_address_raw = deps.api.canonical_address(recipient)?;
+    let amount_raw = amount.u128();
+
+    perform_transfer(
+        &mut deps.storage,
+        &sender_address_raw,
+        &recipient_address_raw,
+        amount_raw,
+    )?;
+
+    let res = HandleResponse {
+        messages: vec![],
+        log: vec![
+            log("action", "transfer"),
+            log(
+                "sender",
+                deps.api.human_address(&env.message.sender)?.as_str(),
+            ),
+            log("recipient", recipient.as_str()),
+        ],
+        data: None,
+    };
+    Ok(res)
+}
+
+fn perform_transfer<T: Storage>(
+    store: &mut T,
+    from: &CanonicalAddr,
+    to: &CanonicalAddr,
+    amount: u128,
+) -> StdResult<()> {
+    let mut balances_store = PrefixedStorage::new(PREFIX_BALANCES, store);
+
+    let mut from_balance = read_u128(&balances_store, from.as_slice())?;
+    if from_balance < amount {
+        return Err(generic_err(format!(
+            "Insufficient funds: balance={}, required={}",
+            from_balance, amount
+        )));
+    }
+    from_balance -= amount;
+    balances_store.set(from.as_slice(), &from_balance.to_be_bytes())?;
+
+    let mut to_balance = read_u128(&balances_store, to.as_slice())?;
+    to_balance += amount;
+    balances_store.set(to.as_slice(), &to_balance.to_be_bytes())?;
+
+    Ok(())
+}
+```
+
+```rust
+// Converts 16 bytes value into u128
+// Errors if data found that is not 16 bytes
+pub fn bytes_to_u128(data: &[u8]) -> StdResult<u128> {
+    match data[0..16].try_into() {
+        Ok(bytes) => Ok(u128::from_be_bytes(bytes)),
+        Err(_) => Err(generic_err("Corrupted data found. 16 byte expected.")),
+    }
+}
+
+// Reads 16 byte storage value into u128
+// Returns zero if key does not exist. Errors if data found that is not 16 bytes
+pub fn read_u128<S: ReadonlyStorage>(store: &S, key: &[u8]) -> StdResult<u128> {
+    let result = store.get(key)?;
+    match result {
+        Some(data) => bytes_to_u128(&data),
+        None => Ok(0u128),
+    }
+}
+
+fn read_balance<S: Storage>(store: &S, owner: &CanonicalAddr) -> StdResult<u128> {
+    let balance_store = ReadonlyPrefixedStorage::new(PREFIX_BALANCES, store);
+    read_u128(&balance_store, owner.as_slice())
 }
 ```
 
@@ -313,23 +394,6 @@ pub fn query<S: Storage, A: Api, Q: Querier>(
             let balance = read_balance(&deps.storage, &address_key)?;
             let out = to_binary(&BalanceResponse {
                 balance: Uint128::from(balance),
-            })?;
-            Ok(out)
-        }
-        QueryMsg::Allowance { owner, spender } => {
-            let owner_key = deps.api.canonical_address(&owner)?;
-            let spender_key = deps.api.canonical_address(&spender)?;
-            let allowance = read_allowance(&deps.storage, &owner_key, &spender_key)?;
-            let out = to_binary(&AllowanceResponse {
-                allowance: Uint128::from(allowance),
-            })?;
-            Ok(out)
-        }
-        QueryMsg::CoinDetails {} => {
-            let out = to_binary(&CoinDetailsResponse {
-                name: "a".to_string(),
-                symbol: "a".to_string(),
-                decimals: 3,
             })?;
             Ok(out)
         }
