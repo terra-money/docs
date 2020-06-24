@@ -1,6 +1,18 @@
 # Writing the Contract
 
-Now that we've figured out the specification, we can start implementing our contract in code.
+A smart contract can be considered an instance of a singleton object whose internal state is persisted on the blockchain. Users can trigger state changes through sending it JSON messages, and users can also query its state through sending a request formatted as a JSON message. These messages are different than Terra blockchain messages such as `MsgSend` and `MsgSwap`.
+
+::: warning NOTE
+Going forward, it is important to be aware of the distinction between native messages intended for inclusion within transactions, and messages that invoke smart contract functions.
+:::
+
+As a smart contract writer, your job is to define 3 functions that define your smart contract's interface:
+
+- `init()`: a constructor which is called during contract instantiation to provide initial state
+- `handle()`: gets called when a user wants to invoke a method on the smart contract
+- `query()`: gets called when a user wants to get data out of a smart contract
+
+In this section, we'll define our expected messages alongside their implementation.
 
 ## Start with a template
 
@@ -8,27 +20,104 @@ In your working directory, you'll want to use `cargo-generate` to start your sma
 
 ```sh
 cargo generate --git https://github.com/CosmWasm/cosmwasm-template.git --name my-terra-token
+cd my-terra-token
 ```
 
-## Implementing messages
+This helps get you started by prepopulating the requisite boilerplate for a smart contract. You'll find in the `src/lib.rs` file that the standard CosmWasm entrypoints `init()`, `handle()`, and `query()` are properly exposed and hooked up.
 
-We'll first start by defining our messages using `struct`. This defines a data structure that will represent our message -- which is intended to be passed from the user to blockchain nodes through JSON.
+## Contract State
 
-#### src/msg.rs
+Now that we've defined our interface, we need to specify the state requirements of our contract. Terra smart contracts have access to the same state storage facilities (by default, a key-value store with bytes keys and bytes values) as the rest of the blockchain.
 
-Each data structure will be needed to be prefixed by a long derive macro which will provide implementations for traits to make it simpler for serialization between JSON and Rust and debugging.
+For our example smart contract, we will need:
 
-- `Serialize`: add serializer
-- `Deserialize`: add deserializer
-- `Clone`: enable struct to be cloned
-- `PartialEq`: allow struct to be compared for equality
-- `JsonSchema`: generates JSON schema
+- a `struct` holding our contract config:
+  - `String` token name
+  - `String` token symbol
+- mapping from `address` account to `Uint128` balance
+
+Since we are using a simple key-value store system to store our state, we'll have to implement the mappings using prefix-keys. To illustrate this, we will use a similar scheme to one where `abc["def"] = 5` would be implemented as `store("abc-def", 5)`, and `abc["eggzz"] = 5` will be: `store("abc-eggzz", 5)`.
+
+```rust
+use schemars::JsonSchema;
+use serde::{Deserialize, Serialize};
+
+use cosmwasm_std::{CanonicalAddr, Storage};
+use cosmwasm_storage::{
+    singleton, singleton_read, PrefixedStorage, ReadonlyPrefixedStorage, ReadonlySingleton,
+    Singleton,
+};
+
+pub static CONFIG_KEY: &[u8] = b"config";
+pub static BALANCE_KEY: &[u8] = b"balance";
+
+#[derive(Serialize, Deserialize, Clone, Debug, PartialEq, JsonSchema)]
+pub struct State {
+    pub name: String,
+    pub ticker: String,
+    pub owner: CanonicalAddr,
+}
+
+pub fn config<S: Storage>(storage: &mut S) -> Singleton<S, State> {
+    singleton(storage, CONFIG_KEY)
+}
+
+pub fn config_read<S: Storage>(storage: &S) -> ReadonlySingleton<S, State> {
+    singleton_read(storage, CONFIG_KEY)
+}
+
+pub fn balance<S: Storage>(storage: &mut S) -> PrefixedStorage<S> {
+    PrefixedStorage::new(BALANCE_KEY, storage)
+}
+
+pub fn balance_read<S: Storage>(storage: &S) -> ReadonlyPrefixedStorage<S> {
+    ReadonlyPrefixedStorage::new(BALANCE_KEY, storage)
+}
+```
+
+
+## InitMsg
+
+The `InitMsg` is provided when a user creates a contract on the blockchain through a `MsgInstantiateContract`. This provides the contract with its configuration as well as its initial state. 
+
+On the Terra blockchain, the uploading of a contract's code and the instantiation of a contract is regarded as separate events, unlike with Ethereum. This is to allow a small set of vetted contract archetypes to exist with multiple instances, each sharing the same base code but configured with different parameters (imagine one canonical ERC20, and multiple tokens that use its code).
+
+### Example
+
+For our contract, we will expect a contract creator to supply the relevant information in a JSON message such as the following:
+
+```json
+{
+  "name": "MyTerraToken",
+  "symbol": "MTT",
+  "initial_balances": [
+    {
+      "address": "terra...",
+      "amount": "10000"
+    },
+    {
+      "address": "terra...",
+      "amount": "5000"
+    }
+  ]
+}
+```
+
+### Message Definition
+
+Here's our `InitMsg` -- as you can see, it maps quite naturally to the JSON representation we had used in the spec. Since the there is only one `InitMsg` type, we're using a `struct`. We represent the list of initial balances using a vector of `InitialBalance`- another `struct`, to represent the array of objects in `initial_balances`. 
+
+::: warning NOTE
+Note that we have to use `Uint128` instead of `u128`, which is a wrapped representation of an unsigned 128-bit integer provided to us by the CosmWasm API. This serializes and deserializes with strings behind the scenes.
+:::
 
 ::: warning NOTE
 `HumanAddr` here refers to the "human-readable" `terra-` account address.
 :::
 
+
 ```rust
+// src/msg.rs
 use schemars::JsonSchema;
 use serde::{Deserialize, Serialize};
 
@@ -44,71 +133,20 @@ pub struct InitialBalance {
 pub struct InitMsg {
     pub name: String,
     pub symbol: String,
-    pub decimals: u8,
     pub initial_balances: Vec<InitialBalance>,
 }
 ```
 
-As for our `HandleMsg`, we will use an enum to multiplex over the different types of messages that our contract can understand. We use the `serde` macro to rewrite the attribute key names to use snake-case, so we'll have `transfer_from` instead of `TransferFrom`.
+### Logic
+
+Here we define our first entry-point, the `init()`, or where the contract is instantiated and passed its `InitMsg`. We need to set up all the initial state:
+
+1. the constants that define the contract's configuration (name, symbol)
+2. the initial balances of all the accounts
 
 ```rust
-#[derive(Serialize, Deserialize, JsonSchema)]
-#[serde(rename_all = "snake_case")]
-pub enum HandleMsg {
-  Approve {
-    spender: HumanAddr,
-    amount: Uint128,
-  },
-  Transfer {
-    recipient: HumanAddr,
-    amount: Uint128,
-  },
-  TransferFrom {
-    owner: HumanAddr,
-    recipient: HumanAddr,
-    amount: Uint128,
-  },
-  Burn {
-    amount: Uint128,
-  },
-}
-```
+// src/contract.rs
 
-For our `QueryMsg`, we'll have to also define the structure of the responses because `query()` will send back information back to the user through JSON.
-
-```rust
-#[derive(Serialize, Deserialize, Clone, Debug, PartialEq, JsonSchema)]
-#[serde(rename_all = "snake_case")]
-pub enum QueryMsg {
-  Balance {
-    address: HumanAddr,
-  },
-  Allowance {
-    owner: HumanAddr,
-    spender: HumanAddr,
-  },
-}
-
-#[derive(Serialize, Deserialize, Clone, PartialEq, JsonSchema)]
-pub struct BalanceResponse {
-    pub balance: Uint128,
-}
-
-#[derive(Serialize, Deserialize, Clone, PartialEq, JsonSchema)]
-pub struct AllowanceResponse {
-    pub allowance: Uint128,
-}
-```
-
-## Main contract logic
-
-After we've defined our messages, we can move on to the main contract logic.
-
-#### src/contract.rs
-
-### init()
-
-```rust
 pub fn init<S: Storage, A: Api, Q: Querier>(
     deps: &mut Extern<S, A, Q>,
     _env: Env,
@@ -126,21 +164,6 @@ pub fn init<S: Storage, A: Api, Q: Querier>(
         }
     }
 
-    // Check name, symbol, decimals
-    if !is_valid_name(&msg.name) {
-        return Err(generic_err(
-            "Name is not in the expected format (3-30 UTF-8 bytes)",
-        ));
-    }
-    if !is_valid_symbol(&msg.symbol) {
-        return Err(generic_err(
-            "Ticker symbol is not in expected format [A-Z]{3,6}",
-        ));
-    }
-    if msg.decimals > 18 {
-        return Err(generic_err("Decimals must not exceed 18"));
-    }
-
     let mut config_store = PrefixedStorage::new(PREFIX_CONFIG, &mut deps.storage);
     let constants = to_vec(&Constants {
         name: msg.name,
@@ -154,7 +177,60 @@ pub fn init<S: Storage, A: Api, Q: Querier>(
 }
 ```
 
-### handle()
+## HandleMsg
+
+The `HandleMsg` is a JSON message passed to the `handle()` function through a `MsgExecuteContract`. Unlike the `InitMsg`, the `HandleMsg` can exist as several different types of messages, to account for the different types of functions that a smart contract can expose to a user. The `handle()` function demultiplexes these different types of messages to its appropriate message handler logic.
+
+### Example
+
+For our simple token example, we want to support the following functions:
+
+#### Transfer
+
+A user can _transfer_ tokens to another account, from its own balance.
+
+```json
+{
+  "transfer": {
+    "recipient": "terra...",
+    "amount": "1000"
+  }
+}
+```
+
+#### Burn
+
+A user can _burn_ their tokens, permanently removing them from the supply.
+
+```json
+{
+  "burn": {
+    "amount": "1000"
+  }
+}
+```
+
+### Message Definition
+
+As for our `HandleMsg`, we will use an `enum` to multiplex over the different types of messages that our contract can understand. The `serde` attribute rewrites our attribute keys in snake case and lower case, so we'll have `transfer` and `burn` instead of `Transfer` and `Burn` when serializing and deserializing across JSON. 
+
+```rust
+// src/msg.rs
+
+#[derive(Serialize, Deserialize, JsonSchema)]
+#[serde(rename_all = "snake_case")]
+pub enum HandleMsg {
+  Transfer {
+    recipient: HumanAddr,
+    amount: Uint128,
+  },
+  Burn {
+    amount: Uint128,
+  },
+}
+```
+
+### Logic
 
 ```rust
 pub fn handle<S: Storage, A: Api, Q: Querier>(
@@ -175,9 +251,58 @@ pub fn handle<S: Storage, A: Api, Q: Querier>(
 }
 ```
 
-### query()
+## QueryMsg
+
+### Example
+
+Our contract will just support 1 type of query message:
+
+#### Balance
+
+```json
+{
+  "balance": {
+    "address": "terra..."
+  }
+}
+```
+
+Which should return:
+
+```json
+{
+  "balance": "1000"
+}
+```
+
+### Message Definition
+
+To support queries against our contract for data, we'll have to define both a `QueryMsg` format (which represents requests), as well as provide the structure of the query's output -- `BalanceResponse` in this case. We must do this because `query()` will send back information to the user through JSON in a structure and we must make the shape of our response known.
 
 ```rust
+// src/msg.rs
+
+#[derive(Serialize, Deserialize, Clone, Debug, PartialEq, JsonSchema)]
+#[serde(rename_all = "snake_case")]
+pub enum QueryMsg {
+  Balance {
+    address: HumanAddr,
+  },
+}
+
+#[derive(Serialize, Deserialize, Clone, PartialEq, JsonSchema)]
+pub struct BalanceResponse {
+    pub balance: Uint128,
+}
+```
+
+### Logic
+
+After we've defined our messages, we can move on to the main contract logic.
+
+```rust
+// src/contract.rs
+
 pub fn query<S: Storage, A: Api, Q: Querier>(
     deps: &Extern<S, A, Q>,
     msg: QueryMsg,

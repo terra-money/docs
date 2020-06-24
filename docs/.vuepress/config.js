@@ -100,7 +100,6 @@ module.exports = {
           children: [
             "/dapps/tutorial/",
             "/dapps/tutorial/setup",
-            "/dapps/tutorial/spec",
             "/dapps/tutorial/implementation",
           ],
         },
