@@ -382,7 +382,7 @@ Which should return:
 
 ### Message Definition
 
-To support queries against our contract for data, we'll have to define both a `QueryMsg` format (which represents requests), as well as provide the structure of the query's output -- `BalanceResponse` in this case. We must do this because `query()` will send back information to the user through JSON in a structure and we must make the shape of our response known.
+To support queries against our contract for data, we'll have to define both a `QueryMsg` format (which represents requests), as well as provide the structure of the query's output -- `BalanceResponse` and `ConfigResponse` in this case. We must do this because `query()` will send back information to the user through JSON in a structure and we must make the shape of our response known.
 
 ```rust
 // src/msg.rs
@@ -409,7 +409,7 @@ pub struct ConfigResponse {
 
 ### Logic
 
-After we've defined our messages, we can move on to the main contract logic.
+The logic for `query()` should be similar to that of `handle()`, except that, since `query()` is called without the end-user making a transaction, there is no information, we omit the `env` argument.
 
 ```rust
 // src/contract.rs

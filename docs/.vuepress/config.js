@@ -96,12 +96,14 @@ module.exports = {
       "/dapps/": [
         "/dapps/",
         {
-          title: "My First dApp",
+          title: "Tutorial",
           children: [
             "/dapps/tutorial/",
             "/dapps/tutorial/setup",
             "/dapps/tutorial/implementation",
+            "/dapps/tutorial/uploading",
           ],
+          collapsable: false,
         },
       ],
       "/dev/": [
