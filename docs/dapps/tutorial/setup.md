@@ -2,6 +2,10 @@
 
 As a smart contract developer, you will need to write, compile, upload, and test your contracts before deploying them to be used on the Columbus mainnet. As this development process can involve manually juggling multiple moving parts over many iterations, it is helpful to first set up a specialized environment to streamline development.
 
+## Install Terra Core locally
+
+Follow the instructions [here](../../node/installation.md) to install the latest version of Terra Core to obtain a working version of `terracli`. You will need this to connect to your local Terra test network, for working with smart contracts.
+
 ## Download localterra
 
 In order to work with Terra Smart Contracts, you should have access to a Terra network that includes the WASM integration.
@@ -13,7 +17,7 @@ To use **localterra**, you should first make sure Docker is installed on your co
 ```sh
 git clone https://github.com/terra-project/localterra
 cd localterra
-docker build -t terracore localterra-terracore 
+docker build -t terracore localterra-terracore
 docker-compose up
 ```
 
@@ -31,7 +35,7 @@ satisfy adjust timber high purchase tuition stool faith fine install that you un
 
 ## Install Rust
 
-While WASM smart contracts can theoretically be written in any programming language, we currently only recommend using Rust as it is the only language for which mature libraries and tooling exist for CosmWasm. For this tutorial, you'll need to also install the latest version of Rust by following the instructions [here](https://www.rust-lang.org/tools/install) and [here](https://forge.rust-lang.org/infra/other-installation-methods.html).
+While WASM smart contracts can theoretically be written in any programming language, we currently only recommend using Rust as it is the only language for which mature libraries and tooling exist for CosmWasm. For this tutorial, you'll need to also install the latest version of Rust by following the instructions [here](https://www.rust-lang.org/tools/install).
 
 Once you'll installed Rust and its toolchain (cargo et al.), you'll need to add the `wasm32-unknown-unknown` compilation target.
 
@@ -45,7 +49,3 @@ Then, install `cargo-generate`, which we will need for bootstrapping new CosmWas
 ```sh
 cargo install cargo-generate --features vendored-openssl
 ```
-
-## Install WABT (optional)
-
-Although not required, we recommend having the WebAssembly Binary Toolkit (aka. WABT) installed on your system in case you want to learn more about the internals of the CosmWasm smart contracts. This will allow you to disassemble and further analyze the WASM output of your smart contracts. You can find details on how to install it [here](https://github.com/WebAssembly/wabt).

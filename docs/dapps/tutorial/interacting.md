@@ -93,7 +93,7 @@ We have now uploaded the code for our contract, but we still don't have a contra
 We will compress the JSON into 1 line with [this online tool](https://codebeautify.org/jsonminifier).
 
 ```sh
-terracli tx wasm instantiate 1 '{"name":"MyTerraToken","symbol":"MTT","initial_balances":[{"address":"terra1dcegyrekltswvyy0xy69ydgxn9x8x32zdtapd8","amount":"100000"}]}' --from test1 --chain-id=localterra --gas=auto --broadcast-mode=block'
+terracli tx wasm instantiate 1 '{"name":"MyTerraToken","symbol":"MTT","initial_balances":[{"address":"terra1dcegyrekltswvyy0xy69ydgxn9x8x32zdtapd8","amount":"100000"}]}' --from test1 --chain-id=localterra --gas=auto --broadcast-mode=block
 ```
 
 You should get a response like the following:
@@ -130,7 +130,7 @@ tx: null
 timestamp: ""
 ```
 
-From the output, we see that our contract was created above at: `terra18vd8fpwxzck93qlwghaj6arh4p7c5n896xzem5` (yours will be different). Take note of this contract address, as we will need it for the next section.
+From the output, we see that our contract was created above at: `terra18vd8fpwxzck93qlwghaj6arh4p7c5n896xzem5`. Take note of this contract address, as we will need it for the next section.
 
 Check out your contract information:
 
@@ -157,6 +157,8 @@ Now, let's do the following:
 
 This should leave us with 55000 tokens.
 
+#### Burning tokens
+
 First, to burn:
 
 ```json
@@ -170,6 +172,8 @@ First, to burn:
 ```sh
 terracli tx wasm execute terra18vd8fpwxzck93qlwghaj6arh4p7c5n896xzem5 '{"burn":{"amount":"15000"}}' --from test1 --chain-id=localterra --gas=auto --broadcast-mode=block
 ```
+
+#### Transferring Tokens
 
 Finally, to send:
 
@@ -186,6 +190,8 @@ Finally, to send:
 terracli tx wasm execute terra18vd8fpwxzck93qlwghaj6arh4p7c5n896xzem5 '{"transfer":{"amount":"30000","recipient":"terra18putj9puq4jqcgmk6hje44fyh4hf9nsuwxj9vy"}}' --from test1 --chain-id=localterra --gas=auto --broadcast-mode=block
 ```
 
+#### Querying balances
+
 Let's check the result of our executions!
 
 ```json
@@ -201,4 +207,37 @@ terracli query wasm contract-store terra18vd8fpwxzck93qlwghaj6arh4p7c5n896xzem5 
 {"balance":"55000"}
 ```
 
-Excellent! Congratulations, you've created your first smart contract!
+```sh
+terracli query wasm contract-store terra18vd8fpwxzck93qlwghaj6arh4p7c5n896xzem5 '{"balance":{"address":"terra18putj9puq4jqcgmk6hje44fyh4hf9nsuwxj9vy"}}'
+{"balance":"30000"}
+```
+
+#### Querying contract details
+
+```json
+{
+  "config": {}
+}
+```
+
+```sh
+terracli query wasm contract-store terra18vd8fpwxzck93qlwghaj6arh4p7c5n896xzem5 '{"config":{}}'
+{"name":"MyTerraToken","symbol":"MTT","owner":"terra1dcegyrekltswvyy0xy69ydgxn9x8x32zdtapd8"}
+```
+
+Excellent! Congratulations, you've created your first smart contract, and now know how to get developing with the Terra dApp Platform.
+
+## What's Next?
+
+We've only walked through a simple example of a smart contract, that modifies a simple balance within its internal state. Although this is enough to make a simple dApp, we can power more interesting applications by **emitting messagess**, which will enable us to interact with other contracts as well as the rest of the blockchain's module.
+
+Check out a couple more examples of smart contracts on Terra at our [repo](https://github.com/terra-project/cosmwasm-contracts).
+
+## Exercises
+
+Try the following problems to improve your understanding of how to write smart contracts:
+
+- create a new variable to store that keeps track of everybody who has an active balance
+- create a new query function that returns the total supply
+- create a new contract function "Burn All" which allows only the contract owner to delete all coins from existence
+- create a new contract function "Mint" which allows only the contract owner to create an amount of coins

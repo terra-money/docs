@@ -86,7 +86,7 @@ Next, we define our `Config` struct, which will hold `name`, `symbol`, and `owne
 - `PartialEq`: gives us eqality comparison
 - `JsonSchema`: auto-generates a JSON schema for us
 
-Something to note here is that `CanonicalAddr` refers to a Terra address's native decoded Bech32 form in bytes. Its counterpart is the `HumanAddr`, which represents a human-readable address starting `terra...`.
+Something to note here is that `CanonicalAddr` refers to a Terra address's native decoded Bech32 form in bytes. Its counterpart is the `HumanAddr`, which represents a human-readable address prefixed with `terra...`.
 
 When working with storage of account addresses for the contract, prefer to use the `CanonicalAddr`. When sending back data to the user, or expecting using input prefer the `HumanAddr` (and convert it to `CanonicalAddr` to work with it inside your contract).
 
@@ -475,12 +475,12 @@ pub fn query<S: Storage, A: Api, Q: Querier>(
     match msg {
         QueryMsg::Balance { address } => {
             let address = deps.api.canonical_address(&address)?;
-            let balance = balance_of(&deps.storage, &address);
+            let balance = balance_get(&deps.storage, &address);
             let out = to_binary(&BalanceResponse { balance })?;
             Ok(out)
         }
         QueryMsg::Config {} => {
-            let config = config_read(&deps.storage).load()?;
+            let config = config_get(&deps.storage)?;
             let out = to_binary(&ConfigResponse {
                 name: config.name,
                 symbol: config.symbol,
