@@ -96,7 +96,7 @@ Where `proposal.json` contains the following:
 
 #### Tax-Rate and Reward-Weight Update Proposals
 
-Tax Rate and Reward Weight are important monetary policy levers handled by the [`Treasury`](./spec-treasury.md) module to modulate miner incentives toward stable demand and steady growth. Usually, they are automatically calibrated once per epoch by the protocol. However, they can be changed at any moment if an update proposal gets passed with enough supporters.
+Tax Rate and Reward Weight are important monetary policy levers handled by the [`Treasury`](../dev/spec-treasury.md) module to modulate miner incentives toward stable demand and steady growth. Usually, they are automatically calibrated once per epoch by the protocol. However, they can be changed at any moment if an update proposal gets passed with enough supporters.
 
 To submit Tax Rate or Reward Weight update proposal, you must provide a proposal file as its contents are less friendly to CLI input:
 
@@ -150,7 +150,7 @@ Where `proposal.json` contains the following:
 }
 ```
 
-Note that Tax Reward and Reward Weight updates through pased Governance proposals are subject to [Policy Constraints](./spec-treasury.md#policy-constraints).
+Note that Tax Reward and Reward Weight updates through passed Governance proposals are subject to [Policy Constraints](../dev/spec-treasury.md#policy-constraints).
 
 ### Software Upgrade Proposals
 

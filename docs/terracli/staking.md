@@ -2,7 +2,7 @@
 
 ## Set up a Validator
 
-Please refer to the [Validator Setup](../validator/getting-started.md) section for a more complete guide on how to set up a validator-candidate.
+Please refer to the [Validator Setup](../validator/setup.md) section for a more complete guide on how to set up a validator-candidate.
 
 ## Delegate to a Validator
 

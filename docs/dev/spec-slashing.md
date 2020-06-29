@@ -12,8 +12,7 @@ At the beginning of each block, the Slashing module checks for evidence of infra
 
 #### Evidence Handling
 
-Tendermint blocks can include
-[Evidence](https://github.com/tendermint/tendermint/blob/master/docs/spec/blockchain/blockchain.md#evidence), which indicates that a validator committed malicious
+Tendermint blocks can include evidence, which indicates that a validator committed malicious
 behavior. The relevant information is forwarded to the application as ABCI Evidence
 in `abci.RequestBeginBlock` so that the validator an be accordingly punished.
 
