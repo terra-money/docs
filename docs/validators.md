@@ -1,6 +1,6 @@
 # Validators
 
-Validators are network participants that, in addition to running a full node, listen to transactions broadcasted in the network's mempool and include them in blocks that they sign. For more details on validators, check the [validator FAQ](..validator/faq).
+Validators are network participants that, in addition to running a full node, listen to transactions broadcasted in the network's mempool and include them in blocks that they sign. For more details on validators, check the [validator FAQ](../validator/faq.md).
 
 In order to do so and reliably to meet the scalability, security, and finality requirements of the Terra network, they typically run specially configured architectures that are robust against many forms of attacks on distributed networks.
 
@@ -14,11 +14,11 @@ A validator's **voting power** is proportional to the amount of Luna they have b
 
 ### Slashing Risks
 
-Running validator is a big responsibility, which is why only the top 100 in bonded Luna stake are elected to sign blocks. As such, safety and liveness guarantees must be met, at the risk of having their validator's stake slashed (penalized), hurting both the validator's funds (as well as their delegator's), and their reputation. 
+Running validator is a big responsibility, which is why only the top 100 in bonded Luna stake are elected to sign blocks. As such, safety and liveness guarantees must be met, at the risk of having their validator's stake slashed (penalized), hurting both the validator's funds (as well as their delegator's), and their reputation.
 
 The major slashing conditions are:
 
-- **double signing**: a validator signed two different blocks with the same chain ID at the same height 
+- **double signing**: a validator signed two different blocks with the same chain ID at the same height
 - **downtime**: a validator was non-responsive / couldn't be reached for more than an amount of time
 - **too many missed oracle votes**: a validator failed to report a threshold amount of votes that lie within the weighted median in the exchange rate oracle
 
