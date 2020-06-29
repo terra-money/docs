@@ -6,11 +6,11 @@ Luna is the native staking token recognized by the Terra protocol. Through its r
 
 ## Staking Rewards
 
-The primary function of Luna is to protect the integrity of Terra mechanisms by locking value within the Terra ecosystem through staking. 
+The primary function of Luna is to protect the integrity of Terra mechanisms by locking value within the Terra ecosystem through staking.
 
 However, in providing network security, Luna holders and delegators are exposed to the risks of maintaining a long-term position on a fluctuating asset. **Staking rewards** therefore provide the incentives to keep long-term interest in Luna ownership.
 
-In the Terra protocol, staking rewards are first distributed to validators who take a commission for providing their operations, and then are withdrawn individually by delegators. 
+In the Terra protocol, staking rewards are first distributed to validators who take a commission for providing their operations, and then are withdrawn individually by delegators.
 
 Rewards from stake are determined largely by the relative size of stake, and are structured in such a way that rewards increase as transaction volume increases. Luna ownership is thus an investment in the long term growth of Terra.
 
@@ -27,7 +27,6 @@ Taxes are used as a stability fee, and the protocol charges a small percentage t
 ### Seigniorage Rewards
 
 Validators participate in the Luna exchange rate oracle process, and win rewards from the seigniorage pool every time they vote within the reward band, proportional to their stake.
-
 
 ## Phases of Luna
 
@@ -49,7 +48,7 @@ While Luna is bonded, it is considered **staked**, and generates rewards for the
 
 ### Unbonding
 
-Luna that is instructed to be undelegated from a delegator transition into an "unbonding" state during which neither rewards accrue nor the Luna can be freely traded. This unbonding phase takes 21 days to complete, after which the Luna return to an unbonded state. 
+Luna that is instructed to be undelegated from a delegator transition into an "unbonding" state during which neither rewards accrue nor the Luna can be freely traded. This unbonding phase takes 21 days to complete, after which the Luna return to an unbonded state.
 
 ::: warning NOTE
 

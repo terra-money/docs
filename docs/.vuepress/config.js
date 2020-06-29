@@ -83,6 +83,7 @@ module.exports = {
     },
     nav: [
       { text: "Docs", link: "/" },
+      { text: "dApps", link: "/dapps/" },
       { text: "Validators", link: "/validator/" },
       { text: "Core Devs", link: "/dev/" },
       {
@@ -92,6 +93,19 @@ module.exports = {
       },
     ],
     sidebar: {
+      "/dapps/": [
+        "/dapps/",
+        {
+          title: "Tutorial",
+          children: [
+            "/dapps/tutorial/",
+            "/dapps/tutorial/setup",
+            "/dapps/tutorial/implementation",
+            "/dapps/tutorial/interacting",
+          ],
+          collapsable: false,
+        },
+      ],
       "/dev/": [
         "/dev/",
         {
