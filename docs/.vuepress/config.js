@@ -101,7 +101,7 @@ module.exports = {
             "/dapps/tutorial/",
             "/dapps/tutorial/setup",
             "/dapps/tutorial/implementation",
-            "/dapps/tutorial/uploading",
+            "/dapps/tutorial/interacting",
           ],
           collapsable: false,
         },

@@ -7,7 +7,6 @@ In this tutorial, we will go over all the necessary steps to go from idea to exe
 1. How to set up your environment for smart contract development and testing
 2. The basic structure and execution model for smart contracts
 3. The local build, upload, and testing process
-4. How to wire a front-end application to your smart contract
 
 ### Requirements
 

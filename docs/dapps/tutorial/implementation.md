@@ -25,21 +25,33 @@ cd my-terra-token
 
 This helps get you started by prepopulating the requisite boilerplate for a smart contract. You'll find in the `src/lib.rs` file that the standard CosmWasm entrypoints `init()`, `handle()`, and `query()` are properly exposed and hooked up.
 
-## Contract State
+### or just follow along
 
-Now that we've defined our interface, we need to specify the state requirements of our contract.
+The following is the complete example of the contract, if you want to read a full implementation.
+
+```sh
+git clone https://github.com/terra-project/my-terra-token
+cd my-terra-token
+```
+
+## Contract State
 
 For our example smart contract, we will need:
 
-- a `struct` holding our contract config:
+- `Config`: a `struct` holding our contract configuration:
   - `String` token name
   - `String` token symbol
   - `CanonicalAddr` contract owner (creator)
-- mapping from `address` account to `Uint128` balance
+- `balances`: a mapping from `CanonicalAddr` account addresses to `Uint128` balance
 
-Terra smart contracts have access to the same low-level storage facilities as Terra Core. Any state we would like to persist must be translated into operations that a key-value store working with byte-based keys and byte-based values is able to perform. As such, you will need to be aware of how the data structures you need are stored as bytes -- including things you might take for granted in other environments, such as numbers.
+Terra smart contracts have the ability to keep persistent state across different executions through a bytes-based key-value store.
+Working at such a low level, you will need to be aware of how the data structures you need are stored as bytes -- including things you might take for granted in other environments, such as numbers. In order to save the data above, we need to find a way that they can be encoded (serialized) into raw bytes, and how those bytes can be converted back into data types that your contract logic can understand.
 
-Fortunately, however, the CosmWasm team has created the [cosmwasm_storage](https://github.com/CosmWasm/cosmwasm/tree/master/packages/storage) crate, which provides several higher-level abstractions that enable us to work with a "bucket" of `Uint128` directly without worrying about serializing / deserializing when `get()`-ing and `set()`-ing from the store.
+Fortunately, the CosmWasm team has provided has created the [cosmwasm_storage](https://github.com/CosmWasm/cosmwasm/tree/master/packages/storage) crate, which provides several higher-level abstractions that enable us to work with a "singleton" and "bucket", which provide us automatic serialization and deserialization.
+
+We'll use the singleton to store our `Config` struct, as it will be a simple data structure that exists at a single key. For our `balances`, we can use a bucket, which is a key-value store interface to implement a map. The bucket will store entries of type `Uint128`, a data type with serialization and deserialization that wraps a native Rust `u128`.
+
+Clear our `src/state.rs` and make the following changes:
 
 ```rust
 // src/state.rs
@@ -52,20 +64,50 @@ use cosmwasm_storage::{Bucket, ReadonlyBucket, ReadonlySingleton, Singleton};
 
 pub static CONFIG_KEY: &[u8] = b"config";
 pub static BALANCE_KEY: &[u8] = b"balance";
+```
 
+We first define the keys for our `Config` and `balance` data requirements. `balance` will be used as a prefix key to implement a mapping, using `address` as a subkey.
+
+```rust
 #[derive(Serialize, Deserialize, Clone, Debug, PartialEq, JsonSchema)]
 pub struct Config {
     pub name: String,
     pub symbol: String,
     pub owner: CanonicalAddr,
 }
+```
 
-pub fn config<S: Storage>(storage: &mut S) -> Singleton<S, Config> {
-    Singleton::new(storage, CONFIG_KEY)
+Next, we define our `Config` struct, which will hold `name`, `symbol`, and `owner`. We use the `derive` attribute to auto-implement some useful traits:
+
+- `Serialize`: provides serialization
+- `Deserialize`: provides deserialization
+- `Clone`: makes our struct copyable
+- `Debug`: enables our struct to be printed to string
+- `PartialEq`: gives us eqality comparison
+- `JsonSchema`: auto-generates a JSON schema for us
+
+Something to note here is that `CanonicalAddr` refers to a Terra address's native decoded Bech32 form in bytes. Its counterpart is the `HumanAddr`, which represents a human-readable address starting `terra...`.
+
+When working with storage of account addresses for the contract, prefer to use the `CanonicalAddr`. When sending back data to the user, or expecting using input prefer the `HumanAddr` (and convert it to `CanonicalAddr` to work with it inside your contract).
+
+```rust
+pub fn config_get<S: Storage>(storage: &S) -> StdResult<Config> {
+    ReadonlySingleton::new(storage, CONFIG_KEY).load()
 }
 
-pub fn config_read<S: Storage>(storage: &S) -> ReadonlySingleton<S, Config> {
-    ReadonlySingleton::new(storage, CONFIG_KEY)
+pub fn config_set<S: Storage>(storage: &mut S, config: &Config) -> StdResult<()> {
+    Singleton::new(storage, CONFIG_KEY).save(config)
+}
+```
+
+We define a simple `get` and `set` function for our `Config` struct, using a singleton to store the data.
+
+```rust
+pub fn balance_get<S: Storage>(storage: &S, address: &CanonicalAddr) -> Uint128 {
+    match ReadonlyBucket::new(BALANCE_KEY, storage).may_load(address.as_slice()) {
+        Ok(Some(amount)) => amount,
+        _ => Uint128::zero(),
+    }
 }
 
 pub fn balance_set<S: Storage>(
@@ -75,14 +117,9 @@ pub fn balance_set<S: Storage>(
 ) -> StdResult<()> {
     Bucket::new(BALANCE_KEY, storage).save(address.as_slice(), amount)
 }
-
-pub fn balance_of<S: Storage>(storage: &S, address: &CanonicalAddr) -> Uint128 {
-    match ReadonlyBucket::new(BALANCE_KEY, storage).may_load(address.as_slice()) {
-        Ok(Some(amount)) => amount,
-        _ => Uint128::zero(),
-    }
-}
 ```
+
+We define a simple `get` and `set` function for our `balance` mapping. Notice that for our `get`, if we encounter an error such as the address does not exist, we report back a `Uint128::zero()`. This sets all the default balances for addresses not yet assigned to be zero.
 
 ## InitMsg
 
@@ -113,14 +150,10 @@ For our contract, we will expect a contract creator to supply the relevant infor
 
 ### Message Definition
 
-Here's our `InitMsg` -- as you can see, it maps quite naturally to the JSON representation we had used in the spec. Since the there is only one `InitMsg` type, we're using a `struct`. We represent the list of initial balances using a vector of `InitialBalance`- another `struct`, to represent the array of objects in `initial_balances`.
+Open up `src/msg.rs`, and clear and fill in the following:
 
 ::: warning NOTE
 Note that we have to use `Uint128` instead of `u128`, which is a wrapped representation of an unsigned 128-bit integer provided to us by the CosmWasm API. This serializes and deserializes with strings behind the scenes.
-:::
-
-::: warning NOTE
-`HumanAddr` here refers to the "human-readable" `terra-` account address.
 :::
 
 ```rust
@@ -152,6 +185,8 @@ Here we define our first entry-point, the `init()`, or where the contract is ins
 1. the constants that define the contract's configuration (name, symbol)
 2. the initial balances of all the accounts
 
+Open up `src/contract.rs`, clear the file, and add the following:
+
 ```rust
 // src/contract.rs
 
@@ -161,7 +196,7 @@ use cosmwasm_std::{
 };
 
 use crate::msg::{BalanceResponse, ConfigResponse, HandleMsg, InitMsg, QueryMsg};
-use crate::state::{balance_of, balance_set, config, config_read, Config};
+use crate::state::{balance_get, balance_set, config_get, config_set, Config};
 
 pub fn init<S: Storage, A: Api, Q: Querier>(
     deps: &mut Extern<S, A, Q>,
@@ -173,11 +208,14 @@ pub fn init<S: Storage, A: Api, Q: Querier>(
         let address = deps.api.canonical_address(&row.address)?;
         balance_set(&mut deps.storage, &address, &row.amount)?;
     }
-    config(&mut deps.storage).save(&Config {
-        name: msg.name,
-        symbol: msg.symbol,
-        owner: env.message.sender,
-    })?;
+    config_set(
+        &mut deps.storage,
+        &Config {
+            name: msg.name,
+            symbol: msg.symbol,
+            owner: env.message.sender,
+        },
+    )?;
 
     Ok(InitResponse::default())
 }
@@ -220,6 +258,8 @@ A user can _burn_ their tokens, permanently removing them from the supply.
 
 As for our `HandleMsg`, we will use an `enum` to multiplex over the different types of messages that our contract can understand. The `serde` attribute rewrites our attribute keys in snake case and lower case, so we'll have `transfer` and `burn` instead of `Transfer` and `Burn` when serializing and deserializing across JSON.
 
+Add the following to `src/msg.rs`:
+
 ```rust
 // src/msg.rs
 
@@ -238,6 +278,8 @@ pub enum HandleMsg {
 
 ### Logic
 
+Add the following to `src/contract.rs`:
+
 ```rust
 // src/contract.rs
 
@@ -253,9 +295,9 @@ pub fn handle<S: Storage, A: Api, Q: Querier>(
 }
 ```
 
-```rust
-// src/contract.rs
+This is our `handle()` method, which matches our message against different types of `HandleMsg`. This then dispatches either a `try_transfer()` or a `try_burn()` call, depending on the message received.
 
+```rust
 fn try_transfer<S: Storage, A: Api, Q: Querier>(
     deps: &mut Extern<S, A, Q>,
     env: Env,
@@ -267,7 +309,7 @@ fn try_transfer<S: Storage, A: Api, Q: Querier>(
     let recipient_address = &deps.api.canonical_address(recipient)?;
 
     // check that sender's funds covers
-    let mut sender_balance = balance_of(&deps.storage, sender_address);
+    let mut sender_balance = balance_get(&deps.storage, sender_address);
     if sender_balance < *amount {
         return Err(generic_err(format!(
             "Insufficient funds to send: balance={}, required={}",
@@ -276,7 +318,7 @@ fn try_transfer<S: Storage, A: Api, Q: Querier>(
     }
     // update balances
     sender_balance = (sender_balance - *amount)?;
-    let mut recipient_balance = balance_of(&deps.storage, recipient_address);
+    let mut recipient_balance = balance_get(&deps.storage, recipient_address);
     recipient_balance = recipient_balance + *amount;
 
     balance_set(&mut deps.storage, sender_address, &sender_balance)?;
@@ -298,6 +340,12 @@ fn try_transfer<S: Storage, A: Api, Q: Querier>(
 }
 ```
 
+It is quite straightforward to follow the logic of `try_transfer()`. In the first part, we need to ensure that the sender's token balance is not smaller than the amount that they wish to send. After, we need to calculate the new balances of the sender and the recipient, apply them with `balance_set()`. Finally, we need to create a `HandleResponse` which will tell the blockchain how to wrap up our contract execution:
+
+- `messages`: a list of messages to emit like `MsgSend`, `MsgSwap`, etc. This is where smart contracts can influence other modules on the Terra blockchain.
+- `log`: a list of key-value pairs to define emitted SDK events that can be subscribed to by clients and parsed by block explorers and applications to report important events or state changes that occured during the execution.
+- `data`: additional data that the contract can record
+
 ```rust
 // src/contract.rs
 
@@ -309,7 +357,7 @@ fn try_burn<S: Storage, A: Api, Q: Querier>(
     // canonical address
     let sender_address = &env.message.sender;
 
-    let mut sender_balance = balance_of(&deps.storage, sender_address);
+    let mut sender_balance = balance_get(&deps.storage, sender_address);
     if sender_balance < *amount {
         return Err(generic_err(format!(
             "Insufficient funds to burn: balance={}, required={}",
@@ -333,6 +381,8 @@ fn try_burn<S: Storage, A: Api, Q: Querier>(
     Ok(res)
 }
 ```
+
+The logic for burning is very similar to sending; instead of sending to a recipient and crediting that recipient with the corresponding amount, the sender simply loses the coins.
 
 ## QueryMsg
 
@@ -384,6 +434,8 @@ Which should return:
 
 To support queries against our contract for data, we'll have to define both a `QueryMsg` format (which represents requests), as well as provide the structure of the query's output -- `BalanceResponse` and `ConfigResponse` in this case. We must do this because `query()` will send back information to the user through JSON in a structure and we must make the shape of our response known.
 
+Add the following to your `src/msg.rs`:
+
 ```rust
 // src/msg.rs
 
@@ -411,6 +463,8 @@ pub struct ConfigResponse {
 
 The logic for `query()` should be similar to that of `handle()`, except that, since `query()` is called without the end-user making a transaction, there is no information, we omit the `env` argument.
 
+Add the following to your `src/contract.rs`:
+
 ```rust
 // src/contract.rs
 
@@ -437,3 +491,104 @@ pub fn query<S: Storage, A: Api, Q: Querier>(
     }
 }
 ```
+
+## Building the Contract
+
+To build your contract, run the following command. This will check for any preliminary errors before optimizing.
+
+```sh
+cargo wasm
+```
+
+### Optimizing your build
+
+::: warning NOTE
+You will need [Docker](https://www.docker.com) installed to run this command.
+:::
+
+You will need to make sure the output WASM binary is as small as possible in order to minimize fees and stay under the size limit for the blockchain. Run the following command in the root directory of your Rust smart contract's project folder.
+
+```sh
+docker run --rm -v "$(pwd)":/code \
+  --mount type=volume,source="$(basename "$(pwd)")_cache",target=/code/target \
+  --mount type=volume,source=registry_cache,target=/usr/local/cargo/registry \
+  cosmwasm/rust-optimizer:0.8.0
+```
+
+This will result in an optimized `contract.wasm` being produced in your working directory.
+
+## Schemas
+
+In order to make use of JSON-schema auto-generation, we should register each of the data structures that we need schemas for. Open up `examples/schema.rs` and insert the following:
+
+```rust
+use std::env::current_dir;
+use std::fs::create_dir_all;
+
+use cosmwasm_schema::{export_schema, remove_schemas, schema_for};
+
+use my_terra_token::msg::{BalanceResponse, ConfigResponse, HandleMsg, InitMsg, QueryMsg};
+use my_terra_token::state::Config;
+
+fn main() {
+    let mut out_dir = current_dir().unwrap();
+    out_dir.push("schema");
+    create_dir_all(&out_dir).unwrap();
+    remove_schemas(&out_dir).unwrap();
+
+    export_schema(&schema_for!(InitMsg), &out_dir);
+    export_schema(&schema_for!(HandleMsg), &out_dir);
+    export_schema(&schema_for!(QueryMsg), &out_dir);
+    export_schema(&schema_for!(Config), &out_dir);
+    export_schema(&schema_for!(BalanceResponse), &out_dir);
+    export_schema(&schema_for!(ConfigResponse), &out_dir);
+}
+```
+
+You can then build the schemas with:
+
+```sh
+cargo schema
+```
+
+Your newly generated schemas should be visible in your `schema/` directory. The following is an example of `schema/query_msg.json`.
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "QueryMsg",
+  "anyOf": [
+    {
+      "type": "object",
+      "required": ["balance"],
+      "properties": {
+        "balance": {
+          "type": "object",
+          "required": ["address"],
+          "properties": {
+            "address": {
+              "$ref": "#/definitions/HumanAddr"
+            }
+          }
+        }
+      }
+    },
+    {
+      "type": "object",
+      "required": ["config"],
+      "properties": {
+        "config": {
+          "type": "object"
+        }
+      }
+    }
+  ],
+  "definitions": {
+    "HumanAddr": {
+      "type": "string"
+    }
+  }
+}
+```
+
+You can use an online tool such as [JSON Schema Validator](https://www.jsonschemavalidator.net/) to test your input against the generated JSON schema.
