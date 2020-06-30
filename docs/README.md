@@ -60,7 +60,7 @@ Welcome to the official documentation for Terra, a decentralized financial infra
   <a href="/dapps/" class="card">
     <img src="/img/icon_smartcontract.svg"/>
     <div class="title">
-      Terra dApp Platform
+      Smart Contracts
     </div>
     <div class="text">
       Build dApps that leverage the robust infrastructure for decentralized finance provided by Terra.
