@@ -185,6 +185,7 @@ module.exports = {
             "terracli/slashing",
             "terracli/staking",
             "terracli/treasury",
+            "terracli/wasm",
           ],
         },
         "integrations",

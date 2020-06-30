@@ -148,7 +148,7 @@ By decoding the Base64 InitMsg:
 {"name":"MyTerraToken","symbol":"MTT","initial_balances":[{"address":"terra1dcegyrekltswvyy0xy69ydgxn9x8x32zdtapd8","amount":"100000"}]}
 ```
 
-## Interacting with the Contract
+## Executing the Contract
 
 Now, let's do the following:
 
