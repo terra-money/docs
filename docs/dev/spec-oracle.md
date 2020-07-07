@@ -129,6 +129,10 @@ Delegate validators will likely require you to deposit some funds (in Terra or L
 
 The `Operator` field contains the operator address of the validator (prefixed `terravaloper-`). The `Delegate` field is the account address (prefixed `terra-`) of the delegate account that will be submitting exchange rate related votes and prevotes on behalf of the `Operator`.
 
+### MsgAggregateExchangeRatePrevote
+
+### MsgAggregateExchangeRateVote
+
 ## State
 
 Oracle maintains several `KVStores`, each indexed as such:

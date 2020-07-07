@@ -2,6 +2,64 @@
 
 The Staking module enables Terra's Proof-of-Stake functionality by requiring validators to bond Luna, the native staking asset.
 
+## Message Types
+
+### MsgDelegate
+
+```go
+type MsgDelegate struct {
+	DelegatorAddress sdk.AccAddress `json:"delegator_address" yaml:"delegator_address"`
+	ValidatorAddress sdk.ValAddress `json:"validator_address" yaml:"validator_address"`
+	Amount           sdk.Coin       `json:"amount" yaml:"amount"`
+}
+```
+
+### MsgUndelegate
+
+```go
+type MsgUndelegate struct {
+	DelegatorAddress sdk.AccAddress `json:"delegator_address" yaml:"delegator_address"`
+	ValidatorAddress sdk.ValAddress `json:"validator_address" yaml:"validator_address"`
+	Amount           sdk.Coin       `json:"amount" yaml:"amount"`
+}
+```
+
+### MsgBeginRedelegate
+
+```go
+type MsgBeginRedelegate struct {
+	DelegatorAddress    sdk.AccAddress `json:"delegator_address" yaml:"delegator_address"`
+	ValidatorSrcAddress sdk.ValAddress `json:"validator_src_address" yaml:"validator_src_address"`
+	ValidatorDstAddress sdk.ValAddress `json:"validator_dst_address" yaml:"validator_dst_address"`
+	Amount              sdk.Coin       `json:"amount" yaml:"amount"`
+}
+```
+
+### MsgEditValidator
+
+```go
+type MsgEditValidator struct {
+	Description      Description    `json:"description" yaml:"description"`
+	ValidatorAddress sdk.ValAddress `json:"address" yaml:"address"`
+	CommissionRate    *sdk.Dec `json:"commission_rate" yaml:"commission_rate"`
+	MinSelfDelegation *sdk.Int `json:"min_self_delegation" yaml:"min_self_delegation"`
+}
+```
+
+### MsgCreateValidator
+
+```go
+type MsgCreateValidator struct {
+	Description       Description     `json:"description" yaml:"description"`
+	Commission        CommissionRates `json:"commission" yaml:"commission"`
+	MinSelfDelegation sdk.Int         `json:"min_self_delegation" yaml:"min_self_delegation"`
+	DelegatorAddress  sdk.AccAddress  `json:"delegator_address" yaml:"delegator_address"`
+	ValidatorAddress  sdk.ValAddress  `json:"validator_address" yaml:"validator_address"`
+	PubKey            crypto.PubKey   `json:"pubkey" yaml:"pubkey"`
+	Value             sdk.Coin        `json:"value" yaml:"value"`
+}
+```
+
 ## Transitions
 
 ### End-Block

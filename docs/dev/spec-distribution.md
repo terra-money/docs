@@ -18,9 +18,21 @@ Collected rewards are pooled globally and divided out passively to validators an
 
 The Community Pool is a reserve of tokens that is designated for funding projects that promote further adoption and stimulate growth for the Terra economy. The portion of seigniorage that is designated for ballot winners of the Exchange Rate Oracle is called the [Reward Weight](spec-treasury.md#reward-weight), a value governed by the Treasury. The rest of that seigniorage is all dedicated to the Community Pool.
 
+## Message Types
+
+### MsgModifyWithdrawAddress
+
+```
+```
+
+### MsgWithdrawDelegationReward
+
+### MsgWithdrawValidatorCommission
+
 ## Governance Proposals
 
 The Distribution module defines a special proposal that upon being passed, will disburse the coins specified in `Amount` to the `Recipient` account using funds from the Community Pool.
+
 
 ### `CommunityPoolSpendProposal`
 

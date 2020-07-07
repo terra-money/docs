@@ -110,6 +110,17 @@ type MsgSwap struct {
 
 A `MsgSwap` transaction denotes the `Trader`'s intent to swap their balance of `OfferCoin` for new denomination `AskDenom`, for both Terra<>Terra and Terra<>Luna swaps.
 
+### MsgSwapSend
+
+```go
+type MsgSwapSend struct {
+	FromAddress sdk.AccAddress `json:"from_address" yaml:"from_address"` // Address of the offer coin payer
+	ToAddress   sdk.AccAddress `json:"to_address" yaml:"to_address"`     // Address of the recipient
+	OfferCoin   sdk.Coin       `json:"offer_coin" yaml:"offer_coin"`     // Coin being offered
+	AskDenom    string         `json:"ask_denom" yaml:"ask_denom"`       // Denom of the coin to swap to
+}
+```
+
 ## State
 
 ### Terra Pool Delta δ
