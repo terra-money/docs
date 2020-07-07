@@ -6,6 +6,83 @@ Governance is the process through which participants within the Terra network ca
 
 Check the [Governance section of the `terracli` Reference](../terracli/governance.md) to see examples of how to participate in the Governance process.
 
+## Message Types
+
+### MsgSubmitProposal
+
+```go
+type MsgSubmitProposal struct {
+	Content        Content        `json:"content" yaml:"content"`
+	InitialDeposit sdk.Coins      `json:"initial_deposit" yaml:"initial_deposit"` //  Initial deposit paid by sender. Must be strictly positive
+	Proposer       sdk.AccAddress `json:"proposer" yaml:"proposer"`               //  Address of the proposer
+}
+```
+
+```json
+{
+	"type": "gov/MsgSubmitProposal",
+	"value": {
+		"content": {
+			"type": "gov/TextProposal",
+			"value": {
+				"title": "proposal name",
+				"description": "proposal desc"
+			}
+		},
+		"initial_deposit": [{
+			"denom": "uluna",
+			"amount": "999",
+		}],
+		"proposer": "terra..."
+	}
+}
+```
+
+### MsgDeposit
+
+```go
+type MsgDeposit struct {
+	ProposalID uint64         `json:"proposal_id" yaml:"proposal_id"` // ID of the proposal
+	Depositor  sdk.AccAddress `json:"depositor" yaml:"depositor"`     // Address of the depositor
+	Amount     sdk.Coins      `json:"amount" yaml:"amount"`           // Coins to add to the proposal's deposit
+}
+```
+
+```json
+{
+	"type": "gov/MsgDeposit",
+	"value": {
+		"proposal_id": "1",
+		"depositor": "terra...",
+		"amount": [{
+			"denom": "uluna",
+			"amount": "1"
+		}]
+	}
+}
+```
+
+### MsgVote
+
+```go
+type MsgVote struct {
+	ProposalID uint64         `json:"proposal_id" yaml:"proposal_id"` // ID of the proposal
+	Voter      sdk.AccAddress `json:"voter" yaml:"voter"`             //  address of the voter
+	Option     VoteOption     `json:"option" yaml:"option"`           //  option from OptionSet chosen by the voter
+}
+```
+
+```json
+{
+	"type": "gov/MsgVote",
+	"value": {
+		"proposal_id": "1",
+		"voter": "terra...",
+		"option": "NoWithVeto"
+	}
+}
+```
+
 ## Proposals
 
 ```go

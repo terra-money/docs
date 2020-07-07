@@ -108,6 +108,20 @@ type MsgSwap struct {
 }
 ```
 
+```json
+{
+   "type": "market/MsgSwap",
+   "value": {
+       "trader": "terra...",
+       "offer_coin": {
+           "denom": "umnt",
+           "amount": "999"
+       },
+       "ask_denom": "ukrw"
+   }
+}
+```
+
 A `MsgSwap` transaction denotes the `Trader`'s intent to swap their balance of `OfferCoin` for new denomination `AskDenom`, for both Terra<>Terra and Terra<>Luna swaps.
 
 ### MsgSwapSend
@@ -118,6 +132,21 @@ type MsgSwapSend struct {
 	ToAddress   sdk.AccAddress `json:"to_address" yaml:"to_address"`     // Address of the recipient
 	OfferCoin   sdk.Coin       `json:"offer_coin" yaml:"offer_coin"`     // Coin being offered
 	AskDenom    string         `json:"ask_denom" yaml:"ask_denom"`       // Denom of the coin to swap to
+}
+```
+
+```json
+{
+   "type": "market/MsgSwapSend",
+   "value": {
+       "from_address": "terra...",
+	   "to_address": "terra...",
+       "offer_coin": {
+           "denom": "umnt",
+           "amount": "999"
+       },
+       "ask_denom": "ukrw"
+   }
 }
 ```
 

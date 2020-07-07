@@ -6,6 +6,21 @@ The Slashing module enables Terra to disincentivize any attributable action by a
 
 ### MsgUnjail
 
+```go
+type MsgUnjail struct {
+    ValidatorAddr sdk.ValAddress `json:"address" yaml:"address"` // address of the validator operator
+}
+```
+
+```json
+{
+    "type": "cosmos/MsgUnjail",
+    "value": {
+        "address": "terravaloper..."
+    }
+}
+```
+
 ## Transitions
 
 ### Begin-Block

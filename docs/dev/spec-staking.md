@@ -14,6 +14,20 @@ type MsgDelegate struct {
 }
 ```
 
+```json
+{
+    "type": "staking/MsgDelegate",
+    "value": {
+        "delegator_address": "terra...",
+        "validator_address": "terravaloper...",
+        "amount": {
+            "denom": "uluna",
+            "amount": "999"
+        }
+    }
+}
+```
+
 ### MsgUndelegate
 
 ```go
@@ -21,6 +35,20 @@ type MsgUndelegate struct {
 	DelegatorAddress sdk.AccAddress `json:"delegator_address" yaml:"delegator_address"`
 	ValidatorAddress sdk.ValAddress `json:"validator_address" yaml:"validator_address"`
 	Amount           sdk.Coin       `json:"amount" yaml:"amount"`
+}
+```
+
+```json
+{
+    "type": "staking/MsgUndelegate",
+    "value": {
+        "delegator_address": "terra...",
+        "validator_address": "terravaloper...",
+        "amount": {
+            "denom": "uluna",
+            "amount": "999"
+        }
+    }
 }
 ```
 
@@ -35,6 +63,21 @@ type MsgBeginRedelegate struct {
 }
 ```
 
+```json
+{
+    "type": "staking/MsgBeginRedelegate",
+    "value": {
+        "delegator_address": "terra...",
+        "validator_src_address": "terravaloper...",
+        "validator_dst_address": "terravaloper...",
+        "amount": {
+            "denom": "uluna",
+            "amount": "999"
+        }
+    }
+}
+```
+
 ### MsgEditValidator
 
 ```go
@@ -43,6 +86,24 @@ type MsgEditValidator struct {
 	ValidatorAddress sdk.ValAddress `json:"address" yaml:"address"`
 	CommissionRate    *sdk.Dec `json:"commission_rate" yaml:"commission_rate"`
 	MinSelfDelegation *sdk.Int `json:"min_self_delegation" yaml:"min_self_delegation"`
+}
+```
+
+```json
+{
+    "type": "staking/MsgEditValidator",
+    "value": {
+        "Description": {
+            "moniker": "validator name",
+            "identity": "[do-not-modify]",
+            "website": "[do-not-modify]",
+            "details": "validator description..."
+        },
+        "address": "terravaloper...",
+        "commission_rate": "terravaloper...",
+        "commission_rate": "0.145000000000000000",
+        "min_self_delegation": null
+    }
 }
 ```
 
@@ -57,6 +118,33 @@ type MsgCreateValidator struct {
 	ValidatorAddress  sdk.ValAddress  `json:"validator_address" yaml:"validator_address"`
 	PubKey            crypto.PubKey   `json:"pubkey" yaml:"pubkey"`
 	Value             sdk.Coin        `json:"value" yaml:"value"`
+}
+```
+
+```json
+{
+    "type": "staking/MsgCreateValidator",
+    "value": {
+        "Description": {
+            "moniker": "validator name",
+            "identity": "<validator-keybase-id>",
+            "website": "https://validator.website",
+            "details": "validator description"
+        },
+        "commission": {
+            "rate": "1.000000000000000000",
+            "max_rate": "1.000000000000000000",
+            "max_change_rate": "1.000000000000000000"
+        },
+        "min_self_delegation": "1",
+        "delegator_address": "terra...",
+        "validator_address": "terravaloper...",
+        "pubkey": "terravalconspub...",
+        "value": {
+            "denom": "uluna",
+            "amount": "999"
+        }
+    }
 }
 ```
 
