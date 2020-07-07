@@ -116,11 +116,13 @@ module.exports = {
             "/dev/spec-distribution",
             "/dev/spec-governance",
             "/dev/spec-market",
+            "/dev/spec-msgauth",
             "/dev/spec-oracle",
             "/dev/spec-slashing",
             "/dev/spec-staking",
             "/dev/spec-supply",
             "/dev/spec-treasury",
+            "/dev/spec-wasm",
           ],
         },
         {
