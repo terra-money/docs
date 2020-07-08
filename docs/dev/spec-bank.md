@@ -19,6 +19,30 @@ type MsgSend struct {
 }
 ```
 
+::: details JSON Example
+
+```json
+{
+  "type": "bank/MsgSend",
+  "value": {
+    "from_address": "terra...",
+    "to_address": "terra...",
+    "amount": [
+      {
+        "denom": "uluna",
+        "amount": "999"
+      },
+      {
+        "denom": "ukrw",
+        "amount": "999"
+      }
+    ]
+  }
+}
+```
+
+:::
+
 The Bank module can be used to send coins from one `Account` (`terra-` prefixed account) to another. A `MsgSend` is constructed to facilitate the transfer. If the balance of coins in the `Account` is insufficient or the recipient `Account` is not allowed to receive the funds via Bank module, the transaction fails.
 
 ### MsgMultiSend
@@ -30,6 +54,61 @@ type MsgMultiSend struct {
     Outputs []Output `json:"outputs"`
 }
 ```
+
+::: details JSON Example
+
+```json
+{
+  "type": "bank/MsgMultiSend",
+  "value": {
+    "inputs": [
+      {
+        "address": "terra...",
+        "coins": [
+          {
+            "denom": "ukrw",
+            "amount": "999"
+          },
+          {
+            "denom": "uluna",
+            "amount": "999"
+          }
+        ]
+      }
+    ],
+    "outputs": [
+      {
+        "address": "terra...",
+        "coins": [
+          {
+            "denom": "ukrw",
+            "amount": "450"
+          },
+          {
+            "denom": "uluna",
+            "amount": "450"
+          }
+        ]
+      },
+      {
+        "address": "terra...",
+        "coins": [
+          {
+            "denom": "ukrw",
+            "amount": "449"
+          },
+          {
+            "denom": "uluna",
+            "amount": "449"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+:::
 
 The Bank module can be used to send multiple transactions at once. `Inputs` contains the incoming transactions, and `Outputs` contains the outgoing transactions. The coin balance of the `Inputs` and the `Outputs` must match exactly. Batching transactions via multisend has the benefit of conserving network bandwidth and gas fees.
 

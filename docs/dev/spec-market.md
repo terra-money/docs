@@ -24,15 +24,13 @@ To defend against this, the Market module enforces the following swap fees
 
   Using the same exchange rates above, swapping 1 SDT will return 980 KRT worth of Luna (2% of 1000 is 20, taken as the swap fee). In the other direction, 1 Luna would give you 9.8 SDT (2% of 10 = 0.2), or 9800 KRT (2% of 10,000 = 200).
 
-## Constant Product Market-Maker
+## Market Making Algorithm
 
-Starting with Columbus-3 (Vodka testnet), Terra now uses a Constant Product market-making algorithm to ensure liquidity for Terra<>Luna swaps. [^2]
+Terra uses a Constant Product market-making algorithm to ensure liquidity for Terra<>Luna swaps. [^2]
 
 [^2]: For a more in-depth treatment of our updated market-making algorithm, check Nick Platias's SFBW 2019 presentation [here](https://agora.terra.money/t/terra-stability-swap-mechanism-deep-dive-at-sfbw/135).
 
-Before, Terra had enforced a daily Luna supply change cap such that Luna could inflate or deflate only up to the cap in any given 24 hour period, after which further swaps would fail. This was to prevent excessive volatility in Luna supply which could lead to divesting attacks \(a large increase in Terra supply putting the peg at risk\) or consensus attacks \(a large increase in Luna supply being staked can lead to a consensus attack on the blockchain\).
-
-Now, with Constant Product, we define a value $CP$ set to the size of the Terra pool multiplied by a set **fiat value of Luna**, and ensure our market-maker maintains it as invariant during any swaps through adjusting the spread.
+With Constant Product, we define a value $CP$ set to the size of the Terra pool multiplied by a set **fiat value of Luna**, and ensure our market-maker maintains it as invariant during any swaps through adjusting the spread.
 
 ::: warning NOTE
 Our implementation of Constant Product diverges from Uniswap's, as we use the fiat value of Luna instead of the size of the Luna pool. This nuance means changes in Luna's price don't affect the product, but rather the size of the Luna pool.
@@ -108,19 +106,23 @@ type MsgSwap struct {
 }
 ```
 
+::: details JSON Example
+
 ```json
 {
-   "type": "market/MsgSwap",
-   "value": {
-       "trader": "terra...",
-       "offer_coin": {
-           "denom": "umnt",
-           "amount": "999"
-       },
-       "ask_denom": "ukrw"
-   }
+  "type": "market/MsgSwap",
+  "value": {
+    "trader": "terra...",
+    "offer_coin": {
+      "denom": "umnt",
+      "amount": "999"
+    },
+    "ask_denom": "ukrw"
+  }
 }
 ```
+
+:::
 
 A `MsgSwap` transaction denotes the `Trader`'s intent to swap their balance of `OfferCoin` for new denomination `AskDenom`, for both Terra<>Terra and Terra<>Luna swaps.
 
@@ -135,20 +137,26 @@ type MsgSwapSend struct {
 }
 ```
 
+::: details JSON Example
+
 ```json
 {
-   "type": "market/MsgSwapSend",
-   "value": {
-       "from_address": "terra...",
-	   "to_address": "terra...",
-       "offer_coin": {
-           "denom": "umnt",
-           "amount": "999"
-       },
-       "ask_denom": "ukrw"
-   }
+  "type": "market/MsgSwapSend",
+  "value": {
+    "from_address": "terra...",
+    "to_address": "terra...",
+    "offer_coin": {
+      "denom": "umnt",
+      "amount": "999"
+    },
+    "ask_denom": "ukrw"
+  }
 }
 ```
+
+:::
+
+A `MsgSendSwap` first performs a swap of `OfferCoin` into `AskDenom` and the sends the resulting coins to `ToAddress`. Tax is charged equivalent to
 
 ## State
 
@@ -256,4 +264,3 @@ The Market module emits the following events
 | `"trader"`    | trader's address |
 | `"swap_coin"` | swapped coins    |
 | `"swap_fee"`  | spread fee       |
-

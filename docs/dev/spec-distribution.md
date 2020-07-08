@@ -23,16 +23,46 @@ The Community Pool is a reserve of tokens that is designated for funding project
 ### MsgModifyWithdrawAddress
 
 ```
+
 ```
 
-### MsgWithdrawDelegationReward
+### MsgWithdrawDelegatorReward
+
+```go
+// msg struct for delegation withdraw from a single validator
+type MsgWithdrawDelegatorReward struct {
+	DelegatorAddress sdk.AccAddress `json:"delegator_address" yaml:"delegator_address"`
+	ValidatorAddress sdk.ValAddress `json:"validator_address" yaml:"validator_address"`
+}
+```
+
+::: details JSON Example
+
+There is an inconsistency between the message's name and its type.
+
+```json
+{
+  "type": "distribution/MsgWithdrawDelegationReward",
+  "value": {
+    "delegator_address": "terra...",
+    "validator_address": "terra..."
+  }
+}
+```
+
+:::
 
 ### MsgWithdrawValidatorCommission
+
+```go
+type MsgWithdrawValidatorCommission struct {
+	ValidatorAddress sdk.ValAddress `json:"validator_address" yaml:"validator_address"`
+}
+```
 
 ## Governance Proposals
 
 The Distribution module defines a special proposal that upon being passed, will disburse the coins specified in `Amount` to the `Recipient` account using funds from the Community Pool.
-
 
 ### `CommunityPoolSpendProposal`
 

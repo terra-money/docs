@@ -12,15 +12,19 @@ type MsgStoreCode struct {
 }
 ```
 
+::: details JSON Example
+
 ```json
 {
-    "type": "wasm/StoreCode",
-    "value": {
-        "sender": "terra...",
-        "wasm_byte_code": "QmFzZTY0LWVuY29kZWQgV0FTTSBiaW5hcnk="
-    }
+  "type": "wasm/StoreCode",
+  "value": {
+    "sender": "terra...",
+    "wasm_byte_code": "QmFzZTY0LWVuY29kZWQgV0FTTSBiaW5hcnk="
+  }
 }
 ```
+
+:::
 
 ### MsgInstantiateContract
 
@@ -34,23 +38,27 @@ type MsgInstantiateContract struct {
 }
 ```
 
+::: details JSON Example
+
 ```json
 {
-    "type": "wasm/InstantiateContract",
-    "value": {
-        "owner": "terra...",
-        "code_id": "23",
-        "init_msg": "eyJlbmNvZGVkIjogIkpTT04gbWVzc2FnZSJ9",
-        "init_coins": [
-            {
-                "denom": "uluna",
-                "amount": "999"
-            }
-        ],
-        "migratable": false
-    }
+  "type": "wasm/InstantiateContract",
+  "value": {
+    "owner": "terra...",
+    "code_id": "23",
+    "init_msg": "eyJlbmNvZGVkIjogIkpTT04gbWVzc2FnZSJ9",
+    "init_coins": [
+      {
+        "denom": "uluna",
+        "amount": "999"
+      }
+    ],
+    "migratable": false
+  }
 }
 ```
+
+:::
 
 ### MsgExecuteContract
 
@@ -63,22 +71,26 @@ type MsgExecuteContract struct {
 }
 ```
 
+::: details JSON Example
+
 ```json
 {
-    "type": "wasm/ExecuteContract",
-    "value": {
-        "sender": "terra...",
-        "contract": "terra...",
-        "execute_msg": "eyJlbmNvZGVkIjogIkpTT04gbWVzc2FnZSJ9",
-        "coins": [
-            {
-                "denom": "uluna",
-                "amount": "999"
-            },
-        ]
-    }
+  "type": "wasm/ExecuteContract",
+  "value": {
+    "sender": "terra...",
+    "contract": "terra...",
+    "execute_msg": "eyJlbmNvZGVkIjogIkpTT04gbWVzc2FnZSJ9",
+    "coins": [
+      {
+        "denom": "uluna",
+        "amount": "999"
+      }
+    ]
+  }
 }
 ```
+
+:::
 
 ### MsgMigrateContract
 
@@ -91,17 +103,21 @@ type MsgMigrateContract struct {
 }
 ```
 
+::: details JSON Example
+
 ```json
 {
-    "type": "wasm/MigrateContract",
-    "value": {
-        "owner": "terra...",
-        "contract": "terra...",
-        "new_code_id": "45",
-        "migrate_msg": "eyJlbmNvZGVkIjogIkpTT04gbWVzc2FnZSJ9"
-    }
+  "type": "wasm/MigrateContract",
+  "value": {
+    "owner": "terra...",
+    "contract": "terra...",
+    "new_code_id": "45",
+    "migrate_msg": "eyJlbmNvZGVkIjogIkpTT04gbWVzc2FnZSJ9"
+  }
 }
 ```
+
+:::
 
 ### MsgUpdateContractOwner
 
@@ -113,13 +129,17 @@ type MsgUpdateContractOwner struct {
 }
 ```
 
+::: details JSON Example
+
 ```json
 {
-    "type": "wasm/UpdateContractOwner",
-    "value": {
-        "owner": "terra...",
-        "new_owner": "terra...",
-        "contract": "terra..."
-    }
+  "type": "wasm/UpdateContractOwner",
+  "value": {
+    "owner": "terra...",
+    "new_owner": "terra...",
+    "contract": "terra..."
+  }
 }
 ```
+
+:::
