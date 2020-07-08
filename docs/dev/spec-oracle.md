@@ -8,13 +8,15 @@ As price information is extrinsic to the blockchain, the Terra network relies on
 Since the Oracle service is powered by validators, you may find it interesting to look at the [Staking](spec-staking.md) module, which covers the logic for staking and validators.
 :::
 
-## Voting Procedure
+## Concepts
+
+### Voting Procedure
 
 During each [`VotePeriod`](#voteperiod), the Oracle module obtains consensus on the exchange rate of Luna against denominations specified in [`Whitelist`](#whitelist) by requiring all members of the validator set to submit a vote for Luna exchange rate before the end of the interval.
 
 Validators must first pre-commit to a exchange rate, then in the subsequent `VotePeriod` submit and reveal their exchange rate alongside a proof that they had pre-commited at that price. This scheme forces the voter to commit to a submission before knowing the votes of others and thereby reduces centralization and free-rider risk in the Oracle.
 
-### Prevote and Vote
+#### Prevote and Vote
 
 Let $P_t$ be the current time interval of duration defined by [`VotePeriod`](#voteperiod)(currently set to 30 seconds) during which validators must submit two messages:
 
@@ -22,7 +24,7 @@ Let $P_t$ be the current time interval of duration defined by [`VotePeriod`](#vo
 
 - A [`MsgExchangeRateVote`](#msgexchangeratevote), containing the salt used to create the hash for the prevote submitted in the previous interval $P_{t-1}$.
 
-### Vote Tally
+#### Vote Tally
 
 At the end of $P_t$, the submitted votes are tallied.
 
@@ -32,7 +34,7 @@ For each denomination, if the total voting power of submitted votes exceeds 50%,
 
 Denominations receiving fewer than [`VoteThreshold`](#votethreshold) total voting power have their exchange rates deleted from the store, and no swaps can be made with it during the next `VotePeriod` $P_{t+1}$.
 
-### Ballot Rewards
+#### Ballot Rewards
 
 After the votes are tallied, the winners of the ballots are determined with [`tally()`](#tally).
 
@@ -42,7 +44,7 @@ Voters that have managed to vote within a narrow band around the weighted median
 Starting from Columbus-3, fees from [Market](spec-market.md) swaps are no longer are included in the oracle reward pool, and are immediately burned during the swap operation.
 :::
 
-#### Reward Band
+### Reward Band
 
 Let $M$ be the weighted median, $\sigma$ be the standard deviation of the votes in the ballot, and $R$ be the [`RewardBand`](#rewardband) parameter. The band around the median is set to be $\varepsilon = \max(\sigma, R/2)$. All valid (i.e. bonded and non-jailed) validators that submitted an exchange rate vote in the interval $\left[ M - \varepsilon, M + \varepsilon \right]$ should be included in the set of winners, weighted by their relative vote power.
 
@@ -60,11 +62,11 @@ A `VotePeriod` during which either of the following events occur is considered a
 
 During every [`SlashWindow`](#slashwindow), participating validators must maintain a valid vote rate of at least [`MinValidPerWindow`](#minvalidperwindow) (5%), lest they get their stake slashed (currently set to [0.01%](#slashfraction)). The slashed validator is automatically temporarily "jailed" by the protocol (to protect the funds of delegators), and the operator is expected to fix the discrepancy promptly to resume validator participation.
 
-#### Abstaining from Voting
+### Abstaining from Voting
 
 A validator may abstain from voting by submitting a non-positive integer for the `ExchangeRate` field in [`MsgExchangeRateVote`](#msgexchangeratevote). Doing so will absolve them of any penalties for missing `VotePeriod`s, but also disqualify them from receiving Oracle seigniorage rewards for faithful reporting.
 
-## Message Types
+## Messages
 
 ::: warning NOTE
 The control flow for vote-tallying, Luna exchange rate updates, ballot rewards and slashing happens at the end of every `VotePeriod`, and is found at the [end-block ABCI function](#end-block) rather than inside message handlers.

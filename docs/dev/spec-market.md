@@ -6,7 +6,9 @@ The ability to guarantee an available, liquid market with fair exchange rates be
 
 As mentioned in the protocol, the price stability of TerraSDR's peg to the SDR is achieved through Terra<>Luna arbitrage activity against the protocol's algorithmic market-maker which expands and contracts Terra supply to maintain the peg.
 
-## Swap Fees
+## Concepts
+
+### Swap Fees
 
 Since Terra's price feed is derived from validator oracles, there is necessarily a delay between the on-chain reported price and the actual realtime price.
 
@@ -24,7 +26,7 @@ To defend against this, the Market module enforces the following swap fees
 
   Using the same exchange rates above, swapping 1 SDT will return 980 KRT worth of Luna (2% of 1000 is 20, taken as the swap fee). In the other direction, 1 Luna would give you 9.8 SDT (2% of 10 = 0.2), or 9800 KRT (2% of 10,000 = 200).
 
-## Market Making Algorithm
+### Market Making Algorithm
 
 Terra uses a Constant Product market-making algorithm to ensure liquidity for Terra<>Luna swaps. [^2]
 
@@ -65,7 +67,7 @@ At the [end of each block](#end-block), the market module will attempt to "reple
 
 This mechanism ensures liquidity and acts as a sort of low-pass filter, allowing for the spread fee (which is a function of `TerraPoolDelta`) to drop back down when there is a change in demand, hence necessary change in supply which needs to be absorbed.
 
-## Swap Procedure
+### Swap Procedure
 
 1. Market module receives [`MsgSwap`](#msgswap) message and performs basic validation checks
 
@@ -93,7 +95,16 @@ Upon successful completion of Terra<>Luna swaps, a portion of the coins to be cr
 
 For Luna swaps into Terra, the Luna that recaptured by the protocol is burned and is called seigniorage -- the value generated from issuing new Terra. At the end of the epoch, the total seigniorage for the epoch will be calculated and reintroduced into the economy as ballot rewards for the exchange rate oracle and to the community pool by the Treasury module, described more fully [here](./spec-treasury.md#ksettleseigniorage).
 
-## Message Types
+## State
+
+### Terra Pool Delta δ
+
+- `k.GetTerraPoolDelta(ctx) sdk.Dec`
+- `k.SetTerraPoolDelta(ctx, delta sdk.Dec)`
+
+An `sdk.Dec` that represents the difference between size of current Terra pool and its original base size, valued in µSDR.
+
+## Messages
 
 ### MsgSwap
 
@@ -157,15 +168,6 @@ type MsgSwapSend struct {
 :::
 
 A `MsgSendSwap` first performs a swap of `OfferCoin` into `AskDenom` and the sends the resulting coins to `ToAddress`. Tax is charged normally, as if the sender were issuing a `MsgSend` with the resutling coins of the swap.
-
-## State
-
-### Terra Pool Delta δ
-
-- `k.GetTerraPoolDelta(ctx) sdk.Dec`
-- `k.SetTerraPoolDelta(ctx, delta sdk.Dec)`
-
-An `sdk.Dec` that represents the difference between size of current Terra pool and its original base size, valued in µSDR.
 
 ## Functions
 

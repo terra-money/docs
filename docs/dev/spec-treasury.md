@@ -101,6 +101,21 @@ type TaxRateUpdateProposal struct {
 }
 ```
 
+::: details JSON Example
+
+```json
+{
+  "type": "treasury/TaxRateUpdateProposal",
+  "value": {
+    "title": "proposal title",
+    "description": "proposal description",
+    "tax_rate": "0.001000000000000000"
+  }
+}
+```
+
+:::
+
 ### RewardWeightUpdateProposal
 
 ```go
@@ -110,6 +125,21 @@ type RewardWeightUpdateProposal struct {
 	RewardWeight sdk.Dec `json:"reward_weight" yaml:"reward_weight"` // target RewardWeight
 }
 ```
+
+::: details JSON Example
+
+```json
+{
+  "type": "treasury/RewardWeightUpdateProposal",
+  "value": {
+    "title": "proposal title",
+    "description": "proposal description",
+    "reward_weight": "0.001000000000000000"
+  }
+}
+```
+
+:::
 
 ## State
 

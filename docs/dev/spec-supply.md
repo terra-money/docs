@@ -8,14 +8,16 @@ The Supply module passively tracks the total supply of all coins Terra and Luna 
 
 > This was taken from the official Cosmos SDK docs, and placed here for your convenience to understand the Supply module and module accounts.
 
-## Total Supply
+## Concepts
 
-The total `Supply` of the network is equal to the sum of all coins from the
+### Total Supply
+
+The total supply of the network is equal to the sum of all coins from the
 account. The total supply is updated every time a `Coin` is minted (eg: as part
 of the inflation mechanism) or burned (eg: due to slashing or if a governance
 proposal is vetoed).
 
-## Module Accounts
+### Module Accounts
 
 The supply module introduces a new type of `auth.Account` which can be used by
 modules to allocate tokens and in special cases mint or burn tokens. At a base
@@ -38,8 +40,9 @@ type ModuleAccount interface {
 }
 ```
 
-> Any module or message handler that allows either direct or indirect sending of funds must explicitly guarantee those funds cannot be sent to module accounts (unless allowed).
-> {warning}
+::: warning
+Any module or message handler that allows either direct or indirect sending of funds must explicitly guarantee those funds cannot be sent to module accounts (unless allowed).
+:::
 
 The supply `Keeper` also introduces new wrapper functions for the auth `Keeper`
 and the bank `Keeper` that are related to `ModuleAccount`s in order to be able
@@ -50,7 +53,7 @@ to:
   (`BaseAccount` or `VestingAccount`) by passing only the `Name`.
 - `Mint` or `Burn` coins for a `ModuleAccount` (restricted to its permissions).
 
-## Permissions
+#### Permissions
 
 Each `ModuleAccount` has a different set of permissions that provide different
 object capabilities to perform certain actions. Permissions need to be
@@ -64,6 +67,4 @@ The available permissions are:
 - `Burner`: allows for a module to burn a specific amount of coins.
 - `Staking`: allows for a module to delegate and undelegate a specific amount of coins.
 
-## Parameters
-
-The Supply module has no parameters.
+## Events

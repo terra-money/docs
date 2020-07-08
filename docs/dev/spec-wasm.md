@@ -1,6 +1,12 @@
 # WASM
 
-## Message Types
+## Concepts
+
+## Data
+
+## State
+
+## Messages
 
 ### MsgStoreCode
 
@@ -143,3 +149,9 @@ type MsgUpdateContractOwner struct {
 ```
 
 :::
+
+## Transitions
+
+## Parameters
+
+## Events
