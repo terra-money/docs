@@ -1,3 +1,7 @@
+---
+sidebarDepth: 2
+---
+
 # Treasury
 
 The Treasury module acts as the "central bank" of the Terra economy, measuring macroeconomic activity by [observing indicators](#observed-indicators) and adjusting [monetary policy levers](#monetary-policy-levers) to modulate miner incentives toward stable, long-term growth.
@@ -6,7 +10,9 @@ The Treasury module acts as the "central bank" of the Terra economy, measuring m
 While the Treasury stabilizes miner demand through adjusting rewards, the [`Market`](spec-market.md) is responsible for Terra price-stability through arbitrage and market maker.
 :::
 
-## Observed Indicators
+## Concepts
+
+### Observed Indicators
 
 The Treasury observes three macroeconomic indicators for each epoch (set to 1 week) and keeps [historical records](#indicators) of their values during previous epochs.
 
@@ -18,7 +24,7 @@ These indicators can be used to derive two other values, the **Tax Reward per un
 
 The protocol can compute and compare the short-term ([`WindowShort`](#windowshort)) and long-term ([`WindowLong`](#windowlong)) rolling averages of the above indicators to determine the relative direction and velocity of the Terra economy.
 
-## Monetary Policy Levers
+### Monetary Policy Levers
 
 ::: warning NOTE
 From Columbus-3, the Reward Weight lever replaces the previous lever for controlling the rate of Luna burn in seigniorage. Now, miners are compensated through burning from swap fees, and ballot rewards in the oracle.
@@ -36,7 +42,13 @@ Both [Tax Rate](#tax-rate) and [Reward Weight](#reward-weight) are stored as val
 
 - For Reward Weight, The Treasury observes the portion of burden seigniorage needed to bear the overall reward profile, [`SeigniorageBurdenTarget`](#seigniorageburdentarget), and hikes up rates accordingly, described [here](#k-updaterewardpolicy).
 
-### Policy Constraints
+### Probation
+
+A probationary period specified by the [`WindowProbation`](#windowprobation) will prevent the network from performing updates for Tax Rate and Reward Weight during the first epochs after genesis to allow the blockchain to first obtain a critical mass of transactions and a mature and reliable history of indicators.
+
+## Data
+
+### PolicyConstraints
 
 Policy updates from both governance proposals and automatic calibration are constrained by the [`TaxPolicy`](#taxpolicy) and [`RewardPolicy`](#rewardpolicy) parameters, respectively. The type `PolicyConstraints` specifies the floor, ceiling, and the max periodic changes for each variable.
 
@@ -75,11 +87,7 @@ func (pc PolicyConstraints) Clamp(prevRate sdk.Dec, newRate sdk.Dec) (clampedRat
 }
 ```
 
-### Probation
-
-A probationary period specified by the [`WindowProbation`](#windowprobation) will prevent the network from performing updates for Tax Rate and Reward Weight during the first epochs after genesis to allow the blockchain to first obtain a critical mass of transactions and a mature and reliable history of indicators.
-
-## Governance Proposals
+## Proposals
 
 The Treasury module defines special proposals which allow the [Tax Rate](#tax-rate) and [Reward Weight](#reward-weight) values in the `KVStore` to be voted on and changed accordingly, subject to the [policy constraints](#policy-constraints) imposed by `pc.Clamp()`.
 

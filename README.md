@@ -9,7 +9,7 @@
   </h4>
 </div>
 
-## Tutorial
+## Building
 
 ### Getting the repo
 
@@ -55,6 +55,52 @@ Build and run locally (hot-reloading dev server):
 ```bash
 yarn dev
 ```
+
+## Organization
+
+### Module Specs
+
+Each module should be documented with the following subheaders:
+
+1. Abstract (no header)
+
+   Maximum 2 paragraphs to explain, in broad terms, the general purpose of the module, to provide a "big-picture" perspective of how the module provides functionality and organization to the Terra protocol, and how it interacts with other modules.
+
+2. Concepts
+
+   A section dedicated to the concepts that are required to understand how the module works. This may include:
+
+   - layman primer
+   - math formulas (formatted with LaTeX)
+   - diagrams
+
+3. Data
+
+   A section that covers the various data structures used by the module.
+
+4. State
+
+   A section that covers the keeper state for that module key-value store
+
+5. Messages
+
+   A section that covers the various types of messages and gives a rough explanation on how they are handled.
+
+6. Proposals
+
+   A section that covers the related governance proposals
+
+7. Transitions
+
+   A section that covers the begin-blocker and end-blocker transition functions
+
+8. Parameters
+
+   A section that covers the chain parameters that can be modified by governance via the `params` module
+
+9. Events
+
+   A section that covers the different types of events that are emitted in the log, and when they are emitted.
 
 ## Built With
 

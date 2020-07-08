@@ -18,25 +18,34 @@ type MsgSubmitProposal struct {
 }
 ```
 
+::: details JSON Example
+
 ```json
 {
-	"type": "gov/MsgSubmitProposal",
-	"value": {
-		"content": {
-			"type": "gov/TextProposal",
-			"value": {
-				"title": "proposal name",
-				"description": "proposal desc"
-			}
-		},
-		"initial_deposit": [{
-			"denom": "uluna",
-			"amount": "999",
-		}],
-		"proposer": "terra..."
-	}
+  "type": "gov/MsgSubmitPropos
+
+
+  al",
+  "value": {
+    "content": {
+      "type": "gov/TextProposal",
+      "value": {
+        "title": "proposal name",
+        "description": "proposal desc"
+      }
+    },
+    "initial_deposit": [
+      {
+        "denom": "uluna",
+        "amount": "999"
+      }
+    ],
+    "proposer": "terra..."
+  }
 }
 ```
+
+:::
 
 ### MsgDeposit
 
@@ -48,19 +57,25 @@ type MsgDeposit struct {
 }
 ```
 
+::: details JSON Example
+
 ```json
 {
-	"type": "gov/MsgDeposit",
-	"value": {
-		"proposal_id": "1",
-		"depositor": "terra...",
-		"amount": [{
-			"denom": "uluna",
-			"amount": "1"
-		}]
-	}
+  "type": "gov/MsgDeposit",
+  "value": {
+    "proposal_id": "1",
+    "depositor": "terra...",
+    "amount": [
+      {
+        "denom": "uluna",
+        "amount": "1"
+      }
+    ]
+  }
 }
 ```
+
+:::
 
 ### MsgVote
 
@@ -72,16 +87,20 @@ type MsgVote struct {
 }
 ```
 
+::: details JSON Example
+
 ```json
 {
-	"type": "gov/MsgVote",
-	"value": {
-		"proposal_id": "1",
-		"voter": "terra...",
-		"option": "NoWithVeto"
-	}
+  "type": "gov/MsgVote",
+  "value": {
+    "proposal_id": "1",
+    "voter": "terra...",
+    "option": "NoWithVeto"
+  }
 }
 ```
+
+:::
 
 ## Proposals
 
@@ -101,15 +120,41 @@ type Proposal struct {
 	VotingEndTime   time.Time `json:"voting_end_time" yaml:"voting_end_time"`     // Time that the VotingPeriod for this proposal will end and votes will be tallied
 }
 
-type Content interface {
-	GetTitle() string
-	GetDescription() string
-	ProposalRoute() string
-	ProposalType() string
-	ValidateBasic() sdk.Error
-	String() string
+```
+
+::: details JSON Example
+
+```json
+{
+  "content": {
+    "type": "gov/TextProposal",
+    "value": {
+      "title": "proposal title",
+      "description": "proposal description"
+    }
+  },
+  "id": "1",
+  "proposal_status": "Passed",
+  "final_tally_result": {
+    "yes": "40000000000",
+    "abstain": "0",
+    "no": "0",
+    "no_with_veto": "0"
+  },
+  "submit_time": "2020-04-25T05:41:20.893245519Z",
+  "deposit_end_time": "2020-04-27T05:41:20.893245519Z",
+  "total_deposit": [
+    {
+      "denom": "uluna",
+      "amount": "100000000"
+    }
+  ],
+  "voting_start_time": "2020-04-25T05:41:20.893245519Z",
+  "voting_end_time": "2020-04-27T05:41:20.893245519Z"
 }
 ```
+
+:::
 
 A `Proposal` is a data structure representing a petition for a change that is submitted by to the blockchain alongside a deposit. Once its deposit reaches a certain value ([`MinDeposit`](#mindeposit)), the proposal is confirmed and voting opens. Bonded Luna hoolders can then send [`TxGovVote`]() transactions to vote on the proposal. Terra currently follows a simple voting scheme of 1 Bonded Luna = 1 Vote.
 
