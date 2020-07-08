@@ -12,14 +12,18 @@ type MsgUnjail struct {
 }
 ```
 
+::: details JSON Example
+
 ```json
 {
-    "type": "cosmos/MsgUnjail",
-    "value": {
-        "address": "terravaloper..."
-    }
+  "type": "cosmos/MsgUnjail",
+  "value": {
+    "address": "terravaloper..."
+  }
 }
 ```
+
+:::
 
 ## Transitions
 

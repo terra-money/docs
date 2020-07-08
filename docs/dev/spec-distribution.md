@@ -20,11 +20,30 @@ The Community Pool is a reserve of tokens that is designated for funding project
 
 ## Message Types
 
-### MsgModifyWithdrawAddress
+### MsgSetWithdrawAddress
 
+```go
+type MsgSetWithdrawAddress struct {
+	DelegatorAddress sdk.AccAddress `json:"delegator_address" yaml:"delegator_address"`
+	WithdrawAddress  sdk.AccAddress `json:"withdraw_address" yaml:"withdraw_address"`
+}
 ```
 
+::: details JSON Example
+
+Note that the type and name of the message are inconsistent.
+
+```json
+{
+  "type": "distribution/MsgModifyWithdrawAddress",
+  "value": {
+    "delegator_address": "terra...",
+    "withdraw_address": "terra..."
+  }
+}
 ```
+
+:::
 
 ### MsgWithdrawDelegatorReward
 
@@ -59,6 +78,19 @@ type MsgWithdrawValidatorCommission struct {
 	ValidatorAddress sdk.ValAddress `json:"validator_address" yaml:"validator_address"`
 }
 ```
+
+::: details JSON Example
+
+```json
+{
+  "type": "distribution/MsgWithdrawValidatorCommission",
+  "value": {
+    "validator_address": "terravaloper..."
+  }
+}
+```
+
+:::
 
 ## Governance Proposals
 
