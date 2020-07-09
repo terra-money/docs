@@ -209,6 +209,33 @@ export default {
         }
       }
     }
+
+    .sidebar-sub-headers {
+      padding-left: 0;
+
+      .sidebar-sub-header {
+        a {
+          border-left: solid 1px darken($borderColor, 5%);
+          padding-left: 2.188rem;
+          font-size: 0.78rem;
+          color: #777;
+
+          &:before {
+            display: none;
+          }
+
+          &.active {
+            border-left: solid 1px $primaryColor;
+            color: $primaryColor;
+            font-weight: 500;
+
+            &:before {
+              display: none;
+            }
+          }
+        }
+      }
+    }
   }
 }
 

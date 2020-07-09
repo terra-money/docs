@@ -200,6 +200,7 @@ export default {
       display: flex;
       padding: 0 2rem;
       justify-content: space-between;
+      overflow-x: auto;
 
       a {
         font-weight: 700;
@@ -208,6 +209,8 @@ export default {
       .nav-item {
         padding: 0;
         text-align: center;
+        padding-right: 20px;
+        white-space: nowrap;
 
         a {
           display: flex;

@@ -48,10 +48,19 @@
   &.details
     display block
     position relative
-    border-radius 2px
+    border-radius 6px
     margin 1.6em 0
     padding 1.6em
-    background-color #eee
+    background-color lighten($primaryColor, 90%)
+    summary
+      color $primaryColor
+      font-weight 500
+      display flex
+      align-items center
+    div[class*="language-"]
+      background rgba(255,255,255,.9)
+      border-radius 6px
+      margin-top 1em
     h4
       margin-top 0
     figure, p
