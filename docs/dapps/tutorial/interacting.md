@@ -90,7 +90,7 @@ We have now uploaded the code for our contract, but we still don't have a contra
 }
 ```
 
-We will compress the JSON into 1 line with [this online tool](https://codebeautify.org/jsonminifier).
+We will compress the JSON into 1 line with [this online tool](https://codebeautify.org/jsonminifier), you can use [this tool](https://goonlinetools.com/json-minifier/).
 
 ```sh
 terracli tx wasm instantiate 1 '{"name":"MyTerraToken","symbol":"MTT","initial_balances":[{"address":"terra1dcegyrekltswvyy0xy69ydgxn9x8x32zdtapd8","amount":"100000"}]}' --from test1 --chain-id=localterra --gas=auto --broadcast-mode=block
