@@ -218,11 +218,11 @@ type MsgAggregateExchangeRateVote struct {
 
 ```json
 {
-  "type": "oracle/MsgAggregateExchangeRatePrevote",
+  "type": "oracle/MsgAggregateExchangeRateVote",
   "value": {
     "salt": "a5720d5a462b7f867af755bfc3fe35627c37382b",
-    "exchange_rates": "terra...",
-    "feeder": "",
+    "exchange_rates": "245ukrw,1.232122232122232122uusd",
+    "feeder": "terra...",
     "validator": "terravaloper..."
   }
 }
@@ -231,8 +231,6 @@ type MsgAggregateExchangeRateVote struct {
 :::
 
 ## State
-
-Oracle maintains several `KVStores`, each indexed as such:
 
 ### Prevotes
 

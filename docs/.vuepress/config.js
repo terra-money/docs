@@ -71,6 +71,7 @@ module.exports = {
     ],
   ],
   themeConfig: {
+    sidebarDepth: 2,
     logo: "/img/docs_logo.svg",
     lastUpdated: "Updated on",
     repo: "terra-project/docs",
@@ -83,9 +84,9 @@ module.exports = {
     },
     nav: [
       { text: "Docs", link: "/" },
-      { text: "dApps", link: "/dapps/" },
+      { text: "Contracts", link: "/dapps/" },
       { text: "Validators", link: "/validator/" },
-      { text: "Core Devs", link: "/dev/" },
+      { text: "Core", link: "/dev/" },
       {
         text: "GitHub",
         link: "https://github.com/terra-project/core",
@@ -124,6 +125,7 @@ module.exports = {
             "/dev/spec-treasury",
             "/dev/spec-wasm",
           ],
+          collapsable: false,
         },
         {
           title: "Other Resources",

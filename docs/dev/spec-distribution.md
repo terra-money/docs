@@ -126,6 +126,34 @@ type MsgWithdrawValidatorCommission struct {
 
 :::
 
+### MsgFundCommunityPool
+
+```go
+type MsgFundCommunityPool struct {
+	Amount    sdk.Coins      `json:"amount" yaml:"amount"`
+	Depositor sdk.AccAddress `json:"depositor" yaml:"depositor"`
+}
+```
+
+::: details JSON Example
+
+```json
+{
+  "type": "distribution/MsgFundCommunityPool",
+  "value": {
+    "amount": [
+      {
+        "denom": "uluna",
+        "amount": "999"
+      }
+    ],
+    "depositor": "terra..."
+  }
+}
+```
+
+:::
+
 ## Proposals
 
 The Distribution module defines a special proposal that upon being passed, will disburse the coins specified in `Amount` to the `Recipient` account using funds from the Community Pool.
