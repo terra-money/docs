@@ -8,19 +8,6 @@ Please refer to the [Validator Setup](../validator/setup.md) section for a more 
 
 On the upcoming mainnet, you can delegate LUNA to a validator. These [delegators](../validator/faq.md) can receive part of the validator's fee revenue.
 
-## Query Validators
-
-You can query the list of all validators of a specific chain:
-
-```bash
-terracli query staking validators
-```
-
-If you want to get the information of a single validator you can check it with:
-
-```bash
-terracli query staking validator <account_terraval>
-```
 
 ## Bond Tokens
 
@@ -48,21 +35,6 @@ While tokens are bonded, they are pooled with all the other bonded tokens in the
 Don't use more LUNA than you have! You can always get more by using the [Faucet](https://faucet.terra.money/)!
 :::
 
-## Query Delegations
-
-Once submitted a delegation to a validator, you can see it's information by using the following command:
-
-```bash
-terracli query staking delegation <delegator_address> <validator_address>
-```
-
-Or if you want to check all your current delegations with distinct validators:
-
-```bash
-terracli query staking delegations <delegator_address>
-```
-
-You can also get previous delegation\(s\) status by adding the `--height` flag.
 
 ## Unbond Tokens
 
@@ -79,9 +51,62 @@ terracli tx staking unbond \
 
 The unbonding will be automatically completed when the unbonding period has passed.
 
-## Query Unbonding-Delegations
 
-Once you begin an unbonding-delegation, you can see it's information by using the following command:
+## Redelegate Tokens
+
+A redelegation is a type delegation that allows you to bond illiquid tokens from one validator to another:
+
+```bash
+terracli tx staking redelegate \
+    <src validator address> \
+    <dst validator address> \
+    <amount> \
+    --from=<key_name> \
+    --chain-id=<chain_id>
+```
+
+The redelegation will be automatically completed when the unbonding period has passed.
+
+## Query Delegations
+
+Once submitted a delegation to a validator, you can see it's information by using the following command:
+
+```bash
+terracli query staking delegation <delegator_address> <validator_address>
+```
+
+Or if you want to check all your current delegations with distinct validators:
+
+```bash
+terracli query staking delegations <delegator_address>
+```
+
+You can also get previous delegation\(s\) status by adding the `--height` flag.
+
+## Query Delegations To Validator
+
+You can also query all of the delegations to a particular validator:
+
+```bash
+terracli query delegations-to <account_terraval>
+```
+
+## Query Validators
+
+You can query the list of all validators of a specific chain:
+
+```bash
+terracli query staking validators
+```
+
+If you want to get the information of a single validator you can check it with:
+
+```bash
+terracli query staking validator <account_terraval>
+```
+## Query Unbonding Delegations
+
+Once you begin an unbonding delegation, you can see it's information by using the following command:
 
 ```bash
 terracli query staking unbonding-delegation <delegator_address> <validator_address>
@@ -100,21 +125,6 @@ terracli query staking unbonding-delegations-from <account_terraval>
 ```
 
 To get previous unbonding-delegation\(s\) status on past blocks, try adding the `--height` flag.
-
-## Redelegate Tokens
-
-A redelegation is a type delegation that allows you to bond illiquid tokens from one validator to another:
-
-```bash
-terracli tx staking redelegate \
-    <src validator address> \
-    <dst validator address> \
-    <amount> \
-    --from=<key_name> \
-    --chain-id=<chain_id>
-```
-
-The redelegation will be automatically completed when the unbonding period has passed.
 
 ## Query Redelegations
 
@@ -137,6 +147,8 @@ terracli query staking redelegations-from <account_terraval>
 ```
 
 To get previous redelegation(s) status on past blocks, try adding the `--height` flag.
+
+
 
 ## Query Parameters
 
@@ -168,11 +180,3 @@ With the `pool` command you will get the values for:
 - Token supply
 - Current annual inflation and the block in which the last inflation was processed
 - Last recorded bonded shares
-
-## Query Delegations To Validator
-
-You can also query all of the delegations to a particular validator:
-
-```bash
-terracli query delegations-to <account_terraval>
-```

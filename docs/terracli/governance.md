@@ -156,6 +156,33 @@ Note that Tax Reward and Reward Weight updates through passed Governance proposa
 
 The `SoftwareUpgrade` is **currently not supported** as it has not yet been implemented and currently does not differ from the semantics of a `Text` proposal.
 
+
+## Increase Deposit
+
+In order for a proposal to be broadcasted to the network, the amount deposited must be above a `minDeposit` value (initial value: `512000000uluna`). If the proposal you previously created didn't meet this requirement, you can still increase the total amount deposited to activate it. Once the minimum deposit is reached, the proposal enters voting period:
+
+```bash
+terracli tx gov deposit <proposal_id> "10000000luluna" \
+    --from=<name> \
+    --chain-id=<chain_id>
+```
+
+::: warning
+Proposals that don't meet this requirement will be deleted after `MaxDepositPeriod` is reached.
+:::
+
+
+## Vote on a Proposal
+
+After a proposal's deposit reaches the `MinDeposit` value, the voting period opens. Bonded LUNA holders can then cast vote on it:
+
+```bash
+terracli tx gov vote \
+    <proposal_id> <Yes/No/NoWithVeto/Abstain> \
+    --from=<name> \
+    --chain-id=<chain_id>
+```
+
 ## Query Proposals
 
 Once created, you can now query information of the proposal:
@@ -178,20 +205,6 @@ To query for the proposer of a given governance proposal:
 terracli query gov proposer <proposal_id>
 ```
 
-## Increase Deposit
-
-In order for a proposal to be broadcasted to the network, the amount deposited must be above a `minDeposit` value (initial value: `512000000uluna`). If the proposal you previously created didn't meet this requirement, you can still increase the total amount deposited to activate it. Once the minimum deposit is reached, the proposal enters voting period:
-
-```bash
-terracli tx gov deposit <proposal_id> "10000000luluna" \
-    --from=<name> \
-    --chain-id=<chain_id>
-```
-
-::: warning
-Proposals that don't meet this requirement will be deleted after `MaxDepositPeriod` is reached.
-:::
-
 ## Query Deposits
 
 Once a new proposal is created, you can query all the deposits submitted to it:
@@ -204,17 +217,6 @@ You can also query a deposit submitted by a specific address:
 
 ```bash
 terracli query gov deposit <proposal_id> <depositor_address>
-```
-
-## Vote on a Proposal
-
-After a proposal's deposit reaches the `MinDeposit` value, the voting period opens. Bonded LUNA holders can then cast vote on it:
-
-```bash
-terracli tx gov vote \
-    <proposal_id> <Yes/No/NoWithVeto/Abstain> \
-    --from=<name> \
-    --chain-id=<chain_id>
 ```
 
 ## Query Votes

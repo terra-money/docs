@@ -8,7 +8,7 @@ To unjail your jailed validator
 terracli tx slashing unjail --from=<validator-operator-addr>
 ```
 
-## Signing Info
+## Query Signing Info
 
 To retrieve a validator's signing info:
 
