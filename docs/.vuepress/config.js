@@ -108,7 +108,10 @@ module.exports = {
         },
       ],
       "/dev/": [
-        "/dev/",
+        {
+          title: "Developer Guide",
+          children: ["/dev/"],
+        },
         {
           title: "Module Specs",
           children: [
@@ -140,10 +143,11 @@ module.exports = {
         },
       ],
       "/validator/": [
-        "/validator/",
+        {
+          title: "Validator Guide",
+          children: ["/validator/", "/validator/setup", "/validator/oracle"],
+        },
         "/validator/faq",
-        "/validator/setup",
-        "/validator/oracle",
         "/validator/security",
         "/validator/troubleshooting",
       ],
@@ -166,10 +170,9 @@ module.exports = {
           title: "Terra Node",
           children: [
             "node/installation",
-            "node/testnet",
             "node/config",
+            "node/testnet",
             "node/join-network",
-            "node/production",
           ],
         },
         {

@@ -42,11 +42,11 @@ Your full node has now been initialized!
 
 You specify the network you want to join by setting the **genesis file** and **seeds**. If you need more information about past networks, check our [Networks Repo](https://github.com/terra-project/networks).
 
-| Network      | Description |                                                                                                    |                                                         |
-| ------------ | ----------- | -------------------------------------------------------------------------------------------------- | ------------------------------------------------------- |
-| `columbus-3` | Mainnet     | [genesis](https://columbus-genesis.s3-ap-northeast-1.amazonaws.com/genesis.json)                   | [address book](https://network.terra.dev/addrbook.json) |
-| `soju-0014`  | Testnet     | [genesis](https://raw.githubusercontent.com/terra-project/networks/master/soju-0014/genesis.json)  |                                                         |
-| `vodka-0001` | Testnet     | [genesis](https://raw.githubusercontent.com/terra-project/networks/master/vodka-0001/genesis.json) |                                                         |
+| Network        | Description        |                                                                                                      |                                                         |
+| -------------- | ------------------ | ---------------------------------------------------------------------------------------------------- | ------------------------------------------------------- |
+| `columbus-3`   | Mainnet            | [genesis](https://columbus-genesis.s3-ap-northeast-1.amazonaws.com/genesis.json)                     | [address book](https://network.terra.dev/addrbook.json) |
+| `soju-0014`    | Columbus-3 Testnet | [genesis](https://raw.githubusercontent.com/terra-project/networks/master/soju-0014/genesis.json)    |                                                         |
+| `tequila-0001` | Columbus-4 Testnet | [genesis](https://raw.githubusercontent.com/terra-project/networks/master/tequila-0001/genesis.json) |                                                         |
 
 ### Download the genesis file
 
