@@ -1,5 +1,42 @@
 # Distribution
 
+## Withdraw Rewards
+
+Withdraw rewards from a given delegation address, and withdraw validator commission if the delegation address given is a validator operator.
+
+```sh
+terracli tx distribution withdraw-rewards <validator-address>
+```
+
+## Set Withdraw Address
+
+Change the default withdraw address for rewards associated with an address.
+
+```sh
+terracli tx distribution set-withdraw-addr <withdraw-address>
+```
+
+
+## Withdraw All Rewards
+
+Withdraw all delegations rewards for a delegator.
+
+
+```sh
+terracli tx distribution withdraw-all-rewards 
+```
+
+## Fund Community Pool
+
+Funds the community pool with the specified amount.
+
+```sh
+terracli tx distribution fund-community-pool <amount>
+```
+
+Argument `amount` is in a format such as: `1000uluna`, or `100ukrw,200uusd`
+
+
 ## Query Distribution Parameters
 
 To check the current distribution parameters, run:
