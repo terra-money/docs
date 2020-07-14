@@ -38,3 +38,70 @@ terracli tx oracle set-feeder <feeder_address> --from=mykey
 ```
 
 where `feeder_address` is the address you want to delegate your voting rights to. Note that the feeder will still need to submit votes on behalf of your validator in order for you to get credit.
+
+## Query Exchange Rates of LUNA
+
+```sh
+terracli query oracle exchange-rates
+```
+
+## Query outstanding votes
+
+```sh
+terracli query oracle votes <denom> <validator>
+```
+
+
+## Query outstand prevotes
+
+```sh
+terracli query oracle prevotes <denom> <validator>
+```
+
+## Query active list of denoms
+
+```sh
+terracli query oracle actives
+```
+
+## Query Oracle params
+
+```sh
+terracli query oracle params
+```
+
+## Query oracle feeder account
+
+```sh
+terracli query oracle feeder <validator-addr>
+```
+
+## Query the miss counter of validator
+
+```sh
+terracli query oracle miss <validator-addr>
+```
+
+## Query outstanding oracle aggregate prevote
+
+```sh
+terracli query oracle aggregate-prevote <validator-addr>
+```
+
+## Query outstanding oracle aggregate vote
+
+```sh
+terracli query oracle aggregate-vote <validator-addr>
+```
+
+## Query current oracle vote targets
+
+```sh
+terracli query oracle vote-targets
+```
+
+## Query tobin taxes
+
+```sh
+terracli query oracle tobin-taxes
+```
