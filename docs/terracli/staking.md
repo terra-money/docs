@@ -138,7 +138,7 @@ You can also query all of the delegations to a particular validator:
 terracli query delegations-to <account_terraval>
 ```
 
-## Unbonding Delegations
+### Unbonding Delegations
 
 Once you begin an unbonding delegation, you can see it's information by using the following command:
 

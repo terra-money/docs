@@ -18,7 +18,7 @@ You can get information about a piece of uploaded code by referencing its ID:
 terracli query wasm code <code-id>
 ```
 
-## Contract Info
+### Contract Info
 
 You can get the metadata information about an instantiated contract:
 

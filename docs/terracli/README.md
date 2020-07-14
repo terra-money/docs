@@ -141,7 +141,7 @@ terracli tx broadcast --node=<node> signedSendTx.json
 ```
 
 
-### About Fees
+## Fees
 
 Transactions on the Terra Protocol network need to include a transaction fee in order to be processed. This fee pays for the gas required to run the transaction. The formula is the following:
 
