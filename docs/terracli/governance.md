@@ -76,7 +76,6 @@ terracli query gov param tallying
 terracli query gov param deposit
 ```
 
-
 ## Transaction
 
 ### Create a Proposal
@@ -235,7 +234,6 @@ Note that Tax Reward and Reward Weight updates through passed Governance proposa
 
 The `SoftwareUpgrade` is **currently not supported** as it has not yet been implemented and currently does not differ from the semantics of a `Text` proposal.
 
-
 ### Increase Deposit
 
 In order for a proposal to be broadcasted to the network, the amount deposited must be above a `minDeposit` value (initial value: `512000000uluna`). If the proposal you previously created didn't meet this requirement, you can still increase the total amount deposited to activate it. Once the minimum deposit is reached, the proposal enters voting period:
@@ -249,7 +247,6 @@ terracli tx gov deposit <proposal_id> "10000000luluna" \
 ::: warning
 Proposals that don't meet this requirement will be deleted after `MaxDepositPeriod` is reached.
 :::
-
 
 ### Vote on a Proposal
 

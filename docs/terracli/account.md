@@ -21,7 +21,6 @@ This can also happen if you fund the account before your node has fully synced w
 Both cases are to be expected.
 :::
 
-
 ## Transaction
 
 ### Send Tokens

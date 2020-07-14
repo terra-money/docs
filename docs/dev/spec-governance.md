@@ -125,10 +125,7 @@ type MsgSubmitProposal struct {
 
 ```json
 {
-  "type": "gov/MsgSubmitPropos
-
-
-  al",
+  "type": "gov/MsgSubmitProposal",
   "value": {
     "content": {
       "type": "gov/TextProposal",
@@ -235,8 +232,9 @@ type ParamChange struct {
 }
 ```
 
-> Parameter Change Proposals are actually located in the Params module, an internal module. It is shown here for your convenience.
-> {note}
+::: warning NOTE
+Parameter Change Proposals are actually located in the Params module, an internal module. It is shown here for your convenience.
+:::
 
 Parameter Change Proposals are a special type of proposal which, once passed, will automaticaly go in effect by directly altering the network's parameter specified. For each module, you can find the parameters associated with it by browsing to the **Parameters** section of the module specification.
 

@@ -41,7 +41,6 @@ terracli tx staking edit-validator \
 - Must be between 0 and the validator's `commission-max-rate`
 - Must not exceed the validator's `commission-max-change-rate` which is maximum % point change rate **per day**. In other words, a validator can only change its commission once per day and within `commission-max-change-rate` bounds.
 
-
 ### Delegate
 
 On the testnet, we delegate LUNA. Here's how you can bond tokens to a testnet validator:
@@ -68,7 +67,6 @@ While tokens are bonded, they are pooled with all the other bonded tokens in the
 Don't use more LUNA than you have! You can always get more by using the [Faucet](https://faucet.terra.money/)!
 :::
 
-
 ### Undelegate
 
 If for any reason the validator misbehaves, or you just want to unbond a certain
@@ -83,7 +81,6 @@ terracli tx staking unbond \
 ```
 
 The unbonding will be automatically completed when the unbonding period has passed.
-
 
 ### Redelegate
 
@@ -196,7 +193,6 @@ With the `pool` command you will get the values for:
 - Token supply
 - Current annual inflation and the block in which the last inflation was processed
 - Last recorded bonded shares
-
 
 ### Parameters
 

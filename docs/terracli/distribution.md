@@ -10,7 +10,6 @@ To check the current outstanding (un-withdrawn) rewards, run:
 terracli query distribution outstanding-rewards
 ```
 
-
 ### Delegator Rewards
 
 To check current rewards for a delegator (if they were to be withdrawn), run:
@@ -24,7 +23,6 @@ To check all current rewards for a delegator (if they were to be withdrawn), run
 ```bash
 terracli query distribution rewards <delegator_address>
 ```
-
 
 ### Validator Commission
 
@@ -41,7 +39,6 @@ To check historical slashes for a validator, run:
 ```bash
 terracli query distribution slashes <validator_address> <start_height> <end_height>
 ```
-
 
 ### Community Pool
 
@@ -92,4 +89,3 @@ terracli tx distribution fund-community-pool <amount>
 ```
 
 Argument `amount` is in a format such as: `1000uluna`, or `100ukrw,200uusd`
-

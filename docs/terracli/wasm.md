@@ -1,6 +1,6 @@
 # WASM
 
-## Query 
+## Query
 
 ### Bytecode
 
@@ -35,7 +35,6 @@ terracli query wasm contract-store <contract-address> <query-msg>
 ```
 
 `<query-msg>` will be a JSON string that encodes the QueryMsg. For instance:
-
 
 ```sh
 terracli query wasm contract-store terra1plju286nnfj3z54wgcggd4enwaa9fgf5kgrgzl '{"config":{}}'
