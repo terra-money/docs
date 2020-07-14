@@ -140,7 +140,6 @@ module.exports = {
         "/validator/faq",
         "/validator/setup",
         "/validator/oracle",
-        "/validator/tasks",
         "/validator/security",
         "/validator/troubleshooting",
       ],
