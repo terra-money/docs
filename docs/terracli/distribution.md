@@ -2,15 +2,7 @@
 
 ## Query
 
-### Community Pool
-
-To query all coins in the Community Pool:
-
-```bash
-terracli query distribution community-pool
-```
-
-## Outstanding Rewards
+### Outstanding Rewards
 
 To check the current outstanding (un-withdrawn) rewards, run:
 
@@ -18,21 +10,6 @@ To check the current outstanding (un-withdrawn) rewards, run:
 terracli query distribution outstanding-rewards
 ```
 
-### Validator Commission
-
-To check the current outstanding commission for a validator, run:
-
-```bash
-terracli query distribution commission <validator_address>
-```
-
-## Validator Slashes
-
-To check historical slashes for a validator, run:
-
-```bash
-terracli query distribution slashes <validator_address> <start_height> <end_height>
-```
 
 ### Delegator Rewards
 
@@ -46,6 +23,32 @@ To check all current rewards for a delegator (if they were to be withdrawn), run
 
 ```bash
 terracli query distribution rewards <delegator_address>
+```
+
+
+### Validator Commission
+
+To check the current outstanding commission for a validator, run:
+
+```bash
+terracli query distribution commission <validator_address>
+```
+
+### Validator Slashes
+
+To check historical slashes for a validator, run:
+
+```bash
+terracli query distribution slashes <validator_address> <start_height> <end_height>
+```
+
+
+### Community Pool
+
+To query all coins in the Community Pool:
+
+```bash
+terracli query distribution community-pool
 ```
 
 ### Parameters
@@ -66,9 +69,7 @@ You can withdraw your rewards against a certain validator
 terracli tx distribution withdraw-rewards <validator-address>
 ```
 
-### Withdraw All Rewards
-
-Optionally, if you 
+If you want to want to withdraw all rewards:
 
 ```sh
 terracli tx distribution withdraw-all-rewards

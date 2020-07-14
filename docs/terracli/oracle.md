@@ -8,13 +8,13 @@
 terracli query oracle exchange-rates
 ```
 
-### Outstanding Votes
+### Votes
 
 ```sh
 terracli query oracle votes <denom> <validator>
 ```
 
-### Outstanding Prevotes
+### Prevotes
 
 ```sh
 terracli query oracle prevotes <denom> <validator>
@@ -38,13 +38,13 @@ terracli query oracle feeder <validator-addr>
 terracli query oracle miss <validator-addr>
 ```
 
-### Outstanding Aggregate Prevotes
+### Aggregate Prevotes
 
 ```sh
 terracli query oracle aggregate-prevote <validator-addr>
 ```
 
-### Outstanding Aggregate Votes
+### Aggregate Votes
 
 ```sh
 terracli query oracle aggregate-vote <validator-addr>
