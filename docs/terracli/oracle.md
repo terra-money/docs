@@ -68,7 +68,7 @@ terracli query oracle tobin-taxes
 terracli query oracle params
 ```
 
-## Transactions
+## Transaction
 
 ### Submit an Exchange Rate Vote
 
