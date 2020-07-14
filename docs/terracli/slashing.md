@@ -1,14 +1,8 @@
 # Slashing
 
-## Unjailing
+## Query
 
-To unjail your jailed validator
-
-```bash
-terracli tx slashing unjail --from=<validator-operator-addr>
-```
-
-## Signing Info
+### Signing Info
 
 To retrieve a validator's signing info:
 
@@ -16,10 +10,21 @@ To retrieve a validator's signing info:
 terracli query slashing signing-info <validator-pubkey>
 ```
 
-## Query Parameters
+### Parameters
 
 You can get the current slashing parameters via:
 
 ```bash
 terracli query slashing params
+```
+
+
+## Transaction
+
+### Unjail Validator
+
+To unjail your jailed validator
+
+```bash
+terracli tx slashing unjail --from=<validator-operator-addr>
 ```

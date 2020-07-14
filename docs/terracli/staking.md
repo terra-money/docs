@@ -1,28 +1,48 @@
 # Staking
 
-## Set up a Validator
+## Transactions
+
+### Create Validator
 
 Please refer to the [Validator Setup](../validator/setup.md) section for a more complete guide on how to set up a validator-candidate.
 
-## Delegate to a Validator
-
-On the upcoming mainnet, you can delegate LUNA to a validator. These [delegators](../validator/faq.md) can receive part of the validator's fee revenue.
-
-## Query Validators
-
-You can query the list of all validators of a specific chain:
-
 ```bash
-terracli query staking validators
+terracli tx staking create-validator \
+    --amount=5000000uluna \
+    --pubkey=$(terrad tendermint show-validator) \
+    --moniker="choose a moniker" \
+    --chain-id=<chain_id> \
+    --from=<key_name> \
+    --commission-rate="0.10" \
+    --commission-max-rate="0.20" \
+    --commission-max-change-rate="0.01" \
+    --min-self-delegation="1"
 ```
 
-If you want to get the information of a single validator you can check it with:
+### Edit Validator Description
+
+You can edit your validator's public description. This info is to identify your validator, and will be relied on by delegators to decide which validators to stake to. Make sure to provide input for every flag below, otherwise the field will default to empty \(`--moniker` defaults to the machine name\).
+
+The `--identity` can be used as to verify identity with systems like Keybase or UPort. When using with Keybase `--identity` should be populated with a 16-digit string that is generated with a [keybase.io](https://keybase.io) account. It's a cryptographically secure method of verifying your identity across multiple online networks. The Keybase API allows us to retrieve your Keybase avatar. This is how you can add a logo to your validator profile.
 
 ```bash
-terracli query staking validator <account_terraval>
+terracli tx staking edit-validator \
+    --moniker="choose a moniker" \
+    --website="https://terra.money" \
+    --identity=6A0D65E29A4CBC8E \
+    --details="To infinity and beyond!" \
+    --chain-id=<chain_id> \
+    --from=<key_name> \
+    --commission-rate="0.10"
 ```
 
-## Bond Tokens
+**Note**: The `commission-rate` value must adhere to the following invariants:
+
+- Must be between 0 and the validator's `commission-max-rate`
+- Must not exceed the validator's `commission-max-change-rate` which is maximum % point change rate **per day**. In other words, a validator can only change its commission once per day and within `commission-max-change-rate` bounds.
+
+
+### Delegate
 
 On the testnet, we delegate LUNA. Here's how you can bond tokens to a testnet validator:
 
@@ -48,7 +68,55 @@ While tokens are bonded, they are pooled with all the other bonded tokens in the
 Don't use more LUNA than you have! You can always get more by using the [Faucet](https://faucet.terra.money/)!
 :::
 
-## Query Delegations
+
+### Undelegate
+
+If for any reason the validator misbehaves, or you just want to unbond a certain
+amount of tokens, use this following command.
+
+```bash
+terracli tx staking unbond \
+  <validator_address> \
+  100uluna \
+  --from=<key_name> \
+  --chain-id=<chain_id>
+```
+
+The unbonding will be automatically completed when the unbonding period has passed.
+
+
+### Redelegate
+
+A redelegation is a type delegation that allows you to bond illiquid tokens from one validator to another:
+
+```bash
+terracli tx staking redelegate \
+    <src validator address> \
+    <dst validator address> \
+    <amount> \
+    --from=<key_name> \
+    --chain-id=<chain_id>
+```
+
+The redelegation will be automatically completed when the unbonding period has passed.
+
+## Query
+
+### Validators
+
+You can query the list of all registered validators:
+
+```bash
+terracli query staking validators
+```
+
+If you want to get the information of a single validator you can check it with:
+
+```bash
+terracli query staking validator <validator-address>
+```
+
+### Delegations
 
 Once submitted a delegation to a validator, you can see it's information by using the following command:
 
@@ -64,59 +132,35 @@ terracli query staking delegations <delegator_address>
 
 You can also get previous delegation\(s\) status by adding the `--height` flag.
 
-## Unbond Tokens
-
-If for any reason the validator misbehaves, or you just want to unbond a certain
-amount of tokens, use this following command.
+You can also query all of the delegations to a particular validator:
 
 ```bash
-terracli tx staking unbond \
-  <validator_address> \
-  100uluna \
-  --from=<key_name> \
-  --chain-id=<chain_id>
+terracli query delegations-to <account_terraval>
 ```
 
-The unbonding will be automatically completed when the unbonding period has passed.
+## Unbonding Delegations
 
-## Query Unbonding-Delegations
-
-Once you begin an unbonding-delegation, you can see it's information by using the following command:
+Once you begin an unbonding delegation, you can see it's information by using the following command:
 
 ```bash
-terracli query staking unbonding-delegation <delegator_address> <validator_address>
+terracli query staking unbonding-delegation <delegator-address> <validator-address>
 ```
 
 Or if you want to check all your current unbonding-delegations with disctinct validators:
 
 ```bash
-terracli query staking unbonding-delegations <account_terra>
+terracli query staking unbonding-delegations <account-terra>
 ```
 
 Additionally, as you can get all the unbonding-delegations from a particular validator:
 
 ```bash
-terracli query staking unbonding-delegations-from <account_terraval>
+terracli query staking unbonding-delegations-from <validator-address>
 ```
 
 To get previous unbonding-delegation\(s\) status on past blocks, try adding the `--height` flag.
 
-## Redelegate Tokens
-
-A redelegation is a type delegation that allows you to bond illiquid tokens from one validator to another:
-
-```bash
-terracli tx staking redelegate \
-    <src validator address> \
-    <dst validator address> \
-    <amount> \
-    --from=<key_name> \
-    --chain-id=<chain_id>
-```
-
-The redelegation will be automatically completed when the unbonding period has passed.
-
-## Query Redelegations
+### Redelegations
 
 Once you begin an redelegation, you can see it's information by using the following command:
 
@@ -138,23 +182,7 @@ terracli query staking redelegations-from <account_terraval>
 
 To get previous redelegation(s) status on past blocks, try adding the `--height` flag.
 
-## Query Parameters
-
-Parameters define high level settings for staking. You can get the current values by using:
-
-```bash
-terracli query staking params
-```
-
-With the above command you will get the values for:
-
-- Unbonding time
-- Maximum numbers of validators
-- Coin denomination for staking
-
-All these values will be subject to updates though a `governance` process by `ParameterChange` proposals.
-
-## Query Pool
+### Staking Pool
 
 A staking `Pool` defines the dynamic parameters of the current state. You can query them with the following command:
 
@@ -169,10 +197,19 @@ With the `pool` command you will get the values for:
 - Current annual inflation and the block in which the last inflation was processed
 - Last recorded bonded shares
 
-## Query Delegations To Validator
 
-You can also query all of the delegations to a particular validator:
+### Parameters
+
+Parameters define high level settings for staking. You can get the current values by using:
 
 ```bash
-terracli query delegations-to <account_terraval>
+terracli query staking params
 ```
+
+With the above command you will get the values for:
+
+- Unbonding time
+- Maximum numbers of validators
+- Coin denomination for staking
+
+All these values will be subject to updates though a `governance` process by `ParameterChange` proposals.

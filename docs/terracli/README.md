@@ -95,6 +95,52 @@ terracli tx ...
 
 Please check each module subsection in the side menu to learn more about different types of transactions you can issue.
 
+### Simulating a transaction
+
+You can simulate a transaction without actually broadcasting it by appending the `--dry-run` flag to the command line:
+
+```bash
+terracli tx send \
+    <from_key_or_address> \
+    <to_address> \
+    <coins> \
+    --chain-id=<chain_id> \
+    --dry-run
+```
+
+### Generating a transaction without sending
+
+Furthermore, you can build a transaction and print its JSON format to STDOUT by appending `--generate-only` to the list of the command line arguments. This allows you to separate the creation and signing of a transaction with the broadcasting.
+
+```bash
+terracli tx send \
+    <from_key_or_address> \
+    <to_address> \
+    <coins> \
+    --chain-id=<chain_id> \
+    --generate-only > unsignedSendTx.json
+```
+
+```bash
+terracli tx sign \
+    --chain-id=<chain_id> \
+    --from=<key_name> \
+    unsignedSendTx.json > signedSendTx.json
+```
+
+You can validate the transaction's signatures by typing the following:
+
+```bash
+terracli tx sign --validate-signatures signedSendTx.json
+```
+
+You can broadcast the signed transaction to a node by providing the JSON file to the following command:
+
+```bash
+terracli tx broadcast --node=<node> signedSendTx.json
+```
+
+
 ### About Fees
 
 Transactions on the Terra Protocol network need to include a transaction fee in order to be processed. This fee pays for the gas required to run the transaction. The formula is the following:

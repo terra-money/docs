@@ -1,6 +1,8 @@
 # Treasury
 
-## Query Tax Rate
+## Query
+
+## Tax Rate
 
 Terra transactions charge a % fee on each outbound transaction from the sender's wallet. To get the effective stability fee rate, run:
 
@@ -8,7 +10,7 @@ Terra transactions charge a % fee on each outbound transaction from the sender's
 terracli query treasury tax-rate
 ```
 
-## Query Tax Cap
+## Tax Cap
 
 Stability fees are capped at some fixed amount of SDT to avoid penalizing large transactions. To get the current tax cap denominated in a given denomination (micro-units), run:
 
@@ -16,7 +18,7 @@ Stability fees are capped at some fixed amount of SDT to avoid penalizing large 
 terracli query treasury tax-cap <denom>
 ```
 
-## Query Tax Proceeds
+## Tax Proceeds
 
 To query the cumulative tax proceeds, run:
 
@@ -24,7 +26,7 @@ To query the cumulative tax proceeds, run:
 terracli query treasury tax-proceeds
 ```
 
-## Query Reward Weight
+## Reward Weight
 
 The Reward Weight is the portion of seigniorage that is designated as ballot rewards for the winners of exchange rate oracle. To query the Reward Weight, run:
 
@@ -32,7 +34,7 @@ The Reward Weight is the portion of seigniorage that is designated as ballot rew
 terracli query treasury reward-weight
 ```
 
-## Query Seigniorage Proceeds
+## Seigniorage Proceeds
 
 The treasury measures the amount of Terra seigniorage accumulated over epochs, denominated in units of `uluna`. To query the seigniorage proceeds, run:
 
@@ -40,7 +42,7 @@ The treasury measures the amount of Terra seigniorage accumulated over epochs, d
 terracli query treasury seigniorage-proceeds
 ```
 
-## Query Parameters
+## Parameters
 
 Parameters define high-level settings for the Treasury, described [here](./spec-treasury.md#parameters). You can get the current values by using:
 
