@@ -332,42 +332,40 @@ type VotingParams struct {
 
 Minimum deposit for a proposal to enter voting period.
 
-- type: `sdk.Coins`
+- type: `Coins`
 - default value: `uluna`
 
 ### MaxDepositPeriod
 
 Maximum period for Luna holders to deposit on a proposal.
 
-- type: `time.Duration`
-- default value: `2 months`
+- type: `time.Duration` (seconds)
+- default value: 2 months
 
 ### Quorum
 
 Minimum percentage of total stake needed to vote for a result to be considered valid.
 
-- type: `sdk.Dec`
-- default value: N/A
+- type: `Dec`
 
 ### Threshold
 
 Minimum proportion of Yes votes for proposal to pass.
 
-- type: `sdk.Dec`
-- default value: `0.5` (50%)
+- type: `Dec`
+- default value: 50%
 
 ### Veto
 
 Minimum value of Veto votes to Total votes ratio for proposal to be vetoed.
 
-- type: `sdk.Dec`
-- default value: `0.33` (1/3rd)
+- type: `Dec`
+- default value: `0.33`
 
 ### VotingPeriod
 
 Length of the voting period.
 
-- type: `time.Duration`
-- default value: N/A
+- type: `time.Duration` (seconds)
 
 ## Events

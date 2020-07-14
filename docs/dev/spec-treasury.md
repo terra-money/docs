@@ -145,26 +145,21 @@ type RewardWeightUpdateProposal struct {
 
 ### Tax Rate
 
-- `k.GetTaxRate(ctx) sdk.Dec`
-- `k.SetTaxRate(ctx, taxRate sdk.Dec)`
+- type: `Dec`
+- default: 0.1%
 
-`sdk.Dec` representing the value of the Tax Rate policy lever for the current epoch.
-
-- default value: `sdk.NewDecWithPrec(1, 3)` (0.1%)
+The value of the Tax Rate policy lever for the current epoch.
 
 ### Reward Weight
 
-- `k.GetRewardWeight(ctx) sdk.Dec`
-- `k.SetRewardWeight(ctx, rewardWeight sdk.Dec)`
+- type: `Dec`
+- default: 5%
 
-`sdk.Dec` representing the value of the Reward Weight policy lever for the current epoch.
-
-- default value: `sdk.NewDecWithPrec(5, 2)` (5%)
+The value of the Reward Weight policy lever for the current epoch.
 
 ### Tax Caps
 
-- `k.GetTaxCap(ctx, denom string) sdk.Int`
-- `k.SetTaxCap(ctx, denom string, taxCap sdk.Int)`
+- type: `map[string]Int`
 
 Treasury keeps a `KVStore` that maps a denomination `denom` to an `sdk.Int` that represents that maximum income that can be generated from taxes on a transaction in that denomination. This is updated every epoch with the equivalent value of [`TaxPolicy.Cap`](#taxpolicy) at the current exchange rate.
 
@@ -172,17 +167,15 @@ For instance, if a transaction's value were 100 SDT, and tax rate and tax cap 5%
 
 ### Tax Proceeds
 
-- `k.RecordEpochTaxProceeds(ctx, delta sdk.Coins)`
-- `k.PeekEpochTaxProceeds(ctx) sdk.Coins`
+- type: `Coins`
 
-The `sdk.Coins` that represents the Tax Rewards $T$ for the current epoch.
+The Tax Rewards $T$ for the current epoch.
 
 ### Epoch Initial Issuance
 
-- `k.RecordEpochInitialIssuance(ctx)`
-- `k.PeekEpochSeigniorage(ctx) sdk.Int`
+- type: `Coins`
 
-The `sdk.Coins` that represents the total supply of Luna at the beginning of the current epoch. This value is used in [`k.SettleSeigniorage()`](#k-settleseigniorage) to calculate the seigniorage to distribute at the end of the epoch.
+The total supply of Luna at the beginning of the current epoch. This value is used in [`k.SettleSeigniorage()`](#k-settleseigniorage) to calculate the seigniorage to distribute at the end of the epoch.
 
 Recording the initial issuance will automatically use the [`Supply`](spec-supply.md) module to determine the total issuance of Luna. Peeking will return the epoch's initial issuance of µLuna as `sdk.Int` instead of `sdk.Coins` for convenience.
 
@@ -192,24 +185,21 @@ The Treasury keeps track of following indicators for the present and previous ep
 
 #### Tax Rewards
 
-- `k.GetTR(ctx, epoch int64) sdk.Dec`
-- `k.SetTR(ctx, epoch int64, TR sdk.Dec)`
+- type: `Dec`
 
-An `sdk.Dec` representing the Tax Rewards $T$ for the `epoch`.
+The Tax Rewards $T$ for the `epoch`.
 
 #### Seigniorage Rewards
 
-- `k.GetSR(ctx, epoch int64) sdk.Dec`
-- `k.SetSR(ctx, epoch int64, SR sdk.Dec)`
+- type: `Dec`
 
-An `sdk.Dec` representing the Seigniorage Rewards $S$ for the `epoch`.
+The Seigniorage Rewards $S$ for the `epoch`.
 
 #### Total Staked Luna
 
-- `k.GetTSL(ctx, epoch int64) sdk.Int`
-- `k.SetTSL(ctx, epoch int64, TSL sdk.Int)`
+- type: `Int`
 
-An `sdk.Int` representing the Total Staked Luna $\lambda$ for the `epoch`.
+The Total Staked Luna $\lambda$ for the `epoch`.
 
 ## Functions
 
@@ -326,7 +316,7 @@ type Params struct {
 ### TaxPolicy
 
 - type: `PolicyConstraints`
-- default value:
+- default:
 
 ```go
 DefaultTaxPolicy = PolicyConstraints{
@@ -342,7 +332,7 @@ Constraints / rules for updating the [Tax Rate](#tax-rate) monetary policy lever
 ### RewardPolicy
 
 - type: `PolicyConstraints`
-- default value:
+- default:
 
 ```go
 DefaultRewardPolicy = PolicyConstraints{
@@ -358,35 +348,35 @@ Constraints / rules for updating the [Reward Weight](#reward-weight) monetary po
 ### SeigniorageBurdenTarget
 
 - type: `sdk.Dec`
-- default value: `sdk.NewDecWithPrec(67, 2)` (67%)
+- default: 67%
 
 Multiplier specifying portion of burden seigniorage needed to bear the overall reward profile for Reward Weight updates during epoch transition.
 
 ### MiningIncrement
 
 - type: `sdk.Dec`
-- default value: `sdk.NewDecWithPrec(107, 2)` (1.07 growth rate, 15% CAGR of $\tau$)
+- default: 1.07 growth rate, 15% CAGR of $\tau$
 
 Multiplier determining an annual growth rate for Tax Rate policy updates during epoch transition.
 
 ### WindowShort
 
 - type: `int64`
-- default value: `4` (month = 4 weeks)
+- default: `4` (month = 4 weeks)
 
 A number of epochs that specifies a time interval for calculating short-term moving average.
 
 ### WindowLong
 
 - type: `int64`
-- default value: `52` (year = 52 weeks)
+- default: `52` (year = 52 weeks)
 
 A number of epochs that specifies a time interval for calculating long-term moving average.
 
 ### WindowProbation
 
 - type: `int64`
-- default value: `12` (3 months = 12 weeks)
+- default: `12` (3 months = 12 weeks)
 
 A number of epochs that specifies a time interval for the probationary period.
 

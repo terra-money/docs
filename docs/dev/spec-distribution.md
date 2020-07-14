@@ -222,15 +222,15 @@ type GenesisState struct {
 
 ### CommunityTax
 
-- type: `sdk.Dec`
+- type: `Dec`
 
 ### BaseProposerReward
 
-- type: `sdk.Dec`
+- type: `Dec`
 
 ### BonusProposerReward
 
-- type: `sdk.Dec`
+- type: `Dec`
 
 ### WithdrawAddrEnabled
 

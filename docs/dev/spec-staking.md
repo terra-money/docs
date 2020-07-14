@@ -258,25 +258,25 @@ type Params struct {
 Time duration of unbonding, in nanoseconds.
 
 - type: `time.Duration`
-- default value: `time.Hour * 24 * 7 * 3` (3 weeks)
+- default: 3 weeks
 
 ### MaxValidators
 
 Maximum number of active validators.
 
 - type: `uint16`
-- default value: `100`
+- default: `100`
 
 ### MaxEntries
 
 Max entries for either unbonding delegation or redelegation (per pair/trio). We need to be a bit careful about potential overflow here, since this is user-determined.
 
 - type: `uint16`
-- default value: `7`
+- default: `7`
 
 ### BondDenom
 
 Defines the denomination of the asset required for staking.
 
 - type: `string`
-- default value: `uluna`
+- default: `uluna`

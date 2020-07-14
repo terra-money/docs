@@ -367,56 +367,56 @@ type Params struct {
 The number of blocks during which voting takes place.
 
 - type: `int64`
-- default value: `core.BlocksPerMinute / 2` (30 seconds)
+- default value: `BlocksPerMinute / 2` (30 seconds)
 
 ### VoteThreshold
 
 The minimum percentage of votes that must be received for a ballot to pass.
 
-- type: `sdk.Dec`
-- default value: `sdk.NewDecWithPrec(50, 2)` (50%)
+- type: `Dec`
+- default value: 50%
 
 ### RewardBand
 
 The tolerated error from the final weighted mean exchange rate that can receive rewards.
 
-- type: `sdk.Dec`
-- default value: `sdk.NewDecWithPrec(7, 2)` (7%)
+- type: `Dec`
+- default value: 7%
 
 ### RewardDistributionWindow
 
 The number of blocks during which seigniorage reward comes in and then is distributed.
 
 - type: `int64`
-- default value: `core.BlocksPerYear` (1 year window)
+- default value: `BlocksPerYear` (1 year window)
 
 ### Whitelist
 
 The list of currencies that can be voted on. This is set to (µKRW, µSDR, µUSD) by default.
 
 - type: `oracle.DenomList`
-- default value: `DenomList{core.MicroKRWDenom, core.MicroSDRDenom, core.MicroUSDDenom}`
+- default value: `[ukrt, uusd, usdr]`
 
 ### SlashFraction
 
 The ratio of penalty on bonded tokens.
 
-- type: `sdk.Dec`
-- default value: `sdk.NewDecWithPrec(1, 4)` (0.01%)
+- type: `Dec`
+- default value: 0.01%
 
 ### SlashWindow
 
 The number of blocks for slashing tallying.
 
 - type: `int64`
-- default value: `core.BlocksPerWeek` (1 week window)
+- default value: `BlocksPerWeek`
 
 ### MinValidPerWindow
 
 The ratio of minimum valid oracle votes per slash window to avoid slashing.
 
-- type: `sdk.Dec`
-- default value: `sdk.NewDecWithPrec(5, 2)` (5%)
+- type: `Dec`
+- default value: 5%
 
 ## Events
 

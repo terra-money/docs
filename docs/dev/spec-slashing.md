@@ -223,30 +223,30 @@ type Params struct {
 
 ### MaxEvidenceAge
 
-- type: `time.Duration`
-- default value: `60 * 2 * time.Second` (2 minutes)
+- type: `time.Duration` (seconds)
+- default: 2 minutes
 
 ### SignedBlocksWindow
 
 - type: `int64`
-- default value: `100`
+- default: `100`
 
 ### MinSignedPerWindow
 
-- type: `sdk.Dec`
-- default value: `sdk.NewDecWithPrec(5, 1)` (5)
+- type: `Dec`
+- default: `5`
 
 ### DowntimeJailDuration
 
-- type: `time.Duration`
-- default value: `60 * 10 * time.Second` (10 minutes)
+- type: `time.Duration` (seconds)
+- default value: 10 minutes
 
 ### SlashFractionDoubleSign
 
-- type: `sdk.Dec`
-- default value: `sdk.NewDec(1).Quo(sdk.NewDec(20))` (1/20)
+- type: `Dec`
+- default value: 1/20
 
 ### SlashFractionDowntime
 
-- type: `sdk.Dec`
-- default value: `sdk.NewDec(1).Quo(sdk.NewDec(10000))` (1/10000)
+- type: `Dec`
+- default value: 1/10000
