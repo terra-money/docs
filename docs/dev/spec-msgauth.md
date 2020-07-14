@@ -34,7 +34,7 @@ type MsgGrantAuthorization struct {
         ]
       }
     },
-    "period": "2020-04-27T05:41:20.893245519Z"
+    "period": "123908000000000"
   }
 }
 ```
@@ -63,7 +63,7 @@ type MsgRevokeAuthorization struct {
   "value": {
     "granter": "terra...",
     "grantee": "terra...",
-    "authorization_msg_type": "msgauth/SendAuthorization"
+    "authorization_msg_type": "swap"
   }
 }
 ```
@@ -95,7 +95,7 @@ type MsgExecAuthorized struct {
         "value": {
           "from_address": "terra...",
           "to_address": "terra...",
-          "coins": [
+          "amount": [
             {
               "denom": "ukrw",
               "amount": "999"
