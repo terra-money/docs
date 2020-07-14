@@ -395,28 +395,28 @@ The number of blocks during which seigniorage reward comes in and then is distri
 The list of currencies that can be voted on. This is set to (µKRW, µSDR, µUSD) by default.
 
 - type: `oracle.DenomList`
-- default value: `[ukrt, uusd, usdr]`
+- default: `[ukrt, uusd, usdr]`
 
 ### SlashFraction
 
 The ratio of penalty on bonded tokens.
 
 - type: `Dec`
-- default value: 0.01%
+- default: 0.01%
 
 ### SlashWindow
 
 The number of blocks for slashing tallying.
 
 - type: `int64`
-- default value: `BlocksPerWeek`
+- default: `BlocksPerWeek`
 
 ### MinValidPerWindow
 
 The ratio of minimum valid oracle votes per slash window to avoid slashing.
 
 - type: `Dec`
-- default value: 5%
+- default: 5%
 
 ## Events
 

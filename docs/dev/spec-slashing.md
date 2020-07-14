@@ -239,14 +239,14 @@ type Params struct {
 ### DowntimeJailDuration
 
 - type: `time.Duration` (seconds)
-- default value: 10 minutes
+- default: 10 minutes
 
 ### SlashFractionDoubleSign
 
 - type: `Dec`
-- default value: 1/20
+- default: 1/20
 
 ### SlashFractionDowntime
 
 - type: `Dec`
-- default value: 1/10000
+- default: 1/10000
