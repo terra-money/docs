@@ -1,4 +1,4 @@
-# dApp Platform
+# Smart Contracts on Terra
 
 With the arrival of WASM Smart Contracts on Terra, anyone is now able to leverage the robust decentralized infrastructure provided by the Terra blockchain to power innovative new forms of value transfer and financial products.
 

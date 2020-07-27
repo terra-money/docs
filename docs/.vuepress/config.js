@@ -6,7 +6,7 @@ module.exports = {
     },
   },
   description:
-    "Terra is the decentralized financial infrastructure powering the innovation of money. Terra provides the foundational building blocks for a new digital economy with its stablecoin protocol, oracle system, smart contracts, and plan for mass-user adoption.",
+    "Terra is a blockchain protocol that provides fundamental infrastructure for a decentralized economy and enables open participation in the creation of new financial primitives to power the innovation of money. ",
   plugins: [
     [
       "@vuepress/register-components",
