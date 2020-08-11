@@ -191,8 +191,8 @@ Open up `src/contract.rs`, clear the file, and add the following:
 // src/contract.rs
 
 use cosmwasm_std::{
-    generic_err, log, to_binary, Api, Binary, Env, Extern, HandleResponse, HumanAddr, InitResponse,
-    Querier, StdResult, Storage, Uint128,
+    log, to_binary, Api, Binary, Env, Extern, HandleResponse, HumanAddr, InitResponse,
+    Querier, StdError, StdResult, Storage, Uint128,
 };
 
 use crate::msg::{BalanceResponse, ConfigResponse, HandleMsg, InitMsg, QueryMsg};
@@ -311,7 +311,7 @@ fn try_transfer<S: Storage, A: Api, Q: Querier>(
     // check that sender's funds covers
     let mut sender_balance = balance_get(&deps.storage, sender_address);
     if sender_balance < *amount {
-        return Err(generic_err(format!(
+        return Err(StdError::generic_err(format!(
             "Insufficient funds to send: balance={}, required={}",
             sender_balance, amount
         )));
@@ -359,7 +359,7 @@ fn try_burn<S: Storage, A: Api, Q: Querier>(
 
     let mut sender_balance = balance_get(&deps.storage, sender_address);
     if sender_balance < *amount {
-        return Err(generic_err(format!(
+        return Err(StdError::generic_err(format!(
             "Insufficient funds to burn: balance={}, required={}",
             sender_balance, amount
         )));
