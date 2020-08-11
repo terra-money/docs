@@ -213,7 +213,7 @@ pub fn init<S: Storage, A: Api, Q: Querier>(
         &Config {
             name: msg.name,
             symbol: msg.symbol,
-            owner: env.message.sender,
+            owner: deps.api.canonical_address(&env.message.sender)?,
         },
     )?;
 
@@ -305,7 +305,7 @@ fn try_transfer<S: Storage, A: Api, Q: Querier>(
     amount: &Uint128,
 ) -> StdResult<HandleResponse> {
     // canonical address
-    let sender_address = &env.message.sender;
+    let sender_address = &deps.api.canonical_address(&env.message.sender)?;
     let recipient_address = &deps.api.canonical_address(recipient)?;
 
     // check that sender's funds covers
@@ -355,7 +355,7 @@ fn try_burn<S: Storage, A: Api, Q: Querier>(
     amount: &Uint128,
 ) -> StdResult<HandleResponse> {
     // canonical address
-    let sender_address = &env.message.sender;
+    let sender_address = &deps.api.canonical_address(&env.message.sender)?;
 
     let mut sender_balance = balance_get(&deps.storage, sender_address);
     if sender_balance < *amount {
