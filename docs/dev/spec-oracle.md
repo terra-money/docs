@@ -2,7 +2,7 @@
 
 The Oracle module provides the Terra blockchain with an up-to-date and accurate price feed of exchange rates of Luna against various Terra pegs so that the [Market](spec-market.md) may provide fair exchanges between Terra<>Terra currency pairs, as well as Terra<>Luna.
 
-As price information is extrinsic to the blockchain, the Terra network relies on validators to periodically vote on the current Luna exchange rate, with the protocol tallying up the results once per `VotePeriod` and updating the on-chain exchange rate as the weighted median of the ballot.
+As price information is extrinsic to the blockchain, the Terra network relies on validators to periodically vote on the current Luna exchange rate, with the protocol tallying up the results once per `VotePeriod` and updating the on-chain exchange rate as the weighted median of the ballot converted Cross Exchange Rates using `ReferenceTerra`.
 
 ::: warning NOTE
 Since the Oracle service is powered by validators, you may find it interesting to look at the [Staking](spec-staking.md) module, which covers the logic for staking and validators.
@@ -33,6 +33,27 @@ The submitted salt of each vote is used to verify consistency with the prevote s
 For each denomination, if the total voting power of submitted votes exceeds 50%, the weighted median of the votes is recorded on-chain as the effective exchange rate for Luna against that denomination for the following `VotePeriod` $P_{t+1}$.
 
 Denominations receiving fewer than [`VoteThreshold`](#votethreshold) total voting power have their exchange rates deleted from the store, and no swaps can be made with it during the next `VotePeriod` $P_{t+1}$.
+
+Choose `ReferenceTerra` with the highest voter turnout. If the voting power of the two denominations is the same, select reference Terra in alphabetical order.
+
+#### Compute Cross Exchange Rate using Reference Terra
+
+1. Choose `ReferenceTerra`
+    - Let `Vote_j = Vote_j_1 ... Vote_j_n` be the `uluna` exchange rate votes for each terra for validator `Val_j` in a given `VotePeriod`. `n` = number of total terra whitelist
+    - For all terra whitelist  `w_1 ... w_n`, choose the index `r` with the highest voter turnout. If the vote turnout has multiple tie winner, we choose in alphabetical order. `w_r` is chosen as the `ReferenceTerra` from which to compute cross exchange rates.
+
+2. Compute Oracle Exchange Rate
+    - Each validator now calculate cross exchange rates(`CER`) for `w_i` as below.
+        - for `i≠r`, `CER_j_i = Vote_j_r / Vote_j_i`
+        - for `i=r`, `CER_j_i = Vote_j_r`
+    - Calculate power weighted median(`PWM`, across all validators) for each cross exchange rates `CER_j_iMCER_i` = `PWM`(for all j)[`CER_j_i`]
+    - Now we transform these `MCER_i`s into the original form uluna/terra as below
+        - for `i≠r`, `LunaRate_i = MCER_r / MCER_i`
+        - for `i=r`, `LunaRate_i = MCER_r`
+
+3. Reward ballot winners
+    - For `i=r`, same as before, reward ballot winners based `CER_j_i = Vote_j_r` ballot with `MCER_i` using [`tally()`](#tally).
+    - For `i≠r`,  reward ballot winners based `CER_j_i = Vote_j_r / Vote_j_i` ballot with `MCER_i` using [`tally()`](#tally).
 
 #### Ballot Rewards
 
@@ -328,10 +349,11 @@ At the end of every block, the Oracle module checks whether it's the last block 
 
    - Must appear in the permitted denominations in [`Whitelist`](#whitelist)
    - Ballot for denomination must have at least [`VoteThreshold`](#votethreshold) total vote power
+   - Choose `ReferenceTerra` with the highest voter turnout
 
 4. For each remaining `denom` with a passing ballot:
 
-   - Tally up votes and find the weighted median exchange rate and winners with [`tally()`](#tally)
+   - Tally up votes with [`Compute Cross Exchange Rate using Reference Terra`](#compute-cross-exchange-rate-using-reference-terra) and find the weighted median exchange rate and winners with [`tally()`](#tally)
    - Iterate through winners of the ballot and add their weight to their running total
    - Set the Luna exchange rate on the blockchain for that Luna<>`denom` with `k.SetLunaExchangeRate()`
    - Emit a [`exchange_rate_update`](#exchange_rate_update) event
