@@ -87,6 +87,12 @@ Your node needs to know how to find peers. You'll need to add healthy seed nodes
 seeds = "20271e0591a7204d72280b87fdaa854f50c55e7e@106.10.59.48:26656,3b1c85b86528d10acc5475cb2c874714a69fde1e@110.234.23.153:26656,49333a4cb195d570ea244dab675a38abf97011d2@13.113.103.57:26656,7f19128de85ced9b62c3947fd2c2db2064462533@52.68.3.126:26656"
 ```
 
+Alternatively, the following are the current seeds for Terra's FCD and LCD servers:
+
+```toml
+seeds = "b416f0b04e2c71b8d76f993468352030e2dcf2a9@public-seed-node.columbus.certus.one:26656,0621acccfc2c847e67d84eb234bcc26323a103c3@public-seed.terra.dev:26656,46bba3a2c615ea5b569f086344f932fa11e81c01@public-seed2.terra.dev:26656"
+```
+
 ## Connecting to the Network
 
 ### Run your node
