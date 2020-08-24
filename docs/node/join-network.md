@@ -111,6 +111,36 @@ View the status of the network with the [Terra Finder](https://finder.terra.mone
 
 Congratulations! You've now successfully joined a network as a full node operator.
 
+### Using a data backup (optional)
+
+If you are connecting to an existing network for which you have a data backup (from a provider you trust), you can optionally load the backup into your node storage rather than syncing from scratch.
+
+ChainLayer has generously provided node data backups for Columbus-3 mainnet, which you can find in their [Terra QuickSync](https://terra.quicksync.io/) page.
+
+#### Example using QuickSync
+
+```bash
+# Stop Terra Daemon first
+
+sudo apt-get update -y
+sudo apt-get install wget liblz4-tool aria2 -y
+
+sudo su - [terrauser]
+cd ~/.terrad/
+FILENAME=columbus-3-pruned.DATE.TIME.tar.lz4
+aria2c -x5 https://get.quicksync.io/$FILENAME
+wget https://raw.githubusercontent.com/chainlayer/quicksync-playbooks/master/roles/quicksync/files/checksum.sh
+wget https://get.quicksync.io/$FILENAME.checksum
+
+# Compare checksum with onchain version. Hash can be found at https://get.quicksync.io/columbus-3-pruned.DATE.TIME.tar.lz4.hash
+curl -s https://lcd.terra.dev/txs/`curl -s https://get.quicksync.io/$FILENAME.hash`|jq -r '.tx.value.memo'|sha512sum -c
+./checksum.sh $FILENAME
+lz4 -d $FILENAME | tar xf -
+
+# Start Terra Daemon
+terrad start
+```
+
 ## Appendix
 
 ### Upgrading Testnet
