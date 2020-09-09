@@ -18,9 +18,10 @@
     "@vuepress/plugin-medium-zoom": "^1.3.1",
     "markdown-it-footnote": "^3.0.2",
     "node-sass": "^4.14.1",
-    "sass-loader": "^8.0.2",
+    "sass-loader": "^10",
     "vue-json-component": "^0.4.1",
     "vuepress": "^1.5.2",
-    "vuepress-plugin-mathjax": "^1.2.8"
+    "vuepress-plugin-mathjax": "^1.2.8",
+    "webpack": "^4.44.1"
   }
 }

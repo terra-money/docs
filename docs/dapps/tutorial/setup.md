@@ -17,7 +17,6 @@ To use **localterra**, you should first make sure Docker is installed on your co
 ```sh
 git clone https://github.com/terra-project/localterra
 cd localterra
-docker build -t terracore localterra-terracore
 docker-compose up
 ```
 

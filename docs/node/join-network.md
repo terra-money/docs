@@ -40,13 +40,13 @@ Your full node has now been initialized!
 
 ## Picking a Network
 
-You specify the network you want to join by setting the **genesis file** and **seeds**. If you need more information about past networks, check our [Networks Repo](https://github.com/terra-project/networks).
+You specify the network you want to join by setting the **genesis file** and **seeds**. If you need more information about past networks, check our [Networks Repo](https://github.com/terra-project/testnet).
 
-| Network        | Description        |                                                                                                      |                                                         |
-| -------------- | ------------------ | ---------------------------------------------------------------------------------------------------- | ------------------------------------------------------- |
-| `columbus-3`   | Mainnet            | [genesis](https://columbus-genesis.s3-ap-northeast-1.amazonaws.com/genesis.json)                     | [address book](https://network.terra.dev/addrbook.json) |
-| `soju-0014`    | Columbus-3 Testnet | [genesis](https://raw.githubusercontent.com/terra-project/networks/master/soju-0014/genesis.json)    |                                                         |
-| `tequila-0001` | Columbus-4 Testnet | [genesis](https://raw.githubusercontent.com/terra-project/networks/master/tequila-0001/genesis.json) |                                                         |
+| Network        | Description        | Homepage                                                                   |
+| -------------- | ------------------ | -------------------------------------------------------------------------- |
+| `columbus-3`   | Mainnet            | [Link](https://github.com/terra-project/mainnet)                           |
+| `soju-0014`    | Columbus-3 Testnet | [Link](https://github.com/terra-project/testnet/tree/master/soju-0014)     |
+| `tequila-0004` | Columbus-4 Testnet | [Link](https://github.com/terra-project/testnet/tree/master/tequila-0004)  |
 
 ### Download the genesis file
 
@@ -57,7 +57,7 @@ mkdir -p ~/.terrad/config
 curl https://columbus-genesis.s3-ap-northeast-1.amazonaws.com/genesis.json > ~/.terrad/config/genesis.json
 ```
 
-Note we use the `latest` directory in the [networks repo](https://github.com/terra-project/networks) which contains details for the latest testnet. If you are connecting to a different testnet, ensure you get the right files.
+Note we use the `latest` directory in the [networks repo](https://github.com/terra-project/testnet) which contains details for the latest testnet. If you are connecting to a different testnet, ensure you get the right files.
 
 To verify the correctness of the configuration run:
 
@@ -65,7 +65,7 @@ To verify the correctness of the configuration run:
 terrad start
 ```
 
-### Download address book (recommended)
+### Download address book (recommended for the mainnet)
 
 If you have an address book of peers, download `addrbook.json` and move it into `~/.terrad/config/addrbook.json`. This will give your node a selection of peers to dial to find other nodes.
 
@@ -87,10 +87,10 @@ Your node needs to know how to find peers. You'll need to add healthy seed nodes
 seeds = "20271e0591a7204d72280b87fdaa854f50c55e7e@106.10.59.48:26656,3b1c85b86528d10acc5475cb2c874714a69fde1e@110.234.23.153:26656,49333a4cb195d570ea244dab675a38abf97011d2@13.113.103.57:26656,7f19128de85ced9b62c3947fd2c2db2064462533@52.68.3.126:26656"
 ```
 
-Alternatively, the following are the current seeds for Terra's FCD and LCD servers:
+Alternatively, the following are the current seeds for Terra foundation nodes:
 
 ```toml
-seeds = "b416f0b04e2c71b8d76f993468352030e2dcf2a9@public-seed-node.columbus.certus.one:26656,0621acccfc2c847e67d84eb234bcc26323a103c3@public-seed.terra.dev:26656,46bba3a2c615ea5b569f086344f932fa11e81c01@public-seed2.terra.dev:26656"
+seeds = "87048bf71526fb92d73733ba3ddb79b7a83ca11e@public-seed.terra.dev:26656,b5205baf1d52b6f91afb0da7d7b33dcebc71755f@public-seed2.terra.dev:26656,5fa582d7c9931e5be8c02069d7b7b243c79d25bf@seed.terra.de-light.io:26656,6be0856f6365559fdc2e9e97a07d609f754632b0@terra-columbus-3-seed.nodes.polychainlabs.com:26656,925ecc3de9e2ac65a203beb2333ced1a00c135ed@terra-seed-us.chorus.one:28657,bae08cc880c20aeda68a5a890a71a9b44ac73cb4@terra-seed-eu.chorus.one:28657"
 ```
 
 ## Connecting to the Network
@@ -117,35 +117,11 @@ View the status of the network with the [Terra Finder](https://finder.terra.mone
 
 Congratulations! You've now successfully joined a network as a full node operator.
 
-### Using a data backup (optional)
+### Using a data backup (recommended for the mainnet)
 
 If you are connecting to an existing network for which you have a data backup (from a provider you trust), you can optionally load the backup into your node storage rather than syncing from scratch.
 
 ChainLayer has generously provided node data backups for Columbus-3 mainnet, which you can find in their [Terra QuickSync](https://terra.quicksync.io/) page.
-
-#### Example using QuickSync
-
-```bash
-# Stop Terra Daemon first
-
-sudo apt-get update -y
-sudo apt-get install wget liblz4-tool aria2 -y
-
-sudo su - [terrauser]
-cd ~/.terrad/
-FILENAME=columbus-3-pruned.DATE.TIME.tar.lz4
-aria2c -x5 https://get.quicksync.io/$FILENAME
-wget https://raw.githubusercontent.com/chainlayer/quicksync-playbooks/master/roles/quicksync/files/checksum.sh
-wget https://get.quicksync.io/$FILENAME.checksum
-
-# Compare checksum with onchain version. Hash can be found at https://get.quicksync.io/columbus-3-pruned.DATE.TIME.tar.lz4.hash
-curl -s https://lcd.terra.dev/txs/`curl -s https://get.quicksync.io/$FILENAME.hash`|jq -r '.tx.value.memo'|sha512sum -c
-./checksum.sh $FILENAME
-lz4 -d $FILENAME | tar xf -
-
-# Start Terra Daemon
-terrad start
-```
 
 ## Appendix
 
@@ -182,7 +158,7 @@ make
 If you have issues at this step, please check that you have the latest stable version of GO installed.
 :::
 
-Note we use `master` here since it contains the latest stable release. See the [testnet repo](https://github.com/terra-project/networks) for details on which version is needed for which testnet, and the [Terra Core release page](https://github.com/terra-project/core/releases) for details on each release. Your full node has been cleanly upgraded!
+Note we use `master` here since it contains the latest stable release. See the [testnet repo](https://github.com/terra-project/testnet) for details on which version is needed for which testnet, and the [Terra Core release page](https://github.com/terra-project/core/releases) for details on each release. Your full node has been cleanly upgraded!
 
 ### Exporting state
 
