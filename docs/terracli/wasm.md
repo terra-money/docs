@@ -34,7 +34,7 @@ You can send a QueryMsg that that will be run against the contract.
 terracli query wasm contract-store <contract-address> <query-msg>
 ```
 
-`<query-msg>` will be a JSON string that encodes the QueryMsg. For instance:
+`<query-msg>` is a JSON string that encodes the QueryMsg. For instance:
 
 ```sh
 terracli query wasm contract-store terra1plju286nnfj3z54wgcggd4enwaa9fgf5kgrgzl '{"config":{}}'
@@ -48,7 +48,7 @@ If you know the key (and subkey) of the information stored in the contract, you 
 terracli query wasm raw-store <contract-address> <key> <subkey>
 ```
 
-If the data uses a `Singleton`, it has only a key, and no subkey. If the data uses a prefixed data store such as `PrefixedStorage` or `Bucket`, it might also use a subkey.
+If the data uses a `Singleton`, it has only a key, and no subkey. If the data uses a prefixed data store such as `PrefixedStorage` or `Bucket`, it may also accept a subkey.
 
 ## Transaction
 
@@ -87,3 +87,25 @@ terracli tx wasm execute <contract-address> <handle-msg> <coins>
 ```
 
 The argument `<handle-msg>` is a raw JSON string containing the HandleMsg that will be parsed and routed to the correct message handling logic in the contract. `<coins>` is the optional amount of Coins (in a comma-separated list) that you want to send alongside your message, in case the logic requires some fees.
+
+### Migrate a Contract
+
+Update a migratable contract's code ID to a new code ID. Can only be issued from the key corresponding to the contract's owner.
+
+```sh
+terracli tx wasm migrate <contract-address> <new-code-id> <migrate-msg>
+```
+
+#### Example
+
+```sh
+terracli tx wasm migrate terra... 10 '{"verifier": "terra..."}'
+```
+
+### Update Contract Owner
+
+Update a contract owner to a new address. Can only be issued from the key corresponding to the contract's owner.
+
+```sh
+terracli tx wasm update-owner <contract-address> <new-owner>
+```
