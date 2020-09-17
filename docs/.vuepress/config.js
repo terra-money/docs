@@ -71,8 +71,7 @@ module.exports = {
     ],
     [
       "script",
-      {
-      },
+      {},
       `window.onload = function() {
         requestAnimationFrame(function() {
           if (location.hash) {
@@ -83,7 +82,7 @@ module.exports = {
             }
           }
         })
-      }`
+      }`,
     ],
   ],
   themeConfig: {
@@ -100,7 +99,7 @@ module.exports = {
     },
     nav: [
       { text: "Docs", link: "/" },
-      { text: "Contracts", link: "/dapps/" },
+      { text: "Contracts", link: "/contracts/" },
       { text: "Validators", link: "/validator/" },
       { text: "Core", link: "/dev/" },
       {
@@ -110,17 +109,33 @@ module.exports = {
       },
     ],
     sidebar: {
-      "/dapps/": [
-        "/dapps/",
+      "/contracts/": [
+        "/contracts/",
         {
           title: "Tutorial",
           children: [
-            "/dapps/tutorial/",
-            "/dapps/tutorial/setup",
-            "/dapps/tutorial/implementation",
-            "/dapps/tutorial/interacting",
+            "/contracts/tutorial/",
+            "/contracts/tutorial/setup",
+            "/contracts/tutorial/implementation",
+            "/contracts/tutorial/interacting",
           ],
           collapsable: false,
+        },
+        {
+          title: "CosmWasm Resources",
+          collapsable: false,
+          children: [
+            ["https://docs.cosmwasm.com", "CosmWasm Official Docs"],
+            ["https://github.com/CosmWasm/cosmwasm", "CosmWasm Repo"],
+            [
+              "https://www.youtube.com/watch?v=pm6VX5ueT2k",
+              "Token Video Tutorial",
+            ],
+            [
+              "https://github.com/CosmWasm/cosmwasm-plus",
+              "Standard CosmWasm Contracts",
+            ],
+          ],
         },
       ],
       "/dev/": [
