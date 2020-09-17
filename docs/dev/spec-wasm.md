@@ -1,5 +1,7 @@
 # WASM
 
+The WASM module
+
 ## Concepts
 
 ## Data
