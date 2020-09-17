@@ -56,7 +56,7 @@ If a user is the contract's owner, and a contract is instantiated as migratable,
 
 #### Transfer of Ownership
 
-The owner of the smart contract can set the `MsgUpdateContractOwner`.
+The owner of the smart contract can assign a new owner to the contract with `MsgUpdateContractOwner`.
 
 #### Query
 
