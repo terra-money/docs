@@ -151,6 +151,7 @@ module.exports = {
             "/dev/spec-distribution",
             "/dev/spec-governance",
             "/dev/spec-market",
+            "/dev/spec-mint",
             "/dev/spec-msgauth",
             "/dev/spec-oracle",
             "/dev/spec-slashing",
