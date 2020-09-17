@@ -1,6 +1,8 @@
-# Smart Contracts on Terra
+# Smart Contracts
 
-With the arrival of WASM Smart Contracts on Terra, anyone is now able to leverage the robust decentralized infrastructure provided by the Terra blockchain to power innovative new forms of value transfer and financial products.
+A smart contract is a contract whose terms are expressed as a computer program with logic and state are persisted on the blockchain. Smart contracts can automatically carry out its terms and conditions with total transparency and no counter-party risk.
+
+Smart contracts allow users to extend the capabilities of the Terra blockchain by introducing custom logic that can be composed against the Terra blockchain's financial primitives such as its stablecoin available in any world currency, robust oracle price feed, and on-chain atomic swap. These decentralized applications unlocks new avenues of value-transfer through enabling unique transaction flows not provided by Terra's native modules.
 
 ## Why build on Terra?
 

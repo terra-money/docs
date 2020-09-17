@@ -57,7 +57,7 @@ Welcome to the official documentation for Terra, a decentralized financial infra
       Become a validator and earn delegation commissions in exchange for helping secure the network.
     </div>
   </a>
-  <a href="/dapps/" class="card">
+  <a href="/contracts/" class="card">
     <img src="/img/icon_smartcontract.svg"/>
     <div class="title">
       Smart Contracts
