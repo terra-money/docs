@@ -12,6 +12,18 @@ terracli query market swap <offer_coin> <ask_denom>
 
 Where `offer_coin` is the coin to be traded and `ask_denom` the denomination to be swapped into.
 
+### Terra Pool Delta
+
+```sh
+terracli query market terra-pool-delta
+```
+
+### Parameters
+
+```sh
+terracli query market params
+```
+
 ## Transaction
 
 ### Swap
@@ -28,3 +40,15 @@ terracli tx market swap \
 Where `offer_coin` is the coin looking to be traded and `ask_denom` the denomination of the coin to be swapped into.
 
 For Terra<>Luna swaps, Constant-Product spread pricing model is enforced to limit consensus-related attack vectors. Terra<>Terra swaps have a constant Tobin Tax (0.3%).
+
+### Swap Send
+
+You can specify optionally specify a recipient during a swap and perform a swap and send in one transaction.
+
+```bash
+terracli tx market swap \
+    <offer_coin> \
+    <ask_denom>  \
+    <recipient>
+    --from mykey \
+```
