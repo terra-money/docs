@@ -14,11 +14,15 @@ Where `offer_coin` is the coin to be traded and `ask_denom` the denomination to 
 
 ### Terra Pool Delta
 
+To get the current value of the Terra Pool Delta:
+
 ```sh
 terracli query market terra-pool-delta
 ```
 
 ### Parameters
+
+To get the market module's parameters:
 
 ```sh
 terracli query market params
@@ -37,9 +41,10 @@ terracli tx market swap \
     --from mykey \
 ```
 
-Where `offer_coin` is the coin looking to be traded and `ask_denom` the denomination of the coin to be swapped into.
+- `offer_coin`: coin to be traded, e.g. `1000ukrw`
+- `ask_denom`: denomination of the coin to be swapped into.
 
-For Terra<>Luna swaps, Constant-Product spread pricing model is enforced to limit consensus-related attack vectors. Terra<>Terra swaps have a constant Tobin Tax (0.3%).
+For Terra<>Luna swaps, Constant-Product spread pricing model is enforced to limit consensus-related attack vectors. Terra<>Terra swaps have a constant Tobin Tax.
 
 ### Swap Send
 

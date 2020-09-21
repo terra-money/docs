@@ -68,6 +68,22 @@ To check the current governance parameters run:
 terracli query gov params
 ```
 
+The reported parameters will be of the following format:
+
+```yaml
+voting_params:
+  voting_period: 5m0s
+tally_params:
+  quorum: "0.334000000000000000"
+  threshold: "0.500000000000000000"
+  veto: "0.334000000000000000"
+deposit_parmas:
+  min_deposit:
+    - denom: uluna
+      amount: "10000000"
+  max_deposit_period: 48h0m0s
+```
+
 To query subsets of the governance parameters run:
 
 ```bash

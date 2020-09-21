@@ -64,8 +64,31 @@ terracli query oracle tobin-taxes
 
 ### Parameters
 
+You can get the oracle module's parameters:
+
 ```sh
 terracli query oracle params
+```
+
+The reported parameters will be of the following format:
+
+```yaml
+vote_period: 5
+vote_threshold: "0.500000000000000000"
+reward_band: "0.020000000000000000"
+reward_distribution_window: 5256000
+whitelist:
+  - name: ukrw
+    tobin_tax: "0.002500000000000000"
+  - name: usdr
+    tobin_tax: "0.002500000000000000"
+  - name: uusd
+    tobin_tax: "0.002500000000000000"
+  - name: umnt
+    tobin_tax: "0.020000000000000000"
+slash_fraction: "0.000100000000000000"
+slash_window: 100800
+min_valid_per_window: "0.050000000000000000"
 ```
 
 ## Transaction

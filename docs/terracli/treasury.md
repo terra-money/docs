@@ -50,12 +50,26 @@ Parameters define high-level settings for the Treasury, described [here](../dev/
 terracli query treasury params
 ```
 
-With the above command you will get the values for:
+The reported parameters will be of the following format:
 
-- Tax Rate update policy
-- Reward Weight update policy
-- Seigniorage Burden Target
-- Mining Increment
-- `WindowShort` \(update parameter\)
-- `WindowLong` \(update parameter\)
-- `WindowProbation` \(update parameter\)
+```yaml
+tax_policy:
+  ratemin: "0.000500000000000000"
+  ratemax: "0.010000000000000000"
+  cap:
+    denom: usdr
+    amount: "1000000"
+  changeratemax: "0.000250000000000000"
+reward_policy:
+  ratemin: "0.050000000000000000"
+  ratemax: "0.500000000000000000"
+  cap:
+    denom: unused
+    amount: "0"
+  changeratemax: "0.025000000000000000"
+seigniorage_burden_target: "0.670000000000000000"
+mining_increment: "1.070000000000000000"
+window_short: 4
+window_long: 52
+window_probation: 12
+```

@@ -99,19 +99,21 @@ With the `pool` command you will get the values for:
 
 ### Parameters
 
-Parameters define high level settings for staking. You can get the current values by using:
+Parameters define high-level settings for staking. You can get the current values by using:
 
 ```bash
 terracli query staking params
 ```
 
-With the above command you will get the values for:
+The reported parameters will be of the following format:
 
-- Unbonding time
-- Maximum numbers of validators
-- Coin denomination for staking
-
-All these values will be subject to updates though a `governance` process by `ParameterChange` proposals.
+```yaml
+unbonding_time: 504h0m0s
+max_validators: 100
+max_entries: 100
+historical_entries: 0
+bond_denom: uluna
+```
 
 ## Transactions
 

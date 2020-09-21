@@ -56,6 +56,15 @@ To check the current distribution parameters, run:
 terracli query distribution params
 ```
 
+The parameters reported will be of the format:
+
+```yaml
+community_tax: "0.020000000000000000"
+base_proposer_reward: "0.010000000000000000"
+bonus_proposer_reward: "0.040000000000000000"
+withdraw_addr_enabled: true
+```
+
 ## Transaction
 
 ### Withdraw Rewards

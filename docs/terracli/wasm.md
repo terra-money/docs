@@ -52,8 +52,18 @@ If the data uses a `Singleton`, it has only a key, and no subkey. If the data us
 
 ### Parameters
 
+You can get the current WASM module's parameters:
+
 ```sh
 terracli query wasm params
+```
+
+The reported parameters will be of the following format:
+
+```yaml
+max_contract_size: 512000
+max_contract_gas: 100000000
+max_contract_msg_size: 1024
 ```
 
 ## Transaction
