@@ -40,7 +40,7 @@ terracli query wasm contract-store <contract-address> <query-msg>
 terracli query wasm contract-store terra1plju286nnfj3z54wgcggd4enwaa9fgf5kgrgzl '{"config":{}}'
 ```
 
-### Access Contract Store
+### Raw Key-Value Store Query
 
 If you know the key (and subkey) of the information stored in the contract, you can get the information by issuing:
 
@@ -49,6 +49,12 @@ terracli query wasm raw-store <contract-address> <key> <subkey>
 ```
 
 If the data uses a `Singleton`, it has only a key, and no subkey. If the data uses a prefixed data store such as `PrefixedStorage` or `Bucket`, it may also accept a subkey.
+
+### Parameters
+
+```sh
+terracli query wasm params
+```
 
 ## Transaction
 
