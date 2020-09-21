@@ -219,6 +219,8 @@ module.exports = {
             "terracli/distribution",
             "terracli/governance",
             "terracli/market",
+            "terracli/mint",
+            "terracli/msgauth",
             "terracli/oracle",
             "terracli/slashing",
             "terracli/staking",

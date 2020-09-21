@@ -52,15 +52,15 @@ The `HandleMsg` is a JSON message that containing function call arguments and ge
 
 #### Migration
 
-If a user is the contract's owner, and a contract is instantiated as migratable, they can submit a `MsgMigrateContract` to set its code ID to a new one.
+If a user is the contract's owner, and a contract is instantiated as migratable, they can issue a `MsgMigrateContract` to reset its code ID to a new one. The migration is be parameterized with a `MigrateMsg`, a JSON message.
 
 #### Transfer of Ownership
 
-The owner of the smart contract can assign a new owner to the contract with `MsgUpdateContractOwner`.
+The current owner of the smart contract can re-assign a new owner to the contract with `MsgUpdateContractOwner`.
 
 #### Query
 
-Contracts can define query functions, or read-only operations meant for data-retrieval. This allows contracts to expose rich, custom data endpoints with JSON responses instead of unformatted raw bytes from LevelDB. Because the blockchain state cannot be changed, the node can directly run the query without needing a transaction.
+Contracts can define query functions, or read-only operations meant for data-retrieval. This allows contracts to expose rich, custom data endpoints with JSON responses instead of raw bytes from the low-level key-value store. Because the blockchain state cannot be changed, the node can directly run the query without a transaction.
 
 Users can specify which query function alongside any arguments with a JSON `QueryMsg`. Even though there is no gas fee, the query function's execution is capped by gas determined by metered execution (which is not charged) as a form of spam-protection.
 
@@ -114,7 +114,7 @@ type MsgInstantiateContract struct {
 
 ```json
 {
-  "type": "wasm/InstantiateContract",
+  "type": "wasm/MsgInstantiateContract",
   "value": {
     "owner": "terra...",
     "code_id": "23",
@@ -147,7 +147,7 @@ type MsgExecuteContract struct {
 
 ```json
 {
-  "type": "wasm/ExecuteContract",
+  "type": "wasm/MsgExecuteContract",
   "value": {
     "sender": "terra...",
     "contract": "terra...",
@@ -179,7 +179,7 @@ type MsgMigrateContract struct {
 
 ```json
 {
-  "type": "wasm/MigrateContract",
+  "type": "wasm/MsgMigrateContract",
   "value": {
     "owner": "terra...",
     "contract": "terra...",
@@ -205,7 +205,7 @@ type MsgUpdateContractOwner struct {
 
 ```json
 {
-  "type": "wasm/UpdateContractOwner",
+  "type": "wasm/MsgUpdateContractOwner",
   "value": {
     "owner": "terra...",
     "new_owner": "terra...",
