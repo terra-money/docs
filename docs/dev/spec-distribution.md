@@ -52,7 +52,7 @@ properties change (aka bonded tokens etc.) its properties will remain constant
 and the delegator's _accumulation_ factor can be calculated passively knowing
 only the height of the last withdrawal and its current properties.
 
-## Messages
+## Message Types
 
 ### MsgSetWithdrawAddress
 

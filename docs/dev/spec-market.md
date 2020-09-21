@@ -104,7 +104,7 @@ For Luna swaps into Terra, the Luna that recaptured by the protocol is burned an
 
 An `sdk.Dec` that represents the difference between size of current Terra pool and its original base size, valued in µSDR.
 
-## Messages
+## Message Types
 
 ### MsgSwap
 

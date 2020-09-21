@@ -128,7 +128,7 @@ Maps contract address to its dedicated KVStore.
 
 - type: `map[bytes]KVStore`
 
-## Messages
+## Message Types
 
 ### MsgStoreCode
 
