@@ -4,6 +4,18 @@ A smart contract is a contract whose terms are expressed as a computer program w
 
 Smart contracts allow users to extend the capabilities of the Terra blockchain by introducing custom logic that can be composed against the Terra blockchain's financial primitives such as its stablecoin available in any world currency, robust oracle price feed, and on-chain atomic swap. These decentralized applications unlocks new avenues of value-transfer through enabling unique transaction flows not provided by Terra's native modules.
 
+## Developer Tools
+
+The following table maps commonly-used Ethereum developer tools to their Terra counterparts.
+
+|                    | Terra                                                                                   | Ethereum        |
+| ------------------ | --------------------------------------------------------------------------------------- | --------------- |
+| Frontend SDK       | [Terra.js](https://terra-project.github.io/terra.js/), [Jigu](https://jigu.terra.money) | Web3.js, Web3py |
+| Browser Extension  | Station CX                                                                              | MetaMask, MEW   |
+| Local Testnet      | [LocalTerra](https://github.com/terra-project/LocalTerra)                               | Ganache         |
+| Contract Language  | [Rust](https://www.rust-lang.org/)                                                      | Solidity, Vyper |
+| Contract Toolchain | [Houston](https://github.com/terra-project/houston)                                     | Truffle         |
+
 ## Why build on Terra?
 
 ### Robust consensus and fast block finality
