@@ -272,8 +272,6 @@ type MsgUpdateContractOwner struct {
 
 :::
 
-## Transitions
-
 ## Parameters
 
 The subspace for the WASM module is `wasm`.
