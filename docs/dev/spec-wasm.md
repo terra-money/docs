@@ -88,7 +88,7 @@ type MsgStoreCode struct {
 
 ```json
 {
-  "type": "wasm/StoreCode",
+  "type": "wasm/MsgStoreCode",
   "value": {
     "sender": "terra...",
     "wasm_byte_code": "QmFzZTY0LWVuY29kZWQgV0FTTSBiaW5hcnk="

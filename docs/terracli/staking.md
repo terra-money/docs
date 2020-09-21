@@ -112,3 +112,63 @@ With the above command you will get the values for:
 - Coin denomination for staking
 
 All these values will be subject to updates though a `governance` process by `ParameterChange` proposals.
+
+## Transactions
+
+### Create validator
+
+```sh
+terracli tx staking create-validator \
+    --amount=5000000uluna \
+    --pubkey=$(terrad tendermint show-validator) \
+    --moniker="choose a moniker" \
+    --website="validator.website" \
+    --identity="keybase identity" \
+    --details="validator's optional details" \
+    --commission-rate="0.10" \
+    --commission-max-rate="0.20" \
+    --commission-max-change-rate="0.01" \
+    --min-self-delegation="1"
+    --chain-id=<chain_id> \
+    --from=<key_name> \
+```
+
+### Edit validator
+
+```sh
+terracli tx staking edit-validator \
+    --moniker="new moniker" \
+    --details="validator's optional details" \
+    --commission-rate="0.10" \
+    --min-self-delegation="1" \
+```
+
+Each of the above flags are all optional and will not be changed if not specified. The new commission rate will be rejected if it contradicts the validator's registered max commission rate and max daily commission rate change.
+
+### Delegate
+
+```sh
+terracli tx staking delegate <validator-addr> <amount>
+```
+
+- `validator-addr`: validator operator address to delegate to
+- `amount`: coins, i.e. `1000uluna`
+
+### Redelegate
+
+```sh
+terracli tx staking redelegate <src-validator-addr> <dst-validator-addr> <amount>
+```
+
+- `src-validator-addr`: source validator's operator address
+- `dst-validator-addr`: destination validator's operator address
+- `amount`: coins, i.e. `1000uluna`
+
+### Undelegate
+
+```sh
+terracli tx staking unbond <validator-addr> <amount>
+```
+
+- `validator-addr`: validator operator address from which to undelegate
+- `amount`: coins, i.e. `1000uluna`
