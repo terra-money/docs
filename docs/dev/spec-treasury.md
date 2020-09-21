@@ -243,7 +243,7 @@ func (k Keeper) UpdateRewardPolicy(ctx sdk.Context) (newRewardWeight sdk.Dec)
 
 This function gets called at the end of an epoch to calculate the next value of the Reward Weight monetary lever.
 
-Consider $ w_t $ to be the current reward weight, and $ b $ to be the [`SeigniorageBurdenTarget`](#seigniorageburdentarget) parameter.
+Consider $w_t$ to be the current reward weight, and $b$ to be the [`SeigniorageBurdenTarget`](#seigniorageburdentarget) parameter.
 
 1. Calculate the sum of $S_m$ of seignorage rewards over the last month `WindowShort`.
 
@@ -251,7 +251,7 @@ Consider $ w_t $ to be the current reward weight, and $ b $ to be the [`Seignior
 
 3. If either $R_m = 0$ or $S_m = 0$ there was no mining and seigniorage rewards in the last month. The Rewards Weight should thus be set to the maximum permitted by the Reward Policy, subject to the rules of `pc.Clamp()` (see [constraints](#policy-constraints)).
 
-4. Otherwise, the new Reward Weight is $ w_{t+1} = b w_t S_m / R_m $, subject to the rules of `pc.Clamp()` (see [constraints](#policy-constraints)).
+4. Otherwise, the new Reward Weight is $w_{t+1} = b w_t S_m / R_m$, subject to the rules of `pc.Clamp()` (see [constraints](#policy-constraints)).
 
 ### `k.UpdateTaxCap()`
 
