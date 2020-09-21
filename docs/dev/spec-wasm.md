@@ -66,11 +66,67 @@ Users can specify which query function alongside any arguments with a JSON `Quer
 
 ### Wasmer VM
 
-#### Gas
+The actual execution of WASM bytecode is performed by [wasmer](https://github.com/wasmerio/wasmer), which provides a lightweight sandboxed runtime with metered execution to account for the resource cost of computation.
+
+#### Gas Meter
+
+In addition to the regular gas fees incurred from creating the transaction, Terra also calculates a separate gas when executing smart contract code. This is tracked by the **gas meter**, which is during the execution of every opcode and gets translated back to native Terra gas via a constant multiplier (currently set to 100).
 
 ## Data
 
+### CodeInfo
+
+```go
+type CodeInfo struct {
+	CodeID   uint64           `json:"code_id"`
+	CodeHash core.Base64Bytes `json:"code_hash"`
+	Creator  sdk.AccAddress   `json:"creator"`
+}
+```
+
+### ContractInfo
+
+```go
+type ContractInfo struct {
+	Address    sdk.AccAddress   `json:"address"`
+	Owner      sdk.AccAddress   `json:"owner"`
+	CodeID     uint64           `json:"code_id"`
+	InitMsg    core.Base64Bytes `json:"init_msg"`
+	Migratable bool             `json:"migratable"`
+}
+```
+
 ## State
+
+### LastCodeID
+
+A counter for the last uploaded code ID.
+
+- type: `uint64`
+
+### LastInstanceID
+
+A counter for the last instantiated contract number.
+
+- type: `uint64`
+
+### Code
+
+Maps a code ID to `CodeInfo` entry.
+
+- type: `map[uint64]CodeInfo`
+
+### ContractInfo
+
+Maps contract address to its corresponding `ContractInfo`.
+
+- type: `map[bytes]ContractInfo`
+
+### ContractStore
+
+Maps contract address to its dedicated KVStore.
+
+- type: `map[bytes]KVStore`
 
 ## Messages
 
@@ -219,5 +275,33 @@ type MsgUpdateContractOwner struct {
 ## Transitions
 
 ## Parameters
+
+The subspace for the WASM module is `wasm`.
+
+```go
+type Params struct {
+	MaxContractSize    uint64 `json:"max_contract_size" yaml:"max_contract_size"`
+	MaxContractGas     uint64 `json:"max_contract_gas" yaml:"max_contract_gas"`
+	MaxContractMsgSize uint64 `json:"max_contract_msg_size" yaml:"max_contract_msg_size"`
+}
+```
+
+### MaxContractSize
+
+Maximum contract bytecode size, in bytes.
+
+- type: `uint64`
+
+### MaxContractGas
+
+Maximum contract gas consumption during any execution.
+
+- type: `uint64`
+
+### MaxContractMsgSize
+
+Maximum contract message size, in bytes.
+
+- type: `uint64`
 
 ## Events
