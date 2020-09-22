@@ -156,9 +156,9 @@ type MsgFundCommunityPool struct {
 
 ## Proposals
 
-The Distribution module defines a special proposal that upon being passed, will disburse the coins specified in `Amount` to the `Recipient` account using funds from the Community Pool.
+### CommunityPoolSpendProposal
 
-### `CommunityPoolSpendProposal`
+The Distribution module defines a special proposal that upon being passed, will disburse the coins specified in `Amount` to the `Recipient` account using funds from the Community Pool.
 
 ```go
 type CommunityPoolSpendProposal struct {
@@ -235,5 +235,3 @@ type GenesisState struct {
 ### WithdrawAddrEnabled
 
 - type: `bool`
-
-## Events

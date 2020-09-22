@@ -1,8 +1,8 @@
 # Smart Contracts
 
-A smart contract is a contract whose terms are expressed as a computer program with logic and state are persisted on the blockchain. Smart contracts can automatically carry out its terms and conditions with total transparency and no counter-party risk.
+A smart contract is a contract whose terms are expressed as a computer program with logic and state persisted on the blockchain. Smart contracts can automatically carry out its terms and conditions with total transparency and no counter-party risk.
 
-Smart contracts allow users to extend the capabilities of the Terra blockchain by introducing custom logic that can be composed against the Terra blockchain's financial primitives such as its stablecoin available in any world currency, robust oracle price feed, and on-chain atomic swap. These decentralized applications unlocks new avenues of value-transfer through enabling unique transaction flows not provided by Terra's native modules.
+Smart contracts allow users to extend the capabilities of the Terra blockchain by introducing custom logic that can be composed against the Terra blockchain's financial primitives such as its stablecoin available in any world currency, robust oracle price feed, and on-chain atomic swap. These decentralized applications unlock new avenues of value-transfer through enabling unique transaction flows not provided by Terra's native modules.
 
 ## Developer Tools
 
@@ -20,7 +20,7 @@ The following table maps commonly-used Ethereum developer tools to their Terra c
 
 ### Robust consensus and fast block finality
 
-Terra is powered by Tendermint BFT consensus, using a dPoS-like scheme driven by a set of 100 top validators. This efficient consensus model enables batches of transations to occur in only 6 seconds (only a fraction of the time it takes for Bitcoin and Ethereum).
+Terra is powered by Tendermint BFT consensus, using a dPoS-like scheme driven by a set of 100 top validators. This efficient consensus model enables batches of transactions to occur in only 6 seconds (only a fraction of the time it takes for Bitcoin and Ethereum).
 
 ### Ready for DeFi applications
 

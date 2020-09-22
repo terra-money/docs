@@ -98,10 +98,6 @@ Each module should be documented with the following subheaders:
 
    A section that covers the chain parameters that can be modified by governance via the `params` module
 
-9. Events
-
-   A section that covers the different types of events that are emitted in the log, and when they are emitted.
-
 ## Built With
 
 - Vuepress

@@ -17,8 +17,6 @@ If the inflation rate is below the goal %-bonded the inflation rate will increas
 If the goal % bonded (67% in Cosmos-Hub) is maintained, then the inflation rate will stay constant
 If the inflation rate is above the goal %-bonded the inflation rate will decrease until a minimum value is reached
 
-## State
-
 ## Parameters
 
 The subspace for the Mint module is `mint`.
@@ -63,5 +61,3 @@ type Params struct {
 ### BlocksPerYear
 
 - type: `uint64`
-
-## Events

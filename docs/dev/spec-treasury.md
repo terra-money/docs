@@ -116,6 +116,14 @@ type TaxRateUpdateProposal struct {
 
 :::
 
+::: details Events
+
+| Type            | Attribute Key | Attribute Value |
+| --------------- | ------------- | --------------- |
+| tax_rate_update | tax_rate      | {taxRate}       |
+
+:::
+
 ### RewardWeightUpdateProposal
 
 ```go
@@ -138,6 +146,14 @@ type RewardWeightUpdateProposal struct {
   }
 }
 ```
+
+:::
+
+::: details Events
+
+| Type                 | Attribute Key | Attribute Value |
+| -------------------- | ------------- | --------------- |
+| reward_weight_update | reward_weight | {rewardWeight}  |
 
 :::
 
@@ -297,6 +313,16 @@ If the blockchain is at the final block of the epoch, the following procedure is
 
 6. Finally, record the Luna issuance with [`k.RecordEpochInitialIssuance()`](#epoch-initial-issuance). This will be used in calculating the seigniorage for the next epoch.
 
+::: details Events
+
+| Type          | Attribute Key | Attribute Value |
+| ------------- | ------------- | --------------- |
+| policy_update | tax_rate      | {taxRate}       |
+| policy_update | reward_weight | {rewardWeight}  |
+| policy_update | tax_cap       | {taxCap}        |
+
+:::
+
 ## Parameters
 
 The subspace for the Treasury module is `treasury`.
@@ -379,15 +405,3 @@ A number of epochs that specifies a time interval for calculating long-term movi
 - default: `12` (3 months = 12 weeks)
 
 A number of epochs that specifies a time interval for the probationary period.
-
-## Events
-
-The Treasury module emits the following events:
-
-### `policy_update`
-
-| Key               | Value         |
-| :---------------- | :------------ |
-| `"tax_rate"`      | tax rate      |
-| `"reward_weight"` | reward weight |
-| `"tax_cap"`       | tax cap       |

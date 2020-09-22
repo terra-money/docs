@@ -99,14 +99,15 @@ For Luna swaps into Terra, the Luna that recaptured by the protocol is burned an
 
 ### Terra Pool Delta δ
 
-- `k.GetTerraPoolDelta(ctx) sdk.Dec`
-- `k.SetTerraPoolDelta(ctx, delta sdk.Dec)`
+- type: `sdk.Dec`
 
-An `sdk.Dec` that represents the difference between size of current Terra pool and its original base size, valued in µSDR.
+Represents the difference between size of current Terra pool and its original base size, valued in µSDR.
 
 ## Message Types
 
 ### MsgSwap
+
+A `MsgSwap` transaction denotes the `Trader`'s intent to swap their balance of `OfferCoin` for new denomination `AskDenom`, for both Terra<>Terra and Terra<>Luna swaps.
 
 ```go
 // MsgSwap contains a swap request
@@ -135,9 +136,24 @@ type MsgSwap struct {
 
 :::
 
-A `MsgSwap` transaction denotes the `Trader`'s intent to swap their balance of `OfferCoin` for new denomination `AskDenom`, for both Terra<>Terra and Terra<>Luna swaps.
+::: details Events
+
+| Type    | Attribute Key | Attribute Value    |
+| ------- | ------------- | ------------------ |
+| swap    | offer         | {offerCoin}        |
+| swap    | trader        | {traderAddress}    |
+| swap    | recipient     | {recipientAddress} |
+| swap    | swap_coin     | {swapCoin}         |
+| swap    | swap_fee      | {swapFee}          |
+| message | module        | market             |
+| message | action        | swap               |
+| message | sender        | {senderAddress}    |
+
+:::
 
 ### MsgSwapSend
+
+A `MsgSendSwap` first performs a swap of `OfferCoin` into `AskDenom` and the sends the resulting coins to `ToAddress`. Tax is charged normally, as if the sender were issuing a `MsgSend` with the resutling coins of the swap.
 
 ```go
 type MsgSwapSend struct {
@@ -167,7 +183,20 @@ type MsgSwapSend struct {
 
 :::
 
-A `MsgSendSwap` first performs a swap of `OfferCoin` into `AskDenom` and the sends the resulting coins to `ToAddress`. Tax is charged normally, as if the sender were issuing a `MsgSend` with the resutling coins of the swap.
+::: details Events
+
+| Type    | Attribute Key | Attribute Value    |
+| ------- | ------------- | ------------------ |
+| swap    | offer         | {offerCoin}        |
+| swap    | trader        | {traderAddress}    |
+| swap    | recipient     | {recipientAddress} |
+| swap    | swap_coin     | {swapCoin}         |
+| swap    | swap_fee      | {swapFee}          |
+| message | module        | market             |
+| message | action        | swapsend           |
+| message | sender        | {senderAddress}    |
+
+:::
 
 ## Functions
 
@@ -228,41 +257,28 @@ type Params struct {
 
 ### PoolRecoveryPeriod
 
-Number of blocks it takes for the Terra & Luna pools to naturally "reset" toward equilibrium ($\delta \to 0$) through automated pool replenishing.
-
 - type: `int64`
 - default: `BlocksPerDay`
 
-### BasePool
+Number of blocks it takes for the Terra & Luna pools to naturally "reset" toward equilibrium ($\delta \to 0$) through automated pool replenishing.
 
-Initial starting size of both Terra and Luna liquidity pools.
+### BasePool
 
 - type: `Dec`
 - default: 250,000 SDR (= 250,000,000,000 µSDR)
 
-### MinSpread
+Initial starting size of both Terra and Luna liquidity pools.
 
-Minimum spread charged on Terra<>Luna swaps to prevent leaking value from front-running attacks.
+### MinSpread
 
 - type: `Dec`
 - default: 2%
 
-### TobinTax
+Minimum spread charged on Terra<>Luna swaps to prevent leaking value from front-running attacks.
 
-A fee added on for swap between Terra currencies (spot-trading).
+### TobinTax
 
 - type: `Dec`
 - default: 0.25%
 
-## Events
-
-The Market module emits the following events
-
-### `swap`
-
-| Key           | Value            |
-| :------------ | :--------------- |
-| `"offer"`     | offered coins    |
-| `"trader"`    | trader's address |
-| `"swap_coin"` | swapped coins    |
-| `"swap_fee"`  | spread fee       |
+A fee added on for swap between Terra currencies (spot-trading).

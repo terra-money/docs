@@ -32,14 +32,13 @@ Users can interact with smart contracts in several ways.
 
 A user can instantiate a new smart contract by sending a `MsgInstantiateContract`. In it, the user is able to:
 
+- assign an owner to the contract
 - specify code will be used for the contract via a code ID
 - define the initial parameters / configuration through an `InitMsg`
 - provide the new contract's account with some initial funds
 - denote whether the contract is migratable (can change code IDs)
 
 The `InitMsg` is a JSON message whose expected format is defined in the contract's code. Every contract contains a section that defines how to set up the initial state depending on the provided `InitMsg`.
-
-By default, the user that creates the contract is its initial owner.
 
 #### Execution
 
@@ -98,39 +97,41 @@ type ContractInfo struct {
 
 ## State
 
-### LastCodeID
+### Last Code ID
+
+- type: `uint64`
 
 A counter for the last uploaded code ID.
 
-- type: `uint64`
+### Last Instance ID
 
-### LastInstanceID
+- type: `uint64`
 
 A counter for the last instantiated contract number.
 
-- type: `uint64`
-
 ### Code
-
-Maps a code ID to `CodeInfo` entry.
 
 - type: `map[uint64]CodeInfo`
 
-### ContractInfo
+Maps a code ID to `CodeInfo` entry.
 
-Maps contract address to its corresponding `ContractInfo`.
+### Contract Info
 
 - type: `map[bytes]ContractInfo`
 
-### ContractStore
+Maps contract address to its corresponding `ContractInfo`.
 
-Maps contract address to its dedicated KVStore.
+### Contract Store
 
 - type: `map[bytes]KVStore`
+
+Maps contract address to its dedicated KVStore.
 
 ## Message Types
 
 ### MsgStoreCode
+
+Uploads new code to the blockchain, and results in a new code ID if successful. `WASMByteCode` is accepted as either uncompressed or gzipped binary data encoded as Base64.
 
 ```go
 type MsgStoreCode struct {
@@ -154,7 +155,21 @@ type MsgStoreCode struct {
 
 :::
 
+::: details Events
+
+| Type       | Attribute Key | Attribute Value |
+| ---------- | ------------- | --------------- |
+| store_code | codeID        | {codeID}        |
+| store_code | sender        | {senderAddress} |
+| message    | module        | wasm            |
+| message    | action        | store_code      |
+| message    | sender        | {senderAddress} |
+
+:::
+
 ### MsgInstantiateContract
+
+Creates a new instance of a smart contract. Initial configuration is provided in the `InitMsg`, which is a JSON message encoded in Base64. If `Migratable` is set to be `true`, the owner of the contract is permitted to reset the contract's code ID to a new one.
 
 ```go
 type MsgInstantiateContract struct {
@@ -188,7 +203,22 @@ type MsgInstantiateContract struct {
 
 :::
 
+::: details Events
+
+| Type                 | Attribute Key    | Attribute Value      |
+| -------------------- | ---------------- | -------------------- |
+| instantiate_contract | owner            | {ownerAddress}       |
+| instantiate_contract | code_id          | {codeID}             |
+| instantiate_contract | contract_address | {contractAddress}    |
+| message              | module           | wasm                 |
+| message              | action           | instantiate_contract |
+| message              | sender           | {senderAddress}      |
+
+:::
+
 ### MsgExecuteContract
+
+Invoke a function defined within the smart contract. Function and parameters are encoded in `ExecuteMsg`, which is a JSON message encoded in Base64.
 
 ```go
 type MsgExecuteContract struct {
@@ -220,7 +250,21 @@ type MsgExecuteContract struct {
 
 :::
 
+::: details Events
+
+| Type             | Attribute Key    | Attribute Value   |
+| ---------------- | ---------------- | ----------------- |
+| execute_contract | contract_address | {contractAddress} |
+| execute_contract | sender           | {senderAddress}   |
+| message          | module           | wasm              |
+| message          | action           | execute_contract  |
+| message          | sender           | {senderAddress}   |
+
+:::
+
 ### MsgMigrateContract
+
+Can be issued by the owner of a migratable smart contract to reset its code ID to another one. `MigrateMsg` is a JSON message encoded in Base64.
 
 ```go
 type MsgMigrateContract struct {
@@ -247,7 +291,21 @@ type MsgMigrateContract struct {
 
 :::
 
+::: details Events
+
+| Type             | Attribute Key    | Attribute Value   |
+| ---------------- | ---------------- | ----------------- |
+| migrate_contract | code_id          | {codeID}          |
+| migrate_contract | contract_address | {contractAddress} |
+| message          | module           | wasm              |
+| message          | action           | migrate_contract  |
+| message          | sender           | {senderAddress}   |
+
+:::
+
 ### MsgUpdateContractOwner
+
+Can be issued by the smart contract's owner to transfer ownership.
 
 ```go
 type MsgUpdateContractOwner struct {
@@ -272,6 +330,18 @@ type MsgUpdateContractOwner struct {
 
 :::
 
+::: details Events
+
+| Type                  | Attribute Key    | Attribute Value       |
+| --------------------- | ---------------- | --------------------- |
+| update_contract_owner | owner            | {ownerAddress}        |
+| update_contract_owner | contract_address | {contractAddress}     |
+| message               | module           | wasm                  |
+| message               | action           | update_contract_owner |
+| message               | sender           | {senderAddress}       |
+
+:::
+
 ## Parameters
 
 The subspace for the WASM module is `wasm`.
@@ -286,20 +356,18 @@ type Params struct {
 
 ### MaxContractSize
 
-Maximum contract bytecode size, in bytes.
-
 - type: `uint64`
+
+Maximum contract bytecode size, in bytes.
 
 ### MaxContractGas
 
-Maximum contract gas consumption during any execution.
-
 - type: `uint64`
+
+Maximum contract gas consumption during any execution.
 
 ### MaxContractMsgSize
 
-Maximum contract message size, in bytes.
-
 - type: `uint64`
 
-## Events
+Maximum contract message size, in bytes.
