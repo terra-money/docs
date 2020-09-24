@@ -1,20 +1,14 @@
 # Oracle Feeder
 
-With the Columbus-3 release, every active validator must participate in the Exchange Rate Oracle, voting periodically for the active Exchange Rate of Luna, and not participating in the Oracle process is now a [slashing condition](../dev/spec-oracle.md#slashing).
+Every validator is required to participate in the Oracle process, which involves periodically submitting a vote for the current exchange rate of Luna. Because these ballots are held very frequently, you will need to set up a program (called a feeder) to automatically submit votes. Failure to set one up will lead to downtime and missed votes, which past a certain threshold results in delegated stake getting [slashed](../dev/spec-oracle.md#slashing) and your validator temporarily jailed.
 
-## Feeder Implementations
+## Implementations
 
-The Terra team provides a reference implementation of a program that pulls the exchange rate of Luna from exchanges and periodically submits it in prevotes and votes following the [Voting Procedure](../dev/spec-oracle.md#voting-procedure). However, some generous validators have also provided their own implementations to the rest of the validator community:
+Below is a list of oracle feeder implementations you can choose from:
 
-| Software                                                                          | Developer                             | Runtime         |
-| :-------------------------------------------------------------------------------- | :------------------------------------ | :-------------- |
-| [`oracle-feeder`](https://github.com/terra-project/oracle-feeder/tree/columbus-3) | **Terra**                             | Node.js, Python | Official reference implementation |
-| [`terra_oracle_voter`](https://github.com/b-harvest/terra_oracle_voter)           | [B-Harvest](https://bharvest.io/)     | Python          |                                   |
-| [`oracle-voter`](https://github.com/stakewithus/oracle-voter)                     | [StakeWith.Us](https://stakewith.us)  | Python          |                                   |
-| [`terra-oracle`](https://github.com/node-a-team/terra-oracle)                     | [Node A-Team](https://nodeateam.com/) | Go              |                                   |
-
-## Custom Implementation
-
-Here are some important things to remember when writing your own Luna exchange rate feeder implementation:
-
-- It may be tempting to design a new pricing model other than getting exchange data direct. Keep in mind that you will be penalized for not voting within the Reward Band of your peer validators.
+| Software                                                                | Developer                             | Runtime         |
+| :---------------------------------------------------------------------- | :------------------------------------ | :-------------- |
+| [`oracle-feeder`](https://github.com/terra-project/oracle-feeder)       | **Terra**                             | Node.js, Python | Official reference implementation |
+| [`terra_oracle_voter`](https://github.com/b-harvest/terra_oracle_voter) | [B-Harvest](https://bharvest.io/)     | Python          |  |
+| [`oracle-voter`](https://github.com/stakewithus/oracle-voter)           | [StakeWith.Us](https://stakewith.us)  | Python          |  |
+| [`terra-oracle`](https://github.com/node-a-team/terra-oracle)           | [Node A-Team](https://nodeateam.com/) | Go              |  |
