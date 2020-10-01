@@ -193,7 +193,6 @@ module.exports = {
             "luna",
             "validators",
             "stablecoin",
-            "seigniorage",
             "governance",
             "smart-contracts",
           ],
