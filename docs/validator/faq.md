@@ -12,7 +12,7 @@ Terra Core is powered by Tendermint consensus, which relies on a set of validato
 
 ### What is "staking"?
 
-The Columbus-3 Mainnet is a public Proof-Of-Stake (PoS) blockchain, meaning that validator's weight is determined by the amount of staking tokens (Luna) bonded as collateral. These Luna can be staked directly by the validator or delegated to them by Luna holders.
+The Columbus-4 Mainnet is a public Proof-Of-Stake (PoS) blockchain, meaning that validator's weight is determined by the amount of staking tokens (Luna) bonded as collateral. These Luna can be staked directly by the validator or delegated to them by Luna holders.
 
 Any user in the system can declare its intention to become a validator by sending a [`create-validator`](#how-to-become-a-validator) transaction. From there, they become validators.
 
@@ -197,7 +197,7 @@ Validators earn proportionally more revenue than their delegators because of com
 
 ### What is a validator's commission?
 
-Revenue received by a validator's pool is split between the validator and its delegators. The validator can apply a commission on the part of the revenue that goes to its delegators. This commission is set as a percentage. Each validator is free to set its initial commission, maximum daily commission change rate and maximum commission. Columbus-3 Mainnet enforces the parameter that each validator sets. These parameters can only be defined when initially declaring candidacy, and may only be constrained further after being declared.
+Revenue received by a validator's pool is split between the validator and its delegators. The validator can apply a commission on the part of the revenue that goes to its delegators. This commission is set as a percentage. Each validator is free to set its initial commission, maximum daily commission change rate and maximum commission. Columbus-4 Mainnet enforces the parameter that each validator sets. These parameters can only be defined when initially declaring candidacy, and may only be constrained further after being declared.
 
 ### How are block provisions distributed?
 
@@ -264,7 +264,7 @@ In order for delegators to have some guarantee about how much skin-in-the-game t
 
 ### How to prevent concentration of stake in the hands of a few top validators?
 
-For now the community is expected to behave in a smart and self-preserving way. When a mining pool in Bitcoin gets too much mining power the community usually stops contributing to that pool. Columbus-3 Mainnet will rely on the same effect initially. In the future, other mechanisms will be deployed to smoothen this process as much as possible:
+For now the community is expected to behave in a smart and self-preserving way. When a mining pool in Bitcoin gets too much mining power the community usually stops contributing to that pool. Columbus-4 Mainnet will rely on the same effect initially. In the future, other mechanisms will be deployed to smoothen this process as much as possible:
 
 - **Penalty-free re-delegation:** This is to allow delegators to easily switch from one validator to another, in order to reduce validator stickiness.
 
@@ -286,7 +286,7 @@ In addition to running a Terra Core node, validators should develop monitoring, 
 
 ### What are bandwidth requirements?
 
-Columbus-3 Mainnet has the capacity for very high throughput compared to chains like Ethereum or Bitcoin.
+Columbus-4 Mainnet has the capacity for very high throughput compared to chains like Ethereum or Bitcoin.
 
 As such, we recommend that the data center nodes only connect to trusted full nodes in the cloud or other validators that know each other socially. This relieves the data center node from the burden of mitigating denial-of-service attacks.
 

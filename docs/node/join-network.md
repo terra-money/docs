@@ -42,11 +42,11 @@ Your full node has now been initialized!
 
 You specify the network you want to join by setting the **genesis file** and **seeds**. If you need more information about past networks, check our [Networks Repo](https://github.com/terra-project/testnet).
 
-| Network        | Description        | Homepage                                                                   |
-| -------------- | ------------------ | -------------------------------------------------------------------------- |
-| `columbus-3`   | Mainnet            | [Link](https://github.com/terra-project/mainnet)                           |
-| `soju-0014`    | Columbus-3 Testnet | [Link](https://github.com/terra-project/testnet/tree/master/soju-0014)     |
-| `tequila-0004` | Columbus-4 Testnet | [Link](https://github.com/terra-project/testnet/tree/master/tequila-0004)  |
+| Network        | Description        | Homepage                                                                  |
+| -------------- | ------------------ | ------------------------------------------------------------------------- |
+| `columbus-4`   | Mainnet            | [Link](https://github.com/terra-project/mainnet)                          |
+| `soju-0014`    | Columbus-3 Testnet | [Link](https://github.com/terra-project/testnet/tree/master/soju-0014)    |
+| `tequila-0004` | Columbus-4 Testnet | [Link](https://github.com/terra-project/testnet/tree/master/tequila-0004) |
 
 ### Download the genesis file
 
@@ -54,7 +54,7 @@ You'll need to select the network you want to join and download its `genesis.jso
 
 ```bash
 mkdir -p ~/.terrad/config
-curl https://columbus-genesis.s3-ap-northeast-1.amazonaws.com/genesis.json > ~/.terrad/config/genesis.json
+curl https://columbus-genesis.s3-ap-northeast-1.amazonaws.com/columbus-4-genesis.json > ~/.terrad/config/genesis.json
 ```
 
 Note we use the `latest` directory in the [networks repo](https://github.com/terra-project/testnet) which contains details for the latest testnet. If you are connecting to a different testnet, ensure you get the right files.
@@ -121,7 +121,7 @@ Congratulations! You've now successfully joined a network as a full node operato
 
 If you are connecting to an existing network for which you have a data backup (from a provider you trust), you can optionally load the backup into your node storage rather than syncing from scratch.
 
-ChainLayer has generously provided node data backups for Columbus-3 mainnet, which you can find in their [Terra QuickSync](https://terra.quicksync.io/) page.
+ChainLayer has generously provided node data backups for Columbus mainnet, which you can find in their [Terra QuickSync](https://terra.quicksync.io/) page.
 
 ## Appendix
 
