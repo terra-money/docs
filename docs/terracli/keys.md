@@ -137,7 +137,7 @@ Only use Ledger devices that you bought factory new or trust fully.
 
 ### Create a Ledger Key on terracli
 
-When you initialize your ledger, a 24-word mnemonic is generated and stored in the device. This mnemonic is compatible with Terra and Terra accounts can be derived from it. Therefore, all you have to do is make your ledger compatible with `terracli`. 
+When you initialize your ledger, a 24-word mnemonic is generated and stored in the device. This mnemonic is compatible with Terra and Terra accounts can be derived from it. Therefore, all you have to do is make your ledger compatible with `terracli`.
 
 The process is similar to the process with a computer; use the following command:
 
@@ -161,27 +161,4 @@ terracli keys add <yourKeyName> --recover
 
 ## Generate Multisig Keys
 
-You can generate and print a multisig public key by typing:
-
-```bash
-terracli keys add --multisig=name1,name2,name3[...] --multisig-threshold=K new_key_name
-```
-
-`K` is the minimum number of private keys that must have signed the transactions that carry the public key's address as signer.
-
-The `--multisig` flag must contain the name of public keys that will be combined into a public key that will be generated and stored as `new_key_name` in the local database. All names supplied through `--multisig` must already exist in the local database.
-
-Unless the flag `--nosort` is set, the order in which the keys are supplied on the command line does not matter, i.e. the following commands generate two identical keys:
-
-```bash
-terracli keys add --multisig=foo,bar,baz --multisig-threshold=2 multisig_address
-terracli keys add --multisig=baz,foo,bar --multisig-threshold=2 multisig_address
-```
-
-Multisig addresses can also be generated on-the-fly and printed through the which command:
-
-```bash
-terracli keys show --multisig-threshold=K name1 name2 name3 [...]
-```
-
-For more information regarding how to generate, sign and broadcast transactions with a multi signature account see [Multisig Transactions](./multisig).
+See [Multisig Transactions](./multisig) for how to create multisig accounts and sign transactions.
