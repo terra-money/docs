@@ -1,6 +1,6 @@
 # Joining a Network
 
-After you've tried out running a simple local Terra network, you may want to participate in an existing Terra network, such as the Columbus mainnet or Soju testnet. This document will help you configure and set up your node for just that.
+After you've tried out running a simple local Terra network, you may want to participate in an existing Terra network, such as the Columbus mainnet or Tequila testnet. This document will help you configure and set up your node for just that.
 
 ## Setup
 
@@ -27,13 +27,13 @@ moniker = "<your_custom_moniker>"
 
 ### Set minimum gas prices for transactions (recommended)
 
-You can edit `~/.terrad/config/app.toml` in order to enable anti-spam by rejecting incoming transactions with implied gas price less than a specified minimum:
+You can edit `~/.terrad/config/app.toml` in order to enable anti-spam by rejecting incoming transactions with implied gas price less than a specified minimum. The minimum gas prices recommended for the Terra mainnet network is the following:
 
 ```toml
 # The minimum gas prices a validator is willing to accept for processing a
 # transaction. A transaction's fees must meet the minimum of any denomination
 # specified in this config (e.g. 0.25token1,0.0001token2).
-minimum-gas-prices = "0.015ukrw,0.015uluna"
+minimum-gas-prices = "0.00506uluna,0.0015uusd,0.00102usdr,1.7805ukrw,4.31626umnt"
 ```
 
 Your full node has now been initialized!
