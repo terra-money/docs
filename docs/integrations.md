@@ -35,7 +35,7 @@
       <!-- Vanilla block explorer from Terraform labs. -->
     </div>
   </a>
-  <a href="https://hubble.figment.network/terra/chains/columbus-3" class="card app">
+  <a href="https://hubble.figment.network/terra/chains/columbus-4" class="card app">
     <img src="/img/expl_hubble.png"/>
     <div class="title">
       Figment Hubble
