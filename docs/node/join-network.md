@@ -42,11 +42,10 @@ Your full node has now been initialized!
 
 You specify the network you want to join by setting the **genesis file** and **seeds**. If you need more information about past networks, check our [Networks Repo](https://github.com/terra-project/testnet).
 
-| Network        | Description        | Homepage                                                                  |
-| -------------- | ------------------ | ------------------------------------------------------------------------- |
-| `columbus-4`   | Mainnet            | [Link](https://github.com/terra-project/mainnet)                          |
-| `soju-0014`    | Columbus-3 Testnet | [Link](https://github.com/terra-project/testnet/tree/master/soju-0014)    |
-| `tequila-0004` | Columbus-4 Testnet | [Link](https://github.com/terra-project/testnet/tree/master/tequila-0004) |
+| Network        | Description        | Homepage                                                                  | Address Book |
+| -------------- | ------------------ | ------------------------------------------------------------------------- | - |
+| `columbus-4`   | Mainnet            | [Link](https://github.com/terra-project/mainnet)                          | https://network.terra.dev/addrbook.json |
+| `tequila-0004` | Testnet | [Link](https://github.com/terra-project/testnet/tree/master/tequila-0004) | https://network.terra.dev/testnet/addrbook.json |
 
 ### Download the genesis file
 
