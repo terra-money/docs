@@ -23,7 +23,7 @@ You set this parameter as a measure against spam.
 # The minimum gas prices a validator is willing to accept for processing a
 # transaction. A transaction's fees must meet the minimum of any denomination
 # specified in this config (e.g. 0.25token1;0.0001token2).
-minimum-gas-prices = "0.00506uluna,0.0015uusd,0.00102usdr,1.7805ukrw,4.31626umnt"
+minimum-gas-prices = "0.00506uluna,0.0015uusd,0.00102usdr,1.7805ukrw,4.31626umnt,0.00125ueur,0.0097ucny,0.16ujpy,0.0011ugbp,0.11uinr,0.0019ucad,0.0013uchf,0.0019uaud,0.002usgd"
 ```
 
 ## P2P Settings

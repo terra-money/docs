@@ -1,1 +1,6 @@
 node_modules
+.DS_Store
+build
+.vuepress
+.now
+.vercel
