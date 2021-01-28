@@ -80,16 +80,10 @@ For more information on seeds and peers, you can [read this](https://github.com/
 
 :::
 
-Your node needs to know how to find peers. You'll need to add healthy seed nodes to `~/.terrad/config/config.toml`. Below are some sample seeds provided by Block42, a Terra validator, taken from their excellent [validator setup guide](https://medium.com/block42-blockchain-company/how-to-setup-a-terra-luna-validator-node-860d8ea7aea2).
+Your node needs to know how to find peers. You'll need to add healthy seed nodes to `~/.terrad/config/config.toml`. The following are the current seeds for Terra mainnet:
 
 ```toml
-seeds = "20271e0591a7204d72280b87fdaa854f50c55e7e@106.10.59.48:26656,3b1c85b86528d10acc5475cb2c874714a69fde1e@110.234.23.153:26656,49333a4cb195d570ea244dab675a38abf97011d2@13.113.103.57:26656,7f19128de85ced9b62c3947fd2c2db2064462533@52.68.3.126:26656"
-```
-
-Alternatively, the following are the current seeds for Terra foundation nodes:
-
-```toml
-seeds = "87048bf71526fb92d73733ba3ddb79b7a83ca11e@public-seed.terra.dev:26656,b5205baf1d52b6f91afb0da7d7b33dcebc71755f@public-seed2.terra.dev:26656,5fa582d7c9931e5be8c02069d7b7b243c79d25bf@seed.terra.de-light.io:26656,6be0856f6365559fdc2e9e97a07d609f754632b0@terra-columbus-3-seed.nodes.polychainlabs.com:26656,925ecc3de9e2ac65a203beb2333ced1a00c135ed@terra-seed-us.chorus.one:28657,bae08cc880c20aeda68a5a890a71a9b44ac73cb4@terra-seed-eu.chorus.one:28657"
+seeds = "87048bf71526fb92d73733ba3ddb79b7a83ca11e@public-seed.terra.dev:26656,b5205baf1d52b6f91afb0da7d7b33dcebc71755f@public-seed2.terra.dev:26656,5fa582d7c9931e5be8c02069d7b7b243c79d25bf@seed.terra.de-light.io:26656"
 ```
 
 ## Connecting to the Network
