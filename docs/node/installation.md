@@ -120,7 +120,7 @@ LimitNOFILE=65535
 Modify the `Service` section from the given sample above to suit your settings.
 Note that even if we raised the number of open files for a process, we still need to include `LimitNOFILE`.
 
-After creating a service definition file, you should execute `systemctl daemon-reload`.
+After creating a service definition file, you should execute `systemctl daemon-reload` and `systemctl enable terrad`
 
 ### Controlling the service
 
