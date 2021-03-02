@@ -228,6 +228,7 @@ module.exports = {
           ],
         },
         "integrations",
+        "ecosystem",
       ],
     },
   },
