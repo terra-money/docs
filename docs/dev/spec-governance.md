@@ -43,7 +43,7 @@ $$\frac{NoWithVeto}{Yes + No + NoWithVeto} \lt V$$
 
 $$\frac{Yes}{Yes + No + NoWithVeto} \gt T$$
 
-If any of the above conditions are not met, the proposal is rejected. The deposit associated with rejected proposals are nopt refunded and will be transferred instead to the Community Pool. The parameters `quorum`, `veto`, and `threshold` exist as blockchain parameters within the Governance module.
+If any of the above conditions are not met, the proposal is rejected. The deposit associated with rejected proposals are not refunded and will be transferred instead to the Community Pool. The parameters `quorum`, `veto`, and `threshold` exist as blockchain parameters within the Governance module.
 
 ### Proposal Implementation
 
