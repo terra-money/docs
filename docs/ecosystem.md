@@ -27,13 +27,26 @@
 [Medium](https://medium.com/mirror-protocol): the official Mirror Medium for all major partnership announcements and monthly ecosystem updates<br>
 [Youtube](https://www.youtube.com/watch?v=zdh0vHpw8yM): the official Mirror Youtube for Mirror panel discussions and monthly AMAs<br>
 
+## Analytics
+
+[Chaiscan](https://www.chaiscan.com/): provides CHAI daily & monthly users and transaction numbers (by DSRV)<br>
+[Flipside Crypto](http://terra.flipsidecrypto.com/): provides insights into Terra’s ecosystem, including ecosystem usage, stakeholder behaviors, staking patterns, and economics<br>
+[Smartstake](http://terra.smartstake.io/): provides data on staking APR and MIR airdrops<br>
+[Megastake](http://lunarichlist.com/): provides a list of the top LUNA wallets<br>
+[Dapp.com](https://www.dapp.com/dapps/terra-chai): provides data on Terra dapps and rankings<br>
+[Blocktivity](http://blocktivity.info/): provides Terra price history, ecosystem and activity data<br>
+[Messari](https://messari.io/asset/terra): provides Terra project overview, news & research, historical data, and metrics<br>
+[Token Terminal](https://terminal.tokenterminal.com/dashboard/Terra): provides data on P/S, VOL/MC, GMV & rankings with other blockchains<br>
+[AssetDash](https://assetdash.com/?q=luna): ranks LUNA with other assets<br>
+[Luna Whale](https://www.lunawhale.com/): provides insights into LUNA whale activity (by DSRV)<br>
+
 ## Applications
 
-[CHAI](https://chai.finance/): a payments product used by 5% of the population in South Korea<br>
-[MemePay](https://www.meme.mn/nav/home): a payments product used by 3% of the population in Mongolia<br>
 [Mirror Protocol](https://mirror.finance/): a DeFi protocol that enables the creation of synthetic assets<br>
 [Anchor Protocol](https://anchor.money/): a high-yield savings protocol<br>
+[CHAI](https://chai.finance/): a payments product used by 5% of the population in South Korea<br>
 [BuzLink](https://buzlink.io/): a viral marketing product to scale social referrals<br>
+[MemePay](https://www.meme.mn/nav/home): a payments product used by 3% of the population in Mongolia<br>
 
 ## Block Explorers
 
@@ -46,25 +59,6 @@
 [Bug Bounty](https://terra.money/bugcrowd): the official Terra Bug Bounty program<br>
 [Project Surge](https://medium.com/terra-money/introducing-project-surge-49cfe8141284): program involving community in Terra’s BD pipeline<br>
 [Terraform Capital](https://capital.terra.money/): launch capital program funding audits for projects that incorporate LUNA/Terra stablecoins<br>
-
-## Educational
-
-[CoinMarketCap Earn](https://coinmarketcap.com/earn/project/terra): video series explaining Terra stablecoins and LUNA<br>
-[Staking Guide](https://terra.money/docs/Luna_Staking_eng.pdf): guide to staking LUNA on Terra Station<br>
-[Developer Docs](https://docs.terra.money/): official documentation for Terra<br>
-[Figment Learn](https://learn.datahub.figment.io/network-documentation/terra/tutorials): tutorials onboarding developers on Terra<br>
-
-## Exchanges
-
-[Binance](https://www.binance.com/en)<br>
-[Huobi](https://www.huobi.com/)<br>
-[Kucoin](https://www.kucoin.com/)<br>
-[Bithumb](https://en.bithumb.com/)<br>
-[Upbit](https://upbit.com/)<br>
-[Bittrex](https://global.bittrex.com/)<br>
-[Coinone](https://coinone.co.kr/)<br>
-[OKEX](https://www.okex.com/)<br>
-[Voyager](https://www.investvoyager.com/)<br>
 
 ## Ecosystem Partnerships
 
@@ -97,12 +91,24 @@
 - [StableXSwap](https://www.stablex.finance/#/swap): stablecoin pool for UST<br>
 - [Beefy Finance](https://beefy.finance/): yield farming optimizer for UST and mAsset pools<br>
 
-## Wallets
+## Educational
 
-[Terra Station](https://station.terra.money/): Terra’s native wallet<br>
-[Mirror Wallet](https://mirrorwallet.com/): Invest and trade cryptocurrencies and mirror assets<br>
-[MathWallet](https://mathwallet.org/en-us/): multi-platform crypto wallet for Terra assets<br>
-[Ledger Nano X/S](https://support.ledger.com/hc/en-us/articles/360017698979-Terra-LUNA-): hardware wallet by the Ledger team<br>
+[CoinMarketCap Earn](https://coinmarketcap.com/earn/project/terra): video series explaining Terra stablecoins and LUNA<br>
+[Staking Guide](https://terra.money/docs/Luna_Staking_eng.pdf): guide to staking LUNA on Terra Station<br>
+[Developer Docs](https://docs.terra.money/): official documentation for Terra<br>
+[Figment Learn](https://learn.datahub.figment.io/network-documentation/terra/tutorials): tutorials onboarding developers on Terra<br>
+
+## Exchanges
+
+[Binance](https://www.binance.com/en)<br>
+[Huobi](https://www.huobi.com/)<br>
+[Kucoin](https://www.kucoin.com/)<br>
+[Bithumb](https://en.bithumb.com/)<br>
+[Upbit](https://upbit.com/)<br>
+[Bittrex](https://global.bittrex.com/)<br>
+[Coinone](https://coinone.co.kr/)<br>
+[OKEX](https://www.okex.com/)<br>
+[Voyager](https://www.investvoyager.com/)<br>
 
 ## Infrastructure
 
@@ -120,15 +126,12 @@
 [Datahub](https://figment.io/datahub/terra/): full node infrastructure for Terra developers<br>
 [Quicksync](https://terra.quicksync.io/): data backup solution for anyone running a node on Terra<br>
 
-## Analytics
+## Wallets
 
-[Chaiscan](https://www.chaiscan.com/): provides CHAI daily & monthly users and transaction numbers (by DSRV)<br>
-[Flipside Crypto](http://terra.flipsidecrypto.com/): provides insights into Terra’s ecosystem, including ecosystem usage, stakeholder behaviors, staking patterns, and economics<br>
-[Smartstake](http://terra.smartstake.io/): provides data on staking APR and MIR airdrops<br>
-[Megastake](http://lunarichlist.com/): provides a list of the top LUNA wallets<br>
-[Dapp.com](https://www.dapp.com/dapps/terra-chai): provides data on Terra dapps and rankings<br>
-[Blocktivity](http://blocktivity.info/): provides Terra price history, ecosystem and activity data<br>
-[Messari](https://messari.io/asset/terra): provides Terra project overview, news & research, historical data, and metrics<br>
-[Token Terminal](https://terminal.tokenterminal.com/dashboard/Terra): provides data on P/S, VOL/MC, GMV & rankings with other blockchains<br>
-[AssetDash](https://assetdash.com/?q=luna): ranks LUNA with other assets<br>
-[Luna Whale](https://www.lunawhale.com/): provides insights into LUNA whale activity (by DSRV)<br>
+[Terra Station](https://station.terra.money/): Terra’s native wallet<br>
+Terra Station Extension: [Chrome](https://chrome.google.com/webstore/detail/terra-station/aiifbnbfobpmeekipheeijimdpnlpgpp)<br>
+Terra Station Desktop: [MacOS](https://www.terra.dev/station/Terra%20Station-1.1.0.dmg) | [Windows](https://www.terra.dev/station/Terra%20Station%20Setup%201.1.0.exe)<br>
+Terra Station Mobile: [iOS](https://apps.apple.com/app/id1548434735) | [Android](https://play.google.com/store/apps/details?id=money.terra.station)<br>
+[Mirror Wallet](https://mirrorwallet.com/): Invest and trade cryptocurrencies and mirror assets<br>
+[MathWallet](https://mathwallet.org/en-us/): multi-platform crypto wallet for Terra assets<br>
+[Ledger Nano X/S](https://support.ledger.com/hc/en-us/articles/360017698979-Terra-LUNA-): hardware wallet by the Ledger team<br>
