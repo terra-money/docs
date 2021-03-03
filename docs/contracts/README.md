@@ -8,13 +8,13 @@ Smart contracts allow users to extend the capabilities of the Terra blockchain b
 
 The following table maps commonly-used Ethereum developer tools to their Terra counterparts.
 
-|                    | Terra                                                                                   | Ethereum        |
-| ------------------ | --------------------------------------------------------------------------------------- | --------------- |
-| Frontend SDK       | [Terra.js](https://terra-project.github.io/terra.js/), [Jigu](https://jigu.terra.money) | Web3.js, Web3py |
-| Browser Extension  | Station CX                                                                              | MetaMask, MEW   |
-| Local Testnet      | [LocalTerra](https://github.com/terra-project/LocalTerra)                               | Ganache         |
-| Contract Language  | [Rust](https://www.rust-lang.org/)                                                      | Solidity, Vyper |
-| Contract Toolchain | [Houston](https://github.com/terra-project/houston)                                     | Truffle         |
+|                    | Terra                                                                                                                 | Ethereum        |
+| ------------------ | --------------------------------------------------------------------------------------------------------------------- | --------------- |
+| Frontend SDK       | [Terra.js](https://terra-project.github.io/terra.js/), [Terra SDK](https://terra-project.github.io/terra-sdk-python/) | Web3.js, Web3py |
+| Browser Extension  | Station CX                                                                                                            | MetaMask, MEW   |
+| Local Testnet      | [LocalTerra](https://github.com/terra-project/LocalTerra)                                                             | Ganache         |
+| Contract Language  | [Rust](https://www.rust-lang.org/)                                                                                    | Solidity, Vyper |
+| Contract Toolchain | [Houston](https://github.com/terra-project/houston)                                                                   | Truffle         |
 
 ## Why build on Terra?
 

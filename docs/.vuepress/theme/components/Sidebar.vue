@@ -18,13 +18,13 @@
           </div>
         </div>
       </a>-->
-      <a href="https://jigu.terra.money/" target="_blank">
+      <a href="https://terra-project.github.io/terra-sdk-python/" target="_blank">
         <div class="image">
-          <img src="/img/jigu_logo.svg" />
+          <img src="/img/terra_sdk.svg" />
         </div>
         <div class="name">
           <div>
-            <b>Jigu</b> Python SDK
+            <b>Terra</b> Python SDK
             <i class="material-icons">transit_enterexit</i>
           </div>
         </div>

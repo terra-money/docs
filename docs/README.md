@@ -82,10 +82,10 @@ Welcome to the official documentation for Terra, a decentralized financial infra
 The Terra SDKs provide an easy way to programmatically interact with a Terra node with popular programming languages to develop applications. Currently, we have SDKs in Python 3 and JavaScript, with support for other runtimes coming soon in the near future.
 
 <div class="cards twoColumn">
-  <a href="https://jigu.terra.money/" class="card lg dark">
-    <img src="/img/jigu_logo.svg">
+  <a href="https://terra-project.github.io/terra-sdk-python/" class="card lg dark">
+    <img src="/img/terra_sdk.svg">
     <div class="title">
-      Jigu
+      Terra SDK
     </div>
     <div class="text">
       Python SDK
