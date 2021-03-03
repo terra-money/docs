@@ -5,7 +5,7 @@
 [Website](http://terra.money/): the official Terraform Labs website<br>
 [Github](https://github.com/terra-project): the official Terraform Labs GitHub hosting all Terra public repos<br>
 [Discord](https://discord.com/invite/bYfyhUT): the official Terra Discord for developers and enthusiasts to engage in focused discussions<br>
-[Telegram](https://discord.com/invite/bYfyhUT): the official Terra Telegram for enthusiasts to engage in discussions<br>
+[Telegram](https://t.me/TerraLunaChat): the official Terra Telegram for enthusiasts to engage in discussions<br>
 [Telegram Announcements](https://t.me/terra_announcements): the official Telegram announcement channel for all major Terra & Mirror updates<br>
 [Twitter](https://twitter.com/terra_money): the official Terra Twitter for all major news and updates regarding Terra and its ecosystem<br>
 [Forum](https://agora.terra.money/): the official Terra Forum for technical discussions related to Terra and its community<br>
