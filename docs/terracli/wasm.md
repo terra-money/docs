@@ -83,7 +83,7 @@ The argument `<wasm-file>` is the path of a file that is the compiled binary of 
 You can create (instantiate) a new contract by referencing a code ID of a contract that has been uploaded.
 
 ```sh
-terracli tx wasm <code-id> <init-msg> <coins>
+terracli tx wasm instantiate <code-id> <init-msg> <coins>
 ```
 
 The argument `<init-msg>` is a JSON string containing the InitMsg to initialize your contract's state. `<coins>` is the optional amount of Coins (in a comma-separated list) that you want to send to the new contract account.
@@ -91,7 +91,7 @@ The argument `<init-msg>` is a JSON string containing the InitMsg to initialize 
 #### Example
 
 ```sh
-terracli instantiate 1 '{"arbiter": "terra~~"}' "1000000uluna"
+terracli tx wasm instantiate 1 '{"arbiter": "terra~~"}' "1000000uluna"
 ```
 
 ### Execute a Contract
