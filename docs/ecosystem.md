@@ -84,6 +84,7 @@
 - [CREAM Finance](https://cream.finance/) - lending and borrowing for UST<br>
 - [Stabilize Protocol](https://www.stabilize.finance/): STBZ-incentivized UST stablecoin pool<br>
 - [Pickle Finance](https://app.pickle.finance/jars): incentivized UST/MIR pool<br>
+- [Set Protocol](https://www.tokensets.com): FAANG index set of 5 mAssets (Facebook, Amazon, Apple, Netflix & Google) on Uniswap<br>
 
 #### Binance Smart Chain
 
