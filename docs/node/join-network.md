@@ -33,7 +33,7 @@ You can edit `~/.terrad/config/app.toml` in order to enable anti-spam by rejecti
 # The minimum gas prices a validator is willing to accept for processing a
 # transaction. A transaction's fees must meet the minimum of any denomination
 # specified in this config (e.g. 0.25token1,0.0001token2).
-minimum-gas-prices = "0.00506uluna,0.0015uusd,0.00102usdr,1.7805ukrw,4.31626umnt,0.00125ueur,0.0097ucny,0.16ujpy,0.0011ugbp,0.11uinr,0.0019ucad,0.0013uchf,0.0019uaud,0.002usgd"
+minimum-gas-prices = "0.01133uluna,0.15uusd,0.104938usdr,169.77ukrw,428.571umnt,0.125ueur,0.98ucny,16.37ujpy,0.11ugbp,10.88uinr,0.19ucad,0.14uchf,0.19uaud,0.2usgd,4.62uthb"
 ```
 
 Your full node has now been initialized!
