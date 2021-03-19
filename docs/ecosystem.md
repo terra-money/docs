@@ -3,6 +3,8 @@
 ## Terra Website and Socials
 
 [Website](http://terra.money/): the official Terraform Labs website<br>
+[Docs](https://docs.terra.money): the official documentation for the Terra blockchain<br>
+[White Paper](https://terra.money/Terra_White_paper.pdf): the official Terra White Paper<br>
 [Github](https://github.com/terra-project): the official Terraform Labs GitHub hosting all Terra public repos<br>
 [Discord](https://discord.com/invite/bYfyhUT): the official Terra Discord for developers and enthusiasts to engage in focused discussions<br>
 [Telegram](https://t.me/TerraLunaChat): the official Terra Telegram for enthusiasts to engage in discussions<br>
@@ -19,6 +21,8 @@
 [Terra-side](https://terra.mirror.finance/): the official Mirror Protocol on Terra<br>
 [Eth-side](https://eth.mirror.finance/): the official Mirror Protocol UI bridge to Ethereum<br>
 [BSC-side](https://bsc.mirror.finance/my): the official Mirror Protocol UI bridge to BSC<br>
+[Docs](https://docs.mirror.finance): the official documentation for Mirror Protocol<br>
+[White Paper](https://mirror.finance/MirrorWP.pdf): the official Mirror Protocol White Paper<br>
 [Github](https://github.com/Mirror-Protocol): the official Mirror Protocol GitHub hosting all Mirror public repos<br>
 [Discord](https://discord.com/invite/KYC22sngFn): the official Mirror Discord for developers and enthusiasts to engage in focused discussions<br>
 [Telegram](https://t.me/mirror_protocol): the official Mirror Telegram for enthusiasts to engage in discussions<br>
@@ -26,6 +30,18 @@
 [Forum](https://forum.mirror.finance/): the official Mirror Forum for technical discussions related to Mirror iterations<br>
 [Medium](https://medium.com/mirror-protocol): the official Mirror Medium for all major partnership announcements and monthly ecosystem updates<br>
 [Youtube](https://www.youtube.com/watch?v=zdh0vHpw8yM): the official Mirror Youtube for Mirror panel discussions and monthly AMAs<br>
+
+## Anchor Website and Socials
+[Website](https://anchorprotocol.com/): the official Anchor Protocol landing page<br>
+[Web App](https://app.anchorprotocol.com/earn): the official Anchor Protocol web application<br>
+[Docs](https://docs.anchorprotocol.com/): the official documentation for Anchor Protocol<br>
+[White Paper](https://anchorprotocol.com/docs/anchor-v1.1.pdf): the official Anchor Protocol White Paper<br>
+[Github](https://github.com/Anchor-Protocol): the official Anchor Protocol GitHub hosting all Anchor public repos<br>
+[Discord](https://discord.com/invite/9aUYgpKZ9c): the official Anchor Discord for developers and enthusiasts to engage in focused discussions<br>
+[Telegram](https://t.me/anchor_official): the official Anchor Telegram for enthusiasts to engage in discussions<br>
+[Twitter](https://twitter.com/anchor_protocol):  the official Anchor Twitter for all major news and updates regarding Anchor and its ecosystem<br>
+[Forum](https://forum.anchorprotocol.com/):  the official Anchor Forum for technical discussions related to Anchor iterations<br>
+[Medium](https://medium.com/anchor-protocol): the official Anchor Medium for all major partnership announcements and monthly ecosystem updates<br>
 
 ## Analytics
 
@@ -36,7 +52,8 @@
 [Dapp.com](https://www.dapp.com/dapps/terra-chai): provides data on Terra dapps and rankings<br>
 [Blocktivity](http://blocktivity.info/): provides Terra price history, ecosystem and activity data<br>
 [Messari](https://messari.io/asset/terra): provides Terra project overview, news & research, historical data, and metrics<br>
-[Token Terminal](https://terminal.tokenterminal.com/dashboard/Terra): provides data on P/S, VOL/MC, GMV & rankings with other blockchains<br>
+[Token Terminal](https://terminal.tokenterminal.com/dashboard/Terra): provides data on Terra P/S, VOL/MC, GMV & rankings with other blockchains<br>
+[Token Terminal Mirror](https://terminal.tokenterminal.com/dashboard/MirrorProtocol): provides data on Mirror P/S, VOL/MC, GMV & rankings with other dapps<br>
 [AssetDash](https://assetdash.com/?q=luna): ranks LUNA with other assets<br>
 [Luna Whale](https://www.lunawhale.com/): provides insights into LUNA whale activity (by DSRV)<br>
 
@@ -110,6 +127,7 @@
 [Coinone](https://coinone.co.kr/)<br>
 [OKEX](https://www.okex.com/)<br>
 [Voyager](https://www.investvoyager.com/)<br>
+[Coinlist](https://coinlist.co/anchor-protocol)<br>
 
 ## Infrastructure
 
