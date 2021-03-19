@@ -64,6 +64,7 @@
 [CHAI](https://chai.finance/): a payments product used by 5% of the population in South Korea<br>
 [BuzLink](https://buzlink.io/): a viral marketing product to scale social referrals<br>
 [MemePay](https://www.meme.mn/nav/home): a payments product used by 3% of the population in Mongolia<br>
+[PayWithTerra](https://paywithterra.com/): a third party service API-utility enabling merchants to accept Terra stablecoins<br>
 
 ## Block Explorers
 
