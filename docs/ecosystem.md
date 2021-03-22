@@ -20,7 +20,6 @@
 [Website](https://mirror.finance/): the official Mirror Protocol landing page<br>
 [Terra-side](https://terra.mirror.finance/): the official Mirror Protocol on Terra<br>
 [Eth-side](https://eth.mirror.finance/): the official Mirror Protocol UI bridge to Ethereum<br>
-[BSC-side](https://bsc.mirror.finance/my): the official Mirror Protocol UI bridge to BSC<br>
 [Docs](https://docs.mirror.finance): the official documentation for Mirror Protocol<br>
 [White Paper](https://mirror.finance/MirrorWP.pdf): the official Mirror Protocol White Paper<br>
 [Github](https://github.com/Mirror-Protocol): the official Mirror Protocol GitHub hosting all Mirror public repos<br>
