@@ -79,6 +79,7 @@
 
 ## Ecosystem Partnerships
 
+[Terra Bridge](https://bridge.terra.money/): Terra bridge web frontend to easily send Terra assets to and from Ethereum and Binance Smart Chain<br>
 [Shuttle](https://github.com/terra-project/shuttle): Terra bridge to Ethereum and Binance Smart Chain<br>
 [Wormhole](https://github.com/certusone/wormhole): a bridge between Terra, Ethereum, and Solana being developed by Certus One<br>
 [Axelar](https://axelar.network/): a bridge between Terra and other supported Layer 1 blockchains<br>
