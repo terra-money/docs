@@ -3,13 +3,40 @@
 ## Applications
 
 <div class="cards twoColumn">
+  <a href="https://mirror.finance/" class="card app">
+    <img src="/img/apps_mirror.png"/>
+    <div class="title">
+      Mirror Protocol
+    </div>
+    <div class="text">
+      a DeFi protocol that enables the creation of synthetic assets
+    </div>
+  </a>
+  <a href="https://anchor.money/" class="card app">
+    <img src="/img/apps_anchor.png"/>
+    <div class="title">
+      Anchor Protocol
+    </div>
+    <div class="text">
+      a high-yield savings protocol
+    </div>
+  </a>
   <a href="https://chai.finance" class="card app">
     <img src="/img/apps_chai.png"/>
     <div class="title">
       CHAI
     </div>
     <div class="text">
-      Next-generation retail payments app, with cash-back and discounts from seigniorage.
+      a payments product used by 5% of the population in South Korea
+    </div>
+  </a>
+  <a href="https://buzlink.io/" class="card app">
+    <img src="/img/apps_buzlink.png"/>
+    <div class="title">
+      BuzLink
+    </div>
+    <div class="text">
+      a viral marketing product to scale social referrals
     </div>
   </a>
   <a href="https://www.meme.mn/" class="card app">
@@ -18,7 +45,16 @@
       MemePay
     </div>
     <div class="text">
-      Fully integrated and seamless blockchain payments experience in a messaging app.
+      a payments product used by 3% of the population in Mongolia
+    </div>
+  </a>
+  <a href="https://paywithterra.com/" class="card app">
+    <img src="/img/apps_paywithterra.png"/>
+    <div class="title">
+      PayWithTerra
+    </div>
+    <div class="text">
+      an API gateway enabling merchants to accept Terra stablecoins
     </div>
   </a>
 </div>
@@ -58,54 +94,45 @@
 LUNA and Terra stablecoins are traded the following exchanges:
 
 <div class="cards threeColumn">
-  <a href="https://coinone.co.kr/" class="card image">
-    <img src="/img/exg_coinone.png"/>
+  <a href="https://www.binance.com/" class="card image">
+    <img src="/img/exg_binance.png" />
   </a>
-  <a href="https://www.bithumb.com/" class="card image">
-    <img src="/img/exg_bithumb.png"/>
-  </a>
-  <a href="https://www.gdac.com/" class="card image">
-    <img src="/img/exg_gdac.png"/>
+  <a href="https://www.huobi.com/" class="card image">
+    <img src="/img/exg_huobi.png" />
   </a>
   <a href="https://www.kucoin.com/" class="card image">
-    <img src="/img/exg_kucoin.png"/>
+    <img src="/img/exg_kucoin.png" />
   </a>
-  <a href="http://upbit.com/" class="card image">
-    <img src="/img/exg_upbit.png"/>
+  <a href="https://www.bithumb.com/" class="card image">
+    <img src="/img/exg_bithumb.png" />
   </a>
-  <a href="https://www.gopax.co.kr/exchange/" class="card image">
-    <img src="/img/exg_gopax.png"/>
+  <a href="https://upbit.com/" class="card image">
+    <img src="/img/exg_upbit.png" />
+  </a>
+  <a href="https://global.bittrex.com/" class="card image">
+    <img src="/img/exg_bittrex.png" />
+  </a>
+  <a href="https://coinone.co.kr/" class="card image">
+    <img src="/img/exg_coinone.png" />
+  </a>
+  <a href="https://www.okex.com/" class="card image">
+    <img src="/img/exg_okex.png" />
+  </a>
+  <a href="https://www.investvoyager.com/" class="card image">
+    <img src="/img/exg_voyager.png" />
+  </a>
+  <a href="https://coinlist.co/anchor-protocol" class="card image">
+    <img src="/img/exg_coinlist.png" />
   </a>
 </div>
 
 ## Wallets
 
-<div class="cards twoColumn">
-  <a href="https://station.terra.money/" class="card app">
-    <img src="/img/wallets_station.png"/>
-    <div class="title">
-      Terra Station
-    </div>
-    <div class="text">
-      Official desktop wallet from Terraform Labs.
-    </div>
-  </a>
-      <a href="https://lunie.io/" class="card app">
-    <img src="/img/wallets_lunie.png"/>
-    <div class="title">
-      Lunie
-    </div>
-    <div class="text">
-      Wallet with mobile support.
-    </div>
-  </a>
-  <!-- <a href="#" class="card disabled app">
-    <img src="/img/wallets_harvest.png"/>
-    <div class="title">
-      Harvest
-    </div>
-    <div class="text">
-    </div>
-  </a> -->
-
-</div>
+[Terra Station](https://station.terra.money/): Terra’s native wallet<br>
+Terra Station Extension: [Chrome](https://chrome.google.com/webstore/detail/terra-station/aiifbnbfobpmeekipheeijimdpnlpgpp)<br>
+Terra Station Desktop: [MacOS](https://www.terra.dev/station/Terra%20Station-1.1.0.dmg) | [Windows](https://www.terra.dev/station/Terra%20Station%20Setup%201.1.0.exe) | [Linux (deb)](https://terra.money/station/station-electron_1.1.1_amd64.deb) | [Linux (rpm)](https://terra.money/station/station-electron-1.1.1.x86_64.rpm)<br>
+Terra Station Mobile: [iOS](https://apps.apple.com/app/id1548434735) | [Android](https://play.google.com/store/apps/details?id=money.terra.station)<br>
+[Mirror Wallet](https://mirrorwallet.com/): Invest and trade cryptocurrencies and mirror assets<br>
+[MathWallet](https://mathwallet.org/en-us/): multi-platform crypto wallet for Terra assets<br>
+[Ledger Nano X/S](https://support.ledger.com/hc/en-us/articles/360017698979-Terra-LUNA-): hardware wallet by the Ledger team<br>
+[Oxis](https://www.oxis.com/): non-custodial wallet with fiat to crypto on and offramps & trading functionality<br>
