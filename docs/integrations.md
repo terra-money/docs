@@ -124,6 +124,9 @@ LUNA and Terra stablecoins are traded the following exchanges:
   <a href="https://coinlist.co/anchor-protocol" class="card image">
     <img src="/img/exg_coinlist.png" />
   </a>
+  <a href="https://coinex.com" class="card image">
+    <img src="/img/exg_coinex.png" />
+  </a>
 </div>
 
 ## Wallets
