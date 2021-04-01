@@ -64,6 +64,7 @@
 [BuzLink](https://buzlink.io/): a viral marketing product to scale social referrals<br>
 [MemePay](https://www.meme.mn/nav/home): a payments product used by 3% of the population in Mongolia<br>
 [PayWithTerra](https://paywithterra.com/): an API gateway enabling merchants to accept Terra stablecoins<br>
+[Kash](https://app.kash.io/): Intellabridge’s decentralized mobile banking app (Alpha release) providing a user-friendly interface to access Mirror and Anchor
 
 ## Block Explorers
 
