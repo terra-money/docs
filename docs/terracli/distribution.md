@@ -75,7 +75,7 @@ You can withdraw your rewards against a certain validator
 terracli tx distribution withdraw-rewards <validator-address>
 ```
 
-If you want to want to withdraw all rewards:
+If you want to withdraw all rewards:
 
 ```sh
 terracli tx distribution withdraw-all-rewards
