@@ -111,6 +111,7 @@
 - [PancakeSwap](https://pancakeswap.finance/): DEX for Terra assets and CAKE-incentivized liquidity pools<br>
 - [StableXSwap](https://www.stablex.finance/#/swap): stablecoin pool for UST<br>
 - [Beefy Finance](https://beefy.finance/): yield farming optimizer for UST and mAsset pools<br>
+- [Smoothy Finance](https://smoothy.finance/#/swap): stablecoin AMM for UST<br>
 
 ## Educational
 
