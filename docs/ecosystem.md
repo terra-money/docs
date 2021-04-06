@@ -112,6 +112,7 @@
 - [StableXSwap](https://www.stablex.finance/#/swap): stablecoin pool for UST<br>
 - [Beefy Finance](https://beefy.finance/): yield farming optimizer for UST and mAsset pools<br>
 - [Smoothy Finance](https://smoothy.finance/#/swap): stablecoin AMM for UST<br>
+- [Acryptos](https://app.acryptos.com/): yield farming optimizer for UST and MIR pools<br>
 
 ## Educational
 
@@ -148,6 +149,7 @@
 [Velo Protocol](https://velo.org/): stablecoin swaps using Velo’s federated credit exchange network<br>
 [Datahub](https://figment.io/datahub/terra/): full node infrastructure for Terra developers<br>
 [Quicksync](https://terra.quicksync.io/): data backup solution for anyone running a node on Terra<br>
+[Bison Trails](https://bisontrails.co/): platform to optimize running a node on Terra<br>
 
 ## Wallets
 
