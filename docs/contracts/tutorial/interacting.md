@@ -31,7 +31,7 @@ satisfy adjust timber high purchase tuition stool faith fine install that you un
 
 ## Uploading Code
 
-Make sure that the **optimized build** of `my-first-contract.wasm` that you created in the last section is in your current working directory.
+Make sure that the **optimized build** of `my_first_contract.wasm` that you created in the last section is in your current working directory.
 
 ```sh
 terracli tx wasm store my-first-contract.wasm --from test1 --chain-id=localterra --gas=auto --fees=100000uluna --broadcast-mode=block
