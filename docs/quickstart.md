@@ -16,7 +16,7 @@ Be sure to write down and verify the 24 words -- whoever has them can access you
 
 ### Get testnet Luna
 
-We will be using the **soju-0014** testnet. Make sure your network is set to **soju-0014** in the bottom left corner of Terra Station. Once you have done that, head over to the [Terra Faucet](https://faucet.terra.money) and request some Luna to your address. You can find your Terra account address in the **Bank** page.
+We will be using the testnet. Make sure your network is set to **Testnet** in the bottom left corner of Terra Station. Once you have done that, head over to the [Terra Faucet](https://faucet.terra.money) and request some Luna to your address. You can find your Terra account address in the **Bank** page.
 
 #### Balance after getting testnet Luna
 
@@ -50,7 +50,7 @@ Head over to the **Market** page in Station and swap **500 Luna for TerraKRW (KR
 
 Head over to the **Staking** page. Pick a validator from the list of delegates that you'd like to stake your Luna with, which should bring you to their page. If you're confident in their architecture, go ahead and delegate some Luna to them.
 
-#### Delegating to node0 on Soju
+#### Delegating to node0 on Testnet
 
 ![delegate](/img/screens/delegate.png)
 

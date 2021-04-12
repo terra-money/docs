@@ -49,7 +49,7 @@ terracli config trust-node false
 Finally, let us set the `chain-id` of the blockchain we want to interact with:
 
 ```bash
-terracli config chain-id soju-0014
+terracli config chain-id tequila-0004
 ```
 
 ## Querying Blockchain State
