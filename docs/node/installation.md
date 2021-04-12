@@ -23,7 +23,7 @@ If you haven't already, install Golang by following the [official docs](https://
 Use `git` to retrieve Terra Core from the [official repo](https://github.com/terra-project/core/), and checkout the `master` branch, which contains the latest stable release. That should install the `terrad` and `terracli` binaries.
 
 ```bash
-git clone https://github.com/terra-project/core/
+git clone https://github.com/terra-project/core
 cd core
 git checkout master
 ```
