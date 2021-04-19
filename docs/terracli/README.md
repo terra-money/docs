@@ -8,7 +8,7 @@ In order to query the state and send transactions, you need a way to access the 
 
 ### Running your own full-node
 
-This is the most secure option, but comes with relatively high resource requirements. In order to run your own full-node, you need good bandwidth and at least 1TB of disk space.
+This is the most secure option, but comes with relatively high resource requirements. In order to run your own full-node, you need good amount of cpu core, bandwidth, amount of memory, and disk space.
 
 You will find the tutorial on how to install `terrad` [here](../node/installation.md), and how to set it up to connect to an existing Terra network [here](../node/join-network.md).
 

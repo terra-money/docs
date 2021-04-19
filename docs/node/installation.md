@@ -8,6 +8,7 @@ We recommend the following for running Terra Core:
 
 - **2 or more** CPU cores
 - At least **1TB** of disk storage
+- At least **16GB** of memory
 - At least **100mbps** network bandwidth
 
 ## Building Terra Core
