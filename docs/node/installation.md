@@ -7,8 +7,8 @@ This is for setting up a **full node**, a resource-intensive process that requir
 We recommend the following for running Terra Core:
 
 - **2 or more** CPU cores
-- At least **300GB** of disk storage
-- At least **2.5 - 5mbps** network bandwidth
+- At least **1TB** of disk storage
+- At least **100mbps** network bandwidth
 
 ## Building Terra Core
 
