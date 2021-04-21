@@ -86,6 +86,7 @@
 [Axelar](https://axelar.network/): a bridge between Terra and other supported Layer 1 blockchains<br>
 [Injective Protocol](https://injectiveprotocol.com/): decentralized derivatives trading using mirror assets<br>
 [Intellabridge](https://www.intellabridge.com/): decentralized mobile banking app “Kash” bringing Mirror and Anchor to mainstream audiences<br>
+[Loop Finance](https://loop.markets): AMM DEX on Terra listing native Terra assets, ERC-20 tokens, and SPL tokens<br>
 
 #### Ethereum
 
