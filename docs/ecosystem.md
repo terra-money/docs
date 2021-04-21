@@ -134,6 +134,7 @@
 [OKEX](https://www.okex.com/)<br>
 [Voyager](https://www.investvoyager.com/)<br>
 [Coinlist](https://coinlist.co/anchor-protocol)<br>
+[Bitfinex](https://www.bitfinex.com)<br>
 
 ## Infrastructure
 
