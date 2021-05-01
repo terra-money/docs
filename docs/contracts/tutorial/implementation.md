@@ -1,7 +1,7 @@
 # Writing the Contract
 
 ::: tip
-You can find the complete contract [here](https://github.com/terra-project/my-first-contract).
+You can find the complete contract [here](https://github.com/terra-project/my-terra-token).
 :::
 
 A smart contract can be considered an instance of a singleton object whose internal state is persisted on the blockchain. Users can trigger state changes through sending it JSON messages, and users can also query its state through sending a request formatted as a JSON message. These messages are different than Terra blockchain messages such as `MsgSend` and `MsgSwap`.
@@ -346,7 +346,7 @@ docker run --rm -v "$(pwd)":/code \
   cosmwasm/rust-optimizer:0.10.3
 ```
 
-This will result in an optimized build of `artifacts/my-first-contract.wasm` in your working directory.
+This will result in an optimized build of `artifacts/my_first_contract.wasm` in your working directory.
 
 ## Schemas
 
