@@ -19,6 +19,7 @@
     "markdown-it-footnote": "^3.0.2",
     "node-sass": "^4.14.1",
     "sass-loader": "^10",
+    "tslib": "^2.2.0",
     "vue-json-component": "^0.4.1",
     "vuepress": "^1.5.2",
     "vuepress-plugin-mathjax": "^1.2.8",

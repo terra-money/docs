@@ -47,13 +47,13 @@ To edit the navigation to include your new article, edit `/docs/.vuepress/config
 Make sure you install all the dependencies:
 
 ```bash
-yarn install
+npm install
 ```
 
 Build and run locally (hot-reloading dev server):
 
 ```bash
-yarn dev
+npm run dev
 ```
 
 ## Organization
