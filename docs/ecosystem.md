@@ -135,6 +135,7 @@
 [Voyager](https://www.investvoyager.com/)<br>
 [Coinlist](https://coinlist.co/anchor-protocol)<br>
 [Bitfinex](https://www.bitfinex.com)<br>
+[Crypto.com](https://crypto.com)<br>
 
 ## Infrastructure
 
