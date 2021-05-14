@@ -92,6 +92,7 @@ module.exports = {
     repo: "terra-project/docs",
     editLinks: true,
     editLinkText: "Edit this page on GitHub",
+    docsBranch: 'main',
     docsDir: "docs",
     algolia: {
       apiKey: "5957091e293f7b97f2994bde312aed99",
