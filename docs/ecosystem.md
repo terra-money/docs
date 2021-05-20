@@ -14,6 +14,8 @@
 [Medium](https://medium.com/terra-money): the official Terra Medium for all major partnership announcements and monthly ecosystem updates<br>
 [Youtube](https://www.youtube.com/c/Terra_Money): the official Terra Youtube for Terra panel discussions and monthly AMAs<br>
 [Blockfolio Signals](https://blockfolio.com/coin/LUNA_2): Terra announcement channel on Blockfolio<br>
+[Reddit](https://www.reddit.com/r/terraluna/): the community-run Terra Reddit<br>
+[LunaLoot](https://lunaloot.com/): the official Terra merch shop<br>
 
 ## Mirror Website and Socials
 
@@ -55,6 +57,10 @@
 [Token Terminal Mirror](https://terminal.tokenterminal.com/dashboard/MirrorProtocol): provides data on Mirror P/S, VOL/MC, GMV & rankings with other dapps<br>
 [AssetDash](https://assetdash.com/?q=luna): ranks LUNA with other assets<br>
 [Luna Whale](https://www.lunawhale.com/): provides insights into LUNA whale activity (by DSRV)<br>
+[TerraSwap Dashboard](https://alpac4.com/TerraSwapDashboard): provides insights on volume and liquidity on TerraSwap, Terra’s AMM DEX<br>
+[Mirror Market](https://mirrormarket.finance/): provides tracking and data insights on the Mirror ecosystem<br>
+[Anchor Simulator](https://anchor-simulator.com/): enables users to estimate earnings on Anchor using different strategies<br>
+[Ape Board](https://apeboard.finance/dashboard): enables users to track portfolio across the entire Terra ecosystem on one dashboard<br>
 
 ## Applications
 
@@ -63,8 +69,15 @@
 [CHAI](https://chai.finance/): a payments product used by 5% of the population in South Korea<br>
 [BuzLink](https://buzlink.io/): a viral marketing product to scale social referrals<br>
 [MemePay](https://www.meme.mn/nav/home): a payments product used by 3% of the population in Mongolia<br>
+
+## Applications Powered By Terra
+
 [PayWithTerra](https://paywithterra.com/): an API gateway enabling merchants to accept Terra stablecoins<br>
 [Kash](https://app.kash.io/): Intellabridge’s decentralized mobile banking app (Alpha release) providing a user-friendly interface to access Mirror and Anchor<br>
+[LoTerra](https://loterra.io/): decentralized lottery<br>
+[Alice Finance](https://www.alice.co/): front-end interface for the Terra product suite<br>
+[Saturn Money](http://saturn.money/): European user-focused interface for payments, savings, and on/offramps<br>
+[Spar Protocol](https://spar.finance/): decentralized on-chain asset management protocol<br>
 
 ## Block Explorers
 
@@ -106,6 +119,7 @@
 - [Stabilize Protocol](https://www.stabilize.finance/): STBZ-incentivized UST stablecoin pool<br>
 - [Pickle Finance](https://app.pickle.finance/jars): incentivized UST/MIR pool<br>
 - [Set Protocol](https://www.tokensets.com): FAANG index set of 5 mAssets (Facebook, Amazon, Apple, Netflix & Google) on Uniswap<br>
+- [Ren Protocol](https://renproject.io/): renVM bridge to transport $renLUNA to Ethereum<br>
 
 #### Binance Smart Chain
 
@@ -117,10 +131,12 @@
 
 ## Educational
 
+[Terra Academy](https://www.youtube.com/watch?v=BXHU5kLVlY8&list=PLZJKUFMj9K6MLhq6Ffo3bkrOLh9oIha-q): comprehensive introduction to Terra App development<br>
 [CoinMarketCap Earn](https://coinmarketcap.com/earn/project/terra): video series explaining Terra stablecoins and LUNA<br>
 [Staking Guide](https://terra.money/docs/Luna_Staking_eng.pdf): guide to staking LUNA on Terra Station<br>
 [Developer Docs](https://docs.terra.money/): official documentation for Terra<br>
 [Figment Learn](https://learn.datahub.figment.io/network-documentation/terra/tutorials): tutorials onboarding developers on Terra<br>
+[Terra Bites](https://anchor.fm/terrabites): podcast dedicated to the Terra ecosystem<br>
 
 ## Exchanges
 
