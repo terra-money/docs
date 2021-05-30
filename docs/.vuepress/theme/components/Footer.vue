@@ -85,7 +85,7 @@
       <ul class="developers">
         <li>Developers</li>
         <li>
-          <a href="https://github.com/terra-project" target="_blank">Github</a>
+          <a href="https://github.com/terra-money" target="_blank">Github</a>
         </li>
         <li>
           <a href="https://docs.terra.money/" target="_blank">Documentation</a>
@@ -94,7 +94,7 @@
           <a href="https://docs.terra.money/#sdks-for-developers" target="_blank">SDKs</a>
         </li>
         <li>
-          <a href="https://github.com/terra-project/TIPs" target="_blank">TIPs</a>
+          <a href="https://github.com/terra-money/TIPs" target="_blank">TIPs</a>
         </li>
       </ul>
       <ul class="developers">
@@ -103,7 +103,7 @@
           <a href="https://docs.terra.money/validator" target="_blank">Validator Guide</a>
         </li>
         <li>
-          <a href="https://github.com/terra-project/validator-profiles" target="_blank">Profiles</a>
+          <a href="https://github.com/terra-money/validator-profiles" target="_blank">Profiles</a>
         </li>
         <li>
           <a href="https://discord.gg/ZHBuKda" target="_blank">Discord Channel</a>

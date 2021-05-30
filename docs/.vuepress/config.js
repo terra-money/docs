@@ -89,7 +89,7 @@ module.exports = {
     sidebarDepth: 2,
     logo: "/img/docs_logo.svg",
     lastUpdated: "Updated on",
-    repo: "terra-project/docs",
+    repo: "terra-money/docs",
     editLinks: true,
     editLinkText: "Edit this page on GitHub",
     docsBranch: 'main',
@@ -105,7 +105,7 @@ module.exports = {
       { text: "Core", link: "/dev/" },
       {
         text: "GitHub",
-        link: "https://github.com/terra-project/core",
+        link: "https://github.com/terra-money/core",
         icon: "/img/github.svg",
       },
     ],
@@ -168,7 +168,7 @@ module.exports = {
           collapsable: false,
           children: [
             [
-              "https://pkg.go.dev/github.com/terra-project/core?tab=subdirectories",
+              "https://pkg.go.dev/github.com/terra-money/core?tab=subdirectories",
               "Terra Core GoDoc",
             ],
             ["https://swagger.terra.money", "Terra REST API"],
