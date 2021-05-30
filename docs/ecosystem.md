@@ -5,7 +5,7 @@
 [Website](http://terra.money/): the official Terraform Labs website<br>
 [Docs](https://docs.terra.money): the official documentation for the Terra blockchain<br>
 [White Paper](https://terra.money/Terra_White_paper.pdf): the official Terra White Paper<br>
-[Github](https://github.com/terra-project): the official Terraform Labs GitHub hosting all Terra public repos<br>
+[Github](https://github.com/terra-money): the official Terraform Labs GitHub hosting all Terra public repos<br>
 [Discord](https://discord.com/invite/bYfyhUT): the official Terra Discord for developers and enthusiasts to engage in focused discussions<br>
 [Telegram](https://t.me/TerraLunaChat): the official Terra Telegram for enthusiasts to engage in discussions<br>
 [Telegram Announcements](https://t.me/terra_announcements): the official Telegram announcement channel for all major Terra & Mirror updates<br>
@@ -94,7 +94,7 @@
 ## Ecosystem Partnerships
 
 [Terra Bridge](https://bridge.terra.money/): Terra bridge web frontend to easily send Terra assets to and from Ethereum and Binance Smart Chain<br>
-[Shuttle](https://github.com/terra-project/shuttle): Terra bridge to Ethereum and Binance Smart Chain<br>
+[Shuttle](https://github.com/terra-money/shuttle): Terra bridge to Ethereum and Binance Smart Chain<br>
 [Wormhole](https://github.com/certusone/wormhole): a bridge between Terra, Ethereum, and Solana being developed by Certus One<br>
 [Axelar](https://axelar.network/): a bridge between Terra and other supported Layer 1 blockchains<br>
 [Injective Protocol](https://injectiveprotocol.com/): decentralized derivatives trading using mirror assets<br>

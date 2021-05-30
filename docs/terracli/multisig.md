@@ -33,7 +33,7 @@ terracli keys show --multisig-threshold=K name1 name2 name3 [...]
 ## Signing a transaction
 
 ::: warning NOTE
-This example uses `test1`, `test2`, `test3` keys from [LocalTerra](https://github.com/terra-project/LocalTerra). Import them into your `terracli` keystore to follow along.
+This example uses `test1`, `test2`, `test3` keys from [LocalTerra](https://github.com/terra-money/LocalTerra). Import them into your `terracli` keystore to follow along.
 :::
 
 ### Step 1: Create the multisig key

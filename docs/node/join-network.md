@@ -40,12 +40,12 @@ Your full node has now been initialized!
 
 ## Picking a Network
 
-You specify the network you want to join by setting the **genesis file** and **seeds**. If you need more information about past networks, check our [Networks Repo](https://github.com/terra-project/testnet).
+You specify the network you want to join by setting the **genesis file** and **seeds**. If you need more information about past networks, check our [Networks Repo](https://github.com/terra-money/testnet).
 
 | Network        | Description        | Homepage                                                                  | Address Book |
 | -------------- | ------------------ | ------------------------------------------------------------------------- | - |
-| `columbus-4`   | Mainnet            | [Link](https://github.com/terra-project/mainnet)                          | https://network.terra.dev/addrbook.json |
-| `tequila-0004` | Testnet | [Link](https://github.com/terra-project/testnet/tree/master/tequila-0004) | https://network.terra.dev/testnet/addrbook.json |
+| `columbus-4`   | Mainnet            | [Link](https://github.com/terra-money/mainnet)                          | https://network.terra.dev/addrbook.json |
+| `tequila-0004` | Testnet | [Link](https://github.com/terra-money/testnet/tree/master/tequila-0004) | https://network.terra.dev/testnet/addrbook.json |
 
 ### Download the genesis file
 
@@ -56,7 +56,7 @@ mkdir -p ~/.terrad/config
 curl https://columbus-genesis.s3-ap-northeast-1.amazonaws.com/columbus-4-genesis.json > ~/.terrad/config/genesis.json
 ```
 
-Note we use the `latest` directory in the [networks repo](https://github.com/terra-project/testnet) which contains details for the latest testnet. If you are connecting to a different testnet, ensure you get the right files.
+Note we use the `latest` directory in the [networks repo](https://github.com/terra-money/testnet) which contains details for the latest testnet. If you are connecting to a different testnet, ensure you get the right files.
 
 To verify the correctness of the configuration run:
 
@@ -151,7 +151,7 @@ make
 If you have issues at this step, please check that you have the latest stable version of GO installed.
 :::
 
-Note we use `master` here since it contains the latest stable release. See the [testnet repo](https://github.com/terra-project/testnet) for details on which version is needed for which testnet, and the [Terra Core release page](https://github.com/terra-project/core/releases) for details on each release. Your full node has been cleanly upgraded!
+Note we use `master` here since it contains the latest stable release. See the [testnet repo](https://github.com/terra-money/testnet) for details on which version is needed for which testnet, and the [Terra Core release page](https://github.com/terra-money/core/releases) for details on each release. Your full node has been cleanly upgraded!
 
 ### Exporting state
 

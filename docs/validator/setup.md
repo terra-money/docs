@@ -120,6 +120,6 @@ Join the [Terra Validators Discord](https://discord.gg/ZHBuKda) channel and intr
 
 ### Submit a Validator Profile
 
-Get a fancy checkmark next to your name by submitting a [Validator Profile](https://github.com/terra-project/validator-profiles).
+Get a fancy checkmark next to your name by submitting a [Validator Profile](https://github.com/terra-money/validator-profiles).
 
 ![validator-profile](/img/screens/validator-check.png)

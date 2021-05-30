@@ -8,6 +8,6 @@ Below is a list of oracle feeder implementations you can choose from:
 
 | Software                                                                | Developer                             | Runtime         |
 | :---------------------------------------------------------------------- | :------------------------------------ | :-------------- |
-| [`oracle-feeder`](https://github.com/terra-project/oracle-feeder)       | **Terra**                             | Node.js, Python | Official reference implementation |
+| [`oracle-feeder`](https://github.com/terra-money/oracle-feeder)       | **Terra**                             | Node.js, Python | Official reference implementation |
 | [`terra_oracle_voter`](https://github.com/b-harvest/terra_oracle_voter) | [B-Harvest](https://bharvest.io/)     | Python          |  |
 | [`terra-oracle`](https://github.com/node-a-team/terra-oracle)           | [Node A-Team](https://nodeateam.com/) | Go              |  |

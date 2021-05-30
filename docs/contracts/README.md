@@ -12,9 +12,9 @@ The following table maps commonly-used Ethereum developer tools to their Terra c
 | ------------------ | --------------------------------------------------------------------------------------------------------------------- | --------------- |
 | Frontend SDK       | [Terra.js](https://terra-project.github.io/terra.js/), [Terra SDK](https://terra-project.github.io/terra-sdk-python/) | Web3.js, Web3py |
 | Browser Extension  | Station CX                                                                                                            | MetaMask, MEW   |
-| Local Testnet      | [LocalTerra](https://github.com/terra-project/LocalTerra)                                                             | Ganache         |
+| Local Testnet      | [LocalTerra](https://github.com/terra-money/LocalTerra)                                                             | Ganache         |
 | Contract Language  | [Rust](https://www.rust-lang.org/)                                                                                    | Solidity, Vyper |
-| Contract Toolchain | [Houston](https://github.com/terra-project/houston)                                                                   | Truffle         |
+| Contract Toolchain | [Houston](https://github.com/terra-money/houston)                                                                   | Truffle         |
 
 ## Why build on Terra?
 
