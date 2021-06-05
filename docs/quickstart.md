@@ -16,7 +16,7 @@ Be sure to write down and verify the 24 words -- whoever has them can access you
 
 ### Get testnet Luna
 
-We will be using the testnet. Make sure your network is set to **Testnet** in the bottom left corner of Terra Station. Once you have done that, head over to the [Terra Faucet](https://faucet.terra.money) and request some Luna to your address. You can find your Terra account address in the **Bank** page.
+We will be using the testnet. Make sure your network is set to **Testnet** in the bottom left corner of Terra Station. Once you have done that, head over to the [Terra Faucet](https://faucet.terra.money) and request some Luna to your address. You can find your Terra account address in the **Top Bar** of the Terra Station.
 
 #### Balance after getting testnet Luna
 
@@ -28,7 +28,7 @@ Now that you have some tokens to play around with, you can practice making trans
 
 ### Sending tokens
 
-The simplest transaction you can make is to send tokens to somebody else. Try sending 100 of your testnet Luna to `terra14lxhx09fyemu9lw46c9m9jk63cg6u8wdc8pdu4`. On your **Bank** page, click "Send" next to your balance of Luna and enter the following in the modal:
+The simplest transaction you can make is to send tokens to somebody else. Try sending 100 of your testnet Luna to `terra14lxhx09fyemu9lw46c9m9jk63cg6u8wdc8pdu4`. On your **Wallet** page, click "Send" next to your balance of Luna and enter the following in the modal:
 
 #### Example of how to send Luna
 
@@ -38,7 +38,7 @@ The simplest transaction you can make is to send tokens to somebody else. Try se
 
 The hallmark feature of the Terra protocol is its stablecoin, powered by a balancing system of on-chain swaps and real-world arbitrage. Let's turn our unstable Luna coins into stablecoins to protect their value!
 
-Head over to the **Market** page in Station and swap **500 Luna for TerraKRW (KRT)**.
+Head over to the **Swap** page in Station and swap **500 Luna for TerraKRW (KRT)**.
 
 #### Example of swapping currencies
 
