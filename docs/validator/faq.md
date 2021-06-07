@@ -16,7 +16,7 @@ The Columbus-4 Mainnet is a public Proof-Of-Stake (PoS) blockchain, meaning that
 
 Any user in the system can declare its intention to become a validator by sending a [`create-validator`](#how-to-become-a-validator) transaction. From there, they become validators.
 
-The weight (i.e. total stake) of a validator determines wether or not it is an active validator, and also how frequently this node will have to propose a block and how much revenue it will obtain. Initially, only the top 100 validators with the most weight will be active validators. If validators double-sign, or are frequently offline, they risk their staked Luna (including Luna delegated by users) being "slashed" by the protocol to penalize negligence and misbehavior.
+The weight (i.e. total stake) of a validator determines wether or not it is an active validator, and also how frequently this node will have to propose a block and how much revenue it will obtain. Initially, only the top 130 validators with the most weight will be active validators. If validators double-sign, or are frequently offline, they risk their staked Luna (including Luna delegated by users) being "slashed" by the protocol to penalize negligence and misbehavior.
 
 ### What is a full node?
 
@@ -75,7 +75,7 @@ terracli tx staking create-validator
 
 Once a validator is created and registered, Luna holders can delegate Luna to it, effectively adding stake to its pool. The total stake of a validator is the sum of the Luna self-bonded by the validator's operator and the Luna bonded by external delegators.
 
-**Only the top 100 validators with the most stake are considered the active validators**, becoming **bonded validators**. If ever a validator's total stake dips below the top 100, the validator loses its validator privileges and no longer serves as part of the active set, entering **unbonding mode** and eventually becomes **unbonded**.
+**Only the top 130 validators with the most stake are considered the active validators**, becoming **bonded validators**. If ever a validator's total stake dips below the top 130, the validator loses its validator privileges and no longer serves as part of the active set, entering **unbonding mode** and eventually becomes **unbonded**.
 
 ## Validator keys and states
 
@@ -121,7 +121,7 @@ If you want to obtain coins for the testnet, you can do so by using [this faucet
 
 ### Is there a minimum amount of Luna that must be staked to be an active (bonded) validator?
 
-There is no minimum. The top 100 validators with the highest total stake (where total stake = self-bonded stake + delegators stake) are the active validators.
+There is no minimum. The top 130 validators with the highest total stake (where total stake = self-bonded stake + delegators stake) are the active validators.
 
 ### How will delegators choose their validators?
 
@@ -169,7 +169,7 @@ Even though delegated funds cannot be stolen by their validators, delegators are
 
 ### How often will a validator be chosen to propose the next block? Does it go up with the quantity of Luna staked?
 
-The validator that is selected to mine the next block is called the **proposer**, the "leader" in the consensus for the round. Each proposer is selected deterministically, and the frequency of being chosen is equal to the relative total stake (where total stake = self-bonded stake + delegators stake) of the validator. For example, if the total bonded stake across all validators is 100 Luna, and a validator's total stake is 10 Luna, then this validator will be chosen 10% of the time as the proposer.
+The validator that is selected to mine the next block is called the **proposer**, the "leader" in the consensus for the round. Each proposer is selected deterministically, and the frequency of being chosen is equal to the relative total stake (where total stake = self-bonded stake + delegators stake) of the validator. For example, if the total bonded stake across all validators is 130 Luna, and a validator's total stake is 10 Luna, then this validator will be chosen 10% of the time as the proposer.
 
 To understand more about the proposer selection process in Tendermint BFT consensus, read more [in their official docs](https://docs.tendermint.com/master/spec/reactors/consensus/proposer-selection.html).
 
