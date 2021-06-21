@@ -263,7 +263,7 @@ Time duration of unbonding, in nanoseconds.
 ### MaxValidators
 
 - type: `uint16`
-- default: `100`
+- default: `130`
 
 Maximum number of active validators.
 
