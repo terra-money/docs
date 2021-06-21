@@ -272,7 +272,7 @@ Initial starting size of both Terra and Luna liquidity pools.
 ### MinSpread
 
 - type: `Dec`
-- default: 2%
+- default: 0.5%
 
 Minimum spread charged on Terra<>Luna swaps to prevent leaking value from front-running attacks.
 
