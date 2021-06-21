@@ -14,7 +14,7 @@ A validator's **voting power** is proportional to the amount of Luna they have b
 
 ### Slashing Risks
 
-Running validator is a big responsibility, which is why only the top 100 in bonded Luna stake are elected to sign blocks. As such, safety and liveness guarantees must be met, at the risk of having their validator's stake slashed (penalized), hurting both the validator's funds (as well as their delegator's), and their reputation.
+Running validator is a big responsibility, which is why only the top 130 in bonded Luna stake are elected to sign blocks. As such, safety and liveness guarantees must be met, at the risk of having their validator's stake slashed (penalized), hurting both the validator's funds (as well as their delegator's), and their reputation.
 
 The major slashing conditions are:
 
