@@ -96,7 +96,7 @@ The following processes get executed during each block transition:
    - If at the end of `epoch`, update indicators, mint seigniorage, and recalibrate monetary policy levers (tax-rate, reward-weight) for the next epoch.
 
 9. Staking
-   - The new set of active validators is determined from the top 100 Luna stakers, and validators that lose their spot within the set are start to unbond.
+   - The new set of active validators is determined from the top 130 Luna stakers, and validators that lose their spot within the set are start to unbond.
 
 ## Conventions
 
