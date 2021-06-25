@@ -57,7 +57,7 @@ terracli query tendermint-validator-set | grep "$(terrad tendermint show-validat
 You are looking for the `bech32` encoded `address` in the `~/.terrad/config/priv_validator.json` file.
 
 ::: warning NOTE
-To be in the validator set, you need to have more total voting power than the 100th validator.
+To be in the validator set, you need to have more total voting power than the 130th validator.
 :::
 
 ## Set up Oracle Feeder
