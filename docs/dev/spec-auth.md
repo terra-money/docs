@@ -1,7 +1,7 @@
 # Auth
 
 ::: warning NOTE
-Terra's Auth module inherits from Cosmos SDK's [`auth`](https://github.com/cosmos/cosmos-sdk/tree/v0.37.4/docs/spec/auth) module. This document is a stub, and covers mainly important Terra-specific notes about how it is used.
+Terra's Auth module inherits from Cosmos SDK's [`auth`](https://github.com/cosmos/cosmos-sdk/blob/v0.43.0/x/auth/spec/README.md) module. This document is a stub, and covers mainly important Terra-specific notes about how it is used.
 :::
 
 Terra's Auth module extends the functionality from Cosmos SDK's `auth` module with a modified ante handler which applies the stability layer fee alongside the all basic transaction validity checks (signatures, nonces, auxiliary fields). In addition, a special vesting account type is defined, which handles the logic for token vesting from the Luna presale.
@@ -12,7 +12,7 @@ The Auth module reads the current effective `TaxRate` and `TaxCap` parameters fr
 
 ### Gas Fee
 
-As with any other transaction, [`MsgSend`](./spec-bank.md#msgsend) and [`MsgMultiSend`](./spec-bank.md#msgmultisend) pay a gas fee the size of which depends on validator's preferences (each validator sets his own min-gas-fees) and the complexity of the transaction. [Notes on gas and fees](../terracli/README.md#a-note-on-gas-and-fees) has a more detailed explanation of how gas is computed. Important detail to note here is that gas fees are specified by the sender when the transaction is outbound.
+As with any other transaction, [`MsgSend`](./spec-bank.md#msgsend) and [`MsgMultiSend`](./spec-bank.md#msgmultisend) pay a gas fee the size of which depends on validator's preferences (each validator sets his own min-gas-fees) and the complexity of the transaction. [Notes on gas and fees](../cli/README.md#a-note-on-gas-and-fees) has a more detailed explanation of how gas is computed. Important detail to note here is that gas fees are specified by the sender when the transaction is outbound.
 
 ### Stability Fee
 
@@ -34,11 +34,11 @@ The subspace for the Auth module is `auth`.
 
 ```go
 type Params struct {
-	MaxMemoCharacters      uint64 `json:"max_memo_characters" yaml:"max_memo_characters"`
-	TxSigLimit             uint64 `json:"tx_sig_limit" yaml:"tx_sig_limit"`
-	TxSizeCostPerByte      uint64 `json:"tx_size_cost_per_byte" yaml:"tx_size_cost_per_byte"`
-	SigVerifyCostED25519   uint64 `json:"sig_verify_cost_ed25519" yaml:"sig_verify_cost_ed25519"`
-	SigVerifyCostSecp256k1 uint64 `json:"sig_verify_cost_secp256k1" yaml:"sig_verify_cost_secp256k1"`
+	MaxMemoCharacters      uint64 `protobuf:"varint,1,opt,name=max_memo_characters,json=maxMemoCharacters,proto3" json:"max_memo_characters,omitempty" yaml:"max_memo_characters"`
+	TxSigLimit             uint64 `protobuf:"varint,2,opt,name=tx_sig_limit,json=txSigLimit,proto3" json:"tx_sig_limit,omitempty" yaml:"tx_sig_limit"`
+	TxSizeCostPerByte      uint64 `protobuf:"varint,3,opt,name=tx_size_cost_per_byte,json=txSizeCostPerByte,proto3" json:"tx_size_cost_per_byte,omitempty" yaml:"tx_size_cost_per_byte"`
+	SigVerifyCostED25519   uint64 `protobuf:"varint,4,opt,name=sig_verify_cost_ed25519,json=sigVerifyCostEd25519,proto3" json:"sig_verify_cost_ed25519,omitempty" yaml:"sig_verify_cost_ed25519"`
+	SigVerifyCostSecp256k1 uint64 `protobuf:"varint,5,opt,name=sig_verify_cost_secp256k1,json=sigVerifyCostSecp256k1,proto3" json:"sig_verify_cost_secp256k1,omitempty" yaml:"sig_verify_cost_secp256k1"`
 }
 ```
 

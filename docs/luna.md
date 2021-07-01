@@ -24,9 +24,9 @@ Gas is a fee that is added on to each transaction to avoid spamming. Validators 
 
 Taxes are used as a stability fee, and the protocol charges a small percentage transaction fee ranging from 0.1% to 1% on every Terra transaction, capped at 1 TerraSDR. This is paid in any Terra currency, and is disbursed pro-rata to stake at the end of every block.
 
-### Seigniorage Rewards
+### Swap Fees
 
-Validators participate in the Luna exchange rate oracle process, and win rewards from the seigniorage pool every time they vote within the reward band, proportional to their stake.
+Validators participate in the Luna exchange rate oracle process, and win rewards from the swap fees every time they vote within the reward band, proportional to their stake.
 
 ## Phases of Luna
 

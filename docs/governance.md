@@ -9,9 +9,8 @@ Proposals start out as ideas within the community, and a member drafts it into a
 Currently, proposals that can be automatically applied include:
 
 - `ParameterChangeProposal`: changing of blockchain parameters (defined in each module)
-- `TaxRateUpdateProposal`: update Tax Rate monetary policy lever
-- `RewardWeightUpdateProposal`: update Reward Weight monetary policy lever
 - `CommunityPoolSpendProposal`: disbursement from the Distribution module's Community Pool
+- `SoftwareUpgradeProposal`: register software upgrade plan to safely upgrade the network
 
 Other issues like large directional changes or decisions requiring human involvement (manual implementation) can be also be voted on, through submitting a plain `TextProposal`.
 

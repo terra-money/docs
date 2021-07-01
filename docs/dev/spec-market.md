@@ -16,7 +16,7 @@ This difference is on the order of about 1 minute (our oracle `VotePeriod` is 30
 
 To defend against this, the Market module enforces the following swap fees
 
-- a **Tobin Tax** (set at [0.25%](#tobintax)) for spot-converting Terra<>Terra swaps
+- a **Tobin Tax** (set at [0.35%~2%](#tobintax)) for spot-converting Terra<>Terra swaps
 
   To illustrate, assume that oracle reports that the Luna<>SDT exchange rate is 10, and for Luna<>KRT, 10,000. Sending in 1 SDT will get you 0.1 Luna, which is 1000 KRT. After applying the Tobin Tax, you'll end up with 997.5 KRT (0.25% of 1000 is 2.5), a better rate than any retail currency exchange and remittance[^1].
 
@@ -54,9 +54,9 @@ The primary advantage of Constant-Product over Columbus-2 is that it offers “u
 
 ### Virtual Liquidity Pools
 
-The market starts out with two liquidity pools of equal sizes, one representing Terra (all denominations) and another representing Luna, initialiazed by the parameter [`BasePool`](#basepool), which defines the initial size, $Pool_{Base}$, of the Terra and Luna liquidity pools.
+The market starts out with two liquidity pools of equal sizes, one representing Terra (all denominations) and another representing Luna, initialized by the parameters [`MintBasePool` and `BurnBasePool`](#basepool), which defines the initial size, $Pool_{Base}$, of the Terra and Luna liquidity pools.
 
-In practice, rather than keeping track of the sizes of the two pools, the information is encoded in a number $\delta$, which the blockchain stores as `TerraPoolDelta`, representing the deviation of the Terra pool from its base size in units µSDR.
+In practice, rather than keeping track of the sizes of the two pools, the information is encoded in a number $\delta$, which the blockchain stores as `MintPoolDelta` and `BurnPoolDelta`, representing the deviation of the Terra pool from its mint/burn base size in units µSDR.
 
 The size of the Terra and Luna liquidity pools can be generated from $\delta$ using the following formulas:
 
@@ -97,11 +97,17 @@ For Luna swaps into Terra, the Luna that recaptured by the protocol is burned an
 
 ## State
 
-### Terra Pool Delta δ
+### Mint Pool Delta δ
 
 - type: `sdk.Dec`
 
-Represents the difference between size of current Terra pool and its original base size, valued in µSDR.
+Represents the difference between size of current Mint pool and its original base size, valued in µSDR.
+
+### Burn Pool Delta δ
+
+- type: `sdk.Dec`
+
+Represents the difference between size of current Burn pool and its original base size, valued in µSDR.
 
 ## Message Types
 
@@ -225,14 +231,14 @@ If the `offerCoin`'s denomination is the same as `askDenom`, this will raise `Er
 func (k Keeper) ApplySwapToPool(ctx sdk.Context, offerCoin sdk.Coin, askCoin sdk.DecCoin) sdk.Error
 ```
 
-`k.ApplySwapToPools()` is called during the swap to update the blockchain's measure of $\delta$, `TerraPoolDelta`, when the balances of the Terra and Luna liquidity pools have changed.
+`k.ApplySwapToPools()` is called during the swap to update the blockchain's measure of $\delta_{mint}$ or $\delta_{burn}$, `MintPoolDelta` or `BurnPoolDelta`, when the balances of the Terra and Luna liquidity pools have changed.
 
-Terra currencies share the same liquidity pool, so `TerraPoolDelta` remains unaltered during Terra<>Terra swaps.
+Terra currencies share the same liquidity pool, so `MintPoolDelta` and `BurnPoolDelta` remains unaltered during Terra<>Terra swaps.
 
 For Terra<>Luna swaps, the relative sizes of the pools will be different after the swap, and $\delta$ will be updated with the following formulas:
 
-- For Terra to Luna, $\delta' = \delta + Offer_{\mu SDR}$
-- For Luna to Terra, $\delta' = \delta - Ask_{\mu SDR}$
+- For Terra to Luna, $\delta_{burn}' = \delta_{burn} + Offer_{\mu SDR}$
+- For Luna to Terra, $\delta_{mint}' = \delta_{mint} - Ask_{\mu SDR}$
 
 ## Transitions
 

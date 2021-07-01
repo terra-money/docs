@@ -15,7 +15,7 @@ terrad start
 Wait for your full node to catch up to the latest block. Next, run the following command. Note that `<terra>` is the address of your validator account, and `<name>` is the name of the validator account. You can find this info by running `terracli keys list`.
 
 ```bash
-terracli tx slashing unjail <terra> --chain-id=<chain_id> --from=<from>
+terrad tx slashing unjail --chain-id=<chain_id> --from=<from>
 ```
 
 ::: warning

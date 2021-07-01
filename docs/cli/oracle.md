@@ -5,61 +5,61 @@
 ### Exchange Rates of LUNA
 
 ```sh
-terracli query oracle exchange-rates
+terrad query oracle exchange-rates
 ```
 
 ### Votes
 
 ```sh
-terracli query oracle votes <denom> <validator>
+terrad query oracle votes <denom> <validator>
 ```
 
 ### Prevotes
 
 ```sh
-terracli query oracle prevotes <denom> <validator>
+terrad query oracle prevotes <denom> <validator>
 ```
 
 ### Active Denoms
 
 ```sh
-terracli query oracle actives
+terrad query oracle actives
 ```
 
 ### Feeder Account
 
 ```sh
-terracli query oracle feeder <validator-addr>
+terrad query oracle feeder <validator-addr>
 ```
 
 ### Miss Counter
 
 ```sh
-terracli query oracle miss <validator-addr>
+terrad query oracle miss <validator-addr>
 ```
 
 ### Aggregate Prevotes
 
 ```sh
-terracli query oracle aggregate-prevote <validator-addr>
+terrad query oracle aggregate-prevote <validator-addr>
 ```
 
 ### Aggregate Votes
 
 ```sh
-terracli query oracle aggregate-vote <validator-addr>
+terrad query oracle aggregate-vote <validator-addr>
 ```
 
 ### Vote Targets
 
 ```sh
-terracli query oracle vote-targets
+terrad query oracle vote-targets
 ```
 
 ### Tobin Taxes
 
 ```sh
-terracli query oracle tobin-taxes
+terrad query oracle tobin-taxes
 ```
 
 ### Parameters
@@ -67,7 +67,7 @@ terracli query oracle tobin-taxes
 You can get the oracle module's parameters:
 
 ```sh
-terracli query oracle params
+terrad query oracle params
 ```
 
 The reported parameters will be of the following format:
@@ -100,7 +100,7 @@ i
 To submit a prevote, run:
 
 ```bash
-terracli tx oracle prevote \
+terrad tx oracle prevote \
     <salt> \
     <price> \
     <validator_address> \
@@ -110,7 +110,7 @@ terracli tx oracle prevote \
 After `VotePeriod` has expired from the submission of the prevote, the voter must submit the actual exchange rate vote. To do so, run:
 
 ```bash
-terracli tx oracle vote \
+terrad tx oracle vote \
     <salt> \
     <price>  \
     <validator_address> \
@@ -127,7 +127,7 @@ Given that oracle votes have to be submitted in a feed over short time intervals
 A voter may also elect to delegate exchange rate voting to another signing key.
 
 ```bash
-terracli tx oracle set-feeder <feeder_address> --from=mykey
+terrad tx oracle set-feeder <feeder_address> --from=mykey
 ```
 
 where `feeder_address` is the address you want to delegate your voting rights to. Note that the feeder will still need to submit votes on behalf of your validator in order for you to get credit.

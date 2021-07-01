@@ -10,11 +10,11 @@ Validators and their delegators will earn the following fees:
 
 - **Stability fees**: To stabilize the value of Luna, the protocol charges a small percentage transaction fee ranging from 0.1% to 1% on every Terra transaction, capped at 1 TerraSDR. This is paid in any Terra currency, and is disbursed pro-rata to stake at the end of every block in TerraSDR.
 
-- **Seigniorage rewards**: Validators that participate in the Exchange Rate [`Oracle`](../dev/spec-oracle.md) get a portion of seigniorage if they faithfully report and win the ballot (vote within the reward band around the weighted median).
+- **Swap fees**: Validators that participate in the Exchange Rate [`Oracle`](../dev/spec-oracle.md) get a portion of swap spread fees if they faithfully report and win the ballot (vote within the reward band around the weighted median).
 
 Besides revenue, there are scarcity incentives:
 
-- **Swap fees**: A small spread is charged on atomic swap transactions between Luna and any Terra currency, which is burned and creates scarcity in Luna and indirectly rewards validators.
+- **Seigniorage rewards**: A small spread is charged on atomic swap transactions between Luna and any Terra currency, which is burned and creates scarcity in Luna and indirectly rewards validators.
 
 Note that validators can set commission on the fees their delegators receive as additional incentive.
 

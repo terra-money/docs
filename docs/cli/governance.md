@@ -7,13 +7,13 @@
 Once created, you can now query information of the proposal:
 
 ```bash
-terracli query gov proposal <proposal_id>
+terrad query gov proposal <proposal_id>
 ```
 
 Or query all available proposals:
 
 ```bash
-terracli query gov proposals
+terrad query gov proposals
 ```
 
 You can also query proposals filtered by `voter` or `depositor` by using the corresponding flags.
@@ -21,7 +21,7 @@ You can also query proposals filtered by `voter` or `depositor` by using the cor
 To query for the proposer of a given governance proposal:
 
 ```bash
-terracli query gov proposer <proposal_id>
+terrad query gov proposer <proposal_id>
 ```
 
 ### Deposits
@@ -29,13 +29,13 @@ terracli query gov proposer <proposal_id>
 Once a new proposal is created, you can query all the deposits submitted to it:
 
 ```bash
-terracli query gov deposits <proposal_id>
+terrad query gov deposits <proposal_id>
 ```
 
 You can also query a deposit submitted by a specific address:
 
 ```bash
-terracli query gov deposit <proposal_id> <depositor_address>
+terrad query gov deposit <proposal_id> <depositor_address>
 ```
 
 ### Votes
@@ -43,13 +43,13 @@ terracli query gov deposit <proposal_id> <depositor_address>
 Check the vote with the option you just submitted:
 
 ```bash
-terracli query gov vote <proposal_id> <voter_address>
+terrad query gov vote <proposal_id> <voter_address>
 ```
 
 You can also get all the previous votes submitted to the proposal with:
 
 ```bash
-terracli query gov votes <proposal_id>
+terrad query gov votes <proposal_id>
 ```
 
 ### Tally Results
@@ -57,7 +57,7 @@ terracli query gov votes <proposal_id>
 To check the current tally of a given proposal you can use the `tally` command:
 
 ```bash
-terracli query gov tally <proposal_id>
+terrad query gov tally <proposal_id>
 ```
 
 ### Parameters
@@ -65,31 +65,31 @@ terracli query gov tally <proposal_id>
 To check the current governance parameters run:
 
 ```bash
-terracli query gov params
+terrad query gov params
 ```
 
 The reported parameters will be of the following format:
 
 ```yaml
-voting_params:
-  voting_period: 5m0s
+deposit_params:
+  max_deposit_period: "86400000000000"
+  min_deposit:
+  - amount: "10000000"
+    denom: uluna
 tally_params:
   quorum: "0.334000000000000000"
   threshold: "0.500000000000000000"
-  veto: "0.334000000000000000"
-deposit_parmas:
-  min_deposit:
-    - denom: uluna
-      amount: "10000000"
-  max_deposit_period: 48h0m0s
+  veto_threshold: "0.334000000000000000"
+voting_params:
+  voting_period: "86400000000000"
 ```
 
 To query subsets of the governance parameters run:
 
 ```bash
-terracli query gov param voting
-terracli query gov param tallying
-terracli query gov param deposit
+terrad query gov param voting
+terrad query gov param tallying
+terrad query gov param deposit
 ```
 
 ## Transaction
@@ -101,7 +101,7 @@ In order to create a governance proposal, you must submit an initial deposit alo
 #### Text Proposals
 
 ```bash
-terracli tx gov submit-proposal \
+terrad tx gov submit-proposal \
     --title=<title> \
     --description=<description> \
     --type="Text" \
@@ -116,7 +116,7 @@ To submit a parameter change proposal, it is highly recommended to pass in the p
 contents are less friendly to command-line input.
 
 ```bash
-terracli tx gov submit-proposal \
+terrad tx gov submit-proposal \
     param-change <path/to/proposal.json> \
     --from=<name> \
     --chain-id=<chain_id>
@@ -160,7 +160,7 @@ To submit a community pool spend proposal, it is highly recommended to pass in t
 contents are less friendly to command-line input.
 
 ```bash
-terracli tx gov submit-proposal \
+terrad tx gov submit-proposal \
     community-pool-spend <path/to/proposal.json> \
     --from=<name> \
     --chain-id=<chain_id>
@@ -188,74 +188,28 @@ Where `proposal.json` contains the following:
 }
 ```
 
-#### Tax-Rate and Reward-Weight Update Proposals
-
-Tax Rate and Reward Weight are important monetary policy levers handled by the [`Treasury`](../dev/spec-treasury.md) module to modulate miner incentives toward stable demand and steady growth. Usually, they are automatically calibrated once per epoch by the protocol. However, they can be changed at any moment if an update proposal gets passed with enough supporters.
-
-To submit Tax Rate or Reward Weight update proposal, you must provide a proposal file as its contents are less friendly to CLI input:
-
-For Tax Rate:
-
-```bash
-terracli tx gov submit-proposal \
-    tax-rate-update <path/to/proposal.json> \
-    --from=<name> \
-    --chain-id=<chain_id>
-```
-
-Where `proposal.json` contains the following:
-
-```json
-{
-  "title": "Update Tax-Rate",
-  "description": "Let's update the tax-rate to 1.5%",
-  "tax_rate": "0.015",
-  "deposit": [
-    {
-      "denom": "uluna",
-      "amount": "10000"
-    }
-  ]
-}
-```
-
-For Reward Weight:
-
-```bash
-terracli tx gov submit-proposal \
-    reward-weight-update <path/to/proposal.json> \
-    --from=<name> \
-    --chain-id=<chain_id>
-```
-
-Where `proposal.json` contains the following:
-
-```json
-{
-  "title": "Update Reward Weight",
-  "description": "Let's update reward weight to 1.5%",
-  "reward_weight": "0.015",
-  "deposit": [
-    {
-      "denom": "uluna",
-      "amount": "10000"
-    }
-  ]
-}
-```
-
-Note that Tax Reward and Reward Weight updates through passed Governance proposals are subject to [Policy Constraints](../dev/spec-treasury.md#policy-constraints).
-
 #### Software Upgrade Proposals
 
-The `SoftwareUpgrade` is **currently not supported** as it has not yet been implemented and currently does not differ from the semantics of a `Text` proposal.
+The `SoftwareUpgrade` is used to register upgrade `Plan` to safely stop the process at the specific height.
+
+```bash
+terrad tx gov submit-proposal \
+    software-upgrade v0.5.0 \
+    --upgrade-height 20 
+    --upgrade-info '{"binaries":{"darwin/amd64":"/Users/yeoyunseog/Workspace/terra/core/build/terrad?checksum=sha256:2032356fe0899dec0cdd559f1c649bc81e53a9b4063b333059135e3a2aae8728"}}' 
+    --title="Upgrade to v0.5.0" 
+    --description="Upgrade to v0.5.0" 
+    --deposit 512000000uluna
+    --chain-id=<chain-id> 
+    --from=<name> 
+```
 
 ### Increase Deposit
 
 In order for a proposal to be broadcasted to the network, the amount deposited must be above a `minDeposit` value (initial value: `512000000uluna`). If the proposal you previously created didn't meet this requirement, you can still increase the total amount deposited to activate it. Once the minimum deposit is reached, the proposal enters voting period:
 
 ```bash
-terracli tx gov deposit <proposal_id> "10000000luluna" \
+terrad tx gov deposit <proposal_id> "10000000luluna" \
     --from=<name> \
     --chain-id=<chain_id>
 ```
@@ -269,7 +223,7 @@ Proposals that don't meet this requirement will be deleted after `MaxDepositPeri
 After a proposal's deposit reaches the `MinDeposit` value, the voting period opens. Bonded LUNA holders can then cast vote on it:
 
 ```bash
-terracli tx gov vote \
+terrad tx gov vote \
     <proposal_id> <Yes/No/NoWithVeto/Abstain> \
     --from=<name> \
     --chain-id=<chain_id>

@@ -7,17 +7,25 @@
 The Market module also allows you determine the result from a swap operation without actually executing the swap. To simulate a swap operation, run:
 
 ```bash
-terracli query market swap <offer_coin> <ask_denom>
+terrad query market swap <offer_coin> <ask_denom>
 ```
 
 Where `offer_coin` is the coin to be traded and `ask_denom` the denomination to be swapped into.
 
-### Terra Pool Delta
+### Mint Pool Delta
 
-To get the current value of the Terra Pool Delta:
+To get the current value of the Mint Pool Delta:
 
 ```sh
-terracli query market terra-pool-delta
+terrad query market mint-pool-delta
+```
+
+### Burn Pool Delta
+
+To get the current value of the Burn Pool Delta:
+
+```sh
+terrad query market burn-pool-delta
 ```
 
 ### Parameters
@@ -25,7 +33,7 @@ terracli query market terra-pool-delta
 To get the market module's parameters:
 
 ```sh
-terracli query market params
+terrad query market params
 ```
 
 ## Transaction
@@ -35,7 +43,7 @@ terracli query market params
 All currencies in the Terra ecosystem can be directly swapped into another at the effective oracle exchange rate. To swap one currency for another, run:
 
 ```bash
-terracli tx market swap \
+terrad tx market swap \
     <offer_coin> \
     <ask_denom>  \
     --from mykey \
@@ -51,7 +59,7 @@ For Terra<>Luna swaps, Constant-Product spread pricing model is enforced to limi
 You can specify optionally specify a recipient during a swap and perform a swap and send in one transaction.
 
 ```bash
-terracli tx market swap \
+terrad tx market swap \
     <offer_coin> \
     <ask_denom>  \
     <recipient>
