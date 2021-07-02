@@ -109,7 +109,7 @@
     </div>
     <div class="sns-container">
       <div class="logos">
-        <a href="https://discord.gg/bYfyhUT" rel="noopener" target="_blank">
+        <a href="https://discord.gg/e29HWwC2Mz" rel="noopener" target="_blank">
           <img
             src="https://terra.money/static/assets/images/icon_discord.png"
             alt="link to Terra discord room"
