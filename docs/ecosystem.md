@@ -69,6 +69,7 @@
 [CHAI](https://chai.finance/): a payments product used by 5% of the population in South Korea<br>
 [BuzLink](https://buzlink.io/): a viral marketing product to scale social referrals<br>
 [MemePay](https://www.meme.mn/nav/home): a payments product used by 3% of the population in Mongolia<br>
+[Pylon Protocol](https://www.pylon.money/): a suite of savings and payments products powered by yield redirection<br>
 
 ## Applications Powered By Terra
 
