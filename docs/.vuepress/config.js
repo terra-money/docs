@@ -119,6 +119,7 @@ module.exports = {
             "/contracts/tutorial/setup",
             "/contracts/tutorial/implementation",
             "/contracts/tutorial/interacting",
+            "/contracts/tutorial/cw20",
           ],
           collapsable: false,
         },
