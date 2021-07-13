@@ -91,7 +91,7 @@
 
 ## Exchanges
 
-LUNA and Terra stablecoins are traded the following exchanges:
+LUNA and Terra stablecoins are traded on the following exchanges:
 
 <div class="cards threeColumn">
   <a href="https://www.binance.com/" class="card image">
