@@ -4,7 +4,7 @@ Here are some common problems that you may run into when running a validator nod
 
 ## Validator has 0 voting power
 
-Your validator has become auto-unbonded. In mainnet and testnet, we unbond validators if they do not vote on `50` of the last `100` blocks. Since blocks are proposed every ~2 seconds, a validator unresponsive for ~100 seconds will become unbonded. This usually happens when your `terrad` process crashes.
+Your validator has become auto-unbonded. In mainnet, we unbond validators if they do not vote on `9500` of the last `10000` blocks (`50` of the last `100` blocks in testnet). Since blocks are proposed every ~5 seconds, a validator unresponsive for ~13 hours (~4 minutes in testnet) will become unbonded. This usually happens when your `terrad` process crashes.
 
 Here's how you can return the voting power back to your validator. First, if `terrad` is not running, start it up again:
 
