@@ -18,7 +18,7 @@ Staking rewards come from three sources: gas (compute fees), taxes, and seignior
 
 ### Gas
 
-Gas is a fee that is added on to each transaction to avoid spamming. Validators set minimum gas prices and reject transactions that have implied gas prices above this threshold. At the end of every block, the compute fees are disbursed to the participating validators pro-rata to stake.
+Gas is a fee that is added on to each transaction to avoid spamming. Validators set minimum gas prices and reject transactions that have implied gas prices below this threshold. At the end of every block, the compute fees are disbursed to the participating validators pro-rata to stake.
 
 ### Taxes
 
