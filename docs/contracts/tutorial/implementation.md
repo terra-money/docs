@@ -179,8 +179,6 @@ Only the owner can reset the count to a specific number.
 
 As for our `HandleMsg`, we will use an `enum` to multiplex over the different types of messages that our contract can understand. The `serde` attribute rewrites our attribute keys in snake case and lower case, so we'll have `increment` and `reset` instead of `Increment` and `Reset` when serializing and deserializing across JSON.
 
-Add the following to `src/msg.rs`:
-
 ```rust
 // src/msg.rs
 
@@ -225,7 +223,7 @@ pub fn try_increment<S: Storage, A: Api, Q: Querier>(
 }
 ```
 
-It is quite straightforward to follow the logic of `try_increment()`. We acquire a mutable reference to the storage to update the singleton located at key `b"config"`, made accessible through the `config` convenience function defined in the `src/storage.rs`. We then update the present state's count by returning an `Ok` result with the new state. Finally, we terminate the contract's execution with an acknowledgement of success by returning an `Ok` result with the default `HandleResponse`.
+It is quite straightforward to follow the logic of `try_increment()`. We acquire a mutable reference to the storage to update the singleton located at key `b"config"`, made accessible through the `config` convenience function defined in the `src/state.rs`. We then update the present state's count by returning an `Ok` result with the new state. Finally, we terminate the contract's execution with an acknowledgement of success by returning an `Ok` result with the default `HandleResponse`.
 
 In this example, the default `HandleResponse` for simplicity. However, the `HandleResponse` can be manually created to provide the following information:
 
@@ -348,18 +346,47 @@ docker run --rm -v "$(pwd)":/code \
 
 This will result in an optimized build of `artifacts/my_first_contract.wasm` in your working directory.
 
+(Optional) Add the above command in `Cargo.toml` for quick access.
+
+This allows the run custom script commands in a similar way as `package.json` in the Node ecosystem.
+
+Install `cargo-run-script`
+
+```sh
+cargo install cargo-run-script
+```
+
+Add the script in `Cargo.toml`
+
+```toml
+[package.metadata.scripts]
+optimize = """docker run --rm -v "$(pwd)":/code \
+  --mount type=volume,source="$(basename "$(pwd)")_cache",target=/code/target \
+  --mount type=volume,source=registry_cache,target=/usr/local/cargo/registry \
+  cosmwasm/rust-optimizer:0.10.3
+"""
+```
+
+Run the command:
+
+```sh
+cargo run-script optimize
+```
+
 ## Schemas
 
-In order to make use of JSON-schema auto-generation, we should register each of the data structures that we need schemas for. Open up `examples/schema.rs` and insert the following:
+In order to make use of JSON-schema auto-generation, we should register each of the data structures that we need schemas for.
 
 ```rust
+// examples/schema.rs
+
 use std::env::current_dir;
 use std::fs::create_dir_all;
 
 use cosmwasm_schema::{export_schema, remove_schemas, schema_for};
 
-use mtt::msg::{CountResponse, HandleMsg, InitMsg, QueryMsg};
-use mtt::state::State;
+use my_first_contract::msg::{CountResponse, HandleMsg, InitMsg, QueryMsg};
+use my_first_contract::state::State;
 
 fn main() {
     let mut out_dir = current_dir().unwrap();
