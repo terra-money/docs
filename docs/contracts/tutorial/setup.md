@@ -24,7 +24,7 @@ You should now have a local testnet running on your machine, with the following 
 
 - Node listening on RPC port `26657`
 - LCD running on port `1317`
-- Swagger Documentation at [http://localhost:1317/swagger-ui/](http://localhost:1317/swagger-ui/)
+- Swagger Documentation at [http://localhost:3060/swagger](http://localhost:3060/swagger)
 
 The account with the following mnemonic is the sole validator on the network and has enough funds to get started with smart contracts.
 
