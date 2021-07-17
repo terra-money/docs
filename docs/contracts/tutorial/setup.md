@@ -15,7 +15,7 @@ In this tutorial, we will be using [LocalTerra](https://github.com/terra-money/l
 To use **LocalTerra**, you should first make sure Docker is installed on your computer by following the instructions [here](https://www.docker.com/get-started). You will also need to set up and configure [Docker Compose](https://docs.docker.com/compose/install/) on your machine.
 
 ```sh
-git clone https://github.com/terra-money/localterra
+git clone --branch v0.4.1 --depth 1 https://github.com/terra-money/localterra.git
 cd localterra
 docker-compose up
 ```
