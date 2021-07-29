@@ -8,4 +8,4 @@ Below is a list of oracle feeder implementations you can choose from:
 
 | Software                                                        | Developer | Runtime |
 | :-------------------------------------------------------------- | :-------- | :------ |
-| [`oracle-feeder`](https://github.com/terra-money/oracle-feeder) | **Terra** | Node.js | Official reference implementation |
+| [`oracle-feeder (opens new window)`](https://github.com/terra-money/oracle-feeder) | **Terra** | Node.js, Python | Official reference implementation |
