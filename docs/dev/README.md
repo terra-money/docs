@@ -104,7 +104,7 @@ The following processes get executed during each block transition:
 
 There are two types of tokens that can be held by accounts and wallets in the Terra protocol:
 
-1. **Terra Stablecoins** are transactional assets that are track the exchange rate of various fiat currencies. By convention, given a fiat currency, the Terra peg that corresponds to it is Terra-`<3-letter ISO4217 currency-code>` (see [here](https://www.xe.com/iso4217.php)) abbreviated `<country-code>T`, where the `T` replaces the currency's designator. For instance, TerraKRW is the peg for the Korean Won, and is abbreviated KRT.
+1. **Terra Stablecoins** are transactional assets that track the exchange rate of various fiat currencies. By convention, given a fiat currency, the Terra peg that corresponds to it is Terra-`<3-letter ISO4217 currency-code>` (see [here](https://www.xe.com/iso4217.php)) abbreviated `<country-code>T`, where the `T` replaces the currency's designator. For instance, TerraKRW is the peg for the Korean Won, and is abbreviated KRT.
 
    The flagship, standard Terra currency is TerraSDR, or SDT, the peg to the IMF's Special Drawing Rights. The protocol will use SDT as its default, "base" currency to do calculations and setting standards.
 

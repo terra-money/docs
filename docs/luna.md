@@ -52,6 +52,6 @@ Luna that is instructed to be undelegated from a delegator transition into an "u
 
 ::: warning NOTE
 
-When Luna is undelegated, this action cannot be undone until the 21 days are completed.
+Undelegating takes 21 days to complete. This action cannot be reversed for 21 days.
 
 :::

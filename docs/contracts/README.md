@@ -20,7 +20,7 @@ The following table maps commonly-used Ethereum developer tools to their Terra c
 
 ### Robust consensus and fast block finality
 
-Terra is powered by Tendermint BFT consensus, using a dPoS-like scheme driven by a set of 100 top validators. This efficient consensus model enables batches of transactions to occur in only 6 seconds (only a fraction of the time it takes for Bitcoin and Ethereum).
+Terra is powered by Tendermint BFT consensus, using a dPoS-like scheme driven by a set of 130 top validators. This efficient consensus model enables batches of transactions to occur in only 6 seconds (only a fraction of the time it takes for Bitcoin and Ethereum).
 
 ### Ready for DeFi applications
 
