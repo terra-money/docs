@@ -50,9 +50,9 @@ Any participant in the network can signal their intent to become a validator by 
 
 - **Initial commission rate**: The commission rate on block provisions, block rewards and fees charged to delegators.
 
-- **Maximum commission**: The maximum commission rate which this validator will be allowed to charge.
+- **Maximum commission**: The maximum commission rate which this validator will be allowed to charge. (This may not be changed after setup.)
 
-- **Commission change rate**: The maximum daily increase of the validator commission.
+- **Commission change rate**: The maximum daily increase of the validator commission. (This may not be changed after setup.)
 
 - **Minimum self-bond amount**: Minimum amount of Luna the validator needs to have bonded at all times. If the validator's self-bonded stake falls below this limit, its entire staking pool will be unbonded.
 
