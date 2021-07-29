@@ -24,6 +24,6 @@ If validators double sign, are frequently offline or do not participate in gover
 
 These are the currently suggested hardware minimums:
 
-- 800GB SSD  
+- 1.5TB SSD  
 - 16 GB RAM  
 - 4 Cores  
