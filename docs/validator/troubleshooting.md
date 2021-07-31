@@ -52,3 +52,46 @@ LimitNOFILE=4096
 [Install]
 WantedBy=multi-user.target
 ```
+
+## Oracle voting error
+
+Error message encountered by the [Terra Oracle feeder](https://github.com/terra-money/oracle-feeder):
+
+    broadcast error: code: 3, raw_log: validator does not exist: terravaloperxxx
+
+This message can occur for a variety of reasons.
+
+### 1. The validator is not active
+
+There are a few reasons why a validator is not active.
+
+For one, it could be jailed. The resolution is unjail the validator.
+
+    terracli tx slashing unjail <terra> --chain-id=<chain_id> --from=<from>
+
+Another reason that the validator is inactive could be due to the validator not being in the active validator set. At the moment of writing the [maximum number of validators is 130](https://docs.terra.money/validators.html#delegations). If the number of validators is more than 130, only the top 130 will be active in order of voting power.
+
+To get to the list of the top 130, the resolution is to increase the voting power to the top 130.
+
+### 2. Wrong network
+
+More often than not though, the Oracle Feeder may be submitting to the wrong network. The command to run the feeder needs to specify the lite client daemon (LCD):
+
+```bash
+nom start vote --\
+  --source http://localhost:8532/latest \
+  --lcd ${LCD} \
+  --chain-id "${CHAIN_ID}" \
+  --validator "${VALIDATOR_KEY}" \
+  --password "${PASSWORD}” \
+```
+
+The LCD that the voter is connecting to may be running for a different network from your node. The remote LCD for the different networks are:
+
+- https://lcd.terra.dev for columbus mainnet
+- https://tequila-lcd.terra.dev for tequila testnet
+- https://bombay-lcd.terra.dev for bombay testnet
+
+Be sure to specify the LCD for the same network that your node is connecting to.
+
+If you run a [local LCD](https://docs.terra.money/terracli/lcd.html) (i.e. localhost:1317), be sure that your LCD is connecting to the same node.
