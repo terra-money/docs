@@ -6,11 +6,13 @@ Each validator candidate is encouraged to run its operations independently, as d
 
 It is mission critical that an attacker cannot steal a validator's key. If this is possible, it puts the entire stake delegated to the compromised validator at risk. Hardware security modules are an important strategy for mitigating this risk.
 
-HSM modules must support `ed25519` signatures for the Terra Chain. The YubiHSM2 supports `ed25519` and we expect to have an adapter library available in December 2017. The YubiHSM can protect a private key but cannot ensure in a secure setting that it won't sign the same block twice.
+Validators should expect to run an HSM that supports ed25519 keys. Here are potential options:
 
-The Terra team is also working on extending our Ledger Nano S application to support validator signing. This app can store recent blocks and mitigate double signing attacks.
-
-We will update this page when more key storage solutions become available.
+YubiHSM 2
+Ledger Nano S
+Ledger BOLOS SGX enclave
+Thales nShield support
+The Terra team does not recommend one solution above the other. The community is encouraged to bolster the effort to improve HSMs and the security of key management.
 
 ## Sentry Nodes for Anti-DDoS
 
