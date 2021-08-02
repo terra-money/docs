@@ -182,3 +182,5 @@ Terra Station Mobile: [iOS](https://apps.apple.com/app/id1548434735) | [Android]
 [MathWallet](https://mathwallet.org/en-us/): multi-platform crypto wallet for Terra assets<br>
 [Ledger Nano X/S](https://support.ledger.com/hc/en-us/articles/360017698979-Terra-LUNA-): hardware wallet by the Ledger team<br>
 [Oxis](https://www.oxis.com/): non-custodial wallet with fiat to crypto on and offramps & trading functionality<br>
+[ZenGo](https://www.zengo.com/): multi-asset wallet, optimized for mobile<br>
+
