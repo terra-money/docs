@@ -8,8 +8,6 @@ It is mission critical that an attacker cannot steal a validator's key. If this 
 
 HSM modules must support `ed25519` signatures for the Terra Chain. The YubiHSM2 supports `ed25519` and we expect to have an adapter library available in December 2017. The YubiHSM can protect a private key but cannot ensure in a secure setting that it won't sign the same block twice.
 
-The Terra team is also working on extending our Ledger Nano S application to support validator signing. This app can store recent blocks and mitigate double signing attacks.
-
 We will update this page when more key storage solutions become available.
 
 ## Sentry Nodes for Anti-DDoS
