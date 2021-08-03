@@ -6,9 +6,7 @@ Each validator candidate is encouraged to run its operations independently, as d
 
 It is mission critical that an attacker cannot steal a validator's key. If this is possible, it puts the entire stake delegated to the compromised validator at risk. Hardware security modules are an important strategy for mitigating this risk.
 
-HSM modules must support `ed25519` signatures for the Terra Chain. The YubiHSM2 supports `ed25519` and we expect to have an adapter library available in December 2017. The YubiHSM can protect a private key but cannot ensure in a secure setting that it won't sign the same block twice.
-
-We will update this page when more key storage solutions become available.
+The suggested method of key management is described by Iqulusion here: https://github.com/iqlusioninc/tmkms
 
 ## Sentry Nodes for Anti-DDoS
 
