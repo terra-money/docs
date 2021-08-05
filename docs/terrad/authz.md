@@ -1,4 +1,4 @@
-# MsgAuth
+# authz
 
 ## Query
 
@@ -7,7 +7,7 @@
 You can retrieve all existing grants between a granter and a grantee:
 
 ```sh
-terrad query msgauth grants <granter-addr> <grantee-addr>
+terrad query authz grants <granter-addr> <grantee-addr>
 ```
 
 ### Grant by Message Type
@@ -15,7 +15,7 @@ terrad query msgauth grants <granter-addr> <grantee-addr>
 You can get the specific grant between a granter and a grantee for a message type.
 
 ```sh
-terrad query msgauth grant <granter-addr> <grantee-addr> <msg-type>
+terrad query authz grant <granter-addr> <grantee-addr> <msg-type>
 ```
 
 ## Transaction
@@ -23,7 +23,7 @@ terrad query msgauth grant <granter-addr> <grantee-addr> <msg-type>
 ### Grant new authorization
 
 ```sh
-terrad tx msgauth grant <grantee-address> <msg-type>
+terrad tx authz grant <grantee-address> <msg-type>
 ```
 
 #### Send Authorization
@@ -31,7 +31,7 @@ terrad tx msgauth grant <grantee-address> <msg-type>
 The "send" authorization can be further constrained by an allowance, specified as a comma-separated list of coins.
 
 ```sh
-terrad tx msgauth grant terra... send 1000000uluna,10000000ukrw --from <granter>
+terrad tx authz grant terra... send 1000000uluna,10000000ukrw --from <granter>
 ```
 
 #### Generic Authorization
@@ -39,7 +39,7 @@ terrad tx msgauth grant terra... send 1000000uluna,10000000ukrw --from <granter>
 Other authorizations with no parameters can be issued simply:
 
 ```sh
-terrad tx msgauth grant terra... swap --from <granter>
+terrad tx authz grant terra... swap --from <granter>
 ```
 
 ### Revoke authorization
@@ -47,7 +47,7 @@ terrad tx msgauth grant terra... swap --from <granter>
 You can revoke an existing authorization:
 
 ```sh
-terrad tx msgauth revoke <grantee-address> <msg-type>
+terrad tx authz revoke <grantee-address> <msg-type>
 ```
 
 ### Execute TX on behalf of granter
@@ -55,7 +55,7 @@ terrad tx msgauth revoke <grantee-address> <msg-type>
 You can exercise a message authorization and execute a transaction:
 
 ```sh
-terrad tx msgauth send-as <granter-address> <tx_json> --from <grantee>
+terrad tx authz send-as <granter-address> <tx_json> --from <grantee>
 ```
 
 - `tx_json` is a JSON file describing a StdTx
