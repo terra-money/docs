@@ -10,7 +10,7 @@ To sign with a multisig account, the transaction must be signed individually by 
 ## Generate a Multisig key
 
 ```bash
-terracli keys add --multisig=name1,name2,name3[...] --multisig-threshold=K new_key_name
+terrad keys add --multisig=name1,name2,name3[...] --multisig-threshold=K new_key_name
 ```
 
 `K` is the minimum number of private keys that must have signed the transactions that carry the public key's address as signer.
@@ -20,20 +20,20 @@ The `--multisig` flag must contain the name of public keys that will be combined
 Unless the flag `--nosort` is set, the order in which the keys are supplied on the command line does not matter, i.e. the following commands generate two identical keys:
 
 ```bash
-terracli keys add --multisig=p1,p2,p3 --multisig-threshold=2 multisig_address
-terracli keys add --multisig=p2,p3,p1 --multisig-threshold=2 multisig_address
+terrad keys add --multisig=p1,p2,p3 --multisig-threshold=2 multisig_address
+terrad keys add --multisig=p2,p3,p1 --multisig-threshold=2 multisig_address
 ```
 
 Multisig addresses can also be generated on-the-fly and printed through the which command:
 
 ```bash
-terracli keys show --multisig-threshold=K name1 name2 name3 [...]
+terrad keys show --multisig-threshold=K name1 name2 name3 [...]
 ```
 
 ## Signing a transaction
 
 ::: warning NOTE
-This example uses `test1`, `test2`, `test3` keys from [LocalTerra](https://github.com/terra-money/LocalTerra). Import them into your `terracli` keystore to follow along.
+This example uses `test1`, `test2`, `test3` keys from [LocalTerra](https://github.com/terra-money/LocalTerra). Import them into your `terrad` keystore to follow along.
 :::
 
 ### Step 1: Create the multisig key
@@ -43,7 +43,7 @@ Let's assume that you have `test1` and `test2` want to make a multisig account w
 First import the public keys of `test3` into your keyring.
 
 ```sh
-terracli keys add \
+terrad keys add \
     test3 \
     --pubkey=terrapub1addwnpepqgcxazmq6wgt2j4rdfumsfwla0zfk8e5sws3p3zg5dkm9007hmfysxas0u2
 ```
@@ -51,7 +51,7 @@ terracli keys add \
 Generate the multisig key with 2/3 threshold.
 
 ```sh
-terracli keys add \
+terrad keys add \
     multi \
     --multisig=test1,test2,test3 \
     --multisig-threshold=2
@@ -60,7 +60,7 @@ terracli keys add \
 You can see its address and details:
 
 ```sh
-terracli keys show multi
+terrad keys show multi
 
 - name: multi
   type: multi
@@ -74,7 +74,7 @@ terracli keys show multi
 Let's add 10 LUNA to the multisig wallet:
 
 ```bash
-terracli tx send \
+terrad tx send \
     test1 \
     terra1e0fx0q9meawrcq7fmma9x60gk35lpr4xk3884m \
     10000000uluna \
@@ -89,7 +89,7 @@ terracli tx send \
 We want to send 5 LUNA from our multisig account to `terra1fmcjjt6yc9wqup2r06urnrd928jhrde6gcld6n`.
 
 ```bash
-terracli tx send \
+terrad tx send \
     terra1e0fx0q9meawrcq7fmma9x60gk35lpr4xk3884m \
     terra1fmcjjt6yc9wqup2r06urnrd928jhrde6gcld6n \
     5000000uluna \
@@ -130,7 +130,7 @@ The file `unsignedTx.json` contains the unsigned transaction encoded in JSON.
 Sign with `test1` and `test2` and create individual signatures.
 
 ```sh
-terracli tx sign \
+terrad tx sign \
     unsignedTx.json \
     --multisig=terra1e0fx0q9meawrcq7fmma9x60gk35lpr4xk3884m \
     --from=test1 \
@@ -139,7 +139,7 @@ terracli tx sign \
 ```
 
 ```sh
-terracli tx sign \
+terrad tx sign \
     unsignedTx.json \
     --multisig=terra1e0fx0q9meawrcq7fmma9x60gk35lpr4xk3884m \
     --from=test2 \
@@ -152,7 +152,7 @@ terracli tx sign \
 Combine signatures to sign transaction.
 
 ```sh
-terracli tx multisign \
+terrad tx multisign \
     unsignedTx.json \
     multi \
     test1sig.json test2sig.json \
@@ -213,7 +213,7 @@ The TX is now signed:
 ### Step 5: Broadcast transaction
 
 ```sh
-terracli tx broadcast signedTx.json \
+terrad tx broadcast signedTx.json \
     --chain-id=localterra \
     --broadcast-mode=block
 ```

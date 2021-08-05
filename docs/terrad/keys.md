@@ -7,7 +7,7 @@ Every Terra account is associated with different key representations, which can 
 This is the address you give to others in order to receive funds, e.g. `terra15h6vd5f0wqps26zjlwrc6chah08ryu4hzzdwhc`.
 
 ```bash
-terracli keys show <account_name>
+terrad keys show <account_name>
 ```
 
 ### Validator Address `terravaloper-`
@@ -15,7 +15,7 @@ terracli keys show <account_name>
 This is the address that uniquely identifies a validator and is used to invoke staking commands. Each account address has a corresponding validator address, and vice-versa.
 
 ```bash
-terracli keys show <account_name> --bech=val
+terrad keys show <account_name> --bech=val
 ```
 
 ### Consensus Address `terravalcons-`
@@ -37,7 +37,7 @@ It is more secure to perform this action on an offline computer.
 To generate an account, just use the following command:
 
 ```bash
-terracli keys add <yourKeyName>
+terrad keys add <yourKeyName>
 ```
 
 - `<yourKeyName>` is the name of the account. It is a reference to the account number used to derive the key pair from the mnemonic. You will use this name to identify your account when you want to send a transaction.
@@ -66,7 +66,7 @@ rm ~/.bash_history
 You can generate more accounts from the same mnemonic using the following command:
 
 ```bash
-terracli keys add <yourKeyName> --recover --account 1
+terrad keys add <yourKeyName> --recover --account 1
 ```
 
 This command will prompt you to input a passphrase as well as your mnemonic. Change the account number to generate a different account.
@@ -74,19 +74,19 @@ This command will prompt you to input a passphrase as well as your mnemonic. Cha
 If you check your private keys, you'll now see `<account_name>`:
 
 ```bash
-terracli keys show <account_name>
+terrad keys show <account_name>
 ```
 
 View the validator operator's address via:
 
 ```bash
-terracli keys show <account_name> --bech=val
+terrad keys show <account_name> --bech=val
 ```
 
 You can see all your available keys by typing:
 
 ```bash
-terracli keys list
+terrad keys list
 ```
 
 ::: danger
@@ -96,7 +96,7 @@ The Terra team is not be responsible for the loss of funds.
 
 ## Generate Keys (Ledger)
 
-You can use the Ledger Nano S hardware wallet to store your Terra account private keys, which is considered a more secure option because the keys are kept off connected devices. The process for using a hardware wallet with `terracli` is similar to creating a normal key, except a Ledger key delegate account information displaying and signing operations to a connected Ledger hardware device instead of a encrypted key stored on the machine.
+You can use the Ledger Nano S hardware wallet to store your Terra account private keys, which is considered a more secure option because the keys are kept off connected devices. The process for using a hardware wallet with `terrad` is similar to creating a normal key, except a Ledger key delegate account information displaying and signing operations to a connected Ledger hardware device instead of a encrypted key stored on the machine.
 
 ### Requirements
 
@@ -135,14 +135,14 @@ Only use Ledger devices that you bought factory new or trust fully.
 
 8. The app installation is confirmed.
 
-### Create a Ledger Key on terracli
+### Create a Ledger Key on terrad
 
-When you initialize your ledger, a 24-word mnemonic is generated and stored in the device. This mnemonic is compatible with Terra and Terra accounts can be derived from it. Therefore, all you have to do is make your ledger compatible with `terracli`.
+When you initialize your ledger, a 24-word mnemonic is generated and stored in the device. This mnemonic is compatible with Terra and Terra accounts can be derived from it. Therefore, all you have to do is make your ledger compatible with `terrad`.
 
 The process is similar to the process with a computer; use the following command:
 
 ```bash
-terracli keys add <yourAccountName> --ledger
+terrad keys add <yourAccountName> --ledger
 ```
 
 ::: warning NOTE
@@ -156,7 +156,7 @@ This will create a key that will defer to the Ledger Hardware Wallet when being 
 If you have the mnemonic used to generate your private key, you can recover it and re-register your key. Issuing the following command will prompt you to enter your 24-word secret mnemonic phrase.
 
 ```
-terracli keys add <yourKeyName> --recover
+terrad keys add <yourKeyName> --recover
 ```
 
 ## Generate Multisig Keys

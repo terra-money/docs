@@ -14,12 +14,12 @@ To start the LCD, you'll need to specify the following parameters
 | `node`       | `tcp://localhost:26657` | yes      | address of the full node to connect                  |
 | `laddr`      | `tcp://localhost:1317`  | yes      | address for the REST server to listen to requests    |
 | `trust-node` | `false`                 | yes      | whether this LCD is connected to a trusted full node |
-| `home`       | `$HOME/.terracli`       | no       | directory for save checkpoints and validator sets    |
+| `home`       | `$HOME/.terra`       | no       | directory for save checkpoints and validator sets    |
 
 For example:
 
 ```bash
-terracli rest-server --chain-id=test \
+terrad rest-server --chain-id=test \
     --laddr=tcp://localhost:1317 \
     --node tcp://localhost:26657 \
     --trust-node=false

@@ -7,13 +7,13 @@
 You can query the list of all registered validators:
 
 ```bash
-terracli query staking validators
+terrad query staking validators
 ```
 
 If you want to get the information of a single validator you can check it with:
 
 ```bash
-terracli query staking validator <validator-address>
+terrad query staking validator <validator-address>
 ```
 
 ### Delegations
@@ -21,13 +21,13 @@ terracli query staking validator <validator-address>
 Once submitted a delegation to a validator, you can see it's information by using the following command:
 
 ```bash
-terracli query staking delegation <delegator_address> <validator_address>
+terrad query staking delegation <delegator_address> <validator_address>
 ```
 
 Or if you want to check all your current delegations with distinct validators:
 
 ```bash
-terracli query staking delegations <delegator_address>
+terrad query staking delegations <delegator_address>
 ```
 
 You can also get previous delegation\(s\) status by adding the `--height` flag.
@@ -35,7 +35,7 @@ You can also get previous delegation\(s\) status by adding the `--height` flag.
 You can also query all of the delegations to a particular validator:
 
 ```bash
-terracli query delegations-to <account_terraval>
+terrad query delegations-to <account_terraval>
 ```
 
 ### Unbonding Delegations
@@ -43,19 +43,19 @@ terracli query delegations-to <account_terraval>
 Once you begin an unbonding delegation, you can see it's information by using the following command:
 
 ```bash
-terracli query staking unbonding-delegation <delegator-address> <validator-address>
+terrad query staking unbonding-delegation <delegator-address> <validator-address>
 ```
 
 Or if you want to check all your current unbonding-delegations with disctinct validators:
 
 ```bash
-terracli query staking unbonding-delegations <account-terra>
+terrad query staking unbonding-delegations <account-terra>
 ```
 
 Additionally, as you can get all the unbonding-delegations from a particular validator:
 
 ```bash
-terracli query staking unbonding-delegations-from <validator-address>
+terrad query staking unbonding-delegations-from <validator-address>
 ```
 
 To get previous unbonding-delegation\(s\) status on past blocks, try adding the `--height` flag.
@@ -65,19 +65,19 @@ To get previous unbonding-delegation\(s\) status on past blocks, try adding the 
 Once you begin an redelegation, you can see it's information by using the following command:
 
 ```bash
-terracli query staking redelegation <delegator_address> <src_val_addr> <dst_val_addr>
+terrad query staking redelegation <delegator_address> <src_val_addr> <dst_val_addr>
 ```
 
 Or if you want to check all your current unbonding-delegations with distinct validators:
 
 ```bash
-terracli query staking redelegations <account_terra>
+terrad query staking redelegations <account_terra>
 ```
 
 Additionally, as you can get all the outgoing redelegations from a particular validator:
 
 ```bash
-terracli query staking redelegations-from <account_terraval>
+terrad query staking redelegations-from <account_terraval>
 ```
 
 To get previous redelegation(s) status on past blocks, try adding the `--height` flag.
@@ -87,7 +87,7 @@ To get previous redelegation(s) status on past blocks, try adding the `--height`
 A staking `Pool` defines the dynamic parameters of the current state. You can query them with the following command:
 
 ```bash
-terracli query staking pool
+terrad query staking pool
 ```
 
 With the `pool` command you will get the values for:
@@ -102,7 +102,7 @@ With the `pool` command you will get the values for:
 Parameters define high-level settings for staking. You can get the current values by using:
 
 ```bash
-terracli query staking params
+terrad query staking params
 ```
 
 The reported parameters will be of the following format:
@@ -120,7 +120,7 @@ bond_denom: uluna
 ### Create validator
 
 ```sh
-terracli tx staking create-validator \
+terrad tx staking create-validator \
     --amount=5000000uluna \
     --pubkey=$(terrad tendermint show-validator) \
     --moniker="choose a moniker" \
@@ -138,7 +138,7 @@ terracli tx staking create-validator \
 ### Edit validator
 
 ```sh
-terracli tx staking edit-validator \
+terrad tx staking edit-validator \
     --moniker="new moniker" \
     --details="validator's optional details" \
     --commission-rate="0.10" \
@@ -150,7 +150,7 @@ Each of the above flags are all optional and will not be changed if not specifie
 ### Delegate
 
 ```sh
-terracli tx staking delegate <validator-addr> <amount>
+terrad tx staking delegate <validator-addr> <amount>
 ```
 
 - `validator-addr`: validator operator address to delegate to
@@ -159,7 +159,7 @@ terracli tx staking delegate <validator-addr> <amount>
 ### Redelegate
 
 ```sh
-terracli tx staking redelegate <src-validator-addr> <dst-validator-addr> <amount>
+terrad tx staking redelegate <src-validator-addr> <dst-validator-addr> <amount>
 ```
 
 - `src-validator-addr`: source validator's operator address
@@ -169,7 +169,7 @@ terracli tx staking redelegate <src-validator-addr> <dst-validator-addr> <amount
 ### Undelegate
 
 ```sh
-terracli tx staking unbond <validator-addr> <amount>
+terrad tx staking unbond <validator-addr> <amount>
 ```
 
 - `validator-addr`: validator operator address from which to undelegate

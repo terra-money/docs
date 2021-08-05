@@ -7,7 +7,7 @@
 After receiving tokens to your address, you can view your account's balance, account number, and sequence number (nonce) by typing:
 
 ```bash
-terracli query account <terra-account>
+terrad query account <terra-account>
 ```
 
 Where `<terra-account>` is your [Account Address](keys.md#account-address-terra).
@@ -28,7 +28,7 @@ Both cases are to be expected.
 The following command is used to send coins from one account to another:
 
 ```bash
-terracli tx send \
+terrad tx send \
     <from_key_or_address> \
     <to_address> \
     <coins> \

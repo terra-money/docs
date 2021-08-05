@@ -7,7 +7,7 @@
 To check the current outstanding (un-withdrawn) rewards, run:
 
 ```bash
-terracli query distribution outstanding-rewards
+terrad query distribution outstanding-rewards
 ```
 
 ### Delegator Rewards
@@ -15,13 +15,13 @@ terracli query distribution outstanding-rewards
 To check current rewards for a delegator (if they were to be withdrawn), run:
 
 ```bash
-terracli query distribution rewards <delegator_address> <validator_address>
+terrad query distribution rewards <delegator_address> <validator_address>
 ```
 
 To check all current rewards for a delegator (if they were to be withdrawn), run:
 
 ```bash
-terracli query distribution rewards <delegator_address>
+terrad query distribution rewards <delegator_address>
 ```
 
 ### Validator Commission
@@ -29,7 +29,7 @@ terracli query distribution rewards <delegator_address>
 To check the current outstanding commission for a validator, run:
 
 ```bash
-terracli query distribution commission <validator_address>
+terrad query distribution commission <validator_address>
 ```
 
 ### Validator Slashes
@@ -37,7 +37,7 @@ terracli query distribution commission <validator_address>
 To check historical slashes for a validator, run:
 
 ```bash
-terracli query distribution slashes <validator_address> <start_height> <end_height>
+terrad query distribution slashes <validator_address> <start_height> <end_height>
 ```
 
 ### Community Pool
@@ -45,7 +45,7 @@ terracli query distribution slashes <validator_address> <start_height> <end_heig
 To query all coins in the Community Pool:
 
 ```bash
-terracli query distribution community-pool
+terrad query distribution community-pool
 ```
 
 ### Parameters
@@ -53,7 +53,7 @@ terracli query distribution community-pool
 To check the current distribution parameters, run:
 
 ```bash
-terracli query distribution params
+terrad query distribution params
 ```
 
 The parameters reported will be of the format:
@@ -72,13 +72,13 @@ withdraw_addr_enabled: true
 You can withdraw your rewards against a certain validator
 
 ```sh
-terracli tx distribution withdraw-rewards <validator-address>
+terrad tx distribution withdraw-rewards <validator-address>
 ```
 
 If you want to withdraw all rewards:
 
 ```sh
-terracli tx distribution withdraw-all-rewards
+terrad tx distribution withdraw-all-rewards
 ```
 
 ### Set Withdraw Address
@@ -86,7 +86,7 @@ terracli tx distribution withdraw-all-rewards
 Change the default withdraw address for rewards associated with an address.
 
 ```sh
-terracli tx distribution set-withdraw-addr <withdraw-address>
+terrad tx distribution set-withdraw-addr <withdraw-address>
 ```
 
 ### Fund Community Pool
@@ -94,7 +94,7 @@ terracli tx distribution set-withdraw-addr <withdraw-address>
 Funds the community pool with the specified amount.
 
 ```sh
-terracli tx distribution fund-community-pool <amount>
+terrad tx distribution fund-community-pool <amount>
 ```
 
 Argument `amount` is in a format such as: `1000uluna`, or `100ukrw,200uusd`

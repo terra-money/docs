@@ -4,7 +4,7 @@
 
 Governance is the process through which participants within the Terra network can effect change on the protocol by submitting petitions known as "proposals," arriving at a popular consensus when a threshold amount of support has been reached for it. The proposal structure is versatile and allows for holders of Luna (those who have an interest in the long-term viability of the network) to voice their opinion on both blockchain parameter updates as well as future development of the Terra protocol.
 
-Check the [Governance section of the `terracli` Reference](../terracli/governance.md) to see examples of how to participate in the Governance process.
+Check the [Governance section of the `terrad` Reference](../terrad/governance.md) to see examples of how to participate in the Governance process.
 
 ## Concepts
 

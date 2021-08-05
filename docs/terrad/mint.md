@@ -7,7 +7,7 @@
 To get the value of annual provisions:
 
 ```sh
-terracli query mint annual-provisions
+terrad query mint annual-provisions
 ```
 
 ### Inflation
@@ -15,7 +15,7 @@ terracli query mint annual-provisions
 To get the current value of inflation:
 
 ```sh
-terracli query mint inflation
+terrad query mint inflation
 ```
 
 ### Parameters
@@ -23,7 +23,7 @@ terracli query mint inflation
 To get the mint module's parameters:
 
 ```sh
-terracli query mint params
+terrad query mint params
 ```
 
 The parameters reported will be of the format:

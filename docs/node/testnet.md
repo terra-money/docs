@@ -17,7 +17,7 @@ terrad init --chain-id=<testnet_name> <node_moniker>
 You will need a Terra account to start. You can generate one with:
 
 ```bash
-terracli keys add <account_name>
+terrad keys add <account_name>
 ```
 
 ### Step 2. Add account to genesis
@@ -25,7 +25,7 @@ terracli keys add <account_name>
 Next, you need to add your account to the genesis. The following commands add your account and set the initial balance:
 
 ```bash
-terrad add-genesis-account $(terracli keys show <account_name> -a) 100000000uluna,1000usd
+terrad add-genesis-account $(terrad keys show <account_name> -a) 100000000uluna,1000usd
 terrad gentx --name my_account --amount 10000000uluna
 terrad collect-gentxs
 ```

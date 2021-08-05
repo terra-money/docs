@@ -16,9 +16,9 @@ This difference is on the order of about 1 minute (our oracle `VotePeriod` is 30
 
 To defend against this, the Market module enforces the following swap fees
 
-- a **Tobin Tax** (set at [0.35%](#tobintax)) for spot-converting Terra<>Terra swaps
+- a [**Tobin Tax**](#tobintax) for spot-converting Terra<>Terra swaps
 
-  To illustrate, assume that oracle reports that the Luna<>SDT exchange rate is 10, and for Luna<>KRT, 10,000. Sending in 1 SDT will get you 0.1 Luna, which is 1000 KRT. After applying the Tobin Tax, you'll end up with 996.5 KRT (0.35% of 1000 is 3.5), a better rate than any retail currency exchange and remittance[^1].
+  To illustrate, assume that the current Tobin Tax for KRT is 0.35%, the oracle reports that the Luna<>SDT exchange rate is 10, and for Luna<>KRT, 10,000. Sending in 1 SDT will get you 0.1 Luna, which is 1000 KRT. After applying the Tobin Tax, you'll end up with 996.5 KRT (0.35% of 1000 is 3.5), a better rate than any retail currency exchange and remittance[^1].
 
 [^1]: Though contrary to our initial policy for zero-fee swaps, we have decided to implement the Tobin tax as a necessity to prevent attackers from exploiting the exchange rate latency and profiting at the cost of ordinary users. The rationale behind setting a Tobin tax at this rate is described in depth in this [post](https://medium.com/terra-money/on-swap-fees-the-greedy-and-the-wise-b967f0c8914e).
 

@@ -18,7 +18,7 @@ terrad init <your_custom_moniker>
 Monikers can only contain ASCII characters; using Unicode characters will render your node unreachable by other peers in the network.
 :::
 
-You can edit this `moniker` later, in the `~/.terrad/config/config.toml` file:
+You can edit this `moniker` later, in the `~/.terra/config/config.toml` file:
 
 ```toml
 # A custom human readable name for this node
@@ -27,7 +27,7 @@ moniker = "<your_custom_moniker>"
 
 ### Set minimum gas prices for transactions (recommended)
 
-You can edit `~/.terrad/config/app.toml` in order to enable anti-spam by rejecting incoming transactions with implied gas price less than a specified minimum. The minimum gas prices recommended for the Terra mainnet network is the following:
+You can edit `~/.terra/config/app.toml` in order to enable anti-spam by rejecting incoming transactions with implied gas price less than a specified minimum. The minimum gas prices recommended for the Terra mainnet network is the following:
 
 ```toml
 # The minimum gas prices a validator is willing to accept for processing a
@@ -49,11 +49,11 @@ You specify the network you want to join by setting the **genesis file** and **s
 
 ### Download the genesis file
 
-You'll need to select the network you want to join and download its `genesis.json` file into your `~/.terrad/config` directory. This file specifies the genesis account balances and parameters to use when replaying transactions and syncing.
+You'll need to select the network you want to join and download its `genesis.json` file into your `~/.terra/config` directory. This file specifies the genesis account balances and parameters to use when replaying transactions and syncing.
 
 ```bash
-mkdir -p ~/.terrad/config
-curl https://columbus-genesis.s3-ap-northeast-1.amazonaws.com/columbus-4-genesis.json > ~/.terrad/config/genesis.json
+mkdir -p ~/.terra/config
+curl https://columbus-genesis.s3-ap-northeast-1.amazonaws.com/columbus-4-genesis.json > ~/.terra/config/genesis.json
 ```
 
 Note we use the `latest` directory in the [networks repo](https://github.com/terra-money/testnet) which contains details for the latest testnet. If you are connecting to a different testnet, ensure you get the right files.
@@ -66,10 +66,10 @@ terrad start
 
 ### Download address book (recommended for the mainnet)
 
-If you have an address book of peers, download `addrbook.json` and move it into `~/.terrad/config/addrbook.json`. This will give your node a selection of peers to dial to find other nodes.
+If you have an address book of peers, download `addrbook.json` and move it into `~/.terra/config/addrbook.json`. This will give your node a selection of peers to dial to find other nodes.
 
 ```bash
-curl https://network.terra.dev/addrbook.json > ~/.terrad/config/addrbook.json
+curl https://network.terra.dev/addrbook.json > ~/.terra/config/addrbook.json
 ```
 
 ### Define seed nodes
@@ -80,7 +80,7 @@ For more information on seeds and peers, you can [read this](https://github.com/
 
 :::
 
-Your node needs to know how to find peers. You'll need to add healthy seed nodes to `~/.terrad/config/config.toml`. The following are the current seeds for Terra mainnet:
+Your node needs to know how to find peers. You'll need to add healthy seed nodes to `~/.terra/config/config.toml`. The following are the current seeds for Terra mainnet:
 
 ```toml
 seeds = "87048bf71526fb92d73733ba3ddb79b7a83ca11e@public-seed.terra.dev:26656,b5205baf1d52b6f91afb0da7d7b33dcebc71755f@public-seed2.terra.dev:26656,5fa582d7c9931e5be8c02069d7b7b243c79d25bf@seed.terra.de-light.io:26656"
@@ -99,7 +99,7 @@ terrad start
 Check that everything is running smoothly:
 
 ```bash
-terracli status
+terrad status
 ```
 
 ### Wait for node to sync
@@ -127,8 +127,8 @@ These instructions are for full nodes that have ran on previous testnets and wou
 First, remove the outdated files and reset the data.
 
 ```bash
-rm ~/.terrad/config/genesis.json
-rm ~/.terrad/config/addrbook.json
+rm ~/.terra/config/genesis.json
+rm ~/.terra/config/addrbook.json
 terrad unsafe-reset-all
 ```
 
