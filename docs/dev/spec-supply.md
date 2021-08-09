@@ -6,8 +6,6 @@ Terra's Supply module inherits from Cosmos SDK's [`supply`](https://github.com/c
 
 The Supply module passively tracks the total supply of all coins Terra and Luna within the blockchain, provides a way for modules to hold and interact with a balance of Coins, and introduces an invariant check to verify the Terra protocol's total supply.
 
-> This was taken from the official Cosmos SDK docs, and placed here for your convenience to understand the Supply module and module accounts.
-
 ## Concepts
 
 ### Total Supply

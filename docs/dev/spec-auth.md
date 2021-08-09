@@ -1,7 +1,7 @@
 # Auth
 
 ::: warning NOTE
-Terra's Auth module inherits from Cosmos SDK's [`auth`](https://github.com/cosmos/cosmos-sdk/tree/v0.37.4/docs/spec/auth) module. This document is a stub, and covers mainly important Terra-specific notes about how it is used.
+Terra's Auth module inherits from Cosmos SDK's [`auth`](https://docs.cosmos.network/v0.43/modules/auth/) module. This document is a stub, and covers mainly important Terra-specific notes about how it is used.
 :::
 
 Terra's Auth module extends the functionality from Cosmos SDK's `auth` module with a modified ante handler which applies the stability layer fee alongside the all basic transaction validity checks (signatures, nonces, auxiliary fields). In addition, a special vesting account type is defined, which handles the logic for token vesting from the Luna presale.
