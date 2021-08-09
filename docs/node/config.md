@@ -30,7 +30,14 @@ minimum-gas-prices = "0.01133uluna,0.15uusd,0.104938usdr,169.77ukrw,428.571umnt,
 
 `app.toml`
 
-TODO: add details
+Enabling Rest API allows you to perform standard database functions (CRUD) using rest architecture.
+
+### Rosetta
+
+`app.toml`
+
+Rosetta is a blockchain integration API for Coinbase.
+
 ## P2P Settings
 
 ### Seed Mode
