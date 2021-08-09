@@ -1,7 +1,7 @@
 # Distribution
 
 ::: warning NOTE
-Terra's Distribution module inherits from Cosmos SDK's [`distribution`](https://github.com/cosmos/cosmos-sdk/tree/v0.37.4/docs/spec/distribution) module. This document is a stub, and covers mainly important Terra-specific notes about how it is used.
+Terra's Distribution module inherits from Cosmos SDK's [`distribution`](https://docs.cosmos.network/v0.43/modules/distribution/) module. This document is a stub, and covers mainly important Terra-specific notes about how it is used.
 :::
 
 The `Distribution` module describes a mechanism that keeps track of collected fees and _passively_ distributes them to validators and delegators. In addition, the Distribution module also defines the [Community Pool](#community-pool), which are funds under the control of on-chain Governance.
