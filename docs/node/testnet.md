@@ -1,6 +1,6 @@
 # Running a Local Testnet
 
-After you've gotten the latest version of Terra Core installed, you can set up a private Terra network to get your bearings in running a Terra full node before [joining an existing network]().
+After you've gotten the latest version of Terra Core installed, you can set up a private Terra network to get your bearings in running a Terra full node before [joining an existing network](join-network.md).
 
 ## Single Node Setup
 
