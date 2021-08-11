@@ -198,7 +198,6 @@ module.exports = {
             "validators",
             "stablecoin",
             "governance",
-            "smart-contracts",
           ],
         },
         {
