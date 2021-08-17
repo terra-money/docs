@@ -17,7 +17,7 @@ While the Treasury stabilizes miner demand through adjusting rewards, the [`Mark
 The Treasury observes three macroeconomic indicators for each epoch (set to 1 week) and keeps [historical records](#indicators) of their values during previous epochs.
 
 - **Tax Rewards**: $T$, Income generated from transaction fees (stability fee) in a during the epoch.
-- **Seigniorage Rewards**: $S$, Amount of seignorage generated from Luna swaps to Terra during the epoch that is destined for ballot rewards inside the `Oracle` rewards.
+- **Seigniorage Rewards**: $S$, Amount of seigniorage generated from Luna swaps to Terra during the epoch that is destined for ballot rewards inside the `Oracle` rewards.
 - **Total Staked Luna**: $\lambda$, total Luna that has been staked by users and bonded by their delegated validators.
 
 These indicators can be used to derive two other values, the **Tax Reward per unit Luna** represented by $\tau = T / \lambda$, used in [Updating Tax Rate](#k-updatetaxpolicy), and **total mining rewards** $R = T + S$, simply the sum of the Tax Rewards and the Seigniorage Rewards, used in [Updating Reward Weight](#k-updaterewardpolicy).
@@ -261,7 +261,7 @@ This function gets called at the end of an epoch to calculate the next value of 
 
 Consider $w_t$ to be the current reward weight, and $b$ to be the [`SeigniorageBurdenTarget`](#seigniorageburdentarget) parameter.
 
-1. Calculate the sum of $S_m$ of seignorage rewards over the last month `WindowShort`.
+1. Calculate the sum of $S_m$ of seigniorage rewards over the last month `WindowShort`.
 
 2. Calculate the sum of $R_m$ of total mining rewards over the last month `WindowShort`.
 
