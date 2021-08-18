@@ -7,7 +7,7 @@ sidebarDepth: 2
 The Treasury module acts as the "central bank" of the Terra economy, measuring macroeconomic activity by [observing indicators](#observed-indicators) and adjusting [monetary policy levers](#monetary-policy-levers) to modulate miner incentives toward stable, long-term growth.
 
 ::: warning NOTE
-While the Treasury stabilizes miner demand through adjusting rewards, the [`Market`](spec-market.md) is responsible for Terra price-stability through arbitrage and market maker.
+While the Treasury stabilizes miner demand by adjusting rewards, the [`Market`](spec-market.md) module is responsible for Terra price-stability through arbitrage and market maker.
 :::
 
 ## Concepts
@@ -16,11 +16,11 @@ While the Treasury stabilizes miner demand through adjusting rewards, the [`Mark
 
 The Treasury observes three macroeconomic indicators for each epoch (set to 1 week) and keeps [historical records](#indicators) of their values during previous epochs.
 
-- **Tax Rewards**: $T$, Income generated from transaction fees (stability fee) in a during the epoch.
-- **Seigniorage Rewards**: $S$, Amount of seigniorage generated from Luna swaps to Terra during the epoch that is destined for ballot rewards inside the `Oracle` rewards.
+- **Tax Rewards**: $T$, Income generated from transaction fees (stability fee) during an epoch.
+- **Seigniorage Rewards**: $S$, The amount of seigniorage generated from Luna swaps to Terra during the epoch that is destined for ballot rewards inside the `Oracle` rewards.
 - **Total Staked Luna**: $\lambda$, total Luna that has been staked by users and bonded by their delegated validators.
 
-These indicators can be used to derive two other values, the **Tax Reward per unit Luna** represented by $\tau = T / \lambda$, used in [Updating Tax Rate](#k-updatetaxpolicy), and **total mining rewards** $R = T + S$, simply the sum of the Tax Rewards and the Seigniorage Rewards, used in [Updating Reward Weight](#k-updaterewardpolicy).
+These indicators can be used to derive two other values, the **Tax Reward per unit Luna** represented by $\tau = T / \lambda$, used in [Updating Tax Rate](#k-updatetaxpolicy), and **total mining rewards** $R = T + S$: the sum of the Tax Rewards and the Seigniorage Rewards, used in [Updating Reward Weight](#k-updaterewardpolicy).
 
 The protocol can compute and compare the short-term ([`WindowShort`](#windowshort)) and long-term ([`WindowLong`](#windowlong)) rolling averages of the above indicators to determine the relative direction and velocity of the Terra economy.
 
