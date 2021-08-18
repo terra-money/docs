@@ -20,7 +20,7 @@ The weight (i.e. total stake) of a validator determines wether or not it is an a
 
 ### What is a full node?
 
-A full node is a program that fully validates transactions and blocks of a blockchain. It is distinct from a light node that only processes block headers and a small subset of transactions. Running a full node requires more resources than a light node but is necessary in order to be a validator. In practice, running a full node only implies running a non-compromised and up-to-date version of the software with low network latency and without downtime.
+A full node is a program that fully validates transactions and blocks of a blockchain. This is different from a light node which only processes block headers and a small subset of transactions. Running a full node requires more resources than a light node but is necessary in order to be a validator. In practice, running a full node only implies running a non-compromised and up-to-date version of the software with low network latency and without downtime.
 
 Of course, it is possible and encouraged for any user to run full nodes even if they do not plan to be validators.
 
@@ -34,13 +34,13 @@ Delegators play a critical role in the system, as they are responsible for choos
 
 ## Becoming a Validator
 
-### How to become a validator?
+### How do I become a validator?
 
 Any participant in the network can signal their intent to become a validator by creating a validator and registering its validator profile. To do so, the candidate broadcasts a `create-validator` transaction, in which they must submit the following information:
 
 - **Validator's PubKey**: Validator operators can have different accounts for validating and holding liquid funds. The PubKey submitted must be associated with the private key with which the validator intends to sign _prevotes_ and _precommits_.
 
-- **Validator's Address**: `terravaloper-` address. This is the address used to identify your validator publicly. The private key associated with this address is used to bond, unbond, and claim rewards.
+- **Validator's Address**: A `terravaloper-` address. This is the address used to identify your validator publicly. The private key associated with this address is used to bond, unbond, and claim rewards.
 
 - **Validator's name** (also known as the **moniker**)
 
@@ -75,13 +75,13 @@ terrad tx staking create-validator
 
 Once a validator is created and registered, Luna holders can delegate Luna to it, effectively adding stake to its pool. The total stake of a validator is the sum of the Luna self-bonded by the validator's operator and the Luna bonded by external delegators.
 
-**Only the top 130 validators with the most stake are considered the active validators**, becoming **bonded validators**. If ever a validator's total stake dips below the top 130, the validator loses its validator privileges and no longer serves as part of the active set, entering **unbonding mode** and eventually becomes **unbonded**.
+**Only the top 130 validators are considered active or  *bonded validators***. If ever a validator's total stake dips below the top 130, the validator loses its validator privileges and no longer serves as part of the active set, entering **unbonding mode** and eventually becoming **unbonded**.
 
 ## Validator keys and states
 
 ### What are the different types of keys?
 
-In short, there are two types of keys:
+There are two types of keys:
 
 - **Tendermint Key**: This is a unique key used to sign block hashes. It is associated with a public key `terravalconspub`.
 
@@ -99,11 +99,11 @@ A validator's operator key is directly tied to an application key, but uses rese
 
 After a validator is created with a `create-validator` transaction, it can be in three states:
 
-- `bonded`: Validator is in the active set and participates in consensus. Validator is earning rewards and can be slashed for misbehaviour.
+- `bonded`: The validator is in the active set and participates in consensus. The validator is earning rewards and can be slashed for misbehavior.
 
-- `unbonding`: Validator is not in the active set and does not participate in consensus. Validator is not earning rewards, but can still be slashed for misbehaviour. This is a transition state from `bonded` to `unbonded`. If validator does not send a `rebond` transaction while in `unbonding` mode, it will take three weeks for the state transition to complete.
+- `unbonding`: The validator is not in the active set and does not participate in consensus. The validator is not earning rewards, but can still be slashed for misbehaviour. This is a transition state from `bonded` to `unbonded`. If a validator does not send a `rebond` transaction while in `unbonding` mode, it will take three weeks for the state transition to complete.
 
-- `unbonded`: Validator is not in the active set, and therefore not signing blocks. Unbonded validators cannot be slashed, but do not earn any rewards from their operation. It is still possible to delegate Luna to this validator. Un-delegating from an `unbonded` validator is immediate.
+- `unbonded`: The validator is not in the active set, and therefore not signing blocks. Unbonded validators cannot be slashed, but do not earn any rewards from their operation. It is still possible to delegate Luna to this validator. Un-delegating from an `unbonded` validator is immediate.
 
 Delegators have the same state as their validator.
 
@@ -111,7 +111,7 @@ Delegators have the same state as their validator.
 Delegations are not necessarily bonded. Luna can be delegated and bonded, delegated and unbonding, delegated and unbonded, or liquid.
 :::
 
-### What is "self-bond"? How can I increase my "self-bond"?
+### What is "self-bonding"? How can I increase my "self-bond"?
 
 The validator operator's "self-bond" refers to the amount of Luna stake delegated to itself. You can increase your self-bond by delegating more Luna to your validator account.
 
@@ -125,11 +125,11 @@ There is no minimum. The top 130 validators with the highest total stake (where 
 
 ### How will delegators choose their validators?
 
-Delegators are free to choose validators according to their own subjective criteria. That said, criteria anticipated to be important include:
+Delegators are free to choose validators according to their own subjective criteria. That said, the criteria anticipated to be important include:
 
-- **Amount of self-bonded Luna:** Number of Luna a validator self-bonded to its staking pool. A validator with higher amount of self-bonded Luna has more skin in the game, making it more liable for its actions.
+- **Amount of self-bonded Luna:** The number of Luna a validator self-bonds to its staking pool. A validator with a higher amount of self-bonded Luna has more skin in the game, making it more liable for its actions.
 
-- **Amount of delegated Luna:** Total number of Luna delegated to a validator. A high stake shows that the community trusts this validator, but it also means that this validator is a bigger target for hackers. Indeed, hackers are incentivized to hack larger validators as they receive a reward proportionate to the stake of the validator they can prove to have compromised. Validators are expected to become less and less attractive as their amount of delegated Luna grows.
+- **Amount of delegated Luna:** The total number of Luna delegated to a validator. A high stake shows that the community trusts this validator, but it also means that this validator is a bigger target for hackers. Indeed, hackers are incentivized to hack larger validators as they receive a reward proportionate to the stake of the validator they can prove to have compromised. Validators are expected to become less and less attractive as their amount of delegated Luna grows.
 
 - **Commission rate:** Commission applied on revenue by validators before it is distributed to their delegators
 
@@ -274,11 +274,11 @@ For now the community is expected to behave in a smart and self-preserving way. 
 
 We recommend the following for running Terra Core:
 
-2 or more CPU cores
-At least 1TB of disk storage
-At least 16GB of memory
-At least 100mbps network bandwidth
-#
+- 4 core Compute Optimized CPU
+- 16GB RAM (32GB to export genesis)
+- 1TB storage
+- At least 100mbps network bandwidth
+
 
 ### What are software requirements?
 
