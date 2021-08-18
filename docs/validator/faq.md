@@ -161,7 +161,7 @@ Staking Luna can be thought of as a safety deposit on validation activities. Whe
 
 Validators, and by association delegators, receive block provisions, block rewards, and fee rewards. If a validator misbehaves, a certain portion of its total stake is slashed (the severity of the penalty depends on the type of misbehavior). This means that every user that bonded Luna to this validator gets penalized in proportion to its stake. Delegators are therefore incentivized to delegate to validators that they anticipate will function safely.
 
-### Can a validator run away with its delegators' Luna?
+### Can a validator run away with a delegators' Luna?
 
 By delegating to a validator, a user delegates staking power. The more staking power a validator has, the more weight it has in the consensus and processes. This does not mean that the validator has custody of its delegators' Luna. _By no means can a validator run away with its delegator's funds_.
 
@@ -272,9 +272,13 @@ For now the community is expected to behave in a smart and self-preserving way. 
 
 ### What are hardware requirements?
 
-Validators should expect to provision one or more data center locations with redundant power, networking, firewalls, HSMs and servers.
+We recommend the following for running Terra Core:
 
-We expect that a modest level of hardware specifications will be needed initially and that they might rise as network use increases. Participating in the testnet is the best way to learn more.
+2 or more CPU cores
+At least 1TB of disk storage
+At least 16GB of memory
+At least 100mbps network bandwidth
+#
 
 ### What are software requirements?
 
@@ -282,7 +286,7 @@ In addition to running a Terra Core node, validators should develop monitoring, 
 
 ### What are bandwidth requirements?
 
-Columbus-4 Mainnet has the capacity for very high throughput compared to chains like Ethereum or Bitcoin.
+Columbus-5 Mainnet has the capacity for very high throughput compared to chains like Ethereum or Bitcoin.
 
 As such, we recommend that the data center nodes only connect to trusted full nodes in the cloud or other validators that know each other socially. This relieves the data center node from the burden of mitigating denial-of-service attacks.
 
