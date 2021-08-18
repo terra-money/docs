@@ -12,7 +12,7 @@ Terra Core is powered by Tendermint consensus, which relies on a set of validato
 
 ### What is "staking"?
 
-The Columbus-4 Mainnet is a public Proof-Of-Stake (PoS) blockchain, meaning that validator's weight is determined by the amount of staking tokens (Luna) bonded as collateral. These Luna can be staked directly by the validator or delegated to them by Luna holders.
+The Columbus-5 Mainnet is a public Proof-Of-Stake (PoS) blockchain, meaning that validator's weight is determined by the amount of staking tokens (Luna) bonded as collateral. These Luna can be staked directly by the validator or delegated to them by Luna holders.
 
 Any user in the system can declare its intention to become a validator by sending a [`create-validator`](#how-to-become-a-validator) transaction. From there, they become validators.
 
@@ -183,17 +183,13 @@ Each member of a validator's staking pool earns different types of revenue:
 
 - **Stability fees**: To stabilize the value of Luna, the protocol charges a small percentage transaction fee ranging from 0.1% to 1% on every Terra transaction, capped at 1 TerraSDR. This is paid in any Terra currency, and is disbursed pro-rata to stake at the end of every block in TerraSDR.
 
-- **Seigniorage rewards**: Validators that participate in the Exchange Rate [`Oracle`](../dev/spec-oracle.md) get a portion of seigniorage if they faithfully report and win the ballot (vote within the reward band around the weighted median).
-
 This total revenue is divided among validators' staking pools according to each validator's weight. Then, within each validator's staking pool the revenue is divided among delegators in proportion to each delegator's stake. Note that a commission on delegators' revenue is applied by the validator before it is distributed.
 
-Besides revenue, there are scarcity incentives:
-
-- **Swap fees**: A small spread is charged on atomic swap transactions between Luna and any Terra currency, which is burned and creates scarcity in Luna and indirectly rewards validators.
+- **Swap fees**: A small spread is charged on atomic swap transactions between Luna and any Terra currency, which is then used to reward validators that faithfully report oracle exchange rates.
 
 ### What is the incentive to run a validator ?
 
-Validators earn proportionally more revenue than their delegators because of commissions, and also play a major role in determining on-chain exchange rates through the [`Oracle`](../dev/spec-oracle.md), where they get rewarded with seigniorage for faithfully reporting the exchange rate.
+Validators earn proportionally more revenue than their delegators because of commissions, and also play a major role in determining on-chain exchange rates through the [`Oracle`](../dev/spec-oracle.md), where they get rewarded for faithfully reporting the exchange rate with swap fees.
 
 ### What is a validator's commission?
 
@@ -240,11 +236,11 @@ $$9R ~ + ~ R ~ + ~ 5\%(R) ~ = ~ 1005 ~ \Leftrightarrow ~ R ~ = ~ 1005 ~/ ~10.05 
 
 ### How does Luna supply behave over time?
 
-Luna is the native staking token for the Terra Proof-of-Stake chain, and represents mining power. However, it also serves the purpose to collateralize the Terra stablecoins. Luna is minted to contract Terra supply to counteract Terra price falling against its peg. In order to constrain Luna inflation, the protocol burns market swap spread fees and distributes a part of seigniorage to the exchange rate oracle ballot winners, which return Luna supply toward target.
+Luna is the native staking token for the Terra Proof-of-Stake chain, and represents mining power. However, it also serves the purpose to collateralize the Terra stablecoins. Luna is minted to contract Terra supply to counteract Terra price falling against its peg. In order to constrain Luna inflation, the protocol burns all seigniorage and dividends swap fees to the exchange rate oracle ballot winners, which return Luna supply toward target.
 
 ### What are the slashing conditions?
 
-If a validator misbehaves, its bonded stake along with its delegators' stake and will be slashed. The severity of the punishment depends on the type of fault. There are 3 main faults that can result in slashing of funds for a validator and its delegators:
+If a validator misbehaves, its bonded stake along with its delegators' stake will be slashed. The severity of the punishment depends on the type of fault. There are 3 main faults that can result in slashing of funds for a validator and its delegators:
 
 - **Double-signing:** If someone reports on chain A that a validator signed two blocks at the same height on chain A and chain B, and if chain A and chain B share a common ancestor, then this validator will get slashed on chain A.
 
