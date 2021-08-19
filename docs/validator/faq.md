@@ -129,85 +129,90 @@ Delegators are free to choose validators according to their own subjective crite
 
 - **Amount of self-bonded Luna:** The number of Luna a validator self-bonds to its staking pool. A validator with a higher amount of self-bonded Luna has more skin in the game, making it more liable for its actions.
 
-- **Amount of delegated Luna:** The total number of Luna delegated to a validator. A high stake shows that the community trusts this validator, but it also means that this validator is a bigger target for hackers. Indeed, hackers are incentivized to hack larger validators as they receive a reward proportionate to the stake of the validator they can prove to have compromised. Validators are expected to become less and less attractive as their amount of delegated Luna grows.
+- **Amount of delegated Luna:** The total number of Luna delegated to a validator. A high stake shows that the community trusts this validator; however, this also means that a validator is a bigger target for hackers. Hackers are incentivized to hack larger validators as they receive a reward proportionate to the stake of the validator they can prove to have compromised. Validators are expected to become less and less attractive as their amount of delegated Luna grows.
 
-- **Commission rate:** Commission applied on revenue by validators before it is distributed to their delegators
+- **Commission rate:** The commission applied to revenue by a validator before being distributed to its delegators.
 
-- **Track record:** Delegators will likely look at the track record of the validators they plan to delegate to. This includes seniority, past votes on proposals, historical average uptime and how often the node was compromised.
+- **Track record:** Delegators will likely look at the track record of the validators they plan to delegate to. This includes seniority, past votes on proposals, historical average uptime, and how often the node was compromised.
 
-Apart from these criteria that will be displayed in Terra Station, there will be a possibility for validators to signal a website address to complete their resume. Validators will need to build reputation one way or another to attract delegators. For example, it would be a good practice for validators to have their setup audited by third parties. Note though, that the Terra team will not approve or conduct any audit itself.
+Apart from the above criteria which will be displayed in Terra Station, validators can also signal a website address to complete their resume. Validators will need to build a reputation to attract delegators. It is a good practice for validators to have their setup audited by third parties. Please note that the Terra team will not approve or conduct any audits.
 
 ## Responsibilites
 
 ### Do validators need to be publicly identified?
 
-No, they do not. Each delegator will value validators based on their own criteria. Validators will be able(and are advised) to register a website address when they nominate themselves so that they can advertise their operation as they see fit. Some delegators may prefer a website that clearly displays the team running the validator and their resume, while others might prefer anonymous validators with positive track records. Most likely both identified and anonymous validators will coexist in the validator set.
+No, they do not. Each delegator will value validators based on their own criteria. Validators are typically advised to register a website address when they nominate themselves so they can advertise their operation as they see fit. While some delegators may prefer a website that clearly identifies the team running the validator and their resume, others may prefer an anonymous validator with a positive track records.
 
 ### What are the responsiblities of a validator?
 
-Validators have three main responsibilities:
+A validator must:
 
-- **Be able to constantly run a correct version of the software:** validators need to make sure that their servers are always online and their private keys are not compromised.
+- **Run correct software versions:** Validators need to make sure that their servers are always online, and that their private keys are not compromised.
 
-- **Actively participate in price discovery and stabilization:** validators are highly incentivised to submit honest and correct votes of real market prices of Luna. Validators are also encouraged to engage in arbitrage swaps that stabilize the prices of Terra stablecoins.
+- **Actively participate in price discovery and stabilization:** Validators are highly incentivised to submit honest and correct votes of the real market prices of Luna. Validators are also encouraged to engage in arbitrage swaps that stabilize the prices of Terra stablecoins.
 
-- **Provide oversight and feedback on correct deployment of community pool funds:** the Terra protocol includes the a governance system for proposals to the facilitate adoption of its currencies. Validators are expected to hold budget executors to account to provide transparency and efficient use of funds.
+- **Provide oversight and feedback on the correct deployment of community pool funds:** the Terra protocol includes a governance system for proposals to facilitate the adoption of its currencies. Validators are expected to hold budget executors to account to provide transparency and the efficient use of funds.
 
-Additionally, validators are expected to be active members of the community. They should always be up-to-date with the current state of the ecosystem so that they can easily adapt to any change.
+- **Be active members of the community:** Validators should always be up-to-date with the current state of the ecosystem so that they can easily adapt to any change.
 
 ### What does staking imply?
 
-Staking Luna can be thought of as a safety deposit on validation activities. When a validator or a delegator wants to retrieve part or all of their deposit, they send an unbonding transaction. Then, Luna undergo a _three weeks unbonding period_ during which they are liable to being slashed for potential misbehaviors committed by the validator before the unbonding process started.
+Think of staked Luna as a safety deposit on a validator's activities. When a validator or a delegator wants to retrieve part or all of their deposit, they send an unbonding transaction. The staked Luna then undergoes a _three weeks unbonding period,_ during which it is vulnerable to slashing risks for potential misbehavior committed by the validator before the start of the unbonding process.
 
-Validators, and by association delegators, receive block provisions, block rewards, and fee rewards. If a validator misbehaves, a certain portion of its total stake is slashed (the severity of the penalty depends on the type of misbehavior). This means that every user that bonded Luna to this validator gets penalized in proportion to its stake. Delegators are therefore incentivized to delegate to validators that they anticipate will function safely.
+Validators, and by association delegators, receive block provisions, block rewards, and fee rewards. If a validator misbehaves, a certain portion of their total stake is slashed (the severity of the penalty depends on the type of misbehavior). This means that every user that bonds Luna to a slashed validator gets penalized in proportion to their stake. Delegators are therefore incentivized to delegate to validators that function safely.
 
 ### Can a validator run away with a delegators' Luna?
 
-By delegating to a validator, a user delegates staking power. The more staking power a validator has, the more weight it has in the consensus and processes. This does not mean that the validator has custody of its delegators' Luna. _By no means can a validator run away with its delegator's funds_.
+**No.** By delegating to a validator, users delegate staking power. The more staking power a validator has, the more weight it has in the consensus and processes. This does not mean that the validator has custody of its delegators' Luna.
 
-Even though delegated funds cannot be stolen by their validators, delegators are still liable if their validators misbehave. In such case, each delegators' stake will be partially slashed in proportion to their relative stake.
+::: warning  
+It's impossible for a validator to run away with a delegator's funds.
+:::
+
+
+Although delegated funds cannot be stolen by validators, delegators are still liable if their validators misbehave. In such case, each delegators' stake will be partially slashed in proportion to their relative stake.
 
 ### How often will a validator be chosen to propose the next block? Does it go up with the quantity of Luna staked?
 
-The validator that is selected to mine the next block is called the **proposer**, the "leader" in the consensus for the round. Each proposer is selected deterministically, and the frequency of being chosen is equal to the relative total stake (where total stake = self-bonded stake + delegators stake) of the validator. For example, if the total bonded stake across all validators is 100 Luna, and a validator's total stake is 10 Luna, then this validator will be chosen 10% of the time as the proposer.
+The validator that is selected to mine the next block is called the **proposer**, or the "leader" in the consensus for the round. Each proposer is selected deterministically, and the frequency of being chosen is equal to the relative total stake of the validator (Total stake = self-bonded stake + delegators stake). For example, if the total bonded stake across all validators is 100 Luna, and a validator's total stake is 10 Luna, then this validator will be chosen 10% of the time as the proposer.
 
 To understand more about the proposer selection process in Tendermint BFT consensus, read more [in their official docs](https://docs.tendermint.com/master/spec/reactors/consensus/proposer-selection.html).
 
 ## Incentives
 
-### What is the incentive to stake?
+### What are the incentives to stake?
 
 Each member of a validator's staking pool earns different types of revenue:
 
-- **Compute fees**: To prevent spamming, validators may set minimum gas fees for transactions to be included in their mempool. At the end of every block, the compute fees are disbursed to the participating validators pro-rata to stake.
+- **Compute fees (gas)**: To prevent spamming, validators can set minimum gas fees for transactions to be included in their mempool. At the end of every block, compute fees are disbursed to the participating validators proportioanl to their stake.
 
-- **Stability fees**: To stabilize the value of Luna, the protocol charges a small percentage transaction fee ranging from 0.1% to 1% on every Terra transaction, capped at 1 TerraSDR. This is paid in any Terra currency, and is disbursed pro-rata to stake at the end of every block in TerraSDR.
+- **Stability fees**: To stabilize the value of Luna, the protocol charges a small fee ranging from 0.1% to 1% on every Terra transaction, capped at 1 TerraSDR. This is paid in any Terra currency, and is disbursed proportional to each validators' stake at the end of every block in TerraSDR.
 
 This total revenue is divided among validators' staking pools according to each validator's weight. Then, within each validator's staking pool the revenue is divided among delegators in proportion to each delegator's stake. Note that a commission on delegators' revenue is applied by the validator before it is distributed.
 
 - **Swap fees**: A small spread is charged on atomic swap transactions between Luna and any Terra currency, which is then used to reward validators that faithfully report oracle exchange rates.
 
-### What is the incentive to run a validator ?
+### What is the incentive to run a validator?
 
-Validators earn proportionally more revenue than their delegators because of commissions, and also play a major role in determining on-chain exchange rates through the [`Oracle`](../dev/spec-oracle.md), where they get rewarded for faithfully reporting the exchange rate with swap fees.
+Validators earn more revenue than their delegators through commission. They also play a major role in determining on-chain exchange rates through the [`Oracle`](../dev/spec-oracle.md), where they get rewarded for faithfully reporting the exchange rate with swap fees.
 
 ### What is a validator's commission?
 
-Revenue received by a validator's pool is split between the validator and its delegators. The validator can apply a commission on the part of the revenue that goes to its delegators. This commission is set as a percentage. Each validator is free to set its initial commission, maximum daily commission change rate and maximum commission. Columbus-4 Mainnet enforces the parameter that each validator sets. These parameters can only be defined when initially declaring candidacy, and may only be constrained further after being declared.
+The revenue received by a validator's pool is split between a validator and their delegators. A validator can apply a commission on the part of the revenue that goes to its delegators. This commission is set as a percentage. Each validator is free to set its initial commission, maximum daily commission change rate, and maximum commission. The Mainnet enforces the parameters that each validator sets. These parameters can only be defined when initially declaring candidacy, and may only be constrained further after being declared.
 
 ### How are block provisions distributed?
 
-Block provisions are distributed proportionally to all validators relative to their total stake. This means that even though each validator gains TerraSDR \(SDT\) with each provision, all validators will still maintain equal weight.
+Block provisions are distributed proportionally to each validators relative to their total stake. This means that even though each validator gains TerraSDR \(SDT\) with each provision, all validators will still maintain equal weight.
 
-Let us take an example where we have 10 validators with equal staking power and a commission rate of 1%. Let us also assume that the provision for a block is 1000 SDT and that each validator has 20% of self-bonded Luna. These tokens do not go directly to the proposer. Instead, they are evenly spread among validators. So now each validator's pool has 100 SDT. These 100 SDT will be distributed according to each participant's stake:
+ **Example:** Take 10 validators with equal staking power and a commission rate of 1%. The block provision is 1000 SDT and each validator has 20% self-bonded Luna. These tokens do not go directly to the proposer. Instead, they are evenly spread among validators. So now each validator's pool has 100 SDT, which is distributed according to each participant's stake:
 
-- Commission: $100 ~ * ~ 80\% ~ * ~ 1\%$ = 0.8 SDT
+- Commission: 100 SDT ~ * ~ 80\% ~ * ~ 1\%$ = 0.8 SDT
 
-- Validator gets: $100 ~ * ~ 20\% ~ + ~ Commission$ = 20.8 SDT
+- Each validator gets: 100 SDT ~ * ~ 20\% ~ + ~ Commission$ = 20.8 SDT
 
-- All delegators get: $100 ~ * ~ 80\% ~ - ~ Commission$ = 79.2 SDT
+- All delegators get: 100 SDT ~ * ~ 80\% ~ - ~ Commission$ = 79.2 SDT
 
-Then, each delegator can claim its part of the 79.2 SDT in proportion to their stake in the validator's staking pool. Note that the validator's commission is not applied on block provisions. Note that block rewards (paid in SDT) are distributed according to the same mechanism.
+Then, each delegator can claim its part of the 79.2 SDT in proportion to their stake in the validator's staking pool. Note that the validator's commission is not applied on block provisions. Block rewards (paid in SDT) are distributed according to the same mechanism.
 
 ### How are fees distributed?
 
