@@ -1,9 +1,9 @@
 # Validator Setup
 
-This is a detailed step-by-step guide for setting up a Terra validator. Please be aware that while it is easy to set up a rudimentary validating node, running a performant production-quality validator node with a robust architecture and security features can require a non-trivial setup.
+This is a detailed step-by-step guide for setting up a Terra validator. Please be aware that while it is easy to set up a rudimentary validating node, running a production-quality validator node with a robust architecture and security features requires an extensive setup.
 
 ::: tip
-Block42 has put together an excellent, step-by-step guide for setting up a new validator that you can find [here](https://medium.com/block42-blockchain-company/how-to-setup-a-terra-luna-validator-node-860d8ea7aea2).
+Block42 has put together an excellent [step-by-step guide](https://medium.com/block42-blockchain-company/how-to-setup-a-terra-luna-validator-node-860d8ea7aea2)  for setting up a new validator.
 :::
 
 ## Requirements
@@ -11,11 +11,11 @@ Block42 has put together an excellent, step-by-step guide for setting up a new v
 This guide starts with the following assumptions:
 
 - You have [installed](../node/installation) the Terra Full Node Software.
-- You have [connected it](../node/join-network) to an existing network.
-- You have [configured it](../node/config) properly.
+- You have [connected your node](../node/join-network) to an existing network.
+- You have [configured your node](../node/config) properly.
 - You know your way around [terrad](../terrad).
 
-## Register your Validator
+## Registering your Validator
 
 You will need to know the consensus PubKey (`terravalconspub-`) of your node to create a new validator. You can find it with:
 
@@ -38,17 +38,17 @@ terrad tx staking create-validator \
     --min-self-delegation="1"
 ```
 
-::: warning NOTE
-When specifying commission parameters, the `commission-max-change-rate` is used to measure % _point_ change over the `commission-rate`. E.g. 1% to 2% is a 100% rate increase, but only 1 percentage point.
+::: warning Note:
+When specifying commission parameters, the `commission-max-change-rate` is measured as a percentage point change of the `commission-rate`. For example, a change from 1% to 2% is a 100% rate increase, but the `commission-max-change-rate` is meaured as 1%.
 :::
 
-::: warning NOTE
-If unspecified, `consensus_pubkey` will default to the output of `terrad tendermint show-validator`. `key_name` is the name of the private key that will be used to sign the transaction.
+::: warning Note:
+Unless specified, `consensus_pubkey` will default to the output of `terrad tendermint show-validator`. `key_name` is the name of the private key that will be used to sign transactions.
 :::
 
 ## Confirmation
 
-Your validator is active if the following command returns anything:
+A validator is active if the following command returns a value:
 
 ```bash
 terrad query tendermint-validator-set | grep "$(terrad tendermint show-validator)"
@@ -56,17 +56,17 @@ terrad query tendermint-validator-set | grep "$(terrad tendermint show-validator
 
 You are looking for the `bech32` encoded `address` in the `~/.terra/config/priv_validator.json` file.
 
-::: warning NOTE
-To be in the validator set, you need to have more total voting power than the 130th validator.
+::: warning Note:
+Only the top 130 validators in voting power are included in the validating set.
 :::
 
-## Set up Oracle Feeder
+## Setting up an Oracle Feeder
 
-Every Terra validator needs to participate in the oracle process and periodically submit a vote for the exchange rate of LUNA in all of the whitelisted denominations. Since this process occurs rather frequently (every 30 seconds), you need to set up an automated process to avoid getting slashed and jailed.
+Every Terra validator needs to participate in the oracle process and periodically submit a vote for the exchange rate of LUNA in all whitelisted denominations. Since this process occurs rather frequently (every 30 seconds), validators need to set up an automated process to avoid getting slashed and jailed.
 
-### Make a new key for oracle votes
+### Making a new key for oracle votes
 
-You can separate the keys that are used for controlling your validator account from the ones that are submitting the oracle votes on behalf of your validator.
+You can separate the keys used for controlling a validator account from those that are submitting oracle votes on behalf of a validator.
 
 ```bash
 terrad keys add <feeder>
