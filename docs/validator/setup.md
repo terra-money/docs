@@ -39,7 +39,7 @@ terrad tx staking create-validator \
 ```
 
 ::: warning Note:
-When specifying commission parameters, the `commission-max-change-rate` is measured as a percentage point change of the `commission-rate`. For example, a change from 1% to 2% is a 100% rate increase, but the `commission-max-change-rate` is meaured as 1%.
+When specifying commission parameters, the `commission-max-change-rate` is measured as a percentage point change of the `commission-rate`. For example, a change from 1% to 2% is a 100% rate increase, but the `commission-max-change-rate` is measured as 1%.
 :::
 
 ::: warning Note:
