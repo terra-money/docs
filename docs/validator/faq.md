@@ -20,7 +20,7 @@ It is possible and encouraged for any user to run full nodes even if they do not
 
 ### What is staking?
 
-When Luna holders delegate their Luna to a validator, they are ***staking.*** Staking increases a validators weight, which helps them, and in return delegators get rewarded.
+When Luna holders delegate their Luna to a validator, they are ***staking.*** Staking increases a validator's weight, which helps them, and in return delegators get rewarded.
 
 The Columbus-5 Mainnet is a public Proof-Of-Stake (PoS) blockchain. This means a validator's weight (total stake) is determined by the amount of staking tokens (Luna) they delegate to themselves plus the Luna bonded to them by external delegators. The weight of a validator determines wether or not they are an active validator, how frequently they can propose a block, and how much revenue they will obtain. Validators with a higher weight can propose more blocks, and in turn make more revenue.
 
