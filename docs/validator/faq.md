@@ -22,7 +22,7 @@ When Luna holders delegate their Luna to a validator, they are ***staking.*** St
 
 The Columbus-5 Mainnet is a public Proof-Of-Stake (PoS) blockchain. This means a validator's weight (total stake) is determined by the amount of staking tokens (Luna) they delegate to themselves plus the Luna bonded to them by external delegators. The weight of a validator determines whether or not they are an active validator and how frequently they can propose a block. Validators with a higher weight will propose more blocks, and in turn make more revenue.
 
-The validator active set is made up of 130 validators, who hold the most Luna. The bottom validator’s stake always forms the barrier for entry into thenetwork. Creating a validator with more stake than the bottom validator is the only way to enter the active set. If validators double-sign, or are frequently offline, they risk their staked Luna (including Luna delegated by users) being "slashed" by the protocol to penalize negligence and misbehavior.
+The validator active set is made up of 130 validators, who hold the most Luna. The bottom validator’s stake always forms the barrier for entry into the network. Creating a validator with more stake than the bottom validator is the only way to enter the active set. If validators double-sign, or are frequently offline, they risk their staked Luna (including Luna delegated by users) being "slashed" by the protocol to penalize negligence and misbehavior.
 
 ### What is a delegator?
 
@@ -30,7 +30,7 @@ Delegators are Luna holders who want to receive staking rewards without the resp
 
 Delegators share the benefits and rewards of staking with their Validator. If a Validator is successful, its delegators will consistently share in the rewards structure. If a Validator is slashed, the delegator’s stake will be also be slashed. This is why delegators should perform due-diligence on validators before delegating. Delegators can also diversify by spreading their stake over multiple validators.
 
-Delegators play a critical role in the system, as they are responsible for choosing validators. Being a delegator is not a passive role. Delegators should remain vigilant, actively monitor the actions of their validators, and redelegate whenever they feel their current validator does not meet their needs.
+Delegators play a critical role in the system, as they are responsible for choosing validators. Being a delegator is not a passive role. Delegators should remain vigilant, actively monitor the actions of their validators, and re-delegate whenever they feel their current validator does not meet their needs.
 
 ## Becoming a Validator
 
@@ -221,7 +221,7 @@ Fees are distributed to validators in the same way as commission: proportionally
 
 #### Rewards
 
-When a validator is selected to propose the next block, they must include at least two thirds of the precommits for the previous block in the form of validator signatures. Proposers who include more than two thirds recieve a bonus proportional to the amount of additional precomits. This reward ranges from 1% if the proposer includes two thirds of the precommits to 5% if the proposer includes 100% of the precommits. If a proposer waits too long however, other validators may timeout and move on to the next proposer. This is why validators have to find a balance between wait time to get the most signatures and the risk of losing out on proposing the next block. This feature aims to incentivize non-empty block proposals, better networking between validators, and to mitigate censorship.
+When a validator is selected to propose the next block, they must include at least two thirds of the precommits for the previous block in the form of validator signatures. Proposers who include more than two thirds receive a bonus proportional to the amount of additional precomits. This reward ranges from 1% if the proposer includes two thirds of the precommits to 5% if the proposer includes 100% of the precommits. If a proposer waits too long however, other validators may timeout and move on to the next proposer. This is why validators have to find a balance between wait time to get the most signatures and the risk of losing out on proposing the next block. This feature aims to incentivize non-empty block proposals, better networking between validators, and to mitigate censorship.
 
 **Example:** There are 10 validators with equal stake. Each has a 1% commission and 20% self-bonded Luna. If a successful block collects 1005 SDT in fees, and the proposer includes 100% of the signatures in their block, they will recieve the full 5% bonus.
 
