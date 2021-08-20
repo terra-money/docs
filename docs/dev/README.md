@@ -40,7 +40,7 @@ The node software is organized into individual modules that implement different 
 9. [`treasury`](spec-treasury.md): miner incentive stabilization
    - macroecnomic monitoring
    - monetary policy levers (Tax Rate, Reward Weight)
-   - seigniorage settlement
+   - seigniorage settlement (all seigniorage is burned as of Cloumbus-5)
 10. [`gov`](spec-governance.md): on-chain governance
     - proposals
     - parameter updating
