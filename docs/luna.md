@@ -14,7 +14,7 @@ In the Terra protocol, staking rewards are first distributed to validators who t
 
 Rewards from stake are determined largely by the relative size of stake, and are structured in such a way that rewards increase as transaction volume increases. Luna ownership is thus an investment in the long term growth of Terra.
 
-Staking rewards come from three sources: gas (compute fees), taxes, and seigniorage rewards.
+Staking rewards come from two sources: gas (compute fees) and taxes.
 
 ### Gas
 
@@ -24,9 +24,11 @@ Gas is a fee that is added on to each transaction to avoid spamming. Validators 
 
 Taxes are used as a stability fee, and the protocol charges a small percentage transaction fee ranging from 0.1% to 1% on every Terra transaction, capped at 1 TerraSDR. This is paid in any Terra currency, and is disbursed pro-rata to stake at the end of every block.
 
-### Seigniorage Rewards
+::: tip NOTE
 
-Validators participate in the Luna exchange rate oracle process, and win rewards from the seigniorage pool every time they vote within the reward band, proportional to their stake.
+**Seigniorage** no longer contributes to rewards as of Columbus-5. All Seigniorage is currently burned.
+
+:::
 
 ## Phases of Luna
 
