@@ -8,13 +8,11 @@ Please read this document thoroughly before becoming a validator.
 
 ### What is a validator?
 
-The Terra Core is powered by the Tendermint consensus, which relies on a set of validators to secure the network. Validators run full nodes and participate in consensus by broadcasting votes. These votes contain cryptographic signatures signed by a validator's private key. Validators commit new blocks in the blockchain and receive revenue in exchange for their work. They also participate in treasury governance by voting on proposals. A validator's voting power is weighted according to their total stake.
-
-Any user in the system can declare its intention to become a validator by sending a [`create-validator`](#how-do-I-become-a-validator) transaction.
+The Terra Core is powered by the Tendermint consensus. Validators run full nodes, participate in consensus by broadcasting votes, commit new blocks to the blockchain, and participate in governance of the blockchain. Validators are able to cast votes on behalf of their delegators. A validator's voting power is weighted according to their total stake.
 
 ### What is a full node?
 
-A full node is a program that validates the transactions and blocks of a blockchain. Running a full node is necessary in order to be a validator. Full nodes reuire more resources than light nodes,  which only processes block headers and a small subset of transactions. Running a full node means you are running a non-compromised and up-to-date version of the Terra Core software with low network latency and no downtime.
+A full node is a program that validates the transactions and blocks of a blockchain. Validators must run full nodes. Full nodes require more resources than light nodes,  which only processes block headers and a small subset of transactions. Running a full node means you are running a non-compromised and up-to-date version of the Terra Core software with low network latency and no downtime.
 
 It is possible and encouraged for any user to run full nodes even if they do not plan to be validators.
 
@@ -22,17 +20,17 @@ It is possible and encouraged for any user to run full nodes even if they do not
 
 When Luna holders delegate their Luna to a validator, they are ***staking.*** Staking increases a validator's weight, which helps them, and in return delegators get rewarded.
 
-The Columbus-5 Mainnet is a public Proof-Of-Stake (PoS) blockchain. This means a validator's weight (total stake) is determined by the amount of staking tokens (Luna) they delegate to themselves plus the Luna bonded to them by external delegators. The weight of a validator determines wether or not they are an active validator, how frequently they can propose a block, and how much revenue they will obtain. Validators with a higher weight can propose more blocks, and in turn make more revenue.
+The Columbus-5 Mainnet is a public Proof-Of-Stake (PoS) blockchain. This means a validator's weight (total stake) is determined by the amount of staking tokens (Luna) they delegate to themselves plus the Luna bonded to them by external delegators. The weight of a validator determines whether or not they are an active validator and how frequently they can propose a block. Validators with a higher weight will propose more blocks, and in turn make more revenue.
 
-Only the top 130 validators with the most weight will be active validators. If validators double-sign, or are frequently offline, they risk their staked Luna (including Luna delegated by users) being "slashed" by the protocol to penalize negligence and misbehavior.
+The validator active set is made up of 130 validators, who hold the most Luna. The bottom validator’s stake always forms the barrier for entry into thenetwork. Creating a validator with more stake than the bottom validator is the only way to enter the active set. If validators double-sign, or are frequently offline, they risk their staked Luna (including Luna delegated by users) being "slashed" by the protocol to penalize negligence and misbehavior.
 
 ### What is a delegator?
 
-Delegators are Luna holders who want to recieve staking rewards without the responsibilty of running a validator. Through Terra Station (check out the [Terra website](https://terra.money) to download), a user can delegate Luna to a validator and in exchange recieve a part of a validator's revenue. For more detail on how revenue is distributed, see [What are the incentives to stake?](#what-are-the-incentives-to-stake) and [What is a validator's commission?](#what-is-a-validator's-commission).
+Delegators are Luna holders who want to receive staking rewards without the responsibility of running a validator. Through Terra Station, a user can delegate Luna to a validator and in exchange receive a part of a validator's revenue. For more detail on how revenue is distributed, see [What are the incentives to stake?](#what-are-the-incentives-to-stake) and [What is a validator's commission?](#what-is-a-validator's-commission).
 
-By sharing revenue with validators, delegators also share responsibility. If a validator misbehaves, each of its delegators can be partially penalized or `slashed` in proportion to their stake. This is why delegators should perform due-diligence on validators before delegating. Delegators can also diversify by spreading their stake over multiple validators.
+Delegators share the benefits and rewards of staking with their Validator. If a Validator is successful, its delegators will consistently share in the rewards structure. If a Validator is slashed, the delegator’s stake will be also be slashed. This is why delegators should perform due-diligence on validators before delegating. Delegators can also diversify by spreading their stake over multiple validators.
 
-Delegators play a critical role in the system, as they are responsible for choosing validators. Being a delegator is not a passive role. Delegators should remain vigilant and actively monitor the actions of their validators, and switch if the validator misbehaves.
+Delegators play a critical role in the system, as they are responsible for choosing validators. Being a delegator is not a passive role. Delegators should remain vigilant, actively monitor the actions of their validators, and redelegate whenever they feel their current validator does not meet their needs.
 
 ## Becoming a Validator
 
@@ -52,9 +50,9 @@ Any participant in the network can signal their intent to become a validator by 
 
 - **Initial commission rate:** The commission rate on block provisions, block rewards and fees charged to delegators.
 
-- **Maximum commission:** The maximum commission rate which the validator will be allowed to charge.
+- **Maximum commission:** The maximum commission rate which the validator will be allowed to charge. (This cannot be changed)
 
-- **Commission change rate**: The maximum daily increase of the validator's commission.
+- **Commission change rate**: The maximum daily increase of the validator's commission.(This cannot be changed)
 
 - **Minimum self-bond amount**: The minimum amount of bonded Luna the validator needs at all times. If the validator's self-bonded stake falls below this limit, its entire staking pool will be unbonded.
 
@@ -133,27 +131,27 @@ Delegators are free to choose validators according to their own criteria. This m
 
 - **Amount of self-bonded Luna:** The amount of Luna a validator self-bonds to its staking pool. A validator with a higher amount of self-bonded Luna has more skin in the game, making it more liable for its actions.
 
-- **Amount of delegated Luna:** The total amount of Luna delegated to a validator. A high stake shows that the community trusts this validator; however, this also means that a validator is a bigger target for hackers. Validators sometimes become less attractive as their amount of delegated Luna grows.
+- **Amount of delegated Luna:** The total amount of Luna delegated to a validator. A high stake shows that the community trusts this validator; however, this also means that a validator is a bigger target for hackers. Large stakes provide large voting power. This weakens the network. At any given time, if 33% or more of staked luna becomes inaccessible, the network will halt. Through incentives and education, we can prevent this by delegating away from validators that have too much voting power. Validators sometimes become less attractive as their amount of delegated Luna grows.
 
-- **Commission rate:** The commission applied to revenue by a validator before being distributed to its delegators.
+- **Commission rate:** The commission applied to rewards by a validator before being distributed to its delegators.
 
 - **Track record:** Delegators can look at the track record of a validators they plan to delegate to. This includes seniority, past votes on proposals, historical average uptime, and how often the node was compromised.
 
 Validators can also provide a website address to complete their resume. Validators need to build a good reputation to attract delegators. It's good practice for validators to have their setup audited by third parties. Please note that the Terra team will not approve or conduct any audits.
 
-## Responsibilites
+## Responsibilities
 
 ### Do validators need to be publicly identified?
 
 No, they do not. Each delegator will value validators based on their own criteria. Validators are typically advised to register a website address when they nominate themselves so they can advertise their operation as they see fit.
 
-### What are the responsiblities of a validator?
+### What are the responsibilities of a validator?
 
 A validator must:
 
 - **Run the correct software versions:** Validators need to make sure that their servers are always online, and that their private keys are not compromised.
 
-- **Actively participate in price discovery and stabilization:** Validators are highly incentivised to submit honest and correct votes of the real market prices of Luna. Validators are also encouraged to engage in arbitrage swaps that stabilize the prices of Terra stablecoins.
+- **Actively participate in price discovery and stabilization:** Validators are highly incentivized to submit honest and correct votes of the real market prices of Luna. Validators are also encouraged to engage in arbitrage swaps that stabilize the prices of Terra stablecoins.
 
 - **Provide oversight and feedback on the correct deployment of community pool funds:** the Terra protocol includes a governance system for proposals to facilitate the adoption of its currencies. Validators are expected to hold budget executors to provide transparency and to use funds efficiently.
 
@@ -245,7 +243,7 @@ $$9R ~ + ~ R ~ + ~ 5\%(R) ~ = ~ 1005 ~ \Leftrightarrow ~ R ~ = ~ 1005 ~/ ~10.05 
 
 ### How does Luna supply behave over time?
 
-Luna is the native staking token for the Terra Proof-of-Stake chain. Luna represents mining power, and also serves as collateral for Terra stablecoins. When a Terra stablecoin's price is low, Terra is burned, and Luna is minted. This increases the price of Terra. In order to constrain Luna inflation, the protocol burns all seigniorage and dividends swap fees to the exchange rate oracle ballot winners, which then returns Luna supply towards a target. The Terra Protocol is deflationary in nature.
+Luna is the native staking token for the Terra Proof-of-Stake chain. Luna represents mining power and serves as collateral for Terra stablecoins. When a Terra stablecoin's price is low, the relevant Terra stablecoin is burned, and Luna is minted. This increases the price of the Terra stablecoin. In order to constrain Luna inflation, the protocol burns all seigniorage and dividends swap fees to the exchange rate oracle ballot winners, which then returns Luna supply towards a target. The Terra Protocol is deflationary in nature.
 
 ### What are the slashing conditions?
 
@@ -262,7 +260,7 @@ If a validator misbehaves, their bonded stake along with their delegators' stake
 
 ### Are vaidators required to self-bond Luna?
 
-No, but self-bonding has bennefits. A validator's total stake is made up of their self-bonded stake plus their delegated stake. This means that a validator can compensate low amounts of self-bonded by attracting more delegators. This is why reputation is very important for validators.
+No, but self-bonding has benefits. A validator's total stake is made up of their self-bonded stake plus their delegated stake. This means that a validator can compensate low amounts of self-bonded by attracting more delegators. This is why reputation is very important for validators.
 
 Although validators are not required to self-bond Luna, we suggest all validators to have `skin-in-the-game`. This can help make a validator more trustworthy.
 
@@ -277,14 +275,14 @@ We recommend the following for running Terra Core:
 
 - 4 core Compute Optimized CPU
 - 16GB RAM (32GB to export genesis)
-- 1TB storage
+- 1TB storage (SSD or better)
 - At least 100mbps network bandwidth
 
 ### What are the software requirements?
 
 In addition to running a Terra Core node, validators should develop monitoring, alerting and management solutions.
 
-Validators should expect to perform regular software updates to accommodate upgrades and bug fixes. There will inevitably be issues with the network, and this requires vigilence.
+Validators should expect to perform regular software updates to accommodate upgrades and bug fixes. There will inevitably be issues with the network, and this requires vigilance.
 
 ### What are the personnel requirements?
 
