@@ -65,7 +65,7 @@ The default number of files Linux can open (per-process) is `1024`. `terrad` is 
 
 ## Oracle voting error
 
-You recieve an error message by the [Terra Oracle feeder](https://github.com/terra-money/oracle-feeder):
+You receive an error message by the [Terra Oracle feeder](https://github.com/terra-money/oracle-feeder):
 
     broadcast error: code: 3, raw_log: validator does not exist: terravaloperxxx
 
@@ -73,13 +73,13 @@ This message can occur for the following reasons:
 
 ### 1. The validator is not active
 
-There are a few reasons why a validator is not active.
+There are a few reasons why a validator is not active:
 
-For one, it could be jailed. The solution for this is to unjail the validator:
+- The validator is jailed. Unjail the validator:
 
     terrad tx slashing unjail <terra> --chain-id=<chain_id> --from=<from>
 
-Another reason for an inactive validator may be that the validator is not in the active [validating set](https://docs.terra.money/validators.html#delegations). Only the top 130 validators are in this set. The only solution for this is to increase your total stake to be included in the top 130.
+- The validator is not in the active [validator set](https://docs.terra.money/validators.html#delegations). Only the top 130 validators are in this set. The only solution for this is to increase your total stake to be included in the top 130.
 
 ### 2. Wrong network
 
