@@ -12,7 +12,7 @@ terrad query treasury tax-rate
 
 ### Tax Cap
 
-Stability fees are capped at some fixed amount of SDT to avoid penalizing large transactions. To get the current tax cap denominated in a given denomination (micro-units), run:
+Stability fees are capped at a fixed amount of SDT to avoid penalizing large transactions. To get the current tax cap denominated in a given denomination (micro-units), run:
 
 ```bash
 terrad query treasury tax-cap <denom>
@@ -33,6 +33,11 @@ The Reward Weight is the portion of seigniorage that is designated as ballot rew
 ```bash
 terrad query treasury reward-weight
 ```
+
+::: warning NOTE
+As of Columbus-5, all
+seigniorage is burned.
+:::
 
 ### Seigniorage Proceeds
 
