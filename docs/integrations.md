@@ -133,7 +133,7 @@ LUNA and Terra stablecoins are traded on the following exchanges:
 
 [Terra Station](https://station.terra.money/): Terra’s native wallet<br>
 Terra Station Extension: [Chrome](https://chrome.google.com/webstore/detail/terra-station/aiifbnbfobpmeekipheeijimdpnlpgpp)<br>
-Terra Station Desktop: [MacOS](https://www.terra.dev/station/Terra%20Station-1.1.0.dmg) | [Windows](https://www.terra.dev/station/Terra%20Station%20Setup%201.1.0.exe) | [Linux (deb)](https://terra.money/station/station-electron_1.1.1_amd64.deb) | [Linux (rpm)](https://terra.money/station/station-electron-1.1.1.x86_64.rpm)<br>
+Terra Station Desktop: [MacOS](https://github.com/terra-money/station/releases/download/v3.5.0/Terra.Station-1.1.0.dmg) | [Windows](https://github.com/terra-money/station/releases/download/v3.5.0/Terra.Station.Setup.1.1.0.exe) | [Linux (deb)](https://github.com/terra-money/station/releases/download/v3.5.0/station-electron_1.1.1_amd64.deb) | [Linux (rpm)](https://github.com/terra-money/station/releases/download/v3.5.0/station-electron-1.1.1.x86_64.rpm)<br>
 Terra Station Mobile: [iOS](https://apps.apple.com/app/id1548434735) | [Android](https://play.google.com/store/apps/details?id=money.terra.station)<br>
 [Mirror Wallet](https://mirrorwallet.com/): Invest and trade cryptocurrencies and mirror assets<br>
 [MathWallet](https://mathwallet.org/en-us/): multi-platform crypto wallet for Terra assets<br>
