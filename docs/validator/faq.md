@@ -22,7 +22,7 @@ When Luna holders delegate their Luna to a validator, they are ***staking.*** St
 
 The Columbus-5 Mainnet is a public Proof-Of-Stake (PoS) blockchain. This means a validator's weight (total stake) is determined by the amount of staking tokens (Luna) they delegate to themselves plus the Luna bonded to them by external delegators. The weight of a validator determines whether or not they are an active validator and how frequently they can propose a block. Validators with a higher weight will propose more blocks, and in turn make more revenue.
 
-The validator active set is made up of 130 validators, who hold the most Luna. The bottom validator’s stake always forms the barrier for entry into the network. Creating a validator with more stake than the bottom validator is the only way to enter the active set. If validators double-sign, or are frequently offline, they risk their staked Luna (including Luna delegated by users) being "slashed" by the protocol to penalize negligence and misbehavior.
+The active validator set is made up of 130 validators, who hold the most Luna. The bottom validator’s stake always forms the barrier for entry into the network. Creating a validator with more stake than the bottom validator is the only way to enter the active set. If validators double-sign, or are frequently offline, they risk their staked Luna (including Luna delegated by users) being "slashed" by the protocol to penalize negligence and misbehavior.
 
 ### What is a delegator?
 
@@ -76,7 +76,7 @@ terrad tx staking create-validator
 
 Once a validator is created and registered, Luna holders can delegate Luna to them, effectively adding stake to its pool. The total stake of a validator is the total of their self-bonded Luna plus the Luna bonded by external delegators.
 
-**Only the top 130 validators are considered active or  *bonded validators***. If a validator's total stake dips below the top 130, the validator loses its validator privileges and no longer serves as part of the active set, entering into **unbonding mode** and eventually becoming **unbonded**.
+**Only the top 130 validators are considered active or *bonded validators***. If a validator's total stake dips below the top 130, the validator loses its validator privileges and no longer serves as part of the active set, entering into **unbonding mode** and eventually becoming **unbonded**, or inactive.
 
 ## Validator keys and states
 
@@ -123,7 +123,7 @@ If you want to obtain coins for the testnet, you can do so by using [this faucet
 
 ### Is there a minimum amount of Luna that must be staked to be an active (bonded) validator?
 
-There is no minimum. The top 130 validators with the highest total stake (where total stake = self-bonded stake + delegators stake) are the active validators.
+There is no set minimum. The top 130 validators with the highest total stake (where total stake = self-bonded stake + delegated stake) make up the active validator set. The bottom 130th validator sets the barrier to entry for the active set. 
 
 ### How will delegators choose their validators?
 
