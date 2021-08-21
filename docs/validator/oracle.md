@@ -1,6 +1,6 @@
 # Oracle Feeder
 
-Every validator is required to participate in the Oracle process, which involves periodically submitting a vote for the current exchange rate of Luna. Because these ballots are held very frequently, you will need to set up a program (called a feeder) to automatically submit votes. Failure to set one up will lead to downtime and missed votes, which past a certain threshold results in delegated stake getting [slashed](../dev/spec-oracle.md#slashing) and your validator temporarily jailed.
+Every validator is required to participate in the Oracle process, which involves periodically submitting a vote for the current exchange rate of Luna. These ballots are held very frequently. A program called a feeder to automatically submits votes. Failure to set up and maintain a feeder will lead to downtime and missed votes, which results in getting [slashed,](../dev/spec-oracle.md#slashing) and your validator will be temporarily jailed.
 
 ## Implementations
 
