@@ -10,21 +10,21 @@ As mentioned in the protocol, the price stability of TerraSDR's peg to the SDR i
 
 ### Swap Fees
 
-Since Terra's price feed is derived from validator oracles, there is necessarily a delay between the on-chain reported price and the actual realtime price.
+Because Terra's price feed is derived from validator oracles, a delay exists between the price reported on-chain and the real-time price.
 
-This difference is on the order of about 1 minute (our oracle `VotePeriod` is 30 seconds), which is negligible for nearly all practical transactions. However an attacker could take advantage of this lag and extract value out of the network through a front-running attack.
+The delay lasts around one minute (our oracle `VotePeriod` is 30 seconds), which is negligible for nearly all practical transactions. However, front-running attackers could take advantage of this delay and extract value from the network.
 
-To defend against this, the Market module enforces the following swap fees
+To defend against this type of attack, the Market module enforces the following swap fees:
 
-- a [**Tobin Tax**](#tobintax) for spot-converting Terra<>Terra swaps
+- [**Tobin tax**](#tobintax) for spot-converting Terra<>Terra swaps
 
-  To illustrate, assume that the current Tobin Tax for KRT is 0.35%, the oracle reports that the Luna<>SDT exchange rate is 10, and for Luna<>KRT, 10,000. Sending in 1 SDT will get you 0.1 Luna, which is 1000 KRT. After applying the Tobin Tax, you'll end up with 996.5 KRT (0.35% of 1000 is 3.5), a better rate than any retail currency exchange and remittance[^1].
+  For example, assume that the current Tobin tax for KRT is 0.35%, the oracle reports that the Luna<>SDT exchange rate is 10 and the Luna<>KRT exchange rate is 10,000. Swapping 1 SDT would return 0.1 Luna, which is 1,000 KRT. After the Tobin tax is applied, you will have 996.5 KRT (0.35% of 1,000 is 3.5), a better rate than any retail currency exchange and remittance[^1].
 
-[^1]: Though contrary to our initial policy for zero-fee swaps, we have decided to implement the Tobin tax as a necessity to prevent attackers from exploiting the exchange rate latency and profiting at the cost of ordinary users. The rationale behind setting a Tobin tax at this rate is described in depth in this [post](https://medium.com/terra-money/on-swap-fees-the-greedy-and-the-wise-b967f0c8914e).
+[^1]: Initially we maintained a policy for zero-fee swaps. However, to prevent front-running attackers from exploiting the exchange-rate latency and profiting at the expense of users, we implemented the Tobin tax. For more information, see ["On swap fees: the greedy and the wise"](https://medium.com/terra-money/on-swap-fees-the-greedy-and-the-wise-b967f0c8914e).
 
-- a **minimum spread** (set at [0.5%](#minspread)) for Terra<>Luna swaps
+- [**Minimum spread**](#minspread) for Terra<>Luna swaps
 
-  Using the same exchange rates above, swapping 1 SDT will return 995 KRT worth of Luna (0.5% of 1000 is 5, taken as the swap fee). In the other direction, 1 Luna would give you 9.95 SDT (0.5% of 10 = 0.05), or 9,950 KRT (0.5% of 10,000 = 50).
+  The minimum spread is 0.5%. Using the same exchange rates we used above, swapping 1 SDT will return 995 KRT worth of Luna (0.5% of 1000 is 5, which is taken as the swap fee). If you reverse the direction of the swap, 1 Luna would return 9.95 SDT (0.5% of 10 is 0.05), or 9,950 KRT (0.5% of 10,000 = 50).
 
 ### Market Making Algorithm
 
@@ -281,4 +281,4 @@ Minimum spread charged on Terra<>Luna swaps to prevent leaking value from front-
 - type: `Dec`
 - default: 0.35%
 
-A fee added on for swap between Terra currencies (spot-trading).
+An additional fee for swapping between Terra currencies (spot-trading). The rate varies, depending on the denomination. For example, while the rate for most denominations is .35%, the rate for MNT is 2%. To see the rates, [query the oracle](../terrad/oracle.html#tobin-taxes). 
