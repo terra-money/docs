@@ -76,7 +76,7 @@ module.exports = {
         requestAnimationFrame(function() {
           if (location.hash) {
             const element = document.getElementById(location.hash.slice(1))
-      
+
             if (element) {
               element.scrollIntoView()
             }
@@ -198,7 +198,6 @@ module.exports = {
             "validators",
             "stablecoin",
             "governance",
-            "smart-contracts",
           ],
         },
         {
@@ -233,6 +232,7 @@ module.exports = {
         },
         "integrations",
         "ecosystem",
+        "migration-guide",
       ],
     },
   },
