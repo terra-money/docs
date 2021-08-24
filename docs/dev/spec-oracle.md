@@ -40,8 +40,8 @@ Choose `ReferenceTerra` with the highest voter turnout. If the voting power of t
 
 1. Choose `ReferenceTerra`
 
-   - Let `Vote_j = Vote_j_1 ... Vote_j_n` be the `uluna` exchange rate votes for each terra for validator `Val_j` in a given `VotePeriod`. `n` = number of total terra whitelist
-   - For all terra whitelist  `w_1 ... w_n`, choose the index `r` with the highest voter turnout. If the vote turnout has multiple tie winner, we choose in alphabetical order. `w_r` is chosen as the `ReferenceTerra` from which to compute cross exchange rates.
+   - Let `Vote_j = Vote_j_1 ... Vote_j_n` be the `uluna` exchange rate votes for each Terra for validator `Val_j` in a given `VotePeriod`. `n` = the entire quantity in the Terra Whitelist.
+   - For the entire Terra Whitelist,  `w_1 ... w_n`, choose the index `r` with the highest voter turnout. If the vote turnout has multiple tie winner, we choose in alphabetical order. `w_r` is chosen as the `ReferenceTerra` from which to compute cross exchange rates.
 
 2. Compute Oracle Exchange Rate
 
@@ -503,4 +503,4 @@ The number of blocks for slashing tallying.
 - type: `Dec`
 - default: 5%
 
-The ratio of minimum valid oracle votes per slash window to avoid slashing.
+The ratio of minimum valid oracle votes per `SlashWindow` to avoid slashing.

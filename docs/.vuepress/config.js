@@ -151,6 +151,7 @@ module.exports = {
             "/dev/spec-auth",
             "/dev/spec-authz",
             "/dev/spec-bank",
+            "/dev/spec-capability",
             "/dev/spec-distribution",
             "/dev/spec-feegrant",
             "/dev/spec-governance",
@@ -197,7 +198,6 @@ module.exports = {
             "validators",
             "stablecoin",
             "governance",
-            "smart-contracts",
           ],
         },
         {
@@ -232,6 +232,7 @@ module.exports = {
         },
         "integrations",
         "ecosystem",
+        "migration-guide",
       ],
     },
   },
