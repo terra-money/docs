@@ -8,7 +8,7 @@ Columbus-5 is the newest iteration of the Terra Mainnet. Use these guides to upg
 - [Cosmwasm Migration Guide](https://github.com/CosmWasm/cosmwasm/blob/main/MIGRATING.md)
 - [Wallet Migration Guide](https://github.com/terra-money/mainnet/wiki/Columbus-5-Wallet-Migration-Guide)
 - [Contract Migration Guide](https://github.com/terra-money/mainnet/wiki/Columbus-5-Contract-Migration-Guide)
-- [Bombay-9 Testnet](https://github.com/terra-money/testnet/tree/master/bombay-9)
+- [Bombay-10 Testnet](https://github.com/terra-money/testnet/tree/master/bombay-10)
 
 ## Columbus-5
 
@@ -28,10 +28,10 @@ go: go version go1.16.5 darwin/amd64
 
 - **Note:** For JavaScript developers: `npm i -S @terra-money/terra.js@^2`
 
-### Bombay-9 Testnet
+### Bombay-10 Testnet
 
-We will launch the Bombay-9 testnet network and retire Bombay-0008.
-For detailed instructions, see [Bombay-9 testnet](https://github.com/terra-money/testnet/tree/master/bombay-9).
+We will launch the Bombay-10 testnet network and retire Bombay-0008.
+For detailed instructions, see [Bombay-10 testnet](https://github.com/terra-money/testnet/tree/master/bombay-10).
 
 ### Major Updates
 
@@ -51,14 +51,15 @@ For detailed instructions, see [Bombay-9 testnet](https://github.com/terra-money
 Expected Timeline:
 
 >Thu Sep 09 2021 08:00:00 GMT+0000 (UTC)  
-Thu Sep 09 2021 00:00:00 GMT-0800 (PST)  
+Thu Sep 09 2021 01:00:00 GMT-0700 (PDT)  
 Thu Sep 09 2021 17:00:00 GMT+0900 (KST)
 
-**Bombay-9:** Tequila-4 will be forked at block height `#5,335,000`:
+**Bombay-10:** Tequila-4 will be forked at block height `#5,335,000`:
 
->Fri Aug 13 08:00:00 GMT+0000 (UTC)  
-Fri Aug 13 00:00:00 GMT-0800 (PST)  
-Fri Aug 13 17:00:00 GMT+0900 (KST)
+2021-08-20T06:00:40Z (UTC)
+>Fri Aug 20 06:00:40 GMT+0000 (UTC)  
+Fri Aug 19 23:00:40 GMT-0700 (PDT)  
+Fri Aug 20 15:00:40 GMT+0900 (KST)
 
 ### Release Notes
 
