@@ -4,13 +4,13 @@
 
 ### Proposals
 
-Once created, you can now query information of the proposal:
+Once created, the information of a single proposal can be queried:
 
 ```bash
 terrad query gov proposal <proposal_id>
 ```
 
-Or query all available proposals:
+Or you can query all available proposals:
 
 ```bash
 terrad query gov proposals
@@ -68,7 +68,7 @@ To check the current governance parameters run:
 terrad query gov params
 ```
 
-The reported parameters will be of the following format:
+The reported parameters will be in the following format:
 
 ```yaml
 voting_params:
@@ -112,7 +112,7 @@ terrad tx gov submit-proposal \
 
 #### Parameter Change Proposals
 
-To submit a parameter change proposal, it is highly recommended to pass in the proposal as a JSON file as its
+ We highly recommended that you submit a parameter change proposal as a JSON file as its
 contents are less friendly to command-line input.
 
 ```bash
@@ -144,14 +144,12 @@ Where `proposal.json` is a file with the following schema:
 }
 ```
 
-::: warning
-Currently parameter changes are _evaluated_ but not _validated_, so it is very important
-that any `value` change is valid (ie. correct type and within bounds) for its
-respective parameter, eg. `MaxValidators` should be an integer and not a decimal.
+::: warning Note:
+Parameter changes are _evaluated_ but not _validated_. Proposers must ensure any `value` change is valid (of the correct type and within the bounds) for its respective parameter.
 
-Proper vetting of a parameter change proposal should prevent this from happening
-(no deposits should occur during the governance process), but it should be noted
-regardless.
+**Example:** `MaxValidators` should be an integer and not a decimal.
+
+Proper vetting of a parameter change proposal can prevent this from happening during the governance process.
 :::
 
 #### Community Pool Spend Proposal
@@ -192,7 +190,7 @@ Where `proposal.json` contains the following:
 
 Tax Rate and Reward Weight are important monetary policy levers handled by the [`Treasury`](../dev/spec-treasury.md) module to modulate miner incentives toward stable demand and steady growth. Usually, they are automatically calibrated once per epoch by the protocol. However, they can be changed at any moment if an update proposal gets passed with enough supporters.
 
-To submit Tax Rate or Reward Weight update proposal, you must provide a proposal file as its contents are less friendly to CLI input:
+To submit a Tax Rate or Reward Weight update proposal, you must provide a proposal file as its contents are less friendly to CLI input:
 
 For Tax Rate:
 
@@ -252,7 +250,7 @@ The `SoftwareUpgrade` is **currently not supported** as it has not yet been impl
 
 ### Increase Deposit
 
-In order for a proposal to be broadcasted to the network, the amount deposited must be above a `minDeposit` value (initial value: `512000000uluna`). If the proposal you previously created didn't meet this requirement, you can still increase the total amount deposited to activate it. Once the minimum deposit is reached, the proposal enters voting period:
+In order for a proposal to be broadcasted to the network, the amount deposited must be above a `minDeposit` value (initial value: `512000000uluna`). If the proposal you previously created didn't meet this requirement, you can still increase the total amount deposited to activate it. Once the minimum deposit is reached, the proposal enters the voting period:
 
 ```bash
 terrad tx gov deposit <proposal_id> "10000000luluna" \
@@ -260,8 +258,8 @@ terrad tx gov deposit <proposal_id> "10000000luluna" \
     --chain-id=<chain_id>
 ```
 
-::: warning
-Proposals that don't meet this requirement will be deleted after `MaxDepositPeriod` is reached.
+::: warning Note:
+Proposals that fail to achieve the `minDeposit` will be deleted after `MaxDepositPeriod` is reached.
 :::
 
 ### Vote on a Proposal
