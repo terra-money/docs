@@ -38,11 +38,11 @@ You may notice that your voting power is less than it used to be. That's because
 
 The default number of files Linux can open (per-process) is `1024`. `terrad` is known to open more than this amount, causing the process to crash. You can fix this by doing the following:
 
-1. Increases the number of open files allowed by running `ulimit -n 4096`.  
+1. Increase the number of open files allowed by running `ulimit -n 4096`.  
 
-1.  Restart the process with `terrad start`.
+2.  Restart the process with `terrad start`.
 
-  If you are using `systemd` or another process manager to launch `terrad` this may require some configuration at that level. A sample `systemd` file to fix this issue is below:
+  If you are using `systemd` or another process manager to launch `terrad`, you may need to configure them. A sample `systemd` file used to fix this issue is below:
 
   ```systemd
   # /etc/systemd/system/terrad.service
@@ -65,7 +65,7 @@ The default number of files Linux can open (per-process) is `1024`. `terrad` is 
 
 ## Oracle voting error
 
-You receive an error message by the [Terra Oracle feeder](https://github.com/terra-money/oracle-feeder):
+You may receive an error message by the [Terra Oracle feeder](https://github.com/terra-money/oracle-feeder):
 
     broadcast error: code: 3, raw_log: validator does not exist: terravaloperxxx
 
@@ -75,7 +75,7 @@ This message can occur for the following reasons:
 
 There are a few reasons why a validator is not active:
 
-- The validator is jailed. Unjail the validator:
+- The validator is jailed. To solve this, `unjail` the validator:
 
     terrad tx slashing unjail <terra> --chain-id=<chain_id> --from=<from>
 
@@ -100,6 +100,6 @@ The LCD the voter is connecting to may be running from a different network than 
 - https://tequila-lcd.terra.dev for the Tequila Testnet.
 - https://bombay-lcd.terra.dev for the Bombay Testnet.
 
-Be sure to specify the LCD for the same network that your node is connecting to.
+Be sure to specify the LCD for the same network your node is connecting to.
 
 If you run a [local LCD](https://docs.terra.money/terrad/lcd.html) (for example localhost:1317), be sure that your LCD is connecting to the same node.

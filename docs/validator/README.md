@@ -4,15 +4,15 @@ The Terra Core is powered by the Tendermint consensus. Validators run full nodes
 
 Validators and their delegators earn the following fees:
 
-- **Compute fees**: To prevent spamming, validators set minimum gas fees for transactions included in their mempool. Fees are then disbursed proportional to a validator's stake at the end of every block.
+- **Compute fees**: To prevent spamming, validators set minimum gas fees for transactions included in their mempool. Fees are then dispersed proportional to a validator's stake at the end of every block.
 
-- **Stability fees**: To stabilize the value of Luna, the protocol charges a small percentage transaction fee ranging from 0.1% to 1% on every Terra transaction, capped at 1 TerraSDR. Fees are then disbursed proportional to a validator's stake at the end of every block.
+- **Stability fees**: To stabilize the value of Luna, the protocol charges a small transaction fee ranging from 0.1% to 1% on every Terra transaction, capped at 1 TerraSDR. Fees are then dispersed proportional to a validator's stake at the end of every block.
 
 - **Swap fees**: A small spread is charged on atomic swap transactions between Luna and any Terra currency, which is then used to reward validators that faithfully report oracle exchange rates.
 
 Validators can set commissions on the fees they receive as additional incentive.
 
-If validators double sign, are frequently offline, or do not participate in governance, their staked Luna (including Luna of users that delegated to them) can be slashed. The penalty depends on the severity of the violation.
+If validators double sign, are frequently offline, or do not participate in governance, their staked Luna (including Luna of users that delegated to them) can be slashed. Penalties can vary depending on the severity of the violation.
 
 ## Hardware
 

@@ -80,7 +80,7 @@ terrad keys show <feeder>
 
 ### Delegate feeder consent
 
-The account address used to submit oracle voting transactions is called a `feeder`. When you set up your oracle voting process for the first time, you must send delegate the feeder permission to an account.
+The account address used to submit oracle voting transactions is called a `feeder`. When you set up your oracle voting process for the first time, you must delegate the feeder permission to an account.
 
 ```bash
 terrad tx oracle set-feeder <feeder-address> --from=<validator>

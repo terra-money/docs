@@ -4,7 +4,7 @@ Each validator candidate is encouraged to run its operations independently. Dive
 
 ## HSM Key Management
 
-Key management is mission critical for validators. If an attacker gains access to a Validator's private key, it puts the validator's entire delegated stake at risk. Hardware security modules are an important strategy for mitigating this risk.
+Key management is mission critical for validators. If an attacker gains access to a validator's private key, it puts the validator's entire delegated stake at risk. Hardware security modules are an important strategy for mitigating this risk.
 
 The suggested method of key management is described by Iqulusion here: https://github.com/iqlusioninc/tmkms
 
