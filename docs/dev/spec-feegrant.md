@@ -80,6 +80,8 @@ To restrict the grantee when values for `spend_limit` and `expiration` are blank
 
 `PeriodicAllowance` is a repeating fee allowance for a specified period and for a specified maximum number of tokens that can spent within that period.
 
+::: details `PeriodicAllowance` code
+
 ```
 // PeriodicAllowance extends Allowance to allow for both a maximum cap,
 // as well as a limit per time period.
@@ -128,6 +130,7 @@ message Grant {
   // grantee is the address of the user being granted an allowance of another user's funds.
   string              grantee   = 2;
 ```
+:::
 
 - `basic`: The instance of `BasicAllowance`.  It is optional. If empty, the grant will have not have a `spend_limit` or `expiration`.
 
@@ -139,9 +142,11 @@ message Grant {
 
 - `period_reset`: The time when the period ends and a new period begins.
 
-### Fee allowance flag
+### Fee account flag
 
-To run transactions that use fee grant from the CLI, specify the the `--fee-account=` flag followed by the granter's account address. When this flag is set, `clientCtx` appends the granter's account address.
+To run transactions that use fee grant from the CLI, specify the `FeeAccount` flag followed by the granter's account address. When this flag is set, `clientCtx` appends the granter's account address.
+
+::: details `FeeAccount` code
 
 ```
 if clientCtx.FeeGranter == nil || flagSet.Changed(flags.FlagFeeAccount) {
@@ -674,11 +679,12 @@ message Fee {
   string granter = 4;
 }
 ```
+:::
 
 The following example shows a CLI command with the `--fee-account` flag:
 
 ```
-./simd tx gov submit-proposal --title="Test Proposal" --description="My awesome proposal" --type="Text" --from validator-key --fee-account=terra1fmcjjt6yc9wqup2r06urnrd928jhrde6gcld6n --chain-id=testnet --fees="10stake"
+./terrad tx gov submit-proposal --title="Test Proposal" --description="My awesome proposal" --type="Text" --from validator-key --fee-account=terra1fmcjjt6yc9wqup2r06urnrd928jhrde6gcld6n --chain-id=testnet --fees="10uluna"
 ```
 
 ### Granted fee deductions
@@ -738,6 +744,8 @@ message MsgGrantAllowance {
 
 ### MsgRevokeAllowance
 
+A fee allowance grant will be revokeed with the MsgRevokeAllowance message.
+
 ```proto
 // MsgRevokeAllowance removes any existing Allowance from Granter to Grantee.
 message MsgRevokeAllowance {
@@ -748,42 +756,3 @@ message MsgRevokeAllowance {
   string grantee = 2;
 }
 ```
-
-::: details JSON Example
-
-```json
-```
-
-:::
-
-## Events
-
-The fee grant module emits the following events:
-
-### Msg Server
-
-#### MsgGrantAllowance
-
-| Type     | Attribute Key | Attribute Value    |
-| -------- | ------------- | ------------------ |
-| message  | action        | set_feegrant       |
-| message  | granter       | {granterAddress}   |
-| message  | grantee       | {granteeAddress}   |
-
-#### MsgRevokeAllowance
-
-| Type     | Attribute Key | Attribute Value    |
-| -------- | ------------- | ------------------ |
-| message  | action        | revoke_feegrant    |
-| message  | granter       | {granterAddress}   |
-| message  | grantee       | {granteeAddress}   |
-
-#### Exec fee allowance
-
-| Type     | Attribute Key | Attribute Value    |
-| -------- | ------------- | ------------------ |
-| message  | action        | use_feegrant       |
-| message  | granter       | {granterAddress}   |
-| message  | grantee       | {granteeAddress}   |
-
-:::
