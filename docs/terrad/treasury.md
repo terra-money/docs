@@ -12,7 +12,7 @@ terrad query treasury tax-rate
 
 ### Tax Cap
 
-Stability fees are capped at some fixed amount of SDT to avoid penalizing large transactions. To get the current tax cap denominated in a given denomination (micro-units), run:
+Stability fees are capped at a fixed amount of SDT to avoid penalizing large transactions. To get the current tax cap denominated in a given denomination (micro-units), run:
 
 ```bash
 terrad query treasury tax-cap <denom>
@@ -34,6 +34,10 @@ The Reward Weight is the portion of seigniorage that is designated as ballot rew
 terrad query treasury reward-weight
 ```
 
+::: warning Note:
+As of Columbus-5, the `reward-weight` is set to `1`.
+:::
+
 ### Seigniorage Proceeds
 
 The treasury measures the amount of Terra seigniorage accumulated over epochs, denominated in units of `uluna`. To query the seigniorage proceeds, run:
@@ -42,15 +46,19 @@ The treasury measures the amount of Terra seigniorage accumulated over epochs, d
 terrad query treasury seigniorage-proceeds
 ```
 
+::: warning Note:
+As of Columbus-5, all seigniorage is burned.
+:::
+
 ### Parameters
 
-Parameters define high-level settings for the Treasury, described [here](../dev/spec-treasury.md#parameters). You can get the current values by using:
+Parameters define the high-level settings for the Treasury, described [here](../dev/spec-treasury.md#parameters). You can get the current values by using:
 
 ```bash
 terrad query treasury params
 ```
 
-The reported parameters will be of the following format:
+The reported parameters will be in the following format:
 
 ```yaml
 tax_policy:
