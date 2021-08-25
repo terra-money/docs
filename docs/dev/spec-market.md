@@ -4,7 +4,7 @@ The Market module contains the logic for atomic swaps between Terra currencies (
 
 The ability to guarantee an available, liquid market with fair exchange rates between different Terra denominations and between Terra and Luna is critical for user-adoption and price-stability.
 
-As mentioned in the protocol, the price stability of TerraSDR's peg to the SDR is achieved through Terra<>Luna arbitrage activity against the protocol's algorithmic market-maker which expands and contracts Terra supply to maintain the peg.
+The price stability of TerraSDR's peg to the SDR is achieved through Terra<>Luna arbitrage activity against the protocol's algorithmic market-maker which expands and contracts Terra supply to maintain the peg.
 
 ## Concepts
 
@@ -34,7 +34,7 @@ Terra uses a Constant Product market-making algorithm to ensure liquidity for Te
 
 With Constant Product, we define a value $CP$ set to the size of the Terra pool multiplied by a set **fiat value of Luna**, and ensure our market-maker maintains it as invariant during any swaps through adjusting the spread.
 
-::: warning NOTE
+::: warning Note:
 Our implementation of Constant Product diverges from Uniswap's, as we use the fiat value of Luna instead of the size of the Luna pool. This nuance means changes in Luna's price don't affect the product, but rather the size of the Luna pool.
 :::
 
@@ -48,34 +48,34 @@ CP = 1000000 SDR
 (1100 SDT) * (909.0909... SDR of Luna) = 1000000 SDR
 ```
 
-Of course, this specific example was meant to be more illustrative than realistic -- with much larger liquidity pools used in production, the magnitude of the spread is diminished.
+This specific example is meant to be more illustrative than realistic. With much larger liquidity pools used in production, the magnitude of the spread is diminished.
 
 The primary advantage of Constant-Product over Columbus-2 is that it offers “unbounded” liquidity, in the sense that swaps of arbitrary size can be serviced (albeit at prices that become increasingly unfavorable as trade size increases).
 
 ### Virtual Liquidity Pools
 
-The market starts out with two liquidity pools of equal sizes, one representing Terra (all denominations) and another representing Luna, initialiazed by the parameter [`BasePool`](#basepool), which defines the initial size, $Pool_{Base}$, of the Terra and Luna liquidity pools.
+The market starts out with two liquidity pools of equal sizes, one representing Terra (all denominations) and another representing Luna, initialized by the parameter [`BasePool`](#basepool), which defines the initial size, $Pool_{Base}$, of the Terra and Luna liquidity pools.
 
-In practice, rather than keeping track of the sizes of the two pools, the information is encoded in a number $\delta$, which the blockchain stores as `TerraPoolDelta`, representing the deviation of the Terra pool from its base size in units µSDR.
+Rather than keeping track of the sizes of the two pools, this information is encoded in a number $\delta$, which the blockchain stores as `TerraPoolDelta`. This represents the deviation of the Terra pool from its base size in units µSDR.
 
 The size of the Terra and Luna liquidity pools can be generated from $\delta$ using the following formulas:
 
 $$Pool_{Terra} = Pool_{Base} + \delta$$
 $$Pool_{Luna} = ({Pool_{Base}})^2 / Pool_{Terra}$$
 
-At the [end of each block](#end-block), the market module will attempt to "replenish" the pools by decreasing the magnitude of $\delta$ between the Terra and Luna pools. The rate at which the pools will be replenished toward equilibrium is set by the parameter [`PoolRecoveryPeriod`](#poolrecoveryperiod), with lower periods meaning lower sensitivity to trades, meaning previous trades are more quickly forgotten and the market is able to offer more liquidity.
+At the [end of each block](#end-block), the market module attempts to "replenish" the pools by decreasing the magnitude of $\delta$ between the Terra and Luna pools. The rate at which the pools will be replenished toward equilibrium is set by the parameter [`PoolRecoveryPeriod`](#poolrecoveryperiod). Lower periods mean lower sensitivity to trades: previous trades are more quickly forgotten and the market is able to offer more liquidity.
 
 This mechanism ensures liquidity and acts as a sort of low-pass filter, allowing for the spread fee (which is a function of `TerraPoolDelta`) to drop back down when there is a change in demand, hence necessary change in supply which needs to be absorbed.
 
 ### Swap Procedure
 
-1. Market module receives [`MsgSwap`](#msgswap) message and performs basic validation checks
+1. The Market module receives [`MsgSwap`](#msgswap) message and performs basic validation checks.
 
-2. Calculate exchange rate $ask$ and $spread$ using [`k.ComputeSwap()`](#k-computeswap)
+2. Calculate exchange rate $ask$ and $spread$ using [`k.ComputeSwap()`](#k-computeswap).
 
-3. Update `TerraPoolDelta` with [`k.ApplySwapToPool()`](#k-applyswaptopool)
+3. Update `TerraPoolDelta` with [`k.ApplySwapToPool()`](#k-applyswaptopool).
 
-4. Transfer `OfferCoin` from account to module using `supply.SendCoinsFromAccountToModule()`
+4. Transfer `OfferCoin` from account to module using `supply.SendCoinsFromAccountToModule()`.
 
 5. Burn offered coins, with `supply.BurnCoins()`.
 
@@ -83,9 +83,9 @@ This mechanism ensures liquidity and acts as a sort of low-pass filter, allowing
 
 7. Mint $ask - fee$ coins of `AskDenom` with `supply.MintCoins()`. This implicitly applies the spread fee as the $fee$ coins are burned.
 
-8. Send newly minted coins to trader with `supply.SendCoinsFromModuleToAccount()`
+8. Send newly minted coins to trader with `supply.SendCoinsFromModuleToAccount()`.
 
-9. Emit [`swap`](#swap) event to publicize swap and record spread fee
+9. Emit [`swap`](#swap) event to publicize the swap and record the spread fee.
 
 If the trader's `Account` has insufficient balance to execute the swap, the swap transaction fails.
 
@@ -93,7 +93,11 @@ Upon successful completion of Terra<>Luna swaps, a portion of the coins to be cr
 
 ### Seigniorage
 
-For Luna swaps into Terra, the Luna that recaptured by the protocol is burned and is called seigniorage -- the value generated from issuing new Terra. At the end of the epoch, the total seigniorage for the epoch will be calculated and reintroduced into the economy as ballot rewards for the exchange rate oracle and to the community pool by the Treasury module, described more fully [here](./spec-treasury.md#ksettleseigniorage).
+For Luna swaps into Terra, Luna recaptured by the protocol is burned and is called seigniorage -- the value generated from issuing new Terra. At the end of an epoch, the total seigniorage for the epoch will be calculated and reintroduced into the economy as ballot rewards for the exchange rate oracle and to the community pool by the Treasury module, described more fully [here](./spec-treasury.md#ksettleseigniorage).
+
+::: warning Note:
+As of Columbus-5, all seigniorage is burned, and the community pool is no longer funded. Swap fees are used as ballot rewards for the exchange rate oracle.
+:::
 
 ## State
 
@@ -101,13 +105,13 @@ For Luna swaps into Terra, the Luna that recaptured by the protocol is burned an
 
 - type: `sdk.Dec`
 
-Represents the difference between size of current Terra pool and its original base size, valued in µSDR.
+ This represents the difference between the current Terra pool size and its original base size, valued in µSDR.
 
 ## Message Types
 
 ### MsgSwap
 
-A `MsgSwap` transaction denotes the `Trader`'s intent to swap their balance of `OfferCoin` for new denomination `AskDenom`, for both Terra<>Terra and Terra<>Luna swaps.
+A `MsgSwap` transaction denotes the `Trader`'s intent to swap their balance of `OfferCoin` for a new denomination `AskDenom`. This is used for both Terra<>Terra and Terra<>Luna swaps.
 
 ```go
 // MsgSwap contains a swap request
@@ -117,24 +121,6 @@ type MsgSwap struct {
 	AskDenom  string         `json:"ask_denom" yaml:"ask_denom"`   // Denom of the coin to swap to
 }
 ```
-
-::: details JSON Example
-
-```json
-{
-  "type": "market/MsgSwap",
-  "value": {
-    "trader": "terra...",
-    "offer_coin": {
-      "denom": "umnt",
-      "amount": "999"
-    },
-    "ask_denom": "ukrw"
-  }
-}
-```
-
-:::
 
 ::: details Events
 
@@ -153,7 +139,7 @@ type MsgSwap struct {
 
 ### MsgSwapSend
 
-A `MsgSendSwap` first performs a swap of `OfferCoin` into `AskDenom` and the sends the resulting coins to `ToAddress`. Tax is charged normally, as if the sender were issuing a `MsgSend` with the resutling coins of the swap.
+A `MsgSendSwap` first performs a swap of `OfferCoin` into `AskDenom` and then sends the resulting coins to `ToAddress`. Tax is charged normally, as if the sender were issuing a `MsgSend` with the resulting coins of the swap.
 
 ```go
 type MsgSwapSend struct {
@@ -163,25 +149,6 @@ type MsgSwapSend struct {
 	AskDenom    string         `json:"ask_denom" yaml:"ask_denom"`       // Denom of the coin to swap to
 }
 ```
-
-::: details JSON Example
-
-```json
-{
-  "type": "market/MsgSwapSend",
-  "value": {
-    "from_address": "terra...",
-    "to_address": "terra...",
-    "offer_coin": {
-      "denom": "umnt",
-      "amount": "999"
-    },
-    "ask_denom": "ukrw"
-  }
-}
-```
-
-:::
 
 ::: details Events
 
@@ -209,13 +176,13 @@ func (k Keeper) ComputeSwap(ctx sdk.Context, offerCoin sdk.Coin, askDenom string
 
 This function detects the swap type from the offer and ask denominations and returns:
 
-1. The amount of asked coins that should be returned for a given `offerCoin`. This is achieved by first spot-converting `offerCoin` to µSDR and then from µSDR to the desired `askDenom` with the proper exchange rate reported from by the Oracle.
+1. The amount of asked coins that should be returned for a given `offerCoin`. This is achieved by first spot-converting `offerCoin` to µSDR and then from µSDR to the desired `askDenom` with the proper exchange rate reported by the Oracle.
 
-2. The spread % that should be taken as a swap fee given the swap type. Terra<>Terra swaps simply have the Tobin Tax spread fee. Terra<>Luna spreads are the greater of `MinSpread` and spread from Constant Product pricing.
+2. The spread % that should be taken as a swap fee given the swap type. Terra<>Terra swaps only have the Tobin Tax spread fee. Terra<>Luna swaps use the `MinSpread` or the Constant Product pricing spread, whichever is greater.
 
 If the `offerCoin`'s denomination is the same as `askDenom`, this will raise `ErrRecursiveSwap`.
 
-::: warning NOTE
+::: warning Note:
 `k.ComputeSwap()` uses `k.ComputeInternalSwap()` internally, which just contains the logic for calculating proper ask coins to exchange, without the Constant Product spread.
 :::
 
@@ -238,9 +205,9 @@ For Terra<>Luna swaps, the relative sizes of the pools will be different after t
 
 ### End-Block
 
-Market module calls `k.ReplenishPools()` at the end of every block, which decreases the value of `TerraPoolDelta` (which measures the difference between Terra and Luna pools) depending on `PoolRecoveryPeriod`, $pr$.
+The Market module calls `k.ReplenishPools()` at the end of every block, which decreases the value of `TerraPoolDelta` (the difference between Terra and Luna pools) depending on `PoolRecoveryPeriod`, $pr$.
 
-This allows the network to sharply increase spread fees in during acute price fluctuations, and automatically return the spread to normal after some time when the price change is long term.
+This allows the network to sharply increase spread fees during acute price fluctuations. After some time, the spread is automatically returned to normal for long term price changes.
 
 ## Parameters
 
@@ -260,25 +227,25 @@ type Params struct {
 - type: `int64`
 - default: `BlocksPerDay`
 
-Number of blocks it takes for the Terra & Luna pools to naturally "reset" toward equilibrium ($\delta \to 0$) through automated pool replenishing.
+The number of blocks it takes for the Terra & Luna pools to naturally "reset" toward equilibrium ($\delta \to 0$) through automated pool replenishing.
 
 ### BasePool
 
 - type: `Dec`
 - default: 250,000 SDR (= 250,000,000,000 µSDR)
 
-Initial starting size of both Terra and Luna liquidity pools.
+The initial starting size of both Terra and Luna liquidity pools.
 
 ### MinSpread
 
 - type: `Dec`
 - default: 0.5%
 
-Minimum spread charged on Terra<>Luna swaps to prevent leaking value from front-running attacks.
+The minimum spread charged on Terra<>Luna swaps to prevent leaking value from front-running attacks.
 
 ### TobinTax
 
 - type: `Dec`
 - default: 0.35%
 
-An additional fee for swapping between Terra currencies (spot-trading). The rate varies, depending on the denomination. For example, while the rate for most denominations is .35%, the rate for MNT is 2%. To see the rates, [query the oracle](../terrad/oracle.html#tobin-taxes). 
+An additional fee for swapping between Terra currencies (spot-trading). The rate varies, depending on the denomination. For example, while the rate for most denominations is .35%, the rate for MNT is 2%. To see the rates, [query the oracle](../terrad/oracle.html#tobin-taxes).

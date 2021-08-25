@@ -44,7 +44,7 @@ terrad tx market swap \
 - `offer_coin`: coin to be traded, e.g. `1000ukrw`
 - `ask_denom`: denomination of the coin to be swapped into.
 
-For Terra<>Luna swaps, Constant-Product spread pricing model is enforced to limit consensus-related attack vectors. Terra<>Terra swaps have a constant Tobin Tax.
+For Terra<>Luna swaps, the Constant-Product spread pricing model is enforced to limit consensus-related attack vectors. Terra<>Terra swaps have a constant Tobin Tax.
 
 ### Swap Send
 
