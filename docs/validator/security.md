@@ -48,4 +48,4 @@ By default, uppercase environment variables with the following prefixes will rep
 - `TM` \(for Tendermint flags\)
 - `BC` \(for democli or basecli flags\)
 
-**Example:** The environment variable `TE_CHAIN_ID` will map to the command line flag `--chain-id`. While explicit command-line flags will take precedence over environment variables, environment variables will take precedence over any of your configuration files. For this reason, it's imperative that you lock down your environment so that any critical parameters are defined as flags on the CLI, or that you prevent modification of any environment variables.
+**Example:** The environment variable `TE_CHAIN_ID` will map to the command line flag `--chain-id`. While explicit command-line flags will take precedence over environment variables, environment variables will take precedence over any of your configuration files. For this reason, it is imperative that you lock down your environment so that any critical parameters are defined as flags on the CLI, or that you prevent modification of any environment variables.

@@ -66,11 +66,11 @@ The following processes get executed during each block transition:
    - Distribute rewards for the previous block
 
 2. Slashing
-   - Checking of infraction evidence or downtime of validators for double-signing and downtime penalites.
+   - Checking of infraction evidence or downtime of validators for double-signing and downtime penalties.
 
 ### Process Messages
 
-3. Messages are routed to the modules that are responsible for working them and then procesed by the appropriate Message Handlers.
+3. Messages are routed to the modules that are responsible for working them and then processed by the appropriate Message Handlers.
 
 ### End Block
 
@@ -110,7 +110,7 @@ There are two types of tokens that can be held by accounts and wallets in the Te
 
 2. **Luna**, the native staking asset that entitles the staking delegator to mining rewards (including exchange rate ballot rewards) if bonded to an active validator. Luna is also is necessary for making governance proposals and collateralizing the Terra economy.
 
-Both Terra (of all denominations) and Luna tokens are divisible up to microunits ($\times 10^{-6}$). The micro-unit is considered the atomic unit of tokens, and cannot be further divided. Below is a list of several denominations that are recognized by the protocol at the time of writing:
+Both Terra (of all denominations) and Luna tokens are divisible up to micro-units ($\times 10^{-6}$). The micro-unit is considered the atomic unit of tokens, and cannot be further divided. Below is a list of several denominations that are recognized by the protocol at the time of writing:
 
 | Denomination | Micro-Unit | Code    | Value         |
 | :----------- | :--------- | :------ | :------------ |
