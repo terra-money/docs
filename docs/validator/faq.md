@@ -28,7 +28,7 @@ The active validator set is made up of 130 validators, who hold the most Luna. T
 
 Delegators are Luna holders who want to receive staking rewards without the responsibility of running a validator. Through Terra Station, a user can delegate Luna to a validator and in exchange receive a part of a validator's revenue. For more detail on how revenue is distributed, see [What are the incentives to stake?](#what-are-the-incentives-to-stake) and [What is a validator's commission?](#what-is-a-validator's-commission).
 
-Delegators share the benefits and rewards of staking with their Validator. If a Validator is successful, its delegators will consistently share in the rewards structure. If a Validator is slashed, the delegator’s stake will be also be slashed. This is why delegators should perform due-diligence on validators before delegating. Delegators can also diversify by spreading their stake over multiple validators.
+Delegators share the benefits and rewards of staking with their Validator. If a Validator is successful, its delegators will consistently share in the rewards structure. If a Validator is slashed, the delegator’s stake will also be slashed. This is why delegators should perform due-diligence on validators before delegating. Delegators can also diversify by spreading their stake over multiple validators.
 
 Delegators play a critical role in the system, as they are responsible for choosing validators. Being a delegator is not a passive role. Delegators should remain vigilant, actively monitor the actions of their validators, and re-delegate whenever they feel their current validator does not meet their needs.
 
@@ -135,7 +135,7 @@ Delegators are free to choose validators according to their own criteria. This m
 
 - **Commission rate:** The commission applied to rewards by a validator before being distributed to its delegators.
 
-- **Track record:** Delegators can look at the track record of a validators they plan to delegate to. This includes seniority, past votes on proposals, historical average uptime, and how often the node was compromised.
+- **Track record:** Delegators can look at the track record of a validator they plan to delegate to. This includes seniority, past votes on proposals, historical average uptime, and how often the node was compromised.
 
 Validators can also provide a website address to complete their resume. Validators need to build a good reputation to attract delegators. It's good practice for validators to have their setup audited by third parties. Please note that the Terra team will not approve or conduct any audits.
 
@@ -153,7 +153,7 @@ A validator must:
 
 - **Actively participate in price discovery and stabilization:** Validators are highly incentivized to submit honest and correct votes of the real market prices of Luna. Validators are also encouraged to engage in arbitrage swaps that stabilize the prices of Terra stablecoins.
 
-- **Provide oversight and feedback on the correct deployment of community pool funds:** the Terra protocol includes a governance system for proposals to facilitate the adoption of its currencies. Validators are expected to hold budget executors to provide transparency and to use funds efficiently.
+- **Provide oversight and feedback on the correct deployment of community pool funds:** The Terra protocol includes a governance system for proposals to facilitate the adoption of its currencies. Validators are expected to hold budget executors to provide transparency and to use funds efficiently.
 
 - **Be active members of the community:** Validators should always be up-to-date with the current state of the ecosystem so that they can easily adapt to any change.
 
@@ -185,7 +185,7 @@ To understand more about the proposer selection process in Tendermint BFT consen
 
 Each member of a validator's staking pool earns different types of revenue:
 
-- **Compute fees (gas)**: To prevent spamming, validators can set minimum gas fees for transactions to be included in their mempool. At the end of every block, compute fees are disbursed to the participating validators proportioanl to their stake.
+- **Compute fees (gas)**: To prevent spamming, validators can set minimum gas fees for transactions to be included in their mempool. At the end of every block, compute fees are disbursed to the participating validators proportional to their stake.
 
 - **Stability fees**: To stabilize the value of Luna, the protocol charges a small fee ranging from 0.1% to 1% on every Terra transaction, capped at 1 TerraSDR. This is paid in any Terra currency, and is disbursed proportional to each validators' stake at the end of every block in TerraSDR.
 
@@ -223,7 +223,7 @@ Fees are distributed to validators in the same way as commission: proportionally
 
 When a validator is selected to propose the next block, they must include at least two thirds of the precommits for the previous block in the form of validator signatures. Proposers who include more than two thirds receive a bonus proportional to the amount of additional precomits. This reward ranges from 1% if the proposer includes two thirds of the precommits to 5% if the proposer includes 100% of the precommits. If a proposer waits too long however, other validators may timeout and move on to the next proposer. This is why validators have to find a balance between wait time to get the most signatures and the risk of losing out on proposing the next block. This feature aims to incentivize non-empty block proposals, better networking between validators, and to mitigate censorship.
 
-**Example:** There are 10 validators with equal stake. Each has a 1% commission and 20% self-bonded Luna. If a successful block collects 1005 SDT in fees, and the proposer includes 100% of the signatures in their block, they will recieve the full 5% bonus.
+**Example:** There are 10 validators with equal stake. Each has a 1% commission and 20% self-bonded Luna. If a successful block collects 1005 SDT in fees, and the proposer includes 100% of the signatures in their block, they will receive the full 5% bonus.
 
 We can use a simple equation to find the reward $R$ for each validator:
 
@@ -255,12 +255,12 @@ If a validator misbehaves, their bonded stake along with their delegators' stake
 
 - **Non-voting:** If a validator does not vote on a proposal, its stake will receive a minor slash.
 
-:::warning Note: Even if a validator does not intentionally misbehave, it can still be slashed if its node crashes, looses connectivity, gets DDoSed, or if its private key is compromised.
+:::warning Note: Even if a validator does not intentionally misbehave, it can still be slashed if its node crashes, loses connectivity, gets DDoSed, or if its private key is compromised.
 :::
 
-### Are vaidators required to self-bond Luna?
+### Are validators required to self-bond Luna?
 
-No, but self-bonding has benefits. A validator's total stake is made up of their self-bonded stake plus their delegated stake. This means that a validator can compensate low amounts of self-bonded by attracting more delegators. This is why reputation is very important for validators.
+No, but self-bonding has benefits. A validator's total stake is made up of their self-bonded stake plus their delegated stake. This means that a validator can compensate for low amounts of self-bonded Luna by attracting more delegators. This is why reputation is very important for validators.
 
 Although validators are not required to self-bond Luna, we suggest all validators to have `skin-in-the-game`. This can help make a validator more trustworthy.
 
@@ -286,7 +286,7 @@ Validators should expect to perform regular software updates to accommodate upgr
 
 ### What are the personnel requirements?
 
-A successful validator operation will require the efforts of multiple highly skilled individuals and continuous operational attention. Running a valdiator is considerably more involved than mining bitcoin.
+A successful validator operation will require the efforts of multiple highly skilled individuals and continuous operational attention. Running a validator is considerably more involved than mining bitcoin.
 
 Running an effective operation is critical to avoiding unexpected unbonding or being slashed. This includes being able to respond to attacks, outages, as well as to maintain security and isolation in your data center.
 
