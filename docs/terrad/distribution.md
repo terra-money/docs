@@ -91,7 +91,7 @@ terrad tx distribution set-withdraw-addr <withdraw-address>
 
 ### Fund Community Pool
 
-Funds the community pool with the specified amount.
+Funds the community pool with a specified amount.
 
 ```sh
 terrad tx distribution fund-community-pool <amount>
