@@ -123,7 +123,7 @@ If you want to obtain coins for the testnet, you can do so by using [this faucet
 
 ### Is there a minimum amount of Luna that must be staked to be an active (bonded) validator?
 
-There is no set minimum. The top 130 validators with the highest total stake (where total stake = self-bonded stake + delegated stake) make up the active validator set. The bottom 130th validator sets the barrier to entry for the active set. 
+There is no set minimum. The top 130 validators with the highest total stake (where total stake = self-bonded stake + delegated stake) make up the active validator set. The bottom 130th validator sets the barrier to entry for the active set.
 
 ### How will delegators choose their validators?
 
@@ -168,7 +168,7 @@ Validators receive block provisions, block rewards, and fee rewards and share th
 **No.** By delegating to a validator, users delegate staking power. The more staking power a validator has, the more weight it has in the consensus and processes. This does not mean that the validator has custody of its delegators' Luna.
 
 ::: warning Note:
-It's not possible for a validator to run away with a delegator's funds.
+It is impossible for a validator to run away with a delegator's funds.
 :::
 
 Although delegated funds cannot be stolen by validators, delegators are still liable if a validator misbehaves. When this happens, a delegator's stake will be partially slashed in proportion to their relative stake.

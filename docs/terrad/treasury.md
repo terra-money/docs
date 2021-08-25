@@ -34,9 +34,8 @@ The Reward Weight is the portion of seigniorage that is designated as ballot rew
 terrad query treasury reward-weight
 ```
 
-::: warning NOTE
-As of Columbus-5, all
-seigniorage is burned.
+::: warning Note:
+As of Columbus-5, all seigniorage is burned.
 :::
 
 ### Seigniorage Proceeds
