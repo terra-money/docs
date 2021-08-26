@@ -16,13 +16,13 @@ While the Treasury stabilizes miner demand through adjusting rewards, the [`Mark
 
 The Treasury observes three macroeconomic indicators for each epoch (set to 1 week) and keeps [historical records](#indicators) of their values during previous epochs:
 
-- **Tax Rewards**: $T$, The income generated from transaction fees (stability fee) during an epoch.
-- **Seigniorage Rewards***: $S$, The amount of seigniorage generated from Luna swaps to Terra during an epoch which is destined for ballot rewards inside the `Oracle` rewards. As of Columbus-5, all seigniorage is burned.
-- **Total Staked Luna**: $\lambda$, The total amount of Luna staked by users and bonded to their delegated validators.
+- **Tax Rewards**: $T$, the income generated from transaction fees (stability fee) during an epoch.
+- **Seigniorage Rewards***: $S$, the amount of seigniorage generated from Luna swaps to Terra during an epoch which is destined for ballot rewards inside the `Oracle` rewards. As of Columbus-5, all seigniorage is burned.
+- **Total Staked Luna**: $\lambda$, the total amount of Luna staked by users and bonded to their delegated validators.
 
 These indicators are used to derive two other values:
-- **Tax Reward per unit Luna** $\tau = T / \lambda$: This is used in [Updating Tax Rate](#k-updatetaxpolicy)
-- **Total mining rewards** $R = T + S$: The sum of the Tax Rewards and the Seigniorage Rewards, used in [Updating Reward Weight](#k-updaterewardpolicy).
+- **Tax Reward per unit Luna** $\tau = T / \lambda$: this is used in [Updating Tax Rate](#k-updatetaxpolicy)
+- **Total mining rewards** $R = T + S$: the sum of the Tax Rewards and the Seigniorage Rewards, used in [Updating Reward Weight](#k-updaterewardpolicy).
 
 ::: warning Note:
 As of Columbus-5, all seigniorage is burned.
@@ -32,9 +32,9 @@ The protocol can compute and compare the short-term ([`WindowShort`](#windowshor
 
 ### Monetary Policy Levers
 
-- **Tax Rate**: $r$ This Adjusts the amount of income coming from Terra transactions, limited by [_tax cap_](#tax-caps).
+- **Tax Rate**: $r$, this adjusts the amount of income coming from Terra transactions, limited by [_tax cap_](#tax-caps).
 
-- **Reward Weight**: $w$ The portion of seigniorage allocated to the reward pool for ballot winners who vote within the reward band of the weighted median exchange rate in the [`Oracle`](spec-oracle.md) module.
+- **Reward Weight**: $w$, the portion of seigniorage allocated to the reward pool for ballot winners who vote within the reward band of the weighted median exchange rate in the [`Oracle`](spec-oracle.md) module.
 
 ::: warning Note:
 As of Columbus-5, all seigniorage is burned and no longer funds the community pool or the oracle reward pool. Validators are instead rewarded for faithful oracle votes through swap fees.
@@ -46,7 +46,7 @@ Both [Tax Rate](#tax-rate) and [Reward Weight](#reward-weight) are stored as val
 
 - For Tax Rate, in order to make sure that unit mining rewards do not stay stagnant, the treasury adds a [`MiningIncrement`](#miningincrement) so mining rewards increase steadily over time, described [here](#kupdatetaxpolicy).
 
-- For Reward Weight, The Treasury observes the portion of burden seigniorage needed to bear the overall reward profile, [`SeigniorageBurdenTarget`](#seigniorageburdentarget), and hikes up rates accordingly, described [here](#k-updaterewardpolicy). The current Reward Weight is `1`.
+- For Reward Weight, The Treasury observes the portion of burden seigniorage needed to bear the overall reward profile, [`SeigniorageBurdenTarget`](#seigniorageburdentarget), and hikes up rates accordingly, described [here](#k-updaterewardpolicy). The current Reward Weight is 100%.
 
 ### Probation
 
@@ -133,7 +133,7 @@ type RewardWeightUpdateProposal struct {
 :::
 
 ::: warning Note:
-As of Columbus-5, all seigniorage is burned. The reward weight is now set to `1`.
+As of Columbus-5, all seigniorage is burned. The Reward Weight is now set to 100%.
 :::
 
 ## State
@@ -141,14 +141,15 @@ As of Columbus-5, all seigniorage is burned. The reward weight is now set to `1`
 ### Tax Rate
 
 - type: `Dec`
-- default: 0.1%
+- Current min: .1%
+- Current max: 1%
 
 The value of the Tax Rate policy lever for the current epoch.
 
 ### Reward Weight
 
 - type: `Dec`
-- default: 5%
+- current: 100%
 
 The value of the Reward Weight policy lever for the current epoch. As of Columbus-5, the reward weight is set to `1`.
 
