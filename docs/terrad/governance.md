@@ -145,11 +145,9 @@ Where `proposal.json` is a file with the following schema:
 ```
 
 ::: warning Note:
-Parameter changes are _evaluated_ but not _validated_. Proposers must ensure any `value` change is valid (of the correct type and within the bounds) for its respective parameter.
+Parameter changes are _evaluated_ but not _validated_. Proposers must ensure that any `value` change to a parameter is of the correct type and within the correct bounds. For example, `MaxValidators` is an integer and not a decimal.
 
-**Example:** `MaxValidators` should be an integer and not a decimal.
-
-Proper vetting of a parameter change proposal can prevent this from happening during the governance process.
+Proper vetting of a parameter change proposal can prevent these errors during the governance process.
 :::
 
 #### Community Pool Spend Proposal
@@ -250,7 +248,7 @@ The `SoftwareUpgrade` is **currently not supported** as it has not yet been impl
 
 ### Increase Deposit
 
-In order for a proposal to be broadcasted to the network, the amount deposited must be above a `minDeposit` value (initial value: `512000000uluna`). If the proposal you previously created didn't meet this requirement, you can still increase the total amount deposited to activate it. Once the minimum deposit is reached, the proposal enters the voting period:
+In order for a proposal to be broadcast to the network, the amount deposited must be above a `minDeposit` value (initial value: `512000000uluna`). If the proposal you previously created didn't meet this requirement, you can still increase the total amount deposited to activate it. Once the minimum deposit is reached, the proposal enters the voting period:
 
 ```bash
 terrad tx gov deposit <proposal_id> "10000000luluna" \
