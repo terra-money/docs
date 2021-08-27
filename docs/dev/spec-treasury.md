@@ -7,7 +7,7 @@ sidebarDepth: 2
 The Treasury module acts as the "central bank" of the Terra economy, measuring macroeconomic activity by [observing indicators](#observed-indicators) and adjusting [monetary policy levers](#monetary-policy-levers) to modulate miner incentives toward stable, long-term growth.
 
 ::: tip Note:
-While the Treasury stabilizes miner demand through adjusting rewards, the [`Market` module](spec-market.md) is responsible for Terra's price-stability through arbitrage and Terra's market-maker.
+While the Treasury stabilizes miner demand through adjusting rewards, the [`Market` module](spec-market.md) maintains Terra's price-stability through arbitrage and Terra's market-maker.
 :::
 
 ## Concepts
@@ -32,9 +32,9 @@ The protocol can compute and compare the short-term ([`WindowShort`](#windowshor
 
 ### Monetary Policy Levers
 
-- **Tax Rate**: $r$, adjusts the amount of income coming from Terra transactions, limited by [_tax cap_](#tax-caps).
+- **Tax Rate**: $r$, adjusts the amount of income gained from Terra transactions, limited by [_tax cap_](#tax-caps).
 
-- **Reward Weight**: $w$, the portion of seigniorage allocated to the reward pool for [`Oracle`](spec-oracle.md) vote winners who vote within the reward band of the weighted median exchange rate.
+- **Reward Weight**: $w$, the portion of seigniorage allocated to the reward pool for [`Oracle`](spec-oracle.md) vote winners. This is given to validtors who vote within the reward band of the weighted median exchange rate.
 
 ::: warning Note:
 As of Columbus-5, all seigniorage is burned and no longer funds the community pool or the oracle reward pool. Validators are instead rewarded for faithful oracle votes through swap fees.
@@ -42,7 +42,7 @@ As of Columbus-5, all seigniorage is burned and no longer funds the community po
 
 ### Updating Policies
 
-Both [Tax Rate](#tax-rate) and [Reward Weight](#reward-weight) are stored as values in the `KVStore`, and can have their values updated through [governance proposals](#governance-proposals) once passed. The Treasury will also re-calibrate each lever once per epoch to stabilize unit returns for Luna, thereby ensuring predictable mining rewards from staking:
+Both [Tax Rate](#tax-rate) and [Reward Weight](#reward-weight) are stored as values in the `KVStore` and can have their values updated through [governance proposals](#governance-proposals) after they have passed. The Treasury recalibrates each lever once per epoch to stabilize unit returns for Luna, ensuring predictable mining rewards from staking:
 
 - For Tax Rate, in order to make sure that unit mining rewards do not stay stagnant, the treasury adds a [`MiningIncrement`](#miningincrement) so mining rewards increase steadily over time, described [here](#kupdatetaxpolicy).
 
