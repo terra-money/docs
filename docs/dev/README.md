@@ -40,7 +40,7 @@ The node software is organized into individual modules that implement different 
 9. [`treasury`](spec-treasury.md): miner incentive stabilization
    - macroecnomic monitoring
    - monetary policy levers (Tax Rate, Reward Weight)
-   - seigniorage settlement (all seigniorage is burned as of Columbus-5)
+   - seigniorage settlement: all seigniorage is burned as of Columbus-5
 10. [`gov`](spec-governance.md): on-chain governance
     - proposals
     - parameter updating
@@ -93,7 +93,7 @@ The following processes get executed during each block transition:
 
 8. Treasury
 
-   - If at the end of `epoch`, update indicators, burn seigniorage, and recalibrate monetary policy levers (tax-rate, reward-weight) for the next epoch.
+   - At the end of `epoch`, update indicators, burn seigniorage, and recalibrate monetary policy levers (tax-rate, reward-weight) for the next epoch.
 
 9. Staking
    - The new set of active validators is determined from the top 130 Luna stakers, and validators that lose their spot within the set are start to unbond.
@@ -110,7 +110,7 @@ There are two types of tokens that can be held by accounts and wallets in the Te
 
 2. **Luna**, the native staking asset that entitles the staking delegator to mining rewards (including exchange rate ballot rewards) if bonded to an active validator. Luna is also is necessary for making governance proposals and collateralizing the Terra economy.
 
-Both Terra (of all denominations) and Luna tokens are divisible up to micro-units ($\times 10^{-6}$). The micro-unit is considered the atomic unit of tokens, and cannot be further divided. Below is a list of several denominations that are recognized by the protocol at the time of writing:
+All denominations of Terra tokens and Luna tokens are divisible up to microunits ($\times 10^{-6}$), which are considered to be the atomic unit of tokens, and they cannot be divided further. The following list shows several denominations that are recognized by the protocol:
 
 | Denomination | Micro-Unit | Code    | Value         |
 | :----------- | :--------- | :------ | :------------ |

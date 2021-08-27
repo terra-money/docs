@@ -14,7 +14,7 @@ In the Terra protocol, staking rewards are first distributed to validators who t
 
 Rewards from stake are determined largely by the relative size of stake, and are structured in such a way that rewards increase as transaction volume increases. Luna ownership is thus an investment in the long term growth of Terra.
 
-Staking rewards come from two sources: gas (compute fees) and taxes.
+Staking rewards come from gas and taxes.
 
 ### Gas
 
