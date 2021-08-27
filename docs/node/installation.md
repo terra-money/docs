@@ -26,7 +26,7 @@ Use `git` to retrieve Terra Core from the [official repo](https://github.com/ter
 ```bash
 git clone https://github.com/terra-money/core
 cd core
-git checkout master
+git checkout v0.4.6
 ```
 
 ### Step 3: Build from source
