@@ -175,7 +175,7 @@ For Terra<>Luna swaps, the relative sizes of the pools will be different after t
 
 The Market module calls `k.ReplenishPools()` at the end of every block, which decreases the value of `TerraPoolDelta` (the difference between Terra and Luna pools) depending on `PoolRecoveryPeriod`, $pr$.
 
-This allows the network to sharply increase spread fees during acute price fluctuations. After some time, the spread is automatically returned to normal for long term price changes.
+This allows the network to sharply increase spread fees during acute price fluctuations. After some time, the spread automatically returns to normal for long term price changes.
 
 ## Parameters
 
