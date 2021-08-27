@@ -46,7 +46,7 @@ CP = 1000000 SDR
 (1100 SDT) * (909.0909... SDR of Luna) = 1000000 SDR
 ```
 
-This specific example is meant to be more illustrative than realistic. With much larger liquidity pools used in production, the magnitude of the spread is diminished.
+This is meant to be an example. In reality, liquidity pools are much larger, diminishing the magnitude of the spread.
 
 The primary advantage of Constant-Product is that it offers “unbounded” liquidity, and swaps of any size can be serviced.
 
