@@ -1,8 +1,10 @@
 # Market
 
-The Market module defines atomic swaps between Terra stablecoins denominations and between Terra and Luna. This module ensures an available, liquid market, stable prices, and fair exchange rates between the protocol's assets.
+The Market module defines atomic swaps between different Terra stablecoin denominations and between Terra and Luna. This module ensures an available, liquid market, stable prices, and fair exchange rates between the protocol's assets.
 
-The price stability of TerraSDR is achieved through Terra<>Luna arbitrage activity against the protocol's algorithmic market-maker which expands and contracts Terra supply to maintain its peg.
+The ability to guarantee an available, liquid market with fair exchange rates between different Terra denominations and between Terra and Luna is critical for user-adoption and price-stability.
+
+The price stability of TerraSDR is achieved through Terra<>Luna arbitrage activity against the protocol's algorithmic market-maker, which expands and contracts Terra's supply to maintain its peg.
 
 ## Concepts
 
