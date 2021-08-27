@@ -58,7 +58,7 @@ Parameters define the high-level settings for the Treasury, described [here](../
 terrad query treasury params
 ```
 
-The reported parameters will be in the following format:
+The reported parameters are in the following format:
 
 ```yaml
 tax_policy:
