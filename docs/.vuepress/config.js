@@ -76,7 +76,7 @@ module.exports = {
         requestAnimationFrame(function() {
           if (location.hash) {
             const element = document.getElementById(location.hash.slice(1))
-      
+
             if (element) {
               element.scrollIntoView()
             }
@@ -151,6 +151,7 @@ module.exports = {
             "/dev/spec-auth",
             "/dev/spec-authz",
             "/dev/spec-bank",
+            "/dev/spec-capability",
             "/dev/spec-distribution",
             "/dev/spec-feegrant",
             "/dev/spec-governance",
@@ -160,7 +161,6 @@ module.exports = {
             "/dev/spec-oracle",
             "/dev/spec-slashing",
             "/dev/spec-staking",
-            "/dev/spec-supply",
             "/dev/spec-treasury",
             "/dev/spec-wasm",
           ],
@@ -232,6 +232,7 @@ module.exports = {
         },
         "integrations",
         "ecosystem",
+        "migration-guide",
       ],
     },
   },

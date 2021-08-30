@@ -1,6 +1,6 @@
 # Node Configuration
 
-This is a short guide on the most important settings for setting up your node. The configuration files mentioned are located in the `~/.terra/config/` directory, and will contain many more items not addressed here. However, as those files are well-documented in the comments preceding configuration lines, please consult those files.
+The following information describes the most important node configuration settings, which are found in the `~/.terra/config/` directory. For more detailed descriptions about your configuration settings, including settings for WASM, explore each configuration file.
 
 ## General Settings
 

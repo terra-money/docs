@@ -173,48 +173,18 @@ Creates a new instance of a smart contract. Initial configuration is provided in
 
 ```go
 type MsgInstantiateContract struct {
-	Owner      sdk.AccAddress   `json:"owner" yaml:"owner"`
-	CodeID     uint64           `json:"code_id" yaml:"code_id"`
-	InitMsg    core.Base64Bytes `json:"init_msg" yaml:"init_msg"`
-	InitCoins  sdk.Coins        `json:"init_coins" yaml:"init_coins"`
-	Migratable bool             `json:"migratable" yaml:"migratable"`
+	// Sender is an sender address
+	Sender string `protobuf:"bytes,1,opt,name=sender,proto3" json:"sender,omitempty" yaml:"sender"`
+	// Admin is an optional admin address who can migrate the contract
+	Admin string `protobuf:"bytes,2,opt,name=admin,proto3" json:"admin,omitempty" yaml:"admin"`
+	// CodeID is the reference to the stored WASM code
+	CodeID uint64 `protobuf:"varint,3,opt,name=code_id,json=codeId,proto3" json:"code_id,omitempty" yaml:"code_id"`
+	// InitMsg json encoded message to be passed to the contract on instantiation
+	InitMsg encoding_json.RawMessage `protobuf:"bytes,4,opt,name=init_msg,json=initMsg,proto3,casttype=encoding/json.RawMessage" json:"init_msg,omitempty" yaml:"init_msg"`
+	// InitCoins that are transferred to the contract on execution
+	InitCoins github_com_cosmos_cosmos_sdk_types.Coins `protobuf:"bytes,5,rep,name=init_coins,json=initCoins,proto3,castrepeated=github.com/cosmos/cosmos-sdk/types.Coins" json:"init_coins" yaml:"init_coins"`
 }
 ```
-
-::: details JSON Example
-
-```json
-{
-  "type": "wasm/MsgInstantiateContract",
-  "value": {
-    "owner": "terra...",
-    "code_id": "23",
-    "init_msg": "eyJlbmNvZGVkIjogIkpTT04gbWVzc2FnZSJ9",
-    "init_coins": [
-      {
-        "denom": "uluna",
-        "amount": "999"
-      }
-    ],
-    "migratable": false
-  }
-}
-```
-
-:::
-
-::: details Events
-
-| Type                 | Attribute Key    | Attribute Value      |
-| -------------------- | ---------------- | -------------------- |
-| instantiate_contract | owner            | {ownerAddress}       |
-| instantiate_contract | code_id          | {codeID}             |
-| instantiate_contract | contract_address | {contractAddress}    |
-| message              | module           | wasm                 |
-| message              | action           | instantiate_contract |
-| message              | sender           | {senderAddress}      |
-
-:::
 
 ### MsgExecuteContract
 
