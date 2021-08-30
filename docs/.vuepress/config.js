@@ -233,6 +233,7 @@ module.exports = {
         "integrations",
         "ecosystem",
         "migration-guide",
+        "history-and-changes"
       ],
     },
   },
