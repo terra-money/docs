@@ -2,9 +2,9 @@
 
 ## Terra Website and Socials
 
-[Website](http://terra.money/): the official Terraform Labs website<br>
+[Website](http://www.terra.money/): the official Terraform Labs website<br>
 [Docs](https://docs.terra.money): the official documentation for the Terra blockchain<br>
-[White Paper](https://terra.money/Terra_White_paper.pdf): the official Terra White Paper<br>
+[White Paper](https://www.terra.money/Terra_White_paper.pdf): the official Terra White Paper<br>
 [Github](https://github.com/terra-money): the official Terraform Labs GitHub hosting all Terra public repos<br>
 [Discord](https://discord.gg/e29HWwC2Mz): the official Terra Discord for developers and enthusiasts to engage in focused discussions<br>
 [Telegram](https://t.me/TerraLunaChat): the official Terra Telegram for enthusiasts to engage in discussions<br>
@@ -89,7 +89,7 @@
 
 ## Contribute
 
-[Bug Bounty](https://terra.money/bugcrowd): the official Terra Bug Bounty program<br>
+[Bug Bounty](https://www.terra.money/bugcrowd): the official Terra Bug Bounty program<br>
 [Project Surge](https://medium.com/terra-money/introducing-project-surge-49cfe8141284): program involving community in Terra’s BD pipeline<br>
 [Terraform Capital](https://capital.terra.money/): launch capital program funding audits for projects that incorporate LUNA/Terra stablecoins<br>
 
@@ -135,7 +135,7 @@
 
 [Terra Academy](https://www.youtube.com/watch?v=BXHU5kLVlY8&list=PLZJKUFMj9K6MLhq6Ffo3bkrOLh9oIha-q): comprehensive introduction to Terra App development<br>
 [CoinMarketCap Earn](https://coinmarketcap.com/earn/project/terra): video series explaining Terra stablecoins and LUNA<br>
-[Staking Guide](https://terra.money/docs/Luna_Staking_eng.pdf): guide to staking LUNA on Terra Station<br>
+[Staking Guide](https://www.terra.money/docs/Luna_Staking_eng.pdf): guide to staking LUNA on Terra Station<br>
 [Developer Docs](https://docs.terra.money/): official documentation for Terra<br>
 [Figment Learn](https://learn.datahub.figment.io/network-documentation/terra/tutorials): tutorials onboarding developers on Terra<br>
 [Terra Bites](https://anchor.fm/terrabites): podcast dedicated to the Terra ecosystem<br>
@@ -176,7 +176,7 @@
 
 [Terra Station](https://station.terra.money/): Terra’s native wallet<br>
 Terra Station Extension: [Chrome](https://chrome.google.com/webstore/detail/terra-station/aiifbnbfobpmeekipheeijimdpnlpgpp)<br>
-Terra Station Desktop: [MacOS](https://www.terra.dev/station/Terra%20Station-1.1.0.dmg) | [Windows](https://www.terra.dev/station/Terra%20Station%20Setup%201.1.0.exe) | [Linux (deb)](https://terra.money/station/station-electron_1.1.1_amd64.deb) | [Linux (rpm)](https://terra.money/station/station-electron-1.1.1.x86_64.rpm)<br>
+Terra Station Desktop: [MacOS](https://www.terra.dev/station/Terra%20Station-1.1.0.dmg) | [Windows](https://www.terra.dev/station/Terra%20Station%20Setup%201.1.0.exe) | [Linux (deb)](https://www.terra.money/station/station-electron_1.1.1_amd64.deb) | [Linux (rpm)](https://www.terra.money/station/station-electron-1.1.1.x86_64.rpm)<br>
 Terra Station Mobile: [iOS](https://apps.apple.com/app/id1548434735) | [Android](https://play.google.com/store/apps/details?id=money.terra.station)<br>
 [Mirror Wallet](https://mirrorwallet.com/): Invest and trade cryptocurrencies and mirror assets<br>
 [MathWallet](https://mathwallet.org/en-us/): multi-platform crypto wallet for Terra assets<br>

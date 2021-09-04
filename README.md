@@ -114,7 +114,7 @@ This software is licensed under the MIT license. See [LICENSE](./LICENSE) for fu
 
 <p>&nbsp;</p>
 <p align="center">
-    <a href="https://terra.money/"><img src="http://terra.money/logos/terra_logo.svg" align="center" width=200/></a>
+    <a href="https://www.terra.money/"><img src="http://www.terra.money/logos/terra_logo.svg" align="center" width=200/></a>
 </p>
 <div align="center">
   <sub><em>Powering the innovation of money.</em></sub>

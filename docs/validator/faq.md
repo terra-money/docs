@@ -26,7 +26,7 @@ Of course, it is possible and encouraged for any user to run full nodes even if 
 
 ### What is a delegator?
 
-Delegators are Luna holders who cannot, or do not want to run validator operations themselves. Through Terra Station (check the [Terra website](https://terra.money) to download), a user can delegate Luna to a validator and obtain a part of its revenue in exchange (for more detail on how revenue is distributed, see [What is the incentive to stake?](#what-is-the-incentive-to-stake) and [What is a validator's commission?](#what-is-a-validators-commission) sections below).
+Delegators are Luna holders who cannot, or do not want to run validator operations themselves. Through Terra Station (check the [Terra website](https://www.terra.money) to download), a user can delegate Luna to a validator and obtain a part of its revenue in exchange (for more detail on how revenue is distributed, see [What is the incentive to stake?](#what-is-the-incentive-to-stake) and [What is a validator's commission?](#what-is-a-validators-commission) sections below).
 
 Because they share revenue with their validators, delegators also share responsibility. Should a validator misbehave, each of its delegators will be partially slashed in proportion to their stake. This is why delegators should perform due-diligence on validators before delegating, as well as diversifying by spreading their stake over multiple validators.
 

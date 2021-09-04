@@ -4,7 +4,7 @@ This is a short tutorial to get quickly started with using Terra.
 
 ## Download Terra Station
 
-Start off by downloading [Terra Station](https://terra.money/protocol.html#protocol1), the official desktop wallet for holding Terra assets. There are official binaries for Windows and macOS. Some people have reported success with installing Terra Station on Linux through WINE, though currently it is not officially supported.
+Start off by downloading [Terra Station](https://www.terra.money/protocol.html#protocol1), the official desktop wallet for holding Terra assets. There are official binaries for Windows and macOS. Some people have reported success with installing Terra Station on Linux through WINE, though currently it is not officially supported.
 
 ### Create a new wallet
 

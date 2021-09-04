@@ -39,7 +39,7 @@ module.exports = {
         rel: "stylesheet",
         type: "text/css",
         href:
-          "https://terra.money/static/fonts/jetbrainsMono.css?updated=190220",
+          "https://www.terra.money/static/fonts/jetbrainsMono.css?updated=190220",
       },
     ],
     [

@@ -34,7 +34,7 @@
       <ul class="learn">
         <li>Learn</li>
         <li>
-          <a href="https://terra.money/Terra_White_paper.pdf" target="_blank">
+          <a href="https://www.terra.money/Terra_White_paper.pdf" target="_blank">
             White
             Paper
           </a>
@@ -111,19 +111,19 @@
       <div class="logos">
         <a href="https://discord.gg/e29HWwC2Mz" rel="noopener" target="_blank">
           <img
-            src="https://terra.money/static/assets/images/icon_discord.png"
+            src="https://www.terra.money/static/assets/images/icon_discord.png"
             alt="link to Terra discord room"
           />
         </a>
         <a href="https://medium.com/terra-money" rel="noopener" target="_blank">
           <img
-            src="https://terra.money/static/assets/images/icon_medium.png"
+            src="https://www.terra.money/static/assets/images/icon_medium.png"
             alt="link to Terra medium"
           />
         </a>
         <a href="https://twitter.com/terra_money" rel="noopener" target="_blank">
           <img
-            src="https://terra.money/static/assets/images/icon_twitter.png"
+            src="https://www.terra.money/static/assets/images/icon_twitter.png"
             alt="link to Terra twitter"
           />
         </a>
@@ -133,18 +133,18 @@
           target="_blank"
         >
           <img
-            src="https://terra.money/static/assets/images/icon_youtube.png"
+            src="https://www.terra.money/static/assets/images/icon_youtube.png"
             alt="link to Terra youtube"
           />
         </a>
         <a href="https://t.me/terra_announcements" rel="noopener" target="_blank">
           <img
-            src="https://terra.money/static/assets/images/icon_telegram.png"
+            src="https://www.terra.money/static/assets/images/icon_telegram.png"
             alt="link to Terra telegram room"
           />
         </a>
       </div>
-      <a href="https://terra.money" target="_blank" class="terramoney">terra.money</a>
+      <a href="https://www.terra.money" target="_blank" class="terramoney">terra.money</a>
     </div>
   </div>
 </template>
