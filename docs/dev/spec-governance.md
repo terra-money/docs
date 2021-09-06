@@ -16,7 +16,7 @@ The following is the governance proposal procedure:
 
 After a proposal is submitted, it enters the deposit period, where it must reach a total minimum deposit of 512 Luna within 2 weeks from the time of its submission. The deposit threshold is reached when the sum of the initial deposit (from the proposer) and the deposits from all other interested network participants meets or exceeds 512 Luna.
 
-Deposits are only required as a form of spam protection, and the network will refund Luna deposits for proposals that pass or are rejected. Deposits are not refunded to proposals that are rejected with veto.
+Deposits are required only to protect against spam. The network refunds deposits for proposals that pass or fail except when a proposal is vetoed. If a proposal is vetoed, deposits are not refunded.
 
 ### Voting Period
 
@@ -31,7 +31,7 @@ Voting is done by holders of bonded LUNA on a 1 bonded LUNA = 1 vote basis. As s
 
 ### Tallying
 
-Three conditions must be met for a proposal to pass:
+For a proposal to pass, the following conditions must be met:
 
 1. Voter participation must be at least `quorum` $Q$:
 
@@ -45,10 +45,10 @@ $$\frac{NoWithVeto}{Yes + No + NoWithVeto} \lt V$$
 
 $$\frac{Yes}{Yes + No + NoWithVeto} \gt T$$
 
-If any of the above conditions are not met, the proposal is rejected. Proposals that get rejected with veto do not get their deposits refunded. The parameters `quorum`, `veto`, and `threshold` exist as blockchain parameters within the Governance module.
+If any of the previous conditions are not met, the proposal is rejected. Proposals that get rejected with veto do not get their deposits refunded. The parameters `quorum`, `veto`, and `threshold` exist as blockchain parameters within the Governance module.
 
-::: Note:
-Deposits will not be refunded for proposals that are rejected with veto. As of Columbus-5, these deposits are burned. Proposals that pass or are rejected (without veto) will have their deposits refunded.
+::: warning Warning
+Deposits will not be refunded for proposals that are rejected with veto. As of Columbus-5, these deposits are burned. Proposals that pass or get rejected without veto will have their deposits refunded.
 :::
 
 ### Proposal Implementation
@@ -79,7 +79,7 @@ type Proposal struct {
 
 A `Proposal` is a data structure representing a petition for a change that is submitted to the blockchain alongside a deposit. Once its deposit reaches a certain value ([`MinDeposit`](#mindeposit)), the proposal is confirmed and voting opens. Bonded Luna holders can then send [`TxGovVote`]() transactions to vote on the proposal. Terra currently follows a simple voting scheme of 1 Bonded Luna = 1 Vote.
 
-The `Content` on a proposal is the interface that contains the information about the `Proposal` such as the `title`, `description`, and any notable changes. A `Content` type can be implemented by any module. The `ProposalRoute` of the `Content` returns a string which must be used to route the handler of the `Content` in the Governance keeper. This allows the governance keeper to execute proposal logic implemented by any module. If a proposal passes, the handler is executed. Only if the handler is successful does the state get persisted and the proposal finally passes. Otherwise, the proposal is rejected.
+The `Content` on a proposal is the interface that contains the information about the `Proposal`, such as the `title`, `description`, and any notable changes. A `Content` type can be implemented by any module. The `ProposalRoute` of the `Content` returns a string which must be used to route the handler of the `Content` in the Governance keeper. This process allows the governance keeper to execute proposal logic implemented by any module. If a proposal passes, the handler is executed. Only if the handler is successful does the state get persisted and the proposal finally passes. Otherwise, the proposal is rejected.
 
 ## Message Types
 
@@ -124,7 +124,7 @@ type TextProposal struct {
 }
 ```
 
-Text Proposals are used to create general-purpose petitions, such as asking the Core team to implement a specific feature. The community can reference a passed Text Proposal to the core developers to indicate that a feature (requiring potentially a soft or hard fork) is in significant demand.
+Text Proposals are used to create general-purpose petitions, such as asking the core team to implement a specific feature. The community can reference a passed Text Proposal to the core developers to indicate that a feature that potentially requires a soft or hard fork is in significant demand.
 
 ### Parameter Change Proposals
 
@@ -151,8 +151,8 @@ Parameter Change Proposals are a special type of proposal which, once passed, wi
 
 ### Software Upgrade Proposals
 
-::: danger
-Software Upgrade Proposals exist due to inheritance from Cosmos SDK but are for the moment considered unavailable, as they have not yet been implemented. They thus share the same semantics as a simple Text Proposal. It is strongly advised to not submit these types of proposals at the risk of losing your Luna deposit.
+::: danger Warning
+Software upgrade proposals exist because they are inherited from the Cosmos SDK, but they are temporarily unavailable because they have not been implemented yet. Therefore, they share the same semantics as a simple text proposal. If you submit this type of proposal, you might lose your Luna deposit.
 :::
 
 ## Transitions

@@ -187,7 +187,7 @@ The fees received are transferred to the Distribution `ModuleAccount`, which tra
 - Community fund: The reserve community tax is charged and distributed to the community pool. As of Columbus-5, this tax is no longer charged and the community pool no longer receives funding.
 - Global pool: The remainder of the funds is allocated to the global pool, where they are distributed proportionally by voting power to all bonded validators independent of whether they voted. This allocation is called social distribution. Social distribution is applied to the proposer validator in addition to the proposer reward.
 
-The proposer reward is calculated from pre-commits Tendermint messages in order to incentivize validators to wait and include additional pre-commits in the block. All provision rewards are added to a provision reward pool which each validator holds individually (`ValidatorDistribution.ProvisionsRewardPool`).
+The proposer reward is calculated from pre-commits Tendermint messages in order to incentivize validators to wait and include additional pre-commits in the block. All provision rewards are added to a provision reward pool, which each validator holds individually (`ValidatorDistribution.ProvisionsRewardPool`).
 
 ```go
 func AllocateTokens(feesCollected sdk.Coins, feePool FeePool, proposer ValidatorDistribution,
