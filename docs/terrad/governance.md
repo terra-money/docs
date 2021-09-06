@@ -4,7 +4,7 @@
 
 ### Proposals
 
-Once created, the information of a single proposal can be queried:
+After a proposal is created, you can query it by running the following command:
 
 ```bash
 terrad query gov proposal <proposal_id>
@@ -144,8 +144,8 @@ Where `proposal.json` is a file with the following schema:
 }
 ```
 
-::: warning Note:
-Parameter changes are _evaluated_ but not _validated_. Proposers must ensure that any `value` change to a parameter is of the correct type and within the correct bounds. For example, `MaxValidators` is an integer and not a decimal.
+::: warning Warning
+Parameter changes are evaluated but not validated. Proposers must ensure that any `value` change to a parameter is of the correct type and within the correct bounds. For example, `MaxValidators` is an integer and not a decimal.
 
 Proper vetting of a parameter change proposal can prevent these errors during the governance process.
 :::
