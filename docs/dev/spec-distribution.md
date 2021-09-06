@@ -1,4 +1,4 @@
-Note:# Distribution
+# Distribution
 
 ::: warning Note:
 Terra's Distribution module inherits from Cosmos SDK's [`distribution`](https://docs.cosmos.network/v0.43/modules/distribution/) module. This document is a stub, and covers mainly important Terra-specific notes about how it is used.
@@ -14,7 +14,7 @@ The `Distribution` module describes a mechanism that keeps track of collected fe
 Passive distribution means that validators and delegators will have to manually collect their fee rewards by submitting withdrawal transactions. Read up on how to do so with `terrad` [here](../terrad/distribution.md).
 :::
 
-Collected rewards are pooled globally and divided out passively to validators and delegators. Each validator has the opportunity to charge delegators commission on the rewards collected on behalf of the delegators. Fees are collected directly into a global reward pool and a validator proposer-reward pool. Due to the nature of passive accounting, whenever changes to parameters which affect the rate of reward distribution occur, withdrawal of rewards must also occur.
+Collected rewards are pooled globally and distrubuted to validators and delegators. Each validator has the opportunity to charge delegators commission on the rewards collected on behalf of the delegators. Fees are collected directly into a global reward pool and a validator proposer-reward pool. Due to the nature of passive accounting, whenever changes to parameters which affect the rate of reward distribution occur, withdrawal of rewards must also occur.
 
 ### Community Pool
 
@@ -177,13 +177,17 @@ type CommunityPoolSpendProposal struct {
 
 ### Begin-Block
 
-> This section was taken from the official Cosmos SDK docs, and placed here for your convenience to understand the Distribution module's parameters.
+> This section derives from the official Cosmos SDK docs, and placed here for your convenience to understand the Distribution module's parameters.
 
 At the beginning of the block, the Distribution module will set the proposer for determining distribution during endblock and distribute rewards for the previous block.
 
-The fees received are transferred to the Distribution `ModuleAccount`, as which keeps track of the flow of coins in (as in this case) and out the module. The fees are also allocated to the proposer, community fund and global pool. When the validator is the proposer of the round, that validator (and their delegators) receives between 1% and 5% of fee rewards, the reserve [Community Tax](#communitytax) is then charged, then the remainder is distributed proportionally by voting power to all bonded validators independent of whether they voted (social distribution). Note the social distribution is applied to the proposer validator in addition to the proposer reward.
+The fees received are transferred to the Distribution `ModuleAccount`, which tracks the flow of coins in and out of the module. Fees are also allocated to the proposer, community fund, and global pool:
 
-The amount of proposer reward is calculated from pre-commits Tendermint messages in order to incentivize validators to wait and include additional pre-commits in the block. All provision rewards are added to a provision reward pool which each validator holds individually (`ValidatorDistribution.ProvisionsRewardPool`).
+- Proposer: When a validator is the proposer of a round, that validator and its delegators receive 1-5% of the fee rewards.
+- Community fund: The reserve community tax is charged and distributed to the community pool. As of Columbus-5, this tax is no longer charged and the community pool no longer receives funding.
+- Global pool: The remainder of the funds is allocated to the global pool, where they are distributed proportionally by voting power to all bonded validators independent of whether they voted. This allocation is called social distribution. Social distribution is applied to the proposer validator in addition to the proposer reward.
+
+The proposer reward is calculated from pre-commits Tendermint messages in order to incentivize validators to wait and include additional pre-commits in the block. All provision rewards are added to a provision reward pool which each validator holds individually (`ValidatorDistribution.ProvisionsRewardPool`).
 
 ```go
 func AllocateTokens(feesCollected sdk.Coins, feePool FeePool, proposer ValidatorDistribution,
