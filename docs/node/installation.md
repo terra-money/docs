@@ -15,7 +15,7 @@ We recommend the following for running Terra Core:
 
 ### Step 1. Install Golang
 
-**Go v1.13.1 or higher is required for Terra Core.**
+**Go v1.16 or higher is required for Terra Core.**
 
 If you haven't already, install Golang by following the [official docs](https://golang.org/doc/install). Make sure that your `GOPATH` and `GOBIN` environment variables are properly set up.
 
@@ -58,7 +58,7 @@ go: go version go1.13.4 darwin/amd64
 ::: warning NOTE
 This guide only covers general settings for a production-level full node. You can find further details on considerations for operating a validator node in our [Validator Guide](../validator/README.md)
 
-For the moment, this guide has only been tested against RPM-based Linux distributions. 
+For the moment, this guide has only been tested against RPM-based Linux distributions.
 :::
 
 

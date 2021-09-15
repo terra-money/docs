@@ -40,7 +40,7 @@ The node software is organized into individual modules that implement different 
 9. [`treasury`](spec-treasury.md): miner incentive stabilization
    - macroeconomic monitoring
    - monetary policy levers (Tax Rate, Reward Weight)
-   - seigniorage settlement
+   - seigniorage settlement: all seigniorage is burned as of Columbus-5
 10. [`gov`](spec-governance.md): on-chain governance
     - proposals
     - parameter updating
@@ -93,7 +93,7 @@ The following processes get executed during each block transition:
 
 8. Treasury
 
-   - If at the end of `epoch`, update indicators, mint seigniorage, and recalibrate monetary policy levers (tax-rate, reward-weight) for the next epoch.
+   - At the end of `epoch`, update indicators, burn seigniorage, and recalibrate monetary policy levers (tax-rate, reward-weight) for the next epoch.
 
 9. Staking
    - The new set of active validators is determined from the top 130 Luna stakers. Validators that lose their spot within the set start the unbonding process.

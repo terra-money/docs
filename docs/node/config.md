@@ -1,6 +1,6 @@
 # Node Configuration
 
-The following information describes the most important node configuration settings, which are found in the `~/.terra/config/` directory. For more detailed descriptions about your configuration settings, including settings for WASM, explore each configuration file.
+This is a short guide on the most important settings for setting up your node. The configuration files mentioned are located in the `~/.terra/config/` directory, and will contain many more items not addressed here. However, as those files are well-documented in the comments preceding configuration lines, please consult those files.
 
 ## General Settings
 
@@ -26,11 +26,20 @@ You set this parameter as a measure against spam.
 minimum-gas-prices = "0.01133uluna,0.15uusd,0.104938usdr,169.77ukrw,428.571umnt,0.125ueur,0.98ucny,16.37ujpy,0.11ugbp,10.88uinr,0.19ucad,0.14uchf,0.19uaud,0.2usgd,4.62uthb,1.25usek,1.25unok,0.9udkk,2180.0uidr,7.6uphp"
 ```
 
-### Enable REST API
+### REST API
 
 `app.toml`
 
-TODO: add details
+Rest API is a set of guidelines for internet data transfer that allows lightweight, scalable integrations. Rest API allows you to perform standard database functions, CRUD, using rest architecture.
+
+### Rosetta API
+
+`app.toml`
+
+Terra uses Rosetta API to integrate with Coinbase. Rosetta is an open source API that organizes blockchain data into a standardized format, making it easy for developers to build cross-chain applications. Instead of creating specific code for each chain, Rosetta allows different blockchains to integrate into any exchange that uses Rosetta API.
+
+For more information, checkout the official [Rosetta docs](https://www.rosetta-api.org/docs/welcome.html).
+
 ## P2P Settings
 
 ### Seed Mode

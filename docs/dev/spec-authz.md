@@ -92,7 +92,7 @@ type MsgRevokeAuthorization struct {
 | revoke_authorization | grant_type    | {msgType}            |
 | revoke_authorization | granter       | {granterAddress}     |
 | revoke_authorization | grantee       | {granteeAddress}     |
-| message              | module        | authz              |
+| message              | module        | authz                |
 | message              | action        | revoke_authorization |
 | message              | sender        | {senderAddress}      |
 

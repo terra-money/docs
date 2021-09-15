@@ -1,6 +1,6 @@
 # Running a Local Testnet
 
-After you've gotten the latest version of Terra Core installed, you can set up a private Terra network to get your bearings in running a Terra full node before [joining an existing network]().
+After you've gotten the latest version of Terra Core installed, you can set up a private Terra network to get your bearings in running a Terra full node before [joining an existing network](join-network.md).
 
 ## Single Node Setup
 
@@ -11,13 +11,13 @@ The simplest Terra network you can set up will be a local testnet with just a si
 First, initialize your genesis file that will bootstrap the network. Set a name for your local testnet, and provide a moniker to refer to your node.
 
 ```bash
-terrad init --chain-id=<testnet_name> <node_moniker>
+terrad init --chain-id=<testnet-name> <node-moniker>
 ```
 
 You will need a Terra account to start. You can generate one with:
 
 ```bash
-terrad keys add <account_name>
+terrad keys add <account-name>
 ```
 
 ### Step 2. Add account to genesis
@@ -25,8 +25,8 @@ terrad keys add <account_name>
 Next, you need to add your account to the genesis. The following commands add your account and set the initial balance:
 
 ```bash
-terrad add-genesis-account $(terrad keys show <account_name> -a) 100000000uluna,1000usd
-terrad gentx --name my_account --amount 10000000uluna
+terrad add-genesis-account $(terrad keys show <account-name> -a) 100000000uluna,1000usd
+terrad gentx <account-name> <amount>
 terrad collect-gentxs
 ```
 
