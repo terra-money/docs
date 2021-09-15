@@ -153,6 +153,7 @@ module.exports = {
             "/dev/spec-bank",
             "/dev/spec-capability",
             "/dev/spec-distribution",
+            "/dev/spec-evidence",
             "/dev/spec-feegrant",
             "/dev/spec-governance",
             "/dev/spec-market",
