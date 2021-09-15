@@ -111,7 +111,7 @@ SigningInfo.Set(val.Address, signInfo)
 This ensures that offending validators are punished the same amount whether they
 act as a single validator with X stake or as N validators with collectively X
 stake. The amount slashed for all double signature infractions committed within a
-single slashing period is capped as described [here](https://docs.cosmos.network/v0.43/modules/slashing/01_concepts.html#tombstone-caps).
+single slashing period is capped as described [here](https://github.com/cosmos/cosmos-sdk/blob/v0.37.4/docs/spec/slashing/01_concepts.md#tombstone-caps).
 
 #### Liveness Tracking
 

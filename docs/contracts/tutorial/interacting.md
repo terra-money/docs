@@ -15,12 +15,12 @@ cd localterra
 docker-compose up
 ```
 
-You should also have the latest version of `terrad` by building the latest version of Terra Core. We will configure it to use it against our isolated testnet environment.
+You should also have the latest version of `terracli` by building the latest version of Terra Core. We will configure it to use it against our isolated testnet environment.
 
 In a separate terminal, make sure to set up the following mnemonic:
 
 ```sh
-terrad keys add test1 --recover
+terracli keys add test1 --recover
 ```
 
 Using the mnemonic:
@@ -34,7 +34,7 @@ satisfy adjust timber high purchase tuition stool faith fine install that you un
 Make sure that the **optimized build** of `my_first_contract.wasm` that you created in the last section is in your current working directory.
 
 ```sh
-terrad tx wasm store my_first_contract.wasm --from test1 --chain-id=localterra --gas=auto --fees=100000uluna --broadcast-mode=block
+terracli tx wasm store my_first_contract.wasm --from test1 --chain-id=localterra --gas=auto --fees=100000uluna --broadcast-mode=block
 ```
 
 You should see output similar to the following:
@@ -74,7 +74,7 @@ As you can see, our contract was successfully instantiated with Code ID #1.
 You can check it out:
 
 ```sh
-terrad query wasm code 1
+terracli query wasm code 1
 codeid: 1
 codehash: KVR4SWuieLxuZaStlvFoUY9YXlcLLMTHYVpkubdjHEI=
 creator: terra1dcegyrekltswvyy0xy69ydgxn9x8x32zdtapd8
@@ -93,7 +93,7 @@ We have now uploaded the code for our contract, but we still don't have a contra
 We will compress the JSON into 1 line with [this online tool](https://goonlinetools.com/json-minifier/).
 
 ```sh
-terrad tx wasm instantiate 1 '{"count":0}' --from test1 --chain-id=localterra --fees=10000uluna --gas=auto --broadcast-mode=block
+terracli tx wasm instantiate 1 '{"count":0}' --from test1 --chain-id=localterra --fees=10000uluna --gas=auto --broadcast-mode=block
 ```
 
 You should get a response like the following:
@@ -135,7 +135,7 @@ From the output, we see that our contract was created above at: `terra18vd8fpwxz
 Check out your contract information:
 
 ```sh
-terrad query wasm contract terra18vd8fpwxzck93qlwghaj6arh4p7c5n896xzem5
+terracli query wasm contract terra18vd8fpwxzck93qlwghaj6arh4p7c5n896xzem5
 address: terra18vd8fpwxzck93qlwghaj6arh4p7c5n896xzem5
 owner: terra1dcegyrekltswvyy0xy69ydgxn9x8x32zdtapd8
 codeid: 1
@@ -171,7 +171,7 @@ First, to burn:
 ```
 
 ```sh
-terrad tx wasm execute terra18vd8fpwxzck93qlwghaj6arh4p7c5n896xzem5 '{"reset":{"count":5}}' --from test1 --chain-id=localterra --fees=1000000uluna --gas=auto --broadcast-mode=block
+terracli tx wasm execute terra18vd8fpwxzck93qlwghaj6arh4p7c5n896xzem5 '{"reset":{"count":5}}' --from test1 --chain-id=localterra --fees=1000000uluna --gas=auto --broadcast-mode=block
 ```
 
 #### Incrementing
@@ -183,7 +183,7 @@ terrad tx wasm execute terra18vd8fpwxzck93qlwghaj6arh4p7c5n896xzem5 '{"reset":{"
 ```
 
 ```sh
-terrad tx wasm execute terra18vd8fpwxzck93qlwghaj6arh4p7c5n896xzem5 '{"increment":{}}' --from test1 --chain-id=localterra --gas=auto --fees=1000000uluna --broadcast-mode=block
+terracli tx wasm execute terra18vd8fpwxzck93qlwghaj6arh4p7c5n896xzem5 '{"increment":{}}' --from test1 --chain-id=localterra --gas=auto --fees=1000000uluna --broadcast-mode=block
 ```
 
 #### Querying count
@@ -197,7 +197,7 @@ Let's check the result of our executions!
 ```
 
 ```sh
-terrad query wasm contract-store terra18vd8fpwxzck93qlwghaj6arh4p7c5n896xzem5 '{"get_count":{}}'
+terracli query wasm contract-store terra18vd8fpwxzck93qlwghaj6arh4p7c5n896xzem5 '{"get_count":{}}'
 {"count":7}
 ```
 

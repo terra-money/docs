@@ -1,6 +1,6 @@
-# AuthZ
+# MsgAuth
 
-The authz (message authorization) module allows users to authorize another account to send messages on their behalf. Certain authorizations such as the spending of another account's tokens, can be parameterized to constrain the permissions of the grantee (like setting a spending limit).
+The MsgAuth (message authorization) module allows users to authorize another account to send messages on their behalf. Certain authorizations such as the spending of another account's tokens, can be parameterized to constrain the permissions of the grantee (like setting a spending limit).
 
 ## Message Types
 
@@ -21,12 +21,12 @@ type MsgGrantAuthorization struct {
 
 ```json
 {
-  "type": "authz/MsgGrantAuthorization",
+  "type": "msgauth/MsgGrantAuthorization",
   "value": {
     "granter": "terra...",
     "grantee": "terra...",
     "authorization": {
-      "type": "authz/SendAuthorization",
+      "type": "msgauth/SendAuthorization",
       "value": {
         "spend_limit": [
           {
@@ -50,7 +50,7 @@ type MsgGrantAuthorization struct {
 | grant_authorization | grant_type    | {msgType}           |
 | grant_authorization | granter       | {granterAddress}    |
 | grant_authorization | grantee       | {granteeAddress}    |
-| message             | module        | authz             |
+| message             | module        | msgauth             |
 | message             | action        | grant_authorization |
 | message             | sender        | {senderAddress}     |
 
@@ -74,7 +74,7 @@ type MsgRevokeAuthorization struct {
 
 ```json
 {
-  "type": "authz/MsgRevokeAuthorization",
+  "type": "msgauth/MsgRevokeAuthorization",
   "value": {
     "granter": "terra...",
     "grantee": "terra...",
@@ -92,7 +92,7 @@ type MsgRevokeAuthorization struct {
 | revoke_authorization | grant_type    | {msgType}            |
 | revoke_authorization | granter       | {granterAddress}     |
 | revoke_authorization | grantee       | {granteeAddress}     |
-| message              | module        | authz                |
+| message              | module        | msgauth              |
 | message              | action        | revoke_authorization |
 | message              | sender        | {senderAddress}      |
 
@@ -114,7 +114,7 @@ type MsgExecAuthorized struct {
 
 ```json
 {
-  "type": "authz/MsgExecAuthorized",
+  "type": "msgauth/MsgExecAuthorized",
   "value": {
     "grantee": "terra...",
     "msgs": [
@@ -143,7 +143,7 @@ type MsgExecAuthorized struct {
 | Type                  | Attribute Key   | Attribute Value       |
 | --------------------- | --------------- | --------------------- |
 | execute_authorization | grantee_address | {granteeAddress}      |
-| message               | module          | authz               |
+| message               | module          | msgauth               |
 | message               | action          | execute_authorization |
 | message               | sender          | {senderAddress}       |
 
