@@ -21,7 +21,7 @@ If you haven't already, install Golang by following the [official docs](https://
 
 ### Step 2: Get Terra Core source code
 
-Use `git` to retrieve Terra Core from the [official repo](https://github.com/terra-money/core/), and checkout the `master` branch, which contains the latest stable release. That should install the `terrad` and `terracli` binaries.
+Use `git` to retrieve Terra Core from the [official repo](https://github.com/terra-money/core/), and checkout the `master` branch, which contains the latest stable release. That should install the `terrad` and `terrad` binaries.
 
 ```bash
 git clone https://github.com/terra-money/core
@@ -31,7 +31,7 @@ git checkout v0.4.6
 
 ### Step 3: Build from source
 
-You can now build Terra Core. Running the following command will install executables `terrad` (Terra node daemon) and `terracli` (CLI for interacting with the node) to your `GOPATH`.
+You can now build Terra Core. Running the following command will install executables `terrad` (Terra node daemon) and `terrad` (CLI for interacting with the node) to your `GOPATH`.
 
 ```bash
 make install
@@ -43,10 +43,10 @@ Verify that everything is OK. If you get something like the following, you've su
 
 ```bash
 terrad version --long
-terracli version --long
+terrad version --long
 name: terra
 server_name: terrad
-client_name: terracli
+client_name: terrad
 version: 0.3.0-24-g3684f77
 commit: 3684f77faadf6cf200d18e15763316d5d9c5a496
 build_tags: netgo,ledger
@@ -84,9 +84,9 @@ Modify `/etc/security/limits.conf` to raise the `nofile` capability.
 
 - `26656` is the default port for the P2P protocol. This port is opened in order to communicate with other nodes, and must be open to join a network. **However,** it does not have to be open to the public. For validator nodes, we recommend configuring `persistent_peers` and closing this port to the public.
 
-- `26657` is the default port for the RPC protocol. This port is used for querying / sending transactions. In other words, this port needs to be opened for serving queries from `terracli`. It is safe to _NOT_ to open this port to the public unless you are planning to run a public node.
+- `26657` is the default port for the RPC protocol. This port is used for querying / sending transactions. In other words, this port needs to be opened for serving queries from `terrad`. It is safe to _NOT_ to open this port to the public unless you are planning to run a public node.
 
-- `1317` is the default port for [Lite Client Daemon](../terracli/lcd.md) (LCD), which can be executed by `terracli rest-server`. LCD provides HTTP RESTful API layer to allow applications and services to interact with your `terrad` instance through RPC. Check the [Terra REST API](https://swagger.terra.money) for usage examples. You don't need to open this port unless you have use of it.
+- `1317` is the default port for [Lite Client Daemon](../terrad/lcd.md) (LCD), which can be executed by `terrad rest-server`. LCD provides HTTP RESTful API layer to allow applications and services to interact with your `terrad` instance through RPC. Check the [Terra REST API](https://swagger.terra.money) for usage examples. You don't need to open this port unless you have use of it.
 
 - `26660` is the default port for interacting with the [Prometheus](https://prometheus.io) database which can be used for monitoring the environment. This port is not opened in the default configuration.
 

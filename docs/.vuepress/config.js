@@ -76,7 +76,7 @@ module.exports = {
         requestAnimationFrame(function() {
           if (location.hash) {
             const element = document.getElementById(location.hash.slice(1))
-      
+
             if (element) {
               element.scrollIntoView()
             }
@@ -149,16 +149,19 @@ module.exports = {
           title: "Module Specs",
           children: [
             "/dev/spec-auth",
+            "/dev/spec-authz",
             "/dev/spec-bank",
+            "/dev/spec-capability",
             "/dev/spec-distribution",
+            "/dev/spec-evidence",
+            "/dev/spec-feegrant",
             "/dev/spec-governance",
             "/dev/spec-market",
             "/dev/spec-mint",
-            "/dev/spec-msgauth",
+            "/dev/spec-authz",
             "/dev/spec-oracle",
             "/dev/spec-slashing",
             "/dev/spec-staking",
-            "/dev/spec-supply",
             "/dev/spec-treasury",
             "/dev/spec-wasm",
           ],
@@ -196,7 +199,6 @@ module.exports = {
             "validators",
             "stablecoin",
             "governance",
-            "smart-contracts",
           ],
         },
         {
@@ -209,28 +211,17 @@ module.exports = {
           ],
         },
         {
-          title: "terracli",
+          title: "terrad reference",
           children: [
-            "terracli/",
-            "terracli/lcd",
-            "terracli/keys",
-            "terracli/multisig",
-            "terracli/tx",
-            "terracli/account",
-            "terracli/distribution",
-            "terracli/governance",
-            "terracli/market",
-            "terracli/mint",
-            "terracli/msgauth",
-            "terracli/oracle",
-            "terracli/slashing",
-            "terracli/staking",
-            "terracli/treasury",
-            "terracli/wasm",
+            "terrad/",
+            "terrad/commands",
+            "terrad/subcommands",
           ],
         },
         "integrations",
         "ecosystem",
+        "migration-guide",
+        "history-and-changes"
       ],
     },
   },

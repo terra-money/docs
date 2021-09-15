@@ -1,106 +1,66 @@
-# terracli
+# terrad
 
-This section is a reference for the functions available from `terracli`, the command line interface that connects a running `terrad` process. For more information on the command usage, refer to its help screen: `terracli config --help`.
+The following information explains the functions you can use from `terrad`, the command line interface that connects a running `terrad` process. Use it to access Terra. For more general information at the command line, run `terrad --help`. For more information about a specific `terrad` command, append the `-h` or `--help` flag after the command, such as `terrad query --help`.
 
 ## Accessing a Node
 
-In order to query the state and send transactions, you need a way to access the network. `terracli` is only the interface to access Terra; a node is the access point connected to the rest of the network through peer connections. You can either run your own full-node, or connect to someone else's.
+To query the state and send transactions, you must connect to a node, which is the access point to the entire network of peer connections. You can either run your own full node or connect to someone else's.
 
-### Running your own full-node
+### Running your own full node
 
-This is the most secure option, but comes with relatively high resource requirements. In order to run your own full-node, you need good amount of cpu core, bandwidth, amount of memory, and disk space.
+Running your own full node is the most secure option, but it comes with relatively high resource requirements. For more information about the requirements to run your own full node and a tutorial for installing `terrad`, see [installation](../node/installation.md). For a tutorial that explains how to connect to an existing Terra network, see [joining a network](../node/join-network.md).
 
-You will find the tutorial on how to install `terrad` [here](../node/installation.md), and how to set it up to connect to an existing Terra network [here](../node/join-network.md).
+### Connecting to a remote full node
 
-### Connecting to a remote full-node
+If you don't want to run your own full node, you can connect to someone else's full node. As you consider your options for operators, prioritize operators you trust because malicious operators might intentionally return incorrect query results or censor your transactions. However, they will never be able to steal your funds because your private keys are stored locally on your computer or on your Ledger hardware device. Possible options of full-node operators include validators, wallet providers or exchanges.
 
-If you do not want or cannot run your own node, you can connect to someone else's full-node. You should pick an operator you trust, because a malicious operator could return incorrect query results or censor your transactions. However, they will never be able to steal your funds, as your private keys are stored locally on your computer or ledger device. Possible options of full-node operators include validators, wallet providers or exchanges.
+To connect to the full-node, you need an address in the `https://<host>:<port>` format, for example `https://77.87.106.33:26657`. This address has to be communicated by the full-node operator you choose to trust. You will use this address in the following section.
 
-In order to connect to the full-node, you will need an address of the following form: `https://77.87.106.33:26657` \(_Note: This is a sample address_\). This address has to be communicated by the full-node operator you choose to trust. You will use this address in the following section.
+## Configuring terrad
 
-## Configuring terracli
-
-`terracli` is the tool that enables you to interact with the node that runs on the Terra Protocol network, whether you run it yourself or not. Let us set it up properly.
-
-In order to set up `terracli`, use the following command:
-
-```bash
-terracli config <flag> <value>
-```
-
-It allows you to set a default value for each given flag.
-
-First, set up the address of the full-node you want to connect to:
-
-```bash
-# example: terracli config node https://77.87.106.33:26657
-terracli config node <host>:<port>
-```
-
-If you run your own full-node, just use `tcp://localhost:26657` as the address.
-
-Then, let us set the default value of the `--trust-node` flag:
-
-```bash
-# Set to true if you run a light-client node, false otherwise
-terracli config trust-node false
-```
-
-Finally, let us set the `chain-id` of the blockchain we want to interact with:
-
-```bash
-terracli config chain-id tequila-0004
-```
+`terrad` enables you to interact with the node that runs on the Terra network, whether you run it yourself or not. To configure `terrad`, edit the the `config.toml` file in the `~/.terra/config/` directory.
 
 ## Querying Blockchain State
 
-`terracli` lets you query all relevant information from the blockchain, like account balances, amount of bonded tokens, outstanding rewards, and more. Next is a list of the most useful commands for delegators.
+To query all relevant information from the blockchain, such as like account balances, amount of bonded tokens, outstanding rewards, and so on, use `terrad query`. The following list shows some of the most useful commands for delegators:
 
 ```bash
 # query account balances and other account-related information
-terracli query account
+terrad query account
 
 # query the list of validators
-terracli query staking validators
+terrad query staking validators
 
 # query the information of a validator given their address
-terracli query staking validator <validatorAddress>
+terrad query staking validator <validatorAddress>
 
 # query all delegations made from a delegator given their address
 # (note: delegator addresses are regular account addresses)
-terracli query staking delegations <delegatorAddress>
+terrad query staking delegations <delegatorAddress>
 
 # query a specific delegation made from a delegator to a validator
-terracli query staking delegation <delegatorAddress> <validatorAddress>
+terrad query staking delegation <delegatorAddress> <validatorAddress>
 
 # query the rewards of a delegator given a delegator address (e.g. terra10snjt8dmpr5my0h76xj48ty80uzwhraqalu4eg)
-terracli query distr rewards <delegatorAddress>
+terrad query distr rewards <delegatorAddress>
 ```
-
-For more commands, just type:
-
-```bash
-terracli query
-```
-
-For each command, you can use the `-h` or `--help` flag to get more information.
 
 ## Sending Transactions
 
-Other than querying blockchain data, `terracli` is used to interact with the blockchain, sending transactions containing module messages with state-changing directives that get processed and included in blocks. All of transaction-sending operations follow the form:
+To interact with the blockchain by sending transactions containing module messages with state-changing directives that get processed and included in blocks, use `terrad tx`. All of transaction-sending operations follow the form:
 
 ```bash
-terracli tx ...
+terrad tx ...
 ```
 
-Please check each module subsection in the side menu to learn more about different types of transactions you can issue.
+To learn more about the different types of interactions you can issue, see the section for each module.
 
 ### Simulating a transaction
 
-You can simulate a transaction without actually broadcasting it by appending the `--dry-run` flag to the command line:
+To simulate a transaction without actually broadcasting it, append the `--dry-run` flag to the command statement:
 
 ```bash
-terracli tx send \
+terrad tx send \
     <from_key_or_address> \
     <to_address> \
     <coins> \
@@ -110,10 +70,10 @@ terracli tx send \
 
 ### Generating a transaction without sending
 
-Furthermore, you can build a transaction and print its JSON format to STDOUT by appending `--generate-only` to the list of the command line arguments. This allows you to separate the creation and signing of a transaction with the broadcasting.
+To build a transaction and print its JSON format to STDOUT, append `--generate-only` to the list of the command line arguments. This allows you to separate the creation and signing of a transaction with the broadcasting.
 
 ```bash
-terracli tx send \
+terrad tx send \
     <from_key_or_address> \
     <to_address> \
     <coins> \
@@ -122,7 +82,7 @@ terracli tx send \
 ```
 
 ```bash
-terracli tx sign \
+terrad tx sign \
     --chain-id=<chain_id> \
     --from=<key_name> \
     unsignedSendTx.json > signedSendTx.json
@@ -131,13 +91,13 @@ terracli tx sign \
 You can validate the transaction's signatures by typing the following:
 
 ```bash
-terracli tx sign --validate-signatures signedSendTx.json
+terrad tx sign --validate-signatures signedSendTx.json
 ```
 
 You can broadcast the signed transaction to a node by providing the JSON file to the following command:
 
 ```bash
-terracli tx broadcast --node=<node> signedSendTx.json
+terrad tx broadcast --node=<node> signedSendTx.json
 ```
 
 
@@ -166,7 +126,7 @@ Validators may start to prioritize transactions by `gasPrice` in the mempool, so
 To directly use fees:
 
 ```bash
-terracli tx send ... --fees=100000uluna
+terrad tx send ... --fees=100000uluna
 ```
 
 If you use fees, validators will calculate the implied `minGasPrices` by dividing your fee with the estimated gas consumption, to properly assign the right priority to your transaction.
@@ -174,7 +134,7 @@ If you use fees, validators will calculate the implied `minGasPrices` by dividin
 To use gas prices (use a comma-separated list of amount and denominations).
 
 ```bash
-terracli tx send ... --gas-prices=0.03uluna,0.015ukrw
+terrad tx send ... --gas-prices=0.03uluna,0.015ukrw
 ```
 
 ### Taxes
@@ -189,10 +149,10 @@ Gas estimate might be inaccurate as state changes could occur in between the end
 
 The adjustment can be controlled via the `--gas-adjustment` flag, whose default value is 1.0.
 
-To get a direct fee estimation from `terracli`:
+To get a direct fee estimation from `terrad`:
 
 ```bash
-terracli tx estimate-fee ...\
+terrad tx estimate-fee ...\
     --gas-prices=0.015uluna
     --gas-adjustment=1.4
 ```
@@ -200,7 +160,7 @@ terracli tx estimate-fee ...\
 To create and send transactions using fee-estimation, use the template below as a format:
 
 ```bash
-terracli tx send ... \
+terrad tx send ... \
     --gas-prices=0.015uluna
     --gas=auto
     --gas-adjustment=1.4
@@ -208,20 +168,20 @@ terracli tx send ... \
 
 ## Shell Autocompletion
 
-Auto-completion scripts for popular UNIX shell interpreters such as `bash` and `zsh` can be generated through the `completion` command, which is available for both `terrad` and `terracli`. This allows for a more convenient way to interact with the Terra Core endpoints when using the command-line.
+Auto-completion scripts for popular UNIX shell interpreters such as `bash` and `zsh` can be generated through the `completion` command, which is available for both `terrad` and `terrad`. This allows for a more convenient way to interact with the Terra Core endpoints when using the command-line.
 
 If you want to generate `bash` completion scripts run the following command:
 
 ```bash
 terrad completion > terrad_completion
-terracli completion > terracli_completion
+terrad completion > terrad_completion
 ```
 
 If you want to generate `zsh` completion scripts run the following command:
 
 ```bash
 terrad completion --zsh > terrad_completion
-terracli completion --zsh > terracli_completion
+terrad completion --zsh > terrad_completion
 ```
 
 ::: warning NOTE
@@ -229,7 +189,7 @@ On most UNIX systems, such scripts may be loaded in `.bashrc` or `.bash_profile`
 
 ```bash
 echo '. terrad_completion' >> ~/.bashrc
-echo '. terracli_completion' >> ~/.bashrc
+echo '. terrad_completion' >> ~/.bashrc
 ```
 
 Refer to the user's manual of your interpreter provided by your operating system for information on how to enable shell autocompletion.

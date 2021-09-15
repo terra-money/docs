@@ -12,10 +12,10 @@ Here's how you can return the voting power back to your validator. First, if `te
 terrad start
 ```
 
-Wait for your full node to catch up to the latest block. Next, run the following command. Note that `<terra>` is the address of your validator account, and `<name>` is the name of the validator account. You can find this info by running `terracli keys list`.
+Wait for your full node to catch up to the latest block. Next, run the following command. Note that `<terra>` is the address of your validator account, and `<name>` is the name of the validator account. You can find this info by running `terrad keys list`.
 
 ```bash
-terracli tx slashing unjail <terra> --chain-id=<chain_id> --from=<from>
+terrad tx slashing unjail <terra> --chain-id=<chain_id> --from=<from>
 ```
 
 ::: warning
@@ -25,7 +25,7 @@ If you don't wait for `terrad` to sync before running `unjail`, you will receive
 Lastly, check your validator again to see if your voting power is back.
 
 ```bash
-terracli status
+terrad status
 ```
 
 You may notice that your voting power is less than it used to be. That's because you got slashed for downtime!
@@ -67,7 +67,7 @@ There are a few reasons why a validator is not active.
 
 For one, it could be jailed. The resolution is unjail the validator.
 
-    terracli tx slashing unjail <terra> --chain-id=<chain_id> --from=<from>
+    terrad tx slashing unjail <terra> --chain-id=<chain_id> --from=<from>
 
 Another reason that the validator is inactive could be due to the validator not being in the active validator set. At the moment of writing the [maximum number of validators is 130](https://docs.terra.money/validators.html#delegations). If the number of validators is more than 130, only the top 130 will be active in order of voting power.
 
@@ -94,4 +94,4 @@ The LCD that the voter is connecting to may be running for a different network f
 
 Be sure to specify the LCD for the same network that your node is connecting to.
 
-If you run a [local LCD](https://docs.terra.money/terracli/lcd.html) (i.e. localhost:1317), be sure that your LCD is connecting to the same node.
+If you run a [local LCD](https://docs.terra.money/terrad/lcd.html) (i.e. localhost:1317), be sure that your LCD is connecting to the same node.

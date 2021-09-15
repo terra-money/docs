@@ -13,7 +13,7 @@ This guide starts with the following assumptions:
 - You have [installed](../node/installation) the Terra Full Node Software.
 - You have [connected it](../node/join-network) to an existing network.
 - You have [configured it](../node/config) properly.
-- You know your way around [terracli](../terracli).
+- You know your way around [terrad](../terrad).
 
 ## Register your Validator
 
@@ -26,7 +26,7 @@ terrad tendermint show-validator
 Next, create your `terrad gentx` command:
 
 ```bash
-terracli tx staking create-validator \
+terrad tx staking create-validator \
     --amount=5000000uluna \
     --pubkey=$(terrad tendermint show-validator) \
     --moniker="choose a moniker" \
@@ -51,10 +51,10 @@ If unspecified, `consensus_pubkey` will default to the output of `terrad tenderm
 Your validator is active if the following command returns anything:
 
 ```bash
-terracli query tendermint-validator-set | grep "$(terrad tendermint show-validator)"
+terrad query tendermint-validator-set | grep "$(terrad tendermint show-validator)"
 ```
 
-You are looking for the `bech32` encoded `address` in the `~/.terrad/config/priv_validator.json` file.
+You are looking for the `bech32` encoded `address` in the `~/.terra/config/priv_validator.json` file.
 
 ::: warning NOTE
 To be in the validator set, you need to have more total voting power than the 130th validator.
@@ -69,13 +69,13 @@ Every Terra validator needs to participate in the oracle process and periodicall
 You can separate the keys that are used for controlling your validator account from the ones that are submitting the oracle votes on behalf of your validator.
 
 ```bash
-terracli keys add <feeder>
+terrad keys add <feeder>
 ```
 
 Show the feeder account details:
 
 ```bash
-terracli keys show <feeder>
+terrad keys show <feeder>
 ```
 
 ### Delegate feeder consent
@@ -83,7 +83,7 @@ terracli keys show <feeder>
 The account address used to submit oracle voting transactions is called a `feeder`. When you set up your oracle voting process for the first time, you must send delegate the feeder permission to an account.
 
 ```bash
-terracli tx oracle set-feeder <feeder-address> --from=<validator>
+terrad tx oracle set-feeder <feeder-address> --from=<validator>
 ```
 
 ### Send funds to feeder
@@ -93,13 +93,13 @@ The feeder needs funds in order to pay for transaction fees to submit oracle vot
 #### Sending Luna to feeder account
 
 ```bash
-terracli tx send <from-address> <feeder-address> <luna-amount>uluna
+terrad tx send <from-address> <feeder-address> <luna-amount>uluna
 ```
 
 #### Example of swap from feeder
 
 ```bash
-terracli tx market swap <luna-amount>uluna ukrw --from=<feeder>
+terrad tx market swap <luna-amount>uluna ukrw --from=<feeder>
 ```
 
 ### Set up oracle feeder program
