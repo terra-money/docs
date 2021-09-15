@@ -71,6 +71,10 @@ The actual execution of WASM bytecode is performed by [wasmer](https://github.co
 
 In addition to the regular gas fees incurred from creating the transaction, Terra also calculates a separate gas when executing smart contract code. This is tracked by the **gas meter**, which is during the execution of every opcode and gets translated back to native Terra gas via a constant multiplier (currently set to 100).
 
+### Gas Fees
+
+Wasm data and event spend gas up to `1 * bytes`. Passing the event & data to another contract also spends gas in reply.
+
 ## Data
 
 ### CodeInfo
