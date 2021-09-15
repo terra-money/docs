@@ -6,8 +6,8 @@ sidebarDepth: 2
 
 The Treasury module acts as the "central bank" of the Terra economy, measuring macroeconomic activity by [observing indicators](#observed-indicators) and adjusting [monetary policy levers](#monetary-policy-levers) to modulate miner incentives toward stable, long-term growth.
 
-::: tip Note:
-While the Treasury stabilizes miner demand through adjusting rewards, the [`Market` module](spec-market.md) maintains Terra's price-stability through arbitrage and Terra's market-maker.
+::: warning Note:
+While the Treasury stabilizes miner demand by adjusting rewards, the [`Market`](spec-market.md) module is responsible for Terra price-stability through arbitrage and the market maker.
 :::
 
 ## Concepts
@@ -28,7 +28,15 @@ These indicators are used to derive two other values:
 As of Columbus-5, all seigniorage is burned and no longer funds community or reward pools.
 :::
 
-The protocol can compute and compare the short-term ([`WindowShort`](#windowshort)) and long-term ([`WindowLong`](#windowlong)) rolling averages of the above indicators to determine the relative direction and velocity of the Terra economy.
+- **Seigniorage Rewards:**: $S$, The amount of seigniorage generated from Luna swaps to Terra during each epoch.
+
+::: warning Note:
+As of Columbus-5, all seigniorage is burned.   
+:::
+
+These indicators can be used to derive two other values, the **Tax Reward per unit Luna** represented by $\tau = T / \lambda$, used in [Updating Tax Rate](#k-updatetaxpolicy), and **total mining rewards** $R = T + S$: the sum of the Tax Rewards and the Seigniorage Rewards, used in [Updating Reward Weight](#k-updaterewardpolicy).
+
+The protocol can compute and compare the short-term ([`WindowShort`](#windowshort)) and the long-term ([`WindowLong`](#windowlong)) rolling averages of the above indicators to determine the relative direction and velocity of the Terra economy.
 
 ### Monetary Policy Levers
 
@@ -36,7 +44,7 @@ The protocol can compute and compare the short-term ([`WindowShort`](#windowshor
 
 - **Reward Weight**: $w$, the portion of seigniorage allocated to the reward pool for [`Oracle`](spec-oracle.md) vote winners. This is given to validtors who vote within the reward band of the weighted median exchange rate.
 
-::: warning Note:
+::: warning Tip
 As of Columbus-5, all seigniorage is burned and no longer funds the community pool or the oracle reward pool. Validators are rewarded for faithful oracle votes through swap fees.
 :::
 

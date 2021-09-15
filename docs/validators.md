@@ -18,9 +18,9 @@ Running a validator is a big responsibility, which is why only the top 130 in bo
 
 The major slashing conditions are:
 
-- **double signing**: a validator signed two different blocks with the same chain ID at the same height
-- **downtime**: a validator was non-responsive / couldn't be reached for more than an amount of time
-- **too many missed oracle votes**: a validator failed to report a threshold amount of votes that lie within the weighted median in the exchange rate oracle
+- **Double Signing:** A validator signs two different blocks with the same chain ID at the same height
+- **Downtime:** A validator is non-responsive / couldn't be reached for more than an amount of time
+- **Missed Oracle Votes:** A validator fails to report a threshold amount of votes that lie within the weighted median in the exchange rate oracle
 
 Other validators are always on the lookout for misbehaving validator nodes, and can submit **evidence** of a punishable infraction. Once discovered, the misbehaving validator node will have a small portion of their funds slashed and **jailed** (excluded from the validator set for an amount of time) in order to protect delegator funds and fix the offending issues.
 
