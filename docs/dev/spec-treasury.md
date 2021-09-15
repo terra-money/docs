@@ -14,11 +14,19 @@ While the Treasury stabilizes miner demand by adjusting rewards, the [`Market`](
 
 ### Observed Indicators
 
-The Treasury observes three macroeconomic indicators for each epoch (set to 1 week) and keeps [historical records](#indicators) of their values during previous epochs.
+The Treasury observes three macroeconomic indicators for each epoch and keeps [indicators](#indicators) of their values during previous epochs:
 
-- **Tax Rewards:** $T$, Income generated from transaction fees (stability fees) during an epoch.
+- **Tax Rewards**: $T$, the income generated from transaction and stability fees during an epoch.
+- **Seigniorage Rewards***: $S$, the amount of seigniorage generated from Luna swaps to Terra during an epoch which is destined for ballot rewards inside the `Oracle` rewards. As of Columbus-5, all seigniorage is burned.
+- **Total Staked Luna**: $\lambda$, the total amount of Luna staked by users and bonded to their delegated validators.
 
-- **Total Staked Luna:** $\lambda$, the total Luna that has been staked by users and bonded by their delegated validators.
+These indicators are used to derive two other values:
+- **Tax Reward per unit Luna** $\tau = T / \lambda$: this is used in [Updating Tax Rate](#k-updatetaxpolicy)
+- **Total mining rewards** $R = T + S$: the sum of the Tax Rewards and the Seigniorage Rewards, used in [Updating Reward Weight](#k-updaterewardpolicy).
+
+::: warning Note:
+As of Columbus-5, all seigniorage is burned and no longer funds community or reward pools.
+:::
 
 - **Seigniorage Rewards:**: $S$, The amount of seigniorage generated from Luna swaps to Terra during each epoch.
 
@@ -32,31 +40,31 @@ The protocol can compute and compare the short-term ([`WindowShort`](#windowshor
 
 ### Monetary Policy Levers
 
-- **Tax Rate:** $r$ adjusts the amount of income coming from Terra transactions, limited by [_tax cap_](#tax-caps).
+- **Tax Rate**: $r$, adjusts the amount of income gained from Terra transactions, limited by [_tax cap_](#tax-caps).
 
-- **Reward Weight:** $w$ the portion of seigniorage allocated for the reward pool for the ballot winners for correctly voting within the reward band of the weighted median of exchange rate in the [`Oracle`](spec-oracle.md) module.
+- **Reward Weight**: $w$, the portion of seigniorage allocated to the reward pool for [`Oracle`](spec-oracle.md) vote winners. This is given to validtors who vote within the reward band of the weighted median exchange rate.
 
-::: warning Note:
-As of Columbus-5, all seigniorage is burned. No seignorage is allocated to the oracle reward pool.
+::: warning Tip
+As of Columbus-5, all seigniorage is burned and no longer funds the community pool or the oracle reward pool. Validators are rewarded for faithful oracle votes through swap fees.
 :::
 
 ### Updating Policies
 
-Both the [Tax Rate](#tax-rate) and the [Reward Weight](#reward-weight) are stored as values in the `KVStore`, and can have their values updated through [governance proposals](#governance-proposals) once passed. The Treasury will also re-calibrate each lever once per epoch to stabilize unit returns for Luna, thereby ensuring predictable mining rewards from staking:
+Both [Tax Rate](#tax-rate) and [Reward Weight](#reward-weight) are stored as values in the `KVStore` and can have their values updated through [governance proposals](#governance-proposals) after they have passed. The Treasury recalibrates each lever once per epoch to stabilize unit returns for Luna, ensuring predictable mining rewards from staking:
 
 - For Tax Rate, in order to make sure that unit mining rewards do not stay stagnant, the treasury adds a [`MiningIncrement`](#miningincrement) so mining rewards increase steadily over time, described [here](#kupdatetaxpolicy).
 
-- For Reward Weight, The Treasury observes the portion of burden seigniorage needed to bear the overall reward profile, [`SeigniorageBurdenTarget`](#seigniorageburdentarget), and hikes up rates accordingly, described [here](#k-updaterewardpolicy).
+- For Reward Weight, the Treasury observes the portion of seigniorage needed to bear the overall reward profile, [`SeigniorageBurdenTarget`](#seigniorageburdentarget), and raises rates accordingly, as described [here](#k-updaterewardpolicy). The current Reward Weight is `1`.
 
 ### Probation
 
-A probationary period specified by the [`WindowProbation`](#windowprobation) will prevent the network from performing updates for Tax Rate and Reward Weight during the first epochs after genesis to allow the blockchain to first obtain a critical mass of transactions and a mature and reliable history of indicators.
+A probationary period specified by the [`WindowProbation`](#windowprobation) prevents the network from performing Tax Rate and Reward Weight updates during the first epochs after genesis to allow the blockchain to first obtain a critical mass of transactions and a mature, reliable history of indicators.
 
 ## Data
 
 ### PolicyConstraints
 
-Policy updates from both governance proposals and automatic calibration are constrained by the [`TaxPolicy`](#taxpolicy) and [`RewardPolicy`](#rewardpolicy) parameters, respectively. The type `PolicyConstraints` specifies the floor, ceiling, and the max periodic changes for each variable.
+Policy updates from governance proposals and automatic calibration are constrained by the [`TaxPolicy`](#taxpolicy) and [`RewardPolicy`](#rewardpolicy) parameters, respectively. `PolicyConstraints` specifies the floor, ceiling, and max periodic changes for each variable.
 
 ```go
 // PolicyConstraints defines constraints around updating a key Treasury variable
@@ -68,7 +76,7 @@ type PolicyConstraints struct {
 }
 ```
 
-The logic for constraining a policy lever update is performed by `pc.Clamp()`, shown below.
+The logic for constraining a policy lever update is performed by `pc.Clamp()`.
 
 ```go
 // Clamp constrains a policy variable update within the policy constraints
@@ -107,60 +115,8 @@ type TaxRateUpdateProposal struct {
 }
 ```
 
-::: details JSON Example
-
-```json
-{
-  "type": "treasury/TaxRateUpdateProposal",
-  "value": {
-    "title": "proposal title",
-    "description": "proposal description",
-    "tax_rate": "0.001000000000000000"
-  }
-}
-```
-
-:::
-
-::: details Events
-
-| Type            | Attribute Key | Attribute Value |
-| --------------- | ------------- | --------------- |
-| tax_rate_update | tax_rate      | {taxRate}       |
-
-:::
-
-### RewardWeightUpdateProposal
-
-```go
-type RewardWeightUpdateProposal struct {
-	Title        string  `json:"title" yaml:"title"`                 // Title of the Proposal
-	Description  string  `json:"description" yaml:"description"`     // Description of the Proposal
-	RewardWeight sdk.Dec `json:"reward_weight" yaml:"reward_weight"` // target RewardWeight
-}
-```
-
-::: details JSON Example
-
-```json
-{
-  "type": "treasury/RewardWeightUpdateProposal",
-  "value": {
-    "title": "proposal title",
-    "description": "proposal description",
-    "reward_weight": "0.001000000000000000"
-  }
-}
-```
-
-:::
-
-::: details Events
-
-| Type                 | Attribute Key | Attribute Value |
-| -------------------- | ------------- | --------------- |
-| reward_weight_update | reward_weight | {rewardWeight}  |
-
+::: warning Note:
+As of Columbus-5, all seigniorage is burned. The Reward Weight is now set to `1`.
 :::
 
 ## State
@@ -168,24 +124,25 @@ type RewardWeightUpdateProposal struct {
 ### Tax Rate
 
 - type: `Dec`
-- default: 0.1%
+- min: .1%
+- max: 1%
 
 The value of the Tax Rate policy lever for the current epoch.
 
 ### Reward Weight
 
 - type: `Dec`
-- default: 5%
+- default: `1`
 
-The value of the Reward Weight policy lever for the current epoch.
+The value of the Reward Weight policy lever for the current epoch. As of Columbus-5, the reward weight is set to `1`.
 
 ### Tax Caps
 
 - type: `map[string]Int`
 
-Treasury keeps a `KVStore` that maps a denomination `denom` to an `sdk.Int` that represents that maximum income that can be generated from taxes on a transaction in that denomination. This is updated every epoch with the equivalent value of [`TaxPolicy.Cap`](#taxpolicy) at the current exchange rate.
+The Treasury keeps a `KVStore` that maps a denomination `denom` to an `sdk.Int` which represents the maximum income that can be generated from taxes on a transaction in that same denomination. This is updated every epoch with the equivalent value of [`TaxPolicy.Cap`](#taxpolicy) at the current exchange rate.
 
-For instance, if a transaction's value were 100 SDT, and tax rate and tax cap 5% and 1 SDT respectively, the income generated from the transaction would be 1 SDT instead of 5 SDT, as it exceeds the tax cap.
+For example, if a transaction's value were 100 SDT with a tax rate of 5% and a tax cap of 1 SDT, the income generated would be 1 SDT, not 5 SDT.
 
 ### Tax Proceeds
 
@@ -197,9 +154,9 @@ The Tax Rewards $T$ for the current epoch.
 
 - type: `Coins`
 
-The total supply of Luna at the beginning of the current epoch. This value is used in [`k.SettleSeigniorage()`](#k-settleseigniorage) to calculate the seigniorage to distribute at the end of the epoch.
+The total supply of Luna at the beginning of the current epoch. This value is used in [`k.SettleSeigniorage()`](#k-settleseigniorage) to calculate the seigniorage distributed at the end of each epoch. As of Columbus 5, all seigniorage is burned.
 
-Recording the initial issuance will automatically use the [`Supply`](spec-supply.md) module to determine the total issuance of Luna. Peeking will return the epoch's initial issuance of µLuna as `sdk.Int` instead of `sdk.Coins` for convenience.
+Recording the initial issuance will automatically use the [`Supply`](spec-supply.md) module to determine the total issuance of Luna. Peeking will return the epoch's initial issuance of µLuna as `sdk.Int` instead of `sdk.Coins` for clarity.
 
 ### Indicators
 
@@ -209,19 +166,19 @@ The Treasury keeps track of following indicators for the present and previous ep
 
 - type: `Dec`
 
-The Tax Rewards $T$ for the `epoch`.
+The Tax Rewards $T$ for each `epoch`.
 
 #### Seigniorage Rewards
 
 - type: `Dec`
 
-The Seigniorage Rewards $S$ for the `epoch`.
+The Seigniorage Rewards $S$ for each `epoch`.
 
 #### Total Staked Luna
 
 - type: `Int`
 
-The Total Staked Luna $\lambda$ for the `epoch`.
+The Total Staked Luna $\lambda$ for each `epoch`.
 
 ## Functions
 
@@ -231,11 +188,11 @@ The Total Staked Luna $\lambda$ for the `epoch`.
 func (k Keeper) UpdateIndicators(ctx sdk.Context)
 ```
 
-This function gets run at the end of an epoch $t$ and records the current values of tax rewards $T$, seigniorage rewards $S$, and total staked Luna $\lambda$ as the historic indicators for epoch $t$ before moving to the next epoch $t+1$.
+At the end of each epoch $t$, this function records the current values of tax rewards $T$, seigniorage rewards $S$, and total staked Luna $\lambda$ before moving to the next epoch $t+1$.
 
 - $T_t$ is the current value in [`TaxProceeds`](#tax-proceeds)
 - $S_t = \Sigma * w$, with epoch seigniorage $\Sigma$ and reward weight $w$.
-- $\lambda_t$ is simply the result of `staking.TotalBondedTokens()`
+- $\lambda_t$ is the result of `staking.TotalBondedTokens()`
 
 ### `k.UpdateTaxPolicy()`
 
@@ -243,19 +200,19 @@ This function gets run at the end of an epoch $t$ and records the current values
 func (k Keeper) UpdateTaxPolicy(ctx sdk.Context) (newTaxRate sdk.Dec)
 ```
 
-This function gets called at the end of an epoch to calculate the next value of the Tax Rate monetary lever.
+At the end of each epoch, this funtion calculates the next value of the Tax Rate monetary lever.
 
-Consider $r_t$ to be the current Tax Rate, and $n$ to be the [`MiningIncrement`](#miningincrement) parameter.
+Using $r_t$ as the current Tax Rate and $n$ as the [`MiningIncrement`](#miningincrement) parameter:
 
 1. Calculate the rolling average $\tau_y$ of Tax Rewards per unit Luna over the last year `WindowLong`.
 
 2. Calculate the rolling average $\tau_m$ of Tax Rewards per unit Luna over the last month `WindowShort`.
 
-3. If $\tau_m = 0$, there was no tax revenue in the last month. The Tax Rate should thus be set to the maximum permitted by the Tax Policy, subject to the rules of `pc.Clamp()` (see [constraints](#policy-constraints)).
+3. If $\tau_m = 0$, there was no tax revenue in the last month. The Tax Rate should be set to the maximum permitted by the Tax Policy, subject to the rules of `pc.Clamp()` (see [constraints](#policy-constraints)).
 
-4. Otherwise, the new Tax Rate is $r_{t+1} = (n r_t \tau_y)/\tau_m$, subject to the rules of `pc.Clamp()` (see [constraints](#policy-constraints)).
+4. If $\tau_m > 0$, the new Tax Rate is $r_{t+1} = (n r_t \tau_y)/\tau_m$, subject to the rules of `pc.Clamp()`. See [constraints](#policy-constraints) for more details.
 
-As such, the Treasury hikes up Tax Rate when tax revenues in a shorter time window is performing poorly in comparison to the longer term tax revenue average. It lowers Tax Rate when short term tax revenues are outperforming the longer term index.
+When monthly tax revenues dip below the yearly average, the Treasury raises the Tax Rate. When monthly tax revenues go above the yearly average, the Treasury lowers the Tax Rate.
 
 ### `k.UpdateRewardPolicy()`
 
@@ -263,17 +220,22 @@ As such, the Treasury hikes up Tax Rate when tax revenues in a shorter time wind
 func (k Keeper) UpdateRewardPolicy(ctx sdk.Context) (newRewardWeight sdk.Dec)
 ```
 
-This function gets called at the end of an epoch to calculate the next value of the Reward Weight monetary lever.
+At the end of each epoch, this funtion calculates the next value of the Reward Weight monetary lever.
 
-Consider $w_t$ to be the current reward weight, and $b$ to be the [`SeigniorageBurdenTarget`](#seigniorageburdentarget) parameter.
+Using $w_t$ as the current reward weight, and $b$ as the [`SeigniorageBurdenTarget`](#seigniorageburdentarget) parameter:
 
-1. Calculate the sum of $S_m$ of seigniorage rewards over the last month `WindowShort`.
+1. Calculate the sum $S_m$ of seigniorage rewards over the last month `WindowShort`.
 
-2. Calculate the sum of $R_m$ of total mining rewards over the last month `WindowShort`.
+2. Calculate the sum $R_m$ of total mining rewards over the last month `WindowShort`.
 
-3. If either $R_m = 0$ or $S_m = 0$ there was no mining and seigniorage rewards in the last month. The Rewards Weight should thus be set to the maximum permitted by the Reward Policy, subject to the rules of `pc.Clamp()` (see [constraints](#policy-constraints)).
+3. If $R_m = 0$ and $S_m = 0$, there were no mining or seigniorage rewards in the last month. The Reward Weight should be set to the maximum permitted by the Reward Policy, subject to the rules of `pc.Clamp()`. See [constraints](#policy-constraints) for more details.
 
-4. Otherwise, the new Reward Weight is $w_{t+1} = b w_t S_m / R_m$, subject to the rules of `pc.Clamp()` (see [constraints](#policy-constraints)).
+4. If $R_m > 0$ or $S_m > 0$, the new Reward Weight is $w_{t+1} = b w_t S_m / R_m$, subject to the rules of `pc.Clamp()`. See [constraints](#policy-constraints) for more details.
+
+
+::: warning Note:
+As of Columbus-5, all seigniorage is burned and no longer funds the community or reward pools.
+:::
 
 ### `k.UpdateTaxCap()`
 
@@ -283,7 +245,7 @@ func (k Keeper) UpdateTaxCap(ctx sdk.Context) sdk.Coins
 
 This function is called at the end of an epoch to compute the Tax Caps for every denomination for the next epoch.
 
-For each denomination in circulation, the new Tax Cap for that denomination is set to be the global Tax Cap defined in the [`TaxPolicy`](#taxpolicy) parameter, at current exchange rates.
+For every denomination in circulation, the new Tax Cap for each denomination is set to be the global Tax Cap defined in the [`TaxPolicy`](#taxpolicy) parameter, at current exchange rates.
 
 ### `k.SettleSeigniorage()`
 
@@ -301,6 +263,10 @@ This function is called at the end of an epoch to compute seigniorage and forwar
 
 3. The remainder of the coins $\Sigma - S$ is sent to the [`Distribution`](spec-distribution.md) module, where it is allocated into the community pool.
 
+::: warning Note:
+As of Columbus-5, all seigniorage is burned and no longer funds the community pool or the oracle reward pool. Validators are rewarded for faithful oracle votes through swap fees.
+:::
+
 ## Transitions
 
 ### End-Block
@@ -311,9 +277,9 @@ If the blockchain is at the final block of the epoch, the following procedure is
 
 2. If the this current block is under [probation](#probation), skip to step 6.
 
-3. [Settle seigniorage](#ksettleseigniorage) accrued during the epoch and make funds available to ballot rewards and the community pool during the next epoch.
+3. [Settle seigniorage](#ksettleseigniorage) accrued during the epoch and make funds available to ballot rewards and the community pool during the next epoch. As of Columbus-5, all seigniorage is burned.
 
-4. Calculate the [Tax Rate](#k-updatetaxpolicy), [Reward Weight](#k-updaterewardpolicy), and [Tax Cap](#k-updatetaxcap) for the next epoch.
+4. Calculate the [Tax Rate](#k-updatetaxpolicy), [Reward Weight](#k-updaterewardpolicy), and [Tax Cap](#k-updatetaxcap) for the next epoch. As of Columbus-5, all seigniorage is burned, and the reward weight is set to `1`.
 
 5. Emit the [`policy_update`](#policy_update) event, recording the new policy lever values.
 
