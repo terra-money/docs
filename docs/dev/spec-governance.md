@@ -1,6 +1,6 @@
 # Governance
 
-::: warning NOTE
+::: warning Note:
 Terra's Governance module inherits from Cosmos SDK's [`gov`](https://docs.cosmos.network/v0.43/modules/gov/) module. This document is a stub, and covers mainly important Terra-specific notes about how it is used.
 :::
 
@@ -14,9 +14,9 @@ The following is the governance proposal procedure:
 
 ### Deposit Period
 
-After the proposal is submitted, it enters the deposit period, where it must reach a total minimum deposit of 512 Luna within 2 weeks from the time of its submission. The deposit threshold is reached when the sum of the initial deposit (from the proposer) and deposits from all other interested network participants goes meets or exceeds 512 Luna.
+After a proposal is submitted, it enters the deposit period, where it must reach a total minimum deposit of 512 Luna within 2 weeks from the time of its submission. The deposit threshold is reached when the sum of the initial deposit (from the proposer) and the deposits from all other interested network participants meets or exceeds 512 Luna.
 
-The deposit is only required as a form of spam protection, and the network will refund Luna deposits for proposals that have passed or have rejected but not vetoed.
+Deposits are required only to protect against spam. The network refunds deposits for proposals that pass or fail except when a proposal is vetoed. If a proposal is vetoed, deposits are not refunded.
 
 ### Voting Period
 
@@ -31,25 +31,29 @@ Voting is done by holders of bonded LUNA on a 1 bonded LUNA = 1 vote basis. As s
 
 ### Tallying
 
-Three conditions must be met for a proposal to pass.
+For a proposal to pass, the following conditions must be met:
 
 1. Voter participation must be at least `quorum` $Q$:
 
 $$\frac{Yes + No + NoWithVeto}{Stake} \ge Q$$
 
-2. Ratio of `NoWithVeto` votes must be less than `veto` $V$:
+2. The ratio of `NoWithVeto` votes must be less than `veto` $V$:
 
 $$\frac{NoWithVeto}{Yes + No + NoWithVeto} \lt V$$
 
-3. Ratio of `Yes` votes must be greater than `threshold` $T$:
+3. The ratio of `Yes` votes must be greater than `threshold` $T$:
 
 $$\frac{Yes}{Yes + No + NoWithVeto} \gt T$$
 
-If any of the above conditions are not met, the proposal is rejected. The deposit associated with rejected proposals are not refunded and will be transferred instead to the Community Pool. The parameters `quorum`, `veto`, and `threshold` exist as blockchain parameters within the Governance module.
+If any of the previous conditions are not met, the proposal is rejected. Proposals that get rejected with veto do not get their deposits refunded. The parameters `quorum`, `veto`, and `threshold` exist as blockchain parameters within the Governance module.
+
+::: warning Warning
+Deposits will not be refunded for proposals that are rejected with veto. As of Columbus-5, these deposits are burned. Proposals that pass or get rejected without veto will have their deposits refunded.
+:::
 
 ### Proposal Implementation
 
-When the governance proposal is accepted, the changes described are automatically put into effect by the proposal handler. Generic proposals such as passed `TextProposal`s must be reviewed by the Terra team and community for how to manually implement.
+When a governance proposal is accepted, the changes described are automatically put into effect by the proposal handler. Generic proposals such as passed `TextProposal`s must be reviewed by the Terra team and community for how to manually implement.
 
 ## Data
 
@@ -73,43 +77,9 @@ type Proposal struct {
 
 ```
 
-::: details JSON Example
+A `Proposal` is a data structure representing a petition for a change that is submitted to the blockchain alongside a deposit. Once its deposit reaches a certain value ([`MinDeposit`](#mindeposit)), the proposal is confirmed and voting opens. Bonded Luna holders can then send [`TxGovVote`]() transactions to vote on the proposal. Terra currently follows a simple voting scheme of 1 Bonded Luna = 1 Vote.
 
-```json
-{
-  "content": {
-    "type": "gov/TextProposal",
-    "value": {
-      "title": "proposal title",
-      "description": "proposal description"
-    }
-  },
-  "id": "1",
-  "proposal_status": "Passed",
-  "final_tally_result": {
-    "yes": "40000000000",
-    "abstain": "0",
-    "no": "0",
-    "no_with_veto": "0"
-  },
-  "submit_time": "2020-04-25T05:41:20.893245519Z",
-  "deposit_end_time": "2020-04-27T05:41:20.893245519Z",
-  "total_deposit": [
-    {
-      "denom": "uluna",
-      "amount": "100000000"
-    }
-  ],
-  "voting_start_time": "2020-04-25T05:41:20.893245519Z",
-  "voting_end_time": "2020-04-27T05:41:20.893245519Z"
-}
-```
-
-:::
-
-A `Proposal` is a data structure representing a petition for a change that is submitted by to the blockchain alongside a deposit. Once its deposit reaches a certain value ([`MinDeposit`](#mindeposit)), the proposal is confirmed and voting opens. Bonded Luna hoolders can then send [`TxGovVote`]() transactions to vote on the proposal. Terra currently follows a simple voting scheme of 1 Bonded Luna = 1 Vote.
-
-The `Content` on a proposal is an interface which contains the information about the `Proposal` such as the `title`, `description`, and any notable changes. Also, this `Content` type can by implemented by any module. The `Content`'s `ProposalRoute` returns a string which must be used to route the `Content`'s Handler in the Governance keeper. This allows the governance keeper to execute proposal logic implemented by any module. If a proposal passes, the handler is executed. Only if the handler is successful does the state get persisted and the proposal finally passes. Otherwise, the proposal is rejected.
+The `Content` on a proposal is the interface that contains the information about the `Proposal`, such as the `title`, `description`, and any notable changes. A `Content` type can be implemented by any module. The `ProposalRoute` of the `Content` returns a string which must be used to route the handler of the `Content` in the Governance keeper. This process allows the governance keeper to execute proposal logic implemented by any module. If a proposal passes, the handler is executed. Only if the handler is successful does the state get persisted and the proposal finally passes. Otherwise, the proposal is rejected.
 
 ## Message Types
 
@@ -123,32 +93,6 @@ type MsgSubmitProposal struct {
 }
 ```
 
-::: details JSON Example
-
-```json
-{
-  "type": "gov/MsgSubmitProposal",
-  "value": {
-    "content": {
-      "type": "gov/TextProposal",
-      "value": {
-        "title": "proposal name",
-        "description": "proposal desc"
-      }
-    },
-    "initial_deposit": [
-      {
-        "denom": "uluna",
-        "amount": "999"
-      }
-    ],
-    "proposer": "terra..."
-  }
-}
-```
-
-:::
-
 ### MsgDeposit
 
 ```go
@@ -159,26 +103,6 @@ type MsgDeposit struct {
 }
 ```
 
-::: details JSON Example
-
-```json
-{
-  "type": "gov/MsgDeposit",
-  "value": {
-    "proposal_id": "1",
-    "depositor": "terra...",
-    "amount": [
-      {
-        "denom": "uluna",
-        "amount": "1"
-      }
-    ]
-  }
-}
-```
-
-:::
-
 ### MsgVote
 
 ```go
@@ -188,21 +112,6 @@ type MsgVote struct {
 	Option     VoteOption     `json:"option" yaml:"option"`           //  option from OptionSet chosen by the voter
 }
 ```
-
-::: details JSON Example
-
-```json
-{
-  "type": "gov/MsgVote",
-  "value": {
-    "proposal_id": "1",
-    "voter": "terra...",
-    "option": "NoWithVeto"
-  }
-}
-```
-
-:::
 
 ## Proposals
 
@@ -215,7 +124,7 @@ type TextProposal struct {
 }
 ```
 
-Text Proposals are used for creating general-purpose petitions, such as asking the Core team to implement a specific feature. The community can reference a passed Text Proposal to the core developers to indicate that a feature (requiring potentially a soft or hard fork) is in significant demand.
+Text Proposals are used to create general-purpose petitions, such as asking the core team to implement a specific feature. The community can reference a passed Text Proposal to the core developers to indicate that a feature that potentially requires a soft or hard fork is in significant demand.
 
 ### Parameter Change Proposals
 
@@ -234,16 +143,16 @@ type ParamChange struct {
 }
 ```
 
-::: warning NOTE
+::: warning Note:
 Parameter Change Proposals are actually located in the Params module, an internal module. It is shown here for your convenience.
 :::
 
-Parameter Change Proposals are a special type of proposal which, once passed, will automaticaly go in effect by directly altering the network's parameter specified. For each module, you can find the parameters associated with it by browsing to the **Parameters** section of the module specification.
+Parameter Change Proposals are a special type of proposal which, once passed, will automatically go into effect by directly altering the network's specified parameter. You can find the parameters associated with each module by browsing to the **Parameters** section of the module specification.
 
 ### Software Upgrade Proposals
 
-::: danger
-Software Upgrade Proposals also exist due to inheritance from Cosmos SDK but are for the moment considered unavailable, as they have not yet been implemented. They thus share the same semantics as a simple Text Proposal. It is strongly advised to not submit these types of proposals at the risk of losing your Luna deposit.
+::: danger Warning
+Software upgrade proposals exist because they are inherited from the Cosmos SDK, but they are temporarily unavailable because they have not been implemented yet. Therefore, they share the same semantics as a simple text proposal. If you submit this type of proposal, you might lose your Luna deposit.
 :::
 
 ## Transitions
@@ -335,7 +244,7 @@ type VotingParams struct {
 - type: `Coins`
 - default value: `uluna`
 
-Minimum deposit for a proposal to enter voting period.
+Minimum deposit for a proposal to enter a voting period.
 
 ### MaxDepositPeriod
 

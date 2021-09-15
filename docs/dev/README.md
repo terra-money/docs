@@ -2,7 +2,7 @@
 
 This document covers tips and guidelines to help you to understand how Terra works and efficiently navigate the codebase of Terra Core, the official Golang reference implementation of the Terra node software.
 
-::: tip
+::: Recommendation
 The Terra Core is built using the [Cosmos SDK](https://cosmos.network/sdk), which provides a robust framework for constructing blockchains that run atop the [Tendermint](https://tendermint.com/) Consensus Protocol.
 
 It is highly recommended that you review these projects before diving into the Terra developer documentation, as they assume familiarity with concepts such as ABCI, Validators, Keepers, Message Handlers, etc.
@@ -104,13 +104,13 @@ The following processes get executed during each block transition:
 
 There are two types of tokens that can be held by accounts and wallets in the Terra protocol:
 
-1. **Terra Stablecoins** are transactional assets that track the exchange rate of various fiat currencies. By convention, given a fiat currency, the Terra peg that corresponds to it is Terra-`<3-letter ISO4217 currency-code>` (see [here](https://www.xe.com/iso4217.php)) abbreviated `<country-code>T`, where the `T` replaces the currency's designator. For instance, TerraKRW is the peg for the Korean Won, and is abbreviated KRT.
+1. **Terra stablecoins** track the exchange rate of various fiat currencies. Each Terra stablecoin is named for its corresponding 3 letter [ISO 4217 fiat currency code](https://www.xe.com/iso4217.php), written as `Terra<currencycode>`. When used as a value, the last letter of each currency code abbreviation is replaced with T to signify it as a Terra stablecoin. For example, the Terra stablecoin pegged to the Korean Won, KRW, is named  TerraKRW, and its abbreviation is KRT.
 
-   The flagship, standard Terra currency is TerraSDR, or SDT, the peg to the IMF's Special Drawing Rights. The protocol will use SDT as its default, "base" currency to do calculations and setting standards.
+   The Terra protocol's standard base currency is TerraSDR, or SDT, which pegs to the IMF's Special Drawing Rights. The Terra protocol uses SDT to make calcualtions and set rate standards.
 
-2. **Luna**, the native staking asset that entitles the staking delegator to mining rewards (including exchange rate ballot rewards) if bonded to an active validator. Luna is also necessary for making governance proposals and collateralizing the Terra economy.
+2. **Luna** is the Terra Protocol's native staking asset. Delegators earn mining rewards when they stake their Luna to an active validator. Luna stabilizes the Terra economy by absorbing the price volatility of Terra stablecoins and is also used to make governance proposals.
 
-All denominations of Terra tokens and Luna tokens are divisible up to microunits ($\times 10^{-6}$), which are considered to be the atomic unit of tokens, and they cannot be divided further. The following list shows several denominations that are recognized by the protocol:
+The micro-unit ($\times 10^{-6}$) is the smallest atomic unit of both Terra stablecoins and Luna.
 
 | Denomination | Micro-Unit | Code    | Value         |
 | :----------- | :--------- | :------ | :------------ |
