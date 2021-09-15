@@ -172,7 +172,7 @@ module.exports = {
               "https://pkg.go.dev/github.com/terra-money/core?tab=subdirectories",
               "Terra Core GoDoc",
             ],
-            ["https://swagger.terra.money", "Terra REST API"],
+            ["https://lcd.terra.dev/swagger-ui/", "Terra REST API"],
           ],
         },
       ],
