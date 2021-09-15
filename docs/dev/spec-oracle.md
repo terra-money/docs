@@ -40,8 +40,8 @@ Choose `ReferenceTerra` with the highest voter turnout. If the voting power of t
 
 1. Choose `ReferenceTerra`
 
-   - Let `Vote_j = Vote_j_1 ... Vote_j_n` be the `uluna` exchange rate votes for each Terra for validator `Val_j` in a given `VotePeriod`. `n` = the entire quantity in the Terra Whitelist.
-   - For the entire Terra Whitelist,  `w_1 ... w_n`, choose the index `r` with the highest voter turnout. If the vote turnout has multiple tie winner, we choose in alphabetical order. `w_r` is chosen as the `ReferenceTerra` from which to compute cross exchange rates.
+   - Let `Vote_j = Vote_j_1 ... Vote_j_n` be the `uluna` exchange rate votes for each terra for validator `Val_j` in a given `VotePeriod`. `n` = number of total terra whitelist
+   - For all terra whitelist  `w_1 ... w_n`, choose the index `r` with the highest voter turnout. If the vote turnout has multiple tie winner, we choose in alphabetical order. `w_r` is chosen as the `ReferenceTerra` from which to compute cross exchange rates.
 
 2. Compute Oracle Exchange Rate
 
@@ -119,34 +119,6 @@ The exchange rate used in the hash must be the open market exchange rate of Luna
 
 `Validator` is the validator address (`terravaloper-`) of the original validator.
 
-::: details JSON Example
-
-```json
-{
-  "type": "oracle/MsgExchangeRatePrevote",
-  "value": {
-    "hash": "a5720d5a462b7f867af755bfc3fe35627c37382b",
-    "denom": "uusd",
-    "feeder": "terra...",
-    "validator": "terravaloper..."
-  }
-}
-```
-
-:::
-
-::: details Events
-
-| Type    | Attribute Key | Attribute Value     |
-| ------- | ------------- | ------------------- |
-| prevote | denom         | {denom}             |
-| prevote | voter         | {validatorAddress}  |
-| prevote | feeder        | {feederAddress}     |
-| message | module        | oracle              |
-| message | action        | exchangerateprevote |
-| message | sender        | {senderAddress}     |
-
-:::
 
 ### MsgExchangeRateVote
 
@@ -164,37 +136,6 @@ type MsgExchangeRateVote struct {
 	Validator    sdk.ValAddress `json:"validator" yaml:"validator"`
 }
 ```
-
-::: details JSON Example
-
-```json
-{
-  "type": "oracle/MsgExchangeRateVote",
-  "value": {
-    "exchange_rate": "0.267872980680898154",
-    "salt": "9dbc",
-    "denom": "uusd",
-    "feeder": "terra...",
-    "validator": "terravaloper..."
-  }
-}
-```
-
-:::
-
-::: details Events
-
-| Type    | Attribute Key | Attribute Value    |
-| ------- | ------------- | ------------------ |
-| vote    | denom         | {denom}            |
-| vote    | voter         | {validatorAddress} |
-| vote    | exchange_rate | {exchangeRate}     |
-| vote    | feeder        | {feederAddress}    |
-| message | module        | oracle             |
-| message | action        | exchangeratevote   |
-| message | sender        | {senderAddress}    |
-
-:::
 
 ### MsgDelegateFeedConsent
 
@@ -214,32 +155,6 @@ type MsgDelegateFeedConsent struct {
 }
 ```
 
-::: details JSON Example
-
-```json
-{
-  "type": "oracle/MsgDelegateFeedConsent",
-  "value": {
-    "operator": "terravaloper...",
-    "delegate": "terra..."
-  }
-}
-```
-
-:::
-
-::: details Events
-
-| Type          | Attribute Key | Attribute Value    |
-| ------------- | ------------- | ------------------ |
-| feed_delegate | operator      | {validatorAddress} |
-| feed_delegate | feeder        | {feederAddress}    |
-| message       | module        | oracle             |
-| message       | action        | delegatefeeder     |
-| message       | sender        | {senderAddress}    |
-
-:::
-
 ### MsgAggregateExchangeRatePrevote
 
 ```go
@@ -249,33 +164,6 @@ type MsgAggregateExchangeRatePrevote struct {
 	Validator sdk.ValAddress    `json:"validator" yaml:"validator"`
 }
 ```
-
-::: details JSON Example
-
-```json
-{
-  "type": "oracle/MsgAggregateExchangeRatePrevote",
-  "value": {
-    "hash": "a5720d5a462b7f867af755bfc3fe35627c37382b",
-    "feeder": "terra...",
-    "validator": "terravaloper..."
-  }
-}
-```
-
-:::
-
-::: details Events
-
-| Type              | Attribute Key | Attribute Value              |
-| ----------------- | ------------- | ---------------------------- |
-| aggregate_prevote | voter         | {validatorAddress}           |
-| aggregate_prevote | feeder        | {feederAddress}              |
-| message           | module        | oracle                       |
-| message           | action        | aggregateexchangerateprevote |
-| message           | sender        | {senderAddress}              |
-
-:::
 
 ### MsgAggregateExchangeRateVote
 
@@ -287,35 +175,6 @@ type MsgAggregateExchangeRateVote struct {
 	Validator     sdk.ValAddress `json:"validator" yaml:"validator"`
 }
 ```
-
-::: details JSON Example
-
-```json
-{
-  "type": "oracle/MsgAggregateExchangeRateVote",
-  "value": {
-    "salt": "a5720d5a462b7f867af755bfc3fe35627c37382b",
-    "exchange_rates": "245ukrw,1.232122232122232122uusd",
-    "feeder": "terra...",
-    "validator": "terravaloper..."
-  }
-}
-```
-
-:::
-
-::: details Events
-
-| Type           | Attribute Key  | Attribute Value           |
-| -------------- | -------------- | ------------------------- |
-| aggregate_vote | voter          | {validatorAddress}        |
-| aggregate_vote | exchange_rates | {exchangeRates}           |
-| aggregate_vote | feeder         | {feederAddress}           |
-| message        | module         | oracle                    |
-| message        | action         | aggregateexchangeratevote |
-| message        | sender         | {senderAddress}           |
-
-:::
 
 ## State
 
@@ -503,4 +362,4 @@ The number of blocks for slashing tallying.
 - type: `Dec`
 - default: 5%
 
-The ratio of minimum valid oracle votes per `SlashWindow` to avoid slashing.
+The ratio of minimum valid oracle votes per slash window to avoid slashing.
