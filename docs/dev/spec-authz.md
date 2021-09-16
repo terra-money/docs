@@ -1,6 +1,6 @@
 # AuthZ
 
-The authz (message authorization) module allows users to authorize another account to send messages on their behalf. Certain authorizations such as the spending of another account's tokens, can be parameterized to constrain the permissions of the grantee (like setting a spending limit).
+The authz (message authorization) module allows users to authorize another account to send messages on their behalf. Certain authorizations such as the spending of another account's tokens, can be parameterized to constrain the permissions of the grantee (like setting a spending limit). 
 
 ## Message Types
 
