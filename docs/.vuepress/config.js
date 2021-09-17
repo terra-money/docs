@@ -99,10 +99,10 @@ module.exports = {
       indexName: "terra-project",
     },
     nav: [
-      { text: "Docs", link: "/" },
-      { text: "Contracts", link: "/contracts/" },
-      { text: "Validators", link: "/validator/" },
-      { text: "Core", link: "/dev/" },
+      { text: "Tutorials", link: "/Tutorials/" },
+      { text: "How to", link: "/How-to/" },
+      { text: "Concepts", link: "/Concepts/" },
+      { text: "Reference", link: "/Reference/" },
       {
         text: "GitHub",
         link: "https://github.com/terra-money/core",
@@ -110,118 +110,119 @@ module.exports = {
       },
     ],
     sidebar: {
-      "/contracts/": [
-        "/contracts/",
+      "/Tutorials/": [
+        "/Tutorials/",
         {
-          title: "Tutorial",
+          title: "Get started",
           children: [
-            "/contracts/tutorial/",
-            "/contracts/tutorial/setup",
-            "/contracts/tutorial/implementation",
-            "/contracts/tutorial/interacting",
-            "/contracts/tutorial/cw20",
+            "/Tutorials/Get-started/Use-Terra-Station",
           ],
-          collapsable: false,
+          collapsable: true,
         },
         {
-          title: "CosmWasm Resources",
-          collapsable: false,
+          title: "Build a simple Terra dApp",
           children: [
-            ["https://docs.cosmwasm.com", "CosmWasm Official Docs"],
-            ["https://github.com/CosmWasm/cosmwasm", "CosmWasm Repo"],
-            [
-              "https://www.youtube.com/watch?v=pm6VX5ueT2k",
-              "Token Video Tutorial",
-            ],
-            [
-              "https://github.com/CosmWasm/cosmwasm-plus",
-              "Standard CosmWasm Contracts",
-            ],
+            "/Tutorials/Smart-contracts/Build-Terra-dApp",
+            "/Tutorials/Smart-contracts/Set-up-local-environment",
+            "/Tutorials/Smart-contracts/Write-smart-contract",
+            "/Tutorials/Smart-contracts/Interact-with-smart-contract",
+            "/Tutorials/Smart-contracts/Manage-CW20-tokens",
           ],
+          collapsable: true,
         },
       ],
-      "/dev/": [
+      "/How-to/": [
+        "/How-to/",
         {
-          title: "Developer Guide",
-          children: ["/dev/"],
+          title: "Manage funds with Terra Station",
+          children: [
+            "/How-to/Manage-funds-Terra-Station/",
+          ],
+          collapsable: true,
         },
         {
-          title: "Module Specs",
+          title: "Run a full Terra node",
           children: [
-            "/dev/spec-auth",
-            "/dev/spec-authz",
-            "/dev/spec-bank",
-            "/dev/spec-capability",
-            "/dev/spec-distribution",
-            "/dev/spec-evidence",
-            "/dev/spec-feegrant",
-            "/dev/spec-governance",
-            "/dev/spec-market",
-            "/dev/spec-mint",
-            "/dev/spec-authz",
-            "/dev/spec-oracle",
-            "/dev/spec-slashing",
-            "/dev/spec-staking",
-            "/dev/spec-treasury",
-            "/dev/spec-wasm",
+            "/How-to/Run-a-full-Terra-node/Hardware-requirements",
+            "/How-to/Run-a-full-Terra-node/Build-Terra-core",
+            "/How-to/Run-a-full-Terra-node/Set-up-production-environment",
+            "/How-to/Run-a-full-Terra-node/Configure-general-settings",
+            "/How-to/Run-a-full-Terra-node/Set-up-private-network",
+            "/How-to/Run-a-full-Terra-node/Join-public-network",
+
+          ],
+          collapsable: true,
+        },
+        {
+          title: "Manage a Terra validator",
+          children: [
+            "/How-to/Manage-a-Terra-validator/Overview",
+            "/How-to/Manage-a-Terra-validator/Register-your-validator",
+            "/How-to/Manage-a-Terra-validator/Set-up-oracle-feeder",
+            "/How-to/Manage-a-Terra-validator/Implement-security",
+            "/How-to/Manage-a-Terra-validator/Troubleshoot-validator-problems",
+          ],
+          collapsable: true,
+        },
+      ],
+      "/Concepts/": [
+
+        {
+          title: "Concepts",
+          children: [
+            "/Concepts/Terra",
+            "/Concepts/Luna",
+            "/Concepts/Stablecoin",
+            "/Concepts/Validators",
+            "/Concepts/Governance",
+            "/Concepts/Smart-contracts",
+
           ],
           collapsable: false,
         },
+      ],
+      "/Reference/": [
+        "/Reference/",
         {
-          title: "Other Resources",
-          collapsable: false,
+          title: "Terra core",
+          collapsable: true,
+          children: [
+            "/Reference/Terra-core/Module-specifications/spec-auth",
+            "/Reference/Terra-core/Module-specifications/spec-authz",
+            "/Reference/Terra-core/Module-specifications/spec-bank",
+            "/Reference/Terra-core/Module-specifications/spec-capability",
+            "/Reference/Terra-core/Module-specifications/spec-distribution",
+            "/Reference/Terra-core/Module-specifications/spec-evidence",
+            "/Reference/Terra-core/Module-specifications/spec-feegrant",
+            "/Reference/Terra-core/Module-specifications/spec-governance",
+            "/Reference/Terra-core/Module-specifications/spec-mint",
+            "/Reference/Terra-core/Module-specifications/spec-oracle",
+            "/Reference/Terra-core/Module-specifications/spec-slashing",
+            "/Reference/Terra-core/Module-specifications/spec-treasury",
+            "/Reference/Terra-core/Module-specifications/spec-wasm",
+        ],
+        },
+        {
+          title: "terrad",
+          collapsable: true,
+          children: [
+            "/Reference/terrad/commands",
+            "/Reference/terrad/subcommands",
+        ],
+        },
+        "/Reference/integrations",
+        "/Reference/ecosystem",
+        {
+          title: "Other resources",
+          collapsable: true,
           children: [
             [
               "https://pkg.go.dev/github.com/terra-money/core?tab=subdirectories",
               "Terra Core GoDoc",
             ],
-            ["https://swagger.terra.money", "Terra REST API"],
+            ["https://lcd.terra.dev/swagger-ui/", "Terra REST API"],
           ],
         },
-      ],
-      "/validator/": [
-        {
-          title: "Validator Guide",
-          children: ["/validator/", "/validator/setup", "/validator/oracle"],
-        },
-        "/validator/faq",
-        "/validator/security",
-        "/validator/troubleshooting",
-      ],
-      "/": [
-        ["/", "Overview"],
-        "quickstart",
-        {
-          title: "Concepts",
-          children: [
-            "terra",
-            "luna",
-            "validators",
-            "stablecoin",
-            "governance",
-          ],
-        },
-        {
-          title: "Terra Node",
-          children: [
-            "node/installation",
-            "node/config",
-            "node/testnet",
-            "node/join-network",
-          ],
-        },
-        {
-          title: "terrad reference",
-          children: [
-            "terrad/",
-            "terrad/commands",
-            "terrad/subcommands",
-          ],
-        },
-        "integrations",
-        "ecosystem",
-        "migration-guide",
-        "history-and-changes"
       ],
     },
   },

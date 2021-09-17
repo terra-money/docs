@@ -1,4 +1,4 @@
-# Getting Started
+# Build a simple Terra dApp
 
 This tutorial is designed to get you quickly acquainted with everything you need to know to start launch your own smart-contract powered applications, building atop the Terra dApp platform.
 
@@ -8,7 +8,7 @@ In this tutorial, we will go over all the necessary steps to go from idea to exe
 2. The basic structure and execution model for smart contracts
 3. The local build, upload, and testing process
 
-### Requirements
+## Requirements
 
 For this tutorial, we recommend:
 
