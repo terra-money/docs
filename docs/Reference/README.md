@@ -1,7 +1,8 @@
 # Reference
 
-Rewrite and update links.
+Use this section to quickly find the information you need about the Terra core modules and the syntax for running all the `terrad` commands and subcommands.
 
+<!--
 <div class="cards twoColumn">
   <a href="/terra.html" class="card">
     <img src="/img/icon_terra.svg"/>
@@ -101,3 +102,4 @@ The Terra SDKs provide an easy way to programmatically interact with a Terra nod
     </div>
   </a>
 </div>
+-->

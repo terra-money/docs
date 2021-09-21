@@ -1,7 +1,8 @@
 # Concepts
 
-Rewrite and update links.
+Learn more about Terra, stablecoins, and how the protocol works by exploring the concepts explained in this section.
 
+<!--
 <div class="cards twoColumn">
   <a href="/terra.html" class="card">
     <img src="/img/icon_terra.svg"/>
@@ -101,3 +102,4 @@ The Terra SDKs provide an easy way to programmatically interact with a Terra nod
     </div>
   </a>
 </div>
+-->
