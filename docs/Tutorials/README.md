@@ -1,7 +1,8 @@
 # Tutorials
 
-Rewrite and update links
+Learn how to [use Terra Station to manage your funds](./Get-started/Use-Terra-Station.md) and how to [build a simple dApp on Terra](./Smart-contracts/Build-Terra-dApp.md) by completing the tutorials in this section.
 
+<!--
 <div class="cards twoColumn">
   <a href="/terra.html" class="card">
     <img src="/img/icon_terra.svg"/>
@@ -101,3 +102,4 @@ The Terra SDKs provide an easy way to programmatically interact with a Terra nod
     </div>
   </a>
 </div>
+-->

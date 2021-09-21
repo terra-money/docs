@@ -2,7 +2,7 @@
 
 This tutorial walks you through the process of using Terra Station, the official desktop wallet for holding Terra assets. You'll learn how to set up a new wallet, make basic transactions, and stake your tokens, all by using testnet Luna so that you can get a solid understanding of how Terra Station works without any risk of losing any real funds.
 
-## Create a new wallet
+## Step 1. Create a new wallet
 
 1. Download and install [Terra Station](https://terra.money/protocol.html#protocol1).
 
@@ -15,7 +15,7 @@ Write down and verify the 24 words, and keep them in a secure location for the f
 - If you clear the Terra Station cache or reinstall station, the mnemonic is erased.
 :::
 
-## Get testnet Luna
+## Step 2. Get testnet Luna
 
 1. In the bottom left corner of Terra Station, switch **Mainnet** to **Testnet** .
 2. A the top of Terra Station, copy your Terra address. Your address follows this format: `terra1qi3vmmjiwjs89qw9m1l98sdjcmn2goy03xuapl`.
@@ -27,7 +27,7 @@ The following image shows your balance after you receive your testnet Luna:
 
 Now, you can practice making transactions using the testnet Luna tokens.
 
-## Make a transaction
+## Step 3. Make a transaction
 
 Transactions are bundles of messages that tell the blockchain to update its state, creating changes in balances and ownership reflected across the distributed ledger. The simplest transaction you can make is to send tokens to somebody else. In the following procedure, you'll send some of your testnet Luna to another address.
 
@@ -42,7 +42,7 @@ The following image shows how to send Luna:
 
 Now that you understand how to make a simple transaction, let's try the on-chain swap.
 
-## Swap Luna for a stablecoin
+## Step 4. Swap Luna for a stablecoin
 
 The hallmark feature of the Terra protocol is its stablecoin, powered by a balancing system of on-chain swaps and real-world arbitrage. Using the on-chain swap, you will turn your unstable Luna coins into stablecoins to protect their value.
 
@@ -55,7 +55,7 @@ The following image shows how to swap from Luna to KRT:
 
 ![swap](/img/screens/swap.png)
 
-## Stake your Luna
+## Step 5. Stake your Luna
 
 Staking is the act of delegating all or part of your Luna balance as your stake to a validator, who will participate in the process of validating transactions. By staking, you earn rewards.
 
@@ -74,7 +74,7 @@ The following image shows delegating Luna to node0 on testnet:
 
 ![delegate](/img/screens/delegate.png)
 
-## Withdraw staking rewards
+## Step 6. Withdraw staking rewards
 
 After some time has passed, rewards will accrue because you delegated Luna to a validator who participates on the network. You can withdraw your accrued rewards at any time.
 
