@@ -10,9 +10,7 @@ In this tutorial, we will go over all the necessary steps to go from idea to exe
 
 ## Requirements
 
-For this tutorial, we recommend:
-
 - [Docker](https://www.docker.com/) installed on your machine
-- familiarity with the Terra ecosystem in general
-- basic proficiency with the [Rust](https://www.rust-lang.org/) programming language
-- a desire to disrupt traditional finance
+- Basic familiarity with the Terra ecosystem
+- Basic proficiency with the [Rust](https://www.rust-lang.org/) programming language
+- A desire to disrupt traditional finance
