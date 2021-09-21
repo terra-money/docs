@@ -1,7 +1,8 @@
 # How to
 
-Rewrite and update links
+Learn how to run a full Terra node and manage a validator by using the information in this section.
 
+<!--
 <div class="cards twoColumn">
   <a href="/terra.html" class="card">
     <img src="/img/icon_terra.svg"/>
@@ -101,3 +102,4 @@ The Terra SDKs provide an easy way to programmatically interact with a Terra nod
     </div>
   </a>
 </div>
+-->
