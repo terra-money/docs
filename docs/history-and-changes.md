@@ -7,7 +7,7 @@ This is a history of changes to the Terra core.
 Columbus-5 is the current Terra Mainnet.
 
 - [Mainnet Changelog](https://github.com/terra-money/core/blob/main/CHANGELOG.md)
-- [Columbus-5 Upgrade Guide](https://github.com/terra-money/mainnet/wiki/%5BWIP%5D-Columbus-5-Upgrade-Instructions)
+- [Columbus-5 Upgrade Guide](https://github.com/terra-money/mainnet/wiki/Columbus-5-Upgrade-Instructions)
 - [Wallet Migration Guide](https://github.com/terra-money/mainnet/wiki/Columbus-5-Wallet-Migration-Guide)
 - [Contract Migration Guide](https://github.com/terra-money/mainnet/wiki/Columbus-5-Contract-Migration-Guide)
 
