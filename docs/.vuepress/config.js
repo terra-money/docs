@@ -99,6 +99,7 @@ module.exports = {
       indexName: "terra-project",
     },
     nav: [
+      { text: "Overview", link: "/" },
       { text: "Tutorials", link: "/Tutorials/" },
       { text: "How to", link: "/How-to/" },
       { text: "Concepts", link: "/Concepts/" },
@@ -110,6 +111,8 @@ module.exports = {
       },
     ],
     sidebar: {
+
+
       "/Tutorials/": [
         "/Tutorials/",
         {
@@ -157,10 +160,12 @@ module.exports = {
           title: "Manage a Terra validator",
           children: [
             "/How-to/Manage-a-Terra-validator/Overview",
-            "/How-to/Manage-a-Terra-validator/Register-your-validator",
+            "/How-to/Manage-a-Terra-validator/Set-up-validator",
             "/How-to/Manage-a-Terra-validator/Set-up-oracle-feeder",
+            "/How-to/Manage-a-Terra-validator/Court-delegations",
             "/How-to/Manage-a-Terra-validator/Implement-security",
             "/How-to/Manage-a-Terra-validator/Troubleshoot-validator-problems",
+            "/How-to/Manage-a-Terra-validator/faq",
           ],
           collapsable: true,
         },

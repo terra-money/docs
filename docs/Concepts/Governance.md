@@ -2,6 +2,8 @@
 
 Governance is the process by which Terra network participants can effect change for the protocol, by collectively demonstrating consensus support for proposals.
 
+The Terra ecosystem is controlled by Luna token holders who submit and vote on off-chain proposals that govern the ecosystem. Proposals that generate a majority support are implemented.
+
 ## Proposals
 
 Proposals start out as ideas within the community. A member drafts a proposal into a specific format and submits the proposal alongside an initial deposit.
