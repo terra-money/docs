@@ -1,6 +1,8 @@
-# Validator Guide
+# Overview
 
-The Terra Core is powered by the Tendermint consensus. Validators run full nodes, participate in consensus by broadcasting votes, commit new blocks to the blockchain, and participate in governance of the blockchain. Validators are able to cast votes on behalf of their delegators. A validator's voting power is weighted according to their total stake. The top 130 validators make up the **Active Validator Set** and are the only validators that sign blocks and receive revenue.
+The tasks in this section describe how to set up a Terra validator. While setting up a rudimentary validating node is easy, running a production-quality validator node with a robust architecture and security features requires an extensive setup.
+
+The Terra core is powered by the Tendermint consensus. Validators run full nodes, participate in consensus by broadcasting votes, commit new blocks to the blockchain, and participate in governance of the blockchain. Validators are able to cast votes on behalf of their delegators. A validator's voting power is weighted according to their total stake. The top 130 validators make up the **Active Validator Set** and are the only validators that sign blocks and receive revenue.
 
 Validators and their delegators earn the following fees:
 
@@ -14,11 +16,17 @@ Validators can set commissions on the fees they receive as additional incentive.
 
 If validators double sign, are frequently offline, or do not participate in governance, their staked Luna (including Luna of users that delegated to them) can be slashed. Penalties can vary depending on the severity of the violation.
 
-## Hardware
+::: tip
+Consider using the helpful [step-by-step guide](https://medium.com/block42-blockchain-company/how-to-setup-a-terra-luna-validator-node-860d8ea7aea2) for setting up a new validator released by Block42.
+:::
 
-We recommend the following for running Terra Core:
+## Requirements
 
-- 4 core Compute Optimized CPU
-- 16GB RAM (32GB to export genesis)
-- 1TB storage (SSD or better)
-- At least 100mbps network bandwidth
+This guide starts with the following assumptions:
+
+- The Terra full-node software is [installed](../Run-a-full-Terra-node/Build-Terra-core.md).
+- Your Terra node is [connected to an existing network](../Run-a-full-Terra-node/Join-public-network.md).
+- Your Terra node is properly [configured](../Run-a-full-Terra-node/Configure-general-settings.md).
+- You are familiar with [terrad](../../Reference/terrad/).
+
+Hardware requirements are the same as the [requirements for running a full node](../Run-a-full-Terra-node/Hardware-requirements.md).

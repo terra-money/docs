@@ -1,29 +1,33 @@
-# Troubleshooting
+# Troubleshoot validator problems
 
-These are some common problems that you may run into when running a validator node.
+Here are some common problems you might encounter when you run a validator node and their solutions.
 
 ## Validator has 0 voting power
 
-If this occurs, your validator has become auto-unbonded. On the Mainnet, validators unbond if they do not vote on `9500` of the last `10000` blocks (`50` of the last `100` blocks on the testnet). Since blocks are proposed every ~5 seconds, a validator that is unresponsive for ~13 hours (~4 minutes in testnet) will become unbonded. This usually happens when your `terrad` process crashes.
+If your validator has 0 voting power, your validator has become auto-unbonded. On the mainnet, validators unbond when they do not vote on `9500` of the last `10000` blocks (`50` of the last `100` blocks on the testnet). Because blocks are proposed every ~5 seconds, a validator that is unresponsive for ~13 hours (~4 minutes on testnet) become unbonded. This problem usually happens when your `terrad` process crashes.
 
-Here's how you can return the voting power back to your validator:
+To return the voting power back to your validator:
 
-1. If `terrad` is not running, start it up again:
+1. If `terrad` is not running, restart it:
 
   ```bash
   terrad start
   ```
 
-1. Wait for your full node to catch up to the latest block and run the following command:  
+1. Wait for your full node to reach the latest block, and run:
 
   ```bash
   terrad tx slashing unjail <terra> --chain-id=<chain_id> --from=<from>
   ```
 
-  `<terra>` is the address of your validator account, and `<name>` is the name of the validator account. You can find this info by running `terrad keys list`.
+where
+
+
+- `<terra>` is the address of your validator account.
+- `<name>` is the name of the validator account. To find this information, run `terrad keys list`.
 
   ::: warning
-  If you don't wait for `terrad` to sync before running `unjail`, you will receive an error message telling you your validator is still jailed.
+  If you don't wait for `terrad` to sync before running `unjail`, an error message will inform you that your validator is still jailed.
   :::
 
 1.  Check your validator again to see if your voting power is back:
@@ -32,17 +36,17 @@ Here's how you can return the voting power back to your validator:
   terrad status
   ```
 
-You may notice that your voting power is less than it used to be. That's because you got slashed for downtime!
+If your voting power is less than it was previously, it's less because you were slashed for downtime.
 
-## Terrad crashes from "too many open files"
+## Terrad crashes because of too many open files
 
-The default number of files Linux can open (per-process) is `1024`. `terrad` is known to open more than this amount, causing the process to crash. You can fix this by doing the following:
+The default number of files Linux can open per process is `1024`. `terrad` is known to open more than this amount, causing the process to crash. To fix this problem:
 
 1. Increase the number of open files allowed by running `ulimit -n 4096`.  
 
-2.  Restart the process with `terrad start`.
+2. Restart the process with `terrad start`.
 
-  If you are using `systemd` or another process manager to launch `terrad`, you may need to configure them. A sample `systemd` file used to fix this issue is below:
+  If you are using `systemd` or another process manager to launch `terrad`, you might need to configure them. The following  sample `systemd` file fixes the problem:
 
   ```systemd
   # /etc/systemd/system/terrad.service
@@ -65,25 +69,25 @@ The default number of files Linux can open (per-process) is `1024`. `terrad` is 
 
 ## Oracle voting error
 
-You may receive an error message by the [Terra Oracle feeder](https://github.com/terra-money/oracle-feeder):
+You might receive the following error message by the [Terra Oracle feeder](https://github.com/terra-money/oracle-feeder):
 
-    broadcast error: code: 3, raw_log: validator does not exist: terravaloperxxx
+    `broadcast error: code: 3, raw_log: validator does not exist: terravaloperxxx`
 
-This message can occur for the following reasons:
+This message occurs for the following reasons:
 
-### 1. The validator is not active
+### The validator is not active
 
-There are a few reasons why a validator is not active:
+The validator might not be active for one of the following reasons:
 
-- The validator is jailed. To solve this, `unjail` the validator:
+- The validator is jailed. To solve this problem, `unjail` the validator by running:
 
-    terrad tx slashing unjail <terra> --chain-id=<chain_id> --from=<from>
+    `terrad tx slashing unjail <terra> --chain-id=<chain_id> --from=<from>`
 
-- The validator is not in the active [validator set](https://docs.terra.money/validators.html#delegations). Only the top 130 validators are in this set. The only solution for this is to increase your total stake to be included in the top 130.
+- The validator is not in the active [validator set](https://docs.terra.money/validators.html#delegations). Only the top 130 validators are in this set. To fix this problem, increase your total stake so that it is included in the top 130.
 
-### 2. Wrong network
+### The network is wrong.
 
-The Oracle Feeder may be submitting to the wrong network. This is common. The command to run the feeder needs to specify the lite client daemon (LCD):
+The oracle feeder might be submitting to the wrong network. To fix this problem, run the feeder with the lite client daemon (LCD) specified:
 
 ```bash
 nom start vote --\
@@ -91,15 +95,14 @@ nom start vote --\
   --lcd ${LCD} \
   --chain-id "${CHAIN_ID}" \
   --validator "${VALIDATOR_KEY}" \
-  --password "${PASSWORD}” \
-```  
+  --password "${PASSWORD}" \
+```
 
-The LCD the voter is connecting to may be running from a different network than your node. The remote LCD for different networks are:
+The LCD to which the voter is connecting might be running from a different network than your node. The remote LCD for different networks are:
 
-- https://lcd.terra.dev for the Columbus Mainnet.
-- https://tequila-lcd.terra.dev for the Tequila Testnet.
-- https://bombay-lcd.terra.dev for the Bombay Testnet.
+- https://lcd.terra.dev for the Columbus mainnet
+- https://bombay-lcd.terra.dev for the Bombay testnet
 
-Be sure to specify the LCD for the same network your node is connecting to.
+Ensure you specify the LCD for the same network to which your node is connecting.
 
-If you run a [local LCD](https://docs.terra.money/terrad/lcd.html) (for example localhost:1317), be sure that your LCD is connecting to the same node.
+If you run a [local LCD](https://docs.terra.money/terrad/lcd.html) (for example, localhost:1317), ensure your LCD is connecting to the same node.
