@@ -99,7 +99,7 @@ module.exports = {
       indexName: "terra-project",
     },
     nav: [
-      { text: "Overview", link: "/Overview/" },
+      { text: "Overview", link: "/" },
       { text: "Tutorials", link: "/Tutorials/" },
       { text: "How to", link: "/How-to/" },
       { text: "Concepts", link: "/Concepts/" },
@@ -112,15 +112,14 @@ module.exports = {
     ],
     sidebar: {
 
-      "/Overview/": [
-                "/Overview/",
+      "/": [
                 {
                   title: "Overview",
                   children: [
-                    "/Overview/history-and-changes",
-                    "/Overview/migration-guide",
+                    "/history-and-changes",
+                    "/migration-guide",
                   ],
-                collapsable: true,
+                collapsable: false,
                 },
               ],
       "/Tutorials/": [
