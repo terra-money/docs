@@ -145,32 +145,6 @@ type MsgStoreCode struct {
 }
 ```
 
-::: details JSON Example
-
-```json
-{
-  "type": "wasm/MsgStoreCode",
-  "value": {
-    "sender": "terra...",
-    "wasm_byte_code": "QmFzZTY0LWVuY29kZWQgV0FTTSBiaW5hcnk="
-  }
-}
-```
-
-:::
-
-::: details Events
-
-| Type       | Attribute Key | Attribute Value |
-| ---------- | ------------- | --------------- |
-| store_code | codeID        | {codeID}        |
-| store_code | sender        | {senderAddress} |
-| message    | module        | wasm            |
-| message    | action        | store_code      |
-| message    | sender        | {senderAddress} |
-
-:::
-
 ### MsgInstantiateContract
 
 Creates a new instance of a smart contract. Initial configuration is provided in the `InitMsg`, which is a JSON message encoded in Base64. If `Migratable` is set to be `true`, the owner of the contract is permitted to reset the contract's code ID to a new one.
@@ -203,39 +177,6 @@ type MsgExecuteContract struct {
 }
 ```
 
-::: details JSON Example
-
-```json
-{
-  "type": "wasm/MsgExecuteContract",
-  "value": {
-    "sender": "terra...",
-    "contract": "terra...",
-    "execute_msg": "eyJlbmNvZGVkIjogIkpTT04gbWVzc2FnZSJ9",
-    "coins": [
-      {
-        "denom": "uluna",
-        "amount": "999"
-      }
-    ]
-  }
-}
-```
-
-:::
-
-::: details Events
-
-| Type             | Attribute Key    | Attribute Value   |
-| ---------------- | ---------------- | ----------------- |
-| execute_contract | contract_address | {contractAddress} |
-| execute_contract | sender           | {senderAddress}   |
-| message          | module           | wasm              |
-| message          | action           | execute_contract  |
-| message          | sender           | {senderAddress}   |
-
-:::
-
 ### MsgMigrateContract
 
 Can be issued by the owner of a migratable smart contract to reset its code ID to another one. `MigrateMsg` is a JSON message encoded in Base64.
@@ -249,34 +190,6 @@ type MsgMigrateContract struct {
 }
 ```
 
-::: details JSON Example
-
-```json
-{
-  "type": "wasm/MsgMigrateContract",
-  "value": {
-    "owner": "terra...",
-    "contract": "terra...",
-    "new_code_id": "45",
-    "migrate_msg": "eyJlbmNvZGVkIjogIkpTT04gbWVzc2FnZSJ9"
-  }
-}
-```
-
-:::
-
-::: details Events
-
-| Type             | Attribute Key    | Attribute Value   |
-| ---------------- | ---------------- | ----------------- |
-| migrate_contract | code_id          | {codeID}          |
-| migrate_contract | contract_address | {contractAddress} |
-| message          | module           | wasm              |
-| message          | action           | migrate_contract  |
-| message          | sender           | {senderAddress}   |
-
-:::
-
 ### MsgUpdateContractOwner
 
 Can be issued by the smart contract's owner to transfer ownership.
@@ -289,32 +202,6 @@ type MsgUpdateContractOwner struct {
 }
 ```
 
-::: details JSON Example
-
-```json
-{
-  "type": "wasm/MsgUpdateContractOwner",
-  "value": {
-    "owner": "terra...",
-    "new_owner": "terra...",
-    "contract": "terra..."
-  }
-}
-```
-
-:::
-
-::: details Events
-
-| Type                  | Attribute Key    | Attribute Value       |
-| --------------------- | ---------------- | --------------------- |
-| update_contract_owner | owner            | {ownerAddress}        |
-| update_contract_owner | contract_address | {contractAddress}     |
-| message               | module           | wasm                  |
-| message               | action           | update_contract_owner |
-| message               | sender           | {senderAddress}       |
-
-:::
 
 ## Parameters
 

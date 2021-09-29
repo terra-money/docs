@@ -67,21 +67,6 @@ type MsgSetWithdrawAddress struct {
 }
 ```
 
-::: details JSON Example
-
-Note that the type and name of the message are inconsistent.
-
-```json
-{
-  "type": "distribution/MsgModifyWithdrawAddress",
-  "value": {
-    "delegator_address": "terra...",
-    "withdraw_address": "terra..."
-  }
-}
-```
-
-:::
 
 ### MsgWithdrawDelegatorReward
 
@@ -93,21 +78,6 @@ type MsgWithdrawDelegatorReward struct {
 }
 ```
 
-::: details JSON Example
-
-There is an inconsistency between the message's name and its type.
-
-```json
-{
-  "type": "distribution/MsgWithdrawDelegationReward",
-  "value": {
-    "delegator_address": "terra...",
-    "validator_address": "terra..."
-  }
-}
-```
-
-:::
 
 ### MsgWithdrawValidatorCommission
 
@@ -117,18 +87,6 @@ type MsgWithdrawValidatorCommission struct {
 }
 ```
 
-::: details JSON Example
-
-```json
-{
-  "type": "distribution/MsgWithdrawValidatorCommission",
-  "value": {
-    "validator_address": "terravaloper..."
-  }
-}
-```
-
-:::
 
 ### MsgFundCommunityPool
 
@@ -139,24 +97,6 @@ type MsgFundCommunityPool struct {
 }
 ```
 
-::: details JSON Example
-
-```json
-{
-  "type": "distribution/MsgFundCommunityPool",
-  "value": {
-    "amount": [
-      {
-        "denom": "uluna",
-        "amount": "999"
-      }
-    ],
-    "depositor": "terra..."
-  }
-}
-```
-
-:::
 
 ## Proposals
 

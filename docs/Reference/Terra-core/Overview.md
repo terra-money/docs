@@ -1,4 +1,4 @@
-# Developer Guide
+# Developer guide
 
 This document covers tips and guidelines to help you to understand how Terra works and efficiently navigate the codebase of Terra Core, the official Golang reference implementation of the Terra node software.
 
@@ -8,7 +8,7 @@ The Terra Core is built using the [Cosmos SDK](https://cosmos.network/sdk), whic
 It is highly recommended that you review these projects before diving into the Terra developer documentation, as they assume familiarity with concepts such as ABCI, Validators, Keepers, Message Handlers, etc.
 :::
 
-## How to use the Docs
+## How to use the docs
 
 As a developer, you will likely find the **Module Specifications** section the most informative. Each specification starts out with a short description of the module's main function within the architecture of the system, and how it contributes in implementing Terra's features.
 
@@ -18,48 +18,47 @@ The current function documentation is not an exhaustive reference, but has been 
 
 At the end, the specification lists out various module parameters alongside their default values with a brief explanation of their purpose, and associated events / tags and errors emitted by the module.
 
-## Module Architecture
+## Module architecture
 
-The node software is organized into individual modules that implement different parts of the Terra protocol. Here are they, listed in the order they are initialized during genesis:
+The node software is organized into the following individual modules that implement different parts of the Terra protocol. They are listed in the order in which they are initialized during genesis:
 
 1. `genaccounts` - import & export genesis account
-2. [`distribution`](spec-distribution.md): distribute rewards between validators and delegators
+2. [`distribution`](./Module-specifications/spec-distribution.md): distribute rewards between validators and delegators
    - tax and reward distribution
    - community pool
-3. [`staking`](spec-staking.md): validators and Luna
-4. [`auth`](spec-auth.md): ante handler
+3. [`staking`](./Module-specifications/spec-staking.md): validators and Luna
+4. [`auth`](./Module-specifications/spec-auth.md): ante handler
    - vesting accounts
    - stability layer fee
-5. [`bank`](spec-bank.md) - sending funds from account to account
-6. [`slashing`](spec-slashing.md) - low-level Tendermint slashing (double-signing, etc)
-7. [`supply`](spec-supply.md) - Terra / Luna supplies
-8. [`oracle`](spec-oracle.md) - exchange rate feed oracle
+5. [`bank`](./Module-specifications/spec-bank.md) - sending funds from account to account
+6. [`slashing`](./Module-specifications/spec-slashing.md) - low-level Tendermint slashing (double-signing, etc)
+7. [`oracle`](./Module-specifications/spec-oracle.md) - exchange rate feed oracle
    - vote tallying weighted median
    - ballot rewards
    - slashing misbehaving oracles
-9. [`treasury`](spec-treasury.md): miner incentive stabilization
+8. [`treasury`](./Module-specifications/spec-treasury.md): miner incentive stabilization
    - macroeconomic monitoring
    - monetary policy levers (Tax Rate, Reward Weight)
    - seigniorage settlement: all seigniorage is burned as of Columbus-5
-10. [`gov`](spec-governance.md): on-chain governance
+9. [`gov`](./Module-specifications/spec-governance.md): on-chain governance
     - proposals
     - parameter updating
-11. [`market`](spec-market.md): price-stabilization
+10. [`market`](./Module-specifications/spec-market.md): price-stabilization
     - Terra<>Terra spot-conversion, Tobin Tax
     - Terra<>Luna market-maker, Constant-Product spread
-12. `crisis` - reports consensus failure state with proof to halt the chain
-13. `genutil` - handles `gentx` commands
+11. `crisis` - reports consensus failure state with proof to halt the chain
+12. `genutil` - handles `gentx` commands
     - filter and handle `MsgCreateValidator` messages
 
-### Inherited Modules
+### Inherited modules
 
-Many of the modules in Terra Core are inherited from Cosmos SDK, and are configured to work with Terra through customization in either genesis parameters or by augmenting their functionality with additional code.
+Many of the modules in Terra Core are inherited from Cosmos SDK and are configured to work with Terra through customization in either genesis parameters or by augmenting their functionality with additional code.
 
-## Block Lifecycle
+## Block lifecycle
 
 The following processes get executed during each block transition:
 
-### Begin Block
+### Begin block
 
 1. Distribution
 
@@ -68,11 +67,11 @@ The following processes get executed during each block transition:
 2. Slashing
    - Checking of infraction evidence or downtime of validators for double-signing and downtime penalties.
 
-### Process Messages
+### Process messages
 
 3. Messages are routed to the modules that are responsible for working them and then processed by the appropriate Message Handlers.
 
-### End Block
+### End block
 
 4. Crisis
 
@@ -100,7 +99,7 @@ The following processes get executed during each block transition:
 
 ## Conventions
 
-### Currency Denominations
+### Currency denominations
 
 There are two types of tokens that can be held by accounts and wallets in the Terra protocol:
 
@@ -108,7 +107,7 @@ There are two types of tokens that can be held by accounts and wallets in the Te
 
    The Terra protocol's standard base currency is TerraSDR, or SDT, which pegs to the IMF's Special Drawing Rights. The Terra protocol uses SDT to make calcualtions and set rate standards.
 
-2. **Luna** is the Terra Protocol's native staking asset. Delegators earn mining rewards when they stake their Luna to an active validator. Luna stabilizes the Terra economy by absorbing the price volatility of Terra stablecoins and is also used to make governance proposals.
+2. **Luna** is the Terra protocol's native staking asset. Delegators earn mining rewards when they stake their Luna to an active validator. Luna stabilizes the Terra economy by absorbing the price volatility of Terra stablecoins and is also used to make governance proposals.
 
 The micro-unit ($\times 10^{-6}$) is the smallest atomic unit of both Terra stablecoins and Luna.
 

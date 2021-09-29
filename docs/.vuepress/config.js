@@ -6,7 +6,7 @@ module.exports = {
     },
   },
   description:
-    "Terra is a blockchain protocol that provides fundamental infrastructure for a decentralized economy and enables open participation in the creation of new financial primitives to power the innovation of money.",
+    "Terra is an open source, public blockchain protocol that provides fundamental infrastructure for a decentralized economy and enables open participation in the creation of new financial primitives to power the innovation of money.",
   plugins: [
     [
       "@vuepress/register-components",
@@ -99,7 +99,7 @@ module.exports = {
       indexName: "terra-project",
     },
     nav: [
-      { text: "Overview", link: "/" },
+      { text: "Overview", link: "/Overview/" },
       { text: "Tutorials", link: "/Tutorials/" },
       { text: "How to", link: "/How-to/" },
       { text: "Concepts", link: "/Concepts/" },
@@ -112,7 +112,17 @@ module.exports = {
     ],
     sidebar: {
 
-
+      "/Overview/": [
+                "/Overview/",
+                {
+                  title: "Overview",
+                  children: [
+                    "/Overview/history-and-changes",
+                    "/Overview/migration-guide",
+                  ],
+                collapsable: true,
+                },
+              ],
       "/Tutorials/": [
         "/Tutorials/",
         {
@@ -125,6 +135,7 @@ module.exports = {
         {
           title: "Build a simple Terra dApp",
           children: [
+            "/Tutorials/Smart-contracts/Overview",
             "/Tutorials/Smart-contracts/Build-Terra-dApp",
             "/Tutorials/Smart-contracts/Set-up-local-environment",
             "/Tutorials/Smart-contracts/Write-smart-contract",
@@ -136,13 +147,6 @@ module.exports = {
       ],
       "/How-to/": [
         "/How-to/",
-        {
-          title: "Manage funds with Terra Station",
-          children: [
-            "/How-to/Manage-funds-Terra-Station/",
-          ],
-          collapsable: true,
-        },
         {
           title: "Run a full Terra node",
           children: [
@@ -183,7 +187,7 @@ module.exports = {
             "/Concepts/Smart-contracts",
 
           ],
-          collapsable: false,
+          collapsable: true,
         },
       ],
       "/Reference/": [
@@ -192,6 +196,7 @@ module.exports = {
           title: "Terra core",
           collapsable: true,
           children: [
+            "/Reference/Terra-core/Overview",
             "/Reference/Terra-core/Module-specifications/spec-auth",
             "/Reference/Terra-core/Module-specifications/spec-authz",
             "/Reference/Terra-core/Module-specifications/spec-bank",

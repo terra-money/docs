@@ -17,45 +17,6 @@ type MsgGrantAuthorization struct {
 }
 ```
 
-::: details JSON Example
-
-```json
-{
-  "type": "authz/MsgGrantAuthorization",
-  "value": {
-    "granter": "terra...",
-    "grantee": "terra...",
-    "authorization": {
-      "type": "authz/SendAuthorization",
-      "value": {
-        "spend_limit": [
-          {
-            "denom": "ukrw",
-            "amount": "999"
-          }
-        ]
-      }
-    },
-    "period": "123908000000000"
-  }
-}
-```
-
-:::
-
-::: details Events
-
-| Type                | Attribute Key | Attribute Value     |
-| ------------------- | ------------- | ------------------- |
-| grant_authorization | grant_type    | {msgType}           |
-| grant_authorization | granter       | {granterAddress}    |
-| grant_authorization | grantee       | {granteeAddress}    |
-| message             | module        | authz             |
-| message             | action        | grant_authorization |
-| message             | sender        | {senderAddress}     |
-
-:::
-
 ### MsgRevokeAuthorization
 
 ```go
@@ -70,34 +31,6 @@ type MsgRevokeAuthorization struct {
 }
 ```
 
-::: details JSON Example
-
-```json
-{
-  "type": "authz/MsgRevokeAuthorization",
-  "value": {
-    "granter": "terra...",
-    "grantee": "terra...",
-    "authorization_msg_type": "swap"
-  }
-}
-```
-
-:::
-
-::: details Events
-
-| Type                 | Attribute Key | Attribute Value      |
-| -------------------- | ------------- | -------------------- |
-| revoke_authorization | grant_type    | {msgType}            |
-| revoke_authorization | granter       | {granterAddress}     |
-| revoke_authorization | grantee       | {granteeAddress}     |
-| message              | module        | authz                |
-| message              | action        | revoke_authorization |
-| message              | sender        | {senderAddress}      |
-
-:::
-
 ### MsgExecAuthorized
 
 ```go
@@ -109,42 +42,3 @@ type MsgExecAuthorized struct {
 	Msgs    []sdk.Msg      `json:"msgs"`
 }
 ```
-
-::: details JSON Example
-
-```json
-{
-  "type": "authz/MsgExecAuthorized",
-  "value": {
-    "grantee": "terra...",
-    "msgs": [
-      {
-        "type": "bank/MsgSend",
-        "value": {
-          "from_address": "terra...",
-          "to_address": "terra...",
-          "amount": [
-            {
-              "denom": "ukrw",
-              "amount": "999"
-            }
-          ]
-        }
-      }
-    ]
-  }
-}
-```
-
-:::
-
-::: details Events
-
-| Type                  | Attribute Key   | Attribute Value       |
-| --------------------- | --------------- | --------------------- |
-| execute_authorization | grantee_address | {granteeAddress}      |
-| message               | module          | authz               |
-| message               | action          | execute_authorization |
-| message               | sender          | {senderAddress}       |
-
-:::
