@@ -1,9 +1,10 @@
-# Terra Docs
+# Concepts
 
-Welcome to the official documentation for Terra, a decentralized financial infrastructure powering the innovation of money. Terra provides the foundational building blocks for a new digital economy with its stablecoin protocol, oracle system, smart contracts, and plan for mass-user adoption.
+Learn more about Terra, stablecoins, and how the protocol works by exploring the concepts explained in this section.
 
+<!--
 <div class="cards twoColumn">
-  <a href="/Concepts/Terra.html" class="card">
+  <a href="/terra.html" class="card">
     <img src="/img/icon_terra.svg"/>
     <div class="title">
       What is Terra?
@@ -12,7 +13,7 @@ Welcome to the official documentation for Terra, a decentralized financial infra
       If this is your first time learning about Terra, start here.
     </div>
   </a>
-  <a href="/Concepts/Luna.html" class="card">
+  <a href="/luna.html" class="card">
     <img src="/img/icon_luna.svg"/>
     <div class="title">
       What is Luna?
@@ -21,7 +22,7 @@ Welcome to the official documentation for Terra, a decentralized financial infra
       Learn about Luna, the native staking asset that powers the Terra ecosystem.
     </div>
   </a>
-  <a href="/Concepts/Stablecoin.html" class="card">
+  <a href="/stablecoin.html" class="card">
     <img src="/img/icon_stable.svg"/>
     <div class="title">
       Stability Mechanisms
@@ -30,7 +31,7 @@ Welcome to the official documentation for Terra, a decentralized financial infra
       Learn about how Terra achieves price-stability while ensuring steady increase in validator incentives.
     </div>
   </a>
-  <a href="/How-to/Run-a-full-Terra-node/Hardware-requirements.html" class="card">
+  <a href="/node/installation.html" class="card">
     <img src="/img/icon_node.svg"/>
     <div class="title">
       Run a Full Node
@@ -39,25 +40,25 @@ Welcome to the official documentation for Terra, a decentralized financial infra
       Learn how to participate in the Terra network by running your own full Terra node.
     </div>
   </a>
-  <a href="/Reference/Terra-core/Overview.html" class="card">
+  <a href="/dev/" class="card">
     <img src="/img/icon_core.svg"/>
     <div class="title">
       Contribute to Core
     </div>
     <div class="text">
-      Hack on the latest version of Terra core, the node software for Terra.
+      Hack on the latest version of Terra Core, the node software for Terra.
     </div>
   </a>
-  <a href="/How-to/Manage-a-Terra-validator/Overview.html" class="card">
+  <a href="/validator/" class="card">
     <img src="/img/icon_validator.svg"/>
     <div class="title">
-      Run a validator
+      Run a Validator
     </div>
     <div class="text">
       Become a validator and earn delegation commissions in exchange for helping secure the network.
     </div>
   </a>
-  <a href="/Tutorials/Smart-contracts/Overview.html" class="card">
+  <a href="/contracts/" class="card">
     <img src="/img/icon_smartcontract.svg"/>
     <div class="title">
       Smart Contracts
@@ -66,7 +67,7 @@ Welcome to the official documentation for Terra, a decentralized financial infra
       Build dApps that leverage the robust infrastructure for decentralized finance provided by Terra.
     </div>
   </a>
-  <a href="/Reference/integrations.html" class="card">
+  <a href="/integrations.html" class="card">
     <img src="/img/icon_apps.svg"/>
     <div class="title">
       Integrations
@@ -83,7 +84,7 @@ The Terra SDKs provide an easy way to programmatically interact with a Terra nod
 
 <div class="cards twoColumn">
   <a href="https://terra-money.github.io/terra-sdk-python/" class="card lg dark">
-    <img src="https://www.terra.money/assets/img/terra_sdk.svg">
+    <img src="https://terra.money/assets/img/terra_sdk.svg">
     <div class="title">
       Terra SDK
     </div>
@@ -101,3 +102,4 @@ The Terra SDKs provide an easy way to programmatically interact with a Terra nod
     </div>
   </a>
 </div>
+-->
