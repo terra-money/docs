@@ -39,7 +39,7 @@ module.exports = {
         rel: "stylesheet",
         type: "text/css",
         href:
-          "https://terra.money/static/fonts/jetbrainsMono.css?updated=190220",
+          "https://www.terra.money/static/fonts/jetbrainsMono.css?updated=190220"
       },
     ],
     [
@@ -112,16 +112,6 @@ module.exports = {
     ],
     sidebar: {
 
-      "/": [
-                {
-                  title: "Overview",
-                  children: [
-                    "/history-and-changes",
-                    "/migration-guide",
-                  ],
-                collapsable: false,
-                },
-              ],
       "/Tutorials/": [
         "/Tutorials/",
         {
@@ -230,9 +220,20 @@ module.exports = {
               "Terra Core GoDoc",
             ],
             ["https://lcd.terra.dev/swagger-ui/", "Terra REST API"],
+
           ],
         },
       ],
-    },
+      "/": [
+          {
+          title: "Overview",
+          children: [
+          "/history-and-changes",
+          "/migration-guide",
+          ],
+          collapsable: false,
+          },
+        ],
+      },
   },
 };
