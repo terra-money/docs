@@ -105,4 +105,4 @@ The LCD to which the voter is connecting might be running from a different netwo
 
 Ensure you specify the LCD for the same network to which your node is connecting.
 
-If you run a [local LCD](https://docs.terra.money/terrad/lcd.html) (for example, localhost:1317), ensure your LCD is connecting to the same node.
+If you run a [local LCD](../Start-LCD.md) (for example, localhost:1317), ensure your LCD is connecting to the same node.

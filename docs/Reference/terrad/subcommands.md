@@ -100,7 +100,7 @@ In some cases, you might need to recover your key. If you have the mnemonic that
 terrad keys add <yourKeyName> --recover
 ```
 
-For information about generating multisignature accounts and signing transactions, see [Multisig Transactions](./multisig).
+For information about generating multisignature accounts and signing transactions, see [Sign with a multisig account](../../How-to/Sign-with-multisig.md).
 
 ## `keys show`
 
