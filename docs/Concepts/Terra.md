@@ -1,0 +1,3 @@
+# The Terra protocol
+
+The Terra protocol is the largest decentralized, open source, public blockchain protocol for algorithmic stablecoins. Using the native staking token Luna and a system of algorithmic monetary policies, the Terra protocol creates Terra stablecoins that consistently track the price of any fiat currency. Users can spend, save, trade, or exchange Terra stablecoins instantly, all on the Terra blockchain. Luna provides its holders with staking rewards and governance power. The Terra ecosystem is a quickly expanding network of decentralized applications, creating a stable demand for Terra and increasing the price of Luna.
