@@ -4,7 +4,7 @@ Running a full Terra node is a resource-intensive process that requires a persis
 
 We recommend the following hardware to run a full node:
 
-- Two or more CPU cores
-- At least 1TB of disk storage
-- At least 16GB of memory
-- At least 100mbps of network bandwidth
+- Four or more CPU cores
+- At least 2 TB of disk storage
+- At least 32 GB of memory
+- At least 100 mbps of network bandwidth
