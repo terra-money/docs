@@ -162,6 +162,8 @@ module.exports = {
           ],
           collapsable: true,
         },
+        "/How-to/Sign-with-multisig",
+        "/How-to/Start-LCD",
       ],
       "/Concepts/": [
 
