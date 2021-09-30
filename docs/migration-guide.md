@@ -1,4 +1,4 @@
-# Columbus-5 Upgrade
+# Columbus-5 upgrade
 
 Columbus-5 is the newest iteration of the Terra Mainnet. Use these guides to upgrade to Columbus-5.
 
