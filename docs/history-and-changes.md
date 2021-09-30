@@ -1,4 +1,4 @@
-# History and Changes
+# History and changes
 
 This is a history of changes to the Terra core.
 

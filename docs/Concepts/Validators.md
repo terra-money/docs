@@ -12,7 +12,7 @@ In Terra's consensus model, Luna holders do not stake their tokens directly, but
 
 A validator's **voting power** is proportional to the amount of Luna they have bonded, from all delegations (including their self-delegation). Only the **top 130** validators in voting power (and bonded Luna, by corollary) comprise the validating set, referred to hereon as **delegates**. Delegators play a vital role in this ecosystem because they determine which validators receive this designation, voting by delegating their Luna.
 
-### Slashing Risks
+### Slashing risks
 
 Running a validator is a big responsibility, which is why only the top 130 in bonded Luna stake are elected to sign blocks. As such, safety and liveness guarantees must be met, at the risk of having their validator's stake slashed (penalized), hurting both the validator's funds (as well as their delegator's), and their reputation.
 
