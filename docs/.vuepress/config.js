@@ -176,7 +176,7 @@ module.exports = {
             "/Concepts/Smart-contracts",
 
           ],
-          collapsable: true,
+          collapsable: false,
         },
       ],
       "/Reference/": [
