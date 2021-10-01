@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-- [Golang v1.13.1 or higher](https://golang.org/doc/install)
+- [Golang v1.16.1 or higher](https://golang.org/doc/install)
 - Ensure your `GOPATH` and `GOBIN` environment variables are set up correctly.
 
 ## Get the Terra core source code
