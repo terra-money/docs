@@ -4,7 +4,7 @@ As a smart contract developer, you will need to write, compile, upload, and test
 
 ## Install Terra Core locally
 
-Follow the instructions [here](../../node/installation.md) to install the latest version of Terra Core to obtain a working version of `terrad`. You will need this to connect to your local Terra test network, for working with smart contracts.
+Follow the instructions [here](../../How-to/Run-a-full-Terra-node/Hardware-requirements.md) to install the latest version of Terra Core to obtain a working version of `terrad`. You will need this to connect to your local Terra test network, for working with smart contracts.
 
 ## Download LocalTerra
 
