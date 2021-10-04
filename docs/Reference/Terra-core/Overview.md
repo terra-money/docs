@@ -79,8 +79,8 @@ The following processes get executed during each block transition:
 
 5. Oracle
 
-   - If at the end of `VotePeriod`, run [Voting Procedure](spec-oracle.md#voting-procedure) and **update Luna Exchange Rate**.
-   - If at the end of `SlashWindow`, **penalize validators** who [missed](spec-oracle.md#slashing) more `VotePeriod`s than permitted.
+   - If at the end of `VotePeriod`, run [Voting Procedure](Module-specifications/spec-oracle.md#voting-procedure) and **update Luna Exchange Rate**.
+   - If at the end of `SlashWindow`, **penalize validators** who [missed](Module-specifications/spec-slashing.md) more `VotePeriod`s than permitted.
 
 6. Governance
 
@@ -88,7 +88,7 @@ The following processes get executed during each block transition:
 
 7. Market
 
-   - [Replenish](spec-market.md#end-block) liquidity pools, **allowing spread fees to decrease**.
+   - [Replenish](Module-specifications/spec-market.md#end-block) liquidity pools, **allowing spread fees to decrease**.
 
 8. Treasury
 

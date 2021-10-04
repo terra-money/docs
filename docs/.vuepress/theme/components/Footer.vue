@@ -64,13 +64,13 @@
       <ul class="developers">
         <li>Luna</li>
         <li>
-          <a href="https://docs.terra.money/luna" target="_blank">What is Luna?</a>
+          <a href="https://docs.terra.money/Concepts/Luna.html" target="_blank">What is Luna?</a>
         </li>
         <li>
-          <a href="https://docs.terra.money/integrations.html#exchanges" target="_blank">Exchanges</a>
+          <a href="https://docs.terra.money/Reference/integrations.html#exchanges" target="_blank">Exchanges</a>
         </li>
         <li>
-          <a href="https://docs.terra.money/integrations.html#wallets" target="_blank">Wallets</a>
+          <a href="https://docs.terra.money/Reference/integrations.html#wallets" target="_blank">Wallets</a>
         </li>
       </ul>
       <ul class="developers">
@@ -97,7 +97,7 @@
       <ul class="developers">
         <li>Validators</li>
         <li>
-          <a href="https://docs.terra.money/validator" target="_blank">Validator Guide</a>
+          <a href="https://docs.terra.money/How-to/Manage-a-Terra-validator/Overview.html" target="_blank">Validator Guide</a>
         </li>
         <li>
           <a href="https://github.com/terra-money/validator-profiles" target="_blank">Profiles</a>
