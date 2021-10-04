@@ -341,7 +341,7 @@ You will need to make sure the output WASM binary is as small as possible in ord
 docker run --rm -v "$(pwd)":/code \
   --mount type=volume,source="$(basename "$(pwd)")_cache",target=/code/target \
   --mount type=volume,source=registry_cache,target=/usr/local/cargo/registry \
-  cosmwasm/rust-optimizer:0.10.3
+  cosmwasm/rust-optimizer:0.12.3
 ```
 
 This will result in an optimized build of `artifacts/my_first_contract.wasm` in your working directory.
