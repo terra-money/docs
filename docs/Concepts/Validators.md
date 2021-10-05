@@ -1,6 +1,6 @@
 # Validators
 
-Validators are network participants that, in addition to running a full node, listen to transactions broadcasted in the network's mempool and include them in blocks that they sign. For more details on validators, check the [validator FAQ](../validator/faq.md).
+Validators are network participants that, in addition to running a full node, listen to transactions broadcasted in the network's mempool and include them in blocks that they sign. For more details on validators, check the [validator FAQ](../How-to/Manage-a-Terra-validator/faq.md).
 
 In order to do so and reliably to meet the scalability, security, and finality requirements of the Terra network, they typically run specially configured architectures that are robust against many forms of attacks on distributed networks.
 
