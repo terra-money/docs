@@ -19,7 +19,7 @@ In this section, we'll define our expected messages alongside their implementati
 In your working directory, you'll want to use `cargo-generate` to start your smart contract with the recommended folder structure and build options:
 
 ```sh
-cargo generate --git https://github.com/CosmWasm/cosmwasm-template.git --branch 0.10 --name my-first-contract
+cargo generate --git https://github.com/CosmWasm/cosmwasm-template.git --name my-first-contract
 cd my-first-contract
 ```
 
@@ -338,40 +338,10 @@ You will need [Docker](https://www.docker.com) installed to run this command.
 You will need to make sure the output WASM binary is as small as possible in order to minimize fees and stay under the size limit for the blockchain. Run the following command in the root directory of your Rust smart contract's project folder.
 
 ```sh
-docker run --rm -v "$(pwd)":/code \
-  --mount type=volume,source="$(basename "$(pwd)")_cache",target=/code/target \
-  --mount type=volume,source=registry_cache,target=/usr/local/cargo/registry \
-  cosmwasm/rust-optimizer:0.12.3
+cargo run-script optimize
 ```
 
 This will result in an optimized build of `artifacts/my_first_contract.wasm` in your working directory.
-
-(Optional) Add the above command in `Cargo.toml` for quick access.
-
-This allows the run custom script commands in a similar way as `package.json` in the Node ecosystem.
-
-Install `cargo-run-script`
-
-```sh
-cargo install cargo-run-script
-```
-
-Add the script in `Cargo.toml`
-
-```toml
-[package.metadata.scripts]
-optimize = """docker run --rm -v "$(pwd)":/code \
-  --mount type=volume,source="$(basename "$(pwd)")_cache",target=/code/target \
-  --mount type=volume,source=registry_cache,target=/usr/local/cargo/registry \
-  cosmwasm/rust-optimizer:0.10.3
-"""
-```
-
-Run the command:
-
-```sh
-cargo run-script optimize
-```
 
 ## Schemas
 

@@ -34,8 +34,10 @@ satisfy adjust timber high purchase tuition stool faith fine install that you un
 Make sure that the **optimized build** of `my_first_contract.wasm` that you created in the last section is in your current working directory.
 
 ```sh
-terrad tx wasm store my_first_contract.wasm --from test1 --chain-id=localterra --gas=auto --fees=100000uluna --broadcast-mode=block
+terrad tx wasm store artifacts/my_first_contract.wasm --from test1 --chain-id=localterra --gas=auto --fees=100000uluna --broadcast-mode=block
 ```
+
+This will ask for a confirmation before broadcasting to LocalTerra, type `y` and press enter.
 
 You should see output similar to the following:
 
@@ -143,7 +145,13 @@ initmsg: eyJjb3VudCI6MH0=
 migratable: false
 ```
 
-By decoding the Base64 InitMsg:
+You can use the following to decode the Base64 InitMsg:
+
+```sh
+echo eyJjb3VudCI6MH0= | base64 --decode
+```
+
+This will produce the message we used when initializing the contract: 
 
 ```json
 { "count": 0 }
@@ -198,7 +206,13 @@ Let's check the result of our executions!
 
 ```sh
 terrad query wasm contract-store terra18vd8fpwxzck93qlwghaj6arh4p7c5n896xzem5 '{"get_count":{}}'
-{"count":7}
+```
+
+Expected output: 
+
+```
+query_result:
+  count: 7
 ```
 
 Excellent! Congratulations, you've created your first smart contract, and now know how to get developing with the Terra dApp Platform.
