@@ -9,9 +9,7 @@
 
 Use `git` to retrieve [Terra core](https://github.com/terra-money/core/), and checkout the `master` branch, which contains the latest stable release.
 
-For Validators install `v0.x.x-oracle` this will enable mempool prioritization
-
-For other use cases install `v0.x.x`
+If you are a validator, install `v0.x.x-oracle` to enable mempool prioritization. Otherwise, install `v0.x.x`.
 
 ```bash
 git clone https://github.com/terra-money/core
@@ -19,7 +17,7 @@ cd core
 git checkout [latest version]
 ```
 
-Example: 
+**Example:**
 ```bash
 git clone https://github.com/terra-money/core
 cd core
@@ -35,8 +33,7 @@ make install
 ```
 
 ::: tip
-If encountering error: `terrad: command not found` <br>
-Confirm `go binary` path is correctly configured, using:
+If the `terrad: command not found` error message is returned, confirm that the go binary path is correctly configured by running the following command:
 
 ```
 export PATH=$PATH:$(go env GOPATH)/bin
