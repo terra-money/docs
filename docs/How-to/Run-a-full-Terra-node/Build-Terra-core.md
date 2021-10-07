@@ -35,8 +35,8 @@ make install
 ```
 
 ::: tip
-IF encountering error: `terrad: command not found`
-confirm GO Binary path is correctly configured, using
+If encountering error: `terrad: command not found` <br>
+Confirm `go binary` path is correctly configured, using:
 
 ```
 export PATH=$PATH:$(go env GOPATH)/bin
