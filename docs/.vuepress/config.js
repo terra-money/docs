@@ -214,7 +214,14 @@ module.exports = {
         ],
         },
         "/Reference/integrations",
-        "/Reference/ecosystem",
+        {
+          title: "Ecosystem",
+          collapsable: true,
+          children: [
+            "/Reference/ecosystem",
+            "/Reference/Terra-Delegation-Program/terra-delegation-program.md",
+        ],
+        },
         {
           title: "Other resources",
           collapsable: true,

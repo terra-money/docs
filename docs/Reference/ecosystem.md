@@ -17,6 +17,10 @@
 [Reddit](https://www.reddit.com/r/terraluna/): the community-run Terra Reddit<br>
 [LunaLoot](https://lunaloot.com/): the official Terra merch shop<br>
 
+## Terra Delegation Program
+
+[Terra Delegation Program](./Terra-Delegation-Program/terra-delegation-program.md): the official page for the Terra Delegation Program<br>
+
 ## Mirror Website and Socials
 
 [Website](https://mirror.finance/): the official Mirror Protocol landing page<br>
@@ -183,4 +187,3 @@ Terra Station Mobile: [iOS](https://apps.apple.com/app/id1548434735) | [Android]
 [Ledger Nano X/S](https://support.ledger.com/hc/en-us/articles/360017698979-Terra-LUNA-): hardware wallet by the Ledger team<br>
 [Oxis](https://www.oxis.com/): non-custodial wallet with fiat to crypto on and offramps & trading functionality<br>
 [ZenGo](https://www.zengo.com/): multi-asset wallet, optimized for mobile<br>
-
