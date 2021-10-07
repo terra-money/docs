@@ -5,7 +5,7 @@ According to the [official documentation](https://docs.rs/crate/cw20/0.2.3)
 ## Checking CW20 balance
   - Query to `/wasm/contracts/<tokenContractAddress>/store` with query_msg `{"balance":{"address":"<userAddress>"}}`
   - Response: `{"height":"2947306","result":{"balance":"24732816921"}}`
-  - [Example](https://tequila-lcd.terra.dev/wasm/contracts/terra1800p00qlxh0nmt0r0u9hv7m4lg042fnafng2t6/store?query_msg={%22balance%22:{%22address%22:%22terra1dakqt3s8dywea9advxz4duxkuvglz3a34yczw9%22}})
+  - [Example](https://bombay-lcd.terra.dev/wasm/contracts/terra1800p00qlxh0nmt0r0u9hv7m4lg042fnafng2t6/store?query_msg={%22balance%22:{%22address%22:%22terra1dakqt3s8dywea9advxz4duxkuvglz3a34yczw9%22}})
 
 ## Interacting with CW20 contract
 
@@ -33,8 +33,8 @@ According to the [official documentation](https://docs.rs/crate/cw20/0.2.3)
 
 ## Sending CW20 token to another contract, and execute message
 - Example
-  - [Finder](https://finder.terra.money/tequila-0004/tx/5F42938E56DB7DC91A59EE4013C6DA07E983FB83FE0D42DCB3BAAF8A30495ADB) (execute_msgs are base64-decoded for readability)
-  - [Raw result](https://tequila-lcd.terra.dev/txs/FA682BA30DABE92086920F44D4DFD45F99F32265AACFB686EB4EA53AFBF6ED1A)
+  - [Finder](https://finder.terra.money/columbus-5/tx/99CFBABE9DBC1059EF40B985D17ED9CCBA11570B28B032D4E57D527FD298F60A)
+  - [Raw result](https://lcd.terra.dev/txs/99CFBABE9DBC1059EF40B985D17ED9CCBA11570B28B032D4E57D527FD298F60A)
 
 ```
 // base64-encode the below message (without the comments), send that as `execute_msg`
@@ -55,15 +55,15 @@ According to the [official documentation](https://docs.rs/crate/cw20/0.2.3)
 ## Transferring CW20 token
   - `transfer` is different to `send`, as in it only __transfers__ ownership of CW20 balance within the contract, whereas `send` is capable of transferring & relays a contract msg to be executed
   - Example
-    - [Finder](https://finder.terra.money/tequila-0004/tx/FA682BA30DABE92086920F44D4DFD45F99F32265AACFB686EB4EA53AFBF6ED1A)
-    - [Raw result](https://tequila-lcd.terra.dev/txs/FA682BA30DABE92086920F44D4DFD45F99F32265AACFB686EB4EA53AFBF6ED1A)
-  - Find other messages at [cw20 documentation](https://docs.rs/crate/cw20/0.2.3)
+    - [Finder](https://finder.terra.money/columbus-5/tx/F424552E25FDE52FEC229E04AE719A5B91D99E1088DC5F4978B263516A269FB1)
+    - [Raw result](https://lcd.terra.dev/txs/F424552E25FDE52FEC229E04AE719A5B91D99E1088DC5F4978B263516A269FB1)
+  - Find other messages at [cw20 documentation](https://docs.rs/crate/cw20/0.8.1)
 
 ```
 {
   "transfer": {
-    "recipient": <recipient>,
-    "amount": "100000"
-  },
+    "amount": "1000000",
+    "recipient": "<recipient>"
+  }
 }
 ```
