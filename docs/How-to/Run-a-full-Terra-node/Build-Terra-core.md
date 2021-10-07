@@ -9,10 +9,21 @@
 
 Use `git` to retrieve [Terra core](https://github.com/terra-money/core/), and checkout the `master` branch, which contains the latest stable release.
 
+For Validators install `v0.x.x-oracle` this will enable mempool prioritization
+
+For other use cases install `v0.x.x`
+
 ```bash
 git clone https://github.com/terra-money/core
 cd core
-git checkout master
+git checkout [latest version]
+```
+
+Example: 
+```bash
+git clone https://github.com/terra-money/core
+cd core
+git checkout v0.5.6-oracle
 ```
 
 ## Build Terra core from source
@@ -22,6 +33,15 @@ Build Terra core, and install the `terrad` executable to your `GOPATH` environme
 ```bash
 make install
 ```
+
+::: tip
+IF encountering error: `terrad: command not found`
+confirm GO Binary path is correctly configured, using
+
+```
+export PATH=$PATH:$(go env GOPATH)/bin
+```
+:::
 
 ## Verify your Terra core installation
 
