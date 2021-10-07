@@ -42,10 +42,10 @@ Your full node has now been initialized!
 
 You specify the network you want to join by setting the **genesis file** and **seeds**. If you need more information about past networks, check our [Networks Repo](https://github.com/terra-money/testnet).
 
-| Network        | Description        | Homepage                                                                  | Address Book |
-| -------------- | ------------------ | ------------------------------------------------------------------------- | - |
-| `columbus-4`   | Mainnet            | [Link](https://github.com/terra-money/mainnet)                          | https://network.terra.dev/addrbook.json |
-| `tequila-0004` | Testnet | [Link](https://github.com/terra-money/testnet/tree/master/tequila-0004) | https://network.terra.dev/testnet/addrbook.json |
+| Network      | Description | Homepage                                                             | Address Book                                    |
+| ------------ | ----------- | -------------------------------------------------------------------- | ----------------------------------------------- |
+| `columbus-4` | Mainnet     | [Link](https://github.com/terra-money/mainnet)                       | https://network.terra.dev/addrbook.json         |
+| `bombay-12`  | Testnet     | [Link](https://github.com/terra-money/testnet/tree/master/bombay-12) | https://network.terra.dev/testnet/addrbook.json |
 
 ### Download the genesis file
 
