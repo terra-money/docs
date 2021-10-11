@@ -95,7 +95,7 @@ signInfo.Tombstoned = true
 SigningInfo.Set(val.Address, signInfo)
 ```
 
-This ensures that offending validators are punished the same amount whether they act as a single validator with X stake or as N validators with a collective X stake. The amount slashed for all double signature infractions committed within a single slashing period is capped. For more information, see [tombstone caps](https://docs.cosmos.network/v0.43/modules/slashing/01_concepts.html#tombstone-caps).
+This ensures that offending validators are punished the same amount whether they act as a single validator with X stake or as N validators with a collective X stake. The amount slashed for all double signature infractions committed within a single slashing period is capped. For more information, see [tombstone caps](https://docs.cosmos.network/master/modules/slashing/01_concepts.html#tombstone-caps).
 
 #### Liveness Tracking
 

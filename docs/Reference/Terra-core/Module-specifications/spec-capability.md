@@ -1,7 +1,7 @@
 # Capability
 
 ::: warning NOTE
-Terra's capability module inherits from Cosmos SDK's [`gov`](https://docs.cosmos.network/v0.43/modules/capability/) module. This document is a stub, and covers mainly important Terra-specific notes about how it is used.
+Terra's capability module inherits from Cosmos SDK's [`capability`](https://docs.cosmos.network/master/modules/capability/) module. This document is a stub, and covers mainly important Terra-specific notes about how it is used.
 :::
 
 The capability module allows you to provision, track, and authenticate multi-owner capabilities at runtime.

@@ -1,7 +1,7 @@
 # Evidence
 
 ::: warning NOTE
-Terra's evidence module inherits from Cosmos SDK's [`evidence`](https://docs.cosmos.network/v0.43/modules/evidence/) module. This document is a stub, and covers mainly important Terra-specific notes about how it is used.
+Terra's evidence module inherits from Cosmos SDK's [`evidence`](https://docs.cosmos.network/master/modules/evidence/) module. This document is a stub, and covers mainly important Terra-specific notes about how it is used.
 :::
 
 The evidence module allows arbitrary evidence of misbehavior, such as equivocation and counterfactual signing, to be submitted and handled.
