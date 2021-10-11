@@ -1,7 +1,7 @@
 # Fee grant
 
 ::: warning Note
-Terra's fee grant module inherits from the Cosmos SDK's [`feegrant`](https://docs.cosmos.network/v0.43/modules/feegrant/) module. This document is a stub and explains mainly important Terra-specific notes about how it is used.
+Terra's fee grant module inherits from the Cosmos SDK's [`feegrant`](https://docs.cosmos.network/master/modules/feegrant/) module. This document is a stub and explains mainly important Terra-specific notes about how it is used.
 :::
 
 This module allows an account, the granter, to permit another account, the grantee, to pay for fees from the granter's account balance. Grantees will not need to maintain their own balance for paying fees.
