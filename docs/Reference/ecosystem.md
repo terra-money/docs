@@ -176,6 +176,12 @@
 [Quicksync](https://terra.quicksync.io/): data backup solution for anyone running a node on Terra<br>
 [Bison Trails](https://bisontrails.co/): platform to optimize running a node on Terra<br>
 
+#### Support
+
+[Terra Public FCD](https://fcd.terra.dev/swagger): the full client daemon for Terra<br>
+[Terra Public LCD](https://lcd.terra.dev/swagger/): the light client daemon for Terra<br>
+[Easy2stake Public LCD](https://terra-lcd.easy2stake.com/82F438G9UNMwD5bwmycR/): the easy2stake light client daemon for Terra<br>
+
 ## Wallets
 
 [Terra Station](https://station.terra.money/): Terra’s native wallet<br>
