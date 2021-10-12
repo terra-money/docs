@@ -1,9 +1,4 @@
-on:
-  schedule:
-    - cron: 0 1 * * * # run daily
-  workflow_dispatch: 
-    
-
+on: workflow_dispatch
 
 name: Broken Link Check
 jobs:
@@ -13,3 +8,5 @@ jobs:
     steps:
       - name: Broken Link Check
         uses: technote-space/broken-link-checker-action@v2
+        with:
+          TARGET: https://docs.terra.money
