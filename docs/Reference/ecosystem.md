@@ -178,9 +178,11 @@
 
 #### Support
 
-[Terra Public FCD](https://fcd.terra.dev/swagger): the full client daemon for Terra<br>
-[Terra Public LCD](https://lcd.terra.dev/swagger/): the light client daemon for Terra<br>
-[Easy2stake Public LCD](https://terra-lcd.easy2stake.com/82F438G9UNMwD5bwmycR/): the easy2stake light client daemon for Terra<br>
+[Terra public FCD](https://fcd.terra.dev/swagger): the full client daemon for Terra<br>
+[Terra public LCD](https://lcd.terra.dev/swagger/): the light client daemon for Terra<br>
+[Easy2stake public LCD](https://terra-lcd.easy2stake.com/82F438G9UNMwD5bwmycR/): the easy2stake light client daemon for Terra<br>
+[Easy2stake public RPC](https://terra-rpc.easy2stake.com/): the easy2stake remote procedure call for Terra<br>
+
 
 ## Wallets
 
