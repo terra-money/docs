@@ -9,7 +9,7 @@
 
 Use `git` to retrieve [Terra core](https://github.com/terra-money/core/), and checkout the `master` branch, which contains the latest stable release.
 
-If you are a validator, install `v0.x.x-oracle` to enable mempool prioritization. Otherwise, install `v0.x.x`.
+If you are using LocalTerra or running a validator, use the `v0.x.x-oracle` branch. Otherwise, use the `v0.x.x` branch.
 
 ```bash
 git clone https://github.com/terra-money/core
