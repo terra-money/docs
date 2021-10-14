@@ -108,14 +108,14 @@ export default {
 
   .sidebar_footer {
     padding: 0.5rem 2.5rem;
-    background-color: #fff;
+    background-color: var(--background-color);
     position: sticky;
     bottom: 0;
 
     &:before {
       content: '';
       display: block;
-      background-color: $borderColor;
+      background-color: var(--background-color);
       height: 1px;
       margin-top: -0.5rem;
       margin-bottom: 1.25rem;
@@ -124,7 +124,7 @@ export default {
     a {
       display: block;
       position: relative;
-      color: $primaryColor;
+      color: var(--primary-color);
       margin: 0.75rem 0;
       padding-left: 2.875rem;
       font-weight: 400;

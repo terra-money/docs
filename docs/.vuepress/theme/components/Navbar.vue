@@ -23,7 +23,7 @@
       :style="
         linksWrapMaxWidth
           ? {
-              'max-width': linksWrapMaxWidth + 'px'
+              'max-width': linksWrapMaxWidth + 'px',
             }
           : {}
       "
@@ -53,12 +53,12 @@ export default {
     SidebarButton,
     NavLinks,
     SearchBox,
-    AlgoliaSearchBox
+    AlgoliaSearchBox,
   },
 
   data() {
     return {
-      linksWrapMaxWidth: null
+      linksWrapMaxWidth: null,
     };
   },
 
@@ -71,7 +71,7 @@ export default {
 
     isAlgoliaSearch() {
       return this.algolia && this.algolia.apiKey && this.algolia.indexName;
-    }
+    },
   },
 
   mounted() {
@@ -91,7 +91,7 @@ export default {
     };
     handleLinksWrapWidth();
     window.addEventListener("resize", handleLinksWrapWidth, false);
-  }
+  },
 };
 
 function css(el, property) {
@@ -126,10 +126,13 @@ $sm-mobile-navbar-horizontal-padding = 1.5rem;
     vertical-align: top;
   }
 
+  .theme-dark .logo {
+    filter: brightness(149%);
+  }
   .site-name {
     font-size: 1.3rem;
     font-weight: 700;
-    color: $textColor;
+    color: var(--text-color);
     position: relative;
     display: none;
   }
@@ -180,6 +183,9 @@ $sm-mobile-navbar-horizontal-padding = 1.5rem;
 }
 
 @media (max-width: $MQMobile) {
+  .theme-dark .navbar .logo {
+      filter: brightness(149%);
+  }
   .navbar {
     padding-top: $mobile-navbar-vertical-padding;
     padding-bottom: $mobile-navbar-vertical-padding;
