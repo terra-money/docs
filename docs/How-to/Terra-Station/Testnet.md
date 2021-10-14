@@ -1,27 +1,14 @@
-# Use Terra Station mobile
+## Step 2. Get testnet Luna
 
-This tutorial walks you through the process of using Terra Station, the official desktop wallet for holding Terra assets. You'll learn how to set up a new wallet, make basic transactions, and stake your tokens, all by using testnet Luna so that you can get a solid understanding of how Terra Station works without any risk of losing any real funds.
+1. In the bottom left corner of Terra Station, switch **Mainnet** to **Testnet** .
+2. A the top of Terra Station, copy your Terra address. Your address follows this format: `terra1qi3vmmjiwjs89qw9m1l98sdjcmn2goy03xuapl`.
+3. Open [Terra Faucet](https://faucet.terra.money), paste your Terra address in the **Testnet address** field, select Luna, and click **Send me tokens**.
 
-## Download the Terra Station app
+The following image shows your balance after you receive your testnet Luna:
 
-1. Navigate to [Terra.money](https://www.terra.money/) in your phone's browser.
+![balance](/img/screens/balance.png)
 
-2. Click "Download Station Wallet" and select the option for your operating system. This will direct you to your phone's app store.
-
-3. Install the Terra Station app on your phone.
-
-## Create a new wallet
-
-2. Launch the Terra Station app.
-::: danger
-Write down and verify the 24 words, and keep them in a secure location for the following reasons:
-
-- People who have access to the words can also access your funds.
-- If you clear the Terra Station cache or reinstall station, the mnemonic is erased.
-:::
-
-## Send funds to your wallet
-
+Now, you can practice making transactions using the testnet Luna tokens.
 
 ## Make a transaction
 
@@ -82,7 +69,3 @@ After some time has passed, rewards will accrue because you delegated Luna to a 
 The following image shows the **Withdraw** button on the validator details page.
 
 ![withdraw](/img/screens/withdraw.png)
-
-## Next steps
-
-Congratulations! You learned the basics of using Terra Station. Now, you're ready to switch from the testnet to the Terra mainnet, where you'll use real tokens.
