@@ -16,7 +16,7 @@ In this section, we'll define our expected messages alongside their implementati
 
 ## Start with a template
 
-In your working directory, you'll want to use `cargo-generate` to start your smart contract with the recommended folder structure and build options:
+In your working directory, start your smart contract with the recommended folder structure and build options by running the following commands:
 
 ```sh
 cargo generate --git https://github.com/CosmWasm/cw-template.git --branch 0.16 --name my-first-contract
