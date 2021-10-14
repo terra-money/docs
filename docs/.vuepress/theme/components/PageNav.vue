@@ -144,8 +144,8 @@ function flatten(items, res) {
       white-space: nowrap;
       text-overflow: ellipsis;
       overflow: hidden;
-      border: 1px solid $primaryColor;
-      color: #0c3694;
+      border: 1px solid var(--primary-color);
+      color: var(--primary-color);
       font-weight: 500;
       line-height: 1.2em;
       box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
@@ -159,7 +159,7 @@ function flatten(items, res) {
         position: absolute;
         top: 14px;
         right: 30px;
-        color: #0c3694;
+        color: var(--primary-color);
         opacity: 0.5;
         font-size: 10px;
         font-weight: 700;

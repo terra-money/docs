@@ -47,7 +47,7 @@ export default {
   font-size: 0.75rem;
   text-transform: uppercase;
   font-weight: 500;
-  color: rgba($textColor, 0.45);
+  color: var(--text-color);
   line-height: 1.8;
 
   &:first-child {
@@ -68,14 +68,14 @@ export default {
 
   &::before {
     content: ' // ';
-    color: rgba($textColor, 0.45);
+    color: var(--text-color);
     font-weight: 400;
     margin: 0 0.5rem;
   }
 
   &:last-child {
     cursor: default;
-    color: $primaryColor;
+    color: var(--primary-color);
   }
 }
 

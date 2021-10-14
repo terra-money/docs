@@ -1,3 +1,8 @@
+.theme-dark 
+  .cards 
+    .card 
+      img
+        filter brightness(200%)  
 .cards
   display flex
   flex-wrap wrap
@@ -20,8 +25,8 @@
     padding 20px
     padding-left 70px
     box-sizing border-box
-    background #F5F6FB
-    color #0f0f0f
+    background var(--border-color)
+    color var(--primary-color)
     font-weight 400
     transition .2s
     position relative
@@ -61,13 +66,13 @@
       background #182E90
       color #fff
       i
-         color #5493F7
+        color #5493F7
       .text
         color rgba(255,255,255, 0.75)
       .caption
         color rgba(255,255,255, 0.5)
     i
-      color $primaryColor
+      color var(--primary-color)
       font-size 30px
       position absolute
       top 20px
@@ -85,31 +90,31 @@
     .text
       font-size 14px
       line-height 21px
-      color rgba(30,30,30, 0.75)
+      color var(--text-color)
     .caption
       padding 5px 0 0
       font-size 11px
       font-weight 500
       text-transform uppercase
-      color rgba(30,30,30, 0.5)
+      color var(--accent-color)
 
     &.lg
       text-align center
       padding 30px
       background #E9EDF8
-      color $primaryColor
+      color var(--primary-color)
       &.dark
         background #182E90
         color #fff
         i
-          color $accentColor
+          color var(--accent-color)
         .text
           color rgba(255,255,255, 1.0)
         .caption
           color rgba(255,255,255, 0.5)
 
       i
-        color $primaryColor
+        color var(--primary-color)
         float none
         font-size 120px
         height auto
@@ -133,13 +138,13 @@
       .text
         font-size 14px
         line-height 21px
-        color rgba(32,67,181, 1.0)
+        color var(--text-color)
       .caption
         padding 10px 0 0
         font-size 11px
         font-weight 500
         text-transform uppercase
-        color rgba(32,67,181, 0.5)
+        color: var(--accent-color)
     
     &.app, &.image
       text-align center

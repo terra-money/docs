@@ -107,7 +107,7 @@ export default {
 }
 
 .sidebar-heading {
-  color: $primaryColor;
+  color: var(--primary-color);
   transition: color 0.15s ease;
   cursor: pointer;
   font-size: 0.813rem;
@@ -118,7 +118,7 @@ export default {
   margin: 0 0 0.313rem;
 
   &.open, &:hover {
-    color: $primaryColor;
+    color: var(--primary-color);
   }
 
   .arrow {
@@ -149,7 +149,7 @@ export default {
   overflow: hidden;
 
   a.sidebar-link {
-    color: #444;
+    color: var(--primary-color);
 
     &:before {
       content: '';

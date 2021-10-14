@@ -112,13 +112,13 @@ export default {
 
   a {
     line-height: 1.4rem;
-    color: $primaryColor;
+    color: var(--primary-color);
     text-transform: uppercase;
     font-size: 0.875rem;
     font-weight: 500;
 
     &:hover, &.router-link-active {
-      color: $primaryColor;
+      color: var(--primary-color);
     }
   }
 
@@ -142,7 +142,7 @@ export default {
     width: 2.625rem;
     border-radius: 1.3125rem;
     padding: 0;
-    background: rgba($primaryColor, 0.08);
+    background: var(--primary-color)
     display: flex;
     align-items: center;
     justify-content: center;
@@ -154,7 +154,7 @@ export default {
     }
 
     &:hover {
-      background: rgba($primaryColor, 0.15);
+      background: var(--primary-color);
     }
   }
 }
@@ -165,7 +165,7 @@ export default {
 
     a {
       line-height: 1.1;
-      color: $primaryColor;
+      color: var(--primary-color);
       text-transform: uppercase;
       font-size: 0.9375rem;
       font-weight: 700;
@@ -208,7 +208,7 @@ export default {
 @media (min-width: $MQMobile) {
   .nav-links a {
     &:hover, &.router-link-active {
-      color: $primaryColor;
+      color: var(--primary-color);
     }
   }
 
