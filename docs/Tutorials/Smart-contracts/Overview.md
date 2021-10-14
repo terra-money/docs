@@ -14,7 +14,6 @@ The following table maps commonly-used Ethereum developer tools to their Terra c
 | Browser Extension  | Station CX                                                                                                            | MetaMask, MEW   |
 | Local Testnet      | [LocalTerra](https://github.com/terra-money/LocalTerra)                                                             | Ganache         |
 | Contract Language  | [Rust](https://www.rust-lang.org/)                                                                                    | Solidity, Vyper |
-| Contract Toolchain | [Houston](https://github.com/terra-money/houston)                                                                   | Truffle         |
 
 ## Why build on Terra?
 
