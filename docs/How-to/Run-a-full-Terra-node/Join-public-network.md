@@ -44,7 +44,7 @@ You specify the network you want to join by setting the **genesis file** and **s
 
 | Network      | Description | Homepage                                                             | Address Book                                    |
 | ------------ | ----------- | -------------------------------------------------------------------- | ----------------------------------------------- |
-| `columbus-4` | Mainnet     | [Link](https://github.com/terra-money/mainnet)                       | https://network.terra.dev/addrbook.json         |
+| `columbus-5` | Mainnet     | [Link](https://github.com/terra-money/mainnet/tree/master/columbus-5)| https://network.terra.dev/addrbook.json         |
 | `bombay-12`  | Testnet     | [Link](https://github.com/terra-money/testnet/tree/master/bombay-12) | https://network.terra.dev/testnet/addrbook.json |
 
 ### Download the genesis file
@@ -53,7 +53,7 @@ You'll need to select the network you want to join and download its `genesis.jso
 
 ```bash
 mkdir -p ~/.terra/config
-curl https://columbus-genesis.s3-ap-northeast-1.amazonaws.com/columbus-4-genesis.json > ~/.terra/config/genesis.json
+curl https://columbus-genesis.s3.ap-northeast-1.amazonaws.com/columbus-5-genesis.json > ~/.terra/config/genesis.json
 ```
 
 Note we use the `latest` directory in the [networks repo](https://github.com/terra-money/testnet) which contains details for the latest testnet. If you are connecting to a different testnet, ensure you get the right files.
