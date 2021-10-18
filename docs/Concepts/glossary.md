@@ -169,7 +169,7 @@ The value of a coin minus the cost of its production. In the Terra protocol, the
 
 ## Self-delegation
 
-The amount of Luna a validator bonds to themselves. Also referred to as self-bond. 
+The amount of Luna a validator bonds to themselves. Also referred to as self-bond.
 
 ## Slashing
 
@@ -197,7 +197,7 @@ The official source code for the Terra protocol.
 
 ## Terra stablecoins
 
-Cryptocurrencies created by the Terra protocol to track the price of fiat currencies. Terra stablecoins are algorithmic stablecoins collateralized by Luna. Terra stablecoins are minted by burning Luna and are freely transacted, bought, or sold just like fiat currency.
+Crypto assets that track the price of fiat currency enabled by the Terra protocol. Users mint new Terra stablecoins by burning Luna. Stablecoins are named for their fiat counterparts. For example, the base Terra stablecoin tracks the price of the IMF’s SDR, named TerraSDR, or SDT. Other stablecoin denominations include TerraUSD or UST, and TerraKRW or  KRT. All Terra stablecoin denominations exist in the same pool.
 
 ## Terra mainnet
 
