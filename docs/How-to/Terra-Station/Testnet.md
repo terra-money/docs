@@ -1,3 +1,7 @@
+# Use the Testnet
+
+The testnet is the testing environment for the Terra network. Use the testnet to simulate transactions.
+
 ## Step 2. Get testnet Luna
 
 1. In the bottom left corner of Terra Station, switch **Mainnet** to **Testnet** .
