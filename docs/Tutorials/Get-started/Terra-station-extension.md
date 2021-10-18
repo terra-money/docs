@@ -28,7 +28,7 @@ This tutorial is only for the Chrome browser. It is recommended that you downloa
 
 7. Click **Create a wallet**.
 
-## Recieve tokens from an exchange
+## Receive tokens from an exchange
 
 Follow these steps to fill your wallet with tokens.
 
