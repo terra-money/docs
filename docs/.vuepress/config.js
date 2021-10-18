@@ -184,6 +184,7 @@ module.exports = {
           ],
           collapsable: false,
         },
+        "/Concepts/glossary"
       ],
       "/Reference/": [
         "/Reference/",
