@@ -53,7 +53,7 @@ go: go version go1.13.4 darwin/amd64
 ```
 
 ::: tip
-If the `terrad: command not found` error message is returned, confirm that the go binary path is correctly configured by running the following command:
+If the `terrad: command not found` error message is returned, confirm that the Go binary path is correctly configured by running the following command:
 
 ```
 export PATH=$PATH:$(go env GOPATH)/bin
