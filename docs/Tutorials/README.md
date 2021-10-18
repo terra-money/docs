@@ -83,7 +83,7 @@ Learn how to [use Terra Station to manage your funds](./Get-started/Use-Terra-St
 The Terra SDKs provide an easy way to programmatically interact with a Terra node with popular programming languages to develop applications. Currently, we have SDKs in Python 3 and JavaScript, with support for other runtimes coming soon in the near future.
 
 <div class="cards twoColumn">
-  <a href="https://terra-money.github.io/terra-sdk-python/" class="card lg dark">
+  <a href="https://terra-money.github.io/terra.py/" class="card lg dark">
     <img src="https://terra.money/assets/img/terra_sdk.svg">
     <div class="title">
       Terra SDK

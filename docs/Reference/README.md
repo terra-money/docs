@@ -83,7 +83,7 @@ Use this section to quickly find the information you need about the Terra core m
 The Terra SDKs provide an easy way to programmatically interact with a Terra node with popular programming languages to develop applications. Currently, we have SDKs in Python 3 and JavaScript, with support for other runtimes coming soon in the near future.
 
 <div class="cards twoColumn">
-  <a href="https://terra-money.github.io/terra-sdk-python/" class="card lg dark">
+  <a href="https://terra-money.github.io/terra.py/" class="card lg dark">
     <img src="https://terra.money/assets/img/terra_sdk.svg">
     <div class="title">
       Terra SDK
