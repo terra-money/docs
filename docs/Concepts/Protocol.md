@@ -1,6 +1,6 @@
 # The Terra protocol
 
-The Terra protocol is the leading decentralized and open-source public blockchain protocol for [algorithmic stablecoins](/Concepts/Glossary.md#algorithmic-stablecoin). Using a combination of open market [arbitrage](/Concepts/Glossary.md#arbitrage) incentives and decentralized oracle voting, the Terra protocol creates stablecoins that consistently track the price of any fiat currency. Users can spend, save, trade, or exchange Terra stablecoins instantly, all on the Terra blockchain. Luna provides its holders with staking rewards and governance power. The Terra ecosystem is a quickly expanding network of decentralized applications, creating a stable demand for Terra and increasing the price of Luna.
+The Terra protocol is the leading decentralized and open-source public blockchain protocol for [algorithmic stablecoins](/Concepts/glossary.md#algorithmic-stablecoin). Using a combination of open market [arbitrage](/Concepts/glossary.md#arbitrage) incentives and decentralized oracle voting, the Terra protocol creates stablecoins that consistently track the price of any fiat currency. Users can spend, save, trade, or exchange Terra stablecoins instantly, all on the Terra blockchain. Luna provides its holders with staking rewards and governance power. The Terra ecosystem is a quickly expanding network of decentralized applications, creating a stable demand for Terra and increasing the price of Luna.
 
 ## Terra and Luna
 
@@ -53,7 +53,7 @@ All seigniorage in the Terra protocol is burned, making Luna deflationary in nat
 
 ## Validators
 
-Validators are the miners of the Terra [blockchain](/Concepts/Glossary.md#blockchain). They are responsible for securing the Terra blockchain and ensuring its accuracy. Validators run programs called full nodes which allow them to verify each transaction made on the Terra network. Validators propose blocks, vote on their validity, and add each new block to the chain in exchange for staking rewards from transaction fees. Users can stake their Luna to validators in exchange for staking rewards. Validators also play an important role in the governance of the Terra protocol.
+Validators are the miners of the Terra [blockchain](/Concepts/glossary.md#blockchain). They are responsible for securing the Terra blockchain and ensuring its accuracy. Validators run programs called full nodes which allow them to verify each transaction made on the Terra network. Validators propose blocks, vote on their validity, and add each new block to the chain in exchange for staking rewards from transaction fees. Users can stake their Luna to validators in exchange for staking rewards. Validators also play an important role in the governance of the Terra protocol.
 
 For more information on validators, visit the [Validator FAQ](/How-to/Manage-a-Terra-validator/faq.md).
 
@@ -97,7 +97,7 @@ Luna exists in the following three phrases:
 
 Generally, the terms bonding, staking, and delegating can be used interchangeably, as they happen in the same step. A delegator delegates Luna to a validator, the Luna gets bonded to the validator, and the bonded Luna gets added to the validator's stake.
 
-Delegators can bond Luna to any validator in the [active set](/Concepts/Glossary.md#active-set) using the delegate function in Terra Station. Delegators start earning staking rewards the moment they bond or stake to a validator.
+Delegators can bond Luna to any validator in the [active set](/Concepts/glossary.md#active-set) using the delegate function in Terra Station. Delegators start earning staking rewards the moment they bond or stake to a validator.
 
 ### Unbonding
 
@@ -149,7 +149,7 @@ For more information on slashing, visit the [slashing module](/Reference/Terra-c
 
 ## Governance
 
-The Terra protocol is a decentralized public [blockchain](/Concepts/Glossary.md#blockchain) governed by community members. Governance is the democratic process that allows users and validators to make changes to the Terra protocol. Community members submit, vote, and implement proposals.  
+The Terra protocol is a decentralized public [blockchain](/Concepts/glossary.md#blockchain) governed by community members. Governance is the democratic process that allows users and validators to make changes to the Terra protocol. Community members submit, vote, and implement proposals.  
 
 ### Proposals
 

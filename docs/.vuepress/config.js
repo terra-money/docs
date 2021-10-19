@@ -172,7 +172,7 @@ module.exports = {
       "/Concepts/": [
         "/Concepts/",
         "/Concepts/Protocol",
-        "/Concepts/Glossary",
+        "/Concepts/glossary",
       ],
       "/Reference/": [
         "/Reference/",
