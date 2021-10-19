@@ -18,7 +18,7 @@
           </div>
         </div>
       </a>-->
-      <a href="https://terra-money.github.io/terra-sdk-python/" target="_blank">
+      <a href="https://terra-money.github.io/terra.py/" target="_blank">
         <div class="image">
           <img src="https://www.terra.money/assets/img/terra_sdk.svg" />
         </div>
