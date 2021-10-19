@@ -1,6 +1,6 @@
 # Concepts
 
-Learn more about Terra, stablecoins, and how the protocol works by exploring the concepts explained in this section. Use the [glossary](/Concepts/glossary.md) to learn more about specific terms. 
+Learn more about [Terra and Luna](/Concepts/Protocol.md), [how the protocol works](/Concepts/Protocol.html#how-the-terra-protocol-works), [validators](/Concepts/Protocol.html#validators), [staking](/Concepts/Protocol.html#staking), and [governance](/Concepts/Protocol.html#governance) by exploring the concepts explained in this section. Use the [glossary](/Concepts/Glossary.md) to learn more about specific terms.
 
 <!--
 <div class="cards twoColumn">

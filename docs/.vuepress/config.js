@@ -170,21 +170,9 @@ module.exports = {
         "/How-to/Start-LCD",
       ],
       "/Concepts/": [
-
-        {
-          title: "Concepts",
-          children: [
-            "/Concepts/Terra",
-            "/Concepts/Luna",
-            "/Concepts/Stablecoin",
-            "/Concepts/Validators",
-            "/Concepts/Governance",
-            "/Concepts/Smart-contracts",
-
-          ],
-          collapsable: false,
-        },
-        "/Concepts/glossary"
+        "/Concepts/",
+        "/Concepts/Protocol",
+        "/Concepts/Glossary",
       ],
       "/Reference/": [
         "/Reference/",
