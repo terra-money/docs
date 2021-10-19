@@ -64,7 +64,7 @@
       <ul class="developers">
         <li>Luna</li>
         <li>
-          <a href="https://docs.terra.money/Concepts/Luna.html" target="_blank">What is Luna?</a>
+          <a href="https://docs.terra.money/Concepts/Protocol.html#terra-and-luna" target="_blank">What is Luna?</a>
         </li>
         <li>
           <a href="https://docs.terra.money/Reference/integrations.html#exchanges" target="_blank">Exchanges</a>
@@ -284,7 +284,7 @@ export default {
         top: 50%;
         left: 0;
         margin-top: -0.563rem;
-        
+
       }
 
       &:hover {

@@ -1,6 +1,6 @@
 # Glossary
 
-A glossary of terms specific to the Terra protocol.
+Use this glossary to learn about terms specific to the Terra Protocol.
 
 ## Active set
 
@@ -107,7 +107,7 @@ The native staking token of the Terra protocol. Luna supply expands and contract
 
 ## Governance
 
-The process that allows users and validators to make changes to the Terra protocol. Users and validators vote on proposals submitted by community members. One staked Luna is equal to one vote.
+Governance is the democratic process that allows users and validators to make changes to the Terra protocol. Community members submit, vote, and implement proposals. One staked Luna is equal to one vote.
 
 ## Governance proposal
 
