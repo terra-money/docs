@@ -1,6 +1,6 @@
 # Use the Terra Station browser extension
 
-This tutorial is only for the Chrome browser. It is recommended that you download Terra station desktop or mobile first before using the browser extension.
+This tutorial for the Chrome browser extension. It is recommended that you download Terra station desktop or mobile first before using the browser extension.
 
 ## Install the Terra Station extension
 

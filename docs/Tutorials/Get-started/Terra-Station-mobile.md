@@ -1,88 +1,138 @@
 # Use Terra Station mobile
 
-This tutorial walks you through the process of using Terra Station, the official desktop wallet for holding Terra assets. You'll learn how to set up a new wallet, make basic transactions, and stake your tokens, all by using testnet Luna so that you can get a solid understanding of how Terra Station works without any risk of losing any real funds.
+Use this tutorial to get started with the Terra Station mobile app.
 
 ## Download the Terra Station app
 
 1. Navigate to [Terra.money](https://www.terra.money/) in your phone's browser.
 
-2. Click "Download Station Wallet" and select the option for your operating system. This will direct you to your phone's app store.
+2. Tap "Download Station Wallet" and select the option for your operating system. This will direct you to your phone's app store.
 
 3. Install the Terra Station app on your phone.
 
 ## Create a new wallet
 
-2. Launch the Terra Station app.
-::: danger
-Write down and verify the 24 words, and keep them in a secure location for the following reasons:
+1. Launch the Terra Station app and select **New wallet**
 
-- People who have access to the words can also access your funds.
-- If you clear the Terra Station cache or reinstall station, the mnemonic is erased.
+2. Enter a name for your wallet and a secure password. Confirm your password and tap **Next**
+
+3. Using a pen and paper, write down your 24-word seed phrase exactly as it appears. Number each word to make verifying easier.
+
+:::danger Write down your seed phrase
+Never save or store your seed phrase as a digital file on any device.
+Always write down your seed phrase with a pen and paper. Store the paper somewhere safe. Anyone with your seed phrase can access your money. There is no recourse for someone stealing your seed phrase.
+
+Never give your seed phrase to anyone, not even support staff.
 :::
 
-## Send funds to your wallet
+4. Verify your writing to make sure every word is spelled correctly and in the right order. If you numbered your phrase, it can be helpful to verify it backwards.
 
+5. Tap **Next**.
 
-## Make a transaction
+6. Confirm your seed phrase by typing or selecting the correct words in each prompt.
 
-Transactions are bundles of messages that tell the blockchain to update its state, creating changes in balances and ownership reflected across the distributed ledger. The simplest transaction you can make is to send tokens to somebody else. In the following procedure, you'll send some of your testnet Luna to another address.
+7. Tap **Confirm**.
 
-1. In Terra Station, click **Wallet**, and click **Send**.
-2. In the **Send to** field, specify `terra14lxhx09fyemu9lw46c9m9jk63cg6u8wdc8pdu4`.
-3. In the **Amount** field, specify `100`, and click **Next**.
-4. In the **Confirm with password** field, specify your password to confirm that the transaction information is correct, and click **Send**.
+Congratulations, you have just created a wallet!
 
-The following image shows how to send Luna:
+## Receive tokens from an exchange
 
-![send](/img/screens/send.png)
+Follow these steps to fill your wallet with tokens.
 
-Now that you understand how to make a simple transaction, let's try the on-chain swap.
+1. Purchase your tokens using any exchange that supports Terra. Visit the [Integrations page](https://docs.terra.money/Reference/integrations.html#exchanges) to view all current exchanges.
 
-## Step 4. Swap Luna for a stablecoin
+2. Withdraw any Terra network supported token from your exchange. Every exchange is different. Please visit your exchange's web page for guides on how to withdraw tokens.
 
-The hallmark feature of the Terra protocol is its stablecoin, powered by a balancing system of on-chain swaps and real-world arbitrage. Using the on-chain swap, you will turn your unstable Luna coins into stablecoins to protect their value.
+3. View your Terra Station wallet address by opening the Terra Station. Your wallet address is at the top near your wallet name. Your wallet adress will look like this: `terra1hm4grlwkt26tccr4vclwjz3elgh224wquctwye`
 
-1. In Terra Station, click **Swap**.
-2. In the **Swap coins** section, select **Luna** in the first field, and specify `500` for the amount.
-3. Select **KRT** in the second field, and click **Next**.
-3. In the **Confirm with password** field, specify your password to confirm that the transaction information is correct, and click **Swap**.
+4. Double check your wallet address is correct before sending.
 
-The following image shows how to swap from Luna to KRT:
+5. Send the tokens to your Terra Station wallet address.
 
-![swap](/img/screens/swap.png)
-
-## Step 5. Stake your Luna
-
-Staking is the act of delegating all or part of your Luna balance as your stake to a validator, who will participate in the process of validating transactions. By staking, you earn rewards.
-
-1. In Terra Station, click **Staking**.
-2. In the **Moniker** column, click the validator **node0**, which is the validator to which you will delegate your stake.
-3. In the **My delegations** section, click **Delegate**.
-4. In the **Amount** field, specify the amount of Luna you want to delegate, and click **Next**.
-
-::: warning Important
-Keep some funds in your account when you delegate because you'll need funds to withdraw rewards.
+:::warning Waiting times for transfers
+When you transfer tokens from an exchange to Terra, there may be waiting period before the tokens appear in your wallet. Don't panic, this waiting period is normal and varies depending on the exchange. If a transfer does not appear immediately, check back after some time.
 :::
 
-5. In the **Confirm with password** field, specify your password to confirm that the transaction information is correct, and click **Delegate**.
+Now you have Tokens on Terra!
 
-The following image shows delegating Luna to node0 on testnet:
+## Swap coins
 
-![delegate](/img/screens/delegate.png)
+1. Open the Terra Station App extension and connect to your wallet. Tap **Swap**.
 
-## Step 6. Withdraw staking rewards
+2. In the first dropdown, select a coin and enter the value you wish to swap.
 
-After some time has passed, rewards will accrue because you delegated Luna to a validator who participates on the network. You can withdraw your accrued rewards at any time.
+3. In the second dropdown, select a coin to recieve.
 
-1. In Terra Station, click **Staking**.
-2. In the **Moniker** column, click **node0**.
-3. In the **My rewards** section, click **Withdraw**.
-4. In the **Confirm with password** field, specify your password to confirm that the transaction information is correct, and click **Withdraw**.
+4. Tap **Next**.
 
-The following image shows the **Withdraw** button on the validator details page.
+5. Select the coin you wish to pay fees in.
 
-![withdraw](/img/screens/withdraw.png)
+5. Confirm your transaction amounts and tap **Confirm**.
 
-## Next steps
+Congratulations, you've just swapped coins!
 
-Congratulations! You learned the basics of using Terra Station. Now, you're ready to switch from the testnet to the Terra mainnet, where you'll use real tokens.
+## Send tokens
+
+1. Open the Terra Station App extension and connect to your wallet.
+
+2. Tap on the token in your available balance that you wish to send.
+
+3. Enter the address of the wallet you wish to send tokens to.
+
+4. Enter the amount you wish to send. You can also add a memo for the transaction.
+
+5. Tap **Next**.
+
+6. Verify the transaction amounts and specify which token you wish to pay fees in. Remember to always leave enough tokens in your account for other transactions.
+
+::: warning Keep coins for fees
+Always keep some coins to pay fees with. Never spend your entire wallet amount. Without money for fees, you can't make any transactions.
+:::
+
+7.  Enter your password and tap **Confirm**. Wait for the transaction to process.
+
+## Stake Luna
+
+1. Open the Terra Station App extension and connect to your wallet. Make sure you have Luna in your wallet to stake.
+
+2. Tap **Staking**.
+
+2. Browse the list and tap on the validator you would like to stake to.
+
+3. Tap **Delegate**
+
+4. Enter the amount of Luna you wish to delegate. Tap **Next**.
+
+5. Confirm the amount and select the coin you wish to pay fees in.
+
+::: warning Keep coins for fees
+Always keep some coins to pay fees with. Never stake your entire wallet amount. Without money for fees, you can't make any transactions.
+:::
+
+6. Tap **Confirm** and wait for your transaction to process.
+
+## Withdraw staking rewards
+
+Rewards start accruing the moment you stake Luna. Monitor your rewards in the staking section of Terra Station. Once you have sufficient rewards, follow these steps to withdraw them:
+
+1. Open the Terra Station app. Connect to a wallet and tap **Staking**.
+
+2. To claim all rewards, tap **Withdraw all rewards** at the top of the staking page.
+
+2. Review the amounts and specify which coin you want to pay fees in.
+
+3. Enter your password and tap **Confirm**.
+
+Congratulations, you've just withdrawn your staking rewards!
+
+## Connect to a dApp
+
+1. Open the Terra Station app and connect to your wallet.
+
+2. In your browser, navigate to the dApp of your choice. We'll use the [Anchor protocol WebApp](https://app.anchorprotocol.com/) for this tutorial. Most dApps use a similar process, though others may vary.
+
+3. Tap the wallet icon at the top of the page.
+
+4. Wallet connect will open your Terra Station app.
+
+5. When prompted, tap **Allow**.
