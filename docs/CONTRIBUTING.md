@@ -1,4 +1,4 @@
-The following information provides a set of guidelines for contributing to the Terra Docs repo. Use your best judgment, and, if you see room for improvement, please propose changes to this wiki page.
+The following information provides a set of guidelines for contributing to the Terra Docs repo. Use your best judgment, and, if you see room for improvement, please propose changes to this document.
 
 Contributions come in the form of writing documentation, raising issues, and any other actions that help develop the Terra protocol documentation.
 
