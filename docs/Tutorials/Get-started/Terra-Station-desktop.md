@@ -129,4 +129,4 @@ After a few moments, the tokens will appear in the receiver's wallet.
 
 ## Next steps
 
-To start using the many dApps the Terra ecosystem has to offer, check out the Terra Station Chrome browser extension. For on-the-go transactions, check out the Terra Station mobile app.
+To start using any of the many dApps the Terra ecosystem has to offer, check out the Terra Station Chrome browser extension. For on-the-go transactions, check out the Terra Station mobile app.
