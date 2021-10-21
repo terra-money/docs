@@ -117,7 +117,7 @@ module.exports = {
         {
           title: "Get started",
           children: [
-            "/Tutorials/Get-started/Use-Terra-Station",
+            "/Tutorials/Get-started/Terra-Station-desktop",
           ],
           collapsable: true,
         },
@@ -149,6 +149,7 @@ module.exports = {
           ],
           collapsable: true,
         },
+        "/How-to/Terra-Station/Wallet",
         {
           title: "Manage a Terra validator",
           children: [
