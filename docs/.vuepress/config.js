@@ -87,6 +87,10 @@ module.exports = {
   ],
   themeConfig: {
     sidebarDepth: 2,
+    // overrideTheme: 'dark',
+    // prefersTheme: 'dark',
+    // overrideTheme: { light: [6, 18], dark: [18, 6] },
+    // theme: 'default-prefers-color-scheme',
     logo: "/img/docs_logo.svg",
     lastUpdated: "Updated on",
     repo: "terra-money/docs",
@@ -167,20 +171,9 @@ module.exports = {
         "/How-to/Start-LCD",
       ],
       "/Concepts/": [
-
-        {
-          title: "Concepts",
-          children: [
-            "/Concepts/Terra",
-            "/Concepts/Luna",
-            "/Concepts/Stablecoin",
-            "/Concepts/Validators",
-            "/Concepts/Governance",
-            "/Concepts/Smart-contracts",
-
-          ],
-          collapsable: false,
-        },
+        "/Concepts/",
+        "/Concepts/Protocol",
+        "/Concepts/glossary",
       ],
       "/Reference/": [
         "/Reference/",

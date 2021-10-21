@@ -33,7 +33,7 @@ You can edit `~/.terra/config/app.toml` in order to enable anti-spam by rejectin
 # The minimum gas prices a validator is willing to accept for processing a
 # transaction. A transaction's fees must meet the minimum of any denomination
 # specified in this config (e.g. 0.25token1,0.0001token2).
-minimum-gas-prices = "0.01133uluna,0.15uusd,0.104938usdr,169.77ukrw,428.571umnt,0.125ueur,0.98ucny,16.37ujpy,0.11ugbp,10.88uinr,0.19ucad,0.14uchf,0.19uaud,0.2usgd,4.62uthb,1.25usek,1.25unok,0.9udkk,2180.0uidr,7.6uphp"
+minimum-gas-prices = "0.01133uluna,0.15uusd,0.104938usdr,169.77ukrw,428.571umnt,0.125ueur,0.98ucny,16.37ujpy,0.11ugbp,10.88uinr,0.19ucad,0.14uchf,0.19uaud,0.2usgd,4.62uthb,1.25usek,1.25unok,0.9udkk,2180.0uidr,7.6uphp,1.17uhkd"
 ```
 
 Your full node has now been initialized!
@@ -44,7 +44,7 @@ You specify the network you want to join by setting the **genesis file** and **s
 
 | Network      | Description | Homepage                                                             | Address Book                                    |
 | ------------ | ----------- | -------------------------------------------------------------------- | ----------------------------------------------- |
-| `columbus-4` | Mainnet     | [Link](https://github.com/terra-money/mainnet)                       | https://network.terra.dev/addrbook.json         |
+| `columbus-5` | Mainnet     | [Link](https://github.com/terra-money/mainnet/tree/master/columbus-5)| https://network.terra.dev/addrbook.json         |
 | `bombay-12`  | Testnet     | [Link](https://github.com/terra-money/testnet/tree/master/bombay-12) | https://network.terra.dev/testnet/addrbook.json |
 
 ### Download the genesis file
@@ -53,7 +53,7 @@ You'll need to select the network you want to join and download its `genesis.jso
 
 ```bash
 mkdir -p ~/.terra/config
-curl https://columbus-genesis.s3-ap-northeast-1.amazonaws.com/columbus-4-genesis.json > ~/.terra/config/genesis.json
+curl https://columbus-genesis.s3.ap-northeast-1.amazonaws.com/columbus-5-genesis.json > ~/.terra/config/genesis.json
 ```
 
 Note we use the `latest` directory in the [networks repo](https://github.com/terra-money/testnet) which contains details for the latest testnet. If you are connecting to a different testnet, ensure you get the right files.

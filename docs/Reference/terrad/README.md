@@ -134,7 +134,7 @@ If you use fees, validators will calculate the implied `minGasPrices` by dividin
 To use gas prices (use a comma-separated list of amount and denominations).
 
 ```bash
-terrad tx send ... --gas-prices=0.03uluna,0.015ukrw
+terrad tx send ... --gas-prices=0.15uusd
 ```
 
 ### Taxes
@@ -153,7 +153,7 @@ To get a direct fee estimation from `terrad`:
 
 ```bash
 terrad tx estimate-fee ...\
-    --gas-prices=0.015uluna
+    --gas-prices=0.15uusd
     --gas-adjustment=1.4
 ```
 
@@ -161,7 +161,7 @@ To create and send transactions using fee-estimation, use the template below as 
 
 ```bash
 terrad tx send ... \
-    --gas-prices=0.015uluna
+    --gas-prices=0.15uusd
     --gas=auto
     --gas-adjustment=1.4
 ```

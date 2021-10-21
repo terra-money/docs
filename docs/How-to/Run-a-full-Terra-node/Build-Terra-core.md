@@ -9,7 +9,7 @@
 
 Use `git` to retrieve [Terra core](https://github.com/terra-money/core/), and checkout the `master` branch, which contains the latest stable release.
 
-If you are a validator, install `v0.x.x-oracle` to enable mempool prioritization. Otherwise, install `v0.x.x`.
+If you are using LocalTerra or running a validator, use the `v0.x.x-oracle` branch. Otherwise, use the `v0.x.x` branch.
 
 ```bash
 git clone https://github.com/terra-money/core
@@ -32,14 +32,6 @@ Build Terra core, and install the `terrad` executable to your `GOPATH` environme
 make install
 ```
 
-::: tip
-If the `terrad: command not found` error message is returned, confirm that the go binary path is correctly configured by running the following command:
-
-```
-export PATH=$PATH:$(go env GOPATH)/bin
-```
-:::
-
 ## Verify your Terra core installation
 
 Verify that Terra core is installed correctly.
@@ -59,3 +51,11 @@ commit: 3684f77faadf6cf200d18e15763316d5d9c5a496
 build_tags: netgo,ledger
 go: go version go1.13.4 darwin/amd64
 ```
+
+::: tip
+If the `terrad: command not found` error message is returned, confirm that the Go binary path is correctly configured by running the following command:
+
+```
+export PATH=$PATH:$(go env GOPATH)/bin
+```
+:::

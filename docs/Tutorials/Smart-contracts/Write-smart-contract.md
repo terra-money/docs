@@ -1,7 +1,7 @@
 # Writing the Contract
 
 ::: tip
-You can find the complete contract [here](https://github.com/terra-money/my-terra-token).
+To better understand the building blocks of the smart contract you will build in this tutorial, view the [complete contract]((https://github.com/CosmWasm/cw-template).
 :::
 
 A smart contract can be considered an instance of a singleton object whose internal state is persisted on the blockchain. Users can trigger state changes through sending it JSON messages, and users can also query its state through sending a request formatted as a JSON message. These messages are different than Terra blockchain messages such as `MsgSend` and `MsgSwap`.
@@ -16,10 +16,10 @@ In this section, we'll define our expected messages alongside their implementati
 
 ## Start with a template
 
-In your working directory, you'll want to use `cargo-generate` to start your smart contract with the recommended folder structure and build options:
+In your working directory, quickly launch your smart contract with the recommended folder structure and build options by running the following commands:
 
 ```sh
-cargo generate --git https://github.com/CosmWasm/cosmwasm-template.git --name my-first-contract
+cargo generate --git https://github.com/CosmWasm/cw-template.git --branch 0.16 --name my-first-contract
 cd my-first-contract
 ```
 
