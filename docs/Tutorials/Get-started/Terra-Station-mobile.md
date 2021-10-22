@@ -6,7 +6,7 @@ Use this tutorial to get started with the Terra Station mobile app.
 
 1. Navigate to [Terra.money](https://www.terra.money/) in your phone's browser.
 
-2. Tap "Download Station Wallet" and select the option for your operating system. This will direct you to your phone's app store.
+2. Tap **Download Station Wallet** and select the option for your operating system. This will direct you to your phone's app store.
 
 3. Install the Terra Station app on your phone.
 
@@ -18,12 +18,15 @@ Use this tutorial to get started with the Terra Station mobile app.
 
 3. Using a pen and paper, write down your 24-word seed phrase exactly as it appears. Number each word to make verifying easier.
 
-:::danger Write down your seed phrase
-Never save or store your seed phrase as a digital file on any device.
-Always write down your seed phrase with a pen and paper. Store the paper somewhere safe. Anyone with your seed phrase can access your money. There is no recourse for someone stealing your seed phrase.
+:::danger Protect your seed phrase
+Anyone with your seed phrase can access your money, and there is no recourse for someone stealing your seed phrase. To protect your seed phrase, consider the following tips:
 
-Never give your seed phrase to anyone, not even support staff.
+- Never save or store your seed phrase as a digital file on any device.
+- Always write down your seed phrase with a pen and paper.
+- Store the paper with your seed phrase on it somewhere safe.
+- Never give your seed phrase to anyone, not even support staff.
 :::
+
 
 4. Verify your writing to make sure every word is spelled correctly and in the right order. If you numbered your phrase, it can be helpful to verify it backwards.
 
@@ -136,3 +139,9 @@ Congratulations, you've just withdrawn your staking rewards!
 4. Wallet connect will open your Terra Station app.
 
 5. When prompted, tap **Allow**.
+
+You can now make transactions on different dApps in the Terra ecosystem.
+
+## Next steps
+
+To use Terra Station on your computer, visit the [Terra Station desktop tutorial](/Get-started/Terra-Station-desktop.md). For more guides on how to use other Station features, visit the [How to](/How-to/Terra-Station) section.

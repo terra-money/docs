@@ -6,7 +6,7 @@ This tutorial walks you through the process of using Terra Station, the official
 
 1. Navigate to [Terra.money](https://www.terra.money/) in your browser.
 
-2. Click "Download Station Wallet" and select the option for your operating system.
+2. Click **Download Station Wallet** and select the option for your operating system.
 
 3. Open the downloaded file and follow the instructions.
 
@@ -20,11 +20,13 @@ This tutorial walks you through the process of using Terra Station, the official
 
 4. Using a pen and paper, write down your 24-word seed phrase exactly as it appears. Number each word to make verifying easier.
 
-:::danger Write down your seed phrase
-Never save or store your seed phrase as a digital file on any device.
-Always write down your seed phrase with a pen and paper. Store the paper somewhere safe. Anyone with your seed phrase can access your money. There is no recourse for someone stealing your seed phrase.
+:::danger Protect your seed phrase
+Anyone with your seed phrase can access your money, and there is no recourse for someone stealing your seed phrase. To protect your seed phrase, consider the following tips:
 
-Never give your seed phrase to anyone, not even support staff.
+- Never save or store your seed phrase as a digital file on any device.
+- Always write down your seed phrase with a pen and paper.
+- Store the paper with your seed phrase on it somewhere safe.
+- Never give your seed phrase to anyone, not even support staff.
 :::
 
 5. Verify your writing to make sure every word is spelled correctly and in the right order. If you numbered your phrase, it can be helpful to verify it backward.
@@ -41,21 +43,21 @@ Congratulations! You have just created a Terra Station wallet.
 
 Follow these steps to fill your wallet with tokens.
 
-1. Purchase your tokens using any exchange that supports Terra. Visit the [Integrations page](https://docs.terra.money/Reference/integrations.html#exchanges) to view a list of current exchanges.
+1. Purchase your tokens using any exchange that supports Terra. To view a list of current exchanges, visit the [Integrations page](https://docs.terra.money/Reference/integrations.html#exchanges)
 
-2. Withdraw any Terra network supported token from your exchange. Every exchange is different. Please visit your exchange's web page for guides on how to withdraw tokens. Use the following steps as a generic guide.
+2. Withdraw any token supported by the Terra network from your exchange. Every exchange is different. Please visit your exchange's web page for guides on how to withdraw tokens. Use the following steps as a generic guide.
 
 3. To receive tokens to your wallet, use your wallet address. Your wallet address will appear at the top of the Terra station Desktop app near your wallet name. Your wallet address will look like this: `terra1hm4grlwkt26tccr4vclwjz3elgh224wquctwye`
 
-4. Double check your wallet address is correct before sending.
+4. Double-check your wallet address is correct before sending.
 
 5. Send the tokens from the exchange to your Terra Station wallet address.
 
 :::warning Waiting times for transfers
-When you transfer tokens from an exchange to Terra, there may be a waiting period before the tokens appear in your wallet. Don't panic, this waiting period is normal and varies depending on the exchange. If a transfer does not appear immediately, check back after some time.
+When you transfer tokens from an exchange to Terra, some time will pass before the tokens appear in your wallet. Don't panic. This waiting period is normal and varies depending on the exchange. If a transfer does not appear immediately, check back after some time.
 :::
 
-Now you have Tokens on Terra!
+Now you have tokens on Terra!
 
 ## Swap coins
 
@@ -75,7 +77,7 @@ Congratulations, you've just swapped coins!
 
 ## Stake Luna
 
-Stake your Luna to a validator to start earning rewards. Make sure you have Luna in your wallet before you stake. You can transfer Luna from an [exchange](#receive-tokens-from-an-exchange) or [swap coins](#swap-coins) you have for Luna.
+Stake your Luna to a validator to start earning rewards. Before you stake, make sure you have Luna in your wallet. You can transfer Luna from an [exchange](#receive-tokens-from-an-exchange) or [swap coins](#swap-coins) you have for Luna.
 
 1. Open Terra Station and click **Staking**.
 
@@ -113,7 +115,7 @@ Congratulations, you've just withdrawn your staking rewards!
 
 2. Click **Wallet** in the navigation bar.
 
-3. Click **send** next to the token you wish to send.
+3. Click **Send** next to the token you wish to send.
 
 3. Enter the address of the wallet you wish to send tokens to.
 
@@ -123,10 +125,12 @@ Congratulations, you've just withdrawn your staking rewards!
 
 6. Verify the transaction amounts and specify which token you wish to pay fees in. Remember to always leave enough tokens in your account for other transactions.
 
-7.  Enter your password and click **send**.
+7.  Enter your password and click **Send**.
 
 After a few moments, the tokens will appear in the receiver's wallet.
 
 ## Next steps
 
 To start using any of the many dApps the Terra ecosystem has to offer, check out the Terra Station Chrome browser extension. For on-the-go transactions, check out the Terra Station mobile app.
+
+For more guides on how to use other Station features, visit the [How to](/How-to/Terra-Station) section.

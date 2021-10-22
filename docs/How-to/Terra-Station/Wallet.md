@@ -60,7 +60,7 @@ Use a QR code to access your wallet on a mobile device. Unlike recovering your w
 
 1. Open the Terra Station app and connect to your wallet.
 
-2. Tap the gear icon in the upper left corner of the app.
+2. Tap the gear icon in the upper right corner of the app.
 
 3. Click **Export wallet with QR code**.
 
@@ -134,4 +134,4 @@ Follow these steps to change your password. Changing your password only changes 
 
 5. Click **Change password**.
 
-Your password is now changed.
+Your wallet password is now changed on your device. Repeat these steps to change your wallet password on other devices.
