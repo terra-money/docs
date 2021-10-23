@@ -1,3 +1,4 @@
+# How to manage Terra Station
 how to change slippage
 how to recover a Wallet
 how to use the market function
@@ -19,7 +20,7 @@ use contracts
 
 If you have an existing wallet, you can connect to it with a private key.
 
-1. 
+1.
 
 ## Recover a wallet with a seed phrase
 

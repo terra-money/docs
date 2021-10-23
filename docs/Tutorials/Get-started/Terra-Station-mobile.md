@@ -42,21 +42,21 @@ Congratulations, you have just created a wallet!
 
 Follow these steps to fill your wallet with tokens.
 
-1. Purchase your tokens using any exchange that supports Terra. Visit the [Integrations page](https://docs.terra.money/Reference/integrations.html#exchanges) to view all current exchanges.
+1. Purchase your tokens using any exchange that supports Terra. To view a list of current exchanges, visit the [Integrations page](https://docs.terra.money/Reference/integrations.html#exchanges)
 
-2. Withdraw any Terra network supported token from your exchange. Every exchange is different. Please visit your exchange's web page for guides on how to withdraw tokens.
+2. Withdraw any token supported by the Terra network from your exchange. Every exchange is different. Please visit your exchange's web page for guides on how to withdraw tokens. Use the following steps as a generic guide.
 
-3. View your Terra Station wallet address by opening the Terra Station. Your wallet address is at the top near your wallet name. Your wallet adress will look like this: `terra1hm4grlwkt26tccr4vclwjz3elgh224wquctwye`
+3. To receive tokens to your wallet, use your wallet address. Your wallet address will appear at the top of the Terra station Desktop app near your wallet name. Your wallet address will look like this: `terra1hm4grlwkt26tccr4vclwjz3elgh224wquctwye`
 
-4. Double check your wallet address is correct before sending.
+4. Double-check your wallet address is correct before sending.
 
-5. Send the tokens to your Terra Station wallet address.
+5. Send the tokens from the exchange to your Terra Station wallet address.
 
 :::warning Waiting times for transfers
-When you transfer tokens from an exchange to Terra, there may be waiting period before the tokens appear in your wallet. Don't panic, this waiting period is normal and varies depending on the exchange. If a transfer does not appear immediately, check back after some time.
+When you transfer tokens from an exchange to Terra, some time will pass before the tokens appear in your wallet. Don't panic. This waiting period is normal and varies depending on the exchange. If a transfer does not appear immediately, check back after some time.
 :::
 
-Now you have Tokens on Terra!
+Now you have tokens on Terra!
 
 ## Swap coins
 

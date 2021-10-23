@@ -141,6 +141,19 @@ module.exports = {
       "/How-to/": [
         "/How-to/",
         {
+          title: "Use Terra Station",
+          children: [
+            "/How-to/Terra-Station/Wallet",
+            "/How-to/Terra-Station/Testnet",
+            "/How-to/Terra-Station/Staking",
+            "/How-to/Terra-Station/Swap",
+            "/How-to/Terra-Station/Governance",
+            "/How-to/Terra-Station/Contracts",
+
+          ],
+          collapsable: true,
+        },
+        {
           title: "Run a full Terra node",
           children: [
             "/How-to/Run-a-full-Terra-node/Hardware-requirements",
@@ -153,7 +166,6 @@ module.exports = {
           ],
           collapsable: true,
         },
-        "/How-to/Terra-Station/Wallet",
         {
           title: "Manage a Terra validator",
           children: [

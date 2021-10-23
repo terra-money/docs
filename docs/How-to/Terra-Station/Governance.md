@@ -1,4 +1,6 @@
-# Governance
+# Participate in governance
+
+Governance is an important part of community involvement. Use this guide to vote on and submit governance proposals in Terra Station. For more information on governance and voting options,  visit the [governance section](/Concepts/Protocol.html#governance) of the concepts page.
 
 ## Vote on a proposal
 
@@ -16,11 +18,11 @@ Voting is an important way for community members to participate in the Terra pro
 
 6. Enter your password and click **Vote**.
 
-Your vote will be submitted. For more information governance and voting options,  visit the [governance section](/Concepts/Protocol.html#governance) of the concepts page.
+Your vote will be submitted.
 
 ## Deposit Luna to a proposal
 
-Anyone can deposit Luna to a new proposal. Users can vote on a proposal once the deposit limit for a proposal is reached.
+Anyone can deposit Luna to a new proposal. Users can vote on a proposal once a minimum deposit of 512 Luna is reached.
 
 1. Open Terra Station and connect your wallet. Click **Governnce** in the sidebar.
 
@@ -34,7 +36,7 @@ Anyone can deposit Luna to a new proposal. Users can vote on a proposal once the
 
 6. Enter your password and click **Deposit**.
 
-Your deposit will be added to the proposal. For more information on governance and proposals, visit the [governance section](/Concepts/Protocol.html#governance) of the concepts page.
+Your deposit will be added to the proposal.
 
 ## Create a new proposal
 
@@ -42,7 +44,6 @@ Any user can create a new proposal. Follow these steps to submit a proposal to g
 
 ::: warning Avoid unnecessary proposals
 To prevent unnecessary proposals or abuse of the system, all governance proposals must obtain a minimum deposit of 512 Luna. If 33.4% of the total vote is `NoWithVeto` after the two-week voting period, the deposit will be burned. All other vote outcomes get their deposits refunded.
-For more information, visit the [governance concepts section](/Concepts/Protocol.html#governance).
 :::
 
 1. Open Terra Station and connect your wallet. Click **Governnce** in the sidebar.
@@ -51,17 +52,16 @@ For more information, visit the [governance concepts section](/Concepts/Protocol
 
 3. Select the type of proposal and enter a title and a description. Enter the amount of Luna you wish to deposit initially.
 
+:::warning Proposal warnings
+
+It is recommended to get community feedback on [the Terra Agora research forum](https://agora.terra.money) before uploading any proposal.
+Do not use text proposals to suggest Parameter changes. Visit the [Governance module reference page](/Reference/Terra-core/Module-specifications/spec-governance.md) for more informaiton.
+:::
+
 4. Click **Next**.
 
 5. Enter the amount of Luna you want to deposit and click **Next**.
 
-6. Enter your password and click **Deposit**.
+6. Enter your password and click **Propose**.
 
-
-It is recommended to get community feedback on https://agora.terra.money before uploading any proposal
-
-error
-Do not use text proposals to suggest Parameter changes
-
-error
-LUNA proposal deposits are not refunded if the quorum is not reached or the poll result is NoWithVeto
+Your proposal will enter the two-week deposit period. After a minimum deposit of 512 Luna has been reached, your proposal will enter a two-week voting period. For more information on governance, visit the [governance section](/Concepts/Protocol.html#governance) of the concepts page.

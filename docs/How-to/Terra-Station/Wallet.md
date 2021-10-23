@@ -1,6 +1,6 @@
 # Manage a Terra Station Wallet
 
-If you already have a Terra Station wallet, you can connect to it using this guide.
+This guide is for advanced features of the Terra Station wallet. If this is your first time using Terra Station, follow the [Terra Station tutorial](/Tutorials/Get-started/Terra-station-desktop.md).
 
 ## Select a wallet
 
