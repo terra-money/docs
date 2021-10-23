@@ -151,10 +151,6 @@ Proof of Stake. A style of blockchain where validators are chosen to propose blo
 
 When a delegator wants to transfer their bonded luna to a different validator. Redelegating Luna is instant and does not require a 21-day unbonding period.
 
-## Reward weight
-
-The percentage of staking rewards a validator receives proportional to their total stake.
-
 ## Rewards
 
 Revenue generated from fees given to validators and delegators.
