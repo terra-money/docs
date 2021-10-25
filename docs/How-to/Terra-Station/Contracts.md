@@ -1,7 +1,14 @@
-# Upload smart contracts
+# Use smart contracts
 
 Contracts are an advanced feature of Terra Station. If this is your first time using Terra Station, follow the [Terra Station tutorial](/Tutorials/Get-started/Terra-station-desktop.md).
 
+## Prerequisites
+
+Compile a contract locally and create a `.wasm` file.  
+
+## Upload your contract
+
+Deploy a contract by uploading your `.wasm` file to Terra Station.
 
 1. Open Terra Station and connect your wallet. Click **Contracts**.
 
@@ -11,6 +18,36 @@ Contracts are an advanced feature of Terra Station. If this is your first time u
 
 4. Enter your password and click **Upload**.
 
-5. Click **Create**.
+Your contract is now uploaded. You will be given a contract code ID.
 
-6. Enter your information and click **Next**
+## Create
+
+Use **Create** to initialize your contract after uploading.
+
+1. Click **Create**.
+
+2. Enter your contract code ID, `InitMsg JSON`, name, and description. Click **Next**.
+
+3. Confirm the fee amounts and enter your password. Click **Create**.
+
+Your contract is now initialized.
+
+## Query
+
+Use **Query** to find out contract values. Querying does not cost anything.
+
+1. Click **Query** located under your contract address.
+
+2. Enter your `HandleMsg JSON`. Click **Next**.
+
+Station will show your query result.
+
+## Interact
+
+Use **Interact** to use the contract. Interacting will spend gas.
+
+1. Click **Interact** located under your contract address.
+
+2. Enter your `HandleMsg JSON`. Click **Next**.
+
+3. Confirm the fee amounts and enter your password. Click **Interact**.

@@ -1,14 +1,17 @@
 # Use the Terra Station browser extension
 
-This tutorial for the Terra Station Chrome browser extension. It is recommended that you download Terra station desktop before using the browser extension.
+Complete this tutorial to install the Terra Station extension for the Google Chrome browser.
+
+## Prerequisites
+
+- Download and install [Terra Station for desktop](/Tutorials/Get-started/Terra-Station-desktop.md).
+- Download Google Chrome.
 
 ## Install the Terra Station extension
 
-The Terra Station browser extension is for Chrome browsers only.
-
 1. Navigate to [Terra.money](https://www.terra.money/) in your browser.
 
-2. Click **Download Station Wallet** and select the Chrome option.
+2. Click **Download Station Wallet** and select the **Chrome Extension** option.
 
 3. Install the extension and add it to your browser.
 
@@ -45,17 +48,15 @@ Congratulations! You have just created a Terra Station wallet.
 
 ## Receive tokens from an exchange
 
-Follow these steps to fill your wallet with tokens.
-
 1. Purchase your tokens using any exchange that supports Terra. To view a list of current exchanges, visit the [Integrations page](https://docs.terra.money/Reference/integrations.html#exchanges)
 
-2. Withdraw any token supported by the Terra network from your exchange. Every exchange is different. Please visit your exchange's web page for guides on how to withdraw tokens. Use the following steps as a generic guide.
+1. Withdraw any token supported by the Terra network from your exchange. Every exchange is different. Please visit your exchange's web page for guides on how to withdraw tokens. Use the following steps as a generic guide.
 
-3. To receive tokens to your wallet, use your wallet address. Your wallet address will appear at the top of the Terra station Desktop app near your wallet name. Your wallet address will look like this: `terra1hm4grlwkt26tccr4vclwjz3elgh224wquctwye`
+    1. To receive tokens to your wallet, use your wallet address. Your wallet address will appear at the top of the Terra station Desktop app near your wallet name. Your wallet address will look like this: `terra1hm4grlwkt26tccr4vclwjz3elgh224wquctwye`
 
-4. Double-check your wallet address is correct before sending.
+    1. Double-check your wallet address is correct before sending.
 
-5. Send the tokens from the exchange to your Terra Station wallet address.
+    1. Send the tokens from the exchange to your Terra Station wallet address.
 
 :::warning Waiting times for transfers
 When you transfer tokens from an exchange to Terra, some time will pass before the tokens appear in your wallet. Don't panic. This waiting period is normal and varies depending on the exchange. If a transfer does not appear immediately, check back after some time.
@@ -67,15 +68,15 @@ Now you have tokens on Terra!
 
 1. Open the Terra Station browser extension and connect to your wallet.
 
-2. Click on the token in your available balance that you wish to send.
+2. Click on the token in your available balance that you want to send.
 
-3. Enter the address of the wallet you wish to send tokens to.
+3. Enter the address of the wallet you want to send tokens to.
 
-4. Enter the amount you wish to send. You can also add a memo for the transaction.
+4. Enter the amount you want to send. You can also add a memo for the transaction.
 
 5. Click **Next**.
 
-6. Verify the transaction amounts and specify which token you wish to pay fees in. Remember to always leave enough tokens in your account for other transactions.
+6. Verify the transaction amounts and specify which token you want to pay fees in. Remember to always leave enough tokens in your account for other transactions.
 
 7.  Enter your password and click **Send**.
 
@@ -87,7 +88,7 @@ After a few moments, the tokens will appear in the receiver's wallet.
 
 2. Navigate to the dApp of your choice. We'll use the [Anchor protocol WebApp](https://app.anchorprotocol.com/) for this tutorial. Most dApps use a similar process, though others may vary.
 
-3. To connect your wallet, simply click **Connect Wallet** at the top of the page.
+3. To connect your wallet, click **Connect Wallet** at the top of the page.
 
 4. Select **Terra Station (extension)** to connect your wallet.  
 

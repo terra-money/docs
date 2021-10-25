@@ -41,17 +41,15 @@ Congratulations! You have just created a Terra Station wallet.
 
 ## Receive tokens from an exchange
 
-Follow these steps to fill your wallet with tokens.
-
 1. Purchase your tokens using any exchange that supports Terra. To view a list of current exchanges, visit the [Integrations page](https://docs.terra.money/Reference/integrations.html#exchanges)
 
-2. Withdraw any token supported by the Terra network from your exchange. Every exchange is different. Please visit your exchange's web page for guides on how to withdraw tokens. Use the following steps as a generic guide.
+1. Withdraw any token supported by the Terra network from your exchange. Every exchange is different. Please visit your exchange's web page for guides on how to withdraw tokens. Use the following steps as a generic guide.
 
-3. To receive tokens to your wallet, use your wallet address. Your wallet address will appear at the top of the Terra station Desktop app near your wallet name. Your wallet address will look like this: `terra1hm4grlwkt26tccr4vclwjz3elgh224wquctwye`
+    1. To receive tokens to your wallet, use your wallet address. Your wallet address will appear at the top of the Terra station Desktop app near your wallet name. Your wallet address will look like this: `terra1hm4grlwkt26tccr4vclwjz3elgh224wquctwye`
 
-4. Double-check your wallet address is correct before sending.
+    1. Double-check your wallet address is correct before sending.
 
-5. Send the tokens from the exchange to your Terra Station wallet address.
+    1. Send the tokens from the exchange to your Terra Station wallet address.
 
 :::warning Waiting times for transfers
 When you transfer tokens from an exchange to Terra, some time will pass before the tokens appear in your wallet. Don't panic. This waiting period is normal and varies depending on the exchange. If a transfer does not appear immediately, check back after some time.
@@ -115,15 +113,15 @@ Congratulations, you've just withdrawn your staking rewards!
 
 2. Click **Wallet** in the navigation bar.
 
-3. Click **Send** next to the token you wish to send.
+3. Click **Send** next to the token you want to send.
 
-3. Enter the address of the wallet you wish to send tokens to.
+3. Enter the address of the wallet you want to send tokens to.
 
-4. Enter the amount you wish to send. You can also add a memo for the transaction.
+4. Enter the amount you want to send. You can also add a memo for the transaction.
 
 5. Click **Next**.
 
-6. Verify the transaction amounts and specify which token you wish to pay fees in. Remember to always leave enough tokens in your account for other transactions.
+6. Verify the transaction amounts and specify which token you want to pay fees in. Remember to always leave enough tokens in your account for other transactions.
 
 7.  Enter your password and click **Send**.
 
