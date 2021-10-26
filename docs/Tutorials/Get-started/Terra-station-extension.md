@@ -5,15 +5,13 @@ Complete this tutorial to install the Terra Station extension for the Google Chr
 ## Prerequisites
 
 - Download and install [Terra Station for desktop](/Tutorials/Get-started/Terra-Station-desktop.md).
-- Download Google Chrome.
+- Download [Google Chrome](https://www.google.com/chrome/).
 
 ## Install the Terra Station extension
 
-1. Navigate to [Terra.money](https://www.terra.money/) in your browser.
+1. Open your Chrome browser and visit the [the Terra Station web extension](https://chrome.google.com/webstore/detail/terra-station/aiifbnbfobpmeekipheeijimdpnlpgpp).
 
-2. Click **Download Station Wallet** and select the **Chrome Extension** option.
-
-3. Install the extension and add it to your browser.
+2. Install the extension and add it to your browser.
 
 ## Create a wallet
 

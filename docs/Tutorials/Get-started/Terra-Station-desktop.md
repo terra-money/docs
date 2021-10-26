@@ -4,11 +4,14 @@ This tutorial walks you through the process of using Terra Station, the official
 
 ## Install Terra Station
 
-1. Navigate to [Terra.money](https://www.terra.money/) in your browser.
+1. Click the download link for your operating system:
 
-2. Click **Download Station Wallet** and select the option for your operating system.
+- [Terra Station for MacOS](https://github.com/terra-money/station/releases/download/v3.5.0/Terra.Station-1.1.0.dmg)
+- [Terra Station for Windows](https://github.com/terra-money/station/releases/download/v3.5.0/Terra.Station.Setup.1.1.0.exe)
+- [Terra Station for Linux(.deb)](https://github.com/terra-money/station/releases/download/v3.5.0/station-electron_1.1.1_amd64.deb)
+- [Terra Station for Linux(.rpm)](https://github.com/terra-money/station/releases/download/v3.5.0/station-electron-1.1.1.x86_64.rpm)
 
-3. Open the downloaded file and follow the instructions.
+2. Open the downloaded file and follow the instructions.
 
 ## Create a wallet
 

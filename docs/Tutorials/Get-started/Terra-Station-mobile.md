@@ -4,11 +4,12 @@ Complete this tutorial to get started with the Terra Station mobile app.
 
 ## Download the Terra Station app
 
-1. Navigate to [Terra.money](https://www.terra.money/) in your device’s browser.
+1. Tap the download link for your operating system. Your device’s app store will open.
 
-2. Tap **Download Station Wallet** and select the option for your operating system. Your device’s app store will open.
+- [Terra Station for iOS](https://apps.apple.com/app/id1548434735)
+- [Terra Station for Android](https://play.google.com/store/apps/details?id=money.terra.station)
 
-3. Install the Terra Station app on your phone.
+2. Install the Terra Station app on your phone.
 
 ## Create a new wallet
 
