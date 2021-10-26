@@ -106,3 +106,43 @@ The LCD to which the voter is connecting might be running from a different netwo
 Ensure you specify the LCD for the same network to which your node is connecting.
 
 If you run a [local LCD](../Start-LCD.md) (for example, localhost:1317), ensure your LCD is connecting to the same node.
+
+## Terrad crashes because of out of memory
+
+The default memory allocator is causing memory fragmentation issue on the `Columbus-5` network as described in [the issue](https://github.com/terra-money/core/issues/592). We highly recommend to install `jemalloc` and preload that `jemalloc` shared library with following steps:
+
+1. Install `jemalloc`.
+
+```bash
+JEMALLOC_VERSION=5.2.1
+wget https://github.com/jemalloc/jemalloc/releases/download/$JEMALLOC_VERSION/jemalloc-$JEMALLOC_VERSION.tar.bz2 
+tar -xf ./jemalloc-$JEMALLOC_VERSION.tar.bz2 
+cd jemalloc-$JEMALLOC_VERSION
+./configure --with-malloc-conf=background_thread:true,metadata_thp:auto,dirty_decay_ms:30000,muzzy_decay_ms:30000
+make
+sudo make install
+```
+
+2. Restart the process with `LD_PRELOAD=/usr/local/lib/libjemalloc.so terrad start`.
+
+  If you are using `systemd` or another process manager to launch `terrad`, you might need to configure them. The following  sample `systemd` file fixes the problem:
+
+  ```systemd
+  # /etc/systemd/system/terrad.service
+  [Unit]
+  Description=Terra Columbus Node
+  After=network.target
+
+  [Service]
+  Type=simple
+  User=ubuntu
+  WorkingDirectory=/home/ubuntu
+  ExecStart=/home/ubuntu/go/bin/terrad start
+  Restart=on-failure
+  RestartSec=3
+  LimitNOFILE=4096
+  ENV="LD_PRELOAD=/usr/local/lib/libjemalloc.so"
+
+  [Install]
+  WantedBy=multi-user.target
+  ```
