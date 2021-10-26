@@ -115,7 +115,7 @@ The 21-day unbonding process helps the long-term stability of the Terra protocol
 Redelegating instantly sends staked Luna from one validator to another. Instead of waiting for the 21-day unstaking period, a user can redelegate their staked Luna at any time using Terra Station's redelegate function. Validators receiving redelegations are barred from further redelegating any amount of Luna to any validator for 21 days.
 
 ::: warning Warning
-When a user redelegates staked Luna from one validator to another, the validator receiving the staked Luna is barred from making further redelegation transactions for 21 days. This requirement only applies to the wallet the redelegation transaction was made with.
+When a user redelegates staked Luna from one validator to another, the validator receiving the staked Luna is barred from making further redelegation transactions for 21 days. This requirement only applies to the wallet that made the redelegation transaction.
 :::
 
 ### Rewards
