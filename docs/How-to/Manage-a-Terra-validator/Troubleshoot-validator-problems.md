@@ -141,7 +141,7 @@ sudo make install
   Restart=on-failure
   RestartSec=3
   LimitNOFILE=4096
-  environment="LD_PRELOAD=/usr/local/lib/libjemalloc.so"
+  Environment="LD_PRELOAD=/usr/local/lib/libjemalloc.so"
 
   [Install]
   WantedBy=multi-user.target
