@@ -1,12 +1,12 @@
 # Use smart contracts
 
-Contracts are an advanced feature of Terra Station. If this is your first time using Terra Station, follow the [Terra Station tutorial](/Tutorials/Get-started/Terra-station-desktop.md).
+Smart contracts are an advanced feature of Terra Station. If you’re using Terra Station for the first time, follow the [Terra Station tutorial](/Tutorials/Get-started/Terra-station-desktop.md).
 
 ## Prerequisites
 
 Compile a contract locally and create a `.wasm` file.  
 
-## Upload your contract
+## Upload
 
 Deploy a contract by uploading your `.wasm` file to Terra Station.
 
@@ -18,7 +18,7 @@ Deploy a contract by uploading your `.wasm` file to Terra Station.
 
 4. Enter your password and click **Upload**.
 
-Your contract is now uploaded. You will be given a contract code ID.
+Your contract is now uploaded, and you received a contract code ID.
 
 ## Create
 

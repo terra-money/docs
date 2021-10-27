@@ -1,26 +1,26 @@
 # Manage delegations
 
-Use this guide to manage your staking delegations in Terra station. To learn how to delegate or withdraw rewards, visit the Terra Station [desktop](/Tutorials/Get-started/Terra-Station-desktop.md) or [mobile](/Tutorials/Get-started/Terra-Station-mobile.md) tutorials.  
+Use this guide to manage your staking delegations in Terra Station. To learn how to delegate or withdraw rewards, visit the Terra Station [desktop](/Tutorials/Get-started/Terra-Station-desktop.md) or [mobile](/Tutorials/Get-started/Terra-Station-mobile.md) tutorials.  
 
 ## Redelegate
 
 Redelegating lets you transfer staked Luna from one validator to another without waiting the 21-day unstaking period. Redelegating happens instantly.
 
 ::: warning Warning
-When a user redelegates staked Luna from one validator to another, the validator receiving the staked Luna is barred from making further redelegation transactions for 21 days. This requirement only applies to the wallet the redelegation transaction was made with.
+When a user redelegates staked Luna from one validator to another, the validator receiving the staked Luna is barred from making further redelegation transactions for 21 days. This requirement only applies to the wallet that made the redelegation transaction.
 :::
 
 1. Open Terra Station and connect your wallet. Click **Staking**.
 
-2. Click on the validator you wish to redelegate to.
+2. Click on the validator you want to redelegate to.
 
-3. Click **Redelegate** under the **My delegations** section.
+3. Under the **My delegations** section, click **Redelegate**.
 
 4. Select the validator you would like to redelegate from.
 
-5. Enter the amount of Luna you wish to redelegate.
+5. Enter the amount of Luna you want to redelegate.
 
-6. Confirm the amounts. Enter your password and click **redelegate**.
+6. Confirm the amounts. Enter your password and click **Redelegate**.
 
 Your staked Luna will be transferred to the new validator.
 
@@ -35,11 +35,11 @@ Undelegating takes 21 days to complete. The only way to undo a delegating or und
 
 1. Open Terra Station and connect your wallet. Click **Staking**.
 
-2. Click on the validator you wish to unstake from.
+2. Click on the validator you want to unstake from.
 
 3. Click **Undelegate** under the **My delegations** section.
 
-4. Enter the amount of Luna you wish to undelegate. Click **Next**.
+4. Enter the amount of Luna you want to undelegate. Click **Next**.
 
 4. Confirm the amounts. Enter your password and click **Undelegate**.
 
