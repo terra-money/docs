@@ -118,6 +118,9 @@ JEMALLOC_VERSION=5.2.1
 wget https://github.com/jemalloc/jemalloc/releases/download/$JEMALLOC_VERSION/jemalloc-$JEMALLOC_VERSION.tar.bz2 
 tar -xf ./jemalloc-$JEMALLOC_VERSION.tar.bz2 
 cd jemalloc-$JEMALLOC_VERSION
+
+# for query node, we recommend to use below configuration
+# ./configure --with-malloc-conf=background_thread:true,dirty_decay_ms:5000,muzzy_decay_ms:5000
 ./configure --with-malloc-conf=background_thread:true,metadata_thp:auto,dirty_decay_ms:30000,muzzy_decay_ms:30000
 make
 sudo make install
