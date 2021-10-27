@@ -1,5 +1,4 @@
-# Use the Terra Station browser extension
-
+# Use Terra Station on Chrome
 Complete this tutorial to install the Terra Station extension for the Google Chrome browser.
 
 ## Prerequisites

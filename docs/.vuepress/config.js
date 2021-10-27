@@ -122,6 +122,8 @@ module.exports = {
           title: "Get started",
           children: [
             "/Tutorials/Get-started/Terra-Station-desktop",
+            "/Tutorials/Get-started/Terra-Station-extension",
+            "/Tutorials/Get-started/Terra-Station-mobile",
           ],
           collapsable: true,
         },
