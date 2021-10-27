@@ -24,6 +24,10 @@ Your vote will be submitted.
 
 Users can vote on a proposal after a minimum deposit of 512 Luna is reached. To help push a proposal forward to a vote, deposit Luna to the proposal.
 
+:::warning Deposits and refunds
+While most deposits get refunded, some deposits get burned. For more information on which deposits get burned, visit the [governance section](/Concepts/Protocol.html#governance) of the concepts page.
+:::
+
 1. Open Terra Station and connect your wallet. In the sidebar, click **Governance**.
 
 2. Click on **Deposit** to view the proposals still in the deposit period.
@@ -41,10 +45,10 @@ Your deposit will be added to the proposal.
 ## Create a new proposal
 
 ::: warning Avoid unnecessary proposals
-To prevent unnecessary proposals or abuse of the system, all governance proposals must obtain a minimum deposit of 512 Luna. If 33.4% of the total vote is `NoWithVeto` after the two-week voting period, the deposit will be burned. Deposits will be refunded for all other voting outcomes.
+To prevent unnecessary proposals or abuse of the system, all governance proposals must obtain a minimum deposit of 512 Luna. If 33.4% of the total vote is `NoWithVeto`, `quorum` is not met, or the minimum deposit isn't reached, the deposit will be burned. All other vote outcomes get their deposits refunded. For more information on deposits and refunds, visit the [governance section](/Concepts/Protocol.html#governance) of the concepts page.
 :::
 
-1. Open Terra Station and connect your wallet. Click **Governance** in the sidebar.
+1. Open Terra Station and connect your wallet. In the sidebar, click **Governance**.
 
 2. Click on **New proposal**.
 
