@@ -107,9 +107,9 @@ Ensure you specify the LCD for the same network to which your node is connecting
 
 If you run a [local LCD](../Start-LCD.md) (for example, localhost:1317), ensure your LCD is connecting to the same node.
 
-## Terrad crashes because of out of memory
+## Terrad crashes because of memory fragmentation
 
-The default memory allocator is causing memory fragmentation issue on the `Columbus-5` network as described in [the issue](https://github.com/terra-money/core/issues/592). We highly recommend to install `jemalloc` and preload that `jemalloc` shared library with following steps:
+As described in [this issue](https://github.com/terra-money/core/issues/592), the default memory allocator causes memory fragmentation on the `Columbus-5` network. To fix this problem, complete the following steps to install `jemalloc` and preload the `jemalloc` shared library:
 
 1. Install `jemalloc`.
 
@@ -123,7 +123,7 @@ make
 sudo make install
 ```
 
-2. Restart the process with `LD_PRELOAD=/usr/local/lib/libjemalloc.so terrad start`.
+2. Restart the process by running `LD_PRELOAD=/usr/local/lib/libjemalloc.so terrad start`.
 
   If you are using `systemd` or another process manager to launch `terrad`, you might need to configure them. The following  sample `systemd` file fixes the problem:
 
