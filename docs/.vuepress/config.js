@@ -230,6 +230,7 @@ module.exports = {
             "/Reference/Terra-Delegation-Program/terra-delegation-program.md",
         ],
         },
+        "/Reference/endpoints.md",
         {
           title: "Other resources",
           collapsable: true,
