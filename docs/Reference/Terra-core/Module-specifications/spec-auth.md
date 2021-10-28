@@ -51,7 +51,7 @@ Maximum permitted number of characters in the memo of a transaction.
 
 ### TxSigLimit
 
-The maximum number of singers in a transaction. A single transaction can have multiple messages and multiple signers. The sig verification cost is much higher than other operations, so we limit this to 100.
+The maximum number of signers in a transaction. A single transaction can have multiple messages and multiple signers. The sig verification cost is much higher than other operations, so we limit this to 100.
 
 - type: `uint64`
 - default: `100`
