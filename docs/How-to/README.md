@@ -1,6 +1,6 @@
 # How to
 
-Learn how to run a full Terra node and manage a validator by using the information in this section.
+Learn how to manage Terra Station, run a full Terra node, and manage a validator by using the information in this section.
 
 <!--
 <div class="cards twoColumn">
