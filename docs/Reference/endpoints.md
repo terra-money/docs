@@ -1,10 +1,10 @@
 # RPC endpoints
 
-## Create a private RPC endpoint
+## Private RPC endpoints
 
 - [QuickNode endpoint services](https://www.quicknode.com/)
 
-## Use a public RPC endpoint
+## Public RPC endpoints
 
 :::danger Public endpoint warning
 Public RPC endpoints should only be used in development. For live dApps, use a private RPC endpoint from the list above or [set up your own endpoint](/How-to/Run-a-full-Terra-node/Hardware-requirements.md).
