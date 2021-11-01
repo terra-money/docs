@@ -176,7 +176,7 @@ The following is a basic outline of the governance process. Visit the [governanc
     The voting options are:
     - `Yes`: In favor.
     - `No`: Not in favor.
-    - `NoWithVeto`: Veto.
+    - `NoWithVeto`: Not in favor, the deposit should be burned.
     - `Abstain`: Voter abstains.
 4. The votes are tallied.
     Proposals pass if they meet three conditions:
@@ -185,6 +185,21 @@ The following is a basic outline of the governance process. Visit the [governanc
     - The number of `Yes` votes reaches a 50% majority.
     If the previous conditions are not met, the proposal is rejected.
 5. Accepted proposals get put into effect.
-6. Deposits get returned for all voting outcomes except `NoWithVeto`. If the number of `NoWithVeto` votes is above 33.4% of the total vote, the proposal is rejected with veto, and the deposit gets burned. This penalty is to prevent abuse in the system.
+6. Deposits get refunded or burned.
 
 Once accepted, the changes described in a governance proposal are automatically put into effect by the proposal handler. Generic proposals, such as a passed `TextProposal`, must be reviewed by the Terra team and community, and they must be manually implemented.
+
+### Deposits
+
+Deposits protect against unnecessary proposals and spam. Users can veto any proposal they deem to be spam by voting `NoWithVeto`.
+
+Deposits get refunded if all of the following conditions are met:
+- The minimum deposit of 512 Luna is reached within the two-week deposit period.
+- `Quorum` is met: the number of total votes is greater than 40% of all staked Luna
+- The total number of `NoWithVeto` votes is less than 33.4% of the total vote.
+- A vote returns a majority of `Yes` or `No` votes.
+
+Deposits are burned under any of the following conditions:
+- The minimum deposit of 512 Luna is not reached within the two-week deposit period.
+- `Quorum` is not met: the number of total votes after the two-week voting period is less than 40% of all staked Luna.
+- the number of `NoWithVeto` votes is above 33.4% of the total vote.
