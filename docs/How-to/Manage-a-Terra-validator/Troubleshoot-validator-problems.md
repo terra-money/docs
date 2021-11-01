@@ -109,43 +109,15 @@ If you run a [local LCD](../Start-LCD.md) (for example, localhost:1317), ensure 
 
 ## Terrad crashes because of memory fragmentation
 
-As described in [this issue](https://github.com/terra-money/core/issues/592), the default memory allocator causes memory fragmentation on the `Columbus-5` network. To fix this problem, complete the following steps to install `jemalloc` and preload the `jemalloc` shared library:
+As described in [this issue](https://github.com/terra-money/core/issues/592), huge memory allocation can cause memory fragmentation issue. Temporal solution is just using small wasm cache size like 50~100MB.
 
-1. Install `jemalloc`.
+If you use v0.5.10+,
 
-```bash
-JEMALLOC_VERSION=5.2.1
-wget https://github.com/jemalloc/jemalloc/releases/download/$JEMALLOC_VERSION/jemalloc-$JEMALLOC_VERSION.tar.bz2 
-tar -xf ./jemalloc-$JEMALLOC_VERSION.tar.bz2 
-cd jemalloc-$JEMALLOC_VERSION
-
-# for query node, we recommend to use below configuration
-# ./configure --with-malloc-conf=background_thread:true,dirty_decay_ms:5000,muzzy_decay_ms:5000
-./configure --with-malloc-conf=background_thread:true,metadata_thp:auto,dirty_decay_ms:30000,muzzy_decay_ms:30000
-make
-sudo make install
+```toml
+contract-memory-cache-size = 100
 ```
 
-2. Restart the process by running `LD_PRELOAD=/usr/local/lib/libjemalloc.so terrad start`.
-
-  If you are using `systemd` or another process manager to launch `terrad`, you might need to configure them. The following  sample `systemd` file fixes the problem:
-
-  ```systemd
-  # /etc/systemd/system/terrad.service
-  [Unit]
-  Description=Terra Columbus Node
-  After=network.target
-
-  [Service]
-  Type=simple
-  User=ubuntu
-  WorkingDirectory=/home/ubuntu
-  ExecStart=/home/ubuntu/go/bin/terrad start
-  Restart=on-failure
-  RestartSec=3
-  LimitNOFILE=4096
-  Environment="LD_PRELOAD=/usr/local/lib/libjemalloc.so"
-
-  [Install]
-  WantedBy=multi-user.target
-  ```
+or,
+```toml
+write-vm-memory-cache-size = 100
+```
