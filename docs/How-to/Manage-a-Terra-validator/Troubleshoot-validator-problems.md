@@ -117,7 +117,7 @@ If you use v0.5.10+,
 contract-memory-cache-size = 100
 ```
 
-or,
+If you use v0.5.7~v0.5.9,
 ```toml
 write-vm-memory-cache-size = 100
 ```
