@@ -59,12 +59,12 @@ function changeClass(domClass, insert, remove) {
 export default {
   data() {
     return {
-      darkmode: "auto",
+      darkmode: "off",
     };
   },
   mounted() {
     const darkmode = localStorage.getItem("darkmode");
-    this.setDarkmode(darkmode || "auto");
+    this.setDarkmode(darkmode || "off");
     // this.setDarkmode(true);
 
   },
