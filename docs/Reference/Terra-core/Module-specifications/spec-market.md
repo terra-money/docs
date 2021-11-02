@@ -28,7 +28,7 @@ To defend against this type of attack, the Market module enforces the following 
 
 Terra uses a Constant Product market-making algorithm to ensure liquidity for Terra<>Luna swaps. [^2]
 
-[^2]: For a more in-depth treatment of our updated market-making algorithm, check Nick Platias's SFBW 2019 presentation [here](https://agora.terra.money/t/terra-stability-swap-mechanism-deep-dive-at-sfbw/135).
+[^2]: For a more in-depth treatment of our updated market-making algorithm, check [Nick Platias's SFBW 2019 presentation](https://agora.terra.money/t/terra-stability-swap-mechanism-deep-dive-at-sfbw/135).
 
 With Constant Product, we define a value $CP$ set to the size of the Terra pool multiplied by a set **fiat value of Luna**, and ensure our market-maker maintains it as invariant during any swaps by adjusting the spread.
 
@@ -83,7 +83,7 @@ This mechanism ensures liquidity and acts as a low-pass filter, allowing for the
 
 8. Send newly minted coins to trader with `supply.SendCoinsFromModuleToAccount()`.
 
-9. Emit [`swap`](#swap) event to publicize the swap and record the spread fee.
+9. Emit `swap` event to publicize the swap and record the spread fee.
 
 If the trader's `Account` has insufficient balance to execute the swap, the swap transaction fails.
 
@@ -91,7 +91,7 @@ Upon successful completion of Terra<>Luna swaps, a portion of the coins to be cr
 
 ### Seigniorage
 
-When Luna swaps into Terra, the Luna recaptured by the protocol is called seigniorage -- the value generated from issuing new Terra. The total seigniorage at the end of each epoch is calculated and reintroduced into the economy as ballot rewards for the exchange rate oracle and to the community pool by the Treasury module, described more fully [here](./spec-treasury.md#ksettleseigniorage).
+When Luna swaps into Terra, the Luna recaptured by the protocol is called seigniorage -- the value generated from issuing new Terra. The total seigniorage at the end of each epoch is calculated and reintroduced into the economy as ballot rewards for the exchange rate oracle and to the community pool by the Treasury module, described more fully [here](/Reference/Terra-core/Module-specifications/spec-treasury.html#k-settleseigniorage).
 
 ::: warning Note:
 As of Columbus-5, all seigniorage is burned, and the community pool is no longer funded. Swap fees are used as ballot rewards for the exchange rate oracle.
@@ -216,4 +216,4 @@ The minimum spread charged on Terra<>Luna swaps to prevent leaking value from fr
 - type: `Dec`
 - default: 0.35%
 
-An additional fee for swapping between Terra currencies (spot-trading). The rate varies, depending on the denomination. For example, while the rate for most denominations is .35%, the rate for MNT is 2%. To see the rates, [query the oracle](../terrad/oracle.html#tobin-taxes).
+An additional fee for swapping between Terra currencies (spot-trading). The rate varies, depending on the denomination. For example, while the rate for most denominations is .35%, the rate for MNT is 2%. To see the rates, [query the oracle](/Reference/terrad/subcommands.html#query-oracle-tobin-taxes).
