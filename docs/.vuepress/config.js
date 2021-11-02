@@ -86,7 +86,7 @@ module.exports = {
     ],
   ],
   themeConfig: {
-    sidebarDepth: 2,
+    sidebarDepth: 3,
     // overrideTheme: 'dark',
     // prefersTheme: 'dark',
     // overrideTheme: { light: [6, 18], dark: [18, 6] },
@@ -108,6 +108,7 @@ module.exports = {
       { text: "How to", link: "/How-to/" },
       { text: "Concepts", link: "/Concepts/" },
       { text: "Reference", link: "/Reference/" },
+      { text: "SDKs", link: "/SDKs/" },
       {
         text: "GitHub",
         link: "https://github.com/terra-money/core",
@@ -228,6 +229,32 @@ module.exports = {
           ],
         },
       ],
+      "/SDKs/": [
+        "/SDKs/",
+        {
+          title: "terra.js",
+          children: [
+            "/SDKs/Terra-js/Overview",
+            "/SDKs/Terra-js/Add-modules",
+            "/SDKs/Terra-js/Make-a-connection",
+            "/SDKs/Terra-js/Query-data",
+            "/SDKs/Terra-js/Coin-and-Coins",
+            "/SDKs/Terra-js/Fees",
+            "/SDKs/Terra-js/Keys",
+            "/SDKs/Terra-js/MsgAuthorization",
+            "/SDKs/Terra-js/Multisend",
+            "/SDKs/Terra-js/Numeric",
+            "/SDKs/Terra-js/Oracle-feeder",
+            "/SDKs/Terra-js/Smart-contracts",
+            "/SDKs/Terra-js/Station-extension",
+            "/SDKs/Terra-js/Transactions",
+            "/SDKs/Terra-js/Wallets",
+            "/SDKs/Terra-js/Websockets",
+          ],
+          collapsable: true,
+        },
+      ],
+
       "/": [
           {
           title: "Overview",
