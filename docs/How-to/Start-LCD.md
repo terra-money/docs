@@ -6,23 +6,20 @@ The Terra SDKs currently rely on an active connection to a running LCD server. P
 
 The light client daemon (LCD) provides a REST-based adapter for the RPC endpoints, which also helps for decoding the Amino-encoded blockchain data into parseable JSON. This enables apps to communicate with a node through simple HTTP.
 
-To start the LCD, you'll need to specify the following parameters
+## Enable REST API
 
-| Parameter    | Default                 | Required | Description                                          |
-| ------------ | ----------------------- | -------- | ---------------------------------------------------- |
-| `chain-id`   | `""`                    | yes      | chain id of the full node to connect                 |
-| `node`       | `tcp://localhost:26657` | yes      | address of the full node to connect                  |
-| `laddr`      | `tcp://localhost:1317`  | yes      | address for the REST server to listen to requests    |
-| `trust-node` | `false`                 | yes      | whether this LCD is connected to a trusted full node |
-| `home`       | `$HOME/.terracli`       | no       | directory for save checkpoints and validator sets    |
+1. Open `~/.terra/config/app.toml`.
 
-For example:
+2. Locate the `API Configuration` section (`[api]`).
 
-```bash
-terracli rest-server --chain-id=test \
-    --laddr=tcp://localhost:1317 \
-    --node tcp://localhost:26657 \
-    --trust-node=false
-```
+3. Change `enable = false` to `enable = true`.
 
-For more information about the Terra REST API endpoints, see the [swagger documentation](https://lcd.terra.dev/swagger/).
+4. Optional: To enable `swagger`, change `swagger = flase` to `swagger = true`.
+
+5. Restart.
+
+Once restarted, the LCD will be available.
+
+For more information on configuring `App.toml`, visit the [configure general settings](/How-to/Start-LCD.md) page.
+
+For more information on Terra REST API endpoints, see the [swagger documentation](https://lcd.terra.dev/swagger/).
