@@ -1,6 +1,6 @@
 # Keys
 
-To perform actions using an account with Terra.js, you need a **Key**, which provides an abstraction around signing functions of an account.
+To perform actions using an account with Terra.js, you need a key, which provides an abstraction around signing functions of an account.
 
 ## Key interface
 
@@ -52,7 +52,7 @@ const mk = new MnemonicKey({
 
 #### Generate random mnemonic
 
-If you want to generate a random mnemonic, you can create a `MnemonicKey` without any arguments:
+If you want to generate a random mnemonic, create a `MnemonicKey` without any arguments:
 
 ```ts
 const mk = new MnemonicKey();
@@ -115,9 +115,9 @@ main().catch(console.error);
 
 ## Custom key implementation
 
-If you need to write your own key management solution, you will need to subclass the abstract `Key` class and provide your own signing function. Note that the key need not expose any details pertaining to the private key -- you could specify a `sign()` function that forwards the signing request to a server or to a hardware wallet, for instance. The remaining functions related to signing (`createSignature()` and `signTx()`) are automatically provided and use `sign()` underneath.
+If you need to write your own key management solution, subclass the abstract `Key` class and provide your own signing function. The key does not need to expose any details pertaining to the private key. For example you could specify a `sign()` function that forwards the signing request to a server or to a hardware wallet. The remaining functions related to signing (`createSignature()` and `signTx()`) are automatically provided and use `sign()` underneath.
 
-The following code listing is the implementation of `RawKey`, which illustrates how to write a custom `Key`:
+The following code is the implementation of `RawKey`, which illustrates how to write a custom `Key`:
 
 ```ts
 import SHA256 from 'crypto-js/sha256';
@@ -153,4 +153,4 @@ export class RawKey extends Key {
 }
 ```
 
-Note that you must call `super()` with the public key—this generates the relevant account and validator public keys associated with your key.
+You must call `super()` with the public key to generate the relevant account and validator public keys associated with your key.

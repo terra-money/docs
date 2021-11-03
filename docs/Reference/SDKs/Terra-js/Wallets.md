@@ -9,7 +9,7 @@ import { LCDClient, MnemonicKey } from '@terra-money/terra.js';
 
 const terra = new LCDClient({
   URL: 'https://lcd.terra.dev',
-  chainId: 'columbus-3'
+  chainId: 'columbus-5'
 });
 
 const mk = new MnemonicKey();
