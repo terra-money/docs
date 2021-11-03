@@ -18,7 +18,7 @@
           </div>
         </div>
       </a>-->
-      <a href="https://terra-money.github.io/terra.py/" target="_blank">
+     <!-- <a href="https://terra-money.github.io/terra.py/" target="_blank">
         <div class="image">
           <img src="https://www.terra.money/assets/img/terra_sdk.svg" />
         </div>
@@ -28,8 +28,8 @@
             <i class="material-icons">transit_enterexit</i>
           </div>
         </div>
-      </a>
-      <a href="https://terra-money.github.io/terra.js/" target="_blank">
+      </a>-->
+     <!-- <a href="https://terra-money.github.io/terra.js/" target="_blank">
         <div class="image">
           <img src="/img/terra_js.svg" />
         </div>
@@ -39,7 +39,7 @@
             <i class="material-icons">transit_enterexit</i>
           </div>
         </div>
-      </a>
+      </a>-->
     </div>
   </aside>
 </template>
