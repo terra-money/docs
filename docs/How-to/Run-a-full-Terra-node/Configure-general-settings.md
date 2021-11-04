@@ -53,7 +53,10 @@ persistent_peers = "id100000000000000000000000000000000@1.2.3.4:26656,id20000000
 minimum-gas-prices = "0.01133uluna,0.15uusd,0.104938usdr,169.77ukrw,428.571umnt,0.125ueur,0.98ucny,16.37ujpy,0.11ugbp,10.88uinr,0.19ucad,0.14uchf,0.19uaud,0.2usgd,4.62uthb,1.25usek,1.25unok,0.9udkk,2180.0uidr,7.6uphp,1.17uhkd"
 ```
 
-## Start the LCD: Enable REST API and swagger
+
+## Start the light client daemon (LCD)
+
+To enable the REST API and Swagger, and to start the LCD, complete the following steps:
 
 1. Open `~/.terra/config/app.toml`.
 
@@ -66,18 +69,17 @@ minimum-gas-prices = "0.01133uluna,0.15uusd,0.104938usdr,169.77ukrw,428.571umnt,
 enable = true
 ```
 
-4. Optional: To enable `swagger`, change `swagger = flase` to `swagger = true`.
+4. Optional: To enable Swagger, change `swagger = flase` to `swagger = true`.
 
 ```toml
 # Swagger defines if swagger documentation should automatically be registered.
 swagger = true
 ```
-Only enable swagger if you wish to use
 5. Restart.
 
 Once restarted, the LCD will be available.
 
-For more information about the Terra REST API endpoints, see the [swagger documentation](https://lcd.terra.dev/swagger/).
+For more information about the Terra REST API endpoints, see the [Swagger documentation](https://lcd.terra.dev/swagger/).
 
 ## Rosetta
 
