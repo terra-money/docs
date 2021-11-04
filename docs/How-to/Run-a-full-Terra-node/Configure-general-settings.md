@@ -40,7 +40,7 @@ If the value of `persistent_peers_max_dial_period` is more than zero, the pause 
 persistent_peers = "id100000000000000000000000000000000@1.2.3.4:26656,id200000000000000000000000000000000@2.3.4.5:26656"
 ```
 
-## Update minimum gas prices and enable the REST API
+## Update minimum gas prices
 
 1. Open `~/.terra/config/app.toml`.
 
@@ -53,8 +53,36 @@ persistent_peers = "id100000000000000000000000000000000@1.2.3.4:26656,id20000000
 minimum-gas-prices = "0.01133uluna,0.15uusd,0.104938usdr,169.77ukrw,428.571umnt,0.125ueur,0.98ucny,16.37ujpy,0.11ugbp,10.88uinr,0.19ucad,0.14uchf,0.19uaud,0.2usgd,4.62uthb,1.25usek,1.25unok,0.9udkk,2180.0uidr,7.6uphp,1.17uhkd"
 ```
 
-3. Enable the REST API, a set of guidelines for internet data transfer that allows lightweight, scalable integrations. Rest API allows you to perform standard database functions, CRUD, using rest architecture.
 
-4. Integrate Terra with Coinbase via the Rosetta API. Rosetta is an open source API that organizes blockchain data into a standardized format, making it easy for developers to build cross-chain applications. Instead of creating specific code for each chain, Rosetta allows different blockchains to integrate into any exchange that uses Rosetta API.
+## Start the light client daemon (LCD)
+
+To enable the REST API and Swagger, and to start the LCD, complete the following steps:
+
+1. Open `~/.terra/config/app.toml`.
+
+2. Locate the `API Configuration` section (`[api]`).
+
+3. Change `enable = false` to `enable = true`.
+
+```toml
+# Enable defines if the API server should be enabled.
+enable = true
+```
+
+4. Optional: To enable Swagger, change `swagger = flase` to `swagger = true`.
+
+```toml
+# Swagger defines if swagger documentation should automatically be registered.
+swagger = true
+```
+5. Restart.
+
+Once restarted, the LCD will be available.
+
+For more information about the Terra REST API endpoints, see the [Swagger documentation](https://lcd.terra.dev/swagger/).
+
+## Rosetta
+
+Integrate Terra with Coinbase via the Rosetta API. Rosetta is an open source API that organizes blockchain data into a standardized format, making it easy for developers to build cross-chain applications. Instead of creating specific code for each chain, Rosetta allows different blockchains to integrate into any exchange that uses Rosetta API.
 
 For more information, checkout the official [Rosetta docs](https://www.rosetta-api.org/docs/welcome.html).
