@@ -218,6 +218,7 @@ module.exports = {
           title: "terrad",
           collapsable: true,
           children: [
+            "/Reference/terrad/",
             "/Reference/terrad/commands",
             "/Reference/terrad/subcommands",
         ],
