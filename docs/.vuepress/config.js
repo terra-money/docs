@@ -187,6 +187,7 @@ module.exports = {
       "/Concepts/": [
         "/Concepts/",
         "/Concepts/Protocol",
+        "/Concepts/Fees",
         "/Concepts/glossary",
       ],
       "/Reference/": [
