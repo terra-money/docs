@@ -1,4 +1,4 @@
-# terrad
+# Using terrad
 
 The following information explains the functions you can use from `terrad`, the command line interface that connects a running `terrad` process. Use it to access Terra. For more general information at the command line, run `terrad --help`. For more information about a specific `terrad` command, append the `-h` or `--help` flag after the command, such as `terrad query --help`.
 
