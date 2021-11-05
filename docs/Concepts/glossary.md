@@ -93,7 +93,7 @@ A user who delegates, bonds, or stakes Luna to a validator to earn rewards.
 
 - **Stability fees**: Fees added on to each transaction to provide stability in the market. The fee for swapping Terra stablecoin denominations is called a Tobin tax. Exchanges between Terra and Luna are subject to a spread fee.
 
-For more information on fees, visit the [Fees on Terra](/Concepts/Fees.md) page.
+For more information on fees, visit the [fees on Terra](/Concepts/Fees.md) page.
 
 ## Fiat currency
 
