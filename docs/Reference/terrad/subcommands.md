@@ -1529,6 +1529,82 @@ terrad tx slashing unjail
 terrad tx slashing unjail
 ```
 
+## `tx staking create-validator`
+
+Creates a new validator that is initialized with a self-delegation.
+
+**Syntax**
+```bash
+terrad tx staking create-validator \
+    --amount=<uluna-amount> \
+    --pubkey=$(terrad tendermint show-validator) \
+    --moniker="<moniker>" \
+    --website="<validator-website>" \
+    --identity="<keybase-identity>" \
+    --details="<validator-optional-details" \
+    --commission-rate="<commission-rate>" \
+    --commission-max-rate="<commission-max-rate>" \
+    --commission-max-change-rate="<commission-max-change-rate>" \
+    --min-self-delegation="<self-delegation-amount>"
+    --chain-id=<chain-ID> \
+    --from=<key-name> \
+```
+
+## `tx staking delegate`
+
+Delegates an amount of liquid coins from your wallet to a validator.
+
+**Syntax**
+```bash
+terrad tx staking delegate <validator-address> <amount>
+```
+
+**Example**
+```bash
+terrad tx staking delegate terravaloper1l2rsakp388kuv9k8qzq6lrm9taddae7fpx59wm 2500stake
+```
+
+## `tx staking edit-validator`
+
+Edits an existing validator account.
+
+**Syntax**
+```bash
+terrad tx staking edit-validator \
+    --moniker="<moniker>" \
+    --details="<validator-optional-details>" \
+    --commission-rate="commission-rate>" \
+    --min-self-delegation="<minimum-self-delegation-amount" \
+```
+
+## `tx staking redelegate`
+
+Redelegates an amount of illiquid staking tokens from one validator to a different validator.
+
+**Syntax**
+```bash
+terrad tx staking redelegate <from-validator-address> <to-validator-address> <amount>
+```
+
+**Example**
+```bash
+terrad tx staking redelegate terravaloper1gghjut3ccd8ay0zduzj64hwre2fxs9ldmqhffj terravaloper1l2rsakp388kuv9k8qzq6lrm9taddae7fpx59wm 350stake
+```
+
+## `tx staking unbond`
+
+Unbonds an amount of bonded shares from a validator.
+
+**Syntax**
+```bash
+terrad tx staking unbond <validator-address> <stake-amount>
+```
+
+**Example**
+```bash
+terrad tx staking unbond terravaloper1gghjut3ccd8ay0zduzj64hwre2fxs9ldmqhffj 600stake
+```
+
 ## `tx wasm clear-admin`
 
 Removes the contract admin so that the contract cannot be migrated.

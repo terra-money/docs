@@ -168,19 +168,17 @@ terrad query tx --type=acc_seq <address>:<sequence>
 terrad query tx --type=signature <sig1_base64,sig2_base64...>
 ```
 
-For a list of subcommands, see []()
-
 ## `txs`
 
 Retrieves transactions that match the specified events where results are paginated.
 
 **Syntax**
-```
+```bash
 terrad query txs --events '<event>' --page <page-number> --limit <number-of-results>
 ```
 
 **Example**
-```
+```bash
 terrad query txs --events 'message.sender=cosmos1...&message.action=withdraw_delegator_reward' --page 1 --limit 30
 ```
 
