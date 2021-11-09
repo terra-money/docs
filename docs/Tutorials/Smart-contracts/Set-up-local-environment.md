@@ -48,3 +48,9 @@ Then, install `cargo-generate`, which we will need for bootstrapping new CosmWas
 ```sh
 cargo install cargo-generate --features vendored-openssl
 ```
+
+You will also need to install `cargo-run-script` which is needed for optimizing smart contracts. 
+
+```sh
+cargo install cargo-run-script
+```
