@@ -15,3 +15,16 @@ Join the [Terra Validators Discord](https://discord.gg/ZHBuKda) channel, and int
 Submit a [Validator Profile](https://github.com/terra-money/validator-profiles) to make it official.
 
 ![validator-profile](/img/screens/validator-check.png)
+
+
+## Put a thumbnail on Terra Station
+
+Create a [Keybase Account](https://keybase.io/) follow the Keybase instructions to set up a PGP key, and upload a profile picture. 
+For best continuity use the same GitHub account to verify your Keybase, and your [Validator Profile](https://github.com/terra-money/validator-profiles)
+
+Now link your Keybase profile to your validator. Open your validator terminal and execute this command:
+
+```bash
+terrad tx staking edit-validator \
+    --identity="keybase identity" 
+```
