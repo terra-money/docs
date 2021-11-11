@@ -35,7 +35,7 @@ Additional ports:
 
 - `26657`: The default port for the RPC protocol. Because this port is used for querying and sending transactions, it must be open for serving queries from `terrad`.
 
-::: danger
+::: danger Warning
 Do not open port `26657` to the public unless you plan to run a public node.
 :::
 
