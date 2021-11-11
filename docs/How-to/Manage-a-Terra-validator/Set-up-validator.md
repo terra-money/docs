@@ -2,18 +2,19 @@
 
 This is a detailed step-by-step guide for setting up a Terra validator. Please be aware that while it is easy to set up a rudimentary validating node, running a production-quality validator node with a robust architecture and security features requires an extensive setup.
 
-::: tip
-Block42 has put together an excellent [step-by-step guide](https://medium.com/block42-blockchain-company/how-to-setup-a-terra-luna-validator-node-860d8ea7aea2) for setting up a new validator.
+::: tip Additional resources
+To supplement this guide, consider using Block42's helpful [step-by-step guide](https://medium.com/block42-blockchain-company/how-to-setup-a-terra-luna-validator-node-860d8ea7aea2) for setting up a new validator.
 :::
 
-## Requirements
+## Prerequisites
 
-This guide starts with the following assumptions:
+- You have completed [how to run a full Terra node](https://docs.terra.money/How-to/Run-a-full-Terra-node/Hardware-requirements.html).
+- You have [installed](../Run-a-full-terra-node/Build-Terra-core.md) the Terra Full Node Software.
+- You have [connected your node](../Run-a-full-terra-node/Join-public-network.md) to an existing network.
+- You have [configured your node](../Run-a-full-terra-node/Configure-general-settings.md) properly.
+- You are familiar with [terrad](../../Reference/terrad/).
 
-- You have [installed](../node/installation) the Terra Full Node Software.
-- You have [connected your node](../node/join-network) to an existing network.
-- You have [configured your node](../node/config) properly.
-- You know your way around [terrad](../terrad).
+The hardware requirements for running a validator are the same as the [requirements for running a full node](../Run-a-full-Terra-node/Hardware-requirements.md).
 
 ## Retrieve the consensus PubKey of your node
 
@@ -24,6 +25,10 @@ terrad tendermint show-validator
 ```
 
 ## Create a new validator
+
+:::tip Get tokens
+In order for Terrad to recognize a wallet address it must contain tokens. For the testnet, use [the faucet](https://faucet.terra.money/) to send Luna to your wallet. If you are on mainnet, send funds from an existing wallet. 1-3 luna are sufficient for most setup processes.
+:::
 
 To create the validator and initialize it with a self-delegation, run the following command. `key-name` is the name of the private key that is used to sign transactions.
 

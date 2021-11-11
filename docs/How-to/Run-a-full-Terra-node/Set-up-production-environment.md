@@ -2,15 +2,15 @@
 
 Use the following information to set up and manage your production-level full Terra node. This information has been tested against RPM-based Linux distributions only.
 
-For information about running a validator node, see [Validator Guide](../validator/README.md).
+For information about running a validator node, visit the [validator guide](/How-to/Manage-a-Terra-validator/Overview.md).
 
 ## Create a dedicated user
 
-Although `terrad` does not require a super user account, during the setup process you'll need super user permission to create and modify some files. In general, to run `terrad`, we strongly recommend using a normal user.
+Although `terrad` does not require a super user account, during the setup process you'll need super user permission to create and modify some files. It is strongly recommended to use a normal user when running `terrad`, .
 
 ## Increase the maximum files `terrad` can open
 
-By default, `terrad` is set to open 1024 files. However, we recommend you increase this amount.
+`terrad` is set to open 1024 files by default. It is recommended that you increase this amount.
 
 Modify `/etc/security/limits.conf` to increase the amount, where `nofile` is the number of files `terrad` can open.
 
@@ -19,21 +19,25 @@ Modify `/etc/security/limits.conf` to increase the amount, where `nofile` is the
 *                hard    nofile          65535
 ```
 
-## Configure the firewall
+## Commonly used ports
 
 `terrad` uses the following TCP ports. Toggle their settings to fit your environment.
 
+Most validators will only need to open the following ports:
+
 - `26656`: The default port for the P2P protocol. This port is used to communicate with other nodes and must be open to join a network. However, it does not have to be open to the public. For validator nodes, we recommend configuring `persistent_peers` and closing this port to the public.
+
+- `1317`: The default port for the [Lite Client Daemon](/How-to/Start-LCD.md) (LCD), which can be executed by `terrad rest-server`. The LCD provides an HTTP RESTful API layer to allow applications and services to interact with your `terrad` instance through RPC. For usage examples, see [Terra REST API](https://lcd.terra.dev/swagger/). You don't need to open this port unless you have use for it.
+
+Additional ports:
+
+- `26660`: The default port for interacting with the [Prometheus](https://prometheus.io) database, which can be used to monitor the environment. In the default configuration, this port is not open.
 
 - `26657`: The default port for the RPC protocol. Because this port is used for querying and sending transactions, it must be open for serving queries from `terrad`.
 
 ::: danger
-Do not open this port to the public unless you plan to run a public node.
+Do not open port `26657` to the public unless you plan to run a public node.
 :::
-
-- `1317`: The default port for the [Lite Client Daemon](../terrad/lcd.md) (LCD), which can be executed by `terrad rest-server`. The LCD provides an HTTP RESTful API layer to allow applications and services to interact with your `terrad` instance through RPC. For usage examples, see [Terra REST API](https://swagger.terra.money). You don't need to open this port unless you have use of it.
-
-- `26660`: The default port for interacting with the [Prometheus](https://prometheus.io) database, which can be used to monitor the environment. In the default configuration, this port is not open.
 
 ## Run the server as a daemon
 
