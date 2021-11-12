@@ -111,19 +111,19 @@
       <div class="logos">
         <a href="https://discord.gg/e29HWwC2Mz" rel="noopener" target="_blank">
           <img
-            src="https://www.terra.money/static/assets/images/icon_discord.png"
+            src="/img/discord.svg"
             alt="link to Terra discord room"
           />
         </a>
         <a href="https://medium.com/terra-money" rel="noopener" target="_blank">
           <img
-            src="https://www.terra.money/static/assets/images/icon_medium.png"
+            src="/img/medium.svg"
             alt="link to Terra medium"
           />
         </a>
         <a href="https://twitter.com/terra_money" rel="noopener" target="_blank">
           <img
-            src="https://www.terra.money/static/assets/images/icon_twitter.png"
+            src="/img/twitter.svg"
             alt="link to Terra twitter"
           />
         </a>
@@ -133,13 +133,13 @@
           target="_blank"
         >
           <img
-            src="https://www.terra.money/static/assets/images/icon_youtube.png"
+            src="/img/icon_youtube.png"
             alt="link to Terra youtube"
           />
         </a>
         <a href="https://t.me/terra_announcements" rel="noopener" target="_blank">
           <img
-            src="https://www.terra.money/static/assets/images/icon_telegram.png"
+            src="/img/icon_telegram.png"
             alt="link to Terra telegram room"
           />
         </a>

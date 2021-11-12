@@ -83,7 +83,7 @@ The Terra SDKs provide an easy way to programmatically interact with a Terra nod
 
 <div class="cards twoColumn">
   <a href="https://terra-money.github.io/terra.py/" class="card lg dark">
-    <img src="https://www.terra.money/assets/img/terra_sdk.svg">
+    <img src="/img/terra_sdk.svg">
     <div class="title">
       Terra SDK
     </div>
