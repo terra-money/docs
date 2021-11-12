@@ -14,7 +14,7 @@ const lcd = new LCDClient({
 });
 ```
 
-The rest of the examples assume the LCDClient was initialized similar to the above example. 
+The rest of the examples assume LCDClient was initialized similar to the above example. 
 
 ## Sending native tokens
 
@@ -24,7 +24,7 @@ import { LCDClient, MnemonicKey, MsgSend } from "@terra-money/terra.js";
 // const lcd = new LCDClient(...);
 
 const mk = new MnemonicKey({
-  mnemonic: process.env.MNENONIC,
+  mnemonic: 'satisfy adjust timber high purchase tuition stool faith fine install that you unaware feed domain license impose boss human eager hat rent enjoy dawn',
 });
 
 const wallet = lcd.wallet(mk);
@@ -54,7 +54,7 @@ import {
 // const lcd = new LCDClient(...);
 
 const mk = new MnemonicKey({
-  mnemonic: process.env.MNENONIC,
+  mnemonic: 'satisfy adjust timber high purchase tuition stool faith fine install that you unaware feed domain license impose boss human eager hat rent enjoy dawn',
 });
 
 const wallet = lcd.wallet(mk);
