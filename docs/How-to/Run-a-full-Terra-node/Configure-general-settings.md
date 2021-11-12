@@ -84,12 +84,12 @@ In seed mode, a node continuously crawls the network for peers, and upon incomin
 # Seed mode, in which node constantly crawls the network and looks for
 # peers. If another node asks it for addresses, it responds and disconnects.
 # Does not work if the peer-exchange reactor is disabled.
-seed_mode = false
+seed_mode = true
 ```
 
 ### `seeds`
 
-When more peers are needed, the seed nodes you specify are dialed and a list of peers is returned. If enough peers are already in the address book, the `seeds` setting might never be used.
+To manually identify seed nodes, edit the following dsetting in `config.toml`.
 
 ```toml
 # Comma separated list of seed nodes to connect to

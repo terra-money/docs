@@ -66,7 +66,7 @@ mv genesis.json ~/.terra/config/genesis.json
 
 Note we use the `latest` directory in the [networks repo](https://github.com/terra-money/testnet) which contains details for the latest testnet. If you are connecting to a different testnet, ensure you get the right files.
 
-To verify your configuration is correct, run:
+To start terrad, enter the following:
 
 ```bash
 terrad start
@@ -92,8 +92,6 @@ wget https://github.com/terra-money/testnet/blob/master/bombay-12/addrbook.json
 mv addrbook.json ~/.terra/config
 ```
 
-
-
 ## Connecting to the Network
 
 ### Run your node
@@ -112,13 +110,13 @@ terrad status
 
 ### Wait for node to sync
 
-::: warning Sync times
-Nodes take at least an hour to sync when starting. This wait is normal. Please be patient and wait for your node to sync before troubleshooting.
+::: warning Sync start times
+Nodes take at least an hour to start syncing. This wait is normal. Before troubleshooting a sync, please wait an hour for the sync to start.
 :::
 
 Your node is catching up with the network by replaying all the transactions from genesis and recreating the blockchain state locally. This will take a long time, so make sure you've set it up on a stable connection so you can leave while it syncs.
 
-- View the status of the network with [Terra Finder](https://finder.terra.money).
+- Validators can view the status of the network with [Terra Finder](https://finder.terra.money).
 - Once your full node syncs up to the current block height, it will appear on the [list of full nodes](https://terra.stake.id/).
 - For faster syncs during testing, see [node sync for testing](#node-sync-for-testing)
 
@@ -197,19 +195,10 @@ Sometimes you may want to sync faster by foregoing checks. This command should o
 terrad start --x-crisis-skip-assert-invariants
 ```
 
-
-### Define seed nodes
-
 ::: warning NOTE
 
-For more information on seeds and peers, you can [read this](https://github.com/tendermint/tendermint/blob/master/docs/tendermint-core/using-tendermint.md#peers).
+For more information on seeds and peers, visit [Tendermint's documentation](https://github.com/tendermint/tendermint/blob/master/docs/tendermint-core/using-tendermint.md#peers).
 
 :::
-
-Your node needs to know how to find peers. You'll need to add healthy seed nodes to `~/.terra/config/config.toml`. The following are the current seeds for Terra mainnet:
-
-```toml
-seeds = "87048bf71526fb92d73733ba3ddb79b7a83ca11e@public-seed.terra.dev:26656,b5205baf1d52b6f91afb0da7d7b33dcebc71755f@public-seed2.terra.dev:26656,5fa582d7c9931e5be8c02069d7b7b243c79d25bf@seed.terra.de-light.io:26656"
-```
 
 For seed mode and p2p settings, visit the [additional settings page](/How-to/Run-a-full-Terra-node/Configure-general-settings.html#additional-settings).
