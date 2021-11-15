@@ -83,9 +83,9 @@ const mk = new MnemonicKey({
 
 ### `CLIKey`
 
-> NOTE: This requires you to have `terracli` installed.
+> NOTE: This requires you to have `terrad` installed.
 
-If you want to use keys stored in your `terracli` installation's keyring to sign transactions, you can use `CLIKey`. This also will work for keys that have been registered in your keyring with `--ledger`, using a Ledger hardware device.
+If you want to use keys stored in your `terrad` installation's keyring to sign transactions, you can use `CLIKey`. This also will work for keys that have been registered in your keyring with `--ledger`, using a Ledger hardware device.
 
 ```ts
 import { StdFee, MsgSend } from '@terra-money/terra.js';
