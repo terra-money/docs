@@ -9,7 +9,7 @@ import fetch from 'isomorphic-fetch';
 import { MsgSend, MnemonicKey, Coin, LCDClient } from '@terra-money/terra.js';
 
 // Fetch gas prices and convert to `Coin` format.
-const gasPrices = await (await fetch('https://fcd.terra.dev/v1/txs/gas_prices')).json();
+const gasPrices = await (await fetch('https://bombay-fcd.terra.dev/v1/txs/gas_prices')).json();
 const gasPricesCoins = Object.keys(gasPrices).map(token => new Coin(token, gasPrices[token]));
 
 const lcd = new LCDClient({
