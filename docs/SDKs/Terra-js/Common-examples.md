@@ -21,9 +21,9 @@ const lcd = new LCDClient({
 });
 ```
 
-The rest of the examples assume LCDClient was initialized similar to the above example. 
-
 ## Sending native tokens
+
+The following code example shows how to send native tokens:
 
 ```ts
 import { LCDClient, MnemonicKey, MsgSend } from "@terra-money/terra.js";
@@ -50,6 +50,8 @@ console.log(result);
 ```
 
 ## Sending CW20 tokens
+
+The following code example shows how to send CW20 tokens:
 
 ```ts
 import {
