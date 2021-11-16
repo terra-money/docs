@@ -1,6 +1,10 @@
 # Set up a local private network
 
-Set up a private Terra network to become familiar with running a Terra full node before you join a public network, such as the Terra mainnet.
+Validators can set up a private Terra network to become familiar with running a Terra full node before joining a public network.
+
+::: tip LocalTerra
+If you are a developer and want to set up a local, WASM-enabled private testnet for smart contracts, visit [Download LocalTerra](/Tutorials/Smart-contracts/Set-up-local-environment.html#download-localterra).
+:::
 
 ## Create a single node
 
@@ -17,6 +21,10 @@ terrad init --chain-id=<testnet-name> <node-moniker>
 ```bash
 terrad keys add <account-name>
 ```
+
+:::tip Get tokens
+In order for Terrad to recognize a wallet address it must contain tokens. For the testnet, use [the faucet](https://faucet.terra.money/) to send Luna to your wallet. If you are on mainnet, send funds from an existing wallet. 1-3 luna are sufficient for most setup processes.
+:::
 
 ## Add your account to the genesis
 

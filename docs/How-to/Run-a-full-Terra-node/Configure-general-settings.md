@@ -4,7 +4,7 @@ The following information describes the most important node configuration settin
 
 For more detailed descriptions about your configuration settings, including settings for WASM, explore each configuration file.
 
-## Update your node's name and P2P settings
+## Update your moniker
 
 1. Open `~/.terra/config/config.toml`.
 
@@ -15,29 +15,22 @@ For more detailed descriptions about your configuration settings, including sett
 moniker = "cx-mbp-will.local"
 ```
 
-3. Modify `seed_mode`. In seed mode, a node continuously crawls the network for peers, and upon incoming connection shares some peers and disconnects.
+## Download the address book
 
-```toml
-# Seed mode, in which node constantly crawls the network and looks for
-# peers. If another node asks it for addresses, it responds and disconnects.
-# Does not work if the peer-exchange reactor is disabled.
-seed_mode = false
+Choose and download `addrbook.json` and move it into `~/.terra/config/addrbook.json`. This will give your node a selection of peers to dial to find other nodes.
+
+For more p2p and seed settings, visit [additional settings](#additional-settings)
+
+- Mainnet address book:
+
+```bash
+curl https://network.terra.dev/addrbook.json > ~/.terra/config/addrbook.json
 ```
 
-4. Modify `seeds`. When more peers are needed, the seed nodes you specify are dialed and a list of peers is returned. If enough peers are already in the address book, the `seeds` setting might never be used.
+- Testnet address book:
 
-```toml
-# Comma separated list of seed nodes to connect to
-seeds = "id100000000000000000000000000000000@1.2.3.4:26656,id200000000000000000000000000000000@2.3.4.5:4444"
-```
-
-5. Modify `persistent_peers`. The nodes you specify are the trusted persistent peers that can help anchor your node in the P2P network. If the connection fails, they are dialed and automatically redialed for 24 hours. The automatic redial function uses exponential backoff and stops after 24 hours of trying to connect.
-
-If the value of `persistent_peers_max_dial_period` is more than zero, the pause between each call to each persistent peer will not exceed `persistent_peers_max_dial_period` during exponential backoff, and the automatic redial process continues.
-
-```toml
-# Comma separated list of nodes to keep persistent connections to
-persistent_peers = "id100000000000000000000000000000000@1.2.3.4:26656,id200000000000000000000000000000000@2.3.4.5:26656"
+```bash
+curl https://network.terra.dev/testnet/addrbook.json > ~/.terra/config/addrbook.json
 ```
 
 ## Update minimum gas prices
@@ -81,8 +74,41 @@ Once restarted, the LCD will be available.
 
 For more information about the Terra REST API endpoints, see the [Swagger documentation](https://lcd.terra.dev/swagger/).
 
-## Rosetta
+## Additional settings
 
-Integrate Terra with Coinbase via the Rosetta API. Rosetta is an open source API that organizes blockchain data into a standardized format, making it easy for developers to build cross-chain applications. Instead of creating specific code for each chain, Rosetta allows different blockchains to integrate into any exchange that uses Rosetta API.
+### `seed_mode`
 
-For more information, checkout the official [Rosetta docs](https://www.rosetta-api.org/docs/welcome.html).
+In seed mode, a node continuously crawls the network for peers, and upon incoming connection shares some peers and disconnects.
+
+```toml
+# Seed mode, in which node constantly crawls the network and looks for
+# peers. If another node asks it for addresses, it responds and disconnects.
+# Does not work if the peer-exchange reactor is disabled.
+seed_mode = true
+```
+
+### `seeds`
+
+To manually identify seed nodes, edit the following dsetting in `config.toml`.
+
+```toml
+# Comma separated list of seed nodes to connect to
+seeds = "id100000000000000000000000000000000@1.2.3.4:26656,id200000000000000000000000000000000@2.3.4.5:4444"
+```
+
+### `persistent_peers`
+
+The nodes you specify are the trusted persistent peers that can help anchor your node in the p2p network. If the connection fails, they are dialed and automatically redialed for 24 hours. The automatic redial function uses exponential backoff and stops after 24 hours of trying to connect.
+
+If the value of `persistent_peers_max_dial_period` is more than zero, the pause between each call to each persistent peer will not exceed `persistent_peers_max_dial_period` during exponential backoff, and the automatic redial process continues.
+
+```toml
+# Comma separated list of nodes to keep persistent connections to
+persistent_peers = "id100000000000000000000000000000000@1.2.3.4:26656,id200000000000000000000000000000000@2.3.4.5:26656"
+```
+
+### Rosetta
+
+Integrate Terra with Coinbase via the Rosetta API. Rosetta is an open-source API that organizes blockchain data into a standardized format, making it easy for developers to build cross-chain applications. Instead of creating specific code for each chain, Rosetta allows different blockchains to integrate into any exchange that uses Rosetta API.
+
+For more information, visit the [Rosetta docs site](https://www.rosetta-api.org/docs/welcome.html).
