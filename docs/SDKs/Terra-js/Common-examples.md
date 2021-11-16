@@ -76,3 +76,36 @@ const result = await lcd.tx.broadcast(tx);
 
 console.log(result);
 ```
+
+## Swaping using the market module
+
+The following code example shows how to swap native Terra assets using the market module: 
+
+```ts
+import {
+  LCDClient,
+  MnemonicKey,
+  MsgSwap,
+  Coin,
+} from "@terra-money/terra.js";
+
+// const lcd = new LCDClient(...);
+
+const mk = new MnemonicKey({
+  mnemonic: 'satisfy adjust timber high purchase tuition stool faith fine install that you unaware feed domain license impose boss human eager hat rent enjoy dawn',
+});
+
+const wallet = lcd.wallet(mk);
+
+// Swap 1 Luna to UST.
+const swap = new MsgSwap(
+  wallet.key.accAddress,
+  new Coin('uluna', '1000000'),
+  'uusd'
+);
+
+const tx = await wallet.createAndSignTx({ msgs: [swap] });
+const result = await lcd.tx.broadcast(tx);
+
+console.log(result);
+```
