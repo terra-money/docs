@@ -2,13 +2,20 @@
 
 ## Configuring LCDClient
 
+The following code example shows how to initialize the LCDClient. The rest of the examples assume you initialized it by using this example or similar code.
+
 ```ts
-import { LCDClient } from "@terra-money/terra.js";
+import fetch from 'isomorphic-fetch';
+import { MsgSend, MnemonicKey, Coin, LCDClient } from '@terra-money/terra.js';
+
+// Fetch gas prices and convert to `Coin` format.
+const gasPrices = await (await fetch('https://fcd.terra.dev/v1/txs/gas_prices')).json();
+const gasPricesCoins = Object.keys(gasPrices).map(token => new Coin(token, gasPrices[token]));
 
 const lcd = new LCDClient({
   URL: "https://bombay-lcd.terra.dev/",
   chainID: "bombay-12",
-  gasPrices: [new Coin("uluna", "0.01133")],
+  gasPrices: gasPricesCoins,
   gasAdjustment: "1.5",
   gas: 10000000,
 });
