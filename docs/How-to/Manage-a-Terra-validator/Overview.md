@@ -16,16 +16,10 @@ Validators can set commissions on the fees they receive as an additional incenti
 
 If validators double sign, are frequently offline, or do not participate in governance, their staked Luna (including Luna of users that delegated to them) can be slashed. Penalties can vary depending on the severity of the violation.
 
-::: tip Additional resources
-To supplement this guide, consider using Block42's helpful [step-by-step guide](https://medium.com/block42-blockchain-company/how-to-setup-a-terra-luna-validator-node-860d8ea7aea2) for setting up a new validator.
-:::
+For more general information on validators, visit the [validator section](/Concepts/Protocol.md#validators) of the concepts page.
 
-## Prerequisites
+## Additional resources
 
-- You have completed [how to run a full Terra node](https://docs.terra.money/How-to/Run-a-full-Terra-node/Hardware-requirements.html).
-- You have [installed](../Run-a-full-terra-node/Build-Terra-core.md) the Terra Full Node Software.
-- You have [connected your node](../Run-a-full-terra-node/Join-public-network.md) to an existing network.
-- You have [configured your node](../Run-a-full-terra-node/Configure-general-settings.md) properly.
-- You are familiar with [terrad](../../Reference/terrad/).
-
-The hardware requirements for running a validator are the same as the [requirements for running a full node](../Run-a-full-Terra-node/Hardware-requirements.md).
+- [The Terra validator Discord](https://discord.com/invite/xfZK6RMFFx).
+- [How to Spin Up a Node on Terra - Terra Bites video](https://www.youtube.com/watch?v=2lKAvltKX6w&ab_channel=TerraBites).
+- [The validator FAQ](./faq.md)
