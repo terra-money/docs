@@ -1,10 +1,10 @@
 # Fees
 
 ```ts
-import { StdFee } from '@terra-money/terra.js';
+import { Fee } from '@terra-money/terra.js';
 
 const msgs = [ new MsgSend( ... ), new MsgSwap( ... ), ]; // messages
-const fee = new StdFee(50000, { uluna: 4500000 });
+const fee = new Fee(50000, { uluna: 4500000 });
 
 const tx = await wallet.createAndSignTx({ msgs, fee });
 ```
@@ -22,7 +22,7 @@ You can define the fee estimation parameters when you create your `LCDClient` in
 ```ts
 const terra = new LCDClient({
   URL: 'https://lcd.terra.dev',
-  chainID: 'columbus-3',
+  chainID: 'columbus-5',
   gasPrices: { uluna: 0.015 },
   gasAdjustment: 1.4
 });
@@ -31,8 +31,6 @@ const terra = new LCDClient({
 You can override these settings by passing the fee estimation parameters in `wallet.createTx` or `wallet.createAndSignTx`:
 
 ```ts
-import { StdSignMsg, StdFee } from '@terra-money/terra.js';
-
 const tx = await wallet.createAndSignTx({
   msgs,
   gasPrices: { ukrw: 0.01 },

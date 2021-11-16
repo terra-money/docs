@@ -9,7 +9,7 @@ import { LCDClient, MnemonicKey } from '@terra-money/terra.js';
 
 const terra = new LCDClient({
   URL: 'https://lcd.terra.dev',
-  chainId: 'columbus-3'
+  chainId: 'columbus-5'
 });
 
 const mk = new MnemonicKey();
@@ -35,7 +35,7 @@ A wallet makes it easy to create a transaction by automatically fetching the acc
 
 ```ts
 const msgs = [ ... ]; // list of messages
-const fee = StdFee(...); // optional fee
+const fee = Fee(...); // optional fee
 
 const unsignedTx = await wallet.createTx({
   msgs,

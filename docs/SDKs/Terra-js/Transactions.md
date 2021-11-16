@@ -22,8 +22,8 @@ import { MnemonicKey, LCDClient } from '@terra-money/terra.js';
 
 const mk = new MnemonicKey();
 const terra = new LCDClient({
-  URL: 'https://soju-lcd.terra.dev',
-  chainId: 'soju-0014'
+  URL: 'https://bombay-lcd.terra.dev',
+  chainId: 'bombay-12'
 });
 const wallet = terra.wallet(mk);
 ```
