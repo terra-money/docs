@@ -253,6 +253,7 @@ module.exports = {
           title: "terra.js",
           children: [
             "/SDKs/Terra-js/Overview",
+            "/SDKs/Terra-js/Common-examples",
             "/SDKs/Terra-js/Add-modules",
             "/SDKs/Terra-js/Make-a-connection",
             "/SDKs/Terra-js/Query-data",
