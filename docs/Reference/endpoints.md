@@ -11,4 +11,5 @@ Public RPC endpoints should only be used in development. For live dApps, use a p
 :::
 
 - Easy2stake public RPC: `https://terra-rpc.easy2stake.com/`
+- Blockdaemon public LCD: `https://blockdaemon-terra-lcd.api.bdnodes.net:1317`
 - Terra public RPC (`http` only, no certificate installed): `http://public-node.terra.dev:26657/`
