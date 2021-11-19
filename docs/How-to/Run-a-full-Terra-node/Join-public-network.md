@@ -54,14 +54,12 @@ Select the network you want to join and download its `genesis.json` file into yo
 - Columbus-5 mainnet genesis:
 
 ```bash
-wget https://columbus-genesis.s3.ap-northeast-1.amazonaws.com/columbus-5-genesis.json
-mv ./columbus-5-genesis.json ~/.terra/config/genesis.json
+wget https://columbus-genesis.s3.ap-northeast-1.amazonaws.com/columbus-5-genesis.json -O ~/.terra/config/genesis.json
 ```
 - Bombay-12 testnet genesis:
 
 ```bash
-wget https://raw.githubusercontent.com/terra-money/testnet/master/bombay-12/genesis.json
-mv genesis.json ~/.terra/config/genesis.json
+wget https://raw.githubusercontent.com/terra-money/testnet/master/bombay-12/genesis.json -I ~/.terra/config/genesis.json
 ```
 
 Note we use the `latest` directory in the [networks repo](https://github.com/terra-money/testnet) which contains details for the latest testnet. If you are connecting to a different testnet, ensure you get the right files.
@@ -81,15 +79,13 @@ For advanced settings, visit [Define seed nodes](#define-seed-nodes).
 - Columbus mainnet address book:
 
 ```bash
-wget https://network.terra.dev/addrbook.json
-mv addrbook.json ~/.terra/config
+wget https://network.terra.dev/addrbook.json -O ~/.terra/config/addrbook.json
 ```
 
 - Bombay testnet address book:
 
 ```bash
-wget https://github.com/terra-money/testnet/blob/master/bombay-12/addrbook.json
-mv addrbook.json ~/.terra/config
+wget https://raw.githubusercontent.com/terra-money/testnet/master/bombay-12/addrbook.json -O ~/.terra/config/addrbook.json
 ```
 
 ## Connecting to the Network
