@@ -24,13 +24,13 @@ For more p2p and seed settings, visit [additional settings](#additional-settings
 - Mainnet address book:
 
 ```bash
-curl https://network.terra.dev/addrbook.json > ~/.terra/config/addrbook.json
+wget https://network.terra.dev/addrbook.json -O ~/.terra/config/addrbook.json
 ```
 
 - Testnet address book:
 
 ```bash
-curl https://network.terra.dev/testnet/addrbook.json > ~/.terra/config/addrbook.json
+wget https://network.terra.dev/testnet/addrbook.json -O ~/.terra/config/addrbook.json
 ```
 
 ## Update minimum gas prices
