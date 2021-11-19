@@ -12,7 +12,7 @@ There are four types of fees on Terra: gas, Tobin taxes, spread fees, and stabil
 | [Stability fee](#stability-fees) | UST<>ANC, Wallet transfers, etc.  | All other transactions using Terra stablecoins. |
 
 :::tip No stacked network fees
-While all transactions charge gas, single transactions will not have overlapping fees on Terra Station. For example, a Terra stablecoin denomination swap charges a gas fee and a Tobin tax but not a spread fee or a stability fee.
+While all transactions charge gas, single transactions do not have overlapping fees on Terra Station. For example, a Terra stablecoin denomination swap charges a gas fee and a Tobin tax but not a spread fee or a stability fee.
 :::
 
 ## Gas
@@ -30,7 +30,7 @@ To view current gas rates in your browser, visit the [gas rates](https://fcd.ter
 
 ## Tobin tax
 
-The Tobin tax is a fixed percentage fee added to any [market swap](./glossary.md#market-swap) between Terra stablecoins. The rate varies depending on each Terra stablecoin denomination. For example, while the rate for most denominations is .35%, the rate for MNT is 2%. To see the Tobin tax rates, [query the oracle](https://lcd.terra.dev/terra/oracle/v1beta1/denoms/tobin_taxes). When stablecoins have different Tobin tax rates, the higher tax rate will be used for the transaction.
+The Tobin tax is a fixed percentage fee added to any [market swap](./glossary.md#market-swap) between Terra stablecoin denominations. The rate varies depending on each Terra stablecoin. For example, while the rate for most denominations is .35%, the rate for MNT is 2%. To see the Tobin tax rates, [query the oracle](https://lcd.terra.dev/terra/oracle/v1beta1/denoms/tobin_taxes). When stablecoins have different Tobin tax rates, the higher tax rate will be used for the transaction.
 
  The Tobin tax was created to discourage front-running the oracle and foreign exchange trading at the expense of users. For more information on the implementation of the Tobin tax, read ["On swap fees: the greedy and the wise"](https://medium.com/terra-money/on-swap-fees-the-greedy-and-the-wise-b967f0c8914e).
 
