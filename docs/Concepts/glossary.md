@@ -89,9 +89,13 @@ A user who delegates, bonds, or stakes Luna to a validator to earn rewards.
 
 ## Fees
 
-- **Gas fees**: Compute fees added on to each transaction to avoid spamming. Validators set minimum gas prices and reject transactions that have implied gas prices below this threshold.
+- **Gas**: Compute fees added on to all transactions to avoid spamming. Validators set minimum gas prices and reject transactions that have implied gas prices below this threshold.
 
-- **Stability fees**: Fees added on to each transaction to provide stability in the market. The fee for swapping Terra stablecoin denominations is called a Tobin tax. Exchanges between Terra and Luna are subject to a spread fee.
+- **Stability fee**: A fee added to any Terra stablecoin transaction excluding [market swaps](#market-swaps). Stability fees are capped at 1 SDT and are also referred to as taxes.
+
+- **Spread fee**: A variable fee on any transaction between Terra and Luna.
+
+- **Tobin tax**: A fee on any transaction between Terra stablecoin denominations.
 
 For more information on fees, visit the [fees on Terra](/Concepts/Fees.md) page.
 
@@ -122,6 +126,10 @@ Validators that are not in the active set. These validators do not participate i
 ## Jailed
 
 Validators who misbehave are jailed or excluded from the validator set for a period amount of time.
+
+## Market swap
+
+A swap in Terra Station that uses the Terra protocol's market function. Market swaps can be between Terra stablecoin denominations or between Terra and Luna. Market swaps spend gas and incur either a [Tobin tax](#fees) or a [Spread fee](#fees), but are not subject to a [stability fee](#fees).
 
 ## Mint
 
