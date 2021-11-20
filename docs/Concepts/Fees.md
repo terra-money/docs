@@ -2,17 +2,17 @@
 
 Fees on the Terra network are minimal compared to most other blockchains.
 
-There are four types of fees on Terra: gas, Tobin taxes, spread fees, and stability fees.
+In addition to gas, transaction fees fall into three catogories: Tobin taxes, spread fees, or stability fees.
 
-| Fee type                         | Example                           | Usage                                           |
-|----------------------------------|-----------------------------------|-------------------------------------------------|
-| [Gas](#gas)                      | All transactions.                 | All transactions on Terra.                      |
-| [Tobin tax](#tobin-tax)          | UST<>KRT, SDT<>UST, etc.          | Swaps between Terra stablecoin denominations.   |
-| [Spread fee](#spread-fees)       | UST<>Luna, Luna<>UST, etc.        | Swaps between Luna and Terra stablecoins.       |
-| [Stability fee](#stability-fees) | UST<>ANC, Wallet transfers, etc.  | All other transactions using Terra stablecoins. |
+| Type                             | Example                           | Usage                                                                    |
+|----------------------------------|-----------------------------------|--------------------------------------------------------------------------|
+| [Gas](#gas)                      | All transactions.                 | All transactions on Terra.                                               |
+| [Tobin tax](#tobin-tax)          | UST<>KRT, SDT<>UST, etc.          | Market swaps between Terra stablecoin denominations.                     |
+| [Spread fee](#spread-fees)       | UST<>Luna, Luna<>KRT, etc.        | Market swaps between Luna and Terra stablecoins.                         |
+| [Stability fee](#stability-fees) | UST<>ANC, Wallet transfers, etc.  | All other transactions using Terra stablecoins, excluding market swaps.  |
 
-:::tip No stacked network fees
-While all transactions charge gas, single transactions do not have overlapping fees on Terra Station. For example, a Terra stablecoin denomination swap charges a gas fee and a Tobin tax but not a spread fee or a stability fee.
+:::tip Market swaps or Stability fees
+While all transactions charge gas, the three other fee types on Terra Station do not overlap. For example, a Terra stablecoin [market swap](./glossary.md#market-swap) charges a gas fee and a Tobin tax but not a spread fee or a stability fee. Terraswap or other dApps may charge their own transaction fees on top of Terra network fees.
 :::
 
 ## Gas

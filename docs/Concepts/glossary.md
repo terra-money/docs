@@ -129,7 +129,9 @@ Validators who misbehave are jailed or excluded from the validator set for a per
 
 ## Market swap
 
-A swap in Terra Station that uses the Terra protocol's market function. Market swaps can be between Terra stablecoin denominations or between Terra and Luna. Market swaps spend gas and incur either a [Tobin tax](#fees) or a [Spread fee](#fees), but are not subject to a [stability fee](#fees).
+A swap in Terra Station that uses the Terra protocol's market function. Market swaps occur between Terra stablecoin denominations or between Terra and Luna. Market swaps spend gas and incur either a [Tobin tax](#fees) or a [Spread fee](#fees), but are not subject to a [stability fee](#fees).
+
+To learn how to use the market swap feature in Terra station, visit [how to use Terra Station](/How-to/Terra-Station/Swap.html#market-swap).
 
 ## Mint
 
