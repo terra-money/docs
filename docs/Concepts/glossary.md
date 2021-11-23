@@ -97,7 +97,7 @@ A user who delegates, bonds, or stakes Luna to a validator to earn rewards.
 
 - **Tobin tax**: A fee on any transaction between Terra stablecoin denominations.
 
-For more information on fees, visit the [fees on Terra](/Concepts/Fees.md) page.
+For more information on fees, visit [Fees on Terra](/Concepts/Fees.md).
 
 ## Fiat currency
 
@@ -129,9 +129,15 @@ Validators who misbehave are jailed or excluded from the validator set for a per
 
 ## Market swap
 
-A swap in Terra Station that uses the Terra protocol's market function. Market swaps occur between Terra stablecoin denominations or between Terra and Luna. Market swaps spend gas and incur either a [Tobin tax](#fees) or a [Spread fee](#fees), but are not subject to a [stability fee](#fees).
+A swap in Terra Station that uses the Terra protocol's market function. Market swaps occur between Terra stablecoin denominations or between Terra and Luna. Market swaps spend [gas](#fees) and incur either a [Tobin tax](#fees) or a [Spread fee](#fees), but are not subject to a [stability fee](#fees).
+
+**Examples**
+- Swapping UST for KRT in Terra Station will charge a Tobin tax and gas fees.
+- Swapping Luna for UST in Terra Station will charge a spread fee and gas fees.
 
 To learn how to use the market swap feature in Terra station, visit [how to use Terra Station](/How-to/Terra-Station/Swap.html#market-swap).
+
+For more information on fees, visit [Fees on Terra](./fees.md).
 
 ## Mint
 
