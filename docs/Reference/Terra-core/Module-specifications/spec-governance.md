@@ -14,13 +14,13 @@ The following is the governance proposal procedure:
 
 ### Deposit Period
 
-After a proposal is submitted, it enters the deposit period, where it must reach a total minimum deposit of 512 Luna within 2 weeks from the time of its submission. The deposit threshold is reached when the sum of the initial deposit (from the proposer) and the deposits from all other interested network participants meets or exceeds 512 Luna.
+After a proposal is submitted, it enters the deposit period, where it must reach a total minimum deposit of 50 Luna within 2 weeks from the time of its submission. The deposit threshold is reached when the sum of the initial deposit (from the proposer) and the deposits from all other interested network participants meets or exceeds 50 Luna.
 
 Deposits are required only to protect against spam. The network refunds deposits for proposals that pass or fail except when a proposal is vetoed. If a proposal is vetoed, deposits are not refunded.
 
 ### Voting Period
 
-If the minimum deposit has been reached before the end of the deposit period, then the proposal goes into voting. The voting starts as soon as the minimum deposit has been reached, and lasts for another 2 weeks. While the proposal is in voting, Luna holders can cast votes for the proposal. The 4 voting options available are:
+If the minimum deposit has been reached before the end of the deposit period, then the proposal goes into voting. The voting starts as soon as the minimum deposit has been reached, and lasts for one week. While the proposal is in voting, Luna holders can cast votes for the proposal. The 4 voting options available are:
 
 - `Yes` - in favor
 - `No` - not in favor

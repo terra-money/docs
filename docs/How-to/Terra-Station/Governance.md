@@ -22,7 +22,7 @@ Your vote will be submitted.
 
 ## Deposit Luna to a proposal
 
-Users can vote on a proposal after a minimum deposit of 512 Luna is reached. To help push a proposal forward to a vote, deposit Luna to the proposal.
+Users can vote on a proposal after a minimum deposit of 50 Luna is reached. To help push a proposal forward to a vote, deposit Luna to the proposal.
 
 :::warning Deposits and refunds
 While most deposits get refunded, some deposits get burned. For more information on which deposits get burned, visit the [governance section](/Concepts/Protocol.html#governance) of the concepts page.
@@ -45,7 +45,7 @@ Your deposit will be added to the proposal.
 ## Create a new proposal
 
 ::: warning Avoid unnecessary proposals
-To prevent unnecessary proposals or abuse of the system, all governance proposals must obtain a minimum deposit of 512 Luna. If 33.4% of the total vote is `NoWithVeto`, `quorum` is not met, or the minimum deposit isn't reached, the deposit will be burned. All other vote outcomes get their deposits refunded. For more information on deposits and refunds, visit the [governance section](/Concepts/Protocol.html#governance) of the concepts page.
+To prevent unnecessary proposals or abuse of the system, all governance proposals must obtain a minimum deposit of 50 Luna. If 33.4% of the total vote is `NoWithVeto`, `quorum` is not met, or the minimum deposit isn't reached, the deposit will be burned. All other vote outcomes get their deposits refunded. For more information on deposits and refunds, visit the [governance section](/Concepts/Protocol.html#governance) of the concepts page.
 :::
 
 1. Open Terra Station and connect your wallet. In the sidebar, click **Governance**.
@@ -66,4 +66,4 @@ Do not use text proposals to suggest parameter changes. For more information, vi
 
 6. Enter your password and click **Propose**.
 
-Your proposal will enter the two-week deposit period. After a minimum deposit of 512 Luna has been reached, your proposal will enter a two-week voting period. For more information on governance, visit the [governance section](/Concepts/Protocol.html#governance) of the concepts page.
+Your proposal will enter the two-week deposit period. After a minimum deposit of 50 Luna has been reached, your proposal will enter a one-week voting period. For more information on governance, visit the [governance section](/Concepts/Protocol.html#governance) of the concepts page.

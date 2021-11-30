@@ -1140,7 +1140,7 @@ terrad tx distribution withdraw-rewards terra19t4gde4f8ndwx67qhbnur9yqdc31xznpks
 
 ## `tx gov deposit`
 
-For a proposal to be sent to the network, the amount deposited must be above a minimum amount specified by `minDeposit` (initial value is `512000000uluna`). If the proposal you previously created didn't meet this requirement, you can still increase the total amount deposited to activate it. After the minimum deposit is reached, the voting period for the proposal begins.
+For a proposal to be sent to the network, the amount deposited must be above a minimum amount specified by `minDeposit` (initial value is `50000000uluna`). If the proposal you previously created didn't meet this requirement, you can still increase the total amount deposited to activate it. After the minimum deposit is reached, the voting period for the proposal begins.
 
 **Syntax**
 ```bash
@@ -1377,7 +1377,7 @@ terrad tx gov submit-proposal software-upgrade v0.5.0-beta3 \
     --upgrade-height=20 \
     --upgrade-info='{"binaries":{"darwin/amd64":"/Workspace/terra/core/build/terrad?checksum=sha256:2032356fe0899dec0cdd559f1c649bc81e53a9b4063b333059135e3a2aae8728"}}' \
     --type="Text" \
-    --deposit="512000000uluna" \
+    --deposit="50000000uluna" \
     --from=terra13a8ddv3h7kbcn73akcbpe7ueks22vaolewpaxmb \
     --chain-id=columbus-5
 ```
