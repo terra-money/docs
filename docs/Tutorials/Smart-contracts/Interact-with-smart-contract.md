@@ -36,6 +36,11 @@ Make sure that the **optimized build** of `my_first_contract.wasm` that you crea
 ```sh
 terrad tx wasm store artifacts/my_first_contract.wasm --from test1 --chain-id=localterra --gas=auto --fees=100000uluna --broadcast-mode=block
 ```
+Or, if you are on an arm64 machine:
+
+```sh
+terrad tx wasm store artifacts/my_first_contract-aarch64.wasm --from test1 --chain-id=localterra --gas=auto --fees=100000uluna --broadcast-mode=block
+```
 
 This will ask for a confirmation before broadcasting to LocalTerra, type `y` and press enter.
 
