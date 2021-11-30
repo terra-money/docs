@@ -309,7 +309,21 @@ You will need to make sure the output WASM binary is as small as possible in ord
 cargo run-script optimize
 ```
 
-This will result in an optimized build of `artifacts/my_first_contract.wasm` in your working directory.
+Or, if you are on an arm64 machine:
+
+```sh
+docker run --rm -v "$(pwd)":/code \
+  --mount type=volume,source="$(basename "$(pwd)")_cache",target=/code/target \
+  --mount type=volume,source=registry_cache,target=/usr/local/cargo/registry \
+  cosmwasm/rust-optimizer-arm64:0.12.4
+  ```
+
+This will result in an optimized build of `artifacts/my_first_contract.wasm` or `artifacts/my_first_contract-aarch64.wasm` in your working directory.
+
+::: warning NOTE
+Please note that rust-optimizer will produce different contracts on Intel and ARM machines. So for reproducible builds you'll have to stick to one.
+:::
+
 
 ## Schemas
 
