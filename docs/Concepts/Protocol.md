@@ -174,9 +174,9 @@ Community members vote with their staked Luna. One staked Luna equals one vote. 
 
 The following is a basic outline of the governance process. Visit the [governance module](/Reference/Terra-core/Module-specifications/spec-governance.md) for more details.
 
-1. A user submits a proposal and a one week deposit period begins.
+1. A user submits a proposal and a two-week deposit period begins.
 2. Users deposit Luna as collateral to back the proposal. This period ends once a minimum threshold of 50 Luna is deposited. Deposits are to protect against spam.
-3. The two-week vote period begins.
+3. The one-week vote period begins.
     The voting options are:
     - `Yes`: In favor.
     - `No`: Not in favor.
@@ -198,12 +198,12 @@ Once accepted, the changes described in a governance proposal are automatically 
 Deposits protect against unnecessary proposals and spam. Users can veto any proposal they deem to be spam by voting `NoWithVeto`.
 
 Deposits get refunded if all of the following conditions are met:
-- The minimum deposit of 50 Luna is reached within the one week deposit period.
+- The minimum deposit of 50 Luna is reached within the two-week deposit period.
 - `Quorum` is met: the number of total votes is greater than 40% of all staked Luna
 - The total number of `NoWithVeto` votes is less than 33.4% of the total vote.
 - A vote returns a majority of `Yes` or `No` votes.
 
 Deposits are burned under any of the following conditions:
 - The minimum deposit of 50 Luna is not reached within the two-week deposit period.
-- `Quorum` is not met: the number of total votes after the two-week voting period is less than 40% of all staked Luna.
+- `Quorum` is not met: the number of total votes after the one-week voting period is less than 40% of all staked Luna.
 - the number of `NoWithVeto` votes is above 33.4% of the total vote.
