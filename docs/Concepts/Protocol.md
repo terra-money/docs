@@ -122,11 +122,11 @@ When a user redelegates staked Luna from one validator to another, the validator
 
 The Terra protocol incentivizes validators and delegators with staking rewards. Staking rewards come from three sources: gas, stability fees, and swap fees.
 
-- [Gas](./fees.md#gas): Compute fees added on to each transaction to avoid spamming. Validators set minimum gas prices and reject transactions that have implied gas prices below this threshold.
+- [Gas](./glossary.md#gas): Compute fees added on to each transaction to avoid spamming. Validators set minimum gas prices and reject transactions that have implied gas prices below this threshold.
 
-- [Stability fees](./fees.md#stability-fees): Fees added on to any transaction to provide stability in the market, capped at 1SDT. The fee rate is variable and called the tax rate.
+- [Stability fees](./glossary.md#stability-fees): Fees added on to any transaction to provide stability in the market, capped at 1SDT. The fee rate is variable and called the tax rate.
 
-- **Swap fees**: The fee for swapping Terra stablecoin denominations is called a [Tobin tax](./fees.md#tobin-tax). Exchanges between Terra and Luna are subject to a [spread fee](./fees.md#spread-fees).
+- **Swap fees**: The fee for swapping Terra stablecoin denominations is called a [Tobin tax](./glossary.md#tobin-tax). Exchanges between Terra and Luna are subject to a [spread fee](./glossary.md#spread-fees).
 
 For more information on fees, visit the [fee page](./fees.md).
 
