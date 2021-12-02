@@ -34,6 +34,9 @@ The price stability of Terra is achieved by the protocol's algorithmic [market m
 
 The Terra protocol's market module enables users to always trade 1 USD worth of Luna for 1 UST, and vice versa, incentivizing users to maintain the price of Terra. This same principle is true for all Terra stablecoin denominations.
 
+Users can access the mint and burn function of the market module by performing [market swaps](./glossary.md#market-swap) in [Terra Station](./glossary.md#terra-station).
+To learn how to use the [market swap](./glossary.md#market-swap) feature of Terra station, visit the [Terra Station market swap guide](/How-to/Terra-Station/Swap.html#market-swap).
+
 - **Example**  
   If 1 UST is trading at 1.01 USD, users can use the market swap feature of Terra Station to trade 1 USD of Luna for 1 UST. The market burns 1 USD of Luna and mints 1 UST. Users can then sell their 1 UST for 1.01 USD, profiting .01 USD through arbitrage, adding to the UST pool. This arbitrage continues until UST price falls back to match the price of USD, maintaining Terra's peg.
 
@@ -124,9 +127,9 @@ The Terra protocol incentivizes validators and delegators with staking rewards. 
 
 - [Gas](./fees.md#gas): Compute fees added on to each transaction to avoid spamming. Validators set minimum gas prices and reject transactions that have implied gas prices below this threshold.
 
-- [Stability fees](./fees.md#stability-fees): Fees added on to any transaction to provide stability in the market, capped at 1SDT. The fee rate is variable and called the tax rate.
+- [Stability fees](/Concepts/fees.md#stability-fee): Fees added on to any Terra stablecoin transaction (excluding [market swaps](/Concepts/Glossary.md#market-swap)) to provide stability in the market, capped at 1SDT. The fee rate is variable and called the tax rate.
 
-- **Swap fees**: The fee for swapping Terra stablecoin denominations is called a [Tobin tax](./fees.md#tobin-tax). Exchanges between Terra and Luna are subject to a [spread fee](./fees.md#spread-fees).
+- **Swap fees**: The fee for swapping Terra stablecoin denominations is called a [Tobin tax](./fees.md#tobin-tax). Exchanges between Terra and Luna are subject to a [spread fee](./fees.md#spread-fee).
 
 For more information on fees, visit the [fee page](./fees.md).
 

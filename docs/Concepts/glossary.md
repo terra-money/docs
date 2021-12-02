@@ -219,7 +219,11 @@ The Terra protocol's blockchain network where all transactions take place.
 
 ## Terra Station
 
-Terra's native wallet, swap, governance, and staking platform. In Station, you can send, receive, swap, and stake Terra coins. You can also participate in governance and read proposals.
+Terra's native wallet, swap, governance, and staking platform. In Station, you can send, receive, swap, and stake Terra coins. You can also participate in governance and vote on proposals.
+
+To learn how to install and get started using Terra Station, visit the [Terra Station tutorial](/Tutorials/Get-started/Terra-Station-desktop.md).
+
+To learn how to use the advanced features of Terra Station, visit the [Terra Station how to guide](/How-to/Terra-Station/Wallet.md).
 
 ## Terrad
 
