@@ -7,7 +7,7 @@
 
 ## Get the Terra core source code
 
-Use `git` to retrieve [Terra core](https://github.com/terra-money/core/), and checkout the `master` branch, which contains the latest stable release.
+Use `git` to retrieve [Terra core](https://github.com/terra-money/core/), and checkout the `main` branch, which contains the latest stable release.
 
 If you are using LocalTerra or running a validator, use the `v0.x.x-oracle` tag. Otherwise, use the `v0.x.x` tag.
 
