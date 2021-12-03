@@ -6,11 +6,11 @@ The following code example shows how to initialize the LCDClient. The rest of th
 
 ```ts
 import fetch from 'isomorphic-fetch';
-import { MsgSend, MnemonicKey, Coin, LCDClient } from '@terra-money/terra.js';
+import { MsgSend, MnemonicKey, Coins, LCDClient } from '@terra-money/terra.js';
 
 // Fetch gas prices and convert to `Coin` format.
 const gasPrices = await (await fetch('https://bombay-fcd.terra.dev/v1/txs/gas_prices')).json();
-const gasPricesCoins = Object.keys(gasPrices).map(token => new Coin(token, gasPrices[token]));
+const gasPricesCoins = new Coins(gasPrices);
 
 const lcd = new LCDClient({
   URL: "https://bombay-lcd.terra.dev/",
