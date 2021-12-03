@@ -81,7 +81,6 @@
 [Kash](https://app.kash.io/): Intellabridge’s decentralized mobile banking app (Alpha release) providing a user-friendly interface to access Mirror and Anchor<br>
 [LoTerra](https://loterra.io/): decentralized lottery<br>
 [Alice Finance](https://www.alice.co/): front-end interface for the Terra product suite<br>
-[Saturn Money](http://saturn.money/): European user-focused interface for payments, savings, and on/offramps<br>
 [Spar Protocol](https://spar.finance/): decentralized on-chain asset management protocol<br>
 
 ## Block Explorers
