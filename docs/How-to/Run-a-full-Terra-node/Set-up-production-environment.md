@@ -1,8 +1,12 @@
 # Set up a production environment
 
-Use the following information to set up and manage your production-level full Terra node. This information has been tested against RPM-based Linux distributions only.
+Use the following information to set up and manage your production-level full Terra node.
 
 For information about running a validator node, visit the [validator guide](/How-to/Manage-a-Terra-validator/Overview.md).
+
+:::warning Recommended operating systems
+This guide has been tested against RPM-based Linux distributions only. To ensure you successfully set up your production environment, consider setting it up on an RPM-based Linux system.
+:::
 
 ## Create a dedicated user
 
