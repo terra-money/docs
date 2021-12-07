@@ -127,6 +127,9 @@ LUNA and Terra stablecoins are traded on the following exchanges:
   <a href="https://coinex.com" class="card image">
     <img src="/img/exg_coinex.png" />
   </a>
+   <a href="https://www.bitfinex.com/" class="card image">
+    <img src="/img/exg_bitfinex.png" />
+  </a>
 </div>
 
 ## Wallets
