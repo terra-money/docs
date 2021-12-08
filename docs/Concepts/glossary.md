@@ -4,11 +4,11 @@ Use this glossary to learn about terms specific to the Terra Protocol.
 
 ## Active set
 
-The top 130 validators that participate in consensus and receive rewards.
+The top 130 [validators](#validator) that participate in consensus and receive rewards.
 
 ## Air drops
 
-Additional rewards given to delegators through certain validators, separate from staking rewards. Airdrops come from protocols in the Terra ecosystem to increase visibility. To claim an airdrop, visit the webpage of the protocol giving out the airdrop.
+Additional rewards given to [delegators](#delegator) through certain [validators](#validator), separate from [staking rewards](#rewards). Airdrops come from protocols in the Terra ecosystem to increase visibility. To claim an airdrop, visit the webpage of the protocol giving out the airdrop.
 
 ## Algorithmic stablecoin
 
@@ -26,7 +26,7 @@ An unchangeable ledger of transactions copied among a network of independent com
 
 ## Blocks
 
-Groups of information stored on a blockchain. Each block contains transactions that are grouped, verified, and signed by validators.
+Groups of information stored on a [blockchain](#blockchain). Each block contains transactions that are grouped, verified, and signed by validators.
 
 ## bLuna
 
@@ -34,15 +34,15 @@ A token representing bonded Luna that can be traded freely or used as collateral
 
 ## Bonded validator
 
-A validator in the active set participating in consensus. Bonded validators earn rewards.
+A [validator](#validator) in the [active set](#active-set) participating in consensus. Bonded validators earn [rewards](#rewards).
 
 ## Bonding
 
-When a user delegates or bonds Luna to a validator to receive staking rewards. Validators never have ownership of a delegator's Luna, even when bonded. Delegating, bonding, and staking generally refer to the same process.
+When a user [delegates](#delegate) or bonds Luna to a [validator](#validator) to receive [staking rewards](#rewards). Validators never have ownership of a delegator's [Luna](#luna), even when bonded. Delegating, bonding, and staking generally refer to the same process.
 
 ## Burn
 
-The destruction of coins. The Terra protocol burns Luna to mint Terra stablecoins and vice versa. Burned coins are destroyed.
+The destruction of coins. The Terra protocol burns [Luna](#luna) to mint [Terra stablecoins](#terra-stablecoins) and vice versa. Burned coins are destroyed.
 
 ## CHAI
 
@@ -50,11 +50,11 @@ A mobile payments app powered by Terra's blockchain network.
 
 ## Columbus-5
 
-The current version of the Terra mainnet.
+The current version of the [Terra mainnet](#terra-mainnet).
 
 ## Commission
 
-The percentage of staking rewards a validator will keep before distributing the rest of the rewards to delegators. Commission is a validator’s income. Validators set their own commission rates.
+The percentage of [staking rewards](#rewards) a [validator](#validator) keeps before distributing the rest of the rewards to [delegators](#delegator). Commission is a validator’s income. Validators set their own commission rates.
 
 ## Community pool
 
@@ -62,7 +62,7 @@ A special fund designated for funding community projects. Any community member c
 
 ## Consensus
 
-A system used by validators or miners to agree that each block of transactions in a blockchain is correct. The Terra blockchain uses the Tendermint consensus. Validators earn rewards for participating in consensus. Visit the [Tendermint official documentation site](https://docs.tendermint.com/) for more information.
+A system used by [validators](#validator) or miners to agree that each [block](#blocks) of transactions in a [blockchain](#blockchain) is correct. The Terra blockchain uses the Tendermint consensus. Validators earn [rewards](#rewards) for participating in consensus. Visit the [Tendermint official documentation site](https://docs.tendermint.com/) for more information.
 
 ## Cosmos-SDK
 
@@ -82,20 +82,20 @@ Decentralized finance. A movement away from traditional finance and toward syste
 
 ## Delegate
 
-When users or delegators add their Luna to a validator's stake in exchange for rewards. Delegated Luna is bonded to a validator. Validators never have ownership of a delegator's Luna. Delegating, bonding, and staking generally refer to the same process.
+When users or delegators add their [Luna](#luna) to a [validator's](#validator) stake in exchange for rewards. Delegated Luna is bonded to a validator. Validators never have ownership of a [delegator's](#delegator) Luna. Delegating, bonding, and staking generally refer to the same process.
 
 
 ## Delegator
 
-A user who delegates, bonds, or stakes Luna to a validator to earn rewards.
+A user who [delegates](#delegate), bonds, or stakes [Luna](#luna) to a [validator](#validator) to earn [rewards](#rewards). Delegating, bonding, and staking generally refer to the same process.
 
 ## Fees
 
-- **Gas**: Compute fees added on to all transactions to avoid spamming. Validators set minimum gas prices and reject transactions that have implied gas prices below this threshold.
+- **Gas**: Compute fees added on to all transactions to avoid spamming. [Validators](#validator) set minimum gas prices and reject transactions that have implied gas prices below this threshold.
 
-- **Stability fee**: A fee added to any Terra stablecoin transaction excluding [market swaps](#market-swaps). Stability fees are capped at 1 SDT and are also referred to as taxes.
+- **Stability fee**: A fee added to any [Terra stablecoin](#terra-stablecoins) transaction excluding [market swaps](#market-swap). Stability fees are capped at 1 SDT and are also referred to as taxes.
 
-- **Spread fee**: A variable fee on any transaction between Terra and Luna.
+- **Spread fee**: A variable fee on any transaction between [Terra](#terra-stablecoins) and [Luna](#luna).
 
 - **Tobin tax**: A fee on any transaction between Terra stablecoin denominations.
 
@@ -107,11 +107,11 @@ Currency issued by a government that is not backed by an underlying asset. USD i
 
 ## Full node
 
-A computer connected to the Terra mainnet able to validate transactions and interact with the Terra blockchain. All active validators run full nodes.
+A computer connected to the [Terra mainnet](#terra-mainnet) able to validate transactions and interact with the Terra blockchain. All active [validators](#validator) run full nodes.
 
 ## Luna
 
-The native staking token of the Terra protocol. Luna supply expands and contracts in order to maintain the prices of Terra stablecoins. Luna is also used as a governance token. [Delegators](#Delegator) can stake Luna to recieve rewards.
+The native staking token of the Terra protocol. Luna supply expands and contracts in order to maintain the prices of [Terra stablecoins](#terra-stablecoins). Luna is also used as a governance token. [Delegators](#Delegator) can stake Luna to recieve rewards.
 
 ## Governance
 
@@ -173,7 +173,7 @@ When a delegator wants to transfer their bonded luna to a different validator. R
 
 ## Rewards
 
-Revenue generated from fees given to validators and delegators.
+Revenue generated from fees given to validators and disbursed to delegators.
 
 ## SDR
 
@@ -217,15 +217,15 @@ The official source code for the Terra protocol.
 
 For more information on the Terra core, visit the [core developer guide](/Reference/Terra-core/Overview.md).
 
+## Terra mainnet
+
+The Terra protocol's blockchain network where all transactions take place.
+
 ## Terra stablecoins
 
 Crypto assets that track the price of fiat currency enabled by the Terra protocol. Users mint new Terra stablecoins by burning Luna. Stablecoins are named for their fiat counterparts. For example, the base Terra stablecoin tracks the price of the IMF’s SDR, named TerraSDR, or SDT. Other stablecoin denominations include TerraUSD or UST, and TerraKRW or  KRT. All Terra stablecoin denominations exist in the same pool.
 
 For more information on Terra stablecoins, visit the [concepts page](./Protocol.md#stablecoin).
-
-## Terra mainnet
-
-The Terra protocol's blockchain network where all transactions take place.
 
 ## Terra Station
 
