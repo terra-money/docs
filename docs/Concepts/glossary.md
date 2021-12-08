@@ -233,7 +233,7 @@ Terra's native wallet and platform for swaps, governance, and staking. In Statio
 
 To learn how to install and get started using Terra Station, visit the [Terra Station tutorial](/Tutorials/Get-started/Terra-Station-desktop.md).
 
-To learn how to use the advanced features of Terra Station, visit the [Terra Station how to guide](/How-to/Terra-Station/Wallet.md).
+To learn how to use the advanced features of Terra Station, visit the [Terra Station how-to guide](/How-to/Terra-Station/Wallet.md).
 
 ## terrad
 
