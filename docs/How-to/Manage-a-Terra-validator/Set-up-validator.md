@@ -13,10 +13,10 @@ For more information on setting up a validator, see [additional resources](./Ove
 
 ## 1. Retrieve the consensus PubKey of your node
 
-The consensus PubKey (`terravalconspub-`) of your node is required to create a new validator. Run:
+The consensus PubKey of your node is required to create a new validator. Run:
 
 ```bash
-terrad tendermint show-validator
+--pubkey=$(terrad tendermint show-validator)
 ```
 
 ## 2. Create a new validator
