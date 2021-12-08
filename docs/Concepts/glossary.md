@@ -14,6 +14,8 @@ Additional rewards given to delegators through certain validators, separate from
 
 A cryptocurrency that tracks the price of any asset, usually currency. Algorithmic stablecoins maintain their price peg through a set of rules or software instead of an underlying asset.
 
+For more information on stablecoins created by the Terra protocol, see [Terra stablecoins](#terra-stablecoins)
+
 ## Arbitrage
 
 To profit from price differences across different markets. Arbitrageurs buy coins in one market and sell them on another market for a higher price.
@@ -187,7 +189,9 @@ The amount of Luna a validator bonds to themselves. Also referred to as self-bon
 
 ## Slashing
 
-Punishment for validators that misbehave.
+Punishment for validators that misbehave. Validators lose part of their stake when they get slashed.
+
+For more information on slashing, visit the [concepts page](./Protocol.md#slashing)
 
 ## Slippage
 
@@ -199,7 +203,9 @@ The amount of Luna bonded to a validator.
 
 ## Staking
 
-When a user or delegator delegates and bonds Luna to an active validator in order to receive rewards. Bonded Luna adds to a validator's stake. Validators provide their stakes as collateral to participate in the consensus process. Validators with larger stakes are chosen to participate more often. Validators receive staking rewards for their participation. A validator's stake can be slashed if the validator misbehaves. Validators never have ownership of a delegator's Luna, even when staking.
+When a user delegates or bonds their Luna to an active validator in order to receive rewards. Bonded Luna adds to a validator's stake. Validators provide their stakes as collateral to participate in the consensus process. Validators with larger stakes are chosen to participate more often. Validators receive staking rewards for their participation. A validator's stake can be slashed if the validator misbehaves. Validators never have ownership of a delegator's Luna, even when staking.
+
+For more information on staking, visit the [concepts page](./Protocol.md#staking).
 
 ## Tendermint consensus
 
@@ -209,9 +215,13 @@ The consensus procedure used by the Terra protocol. First, a validator proposes 
 
 The official source code for the Terra protocol.
 
+For more information on the Terra core, visit the [core developer guide](/Reference/Terra-core/Overview.md).
+
 ## Terra stablecoins
 
 Crypto assets that track the price of fiat currency enabled by the Terra protocol. Users mint new Terra stablecoins by burning Luna. Stablecoins are named for their fiat counterparts. For example, the base Terra stablecoin tracks the price of the IMF’s SDR, named TerraSDR, or SDT. Other stablecoin denominations include TerraUSD or UST, and TerraKRW or  KRT. All Terra stablecoin denominations exist in the same pool.
+
+For more information on Terra stablecoins, visit the [concepts page](./Protocol.md#stablecoin).
 
 ## Terra mainnet
 
@@ -219,11 +229,17 @@ The Terra protocol's blockchain network where all transactions take place.
 
 ## Terra Station
 
-Terra's native wallet, swap, governance, and staking platform. In Station, you can send, receive, swap, and stake Terra coins. You can also participate in governance and read proposals.
+Terra's native wallet and platform for swaps, governance, and staking. In Station, you can send, receive, swap, and stake Terra coins. You can also participate in governance and vote on proposals.
 
-## Terrad
+To learn how to install and get started using Terra Station, visit the [Terra Station tutorial](/Tutorials/Get-started/Terra-Station-desktop.md).
 
-A command line interface for connecting to a Terra node.
+To learn how to use the advanced features of Terra Station, visit the [Terra Station how-to guide](/How-to/Terra-Station/Wallet.md).
+
+## terrad
+
+The command line interface for interacting with a Terra node.
+
+For more information on terrad, visit [Using terrad](/Reference/terrad/).
 
 ## Terravaloper address
 
@@ -240,6 +256,8 @@ A quickly expanding network of decentralized applications built on the Terra pro
 ## The Terra protocol
 
 The leading decentralized and open-source public blockchain protocol for algorithmic stablecoins. Using a combination of open market arbitrage incentives and decentralized oracle voting, the Terra protocol creates stablecoins that consistently track the price of any fiat currency.
+
+For more information on how the Terra protocol works, visit the [concepts page](./Protocol.md)
 
 ## Tobin tax
 
@@ -280,6 +298,8 @@ The amount of time a validator has been active in a given timeframe. Validators 
 ## Validator
 
 A Terra blockchain miner responsible for verifying transactions on the blockchain. Validators run programs called full nodes that allow them to participate in consensus, verify blocks, participate in governance, and receive rewards. The top 130 validators with the highest total stake can participate in consensus.
+
+For more information on validators, visit the [concepts page](./Protocol.md#validators).
 
 ## Weight
 

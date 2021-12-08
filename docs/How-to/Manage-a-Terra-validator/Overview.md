@@ -6,13 +6,13 @@ The Terra core is powered by the Tendermint consensus. Validators run full nodes
 
 Validators and their delegators earn the following fees:
 
-- [Gas](./fees.md#gas): Compute fees added on to each transaction to avoid spamming. Validators set minimum gas prices and reject transactions that have implied gas prices below this threshold.
+- [Gas](/Concepts/fees.md#gas): Fees added on to each transaction to avoid spamming and pay for computing power. Validators set minimum gas prices and reject transactions that have implied gas prices below this threshold.
 
-- [Stability fees](./fees.md#stability-fees): Fees added on to any transaction to provide stability in the market, capped at 1SDT. The fee rate is variable and called the tax rate.
+- [Stability fees](/Concepts/fees.md#stability-fee): Fees added on to any Terra stablecoin transaction (excluding [market swaps](/Concepts/Glossary.md#market-swap)) to provide stability in the market, capped at 1SDT. The fee rate is variable and called the tax rate.
 
-- **Swap fees**: The fee for swapping Terra stablecoin denominations is called a [Tobin tax](./fees.md#tobin-tax). Exchanges between Terra and Luna are subject to a [spread fee](./fees.md#spread-fees).
+- **Swap fees**: The fee for swapping Terra stablecoin denominations is called a [Tobin tax](/Concepts/fees.md#tobin-tax). Exchanges between Terra and Luna are subject to a [spread fee](/Concepts/fees.md#spread-fee).
 
-For more information on fees, visit the [fee page](./fees.md).
+For more information on fees, visit the [fee page](/Concepts/fees.md).
 
 Validators can set commissions on the fees they receive as an additional incentive.
 
