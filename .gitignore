@@ -1,6 +1,7 @@
 node_modules
 .DS_Store
 build
+_build
 docs/.vuepress/dist
 .now
 .vercel
