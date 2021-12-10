@@ -152,11 +152,11 @@ Slashing occurs under the following conditions:
 
 Validators monitor each other closely and can submit evidence of misbehavior. Once discovered, the misbehaving validator will have a small portion of their funds slashed. Offending validators will also be jailed or excluded from consensus for a period of time. Even simple issues such as malfunctions or downtimes from upgrading can lead to slashing.
 
-For more information on slashing, visit the [slashing module](/Reference/Terra-core/Module-specifications/spec-slashing.md).
+For more information on slashing, visit the [slashing module](/docs/Reference/Terra-core/Module-specifications/spec-slashing.md).
 
 ## Governance
 
-The Terra protocol is a decentralized public [blockchain](/Concepts/glossary.md#blockchain) governed by community members. Governance is the democratic process that allows users and validators to make changes to the Terra protocol. Community members submit, vote, and implement proposals.  
+The Terra protocol is a decentralized public [blockchain](glossary.md#blockchain) governed by community members. Governance is the democratic process that allows users and validators to make changes to the Terra protocol. Community members submit, vote, and implement proposals.  
 
 ### Proposals
 
