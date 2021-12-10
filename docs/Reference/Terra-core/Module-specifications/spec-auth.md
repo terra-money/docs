@@ -4,15 +4,15 @@
 Terra's Auth module inherits from Cosmos SDK's [`auth`](https://docs.cosmos.network/master/modules/auth/) module. This document is a stub, and covers mainly important Terra-specific notes about how it is used.
 :::
 
-Terra's Auth module extends the functionality from Cosmos SDK's `auth` module with a modified ante handler which applies the stability layer fee alongside the all basic transaction validity checks (signatures, nonces, auxiliary fields). In addition, a special vesting account type is defined, which handles the logic for token vesting from the Luna presale.
+Terra's Auth module extends the functionality from Cosmos SDK's `auth` module with a modified ante handler, which applies the [stability fee](/Concepts/glossary.md#fees) alongside all basic transaction validity checks, such as signatures, nonces, and auxiliary fields. This module also defines a special vesting account type which handles the logic for token vesting from the Luna presale.
 
 ## Fees
 
-The Auth module reads the current effective `TaxRate` and `TaxCap` parameters from the [`Treasury`](./spec-treasury.md) module to enforce a stability layer fee.
+The Auth module reads the current effective `TaxRate` and `TaxCap` parameters from the [`Treasury`](./spec-treasury.md) module to enforce a stability fee.
 
 ### Gas Fee
 
-As with any other transaction, [`MsgSend`](./spec-bank.md#msgsend) and [`MsgMultiSend`](./spec-bank.md#msgmultisend) pay a gas fee the size of which depends on validator's preferences (each validator sets his own min-gas-fees) and the complexity of the transaction. [Notes on gas and fees](/Reference/terrad/#fees) has a more detailed explanation of how gas is computed. Important detail to note here is that gas fees are specified by the sender when the transaction is outbound.
+Like all transactions on the Terra blockchain, [`MsgSend`](./spec-bank.md#msgsend) and [`MsgMultiSend`](./spec-bank.md#msgmultisend) incur gas fees. These fees are determined by a validator's minimum gas price and the complexity of the transaction. More complex transactions incur higher fees. Gas fees are specified by the sender when a transaction is outbound. For more information on how gas is calculated, see [fees](/Reference/terrad/#fees).
 
 ### Stability Fee
 
