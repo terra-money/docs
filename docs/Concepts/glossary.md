@@ -285,15 +285,15 @@ When a delegator decides to undelegate their Luna from a validator. This process
 
 ## Unbonding Luna
 
-Luna that is transitioning from bonded to unbonded. Luna that is unbonding cannot be traded freely. The unbonding process takes 21 days. No rewards accrue during this period. This action cannot be stopped once executed.
+[Luna](#luna) that is transitioning from bonded to unbonded. Luna that is unbonding cannot be traded freely. The unbonding process takes 21 days. No rewards accrue during this period. This action cannot be stopped once executed.
 
 ## Undelegate
 
-When a delegator no longer wishes to have their Luna bonded to a validator. This process takes 21 days. No rewards accrue during this period. This action cannot be stopped once executed.
+When a [delegator](#delegator) no longer wants to have their Luna bonded to a validator. This process takes 21 days. No rewards accrue during this period. This action cannot be stopped once executed.
 
 ## Uptime
 
-The amount of time a validator has been active in a given timeframe. Validators with low up time may be slashed.
+The amount of time a [validator](#validator) is active in a given timeframe. Validators with low up time may be [slashed](#slashing).
 
 ## Validator
 
@@ -303,4 +303,4 @@ For more information on validators, visit the [concepts page](./Protocol.md#vali
 
 ## Weight
 
-The measure of a validator's total stake. Validators with higher weights get selected more often to propose blocks. A validator's weight is also a measure of their voting power in governance.
+The measure of a [validator's](#validator) total stake. Validators with higher weights get selected more often to propose blocks. A validator's weight is also a measure of their voting power in [governance](#governance).
