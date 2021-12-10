@@ -115,19 +115,19 @@ The native staking token of the Terra protocol. Luna supply expands and contract
 
 ## Governance
 
-Governance is the democratic process that allows users and validators to make changes to the Terra protocol. Community members submit, vote, and implement proposals. One staked Luna is equal to one vote.
+Governance is the democratic process that allows users and [validators](#validator) to make changes to the Terra protocol. Community members submit, vote, and implement proposals. One staked [Luna](#luna) is equal to one vote.
 
 ## Governance proposal
 
-A written submission for a change or addition to the Terra protocol. Topics of proposals can vary from community pool spending, software changes, parameter changes, or any idea pertaining to the Terra protocol.
+A written submission for a change or addition to the [Terra protocol](#the-terra-protocol). Topics of proposals can vary from community pool spending, software changes, parameter changes, or any change pertaining to the Terra protocol.
 
 ## Inactive set
 
-Validators that are not in the active set. These validators do not participate in consensus and do not earn rewards.
+[Validators](#validator) that are not in the [active set](#active-set). These validators do not participate in [consensus](#consensus) and do not earn [rewards](#rewards).
 
 ## Jailed
 
-Validators who misbehave are jailed or excluded from the validator set for a period amount of time.
+Validators who misbehave are jailed or excluded from the [active set](#active-set) for a period amount of time.
 
 ## Market swap
 

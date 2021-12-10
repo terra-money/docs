@@ -19,7 +19,7 @@ To enable the REST API and Swagger, and to start the LCD, complete the following
 enable = true
 ```
 
-4. Optional: To enable Swagger, change `swagger = flase` to `swagger = true`.
+4. Optional: To enable Swagger, change `swagger = false` to `swagger = true`.
 
 ```toml
 # Swagger defines if swagger documentation should automatically be registered.
