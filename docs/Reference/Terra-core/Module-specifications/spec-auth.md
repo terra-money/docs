@@ -16,17 +16,19 @@ Like all transactions on the Terra blockchain, [`MsgSend`](./spec-bank.md#msgsen
 
 ### Stability Fee
 
-In addition to the gas fee, the ante handler charges a stability fee that is a percentage of the transaction's value only for the **Stable Coins** except **LUNA**. It reads the Tax Rate and Tax Cap parameters from the [`Treasury`](./spec-treasury.md) module to compute the amount of stability tax that needs to be charged.
+In addition to the gas fee, the ante handler charges a stability fee on all transactions using Terra stablecoins, excluding market swaps. The ante handler reads the `TaxRate` and `TaxCap` parameters from the [`Treasury`](./spec-treasury.md) module and computes the stablity fee amount for each transaction.
 
-The **Tax Rate** is a parameter agreed upon by the network that specifies the percentage of payment transactions that will be collected as Tax Proceeds in the block reward, which will be distributed among the validators. For more information about the distribution model, see [How are block provisions distributed](../../../How-to/Manage-a-Terra-validator/faq.md#how-are-block-provisions-distributed). The taxes collected per transaction cannot exceed the specific **Tax Cap** defined for that transaction's denomination. Every epoch, the Tax Rate and Tax Caps are recalibrated automatically by the network; see [here](spec-treasury.md#monetary-policy-levers) for more details.
+The `TaxRate` specifies the stability fee percentage rate for transactions. These fees become the `TaxProceeds` in block rewards and then get distributed among validators in the active set. For more information about the distribution model, see [How are block provisions distributed](../../../How-to/Manage-a-Terra-validator/faq.md#how-are-block-provisions-distributed). Stability fees are capped for each transaction according to the `TaxCap`. Every epoch, the Tax Rate and Tax Caps are recalibrated automatically by the network. For more details on how these rates are set, visit [the treasury module](spec-treasury.md#monetary-policy-levers).
 
-For an example `MsgSend` transaction of µSDR tokens,
+**Example**:
+
+For `MsgSend` transactions of µSDR:
 
 ```text
 stability fee = min(1000 * tax_rate, tax_cap(usdr))
 ```
 
-For a `MsgMultiSend` transaction, a stability fee is charged from every outbound transaction.
+For `MsgMultiSend` transactions, stability fees are charged in every outbound transaction.
 
 ## Parameters
 
