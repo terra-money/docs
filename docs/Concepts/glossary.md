@@ -261,7 +261,7 @@ For more information on how the Terra protocol works, visit the [concepts page](
 
 ## Tobin tax
 
-A fee added to every swap between Terra stablecoins (spot-trading). The rate varies, depending on the denomination. For example, while the rate for most denominations is .35%, the rate for MNT is 2%. To see the rates, [query the oracle](../terrad/oracle.html#tobin-taxes).
+A fee added to every swap between Terra stablecoins (spot-trading). The rate varies, depending on the denomination. For example, while the rate for most denominations is .35%, the rate for MNT is 2%. To see the rates, [query the oracle](https://lcd.terra.dev/terra/oracle/v1beta1/denoms/tobin_taxes).
 
 ## Total stake
 
