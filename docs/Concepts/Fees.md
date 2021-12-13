@@ -1,6 +1,6 @@
 # Fees on Terra
 
-On the Terra network, all transactions incur a gas fee. Transactions invloving stablecoins incur additional fees depending on the type of transaction being made. The following table explains which extra fee is added to the different types of stablecoin transactions:
+On the Terra network, all transactions incur a gas fee. Transactions involving stablecoins incur additional fees depending on the type of transaction being made. The following table explains which extra fee is added to the different types of stablecoin transactions:
 
 |                                                                        | [Gas](#gas) | [Tobin](#tobin-tax) | [Spread](#spread-fee) | [Stability](#stability-fee) |
 |------------------------------------------------------------------------|-------------|---------------------|-----------------------|-----------------------------|
