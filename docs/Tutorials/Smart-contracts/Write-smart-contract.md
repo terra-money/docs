@@ -325,7 +325,7 @@ Please note that rust-optimizer will produce different contracts on Intel and AR
 :::
 
 ::: warning NOTE
-If you are developing with a Windows exposed Docker daemon connected to WSL 1, you will need to replace the `pwd` and `basename "$(pwd)"` steps of the optimization command with the absolute path of your smart contract folder, or Docker will be unable to optimize your build.
+If you are developing with a Windows exposed Docker daemon connected to WSL 1, you will need to replace the `pwd` and `basename "$(pwd)"` steps of the optimization command with the windows absolute path of your smart contract folder, or Docker will be unable to optimize your build.
 :::
 
 
