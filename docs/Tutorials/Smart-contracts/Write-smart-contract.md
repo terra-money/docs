@@ -324,6 +324,10 @@ This will result in an optimized build of `artifacts/my_first_contract.wasm` or 
 Please note that rust-optimizer will produce different contracts on Intel and ARM machines. So for reproducible builds you'll have to stick to one.
 :::
 
+::: warning NOTE
+If you are developing with a Windows exposed Docker daemon connected to WSL 1, you will need to replace the `pwd` and `basename "$(pwd)"` steps of the optimization command with the absolute path of your smart contract folder, or Docker will be unable to optimize your build.
+:::
+
 
 ## Schemas
 
