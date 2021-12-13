@@ -47,21 +47,21 @@ type Params struct {
 
 ### MaxMemoCharacters
 
-Maximum permitted number of characters in the memo of a transaction.
+The maximum permitted number of characters in the memo of a transaction.
 
 - type: `uint64`
 - default: `256`
 
 ### TxSigLimit
 
-The maximum number of signers in a transaction. A single transaction can have multiple messages and multiple signers. The sig verification cost is much higher than other operations, so we limit this to 100.
+The maximum number of signers in a transaction. A single transaction can have multiple messages and multiple signers. Because the sig verification cost is generally higher than other operations, the number of signers is limited to 100.
 
 - type: `uint64`
 - default: `100`
 
 ### TxSizeCostPerByte
 
-Used to compute gas consumption of the transaction, `TxSizeCostPerByte * txsize`.
+The cost per byte used to compute the gas consumption of a transaction. `TxSizeCostPerByte * txsize`.
 
 - type: `uint64`
 - default: `10`
