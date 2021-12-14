@@ -1,6 +1,6 @@
-# Using Terrain 
+# Using Terrain
 
-With Terrain installed we can now scaffold our new application: 
+With Terrain installed you can now scaffold your new application:
 
 ```sh
 terrain new my-terra-dapp
@@ -8,63 +8,69 @@ cd my-terra-dapp
 npm install
 ```
 
-## Project Structure
+## Project structure
 
-The scaffoled project structure will look like this:
+The following structure shows your scaffolded project:
 
 ```
 .
-├── contracts              # contracts' source code
+├── contracts              # The contracts' source code.
 │   ├── counter
-│   └── ...                # more contract can be added here
-├── frontend               # frontend application
-├── lib                    # predefined functions for task and console
-├── tasks                  # predefined tasks
-├── keys.terrain.js        # keys for signing transacitons
-├── config.terrain.json    # config for connections and contract deployments
-└── refs.terrain.json      # deployed code and contract referecnes
+│   └── ...                # Add more contracts here.
+├── frontend               # The front-end application.
+├── lib                    # Predefined functions for task and console.
+├── tasks                  # Predefined tasks.
+├── keys.terrain.js        # Keys for signing transactions.
+├── config.terrain.json    # Config for connections and contract deployments.
+└── refs.terrain.json      # Deployed code and contract references.
 ```
 
 ## Deployment
 
-To deploy the application we can use `terrain deploy`
+To deploy the application, run the following command: 
 
 ```sh
 terrain deploy counter --signer validator
 ```
 
-The deploy command is performing a number of steps automatically: 
+The deploy command performs the following steps automatically:
 
-* Build counter smart contract
-* Optimize counter smart contract
-* Upload counter smart contract to LocalTerra
-* Instantiate the deployed smart contract
+* Builds the counter smart contract
+* Optimizes the counter smart contract
+* Uploads counter smart contract to LocalTerra
+* InstantiatesInstantiate the deployed smart contract
 
-## Interacting with deployed contract
+## Interacting with the deployed contract
 
-To start interacting with your smart contract the template comes with some predefined helpers in `lib/index.js`. 
+The template comes with several predefined helpers in `lib/index.js`. Use them to start interacting with your smart contract:
 
-First run `terrain console`, then with the console open you can increment the counter with: 
+1. Run `terrain console`.
+
+2. With the console open, increment the counter by running the following:
 
 ```JavaScript
 await lib.increment()
 ```
 
-You can get the current count with: 
+You can get the current count by using:
 
 ```JavaScript
 await lib.getCount()
 ```
 
-After incrementing once, `await lib.getCount()` should return: 
+3. After incrementing once, `await lib.getCount()` will return:
 
 ```JSON
 { count: 1 }
 ```
 
-## Fontend
+## Front-end scaffolding
 
-Terrain also scaffoled a very simple frontend. To use the frontend you can run the following commands: 
+Terrain also scaffolds a very simple frontend.
+
+In the Terra Station Chrome extension, switch the network to Localterra.
+
+1. To use the front end, run the following commands in order. The terrain sync-refs command copies your deployed contract addresses to the front-end part of the codebase.
 
 ```
 terrain sync-refs
@@ -73,17 +79,13 @@ npm install
 npm start
 ```
 
-It's important to run the first command, `terrain sync-refs`, to copy your deployed contract addresses to the frontend part of the codebase. 
-
-Make sure you've switched to LocalTerra in the Terra Station chrome extension before interacting with your contract.
-
-Please import the following mnemonic in Terra Station which is the sole validator on the LocalTerra network and has enough funds to get started with smart contracts.
+2. Import the following seed phrase in Terra Station to access the sole validator on the LocalTerra network and gain funds to get started with smart contracts:
 
 ```
 satisfy adjust timber high purchase tuition stool faith fine install that you unaware feed domain license impose boss human eager hat rent enjoy dawn
 ```
 
-With Localterra selected in Terra Station and the local seed phrase imported, you should now be able to increment/reset the counter from the frontend.
+3. With Localterra selected in Terra Station and the local seed phrase imported, you can now increment and reset the counter from the front end.
 
 ### Demo
 
@@ -91,6 +93,4 @@ With Localterra selected in Terra Station and the local seed phrase imported, yo
 
 ## Advanced usage
 
-For more advanced use-cases like deploying to testnet or mainnet, please refer to Terrain's readme: 
-
-[https://github.com/iboss-ptk/terrain](https://github.com/iboss-ptk/terrain#readme)
+For more advanced use cases  like deploying to the testnet or mainnet, see [Terrain's readme](https://github.com/iboss-ptk/terrain#readme).
