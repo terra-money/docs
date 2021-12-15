@@ -1,6 +1,6 @@
 # Governance
 
-::: warning Note:
+:::{note}
 Terra's Governance module inherits from Cosmos SDK's [`gov`](https://docs.cosmos.network/master/modules/gov/) module. This document is a stub, and covers mainly important Terra-specific notes about how it is used.
 :::
 
@@ -47,7 +47,7 @@ $$\frac{Yes}{Yes + No + NoWithVeto} \gt T$$
 
 If any of the previous conditions are not met, the proposal is rejected. Proposals that get rejected with veto do not get their deposits refunded. The parameters `quorum`, `veto`, and `threshold` exist as blockchain parameters within the Governance module.
 
-::: warning Warning
+:::{caution}
 Deposits will not be refunded for proposals that are rejected with veto. As of Columbus-5, these deposits are burned. Proposals that pass or get rejected without veto will have their deposits refunded.
 :::
 
@@ -143,7 +143,7 @@ type ParamChange struct {
 }
 ```
 
-::: warning Note:
+:::{note}
 Parameter Change Proposals are actually located in the Params module, an internal module. It is shown here for your convenience.
 :::
 
@@ -151,7 +151,7 @@ Parameter Change Proposals are a special type of proposal which, once passed, wi
 
 ### Software Upgrade Proposals
 
-::: danger Warning
+::: {caution}
 Software upgrade proposals exist because they are inherited from the Cosmos SDK, but they are temporarily unavailable because they have not been implemented yet. Therefore, they share the same semantics as a simple text proposal. If you submit this type of proposal, you might lose your Luna deposit.
 :::
 

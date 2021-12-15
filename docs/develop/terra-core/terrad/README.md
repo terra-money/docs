@@ -119,7 +119,7 @@ Each transaction may either supply fees or gas prices, but not both. Most users 
 
 Validators specify a minimum gas price that they use to determine whether to include a transaction, which they calculate during `CheckTx`, where `gasPrices >= minGasPrices`. Note, your transaction must supply fees that are greater than or equal to **any** of the denominations the validator requires.
 
-::: warning NOTE
+:::{tip}
 Validators may start to prioritize transactions by `gasPrice` in the mempool, so providing higher fees or gas prices will likely yield higher priority of inclusion in a block.
 :::
 
@@ -184,7 +184,7 @@ terrad completion --zsh > terrad_completion
 terrad completion --zsh > terrad_completion
 ```
 
-::: warning NOTE
+::: {tip}
 On most UNIX systems, such scripts may be loaded in `.bashrc` or `.bash_profile` to enable Bash autocompletion.
 
 ```bash

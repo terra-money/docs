@@ -1,6 +1,6 @@
 # Bank
 
-::: warning NOTE
+:::{note}
 Terra's Bank module inherits from Cosmos SDK's [`bank`](https://docs.cosmos.network/master/modules/bank/) module. This document is a stub, and covers mainly important Terra-specific notes about how it is used.
 :::
 

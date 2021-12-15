@@ -1,6 +1,6 @@
 # Auth
 
-::: warning NOTE
+:::{note}
 Terra's Auth module inherits from Cosmos SDK's [`auth`](https://docs.cosmos.network/master/modules/auth/) module. This document is a stub, and covers mainly important Terra-specific notes about how it is used.
 :::
 

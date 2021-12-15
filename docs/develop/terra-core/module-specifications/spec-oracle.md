@@ -4,7 +4,7 @@ The Oracle module provides the Terra blockchain with an up-to-date and accurate 
 
 As price information is extrinsic to the blockchain, the Terra network relies on validators to periodically vote on the current Luna exchange rate, with the protocol tallying up the results once per `VotePeriod` and updating the on-chain exchange rate as the weighted median of the ballot converted Cross Exchange Rates using `ReferenceTerra`.
 
-::: warning NOTE
+:::{note}
 Since the Oracle service is powered by validators, you may find it interesting to look at the [Staking](spec-staking.md) module, which covers the logic for staking and validators.
 :::
 
@@ -63,8 +63,8 @@ After the votes are tallied, the winners of the ballots are determined with [`ta
 
 Voters that have managed to vote within a narrow band around the weighted median, are rewarded with a portion of the collected seigniorage. See [`k.RewardBallotWinners()`](#k-rewardballotwinners) for more details.
 
-::: warning NOTE
-Starting from Columbus-3, fees from [Market](spec-market.md) swaps are no longer are included in the oracle reward pool, and are immediately burned during the swap operation.
+:::{note}
+As of Columbus-5, swap fees dividend to faithful oracles voters instead of being burned.
 :::
 
 ### Reward Band
@@ -73,7 +73,7 @@ Let $M$ be the weighted median, $\sigma$ be the standard deviation of the votes 
 
 ### Slashing
 
-::: danger
+:::{danger}
 Be sure to read this section carefully as it concerns potential loss of funds.
 :::
 
@@ -91,7 +91,7 @@ A validator may abstain from voting by submitting a non-positive integer for the
 
 ## Message Types
 
-::: warning NOTE
+:::{note}
 The control flow for vote-tallying, Luna exchange rate updates, ballot rewards and slashing happens at the end of every `VotePeriod`, and is found at the [end-block ABCI function](#end-block) rather than inside message handlers.
 :::
 
@@ -141,7 +141,7 @@ type MsgExchangeRateVote struct {
 
 Validators may also elect to delegate voting rights to another key to prevent the block signing key from being kept online. To do so, they must submit a `MsgDelegateFeedConsent`, delegating their oracle voting rights to a `Delegate` that sign `MsgExchangeRatePrevote` and `MsgExchangeRateVote` on behalf of the validator.
 
-::: danger
+::: {caution}
 Delegate validators will likely require you to deposit some funds (in Terra or Luna) which they can use to pay fees, sent in a separate `MsgSend`. This agreement is made off-chain and not enforced by the Terra protocol.
 :::
 

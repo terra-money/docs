@@ -48,7 +48,7 @@ terrad debug raw-bytes [72 101 108 108 111 44 32 112 108 97 121 103 114 111 117 
 
 Generates a public and private key pair for an account so that you can receive funds, send funds, create bonding transactions, and so on.
 
-::: tip
+::: {important}
 For security purposes, run this command on an offline computer.
 :::
 
@@ -63,11 +63,11 @@ To specify the path \(`0`, `1`, `2`, ...\) you want to use to generate your acco
 
 The command generates a 24-word mnemonic and saves the private and public keys for account `0` simultaneously. You are prompted to specify a passphrase that is used to encrypt the private key of account `0` on disk. Each time you want to send a transaction, this password is required. If you lose the password, you can always recover the private key by using the mnemonic phrase.
 
-::: danger
-To prevent theft or loss of funds, ensure that you keep multiple copies of your mnemonic and store it in a secure place and that only you know how to access it. If someone is able to gain access to your mnemonic, they are able to gain access to your private keys and control the accounts associated with them.
+:::{danger}
+To prevent theft or loss of funds, ensure that you keep multiple copies of your mnemonic and store it in a secure place and that only know how to access. If someone is able to gain access to your mnemonic, they are able to gain access to your private keys and control the accounts associated with them.
 :::
 
-::: tip
+:::{tip}
 After you have triple-checked your mnemonic and safely stored it, you can delete bash history to ensure no one can retrieve it.
 
 ```bash
@@ -84,7 +84,7 @@ terrad keys add <your-key-name> --recover --account 1
 
 You are prompted to specify a passphrase and your mnemonic. To generate a different account, change the account number.
 
-::: danger
+:::{danger}
 - Do not use the same passphrase for multiple keys. We are not responsible for the loss of funds. Do not lose or share your mnemonic with anyone.
 :::
 
@@ -153,7 +153,7 @@ terrad query account terra15h6vd5f0wqps26zjlwrc6chah08ryu4hzzdwhc
 
 Learn more about [account addresses](keys.md#account-address-terra).
 
-::: warning NOTE
+:::{error}
 When you query an account balance that has zero tokens or you fund an account before your node has fully synced with the chain, this error message is sent:
 
 `No account with address <account-address> was found in the state`.
@@ -1156,7 +1156,7 @@ terrad tx gov deposit 15 "10000000luluna" \
     --chain-id=columbus-5
 ```
 
-::: warning
+:::{warning}
 Proposals that don't meet this requirement are deleted after `MaxDepositPeriod` is reached.
 :::
 
@@ -1230,7 +1230,7 @@ where `proposal.json` contains the following information:
 }
 ```
 
-::: warning
+::: {important}
 Because parameter changes are evaluated but not validated, ensure that new value you propose is valid for its parameter. For example, the proposed value for `MaxValidators` must be an integer, not a decimal.
 :::
 

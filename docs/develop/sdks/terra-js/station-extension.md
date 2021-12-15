@@ -10,7 +10,7 @@ The Terra Station extension is a web-wallet extension for Chrome that enables we
 
 Wallet Provider is a library that simplifies the development of React dApps that use Terra Station extension or Terra Station mobile.
 
-Use one of the following templates to get quickly get started using Wallet Provider: 
+Use one of the following templates to get quickly get started using Wallet Provider:
 
 ### Create React App
 
@@ -39,12 +39,12 @@ yarn run dev
 - [Wallet Provider + Vite.js](https://github.com/terra-money/wallet-provider/tree/main/templates/vite)
 - [Wallet Controller](https://github.com/terra-money/wallet-provider/tree/main/templates/wallet-controller)
 
-::: tip
+::: {tip}
 The Wallet Controller template is an example of how WalletController behaves underneath the React API. If you are unable to use React, start by using the Wallet Controller template.
 :::
 
-## Usage 
+## Usage
 
-Visit the Wallet Provider GitHub for more details on using the APIs provided: 
+Visit the Wallet Provider GitHub for more details on using the APIs provided:
 
 [https://github.com/terra-money/wallet-provider](https://github.com/terra-money/wallet-provider#basic-usage)

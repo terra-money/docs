@@ -1,6 +1,6 @@
 # Distribution
 
-::: warning Note:
+:::{note}
 Terra's Distribution module inherits from Cosmos SDK's [`distribution`](https://docs.cosmos.network/master/modules/distribution/) module. This document is a stub, and covers mainly important Terra-specific notes about how it is used.
 :::
 
@@ -10,8 +10,8 @@ The `Distribution` module describes a mechanism that keeps track of collected fe
 
 ### Validator & Delegator Rewards
 
-::: warning IMPORTANT
-Passive distribution means that validators and delegators will have to manually collect their fee rewards by submitting withdrawal transactions. Read up on how to do so with `terrad` [here](../terrad/distribution.md).
+:::{important}
+Passive distribution means that validators and delegators need to manually collect their fee rewards by submitting withdrawal transactions. Read up on how to do so with `terrad` [here](../terrad/distribution.md).
 :::
 
 Collected rewards are pooled globally and distrubuted to validators and delegators. Each validator has the opportunity to charge delegators commission on the rewards collected on behalf of the delegators. Fees are collected directly into a global reward pool and a validator proposer-reward pool. Due to the nature of passive accounting, whenever changes to parameters which affect the rate of reward distribution occur, withdrawal of rewards must also occur.
@@ -20,7 +20,7 @@ Collected rewards are pooled globally and distrubuted to validators and delegato
 
 The Community Pool is a reserve of tokens that is designated for funding projects that promote further adoption and stimulate growth for the Terra economy. The portion of seigniorage that is designated for ballot winners of the Exchange Rate Oracle is called the [Reward Weight](spec-treasury.md#reward-weight), a value governed by the Treasury. The rest of that seigniorage is all dedicated to the Community Pool.
 
-::: warning Note:
+:::{note}
 As of Columbus-5, all seigniorage is burned, and the Community Pool no longer receives funding.
 :::
 

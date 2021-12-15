@@ -1,6 +1,6 @@
 # Writing the Contract
 
-::: tip
+::: {seealso}
 To better understand the building blocks of the smart contract you will build in this tutorial, view the [complete contract](https://github.com/CosmWasm/cw-template).
 :::
 
@@ -299,7 +299,7 @@ cargo wasm
 
 ### Optimizing your build
 
-::: warning NOTE
+::: {important}
 You will need [Docker](https://www.docker.com) installed to run this command.
 :::
 
@@ -320,7 +320,7 @@ docker run --rm -v "$(pwd)":/code \
 
 This will result in an optimized build of `artifacts/my_first_contract.wasm` or `artifacts/my_first_contract-aarch64.wasm` in your working directory.
 
-::: warning NOTE
+::: {note}
 Please note that rust-optimizer will produce different contracts on Intel and ARM machines. So for reproducible builds you'll have to stick to one.
 :::
 

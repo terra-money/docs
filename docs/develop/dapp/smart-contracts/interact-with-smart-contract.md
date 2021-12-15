@@ -1,9 +1,7 @@
 # Interacting with the Contract
 
-::: warning NOTE
-
+:::{tip}
 You can also follow these steps in the official desktop wallet for Terra, [Terra Station](https://station.terra.money).
-
 :::
 
 ## Requirements
@@ -156,7 +154,7 @@ You can use the following to decode the Base64 InitMsg:
 echo eyJjb3VudCI6MH0= | base64 --decode
 ```
 
-This will produce the message we used when initializing the contract: 
+This will produce the message we used when initializing the contract:
 
 ```json
 { "count": 0 }
@@ -213,7 +211,7 @@ Let's check the result of our executions!
 terrad query wasm contract-store terra18vd8fpwxzck93qlwghaj6arh4p7c5n896xzem5 '{"get_count":{}}'
 ```
 
-Expected output: 
+Expected output:
 
 ```
 query_result:
