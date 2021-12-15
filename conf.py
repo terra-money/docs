@@ -27,9 +27,15 @@ author = 'Terraform Labs'
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ["myst_parser"]
+extensions = [
+    'myst_parser',
+
+    ]
 
 myst_heading_anchors = 3
+myst_enable_extensions = [
+  "colon_fence",
+]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -51,6 +57,12 @@ html_theme = "sphinx_book_theme"
 html_theme_options = {
     "repository_url": "https://github.com/terra-money/docs",
     "use_repository_button": True,
+    "show_navbar_depth": 2,
+
+}
+
+html_sidebars = {
+
 
 }
 

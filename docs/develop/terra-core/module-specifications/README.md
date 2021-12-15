@@ -1,4 +1,4 @@
-# Developer guide
+# Terra core developer guide
 
 This document covers tips and guidelines to help you to understand how Terra works and efficiently navigate the codebase of Terra Core, the official Golang reference implementation of the Terra node software.
 

@@ -1,4 +1,6 @@
-# Hardware requirements
+# Run a full Terra node
+
+## Hardware requirements
 
 Running a full Terra node is a resource-intensive process that requires a persistent server. If you want to use Terra without downloading the entire blockchain, use [Terra Station](https://station.terra.money/).
 

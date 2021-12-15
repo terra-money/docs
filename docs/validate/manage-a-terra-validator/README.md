@@ -1,4 +1,4 @@
-# Overview
+# Manage a Validator
 
 The tasks in this section describe how to set up a Terra validator. While setting up a rudimentary validating node is easy, running a production-quality validator node with a robust architecture and security features requires an extensive setup.
 
