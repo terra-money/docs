@@ -2,6 +2,7 @@
 
 ## Private RPC endpoints
 
+- [Figment DataHub endpoint services](https://www.figment.io/datahub)
 - [QuickNode endpoint services](https://www.quicknode.com/)
 
 ## Public RPC endpoints

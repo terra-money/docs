@@ -4,7 +4,7 @@
 Terra's Auth module inherits from Cosmos SDK's [`auth`](https://docs.cosmos.network/master/modules/auth/) module. This document is a stub, and covers mainly important Terra-specific notes about how it is used.
 :::
 
-Terra's Auth module extends the functionality from Cosmos SDK's `auth` module with a modified ante handler, which applies the [stability fee](/Concepts/glossary.md#fees) alongside all basic transaction validity checks, such as signatures, nonces, and auxiliary fields. This module also defines a special vesting account type which handles the logic for token vesting from the Luna presale.
+Terra's Auth module extends the functionality from Cosmos SDK's `auth` module with a modified ante handler, which applies the [stability fee](/Concepts/glossary.md#fees) alongside all basic transaction validity checks, such as signatures, nonces, and auxiliary fields. This module also defines a special vesting account type that handles the logic for token vesting from the Luna presale.
 
 ## Fees
 
@@ -16,17 +16,20 @@ Like all transactions on the Terra blockchain, [`MsgSend`](./spec-bank.md#msgsen
 
 ### Stability Fee
 
-In addition to the gas fee, the ante handler charges a stability fee that is a percentage of the transaction's value only for the **Stable Coins** except **LUNA**. It reads the Tax Rate and Tax Cap parameters from the [`Treasury`](./spec-treasury.md) module to compute the amount of stability tax that needs to be charged.
+In addition to the gas fee, the ante handler charges a stability fee on all transactions using Terra stablecoins, excluding market swaps. The ante handler reads the `TaxRate` and `TaxCap` parameters from the [`Treasury`](./spec-treasury.md) module and computes the stability fee amount for each transaction.
 
-The **Tax Rate** is a parameter agreed upon by the network that specifies the percentage of payment transactions that will be collected as Tax Proceeds in the block reward, which will be distributed among the validators. For more information about the distribution model, see [How are block provisions distributed](../../../How-to/Manage-a-Terra-validator/faq.md#how-are-block-provisions-distributed). The taxes collected per transaction cannot exceed the specific **Tax Cap** defined for that transaction's denomination. Every epoch, the Tax Rate and Tax Caps are recalibrated automatically by the network; see [here](spec-treasury.md#monetary-policy-levers) for more details.
+The `TaxRate` specifies the stability fee percentage rate for transactions. These fees become the `TaxProceeds` in block rewards and then are distributed among validators in the active set. For more information about the distribution model, see [How are block provisions distributed](../../../How-to/Manage-a-Terra-validator/faq.md#how-are-block-provisions-distributed). Stability fees are capped for each transaction according to the `TaxCap`. Every epoch, the Tax Rate and Tax Caps are recalibrated automatically by the network. For more details on how these rates are set, visit [the treasury module](spec-treasury.md#monetary-policy-levers).
 
-For an example `MsgSend` transaction of µSDR tokens,
+**Example**:
+
+For `MsgSend` transactions of µSDR:
 
 ```text
 stability fee = min(1000 * tax_rate, tax_cap(usdr))
 ```
 
-For a `MsgMultiSend` transaction, a stability fee is charged from every outbound transaction.
+For `MsgMultiSend` transactions, stability fees are charged in every outbound transaction.
+
 
 ## Parameters
 
@@ -44,21 +47,21 @@ type Params struct {
 
 ### MaxMemoCharacters
 
-Maximum permitted number of characters in the memo of a transaction.
+The maximum permitted number of characters in the memo of a transaction.
 
 - type: `uint64`
 - default: `256`
 
 ### TxSigLimit
 
-The maximum number of signers in a transaction. A single transaction can have multiple messages and multiple signers. The sig verification cost is much higher than other operations, so we limit this to 100.
+The maximum number of signers in a transaction. A single transaction can have multiple messages and multiple signers. Because the sig verification cost is generally higher than other operations, the number of signers is limited to 100.
 
 - type: `uint64`
 - default: `100`
 
 ### TxSizeCostPerByte
 
-Used to compute gas consumption of the transaction, `TxSizeCostPerByte * txsize`.
+The cost per byte used to compute the gas consumption of a transaction. `TxSizeCostPerByte * txsize`.
 
 - type: `uint64`
 - default: `10`
