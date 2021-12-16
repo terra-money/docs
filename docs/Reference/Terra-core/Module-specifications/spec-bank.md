@@ -4,7 +4,7 @@
 Terra's Bank module inherits from Cosmos SDK's [`bank`](https://docs.cosmos.network/master/modules/bank/) module. This document is a stub, and covers mainly important Terra-specific notes about how it is used.
 :::
 
-The Bank module is the base transactional layer of the Terra blockchain: it allows assets to be sent from one `Account` to another. Bank defines 2 types of Send-Transactions: `MsgSend` and `MsgMultiSend`. These messages automatically incur a stability fee, which is performed by the [ante handler in the `Auth` module](spec-auth.md#stability-fee).
+The bank module is the base transactional layer of the Terra blockchain. This module allows assets to be sent from one `Account` to another. The bank module defines 2 types of Send-Transactions: `MsgSend` and `MsgMultiSend`. These messages automatically incur a stability fee, which is performed by the [ante handler in the `Auth` module](spec-auth.md#stability-fee).
 
 ## Message Types
 
@@ -19,7 +19,7 @@ type MsgSend struct {
 }
 ```
 
-The Bank module can be used to send coins from one `Account` (`terra-` prefixed account) to another. A `MsgSend` is constructed to facilitate the transfer. If the balance of coins in the `Account` is insufficient or the recipient `Account` is not allowed to receive the funds via Bank module, the transaction fails.
+The Bank module can be used to send coins from one Terra account to another. All Terra accounts have the prefix `terra` followed by a string of characters. `MsgSend` is constructed to facilitate the transfer. If the balance of coins in the sender `Account` is insufficient or the recipient `Account` is not allowed to receive the funds via the bank module, the transaction fails. Taxes and fees already paid through failed transactions are not refunded.
 
 ### MsgMultiSend
 
@@ -31,6 +31,6 @@ type MsgMultiSend struct {
 }
 ```
 
-The Bank module can be used to send multiple transactions at once. `Inputs` contains the incoming transactions, and `Outputs` contains the outgoing transactions. The coin balance of the `Inputs` and the `Outputs` must match exactly. Batching transactions via multisend has the benefit of conserving network bandwidth and gas fees.
+The Bank module is used to send multiple transactions at once. `Inputs` contains the incoming transactions, and `Outputs` contains the outgoing transactions. The coin balance of the `Inputs` and the `Outputs` must match exactly. Batching transactions via `MsgMultiSend` conserves network bandwidth and gas fees.
 
-If any of the `Accounts` fails, then taxes and fees already paid through the transaction is not refunded.
+Taxes and fees already paid through failed transactions are not refunded.
