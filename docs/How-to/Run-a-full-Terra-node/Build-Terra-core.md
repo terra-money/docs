@@ -18,6 +18,7 @@ git checkout [latest version]
 ```
 
 **Example:**
+
 ```bash
 git clone https://github.com/terra-money/core
 cd core
@@ -26,7 +27,7 @@ git checkout v0.5.6-oracle
 
 ## Build Terra core from source
 
-Build Terra core, and install the `terrad` executable to your `GOPATH` environment variable.
+Build Terra core, and install the `terrad` executable to your `GOPATH` environment variable. `terrad` - a node daemon, runs in the background, allowing you interact with a Terra node.
 
 ```bash
 make install
@@ -58,4 +59,5 @@ If the `terrad: command not found` error message is returned, confirm that the G
 ```
 export PATH=$PATH:$(go env GOPATH)/bin
 ```
+
 :::
