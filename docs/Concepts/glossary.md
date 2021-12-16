@@ -111,7 +111,7 @@ A computer connected to the [Terra mainnet](#terra-mainnet) able to validate tra
 
 ## Luna
 
-The native staking token of the Terra protocol. Luna supply expands and contracts in order to maintain the prices of [Terra stablecoins](#terra-stablecoins). Luna is also used as a governance token. [Delegators](#Delegator) can stake Luna to recieve rewards.
+The native staking token of the Terra protocol. Luna supply expands and contracts in order to maintain the prices of [Terra stablecoins](#terra-stablecoins). Luna is also used as a governance token. [Delegators](#delegator) can stake Luna to recieve rewards.
 
 ## Governance
 
@@ -199,7 +199,7 @@ The difference in a coin's price between the start and end of a transaction.
 
 ## Stake
 
-The amount of Luna bonded to a validator.
+The amount of [Luna](#luna) bonded to a validator.
 
 ## Staking
 
