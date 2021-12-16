@@ -21,21 +21,18 @@ project = 'Terra Docs'
 copyright = '2021, Terraform Labs'
 author = 'Terraform Labs'
 
+root_doc = "index"
 
 # -- General configuration ---------------------------------------------------
 
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = [
-    'myst_parser',
-
+extensions = ["myst_parser",
+              "sphinx_panels",
     ]
 
 myst_heading_anchors = 3
-myst_enable_extensions = [
-  "colon_fence",
-]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -52,17 +49,19 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', 'node_modules']
 # a list of builtin themes.
 #
 html_theme = "sphinx_book_theme"
+html_logo = "img/docs_logo.svg"
 
 # Theme options
 html_theme_options = {
+    "path_to_docs": "docs",
     "repository_url": "https://github.com/terra-money/docs",
     "use_repository_button": True,
-    "show_navbar_depth": 2,
-
-}
-
-html_sidebars = {
-
+    "use_edit_page_button": True,
+    "use_issues_button": True,
+    "use_repository_button": True,
+    "use_download_button": True,
+    "logo_only": True,
+    "show_toc_level": 2,
 
 }
 
@@ -70,3 +69,21 @@ html_sidebars = {
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
+
+myst_enable_extensions = [
+    "dollarmath",
+    "amsmath",
+    "deflist",
+    "fieldlist",
+    "html_admonition",
+    "html_image",
+    "colon_fence",
+    "smartquotes",
+    "replacements",
+    "linkify",
+    "substitution",
+    "tasklist",
+]
+myst_footnote_transition = True
+myst_dmath_double_inline = True
+panels_add_bootstrap_css = False
