@@ -27,4 +27,4 @@ With fundamental infrastructure such as price oracles, on-chain swaps, stablecoi
 
 ### Active user base with real-world usage
 
-With over 1.5 million total users and a highly active user base from a variety of integrations (like Terra-powered payment gateways such as CHAI and MemePay), the Terra economy is a thriving new home for the future of innovative DeFi products. And unlike many other stablecoin protocols, Terra stablecoins are directly integrated in payments solutions where they are used everyday purchases such as groceries, movie tickets, taxis, and more.
+With millions of highly active users from a variety of integrations (like Terra-powered payment gateways such as CHAI and MemePay), the Terra economy is a thriving new home for the future of innovative DeFi products. And unlike many other stablecoin protocols, Terra stablecoins are directly integrated in payments solutions where they are used everyday purchases such as groceries, movie tickets, taxis, and more.
