@@ -10,3 +10,13 @@ We recommend the following hardware to run a full node:
 - At least 2 TB of disk storage
 - At least 32 GB of memory
 - At least 300 mbps of network bandwidth
+
+```{toctree}
+:hidden:
+:caption: Run a full Terra node
+build-terra-core
+configure-general-settings
+join-public-network
+set-up-private-network
+set-up-production-environment
+```

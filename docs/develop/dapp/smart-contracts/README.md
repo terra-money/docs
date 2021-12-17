@@ -36,5 +36,5 @@ build-terra-dapp
 interact-with-smart-contract
 manage-cw20-tokens
 set-up-local-environment
-write-smart-contracts
+write-smart-contract
 ```

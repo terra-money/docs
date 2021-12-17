@@ -120,3 +120,23 @@ The micro-unit ($\times 10^{-6}$) is the smallest atomic unit of both Terra stab
 | TerraMNT     | µMNT       | `umnt`  | 0.000001 MNT  |
 
 Note that the Terra protocol is only aware of the value of fiat currencies through their Terra stablecoin counterparts, which are assumed to trade relatively close to the value of the fiat currency they are pegged to, due to arbitrage activity.
+
+```{toctree}
+:hidden:
+:caption: Module specifications
+spec-auth
+spec-authz
+spec-bank
+spec-capability
+spec-distribution
+spec-evidence
+spec-feegrant
+spec-governance
+spec-market
+spec-mint
+spec-oracle
+spec-slashing
+spec-staking
+spec-treasury
+spec-wasm
+```

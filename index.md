@@ -58,6 +58,7 @@ docs/develop/reference/migration-guide
 ```
 
 ## Learn
+
 ```{toctree}
 :hidden:
 :caption: Learn
@@ -65,8 +66,17 @@ docs/learn/README
 ```
 
 ## Develop
+
 ```{toctree}
 :hidden:
 :caption: Develop
 docs/develop/README
+```
+
+## Validate
+
+```{toctree}
+:hidden:
+:caption: Validate
+docs/validate/README
 ```
