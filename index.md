@@ -9,7 +9,7 @@ Welcome to the official documentation for Terra, a decentralized financial infra
 
 **What is Terra?**
 ^^^
-If this is your first time learning about Terra, [start here](Concepts/Protocol.md).
+If this is your first time learning about Terra, [start here](learn/protocol.md).
 ---
 
 **What is Luna?**
