@@ -20,7 +20,7 @@ Stablecoins are only valuable to users if they maintain their price peg. The Ter
 
 ### Expansion and contraction
 
-Imagine the whole Terra economy as two pools: one for Terra and one for Luna. To maintain the price of Terra, the Luna supply pool adds to or subtracts from Terra’s supply. Users burn Luna to mint Terra and burn Terra to mint Luna, all incentivized by the protocol's algorithmic [market module](././develop/terra-core/module-specifications/spec-market.md#Market).
+Imagine the whole Terra economy as two pools: one for Terra and one for Luna. To maintain the price of Terra, the Luna supply pool adds to or subtracts from Terra’s supply. Users burn Luna to mint Terra and burn Terra to mint Luna, all incentivized by the protocol's algorithmic [market module](../develop/terra-core/module-specifications/spec-market.md).
 
 - **Expansion**: When the price of Terra is high relative to its peg, supply is too small and demand is too high. The protocol incentivizes users to burn Luna and mint Terra. The new supply of Terra makes its pool larger, balancing supply with demand. Users mint more Terra from burned Luna until Terra reaches its target price. The Luna pool gets smaller in this process, increasing the price of Luna.
 
@@ -30,12 +30,12 @@ Luna is the variable counterpart to the stable asset Terra. By modulating supply
 
 ### The market module and arbitrage
 
-The price stability of Terra is achieved by the protocol's algorithmic [market module](/reference/terra-core/module-specifications/spec-market.md), which incentivizes the minting or burning of Terra through arbitrage opportunities. Arbitrage occurs when a user profits from price differences between markets.
+The price stability of Terra is achieved by the protocol's algorithmic [market module](../develop/terra-core/module-specifications/spec-market.md), which incentivizes the minting or burning of Terra through arbitrage opportunities. Arbitrage occurs when a user profits from price differences between markets.
 
 The Terra protocol's market module enables users to always trade 1 USD worth of Luna for 1 UST, and vice versa, incentivizing users to maintain the price of Terra. This same principle is true for all Terra stablecoin denominations.
 
 Users can access the mint and burn function of the market module by performing [market swaps](./glossary.md#market-swap) in [Terra Station](./glossary.md#terra-station).
-To learn how to use the market swap feature of Terra Station, visit the [Terra Station market swap guide](/How-to/Terra-Station/Swap.html#market-swap).
+To learn how to use the market swap feature of Terra Station, visit the [Terra Station market swap guide](./terra-station/station-guides/swap.md#market-swap).
 
 - **Example**  
   If 1 UST is trading at 1.01 USD, users can use the market swap feature of Terra Station to trade 1 USD of Luna for 1 UST. The market burns 1 USD of Luna and mints 1 UST. Users can then sell their 1 UST for 1.01 USD, profiting .01 USD through arbitrage, adding to the UST pool. This arbitrage continues until UST price falls back to match the price of USD, maintaining Terra's peg.
