@@ -9,5 +9,4 @@ dapp/README
 reference/README
 sdks/README
 terra-core/README
-terrad/README
 ```
