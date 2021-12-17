@@ -56,9 +56,9 @@ All seigniorage in the Terra protocol is burned, making Luna deflationary in nat
 
 ## Validators
 
-Validators are the miners of the Terra [blockchain](/Concepts/glossary.md#blockchain). They are responsible for securing the Terra blockchain and ensuring its accuracy. Validators run programs called full nodes which allow them to verify each transaction made on the Terra network. Validators propose blocks, vote on their validity, and add each new block to the chain in exchange for staking rewards from transaction fees. Users can stake their Luna to validators in exchange for staking rewards. Validators also play an important role in the governance of the Terra protocol.
+Validators are the miners of the Terra [blockchain](./glossary.md#blockchain). They are responsible for securing the Terra blockchain and ensuring its accuracy. Validators run programs called full nodes which allow them to verify each transaction made on the Terra network. Validators propose blocks, vote on their validity, and add each new block to the chain in exchange for staking rewards from transaction fees. Users can stake their Luna to validators in exchange for staking rewards. Validators also play an important role in the governance of the Terra protocol.
 
-For more information on validators, visit the [Validator FAQ](/How-to/Manage-a-Terra-validator/faq.md).
+For more information on validators, visit the [Validator FAQ](../validate/manage-a-terra-validator/faq.md).
 
 ### Consensus
 
@@ -85,7 +85,7 @@ Delegators are users who want to receive rewards from consensus without running 
 :::{admonition} Who owns staked Luna?
 :class: warning
 
-Staked Luna never leaves the possession of the delegator. Even though it can’t be traded freely, staked Luna is never owned by a validator. For more information, visit the [Validator FAQ](/How-to/Manage-a-Terra-validator/faq.md#can-a-validator-run-away-with-a-delegators-luna)
+Staked Luna never leaves the possession of the delegator. Even though it can’t be traded freely, staked Luna is never owned by a validator. For more information, visit the [Validator FAQ](../validate/manage-a-terra-validator/faq.md#can-a-validator-run-away-with-a-delegators-luna)
 :::
 
 ### Phases of Luna
@@ -129,14 +129,14 @@ The Terra protocol incentivizes validators and delegators with staking rewards. 
 
 - [Gas](./fees.md#gas): Compute fees added on to each transaction to avoid spamming. Validators set minimum gas prices and reject transactions that have implied gas prices below this threshold.
 
-- [Stability fees](/Concepts/fees.md#stability-fee): Fees added to any Terra stablecoin transaction, excluding [market swaps](/Concepts/Glossary.md#market-swap), to provide stability in the market. Fees are capped at 1SDT. The fee rate, called the tax rate, is variable.
+- [Stability fees](./fees.md#stability-fee): Fees added to any Terra stablecoin transaction, excluding [market swaps](./Glossary.md#market-swap), to provide stability in the market. Fees are capped at 1SDT. The fee rate, called the tax rate, is variable.
 
 - **Swap fees**: The fee for swapping Terra stablecoin denominations is called a [Tobin tax](./fees.md#tobin-tax). Exchanges between Terra and Luna are subject to a [spread fee](./fees.md#spread-fee).
 
 For more information on fees, visit the [fee page](./fees.md).
 
 At the end of every block, all transaction fees are distributed to each validator and their delegators proportional to their staked amount. Validators can keep a portion of rewards to pay for their services. This portion is called commission. The rest of the rewards are distributed to delegators according to their staked amounts.
-Staking rewards also play a key role in the stability of the Terra protocol. During periods of volatility, the Terra protocol modulates tax rates to maintain a stable mining incentive. This mechanism is described in detail in the [treasury module](/Reference/Terra-core/Module-specifications/spec-treasury.md). Steady rewards regardless of market volatility ensure steady demand for staking. Staking locks value in the system, ensuring long- and short-term stability for the price of Terra.
+Staking rewards also play a key role in the stability of the Terra protocol. During periods of volatility, the Terra protocol modulates tax rates to maintain a stable mining incentive. This mechanism is described in detail in the [treasury module](../develop/terra-core/module-specifications/spec-treasury.md). Steady rewards regardless of market volatility ensure steady demand for staking. Staking locks value in the system, ensuring long- and short-term stability for the price of Terra.
 
 ### Slashing
 
@@ -155,7 +155,7 @@ Slashing occurs under the following conditions:
 
 Validators monitor each other closely and can submit evidence of misbehavior. Once discovered, the misbehaving validator will have a small portion of their funds slashed. Offending validators will also be jailed or excluded from consensus for a period of time. Even simple issues such as malfunctions or downtimes from upgrading can lead to slashing.
 
-For more information on slashing, visit the [slashing module](/docs/Reference/Terra-core/Module-specifications/spec-slashing.md).
+For more information on slashing, visit the [slashing module](../develop/terra-core/module-specifications/spec-slashing.md).
 
 ## Governance
 
@@ -178,7 +178,7 @@ Other issues like large directional changes or any decision requiring manual imp
 
 Community members vote with their staked Luna. One staked Luna equals one vote. If a user fails to specify a vote, their vote defaults to the validator they are staked to. Validators vote with their entire stake unless specified by delegators. For this reason, it is very important that each delegator votes according to their preferences.
 
-The following is a basic outline of the governance process. Visit the [governance module](/Reference/Terra-core/Module-specifications/spec-governance.md) for more details.
+The following is a basic outline of the governance process. Visit the [governance module](../develop/terra-core/module-specifications/spec-governance.md) for more details.
 
 1. A user submits a proposal and a two-week deposit period begins.
 2. Users deposit Luna as collateral to back the proposal. This period ends once a minimum threshold of 50 Luna is deposited. Deposits are to protect against spam.

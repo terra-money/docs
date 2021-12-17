@@ -1,6 +1,6 @@
 # Participate in governance
 
-Governance is an important part of being involved in the Terra community. Use the following information to learn how to vote on and submit governance proposals in Terra Station. For more information on governance and voting options, visit the [governance section](/Concepts/Protocol.html#governance) of the concepts page.
+Governance is an important part of being involved in the Terra community. Use the following information to learn how to vote on and submit governance proposals in Terra Station. For more information on governance and voting options, visit the [governance section](/Concepts/Protocol.md#governance) of the concepts page.
 
 ## Vote on a proposal
 
@@ -25,7 +25,7 @@ Your vote will be submitted.
 Users can vote on a proposal after a minimum deposit of 50 Luna is reached. To help push a proposal forward to a vote, deposit Luna to the proposal.
 
 :::warning Deposits and refunds
-While most deposits get refunded, some deposits get burned. For more information on which deposits get burned, visit the [governance section](/Concepts/Protocol.html#governance) of the concepts page.
+While most deposits get refunded, some deposits get burned. For more information on which deposits get burned, visit the [governance section](/Concepts/Protocol.md#governance) of the concepts page.
 :::
 
 1. Open Terra Station and connect your wallet. In the sidebar, click **Governance**.

@@ -99,7 +99,7 @@ A user who [delegates](#delegate), bonds, or stakes [Luna](#luna) to a [validato
 
 - **Tobin tax**: A fee on any transaction between Terra stablecoin denominations.
 
-For more information on fees, visit [Fees on Terra](/Concepts/Fees.md).
+For more information on fees, visit [Fees on Terra](fees.md).
 
 ## Fiat currency
 
@@ -111,7 +111,7 @@ A computer connected to the [Terra mainnet](#terra-mainnet) able to validate tra
 
 ## Luna
 
-The native staking token of the Terra protocol. Luna supply expands and contracts in order to maintain the prices of [Terra stablecoins](#terra-stablecoins). Luna is also used as a governance token. [Delegators](#Delegator) can stake Luna to recieve rewards.
+The native staking token of the Terra protocol. Luna supply expands and contracts in order to maintain the prices of [Terra stablecoins](#terra-stablecoins). Luna is also used as a governance token. [Delegators](#delegator) can stake Luna to recieve rewards.
 
 ## Governance
 
@@ -137,7 +137,7 @@ A swap in Terra Station that uses the Terra protocol's market function. Market s
 - Swapping UST for KRT in Terra Station will charge a Tobin tax and gas fees.
 - Swapping Luna for UST in Terra Station will charge a spread fee and gas fees.
 
-To learn how to use the market swap feature in Terra station, visit [how to use Terra Station](/How-to/Terra-Station/Swap.html#market-swap).
+To learn how to use the market swap feature in Terra station, visit [how to use Terra Station](./terra-station/station-guides/swap.md).
 
 For more information on fees, visit [Fees on Terra](./fees.md).
 
@@ -147,13 +147,13 @@ The creation of new coins. Minting is the opposite of burning. The Terra protoco
 
 ## Module
 
-A section of the Terra core that represents a particular function of the Terra protocol. Visit the [Terra core module specifications](/Reference/Terra-core/Overview.md) for more information.
+A section of the Terra core that represents a particular function of the Terra protocol. Visit the [Terra core module specifications](../develop/terra-core/module-specifications/README.md) for more information.
 
 ## Oracle
 
 A software that monitors the real-world price and exchange rates of different assets. Validators submit exchange rates to the protocol and vote on the correct rates. Oracles are used to relay current external exchange rates to the protocol.
 
-For more information, visit the [Oracle](/Reference/Terra-core/Module-specifications/spec-oracle.md) reference documentation.
+For more information, visit the [oracle page](../develop/terra-core/module-specifications/spec-oracle.md).
 
 ## Peg
 
@@ -191,7 +191,7 @@ The amount of Luna a validator bonds to themselves. Also referred to as self-bon
 
 Punishment for validators that misbehave. Validators lose part of their stake when they get slashed.
 
-For more information on slashing, visit the [concepts page](./Protocol.md#slashing)
+For more information on slashing, visit the [concepts page](protocol.md#slashing)
 
 ## Slippage
 
@@ -205,7 +205,7 @@ The amount of Luna bonded to a validator.
 
 When a user delegates or bonds their Luna to an active validator in order to receive rewards. Bonded Luna adds to a validator's stake. Validators provide their stakes as collateral to participate in the consensus process. Validators with larger stakes are chosen to participate more often. Validators receive staking rewards for their participation. A validator's stake can be slashed if the validator misbehaves. Validators never have ownership of a delegator's Luna, even when staking.
 
-For more information on staking, visit the [concepts page](./Protocol.md#staking).
+For more information on staking, visit the [concepts page](protocol.md#staking).
 
 ## Tendermint consensus
 
@@ -215,7 +215,7 @@ The consensus procedure used by the Terra protocol. First, a validator proposes 
 
 The official source code for the Terra protocol.
 
-For more information on the Terra core, visit the [core developer guide](/Reference/Terra-core/Overview.md).
+For more information on the Terra core, visit the [Terra core modules](../develop/terra-core/module-specifications/README.md).
 
 ## Terra mainnet
 
@@ -225,21 +225,21 @@ The Terra protocol's blockchain network where all transactions take place.
 
 Crypto assets that track the price of fiat currency enabled by the Terra protocol. Users mint new Terra stablecoins by burning Luna. Stablecoins are named for their fiat counterparts. For example, the base Terra stablecoin tracks the price of the IMF’s SDR, named TerraSDR, or SDT. Other stablecoin denominations include TerraUSD or UST, and TerraKRW or  KRT. All Terra stablecoin denominations exist in the same pool.
 
-For more information on Terra stablecoins, visit the [concepts page](./Protocol.md#stablecoin).
+For more information on Terra stablecoins, visit the [concepts page](protocol.md#stablecoin).
 
 ## Terra Station
 
 Terra's native wallet and platform for swaps, governance, and staking. In Station, you can send, receive, swap, and stake Terra coins. You can also participate in governance and vote on proposals.
 
-To learn how to install and get started using Terra Station, visit the [Terra Station tutorial](/Tutorials/Get-started/Terra-Station-desktop.md).
+To learn how to install and get started using Terra Station, visit the [Terra Station tutorial](./terra-station/get-started/README.md).
 
-To learn how to use the advanced features of Terra Station, visit the [Terra Station how-to guide](/How-to/Terra-Station/Wallet.md).
+To learn how to use the advanced features of Terra Station, visit the [Terra Station how-to guide](./terra-station/station-guides/wallet.md).
 
 ## terrad
 
 The command line interface for interacting with a Terra node.
 
-For more information on terrad, visit [Using terrad](/Reference/terrad/).
+For more information on terrad, visit [Using terrad](../develop/terra-core/terrad/README.md).
 
 ## Terravaloper address
 
@@ -257,7 +257,7 @@ A quickly expanding network of decentralized applications built on the Terra pro
 
 The leading decentralized and open-source public blockchain protocol for algorithmic stablecoins. Using a combination of open market arbitrage incentives and decentralized oracle voting, the Terra protocol creates stablecoins that consistently track the price of any fiat currency.
 
-For more information on how the Terra protocol works, visit the [concepts page](./Protocol.md)
+For more information on how the Terra protocol works, visit the [concepts page](./protocol.md)
 
 ## Tobin tax
 
@@ -299,7 +299,7 @@ The amount of time a [validator](#validator) is active in a given timeframe. Val
 
 A Terra blockchain miner responsible for verifying transactions on the blockchain. Validators run programs called full nodes that allow them to participate in consensus, verify blocks, participate in governance, and receive rewards. The top 130 validators with the highest total stake can participate in consensus.
 
-For more information on validators, visit the [concepts page](./Protocol.md#validators).
+For more information on validators, visit the [concepts page](./protocol.md#validators).
 
 ## Weight
 

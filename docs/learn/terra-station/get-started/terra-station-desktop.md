@@ -25,7 +25,8 @@ For more guides on how to use Station's advanced features, visit the [How to](/H
 
 4. Using a pen and paper, write down your 24-word seed phrase exactly as it appears. Number each word to make verifying easier.
 
-:::danger Protect your seed phrase
+:::{admonition} Protect your seed phrase
+:class: danger
 Anyone with your seed phrase can access your money, and there is no recourse for someone stealing your seed phrase. To protect your seed phrase, consider the following tips:
 
 - Never save or store your seed phrase as a digital file on any device.
@@ -56,7 +57,9 @@ Congratulations! You have just created a Terra Station wallet.
 
     1. Send the tokens from the exchange to your Terra Station wallet address.
 
-:::warning Waiting times for transfers
+:::{admonition}  Waiting times for transfers
+:class: tip
+
 When you transfer tokens from an exchange to Terra, some time will pass before the tokens appear in your wallet. Don't panic. This waiting period is normal and varies depending on the exchange. If a transfer does not appear immediately, check back after some time.
 :::
 
@@ -90,7 +93,8 @@ Stake your Luna to a validator to start earning rewards. Before you stake, make 
 
 4. In the **Amount** field, specify the amount of Luna you want to delegate, and click **Next**.
 
-::: warning Keep coins for fees
+:::{admonition} Keep coins for fees
+:class: tip
 Always keep some coins to pay fees with. Never stake your entire wallet amount. Without money for fees, you can't make any transactions.
 :::
 

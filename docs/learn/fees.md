@@ -20,13 +20,13 @@ Gas on Terra works differently than it works on other blockchains:
 - Unused gas is not refunded.
 - Transactions are not queued based on gas amounts, but in the order received.
 
-For an in-depth explanation of how gas fees are calculated, visit the [terrad reference](/Reference/terrad/#fees) page.
+For an in-depth explanation of how gas fees are calculated, visit the [terrad reference](../develop/terra-core/terrad/README.md#fees) page.
 
 To view current gas rates in your browser, visit the [gas rates](https://fcd.terra.dev/v1/txs/gas_prices) FCD page.
 
 ## Stability fee
 
-Stability fees are the most common fee type, and are added to any transaction using Terra stablecoins, excluding [market swaps](./glossary.md#market-swap). This fee is called the tax rate and varies between .01% to 1%. Stability fees are capped at 1 SDT per transaction. The current tax rate can be found on the [tax rate](https://fcd.terra.dev/terra/treasury/v1beta1/tax_rate) FCD page. For more information on the tax rate and how it works, visit the [treasury module](/Reference/Terra-core/Module-specifications/spec-treasury.md).
+Stability fees are the most common fee type, and are added to any transaction using Terra stablecoins, excluding [market swaps](./glossary.md#market-swap). This fee is called the tax rate and varies between .01% to 1%. Stability fees are capped at 1 SDT per transaction. The current tax rate can be found on the [tax rate](https://fcd.terra.dev/terra/treasury/v1beta1/tax_rate) FCD page. For more information on the tax rate and how it works, visit the [treasury module](../develop/terra-core/module-specifications/spec-treasury.md).
 
 ## Tobin tax
 
@@ -36,6 +36,6 @@ The Tobin tax is a fixed percentage fee added to any [market swap](./glossary.md
 
 ## Spread fee
 
- Spread fees are added to any [market swap](./glossary.md#market-swap) between Terra and Luna. The minimum spread fee is .5%. During times of extreme volatility, the market module adjusts the spread fee to maintain a [constant product](/Reference/Terra-core/Module-specifications/spec-market.html#market-making-algorithm) between the size of the Terra pool and the fiat value of the Luna pool, ensuring stability in the protocol. As the pools reach constant product equilibrium, The spread rate returns to a normal value.
+ Spread fees are added to any [market swap](./glossary.md#market-swap) between Terra and Luna. The minimum spread fee is .5%. During times of extreme volatility, the market module adjusts the spread fee to maintain a [constant product](../develop/terra-core/module-specifications/spec-market.md#market-making-algorithm) between the size of the Terra pool and the fiat value of the Luna pool, ensuring stability in the protocol. As the pools reach constant product equilibrium, The spread rate returns to a normal value.
 
- For more information on spread fees, visit the [market module](/Reference/Terra-core/Module-specifications/spec-market.md).
+ For more information on spread fees, visit the [market module](../develop/terra-core/module-specifications/spec-market.md).
