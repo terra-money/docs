@@ -53,13 +53,30 @@ Discover novel applications built on Terra and integrations with existing tools.
 
 ```{toctree}
 :hidden:
-docs/history-and-changes
-docs/migration-guide
+docs/develop/reference/history-and-changes
+docs/develop/reference/migration-guide
 ```
 
 ## Learn
+
 ```{toctree}
 :hidden:
 :caption: Learn
 docs/learn/README
+```
+
+## Develop
+
+```{toctree}
+:hidden:
+:caption: Develop
+docs/develop/README
+```
+
+## Validate
+
+```{toctree}
+:hidden:
+:caption: Validate
+docs/validate/README
 ```

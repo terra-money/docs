@@ -25,3 +25,14 @@ For more general information on validators, visit the [validator section](/Conce
 - [The Terra validator Discord](https://discord.com/invite/xfZK6RMFFx).
 - [How to Spin Up a Node on Terra - Terra Bites video](https://www.youtube.com/watch?v=2lKAvltKX6w&ab_channel=TerraBites).
 - [The validator FAQ](./faq.md)
+
+```{toctree}
+:hidden:
+:caption: Manage a Terra validator
+court-delegations
+faq
+implement-security
+set-up-oracle-feeder
+set-up-validator
+troubleshoot-validator-problems
+```
