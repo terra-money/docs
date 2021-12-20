@@ -25,7 +25,7 @@ You can edit this `moniker` later, in the `~/.terra/config/config.toml` file:
 moniker = "<your_custom_moniker>"
 ```
 
-### Set minimum gas prices for transactions (recommended)
+### Set minimum gas prices for transactions
 
 You can edit `~/.terra/config/app.toml` in order to enable anti-spam by rejecting incoming transactions with implied gas price less than a specified minimum. The minimum gas prices recommended for the Terra mainnet network is the following:
 
@@ -55,11 +55,15 @@ Select the network you want to join and download its `genesis.json` file into yo
 
 ```bash
 wget https://columbus-genesis.s3.ap-northeast-1.amazonaws.com/columbus-5-genesis.json -O ~/.terra/config/genesis.json
+$ move to appropriate directory
+mv ./columbus-5-genesis.json ~/.terra/config/genesis.json
 ```
 - Bombay-12 testnet genesis:
 
 ```bash
 wget https://raw.githubusercontent.com/terra-money/testnet/master/bombay-12/genesis.json -I ~/.terra/config/genesis.json
+$ move to appropriate directory
+mv genesis.json ~/.terra/config/genesis.json
 ```
 
 Note we use the `latest` directory in the [networks repo](https://github.com/terra-money/testnet) which contains details for the latest testnet. If you are connecting to a different testnet, ensure you get the right files.
@@ -70,7 +74,7 @@ To start terrad, enter the following:
 terrad start
 ```
 
-### Download address book (recommended for the mainnet)
+### Download address book
 
 To give your node a selection of peers to dial and find other nodes, download `addrbook.json` and move it into `~/.terra/config/addrbook.json`.
 
