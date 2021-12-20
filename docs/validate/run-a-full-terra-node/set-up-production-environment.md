@@ -2,7 +2,7 @@
 
 Use the following information to set up and manage your production-level full Terra node.
 
-For information about running a validator node, visit the [validator guide](/How-to/Manage-a-Terra-validator/Overview.md).
+For information about running a validator node, visit the [Manage a validator](../manage-a-terra-validator/README.md).
 
 :::warning Recommended operating systems
 This guide has been tested against RPM-based Linux distributions only. To ensure you successfully set up your production environment, consider setting it up on an RPM-based Linux system.
@@ -33,7 +33,7 @@ Most validators will only need to open the following port:
 
 Additional ports:
 
-- `1317`: The default port for the [Lite Client Daemon](/How-to/Start-LCD.md) (LCD), which can be executed by `terrad rest-server`. The LCD provides an HTTP RESTful API layer to allow applications and services to interact with your `terrad` instance through RPC. For usage examples, see [Terra REST API](https://lcd.terra.dev/swagger/). You don't need to open this port unless you have use for it.
+- `1317`: The default port for the [Lite Client Daemon](../../develop/start-LCD.md) (LCD), which can be executed by `terrad rest-server`. The LCD provides an HTTP RESTful API layer to allow applications and services to interact with your `terrad` instance through RPC. For usage examples, see [Terra REST API](https://lcd.terra.dev/swagger/). You don't need to open this port unless you have use for it.
 
 - `26660`: The default port for interacting with the [Prometheus](https://prometheus.io) database, which can be used to monitor the environment. In the default configuration, this port is not open.
 

@@ -2,14 +2,13 @@
 
 This is a detailed step-by-step guide for setting up a Terra validator. Please be aware that while it is easy to set up a rudimentary validating node, running a production-quality validator node with a robust architecture and security features requires an extensive setup.
 
-For more information on setting up a validator, see [additional resources](./Overview.md#additional-resources).
+For more information on setting up a validator, see [additional resources](./README.md#additional-resources).
 
 ## Prerequisites
 
-- You have completed [how to run a full Terra node](https://docs.terra.money/How-to/Run-a-full-Terra-node/Hardware-requirements.html), which outlines how to install, connect, and configure a node.
-- You are familiar with [terrad](../../Reference/terrad/).
+- You have completed [how to run a full Terra node](../run-a-full-terra-node/README.md), which outlines how to install, connect, and configure a node.
+- You are familiar with [terrad](../../develop/terra-core/terrad/README.md).
 - you have read through [the validator FAQ](./faq.md)
-- Hardware requirements: see [requirements for running a full node](../Run-a-full-Terra-node/Hardware-requirements.md).
 
 ## 1. Retrieve the consensus PubKey of your node
 

@@ -50,10 +50,11 @@ Only one fee grant is allowed between a granter and a grantee. Self-grants are p
 
 ### Fee allowance types
 
-- [`BasicAllowance`](#basicallowance)
-- [`PeriodicAllowance`](#periodicallowance)
+The following types of fee allowances can be granted.
 
-`BasicAllowance` permits the grantee to pay fees by using funds from the  granter's account. If the threshold for either `spend_limit` or `expiration` is met, the grant is removed from the state.
+#### `BasicAllowance`
+
+`BasicAllowance` permits the grantee to pay fees by using funds from the granter's account. If the threshold for either `spend_limit` or `expiration` is met, the grant is removed from the state.
 
 ```
 // BasicAllowance implements Allowance with a one-time grant of tokens
@@ -77,6 +78,8 @@ message BasicAllowance {
 - `expiration`: The date and time when the grant expires. This value is optional. If it is blank, the grant does not expire.
 
 To restrict the grantee when values for `spend_limit` and `expiration` are blank, revoke the grant.
+
+#### `PeriodicAllowance`
 
 `PeriodicAllowance` is a repeating fee allowance for a specified period and for a specified maximum number of tokens that can spent within that period.
 

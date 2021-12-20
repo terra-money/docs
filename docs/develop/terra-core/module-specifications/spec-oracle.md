@@ -1,6 +1,6 @@
 # Oracle
 
-The Oracle module provides the Terra blockchain with an up-to-date and accurate price feed of exchange rates of Luna against various Terra pegs so that the [Market](spec-market.md) may provide fair exchanges between Terra<>Terra currency pairs, as well as Terra<>Luna.
+The Oracle module provides the Terra blockchain with an up-to-date and accurate price feed of exchange rates of Luna against various Terra pegs so that the [Market](./spec-market.md) may provide fair exchanges between Terra<>Terra currency pairs, as well as Terra<>Luna.
 
 As price information is extrinsic to the blockchain, the Terra network relies on validators to periodically vote on the current Luna exchange rate, with the protocol tallying up the results once per `VotePeriod` and updating the on-chain exchange rate as the weighted median of the ballot converted Cross Exchange Rates using `ReferenceTerra`.
 
@@ -36,7 +36,7 @@ Denominations receiving fewer than [`VoteThreshold`](#votethreshold) total votin
 
 Choose `ReferenceTerra` with the highest voter turnout. If the voting power of the two denominations is the same, select reference Terra in alphabetical order.
 
-#### Compute Cross Exchange Rate using Reference Terra
+#### Compute Cross Exchange Rate
 
 1. Choose `ReferenceTerra`
 
@@ -61,7 +61,7 @@ Choose `ReferenceTerra` with the highest voter turnout. If the voting power of t
 
 After the votes are tallied, the winners of the ballots are determined with [`tally()`](#tally).
 
-Voters that have managed to vote within a narrow band around the weighted median, are rewarded with a portion of the collected seigniorage. See [`k.RewardBallotWinners()`](#k-rewardballotwinners) for more details.
+Voters that have managed to vote within a narrow band around the weighted median, are rewarded with a portion of the collected seigniorage. See [`k.RewardBallotWinners()`](#krewardballotwinners) for more details.
 
 :::{note}
 As of Columbus-5, swap fees dividend to faithful oracles voters instead of being burned.
@@ -268,10 +268,10 @@ At the end of every block, the Oracle module checks whether it's the last block 
 
 4. For each remaining `denom` with a passing ballot:
 
-   - Tally up votes with [`Compute Cross Exchange Rate using Reference Terra`](#compute-cross-exchange-rate-using-reference-terra) and find the weighted median exchange rate and winners with [`tally()`](#tally)
+   - Tally up votes with [Compute Cross Exchange Rate](#compute-cross-exchange-rate) and find the weighted median exchange rate and winners with [`tally()`](#tally).
    - Iterate through winners of the ballot and add their weight to their running total
-   - Set the Luna exchange rate on the blockchain for that Luna<>`denom` with `k.SetLunaExchangeRate()`
-   - Emit a [`exchange_rate_update`](#exchange_rate_update) event
+   - Set the Luna exchange rate on the blockchain for that Luna<>`denom` with `k.SetLunaExchangeRate()`.
+   - Emit a `exchange_rate_update` event.
 
 5. Count up the validators who [missed](#slashing) the Oracle vote and increase the appropriate miss counters
 

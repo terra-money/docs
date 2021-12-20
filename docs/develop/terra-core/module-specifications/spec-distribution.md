@@ -4,14 +4,14 @@
 Terra's Distribution module inherits from Cosmos SDK's [`distribution`](https://docs.cosmos.network/master/modules/distribution/) module. This document is a stub, and covers mainly important Terra-specific notes about how it is used.
 :::
 
-The `Distribution` module describes a mechanism that keeps track of collected fees and _passively_ distributes them to validators and delegators. In addition, the Distribution module also defines the [Community Pool](#community-pool), which are funds under the control of on-chain Governance.
+The `Distribution` module describes a mechanism that keeps track of collected fees and passively distributes them to validators and delegators. In addition, the Distribution module also defines the [Community Pool](#community-pool), which are funds under the control of on-chain Governance.
 
 ## Concepts
 
 ### Validator & Delegator Rewards
 
 :::{important}
-Passive distribution means that validators and delegators need to manually collect their fee rewards by submitting withdrawal transactions. Read up on how to do so with `terrad` [here](../terrad/distribution.md).
+Passive distribution means that validators and delegators need to manually collect their fee rewards by [submitting withdrawal transactions](../terrad/subcommands.md#tx-distribution-withdraw-rewards).
 :::
 
 Collected rewards are pooled globally and distrubuted to validators and delegators. Each validator has the opportunity to charge delegators commission on the rewards collected on behalf of the delegators. Fees are collected directly into a global reward pool and a validator proposer-reward pool. Due to the nature of passive accounting, whenever changes to parameters which affect the rate of reward distribution occur, withdrawal of rewards must also occur.

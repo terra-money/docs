@@ -47,7 +47,7 @@ minimum-gas-prices = "0.01133uluna,0.15uusd,0.104938usdr,169.77ukrw,428.571umnt,
 ```
 
 
-## Start the light client daemon (LCD)
+## Start the light client daemon
 
 To enable the REST API and Swagger, and to start the LCD, complete the following steps:
 

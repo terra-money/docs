@@ -12,7 +12,7 @@ Validators and their delegators earn the following fees:
 
 - **Swap fees**: The fee for swapping Terra stablecoin denominations is called a [Tobin tax](../../learn/fees.md#tobin-tax). Exchanges between Terra and Luna are subject to a [spread fee](../../learn/fees.md#spread-fee).
 
-For more information on fees, visit the [fee page](../../learn/fees.md).
+For more information on fees, see [Fees](../../learn/fees.md).
 
 Validators can set commissions on the fees they receive as an additional incentive.
 

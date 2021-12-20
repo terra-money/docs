@@ -3,7 +3,7 @@
 Validators can set up a private Terra network to become familiar with running a Terra full node before joining a public network.
 
 ::: tip LocalTerra
-If you are a developer and want to set up a local, WASM-enabled private testnet for smart contracts, visit [Download LocalTerra](/Tutorials/Smart-contracts/Set-up-local-environment.html#download-localterra).
+If you are a developer and want to set up a local, WASM-enabled private testnet for smart contracts, visit [Download LocalTerra](../../develop/dapp/smart-contracts/set-up-local-environment.md#download-localterra).
 :::
 
 ## Create a single node

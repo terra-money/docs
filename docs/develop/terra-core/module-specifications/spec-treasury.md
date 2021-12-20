@@ -7,7 +7,7 @@ sidebarDepth: 2
 The Treasury module acts as the "central bank" of the Terra economy, measuring macroeconomic activity by [observing indicators](#observed-indicators) and adjusting [monetary policy levers](#monetary-policy-levers) to modulate miner incentives toward stable, long-term growth.
 
 :::{note}
-While the Treasury stabilizes miner demand by adjusting rewards, the [`Market`](spec-market.md) module is responsible for Terra price-stability through arbitrage and the market maker.
+While the Treasury stabilizes miner demand by adjusting rewards, the [`Market`](./spec-market.md) module is responsible for Terra price-stability through arbitrage and the market maker.
 :::
 
 ## Concepts
@@ -21,8 +21,8 @@ The Treasury observes three macroeconomic indicators for each epoch and keeps [i
 - **Total Staked Luna**: $\lambda$, the total amount of Luna staked by users and bonded to their delegated validators.
 
 These indicators are used to derive two other values:
-- **Tax Reward per unit Luna** $\tau = T / \lambda$: this is used in [Updating Tax Rate](#k-updatetaxpolicy)
-- **Total mining rewards** $R = T + S$: the sum of the Tax Rewards and the Seigniorage Rewards, used in [Updating Reward Weight](#k-updaterewardpolicy).
+- **Tax Reward per unit Luna** $\tau = T / \lambda$: this is used in [Updating Tax Rate](#kupdatetaxpolicy)
+- **Total mining rewards** $R = T + S$: the sum of the Tax Rewards and the Seigniorage Rewards, used in [Updating Reward Weight](#kupdaterewardpolicy).
 
 :::{note}
 As of Columbus-5, all seigniorage is burned and no longer funds community or reward pools.
@@ -34,7 +34,7 @@ As of Columbus-5, all seigniorage is burned and no longer funds community or rew
 As of Columbus-5, all seigniorage is burned.   
 :::
 
-These indicators can be used to derive two other values, the **Tax Reward per unit Luna** represented by $\tau = T / \lambda$, used in [Updating Tax Rate](#k-updatetaxpolicy), and **total mining rewards** $R = T + S$: the sum of the Tax Rewards and the Seigniorage Rewards, used in [Updating Reward Weight](#k-updaterewardpolicy).
+These indicators can be used to derive two other values, the **Tax Reward per unit Luna** represented by $\tau = T / \lambda$, used in [Updating Tax Rate](#kupdatetaxpolicy), and **total mining rewards** $R = T + S$: the sum of the Tax Rewards and the Seigniorage Rewards, used in [Updating Reward Weight](#kupdaterewardpolicy).
 
 The protocol can compute and compare the short-term ([`WindowShort`](#windowshort)) and the long-term ([`WindowLong`](#windowlong)) rolling averages of the above indicators to determine the relative direction and velocity of the Terra economy.
 
@@ -50,11 +50,11 @@ As of Columbus-5, all seigniorage is burned and no longer funds the community po
 
 ### Updating Policies
 
-Both [Tax Rate](#tax-rate) and [Reward Weight](#reward-weight) are stored as values in the `KVStore` and can have their values updated through [governance proposals](#governance-proposals) after they have passed. The Treasury recalibrates each lever once per epoch to stabilize unit returns for Luna, ensuring predictable mining rewards from staking:
+Both [Tax Rate](#tax-rate) and [Reward Weight](#reward-weight) are stored as values in the `KVStore` and can have their values updated through governance proposals after they have passed. The Treasury recalibrates each lever once per epoch to stabilize unit returns for Luna, ensuring predictable mining rewards from staking:
 
 - For Tax Rate, in order to make sure that unit mining rewards do not stay stagnant, the treasury adds a [`MiningIncrement`](#miningincrement) so mining rewards increase steadily over time, described [here](#kupdatetaxpolicy).
 
-- For Reward Weight, the Treasury observes the portion of seigniorage needed to bear the overall reward profile, [`SeigniorageBurdenTarget`](#seigniorageburdentarget), and raises rates accordingly, as described [here](#k-updaterewardpolicy). The current Reward Weight is `1`.
+- For Reward Weight, the Treasury observes the portion of seigniorage needed to bear the overall reward profile, [`SeigniorageBurdenTarget`](#seigniorageburdentarget), and raises rates accordingly, as described [here](#kupdaterewardpolicy). The current Reward Weight is `1`.
 
 ### Probation
 
@@ -103,7 +103,7 @@ func (pc PolicyConstraints) Clamp(prevRate sdk.Dec, newRate sdk.Dec) (clampedRat
 
 ## Proposals
 
-The Treasury module defines special proposals which allow the [Tax Rate](#tax-rate) and [Reward Weight](#reward-weight) values in the `KVStore` to be voted on and changed accordingly, subject to the [policy constraints](#policy-constraints) imposed by `pc.Clamp()`.
+The Treasury module defines special proposals which allow the [Tax Rate](#tax-rate) and [Reward Weight](#reward-weight) values in the `KVStore` to be voted on and changed accordingly, subject to the [policy constraints](#policyconstraints) imposed by `pc.Clamp()`.
 
 ### TaxRateUpdateProposal
 
@@ -154,9 +154,9 @@ The Tax Rewards $T$ for the current epoch.
 
 - type: `Coins`
 
-The total supply of Luna at the beginning of the current epoch. This value is used in [`k.SettleSeigniorage()`](#k-settleseigniorage) to calculate the seigniorage distributed at the end of each epoch. As of Columbus 5, all seigniorage is burned.
+The total supply of Luna at the beginning of the current epoch. This value is used in [`k.SettleSeigniorage()`](#ksettleseigniorage) to calculate the seigniorage distributed at the end of each epoch. As of Columbus 5, all seigniorage is burned.
 
-Recording the initial issuance will automatically use the [`Supply`](spec-supply.md) module to determine the total issuance of Luna. Peeking will return the epoch's initial issuance of µLuna as `sdk.Int` instead of `sdk.Coins` for clarity.
+Recording the initial issuance will automatically use the Supply module to determine the total issuance of Luna. Peeking will return the epoch's initial issuance of µLuna as `sdk.Int` instead of `sdk.Coins` for clarity.
 
 ### Indicators
 
@@ -208,9 +208,9 @@ Using $r_t$ as the current Tax Rate and $n$ as the [`MiningIncrement`](#miningin
 
 2. Calculate the rolling average $\tau_m$ of Tax Rewards per unit Luna over the last month `WindowShort`.
 
-3. If $\tau_m = 0$, there was no tax revenue in the last month. The Tax Rate should be set to the maximum permitted by the Tax Policy, subject to the rules of `pc.Clamp()` (see [constraints](#policy-constraints)).
+3. If $\tau_m = 0$, there was no tax revenue in the last month. The Tax Rate should be set to the maximum permitted by the Tax Policy, subject to the rules of `pc.Clamp()` (see [constraints](#policyconstraints)).
 
-4. If $\tau_m > 0$, the new Tax Rate is $r_{t+1} = (n r_t \tau_y)/\tau_m$, subject to the rules of `pc.Clamp()`. See [constraints](#policy-constraints) for more details.
+4. If $\tau_m > 0$, the new Tax Rate is $r_{t+1} = (n r_t \tau_y)/\tau_m$, subject to the rules of `pc.Clamp()`. See [constraints](#policyconstraints) for more details.
 
 When monthly tax revenues dip below the yearly average, the Treasury raises the Tax Rate. When monthly tax revenues go above the yearly average, the Treasury lowers the Tax Rate.
 
@@ -228,9 +228,9 @@ Using $w_t$ as the current reward weight, and $b$ as the [`SeigniorageBurdenTarg
 
 2. Calculate the sum $R_m$ of total mining rewards over the last month `WindowShort`.
 
-3. If $R_m = 0$ and $S_m = 0$, there were no mining or seigniorage rewards in the last month. The Reward Weight should be set to the maximum permitted by the Reward Policy, subject to the rules of `pc.Clamp()`. See [constraints](#policy-constraints) for more details.
+3. If $R_m = 0$ and $S_m = 0$, there were no mining or seigniorage rewards in the last month. The Reward Weight should be set to the maximum permitted by the Reward Policy, subject to the rules of `pc.Clamp()`. See [constraints](#policyconstraints) for more details.
 
-4. If $R_m > 0$ or $S_m > 0$, the new Reward Weight is $w_{t+1} = b w_t S_m / R_m$, subject to the rules of `pc.Clamp()`. See [constraints](#policy-constraints) for more details.
+4. If $R_m > 0$ or $S_m > 0$, the new Reward Weight is $w_{t+1} = b w_t S_m / R_m$, subject to the rules of `pc.Clamp()`. See [constraints](#policyconstraints) for more details.
 
 
 ::: {note}
@@ -279,9 +279,9 @@ If the blockchain is at the final block of the epoch, the following procedure is
 
 3. [Settle seigniorage](#ksettleseigniorage) accrued during the epoch and make funds available to ballot rewards and the community pool during the next epoch. As of Columbus-5, all seigniorage is burned.
 
-4. Calculate the [Tax Rate](#k-updatetaxpolicy), [Reward Weight](#k-updaterewardpolicy), and [Tax Cap](#k-updatetaxcap) for the next epoch. As of Columbus-5, all seigniorage is burned, and the reward weight is set to `1`.
+4. Calculate the [Tax Rate](#kupdatetaxpolicy), [Reward Weight](#kupdaterewardpolicy), and [Tax Cap](#kupdatetaxcap) for the next epoch. As of Columbus-5, all seigniorage is burned, and the reward weight is set to `1`.
 
-5. Emit the [`policy_update`](#policy_update) event, recording the new policy lever values.
+5. Emit the `policy_update` event, recording the new policy lever values.
 
 6. Finally, record the Luna issuance with [`k.RecordEpochInitialIssuance()`](#epoch-initial-issuance). This will be used in calculating the seigniorage for the next epoch.
 
