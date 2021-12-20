@@ -1,7 +1,7 @@
 # Validator FAQ
 
-::: warning Recommendation
-Please read this document thoroughly before becoming a validator.
+::: warning
+Read this document thoroughly before becoming a validator.
 :::
 
 ## General Concepts
@@ -26,7 +26,7 @@ The active validator set is made up of 130 validators, who hold the most Luna. T
 
 ### What is a delegator?
 
-Delegators are Luna holders who want to receive staking rewards without the responsibility of running a validator. Through Terra Station, a user can delegate Luna to a validator and in exchange receive a part of a validator's revenue. For more detail on how revenue is distributed, see [What are the incentives to stake?](#what-are-the-incentives-to-stake) and [What is a validator's commission?](#what-is-a-validator's-commission).
+Delegators are Luna holders who want to receive staking rewards without the responsibility of running a validator. Through Terra Station, a user can delegate Luna to a validator and in exchange receive a part of a validator's revenue. For more detail on how revenue is distributed, see [What are the incentives to stake?](#what-are-the-incentives-to-stake) and [What is a validator's commission?](#what-is-a-validators-commission).
 
 Delegators share the benefits and rewards of staking with their Validator. If a Validator is successful, its delegators will consistently share in the rewards structure. If a Validator is slashed, the delegator’s stake will also be slashed. This is why delegators should perform due-diligence on validators before delegating. Delegators can also diversify by spreading their stake over multiple validators.
 
@@ -204,7 +204,7 @@ This total revenue is divided among a validator's staking pool according to each
 
 ### What is the incentive to run a validator?
 
-Validators earn more revenue than their delegators through commission. They also play a major role in determining on-chain exchange rates through the [`Oracle`](../dev/spec-oracle.md), where they get rewarded for faithfully reporting exchange rates with swap fees.
+Validators earn more revenue than their delegators through commission. They also play a major role in determining on-chain exchange rates through the [`Oracle`](../../develop/terra-core/module-specifications/spec-oracle.md), where they get rewarded for faithfully reporting exchange rates with swap fees.
 
 ### What is a validator's commission?
 

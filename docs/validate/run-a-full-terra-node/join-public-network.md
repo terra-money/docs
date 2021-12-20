@@ -1,6 +1,6 @@
 # Join a public network
 
-After you've [run a simple local Terra network](Set-up-private-network.md), join a public Terra network, such as the Columbus mainnet or Bombay testnet, by completing the following steps.
+After you've [run a simple local Terra network](./set-up-private-network.md), join a public Terra network, such as the Columbus mainnet or Bombay testnet, by completing the following steps.
 
 ## Setup
 
@@ -70,11 +70,11 @@ To start terrad, enter the following:
 terrad start
 ```
 
-### Download address book (recommended for the mainnet)
+### Download the address book (recommended for the mainnet)
 
 To give your node a selection of peers to dial and find other nodes, download `addrbook.json` and move it into `~/.terra/config/addrbook.json`.
 
-For advanced settings, visit [Define seed nodes](#define-seed-nodes).
+For more information about seed mode and identifying seed nodes, see [`seeds`](./configure-general-settings.md#seeds).
 
 - Columbus mainnet address book:
 
@@ -116,7 +116,7 @@ Your node is catching up with the network by replaying all the transactions from
 - Once your full node syncs up to the current block height, it will appear on the [list of full nodes](https://terra.stake.id/).
 - For faster syncs during testing, see [node sync for testing](#node-sync-for-testing)
 
-Congratulations! You've successfully joined a network as a full node operator. If you are a validator, continue to [manage a Terra validator](/How-to/Manage-a-Terra-validator/Overview.html) for next steps.
+Congratulations! You've successfully joined a network as a full node operator. If you are a validator, go to [Manage a Terra validator](../manage-a-terra-validator/README.md) for your next steps.
 
 ### Using a data backup (recommended for the mainnet)
 
@@ -191,10 +191,6 @@ Sometimes you may want to sync faster by foregoing checks. This command should o
 terrad start --x-crisis-skip-assert-invariants
 ```
 
-::: warning NOTE
-
 For more information on seeds and peers, visit [Tendermint's documentation](https://github.com/tendermint/tendermint/blob/master/docs/tendermint-core/using-tendermint.md#peers).
 
-:::
-
-For seed mode and p2p settings, visit the [additional settings page](/How-to/Run-a-full-Terra-node/Configure-general-settings.html#additional-settings).
+For seed mode and p2p settings, see [Additional settings](./configure-general-settings.md#additional-settings).

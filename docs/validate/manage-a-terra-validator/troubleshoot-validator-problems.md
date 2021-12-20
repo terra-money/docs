@@ -100,12 +100,12 @@ nom start vote --\
 
 The LCD to which the voter is connecting might be running from a different network than your node. The remote LCD for different networks are:
 
-- https://lcd.terra.dev for the Columbus mainnet
-- https://bombay-lcd.terra.dev for the Bombay testnet
+- [Columbus mainnet](https://lcd.terra.dev)
+- [Bombay testnet](https://bombay-lcd.terra.dev)
 
 Ensure you specify the LCD for the same network to which your node is connecting.
 
-If you run a [local LCD](../Start-LCD.md) (for example, localhost:1317), ensure your LCD is connecting to the same node.
+If you run a [local LCD](../../develop/start-LCD.md) (for example, localhost:1317), ensure your LCD is connecting to the same node.
 
 ## Terrad crashes because of memory fragmentation
 
