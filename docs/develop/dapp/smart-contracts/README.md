@@ -27,6 +27,7 @@ With fundamental infrastructure such as price oracles, on-chain swaps, stablecoi
 
 ### Active user base with real-world usage
 
+<<<<<<< HEAD:docs/develop/dapp/smart-contracts/README.md
 With millions of highly active users from a variety of integrations (like Terra-powered payment gateways such as CHAI and MemePay), the Terra economy is a thriving new home for the future of innovative DeFi products. Unlike many other stablecoin protocols, Terra stablecoins are directly integrated in payments solutions where they are used everyday purchases such as groceries, movie tickets, taxis, and more.
 
 ```{toctree}
@@ -38,3 +39,6 @@ manage-cw20-tokens
 set-up-local-environment
 write-smart-contract
 ```
+=======
+With millions of highly active users from a variety of integrations (like Terra-powered payment gateways such as CHAI and MemePay), the Terra economy is a thriving new home for the future of innovative DeFi products. And unlike many other stablecoin protocols, Terra stablecoins are directly integrated in payments solutions where they are used everyday purchases such as groceries, movie tickets, taxis, and more.
+>>>>>>> main:docs/Tutorials/Smart-contracts/Overview.md

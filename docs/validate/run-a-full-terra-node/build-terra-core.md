@@ -1,5 +1,7 @@
 # Build Terra core
 
+Terra core is the official Golang reference implementation of the Terra node software. Use this guide to install Terra core and `terrad`, the command-line interface and daemon that connects to Terra and enables you to interact with the Terra blockchain.
+
 ## Prerequisites
 
 - [Golang v1.16.1 or higher](https://golang.org/doc/install)

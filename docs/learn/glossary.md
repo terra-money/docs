@@ -199,7 +199,7 @@ The difference in a coin's price between the start and end of a transaction.
 
 ## Stake
 
-The amount of Luna bonded to a validator.
+The amount of [Luna](#luna) bonded to a validator.
 
 ## Staking
 

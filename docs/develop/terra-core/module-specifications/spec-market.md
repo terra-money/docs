@@ -122,7 +122,7 @@ type MsgSwap struct {
 
 ### MsgSwapSend
 
-A `MsgSendSwap` first performs a swap of `OfferCoin` into `AskDenom` and then sends the resulting coins to `ToAddress`. Tax is charged normally, as if the sender were issuing a `MsgSend` with the resulting coins of the swap.
+A `MsgSwapSend` first performs a swap of `OfferCoin` into `AskDenom` and then sends the resulting coins to `ToAddress`. Tax is charged normally, as if the sender were issuing a `MsgSend` with the resulting coins of the swap.
 
 ```go
 type MsgSwapSend struct {
