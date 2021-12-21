@@ -1,6 +1,8 @@
-# Participate in governance
+# Governance
 
-Governance is an important part of being involved in the Terra community. Use the following information to learn how to vote on and submit governance proposals in Terra Station. For more information on governance and voting options, visit the [governance section](/Concepts/Protocol.md#governance) of the concepts page.
+If this is your first time using Terra Station, follow the [Terra Station tutorial](../get-started/terra-station-desktop.md).
+
+Governance is an important part of being involved in the Terra community. Use the following information to learn how to vote on and submit governance proposals in Terra Station. For more information on governance and voting options, visit [the governance overview](../../protocol.md#governance).
 
 ## Vote on a proposal
 
@@ -24,8 +26,7 @@ Your vote will be submitted.
 
 Users can vote on a proposal after a minimum deposit of 50 Luna is reached. To help push a proposal forward to a vote, deposit Luna to the proposal.
 
-:::warning Deposits and refunds
-While most deposits get refunded, some deposits get burned. For more information on which deposits get burned, visit the [governance section](/Concepts/Protocol.md#governance) of the concepts page.
+:::{caution} While most deposits get refunded, some deposits get burned. For more information on which deposits get burned, visit the [governance section](../../protocol.md#governance) of the concepts page.
 :::
 
 1. Open Terra Station and connect your wallet. In the sidebar, click **Governance**.
@@ -44,8 +45,9 @@ Your deposit will be added to the proposal.
 
 ## Create a new proposal
 
-::: warning Avoid unnecessary proposals
-To prevent unnecessary proposals or abuse of the system, all governance proposals must obtain a minimum deposit of 50 Luna. If 33.4% of the total vote is `NoWithVeto`, `quorum` is not met, or the minimum deposit isn't reached, the deposit will be burned. All other vote outcomes get their deposits refunded. For more information on deposits and refunds, visit the [governance section](/Concepts/Protocol.html#governance) of the concepts page.
+:::{admonition} Avoid unnecessary proposals
+:class: caution
+To prevent unnecessary proposals or abuse of the system, all governance proposals must obtain a minimum deposit of 50 Luna. If 33.4% of the total vote is `NoWithVeto`, `quorum` is not met, or the minimum deposit isn't reached, the deposit will be burned. All other vote outcomes get their deposits refunded. For more information on deposits and refunds, visit the [governance overview](../../protocol.md#governance).
 :::
 
 1. Open Terra Station and connect your wallet. In the sidebar, click **Governance**.
@@ -54,11 +56,10 @@ To prevent unnecessary proposals or abuse of the system, all governance proposal
 
 3. Select the type of proposal, and enter a title, a description, and the amount of Luna you want to deposit initially.
 
-:::warning Proposal warnings
-
-Before uploading any proposal, try to get community feedback on [the Terra Agora research forum](https://agora.terra.money).
-Do not use text proposals to suggest parameter changes. For more information, visit the [Governance module reference page](/Reference/Terra-core/Module-specifications/spec-governance.md).
-:::
+    :::{tip}
+    Before uploading any proposal, try to get community feedback on [the Terra Agora research forum](https://agora.terra.money).
+    Do not use text proposals to suggest parameter changes. For more information, visit the [Governance module reference page](../../../develop/terra-core/module-specifications/spec-governance.md).
+    :::
 
 4. Click **Next**.
 
@@ -66,4 +67,4 @@ Do not use text proposals to suggest parameter changes. For more information, vi
 
 6. Enter your password and click **Propose**.
 
-Your proposal will enter the two-week deposit period. After a minimum deposit of 50 Luna has been reached, your proposal will enter a one-week voting period. For more information on governance, visit the [governance section](/Concepts/Protocol.html#governance) of the concepts page.
+Your proposal will enter the two-week deposit period. After a minimum deposit of 50 Luna has been reached, your proposal will enter a one-week voting period. For more information on governance and voting options, visit the [governance overview](../../protocol.md#governance).

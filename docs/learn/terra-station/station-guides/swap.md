@@ -1,10 +1,10 @@
 # Mint, burn, or swap
 
-This guide is for advanced swap features in Terra Station. If this is your first time using Terra Station or if you want to swap coins, follow the [Terra Station tutorial](/Tutorials/Get-started/Terra-station-desktop.md).
+This guide is for advanced swap features in Terra Station. If this is your first time using Terra Station or if you want to [swap coins](../get-started/terra-station-desktop.md#swap-coins), follow the [Terra Station tutorial](../get-started/terra-station-desktop.md).
 
 ## Market swap
 
-The market swap allows users to access the mint/burn function of the Terra protocol. Users can mint Luna from burned Terra or vice versa. The market swap is also used for swaps between different Terra stablecoin denominations.
+The [market swap](../../glossary.md#market-swap) feature of Terra Station allows users to access the mint/burn function of the Terra protocol. Users can mint Luna from burned Terra or vice versa. The market swap is also used for swaps between different Terra stablecoin denominations.
 
 1. Open Terra Station and connect your wallet. Click **Swap** in the menu.
 

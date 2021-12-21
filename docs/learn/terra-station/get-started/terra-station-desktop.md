@@ -2,16 +2,16 @@
 
 This tutorial walks you through the process of using Terra Station, the official desktop wallet for Terra.
 
-For more guides on how to use Station's advanced features, visit the [How to](/How-to/Terra-Station/Wallet.html) section.
+For more guides on how to use Station's advanced features, visit the [Station guides](../station-guides/README.md).
 
 ## Install Terra Station
 
 1. Click the download link for your operating system:
 
-- [Terra Station for MacOS](https://github.com/terra-money/station/releases/download/v3.5.0/Terra.Station-1.1.0.dmg)
-- [Terra Station for Windows](https://github.com/terra-money/station/releases/download/v3.5.0/Terra.Station.Setup.1.1.0.exe)
-- [Terra Station for Linux(.deb)](https://github.com/terra-money/station/releases/download/v3.5.0/station-electron_1.1.1_amd64.deb)
-- [Terra Station for Linux(.rpm)](https://github.com/terra-money/station/releases/download/v3.5.0/station-electron-1.1.1.x86_64.rpm)
+    - [Terra Station for MacOS](https://github.com/terra-money/station/releases/download/v3.5.0/Terra.Station-1.1.0.dmg)
+    - [Terra Station for Windows](https://github.com/terra-money/station/releases/download/v3.5.0/Terra.Station.Setup.1.1.0.exe)
+    - [Terra Station for Linux(.deb)](https://github.com/terra-money/station/releases/download/v3.5.0/station-electron_1.1.1_amd64.deb)
+    - [Terra Station for Linux(.rpm)](https://github.com/terra-money/station/releases/download/v3.5.0/station-electron-1.1.1.x86_64.rpm)
 
 2. Open the downloaded file and follow the instructions.
 
@@ -25,29 +25,29 @@ For more guides on how to use Station's advanced features, visit the [How to](/H
 
 4. Using a pen and paper, write down your 24-word seed phrase exactly as it appears. Number each word to make verifying easier.
 
-:::{admonition} Protect your seed phrase
-:class: danger
-Anyone with your seed phrase can access your money, and there is no recourse for someone stealing your seed phrase. To protect your seed phrase, consider the following tips:
+    :::{admonition} Protect your seed phrase
+    :class: danger
+    Anyone with your seed phrase can access your money, and there is no recourse for someone stealing your seed phrase. To protect your seed phrase, consider the following tips:
 
-- Never save or store your seed phrase as a digital file on any device.
-- Always write down your seed phrase with a pen and paper.
-- Store the paper with your seed phrase on it somewhere safe.
-- Never give your seed phrase to anyone, not even support staff.
-:::
+    - Never save or store your seed phrase as a digital file on any device.
+    - Always write down your seed phrase with a pen and paper.
+    - Store the paper with your seed phrase on it somewhere safe.
+    - Never give your seed phrase to anyone, not even support staff.
+    :::
 
 5. Verify your writing to make sure every word is spelled correctly and in the right order. If you numbered your phrase, it can be helpful to verify it backward.
 
-5. Check the box ensuring you wrote down your seed phrase, and click **Next**.
+6. Check the box ensuring you wrote down your seed phrase, and click **Next**.
 
-6. Confirm your seed phrase by typing or selecting the correct words in each prompt.
+7. Confirm your seed phrase by typing or selecting the correct words in each prompt.
 
-7. Click **Create a wallet**.
+8. Click **Create a wallet**.
 
 Congratulations! You have just created a Terra Station wallet.
 
 ## Receive tokens from an exchange
 
-1. Purchase your tokens using any exchange that supports Terra. To view a list of current exchanges, visit the [Integrations page](https://docs.terra.money/Reference/integrations.html#exchanges)
+1. Purchase your tokens using any exchange that supports Terra. To view a list of current exchanges, visit the [Integrations page](../../ecosystem/integrations.md)
 
 1. Withdraw any token supported by the Terra network from your exchange. Every exchange is different. Please visit your exchange's web page for guides on how to withdraw tokens. Use the following steps as a generic guide.
 
@@ -57,11 +57,11 @@ Congratulations! You have just created a Terra Station wallet.
 
     1. Send the tokens from the exchange to your Terra Station wallet address.
 
-:::{admonition}  Waiting times for transfers
-:class: tip
+    :::{admonition}  Waiting times for transfers
+    :class: tip
 
-When you transfer tokens from an exchange to Terra, some time will pass before the tokens appear in your wallet. Don't panic. This waiting period is normal and varies depending on the exchange. If a transfer does not appear immediately, check back after some time.
-:::
+    When you transfer tokens from an exchange to Terra, some time will pass before the tokens appear in your wallet. Don't panic. This waiting period is normal and varies depending on the exchange. If a transfer does not appear immediately, check back after some time.
+    :::
 
 Now you have tokens on Terra!
 
@@ -93,10 +93,10 @@ Stake your Luna to a validator to start earning rewards. Before you stake, make 
 
 4. In the **Amount** field, specify the amount of Luna you want to delegate, and click **Next**.
 
-:::{admonition} Keep coins for fees
-:class: tip
-Always keep some coins to pay fees with. Never stake your entire wallet amount. Without money for fees, you can't make any transactions.
-:::
+    :::{admonition} Keep coins for fees
+    :class: tip
+    Always keep some coins to pay fees with. Never stake your entire wallet amount. Without money for fees, you can't make any transactions.
+    :::
 
 5. Double check the amounts and fees. Enter your password and click **Delegate**.
 
@@ -140,4 +140,4 @@ After a few moments, the tokens will appear in the receiver's wallet.
 
 To start using any of the many dApps the Terra ecosystem has to offer, check out the Terra Station Chrome browser extension. For on-the-go transactions, check out the Terra Station mobile app.
 
-For more guides on how to use other Station features, visit the [How to](/How-to/Terra-Station/Wallet.html) section.
+To learn how to use other Station features, visit the [Station guides](../station-guides/README.md).

@@ -19,7 +19,7 @@
 
 ## Terra Delegation Program
 
-[Terra Delegation Program](./Terra-Delegation-Program/terra-delegation-program.md): the official page for the Terra Delegation Program<br>
+[Terra Delegation Program](../validate/terra-delegation-program.md): the official page for the Terra Delegation Program<br>
 
 ## Mirror Website and Socials
 

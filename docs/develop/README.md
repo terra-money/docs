@@ -2,7 +2,6 @@
 
 ```{toctree}
 :hidden:
-:caption: Develop
 sign-with-multisig
 start-LCD
 dapp/README

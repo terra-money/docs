@@ -1,4 +1,4 @@
-# Use Terra Station
+# Get started with Station
 
 ```{toctree}
 :hidden:

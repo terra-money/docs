@@ -1,6 +1,6 @@
-# Manage a Terra Station wallet
+# Wallet
 
-This guide is for advanced features of the Terra Station wallet. If this is your first time using Terra Station, follow the [Terra Station tutorial](/Tutorials/Get-started/Terra-station-desktop.md).
+This guide is for advanced features of the Terra Station wallet. If this is your first time using Terra Station, follow the [Terra Station tutorial](../get-started/terra-station-desktop.md).
 
 ## Select a wallet
 
@@ -106,7 +106,8 @@ Your wallet is now disconnected.
 
 Deleting a wallet deletes the wallet name, password, and private key from your device. You can access the wallet again by entering your [seed phrase](#recover-a-wallet-using-a-seed-phrase) or [private key and password](#connect-to-a-wallet-using-a-private-key). Deleting a wallet from one device does not delete it from other devices.
 
-::: danger Write down your seed phrase
+:::{admonition} Write down your seed phrase
+:class: danger
 Before you delete your wallet, always make sure you have your seed phrase and private key. Never store your seed phrase on a digital device. Without a seed phrase or private key and password, your wallet and funds will be permanently inaccessible. Always store your seed phrase in a secure location.
 :::
 

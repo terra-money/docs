@@ -2,11 +2,9 @@
 
 ```{toctree}
 :hidden:
-:caption: Learn
-fees
-glossary
+terra-station/README
 protocol
+glossary
+fees
 ecosystem/README
-terra-station/get-started/README
-terra-station/station-guides/README
 ```

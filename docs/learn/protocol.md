@@ -1,4 +1,4 @@
-# The Terra protocol
+# About the Terra Protocol
 
 The Terra protocol is the leading decentralized and open-source public blockchain protocol for [algorithmic stablecoins](./glossary.md#algorithmic-stablecoin). Using a combination of open market [arbitrage](./glossary.md#arbitrage) incentives and decentralized oracle voting, the Terra protocol creates stablecoins that consistently track the price of any fiat currency. Users can spend, save, trade, or exchange Terra stablecoins instantly, all on the Terra blockchain. Luna provides its holders with staking rewards and governance power. The Terra ecosystem is a quickly expanding network of decentralized applications, creating a stable demand for Terra and increasing the price of Luna.
 
@@ -6,23 +6,23 @@ The Terra protocol is the leading decentralized and open-source public blockchai
 
 The protocol consists of two main tokens, Terra and Luna.
 
-- **Terra**: Stablecoins that track the price of fiat currencies. Users mint new Terra by burning Luna. Stablecoins are named for their fiat counterparts. For example, the base Terra stablecoin tracks the price of the IMF’s SDR, named TerraSDR, or SDT. Other stablecoin denominations include TerraUSD or UST, and TerraKRW or  KRT. All Terra denominations exist in the same pool.
+- **Terra**: Stablecoins that track the price of [fiat currencies](glossary.md#fiat-currency). Users mint new Terra by [burning](glossary.md#burn) Luna. Stablecoins are named for their fiat counterparts. For example, the base Terra stablecoin tracks the price of the [IMF’s SDR](glossary.md#sdr), named TerraSDR, or SDT. Other stablecoin denominations include TerraUSD or UST, and TerraKRW or  KRT. All Terra denominations exist in the same pool.
 
-- **Luna**: The Terra protocol’s native staking token that absorbs the price volatility of Terra. Luna is used for governance and in mining. Users stake Luna to validators who record and verify transactions on the blockchain in exchange for rewards from transaction fees. The more Terra is used, the more Luna is worth.
+- **Luna**: The Terra protocol’s native [staking](glossary.md#staking) token that absorbs the price volatility of Terra. Luna is used for [governance](#governance) and in mining. Users stake Luna to validators who record and verify transactions on the [blockchain](glossary.md#blockchain) in exchange for rewards from transaction fees. The more Terra is used, the more Luna is worth.
 
 ## How the Terra protocol works
 
 ### Stablecoin
 
-Stablecoins are the main feature of the Terra protocol: crypto assets that track the price of an underlying currency. As a digital form of currency, Terra stablecoins can be used just like fiat currency with blockchain's added benefits: an unchangeable public ledger, instant transactions, faster settlement times, and fewer fees.
+Stablecoins are the main feature of the Terra protocol: crypto assets that track the price of an underlying currency. As a digital form of currency, Terra stablecoins can be used just like [fiat](glossary.md#fiat) currency with [blockchain's](glossary.md#blockchain) added benefits: an unchangeable public ledger, instant transactions, faster settlement times, and fewer fees.
 
-Stablecoins are only valuable to users if they maintain their price peg. The Terra protocol uses the basic market forces of supply and demand to maintain the price of Terra. When the demand for Terra is high and the supply is limited, the price of Terra increases. When the demand for Terra is low and the supply is too large, the price of Terra decreases. The protocol ensures the supply and demand of Terra is always balanced, leading to a stable price.
+Stablecoins are only valuable to users if they maintain their [price peg](glossary.md#peg). The Terra protocol uses the basic market forces of supply and demand to maintain the price of Terra. When the demand for Terra is high and the supply is limited, the price of Terra increases. When the demand for Terra is low and the supply is too large, the price of Terra decreases. The protocol ensures the supply and demand of Terra is always balanced, leading to a stable price.
 
 ### Expansion and contraction
 
 Imagine the whole Terra economy as two pools: one for Terra and one for Luna. To maintain the price of Terra, the Luna supply pool adds to or subtracts from Terra’s supply. Users burn Luna to mint Terra and burn Terra to mint Luna, all incentivized by the protocol's algorithmic [market module](../develop/terra-core/module-specifications/spec-market.md).
 
-- **Expansion**: When the price of Terra is high relative to its peg, supply is too small and demand is too high. The protocol incentivizes users to burn Luna and mint Terra. The new supply of Terra makes its pool larger, balancing supply with demand. Users mint more Terra from burned Luna until Terra reaches its target price. The Luna pool gets smaller in this process, increasing the price of Luna.
+- **Expansion**: When the price of Terra is high relative to its [peg](glossary.md#peg), supply is too small and demand is too high. The protocol incentivizes users to burn Luna and mint Terra. The new supply of Terra makes its pool larger, balancing supply with demand. Users mint more Terra from burned Luna until Terra reaches its target price. The Luna pool gets smaller in this process, increasing the price of Luna.
 
 - **Contraction**: When the price of Terra is too low relative to its peg, supply is too large and demand is too low. The protocol incentives users to burn Terra and mint Luna. The decrease in Terra’s supply causes scarcity, and the price of Terra increases. More Luna is minted from burned Terra until Terra reaches its target price. The Luna pool increases and lowers in price.
 
@@ -30,7 +30,7 @@ Luna is the variable counterpart to the stable asset Terra. By modulating supply
 
 ### The market module and arbitrage
 
-The price stability of Terra is achieved by the protocol's algorithmic [market module](../develop/terra-core/module-specifications/spec-market.md), which incentivizes the minting or burning of Terra through arbitrage opportunities. Arbitrage occurs when a user profits from price differences between markets.
+The price stability of Terra is achieved by the protocol's algorithmic [market module](../develop/terra-core/module-specifications/spec-market.md), which incentivizes the minting or burning of Terra through arbitrage opportunities. [Arbitrage](glossary.md#arbitrage) occurs when a user profits from price differences between markets.
 
 The Terra protocol's market module enables users to always trade 1 USD worth of Luna for 1 UST, and vice versa, incentivizing users to maintain the price of Terra. This same principle is true for all Terra stablecoin denominations.
 
@@ -38,12 +38,12 @@ Users can access the mint and burn function of the market module by performing [
 To learn how to use the market swap feature of Terra Station, visit the [Terra Station market swap guide](./terra-station/station-guides/swap.md#market-swap).
 
 - **Example**  
-  If 1 UST is trading at 1.01 USD, users can use the market swap feature of Terra Station to trade 1 USD of Luna for 1 UST. The market burns 1 USD of Luna and mints 1 UST. Users can then sell their 1 UST for 1.01 USD, profiting .01 USD through arbitrage, adding to the UST pool. This arbitrage continues until UST price falls back to match the price of USD, maintaining Terra's peg.
+  If 1 UST is trading at 1.01 USD, users can use the market swap feature of Terra Station to trade 1 USD of Luna for 1 UST. The market burns 1 USD of Luna and mints 1 UST. Users can then sell their 1 UST for 1.01 USD, profiting .01 USD through arbitrage, adding to the UST pool. This arbitrage continues until UST price falls back to match the price of USD, maintaining Terra's [peg](glossary.md#peg).
 
 The same arbitrage mechanism works in reverse for contraction.
 
 - **Example**  
-  If 1 UST is trading at .99 USD, users can buy 1 UST for .99 USD. Users then utilize Terra Station's market swap function to trade 1 UST for 1 USD of Luna. The swap burns 1 UST and mints 1 USD of Luna. Users profit .01 UST from the swap. This arbitrage continues, and UST is burned to mint Luna until the price of UST rises back to 1 USD.
+  If 1 UST is trading at .99 USD, users can buy 1 UST for .99 USD. Users then utilize Terra Station's [market swap](./glossary.md#market-swap) function to trade 1 UST for 1 USD of Luna. The swap burns 1 UST and mints 1 USD of Luna. Users profit .01 UST from the swap. This arbitrage continues, and UST is burned to mint Luna until the price of UST rises back to 1 USD.
 
 ### Scalability
 
@@ -51,8 +51,8 @@ The Terra protocol is scalable: it is designed to maintain Terra's price stabili
 
 ### Seigniorage and deflation
 
-Seigniorage is the value of a coin minus the cost of its production. In early versions of the Terra protocol, seigniorage was diverted to fund various community projects. While seigniorage can create enormous value, it also creates inflation in the system.
-All seigniorage in the Terra protocol is burned, making Luna deflationary in nature.
+[Seigniorage](glossary.md#seigniorage) is the value of a coin minus the cost of its production. In early versions of the Terra protocol, seigniorage was diverted to fund various community projects. While seigniorage can create enormous value, it also creates inflation in the system.
+All seigniorage in the Terra protocol is [burned](glossary.md#burn), making Luna deflationary in nature.
 
 ## Validators
 
