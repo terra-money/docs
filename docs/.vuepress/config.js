@@ -129,6 +129,14 @@ module.exports = {
           collapsable: true,
         },
         {
+          title: "Developer 5 minute guide",
+          children: [
+            "/Tutorials/Quick-start/Initial-setup",
+            "/Tutorials/Quick-start/Using-Terrain",
+          ],
+          collapsable: true,
+        },
+        {
           title: "Build a simple Terra dApp",
           children: [
             "/Tutorials/Smart-contracts/Overview",
