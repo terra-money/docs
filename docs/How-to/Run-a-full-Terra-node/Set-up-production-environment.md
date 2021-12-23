@@ -5,7 +5,7 @@ Use the following information to set up and manage your production-level full Te
 For information about running a validator node, visit the [validator guide](/How-to/Manage-a-Terra-validator/Overview.md).
 
 :::warning Recommended operating systems
-This guide has been tested against RPM-based Linux distributions only. To ensure you successfully set up your production environment, consider setting it up on an RPM-based Linux system.
+This guide has been tested against Linux distributions only. To ensure you successfully set up your production environment, consider setting it up on an Linux system.
 :::
 
 ## Create a dedicated user
