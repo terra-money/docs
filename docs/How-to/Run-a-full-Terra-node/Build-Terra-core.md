@@ -4,7 +4,7 @@ Terra core is the official Golang reference implementation of the Terra node sof
 
 ## Prerequisites
 
-- [Golang v1.16.1 or higher](https://golang.org/doc/install)
+- [Any Golang Version between v1.16.1 and go1.17.1 linux/amd64](https://golang.org/doc/install)
 - Ensure your `GOPATH` and `GOBIN` environment variables are set up correctly.
 
 ## Get the Terra core source code
