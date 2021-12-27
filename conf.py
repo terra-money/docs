@@ -49,6 +49,7 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', 'node_modules']
 #
 html_theme = "sphinx_book_theme"
 html_logo = "img/docs_logo.svg"
+html_favicon = "img/docs_favicon.ico"
 
 # Theme options
 html_theme_options = {

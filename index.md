@@ -14,43 +14,42 @@ If this is your first time learning about Terra, [start here](docs/learn/protoco
 
 **What is Luna?**
 ^^^
-Learn about Luna, the native staking asset that powers the Terra ecosystem.
+Learn about [Luna](docs/learn/protocol.md), the native staking asset that powers the Terra ecosystem.
 
 ---
-**Stability Mechanisms**
+**Stability mechanisms**
 ^^^
-Learn about how Terra achieves price-stability while ensuring steady increase in validator incentives.
+Learn about how Terra achieves [price-stability](docs/learn/protocol.md#stablecoins) while ensuring validator incentives steadily increase.
 
 ---
-**Run a Full Node**
+**Run a full Terra node**
 ^^^
-Learn how to participate in the Terra network by running your own full Terra node.
+Learn how to participate in the Terra network by [running your own full Terra node](docs/validate/run-a-full-terra-node/README.md).
 
 ---
-**Contribute to Core**
+**Contribute to Terra core**
 ^^^
-Hack on the latest version of Terra core, the node software for Terra.
+Hack on the latest version of [Terra core](docs/develop/module-specifications/README.md)., the node software for Terra.
 
 ---
 
 **Run a validator**
 ^^^
-Become a validator and earn delegation commissions in exchange for helping secure the network.
+[Become a validator](docs/validate/manage-a-terra-validator/README.md) and earn delegation commissions in exchange for helping secure the network.
 
 ---
 
-**Smart Contracts**
+**Build smart contract-powered dApps**
 ^^^
-Build dApps that leverage the robust infrastructure for decentralized finance provided by Terra.
+[Build dApps](docs/develop/dapp/smart-contracts/README.md) that leverage the robust infrastructure for decentralized finance provided by Terra.
 
 ---
 
-**Integrations**
+**Discover Terra integrations**
 ^^^
-Discover novel applications built on Terra and integrations with existing tools.
+Explore novel [Terra applications and integrations](docs/learn/ecosystem/integrations.md) with existing tools.
 
 ````
-
 
 %## Learn
 

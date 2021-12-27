@@ -12,15 +12,15 @@ The protocol consists of two main tokens, Terra and Luna.
 
 ## How the Terra protocol works
 
-### Stablecoin
+### Stablecoins
 
-Stablecoins are the main feature of the Terra protocol: crypto assets that track the price of an underlying currency. As a digital form of currency, Terra stablecoins can be used just like [fiat](glossary.md#fiat) currency with [blockchain's](glossary.md#blockchain) added benefits: an unchangeable public ledger, instant transactions, faster settlement times, and fewer fees.
+Stablecoins are the main feature of the Terra protocol: crypto assets that track the price of an underlying currency. As a digital form of currency, Terra stablecoins can be used just like [fiat currency](glossary.md#fiat-currency)  with [blockchain's](glossary.md#blockchain) added benefits: an unchangeable public ledger, instant transactions, faster settlement times, and fewer fees.
 
 Stablecoins are only valuable to users if they maintain their [price peg](glossary.md#peg). The Terra protocol uses the basic market forces of supply and demand to maintain the price of Terra. When the demand for Terra is high and the supply is limited, the price of Terra increases. When the demand for Terra is low and the supply is too large, the price of Terra decreases. The protocol ensures the supply and demand of Terra is always balanced, leading to a stable price.
 
 ### Expansion and contraction
 
-Imagine the whole Terra economy as two pools: one for Terra and one for Luna. To maintain the price of Terra, the Luna supply pool adds to or subtracts from Terra’s supply. Users burn Luna to mint Terra and burn Terra to mint Luna, all incentivized by the protocol's algorithmic [market module](../develop/terra-core/module-specifications/spec-market.md).
+Imagine the whole Terra economy as two pools: one for Terra and one for Luna. To maintain the price of Terra, the Luna supply pool adds to or subtracts from Terra’s supply. Users burn Luna to mint Terra and burn Terra to mint Luna, all incentivized by the protocol's algorithmic [market module](../develop/module-specifications/spec-market.md).
 
 - **Expansion**: When the price of Terra is high relative to its [peg](glossary.md#peg), supply is too small and demand is too high. The protocol incentivizes users to burn Luna and mint Terra. The new supply of Terra makes its pool larger, balancing supply with demand. Users mint more Terra from burned Luna until Terra reaches its target price. The Luna pool gets smaller in this process, increasing the price of Luna.
 
@@ -30,7 +30,7 @@ Luna is the variable counterpart to the stable asset Terra. By modulating supply
 
 ### The market module and arbitrage
 
-The price stability of Terra is achieved by the protocol's algorithmic [market module](../develop/terra-core/module-specifications/spec-market.md), which incentivizes the minting or burning of Terra through arbitrage opportunities. [Arbitrage](glossary.md#arbitrage) occurs when a user profits from price differences between markets.
+The price stability of Terra is achieved by the protocol's algorithmic [market module](../develop/module-specifications/spec-market.md), which incentivizes the minting or burning of Terra through arbitrage opportunities. [Arbitrage](glossary.md#arbitrage) occurs when a user profits from price differences between markets.
 
 The Terra protocol's market module enables users to always trade 1 USD worth of Luna for 1 UST, and vice versa, incentivizing users to maintain the price of Terra. This same principle is true for all Terra stablecoin denominations.
 
@@ -129,14 +129,14 @@ The Terra protocol incentivizes validators and delegators with staking rewards. 
 
 - [Gas](./fees.md#gas): Compute fees added on to each transaction to avoid spamming. Validators set minimum gas prices and reject transactions that have implied gas prices below this threshold.
 
-- [Stability fees](./fees.md#stability-fee): Fees added to any Terra stablecoin transaction, excluding [market swaps](./Glossary.md#market-swap), to provide stability in the market. Fees are capped at 1SDT. The fee rate, called the tax rate, is variable.
+- [Stability fees](./fees.md#stability-fees): Fees added to any Terra stablecoin transaction, excluding [market swaps](./glossary.md#market-swap), to provide stability in the market. Fees are capped at 1SDT. The fee rate, called the tax rate, is variable.
 
-- **Swap fees**: The fee for swapping Terra stablecoin denominations is called a [Tobin tax](./fees.md#tobin-tax). Exchanges between Terra and Luna are subject to a [spread fee](./fees.md#spread-fee).
+- **Swap fees**: The fee for swapping Terra stablecoin denominations is called a [Tobin tax](./fees.md#tobin-tax). Exchanges between Terra and Luna are subject to a [spread fee](./fees.md#spread-fees).
 
 For more information on fees, visit the [fee page](./fees.md).
 
 At the end of every block, all transaction fees are distributed to each validator and their delegators proportional to their staked amount. Validators can keep a portion of rewards to pay for their services. This portion is called commission. The rest of the rewards are distributed to delegators according to their staked amounts.
-Staking rewards also play a key role in the stability of the Terra protocol. During periods of volatility, the Terra protocol modulates tax rates to maintain a stable mining incentive. This mechanism is described in detail in the [treasury module](../develop/terra-core/module-specifications/spec-treasury.md). Steady rewards regardless of market volatility ensure steady demand for staking. Staking locks value in the system, ensuring long- and short-term stability for the price of Terra.
+Staking rewards also play a key role in the stability of the Terra protocol. During periods of volatility, the Terra protocol modulates tax rates to maintain a stable mining incentive. This mechanism is described in detail in the [treasury module](../develop/module-specifications/spec-treasury.md). Steady rewards regardless of market volatility ensure steady demand for staking. Staking locks value in the system, ensuring long- and short-term stability for the price of Terra.
 
 ### Slashing
 
@@ -155,7 +155,7 @@ Slashing occurs under the following conditions:
 
 Validators monitor each other closely and can submit evidence of misbehavior. Once discovered, the misbehaving validator will have a small portion of their funds slashed. Offending validators will also be jailed or excluded from consensus for a period of time. Even simple issues such as malfunctions or downtimes from upgrading can lead to slashing.
 
-For more information on slashing, visit the [slashing module](../develop/terra-core/module-specifications/spec-slashing.md).
+For more information on slashing, visit the [slashing module](../develop/module-specifications/spec-slashing.md).
 
 ## Governance
 
@@ -178,7 +178,7 @@ Other issues like large directional changes or any decision requiring manual imp
 
 Community members vote with their staked Luna. One staked Luna equals one vote. If a user fails to specify a vote, their vote defaults to the validator they are staked to. Validators vote with their entire stake unless specified by delegators. For this reason, it is very important that each delegator votes according to their preferences.
 
-The following is a basic outline of the governance process. Visit the [governance module](../develop/terra-core/module-specifications/spec-governance.md) for more details.
+The following is a basic outline of the governance process. Visit the [governance module](../develop/module-specifications/spec-governance.md) for more details.
 
 1. A user submits a proposal and a two-week deposit period begins.
 2. Users deposit Luna as collateral to back the proposal. This period ends once a minimum threshold of 50 Luna is deposited. Deposits are to protect against spam.

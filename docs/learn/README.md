@@ -1,10 +1,11 @@
 # Learn
 
+Use the following information to familiarize yourself with the Terra protocol and helpful terminology, the vibrant Terra ecosystem, and Terra Station, the official Terra wallet.
+
 ```{toctree}
-:hidden:
-terra-station/README
 protocol
-glossary
-fees
 ecosystem/README
+fees
+glossary
+terra-station/README
 ```
