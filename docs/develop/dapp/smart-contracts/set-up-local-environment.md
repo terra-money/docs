@@ -1,6 +1,6 @@
 # Environment Setup
 
-As a smart contract developer, you will need to write, compile, upload, and test your contracts before deploying them to be used on the Columbus mainnet. As this development process can involve manually juggling multiple moving parts over many iterations, it is helpful to first set up a specialized environment to streamline development.
+As a smart contract developer, you will need to write, compile, upload, and test your contracts before deploying them on the Columbus mainnet. The first step is to set up a specialized environment to streamline development.
 
 ## Install Terra Core locally
 

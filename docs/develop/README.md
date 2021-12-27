@@ -2,10 +2,9 @@
 
 ```{toctree}
 :hidden:
-sign-with-multisig
-start-LCD
 dapp/README
-reference/README
+terrad/README
+module-specifications/README
 sdks/README
-terra-core/README
+reference/README
 ```

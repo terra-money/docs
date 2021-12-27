@@ -27,7 +27,7 @@ The following structure shows your scaffolded project:
 
 ## Deployment
 
-To deploy the application, run the following command: 
+To deploy the application, run the following command:
 
 ```sh
 terrain deploy counter --signer validator

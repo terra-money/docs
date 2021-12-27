@@ -1,5 +1,23 @@
-# Terra core developer guide
+# Terra core modules
 
+```{toctree}
+:hidden:
+spec-auth
+spec-authz
+spec-bank
+spec-capability
+spec-distribution
+spec-evidence
+spec-feegrant
+spec-governance
+spec-market
+spec-mint
+spec-oracle
+spec-slashing
+spec-staking
+spec-treasury
+spec-wasm
+```
 This document covers tips and guidelines to help you to understand how Terra works and efficiently navigate the codebase of Terra Core, the official Golang reference implementation of the Terra node software.
 
 :::{note}
@@ -8,9 +26,9 @@ The Terra Core is built using the [Cosmos SDK](https://cosmos.network/sdk), whic
 It is highly recommended that you review these projects before diving into the Terra developer documentation, as they assume familiarity with concepts such as ABCI, Validators, Keepers, Message Handlers, etc.
 :::
 
-## How to use the docs
+## How to use the core module docs
 
-As a developer, you will likely find the **Module Specifications** section the most informative. Each specification starts out with a short description of the module's main function within the architecture of the system, and how it contributes in implementing Terra's features.
+Each module specification starts out with a short description of the module's main function within the architecture of the system, and how it contributes in implementing Terra's features.
 
 Beyond the introduction, each module will lay out a more detailed description of its main process and algorithms, alongside any concepts you may need to know. It is recommended that you start here to understand a module, as it is usually cross-referenced with more specific sections deeper in the spec such as specific state variables, message handlers and functions that may be of interest.
 
@@ -120,23 +138,3 @@ The micro-unit ($\times 10^{-6}$) is the smallest atomic unit of both Terra stab
 | TerraMNT     | µMNT       | `umnt`  | 0.000001 MNT  |
 
 Note that the Terra protocol is only aware of the value of fiat currencies through their Terra stablecoin counterparts, which are assumed to trade relatively close to the value of the fiat currency they are pegged to, due to arbitrage activity.
-
-```{toctree}
-:hidden:
-:caption: Module specifications
-spec-auth
-spec-authz
-spec-bank
-spec-capability
-spec-distribution
-spec-evidence
-spec-feegrant
-spec-governance
-spec-market
-spec-mint
-spec-oracle
-spec-slashing
-spec-staking
-spec-treasury
-spec-wasm
-```

@@ -1,16 +1,18 @@
 # Build a simple Terra dApp
 
-This tutorial is designed to get you quickly acquainted with everything you need to know to start launch your own smart-contract powered applications, building atop the Terra dApp platform.
+This tutorial is designed to get you acquainted with everything you need to know to launch your own smart-contract powered applications on Terra.
 
-In this tutorial, we will go over all the necessary steps to go from idea to execution and deployment by walking through the default template contract provided by CosmWasm. In doing so, you will learn:
+Using CosmWasm's default template contract as an example, this tutorial walks you through the necessary steps to go from an idea to execution.
 
-1. How to set up your environment for smart contract development and testing
-2. The basic structure and execution model for smart contracts
-3. The local build, upload, and testing process
+In this guide, you will learn:
+
+1. How to set up your environment for smart contract development and testing.
+2. The basic structure and execution model for smart contracts.
+3. The local build, upload, and testing process.
 
 ## Requirements
 
-- [Docker](https://www.docker.com/) installed on your machine
+- [Docker](https://www.docker.com/)
 - Basic familiarity with the Terra ecosystem
-- Basic proficiency with the [Rust](https://www.rust-lang.org/) programming language
+- Basic proficiency with [Rust](https://www.rust-lang.org/)
 - A desire to disrupt traditional finance

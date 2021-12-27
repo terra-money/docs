@@ -1,5 +1,11 @@
 # Using terrad
 
+```{toctree}
+:hidden:
+commands
+subcommands
+```
+
 The following information explains the functions you can use from terrad, the command-line interface that connects to Terra and enables you to interact with the Terra blockchain. Every active validator and full node runs terrad and communicates with their node via terrad. In this relationship, terrad operates as both the client and the server. You can use terrad to interact with the Terra blockchain by uploading contracts, querying data, managing staking activities, working with governance proposals, and more. For more general information at the command line, run `terrad --help`. For more information about a specific `terrad` command, append the `-h` or `--help` flag after the command, such as `terrad query --help`.
 
 ## Accessing a Node
@@ -190,10 +196,3 @@ echo '. terrad_completion' >> ~/.bashrc
 ```
 
 Refer to the user's manual of your interpreter provided by your operating system for information on how to enable shell autocompletion.
-
-```{toctree}
-:hidden:
-:caption: terrad
-commands
-subcommands
-```

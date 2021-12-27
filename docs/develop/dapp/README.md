@@ -1,7 +1,6 @@
 # Build a dApp
 
 ```{toctree}
-:caption: Build a dApp
+quick-start/README
 smart-contracts/README
-
 ```
