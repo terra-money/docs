@@ -263,6 +263,10 @@ For more information on how the Terra protocol works, visit the [concepts page](
 
 A fee added to every swap between Terra stablecoins (spot-trading). The rate varies, depending on the denomination. For example, while the rate for most denominations is .35%, the rate for MNT is 2%. To see the rates, [query the oracle](https://lcd.terra.dev/terra/oracle/v1beta1/denoms/tobin_taxes).
 
+## Tombstone
+
+To block a validator from participating in consensus or oracle voting.
+
 ## Total stake
 
 The total amount of Luna bonded to a delegator, including self-bonded Luna.
