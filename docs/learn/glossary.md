@@ -56,7 +56,7 @@ The current version of the [Terra mainnet](#terra-mainnet).
 
 The percentage of [staking rewards](#rewards) a [validator](#validator) keeps before distributing the rest of the rewards to [delegators](#delegator). Commission is a validator’s income. Validators set their own commission rates.
 
-## Community pool
+## community pool
 
 A special fund designated for funding community projects. Any community member can create a governance proposal to spend the tokens in the community pool. If the proposal passes, the funds are spent as specified in the proposal.
 

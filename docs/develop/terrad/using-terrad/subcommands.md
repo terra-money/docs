@@ -1234,7 +1234,7 @@ where `proposal.json` contains the following information:
 Because parameter changes are evaluated but not validated, ensure that new value you propose is valid for its parameter. For example, the proposed value for `MaxValidators` must be an integer, not a decimal.
 :::
 
-### Community pool spend proposal
+### community pool spend proposal
 
 When you submit a community pool spend proposal, we recommend you send the proposal as a JSON file.
 
@@ -1258,7 +1258,7 @@ where `proposal.json` contains the following information:
 
 ```json
 {
-  "title": "Community Pool Spend",
+  "title": "community pool Spend",
   "description": "Pay me some Lunas!",
   "recipient": "terra1s5afhd6gxevu37mkqcvvsj8qeylhn0rzn7cdaq",
   "amount": [
