@@ -60,7 +60,7 @@ await lib.getCount()
 
 3. After incrementing once, `await lib.getCount()` will return:
 
-```JSON
+```json
 { count: 1 }
 ```
 
