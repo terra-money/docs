@@ -4,7 +4,7 @@ The Oracle module provides the Terra blockchain with an up-to-date and accurate 
 
 As price information is extrinsic to the blockchain, the Terra network relies on validators to periodically vote on the current Luna exchange rate, with the protocol tallying up the results once per `VotePeriod` and updating the on-chain exchange rate as the weighted median of the ballot converted Cross Exchange Rates using `ReferenceTerra`.
 
-:::{note}
+:::{Important}
 Since the Oracle service is powered by validators, you may find it interesting to look at the [Staking](spec-staking.md) module, which covers the logic for staking and validators.
 :::
 
@@ -63,7 +63,7 @@ After the votes are tallied, the winners of the ballots are determined with [`ta
 
 Voters that have managed to vote within a narrow band around the weighted median, are rewarded with a portion of the collected seigniorage. See [`k.RewardBallotWinners()`](#krewardballotwinners) for more details.
 
-:::{note}
+:::{Important}
 As of Columbus-5, swap fees dividend to faithful oracles voters instead of being burned.
 :::
 
@@ -91,7 +91,7 @@ A validator may abstain from voting by submitting a non-positive integer for the
 
 ## Message Types
 
-:::{note}
+:::{Important}
 The control flow for vote-tallying, Luna exchange rate updates, ballot rewards and slashing happens at the end of every `VotePeriod`, and is found at the [end-block ABCI function](#end-block) rather than inside message handlers.
 :::
 

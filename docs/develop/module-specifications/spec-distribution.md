@@ -1,6 +1,6 @@
 # Distribution
 
-:::{note}
+:::{Important}
 Terra's Distribution module inherits from Cosmos SDK's [`distribution`](https://docs.cosmos.network/master/modules/distribution/) module. This document is a stub, and covers mainly important Terra-specific notes about how it is used.
 :::
 
@@ -20,7 +20,7 @@ Collected rewards are pooled globally and distrubuted to validators and delegato
 
 The Community Pool is a reserve of tokens that is designated for funding projects that promote further adoption and stimulate growth for the Terra economy. The portion of seigniorage that is designated for ballot winners of the Exchange Rate Oracle is called the [Reward Weight](spec-treasury.md#reward-weight), a value governed by the Treasury. The rest of that seigniorage is all dedicated to the Community Pool.
 
-:::{note}
+:::{Important}
 As of Columbus-5, all seigniorage is burned, and the Community Pool no longer receives funding.
 :::
 

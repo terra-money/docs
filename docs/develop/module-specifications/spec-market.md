@@ -32,7 +32,7 @@ Terra uses a Constant Product market-making algorithm to ensure liquidity for Te
 
 With Constant Product, we define a value $CP$ set to the size of the Terra pool multiplied by a set **fiat value of Luna**, and ensure our market-maker maintains it as invariant during any swaps by adjusting the spread.
 
-::: {note}
+::: {Important}
 Terra's implementation of Constant Product diverges from Uniswap's: the Terra protocol uses the fiat value of Luna instead of the size of the Luna pool. This nuance means changes in Luna's price don't affect the product, but rather the size of the Luna pool.
 :::
 
@@ -93,7 +93,7 @@ Upon successful completion of Terra<>Luna swaps, a portion of the coins to be cr
 
 When Luna swaps into Terra, the Luna recaptured by the protocol is called seigniorage -- the value generated from issuing new Terra. The total seigniorage at the end of each epoch is calculated and reintroduced into the economy as ballot rewards for the exchange rate oracle and to the community pool by the Treasury module. For more informations, see [`k.SettleSeigniorage`](./spec-treasury.md#ksettleseigniorage).
 
-::: {note}
+::: {Important}
 As of Columbus-5, all seigniorage is burned, and the community pool is no longer funded. Swap fees are used as ballot rewards for the exchange rate oracle.
 :::
 
@@ -150,7 +150,7 @@ This function detects the swap type from the offer and ask denominations and ret
 
 If the `offerCoin`'s denomination is the same as `askDenom`, this will raise `ErrRecursiveSwap`.
 
-:::{note}
+:::{Important}
 `k.ComputeSwap()` uses `k.ComputeInternalSwap()` internally, which only contains the logic for calculating proper ask coins to exchange, and not the Constant Product spread.
 :::
 

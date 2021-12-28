@@ -1,6 +1,6 @@
 # Capability
 
-:::{note}
+:::{Important}
 Terra's capability module inherits from Cosmos SDK's [`capability`](https://docs.cosmos.network/master/modules/capability/) module. This document is a stub, and covers mainly important Terra-specific notes about how it is used.
 :::
 

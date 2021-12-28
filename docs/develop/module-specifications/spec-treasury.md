@@ -6,7 +6,7 @@ sidebarDepth: 2
 
 The Treasury module acts as the "central bank" of the Terra economy, measuring macroeconomic activity by [observing indicators](#observed-indicators) and adjusting [monetary policy levers](#monetary-policy-levers) to modulate miner incentives toward stable, long-term growth.
 
-:::{note}
+:::{Important}
 While the Treasury stabilizes miner demand by adjusting rewards, the [`Market`](./spec-market.md) module is responsible for Terra price-stability through arbitrage and the market maker.
 :::
 
@@ -24,13 +24,13 @@ These indicators are used to derive two other values:
 - **Tax Reward per unit Luna** $\tau = T / \lambda$: this is used in [Updating Tax Rate](#kupdatetaxpolicy)
 - **Total mining rewards** $R = T + S$: the sum of the Tax Rewards and the Seigniorage Rewards, used in [Updating Reward Weight](#kupdaterewardpolicy).
 
-:::{note}
+:::{Important}
 As of Columbus-5, all seigniorage is burned and no longer funds community or reward pools.
 :::
 
 - **Seigniorage Rewards:**: $S$, The amount of seigniorage generated from Luna swaps to Terra during each epoch.
 
-:::{note}
+:::{Important}
 As of Columbus-5, all seigniorage is burned.   
 :::
 
@@ -44,7 +44,7 @@ The protocol can compute and compare the short-term ([`WindowShort`](#windowshor
 
 - **Reward Weight**: $w$, the portion of seigniorage allocated to the reward pool for [`Oracle`](spec-oracle.md) vote winners. This is given to validtors who vote within the reward band of the weighted median exchange rate.
 
-:::{note}
+:::{Important}
 As of Columbus-5, all seigniorage is burned and no longer funds the community pool or the oracle reward pool. Validators are rewarded for faithful oracle votes through swap fees.
 :::
 
@@ -115,7 +115,7 @@ type TaxRateUpdateProposal struct {
 }
 ```
 
-:::{note}
+:::{Important}
 As of Columbus-5, all seigniorage is burned. The Reward Weight is now set to `1`.
 :::
 
@@ -233,7 +233,7 @@ Using $w_t$ as the current reward weight, and $b$ as the [`SeigniorageBurdenTarg
 4. If $R_m > 0$ or $S_m > 0$, the new Reward Weight is $w_{t+1} = b w_t S_m / R_m$, subject to the rules of `pc.Clamp()`. See [constraints](#policyconstraints) for more details.
 
 
-::: {note}
+::: {Important}
 As of Columbus-5, all seigniorage is burned and no longer funds the community or reward pools.
 :::
 
@@ -263,7 +263,7 @@ This function is called at the end of an epoch to compute seigniorage and forwar
 
 3. The remainder of the coins $\Sigma - S$ is sent to the [`Distribution`](spec-distribution.md) module, where it is allocated into the community pool.
 
-::: {note}
+::: {Important}
 As of Columbus-5, all seigniorage is burned and no longer funds the community pool or the oracle reward pool. Validators are rewarded for faithful oracle votes through swap fees.
 :::
 

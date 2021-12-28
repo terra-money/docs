@@ -1,6 +1,6 @@
 # Governance
 
-:::{note}
+:::{Important}
 Terra's Governance module inherits from Cosmos SDK's [`gov`](https://docs.cosmos.network/master/modules/gov/) module. This document is a stub, and covers mainly important Terra-specific notes about how it is used.
 :::
 
@@ -141,7 +141,7 @@ type ParamChange struct {
 }
 ```
 
-:::{note}
+:::{Important}
 Parameter Change Proposals are actually located in the Params module, an internal module. It is shown here for your convenience.
 :::
 

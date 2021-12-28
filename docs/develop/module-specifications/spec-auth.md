@@ -1,24 +1,24 @@
 # Auth
 
-:::{note}
+:::{Important}
 Terra's Auth module inherits from Cosmos SDK's [`auth`](https://docs.cosmos.network/master/modules/auth/) module. This document is a stub, and covers mainly important Terra-specific notes about how it is used.
 :::
 
-Terra's Auth module extends the functionality from Cosmos SDK's `auth` module with a modified ante handler, which applies the [stability fee](../../../learn/glossary.md#fees) alongside all basic transaction validity checks, such as signatures, nonces, and auxiliary fields. This module also defines a special vesting account type that handles the logic for token vesting from the Luna presale.
+Terra's Auth module extends the functionality from Cosmos SDK's `auth` module with a modified ante handler, which applies the [stability fee](../../learn/glossary.md#fees) alongside all basic transaction validity checks, such as signatures, nonces, and auxiliary fields. This module also defines a special vesting account type that handles the logic for token vesting from the Luna presale.
 
 ## Fees
 
 The Auth module reads the current effective `TaxRate` and `TaxCap` parameters from the [`Treasury`](./spec-treasury.md) module to enforce a stability fee.
 
-### Gas Fee
+### Gas fee
 
-Like all transactions on the Terra blockchain, [`MsgSend`](./spec-bank.md#msgsend) and [`MsgMultiSend`](./spec-bank.md#msgmultisend) incur gas fees. These fees are determined by a validator's minimum gas price and the complexity of the transaction. More complex transactions incur higher fees. Gas fees are specified by the sender when a transaction is outbound. For more information on how gas is calculated, see [fees](../terrad/README.md#fees).
+Like all transactions on the Terra blockchain, [`MsgSend`](./spec-bank.md#msgsend) and [`MsgMultiSend`](./spec-bank.md#msgmultisend) incur gas fees. These fees are determined by a validator's minimum gas price and the complexity of the transaction. More complex transactions incur higher fees. Gas fees are specified by the sender when a transaction is outbound. For more information on how gas is calculated, see [fees](../terrad/using-terrad/README.md#fees).
 
-### Stability Fee
+### Stability fee
 
 In addition to the gas fee, the ante handler charges a stability fee on all transactions using Terra stablecoins, excluding market swaps. The ante handler reads the `TaxRate` and `TaxCap` parameters from the [`Treasury`](./spec-treasury.md) module and computes the stability fee amount for each transaction.
 
-The `TaxRate` specifies the stability fee percentage rate for transactions. These fees become the `TaxProceeds` in block rewards and then are distributed among validators in the active set. For more information about the distribution model, see [How are block provisions distributed](../../../validate/manage-a-terra-validator/faq.md#how-are-block-provisions-distributed). Stability fees are capped for each transaction according to the `TaxCap`. Every epoch, the Tax Rate and Tax Caps are recalibrated automatically by the network. For more details on how these rates are set, see [the treasury module](./spec-treasury.md#monetary-policy-levers).
+The `TaxRate` specifies the stability fee percentage rate for transactions. These fees become the `TaxProceeds` in block rewards and then are distributed among validators in the active set. For more information about the distribution model, see [How are block provisions distributed](../../validate/manage-a-terra-validator/faq.md#how-are-block-provisions-distributed). Stability fees are capped for each transaction according to the `TaxCap`. Every epoch, the Tax Rate and Tax Caps are recalibrated automatically by the network. For more details on how these rates are set, see [the treasury module](./spec-treasury.md#monetary-policy-levers).
 
 **Example**:
 
