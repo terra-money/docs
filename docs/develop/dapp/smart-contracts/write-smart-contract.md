@@ -320,7 +320,7 @@ docker run --rm -v "$(pwd)":/code \
 
 This will result in an optimized build of `artifacts/my_first_contract.wasm` or `artifacts/my_first_contract-aarch64.wasm` in your working directory.
 
-::: {note}
+::: {Important}
 Please note that rust-optimizer will produce different contracts on Intel and ARM machines. So for reproducible builds you'll have to stick to one.
 :::
 

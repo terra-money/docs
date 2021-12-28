@@ -1,7 +1,7 @@
 # Evidence
 
-:::{note}
-Terra's evidence module inherits from Cosmos SDK's [`evidence`](https://docs.cosmos.network/master/modules/evidence/) module. This document is a stub, and covers mainly important Terra-specific notes about how it is used.
+:::{Important}
+Terra's evidence module inherits from Cosmos SDK's [`evidence`](https://docs.cosmos.network/master/modules/evidence/) module. This document is a stub and covers mainly important Terra-specific notes about how it is used.
 :::
 
 The evidence module allows arbitrary evidence of misbehavior, such as equivocation and counterfactual signing, to be submitted and handled.
@@ -10,7 +10,7 @@ Typically, standard evidence handling expects the underlying consensus engine, T
 
 All concrete evidence types must implement the `Evidence` interface contract. First, submitted `Evidence` is routed through the evidence module's `Router`, where it attempts to find a corresponding registered `Handler` for that specific `Evidence` type. Each `Evidence` type must have a `Handler` registered with the evidence module's keeper for it to be successfully routed and executed.
 
-Each corresponding handler must also fulfill the `Handler` interface contract. The `Handler` for a given `Evidence` type can perform any arbitrary state transitions such as slashing, jailing, and tombstoning.
+Each corresponding handler must also fulfill the `Handler` interface contract. The `Handler` for a given `Evidence` type can perform any arbitrary state transitions, such as slashing, jailing, and [tombstoning](../../learn/glossary.md#tombstone).
 
 ## Concepts
 

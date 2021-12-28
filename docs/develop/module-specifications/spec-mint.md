@@ -2,20 +2,20 @@
 
 ## Concepts
 
-### The Minting Mechanism
+### The minting mechanism
 
 The minting mechanism was designed to:
 
-- allow for a flexible inflation rate determined by market demand targeting a particular bonded-stake ratio
-- effect a balance between market liquidity and staked supply
+- Allow for a flexible inflation rate determined by market demand targeting a particular bonded-stake ratio.
+- Affect a balance between market liquidity and staked supply.
 
-In order to best determine the appropriate market rate for inflation rewards, a moving change rate is used. The moving change rate mechanism ensures that if the % bonded is either over or under the goal %-bonded, the inflation rate will adjust to further incentivize or disincentivize being bonded, respectively. Setting the goal %-bonded at less than 100% encourages the network to maintain some non-staked tokens which should help provide some liquidity.
+To best determine the appropriate market rate for inflation rewards, a moving change rate is used. The moving change rate mechanism ensures that if the percentage bonded is either over or under the goal percentage-bonded, the inflation rate will adjust to further incentivize or disincentivize being bonded, respectively. Setting the goal percentage-bonded at less than 100% encourages the network to maintain some nonstaked tokens, which helps to provide some liquidity.
 
-It can be broken down in the following way:
+It works in the following ways:
 
-If the inflation rate is below the goal %-bonded the inflation rate will increase until a maximum value is reached
-If the goal % bonded (67% in Cosmos-Hub) is maintained, then the inflation rate will stay constant
-If the inflation rate is above the goal %-bonded the inflation rate will decrease until a minimum value is reached
+- If the inflation rate is below the goal percentage-bonded, the inflation rate increases until a maximum value is reached.
+- If the goal percentage-bonded (67% in Cosmos-Hub) is maintained, the inflation rate stays constant.
+- If the inflation rate is above the goal percentage-bonded, the inflation rate decreases until a minimum value is reached.
 
 ## Parameters
 

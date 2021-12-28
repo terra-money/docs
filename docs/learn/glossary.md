@@ -56,7 +56,7 @@ The current version of the [Terra mainnet](#terra-mainnet).
 
 The percentage of [staking rewards](#rewards) a [validator](#validator) keeps before distributing the rest of the rewards to [delegators](#delegator). Commission is a validator’s income. Validators set their own commission rates.
 
-## Community pool
+## community pool
 
 A special fund designated for funding community projects. Any community member can create a governance proposal to spend the tokens in the community pool. If the proposal passes, the funds are spent as specified in the proposal.
 
@@ -262,6 +262,10 @@ For more information on how the Terra protocol works, visit the [concepts page](
 ## Tobin tax
 
 A fee added to every swap between Terra stablecoins (spot-trading). The rate varies, depending on the denomination. For example, while the rate for most denominations is .35%, the rate for MNT is 2%. To see the rates, [query the oracle](https://lcd.terra.dev/terra/oracle/v1beta1/denoms/tobin_taxes).
+
+## Tombstone
+
+To block a validator from participating in consensus or oracle voting.
 
 ## Total stake
 
