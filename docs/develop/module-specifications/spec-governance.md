@@ -150,7 +150,7 @@ Parameter-change proposals are a special type of proposal which, once passed, au
 ### Software-upgrade proposals
 
 ::: {caution}
-Software upgrade proposals exist because they are inherited from the Cosmos SDK, but they are temporarily unavailable because they have not been implemented yet. Therefore, they share the same semantics as a simple text proposal. If you submit this type of proposal, you might lose your Luna deposit.
+Software upgrade proposals exist because they are inherited from the Cosmos SDK, but they are temporarily unavailable because they have not been implemented yet. Therefore, they share the same semantics as a simple text proposal. If you submit a software-upgrade proposal, [you might lose your Luna deposit](../../learn/protocol.md#deposits).
 :::
 
 ## Transitions
@@ -159,7 +159,7 @@ Software upgrade proposals exist because they are inherited from the Cosmos SDK,
 
 > This section was taken from the official Cosmos SDK docs, and placed here for your convenience to understand the Governance process.
 
-`ProposalProcessingQueue` is a queue `queue[proposalID]` containing all the `ProposalID`s of proposals that reached `MinDeposit`. At the end of each block, all the proposals that have reached the end of their voting period are processed. To process a finished proposal, the application tallies the votes, computes the votes of each validator and checks if every validator in the validator set has voted. If the proposal is accepted, deposits are refunded. Finally, the proposal content `Handler` is executed.
+`ProposalProcessingQueue` is a queue `queue[proposalID]` containing all the `ProposalID`s of proposals that reached `MinDeposit`. At the end of each block, all the proposals that have reached the end of their voting period are processed. To process a finished proposal, the application tallies the votes, computes the votes of each validator, and checks whether every validator in the validator set has voted. If the proposal is accepted, deposits are refunded. Finally, the proposal content `Handler` is executed.
 
 ```go
 for finishedProposalID in GetAllFinishedProposalIDs(block.Time)
