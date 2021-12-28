@@ -1,12 +1,12 @@
 # Bank
 
 :::{Important}
-Terra's Bank module inherits from Cosmos SDK's [`bank`](https://docs.cosmos.network/master/modules/bank/) module. This document is a stub, and covers mainly important Terra-specific notes about how it is used.
+Terra's bank module inherits from the Cosmos SDK's [`bank`](https://docs.cosmos.network/master/modules/bank/) module. This document is a stub and covers mainly important Terra-specific notes about how it is used.
 :::
 
 The bank module is the base transactional layer of the Terra blockchain. This module allows assets to be sent from one `Account` to another. The bank module defines the following types of send transactions: `MsgSend` and `MsgMultiSend`. These messages automatically incur a stability fee, which is done by the [ante handler in the `Auth` module](spec-auth.md#stability-fee).
 
-## Message Types
+## Message types
 
 ### MsgSend
 
@@ -19,7 +19,7 @@ type MsgSend struct {
 }
 ```
 
-The Bank module is used to send coins from one Terra account to another. `MsgSend` is constructed to facilitate the transfer. If the balance of coins in the sender `Account` is insufficient or the recipient `Account` is unable to receive the funds via the bank module, the transaction fails. Taxes and fees already paid through failed transactions are not refunded.
+The bank module is used to send coins from one Terra account to another. `MsgSend` is constructed to facilitate the transfer. If the balance of coins in the sender `Account` is insufficient or the recipient `Account` is unable to receive the funds via the bank module, the transaction fails. Taxes and fees already paid through failed transactions are not refunded.
 
 ### MsgMultiSend
 
