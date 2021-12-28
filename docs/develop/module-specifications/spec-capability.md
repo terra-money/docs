@@ -1,10 +1,10 @@
 # Capability
 
 :::{Important}
-Terra's capability module inherits from Cosmos SDK's [`capability`](https://docs.cosmos.network/master/modules/capability/) module. This document is a stub, and covers mainly important Terra-specific notes about how it is used.
+Terra's capability module inherits from Cosmos SDK's [`capability`](https://docs.cosmos.network/master/modules/capability/) module. This document is a stub and covers mainly important Terra-specific notes about how it is used.
 :::
 
-The capability module allows you to provision, track, and authenticate multi-owner capabilities at runtime.
+The capability module allows you to provision, track, and authenticate multiowner capabilities at runtime.
 
 The keeper maintains two states: persistent and ephemeral in-memory. The persistent state maintains a globally unique autoincrementing index and a map from the capability index to a set of capability owners that are defined as a module and a capability name tuple. The ephemeral in-memory state tracks the actual capabilities, represented as addresses in local memory, with both forward and reverse indexes. The forward index maps the module name and capability tuples to the capability name. The reverse index maps the module and capability name to the capability itself.
 
