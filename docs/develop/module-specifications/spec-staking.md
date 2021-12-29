@@ -1,8 +1,8 @@
 # Staking
 
-The Staking module enables Terra's Proof-of-Stake functionality by requiring validators to bond Luna, the native staking asset.
+The staking module enables Terra's proof-of-stake functionality by requiring validators to bond Luna, the native staking asset.
 
-## Message Types
+## Message types
 
 ### MsgDelegate
 
@@ -72,58 +72,55 @@ type MsgCreateValidator struct {
 Each abci end block call, the operations to update queues and validator set
 changes are specified to execute.
 
-#### Validator Set Changes
+#### Validator set changes
 
 The staking validator set is updated during this process by state transitions
-that run at the end of every block. As a part of this process any updated
+that run at the end of every block. As a part of this process, any updated
 validators are also returned back to Tendermint for inclusion in the Tendermint
-validator set which is responsible for validating Tendermint messages at the
-consensus layer. Operations are as following:
+validator set, which is responsible for validating Tendermint messages at the
+consensus layer. The following operations are done:
 
-- the new validator set is taken as the top `params.MaxValidators` number of
-  validators retrieved from the ValidatorsByPower index
-- the previous validator set is compared with the new validator set:
-  - missing validators begin unbonding and their `Tokens` are transferred from the
-    `BondedPool` to the `NotBondedPool` `ModuleAccount`
-  - new validators are instantly bonded and their `Tokens` are transferred from the
-    `NotBondedPool` to the `BondedPool` `ModuleAccount`
+- The new validator set is taken as the top `params.MaxValidators` number of
+  validators retrieved from the ValidatorsByPower index.
+- The previous validator set is compared with the new validator set:
+  - Missing validators begin unbonding, and their `Tokens` are transferred from the
+    `BondedPool` to the `NotBondedPool` `ModuleAccount`.
+  - New validators are instantly bonded, and their `Tokens` are transferred from the
+    `NotBondedPool` to the `BondedPool` `ModuleAccount`.
 
 In all cases, any validators leaving or entering the bonded validator set or
 changing balances and staying within the bonded validator set incur an update
-message which is passed back to Tendermint.
+message that is passed back to Tendermint.
 
 #### Queues
 
-Within staking, certain state-transitions are not instantaneous but take place
-over a duration of time (typically the unbonding period). When these
-transitions are mature certain operations must take place in order to complete
-the state operation. This is achieved through the use of queues which are
-checked/processed at the end of each block.
+Within staking, certain state transitions are not instantaneous but happen
+over a duration of time, typically the unbonding period. When these
+transitions are mature, certain operations must take place to complete
+the state operation. It is achieved through the use of queues that are
+checked and processed at the end of each block.
 
-##### Unbonding Validators
+##### Unbonding validators
 
-When a validator is kicked out of the bonded validator set (either through
-being jailed, or not having sufficient bonded tokens) it begins the unbonding
-process along with all its delegations begin unbonding (while still being
-delegated to this validator). At this point the validator is said to be an
-unbonding validator, whereby it will mature to become an "unbonded validator"
+When a validator is kicked out of the bonded validator set, because either they are
+jailed or they don't have sufficient bonded tokens, it begins the unbonding
+process along with all its delegations begin unbonding, while still being
+delegated to this validator. At this point, the validator is said to be an
+unbonding validator, whereby it matures to become an unbonded validator
 after the unbonding period has passed.
 
-Each block the validator queue is to be checked for mature unbonding validators
-(namely with a completion time <= current time). At this point any mature
-validators which do not have any delegations remaining are deleted from state.
-For all other mature unbonding validators that still have remaining
+Each block the validator queue is to be checked for mature unbonding validators, namely with a completion time <= current time. At this point, any mature validators that do not have any remaining delegations are deleted from state. For all other mature unbonding validators that still have remaining
 delegations, the `validator.Status` is switched from `sdk.Unbonding` to
 `sdk.Unbonded`.
 
-##### Unbonding Delegations
+##### Unbonding delegations
 
 Complete the unbonding of all mature `UnbondingDelegations.Entries` within the
 `UnbondingDelegations` queue with the following procedure:
 
-- transfer the balance coins to the delegator's wallet address
-- remove the mature entry from `UnbondingDelegation.Entries`
-- remove the `UnbondingDelegation` object from the store if there are no
+- Transfer the balance coins to the delegator's wallet address.
+- Remove the mature entry from `UnbondingDelegation.Entries`.
+- Remove the `UnbondingDelegation` object from the store, if there are no
   remaining entries.
 
 ##### Redelegations
@@ -131,8 +128,8 @@ Complete the unbonding of all mature `UnbondingDelegations.Entries` within the
 Complete the unbonding of all mature `Redelegation.Entries` within the
 `Redelegations` queue with the following procedure:
 
-- remove the mature entry from `Redelegation.Entries`
-- remove the `Redelegation` object from the store if there are no
+- Remove the mature entry from `Redelegation.Entries`.
+- Remove the `Redelegation` object from the store, if there are no
   remaining entries.
 
 ## Parameters
@@ -153,7 +150,7 @@ type Params struct {
 - type: `time.Duration`
 - default: 3 weeks
 
-Time duration of unbonding, in nanoseconds.
+Time duration of unbonding in nanoseconds.
 
 ### MaxValidators
 
@@ -167,11 +164,11 @@ Maximum number of active validators.
 - type: `uint16`
 - default: `7`
 
-Max entries for either unbonding delegation or redelegation (per pair/trio). We need to be a bit careful about potential overflow here, since this is user-determined.
+Maximum entries for either unbonding delegation or redelegation per pair or trio. Be aware of potential overflow because this is user-determined.
 
 ### BondDenom
 
 - type: `string`
 - default: `uluna`
 
-Defines the denomination of the asset required for staking.
+Denomination of the asset required for staking.

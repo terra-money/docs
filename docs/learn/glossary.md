@@ -56,7 +56,7 @@ The current version of the [Terra mainnet](#terra-mainnet).
 
 The percentage of [staking rewards](#rewards) a [validator](#validator) keeps before distributing the rest of the rewards to [delegators](#delegator). Commission is a validator’s income. Validators set their own commission rates.
 
-## community pool
+## Community pool
 
 A special fund designated for funding community projects. Any community member can create a governance proposal to spend the tokens in the community pool. If the proposal passes, the funds are spent as specified in the proposal.
 
@@ -145,6 +145,10 @@ For more information on fees, visit [Fees on Terra](./fees.md).
 
 The creation of new coins. Minting is the opposite of burning. The Terra protocol burns Luna to mint Terra stablecoins and vice versa.
 
+## Miss
+
+When a vote fails to be included in consensus.
+
 ## Module
 
 A section of the Terra core that represents a particular function of the Terra protocol. Visit the [Terra core module specifications](../develop/terra-core/module-specifications/README.md) for more information.
@@ -191,7 +195,7 @@ The amount of Luna a validator bonds to themselves. Also referred to as self-bon
 
 Punishment for validators that misbehave. Validators lose part of their stake when they get slashed.
 
-For more information on slashing, visit the [concepts page](protocol.md#slashing)
+For more information, see [slashing](protocol.md#slashing) in the description of the Terra protocol.
 
 ## Slippage
 
@@ -203,7 +207,7 @@ The amount of [Luna](#luna) bonded to a validator.
 
 ## Staking
 
-When a user delegates or bonds their Luna to an active validator in order to receive rewards. Bonded Luna adds to a validator's stake. Validators provide their stakes as collateral to participate in the consensus process. Validators with larger stakes are chosen to participate more often. Validators receive staking rewards for their participation. A validator's stake can be slashed if the validator misbehaves. Validators never have ownership of a delegator's Luna, even when staking.
+When a user delegates or bonds their Luna to an active validator to receive rewards. Bonded Luna adds to a validator's stake. Validators provide their stakes as collateral to participate in the consensus process. Validators with larger stakes are chosen to participate more often. Validators receive staking rewards for their participation. A validator's stake can be slashed if the validator misbehaves. Validators never have ownership of a delegator's Luna, even when staking.
 
 For more information on staking, visit the [concepts page](protocol.md#staking).
 
