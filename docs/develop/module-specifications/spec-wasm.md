@@ -4,76 +4,76 @@ The WASM module implements the execution environment for WebAssembly smart contr
 
 ## Concepts
 
-### Smart Contracts
+### Smart contracts
 
-Smart contracts are autonomous agents that are able to interact with other entities on the Terra blockchain, such as human-owned accounts, validators, and other smart contracts. Each smart contract has:
+Smart contracts are autonomous agents that can interact with other entities on the Terra blockchain, such as human-owned accounts, validators, and other smart contracts. Each smart contract has:
 
-- a unique **contract address** with an account that holds funds
-- a **code ID**, where its logic is defined
-- its own **key-value store**, where it can persist and retrieve data
+- A unique contract address with an account that holds funds.
+- A code ID where its logic is defined.
+- Its own key-value store where it can persist and retrieve data
 
-#### Contract Address
+#### Contract address
 
-Upon instantiation, each contract is automatically assigned a Terra account address, called the _contract address_. The address is procedurally generated on-chain without an accompanying private / public key pair, and can be completely determined by the contract's number order of existence. For instance, on two separate Terra networks, the first contract will always be assigned the address `terra18vd8fpwxzck93qlwghaj6arh4p7c5n896xzem5`, and similarly for the second, third, and so forth.
+Upon instantiation, each contract is automatically assigned a Terra account address, called the contract address. The address is procedurally generated on-chain without an accompanying private and public key pair, and it can be completely determined by the contract's number order of existence. For instance, on two separate Terra networks, the first contract will always be assigned the address `terra18vd8fpwxzck93qlwghaj6arh4p7c5n896xzem5`, and similarly for the second, third, and so on.
 
 #### Code ID
 
-On Terra, code upload and contract creation occur as separate events. A smart contract writer first uploads WASM bytecode onto the blockchain to obtain a _code ID_, which they can then use to initialize an instance of that contract. This scheme promotes efficient storage, as most contracts share the same underlying logic and vary only in their initial configuration. Vetted, high quality contracts for common use cases such as fungible tokens and multisig wallets can be easily reused without the need to upload new code.
+On Terra, code upload and contract creation are separate events. A smart contract writer first uploads WASM bytecode onto the blockchain to obtain a code ID, which they then can use to initialize an instance of that contract. This scheme promotes efficient storage because most contracts share the same underlying logic and vary only in their initial configuration. Vetted, high-quality contracts for common use cases like fungible tokens and multisig wallets can be easily reused without the need to upload new code.
 
-#### Key-Value Store
+#### Key-value store
 
-Each smart contract is given its own dedicated keyspace in LevelDB, prefixed by the contract address. Contract code is safely sandboxed and can only can set and delete new keys and values within its assigned keyspace.
+Each smart contract is given its own dedicated keyspace in LevelDB, prefixed by the contract address. Contract code is safely sandboxed and can only set and delete new keys and values within its assigned keyspace.
 
 ### Interaction
 
-Users can interact with smart contracts in several ways.
+You can interact with smart contracts in several ways.
 
 #### Instantiation
 
-A user can instantiate a new smart contract by sending a `MsgInstantiateContract`. In it, the user is able to:
+You can instantiate a new smart contract by sending a `MsgInstantiateContract`. In it, you can:
 
-- assign an owner to the contract
-- specify code will be used for the contract via a code ID
-- define the initial parameters / configuration through an `InitMsg`
-- provide the new contract's account with some initial funds
-- denote whether the contract is migratable (can change code IDs)
+- Assign an owner to the contract.
+- Specify code will be used for the contract via a code ID.
+- Define the initial parameters / configuration through an `InitMsg`.
+- Provide the new contract's account with some initial funds.
+- Denote whether the contract is migratable (i.e. can change code IDs).
 
 The `InitMsg` is a JSON message whose expected format is defined in the contract's code. Every contract contains a section that defines how to set up the initial state depending on the provided `InitMsg`.
 
 #### Execution
 
-A user can execute a smart contract to invoke one of its defined functions by sending a `MsgExecuteContract`. In it, the user is able to:
+You can execute a smart contract to invoke one of its defined functions by sending a `MsgExecuteContract`. In it, you can:
 
-- specify which function to call with a `HandleMsg`
-- send funds to the contract, which may be expected during execution
+- Specify which function to call with a `HandleMsg`.
+- Send funds to the contract, which may be expected during execution.
 
-The `HandleMsg` is a JSON message that containing function call arguments and gets routed to the appropriate handling logic. From there, the contract executes the function's instructions, during which the contract's own state can modified. The contract can only modify outside state (such as state in other contracts or modules) after its own execution has ended, by returning a list of blockchain messages such as `MsgSend` and `MsgSwap`. These messages are appended to the same transaction as the `MsgExecuteContract`, and if any of the messages are invalid, the whole transaction is invalidated.
+The `HandleMsg` is a JSON message that contains function call arguments and gets routed to the appropriate handling logic. From there, the contract executes the function's instructions during which the contract's own state can be modified. The contract can only modify outside state, such as state in other contracts or modules, after its own execution has ended, by returning a list of blockchain messages, such as `MsgSend` and `MsgSwap`. These messages are appended to the same transaction as the `MsgExecuteContract`, and, if any of the messages are invalid, the whole transaction is invalidated.
 
 #### Migration
 
-If a user is the contract's owner, and a contract is instantiated as migratable, they can issue a `MsgMigrateContract` to reset its code ID to a new one. The migration is be parameterized with a `MigrateMsg`, a JSON message.
+If a user is the contract's owner, and a contract is instantiated as migratable, they can issue a `MsgMigrateContract` to reset its code ID to a new one. The migration can be parameterized with a `MigrateMsg`, a JSON message.
 
-#### Transfer of Ownership
+#### Transfer of ownership
 
-The current owner of the smart contract can re-assign a new owner to the contract with `MsgUpdateContractOwner`.
+The current owner of the smart contract can reassign a new owner to the contract with `MsgUpdateContractOwner`.
 
 #### Query
 
-Contracts can define query functions, or read-only operations meant for data-retrieval. This allows contracts to expose rich, custom data endpoints with JSON responses instead of raw bytes from the low-level key-value store. Because the blockchain state cannot be changed, the node can directly run the query without a transaction.
+Contracts can define query functions, or read-only operations meant for data-retrieval. Doing so allows contracts to expose rich, custom data endpoints with JSON responses instead of raw bytes from the low-level key-value store. Because the blockchain state cannot be changed, the node can directly run the query without a transaction.
 
-Users can specify which query function alongside any arguments with a JSON `QueryMsg`. Even though there is no gas fee, the query function's execution is capped by gas determined by metered execution (which is not charged) as a form of spam-protection.
+Users can specify which query function alongside any arguments with a JSON `QueryMsg`. Even though there is no gas fee, the query function's execution is capped by gas determined by metered execution, which is not charged, as a form of spam protection.
 
 ### Wasmer VM
 
-The actual execution of WASM bytecode is performed by [wasmer](https://github.com/wasmerio/wasmer), which provides a lightweight sandboxed runtime with metered execution to account for the resource cost of computation.
+The actual execution of WASM bytecode is performed by [wasmer](https://github.com/wasmerio/wasmer), which provides a lightweight, sandboxed runtime with metered execution to account for the resource cost of computation.
 
-#### Gas Meter
+#### Gas meter
 
 In addition to the regular gas fees incurred from creating the transaction, Terra also calculates a separate gas when executing smart contract code. This is tracked by the **gas meter**, which is during the execution of every opcode and gets translated back to native Terra gas via a constant multiplier (currently set to 100).
 
-### Gas Fees
+### Gas fees
 
-Wasm data and event spend gas up to `1 * bytes`. Passing the event & data to another contract also spends gas in reply.
+WASM data and event spend gas up to `1 * bytes`. Passing the event and data to another contract also spends gas in reply.
 
 ## Data
 
@@ -131,11 +131,11 @@ Maps contract address to its corresponding `ContractInfo`.
 
 Maps contract address to its dedicated KVStore.
 
-## Message Types
+## Message types
 
 ### MsgStoreCode
 
-Uploads new code to the blockchain, and results in a new code ID if successful. `WASMByteCode` is accepted as either uncompressed or gzipped binary data encoded as Base64.
+Uploads new code to the blockchain and results in a new code ID, if successful. `WASMByteCode` is accepted as either uncompressed or gzipped binary data encoded as Base64.
 
 ```go
 type MsgStoreCode struct {
@@ -147,7 +147,7 @@ type MsgStoreCode struct {
 
 ### MsgInstantiateContract
 
-Creates a new instance of a smart contract. Initial configuration is provided in the `InitMsg`, which is a JSON message encoded in Base64. If `Migratable` is set to be `true`, the owner of the contract is permitted to reset the contract's code ID to a new one.
+Creates a new instance of a smart contract. Initial configuration is provided in the `InitMsg`, which is a JSON message encoded in Base64. If `Migratable` is set to `true`, the owner of the contract is permitted to reset the contract's code ID to a new one.
 
 ```go
 type MsgInstantiateContract struct {
@@ -166,7 +166,7 @@ type MsgInstantiateContract struct {
 
 ### MsgExecuteContract
 
-Invoke a function defined within the smart contract. Function and parameters are encoded in `ExecuteMsg`, which is a JSON message encoded in Base64.
+Invokes a function defined within the smart contract. Function and parameters are encoded in `ExecuteMsg`, which is a JSON message encoded in Base64.
 
 ```go
 type MsgExecuteContract struct {
@@ -219,7 +219,7 @@ type Params struct {
 
 - type: `uint64`
 
-Maximum contract bytecode size, in bytes.
+Maximum contract bytecode size in bytes.
 
 ### MaxContractGas
 
@@ -231,4 +231,4 @@ Maximum contract gas consumption during any execution.
 
 - type: `uint64`
 
-Maximum contract message size, in bytes.
+Maximum contract message size in bytes.
