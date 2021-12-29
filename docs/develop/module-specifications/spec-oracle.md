@@ -122,7 +122,7 @@ The exchange rate used in the hash must be the open-market exchange rate of Luna
 
 ### MsgExchangeRateVote
 
-The `MsgExchangeRateVote` contains the actual exchange rate vote. The `Salt` parameter must match the salt used to create the prevote, otherwise the voter cannot be rewarded.
+The `MsgExchangeRateVote` contains the actual exchange rate vote. The `Salt` parameter must match the salt used to create the prevote. Otherwise, the voter cannot be rewarded.
 
 ```go
 // MsgExchangeRateVote - struct for voting on the exchange rate of Luna denominated in various Terra assets.
@@ -139,13 +139,13 @@ type MsgExchangeRateVote struct {
 
 ### MsgDelegateFeedConsent
 
-Validators may also elect to delegate voting rights to another key to prevent the block signing key from being kept online. To do so, they must submit a `MsgDelegateFeedConsent`, delegating their oracle voting rights to a `Delegate` that sign `MsgExchangeRatePrevote` and `MsgExchangeRateVote` on behalf of the validator.
+Validators may also elect to delegate voting rights to another key to prevent the block-signing key from being kept online. To do so, they must submit a `MsgDelegateFeedConsent`, delegating their oracle-voting rights to a `Delegate` that signs `MsgExchangeRatePrevote` and `MsgExchangeRateVote` on behalf of the validator.
 
 ::: {caution}
-Delegate validators will likely require you to deposit some funds (in Terra or Luna) which they can use to pay fees, sent in a separate `MsgSend`. This agreement is made off-chain and not enforced by the Terra protocol.
+Delegate validators will likely require you to deposit some funds in Terra or Luna, which they can use to pay fees, to be sent in a separate `MsgSend`. This agreement is made off-chain and is not enforced by the Terra protocol.
 :::
 
-The `Operator` field contains the operator address of the validator (prefixed `terravaloper-`). The `Delegate` field is the account address (prefixed `terra-`) of the delegate account that will be submitting exchange rate related votes and prevotes on behalf of the `Operator`.
+The `Operator` field contains the operator address of the validator, prefixed `terravaloper-`. The `Delegate` field is the account address, prefixed `terra-`, of the delegate account that will submit exchange-rate related votes and prevotes on behalf of the `Operator`.
 
 ```go
 // MsgDelegateFeedConsent - struct for delegating oracle voting rights to another address.
@@ -182,31 +182,31 @@ type MsgAggregateExchangeRateVote struct {
 
 - type: `map[voter: ValAddress][denom: string]ExchangeRatePrevote`
 
-Contains validator `voter`'s prevote for a given `denom` for the current `VotePeriod`.
+Contains a validator `voter`'s prevote for a given `denom` for the current `VotePeriod`.
 
 ### Votes
 
 - type: `map[voter: ValAddress][denom: string]ExchangeRateVote`
 
-Contains validator `voter`'s vote for a given `denom` for the current `VotePeriod`.
+Contains a validator `voter`'s vote for a given `denom` for the current `VotePeriod`.
 
-### Luna Exchange Rate
+### Luna exchange rate
 
 - type: `map[denom: string]Dec`
 
-Stores the current Luna exchange rate against a given `denom`, which is used by the [`Market`](spec-market.md) module for pricing swaps.
+Stores the current Luna exchange rate against a given `denom`, which is used by the ['market`](spec-market.md) module for pricing swaps.
 
-### Oracle Delegates
+### Oracle delegates
 
 - type: `map[operator: ValAddress]AccAddress`
 
-Address of `operator`'s delegated price feeder.
+Address of an `operator`'s delegated price feeder.
 
-### Validator Misses
+### Validator misses
 
 - type: `map[operator: ValAddress]int64`
 
-An `int64` representing the number of `VotePeriods` that validator `operator` missed during the current `SlashWindow`.
+An `int64` representing the number of `VotePeriods` that a validator `operator` missed during the current `SlashWindow`.
 
 ## Functions
 
@@ -216,7 +216,7 @@ An `int64` representing the number of `VotePeriods` that validator `operator` mi
 func VoteHash(salt string, rate sdk.Dec, denom string, voter sdk.ValAddress) ([]byte, error)
 ```
 
-This function computes the truncated SHA256 hash value from `salt:rate:denom:voter` for an `ExchangeRateVote`, which is submitted in an `MsgExchangeRatePrevote` in the `VotePeriod` prior.
+Computes the truncated SHA256 hash value from `salt:rate:denom:voter` for an `ExchangeRateVote`, which is submitted in an `MsgExchangeRatePrevote` in the `VotePeriod` prior.
 
 ### `tally()`
 
@@ -224,7 +224,7 @@ This function computes the truncated SHA256 hash value from `salt:rate:denom:vot
 func tally(ctx sdk.Context, pb types.ExchangeRateBallot, rewardBand sdk.Dec) (weightedMedian sdk.Dec, ballotWinners []types.Claim)
 ```
 
-This function contains the logic for tallying up the votes for a specific ballot of a denomination, and determines the weighted median $M$ as well as the winners of the ballot.
+Contains the logic that tallies the votes for a specific ballot of a denomination and determines the weighted median $M$ and the winners of the ballot.
 
 ### `k.RewardBallotWinners()`
 
@@ -232,7 +232,7 @@ This function contains the logic for tallying up the votes for a specific ballot
 func (k Keeper) RewardBallotWinners(ctx sdk.Context, ballotWinners types.ClaimPool)
 ```
 
-At the end of every `VotePeriod`, a portion of the seigniorage is rewarded to the oracle ballot winners (validators who submitted an exchange rate vote within the band).
+At the end of every `VotePeriod`, a portion of the seigniorage is rewarded to the oracle ballot winners, the validators who submitted an exchange-rate vote within the band.
 
 The total amount of Luna rewarded per `VotePeriod` is equal to the current amount of Luna in the reward pool (the Luna owned by the oracle module) divided by the parameter [`RewardDistributionWindow`](#rewarddistributionwindow).
 
@@ -244,7 +244,7 @@ Each winning validator gets a portion of the reward proportional to their winnin
 func SlashAndResetMissCounters(ctx sdk.Context, k Keeper)
 ```
 
-This function is called at the end of every `SlashWindow` and will check the miss counters of every validator to see if that validator met the minimum valid votes defined in the parameter [`MinValidPerWindow`](#minvalidperwindow) (did not miss more than the threshold).
+This function is called at the end of every `SlashWindow` and will check the miss counters of every validator to determine whether that validator met the minimum valid votes defined in the parameter [`MinValidPerWindow`](#minvalidperwindow).
 
 If a validator does not reach the criteria, their staked funds are slashed by [`SlashFraction`](#slashfraction), and they are jailed.
 
@@ -254,32 +254,32 @@ After checking all validators, all miss counters are reset back to zero for the 
 
 ### End-Block
 
-At the end of every block, the oracle module checks whether it's the last block of the `VotePeriod`. If it is, it runs the [Voting Procedure](#voting-procedure):
+At the end of every block, the oracle module checks whether it's the last block of the `VotePeriod`. If it is the last block, the [voting procedure](#voting-procedure) is run:
 
-1. All current active Luna exchange rates are purged from the store
+1. All current active Luna exchange rates are purged from the store.
 
-2. Received votes are organized into ballots by denomination. Abstained votes, as well as votes by inactive or jailed validators are ignored
+2. Received votes are organized into ballots by denomination. Abstained votes, as well as votes by inactive or jailed validators, are ignored.
 
-3. Denominations not meeting the following requirements will be dropped:
+3. Denominations that do not meet the following requirements are dropped:
 
-   - Must appear in the permitted denominations in [`Whitelist`](#whitelist)
-   - Ballot for denomination must have at least [`VoteThreshold`](#votethreshold) total vote power
-   - Choose `ReferenceTerra` with the highest voter turnout
+   - Must appear in the permitted denominations in [`Whitelist`](#whitelist).
+   - Ballot for denomination must have at least [`VoteThreshold`](#votethreshold) total vote power.
+   - Choose `ReferenceTerra` with the highest voter turnout.
 
 4. For each remaining `denom` with a passing ballot:
 
    - Tally up votes with [Compute Cross Exchange Rate](#compute-cross-exchange-rate) and find the weighted median exchange rate and winners with [`tally()`](#tally).
-   - Iterate through winners of the ballot and add their weight to their running total
+   - Iterate through winners of the ballot and add their weight to their running total.
    - Set the Luna exchange rate on the blockchain for that Luna<>`denom` with `k.SetLunaExchangeRate()`.
    - Emit a `exchange_rate_update` event.
 
-5. Count up the validators who [missed](#slashing) the Oracle vote and increase the appropriate miss counters
+5. Count the validators who [missed](#slashing) the oracle vote, and increase the appropriate miss counters.
 
-6. If at the end of a [`SlashWindow`](#slashwindow), penalize validators who have missed more than the penalty threshold (submitted fewer valid votes than [`MinValidPerWindow`](#minvalidperwindow))
+6. If at the end of a [`SlashWindow`](#slashwindow), penalize validators who have missed more than the penalty threshold (i.e. submitted fewer valid votes than [`MinValidPerWindow`](#minvalidperwindow)).
 
-7. Distribute rewards to ballot winners with [`k.RewardBallotWinners()`](#krewardballotwinners)
+7. Distribute rewards to ballot winners with [`k.RewardBallotWinners()`](#krewardballotwinners).
 
-8. Clear all prevotes (except ones for the next `VotePeriod`) and votes from the store
+8. Clear all prevotes except the prevotes for the next `VotePeriod` and votes from the store.
 
 ::: details Events
 
@@ -311,9 +311,9 @@ type Params struct {
 ### VotePeriod
 
 - type: `int64`
-- default value: `5 blockchain blocks'
+- default value: `5 blockchain blocks`
 
-The number of blocks during which voting takes place.
+The number of blocks during which voting occurs.
 
 ### VoteThreshold
 
@@ -334,14 +334,14 @@ The tolerated error from the final weighted mean exchange rate that can receive 
 - type: `int64`
 - default value: `BlocksPerYear` (1 year window)
 
-The number of blocks during which seigniorage reward comes in and then is distributed.
+The number of blocks during which the seigniorage reward arrives and then is distributed.
 
 ### Whitelist
 
 - type: `oracle.DenomList`
 - default: `[ukrt, uusd, usdr]`
 
-The list of currencies that can be voted on. This is set to (µKRW, µSDR, µUSD) by default.
+The list of currencies that can be voted on. The default is (µKRW, µSDR, µUSD).
 
 ### SlashFraction
 
