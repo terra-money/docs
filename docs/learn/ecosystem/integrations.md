@@ -2,135 +2,152 @@
 
 ## Applications
 
-<div class="cards twoColumn">
-  <a href="https://mirror.finance/" class="card app">
-    <img src="../../assets../../assets/img/apps_mirror.png"/>
-    <div class="title">
-      Mirror Protocol
-    </div>
-    <div class="text">
-      a DeFi protocol that enables the creation of synthetic assets
-    </div>
-  </a>
-  <a href="https://anchor.money/" class="card app">
-    <img src="../../assets/img/apps_anchor.png"/>
-    <div class="title">
-      Anchor Protocol
-    </div>
-    <div class="text">
-      a high-yield savings protocol
-    </div>
-  </a>
-  <a href="https://chai.finance" class="card app">
-    <img src="../../assets/img/apps_chai.png"/>
-    <div class="title">
-      CHAI
-    </div>
-    <div class="text">
-      a payments product used by 5% of the population in South Korea
-    </div>
-  </a>
-  <a href="https://buzlink.io/" class="card app">
-    <img src="../../assets/img/apps_buzlink.png"/>
-    <div class="title">
-      BuzLink
-    </div>
-    <div class="text">
-      a viral marketing product to scale social referrals
-    </div>
-  </a>
-  <a href="https://www.meme.mn/" class="card app">
-    <img src="../../assets/img/apps_memepay.png"/>
-    <div class="title">
-      MemePay
-    </div>
-    <div class="text">
-      a payments product used by 3% of the population in Mongolia
-    </div>
-  </a>
-  <a href="https://paywithterra.com/" class="card app">
-    <img src="../../assets/img/apps_paywithterra.png"/>
-    <div class="title">
-      PayWithTerra
-    </div>
-    <div class="text">
-      an API gateway enabling merchants to accept Terra stablecoins
-    </div>
-  </a>
-</div>
+````{panels}
+:container: +full-width text-center
+:column: col-lg-5 px-2 py-2
+:card:
 
-## Block Explorers
+![](../../assets/img/apps_mirror.png)
+^^^
+**[Mirror](https://mirror.finance/)**
 
-<div class="cards threeColumn">
-  <a href="https://finder.terra.money/" class="card app">
-    <img src="../../assets/img/expl_finder.png"/>
-    <div class="title">
-      Terra Finder
-    </div>
-    <div class="text">
-      <!-- Vanilla block explorer from Terraform labs. -->
-    </div>
-  </a>
-  <a href="https://hubble.figment.network/terra/chains/columbus-4" class="card app">
-    <img src="../../assets/img/expl_hubble.png"/>
-    <div class="title">
-      Figment Hubble
-    </div>
-    <div class="text">
-    </div>
-  </a>
-  <a href="https://terra.stake.id/#/" class="card app">
-    <img src="../../assets/img/expl_stakeid.png"/>
-    <div class="title">
-      Stake.id
-    </div>
-    <div class="text">
-    </div>
-  </a>
-</div>
+A DeFi protocol that enables the creation of synthetic assets
+---
+
+![](../../assets/img/apps_anchor.png)
+^^^
+**[Anchor](https://anchor.money/)**
+
+A high-yield savings protocol
+---
+
+![](../../assets/img/apps_chai.png)
+^^^
+**[Chai](https://chai.finance)**
+
+A payments product used by 5% of the population in South Korea
+---
+
+![](../../assets/img/apps_buzlink.png)
+^^^
+**[BuzLink](https://buzlink.io/)**
+
+A viral marketing product to scale social referrals
+---
+
+![](../../assets/img/apps_memepay.png)
+^^^
+**[MemePay](https://www.meme.mn/)**
+
+A payments product used by 3% of the population in Mongolia
+---
+
+![](../../assets/img/apps_paywithterra.png)
+^^^
+**[PayWithTerra](https://paywithterra.com/)**
+
+An API gateway enabling merchants to accept Terra stablecoins
+
+````
+
+## Block explorers
+
+````{panels}
+:container: +full-width text-center
+:column: col-lg-5 px-2 py-2
+:card:
+
+![](../../assets/img/expl_finder.png)
+^^^
+**[Terra Finder](https://finder.terra.money/)**
+---
+
+![](../../assets/img/expl_hubble.png)
+^^^
+**[Figment Hubble](https://hubble.figment.io/terra/chains/columbus-5)**
+---
+
+![](../../assets/img/expl_stakeid.png)
+^^^
+**[Stake.id](https://terra.stake.id/#/)**
+---
+
+````
 
 ## Exchanges
 
-LUNA and Terra stablecoins are traded on the following exchanges:
+Luna and Terra stablecoins are traded on the following exchanges:
 
-<div class="cards threeColumn">
-  <a href="https://www.binance.com/" class="card image">
-    <img src="../../assets/img/exg_binance.png" />
-  </a>
-  <a href="https://www.huobi.com/" class="card image">
-    <img src="../../assets/img/exg_huobi.png" />
-  </a>
-  <a href="https://www.kucoin.com/" class="card image">
-    <img src="../../assets/img/exg_kucoin.png" />
-  </a>
-  <a href="https://www.bithumb.com/" class="card image">
-    <img src="../../assets/img/exg_bithumb.png" />
-  </a>
-  <a href="https://upbit.com/" class="card image">
-    <img src="../../assets/img/exg_upbit.png" />
-  </a>
-  <a href="https://global.bittrex.com/" class="card image">
-    <img src="../../assets/img/exg_bittrex.png" />
-  </a>
-  <a href="https://coinone.co.kr/" class="card image">
-    <img src="../../assets/img/exg_coinone.png" />
-  </a>
-  <a href="https://www.okex.com/" class="card image">
-    <img src="../../assets/img/exg_okex.png" />
-  </a>
-  <a href="https://www.investvoyager.com/" class="card image">
-    <img src="../../assets/img/exg_voyager.png" />
-  </a>
-  <a href="https://coinlist.co/anchor-protocol" class="card image">
-    <img src="../../assets/img/exg_coinlist.png" />
-  </a>
-  <a href="https://coinex.com" class="card image">
-    <img src="../../assets/img/exg_coinex.png" />
-  </a>
-   <a href="https://www.bitfinex.com/" class="card image">
-    <img src="../../assets/img/exg_bitfinex.png" />
-  </a>
-</div>
+````{panels}
+:container: +full-width text-center
+:column: col-lg-5 px-2 py-2
+:card:
+
+![](../../assets/img/exg_binance.png)
+^^^
+**[Binance](https://www.binance.com/)**
+---
+
+![](../../assets/img/exg_huobi.png)
+^^^
+**[Huobi](https://www.huobi.com/)**
+---
+
+![](../../assets/img/exg_kucoin.png)
+^^^
+**[Kucoin](https://www.kucoin.com/)**
+---
+
+![](../../assets/img/exg_bithumb.png)
+^^^
+**[Bithumb](https://www.bithumb.com/)**
+---
+
+![](../../assets/img/exg_upbit.png)
+^^^
+**[Upbit](https://upbit.com/)**
+---
+
+![](../../assets/img/exg_bittrex.png)
+^^^
+**[Bittrex](https://global.bittrex.com/)**
+---
+
+![](../../assets/img/exg_coinone.png)
+^^^
+**[CoinOne](https://coinone.co.kr/)**
+---
+
+![](../../assets/img/exg_coinone.png)
+^^^
+**[OKEx](https://www.okex.com/)**
+---
+
+![](../../assets/img/exg_okex.png)
+^^^
+**[OKEx](https://www.okex.com/)**
+---
+
+![](../../assets/img/exg_voyager.png)
+^^^
+**[Voyager](https://www.investvoyager.com)**
+---
+
+![](../../assets/img/exg_coinlist.png)
+^^^
+**[CoinList](https://coinlist.co/anchor-protocol)**
+---
+
+![](../../assets/img/exg_coinex.png)
+^^^
+**[CoinEx](https://coinex.com)**
+---
+
+![](../../assets/img/exg_bitfinex.png)
+^^^
+**[Bitfinex](https://www.bitfinex.com/)**
+---
+````
 
 ## Wallets
 

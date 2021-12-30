@@ -7,45 +7,42 @@ Welcome to the official documentation for Terra, a decentralized financial infra
 :column: col-lg-5 px-2 py-2
 :card:
 
-**What is Terra?**
+**[What is Terra?](docs/learn/protocol.md)**
 ^^^
 If this is your first time learning about Terra, [start here](docs/learn/protocol.md).
 ---
 
-**What is Luna?**
+**[What is Luna?](docs/learn/protocol.md)**
 ^^^
 Learn about [Luna](docs/learn/protocol.md), the native staking asset that powers the Terra ecosystem.
-
 ---
-**Stability mechanisms**
+
+**[Stability mechanisms](docs/learn/protocol.md#stablecoins)**
 ^^^
 Learn about how Terra achieves [price-stability](docs/learn/protocol.md#stablecoins) while ensuring validator incentives steadily increase.
-
 ---
-**Run a full Terra node**
+
+**[Run a full Terra node](docs/validate/run-a-full-terra-node/README.md)**
 ^^^
 Learn how to participate in the Terra network by [running your own full Terra node](docs/validate/run-a-full-terra-node/README.md).
-
 ---
-**Contribute to Terra core**
+
+**[Contribute to Terra core](docs/develop/module-specifications/README.md)**
 ^^^
 Hack on the latest version of [Terra core](docs/develop/module-specifications/README.md)., the node software for Terra.
-
 ---
 
-**Run a validator**
+**[Be a validator](docs/validate/manage-a-terra-validator/README.md)**
 ^^^
 [Become a validator](docs/validate/manage-a-terra-validator/README.md) and earn delegation commissions in exchange for helping secure the network.
-
 ---
 
-**Build smart contract-powered dApps**
+**[Build smart contract-powered dApps](docs/develop/dapp/smart-contracts/README.md)**
 ^^^
 [Build dApps](docs/develop/dapp/smart-contracts/README.md) that leverage the robust infrastructure for decentralized finance provided by Terra.
-
 ---
 
-**Discover Terra integrations**
+**[Discover Terra integrations](docs/learn/ecosystem/integrations.md)**
 ^^^
 Explore novel [Terra applications and integrations](docs/learn/ecosystem/integrations.md) with existing tools.
 
