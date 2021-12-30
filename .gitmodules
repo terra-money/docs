@@ -1,0 +1,3 @@
+[submodule "docs/develop/sdks/terra-py"]
+	path = docs/develop/sdks/terra-py
+	url = https://github.com/terra-money/terra.py
