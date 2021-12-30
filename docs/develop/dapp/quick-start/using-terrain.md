@@ -89,8 +89,8 @@ satisfy adjust timber high purchase tuition stool faith fine install that you un
 
 ### Demo
 
-![](/img/tut_counter.gif)
+![](../../../assets/img/tut_counter.gif)
 
 ## Advanced usage
 
-For more advanced use cases  like deploying to the testnet or mainnet, see [Terrain's readme](https://github.com/iboss-ptk/terrain#readme).
+For more advanced use cases, like deploying to the testnet or mainnet, see [Terrain's readme](https://github.com/iboss-ptk/terrain#readme).
