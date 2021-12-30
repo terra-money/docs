@@ -103,7 +103,7 @@ func (pc PolicyConstraints) Clamp(prevRate sdk.Dec, newRate sdk.Dec) (clampedRat
 
 ## Proposals
 
-The treasury module defines special proposals which allow the [tax rate](#tax-rate) and [reward weight](#reward-weight) values in the `KVStore` to be voted on and changed accordingly, subject to the [policy constraints](#policyconstraints) imposed by `pc.Clamp()`.
+The treasury module defines special proposals which allow the [tax rate](#tax-rate) and [reward weight](#reward-weight) values in the `KVStore` to be voted on and changed accordingly, subject to the [constraints](#policyconstraints) imposed by `pc.Clamp()`.
 
 ### TaxRateUpdateProposal
 

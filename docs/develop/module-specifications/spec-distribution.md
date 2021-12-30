@@ -11,7 +11,7 @@ The distribution module describes a mechanism that tracks collected fees and pas
 ### Validator and delegator rewards
 
 :::{important}
-Passive distribution means that validators and delegators need to manually collect their fee rewards by [submitting withdrawal transactions](../terrad/subcommands.md#tx-distribution-withdraw-rewards).
+Passive distribution means that validators and delegators need to manually collect their fee rewards by [submitting withdrawal transactions](../terrad/using-terrad/subcommands.md#tx-distribution-withdraw-rewards).
 :::
 
 Collected rewards are pooled globally and distrubuted to validators and delegators. Each validator has the opportunity to charge delegators commission on the rewards collected on behalf of the delegators. Fees are collected directly into a global reward pool and a validator proposer-reward pool. Due to the nature of passive accounting, whenever changes to parameters which affect the rate of reward distribution occur, withdrawal of rewards must also occur.

@@ -14,7 +14,7 @@ To query the state and send transactions, you must connect to a node, which is t
 
 ### Running your own full node
 
-Running your own full node is the most secure option, but it comes with relatively high resource requirements. For more information about the requirements to run your own full node and a tutorial for installing `terrad`, see [installation](../../How-to/Run-a-full-Terra-node/Build-Terra-core.md). For a tutorial that explains how to connect to an existing Terra network, see [joining a network](../../How-to/Run-a-full-Terra-node/Join-public-network.md).
+Running your own full node is the most secure option, but it comes with relatively high resource requirements. For more information about the requirements to run your own full node and a tutorial for installing `terrad`, see [installation](../../../validate/run-a-full-terra-node/build-terra-core.md). For a tutorial that explains how to connect to an existing Terra network, see [joining a network](../../../validate/run-a-full-terra-node/join-public-network.md).
 
 ### Connecting to a remote full node
 
