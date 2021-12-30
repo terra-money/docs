@@ -151,13 +151,13 @@ When a vote fails to be included in consensus.
 
 ## Module
 
-A section of the Terra core that represents a particular function of the Terra protocol. Visit the [Terra core module specifications](../develop/terra-core/module-specifications/README.md) for more information.
+A section of the Terra core that represents a particular function of the Terra protocol. Visit the [Terra core module specifications](../develop/module-specifications/README.md) for more information.
 
 ## Oracle
 
 A software that monitors the real-world price and exchange rates of different assets. Validators submit exchange rates to the protocol and vote on the correct rates. Oracles are used to relay current external exchange rates to the protocol.
 
-For more information, visit the [oracle page](../develop/terra-core/module-specifications/spec-oracle.md).
+For more information, visit the [oracle page](../develop/module-specifications/spec-oracle.md).
 
 ## Peg
 
@@ -219,7 +219,7 @@ The consensus procedure used by the Terra protocol. First, a validator proposes 
 
 The official source code for the Terra protocol.
 
-For more information on the Terra core, visit the [Terra core modules](../develop/terra-core/module-specifications/README.md).
+For more information on the Terra core, see [Terra core modules](../develop/module-specifications/README.md).
 
 ## Terra mainnet
 
@@ -229,7 +229,7 @@ The Terra protocol's blockchain network where all transactions take place.
 
 Crypto assets that track the price of fiat currency enabled by the Terra protocol. Users mint new Terra stablecoins by burning Luna. Stablecoins are named for their fiat counterparts. For example, the base Terra stablecoin tracks the price of the IMF’s SDR, named TerraSDR, or SDT. Other stablecoin denominations include TerraUSD or UST, and TerraKRW or  KRT. All Terra stablecoin denominations exist in the same pool.
 
-For more information on Terra stablecoins, visit the [concepts page](protocol.md#stablecoin).
+For more information, see [stablecoins](./protocol.md#stablecoin) in the description of the Terra protocol.
 
 ## Terra Station
 
@@ -243,7 +243,7 @@ To learn how to use the advanced features of Terra Station, visit the [Terra Sta
 
 The command line interface for interacting with a Terra node.
 
-For more information on terrad, visit [Using terrad](../develop/terra-core/terrad/README.md).
+For more information on terrad, see [`terrad` guides](../develop/terrad/README.md).
 
 ## Terravaloper address
 

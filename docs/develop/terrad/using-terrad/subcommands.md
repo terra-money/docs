@@ -100,7 +100,7 @@ In some cases, you might need to recover your key. If you have the mnemonic that
 terrad keys add <yourKeyName> --recover
 ```
 
-For information about generating multisignature accounts and signing transactions, see [Sign with a multisig account](../../How-to/Sign-with-multisig.md).
+For information about generating multisignature accounts and signing transactions, see [Sign with a multisig account](../sign-with-multisig.md).
 
 ## `keys show`
 
@@ -822,7 +822,7 @@ terrad query treasury indicators
 
 ## `query treasury params`
 
-Retrieves the high-level settings for the treasury. For more information, see [treasury parameters](../dev/spec-treasury.md#parameters).
+Retrieves the high-level settings for the treasury. For more information, see [treasury parameters](../../module-specifications/spec-treasury.md#parameters).
 
 **Syntax**
 ```bash
@@ -1278,7 +1278,7 @@ where `proposal.json` contains the following information:
 
 ### Tax-rate and reward-weight update proposals
 
-Tax rate and reward weight are important monetary policy levers handled by the [`Treasury`](../dev/spec-treasury.md) module to modulate miner incentives toward stable demand and steady growth. Usually, they are automatically calibrated once per epoch by the protocol. However, they can be changed at any time, if an update proposal gets passed with enough supporters.
+Tax rate and reward weight are important monetary policy levers handled by the [`Treasury`](../../module-specifications/spec-treasury.md) module to modulate miner incentives toward stable demand and steady growth. Usually, they are automatically calibrated once per epoch by the protocol. However, they can be changed at any time, if an update proposal gets passed with enough supporters.
 
 When you submit a tax rate or reward weight update proposal, we recommend you send the proposal as a JSON file.
 
@@ -1350,7 +1350,7 @@ where `proposal.json` contains the following information:
 }
 ```
 
-Tax reward and reward weight updates that are passed by governance proposals are subject to [policy constraints](../dev/spec-treasury.md#policy-constraints).
+Tax reward and reward weight updates that are passed by governance proposals are subject to [policy constraints](../../module-specifications/spec-treasury.md#policy-constraints).
 
 ### Software upgrade proposals
 
@@ -1498,7 +1498,7 @@ terrad tx oracle aggregate-vote \
     "terravaloper15h6vd5f0wqps26zjlwrc6chah08ryu4hzzdwhc" \
 ```
 
-Given that oracle votes must be submitted in a feed over short time intervals (30 seconds), prevotes and votes must be submitted via some persistent server daemon, not manually. For more information, see [Exchange Rate Oracle](../validator/oracle.md) section of the validator documentation and the [Oracle Module Specification](../dev/spec-oracle.md).
+Given that oracle votes must be submitted in a feed over short time intervals (30 seconds), prevotes and votes must be submitted via some persistent server daemon, not manually. For more information, see [exchange-rate oracle](../../../validate/manage-a-terra-validator/set-up-oracle-feeder.md) section of the validator documentation and the [oracle module](../../module-specifications/spec-oracle.md).
 
 ## `tx oracle set-feeder`
 

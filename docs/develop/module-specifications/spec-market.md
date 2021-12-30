@@ -216,4 +216,4 @@ The minimum spread charged on Terra<>Luna swaps to prevent leaking value from fr
 - type: `Dec`
 - default: 0.35%
 
-An additional fee for swapping between Terra currencies (spot-trading). The rate varies, depending on the denomination. For example, while the rate for most denominations is .35%, the rate for MNT is 2%. To see the rates, [query the oracle](../terrad/subcommands.md#query-oracle-tobin-taxes).
+An additional fee for swapping between Terra currencies (spot-trading). The rate varies, depending on the denomination. For example, while the rate for most denominations is .35%, the rate for MNT is 2%. To see the rates, [query the oracle](../terrad/using-terrad/subcommands.md#query-oracle-tobin-taxes).

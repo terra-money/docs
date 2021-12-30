@@ -4,7 +4,7 @@
 Read this document thoroughly before becoming a validator.
 :::
 
-## General Concepts
+## General concepts
 
 ### What is a validator?
 
@@ -204,7 +204,7 @@ This total revenue is divided among a validator's staking pool according to each
 
 ### What is the incentive to run a validator?
 
-Validators earn more revenue than their delegators through commission. They also play a major role in determining on-chain exchange rates through the [`Oracle`](../../develop/terra-core/module-specifications/spec-oracle.md), where they get rewarded for faithfully reporting exchange rates with swap fees.
+Validators earn more revenue than their delegators through commission. They also play a major role in determining on-chain exchange rates through the [oracle module](../../develop/module-specifications/spec-oracle.md), where they get rewarded for faithfully reporting exchange rates with swap fees.
 
 ### What is a validator's commission?
 

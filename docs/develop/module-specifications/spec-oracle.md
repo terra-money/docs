@@ -36,7 +36,7 @@ Denominations receiving fewer than [`VoteThreshold`](#votethreshold) total votin
 
 Choose `ReferenceTerra` with the highest voter turnout. If the voting power of the two denominations is the same, select reference Terra in alphabetical order.
 
-#### Compute the cross-exchange rate
+#### Compute cross-exchange rate
 
 1. Choose `ReferenceTerra`.
 
