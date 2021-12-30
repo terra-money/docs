@@ -4,7 +4,7 @@
 
 <div class="cards twoColumn">
   <a href="https://mirror.finance/" class="card app">
-    <img src="/img/apps_mirror.png"/>
+    <img src="../../assets../../assets/img/apps_mirror.png"/>
     <div class="title">
       Mirror Protocol
     </div>
@@ -13,7 +13,7 @@
     </div>
   </a>
   <a href="https://anchor.money/" class="card app">
-    <img src="/img/apps_anchor.png"/>
+    <img src="../../assets/img/apps_anchor.png"/>
     <div class="title">
       Anchor Protocol
     </div>
@@ -22,7 +22,7 @@
     </div>
   </a>
   <a href="https://chai.finance" class="card app">
-    <img src="/img/apps_chai.png"/>
+    <img src="../../assets/img/apps_chai.png"/>
     <div class="title">
       CHAI
     </div>
@@ -31,7 +31,7 @@
     </div>
   </a>
   <a href="https://buzlink.io/" class="card app">
-    <img src="/img/apps_buzlink.png"/>
+    <img src="../../assets/img/apps_buzlink.png"/>
     <div class="title">
       BuzLink
     </div>
@@ -40,7 +40,7 @@
     </div>
   </a>
   <a href="https://www.meme.mn/" class="card app">
-    <img src="/img/apps_memepay.png"/>
+    <img src="../../assets/img/apps_memepay.png"/>
     <div class="title">
       MemePay
     </div>
@@ -49,7 +49,7 @@
     </div>
   </a>
   <a href="https://paywithterra.com/" class="card app">
-    <img src="/img/apps_paywithterra.png"/>
+    <img src="../../assets/img/apps_paywithterra.png"/>
     <div class="title">
       PayWithTerra
     </div>
@@ -63,7 +63,7 @@
 
 <div class="cards threeColumn">
   <a href="https://finder.terra.money/" class="card app">
-    <img src="/img/expl_finder.png"/>
+    <img src="../../assets/img/expl_finder.png"/>
     <div class="title">
       Terra Finder
     </div>
@@ -72,7 +72,7 @@
     </div>
   </a>
   <a href="https://hubble.figment.network/terra/chains/columbus-4" class="card app">
-    <img src="/img/expl_hubble.png"/>
+    <img src="../../assets/img/expl_hubble.png"/>
     <div class="title">
       Figment Hubble
     </div>
@@ -80,7 +80,7 @@
     </div>
   </a>
   <a href="https://terra.stake.id/#/" class="card app">
-    <img src="/img/expl_stakeid.png"/>
+    <img src="../../assets/img/expl_stakeid.png"/>
     <div class="title">
       Stake.id
     </div>
@@ -95,40 +95,40 @@ LUNA and Terra stablecoins are traded on the following exchanges:
 
 <div class="cards threeColumn">
   <a href="https://www.binance.com/" class="card image">
-    <img src="/img/exg_binance.png" />
+    <img src="../../assets/img/exg_binance.png" />
   </a>
   <a href="https://www.huobi.com/" class="card image">
-    <img src="/img/exg_huobi.png" />
+    <img src="../../assets/img/exg_huobi.png" />
   </a>
   <a href="https://www.kucoin.com/" class="card image">
-    <img src="/img/exg_kucoin.png" />
+    <img src="../../assets/img/exg_kucoin.png" />
   </a>
   <a href="https://www.bithumb.com/" class="card image">
-    <img src="/img/exg_bithumb.png" />
+    <img src="../../assets/img/exg_bithumb.png" />
   </a>
   <a href="https://upbit.com/" class="card image">
-    <img src="/img/exg_upbit.png" />
+    <img src="../../assets/img/exg_upbit.png" />
   </a>
   <a href="https://global.bittrex.com/" class="card image">
-    <img src="/img/exg_bittrex.png" />
+    <img src="../../assets/img/exg_bittrex.png" />
   </a>
   <a href="https://coinone.co.kr/" class="card image">
-    <img src="/img/exg_coinone.png" />
+    <img src="../../assets/img/exg_coinone.png" />
   </a>
   <a href="https://www.okex.com/" class="card image">
-    <img src="/img/exg_okex.png" />
+    <img src="../../assets/img/exg_okex.png" />
   </a>
   <a href="https://www.investvoyager.com/" class="card image">
-    <img src="/img/exg_voyager.png" />
+    <img src="../../assets/img/exg_voyager.png" />
   </a>
   <a href="https://coinlist.co/anchor-protocol" class="card image">
-    <img src="/img/exg_coinlist.png" />
+    <img src="../../assets/img/exg_coinlist.png" />
   </a>
   <a href="https://coinex.com" class="card image">
-    <img src="/img/exg_coinex.png" />
+    <img src="../../assets/img/exg_coinex.png" />
   </a>
    <a href="https://www.bitfinex.com/" class="card image">
-    <img src="/img/exg_bitfinex.png" />
+    <img src="../../assets/img/exg_bitfinex.png" />
   </a>
 </div>
 
