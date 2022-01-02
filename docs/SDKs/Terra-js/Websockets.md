@@ -26,6 +26,8 @@ wsclient.subscribe('Tx', { 'message.action': 'send' }, data => {
   console.log('Send occured!');
   console.log(data.value);
 });
+
+wsclient.start();
 ```
 
 ### Supported Events
