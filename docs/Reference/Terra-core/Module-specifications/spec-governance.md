@@ -6,7 +6,7 @@ Terra's Governance module inherits from Cosmos SDK's [`gov`](https://docs.cosmos
 
 Governance is the process through which participants within the Terra network can effect change on the protocol by submitting petitions known as "proposals," arriving at a popular consensus when a threshold amount of support has been reached for it. The proposal structure is versatile and allows for holders of Luna (those who have an interest in the long-term viability of the network) to voice their opinion on both blockchain parameter updates as well as future development of the Terra protocol.
 
-Check the [Governance section of the `terrad` Reference](../terrad/governance.md) to see examples of how to participate in the Governance process.
+Check the [Governance section of the `terrad` Reference](/Reference/terrad/subcommands.md#tx-gov-submit-proposal) to see examples of how to participate in the Governance process.
 
 ## Concepts
 
@@ -16,7 +16,18 @@ The following is the governance proposal procedure:
 
 After a proposal is submitted, it enters the deposit period, where it must reach a total minimum deposit of 50 Luna within 2 weeks from the time of its submission. The deposit threshold is reached when the sum of the initial deposit (from the proposer) and the deposits from all other interested network participants meets or exceeds 50 Luna.
 
-Deposits are required only to protect against spam. The network refunds deposits for proposals that pass or fail except when a proposal is vetoed. If a proposal is vetoed, deposits are not refunded.
+Deposits protect against unnecessary proposals and spam.
+
+Deposits get refunded if all of the following conditions are met:
+- The minimum deposit of 50 Luna is reached within the two-week deposit period.
+- `Quorum` is met: the number of total votes is greater than 40% of all staked Luna
+- The total number of `NoWithVeto` votes is less than 33.4% of the total vote.
+- A vote returns a majority of `Yes` or `No` votes.
+
+Deposits are burned under any of the following conditions:
+- The minimum deposit of 50 Luna is not reached within the two-week deposit period.
+- `Quorum` is not met: the number of total votes after the one-week voting period is less than 40% of all staked Luna.
+- the number of `NoWithVeto` votes is above 33.4% of the total vote.
 
 ### Voting Period
 
@@ -48,7 +59,7 @@ $$\frac{Yes}{Yes + No + NoWithVeto} \gt T$$
 If any of the previous conditions are not met, the proposal is rejected. Proposals that get rejected with veto do not get their deposits refunded. The parameters `quorum`, `veto`, and `threshold` exist as blockchain parameters within the Governance module.
 
 ::: warning Warning
-Deposits will not be refunded for proposals that are rejected with veto. As of Columbus-5, these deposits are burned. Proposals that pass or get rejected without veto will have their deposits refunded.
+Deposits will not be refunded for proposals that are rejected with veto, do not meet quorum, or fail to reach the minimum deposit during the deposit period. Non-refunded deposits are burned.
 :::
 
 ### Proposal Implementation
