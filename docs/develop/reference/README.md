@@ -5,5 +5,4 @@
 endpoints
 history-and-changes
 migration-guide
-../module-specifications/README
 ```

@@ -1,12 +1,12 @@
 # Governance
 
-::: warning Note:
+:::{Important}
 Terra's Governance module inherits from Cosmos SDK's [`gov`](https://docs.cosmos.network/master/modules/gov/) module. This document is a stub, and covers mainly important Terra-specific notes about how it is used.
 :::
 
 Governance is the process through which participants within the Terra network can effect change on the protocol by submitting petitions known as "proposals," arriving at a popular consensus when a threshold amount of support has been reached for it. The proposal structure is versatile and allows for holders of Luna (those who have an interest in the long-term viability of the network) to voice their opinion on both blockchain parameter updates as well as future development of the Terra protocol.
 
-Check the [Governance section of the `terrad` Reference](/Reference/terrad/subcommands.md#tx-gov-submit-proposal) to see examples of how to participate in the Governance process.
+Check the [Governance section of the `terrad` Reference](../terrad/using-terrad/subcommands.md#tx-gov-submit-proposal) to see examples of how to participate in the Governance process.
 
 ## Concepts
 
@@ -58,7 +58,7 @@ $$\frac{Yes}{Yes + No + NoWithVeto} \gt T$$
 
 If any of the previous conditions are not met, the proposal is rejected. Proposals that get rejected with veto do not get their deposits refunded. The parameters `quorum`, `veto`, and `threshold` exist as blockchain parameters within the Governance module.
 
-::: warning Warning
+::: {warning}
 Deposits will not be refunded for proposals that are rejected with veto, do not meet quorum, or fail to reach the minimum deposit during the deposit period. Non-refunded deposits are burned.
 :::
 
@@ -154,15 +154,15 @@ type ParamChange struct {
 }
 ```
 
-::: warning Note:
+::: {important}:
 Parameter Change Proposals are actually located in the Params module, an internal module. It is shown here for your convenience.
 :::
 
-Parameter Change Proposals are a special type of proposal which, once passed, will automatically go into effect by directly altering the network's specified parameter. You can find the parameters associated with each module by browsing to the **Parameters** section of the module specification.
+Parameter Change Proposals are a special type of proposal which, once passed, will automatically go into effect by directly altering the network's specified parameter.
 
 ### Software Upgrade Proposals
 
-::: danger Warning
+::: {danger}
 Software upgrade proposals exist because they are inherited from the Cosmos SDK, but they are temporarily unavailable because they have not been implemented yet. Therefore, they share the same semantics as a simple text proposal. If you submit this type of proposal, you might lose your Luna deposit.
 :::
 
