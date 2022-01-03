@@ -109,7 +109,7 @@ As of Columbus-5, all seigniorage is burned, and the community pool is no longer
 
 ### MsgSwap
 
-A `MsgSwap` transaction denotes the `Trader`'s intent to swap their balance of `OfferCoin` for a new denomination `AskDenom`. Terra<>Terra swaps incur gas and the Tobin tax, Terra<>Luna swaps incur gas and a spread fee.
+A `MsgSwap` transaction denotes the `Trader`'s intent to swap their balance of `OfferCoin` for a new denomination `AskDenom`. Terra<>Terra swaps incur gas and the Tobin tax, and Terra<>Luna swaps incur gas and a spread fee.
 
 ```go
 // MsgSwap contains a swap request
@@ -122,7 +122,7 @@ type MsgSwap struct {
 
 ### MsgSwapSend
 
-A `MsgSwapSend` first performs a swap of `OfferCoin` into `AskDenom` and then sends the resulting coins to `ToAddress`. Swap fees are charged to the sender.
+A `MsgSwapSend` first swaps `OfferCoin` for `AskDenom` and then sends the acquired coins to `ToAddress`. Swap fees are charged to the sender.
 
 ```go
 type MsgSwapSend struct {
