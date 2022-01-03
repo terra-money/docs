@@ -118,3 +118,61 @@ const result = await lcd.tx.broadcast(tx);
 
 console.log(result);
 ```
+
+## Swapping a native Terra asset for a CW20 token using Terraswap
+
+The following code example shows how to swap a native asset for CW20 using Terraswap.
+
+Run this example on mainnet.
+
+```ts
+import {
+  MsgExecuteContract,
+  MnemonicKey,
+  Coins,
+  LCDClient,
+} from "@terra-money/terra.js";
+
+// const lcd = new LCDClient(...);
+
+const mk = new MnemonicKey({
+  mnemonic: 'satisfy adjust timber high purchase tuition stool faith fine install that you unaware feed domain license impose boss human eager hat rent enjoy dawn',
+});
+
+const wallet = lcd.wallet(mk);
+
+// UST <> SCRT
+const pool = "terra1tq4mammgkqrxrmcfhwdz59mwvwf4qgy6rdrt46";
+
+// Fetch the number of each asset in the pool.
+const { assets } = await lcd.wasm.contractQuery(pool, { pool: {} });
+
+// Calculate belief price using pool balances.
+const beliefPrice = (assets[0].amount / assets[1].amount).toFixed(18);
+
+// Swap 1 UST to SCRT with 1% slippage tolerance.
+const terraSwap = new MsgExecuteContract(
+  wallet.key.accAddress,
+  pool, 
+  {
+    swap: {
+      max_spread: "0.01",
+      offer_asset: {
+        info: {
+          native_token: {
+            denom: "uusd",
+          },
+        },
+        amount: "1000000",
+      },
+      belief_price: beliefPrice,
+    },
+  },
+  new Coins({ uusd: '1000000' }),
+);
+
+const tx = await wallet.createAndSignTx({ msgs: [terraSwap] });
+const result = await lcd.tx.broadcast(tx);
+
+console.log(result);
+```

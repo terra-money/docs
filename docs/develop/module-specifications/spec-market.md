@@ -1,18 +1,18 @@
 # Market
 
-The market module enables atomic swaps between different Terra stablecoin denominations, and between Terra and Luna. This module ensures an available, liquid market, stable prices, and fair exchange rates between the protocol's assets.
+The Market module enables atomic swaps between different Terra stablecoin denominations, and between Terra and Luna. This module ensures an available, liquid market, stable prices, and fair exchange rates between the protocol's assets.
 
 The price stability of TerraSDR is achieved through Terra<>Luna arbitrage activity against the protocol's algorithmic market-maker, which expands and contracts Terra's supply to maintain its peg.
 
 ## Concepts
 
-### Swap fees
+### Swap Fees
 
 Because Terra's price feed is derived from validator oracles, a delay exists between the price reported on-chain and the real-time price.
 
 The delay lasts around one minute (our oracle `VotePeriod` is 30 seconds), which is negligible for nearly all practical transactions. However, front-running attackers could take advantage of this delay and extract value from the network.
 
-To defend against this type of attack, the market module enforces the following swap fees:
+To defend against this type of attack, the Market module enforces the following swap fees:
 
 - [**Tobin tax**](#tobintax) for spot-converting Terra<>Terra swaps
 
@@ -24,16 +24,16 @@ To defend against this type of attack, the market module enforces the following 
 
   The minimum spread is 0.5%. Using the same exchange rates we used above, swapping 1 SDT will return 995 KRT worth of Luna (0.5% of 1000 is 5, which is taken as the swap fee). If you reverse the direction of the swap, 1 Luna would return 9.95 SDT (0.5% of 10 is 0.05), or 9,950 KRT (0.5% of 10,000 = 50).
 
-### Market-making algorithm
+### Market Making Algorithm
 
-Terra uses a constant product market-making algorithm to ensure liquidity for Terra<>Luna swaps. [^2]
+Terra uses a Constant Product market-making algorithm to ensure liquidity for Terra<>Luna swaps. [^2]
 
 [^2]: For a more in-depth treatment of our updated market-making algorithm, check [Nick Platias's SFBW 2019 presentation](https://agora.terra.money/t/terra-stability-swap-mechanism-deep-dive-at-sfbw/135).
 
 With Constant Product, we define a value $CP$ set to the size of the Terra pool multiplied by a set **fiat value of Luna**, and ensure our market-maker maintains it as invariant during any swaps by adjusting the spread.
 
-::: {Important}
-Terra's implementation of Constant Product diverges from Uniswap's: the Terra protocol uses the fiat value of Luna instead of the size of the Luna pool. This nuance means changes in Luna's price don't affect the product, but rather the size of the Luna pool.
+::: warning Note:
+Our implementation of Constant Product diverges from Uniswap's, as we use the fiat value of Luna instead of the size of the Luna pool. This nuance means changes in Luna's price don't affect the product, but rather the size of the Luna pool.
 :::
 
 $$CP = Pool_{Terra} * Pool_{Luna} * (Price_{Luna}/Price_{SDR})$$
@@ -65,13 +65,13 @@ At the [end of each block](#end-block), the market module attempts to replenish 
 
 This mechanism ensures liquidity and acts as a low-pass filter, allowing for the spread fee (which is a function of `TerraPoolDelta`) to drop back down when there is a change in demand, causing a necessary change in supply which needs to be absorbed.
 
-### Swap procedure
+### Swap Procedure
 
-1. The market module receives [`MsgSwap`](#msgswap) message and does basic validation checks.
+1. The Market module receives [`MsgSwap`](#msgswap) message and performs basic validation checks.
 
-2. Calculate exchange rate $ask$ and $spread$ using [`k.ComputeSwap()`](#kcomputeswap).
+2. Calculate exchange rate $ask$ and $spread$ using [`k.ComputeSwap()`](#k-computeswap).
 
-3. Update `TerraPoolDelta` with [`k.ApplySwapToPool()`](#kapplyswaptopool).
+3. Update `TerraPoolDelta` with [`k.ApplySwapToPool()`](#k-applyswaptopool).
 
 4. Transfer `OfferCoin` from account to module using `supply.SendCoinsFromAccountToModule()`.
 
@@ -91,25 +91,25 @@ Upon successful completion of Terra<>Luna swaps, a portion of the coins to be cr
 
 ### Seigniorage
 
-When Luna swaps to Terra, the Luna recaptured by the protocol is called seigniorage, the value generated from issuing new Terra. The total seigniorage at the end of each epoch is calculated and reintroduced into the economy as ballot rewards for the exchange rate oracle and to the community pool by the treasury module. For more informations, see [`k.SettleSeigniorage`](./spec-treasury.md#ksettleseigniorage).
+When Luna swaps into Terra, the Luna recaptured by the protocol is called seigniorage -- the value generated from issuing new Terra. The total seigniorage at the end of each epoch is calculated and reintroduced into the economy as ballot rewards for the exchange rate oracle and to the community pool by the Treasury module, described more fully [here](/Reference/Terra-core/Module-specifications/spec-treasury.html#k-settleseigniorage).
 
-::: {Important}
+::: warning Note:
 As of Columbus-5, all seigniorage is burned, and the community pool is no longer funded. Swap fees are used as ballot rewards for the exchange rate oracle.
 :::
 
 ## State
 
-### Terra pool delta δ
+### Terra Pool Delta δ
 
 - type: `sdk.Dec`
 
- Represents the difference between the current Terra pool size and its original base size, valued in µSDR.
+ This represents the difference between the current Terra pool size and its original base size, valued in µSDR.
 
-## Message types
+## Message Types
 
 ### MsgSwap
 
-A `MsgSwap` transaction denotes the `Trader`'s intent to swap their balance of `OfferCoin` for a new denomination `AskDenom`. It is used for both Terra<>Terra and Terra<>Luna swaps.
+A `MsgSwap` transaction denotes the `Trader`'s intent to swap their balance of `OfferCoin` for a new denomination `AskDenom`. Terra<>Terra swaps incur gas and the Tobin tax, and Terra<>Luna swaps incur gas and a spread fee.
 
 ```go
 // MsgSwap contains a swap request
@@ -122,7 +122,7 @@ type MsgSwap struct {
 
 ### MsgSwapSend
 
-A `MsgSwapSend` first performs a swap of `OfferCoin` into `AskDenom` and then sends the resulting coins to `ToAddress`. Tax is charged normally, as if the sender were issuing a `MsgSend` with the resulting coins of the swap.
+A `MsgSwapSend` first swaps `OfferCoin` for `AskDenom` and then sends the acquired coins to `ToAddress`. Swap fees are charged to the sender.
 
 ```go
 type MsgSwapSend struct {
@@ -144,14 +144,14 @@ func (k Keeper) ComputeSwap(ctx sdk.Context, offerCoin sdk.Coin, askDenom string
 
 This function detects the swap type from the offer and ask denominations and returns:
 
-- The amount of asked coins that should be returned for a given `offerCoin`. This is achieved by first spot-converting `offerCoin` to µSDR and then from µSDR to the desired `askDenom` with the proper exchange rate reported by the Oracle.
+1. The amount of asked coins that should be returned for a given `offerCoin`. This is achieved by first spot-converting `offerCoin` to µSDR and then from µSDR to the desired `askDenom` with the proper exchange rate reported by the Oracle.
 
-- The spread percentage that should be taken as a swap fee given the swap type. Terra<>Terra swaps only have the Tobin tax spread fee. Terra<>Luna swaps use the `MinSpread` or the constant product pricing spread, whichever is greater.
+2. The spread percentage that should be taken as a swap fee given the swap type. Terra<>Terra swaps only have the Tobin Tax spread fee. Terra<>Luna swaps use the `MinSpread` or the Constant Product pricing spread, whichever is greater.
 
-If the `offerCoin`'s denomination is the same as `askDenom`, `ErrRecursiveSwap` is raised.
+If the `offerCoin`'s denomination is the same as `askDenom`, this will raise `ErrRecursiveSwap`.
 
-:::{Important}
-`k.ComputeSwap()` uses `k.ComputeInternalSwap()` internally, which contains only the logic for calculating proper ask coins to exchange and not the constant product spread.
+::: warning Note:
+`k.ComputeSwap()` uses `k.ComputeInternalSwap()` internally, which only contains the logic for calculating proper ask coins to exchange, and not the Constant Product spread.
 :::
 
 ### `k.ApplySwapToPool()`
@@ -173,13 +173,13 @@ For Terra<>Luna swaps, the relative sizes of the pools will be different after t
 
 ### End-Block
 
-The market module calls `k.ReplenishPools()` at the end of every block, which decreases the value of `TerraPoolDelta` (the difference between Terra and Luna pools) depending on `PoolRecoveryPeriod`, $pr$.
+The Market module calls `k.ReplenishPools()` at the end of every block, which decreases the value of `TerraPoolDelta` (the difference between Terra and Luna pools) depending on `PoolRecoveryPeriod`, $pr$.
 
-This allows the network to sharply increase spread fees during acute price fluctuations. After some time, the spread automatically returns to normal for long-term price changes.
+This allows the network to sharply increase spread fees during acute price fluctuations. After some time, the spread automatically returns to normal for long term price changes.
 
 ## Parameters
 
-The subspace for the market module is `market`.
+The subspace for the Market module is `market`.
 
 ```go
 type Params struct {
@@ -195,7 +195,7 @@ type Params struct {
 - type: `int64`
 - default: `BlocksPerDay`
 
-The number of blocks it takes for the Terra and Luna pools to naturally reset toward equilibrium ($\delta \to 0$) through automated pool replenishing.
+The number of blocks it takes for the Terra & Luna pools to naturally "reset" toward equilibrium ($\delta \to 0$) through automated pool replenishing.
 
 ### BasePool
 
@@ -216,4 +216,4 @@ The minimum spread charged on Terra<>Luna swaps to prevent leaking value from fr
 - type: `Dec`
 - default: 0.35%
 
-An additional fee for swapping between Terra currencies (spot-trading). The rate varies, depending on the denomination. For example, while the rate for most denominations is .35%, the rate for MNT is 2%. To see the rates, [query the oracle](../terrad/using-terrad/subcommands.md#query-oracle-tobin-taxes).
+An additional fee for swapping between Terra currencies (spot-trading). The rate varies, depending on the denomination. For example, while the rate for most denominations is .35%, the rate for MNT is 2%. To see the rates, [query the oracle](/Reference/terrad/subcommands.html#query-oracle-tobin-taxes).
