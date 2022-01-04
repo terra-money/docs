@@ -177,9 +177,9 @@ const result = await lcd.tx.broadcast(tx);
 console.log(result);
 ```
 
-## Decoding messages encoded using Protobuf
+## Decoding Protobuf-encoded messages
 
-The following code example shows how decode messages that have been encoded using Protobuf. 
+The following code example shows how to decode messages that have been encoded using Protobuf:
 
 ```ts
 import {
