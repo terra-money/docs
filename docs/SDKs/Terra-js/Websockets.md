@@ -22,7 +22,7 @@ wsclient.subscribe('NewBlock', {}, (_) => {
 });
 
 // send tracker
-wsclient.subscribe('Tx', { 'message.action': 'send' }, data => {
+wsclient.subscribe('Tx', { 'message.action': '/cosmos.bank.v1beta1.MsgSend' }, data => {
   console.log('Send occured!');
   console.log(data.value);
 });
@@ -74,7 +74,7 @@ The following shows an example of how to construct a `TendermintQuery` and use i
 
 ```ts
 const tmQuery = {
-  "message.action": "send", //
+  "message.action": "/cosmos.bank.v1beta1.MsgSend",
   "tx.timestamp": [">=", new Date()],
   "store_code.abc": ["EXISTS"],
   "abc.xyz": ["CONTAINS", "terra1..."]
@@ -87,7 +87,7 @@ wsclient.subscribe('Tx', tmQuery, (data) => {
 
 The resultant query will be:
 
-`tm.event='Tx' AND message.action='send' tx.timestamp >= 2020-12-12 AND store_code.abc EXISTS AND abc.xyz CONTAINS 'terra1...'`
+`tm.event='Tx' AND message.action='/cosmos.bank.v1beta1.MsgSend' tx.timestamp >= 2020-12-12 AND store_code.abc EXISTS AND abc.xyz CONTAINS 'terra1...'`
 
 ### `subscribeTx`
 
