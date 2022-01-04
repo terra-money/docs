@@ -1,4 +1,4 @@
-# `terrad` guides
+# `terrad`
 
 ```{toctree}
 :hidden:
