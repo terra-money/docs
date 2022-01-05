@@ -1,10 +1,11 @@
-# `terrad`
+# terrad
 
 ```{toctree}
 :hidden:
 install-terrad
-using-terrad/README
-localterra
+using-terrad
+commands
+subcommands
 sign-with-multisig
 start-lcd
 ```

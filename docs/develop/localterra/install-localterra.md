@@ -6,18 +6,20 @@
 - [`docker-compose`](https://github.com/docker/compose)
 - Supported known architecture: x86_64
 
-1. Run the following commands::
+## Installation
 
-```sh
-$ git clone --depth 1 https://www.github.com/terra-money/LocalTerra
-$ cd LocalTerra
-```
+1. Run the following commands:
+
+    ```sh
+    $ git clone --depth 1 https://www.github.com/terra-money/LocalTerra
+    $ cd LocalTerra
+    ```
 
 2. Make sure your Docker daemon is running in the background and [`docker-compose`](https://github.com/docker/compose) is installed.
 
-## Start, stop, and reset LocalTerra
+## Using LocalTerra
 
-- Start LocalTerra:
+### Start
 
 ```sh
 $ docker-compose up
@@ -30,15 +32,13 @@ Your environment now contains:
 - [FCD](http://www.github.com/terra-money/fcd) running on http://localhost:3060
 - An oracle feeder feeding live prices from mainnet, trailing by one vote period
 
-
-
-Stop LocalTerra:
+### Stop
 
 ```sh
 $ docker-compose stop
 ```
 
-Reset the world state:
+### Reset
 
 ```sh
 $ docker-compose rm

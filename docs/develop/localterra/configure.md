@@ -1,4 +1,4 @@
-## Configure LocalTerra
+# Configure LocalTerra
 
 The majority of LocalTerra is implemented through a `docker-compose.yml` file, making it easily customizable. You can use LocalTerra as a starting template point for setting up your own local Terra testnet with Docker containers.
 
@@ -7,11 +7,11 @@ Out of the box, LocalTerra comes preconfigured with opinionated settings such as
 - ports defined for RPC (26657), LCD (1317) and FCD (3060)
 - standard [accounts](#accounts)
 
-### Modifying node configuration
+## Modify node configuration
 
 You can modify the node configuration of your validator in the `config/config.toml` and `config/app.toml` files.
 
-### Speed up block time
+## Speed up block time
 
 LocalTerra is often used alongside a script written with the Terra.js SDK or Terra Python SDK as a convenient way to do integration tests. You can greatly improve the experience by speeding up the block time.
 
@@ -44,6 +44,6 @@ Additionally, you can use the following single line to configure timeouts:
 sed -E -i '/timeout_(propose|prevote|precommit|commit)/s/[0-9]+m?s/200ms/' config/config.toml
 ```
 
-### Modifying genesis
+## Modifying genesis
 
 You can change the `genesis.json` file by altering `config/genesis.json`. To load your changes, restart your LocalTerra.
