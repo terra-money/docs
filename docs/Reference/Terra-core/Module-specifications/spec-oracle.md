@@ -14,7 +14,7 @@ Since the Oracle service is powered by validators, you may find it interesting t
 
 During each [`VotePeriod`](#voteperiod), the Oracle module obtains consensus on the exchange rate of Luna against denominations specified in [`Whitelist`](#whitelist) by requiring all members of the validator set to submit a vote for Luna exchange rate before the end of the interval.
 
-Validators must first pre-commit to a exchange rate, then in the subsequent `VotePeriod` submit and reveal their exchange rate alongside a proof that they had pre-commited at that price. This scheme forces the voter to commit to a submission before knowing the votes of others and thereby reduces centralization and free-rider risk in the Oracle.
+Validators must first pre-commit to an exchange rate. In the subsequent `VotePeriod`, validators submit and reveal their exchange rate alongside a proof that they had pre-committed at that price. This scheme forces the voter to commit to a submission before knowing the votes of others. This system reduces centralization and free-rider risk in the Oracle.
 
 #### Prevote and Vote
 
