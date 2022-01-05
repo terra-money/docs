@@ -17,7 +17,7 @@ While the Treasury stabilizes miner demand by adjusting rewards, the [`Market`](
 The Treasury observes three macroeconomic indicators for each epoch and keeps [indicators](#indicators) of their values during previous epochs:
 
 - **Tax Rewards**: $T$, the income generated from transaction and stability fees during an epoch.
-- **Seigniorage Rewards***: $S$, the amount of seigniorage generated from Luna swaps to Terra during an epoch which is destined for ballot rewards inside the `Oracle` rewards. As of Columbus-5, all seigniorage is burned.
+- **Seigniorage Rewards***: $S$, the amount of seigniorage generated from Luna swaps to Terra during an epoch. As of Columbus-5, all seigniorage is burned.
 - **Total Staked Luna**: $\lambda$, the total amount of Luna staked by users and bonded to their delegated validators.
 
 These indicators are used to derive two other values:
@@ -374,6 +374,6 @@ A number of epochs that specifies a time interval for calculating long-term movi
 ### WindowProbation
 
 - type: `int64`
-- default: `12` (3 months = 12 weeks)
+- default: `18`
 
 A number of epochs that specifies a time interval for the probationary period.
