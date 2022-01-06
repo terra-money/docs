@@ -1,10 +1,10 @@
 # Develop
 
+## Tutorials
+
 ```{toctree}
-:hidden:
 dapp/README
-terrad/README
-localterra/README
+how-to/README.md
 module-specifications/README
 sdks/README
 reference/README
