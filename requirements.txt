@@ -24,12 +24,14 @@ requests
 snowballstemmer
 soupsieve
 Sphinx
-sphinx-book-theme
 sphinxcontrib-applehelp
 sphinxcontrib-devhelp
 sphinxcontrib-htmlhelp
 sphinxcontrib-jsmath
 sphinxcontrib-qthelp
 sphinxcontrib-serializinghtml
+sphinx-book-theme
+sphinx-copybutton
+sphinx_design
 sphinx_panels
 urllib3
