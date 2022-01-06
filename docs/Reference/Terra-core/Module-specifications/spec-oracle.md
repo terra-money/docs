@@ -61,11 +61,8 @@ Choose `ReferenceTerra` with the highest voter turnout. If the voting power of t
 
 After the votes are tallied, the winners of the ballots are determined with [`tally()`](#tally).
 
-Voters that have managed to vote within a narrow band around the weighted median, are rewarded with a portion of the collected seigniorage. See [`k.RewardBallotWinners()`](#k-rewardballotwinners) for more details.
+Voters that have managed to vote within a narrow band around the weighted median are rewarded with swap fees. See [`k.RewardBallotWinners()`](#k-rewardballotwinners) for more details.
 
-::: warning NOTE
-Starting from Columbus-3, fees from [Market](spec-market.md) swaps are no longer are included in the oracle reward pool, and are immediately burned during the swap operation.
-:::
 
 ### Reward Band
 
@@ -87,7 +84,7 @@ During every [`SlashWindow`](#slashwindow), participating validators must mainta
 
 ### Abstaining from Voting
 
-A validator may abstain from voting by submitting a non-positive integer for the `ExchangeRate` field in [`MsgExchangeRateVote`](#msgexchangeratevote). Doing so will absolve them of any penalties for missing `VotePeriod`s, but also disqualify them from receiving Oracle seigniorage rewards for faithful reporting.
+A validator may abstain from voting by submitting a non-positive integer for the `ExchangeRate` field in [`MsgExchangeRateVote`](#msgexchangeratevote). Doing so will absolve them of any penalties for missing `VotePeriod`s, but also disqualify them from receiving Oracle rewards for faithful reporting.
 
 ## Message Types
 
@@ -232,7 +229,7 @@ This function contains the logic for tallying up the votes for a specific ballot
 func (k Keeper) RewardBallotWinners(ctx sdk.Context, ballotWinners types.ClaimPool)
 ```
 
-At the end of every `VotePeriod`, a portion of the seigniorage is rewarded to the oracle ballot winners (validators who submitted an exchange rate vote within the band).
+At the end of every `VotePeriod`, a portion of swap fees are rewarded to the oracle ballot winners (validators who submitted an exchange rate vote within the band).
 
 The total amount of Luna rewarded per `VotePeriod` is equal to the current amount of Luna in the reward pool (the Luna owned by the Oracle module) divided by the parameter [`RewardDistributionWindow`](#rewarddistributionwindow).
 
@@ -334,7 +331,7 @@ The tolerated error from the final weighted mean exchange rate that can receive 
 - type: `int64`
 - default value: `BlocksPerYear` (1 year window)
 
-The number of blocks during which seigniorage reward comes in and then is distributed.
+The number of blocks during which oracle rewards from swap fees comes in and then are distributed.
 
 ### Whitelist
 
