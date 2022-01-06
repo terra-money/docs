@@ -329,7 +329,7 @@ The tolerated error from the final weighted mean exchange rate that can receive 
 ### RewardDistributionWindow
 
 - type: `int64`
-- default value: `BlocksPerYear` (1 year window)
+- default value: `BlocksPerYear` (2 year window)
 
 The number of blocks during which oracle rewards from swap fees comes in and then are distributed.
 
