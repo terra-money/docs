@@ -7,7 +7,7 @@ sidebarDepth: 2
 The Treasury module acts as the "central bank" of the Terra economy, measuring macroeconomic activity by [observing indicators](#observed-indicators) and adjusting [monetary policy levers](#monetary-policy-levers) to modulate miner incentives toward stable, long-term growth.
 
 ::: warning Note:
-While the Treasury stabilizes miner demand by adjusting rewards, the [`Market`](spec-market.md) module is responsible for Terra price-stability through arbitrage and the market maker.
+While the Treasury stabilizes miner demand by adjusting rewards, the [`Market`](spec-market.md) module is responsible for Terra price stability through arbitrage and the market maker.
 :::
 
 ## Concepts
@@ -42,7 +42,7 @@ The protocol can compute and compare the short-term ([`WindowShort`](#windowshor
 
 - **Tax Rate**: $r$, adjusts the amount of income gained from Terra transactions, limited by [_tax cap_](#tax-caps).
 
-- **Reward Weight**: $w$, the portion of seigniorage allocated to the reward pool for [`Oracle`](spec-oracle.md) vote winners. This is given to validtors who vote within the reward band of the weighted median exchange rate.
+- **Reward Weight**: $w$, the portion of seigniorage allocated to the reward pool for [`Oracle`](spec-oracle.md) vote winners. This is given to validators who vote within the reward band of the weighted median exchange rate.
 
 ::: warning Tip
 As of Columbus-5, all seigniorage is burned and no longer funds the community pool or the oracle reward pool. Validators are rewarded for faithful oracle votes through swap fees.
@@ -160,7 +160,7 @@ Recording the initial issuance will automatically use the [`Supply`](spec-supply
 
 ### Indicators
 
-The Treasury keeps track of following indicators for the present and previous epochs:
+The Treasury keeps track of the following indicators for the present and previous epochs:
 
 #### Tax Rewards
 
@@ -200,7 +200,7 @@ At the end of each epoch $t$, this function records the current values of tax re
 func (k Keeper) UpdateTaxPolicy(ctx sdk.Context) (newTaxRate sdk.Dec)
 ```
 
-At the end of each epoch, this funtion calculates the next value of the Tax Rate monetary lever.
+At the end of each epoch, this function calculates the next value of the Tax Rate monetary lever.
 
 Using $r_t$ as the current Tax Rate and $n$ as the [`MiningIncrement`](#miningincrement) parameter:
 
@@ -220,7 +220,7 @@ When monthly tax revenues dip below the yearly average, the Treasury raises the 
 func (k Keeper) UpdateRewardPolicy(ctx sdk.Context) (newRewardWeight sdk.Dec)
 ```
 
-At the end of each epoch, this funtion calculates the next value of the Reward Weight monetary lever.
+At the end of each epoch, this function calculates the next value of the Reward Weight monetary lever.
 
 Using $w_t$ as the current reward weight, and $b$ as the [`SeigniorageBurdenTarget`](#seigniorageburdentarget) parameter:
 
@@ -257,7 +257,7 @@ This function is called at the end of an epoch to compute seigniorage and forwar
 
 1. The seigniorage $\Sigma$ of the current epoch is calculated by taking the difference between the Luna supply at the start of the epoch ([Epoch Initial Issuance](#epoch-initial-issuance)) and the Luna supply at the time of calling.
 
-   Note that $\Sigma > 0$ when the current Luna supply is lower than at the start of the epoch, because the Luna had been burned from Luna swaps into Terra. See [here](spec-market.md#seigniorage).
+   Note that $\Sigma > 0$ when the current Luna supply is lower than at the start of the epoch because the Luna had been burned from Luna swaps into Terra. See [here](spec-market.md#seigniorage).
 
 2. The Reward Weight $w$ is the percentage of the seigniorage designated for ballot rewards. Amount $S$ of new Luna is minted, and the [`Oracle`](spec-oracle.md) module receives $S = \Sigma * w$ of the seigniorage.
 
@@ -275,7 +275,7 @@ If the blockchain is at the final block of the epoch, the following procedure is
 
 1. Update all the indicators with [`k.UpdateIndicators()`](#kupdateindicators)
 
-2. If the this current block is under [probation](#probation), skip to step 6.
+2. If the current block is under [probation](#probation), skip to step 6.
 
 3. [Settle seigniorage](#ksettleseigniorage) accrued during the epoch and make funds available to ballot rewards and the community pool during the next epoch. As of Columbus-5, all seigniorage is burned.
 
@@ -348,7 +348,7 @@ Constraints / rules for updating the [Reward Weight](#reward-weight) monetary po
 - type: `sdk.Dec`
 - default: 67%
 
-Multiplier specifying portion of burden seigniorage needed to bear the overall reward profile for Reward Weight updates during epoch transition.
+Multiplier specifying the portion of burden seigniorage needed to bear the overall reward profile for Reward Weight updates during epoch transition.
 
 ### MiningIncrement
 
