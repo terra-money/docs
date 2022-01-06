@@ -30,6 +30,8 @@ root_doc = "index"
 # ones.
 extensions = ["myst_parser",
               "sphinx_panels",
+              "sphinx_copybutton",
+              "sphinx_design",
     ]
 myst_heading_anchors = 3
 
@@ -63,6 +65,7 @@ html_theme_options = {
     "logo_only": True,
     "show_toc_level": 2,
 
+
 }
 
 # Add any paths that contain custom static files (such as style sheets) here,
@@ -86,4 +89,5 @@ myst_enable_extensions = [
 ]
 myst_footnote_transition = True
 myst_dmath_double_inline = True
+myst_all_links_external = True
 panels_add_bootstrap_css = False
