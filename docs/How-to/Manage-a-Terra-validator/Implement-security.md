@@ -42,7 +42,9 @@ persistent_peers = "validator node address"
 private_peer_ids = "nodeid of the validator"
 ```
 
-::: warning Note a node address has this format: `nodeid@ip:port`, you can get the nodeid by running `terrad tendermint show-node-id`, the default port is 26656. :::
+::: warning Note 
+A node address has this format: `nodeid@ip:port`, you can get the nodeid by running `terrad tendermint show-node-id`, the default port is 26656. 
+:::
 
 ## Environment Variables
 
