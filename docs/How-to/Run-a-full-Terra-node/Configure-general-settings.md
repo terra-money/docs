@@ -8,14 +8,11 @@ The following information describes the most important node configuration settin
 ~/.terra/config
 │-- addrbook.json                       # a registry of peers to connect to
 │-- app.toml                            # terrad configuration file
-│-- client.toml                         #  ?
+│-- client.toml                         # configurations for the cli wallet (ex terracli)
 │-- config.toml                         # Tendermint configuration  file
 │-- genesis.json                        # gensesis transactions
-└─── gentx
-     └ gentx-9dd77b79daf841e0bbb4306e93d4b01c7cdf3997.json # ?
-│-- node_key.json                       # ?
-└-- priv_validator_key.json             # ?
-
+│-- node_key.json                       # private key used for node authentication in the p2p protocol (it's corresponding public key is the nodeid)
+└-- priv_validator_key.json             # key used by the validator on the node to sign blocks 
 ```
 :::
 
