@@ -61,7 +61,7 @@ Choose `ReferenceTerra` with the highest voter turnout. If the voting power of t
 
 After the votes are tallied, the winners of the ballots are determined with [`tally()`](#tally).
 
-Voters that have managed to vote within a narrow band around the weighted median are rewarded with swap fees. See [`k.RewardBallotWinners()`](#k-rewardballotwinners) for more details.
+Voters that have managed to vote within a narrow band around the weighted median are rewarded with swap fees from the oracle reward pool. Swap fees from the reward pool are then distributed over a 2-year period. See [`k.RewardBallotWinners()`](#k-rewardballotwinners) for more details.
 
 
 ### Reward Band
