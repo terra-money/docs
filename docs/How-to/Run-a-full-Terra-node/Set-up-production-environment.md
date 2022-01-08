@@ -37,25 +37,25 @@ After=network.target
 
 [Service]
 Type=simple
-User=<TERRA_USER> # Adjust for your system
-ExecStart=<PATH_TO_TERRAD>/terrad start  # PATH_TO_TERRAD is likely /usr/go/bin. 
+User=<TERRA_USER> 
+ExecStart=<PATH_TO_TERRAD>/terrad start  
 Restart=on-abort
 
 [Install]
 WantedBy=multi-user.target
 
 [Service]
-LimitNOFILE=65535  # make sure you made the correct edits to /etc/security/limits.conf
+LimitNOFILE=65535  
 ```
 
-2. Modify the `Service` section for your environment:
+2. Modify the `Service` section according to your environment:
 
-   - Enter the user
-   - Enter the path to the executable
-   - Even if you raised the number of open files, you must include `LimitNOFILE`.
+   - enter the user (likely your username, unless you created a user specifically for `terrad`)
+   - enter the path to the `terrad` executable. `<PATH_TO_TERRAD>` is likely `/home/<YOUR_USER>/go/bin/terrad` or `/usr/go/bin`. Confirm this with `whereis terrad`
+   - make sure you made the correct edits to /etc/security/limits.conf
 
 
-3. Run `systemctl daemon-reload` and `systemctl enable terrad`. This will register `terrad` as a system service and turn it on on startup.
+3. Run `systemctl daemon-reload` followed by `systemctl enable terrad`. This will register `terrad` as a system service and turn it on on startup.
 
 4. Now start the serivce with `systemctl start terrad`.
 

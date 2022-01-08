@@ -167,13 +167,13 @@ module.exports = {
         {
           title: "Run a full Terra node",
           children: [
-            "/How-to/Run-a-full-Terra-node/Hardware-requirements",
+            "/How-to/Run-a-full-Terra-node/System-configuration",
             "/How-to/Run-a-full-Terra-node/Build-Terra-core",
             "/How-to/Run-a-full-Terra-node/Set-up-production-environment",
             "/How-to/Run-a-full-Terra-node/Configure-general-settings",
-            "/How-to/Run-a-full-Terra-node/Set-up-private-network",
-            "/How-to/Run-a-full-Terra-node/Join-public-network",
-
+            "/How-to/Run-a-full-Terra-node/Joining-a-network",
+            "/How-to/Run-a-full-Terra-node/Synchronization",
+            "/How-to/Run-a-full-Terra-node/Updates-And-Troubleshooting"
           ],
           collapsable: true,
         },

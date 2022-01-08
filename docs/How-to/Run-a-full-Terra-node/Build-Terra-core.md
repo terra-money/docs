@@ -5,7 +5,8 @@ Terra core is the official Golang reference implementation of the Terra node sof
 ## Prerequisites
 
 - `Go` has to be installed on your system. 
-    ::: details Installing Go
+
+    ::: details Installing Go  (for MacOS & Linux)
 
     Go releases can be found here: [ https://go.dev/dl/ ](https://go.dev/dl/)
 
@@ -14,6 +15,7 @@ Terra core is the official Golang reference implementation of the Terra node sof
     ```bash
     # make sure to get the latest stable release for linux-amd64 (paste the link you copied)
     CURRENT_GO_RELEASE='https://go.dev/dl/go1.17.6.linux-amd64.tar.gz' 
+
     # download the archive
     wget $CURRENT_GO_RELEASE 
 
@@ -22,11 +24,15 @@ Terra core is the official Golang reference implementation of the Terra node sof
 
     # unpack
     sudo tar -C /usr/local -xzf go1.17.6.linux-amd64.tar.gz
+
     # add the path to the go-binary to your system path.
     # for this to persist, add this line to your ~/.profile or ~/.bashrc or  ~/.zshrc
     export PATH=$PATH:/usr/local/go/bin
+
     # check that everything went well. 
-    go version
+    go version 
+    # go version go1.17.5 linux/amd64
+
     ```
 
     :::

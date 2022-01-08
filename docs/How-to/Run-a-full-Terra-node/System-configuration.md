@@ -1,4 +1,6 @@
-# Hardware requirements
+# System Configuration 
+
+##  Hardware requirements
 
 :::warning Recommended operating systems
 This guide has been tested against Linux distributions only. To ensure you successfully set up your production environment, consider setting it up on an Linux system.
@@ -14,9 +16,8 @@ We recommend the following hardware to run a full node:
 - At least 300 mbps of network bandwidth
 
 
-# System Configuration 
 
-### Commonly used ports
+## Commonly used ports
 
 `terrad` uses the following TCP ports. Toggle their settings to fit your environment.
 
@@ -35,3 +36,4 @@ Additional ports:
 ::: danger Warning
 Do not open port `26657` to the public unless you plan to run a public node.
 :::
+
