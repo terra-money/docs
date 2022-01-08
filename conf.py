@@ -90,4 +90,4 @@ myst_enable_extensions = [
 myst_footnote_transition = True
 myst_dmath_double_inline = True
 myst_all_links_external = True
-panels_add_bootstrap_css = False
+panels_add_bootstrap_css = True
