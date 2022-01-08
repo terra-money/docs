@@ -8,9 +8,9 @@ The WASM module implements the execution environment for WebAssembly smart contr
 
 Smart contracts are autonomous agents that are able to interact with other entities on the Terra blockchain, such as human-owned accounts, validators, and other smart contracts. Each smart contract has:
 
-- a unique **contract address** with an account that holds funds
-- a **code ID**, where its logic is defined
-- its own **key-value store**, where it can persist and retrieve data
+- A unique **contract address** with an account that holds funds.
+- A **code ID**, where its logic is defined.
+- Its own **key-value store**, where it can persist and retrieve data.
 
 #### Contract Address
 
@@ -22,7 +22,7 @@ On Terra, code upload and contract creation occur as separate events. A smart co
 
 #### Key-Value Store
 
-Each smart contract is given its own dedicated keyspace in LevelDB, prefixed by the contract address. Contract code is safely sandboxed and can only can set and delete new keys and values within its assigned keyspace.
+Every smart contract is given its own dedicated keyspace in LevelDB, prefixed by the contract address. Contract code is safely sandboxed and can only can set and delete new keys and values within its assigned keyspace.
 
 ### Interaction
 
@@ -30,13 +30,13 @@ Users can interact with smart contracts in several ways.
 
 #### Instantiation
 
-A user can instantiate a new smart contract by sending a `MsgInstantiateContract`. In it, the user is able to:
+A user can instantiate a new smart contract by sending a `MsgInstantiateContract`. This message enables the user to:
 
-- assign an owner to the contract
-- specify code will be used for the contract via a code ID
-- define the initial parameters / configuration through an `InitMsg`
-- provide the new contract's account with some initial funds
-- denote whether the contract is migratable (can change code IDs)
+- assign an owner to the contract.
+- specify code will be used for the contract via a code ID.
+- define the initial parameters / configuration through an `InitMsg`.
+- provide the new contract's account with some initial funds.
+- denote whether the contract is migratable (able to change code IDs).
 
 The `InitMsg` is a JSON message whose expected format is defined in the contract's code. Every contract contains a section that defines how to set up the initial state depending on the provided `InitMsg`.
 
