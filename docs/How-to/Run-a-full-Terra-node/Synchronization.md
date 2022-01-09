@@ -39,7 +39,7 @@ The link in your clipboard should resemble: ***https://dl2.quicksync.io/bombay-1
 
 :::
 
-The archived snapshot contains the state and transactions of the network, which -- given default config -- are stored in the `~/.terra/data/` folder. It is this folder on your node that the snapshot needs to populate. Therefore you should either navigate exactly to `~/.terra/` folder before proceeding OR otherwise make sure that the contents of the archive are placed into `~/.terra/data/`.  
+The archived snapshot contains the state and transactions of the network, which -- given default config -- are stored in the `~/.terra/data/` folder. It is this folder on your node that the snapshot contains. Therefore you should either navigate exactly to `~/.terra/` folder before proceeding to unpck it **OR** otherwise make sure that the contents of the archive are placed into `~/.terra/`.  
 
 
 Download the snapshot. 
@@ -60,6 +60,34 @@ Finally, unpack the `.tar` archive into `~/.terra`. Its contents must replace `~
 ```bash
 tar -xvf bombay-12-default.20220107.0510.tar
 ```
+
+Due to the size of the network this will take some time. After snapshot is completely unpacked, start `terrad`. It should work out of the box. 
+
+```bash
+terrad start
+```
+
+## Sync Complete
+
+You can tell that your node is in sync with the network when `SyncInfo.catching_up` in the `terrad status` response returns `false` and `latest_block_height` should correspond to the public network blockheight ( you can find that on [ stake.id ](https://terra.stake.id/#/) for example):
+
+```bash
+terrad status  
+```
+
+```json
+  {
+    "SyncInfo": {
+        "latest_block_height": "7356350",
+        "catching_up"        : false
+    },
+  ...
+  }
+```
+
+- Validators can view the status of the network with [Terra Finder](https://finder.terra.money).
+- For faster syncs during testing, see [node sync for testing](#node-sync-for-testing)
+
 
 
 
@@ -109,23 +137,6 @@ Sometimes you may want to sync faster by foregoing checks. This command should o
 terrad start --x-crisis-skip-assert-invariants
 ```
 
-
-## Sync Complete
-
-- Validators can view the status of the network with [Terra Finder](https://finder.terra.money).
-- For faster syncs during testing, see [node sync for testing](#node-sync-for-testing)
-
-
-You can tell that your node is in sync with the network when `SyncInfo.catching_up` in the `terrad status` response returns `false`:
-```json
-  {
-    "SyncInfo": {
-        "catching_up": false                         
-    },
-  ...
-  }
-  
-```
 
 
 ## Congratulations!
