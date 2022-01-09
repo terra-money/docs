@@ -139,7 +139,7 @@ A swap in Terra Station that uses the Terra protocol's market function. Market s
 
 To learn how to use the market swap feature in Terra station, visit [how to use Terra Station](/How-to/Terra-Station/Swap.html#market-swap).
 
-For more information on fees, visit [Fees on Terra](./fees.md).
+For more information on fees, visit [Fees on Terra](./Fees.md).
 
 ## Mint
 
