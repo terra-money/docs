@@ -332,6 +332,7 @@ This will result in an optimized build of `artifacts/my_first_contract.wasm` or 
 Please note that rust-optimizer will produce different contracts on Intel and ARM machines. So for reproducible builds you'll have to stick to one.
 :::
 
+
 ## Schemas
 
 In order to make use of JSON-schema auto-generation, we should register each of the data structures that we need schemas for.
