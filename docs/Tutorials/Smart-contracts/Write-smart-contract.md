@@ -318,16 +318,19 @@ docker run --rm -v "$(pwd)":/code \
   cosmwasm/rust-optimizer-arm64:0.12.4
   ```
 
+Or, if you are developing with a Windows exposed Docker daemon connected to WSL 1:
+```sh
+docker run --rm -v "$(wslpath -w $(pwd))":/code \
+  --mount type=volume,source="$(basename "$(pwd)")_cache",target=/code/target \
+  --mount type=volume,source=registry_cache,target=/usr/local/cargo/registry \
+  cosmwasm/rust-optimizer:0.12.4
+```
+
 This will result in an optimized build of `artifacts/my_first_contract.wasm` or `artifacts/my_first_contract-aarch64.wasm` in your working directory.
 
 ::: warning NOTE
 Please note that rust-optimizer will produce different contracts on Intel and ARM machines. So for reproducible builds you'll have to stick to one.
 :::
-
-::: warning NOTE
-If you are developing with a Windows exposed Docker daemon connected to WSL 1, you will need to replace the `pwd` and `basename "$(pwd)"` steps of the optimization command with the windows absolute path of your smart contract folder, or Docker will be unable to optimize your build.
-:::
-
 
 ## Schemas
 
