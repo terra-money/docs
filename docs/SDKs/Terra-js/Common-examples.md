@@ -204,3 +204,47 @@ const initMessages = txInfos.map((tx) => tx.body.messages)
 
 console.log(initMessages);
 ```
+
+## Validate a Terra address
+
+The following code example shows how to do a basic verification on a terra address.
+
+This is a basic version of the verification, it does not require external libraries as it performs a simple comparison with a regex string. But it could give false positives since it doesn't verify the checksum of the address.
+```ts
+// basic address validation (no library required)
+function isValid(address) {
+  // check the string format:
+  // - starts with "terra1"
+  // - length == 44 ("terra1" + 38)
+  // - contains only numbers and lower case letters
+  return /(terra1[a-z0-9]{38})/g.test(address);
+}
+
+console.log(isValid('terra1dcegyrekltswvyy0xy69ydgxn9x8x32zdtapd8')); // true
+console.log(isValid('terra1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')); // true (even if this doesn't have a valid checksum)
+console.log(isValid('cosmos1zz22dfpvw3zqpeyhvhmx944a588fgcalw744ts')); // false
+console.log(isValid('random string')); // false
+```
+
+This is a more advanced verification, it requires the bech32 library which is used to verify the checksum.
+
+```ts
+import { bech32 } from 'bech32';
+
+// advanced address validation, it verify also the bech32 checksum
+function isValid(address) {
+  try {
+    const { prefix: decodedPrefix } = bech32.decode(address); // throw error if checksum is invalid
+    // verify address prefix
+    return decodedPrefix === 'terra';
+  } catch {
+    // invalid checksum
+    return false; 
+  }
+}
+
+console.log(isValid('terra1dcegyrekltswvyy0xy69ydgxn9x8x32zdtapd8')); // true
+console.log(isValid('terra1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')); // false
+console.log(isValid('cosmos1zz22dfpvw3zqpeyhvhmx944a588fgcalw744ts')); // false
+console.log(isValid('random string')); // false
+```
