@@ -38,7 +38,7 @@ The deploy command performs the following steps automatically:
 * Builds the counter smart contract
 * Optimizes the counter smart contract
 * Uploads counter smart contract to LocalTerra
-* InstantiatesInstantiate the deployed smart contract
+* Instantiates the deployed smart contract
 
 ## Interacting with the deployed contract
 
