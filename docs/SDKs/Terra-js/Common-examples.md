@@ -248,3 +248,37 @@ console.log(isValid('terra1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')); // false
 console.log(isValid('cosmos1zz22dfpvw3zqpeyhvhmx944a588fgcalw744ts')); // false
 console.log(isValid('random string')); // false
 ```
+
+
+## Avoid Status 500: timed out waiting for tx to be included in a block
+
+Occasionally the broadcast function of terra.js and terra.py throws the error `Status 500: timed out waiting for tx to be included in a block`, even if transaction will confirmed onchain after a few seconds.
+
+This happens because the libraries use by default the `broadcast-mode = block`, with this mode the LCD to which you are broadcasting the transaction sends an http response to your request only when the transaction has been included in a block, but if the chain is overloaded the confirmation may take too long and trigger a timeout in the LCD.
+
+To solve this problem it is recommended to use the `broadcast-mode = sync` and then iterate a request to the LCD with the txhash to understand when it has been included in a block.
+
+This is an example to do it in javascript:
+
+```ts
+// sign the tx
+wallet.createAndSignTx(YOUR_TX_HERE)
+  // use broadcastSync() instead of broadcast()
+  .then(tx => terra.tx.broadcastSync(tx))
+  .then(async result => {
+    // TODO: use a for or add a timeout to prevent infinite loops 
+    while(true){
+      // query txhash
+      const data = await terra.tx.txInfo(result.txhash)
+        .catch(() => {})
+      // if hash is onchain return data
+      if(data) return data
+      // else wait 250ms and then repeat
+      await new Promise(resolve => setTimeout(resolve, 250))
+    }
+  })
+  .then(result => {
+    // this will be executed when the tx has been included into a block
+    console.log(result)
+  })
+```
