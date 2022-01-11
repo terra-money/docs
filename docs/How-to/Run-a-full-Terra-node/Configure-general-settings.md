@@ -2,36 +2,35 @@
 
 The following information describes the most important node configuration settings, which are found in the `~/.terra/config/` directory. We recommend that you update these settings with your own information.
 
-For more detailed descriptions about your configuration settings, including settings for WASM, explore each configuration file.
-
-## Update your moniker
-
-1. Open `~/.terra/config/config.toml`.
-
-2. Modify the `moniker` to name your node.
-
-```toml
-# A custom human readable name for this node
-moniker = "cx-mbp-will.local"
-```
-
-## Download the address book
-
-Choose and download `addrbook.json` and move it into `~/.terra/config/addrbook.json`. This will give your node a selection of peers to dial to find other nodes.
-
-For more p2p and seed settings, visit [additional settings](#additional-settings)
-
-- Mainnet address book:
+:::details Structure of .terra/config
 
 ```bash
-wget https://network.terra.dev/addrbook.json -O ~/.terra/config/addrbook.json
+~/.terra/config
+│-- addrbook.json                       # a registry of peers to connect to
+│-- app.toml                            # terrad configuration file
+│-- client.toml                         # configurations for the cli wallet (ex terracli)
+│-- config.toml                         # Tendermint configuration  file
+│-- genesis.json                        # gensesis transactions
+│-- node_key.json                       # private key used for node authentication in the p2p protocol (it's corresponding public key is the nodeid)
+└-- priv_validator_key.json             # key used by the validator on the node to sign blocks 
 ```
+:::
 
-- Testnet address book:
+
+
+### Initialize and configure moniker
+
+First, initialize the node with a human readable name:
 
 ```bash
-wget https://network.terra.dev/testnet/addrbook.json -O ~/.terra/config/addrbook.json
+terrad init <your_custom_moniker> # ex., terrad init validator-joes-node
 ```
+::: warning Moniker characters
+Monikers can only contain ASCII characters; using Unicode characters will render your node unreachable by other peers in the network.
+:::
+
+You can update your node's moniker by editing the `moniker` field in  `~/.terra/config/config.toml`
+
 
 ## Update minimum gas prices
 
@@ -46,10 +45,9 @@ wget https://network.terra.dev/testnet/addrbook.json -O ~/.terra/config/addrbook
 minimum-gas-prices = "0.01133uluna,0.15uusd,0.104938usdr,169.77ukrw,428.571umnt,0.125ueur,0.98ucny,16.37ujpy,0.11ugbp,10.88uinr,0.19ucad,0.14uchf,0.19uaud,0.2usgd,4.62uthb,1.25usek,1.25unok,0.9udkk,2180.0uidr,7.6uphp,1.17uhkd"
 ```
 
-
 ## Start the light client daemon (LCD)
 
-To enable the REST API and Swagger, and to start the LCD, complete the following steps:
+For information about the available Terra REST API endpoints, see the [Swagger documentation](https://lcd.terra.dev/swagger/). To enable the REST API and Swagger, and to start the LCD, complete the following steps:
 
 1. Open `~/.terra/config/app.toml`.
 
@@ -62,53 +60,11 @@ To enable the REST API and Swagger, and to start the LCD, complete the following
 enable = true
 ```
 
-4. Optional: To enable Swagger, change `swagger = flase` to `swagger = true`.
+4. Optional: Swagger defines if swagger documentation should automatically be registered. To enable Swagger, change `swagger = flase` to `swagger = true`.
 
 ```toml
-# Swagger defines if swagger documentation should automatically be registered.
 swagger = true
 ```
-5. Restart.
 
-Once restarted, the LCD will be available.
+5. Restart the service via `systemctl restart terrad`. Once restarted, the LCD will be available (by default on port on `127.0.0.1:26657`)
 
-For more information about the Terra REST API endpoints, see the [Swagger documentation](https://lcd.terra.dev/swagger/).
-
-## Additional settings
-
-### `seed_mode`
-
-In seed mode, a node continuously crawls the network for peers, and upon incoming connection shares some peers and disconnects.
-
-```toml
-# Seed mode, in which node constantly crawls the network and looks for
-# peers. If another node asks it for addresses, it responds and disconnects.
-# Does not work if the peer-exchange reactor is disabled.
-seed_mode = true
-```
-
-### `seeds`
-
-To manually identify seed nodes, edit the following dsetting in `config.toml`.
-
-```toml
-# Comma separated list of seed nodes to connect to
-seeds = "id100000000000000000000000000000000@1.2.3.4:26656,id200000000000000000000000000000000@2.3.4.5:4444"
-```
-
-### `persistent_peers`
-
-The nodes you specify are the trusted persistent peers that can help anchor your node in the p2p network. If the connection fails, they are dialed and automatically redialed for 24 hours. The automatic redial function uses exponential backoff and stops after 24 hours of trying to connect.
-
-If the value of `persistent_peers_max_dial_period` is more than zero, the pause between each call to each persistent peer will not exceed `persistent_peers_max_dial_period` during exponential backoff, and the automatic redial process continues.
-
-```toml
-# Comma separated list of nodes to keep persistent connections to
-persistent_peers = "id100000000000000000000000000000000@1.2.3.4:26656,id200000000000000000000000000000000@2.3.4.5:26656"
-```
-
-### Rosetta
-
-Integrate Terra with Coinbase via the Rosetta API. Rosetta is an open-source API that organizes blockchain data into a standardized format, making it easy for developers to build cross-chain applications. Instead of creating specific code for each chain, Rosetta allows different blockchains to integrate into any exchange that uses Rosetta API.
-
-For more information, visit the [Rosetta docs site](https://www.rosetta-api.org/docs/welcome.html).
