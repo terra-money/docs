@@ -1,6 +1,6 @@
 # Configure general settings
 
-The following information describes the most important node configuration settings, which are found in the `~/.terra/config/` directory. We recommend that you update these settings with your own information.
+The following information describes the most important node configuration settings found in the `~/.terra/config/` directory. It is recommended that you update these settings with your own information.
 
 :::details Structure of .terra/config
 
@@ -11,16 +11,15 @@ The following information describes the most important node configuration settin
 │-- client.toml                         # configurations for the cli wallet (ex terracli)
 │-- config.toml                         # Tendermint configuration  file
 │-- genesis.json                        # gensesis transactions
-│-- node_key.json                       # private key used for node authentication in the p2p protocol (it's corresponding public key is the nodeid)
-└-- priv_validator_key.json             # key used by the validator on the node to sign blocks 
+│-- node_key.json                       # private key used for node authentication in the p2p protocol (its corresponding public key is the nodeid)
+└-- priv_validator_key.json             # key used by the validator on the node to sign blocks
 ```
 :::
 
 
+## Initialize and configure moniker
 
-### Initialize and configure moniker
-
-First, initialize the node with a human readable name:
+Initialize the node with a human-readable name:
 
 ```bash
 terrad init <your_custom_moniker> # ex., terrad init validator-joes-node
@@ -31,12 +30,15 @@ Monikers can only contain ASCII characters; using Unicode characters will render
 
 You can update your node's moniker by editing the `moniker` field in  `~/.terra/config/config.toml`
 
-
 ## Update minimum gas prices
 
 1. Open `~/.terra/config/app.toml`.
 
-2. Modify `minimum-gas-prices` to set the minimum price of gas a validator will accept to validate a transaction and to prevent spam.
+2. Modify `minimum-gas-prices` and set the minimum price of gas a validator will accept to validate a transaction and to prevent spam.
+
+- You can [query FCD](https://fcd.terra.dev/v1/txs/gas_prices) to view the current gas prices.
+
+**Example**:
 
 ```toml
 # The minimum gas prices a validator is willing to accept for processing a
@@ -55,16 +57,15 @@ For information about the available Terra REST API endpoints, see the [Swagger d
 
 3. Change `enable = false` to `enable = true`.
 
-```toml
-# Enable defines if the API server should be enabled.
-enable = true
-```
+   ```toml
+   # Enable defines if the API server should be enabled.
+   enable = true
+   ```
 
-4. Optional: Swagger defines if swagger documentation should automatically be registered. To enable Swagger, change `swagger = flase` to `swagger = true`.
+4. Optional: Swagger defines if swagger documentation should automatically be registered. To enable Swagger, change `swagger = false to `swagger = true`.
 
-```toml
-swagger = true
-```
+   ```toml
+   swagger = true
+   ```
 
-5. Restart the service via `systemctl restart terrad`. Once restarted, the LCD will be available (by default on port on `127.0.0.1:26657`)
-
+5. Restart the service via `systemctl restart terrad`. Once restarted, the LCD will be available (by default on port `127.0.0.1:26657`)

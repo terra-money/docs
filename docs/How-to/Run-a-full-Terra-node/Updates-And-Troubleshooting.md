@@ -1,12 +1,12 @@
-# Updates and Troubleshooting
+# Updates and additional settings
 
-### Upgrading Testnet
+## Upgrade the testnet
 
-These instructions are for full nodes that have ran on previous testnets and would like to upgrade to the latest testnet.
+These instructions are for full nodes running previous testnets that would like to upgrade to the latest testnet.
 
-#### Reset data
+### 1. Reset data
 
-First, remove the outdated files and reset the data.
+Remove the outdated files and reset data:
 
 ```bash
 rm ~/.terra/config/genesis.json
@@ -14,15 +14,15 @@ rm ~/.terra/config/addrbook.json
 terrad unsafe-reset-all
 ```
 
-Your node is now in a pristine state while keeping the original `priv_validator.json` and `config.toml`. If you had any sentry nodes or full nodes setup before, your node will still try to connect to them, but may fail if they haven't also been upgraded.
+Your node is now in a pristine state, keeping the original `priv_validator.json` and `config.toml`. If you had any sentry nodes or full nodes set up before, your node will still try to connect to them but may fail if they haven't also been upgraded.
 
 ::: danger
 Make sure that every node has a unique `priv_validator.json`. Do not copy the `priv_validator.json` from an old node to multiple new nodes. Running two nodes with the same `priv_validator.json` will cause you to double sign.
 :::
 
-## Software upgrade
+### 2. Software upgrade
 
-Now it is time to upgrade the software. Go to the project directory, and run:
+Now it is time to upgrade the software. Go to the project directory and run:
 
 ```bash
 git checkout master && git pull
@@ -30,22 +30,24 @@ make
 ```
 
 ::: warning NOTE
-If you have issues at this step, please check that you have the latest stable version of GO installed.
+If you have issues at this step, please check that you have a compatible version of GO installed (v1.16.1-go1.17.1).
 :::
 
-Note we use `master` here since it contains the latest stable release. See the [testnet repo](https://github.com/terra-money/testnet) for details on which version is needed for which testnet, and the [Terra Core release page](https://github.com/terra-money/core/releases) for details on each release. Your full node has been cleanly upgraded!
+The previous command uses `master` as it contains the latest stable release. See the [testnet repo](https://github.com/terra-money/testnet) for details on which version is needed for which testnet, and the [Terra Core release page](https://github.com/terra-money/core/releases) for details on each release.
+
+Your full node is now cleanly upgraded!
 
 ## Exporting state
 
-Terra can dump the entire application state to a JSON file, which could be useful for manual analysis and can also be used as the genesis file of a new network.
+Terra can export the entire application state to a JSON file. You can use this file for manual analysis or as the genesis file of a new network.
 
-Export state with:
+Export state:
 
 ```bash
 terrad export > [filename].json
 ```
 
-You can also export state from a particular height \(at the end of processing the block of that height\):
+You can also export a state from a particular height. The following command will export the state after the block height you specify:
 
 ```bash
 terrad export --height [height] > [filename].json
@@ -60,29 +62,24 @@ terrad export --height [height] --for-zero-height > [filename].json
 
 ::: warning NOTE
 
-For more information on seeds and peers, visit [Tendermint's documentation](https://github.com/tendermint/tendermint/blob/master/docs/tendermint-core/using-tendermint.md#peers).
+For more information on seeds and peers, visit the [Tendermint documentation](https://github.com/tendermint/tendermint/blob/master/docs/tendermint-core/using-tendermint.md#peers).
 
 :::
 
 
-
-# Additional Settings
+## Additional Settings
 
 ### `seed_mode`
 
-In seed mode, a node continuously crawls the network for peers, and upon incoming connection shares some peers and disconnects.
+In seed mode, your node constantly crawls the network and looks for peers. If another node asks it for addresses, it responds and disconnects. Seed mode will not work if the peer-exchange reactor is disabled.
 
 ```toml
-# Seed mode, in which node constantly crawls the network and looks for
-# peers. If another node asks it for addresses, it responds and disconnects.
-# Does not work if the peer-exchange reactor is disabled.
 seed_mode = true
 ```
 
 ### `seeds`
 
-For advanced settings, visit [Define seed nodes](#define-seed-nodes).
-To manually identify seed nodes, edit the following dsetting in `config.toml`.
+To manually identify seed nodes, edit the following setting in `config.toml`.
 
 ```toml
 # Comma separated list of seed nodes to connect to

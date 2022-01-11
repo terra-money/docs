@@ -1,7 +1,7 @@
 # System Configuration
 
 :::warning Recommended operating systems
-This guide has been tested against Linux distributions only. To ensure you successfully set up your production environment, consider setting it up on an Linux system.
+This guide has been tested against Linux distributions only. To ensure a successful production environment setup, consider using a Linux system.
 :::
 
 Running a full Terra node is a resource-intensive process that requires a persistent server. If you want to use Terra without downloading the entire blockchain, use [Terra Station](https://station.terra.money/).
@@ -21,7 +21,7 @@ Running a full Terra node is a resource-intensive process that requires a persis
 
   Go releases can be found here: [ https://go.dev/dl/ ](https://go.dev/dl/)
 
-  In your browser you can right-click the correct release (v1.16.1 - go1.17.1) and `Copy link`.
+  In your browser, you can right-click the correct release (v1.16.1 - go1.17.1) and `Copy link`.
 
   ```bash
   # 1. Download the archive

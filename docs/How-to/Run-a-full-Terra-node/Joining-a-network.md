@@ -1,35 +1,35 @@
-# Joining a network
+# Join a network
 
-As a node operator exercise and for testing purposes it is highly recommeded to start with setting up a local private network before joining the public ones. The following sections outlines this process. You may wish to skip directly to [ joining the public networks ](#joining-a-public-network) section of the guide.
+It is highly recommended that you set up a local private network before joining a public network. This will help get familiar with the setup process, and provide an environment for testing. The following sections outline this process. If you want to join a public network without setting up a private network, you can skip to [join a public network ](#join-a-public-network).
 
 ## Set up a local private network
 
-Validators can set up a private Terra network to become familiar with running a Terra full node before joining a public network.
+Validators can set up a private Terra network to become familiar with running a full Terra node before joining a public network.
 
 ::: tip LocalTerra
 
-If you are a developer and want to set up a local, WASM-enabled private testnet for smart contracts, visit [Download LocalTerra](/Tutorials/Smart-contracts/Set-up-local-environment.html#download-localterra).
+If you are a developer and want to set up a local, WASM-enabled, private testnet for smart contracts, visit [Download LocalTerra](/Tutorials/Smart-contracts/Set-up-local-environment.html#download-localterra).
 
 :::
 
 ### Create a single node
 
-The simplest Terra network you can set up is a local testnet with just a single node. In single-node environment, you have one account, and you are the only validator signing blocks for your private network.
+The simplest Terra network you can set up is a local testnet with just a single node. In a single-node environment, you have one account and are the only validator signing blocks for your private network.
 
-1. Initialize your genesis file that will bootstrap the network. Replace the variables with your own information.
+1. Initialize your genesis file that will bootstrap the network. Replace the following variables with your own information:
 
 ```bash
 terrad init --chain-id=<testnet-name> <node-moniker>
 ```
 
-2. Generate a Terra account. Replace the variable with your account name.
+2. Generate a Terra account. Replace the variable with your account name:
 
 ```bash
 terrad keys add <account-name>
 ```
 
 :::tip Get tokens
-In order for Terrad to recognize a wallet address it must contain tokens. For the testnet, use [the faucet](https://faucet.terra.money/) to send Luna to your wallet. If you are on mainnet, send funds from an existing wallet. 1-3 luna are sufficient for most setup processes.
+In order for Terrad to recognize a wallet address, it must contain tokens. For the testnet, use [the faucet](https://faucet.terra.money/) to send Luna to your wallet. If you are on mainnet, send funds from an existing wallet. 1-3 Luna are sufficient for most setup processes.
 :::
 
 ### Add your account to the genesis
@@ -44,24 +44,24 @@ terrad collect-gentxs
 
 ### Start your private Terra network
 
-Run the following command:
+Run the following command to start your private network:
 
 ```bash
 terrad start
 ```
 
-If the private Terra network is set up correctly, your `terrad` node is running a node on `tcp://localhost:26656`, listening for incoming transactions and signing blocks.
+If the private Terra network is set up correctly, your `terrad` node will be running on `tcp://localhost:26656`, listening for incoming transactions, and signing blocks.
 
-## Joining a public network
+## Join a public network
 
-These instructions are for setting up a brand new full node from scratch. Join a public Terra network, such as the Columbus mainnet or Bombay testnet, by completing the following steps.
+These instructions are for setting up a brand new full node from scratch. You can join a public Terra network, such as the Columbus mainnet or Bombay testnet, by completing the following steps:
 
 
-### Pick a Public Network
+### 1. Select a network
 
-Specify the network you want to join by choosing the corresponding **genesis file** and **seeds**. 
+Specify the network you want to join by choosing the corresponding **genesis file** and **seeds**:
 
-| Network      | Type | Genesis|Addressbook| 
+| Network      | Type | Genesis|Addressbook|
 | :--- | :--- | :--- | :--- |
 | `columbus-5` | Mainnet      |[Genesis Link](https://columbus-genesis.s3.ap-northeast-1.amazonaws.com/columbus-5-genesis.json)| [Addressbook Link](https://network.terra.dev/addrbook.json)|
 | `bombay-12`  | Testnet      |[Genesis Link](https://raw.githubusercontent.com/terra-money/testnet/master/bombay-12/genesis.json)|[ Addressbook Link ](https://raw.githubusercontent.com/terra-money/testnet/master/bombay-12/addrbook.json)|
@@ -69,37 +69,41 @@ Specify the network you want to join by choosing the corresponding **genesis fil
 
 :::warning Selecting a network
 
-Note that the versions of the network listed above are the [ latest versions ](https://github.com/terra-money/testnet/tree/master#latest-networks). To find earlier versions, please consults the [networks repo](https://github.com/terra-money/testnet).
+Note that the versions of the network listed above are the [ latest versions ](https://github.com/terra-money/testnet/tree/master#latest-networks). To find earlier versions, please consult the [networks repo](https://github.com/terra-money/testnet).
 
 :::
 
 
-### Download the genesis file and the addressbook
+### 2. Download genesis file and address book
 
-- *Genesis-transaction* file specifies the account balances and parameters at the start of the network to use when replaying transactions and syncing.
+**Genesis-transaction** specifies the account balances and parameters at the start of the network to use when replaying transactions and syncing.
 
-- *Addressbook* file lists a selection of peers for your node to dial to in order to discover other nodes in the network. Public address-books of peers are made available by the Terra community.
+**Addressbook** lists a selection of peers for your node to dial to in order to discover other nodes in the network. Public address books of peers are made available by the Terra community.
 
+Choose a `testnet` or `mainnet` address type and download the appropriate genesis-transaction and addressbook. Links to these are posted in [Select-a-network](#1.-select-a-network).
 
-Choose the network type( `testnet`/`mainnet` ) and download the appropriate *genesis-transaction* and *addressbook*. Links to these are posted in the [ table ](#pick-a-public-network) above. Given default `terrad` configuration, the *genesis transaction* and *addressbook* files should be placed under `~/.terra/config/genesis.json` and `~/.terra/config/addrbook.json` respectively.
+- For default `terrad` configurations, the `genesis` and `addressbook` files should be placed under `~/.terra/config/genesis.json` and `~/.terra/config/addrbook.json` respectively.
 
-For example, if you were to pick the  __Bombay-12__ testnet:
+**Example**:
 
 ```bash
-# Obtain the genesis for the bombay-12 testnet
+# Obtain the genesis for the bombay-12 testnet:
 wget https://raw.githubusercontent.com/terra-money/testnet/master/bombay-12/genesis.json -I ~/.terra/config/genesis.json
 
-# Obtain the addressbook for the bombay-12 testnet
+# Obtain the addressbook for the bombay-12 testnet:
 wget https://raw.githubusercontent.com/terra-money/testnet/master/bombay-12/addrbook.json -O ~/.terra/config/addrbook.json
 ```
+
+### 3. `terrad start`
 
 Start the network and check that everything is running smoothly:
 
 ```bash
 terrad start
-terrad status # it will take a few seconds for terrad to start
+terrad status
+# It will take a few seconds for terrad to start.
 ```
-:::details Expand for a healthy Node Status Example
+:::details Healthy Node Status Example
 
 ```json
 {
@@ -143,8 +147,4 @@ terrad status # it will take a few seconds for terrad to start
 ```
 :::
 
-
-Synchronization will take a long time, so make sure you've set it up on a stable connection so you can leave while it syncs. 
-
-
-
+Your node is now syncing. This process will take a long time. Make sure you've set it up on a stable connection so you can leave while it syncs.
