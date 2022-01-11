@@ -30,7 +30,7 @@ Welcome to the official documentation for Terra, a decentralized financial infra
       Learn about how Terra achieves price-stability while ensuring steady increase in validator incentives.
     </div>
   </a>
-  <a href="/How-to/Run-a-full-Terra-node/Hardware-requirements.html" class="card">
+  <a href="/How-to/Run-a-full-Terra-node/System-configuration.html" class="card">
     <img src="/img/icon_node.svg"/>
     <div class="title">
       Run a Full Node
