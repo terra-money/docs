@@ -160,7 +160,7 @@ Recording the initial issuance automatically uses the supply module to determine
 
 ### Indicators
 
-The treasury keeps track of following indicators for the present and previous epochs:
+The Treasury keeps track of the following indicators for the present and previous epochs:
 
 #### Tax rewards
 
@@ -275,7 +275,7 @@ If the blockchain is at the final block of the epoch, the following procedure is
 
 1. Update all the indicators with [`k.UpdateIndicators()`](#kupdateindicators)
 
-2. If the this current block is under [probation](#probation), skip to step 6.
+2. If the current block is under [probation](#probation), skip to step 6.
 
 3. [Settle seigniorage](#ksettleseigniorage) accrued during the epoch and make funds available to ballot rewards and the community pool during the next epoch. As of Columbus-5, all seigniorage is burned.
 
@@ -348,7 +348,7 @@ Constraints for updating the [reward weight](#reward-weight) monetary policy lev
 - type: `sdk.Dec`
 - default: 67%
 
-Multiplier specifying the portion of burden seigniorage needed to bear the overall reward profile for reward weight updates during epoch transition.
+Multiplier specifying the portion of burden seigniorage needed to bear the overall reward profile for Reward Weight updates during epoch transition.
 
 ### MiningIncrement
 
@@ -374,6 +374,6 @@ A number of epochs that specifies a time interval for calculating the long-term 
 ### WindowProbation
 
 - type: `int64`
-- default: `12` (3 months = 12 weeks)
+- default: `18`
 
 A number of epochs that specifies a time interval for the probationary period.

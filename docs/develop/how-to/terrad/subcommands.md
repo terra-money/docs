@@ -48,7 +48,7 @@ terrad debug raw-bytes [72 101 108 108 111 44 32 112 108 97 121 103 114 111 117 
 
 Generates a public and private key pair for an account so that you can receive funds, send funds, create bonding transactions, and so on.
 
-::: {important}
+::: tip
 For security purposes, run this command on an offline computer.
 :::
 
@@ -63,11 +63,11 @@ To specify the path \(`0`, `1`, `2`, ...\) you want to use to generate your acco
 
 The command generates a 24-word mnemonic and saves the private and public keys for account `0` simultaneously. You are prompted to specify a passphrase that is used to encrypt the private key of account `0` on disk. Each time you want to send a transaction, this password is required. If you lose the password, you can always recover the private key by using the mnemonic phrase.
 
-:::{danger}
-To prevent theft or loss of funds, ensure that you keep multiple copies of your mnemonic and store it in a secure place and that only know how to access. If someone is able to gain access to your mnemonic, they are able to gain access to your private keys and control the accounts associated with them.
+::: danger
+To prevent theft or loss of funds, ensure that you keep multiple copies of your mnemonic and store it in a secure place and that only you know how to access it. If someone is able to gain access to your mnemonic, they are able to gain access to your private keys and control the accounts associated with them.
 :::
 
-:::{tip}
+::: tip
 After you have triple-checked your mnemonic and safely stored it, you can delete bash history to ensure no one can retrieve it.
 
 ```bash
@@ -84,7 +84,7 @@ terrad keys add <your-key-name> --recover --account 1
 
 You are prompted to specify a passphrase and your mnemonic. To generate a different account, change the account number.
 
-:::{danger}
+::: danger
 - Do not use the same passphrase for multiple keys. We are not responsible for the loss of funds. Do not lose or share your mnemonic with anyone.
 :::
 
@@ -100,7 +100,7 @@ In some cases, you might need to recover your key. If you have the mnemonic that
 terrad keys add <yourKeyName> --recover
 ```
 
-For information about generating multisignature accounts and signing transactions, see [Sign with a multisig account](../sign-with-multisig.md).
+For information about generating multisignature accounts and signing transactions, see [Sign with a multisig account](../../How-to/Sign-with-multisig.md).
 
 ## `keys show`
 
@@ -137,28 +137,6 @@ Lists all your keys.
 terrad keys list
 ```
 
-## `query account`
-
-Displays your account balance, account number, and sequence number (nonce).
-
-**Syntax**
-```bash
-terrad query account <account-address>
-```
-
-**Example**
-```bash
-terrad query account terra15h6vd5f0wqps26zjlwrc6chah08ryu4hzzdwhc
-```
-
-Learn more about [account addresses](keys.md#account-address-terra).
-
-:::{error}
-When you query an account balance that has zero tokens or you fund an account before your node has fully synced with the chain, this error message is sent:
-
-`No account with address <account-address> was found in the state`.
-:::
-
 ## `query authz grants`
 
 Retrieves all existing grants between a granter and a grantee.
@@ -178,6 +156,35 @@ Additionally, the `grants` command can retrieve the specific grant between a gra
 ```bash
 terrad query authz grants terra15h6vd5f0wqps26zjlwrc6chah08ryu4hzzdwhc terra14h2od5f3vahd28uywwvt8sqbi52upnzagshtrm /cosmos.bank.v1beta1.MsgSend
 ```
+## `query bank balances`
+
+Displays your account balance, account number, and sequence number (nonce).
+
+**Syntax**
+```bash
+terrad query bank balances <account-address>
+```
+
+**Example**
+```bash
+terrad query bank balances terra15h6vd5f0wqps26zjlwrc6chah08ryu4hzzdwhc
+```
+
+Learn more about [account addresses](keys.md#account-address-terra).
+
+::: warning NOTE
+When you query an account balance that has zero tokens or you fund an account before your node has fully synced with the chain, this error message is sent:
+
+`No account with address <account-address> was found in the state`.
+:::
+
+## `query bank denom-metadata`
+
+Query the client metadata for coin denominations.
+
+## `query bank total`
+
+Query the total supply of coins of the chain.
 
 ## `query distribution rewards`
 
@@ -822,7 +829,7 @@ terrad query treasury indicators
 
 ## `query treasury params`
 
-Retrieves the high-level settings for the treasury. For more information, see [treasury parameters](../../module-specifications/spec-treasury.md#parameters).
+Retrieves the high-level settings for the treasury. For more information, see [treasury parameters](../dev/spec-treasury.md#parameters).
 
 **Syntax**
 ```bash
@@ -1156,7 +1163,7 @@ terrad tx gov deposit 15 "10000000luluna" \
     --chain-id=columbus-5
 ```
 
-:::{warning}
+::: warning
 Proposals that don't meet this requirement are deleted after `MaxDepositPeriod` is reached.
 :::
 
@@ -1230,11 +1237,11 @@ where `proposal.json` contains the following information:
 }
 ```
 
-::: {important}
+::: warning
 Because parameter changes are evaluated but not validated, ensure that new value you propose is valid for its parameter. For example, the proposed value for `MaxValidators` must be an integer, not a decimal.
 :::
 
-### community pool spend proposal
+### Community pool spend proposal
 
 When you submit a community pool spend proposal, we recommend you send the proposal as a JSON file.
 
@@ -1258,7 +1265,7 @@ where `proposal.json` contains the following information:
 
 ```json
 {
-  "title": "community pool Spend",
+  "title": "Community Pool Spend",
   "description": "Pay me some Lunas!",
   "recipient": "terra1s5afhd6gxevu37mkqcvvsj8qeylhn0rzn7cdaq",
   "amount": [
@@ -1278,7 +1285,7 @@ where `proposal.json` contains the following information:
 
 ### Tax-rate and reward-weight update proposals
 
-Tax rate and reward weight are important monetary policy levers handled by the [`Treasury`](../../module-specifications/spec-treasury.md) module to modulate miner incentives toward stable demand and steady growth. Usually, they are automatically calibrated once per epoch by the protocol. However, they can be changed at any time, if an update proposal gets passed with enough supporters.
+Tax rate and reward weight are important monetary policy levers handled by the [`Treasury`](../dev/spec-treasury.md) module to modulate miner incentives toward stable demand and steady growth. Usually, they are automatically calibrated once per epoch by the protocol. However, they can be changed at any time, if an update proposal gets passed with enough supporters.
 
 When you submit a tax rate or reward weight update proposal, we recommend you send the proposal as a JSON file.
 
@@ -1350,7 +1357,7 @@ where `proposal.json` contains the following information:
 }
 ```
 
-Tax reward and reward weight updates that are passed by governance proposals are subject to [policy constraints](../../module-specifications/spec-treasury.md#policy-constraints).
+Tax reward and reward weight updates that are passed by governance proposals are subject to [policy constraints](../dev/spec-treasury.md#policy-constraints).
 
 ### Software upgrade proposals
 
@@ -1498,7 +1505,7 @@ terrad tx oracle aggregate-vote \
     "terravaloper15h6vd5f0wqps26zjlwrc6chah08ryu4hzzdwhc" \
 ```
 
-Given that oracle votes must be submitted in a feed over short time intervals (30 seconds), prevotes and votes must be submitted via some persistent server daemon, not manually. For more information, see [exchange-rate oracle](../../../validate/manage-a-terra-validator/set-up-oracle-feeder.md) section of the validator documentation and the [oracle module](../../module-specifications/spec-oracle.md).
+Given that oracle votes must be submitted in a feed over short time intervals (30 seconds), prevotes and votes must be submitted via some persistent server daemon, not manually. For more information, see [Exchange Rate Oracle](../validator/oracle.md) section of the validator documentation and the [Oracle Module Specification](../dev/spec-oracle.md).
 
 ## `tx oracle set-feeder`
 

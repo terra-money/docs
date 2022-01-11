@@ -8,9 +8,9 @@ The WASM module implements the execution environment for WebAssembly smart contr
 
 Smart contracts are autonomous agents that can interact with other entities on the Terra blockchain, such as human-owned accounts, validators, and other smart contracts. Each smart contract has:
 
-- A unique contract address with an account that holds funds.
-- A code ID where its logic is defined.
-- Its own key-value store where it can persist and retrieve data
+- A unique **contract address** with an account that holds funds.
+- A **code ID**, where its logic is defined.
+- Its own **key-value store**, where it can persist and retrieve data.
 
 #### Contract address
 
