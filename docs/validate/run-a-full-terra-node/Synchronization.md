@@ -1,4 +1,4 @@
-# During Sync
+# During sync
 
 ::: warning Sync start times
 

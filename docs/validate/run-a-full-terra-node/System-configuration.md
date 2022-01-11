@@ -1,6 +1,6 @@
-# System Configuration
+# System configuration
 
-:::warning Recommended operating systems
+:::warning Recommended operating systems  
 This guide has been tested against Linux distributions only. To ensure a successful production environment setup, consider using a Linux system.
 :::
 
@@ -17,7 +17,7 @@ Running a full Terra node is a resource-intensive process that requires a persis
 
 - [Golang v1.16.1 - go1.17.1 linux/amd64](https://go.dev/dl/)
 
-::: details Installing Go  (for MacOS & Linux)  
+::: details Installing Go for MacOS & Linux
 
   Go releases can be found here: [ https://go.dev/dl/ ](https://go.dev/dl/)
 
