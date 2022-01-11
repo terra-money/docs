@@ -137,28 +137,6 @@ Lists all your keys.
 terrad keys list
 ```
 
-## `query account`
-
-Displays your account balance, account number, and sequence number (nonce).
-
-**Syntax**
-```bash
-terrad query account <account-address>
-```
-
-**Example**
-```bash
-terrad query account terra15h6vd5f0wqps26zjlwrc6chah08ryu4hzzdwhc
-```
-
-Learn more about [account addresses](keys.md#account-address-terra).
-
-::: warning NOTE
-When you query an account balance that has zero tokens or you fund an account before your node has fully synced with the chain, this error message is sent:
-
-`No account with address <account-address> was found in the state`.
-:::
-
 ## `query authz grants`
 
 Retrieves all existing grants between a granter and a grantee.
@@ -178,6 +156,35 @@ Additionally, the `grants` command can retrieve the specific grant between a gra
 ```bash
 terrad query authz grants terra15h6vd5f0wqps26zjlwrc6chah08ryu4hzzdwhc terra14h2od5f3vahd28uywwvt8sqbi52upnzagshtrm /cosmos.bank.v1beta1.MsgSend
 ```
+## `query bank balances`
+
+Displays your account balance, account number, and sequence number (nonce).
+
+**Syntax**
+```bash
+terrad query bank balances <account-address>
+```
+
+**Example**
+```bash
+terrad query bank balances terra15h6vd5f0wqps26zjlwrc6chah08ryu4hzzdwhc
+```
+
+Learn more about [account addresses](keys.md#account-address-terra).
+
+::: warning NOTE
+When you query an account balance that has zero tokens or you fund an account before your node has fully synced with the chain, this error message is sent:
+
+`No account with address <account-address> was found in the state`.
+:::
+
+## `query bank denom-metadata`
+
+Query the client metadata for coin denominations.
+
+## `query bank total`
+
+Query the total supply of coins of the chain.
 
 ## `query distribution rewards`
 
