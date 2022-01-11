@@ -1,13 +1,13 @@
 # Set up a production environment
 
-Use the following information to set up and manage your production-level full Terra node.
+Use the following information to set up and manage your production-level full Terra node.  
 
-For information about running a validator node, visit the [Manage a validator](../manage-a-terra-validator/README.md).
+For information about running a validator node, visit the [validator guide](/How-to/Manage-a-Terra-validator/Overview.md).
 
 
 ## Create a dedicated user
 
-Although `terrad` does not require a super user account, during the setup process you'll need super user permission to create and modify some files. It is strongly recommended to use a normal user when running `terrad`.
+Although `terrad` does not require a super user account, during the setup process you'll need super user permission to create and modify some files. It is strongly recommended to use a normal user when running `terrad`.  
 
 ## Increase the maximum files `terrad` can open
 

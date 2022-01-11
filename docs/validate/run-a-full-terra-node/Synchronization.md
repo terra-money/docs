@@ -8,7 +8,7 @@ Nodes take at least an hour to start syncing. This wait is normal. Before troubl
 
 ## Monitor the sync
 
-Your node is catching up with the network by replaying all the transactions from genesis and recreating the blockchain state locally. You can verify this process by checking the `latest_block_height` in the `SyncInfo` of the `terrad status` response:
+Your node is catching up with the network by replaying all the transactions from genesis and recreating the blockchain state locally. You can verify this process by checking the `latest_block_height` in the `SyncInfo` of the `terrad status` response:  
 
 ```json
   {

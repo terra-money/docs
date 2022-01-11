@@ -4,7 +4,7 @@ It is highly recommended that you set up a local private network before joining 
 
 ## Set up a local private network
 
-Validators can set up a private Terra network to become familiar with running a full Terra node before joining a public network.
+Validators can set up a private Terra network to become familiar with running a full Terra node before joining a public network.  
 
 ::: tip LocalTerra
 

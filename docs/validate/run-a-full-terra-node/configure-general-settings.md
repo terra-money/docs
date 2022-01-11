@@ -1,6 +1,6 @@
 # Configure general settings
 
-The following information describes the most important node configuration settings found in the `~/.terra/config/` directory. It is recommended that you update these settings with your own information.
+The following information describes the most important node configuration settings found in the `~/.terra/config/` directory. It is recommended that you update these settings with your own information.  
 
 :::details Structure of .terra/config
 
