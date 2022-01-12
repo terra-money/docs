@@ -24,4 +24,5 @@ smart-contracts
 station-extension
 transactions
 wallets
+Websockets
 ```
