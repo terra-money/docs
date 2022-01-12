@@ -107,7 +107,7 @@ terrad tx sign \
 ```bash
 terrad tx sign \
     --chain-id=bombay-12 \
-    --from=terra1ru2y342y09tzsnzxl7tf9cva9kp33h0jnsm9ss unsignedTx.json
+    --from=terra1EXAMPLEy09tEXAMPLEtf9EXAMPLE3h0EXAMPLEss unsignedTx.json
 ```
 A healthy response should looks simillar to the following:
 ```json
