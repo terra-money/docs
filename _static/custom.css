@@ -35,4 +35,8 @@ ul.search li {
 label > i.fas {
   color: #2646ae;
 }
+
+/* Make sure horizontal scrollbars don't appear for the sidebar */
+.bd-sidebar {
+  overflow-x: hidden;
 }
