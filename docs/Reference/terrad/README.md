@@ -60,7 +60,7 @@ To learn more about the different types of interactions you can issue, see the s
 To simulate a transaction without actually broadcasting it, append the `--dry-run` flag to the command statement:
 
 ```bash
-terrad tx send \
+terrad tx bank send \
     <from_key_or_address> \
     <to_address> \
     <coins> \
