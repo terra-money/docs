@@ -1,0 +1,4 @@
+/* Make top level navbar items larger than children */
+li.toctree-l1 > a {
+  font-size: 1.2em;
+}
