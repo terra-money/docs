@@ -1,4 +1,4 @@
-# Developer reference
+# Dev reference
 
 ```{toctree}
 :hidden:

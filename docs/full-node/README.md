@@ -1,9 +1,9 @@
-# Validate
+# Full node
 
 ```{toctree}
 :hidden:
-terra-delegation-program
+run-a-full-terra-node/README
 manage-a-terra-validator/README
 reference/README
-run-a-full-terra-node/README
+
 ```

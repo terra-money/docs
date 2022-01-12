@@ -41,10 +41,10 @@ Terra core is the official Golang reference implementation of the Terra node sof
    # ...And a bunch of dependenecies
    ```
 
-::: tip
+::: {tip}
 If the `terrad: command not found` error message is returned, confirm that the Go binary path is correctly configured by running the following command:
 
-```
+```bash
 export PATH=$PATH:$(go env GOPATH)/bin
 ```
 :::

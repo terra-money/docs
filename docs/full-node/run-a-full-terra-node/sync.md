@@ -1,9 +1,11 @@
-# During sync
+# Sync
 
-::: warning Sync start times
+After [Joining a public network](join-a-network.md#join-a-public-network), your node will begin to sync.
+
+::: {admonition} Sync start times
+:class: caution
 
 Nodes take at least an hour to start syncing. This wait is normal. Before troubleshooting a sync, please wait an hour for the sync to start.
-
 :::
 
 ## Monitor the sync
@@ -32,8 +34,9 @@ Before downloading a snapshot, make sure that you have the streaming and unpacki
 apt-get install wget liblz4-tool aria2 -y
 ```
 
-::: tip Tip: Circumvent local download
-Do not click the download link if you are using a separately hosted node, as this will not download to the correct machine. Instead, copy the link by right-clicking the  `Download` button. Downloading locally is not recommended unless you are hosting your node on the same computer from which you are browsing.
+::: {admonition} Copy the download URL
+:class: tip
+Don't click the download link if you are using a separately hosted node, as this will not download to the correct machine. Instead, copy the link by right-clicking the  `Download` button. Downloading locally is not recommended unless you are hosting your node on the same computer from which you are browsing.
 
 The link in your clipboard should resemble the following:
 
@@ -46,30 +49,30 @@ The archived snapshot contains the state and transactions of the network, which 
 
 1. Download the snapshot.
 
-```bash
-# aria2c is a multi-source command-line download utility
-# specify N cores(up to 16) to speed up the process via -xN (5 cores used below)
-aria2c -x5 https://dl2.quicksync.io/bombay-12-default.20220107.0510.tar.lz4
-```
+   ```bash
+   # aria2c is a multi-source command-line download utility
+   # specify N cores(up to 16) to speed up the process via -xN (5 cores used below)
+   aria2c -x5 https://dl2.quicksync.io/bombay-12-default.20220107.0510.tar.lz4
+   ```
 
 2. Unpack the `.lz4` archive:
 
-```bash
-lz4 -d bombay-12-default.20220107.0510.tar.lz4
-```
+   ```bash
+   lz4 -d bombay-12-default.20220107.0510.tar.lz4
+   ```
 3. Unpack the `.tar` archive into `~/.terra`. Its contents must replace `~/.terra/data/`:
 
-```bash
-tar -xvf bombay-12-default.20220107.0510.tar
-```
+   ```bash
+   tar -xvf bombay-12-default.20220107.0510.tar
+   ```
 
 Due to the size of the network, this may take some time.
 
 4. After the snapshot is completely unpacked, start `terrad`:
 
-```bash
-terrad start
-```
+   ```bash
+   terrad start
+   ```
 
 ## Sync Complete
 
@@ -78,6 +81,7 @@ You can tell that your node is in sync with the network when `SyncInfo.catching_
 ```bash
 terrad status  
 ```
+**Example**:
 
 ```json
   {
@@ -89,7 +93,7 @@ terrad status
   }
 ```
 
-- Validators can view the status of the network using [Terra Finder](https://finder.terra.money).
+Validators can view the status of the network using [Terra Finder](https://finder.terra.money).
 
 ## Verify the snapshot
 
@@ -103,47 +107,47 @@ For this example, we will use the following snapshot URL:
 
 1. To make things easier for checking, assign the URL to a variable:
 
-```bash
-URL=https://dl2.quicksync.io/bombay-12-default.20220107.0510.tar.lz4
-```
+   ```bash
+   URL=https://dl2.quicksync.io/bombay-12-default.20220107.0510.tar.lz4
+   ```
 
 2. Obtain the checksum for the snapshot:
 
-```bash
-wget $URL.checksum
-# bombay-12-default.20220 100%[==============================>]  59.55K   215KB/s    in 0.3s    
-# 2022-01-08 07:30:06 (215 KB/s) - 'bombay-12-default.20220107.0510.tar.lz4.checksum.1' saved [60984/60984]
-```
+   ```bash
+   wget $URL.checksum
+   # bombay-12-default.20220 100%[==============================>]  59.55K   215KB/   s    in 0.3s    
+   # 2022-01-08 07:30:06 (215 KB/s) - 'bombay-12-   default.20220107.0510.tar.lz4.checksum.1' saved [60984/60984]
+   ```
 
 3. Obtain the tx hash and assign it to a variable for brevity:
 
-```bash
-HASH=$(curl -s $URL.hash)   
-# 80E12115FEA1B3A161A2FDE7367FC34B8714EF398DAE5B1396F9748BC6218DB1
-```
+   ```bash
+   HASH=$(curl -s $URL.hash)   
+   # 80E12115FEA1B3A161A2FDE7367FC34B8714EF398DAE5B1396F9748BC6218DB1
+   ```
 
 4. Obtain the transaction profile and verify it:
 
-```bash
-curl -s https://lcd-cosmos.cosmostation.io/txs/$(curl -s $URL.hash) | jq -r '.tx.value.memo'|sha512sum -c
-# bombay-12-default.20220107.0510.tar.lz4.checksum: OK
-```
+   ```bash
+   curl -s https://lcd-cosmos.cosmostation.io/txs/$(curl -s $URL.hash) | jq -r    '.tx.value.memo'|sha512sum -c
+   # bombay-12-default.20220107.0510.tar.lz4.checksum: OK
+   ```
 
 5. Obtain the checksum script and verify the provided snapshot:
 
-```bash
-wget https://raw.githubusercontent.com/chainlayer/quicksync-playbooks/master/roles/quicksync/files/checksum.sh
-./checksum.sh $(basename $URL)
-```
+   ```bash
+   wget https://raw.githubusercontent.com/chainlayer/quicksync-playbooks/master/   roles/quicksync/files/checksum.sh
+   ./checksum.sh $(basename $URL)
+   ```
 
 ## Sync faster during testing
 
 Sometimes you may want to sync faster by foregoing checks. This command should only be used by advanced users in non-production environments. To speed up the sync process during testing, use the following command:
 
-```bash
-terrad start --x-crisis-skip-assert-invariants
-```
+   ```bash
+   terrad start --x-crisis-skip-assert-invariants
+   ```
 
 ## Congratulations!
 
-Congratulations! You've successfully joined a network as a full node operator. If you are a validator, continue to [manage a Terra validator](/How-to/Manage-a-Terra-validator/Overview.html) for the next steps.
+You've successfully joined a network as a full node operator. If you are a validator, continue to [manage a Terra validator](../manage-a-terra-validator/README.md) for the next steps.

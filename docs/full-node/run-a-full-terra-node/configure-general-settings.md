@@ -2,7 +2,7 @@
 
 The following information describes the most important node configuration settings found in the `~/.terra/config/` directory. It is recommended that you update these settings with your own information.  
 
-:::details Structure of .terra/config
+:::{dropdown} Structure of .terra/config
 
 ```bash
 ~/.terra/config
@@ -24,7 +24,8 @@ Initialize the node with a human-readable name:
 ```bash
 terrad init <your_custom_moniker> # ex., terrad init validator-joes-node
 ```
-::: warning Moniker characters
+::: {admonition} Moniker characters
+:class: caution
 Monikers can only contain ASCII characters; using Unicode characters will render your node unreachable by other peers in the network.
 :::
 

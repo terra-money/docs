@@ -2,7 +2,7 @@
 
 Use the following information to set up and manage your production-level full Terra node.  
 
-For information about running a validator node, visit the [validator guide](/How-to/Manage-a-Terra-validator/Overview.md).
+For information about running a validator node, visit the [validator guide](../manage-a-terra-validator/README.md).
 
 
 ## Create a dedicated user
@@ -23,31 +23,33 @@ Modify `/etc/security/limits.conf`[*](https://linux.die.net/man/5/limits.conf) t
 # ...
 ```
 
-# Running the server as a daemon
+# Run the server as a daemon
 
 `terrad` must be running at all times. It is recommended that you register `terrad` as a `systemd` service so that it will be started automatically when the system reboots.
 
-## Register terrad as a service
+## Register `terrad` as a service
 
-1. Create a service definition file in `/etc/systemd/system/terrad.service`, as shown in the following example:
+1. Create a service definition file in `/etc/systemd/system/terrad.service`.
 
-   ```bash
-   [Unit]
-   Description=Terra Daemon
-   After=network.target
+     **Example**:
 
-   [Service]
-   Type=simple
-   User=<TERRA_USER>
-   ExecStart=<PATH_TO_TERRAD>/terrad start  
-   Restart=on-abort
+     ```bash
+     [Unit]
+     Description=Terra Daemon
+     After=network.target
 
-   [Install]
-   WantedBy=multi-user.target
+     [Service]
+     Type=simple
+     User=<TERRA_USER>
+     ExecStart=<PATH_TO_TERRAD>/terrad start  
+     Restart=on-abort
 
-   [Service]
-   LimitNOFILE=65535  
-   ```
+     [Install]
+     WantedBy=multi-user.target
+
+     [Service]
+     LimitNOFILE=65535  
+     ```
 
 2. Modify the `Service` section according to your environment:
 
@@ -60,9 +62,9 @@ Modify `/etc/security/limits.conf`[*](https://linux.die.net/man/5/limits.conf) t
 
 4. Now start the serivce with `systemctl start terrad`.
 
-:::details Controlling the service.
+### Controlling the service
 
-Use `systemctl` to start, stop, and restart the service.
+Use `systemctl` to start, stop, and restart the service:
 
 ```bash
 # Check health
@@ -75,7 +77,7 @@ systemctl stop terrad
 systemctl restart terrad
 ```
 
-## Access logs
+### Access logs
 
 Use `journalctl -t` to access entire logs, entire logs in reverse, and the latest and continuous log.
 
@@ -87,5 +89,3 @@ journalctl -t terrad
 # Latest and continuous
 journalctl -t terrad -f
 ```
-
-:::

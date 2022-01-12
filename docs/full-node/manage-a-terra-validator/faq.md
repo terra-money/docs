@@ -1,6 +1,6 @@
 # Validator FAQ
 
-::: warning
+::: {important}
 Read this document thoroughly before becoming a validator.
 :::
 
@@ -26,7 +26,7 @@ The active validator set is made up of 130 validators, who hold the most Luna. T
 
 ### What is a delegator?
 
-Delegators are Luna holders who want to receive staking rewards without the responsibility of running a validator. Through Terra Station, a user can delegate Luna to a validator and in exchange receive a part of a validator's revenue. For more detail on how revenue is distributed, see [What are the incentives to stake?](#what-are-the-incentives-to-stake) and [What is a validator's commission?](#what-is-a-validators-commission).
+Delegators are Luna holders who want to receive staking rewards without the responsibility of running a validator. Through Terra Station, a user can delegate Luna to a validator and in exchange receive a part of a validator's revenue. For more detail on how revenue is distributed, see [What are the incentives to stake?](#what-are-the-incentives-to-stake) and [What is a validator's commission?](#what-is-a-validators-commission)
 
 Delegators share the benefits and rewards of staking with their Validator. If a Validator is successful, its delegators will consistently share in the rewards structure. If a Validator is slashed, the delegator’s stake will also be slashed. This is why delegators should perform due-diligence on validators before delegating. Delegators can also diversify by spreading their stake over multiple validators.
 
@@ -59,6 +59,7 @@ Any participant in the network can signal their intent to become a validator by 
 - **Initial self-bond amount**: The initial amount of Luna the validator self-bonds.
 
 **Example:**
+
 ```bash
 terrad tx staking create-validator
     --pubkey terravalconspub1zcjduepqs5s0vddx5m65h5ntjzwd0x8g3245rgrytpds4ds7vdtlwx06mcesmnkzly
@@ -176,7 +177,7 @@ Validators receive block provisions, block rewards, and fee rewards and share th
 
 **No.** By delegating to a validator, users delegate staking power. The more staking power a validator has, the more weight it has in the consensus and processes. This does not mean that the validator has custody of its delegators' Luna.
 
-::: warning Warning
+::: {important}
 It is impossible for a validator to run away with a delegator's funds.
 :::
 
@@ -198,9 +199,9 @@ Each member of a validator's staking pool earns different types of revenue:
 
 - **Stability fees**: To stabilize the value of Luna, the protocol charges a small fee ranging from 0.1% to 1% on every Terra transaction, capped at 1 TerraSDR. This is paid in any Terra currency, and is disbursed proportional to each validators' stake at the end of every block in TerraSDR.
 
-This total revenue is divided among a validator's staking pool according to each validator's weight. The revenue is then divided among delegators in proportion to each delegator's stake. Note that a commission on delegators' revenue is applied by the validator before it is distributed.
-
 - **Swap fees**: A small spread is charged on market swap transactions between Luna and any Terra currency, which is then used to reward validators that faithfully report oracle exchange rates. The fee for swaps between different Terra stablecoins is called the Tobin tax.
+
+This total revenue is divided among a validator's staking pool according to each validator's weight. The revenue is then divided among delegators in proportion to each delegator's stake. Note that a commission on delegators' revenue is applied by the validator before it is distributed.
 
 ### What is the incentive to run a validator?
 
@@ -312,4 +313,4 @@ Validator nodes should only connect to full-nodes they trust. They can be run by
 
 Sentry nodes can be quickly spun up or used to change IP addresses. Because links to the sentry nodes are in private IP space, an internet based attack can't disturb them directly. This will ensure a validator's block proposals and votes always make it to the rest of the network.
 
-For more on sentry node architecture, see [this](https://forum.cosmos.network/t/sentry-node-architecture-overview/454).
+For more on sentry node architecture, visit [the Cosmos forum](https://forum.cosmos.network/t/sentry-node-architecture-overview/454).

@@ -6,9 +6,9 @@ It is highly recommended that you set up a local private network before joining 
 
 Validators can set up a private Terra network to become familiar with running a full Terra node before joining a public network.  
 
-::: tip LocalTerra
-
-If you are a developer and want to set up a local, WASM-enabled, private testnet for smart contracts, visit [Download LocalTerra](/Tutorials/Smart-contracts/Set-up-local-environment.html#download-localterra).
+::: {admonition} LocalTerra
+:class: tip
+If you are a developer and want to set up a local, WASM-enabled, private testnet for smart contracts, visit [install LocalTerra](../../develop/how-to/localterra/README.md).
 
 :::
 
@@ -18,17 +18,18 @@ The simplest Terra network you can set up is a local testnet with just a single 
 
 1. Initialize your genesis file that will bootstrap the network. Replace the following variables with your own information:
 
-```bash
-terrad init --chain-id=<testnet-name> <node-moniker>
-```
+   ```bash
+     terrad init --chain-id=<testnet-name> <node-moniker>
+     ```
 
 2. Generate a Terra account. Replace the variable with your account name:
 
-```bash
-terrad keys add <account-name>
-```
+   ```bash
+   terrad keys add <account-name>
+   ```
 
-:::tip Get tokens
+:::{admonition} Get tokens
+:class: tip
 In order for Terrad to recognize a wallet address, it must contain tokens. For the testnet, use [the faucet](https://faucet.terra.money/) to send Luna to your wallet. If you are on mainnet, send funds from an existing wallet. 1-3 Luna are sufficient for most setup processes.
 :::
 
@@ -67,8 +68,8 @@ Specify the network you want to join by choosing the corresponding **genesis fil
 | `bombay-12`  | Testnet      |[Genesis Link](https://raw.githubusercontent.com/terra-money/testnet/master/bombay-12/genesis.json)|[ Addressbook Link ](https://raw.githubusercontent.com/terra-money/testnet/master/bombay-12/addrbook.json)|
 
 
-:::warning Selecting a network
-
+:::{admonition} Selecting a network
+:class: tip
 Note that the versions of the network listed above are the [ latest versions ](https://github.com/terra-money/testnet/tree/master#latest-networks). To find earlier versions, please consult the [networks repo](https://github.com/terra-money/testnet).
 
 :::
@@ -80,7 +81,7 @@ Note that the versions of the network listed above are the [ latest versions ](h
 
 **Addressbook** lists a selection of peers for your node to dial to in order to discover other nodes in the network. Public address books of peers are made available by the Terra community.
 
-Choose a `testnet` or `mainnet` address type and download the appropriate genesis-transaction and addressbook. Links to these are posted in [Select-a-network](#1.-select-a-network).
+Choose a `testnet` or `mainnet` address type and download the appropriate genesis-transaction and addressbook. Links to these are posted in [Select-a-network](#select-a-network).
 
 - For default `terrad` configurations, the `genesis` and `addressbook` files should be placed under `~/.terra/config/genesis.json` and `~/.terra/config/addrbook.json` respectively.
 
@@ -103,7 +104,7 @@ terrad start
 terrad status
 # It will take a few seconds for terrad to start.
 ```
-:::details Healthy Node Status Example
+:::{dropdown} Healthy Node Status Example
 
 ```json
 {
@@ -148,3 +149,11 @@ terrad status
 :::
 
 Your node is now syncing. This process will take a long time. Make sure you've set it up on a stable connection so you can leave while it syncs.
+
+::: {admonition} Sync start times
+:class: caution
+
+Nodes take at least an hour to start syncing. This wait is normal. Before troubleshooting a sync, please wait an hour for the sync to start.
+:::
+
+Continue to the [Sync](sync.md) page to find out more about syncing your node.

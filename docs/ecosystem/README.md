@@ -2,7 +2,6 @@
 
 ```{toctree}
 :hidden:
-:caption: Ecosystem
-ecosystem
+explore
 integrations
 ```

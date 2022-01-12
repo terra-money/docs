@@ -1,4 +1,4 @@
-# How-to guides
+# Guides
 
 ```{toctree}
 :hidden:

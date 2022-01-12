@@ -1,4 +1,4 @@
-# Ecosystem
+# Explore the ecosystem
 
 ## Terra Website and Socials
 

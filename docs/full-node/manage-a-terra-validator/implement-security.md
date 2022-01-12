@@ -22,28 +22,28 @@ Learn more about [sentry-node architecture](https://forum.cosmos.network/t/sentr
 
 1. For validators nodes, edit the `config.toml`:
 
-```bash
-# Comma separated list of nodes to keep persistent connections to
-# Do not add private peers to this list if you don't want them advertised
-persistent_peers = "comma separated list of sentry node addresses"
+   ```bash
+   # Comma separated list of nodes to keep persistent connections to
+   # Do not add private peers to this list if you don't want them advertised
+   persistent_peers = "comma separated list of sentry node addresses"
 
-# Set true to enable the peer-exchange reactor
-pex = false
-```
+   # Set true to enable the peer-exchange reactor
+   pex = false
+   ```
 
 2. For sentry nodes, edit the `config.toml`:
 
-```bash
-# Comma separated list of nodes to keep persistent connections to
-# Do not add private peers to this list if you don't want them advertised
-persistent_peers = "validator node address"
+   ```bash
+   # Comma separated list of nodes to keep persistent connections to
+   # Do not add private peers to this list if you don't want them advertised
+   persistent_peers = "validator node address"
 
-# Comma separated list of peer IDs to keep private (will not be gossiped to other peers)
-private_peer_ids = "nodeid of the validator"
-```
+   # Comma separated list of peer IDs to keep private (will not be gossiped to other peers)
+   private_peer_ids = "nodeid of the validator"
+   ```
 
-:::warning Note 
-A node address has this format: `nodeid@ip:port`, you can get the nodeid by running `terrad tendermint show-node-id`, the default port is 26656. 
+::: {tip}
+A node address has the following format: `nodeid@ip:port`, you can get the nodeid by running `terrad tendermint show-node-id`, the default port is 26656.
 :::
 
 ## Environment Variables
