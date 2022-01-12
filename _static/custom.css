@@ -2,3 +2,8 @@
 li.toctree-l1 > a {
   font-size: 1.2em;
 }
+
+/* Copy+paste code blocks override default pygment background colors */
+.highlight > pre {
+  background-color: #263238;
+}
