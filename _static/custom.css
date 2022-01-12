@@ -19,3 +19,9 @@ li.toctree-l1 > a {
   transition: .2s;
   margin-right: 0.188rem;
 }
+
+/* Remove weird icon from search results and adjust padding */
+ul.search li {
+  background-image: unset;
+  padding: unset;
+}
