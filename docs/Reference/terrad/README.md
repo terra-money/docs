@@ -16,6 +16,8 @@ If you don't want to run your own full node, you can connect to someone else's f
 
 To connect to the full-node, you need an address in the `https://<host>:<port>` format, for example `https://77.87.106.33:26657`. This address has to be communicated by the full-node operator you choose to trust. You will use this address in the following section.
 
+If you are not running a node yet would like to communicate through terrad, lists of public nodes can be found [here](https://docs.terra.money/Reference/endpoints.html#private-rpc-endpoints.
+
 ## Configuring terrad
 
 `terrad` enables you to interact with the node that runs on the Terra network, whether you run it yourself or not. To configure `terrad`, edit the the `config.toml` file in the `~/.terra/config/` directory.
@@ -26,7 +28,9 @@ To query all relevant information from the blockchain, such as like account bala
 
 ```bash
 # query account balances and other account-related information
-terrad query account
+terrad query account <ACCOUNT_ADDRESS> 
+# Account address is of the form terra1rEXAMPLE9tEXAMPLEf9cvEXAMPLEss
+# you can find the one for your node by running `terrad keys list`
 
 # query the list of validators
 terrad query staking validators
@@ -61,32 +65,101 @@ To simulate a transaction without actually broadcasting it, append the `--dry-ru
 
 ```bash
 terrad tx bank send \
-    <from_key_or_address> \
-    <to_address> \
-    <coins> \
-    --chain-id=<chain_id> \
+    <sender_address> \ 
+    <recipient_address> \ 
+    <amount_and_denomination> \
+    --chain-id=<chain-id> \
+    --dry-run 
+```
+:::details Example: simulate a KRW transfer:
+```bash
+terrad tx bank send \ 
+    terra1ru2ySENDER-EXAMPLEtf9cva9kp33h0jnsm9ss \  
+    terra1rRECIPIENT-EXAMPLEtf9cva9kp33h0jnsm9ss \
+    1ukrw \ 
+    --chain-id=bombay-12 \
     --dry-run
 ```
+:::
+
 
 ### Generating a transaction without sending
 
 To build a transaction and print its JSON format to STDOUT, append `--generate-only` to the list of the command line arguments. This allows you to separate the creation and signing of a transaction with the broadcasting.
 
 ```bash
-terrad tx send \
-    <from_key_or_address> \
-    <to_address> \
-    <coins> \
-    --chain-id=<chain_id> \
+terrad tx bank send \
+    <sender_address> \ 
+    <recipient_address> \ 
+    <amount_and_denomination> \
+    --chain-id=<chain-id> \
     --generate-only > unsignedSendTx.json
 ```
 
 ```bash
 terrad tx sign \
     --chain-id=<chain_id> \
-    --from=<key_name> \
+    --from=<address> \
     unsignedSendTx.json > signedSendTx.json
 ```
+
+:::details Example: Sign an unsigned transaction
+```bash
+terrad tx sign \
+    --chain-id=bombay-12 \
+    --from=terra1ru2y342y09tzsnzxl7tf9cva9kp33h0jnsm9ss unsignedTx.json
+```
+A healthy response should looks simillar to the following:
+```json
+{
+  "body": {
+    "messages": [
+      {
+        "@type": "/cosmos.bank.v1beta1.MsgSend",
+        "from_address": "terra1ru2ySENDER-EXAMPLEtf9cva9kp33h0jnsm9ss",
+        "to_address": "terra1rRECIPIENT-EXAMPLEtf9cva9kp33h0jnsm9ss",
+        "amount": [
+          {
+            "denom": "ukrw",
+            "amount": "1"
+          }
+        ]
+      }
+    ],
+    "memo": "",
+    "timeout_height": "0",
+    "extension_options": [],
+    "non_critical_extension_options": []
+  },
+  "auth_info": {
+    "signer_infos": [
+      {
+        "public_key": {
+          "@type": "/cosmos.crypto.secp256k1.PubKey",
+          "key": "A3Z50zDpCEXAMPLEG5Ru+DGOFEXAMPLEm0EXAMPLEKtxd"
+        },
+        "mode_info": {
+          "single": {
+            "mode": "SIGN_MODE_DIRECT"
+          }
+        },
+        "sequence": "0"
+      }
+    ],
+    "fee": {
+      "amount": [],
+      "gas_limit": "200000",
+      "payer": "",
+      "granter": ""
+    }
+  },
+  "signatures": [
+    "dclBjQ9IsPPkOlcFMsBlQqkx7yqRl0oPBnRuEXAMPLEwlSQTGndiJtZMXI7j5MZ+5JEZI0X3MOg0cr72sq11lA=="
+  ]
+}
+```
+
+:::
 
 You can validate the transaction's signatures by typing the following:
 
