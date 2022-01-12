@@ -25,3 +25,14 @@ ul.search li {
   background-image: unset;
   padding: unset;
 }
+
+/* Color arrow and hamburger icon at the top of the page */
+#navbar-toggler {
+  color: #2646ae;
+}
+
+/* Color arrows in sidebar */
+label > i.fas {
+  color: #2646ae;
+}
+}
