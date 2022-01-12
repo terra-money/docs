@@ -6,4 +6,16 @@ li.toctree-l1 > a {
 /* Copy+paste code blocks override default pygment background colors */
 .highlight > pre {
   background-color: #263238;
+  color: #EEFFFF;
+}
+
+/* Format social logos in the footer */
+.logos a {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  position: relative;
+  opacity: .5;
+  transition: .2s;
+  margin-right: 0.188rem;
 }
