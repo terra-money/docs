@@ -16,7 +16,7 @@ terrad unsafe-reset-all
 
 Your node is now in a pristine state, keeping the original `priv_validator.json` and `config.toml`. If you had any sentry nodes or full nodes set up before, your node will still try to connect to them but may fail if they haven't also been upgraded.
 
-::: danger
+::: {danger}
 Make sure that every node has a unique `priv_validator.json`. Do not copy the `priv_validator.json` from an old node to multiple new nodes. Running two nodes with the same `priv_validator.json` will cause you to double sign.  
 :::
 
@@ -29,7 +29,7 @@ git checkout master && git pull
 make
 ```
 
-::: warning NOTE
+::: {tip}
 If you have issues at this step, please check that you have a compatible version of GO installed (v1.16.1-go1.17.1).
 :::
 
@@ -60,7 +60,7 @@ terrad export --height [height] --for-zero-height > [filename].json
 ```
 
 
-::: warning NOTE
+::: {tip}
 
 For more information on seeds and peers, visit the [Tendermint documentation](https://github.com/tendermint/tendermint/blob/master/docs/tendermint-core/using-tendermint.md#peers).
 
