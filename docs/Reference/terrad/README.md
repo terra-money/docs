@@ -65,18 +65,18 @@ To simulate a transaction without actually broadcasting it, append the `--dry-ru
 
 ```bash
 terrad tx bank send \
-    <sender_address> \ 
-    <recipient_address> \ 
+    <sender_address> \
+    <recipient_address> \
     <amount_and_denomination> \
     --chain-id=<chain-id> \
     --dry-run 
 ```
 :::details Example: simulate a KRW transfer:
 ```bash
-terrad tx bank send \ 
-    terra1ru2ySENDER-EXAMPLEtf9cva9kp33h0jnsm9ss \  
+terrad tx bank send \
+    terra1ru2ySENDER-EXAMPLEtf9cva9kp33h0jnsm9ss \
     terra1rRECIPIENT-EXAMPLEtf9cva9kp33h0jnsm9ss \
-    1ukrw \ 
+    1ukrw \
     --chain-id=bombay-12 \
     --dry-run
 ```
@@ -85,16 +85,20 @@ terrad tx bank send \
 
 ### Generating a transaction without sending
 
-To build a transaction and print its JSON format to STDOUT, append `--generate-only` to the list of the command line arguments. This allows you to separate the creation and signing of a transaction with the broadcasting.
+To build a transaction and print its JSON format to STDOUT, append `--generate-only` to the list of the command line arguments. This allows you to separate the creation and signing of a transaction with the broadcasting. The following command will generate an `unsignedSendTx.json` file with the to-be-transaction data.
 
 ```bash
 terrad tx bank send \
-    <sender_address> \ 
-    <recipient_address> \ 
+    <sender_address> \
+    <recipient_address> \
     <amount_and_denomination> \
     --chain-id=<chain-id> \
     --generate-only > unsignedSendTx.json
 ```
+
+Since this is only a stub for an actual transaction, it has to be signed before it can be committed to the blockchain.
+You can do so by specifying the `chain-id` of the network you want to commit it to and an `address` that is able to sign transactions(this could be your account, for example. 
+Find it with `terrad keys list`)
 
 ```bash
 terrad tx sign \
@@ -161,11 +165,11 @@ A healthy response should looks simillar to the following:
 
 :::
 
-You can validate the transaction's signatures by typing the following:
+<!-- You can validate the transaction's signatures by typing the following:
 
 ```bash
 terrad tx sign --validate-signatures signedSendTx.json
-```
+``` -->
 
 You can broadcast the signed transaction to a node by providing the JSON file to the following command:
 
