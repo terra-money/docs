@@ -1,8 +1,7 @@
 # Learn
 
-Use the following information to familiarize yourself with the Terra protocol and helpful terminology, the vibrant Terra ecosystem, and Terra Station, the official Terra wallet.
 
-Discover how the Terra protocol works, how to create a wallet on Terra station, and how to stake Luna to earn rewards.
+Discover how the Terra protocol works and learn about validators, staking, and governance. Use the Terra Station guides to create a wallet, stake Luna, send coins, and participate in governance. Use the glossary to look up helpful terms. 
 
 ```{toctree}
 :hidden:
