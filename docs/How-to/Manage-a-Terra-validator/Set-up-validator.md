@@ -82,11 +82,10 @@ If the initialization above succeed, you should see an output similar to this:
 ```
 
 You are able to inspect other validators on the given network via `terrad query tendermint-validator-set`.
-:::details 
 
+:::warning Finding the keys & address locally
 
-
-:::warning
 The pubkey associated with your validator as well as the corresponding private key and the validator's address can always be found in the `~/.terra/config/priv_validator.json` file. Never share this file.
+
 :::
 
