@@ -136,9 +136,19 @@ A healthy response should looks simillar to the following:
     "non_critical_extension_options": []
   },
   "auth_info": {
-    "signer_infos": [
+    "signer_infos":[
       {
-        "public_key": {aya's samba by eiji nakayama
+        "public_key": {
+          "@type": "/cosmos.crypto.secp256k1.PubKey",
+          "key": "A3Z50zDpCEXAMPLEG5Ru+DGOFEXAMPLEm0EXAMPLEKtxd"
+        },
+        "mode_info": {
+          "single": {
+            "mode": "SIGN_MODE_DIRECT"
+          }
+        },
+        "sequence": "0"
+      }
     ],
     "fee": {
       "amount": [],
