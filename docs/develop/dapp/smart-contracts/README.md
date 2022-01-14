@@ -3,11 +3,12 @@
 ```{toctree}
 :hidden:
 build-terra-dapp
-interact-with-smart-contract
-manage-cw20-tokens
 set-up-local-environment
 write-smart-contract
+interact-with-smart-contract
+manage-cw20-tokens
 ```
+## Overview
 
 A smart contract is a contract whose terms are expressed as a computer program with logic and state persisted on the blockchain. Smart contracts can automatically carry out its terms and conditions with total transparency and no counter-party risk.
 

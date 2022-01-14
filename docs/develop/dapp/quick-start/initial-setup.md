@@ -48,7 +48,7 @@ cargo install cargo-run-script
 
 ## 3.  Install Terrain
 
-Use npm to install the terrain command-line tool globally:
+Use npm to install the Terrain command-line tool globally:
 
 ```sh
 npm install -g @iboss/terrain

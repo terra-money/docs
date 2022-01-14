@@ -70,7 +70,7 @@ Terrain also scaffolds a very simple frontend.
 
 In the Terra Station Chrome extension, switch the network to Localterra.
 
-1. To use the front end, run the following commands in order. The terrain sync-refs command copies your deployed contract addresses to the front-end part of the codebase.
+1. To use the front end, run the following commands in order. The Terrain sync-refs command copies your deployed contract addresses to the front-end part of the codebase.
 
 ```
 terrain sync-refs
