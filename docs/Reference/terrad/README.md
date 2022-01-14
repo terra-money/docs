@@ -49,7 +49,7 @@ terrad query staking delegation <delegatorAddress> <validatorAddress>
 terrad query distr rewards <delegatorAddress>
 ```
 
-## Sending Transactions
+<!-- ## Sending Transactions
 
 To interact with the blockchain by sending transactions containing module messages with state-changing directives that get processed and included in blocks, use `terrad tx`. All of transaction-sending operations follow the form:
 
@@ -57,7 +57,7 @@ To interact with the blockchain by sending transactions containing module messag
 terrad tx ...
 ```
 
-To learn more about the different types of interactions you can issue, see the section for each module.
+To learn more about the different types of interactions you can issue, see the section for each module. -->
 
 ### Simulating a transaction
 
@@ -138,17 +138,7 @@ A healthy response should looks simillar to the following:
   "auth_info": {
     "signer_infos": [
       {
-        "public_key": {
-          "@type": "/cosmos.crypto.secp256k1.PubKey",
-          "key": "A3Z50zDpCEXAMPLEG5Ru+DGOFEXAMPLEm0EXAMPLEKtxd"
-        },
-        "mode_info": {
-          "single": {
-            "mode": "SIGN_MODE_DIRECT"
-          }
-        },
-        "sequence": "0"
-      }
+        "public_key": {aya's samba by eiji nakayama
     ],
     "fee": {
       "amount": [],
@@ -174,7 +164,7 @@ terrad tx sign --validate-signatures signedSendTx.json
 You can broadcast the signed transaction to a node by providing the JSON file to the following command:
 
 ```bash
-terrad tx broadcast --node=<node> signedSendTx.json
+terrad tx broadcast --node=<url> signedSendTx.json
 ```
 
 
