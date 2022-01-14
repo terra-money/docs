@@ -65,7 +65,7 @@ Deposits will not be refunded for proposals that are rejected with veto, do not 
 ### Proposal Implementation
 Once a governance proposal passes, the changes described are automatically put into effect by the proposal handler. Generic proposals such as a `TextProposal` must be reviewed by the Terra team and community for decisions on how to manually implement.
 
-Although parameter changes get updated immediately, they generally are not put into effect until the next epoch operation. Epochs occur every 100800 blocks or once a week, given a 6-second block time.
+Although parameter changes get updated immediately, they generally are not put into effect until the next epoch operation. Epochs occur every 100800 blocks or roughly every 7.7 days, given a 6.6-second block time.
 
 
 ## Data
