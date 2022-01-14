@@ -1,4 +1,4 @@
-# Terra core modules
+# Terra Core modules
 
 ```{toctree}
 :hidden:
