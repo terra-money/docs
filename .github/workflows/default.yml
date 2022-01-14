@@ -15,16 +15,15 @@ jobs:
           persist-credentials: false
 
       - name: Build
-        run: |
-          yarn
-          yarn build
-          echo 'docs.terra.money' > docs/.vuepress/dist/CNAME
+        uses: ammaraskar/sphinx-action@master
+        with:
+          docs-folder: "."
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
           ACCESS_TOKEN: ${{ secrets.GH_TOKEN }}
           BRANCH: gh-pages
-          FOLDER: docs/.vuepress/dist
+          FOLDER: _build/html
           GIT_CONFIG_NAME: Github Actions
           GIT_CONFIG_EMAIL: noreply@github.com
