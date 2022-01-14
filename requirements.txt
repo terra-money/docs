@@ -34,4 +34,5 @@ sphinx-book-theme
 sphinx-copybutton
 sphinx_design
 sphinx_panels
+sphinx-tabs
 urllib3
