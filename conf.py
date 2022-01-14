@@ -32,6 +32,7 @@ extensions = ["myst_parser",
               "sphinx_panels",
               "sphinx_copybutton",
               "sphinx_design",
+              'sphinx_tabs.tabs',
     ]
 myst_heading_anchors = 3
 
