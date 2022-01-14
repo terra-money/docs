@@ -1,6 +1,6 @@
 # About the Terra Protocol
 
-The Terra protocol is the leading decentralized and open-source public blockchain protocol for [algorithmic stablecoins](./glossary.md#algorithmic-stablecoin). Using a combination of open market [arbitrage](./glossary.md#arbitrage) incentives and decentralized oracle voting, the Terra protocol creates stablecoins that consistently track the price of any fiat currency. Users can spend, save, trade, or exchange Terra stablecoins instantly, all on the Terra blockchain. Luna provides its holders with staking rewards and governance power. The Terra ecosystem is a quickly expanding network of decentralized applications, creating a stable demand for Terra and increasing the price of Luna.
+The Terra protocol is the leading decentralized and open-source public blockchain protocol for [algorithmic stablecoins](./glossary.md#algorithmic-stablecoin). Using a combination of open market [arbitrage](./glossary.md#arbitrage) incentives and decentralized Oracle voting, the Terra protocol creates stablecoins that consistently track the price of any fiat currency. Users can spend, save, trade, or exchange Terra stablecoins instantly, all on the Terra blockchain. Luna provides its holders with staking rewards and governance power. The Terra ecosystem is a quickly expanding network of decentralized applications, creating a stable demand for Terra and increasing the price of Luna.
 
 ## Terra and Luna
 
@@ -151,7 +151,7 @@ Slashing occurs under the following conditions:
 
 - **Double signing**: When a validator signs two different blocks with the same chain ID at the same height.
 - **Downtime**: When a validator is unresponsive or can't be reached for a period of time.
-- **Missed votes**: When a validator misses votes in consensus or fails to vote correctly in the oracle process.
+- **Missed votes**: When a validator misses votes in consensus or fails to vote correctly in the Oracle process.
 
 Validators monitor each other closely and can submit evidence of misbehavior. Once discovered, the misbehaving validator will have a small portion of their funds slashed. Offending validators will also be jailed or excluded from consensus for a period of time. Even simple issues such as malfunctions or downtimes from upgrading can lead to slashing.
 
