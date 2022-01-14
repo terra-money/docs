@@ -25,7 +25,7 @@ Learn how the Terra Protocol works.
 :::
 
 :::{grid-item-card}
-:link: terra-station/get-started/README.html
+:link: terra-station/README.html
 :class-card: sd-text-center sd-shadow-md sd-rounded-3
 ```{image} /img/wallets_station.png
 :class: sd-width-auto sd-pb-2 sd-animate-grow50-rot20

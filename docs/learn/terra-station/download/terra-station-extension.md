@@ -1,3 +1,5 @@
+# Terra Station extension
+
 ::::{grid} auto
 
 ```{button-link} terra-station-desktop.html
@@ -17,8 +19,6 @@ Chrome extension
 Mobile
 ```
 ::::
-
-# Terra Station on Chrome
 
 Complete this tutorial to install the Terra Station extension for the Google Chrome browser.
 
@@ -45,15 +45,14 @@ Use this tutorial to create a new wallet. To connect to an existing wallet, visi
 
 4. Using a pen and paper, write down your 24-word seed phrase exactly as it appears. Number each word to make verifying easier.
 
-    :::{admonition} Protect your seed phrase
-    :class: danger
-    Anyone with your seed phrase can access your money, and there is no recourse for someone stealing your seed phrase. To protect your seed phrase, consider the following tips:
-
-    - Never save or store your seed phrase as a digital file on any device.
-    - Always write down your seed phrase with a pen and paper.
-    - Store the paper with your seed phrase on it somewhere safe.
-    - Never give your seed phrase to anyone, not even support staff.
-    :::
+   :::{admonition} Protect your seed phrase
+   :class: danger
+   Anyone with your seed phrase can access your money, and there is no recourse for someone stealing your seed phrase. To protect your seed phrase, consider the following tips:
+   - Never save or store your seed phrase as a digital file on any device.
+   - Always write down your seed phrase with a pen and paper.
+   - Store the paper with your seed phrase on it somewhere safe.
+   - Never give your seed phrase to anyone, not even support staff.
+   :::
 
 5. Verify your writing to make sure every word is spelled correctly and in the right order. If you numbered your phrase, it can be helpful to verify it backward.
 
@@ -118,4 +117,4 @@ You can now make transactions on different dApps in the Terra ecosystem.
 
 ## Next steps
 
-For on-the-go transactions, check out the Terra Station mobile app. To learn how to use other Station features, visit the [Station guides](../station-guides/README.md).
+For on-the-go transactions, check out the [Terra Station mobile app](terra-station-mobile.md). To learn how to use other Station features, visit the [Station guides](../station-guides/README.md).

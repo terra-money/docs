@@ -16,7 +16,7 @@ If this is your first time learning about Terra, start here.
 :::
 
 :::{grid-item-card}
-:link: docs/learn/terra-station/get-started/README.html
+:link: docs/learn/terra-station/README.html
 :class-card: sd-text-center sd-shadow-md sd-rounded-3
 ```{image} /img/wallets_station.png
 :class: sd-width-auto sd-pb-2 sd-animate-grow50-rot20

@@ -93,7 +93,7 @@ html_theme_options = {
     "use_repository_button": True,
     "use_download_button": True,
     "logo_only": True,
-    "show_toc_level": 2,
+    "show_toc_level": 1,
     "extra_navbar": False,
     "extra_footer": theme_extra_footer,
 }

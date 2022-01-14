@@ -58,7 +58,7 @@ All seigniorage in the Terra protocol is [burned](glossary.md#burn), making Luna
 
 Validators are the miners of the Terra [blockchain](./glossary.md#blockchain). They are responsible for securing the Terra blockchain and ensuring its accuracy. Validators run programs called full nodes which allow them to verify each transaction made on the Terra network. Validators propose blocks, vote on their validity, and add each new block to the chain in exchange for staking rewards from transaction fees. Users can stake their Luna to validators in exchange for staking rewards. Validators also play an important role in the governance of the Terra protocol.
 
-For more information on validators, visit the [Validator FAQ](../validate/manage-a-terra-validator/faq.md).
+For more information on validators, visit the [Validator FAQ](../full-node/manage-a-terra-validator/faq.md).
 
 ### Consensus
 
@@ -85,7 +85,7 @@ Delegators are users who want to receive rewards from consensus without running 
 :::{admonition} Who owns staked Luna?
 :class: warning
 
-Staked Luna never leaves the possession of the delegator. Even though it can’t be traded freely, staked Luna is never owned by a validator. For more information, visit the [Validator FAQ](../validate/manage-a-terra-validator/faq.md#can-a-validator-run-away-with-a-delegators-luna)
+Staked Luna never leaves the possession of the delegator. Even though it can’t be traded freely, staked Luna is never owned by a validator. For more information, visit the [Validator FAQ](../full-node/manage-a-terra-validator/faq.md#can-a-validator-run-away-with-a-delegators-luna)
 :::
 
 ### Phases of Luna
@@ -127,13 +127,13 @@ When a user redelegates staked Luna from one validator to another, the validator
 
 The Terra protocol incentivizes validators and delegators with staking rewards. Staking rewards come from three sources: gas, stability fees, and swap fees.
 
-- [Gas](./Fees.md#gas): Compute fees added on to each transaction to avoid spamming. Validators set minimum gas prices and reject transactions that have implied gas prices below this threshold.
+- [Gas](./fees.md#gas): Compute fees added on to each transaction to avoid spamming. Validators set minimum gas prices and reject transactions that have implied gas prices below this threshold.
 
 - [Stability fees](./fees.md#stability-fees): Fees added to any Terra stablecoin transaction, excluding [market swaps](./glossary.md#market-swap), to provide stability in the market. Fees are capped at 1SDT. The fee rate, called the tax rate, is variable.
 
 - **Swap fees**: The fee for swapping Terra stablecoin denominations is called a [Tobin tax](./fees.md#tobin-tax). Exchanges between Terra and Luna are subject to a [spread fee](./fees.md#spread-fees).
 
-For more information on fees, visit the [fee page](./Fees.md).
+For more information on fees, visit the [fee page](./fees.md).
 
 At the end of every block, all transaction fees are distributed to each validator and their delegators proportional to their staked amount. Validators can keep a portion of rewards to pay for their services. This portion is called commission. The rest of the rewards are distributed to delegators according to their staked amounts.
 Staking rewards also play a key role in the stability of the Terra protocol. During periods of volatility, the Terra protocol modulates tax rates to maintain a stable mining incentive. This mechanism is described in detail in the [treasury module](../develop/module-specifications/spec-treasury.md). Steady rewards regardless of market volatility ensure steady demand for staking. Staking locks value in the system, ensuring long- and short-term stability for the price of Terra.

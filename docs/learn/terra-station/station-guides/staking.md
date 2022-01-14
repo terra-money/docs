@@ -1,8 +1,43 @@
 # Manage delegations
 
-Use this guide to manage your staking delegations in Terra Station. To learn how to stake or withdraw rewards, visit the Terra Station [desktop](../get-started/terra-station-desktop.md) or [mobile](../get-started/terra-station-mobile.md) tutorials.  
+Use this guide to manage your staking delegations in Terra Station. To learn how to stake or withdraw rewards, visit the Terra Station [desktop](../download/terra-station-desktop.md) or [mobile](../download/terra-station-mobile.md) tutorials.  
 
-If this is your first time using Terra Station, follow the [Terra Station tutorial](../get-started/terra-station-desktop.md).
+If this is your first time using Terra Station, follow the [Terra Station tutorial](../download/terra-station-desktop.md).
+
+## Stake Luna
+
+Stake your Luna to a validator to start earning rewards. Before you stake, make sure you have Luna in your wallet. You can transfer Luna from an [exchange](#receive-tokens-from-an-exchange) or [swap coins](#swap-coins) you have for Luna.
+
+1. Open Terra Station and click **Staking**.
+
+2. Select a Validator and click on their name in the **Moniker** column of the validator list.
+
+3. In the **My delegations** section, click **Delegate**. A new window will appear.
+
+4. In the **Amount** field, specify the amount of Luna you want to delegate, and click **Next**.
+
+   :::{admonition} Keep coins for fees
+   :class: warning
+   Always keep some coins to pay fees with. Never stake your entire wallet amount. Without money for fees, you can't make any transactions.
+   :::
+
+5. Double check the amounts and fees. Enter your password and click **Delegate**.
+
+Congratulations, you've just delegated Luna!
+
+## Withdraw staking rewards
+
+Rewards start accruing the moment you stake Luna. Monitor your rewards in the staking section of Terra Station. Once you have sufficient rewards, follow these steps to withdraw them:
+
+1. Open Terra Station and click **Staking**.
+
+2. To claim all rewards, click **Withdraw all rewards** in the upper right corner of the staking page. To withdraw rewards only from a single validator, click on their name in the list and click **withdraw** on their page.  A new window will appear.
+
+3. Review the amounts and specify which coin you want to pay fees in.
+
+4. Enter your password and click **withdraw**.
+
+Congratulations, you've just withdrawn your staking rewards!
 
 ## Redelegate
 

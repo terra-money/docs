@@ -1,3 +1,5 @@
+# Terra Station mobile
+
 ::::{grid} auto
 
 ```{button-link} terra-station-desktop.html
@@ -18,17 +20,14 @@ Mobile
 ```
 ::::
 
-
-# Terra Station mobile
-
 Complete this tutorial to get started with the Terra Station mobile app.
 
 ## Download the Terra Station app
 
 1. Tap the download link for your operating system. Your device’s app store will open.
 
-    - [Terra Station for iOS](https://apps.apple.com/app/id1548434735)
-    - [Terra Station for Android](https://play.google.com/store/apps/details?id=money.terra.station)
+   - [Terra Station for iOS](https://apps.apple.com/app/id1548434735)
+   - [Terra Station for Android](https://play.google.com/store/apps/details?id=money.terra.station)
 
 2. Install the Terra Station app on your phone.
 
@@ -40,15 +39,15 @@ Complete this tutorial to get started with the Terra Station mobile app.
 
 3. Using a pen and paper, write down your 24-word seed phrase exactly as it appears. Number each word to make verifying easier.
 
-    :::{admonition} Protect your seed phrase
-    :class: danger
-    Anyone with your seed phrase can access your money, and there is no recourse for someone stealing your seed phrase. To protect your seed phrase, consider the following tips:
+   :::{admonition} Protect your seed phrase
+   :class: danger
+   Anyone with your seed phrase can access your money, and there is no recourse for someone stealing your seed phrase. To protect your seed phrase, consider the following tips:
 
-    - Never save or store your seed phrase as a digital file on any device.
-    - Always write down your seed phrase with a pen and paper.
-    - Store the paper with your seed phrase on it somewhere safe.
-    - Never give your seed phrase to anyone, not even support staff.
-    :::
+   - Never save or store your seed phrase as a digital file on any device.
+   - Always write down your seed phrase with a pen and paper.
+   - Store the paper with your seed phrase on it somewhere safe.
+   - Never give your seed phrase to anyone, not even support staff.
+   :::
 
 4. Verify your writing to make sure every word is spelled correctly and in the right order. If you numbered your phrase, it can be helpful to verify it backward.
 
@@ -73,7 +72,7 @@ Congratulations, you have just created a wallet!
     1. Send the tokens from the exchange to your Terra Station wallet address.
 
     :::{admonition} Waiting times for transfers
-    :class: warning
+    :class: caution
     When you transfer tokens from an exchange to Terra, some time will pass before the tokens appear in your wallet. Don't panic. This waiting period is normal and varies depending on the exchange. If a transfer does not appear immediately, check back after some time.
     :::
 
@@ -109,10 +108,10 @@ Congratulations, you've just swapped coins!
 
 6. Verify the transaction amounts and specify which token you want to pay fees in. Remember to always leave enough tokens in your account for other transactions.
 
-    :::{admonition} Keep coins for fees
-    :class: warning
-    Always keep some coins to pay fees with. Never spend your entire wallet amount. Without money for fees, you can't make any transactions.
-    :::
+   :::{admonition} Keep coins for fees
+   :class: caution
+   Always keep some coins to pay fees with. Never spend your entire wallet amount. Without money for fees, you can't make any transactions.
+   :::
 
 7.  Enter your password and tap **Confirm**. Wait for the transaction to process. This generally takes a few seconds.
 
@@ -130,9 +129,10 @@ Congratulations, you've just swapped coins!
 
 6. Confirm the amount and select the coin you want to pay fees in.
 
-    ::: warning Keep coins for fees
-    Always keep some coins to pay fees with. Never stake your entire wallet amount. Without money for fees, you can't make any transactions.
-    :::
+   :::{admonition} Keep coins for fees
+   :class: caution
+   Always keep some coins to pay fees with. Never stake your entire wallet amount. Without money for fees, you can't make any transactions.
+   :::
 
 7. Tap **Confirm** and wait for your transaction to process.
 

@@ -1,29 +1,11 @@
-# Download Terra Station
+# Download
 
 ```{toctree}
 :hidden:
-:caption: Get started
+:caption: Download Terra Station
 terra-station-desktop
 terra-station-extension
 terra-station-mobile
 ```
-::::{grid} auto
-
-```{button-link} terra-station-desktop.html
-:color: primary
-:outline:
-Desktop
-```
-
-```{button-link} terra-station-extension.html
-:color: primary
-:outline:
-Chrome extension
-```
-
-```{button-link} terra-station-mobile.html
-:color: primary
-:outline:
-Mobile
-```
-::::
+:::{include} terra-station-desktop.md
+:::

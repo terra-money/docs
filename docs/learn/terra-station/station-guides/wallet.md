@@ -1,6 +1,56 @@
-# Wallet
+# Wallet <img src="/img/StationWallet.svg" height="40px">
 
-This guide is for advanced features of the Terra Station wallet. If this is your first time using Terra Station, follow the [Terra Station tutorial](../get-started/terra-station-desktop.md).
+This guide is for advanced features of the Terra Station wallet. If this is your first time using Terra Station, follow the [Terra Station tutorial](../download/terra-station-desktop.md).
+
+## Create a wallet
+
+1. Open the Terra Station desktop app and click **New wallet**.
+
+2. Type in a secure wallet name and password.
+
+3. Confirm your password.
+
+4. Using a pen and paper, write down your 24-word seed phrase exactly as it appears. Number each word to make verifying easier.
+
+   :::{admonition} Protect your seed phrase
+   :class: danger
+   Anyone with your seed phrase can access your money, and there is no recourse for someone stealing your seed phrase. To protect your seed phrase, consider the following tips:
+
+   - Never save or store your seed phrase as a digital file on any device.
+   - Always write down your seed phrase with a pen and paper.
+   - Store the paper with your seed phrase on it somewhere safe.
+   - Never give your seed phrase to anyone, not even support staff.
+   :::
+
+5. Verify your writing to make sure every word is spelled correctly and in the right order. If you numbered your phrase, it can be helpful to verify it backward.
+
+5. Check the box ensuring you wrote down your seed phrase, and click **Next**.
+
+6. Confirm your seed phrase by typing or selecting the correct words in each prompt.
+
+7. Click **Create a wallet**.
+
+Congratulations! You have just created a Terra Station wallet.
+
+## Send tokens
+
+1. Open the Terra Station desktop app and connect to your wallet.
+
+2. Click **Wallet** in the navigation bar.
+
+3. Click **Send** next to the token you want to send.
+
+4. Enter the address of the wallet you want to send tokens to.
+
+5. Enter the amount you want to send. You can also add a memo for the transaction.
+
+6. Click **Next**.
+
+7. Verify the transaction amounts and specify which token you want to pay fees in. Remember to always leave enough tokens in your account for other transactions.
+
+8.  Enter your password and click **Send**.
+
+After a few moments, the tokens will appear in the receiver's wallet.
 
 ## Select a wallet
 
