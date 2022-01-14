@@ -91,7 +91,7 @@ A user who [delegates](#delegate), bonds, or stakes [Luna](#luna) to a [validato
 
 ##Epoch
 
-A length of time measured as every 100800 [blocks](#blocks). Epochs occur roughly every 7.7 days, given a 6.6-second block time. Block time may vary.
+A length of time measured in [blocks](#blocks). An epoch for the governance module occurs every 100800 blocks, or roughly every 7.7 days, given a 6.6-second block time. Block times may vary.
 
 ## Fees
 
