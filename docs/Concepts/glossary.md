@@ -89,6 +89,10 @@ When users or delegators add their [Luna](#luna) to a [validator's](#validator) 
 
 A user who [delegates](#delegate), bonds, or stakes [Luna](#luna) to a [validator](#validator) to earn [rewards](#rewards). Delegating, bonding, and staking generally refer to the same process.
 
+##Epoch
+
+A length of time measured in [blocks](#blocks). An epoch for the governance module occurs every 100800 blocks, or roughly every 7.7 days, given a 6.6-second block time. Block times may vary.
+
 ## Fees
 
 - **Gas**: Compute fees added on to all transactions to avoid spamming. [Validators](#validator) set minimum gas prices and reject transactions that have implied gas prices below this threshold.
