@@ -1,7 +1,6 @@
 # Learn
 
-
-Discover how the Terra protocol works and learn about validators, staking, and governance. Use the Terra Station guides to create a wallet, stake Luna, send coins, and participate in governance. Use the glossary to look up helpful terms. 
+Discover how the Terra protocol works and learn about validators, staking, and governance. Use the Terra Station guides to create a wallet, stake Luna, send coins, and participate in governance. Browse the glossary to look up helpful terms.
 
 ```{toctree}
 :hidden:
