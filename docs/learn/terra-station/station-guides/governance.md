@@ -1,4 +1,4 @@
-# Governance
+# Governance <img src="/img/Governance.svg" height="40px">
 
 If this is your first time using Terra Station, follow the [Terra Station tutorial](../download/terra-station-desktop.md).
 

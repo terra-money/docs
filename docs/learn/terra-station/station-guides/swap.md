@@ -1,6 +1,6 @@
-# Mint, burn, or swap
+# Mint, burn, or swap <img src="/img/Swap_ver1.svg" height="40px">
 
-This guide is for advanced swap features in Terra Station. If this is your first time using Terra Station or if you want to [swap coins](../get-started/terra-station-desktop.md#swap-coins), follow the [Terra Station tutorial](../get-started/terra-station-desktop.md).
+This guide is for advanced swap features in Terra Station. If this is your first time using Terra Station, follow the [Terra Station tutorial](../download/terra-station-desktop.md).
 
 ## Swap coins
 

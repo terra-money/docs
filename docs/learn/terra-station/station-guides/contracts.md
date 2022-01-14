@@ -1,4 +1,4 @@
-# Contracts
+# Contracts <img src="/img/icon_smartcontract.svg" height="40px">
 
 Smart contracts are an advanced feature of Terra Station. If you’re using Terra Station for the first time, follow the [Terra Station tutorial](../download/terra-station-desktop.md).
 
