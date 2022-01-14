@@ -1,4 +1,25 @@
-# Use Terra Station on Chrome
+::::{grid} auto
+
+```{button-link} terra-station-desktop.html
+:color: primary
+:outline:
+Desktop
+```
+
+```{button-link} terra-station-extension.html
+:color: primary
+Chrome extension
+```
+
+```{button-link} terra-station-mobile.html
+:color: primary
+:outline:
+Mobile
+```
+::::
+
+# Terra Station on Chrome
+
 Complete this tutorial to install the Terra Station extension for the Google Chrome browser.
 
 ## Prerequisites

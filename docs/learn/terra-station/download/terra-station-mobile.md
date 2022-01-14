@@ -1,5 +1,25 @@
+::::{grid} auto
 
-# Use Terra Station mobile
+```{button-link} terra-station-desktop.html
+:color: primary
+:outline:
+Desktop
+```
+
+```{button-link} terra-station-extension.html
+:color: primary
+:outline:
+Chrome extension
+```
+
+```{button-link} terra-station-mobile.html
+:color: primary
+Mobile
+```
+::::
+
+
+# Terra Station mobile
 
 Complete this tutorial to get started with the Terra Station mobile app.
 
