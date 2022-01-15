@@ -40,7 +40,7 @@ station-guides/README
 :::{grid-item-card}
 :link: station-guides/staking.html
 :class-card: sd-text-center sd-shadow-md sd-rounded-3
-```{image} /img/staking.svg
+```{image} /img/Staking.svg
 :class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
 ```
 **Stake Luna**  

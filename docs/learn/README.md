@@ -47,7 +47,7 @@ Learn how Luna helps stabilize the price of Terra.
 :::{grid-item-card}
 :link: protocol.html#validators
 :class-card: sd-text-center sd-shadow-md sd-rounded-3
-```{image} /img/staking.svg
+```{image} /img/Staking.svg
 :class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
 ```
 **Validators and Staking**  
@@ -57,7 +57,7 @@ Find out about validators, consensus, staking, and rewards.
 :::{grid-item-card}
 :link: fees.html
 :class-card: sd-text-center sd-shadow-md sd-rounded-3
-```{image} /img/fees.svg
+```{image} /img/Fees.svg
 :class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
 ```
 **How fees work**  
@@ -67,7 +67,7 @@ Learn how fees become staking rewards.
 :::{grid-item-card}
 :link: glossary.html
 :class-card: sd-text-center sd-shadow-md sd-rounded-3
-```{image} /img/glossary.svg
+```{image} /img/Glossary.svg
 :class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
 ```
 **Glossary**  
