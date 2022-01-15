@@ -12,7 +12,6 @@ Welcome to the official documentation for Terra, a decentralized financial infra
 :class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
 ```
 **What is Terra?**  
-If this is your first time learning about Terra, start here.
 :::
 
 :::{grid-item-card}
@@ -22,7 +21,6 @@ If this is your first time learning about Terra, start here.
 :class: sd-width-auto sd-pb-2 sd-animate-grow50-rot20
 ```
 **Get started with Station**  
-Learn how to create a wallet and stake Luna for rewards.
 :::
 
 :::{grid-item-card}
@@ -32,7 +30,6 @@ Learn how to create a wallet and stake Luna for rewards.
 :class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
 ```
 **Build a dApp**  
-Set up your environment and create a dApp.
 :::
 
 :::{grid-item-card}
@@ -42,17 +39,15 @@ Set up your environment and create a dApp.
 :class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
 ```
 **Unearth Terra core**  
-Discover the source code modules at the heart of the protocol.
 :::
 
 :::{grid-item-card}
 :link: docs/develop/core-modules/README.html
 :class-card: sd-text-center sd-shadow-md sd-rounded-3
-```{image} /img/icon_apps.svg
+```{image} /img/Ecosystem_ver1.svg
 :class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
 ```
 **Explore the ecosystem**  
-Find out about all the apps built on Terra.
 :::
 
 :::{grid-item-card}
@@ -62,7 +57,6 @@ Find out about all the apps built on Terra.
 :class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
 ```
 **Participate in governance**  
-Become an active member of the community by voting on proposals.
 :::
 
 :::::::

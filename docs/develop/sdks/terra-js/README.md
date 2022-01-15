@@ -1,4 +1,4 @@
-# Terra.js
+# Terra.js <img src="/img/terra_js.svg" height="40px">
 
 Terra.js seeks to provide a compatible way to work with the Terra blockchain within JavaScript runtimes, such as Node.js and the browser. Terra.js enables the following functions:
 
@@ -7,8 +7,10 @@ Terra.js seeks to provide a compatible way to work with the Terra blockchain wit
 - Providing access to the `terrad` node API (LCD) from a JavaScript-based interface
 - Providing additional utilities, such as hash functions and key-signing algorithms
 
+## Contents <img src="/img/Glossary.svg" height="30px">
+
 ```{toctree}
-:caption: Terra.js
+:maxdepth: 1
 add-modules
 coin-and-coins
 common-examples
