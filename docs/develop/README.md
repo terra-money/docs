@@ -34,7 +34,7 @@ reference/README
 :::{grid-item-card}
 :link: how-to/terrad/README.html
 :class-card: sd-text-center sd-shadow-md sd-rounded-3
-```{image} /img/terrad.svg
+```{image} /img/Terrad.svg
 :class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
 ```
 **`terrad`**  
