@@ -90,6 +90,7 @@
 [Stake ID](https://terra.stake.id/#/): Terra block explorer with additional data on the latest proposals and validators<br>
 [Figment Hubble](https://hubble.figment.io/terra/chains/columbus-4): Terra block explorer with advanced validator data and income report functionality<br>
 [Extraterrestria Finder](https://finder.extraterrestrial.money/): Terra block explorer with community driven features<br>
+[ATOMScan](https://atomscan.com/terra): Terra block explorer by ATOMScan<br>
 
 ## Contribute
 
