@@ -2,10 +2,13 @@
 sidebarDepth: 2
 ---
 
-::: Danger Note
+# Treasury
+
+::: danger Note
 The treasury module logic is no longer effectively used by the Terra protocol. On March 3rd, 2021, the Terra community passed [governance proposal 43](https://station.terra.money/proposal/43), updating the seigniorage reward weight to burn all seigniorage. On January 6th, 2022, the Terra community passed [proposal 172](https://station.terra.money/proposal/172), which changed the stability fee tax rate to zero. Neither seigniorage nor the tax rate are currently used. The information in this section is kept as reference. Although the rates and parameters used in this section no longer have any effect on the protocol or transactions, they are still calculated as their logic is intact. The effective rates of seigniorage and stability fees are calculated as zero.  
 
-# Treasury
+:::
+
 
 The Treasury module acts as the "central bank" of the Terra economy, measuring macroeconomic activity by [observing indicators](#observed-indicators) and adjusting [monetary policy levers](#monetary-policy-levers) to modulate miner incentives toward stable, long-term growth.
 
