@@ -29,7 +29,7 @@ The node software is organized into the following individual modules that implem
 3. [`staking`](./Module-specifications/spec-staking.md): validators and Luna
 4. [`auth`](./Module-specifications/spec-auth.md): ante handler
    - vesting accounts
-   - stability layer fee
+   - stability layer fee (As of [proposal 172](https://station.terra.money/proposal/172), the stability fee is set at zero)
 5. [`bank`](./Module-specifications/spec-bank.md) - sending funds from account to account
 6. [`slashing`](./Module-specifications/spec-slashing.md) - low-level Tendermint slashing (double-signing, etc)
 7. [`oracle`](./Module-specifications/spec-oracle.md) - exchange rate feed oracle
@@ -39,7 +39,12 @@ The node software is organized into the following individual modules that implem
 8. [`treasury`](./Module-specifications/spec-treasury.md): miner incentive stabilization
    - macroeconomic monitoring
    - monetary policy levers (Tax Rate, Reward Weight)
-   - seigniorage settlement: all seigniorage is burned as of Columbus-5
+   - seigniorage settlement
+
+   ::: warning Note:
+   As of proposals [43](https://station.terra.money/proposal/43) and [172](https://station.terra.money/proposal/172), all seigniorage is burned, and the stability fee tax rate is zero. 
+   :::
+
 9. [`gov`](./Module-specifications/spec-governance.md): on-chain governance
     - proposals
     - parameter updating
@@ -93,6 +98,10 @@ The following processes get executed during each block transition:
 8. Treasury
 
    - At the end of `epoch`, update indicators, burn seigniorage, and recalibrate monetary policy levers (tax-rate, reward-weight) for the next epoch.
+
+   ::: warning Note:
+   As of proposals [43](https://station.terra.money/proposal/43) and [172](https://station.terra.money/proposal/172), all seigniorage is burned, and the stability fee tax rate is zero.   
+   :::
 
 9. Staking
    - The new set of active validators is determined from the top 130 Luna stakers. Validators that lose their spot within the set start the unbonding process.

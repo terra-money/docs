@@ -919,6 +919,10 @@ Retrieves the stability tax rate of the current epoch.
 terrad query treasury tax-rate
 ```
 
+::: warning Note:
+As of proposal [172](https://station.terra.money/proposal/172), the stability fee tax rate is zero.   
+:::
+
 ## `query tx`
 
 Retrieves a transaction by its hash, account sequence, or signature.

@@ -123,18 +123,15 @@ When a user redelegates staked Luna from one validator to another, the validator
 
 ### Rewards
 
-The Terra protocol incentivizes validators and delegators with staking rewards. Staking rewards come from three sources: gas, stability fees, and swap fees.
+The Terra protocol incentivizes validators and delegators with staking rewards. Staking rewards come from two sources: gas and swap fees.
 
 - [Gas](./Fees.md#gas): Compute fees added on to each transaction to avoid spamming. Validators set minimum gas prices and reject transactions that have implied gas prices below this threshold.
 
-- [Stability fees](/Concepts/Fees.md#stability-fee): Fees added to any Terra stablecoin transaction, excluding [market swaps](/Concepts/Glossary.md#market-swap), to provide stability in the market. Fees are capped at 1SDT. The fee rate, called the tax rate, is variable.
-
-- **Swap fees**: The fee for swapping Terra stablecoin denominations is called a [Tobin tax](./Fees.md#tobin-tax). Exchanges between Terra and Luna are subject to a [spread fee](./Fees.md#spread-fee).
+- **Swap fees**: The fee for swapping Terra stablecoin denominations is called a [Tobin tax](./Fees.md#tobin-tax). Exchanges between Terra and Luna are subject to a [spread fee](./Fees.md#spread-fee). Swap fees are directed to the Oracle reward pool, where they are distributed over a period of two years to validators who faithfully report correct Oracle prices.
 
 For more information on fees, visit the [fee page](./Fees.md).
 
-At the end of every block, all transaction fees are distributed to each validator and their delegators proportional to their staked amount. Validators can keep a portion of rewards to pay for their services. This portion is called commission. The rest of the rewards are distributed to delegators according to their staked amounts.
-Staking rewards also play a key role in the stability of the Terra protocol. During periods of volatility, the Terra protocol modulates tax rates to maintain a stable mining incentive. This mechanism is described in detail in the [treasury module](/Reference/Terra-core/Module-specifications/spec-treasury.md). Steady rewards regardless of market volatility ensure steady demand for staking. Staking locks value in the system, ensuring long- and short-term stability for the price of Terra.
+At the end of every block, transaction fees are distributed to each validator and their delegators proportional to their staked amount. Validators can keep a portion of rewards to pay for their services. This portion is called commission. The rest of the rewards are distributed to delegators according to their staked amounts.
 
 ### Slashing
 
@@ -165,11 +162,8 @@ Proposals start as ideas within the community. A community member drafts and sub
 The most common proposal types include:
 
 - `ParameterChangeProposal`: To change the parameters defined in each module.
-- `TaxRateUpdateProposal`: To update tax rate monetary policy lever.
-- `RewardWeightUpdateProposal`: To update the reward weight monetary policy lever
-- `CommunityPoolSpendProposal`: To spend funds in the community pool
-
-Other issues like large directional changes or any decision requiring manual implementation are submitted as a `TextProposal`.
+- `CommunityPoolSpendProposal`: To spend funds in the community pool.
+- `TextProposal` : To handle other issues like large directional changes or any decision requiring manual implementation.
 
 ### Voting process
 
