@@ -7,8 +7,8 @@
 
 ## Public RPC endpoints
 
-:::{caution}
-Public RPC endpoints should only be used in development. For live dApps, use a private RPC endpoint from the list above or [set up your own endpoint](../../validate/run-a-full-terra-node/README.md#hardware-requirements).
+:::danger Public endpoint warning
+Public RPC endpoints should only be used in development. For live dApps, use a private RPC endpoint from the list above or [set up your own endpoint](../../full-node/run-a-full-terra-node/system-config.md).
 :::
 
 - Easy2stake public RPC: `https://terra-rpc.easy2stake.com/`

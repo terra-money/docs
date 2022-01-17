@@ -89,11 +89,13 @@ When users or delegators add their [Luna](#luna) to a [validator's](#validator) 
 
 A user who [delegates](#delegate), bonds, or stakes [Luna](#luna) to a [validator](#validator) to earn [rewards](#rewards). Delegating, bonding, and staking generally refer to the same process.
 
+##Epoch
+
+A length of time measured in [blocks](#blocks). An epoch for the governance module occurs every 100800 blocks, or roughly every 7.7 days, given a 6.6-second block time. Block times may vary.
+
 ## Fees
 
 - **Gas**: Compute fees added on to all transactions to avoid spamming. [Validators](#validator) set minimum gas prices and reject transactions that have implied gas prices below this threshold.
-
-- **Stability fee**: A fee added to any [Terra stablecoin](#terra-stablecoins) transaction excluding [market swaps](#market-swap). Stability fees are capped at 1 SDT and are also referred to as taxes.
 
 - **Spread fee**: A variable fee on any transaction between [Terra](#terra-stablecoins) and [Luna](#luna).
 
@@ -131,7 +133,7 @@ Validators who misbehave are jailed or excluded from the [active set](#active-se
 
 ## Market swap
 
-A swap in Terra Station that uses the Terra protocol's market function. Market swaps occur between Terra stablecoin denominations or between Terra and Luna. Market swaps spend [gas](#fees) and incur either a [Tobin tax](#fees) or a [Spread fee](#fees), but are not subject to a [stability fee](#fees).
+A swap in Terra Station that uses the Terra protocol's market function. Market swaps occur between Terra stablecoin denominations or between Terra and Luna. Market swaps spend [gas](#fees) and incur either a [Tobin tax](#fees) or a [Spread fee](#fees).
 
 **Examples**
 - Swapping UST for KRT in Terra Station will charge a Tobin tax and gas fees.

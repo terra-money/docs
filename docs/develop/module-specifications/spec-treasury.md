@@ -4,7 +4,13 @@ sidebarDepth: 2
 
 # Treasury
 
-The treasury module acts as the central bank of the Terra economy, measuring macroeconomic activity by [observing indicators](#observed-indicators) and adjusting [monetary policy levers](#monetary-policy-levers) to modulate miner incentives toward stable, long-term growth.
+:::{admonition} Important
+:class: danger
+The treasury module logic is no longer effectively used by the Terra protocol. On March 3rd, 2021, the Terra community passed [governance proposal 43](https://station.terra.money/proposal/43), updating the seigniorage reward weight to burn all seigniorage. On January 6th, 2022, the Terra community passed [proposal 172](https://station.terra.money/proposal/172), which changed the stability fee tax rate to zero. Neither seigniorage nor the tax rate are currently used. The information in this section is kept as reference. Although the rates and parameters used in this section no longer have any effect on the protocol or transactions, they are still calculated as their logic is intact. The effective rates of seigniorage and stability fees are calculated as zero.  
+:::
+
+
+The Treasury module acts as the "central bank" of the Terra economy, measuring macroeconomic activity by [observing indicators](#observed-indicators) and adjusting [monetary policy levers](#monetary-policy-levers) to modulate miner incentives toward stable, long-term growth.
 
 :::{Important}
 While the Treasury stabilizes miner demand by adjusting rewards, the [`market`](./spec-market.md) module is responsible for Terra price stability through arbitrage and the market maker.
@@ -20,18 +26,9 @@ The treasury observes three macroeconomic indicators for each epoch and keeps [i
 - **Seigniorage Rewards**: $S$, the amount of seigniorage generated from Luna swaps to Terra during an epoch which is destined for ballot rewards inside the `Oracle` rewards. As of Columbus-5, all seigniorage is burned.
 - **Total Staked Luna**: $\lambda$, the total amount of Luna staked by users and bonded to their delegated validators.
 
-These indicators are used to derive two other values:
-- **Tax Reward per unit Luna** $\tau = T / \lambda$: Used in [Updating Tax Rate](#kupdatetaxpolicy)
-- **Total mining rewards** $R = T + S$: The sum of the Tax Rewards and the Seigniorage Rewards, used in [Updating Reward Weight](#kupdaterewardpolicy).
-
-:::{Important}
-As of Columbus-5, all seigniorage is burned and no longer funds community or reward pools.
-:::
-
-- **Seigniorage Rewards:**: $S$, The amount of seigniorage generated from Luna swaps to Terra during each epoch.
-
-:::{Important}
-As of Columbus-5, all seigniorage is burned.   
+::: {admonition} Note
+:class: warning
+As of proposals [43](https://station.terra.money/proposal/43) and [172](https://station.terra.money/proposal/172), all seigniorage is burned, and the stability fee tax rate is zero.   
 :::
 
 These indicators can be used to derive two other values, the **Tax Reward per unit Luna** represented by $\tau = T / \lambda$, used in [Updating Tax Rate](#kupdatetaxpolicy), and **total mining rewards** $R = T + S$: the sum of the Tax Rewards and the Seigniorage Rewards, used in [Updating Reward Weight](#kupdaterewardpolicy).
@@ -42,7 +39,12 @@ The protocol can compute and compare the short-term ([`WindowShort`](#windowshor
 
 - **Tax Rate**: $r$, adjusts the amount of income gained from Terra transactions, limited by [_tax cap_](#tax-caps).
 
-- **Reward Weight**: $w$, the portion of seigniorage allocated to the reward pool for [oracle](spec-oracle.md) vote winners. This portion is given to validators who vote within the reward band of the weighted median exchange rate.
+::: {admonition} Note
+:class: warning
+As of [proposal 172](https://station.terra.money/proposal/172), the stability fee tax rate is zero.
+:::
+
+- **Reward Weight**: $w$, the portion of seigniorage allocated to the reward pool for [`Oracle`](spec-oracle.md) vote winners. This is given to validators who vote within the reward band of the weighted median exchange rate.
 
 :::{Important}
 As of Columbus-5, all seigniorage is burned and no longer funds the community pool or the oracle reward pool. Validators are rewarded for faithful oracle votes through swap fees.
@@ -50,21 +52,32 @@ As of Columbus-5, all seigniorage is burned and no longer funds the community po
 
 ### Updating policies
 
-Both [tax rate](#tax-rate) and [reward weight](#reward-weight) are stored as values in the `KVStore` and can have their values updated through governance proposals after they have passed. The treasury recalibrates each lever once per epoch to stabilize unit returns for Luna, ensuring predictable mining rewards from staking:
+
+Both [Tax Rate](#tax-rate) and [Reward Weight](#reward-weight) are stored as values in the `KVStore` and can have their values updated through [governance proposals](#governance-proposals) after they have passed. The Treasury recalibrates each lever once per epoch to stabilize unit returns for Luna, ensuring predictable mining rewards from staking:
 
 - For tax rate, to ensure that unit-mining rewards do not stay stagnant, the treasury adds a [`MiningIncrement`](#miningincrement) so mining rewards increase steadily over time, as described in [k.updatetaxpolicy](#kupdatetaxpolicy).
 
 - For reward weight, the treasury observes the portion of seigniorage needed to bear the overall reward profile, [`SeigniorageBurdenTarget`](#seigniorageburdentarget) and raises rates accordingly, as described in [k.updaterewardpolicy](#kupdaterewardpolicy). The current reward weight is `1`.
 
+::: {admonition} Note
+:class: warning
+As of proposals [43](https://station.terra.money/proposal/43) and [172](https://station.terra.money/proposal/172), all seigniorage is burned, and the stability fee tax rate is zero.   
+:::
 ### Probation
 
 A probationary period specified by the [`WindowProbation`](#windowprobation) prevents the network from updating the tax rate and reward weight during the first epochs after genesis to allow the blockchain to first obtain a critical mass of transactions and a mature, reliable history of indicators.
+
 
 ## Data
 
 ### PolicyConstraints
 
-Policy updates from governance proposals and automatic calibration are constrained by the [`TaxPolicy`](#taxpolicy) and [`RewardPolicy`](#rewardpolicy) parameters, respectively. `PolicyConstraints` specifies the floor, ceiling, and maximum periodic changes for each variable.
+::: {admonition} Note
+:class: warning
+As of proposals [43](https://station.terra.money/proposal/43) and [172](https://station.terra.money/proposal/172), all seigniorage is burned, and the stability fee tax rate is zero.   
+:::
+
+Policy updates from governance proposals and automatic calibration are constrained by the [`TaxPolicy`](#taxpolicy) and [`RewardPolicy`](#rewardpolicy) parameters, respectively. `PolicyConstraints` specifies the floor, ceiling, and max periodic changes for each variable.
 
 ```go
 // PolicyConstraints defines constraints around updating a key Treasury variable
@@ -103,7 +116,12 @@ func (pc PolicyConstraints) Clamp(prevRate sdk.Dec, newRate sdk.Dec) (clampedRat
 
 ## Proposals
 
-The treasury module defines special proposals which allow the [tax rate](#tax-rate) and [reward weight](#reward-weight) values in the `KVStore` to be voted on and changed accordingly, subject to the [constraints](#policyconstraints) imposed by `pc.Clamp()`.
+::: {admonition} Note
+:class: warning
+As of proposals [43](https://station.terra.money/proposal/43) and [172](https://station.terra.money/proposal/172), all seigniorage is burned, and the stability fee tax rate is zero.   
+:::
+
+The Treasury module defines special proposals which allow the [Tax Rate](#tax-rate) and [Reward Weight](#reward-weight) values in the `KVStore` to be voted on and changed accordingly, subject to the [policy constraints](#policy-constraints) imposed by `pc.Clamp()`.
 
 ### TaxRateUpdateProposal
 
@@ -115,8 +133,9 @@ type TaxRateUpdateProposal struct {
 }
 ```
 
-:::{Important}
-As of Columbus-5, all seigniorage is burned. The reward weight is `1`.
+::: {admonition} Note
+:class: warning
+As of proposals [43](https://station.terra.money/proposal/43) and [172](https://station.terra.money/proposal/172), all seigniorage is burned, and the stability fee tax rate is zero.   
 :::
 
 ## State
@@ -129,7 +148,12 @@ As of Columbus-5, all seigniorage is burned. The reward weight is `1`.
 
 The value of the tax rate policy lever for the current epoch.
 
-### Reward weight
+::: {admonition} Note
+:class: warning
+As of proposals [43](https://station.terra.money/proposal/43) and [172](https://station.terra.money/proposal/172), all seigniorage is burned, and the stability fee tax rate is zero.   
+:::
+
+### Reward Weight
 
 - type: `Dec`
 - default: `1`
@@ -143,6 +167,11 @@ The value of the reward weight policy lever for the current epoch. As of Columbu
 The treasury keeps a `KVStore` that maps a denomination `denom` to an `sdk.Int`, which represents the maximum income that can be generated from taxes on a transaction in that same denomination. It is updated every epoch with the equivalent value of [`TaxPolicy.Cap`](#taxpolicy) at the current exchange rate.
 
 For example, if a transaction's value is 100 SDT with a tax rate of 5% and a tax cap of 1 SDT, the income generated is 1 SDT, not 5 SDT.
+
+::: {admonition} Note
+:class: warning
+As of proposals [43](https://station.terra.money/proposal/43) and [172](https://station.terra.money/proposal/172), all seigniorage is burned, and the stability fee tax rate is zero.   
+:::
 
 ### Tax Proceeds
 
@@ -158,6 +187,11 @@ The total supply of Luna at the beginning of the current epoch. This value is us
 
 Recording the initial issuance automatically uses the supply module to determine the total issuance of Luna. Peeking returns the epoch's initial issuance of µLuna as `sdk.Int` instead of `sdk.Coins` for clarity.
 
+::: {admonition} Note
+:class: warning
+As of proposals [43](https://station.terra.money/proposal/43) and [172](https://station.terra.money/proposal/172), all seigniorage is burned, and the stability fee tax rate is zero.   
+:::
+
 ### Indicators
 
 The Treasury keeps track of the following indicators for the present and previous epochs:
@@ -168,13 +202,23 @@ The Treasury keeps track of the following indicators for the present and previou
 
 The Tax Rewards $T$ for each `epoch`.
 
-#### Seigniorage rewards
+::: {admonition} Note
+:class: warning
+As of proposals [43](https://station.terra.money/proposal/43) and [172](https://station.terra.money/proposal/172), all seigniorage is burned, and the stability fee tax rate is zero.   
+:::
+
+#### Seigniorage Rewards
 
 - type: `Dec`
 
 The seigniorage rewards $S$ for each `epoch`.
 
-#### Total staked Luna
+::: {admonition} Note
+:class: warning
+As of proposals [43](https://station.terra.money/proposal/43) and [172](https://station.terra.money/proposal/172), all seigniorage is burned, and the stability fee tax rate is zero.   
+:::
+
+#### Total Staked Luna
 
 - type: `Int`
 
@@ -193,6 +237,11 @@ At the end of each epoch $t$, this function records the current values of tax re
 - $T_t$ is the current value in [`TaxProceeds`](#tax-proceeds).
 - $S_t = \Sigma * w$, with epoch seigniorage $\Sigma$ and reward weight $w$.
 - $\lambda_t$ is the result of `staking.TotalBondedTokens()`.
+
+::: {admonition} Note
+:class: warning
+As of proposals [43](https://station.terra.money/proposal/43) and [172](https://station.terra.money/proposal/172), all seigniorage is burned, and the stability fee tax rate is zero.   
+:::
 
 ### `k.UpdateTaxPolicy()`
 
@@ -213,6 +262,11 @@ Using $r_t$ as the current tax rate and $n$ as the [`MiningIncrement`](#miningin
 4. If $\tau_m > 0$, the new Tax Rate is $r_{t+1} = (n r_t \tau_y)/\tau_m$, subject to the rules of `pc.Clamp()`. For more information, see [constraints](#policyconstraints).
 
 When monthly tax revenues dip below the yearly average, the treasury increases the tax rate. When monthly tax revenues go above the yearly average, the treasury decreases the tax rate.
+
+::: {admonition} Note
+:class: warning
+As of proposals [43](https://station.terra.money/proposal/43) and [172](https://station.terra.money/proposal/172), all seigniorage is burned, and the stability fee tax rate is zero.   
+:::
 
 ### `k.UpdateRewardPolicy()`
 
@@ -246,6 +300,11 @@ func (k Keeper) UpdateTaxCap(ctx sdk.Context) sdk.Coins
 This function is called at the end of an epoch to compute the Tax Caps for every denomination for the next epoch.
 
 For every denomination in circulation, the new Tax Cap for each denomination is set to be the global Tax Cap defined in the [`TaxPolicy`](#taxpolicy) parameter, at current exchange rates.
+
+::: {admonition} Note
+:class: warning
+As of proposals [43](https://station.terra.money/proposal/43) and [172](https://station.terra.money/proposal/172), all seigniorage is burned, and the stability fee tax rate is zero.   
+:::
 
 ### `k.SettleSeigniorage()`
 
@@ -285,7 +344,6 @@ If the blockchain is at the final block of the epoch, the following procedure is
 
 6. Finally, record the Luna issuance with [`k.RecordEpochInitialIssuance()`](#epoch-initial-issuance). It will be used to calculate the seigniorage for the next epoch.
 
-::: details Events
 
 | Type          | Attribute Key | Attribute Value |
 | ------------- | ------------- | --------------- |
@@ -293,6 +351,10 @@ If the blockchain is at the final block of the epoch, the following procedure is
 | policy_update | reward_weight | {rewardWeight}  |
 | policy_update | tax_cap       | {taxCap}        |
 
+
+::: {admonition} Note
+:class: warning
+As of proposals [43](https://station.terra.money/proposal/43) and [172](https://station.terra.money/proposal/172), all seigniorage is burned, and the stability fee tax rate is zero.   
 :::
 
 ## Parameters
@@ -349,6 +411,11 @@ Constraints for updating the [reward weight](#reward-weight) monetary policy lev
 - default: 67%
 
 Multiplier specifying the portion of burden seigniorage needed to bear the overall reward profile for Reward Weight updates during epoch transition.
+
+::: {admonition} Note
+:class: warning
+As of proposals [43](https://station.terra.money/proposal/43) and [172](https://station.terra.money/proposal/172), all seigniorage is burned, and the stability fee tax rate is zero.   
+:::
 
 ### MiningIncrement
 
