@@ -56,7 +56,13 @@ The node software is organized into the following individual modules that implem
 8. [`treasury`](spec-treasury.md): miner incentive stabilization
    - macroeconomic monitoring
    - monetary policy levers (Tax Rate, Reward Weight)
-   - seigniorage settlement: all seigniorage is burned as of Columbus-5
+   - seigniorage settlement
+
+   ::: {admonition} Note
+   :class: warning
+   As of proposals [43](https://station.terra.money/proposal/43) and [172](https://station.terra.money/proposal/172), all seigniorage is burned, and the stability fee tax rate is zero.  
+   :::
+   
 9. [`gov`](spec-governance.md): on-chain governance
     - proposals
     - parameter updating
