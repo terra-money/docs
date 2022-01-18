@@ -79,6 +79,8 @@ Staking is the process of bonding Luna to a validator in exchange for staking re
 
 The Terra protocol only allows the top 130 validators to participate in consensus. A validator's rank is determined by their stake or the total amount of Luna bonded to them. Although validators can bond Luna to themselves, they mainly amass larger stakes from delegators. Validators with larger stakes get chosen more often to propose new blocks and earn proportionally more rewards.
 
+To learn how to stake your Luna and earn staking rewards, visit the [Terra Station staking guide](terra-station/station-guides/staking.md)
+
 ### Delegators
 Delegators are users who want to receive rewards from consensus without running a full node. Any user that stakes Luna is a delegator. Delegators stake their Luna to a validator, adding to a validator’s weight, or total stake. In return, delegators receive a portion of transaction fees as staking rewards.
 
@@ -156,7 +158,9 @@ For more information on slashing, visit the [slashing module](../develop/module-
 
 ## Governance
 
-The Terra protocol is a decentralized public [blockchain](glossary.md#blockchain) governed by community members. Governance is the democratic process that allows users and validators to make changes to the Terra protocol. Community members submit, vote, and implement proposals.  
+The Terra protocol is a decentralized public [blockchain](glossary.md#blockchain) governed by community members. Governance is the democratic process that allows users and validators to make changes to the Terra protocol. Community members submit, vote, and implement proposals.
+
+To learn how to vote with your staked Luna or submit proposals, visit the [Terra Station governance guide](terra-station/station-guides/governance.md).
 
 ### Proposals
 
