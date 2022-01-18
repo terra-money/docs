@@ -1,6 +1,6 @@
 # SDKs
 
-Use this section to access the terra.js and terra.py SDKs.
+[Terra.js](terra-js/README.md) and [Terra.py](https://terra-money.github.io/terra.py/) are the official Javascript and Python SDKs for Terra.
 
 ```{toctree}
 :caption: SDKs

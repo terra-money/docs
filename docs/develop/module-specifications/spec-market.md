@@ -1,4 +1,4 @@
-# Market
+# Market <img src="/img/Market.svg" height="40px">
 
 The Market module enables atomic swaps between different Terra stablecoin denominations, and between Terra and Luna. This module ensures an available, liquid market, stable prices, and fair exchange rates between the protocol's assets.
 
