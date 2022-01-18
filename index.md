@@ -33,16 +33,7 @@ Welcome to the official documentation for Terra, a decentralized financial infra
 :::
 
 :::{grid-item-card}
-:link: docs/develop/core-modules/README.html
-:class-card: sd-text-center sd-shadow-md sd-rounded-3
-```{image} /img/icon_core.svg
-:class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
-```
-**Unearth Terra core**  
-:::
-
-:::{grid-item-card}
-:link: docs/develop/core-modules/README.html
+:link: docs/ecosystem/README.md
 :class-card: sd-text-center sd-shadow-md sd-rounded-3
 ```{image} /img/Ecosystem_ver1.svg
 :class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
@@ -59,6 +50,41 @@ Welcome to the official documentation for Terra, a decentralized financial infra
 **Participate in governance**  
 :::
 
+:::{grid-item-card}
+:link: docs/develop/module-specifications/README.html
+:class-card: sd-text-center sd-shadow-md sd-rounded-3
+```{image} /img/icon_core.svg
+:class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
+```
+**Unearth Terra Core**  
+:::
+
+:::{grid-item-card}
+:link: docs/full-node/run-a-full-terra-node/README.html
+:class-card: sd-text-center sd-shadow-md sd-rounded-3
+```{image} /img/icon_node.svg
+:class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
+```
+**Run a full node**  
+:::
+
+:::{grid-item-card}
+:link: docs/develop/sdks/terra-js/README.html
+:class-card: sd-text-center sd-shadow-md sd-rounded-3
+```{image} /img/terra_js.svg
+:class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
+```
+**Terra.js**  
+:::
+
+:::{grid-item-card}
+:link: https://terra-money.github.io/terra.py/
+:class-card: sd-text-center sd-shadow-md sd-rounded-3
+```{image} /img/terra_sdk.svg
+:class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
+```
+**Terra.py**  
+:::
 :::::::
 
 
