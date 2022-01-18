@@ -5,7 +5,7 @@
 quick-start/README
 smart-contracts/README
 ```
-Use these guides to build your own dApp.
+Use these guides to setup your environment and build a dApp. If this is your first time building on Terra, use the [quickstart guide](quick-start/README.md) to set up your environment.
 
 :::::::{grid}
 :gutter: 3
@@ -17,7 +17,7 @@ Use these guides to build your own dApp.
 :class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
 ```
 **Terrain quickstart guide**  
-Use this tutorial to setup Terrain in 5 minutes.
+Set up Terrain and start building in 5 minutes.
 :::
 
 :::{grid-item-card}
@@ -27,7 +27,7 @@ Use this tutorial to setup Terrain in 5 minutes.
 :class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
 ```
 **In-depth dApp guide**  
-Use this guide for an in-depth overview for building a dApp.
+An in-depth overview for building a dApp.
 :::
 
 :::::::

@@ -10,9 +10,6 @@ Terrain will help you:
 * Access a console (or REPL) for interacting with the Terra blockchain
 * Create predefined functions used in tasks and in the console
 
-## Prerequisites
-
-
 ## 1. Download LocalTerra
 
 LocalTerra is a development environment designed to make it easy for smart contract developers to test their contracts locally.
