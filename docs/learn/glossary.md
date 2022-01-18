@@ -271,7 +271,7 @@ A fee added to every swap between Terra stablecoins (spot-trading). The rate var
 
 ## Tombstone
 
-To block a validator from participating in consensus or oracle voting.
+To block a validator from participating in consensus or oracle voting. Tombstoned validators cannot rejoin the active set. 
 
 ## Total stake
 
