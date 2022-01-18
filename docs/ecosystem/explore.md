@@ -17,10 +17,6 @@
 [Reddit](https://www.reddit.com/r/terraluna/): the community-run Terra Reddit<br>
 [LunaLoot](https://lunaloot.com/): the official Terra merch shop<br>
 
-## Terra Delegation Program
-
-[Terra Delegation Program](../validate/terra-delegation-program.md): the official page for the Terra Delegation Program<br>
-
 ## Mirror Website and Socials
 
 [Website](https://mirror.finance/): the official Mirror Protocol landing page<br>
@@ -182,7 +178,7 @@
 [Terra public FCD](https://fcd.terra.dev/swagger): the full client daemon for Terra<br>
 [Terra public LCD](https://lcd.terra.dev/swagger/): the light client daemon for Terra<br>
 [Easy2stake public LCD](https://terra-lcd.easy2stake.com/82F438G9UNMwD5bwmycR/): the easy2stake light client daemon for Terra<br>
-[RPC endpoints](/Reference/endpoints.md): a list of recommended RPC endpoints<br>
+[RPC endpoints](../develop/how-to/endpoints.md): a list of recommended RPC endpoints<br>
 
 ## Wallets
 
