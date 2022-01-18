@@ -19,7 +19,8 @@
 
 project = 'Terra Docs'
 copyright = '2021, Terraform Labs'
-author = 'Terraform Labs'
+html_show_copyright = False
+#author = Terraform Labs
 
 root_doc = "index"
 
