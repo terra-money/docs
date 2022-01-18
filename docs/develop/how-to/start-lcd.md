@@ -30,4 +30,4 @@ Once restarted, the LCD will be available.
 
 For more information about the Terra REST API endpoints, see the [Swagger documentation](https://lcd.terra.dev/swagger/).
 
-For more information on configuring `App.toml`, see [configure general settings](../validate/run-a-full-terra-node/configure-general-settings.md#start-the-light-client-daemon).
+For more information on configuring `App.toml`, see [Configure general settings](../../full-node/run-a-full-terra-node/configure-general-settings.md#start-the-light-client-daemon-lcd).
