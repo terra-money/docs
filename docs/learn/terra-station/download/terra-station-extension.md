@@ -2,22 +2,29 @@
 
 ::::{grid} auto
 
+:::{grid-item}
 ```{button-link} terra-station-desktop.html
 :color: primary
 :outline:
 Desktop
 ```
+:::
 
+:::{grid-item}
 ```{button-link} terra-station-extension.html
 :color: primary
 Chrome extension
 ```
+:::
 
+:::{grid-item}
 ```{button-link} terra-station-mobile.html
 :color: primary
 :outline:
 Mobile
 ```
+:::
+
 ::::
 
 Complete this tutorial to install the Terra Station extension for the Google Chrome browser.
@@ -66,7 +73,7 @@ Congratulations! You have just created a Terra Station wallet.
 
 ## Receive tokens from an exchange
 
-1. Purchase your tokens using any exchange that supports Terra. To view a list of current exchanges, visit the [Integrations page](../../ecosystem/integrations.md#exchanges)
+1. Purchase your tokens using any exchange that supports Terra. To view a list of current exchanges, visit the [Integrations page](../../../ecosystem/integrations.md#exchanges)
 
 1. Withdraw any token supported by the Terra network from your exchange. Every exchange is different. Please visit your exchange's web page for guides on how to withdraw tokens. Use the following steps as a generic guide.
 

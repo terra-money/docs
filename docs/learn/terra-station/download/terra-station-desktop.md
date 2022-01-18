@@ -2,22 +2,29 @@
 
 ::::{grid} auto
 
+:::{grid-item}
 ```{button-link} terra-station-desktop.html
 :color: primary
 Desktop
 ```
+:::
 
+:::{grid-item}
 ```{button-link} terra-station-extension.html
 :color: primary
 :outline:
 Chrome extension
 ```
+:::
 
+:::{grid-item}
 ```{button-link} terra-station-mobile.html
 :color: primary
 :outline:
 Mobile
 ```
+:::
+
 ::::
 
 This tutorial walks you through the process of using Terra Station, the official desktop wallet for Terra.

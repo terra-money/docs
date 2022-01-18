@@ -58,7 +58,7 @@ To prevent unnecessary proposals or abuse of the system, all governance proposal
 
     :::{tip}
     Before uploading any proposal, try to get community feedback on [the Terra Agora research forum](https://agora.terra.money).
-    Do not use text proposals to suggest parameter changes. For more information, visit the [Governance module reference page](../../../develop/terra-core/module-specifications/spec-governance.md).
+    Do not use text proposals to suggest parameter changes. For more information, visit the [Governance module reference page](../../../develop/module-specifications/spec-governance.md).
     :::
 
 4. Click **Next**.

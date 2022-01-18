@@ -6,7 +6,6 @@ Discover [how the Terra protocol works](protocol.md) and learn about [validators
 :hidden:
 terra-station/README
 protocol
-ecosystem/README
 fees
 glossary
 ```

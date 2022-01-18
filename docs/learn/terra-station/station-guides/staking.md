@@ -6,7 +6,7 @@ If this is your first time using Terra Station, follow the [Terra Station tutori
 
 ## Stake Luna
 
-Stake your Luna to a validator to start earning rewards. Before you stake, make sure you have Luna in your wallet. You can transfer Luna from an [exchange](#receive-tokens-from-an-exchange) or [swap coins](#swap-coins) you have for Luna.
+Stake your Luna to a validator to start earning rewards. Before you stake, make sure you have Luna in your wallet. You can transfer Luna from an [exchange](wallet.md) or [swap coins](wallet.md) you have for Luna.
 
 1. Open Terra Station and click **Staking**.
 

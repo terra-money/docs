@@ -141,7 +141,7 @@ A swap in Terra Station that uses the Terra protocol's market function. Market s
 
 To learn how to use the market swap feature in Terra station, visit [how to use Terra Station](./terra-station/station-guides/swap.md).
 
-For more information on fees, visit [Fees on Terra](./Fees.md).
+For more information on fees, visit [Fees on Terra](fees.md).
 
 ## Mint
 
@@ -231,13 +231,13 @@ The Terra protocol's blockchain network where all transactions take place.
 
 Crypto assets that track the price of fiat currency enabled by the Terra protocol. Users mint new Terra stablecoins by burning Luna. Stablecoins are named for their fiat counterparts. For example, the base Terra stablecoin tracks the price of the IMF’s SDR, named TerraSDR, or SDT. Other stablecoin denominations include TerraUSD or UST, and TerraKRW or  KRT. All Terra stablecoin denominations exist in the same pool.
 
-For more information, see [stablecoins](./protocol.md#stablecoin) in the description of the Terra protocol.
+For more information, see [stablecoins](protocol.md#stablecoins).
 
 ## Terra Station
 
 Terra's native wallet and platform for swaps, governance, and staking. In Station, you can send, receive, swap, and stake Terra coins. You can also participate in governance and vote on proposals.
 
-To learn how to install and get started using Terra Station, visit the [Terra Station tutorial](./terra-station/get-started/README.md).
+To learn how to install and get started using Terra Station, visit the [Terra Station tutorial](terra-station/download/README.md).
 
 To learn how to use the advanced features of Terra Station, visit the [Terra Station how-to guide](./terra-station/station-guides/wallet.md).
 
@@ -245,7 +245,7 @@ To learn how to use the advanced features of Terra Station, visit the [Terra Sta
 
 The command line interface for interacting with a Terra node.
 
-For more information on terrad, see [`terrad` guides](../develop/terrad/README.md).
+For more information on terrad, see [`terrad` guides](../develop/how-to/terrad/README.md).
 
 ## Terravaloper address
 
@@ -271,7 +271,7 @@ A fee added to every swap between Terra stablecoins (spot-trading). The rate var
 
 ## Tombstone
 
-To block a validator from participating in consensus or oracle voting. Tombstoned validators cannot rejoin the active set. 
+To block a validator from participating in consensus or oracle voting. Tombstoned validators cannot rejoin the active set.
 
 ## Total stake
 
