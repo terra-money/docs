@@ -8,7 +8,7 @@ Terra's Auth module extends the functionality from Cosmos SDK's `auth` module wi
 
 ## Gas Fee
 
-Like all transactions on the Terra blockchain, [`MsgSend`](./spec-bank.md#msgsend) and [`MsgMultiSend`](./spec-bank.md#msgmultisend) incur gas fees. These fees are determined by a validator's minimum gas price and the complexity of the transaction. More complex transactions incur higher fees. Gas fees are specified by the sender when a transaction is outbound. For more information on how gas is calculated, see [fees](../terrad/using-terrad/README.md#fees).
+Like all transactions on the Terra blockchain, [`MsgSend`](spec-bank.md#msgsend) and [`MsgMultiSend`](spec-bank.md#msgmultisend) incur gas fees. These fees are determined by a validator's minimum gas price and the complexity of the transaction. More complex transactions incur higher fees. Gas fees are specified by the sender when a transaction is outbound. For more information on how gas is calculated, see [fees](../how-to/terrad/using-terrad.md#fees).
 
 ## Parameters
 
