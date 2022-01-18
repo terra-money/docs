@@ -92,7 +92,7 @@ type Proposal struct {
 
 ```
 
-A `Proposal` is a data structure representing a petition for a change that is submitted to the blockchain alongside a deposit. Once its deposit reaches a certain value ([`MinDeposit`](#mindeposit)), the proposal is confirmed and voting opens. Bonded Luna holders can then send [`TxGovVote`]() transactions to vote on the proposal. Terra currently follows a simple voting scheme of 1 Bonded Luna = 1 Vote.
+A `Proposal` is a data structure representing a petition for a change that is submitted to the blockchain alongside a deposit. Once its deposit reaches a certain [`MinDeposit`](#mindeposit), the proposal is confirmed and voting opens. Bonded Luna holders can then send `TxGovVote` transactions to vote on the proposal. Terra currently follows a simple voting scheme of 1 Bonded Luna = 1 Vote.
 
 The `Content` on a proposal is the interface that contains the information about the `Proposal`, such as the `title`, `description`, and any notable changes. A `Content` type can be implemented by any module. The `ProposalRoute` of the `Content` returns a string which must be used to route the handler of the `Content` in the Governance keeper. This process allows the governance keeper to execute proposal logic implemented by any module. If a proposal passes, the handler is executed. Only if the handler is successful does the state get persisted and the proposal finally passes. Otherwise, the proposal is rejected.
 
@@ -158,7 +158,7 @@ type ParamChange struct {
 }
 ```
 
-::: {important}:
+::: {important}
 Parameter Change Proposals are actually located in the Params module, an internal module. It is shown here for your convenience.
 :::
 
@@ -178,7 +178,7 @@ Software upgrade proposals exist because they are inherited from the Cosmos SDK,
 
 `ProposalProcessingQueue` is a queue `queue[proposalID]` containing all the `ProposalID`s of proposals that reached `MinDeposit`. At the end of each block, all the proposals that have reached the end of their voting period are processed. To process a finished proposal, the application tallies the votes, computes the votes of each validator and checks if every validator in the validator set has voted. If the proposal is accepted, deposits are refunded. Finally, the proposal content `Handler` is executed.
 
-```go
+```GO
 for finishedProposalID in GetAllFinishedProposalIDs(block.Time)
 	proposal = load(Governance, <proposalID|'proposal'>) // proposal is a const key
 

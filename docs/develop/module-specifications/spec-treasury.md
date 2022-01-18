@@ -53,7 +53,7 @@ As of Columbus-5, all seigniorage is burned and no longer funds the community po
 ### Updating policies
 
 
-Both [Tax Rate](#tax-rate) and [Reward Weight](#reward-weight) are stored as values in the `KVStore` and can have their values updated through [governance proposals](#governance-proposals) after they have passed. The Treasury recalibrates each lever once per epoch to stabilize unit returns for Luna, ensuring predictable mining rewards from staking:
+Both [Tax Rate](#tax-rate) and [Reward Weight](#reward-weight) are stored as values in the `KVStore` and can have their values updated through [governance proposals](#proposals) after they have passed. The Treasury recalibrates each lever once per epoch to stabilize unit returns for Luna, ensuring predictable mining rewards from staking:
 
 - For tax rate, to ensure that unit-mining rewards do not stay stagnant, the treasury adds a [`MiningIncrement`](#miningincrement) so mining rewards increase steadily over time, as described in [k.updatetaxpolicy](#kupdatetaxpolicy).
 
@@ -70,7 +70,7 @@ A probationary period specified by the [`WindowProbation`](#windowprobation) pre
 
 ## Data
 
-### PolicyConstraints
+### Policy constraints
 
 ::: {admonition} Note
 :class: warning

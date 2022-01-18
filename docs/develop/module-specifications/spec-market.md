@@ -32,7 +32,7 @@ Terra uses a Constant Product market-making algorithm to ensure liquidity for Te
 
 With Constant Product, we define a value $CP$ set to the size of the Terra pool multiplied by a set **fiat value of Luna**, and ensure our market-maker maintains it as invariant during any swaps by adjusting the spread.
 
-::: warning Note:
+::: {note}
 Our implementation of Constant Product diverges from Uniswap's, as we use the fiat value of Luna instead of the size of the Luna pool. This nuance means changes in Luna's price don't affect the product, but rather the size of the Luna pool.
 :::
 
@@ -69,7 +69,7 @@ This mechanism ensures liquidity and acts as a low-pass filter, allowing for the
 
 1. The Market module receives [`MsgSwap`](#msgswap) message and performs basic validation checks.
 
-2. Calculate exchange rate $ask$ and $spread$ using [`k.ComputeSwap()`](#k-computeswap).
+2. Calculate exchange rate $ask$ and $spread$ using [`k.ComputeSwap()`](#functions).
 
 3. Update `TerraPoolDelta` with [`k.ApplySwapToPool()`](#k-applyswaptopool).
 
@@ -97,7 +97,7 @@ Upon successful completion of Terra<>Luna swaps, a portion of the coins to be cr
 Seigniorage used to be an important part of the protocol, but is no longer necessary. As of Columbus-5, all seigniorage is burned, and the community pool is no longer funded. Swap fees are used instead of seigniorage as ballot rewards for the exchange rate oracle. The following information is kept as reference:
 :::
 
-When Luna swaps into Terra, the Luna recaptured by the protocol was called seigniorage -- the value generated from issuing new Terra. The total seigniorage at the end of each epoch was calculated and reintroduced into the economy as ballot rewards for the exchange rate oracle and to the community pool by the Treasury module, described more fully [here](spec-treasury.md#k-settleseigniorage). As of Columbus-5, all seigniorage is burned, and the community pool is no longer funded. Swap fees are used as ballot rewards for the exchange rate oracle.
+When Luna swaps into Terra, the Luna recaptured by the protocol was called seigniorage -- the value generated from issuing new Terra. The total seigniorage at the end of each epoch was calculated and reintroduced into the economy as ballot rewards for the exchange rate oracle and to the community pool by the Treasury module, described more fully [here](spec-treasury.md). As of Columbus-5, all seigniorage is burned, and the community pool is no longer funded. Swap fees are used as ballot rewards for the exchange rate oracle.
 
 ## State
 
@@ -152,7 +152,7 @@ This function detects the swap type from the offer and ask denominations and ret
 
 If the `offerCoin`'s denomination is the same as `askDenom`, this will raise `ErrRecursiveSwap`.
 
-::: warning Note:
+::: {note}
 `k.ComputeSwap()` uses `k.ComputeInternalSwap()` internally, which only contains the logic for calculating proper ask coins to exchange, and not the Constant Product spread.
 :::
 

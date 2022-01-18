@@ -83,7 +83,7 @@ To restrict the grantee when values for `spend_limit` and `expiration` are blank
 
 `PeriodicAllowance` is a repeating fee allowance for a specified period and for a specified maximum number of tokens that can spent within that period.
 
-::: details `PeriodicAllowance` code
+::: {dropdown} `PeriodicAllowance` code
 
 ```
 // PeriodicAllowance extends Allowance to allow for both a maximum cap,
@@ -149,7 +149,7 @@ message Grant {
 
 To run transactions that use fee grant from the CLI, specify the `FeeAccount` flag followed by the granter's account address. When this flag is set, `clientCtx` appends the granter's account address.
 
-::: details `FeeAccount` code
+::: {dropdown} `FeeAccount` code
 
 ```
 if clientCtx.FeeGranter == nil || flagSet.Changed(flags.FlagFeeAccount) {

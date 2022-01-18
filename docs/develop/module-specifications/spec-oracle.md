@@ -4,7 +4,7 @@ The Oracle module provides the Terra blockchain with an up-to-date and accurate 
 
 As price information is extrinsic to the blockchain, the Terra network relies on validators to periodically vote on the current Luna exchange rate, with the protocol tallying up the results once per `VotePeriod` and updating the on-chain exchange rate as the weighted median of the ballot converted Cross Exchange Rates using `ReferenceTerra`.
 
-::: warning NOTE
+::: {note}
 Since the Oracle service is powered by validators, you may find it interesting to look at the [Staking](spec-staking.md) module, which covers the logic for staking and validators.
 :::
 
@@ -70,8 +70,8 @@ Let $M$ be the weighted median, $\sigma$ be the standard deviation of the votes 
 
 ### Slashing
 
-::: danger
-Be sure to read this section carefully as it concerns potential loss of funds.
+::: {danger}
+Be sure to read this section carefully, as it concerns potential loss of funds.
 :::
 
 A `VotePeriod` during which either of the following events occur is considered a "miss":
@@ -88,7 +88,7 @@ A validator may abstain from voting by submitting a non-positive integer for the
 
 ## Message Types
 
-::: warning NOTE
+::: {note}
 The control flow for vote-tallying, Luna exchange rate updates, ballot rewards and slashing happens at the end of every `VotePeriod`, and is found at the [end-block ABCI function](#end-block) rather than inside message handlers.
 :::
 
@@ -138,7 +138,7 @@ type MsgExchangeRateVote struct {
 
 Validators may also elect to delegate voting rights to another key to prevent the block signing key from being kept online. To do so, they must submit a `MsgDelegateFeedConsent`, delegating their oracle voting rights to a `Delegate` that sign `MsgExchangeRatePrevote` and `MsgExchangeRateVote` on behalf of the validator.
 
-::: danger
+::: {danger}
 Delegate validators will likely require you to deposit some funds (in Terra or Luna) which they can use to pay fees, sent in a separate `MsgSend`. This agreement is made off-chain and not enforced by the Terra protocol.
 :::
 
@@ -278,7 +278,7 @@ At the end of every block, the Oracle module checks whether it's the last block 
 
 8. Clear all prevotes (except ones for the next `VotePeriod`) and votes from the store
 
-::: details Events
+::: {dropdown} Events
 
 | Type                 | Attribute Key | Attribute Value |
 | -------------------- | ------------- | --------------- |

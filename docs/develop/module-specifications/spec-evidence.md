@@ -187,7 +187,7 @@ The stake that contributed to the infraction is slashed, even if it has been red
 
 Additionally, the validator is permanently jailed and tombstoned so that the validator cannot re-enter the validator set again.
 
-::: details `Equivocation` evidence handling code
+::: {dropdown} `Equivocation` evidence handling code
 
 ```go
 func (k Keeper) HandleEquivocationEvidence(ctx sdk.Context, evidence *types.Equivocation) {
