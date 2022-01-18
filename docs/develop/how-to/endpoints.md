@@ -7,7 +7,8 @@
 
 ## Public RPC endpoints
 
-:::danger Public endpoint warning
+::: {admonition} Public endpoint warning
+:class: danger
 Public RPC endpoints should only be used in development. For live dApps, use a private RPC endpoint from the list above or [set up your own endpoint](../../full-node/run-a-full-terra-node/system-config.md).
 :::
 

@@ -48,21 +48,21 @@ The template comes with several predefined helpers in `lib/index.js`. Use them t
 
 2. With the console open, increment the counter by running the following:
 
-```JavaScript
-await lib.increment()
-```
+   ```JavaScript
+   await lib.increment()
+   ```
 
-You can get the current count by using:
+   You can get the current count by using:
 
-```JavaScript
-await lib.getCount()
-```
+   ```JavaScript
+   await lib.getCount()
+   ```
 
 3. After incrementing once, `await lib.getCount()` will return:
 
-```json
-{ count: 1 }
-```
+   ```json
+   { count: 1 }
+   ```
 
 ## Front-end scaffolding
 
@@ -72,24 +72,24 @@ In the Terra Station Chrome extension, switch the network to Localterra.
 
 1. To use the front end, run the following commands in order. The Terrain sync-refs command copies your deployed contract addresses to the front-end part of the codebase.
 
-```
-terrain sync-refs
-cd frontend
-npm install
-npm start
-```
+   ```
+   terrain sync-refs
+   cd frontend
+   npm install
+   npm start
+   ```
 
 2. Import the following seed phrase in Terra Station to access the sole validator on the LocalTerra network and gain funds to get started with smart contracts:
 
-```
-satisfy adjust timber high purchase tuition stool faith fine install that you unaware feed domain license impose boss human eager hat rent enjoy dawn
-```
+   ```
+   satisfy adjust timber high purchase tuition stool faith fine install that you unaware feed domain license impose boss human eager hat rent enjoy dawn
+   ```
 
 3. With Localterra selected in Terra Station and the local seed phrase imported, you can now increment and reset the counter from the front end.
 
 ### Demo
 
-![](../../../assets/img/tut_counter.gif)
+![](/img/tut_counter.gif)
 
 ## Advanced usage
 

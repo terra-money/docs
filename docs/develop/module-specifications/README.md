@@ -1,4 +1,4 @@
-# Terra Core modules
+# Terra Core modules <img src="/img/icon_core.svg" height="40px">
 
 ```{toctree}
 :hidden:
@@ -62,7 +62,7 @@ The node software is organized into the following individual modules that implem
    :class: warning
    As of proposals [43](https://station.terra.money/proposal/43) and [172](https://station.terra.money/proposal/172), all seigniorage is burned, and the stability fee tax rate is zero.  
    :::
-   
+
 9. [`gov`](spec-governance.md): on-chain governance
     - proposals
     - parameter updating
