@@ -16,13 +16,9 @@ Passive distribution means that validators and delegators need to manually colle
 
 Collected rewards are pooled globally and distrubuted to validators and delegators. Each validator has the opportunity to charge delegators commission on the rewards collected on behalf of the delegators. Fees are collected directly into a global reward pool and a validator proposer-reward pool. Due to the nature of passive accounting, whenever changes to parameters which affect the rate of reward distribution occur, withdrawal of rewards must also occur.
 
-### community pool
+### Community pool
 
-The community pool is a reserve of tokens designated for funding projects that promote further adoption and stimulate growth for the Terra economy. The portion of seigniorage that is designated for ballot winners of the exchange rate oracle is called the [reward weight](spec-treasury.md#reward-weight), a value governed by the treasury. The rest of that seigniorage is dedicated to the community pool.
-
-:::{Important}
-As of Columbus-5, all seigniorage is burned, and the community pool no longer receives funding.
-:::
+The community pool is a reserve of tokens designated for funding projects that promote further adoption and stimulate growth for the Terra economy. The comminuty pool used to be funded by seigniorage. As of Columbus-5, all seigniorage is burned, and the community pool no longer receives funding.
 
 ## State
 
