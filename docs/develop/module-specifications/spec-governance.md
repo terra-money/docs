@@ -1,4 +1,4 @@
-# Governance
+# Governance <img src="/img/Governance.svg" height="40px">
 
 :::{Important}
 Terra's Governance module inherits from Cosmos SDK's [`gov`](https://docs.cosmos.network/master/modules/gov/) module. This document is a stub, and covers mainly important Terra-specific notes about how it is used.
@@ -6,7 +6,9 @@ Terra's Governance module inherits from Cosmos SDK's [`gov`](https://docs.cosmos
 
 Governance is the process through which participants within the Terra network can effect change on the protocol by submitting petitions known as "proposals," arriving at a popular consensus when a threshold amount of support has been reached for it. The proposal structure is versatile and allows for holders of Luna (those who have an interest in the long-term viability of the network) to voice their opinion on both blockchain parameter updates as well as future development of the Terra protocol.
 
-Check the [Governance section of the `terrad` Reference](../terrad/using-terrad/subcommands.md#tx-gov-submit-proposal) to see examples of how to participate in the Governance process.
+Check the [Governance section of the `terrad` Reference](../how-to/terrad/subcommands.md#tx-gov-submit-proposal) to see examples of how to participate in the Governance process.
+
+To learn how to vote with your staked Luna or submit proposals, visit the [Terra Station governance guide](../../learn/terra-station/station-guides/governance.md).
 
 ## Concepts
 
