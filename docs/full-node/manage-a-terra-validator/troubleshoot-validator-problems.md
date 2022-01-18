@@ -115,4 +115,4 @@ The LCD the voter is connecting to might be running on a different network than 
 
 Ensure you specify the LCD for the same network to which your node is connecting.
 
-If you run a [local LCD](../../develop/start-lcd.md) (for example, localhost:1317), ensure your LCD is connecting to the same node.
+If you run a [local LCD](../../develop/how-to/start-lcd.md) (for example, localhost:1317), ensure your LCD is connecting to the same node.

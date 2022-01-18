@@ -8,8 +8,6 @@ Validators and their delegators earn the following fees:
 
 - [Gas](../../learn/fees.md#gas): Fees added on to each transaction to avoid spamming and pay for computing power. Validators set minimum gas prices and reject transactions that have implied gas prices below this threshold.
 
-- [Stability fees](../../learn/fees.md#stability-fee): Fees added on to any Terra stablecoin transaction (excluding [market swaps](../../learn/glossary.md#market-swap)) to provide stability in the market, capped at 1SDT. The fee rate is variable and called the tax rate.
-
 - **Swap fees**: The fee for swapping Terra stablecoin denominations is called a [Tobin tax](../../learn/fees.md#tobin-tax). Exchanges between Terra and Luna are subject to a [spread fee](../../learn/fees.md#spread-fee).
 
 For more information on fees, visit the [fee page](../../learn/fees.md).
