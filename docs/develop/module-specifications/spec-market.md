@@ -91,11 +91,13 @@ Upon successful completion of Terra<>Luna swaps, a portion of the coins to be cr
 
 ### Seigniorage
 
-When Luna swaps into Terra, the Luna recaptured by the protocol is called seigniorage -- the value generated from issuing new Terra. The total seigniorage at the end of each epoch is calculated and reintroduced into the economy as ballot rewards for the exchange rate oracle and to the community pool by the Treasury module, described more fully [here](/Reference/Terra-core/Module-specifications/spec-treasury.html#k-settleseigniorage).
+::: {admonition} All seigniorage is Burned
+:class: Caution
 
-::: warning Note:
-As of Columbus-5, all seigniorage is burned, and the community pool is no longer funded. Swap fees are used as ballot rewards for the exchange rate oracle.
+Seigniorage used to be an important part of the protocol, but is no longer necessary. As of Columbus-5, all seigniorage is burned, and the community pool is no longer funded. Swap fees are used instead of seigniorage as ballot rewards for the exchange rate oracle. The following information is kept as reference:
 :::
+
+When Luna swaps into Terra, the Luna recaptured by the protocol was called seigniorage -- the value generated from issuing new Terra. The total seigniorage at the end of each epoch was calculated and reintroduced into the economy as ballot rewards for the exchange rate oracle and to the community pool by the Treasury module, described more fully [here](spec-treasury.md#k-settleseigniorage). As of Columbus-5, all seigniorage is burned, and the community pool is no longer funded. Swap fees are used as ballot rewards for the exchange rate oracle.
 
 ## State
 
@@ -216,4 +218,4 @@ The minimum spread charged on Terra<>Luna swaps to prevent leaking value from fr
 - type: `Dec`
 - default: 0.35%
 
-An additional fee for swapping between Terra currencies (spot-trading). The rate varies, depending on the denomination. For example, while the rate for most denominations is .35%, the rate for MNT is 2%. To see the rates, [query the oracle](/Reference/terrad/subcommands.html#query-oracle-tobin-taxes).
+An additional fee for swapping between Terra currencies (spot-trading). The rate varies, depending on the denomination. For example, while the rate for most denominations is .35%, the rate for MNT is 2%. To see the rates, [query the oracle](https://lcd.terra.dev/terra/oracle/v1beta1/denoms/tobin_taxes).
