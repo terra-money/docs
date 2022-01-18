@@ -9,7 +9,7 @@ The minting mechanism was designed to:
 - Allow for a flexible inflation rate determined by market demand targeting a particular bonded-stake ratio.
 - Affect a balance between market liquidity and staked supply.
 
-To best determine the appropriate market rate for inflation rewards, a moving change rate is used. The moving change rate mechanism ensures that if the percentage bonded is either over or under the goal percentage-bonded, the inflation rate will adjust to further incentivize or disincentivize being bonded, respectively. Setting the goal percentage-bonded at less than 100% encourages the network to maintain some nonstaked tokens, which helps to provide some liquidity.
+To best determine the appropriate market rate for inflation rewards, a moving change rate is used. The moving change rate mechanism ensures that if the percentage bonded is either over or under the goal percentage-bonded, the inflation rate will adjust to further incentivize or disincentivize being bonded, respectively. Setting the goal percentage-bonded at less than 100% encourages the network to maintain some non-staked tokens, which helps to provide some liquidity.
 
 It works in the following ways:
 
