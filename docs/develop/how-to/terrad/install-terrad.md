@@ -2,7 +2,7 @@
 
 `terrad` is the command-line interface and daemon that connects to Terra and enables you to interact with the Terra blockchain. Terra core is the official Golang reference implementation of the Terra node software.
 
-This guide is for developers who want to install `terrad` and interact with Terra core without running a full node. If you want to run a full node or join a network, visit [](../../full-node/run-a-full-terra-node/README.md).
+This guide is for developers who want to install `terrad` and interact with Terra core without running a full node. If you want to run a full node or join a network, visit [](../../../full-node/run-a-full-terra-node/README.md).
 
 ### Prerequisites
 
@@ -75,4 +75,4 @@ export PATH=$PATH:$(go env GOPATH)/bin
 
 With `terrad` installed, you can set up a local testing environment using [LocalTerra](../localterra/README.md).
 
-For more information on `terrad` commands and usage, see [](using-terrad/README.md).
+For more information on `terrad` commands and usage, see [](using-terrad.md).

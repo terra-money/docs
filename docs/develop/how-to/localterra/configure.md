@@ -5,7 +5,7 @@ The majority of LocalTerra is implemented through a `docker-compose.yml` file, m
 Out of the box, LocalTerra comes preconfigured with opinionated settings such as:
 
 - ports defined for RPC (26657), LCD (1317) and FCD (3060)
-- standard [accounts](#accounts)
+- standard [accounts](accounts.md)
 
 ## Modify node configuration
 

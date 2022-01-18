@@ -102,7 +102,7 @@ terrad migrate /genesis.json --chain-id=testnet --genesis-time=2020-04-19T17:00:
 
 ## `query`
 
-Manages queries. For a list of syntax and subcommands, see the [query subcommands](subcommands.md#query-account).
+Manages queries. For a list of syntax and subcommands, see the [query subcommands](subcommands.md#query-authz-grants).
 
 ## `rosetta`
 
@@ -133,7 +133,7 @@ terrad status
 
 ## `tendermint`
 
-Manages the Tendermint protocol. For a list of subcommands, see []()
+Manages the Tendermint protocol.
 
 ## `testnet`
 

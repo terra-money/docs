@@ -8,7 +8,7 @@ To query the state and send transactions, you must connect to a node, which is t
 
 ### Running your own full node
 
-Running your own full node is the most secure option, but it comes with relatively high resource requirements. For more information about the requirements to run your own full node and a tutorial for installing `terrad`, see [installation](../../../full-node/run-a-full-terra-node/build-terra-core.md). For a tutorial that explains how to connect to an existing Terra network, see [joining a network](../../../full-node/run-a-full-terra-node/build-terra-core.mdjoin-a-network.md).
+Running your own full node is the most secure option, but it comes with relatively high resource requirements. For more information about the requirements to run your own full node and a tutorial for installing `terrad`, see [installation](../../../full-node/run-a-full-terra-node/build-terra-core.md). For a tutorial that explains how to connect to an existing Terra network, see [joining a network](../../../full-node/run-a-full-terra-node/join-a-network.md).
 
 ### Connecting to a remote full node
 
@@ -71,7 +71,7 @@ terrad tx bank send \
     --chain-id=<chain-id> \
     --dry-run
 ```
-:::details Example: simulate a KRW transfer:
+::: {dropdown} Example: simulate a KRW transfer:
 ```bash
 terrad tx bank send \
     terra1ru2ySENDER-EXAMPLEtf9cva9kp33h0jnsm9ss \  
@@ -103,7 +103,7 @@ terrad tx sign \
     unsignedSendTx.json > signedSendTx.json
 ```
 
-:::details Example: Sign an unsigned transaction
+::: {dropdown} Example: Sign an unsigned transaction
 ```bash
 terrad tx sign \
     --chain-id=bombay-12 \

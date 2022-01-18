@@ -10,6 +10,7 @@ terrad/README
 localterra/README
 sign-with-multisig
 start-lcd
+endpoints.md
 ```
 
 :::::::{grid} 2 2 2 3
