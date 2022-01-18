@@ -1,8 +1,10 @@
-# Before Sync
+# Sync
+
+## Before Sync
 
 Certain files will need to be absent or deleted prior to download. A quicksync replaces blockchain data with a customized snapshot. For most use cases a "pruned" version is adequate. Pruned  versions will have certain transactions removed from the archive to make node performance smoother. If you are running a node for archival purposes, you will want an "archive" or "default" download.
 
-After choosing  the appropriate download type, examine your node and ensure  that `.terra/data` is empty
+After choosing  the appropriate download type, examine your node and ensure  that `.terra/data` is empty.
 
  **Example**:
 ```bash
@@ -19,9 +21,9 @@ Example of a removed private key:
 ```
 :::
 
-If you have an address book downloaded, you may keep it. Otherwise, you will need to download the [appropriate addressbook](https://docs.terra.money/How-to/Run-a-full-Terra-node/Joining-a-network.html#_2-download-genesis-file-and-address-book) prior to running  `terrad start`. 
+If you have an address book downloaded, you may keep it. Otherwise, you will need to download the [appropriate addressbook](https://docs.terra.money/How-to/Run-a-full-Terra-node/Joining-a-network.html#_2-download-genesis-file-and-address-book) prior to running  `terrad start`.
 
-# During Sync
+## During Sync
 
 After [Joining a public network](join-a-network.md#join-a-public-network), your node will begin to sync.
 
@@ -84,12 +86,12 @@ The archived snapshot contains the state and transactions of the network, which 
    lz4 -d bombay-12-default.20220107.0510.tar.lz4
    ```
 3. Unpack the `.tar` archive into `~/.terra`. Its contents must replace `~/.terra/data/`:
-
    ```bash
    tar -xvf bombay-12-default.20220107.0510.tar
    ```
 
-Due to the size of the network, this may take some time.
+   Due to the size of the network, this may take some time.  
+
 
 4. After the snapshot is completely unpacked, start `terrad`:
 
