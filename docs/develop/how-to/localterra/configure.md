@@ -1,6 +1,6 @@
 # Configure LocalTerra
 
-The majority of LocalTerra is implemented through a `docker-compose.yml` file, making it easily customizable. You can use LocalTerra as a starting template point for setting up your own local Terra testnet with Docker containers.
+The majority of LocalTerra is implemented through a `docker-compose.yml` file, making it easily customizable. You can use LocalTerra as a starting point for setting up your own local Terra testnet with Docker containers.
 
 Out of the box, LocalTerra comes preconfigured with opinionated settings such as:
 
