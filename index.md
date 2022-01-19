@@ -107,3 +107,8 @@ docs/full-node/README
 :hidden:
 docs/ecosystem/README
 ```
+
+```{toctree}
+:hidden:
+Spacecamp <docs/spacecamp/README.md>
+```

@@ -20,7 +20,7 @@ Use this tutorial to setup Terrain in 5 minutes.
 :::
 
 :::{grid-item-card}
-:link: smart-contracts/README.html
+:link: using-terrain-localterra.html
 :class-card: sd-text-center sd-shadow-md sd-rounded-3
 ```{image} /img/LocalTerra.svg
 :class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
@@ -29,7 +29,7 @@ Use this tutorial to setup Terrain in 5 minutes.
 :::
 
 :::{grid-item-card}
-:link: smart-contracts/README.html
+:link: using-terrain-testnet.html
 :class-card: sd-text-center sd-shadow-md sd-rounded-3
 ```{image} /img/icon_node.svg
 :class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
@@ -44,5 +44,7 @@ Use this tutorial to setup Terrain in 5 minutes.
 ```{toctree}
 :maxdepth: 1
 initial-setup
-using-terrain
+using-terrain-localterra
+using-terrain-testnet
+
 ```

@@ -1,18 +1,26 @@
-# Using Terrain with Bombay
+# Use Terrain with the testnet
 
-## Setting up Bombay wallet
+The Bombay testnet is used for testing transactions on the Terra network.
 
-First create a new wallet using the Terra station extension. It's recommended to name this wallet bombay or testnet so it's easy to remember that it's only used for bombay.
+## Prerequisites
 
-After creating a bombay wallet and storing the seed phrase you can request funds from the testnet faucet: 
+- [Install the Terra Station browser extension](../../../learn/terra-station/download/terra-station-extension.md)
+
+## 1. Create a Bombay wallet
+
+[Create a new wallet](../../../learn/terra-station/download/terra-station-extension.md#create-a-wallet) using the Terra Station extension. It's recommended to name this wallet Bombay or testnet so it's easy to remember that it's only used for Bombay.
+
+After creating a Bombay wallet and storing the seed phrase, request funds from the testnet faucet:
 
 https://faucet.terra.money
 
+:::{danger}
 Make sure you have your seed phrase stored somewhere since you will need it to complete this tutorial.
+:::
 
-## Scaffold dapp
+## 2. Scaffold your dApp
 
-With Terrain installed you can now scaffold your new application:
+Scaffold your new application:
 
 ```sh
 terrain new my-terra-dapp
@@ -20,7 +28,7 @@ cd my-terra-dapp
 npm install
 ```
 
-## Project structure
+### Project structure
 
 The following structure shows your scaffolded project:
 
@@ -37,26 +45,24 @@ The following structure shows your scaffolded project:
 └── refs.terrain.json      # Deployed code and contract references.
 ```
 
-## Testnet configuration
+## 3. Configure the testnet
 
-Before deploying we need to teach Terrain how to access our bombay wallet. To do this you'll need to modify `keys.terrain.js` in the generated project.
+Before deploying we need to teach Terrain how to access our Bombay wallet. To do this you'll need to modify `keys.terrain.js` in the generated project.
 
-Modify the configuration to look like this: 
+Modify the configuration and input your seed phrase to look like this:
 
 ```
 module.exports = {
   bombay: {
     mnemonic:
-      "SEED_GOES_HERE",
+      "PLACE_YOUR_BOMBAY_SEED_PHRASE_HERE",
   },
 };
 ```
 
-Make sure to replace `SEED_GOES_HERE` with the seed phrase you generated in the Initial setup tutorial.
+## 4. Deploy
 
-## Deployment
-
-To deploy the application, run the following command: 
+To deploy the application, run the following command:
 
 ```sh
 terrain deploy counter --signer bombay --network testnet
@@ -64,68 +70,67 @@ terrain deploy counter --signer bombay --network testnet
 
 The deploy command performs the following steps automatically:
 
-* Builds the counter smart contract
-* Optimizes the counter smart contract
-* Uploads counter smart contract to LocalTerra
-* Instantiates the deployed smart contract
+* Builds the counter smart contract.
+* Optimizes the counter smart contract.
+* Uploads counter smart contract to LocalTerra.
+* Instantiates the deployed smart contract.
 
-:::warning Warning
-If you get the following error: 
+:::{warning}
+If you get the following error:
 
-```
-CLIError: account sequence mismatch, expected 1, got 0: incorrect account sequence
-```
+   ```
+   CLIError: account sequence mismatch, expected 1, got 0: incorrect account sequence
+   ```
 
 Wait a few seconds then try the deploy again.
 :::
 
-## Interacting with the deployed contract
+## 5. Interact with the deployed contract
 
-The template comes with several predefined helpers in `lib/index.js`. Use them to start interacting with your smart contract:
+The Terrain template comes with several predefined helpers in `lib/index.js`. Use them to start interacting with your smart contract:
 
 1. Run `terrain console --network testnet`.
 
 2. With the console open, increment the counter by running the following:
 
-```JavaScript
-await lib.increment(wallets.bombay);
-```
+   ```JavaScript
+   await lib.increment(wallets.bombay);
+   ```
 
-Make sure to pass your bombay wallet to the increment command. `terrain console` makes wallets specified in `keys.terrain.js` available in the `wallets` object.
+   Make sure to pass your Bombay wallet to the increment command. `terrain console` makes wallets specified in `keys.terrain.js` available in the `wallets` object.
 
-You can get the current count by using:
+   You can get the current count by using:
 
-```JavaScript
-await lib.getCount()
-```
+   ```JavaScript
+   await lib.getCount()
+   ```
 
 3. After incrementing once, `await lib.getCount()` will return:
 
-```JSON
-{ count: 1 }
-```
+   ```JSON
+   { count: 1 }
+   ```
 
-## Front-end scaffolding
+## 6. Front-end scaffolding
 
 Terrain also scaffolds a very simple frontend.
 
-In the Terra Station Chrome extension, switch the network to Testnet.
+1. In the Terra Station Chrome extension, [switch the network to `testnet`](../../../learn/terra-station/station-guides/testnet.md).
 
-1. To use the front end, run the following commands in order. The terrain sync-refs command copies your deployed contract addresses to the front-end part of the codebase.
+2. To use the front end, run the following commands in order. The terrain sync-refs command copies your deployed contract addresses to the front-end part of the codebase.
 
-```
-terrain sync-refs
-cd frontend
-npm install
-npm start
-```
+   ```
+   cd frontend
+   npm install
+   npm start
+   ```
 
-1. With Testnet selected in Terra Station you can now increment and reset the counter from the front end.
+3. With `testnet` selected in Terra Station you can now increment and reset the counter from the front end.
 
-### Demo
+## Demo
 
 ![](/img/tut_counter.gif)
 
 ## Advanced usage
 
-For more advanced use cases  like deploying to the testnet or mainnet, see [Terrain's readme](https://github.com/iboss-ptk/terrain#readme).
+For more advanced use cases such as deploying to the testnet or mainnet, see [Terrain's readme](https://github.com/iboss-ptk/terrain#readme).
