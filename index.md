@@ -33,7 +33,7 @@ Welcome to the official documentation for Terra, a decentralized financial infra
 :::
 
 :::{grid-item-card}
-:link: docs/ecosystem/README.md
+:link: docs/ecosystem/README.html
 :class-card: sd-text-center sd-shadow-md sd-rounded-3
 ```{image} /img/Ecosystem_ver1.svg
 :class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
