@@ -106,6 +106,11 @@ The following processes are executed during each block transition:
 
 8. Treasury: At the end of `epoch`, update indicators, burn seigniorage, and recalibrate monetary policy levers (tax-rate, reward-weight) for the next epoch.
 
+::: {admonition} Note
+:class: warning
+As of proposals [43](https://station.terra.money/proposal/43) and [172](https://station.terra.money/proposal/172), all seigniorage is burned, and the stability fee tax rate is zero.  
+:::
+
 9. Staking: The new set of active validators is determined from the top 130 Luna stakers. Validators that lose their spot within the set start the unbonding process.
 
 ## Conventions

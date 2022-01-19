@@ -818,6 +818,11 @@ terrad query staking validator terravaloper15h6vd5f0wqps26zjlwrc6chah08ryu4hzzdw
 
 ## `query treasury indicators`
 
+::: {admonition} Note
+:class: warning
+As of proposals [43](https://station.terra.money/proposal/43) and [172](https://station.terra.money/proposal/172), all seigniorage is burned, and the stability fee tax rate is fixed at zero. Although the Treasury module is no longer in use, the commands are kept for reference.
+:::
+
 Retrieves treasury indicators.
 
 **Syntax**
@@ -826,6 +831,11 @@ terrad query treasury indicators
 ```
 
 ## `query treasury params`
+
+::: {admonition} Note
+:class: warning
+As of proposals [43](https://station.terra.money/proposal/43) and [172](https://station.terra.money/proposal/172), all seigniorage is burned, and the stability fee tax rate is fixed at zero. Although the Treasury module is no longer in use, the commands are kept for reference.
+:::
 
 Retrieves the high-level settings for the treasury. For more information, see [treasury parameters](../../module-specifications/spec-treasury.md#parameters).
 
@@ -838,27 +848,32 @@ The parameters are returned in the following format:
 
 ```yaml
 tax_policy:
-  ratemin: "0.000500000000000000"
-  ratemax: "0.010000000000000000"
+  ratemin: "0.00000000000000000"
+  ratemax: "0.00000000000000000"
   cap:
     denom: usdr
-    amount: "1000000"
-  changeratemax: "0.000250000000000000"
+    amount: "000000"
+  changeratemax: "0.0000000000000000"
 reward_policy:
-  ratemin: "0.050000000000000000"
-  ratemax: "0.500000000000000000"
+  ratemin: "0.00000000000000000"
+  ratemax: "0.00000000000000000"
   cap:
     denom: unused
     amount: "0"
-  changeratemax: "0.025000000000000000"
-seigniorage_burden_target: "0.670000000000000000"
-mining_increment: "1.070000000000000000"
+  changeratemax: "0.0000000000000000"
+seigniorage_burden_target: "0.0000000000000000"
+mining_increment: "0.00000000000000000"
 window_short: 4
 window_long: 52
 window_probation: 12
 ```
 
 ## `query treasury reward-weight`
+
+::: {admonition} Note
+:class: warning
+As of proposals [43](https://station.terra.money/proposal/43) and [172](https://station.terra.money/proposal/172), all seigniorage is burned, and the stability fee tax rate is fixed at zero. Although the Treasury module is no longer in use, the commands are kept for reference.
+:::
 
 Retrieves the reward weight of the current epoch. The reward weight is the portion of seigniorage that is designated as ballot rewards for the winners of exchange-rate oracle.
 
@@ -869,6 +884,11 @@ terrad query treasury reward-weight
 
 ## `query treasury seigniorage-proceeds`
 
+::: {admonition} Note
+:class: warning
+As of proposals [43](https://station.terra.money/proposal/43) and [172](https://station.terra.money/proposal/172), all seigniorage is burned, and the stability fee tax rate is fixed at zero. Although the Treasury module is no longer in use, the commands are kept for reference.
+:::
+
 Retrieves the amount of seigniorage denominated in uluna in the current epoch.
 
 **Syntax**
@@ -878,6 +898,11 @@ terrad query treasury seigniorage-proceeds
 
 ## `query treasury tax-cap`
 
+::: {admonition} Note
+:class: warning
+As of proposals [43](https://station.terra.money/proposal/43) and [172](https://station.terra.money/proposal/172), all seigniorage is burned, and the stability fee tax rate is fixed at zero. This command is here for reference.
+:::
+
 Retrieves the current stability tax cap of the specified denomination. Stability fees are capped at some fixed amount of SDT to avoid penalizing large transactions.
 
 **Syntax**
@@ -885,12 +910,18 @@ Retrieves the current stability tax cap of the specified denomination. Stability
 terrad query treasury tax-cap <denomination>
 ```
 
+
 **Example**
 ```bash
 terrad query treasury tax-cap ukrw
 ```
 
 ## `query treasury tax-caps`
+
+::: {admonition} Note
+:class: warning
+As of proposals [43](https://station.terra.money/proposal/43) and [172](https://station.terra.money/proposal/172), all seigniorage is burned, and the stability fee tax rate is fixed at zero. Although the Treasury module is no longer in use, the commands are kept for reference.
+:::
 
 Retrieves the current stability tax cap of all assets.
 
@@ -901,6 +932,11 @@ terrad query treasury tax-caps
 
 ## `query treasury tax-proceeds`
 
+::: {admonition} Note
+:class: warning
+As of proposals [43](https://station.terra.money/proposal/43) and [172](https://station.terra.money/proposal/172), all seigniorage is burned, and the stability fee tax rate is fixed at zero. Although the Treasury module is no longer in use, the commands are kept for reference.
+:::
+
 Retrieves the cumulative tax proceeds.
 
 **Syntax**
@@ -909,6 +945,11 @@ terrad query treasury tax-proceeds
 ```
 
 ## `query treasury tax-rate`
+
+::: {admonition} Note
+:class: warning
+As of proposals [43](https://station.terra.money/proposal/43) and [172](https://station.terra.money/proposal/172), all seigniorage is burned, and the stability fee tax rate is fixed at zero. Although the Treasury module is no longer in use, the commands are kept for reference.
+:::
 
 Retrieves the stability tax rate of the current epoch.
 
@@ -1286,6 +1327,11 @@ where `proposal.json` contains the following information:
 ```
 
 ### Tax-rate and reward-weight update proposals
+
+::: {admonition} Note
+:class: warning
+As of proposals [43](https://station.terra.money/proposal/43) and [172](https://station.terra.money/proposal/172), all seigniorage is burned, and the stability fee tax rate is fixed at zero. Although the Treasury module is no longer in use, the commands are kept for reference.
+:::
 
 Tax rate and reward weight are important monetary policy levers handled by the [`Treasury`](../../module-specifications/spec-treasury.md) module to modulate miner incentives toward stable demand and steady growth. Usually, they are automatically calibrated once per epoch by the protocol. However, they can be changed at any time, if an update proposal gets passed with enough supporters.
 
