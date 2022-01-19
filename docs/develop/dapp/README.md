@@ -11,7 +11,7 @@ Use these guides to setup your environment and build a dApp. If this is your fir
 :gutter: 3
 
 :::{grid-item-card}
-:link: quick-start/initial-setup.html
+:link: quick-start/README.html
 :class-card: sd-text-center sd-shadow-md sd-rounded-3
 ```{image} /img/terrain.png
 :class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
