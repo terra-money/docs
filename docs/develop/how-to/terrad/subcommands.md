@@ -820,7 +820,7 @@ terrad query staking validator terravaloper15h6vd5f0wqps26zjlwrc6chah08ryu4hzzdw
 
 ::: {admonition} Note
 :class: warning
-As of proposals [43](https://station.terra.money/proposal/43) and [172](https://station.terra.money/proposal/172), all seigniorage is burned, and the stability fee tax rate is fixed at zero. Although the Treasury module is no longer in use, the commands are kept for reference.
+As of proposals [43](https://station.terra.money/proposal/43) and [172](https://station.terra.money/proposal/172), all seigniorage is burned, and the stability fee tax rate is fixed at zero.Although the Treasury module is no longer effectively used, the commands are kept for reference.
 :::
 
 Retrieves treasury indicators.
@@ -834,7 +834,7 @@ terrad query treasury indicators
 
 ::: {admonition} Note
 :class: warning
-As of proposals [43](https://station.terra.money/proposal/43) and [172](https://station.terra.money/proposal/172), all seigniorage is burned, and the stability fee tax rate is fixed at zero. Although the Treasury module is no longer in use, the commands are kept for reference.
+As of proposals [43](https://station.terra.money/proposal/43) and [172](https://station.terra.money/proposal/172), all seigniorage is burned, and the stability fee tax rate is fixed at zero.Although the Treasury module is no longer effectively used, the commands are kept for reference.
 :::
 
 Retrieves the high-level settings for the treasury. For more information, see [treasury parameters](../../module-specifications/spec-treasury.md#parameters).
@@ -872,7 +872,7 @@ window_probation: 12
 
 ::: {admonition} Note
 :class: warning
-As of proposals [43](https://station.terra.money/proposal/43) and [172](https://station.terra.money/proposal/172), all seigniorage is burned, and the stability fee tax rate is fixed at zero. Although the Treasury module is no longer in use, the commands are kept for reference.
+As of proposals [43](https://station.terra.money/proposal/43) and [172](https://station.terra.money/proposal/172), all seigniorage is burned, and the stability fee tax rate is fixed at zero.Although the Treasury module is no longer effectively used, the commands are kept for reference.
 :::
 
 Retrieves the reward weight of the current epoch. The reward weight is the portion of seigniorage that is designated as ballot rewards for the winners of exchange-rate oracle.
@@ -886,7 +886,7 @@ terrad query treasury reward-weight
 
 ::: {admonition} Note
 :class: warning
-As of proposals [43](https://station.terra.money/proposal/43) and [172](https://station.terra.money/proposal/172), all seigniorage is burned, and the stability fee tax rate is fixed at zero. Although the Treasury module is no longer in use, the commands are kept for reference.
+As of proposals [43](https://station.terra.money/proposal/43) and [172](https://station.terra.money/proposal/172), all seigniorage is burned, and the stability fee tax rate is fixed at zero.Although the Treasury module is no longer effectively used, the commands are kept for reference.
 :::
 
 Retrieves the amount of seigniorage denominated in uluna in the current epoch.
@@ -920,7 +920,7 @@ terrad query treasury tax-cap ukrw
 
 ::: {admonition} Note
 :class: warning
-As of proposals [43](https://station.terra.money/proposal/43) and [172](https://station.terra.money/proposal/172), all seigniorage is burned, and the stability fee tax rate is fixed at zero. Although the Treasury module is no longer in use, the commands are kept for reference.
+As of proposals [43](https://station.terra.money/proposal/43) and [172](https://station.terra.money/proposal/172), all seigniorage is burned, and the stability fee tax rate is fixed at zero.Although the Treasury module is no longer effectively used, the commands are kept for reference.
 :::
 
 Retrieves the current stability tax cap of all assets.
@@ -934,7 +934,7 @@ terrad query treasury tax-caps
 
 ::: {admonition} Note
 :class: warning
-As of proposals [43](https://station.terra.money/proposal/43) and [172](https://station.terra.money/proposal/172), all seigniorage is burned, and the stability fee tax rate is fixed at zero. Although the Treasury module is no longer in use, the commands are kept for reference.
+As of proposals [43](https://station.terra.money/proposal/43) and [172](https://station.terra.money/proposal/172), all seigniorage is burned, and the stability fee tax rate is fixed at zero.Although the Treasury module is no longer effectively used, the commands are kept for reference.
 :::
 
 Retrieves the cumulative tax proceeds.
@@ -948,7 +948,7 @@ terrad query treasury tax-proceeds
 
 ::: {admonition} Note
 :class: warning
-As of proposals [43](https://station.terra.money/proposal/43) and [172](https://station.terra.money/proposal/172), all seigniorage is burned, and the stability fee tax rate is fixed at zero. Although the Treasury module is no longer in use, the commands are kept for reference.
+As of proposals [43](https://station.terra.money/proposal/43) and [172](https://station.terra.money/proposal/172), all seigniorage is burned, and the stability fee tax rate is fixed at zero.Although the Treasury module is no longer effectively used, the commands are kept for reference.
 :::
 
 Retrieves the stability tax rate of the current epoch.
@@ -1330,7 +1330,7 @@ where `proposal.json` contains the following information:
 
 ::: {admonition} Note
 :class: warning
-As of proposals [43](https://station.terra.money/proposal/43) and [172](https://station.terra.money/proposal/172), all seigniorage is burned, and the stability fee tax rate is fixed at zero. Although the Treasury module is no longer in use, the commands are kept for reference.
+As of proposals [43](https://station.terra.money/proposal/43) and [172](https://station.terra.money/proposal/172), all seigniorage is burned, and the stability fee tax rate is fixed at zero.Although the Treasury module is no longer effectively used, the commands are kept for reference.
 :::
 
 Tax rate and reward weight are important monetary policy levers handled by the [`Treasury`](../../module-specifications/spec-treasury.md) module to modulate miner incentives toward stable demand and steady growth. Usually, they are automatically calibrated once per epoch by the protocol. However, they can be changed at any time, if an update proposal gets passed with enough supporters.
