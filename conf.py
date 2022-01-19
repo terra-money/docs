@@ -86,7 +86,6 @@ myst_all_links_external = True
 panels_add_bootstrap_css = True
 nitpicky = True
 
-theme_extra_footer = """<div class="logos"><a href="https://discord.gg/e29HWwC2Mz" rel="noopener" target="_blank"><img src="/discord.svg" alt="link to Terra discord room"></a> <a href="https://medium.com/terra-money" rel="noopener" target="_blank"><img src="/medium.svg" alt="link to Terra medium"></a> <a href="https://twitter.com/terra_money" rel="noopener" target="_blank"><img src="/twitter.svg" alt="link to Terra twitter"></a> <a href="https://www.youtube.com/channel/UCoV1RXZ9ZBGcuu_PMTTlM0g" rel="noopener" target="_blank"><img src="/icon_youtube.png" alt="link to Terra youtube"></a> <a href="https://t.me/terra_announcements" rel="noopener" target="_blank"><img src="/icon_telegram.png" alt="link to Terra telegram room"></a></div>"""
 
 # Theme options
 html_theme_options = {
@@ -100,5 +99,4 @@ html_theme_options = {
     "logo_only": True,
     "show_toc_level": 3,
     "extra_navbar": False,
-    "extra_footer": theme_extra_footer,
 }
