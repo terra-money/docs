@@ -1,4 +1,16 @@
-# Using Terrain
+# Using Terrain with LocalTerra
+
+## Installing LocalTerra 
+
+To download LocalTerra, run the following command:
+
+```sh
+git clone --branch v0.5.2 --depth 1 https://github.com/terra-money/localterra
+cd localterra
+docker-compose up
+```
+
+## Scaffolding dapp
 
 With Terrain installed you can now scaffold your new application:
 
