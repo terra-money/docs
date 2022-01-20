@@ -98,5 +98,5 @@ html_theme_options = {
     "use_download_button": True,
     "logo_only": True,
     "show_toc_level": 3,
-    "extra_navbar": "<p>Your HTML</p>",
+    "extra_navbar": False,
 }
