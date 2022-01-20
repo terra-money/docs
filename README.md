@@ -9,21 +9,7 @@
   </h4>
 </div>
 
-## Stallings notes
 
-Using Docker since it's easier than configuring your local machine. 
-
-First build the local Docker container:
-
-```
-make docker-make
-```
-
-Then you're ready to build the site: 
-
-```
-make docker-build
-```
 
 ## Building
 
@@ -34,6 +20,26 @@ If you are contributing to the repository, make sure to fork this repo, and then
 ```bash
 git clone https://github.com/<your-username>/terra-docs
 ```
+
+## Test locally with Docker
+
+Using Docker is easier than configuring your local machine to build `sphinx`:
+
+First build the local Docker container:
+
+```
+make docker-make
+```
+
+Then you're ready to build the site:
+
+```
+make docker-build
+```
+
+You can view the site in your browser by navigating to `index.html` located in `<PATH_TO_CLONED_REPO>/_build/html/index.html`.
+
+Make sure to run `make docker-build` each time you save your changes to view them live.
 
 ### Adding an article
 
@@ -57,20 +63,6 @@ Notice how `README.md` serves as the default root of the folder.
 ### Editing the navigation
 
 To edit the navigation to include your new article, edit `/docs/.vuepress/config.js` and add your new article in the appropriate section in `themeConfig.sidebar`, following the other paths as examples.
-
-### Test it out locally
-
-Make sure you install all the dependencies:
-
-```bash
-npm install
-```
-
-Build and run locally (hot-reloading dev server):
-
-```bash
-npm run dev
-```
 
 ## Organization
 
@@ -116,9 +108,7 @@ Each module should be documented with the following subheaders:
 
 ## Built With
 
-- Vuepress
-- MathJax
-- Terra Docs custom theme
+- Sphinx Book Theme
 
 ## License
 
