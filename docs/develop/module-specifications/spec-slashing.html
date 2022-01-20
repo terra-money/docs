@@ -1,0 +1,1813 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Slashing &#8212; Terra Docs  documentation</title>
+    
+    <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  
+    
+    <link rel="stylesheet"
+      href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+    <link rel="preload" as="font" type="font/woff2" crossorigin
+      href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+    <link rel="preload" as="font" type="font/woff2" crossorigin
+      href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+    
+      
+  
+    
+    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" />
+    
+    <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script src="../../../_static/sphinx-book-theme.9d8b4a8b9bb19db25eeaddc40d639ba2.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    <link rel="shortcut icon" href="../../../_static/docs_favicon.ico"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Staking" href="spec-staking.html" />
+    <link rel="prev" title="Oracle" href="spec-oracle.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<div class="col-12 col-md-3 bd-sidebar site-navigation " id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../../_static/docs_logo.svg" class="logo" alt="logo">
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../learn/README.html">
+   Learn
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../learn/terra-station/README.html">
+     Terra Station
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../learn/terra-station/download/README.html">
+       Download
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+      <label for="toctree-checkbox-3">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../learn/terra-station/download/terra-station-desktop.html">
+         Terra Station desktop
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../learn/terra-station/download/terra-station-extension.html">
+         Terra Station extension
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../learn/terra-station/download/terra-station-mobile.html">
+         Terra Station mobile
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../learn/terra-station/station-guides/README.html">
+       Terra Station guides
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+      <label for="toctree-checkbox-4">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../learn/terra-station/station-guides/wallet.html">
+         Wallet
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../learn/terra-station/station-guides/staking.html">
+         Manage Staking
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../learn/terra-station/station-guides/swap.html">
+         Mint, burn, or swap
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../learn/terra-station/station-guides/governance.html">
+         Governance
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../learn/terra-station/station-guides/contracts.html">
+         Contracts
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../learn/terra-station/station-guides/testnet.html">
+         Testnet
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../learn/protocol.html">
+     About the Terra Protocol
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../learn/fees.html">
+     Fees on Terra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../learn/glossary.html">
+     Glossary
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../README.html">
+   Develop
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../dapp/README.html">
+     Build a dApp
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+    <label for="toctree-checkbox-6">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../dapp/quick-start/README.html">
+       5-minute quickstart guide
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+      <label for="toctree-checkbox-7">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../dapp/quick-start/initial-setup.html">
+         Initial setup
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../dapp/quick-start/using-terrain-localterra.html">
+         Use Terrain with LocalTerra
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../dapp/quick-start/using-terrain-testnet.html">
+         Use Terrain with the testnet
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../dapp/smart-contracts/README.html">
+       In-depth dApp guide
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+      <label for="toctree-checkbox-8">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../dapp/smart-contracts/build-terra-dapp.html">
+         Build a simple Terra dApp
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../dapp/smart-contracts/set-up-local-environment.html">
+         Environment Setup
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../dapp/smart-contracts/write-smart-contract.html">
+         Writing the Contract
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../dapp/smart-contracts/interact-with-smart-contract.html">
+         Interacting with the Contract
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../dapp/smart-contracts/manage-cw20-tokens.html">
+         CW20 Tokens
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../how-to/README.html">
+     Guides
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+    <label for="toctree-checkbox-9">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../how-to/terrad/README.html">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         terrad
+        </span>
+       </code>
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+      <label for="toctree-checkbox-10">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../how-to/terrad/install-terrad.html">
+         Install terrad
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../how-to/terrad/using-terrad.html">
+         Using terrad
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../how-to/terrad/commands.html">
+         Commands
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../how-to/terrad/subcommands.html">
+         Subcommands
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../how-to/localterra/README.html">
+       LocalTerra
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+      <label for="toctree-checkbox-11">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../how-to/localterra/install-localterra.html">
+         Install LocalTerra
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../how-to/localterra/configure.html">
+         Configure LocalTerra
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../how-to/localterra/integrations.html">
+         Integrations
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../how-to/localterra/accounts.html">
+         Accounts
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../how-to/sign-with-multisig.html">
+       Sign with a multisig account
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../how-to/start-lcd.html">
+       Start the light client daemon (LCD)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../how-to/endpoints.html">
+       RPC endpoints
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 current active has-children">
+    <a class="reference internal" href="README.html">
+     Terra Core modules
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+    <label for="toctree-checkbox-12">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l3">
+      <a class="reference internal" href="spec-auth.html">
+       Auth
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spec-authz.html">
+       AuthZ
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spec-bank.html">
+       Bank
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spec-capability.html">
+       Capability
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spec-distribution.html">
+       Distribution
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spec-evidence.html">
+       Evidence
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spec-feegrant.html">
+       Fee grant
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spec-governance.html">
+       Governance
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spec-market.html">
+       Market
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spec-mint.html">
+       Mint
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spec-oracle.html">
+       Oracle
+      </a>
+     </li>
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
+       Slashing
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spec-staking.html">
+       Staking
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spec-treasury.html">
+       Treasury
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spec-wasm.html">
+       WASM
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../sdks/README.html">
+     SDKs
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+    <label for="toctree-checkbox-13">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../sdks/terra-js/README.html">
+       Terra.js
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+      <label for="toctree-checkbox-14">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../sdks/terra-js/add-modules.html">
+         Add modules
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../sdks/terra-js/coin-and-coins.html">
+         Coin and Coins
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../sdks/terra-js/common-examples.html">
+         Common examples
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../sdks/terra-js/fees.html">
+         Fees
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../sdks/terra-js/keys.html">
+         Keys
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../sdks/terra-js/make-a-connection.html">
+         Make a connection
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../sdks/terra-js/msgAuthorization.html">
+         MsgAuthorization
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../sdks/terra-js/multisend.html">
+         MsgSend
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../sdks/terra-js/numeric.html">
+         Numeric
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../sdks/terra-js/oracle-feeder.html">
+         Oracle feeder
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../sdks/terra-js/query-data.html">
+         Query data
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../sdks/terra-js/smart-contracts.html">
+         Smart contracts
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../sdks/terra-js/station-extension.html">
+         Terra Station extension
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../sdks/terra-js/transactions.html">
+         Transactions
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../sdks/terra-js/wallets.html">
+         Wallets
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../sdks/terra-js/Websockets.html">
+         Websockets
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference external" href="https://terra-money.github.io/terra.py/">
+       Terra.py
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../reference/README.html">
+     Dev reference
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+    <label for="toctree-checkbox-15">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference external" href="https://lcd.terra.dev/swagger/">
+       Terra REST API
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference external" href="https://pkg.go.dev/github.com/terra-money/core">
+       Terra Core GoDoc
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../how-to/terrad/README.html">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         terrad
+        </span>
+       </code>
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+      <label for="toctree-checkbox-16">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../how-to/terrad/install-terrad.html">
+         Install terrad
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../how-to/terrad/using-terrad.html">
+         Using terrad
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../how-to/terrad/commands.html">
+         Commands
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../how-to/terrad/subcommands.html">
+         Subcommands
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../how-to/endpoints.html">
+       RPC endpoints
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../reference/history-and-changes.html">
+       History and changes
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../reference/migration-guide.html">
+       Columbus-5 upgrade
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../full-node/README.html">
+   Full node
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+  <label for="toctree-checkbox-17">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../full-node/run-a-full-terra-node/README.html">
+     Run a full Terra node
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+    <label for="toctree-checkbox-18">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../full-node/run-a-full-terra-node/system-config.html">
+       System configuration
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../full-node/run-a-full-terra-node/build-terra-core.html">
+       Build Terra core
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../full-node/run-a-full-terra-node/set-up-production.html">
+       Set up a production environment
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../full-node/run-a-full-terra-node/configure-general-settings.html">
+       Configure general settings
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../full-node/run-a-full-terra-node/join-a-network.html">
+       Join a network
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../full-node/run-a-full-terra-node/sync.html">
+       Sync
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../full-node/run-a-full-terra-node/updates-and-additional.html">
+       Updates and additional settings
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../full-node/manage-a-terra-validator/README.html">
+     Manage a validator
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
+    <label for="toctree-checkbox-19">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../full-node/manage-a-terra-validator/court-delegations.html">
+       Court delegations
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../full-node/manage-a-terra-validator/faq.html">
+       Validator FAQ
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../full-node/manage-a-terra-validator/implement-security.html">
+       Implement security practices
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../full-node/manage-a-terra-validator/set-up-oracle-feeder.html">
+       Set up an oracle feeder
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../full-node/manage-a-terra-validator/set-up-validator.html">
+       Register your Terra validator
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../full-node/manage-a-terra-validator/troubleshoot-validator-problems.html">
+       Troubleshoot validator problems
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../full-node/reference/README.html">
+     Node reference
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
+    <label for="toctree-checkbox-20">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference external" href="https://lcd.terra.dev/swagger/">
+       Terra REST API
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference external" href="https://pkg.go.dev/github.com/terra-money/core">
+       Terra Core GoDoc
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../how-to/terrad/README.html">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         terrad
+        </span>
+       </code>
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
+      <label for="toctree-checkbox-21">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../how-to/terrad/install-terrad.html">
+         Install terrad
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../how-to/terrad/using-terrad.html">
+         Using terrad
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../how-to/terrad/commands.html">
+         Commands
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../how-to/terrad/subcommands.html">
+         Subcommands
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../how-to/endpoints.html">
+       RPC endpoints
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../how-to/start-lcd.html">
+       Start the light client daemon (LCD)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../reference/history-and-changes.html">
+       History and changes
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../reference/migration-guide.html">
+       Columbus-5 upgrade
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../ecosystem/README.html">
+   Ecosystem
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
+  <label for="toctree-checkbox-22">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../ecosystem/explore.html">
+     Explore the ecosystem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../ecosystem/integrations.html">
+     Integrations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://www.terra.money/ecosystem">
+     dApps
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../../spacecamp/README.html">
+   Spacecamp
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
+  <label for="toctree-checkbox-23">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../learn/terra-station/README.html">
+     Terra Station
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
+    <label for="toctree-checkbox-24">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../learn/terra-station/download/README.html">
+       Download
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/>
+      <label for="toctree-checkbox-25">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../learn/terra-station/download/terra-station-desktop.html">
+         Terra Station desktop
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../learn/terra-station/download/terra-station-extension.html">
+         Terra Station extension
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../learn/terra-station/download/terra-station-mobile.html">
+         Terra Station mobile
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../learn/terra-station/station-guides/README.html">
+       Terra Station guides
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
+      <label for="toctree-checkbox-26">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../learn/terra-station/station-guides/wallet.html">
+         Wallet
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../learn/terra-station/station-guides/staking.html">
+         Manage Staking
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../learn/terra-station/station-guides/swap.html">
+         Mint, burn, or swap
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../learn/terra-station/station-guides/governance.html">
+         Governance
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../learn/terra-station/station-guides/contracts.html">
+         Contracts
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../learn/terra-station/station-guides/testnet.html">
+         Testnet
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../dapp/quick-start/README.html">
+     5-minute quickstart guide
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" type="checkbox"/>
+    <label for="toctree-checkbox-27">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../dapp/quick-start/initial-setup.html">
+       Initial setup
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../dapp/quick-start/using-terrain-localterra.html">
+       Use Terrain with LocalTerra
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../dapp/quick-start/using-terrain-testnet.html">
+       Use Terrain with the testnet
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../dapp/quick-start/using-terrain-localterra.html">
+     Use Terrain with LocalTerra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../dapp/quick-start/using-terrain-testnet.html">
+     Use Terrain with the testnet
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../dapp/smart-contracts/README.html">
+     In-depth dApp guide
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" type="checkbox"/>
+    <label for="toctree-checkbox-28">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../dapp/smart-contracts/build-terra-dapp.html">
+       Build a simple Terra dApp
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../dapp/smart-contracts/set-up-local-environment.html">
+       Environment Setup
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../dapp/smart-contracts/write-smart-contract.html">
+       Writing the Contract
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../dapp/smart-contracts/interact-with-smart-contract.html">
+       Interacting with the Contract
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../dapp/smart-contracts/manage-cw20-tokens.html">
+       CW20 Tokens
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../how-to/endpoints.html">
+     RPC endpoints
+    </a>
+   </li>
+   <li class="toctree-l2 current active has-children">
+    <a class="reference internal" href="README.html">
+     Terra Core modules
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" type="checkbox"/>
+    <label for="toctree-checkbox-29">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l3">
+      <a class="reference internal" href="spec-auth.html">
+       Auth
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spec-authz.html">
+       AuthZ
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spec-bank.html">
+       Bank
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spec-capability.html">
+       Capability
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spec-distribution.html">
+       Distribution
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spec-evidence.html">
+       Evidence
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spec-feegrant.html">
+       Fee grant
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spec-governance.html">
+       Governance
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spec-market.html">
+       Market
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spec-mint.html">
+       Mint
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spec-oracle.html">
+       Oracle
+      </a>
+     </li>
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
+       Slashing
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spec-staking.html">
+       Staking
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spec-treasury.html">
+       Treasury
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spec-wasm.html">
+       WASM
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../sdks/terra-js/README.html">
+     Terra.js
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" type="checkbox"/>
+    <label for="toctree-checkbox-30">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../sdks/terra-js/add-modules.html">
+       Add modules
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../sdks/terra-js/coin-and-coins.html">
+       Coin and Coins
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../sdks/terra-js/common-examples.html">
+       Common examples
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../sdks/terra-js/fees.html">
+       Fees
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../sdks/terra-js/keys.html">
+       Keys
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../sdks/terra-js/make-a-connection.html">
+       Make a connection
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../sdks/terra-js/msgAuthorization.html">
+       MsgAuthorization
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../sdks/terra-js/multisend.html">
+       MsgSend
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../sdks/terra-js/numeric.html">
+       Numeric
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../sdks/terra-js/oracle-feeder.html">
+       Oracle feeder
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../sdks/terra-js/query-data.html">
+       Query data
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../sdks/terra-js/smart-contracts.html">
+       Smart contracts
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../sdks/terra-js/station-extension.html">
+       Terra Station extension
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../sdks/terra-js/transactions.html">
+       Transactions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../sdks/terra-js/wallets.html">
+       Wallets
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../sdks/terra-js/Websockets.html">
+       Websockets
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://terra-money.github.io/terra.py/">
+     Terra.py
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://faucet.terra.money/">
+     Faucet
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<!-- This is an invisible pixel that we watch to see if we've scrolled. -->
+<div class="sbt-scroll-pixel-helper"></div>
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            <div class="topbar-left">
+                
+                <label class="nav-toggle-button" for="__navigation">
+                    <div class="visually-hidden">Toggle navigation</div>
+                    <i class="fas fa-bars"></i>
+                </label>
+                
+            </div>
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/docs/develop/module-specifications/spec-slashing.md.txt"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/terra-money/docs"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/terra-money/docs/issues/new?title=Issue%20on%20page%20%2Fdocs/develop/module-specifications/spec-slashing.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/terra-money/docs/edit/master/docs/docs/develop/module-specifications/spec-slashing.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#message-types">
+   Message Types
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#msgunjail">
+     MsgUnjail
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#transitions">
+   Transitions
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#begin-block">
+     Begin-Block
+    </a>
+    <ul class="visible nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#evidence-handling">
+       Evidence handling
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#liveness-tracking">
+       Liveness tracking
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#parameters">
+   Parameters
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#maxevidenceage">
+     MaxEvidenceAge
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#signedblockswindow">
+     SignedBlocksWindow
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#minsignedperwindow">
+     MinSignedPerWindow
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#downtimejailduration">
+     DowntimeJailDuration
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#slashfractiondoublesign">
+     SlashFractionDoubleSign
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#slashfractiondowntime">
+     SlashFractionDowntime
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Slashing</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#message-types">
+   Message Types
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#msgunjail">
+     MsgUnjail
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#transitions">
+   Transitions
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#begin-block">
+     Begin-Block
+    </a>
+    <ul class="visible nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#evidence-handling">
+       Evidence handling
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#liveness-tracking">
+       Liveness tracking
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#parameters">
+   Parameters
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#maxevidenceage">
+     MaxEvidenceAge
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#signedblockswindow">
+     SignedBlocksWindow
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#minsignedperwindow">
+     MinSignedPerWindow
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#downtimejailduration">
+     DowntimeJailDuration
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#slashfractiondoublesign">
+     SlashFractionDoubleSign
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#slashfractiondowntime">
+     SlashFractionDowntime
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="slashing">
+<h1>Slashing<a class="headerlink" href="#slashing" title="Permalink to this headline">¶</a></h1>
+<p>The slashing module enables Terra to disincentivize any attributable action by a protocol-recognized actor with value at stake by penalizing them. The penalty is called <a class="reference internal" href="../../learn/glossary.html#slashing"><span class="std std-doc">slashing</span></a>. Terra mainly uses the <a class="reference internal" href="spec-staking.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">Staking</span></code></span></a> module to slash when violating validator responsibilities, such as missing too many <code class="docutils literal notranslate"><span class="pre">VotePeriod</span></code>s in the exchange rate oracle. This module manages lower-level penalties at the Tendermint consensus level, such as double-signing.</p>
+<div class="section" id="message-types">
+<h2>Message Types<a class="headerlink" href="#message-types" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="msgunjail">
+<h3>MsgUnjail<a class="headerlink" href="#msgunjail" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">type</span><span class="w"> </span><span class="nx">MsgUnjail</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">ValidatorAddr</span><span class="w"> </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">ValAddress</span><span class="w"> </span><span class="s">`json:&quot;address&quot; yaml:&quot;address&quot;`</span><span class="w"> </span><span class="c1">// address of the validator operator</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="transitions">
+<h2>Transitions<a class="headerlink" href="#transitions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="begin-block">
+<h3>Begin-Block<a class="headerlink" href="#begin-block" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>This section was taken from the official Cosmos SDK docs, and placed here for your convenience to understand the slashing module’s parameters.</p>
+</div></blockquote>
+<p>At the beginning of each block, the slashing module checks for evidence of infractions or downtime of validators, double-signing, and other low-level consensus penalties.</p>
+<div class="section" id="evidence-handling">
+<h4>Evidence handling<a class="headerlink" href="#evidence-handling" title="Permalink to this headline">¶</a></h4>
+<p>Tendermint blocks can include evidence, which indicates that a validator committed malicious
+behavior. The relevant information is forwarded to the application as ABCI Evidence
+in <code class="docutils literal notranslate"><span class="pre">abci.RequestBeginBlock</span></code> so that the validator an be punished.</p>
+<p>For some <code class="docutils literal notranslate"><span class="pre">Evidence</span></code> submitted in <code class="docutils literal notranslate"><span class="pre">block</span></code> to be valid, it must satisfy:</p>
+<p><code class="docutils literal notranslate"><span class="pre">Evidence.Timestamp</span> <span class="pre">&gt;=</span> <span class="pre">block.Timestamp</span> <span class="pre">-</span> <span class="pre">MaxEvidenceAge</span></code></p>
+<p>where <code class="docutils literal notranslate"><span class="pre">Evidence.Timestamp</span></code> is the timestamp in the block at height
+<code class="docutils literal notranslate"><span class="pre">Evidence.Height</span></code>, and <code class="docutils literal notranslate"><span class="pre">block.Timestamp</span></code> is the current block timestamp.</p>
+<p>If valid evidence is included in a block, the validator’s stake is reduced by
+some penalty (<code class="docutils literal notranslate"><span class="pre">SlashFractionDoubleSign</span></code> for equivocation) of what their stake was
+when the infraction occurred instead of when the evidence was discovered. We
+want to follow the stake, i.e. the stake which contributed to the infraction
+should be slashed, even if it has since been redelegated or has started unbonding.</p>
+<p>The unbondings and redelegations from the slashed validator are looped through, and the amount of stake that has moved is tracked:</p>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="nx">slashAmountUnbondings</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="nx">slashAmountRedelegations</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+
+<span class="nx">unbondings</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">getUnbondings</span><span class="p">(</span><span class="nx">validator</span><span class="p">.</span><span class="nx">Address</span><span class="p">)</span><span class="w"></span>
+<span class="k">for</span><span class="w"> </span><span class="nx">unbond</span><span class="w"> </span><span class="nx">in</span><span class="w"> </span><span class="nx">unbondings</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">was</span><span class="w"> </span><span class="nx">not</span><span class="w"> </span><span class="nx">bonded</span><span class="w"> </span><span class="nx">before</span><span class="w"> </span><span class="nx">evidence</span><span class="p">.</span><span class="nx">Height</span><span class="w"> </span><span class="nx">or</span><span class="w"> </span><span class="nx">started</span><span class="w"> </span><span class="nx">unbonding</span><span class="w"> </span><span class="nx">before</span><span class="w"> </span><span class="nx">unbonding</span><span class="w"> </span><span class="nx">period</span><span class="w"> </span><span class="nx">ago</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">continue</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="nx">burn</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">unbond</span><span class="p">.</span><span class="nx">InitialTokens</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">SLASH_PROPORTION</span><span class="w"></span>
+<span class="w">    </span><span class="nx">slashAmountUnbondings</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">burn</span><span class="w"></span>
+
+<span class="w">    </span><span class="nx">unbond</span><span class="p">.</span><span class="nx">Tokens</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nx">unbond</span><span class="p">.</span><span class="nx">Tokens</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">burn</span><span class="p">)</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="c1">// only care if source gets slashed because we&#39;re already bonded to destination</span><span class="w"></span>
+<span class="c1">// so if destination validator gets slashed our delegation just has same shares</span><span class="w"></span>
+<span class="c1">// of smaller pool.</span><span class="w"></span>
+<span class="nx">redels</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">getRedelegationsBySource</span><span class="p">(</span><span class="nx">validator</span><span class="p">.</span><span class="nx">Address</span><span class="p">)</span><span class="w"></span>
+<span class="k">for</span><span class="w"> </span><span class="nx">redel</span><span class="w"> </span><span class="nx">in</span><span class="w"> </span><span class="nx">redels</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">was</span><span class="w"> </span><span class="nx">not</span><span class="w"> </span><span class="nx">bonded</span><span class="w"> </span><span class="nx">before</span><span class="w"> </span><span class="nx">evidence</span><span class="p">.</span><span class="nx">Height</span><span class="w"> </span><span class="nx">or</span><span class="w"> </span><span class="nx">started</span><span class="w"> </span><span class="nx">redelegating</span><span class="w"> </span><span class="nx">before</span><span class="w"> </span><span class="nx">unbonding</span><span class="w"> </span><span class="nx">period</span><span class="w"> </span><span class="nx">ago</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">continue</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="nx">burn</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">redel</span><span class="p">.</span><span class="nx">InitialTokens</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">SLASH_PROPORTION</span><span class="w"></span>
+<span class="w">    </span><span class="nx">slashAmountRedelegations</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">burn</span><span class="w"></span>
+
+<span class="w">    </span><span class="nx">amount</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">unbondFromValidator</span><span class="p">(</span><span class="nx">redel</span><span class="p">.</span><span class="nx">Destination</span><span class="p">,</span><span class="w"> </span><span class="nx">burn</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="nx">destroy</span><span class="p">(</span><span class="nx">amount</span><span class="p">)</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>The validator is slashed and <a class="reference internal" href="../../learn/glossary.html#tombstone"><span class="std std-doc">tombstoned</span></a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curVal</span> <span class="o">:=</span> <span class="n">validator</span>
+<span class="n">oldVal</span> <span class="o">:=</span> <span class="n">loadValidator</span><span class="p">(</span><span class="n">evidence</span><span class="o">.</span><span class="n">Height</span><span class="p">,</span> <span class="n">evidence</span><span class="o">.</span><span class="n">Address</span><span class="p">)</span>
+
+<span class="n">slashAmount</span> <span class="o">:=</span> <span class="n">SLASH_PROPORTION</span> <span class="o">*</span> <span class="n">oldVal</span><span class="o">.</span><span class="n">Shares</span>
+<span class="n">slashAmount</span> <span class="o">-=</span> <span class="n">slashAmountUnbondings</span>
+<span class="n">slashAmount</span> <span class="o">-=</span> <span class="n">slashAmountRedelegations</span>
+
+<span class="n">curVal</span><span class="o">.</span><span class="n">Shares</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">curVal</span><span class="o">.</span><span class="n">Shares</span> <span class="o">-</span> <span class="n">slashAmount</span><span class="p">)</span>
+
+<span class="n">signInfo</span> <span class="o">=</span> <span class="n">SigningInfo</span><span class="o">.</span><span class="n">Get</span><span class="p">(</span><span class="n">val</span><span class="o">.</span><span class="n">Address</span><span class="p">)</span>
+<span class="n">signInfo</span><span class="o">.</span><span class="n">JailedUntil</span> <span class="o">=</span> <span class="n">MAX_TIME</span>
+<span class="n">signInfo</span><span class="o">.</span><span class="n">Tombstoned</span> <span class="o">=</span> <span class="n">true</span>
+<span class="n">SigningInfo</span><span class="o">.</span><span class="n">Set</span><span class="p">(</span><span class="n">val</span><span class="o">.</span><span class="n">Address</span><span class="p">,</span> <span class="n">signInfo</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This process ensures that offending validators are punished with the same amount whether they act as a single validator with X stake or as N validators with a collective X stake. The amount slashed for all double-signature infractions committed within a single slashing period is capped. For more information, see <a class="reference external" href="https://docs.cosmos.network/master/modules/slashing/01_concepts.html#tombstone-caps">tombstone caps</a>.</p>
+</div>
+<div class="section" id="liveness-tracking">
+<h4>Liveness tracking<a class="headerlink" href="#liveness-tracking" title="Permalink to this headline">¶</a></h4>
+<p>At the beginning of each block, the <code class="docutils literal notranslate"><span class="pre">ValidatorSigningInfo</span></code> for each
+validator is updated and whether they’ve crossed below the liveness threshold over a
+sliding window is checked. This sliding window is defined by <code class="docutils literal notranslate"><span class="pre">SignedBlocksWindow</span></code>, and the
+index in this window is determined by <code class="docutils literal notranslate"><span class="pre">IndexOffset</span></code> found in the validator’s
+<code class="docutils literal notranslate"><span class="pre">ValidatorSigningInfo</span></code>. For each block processed, the <code class="docutils literal notranslate"><span class="pre">IndexOffset</span></code> is incremented
+regardless of whether the validator signed. After the index is determined, the
+<code class="docutils literal notranslate"><span class="pre">MissedBlocksBitArray</span></code> and <code class="docutils literal notranslate"><span class="pre">MissedBlocksCounter</span></code> are updated accordingly.</p>
+<p>Finally, to determine whether a validator crosses below the liveness threshold,
+the maximum number of blocks missed, <code class="docutils literal notranslate"><span class="pre">maxMissed</span></code>, which is
+<code class="docutils literal notranslate"><span class="pre">SignedBlocksWindow</span> <span class="pre">-</span> <span class="pre">(MinSignedPerWindow</span> <span class="pre">*</span> <span class="pre">SignedBlocksWindow)</span></code>, and the minimum
+height at which we can determine liveness, <code class="docutils literal notranslate"><span class="pre">minHeight</span></code>, are fetched. If the current block is
+greater than <code class="docutils literal notranslate"><span class="pre">minHeight</span></code> and the validator’s <code class="docutils literal notranslate"><span class="pre">MissedBlocksCounter</span></code> is greater than
+<code class="docutils literal notranslate"><span class="pre">maxMissed</span></code>, they are slashed by <code class="docutils literal notranslate"><span class="pre">SlashFractionDowntime</span></code>, jailed
+for <code class="docutils literal notranslate"><span class="pre">DowntimeJailDuration</span></code>, and have the following values reset:
+<code class="docutils literal notranslate"><span class="pre">MissedBlocksBitArray</span></code>, <code class="docutils literal notranslate"><span class="pre">MissedBlocksCounter</span></code>, and <code class="docutils literal notranslate"><span class="pre">IndexOffset</span></code>.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Liveness slashes do not lead to tombstombing.</p>
+</div>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="nx">height</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">block</span><span class="p">.</span><span class="nx">Height</span><span class="w"></span>
+
+<span class="k">for</span><span class="w"> </span><span class="nx">vote</span><span class="w"> </span><span class="nx">in</span><span class="w"> </span><span class="nx">block</span><span class="p">.</span><span class="nx">LastCommitInfo</span><span class="p">.</span><span class="nx">Votes</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">signInfo</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">GetValidatorSigningInfo</span><span class="p">(</span><span class="nx">vote</span><span class="p">.</span><span class="nx">Validator</span><span class="p">.</span><span class="nx">Address</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">  </span><span class="c1">// This is a relative index, so we counts blocks the validator SHOULD have</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// signed. We use the 0-value default signing info if not present, except for</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// start height.</span><span class="w"></span>
+<span class="w">  </span><span class="nx">index</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">signInfo</span><span class="p">.</span><span class="nx">IndexOffset</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="nx">SignedBlocksWindow</span><span class="p">()</span><span class="w"></span>
+<span class="w">  </span><span class="nx">signInfo</span><span class="p">.</span><span class="nx">IndexOffset</span><span class="o">++</span><span class="w"></span>
+
+<span class="w">  </span><span class="c1">// Update MissedBlocksBitArray and MissedBlocksCounter. The MissedBlocksCounter</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// just tracks the sum of MissedBlocksBitArray. That way we avoid needing to</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// read/write the whole array each time.</span><span class="w"></span>
+<span class="w">  </span><span class="nx">missedPrevious</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">GetValidatorMissedBlockBitArray</span><span class="p">(</span><span class="nx">vote</span><span class="p">.</span><span class="nx">Validator</span><span class="p">.</span><span class="nx">Address</span><span class="p">,</span><span class="w"> </span><span class="nx">index</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="nx">missed</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="p">!</span><span class="nx">signed</span><span class="w"></span>
+
+<span class="w">  </span><span class="k">switch</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="p">!</span><span class="nx">missedPrevious</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">missed</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// array index has changed from not missed to missed, increment counter</span><span class="w"></span>
+<span class="w">    </span><span class="nx">SetValidatorMissedBlockBitArray</span><span class="p">(</span><span class="nx">vote</span><span class="p">.</span><span class="nx">Validator</span><span class="p">.</span><span class="nx">Address</span><span class="p">,</span><span class="w"> </span><span class="nx">index</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="nx">signInfo</span><span class="p">.</span><span class="nx">MissedBlocksCounter</span><span class="o">++</span><span class="w"></span>
+
+<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="nx">missedPrevious</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">!</span><span class="nx">missed</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// array index has changed from missed to not missed, decrement counter</span><span class="w"></span>
+<span class="w">    </span><span class="nx">SetValidatorMissedBlockBitArray</span><span class="p">(</span><span class="nx">vote</span><span class="p">.</span><span class="nx">Validator</span><span class="p">.</span><span class="nx">Address</span><span class="p">,</span><span class="w"> </span><span class="nx">index</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="nx">signInfo</span><span class="p">.</span><span class="nx">MissedBlocksCounter</span><span class="o">--</span><span class="w"></span>
+
+<span class="w">  </span><span class="k">default</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// array index at this index has not changed; no need to update counter</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="nx">missed</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// emit events...</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">  </span><span class="nx">minHeight</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">signInfo</span><span class="p">.</span><span class="nx">StartHeight</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">SignedBlocksWindow</span><span class="p">()</span><span class="w"></span>
+<span class="w">  </span><span class="nx">maxMissed</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">SignedBlocksWindow</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">MinSignedPerWindow</span><span class="p">()</span><span class="w"></span>
+
+<span class="w">  </span><span class="c1">// If we are past the minimum height and the validator has missed too many</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// jail and slash them.</span><span class="w"></span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="nx">height</span><span class="w"> </span><span class="p">&gt;</span><span class="w"> </span><span class="nx">minHeight</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">signInfo</span><span class="p">.</span><span class="nx">MissedBlocksCounter</span><span class="w"> </span><span class="p">&gt;</span><span class="w"> </span><span class="nx">maxMissed</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">validator</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">ValidatorByConsAddr</span><span class="p">(</span><span class="nx">vote</span><span class="p">.</span><span class="nx">Validator</span><span class="p">.</span><span class="nx">Address</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">// emit events...</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">// We need to retrieve the stake distribution which signed the block, so we</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// subtract ValidatorUpdateDelay from the block height, and subtract an</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// additional 1 since this is the LastCommit.</span><span class="w"></span>
+<span class="w">    </span><span class="c1">//</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// Note, that this CAN result in a negative &quot;distributionHeight&quot; up to</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// -ValidatorUpdateDelay-1, i.e. at the end of the pre-genesis block (none) = at the beginning of the genesis block.</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// That&#39;s fine since this is just used to filter unbonding delegations &amp; redelegations.</span><span class="w"></span>
+<span class="w">    </span><span class="nx">distributionHeight</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">height</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">ValidatorUpdateDelay</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+
+<span class="w">    </span><span class="nx">Slash</span><span class="p">(</span><span class="nx">vote</span><span class="p">.</span><span class="nx">Validator</span><span class="p">.</span><span class="nx">Address</span><span class="p">,</span><span class="w"> </span><span class="nx">distributionHeight</span><span class="p">,</span><span class="w"> </span><span class="nx">vote</span><span class="p">.</span><span class="nx">Validator</span><span class="p">.</span><span class="nx">Power</span><span class="p">,</span><span class="w"> </span><span class="nx">SlashFractionDowntime</span><span class="p">())</span><span class="w"></span>
+<span class="w">    </span><span class="nx">Jail</span><span class="p">(</span><span class="nx">vote</span><span class="p">.</span><span class="nx">Validator</span><span class="p">.</span><span class="nx">Address</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">    </span><span class="nx">signInfo</span><span class="p">.</span><span class="nx">JailedUntil</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">block</span><span class="p">.</span><span class="nx">Time</span><span class="p">.</span><span class="nx">Add</span><span class="p">(</span><span class="nx">DowntimeJailDuration</span><span class="p">())</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">// We need to reset the counter &amp; array so that the validator won&#39;t be</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// immediately slashed for downtime upon rebonding.</span><span class="w"></span>
+<span class="w">    </span><span class="nx">signInfo</span><span class="p">.</span><span class="nx">MissedBlocksCounter</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="w">    </span><span class="nx">signInfo</span><span class="p">.</span><span class="nx">IndexOffset</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="w">    </span><span class="nx">ClearValidatorMissedBlockBitArray</span><span class="p">(</span><span class="nx">vote</span><span class="p">.</span><span class="nx">Validator</span><span class="p">.</span><span class="nx">Address</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">  </span><span class="nx">SetValidatorSigningInfo</span><span class="p">(</span><span class="nx">vote</span><span class="p">.</span><span class="nx">Validator</span><span class="p">.</span><span class="nx">Address</span><span class="p">,</span><span class="w"> </span><span class="nx">signInfo</span><span class="p">)</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
+<p>The subspace for the slashing module is <code class="docutils literal notranslate"><span class="pre">slashing</span></code>.</p>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">type</span><span class="w"> </span><span class="nx">Params</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">	</span><span class="nx">MaxEvidenceAge</span><span class="w">          </span><span class="nx">time</span><span class="p">.</span><span class="nx">Duration</span><span class="w"> </span><span class="s">`json:&quot;max_evidence_age&quot; yaml:&quot;max_evidence_age&quot;`</span><span class="w"></span>
+<span class="w">	</span><span class="nx">SignedBlocksWindow</span><span class="w">      </span><span class="kt">int64</span><span class="w">         </span><span class="s">`json:&quot;signed_blocks_window&quot; yaml:&quot;signed_blocks_window&quot;`</span><span class="w"></span>
+<span class="w">	</span><span class="nx">MinSignedPerWindow</span><span class="w">      </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">Dec</span><span class="w">       </span><span class="s">`json:&quot;min_signed_per_window&quot; yaml:&quot;min_signed_per_window&quot;`</span><span class="w"></span>
+<span class="w">	</span><span class="nx">DowntimeJailDuration</span><span class="w">    </span><span class="nx">time</span><span class="p">.</span><span class="nx">Duration</span><span class="w"> </span><span class="s">`json:&quot;downtime_jail_duration&quot; yaml:&quot;downtime_jail_duration&quot;`</span><span class="w"></span>
+<span class="w">	</span><span class="nx">SlashFractionDoubleSign</span><span class="w"> </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">Dec</span><span class="w">       </span><span class="s">`json:&quot;slash_fraction_double_sign&quot; yaml:&quot;slash_fraction_double_sign&quot;`</span><span class="w"></span>
+<span class="w">	</span><span class="nx">SlashFractionDowntime</span><span class="w">   </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">Dec</span><span class="w">       </span><span class="s">`json:&quot;slash_fraction_downtime&quot; yaml:&quot;slash_fraction_downtime&quot;`</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<div class="section" id="maxevidenceage">
+<h3>MaxEvidenceAge<a class="headerlink" href="#maxevidenceage" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>type: <code class="docutils literal notranslate"><span class="pre">time.Duration</span></code> (seconds)</p></li>
+<li><p>default: 2 minutes</p></li>
+</ul>
+</div>
+<div class="section" id="signedblockswindow">
+<h3>SignedBlocksWindow<a class="headerlink" href="#signedblockswindow" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>type: <code class="docutils literal notranslate"><span class="pre">int64</span></code></p></li>
+<li><p>default: <code class="docutils literal notranslate"><span class="pre">100</span></code></p></li>
+</ul>
+</div>
+<div class="section" id="minsignedperwindow">
+<h3>MinSignedPerWindow<a class="headerlink" href="#minsignedperwindow" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>type: <code class="docutils literal notranslate"><span class="pre">Dec</span></code></p></li>
+<li><p>default: <code class="docutils literal notranslate"><span class="pre">5</span></code></p></li>
+</ul>
+</div>
+<div class="section" id="downtimejailduration">
+<h3>DowntimeJailDuration<a class="headerlink" href="#downtimejailduration" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>type: <code class="docutils literal notranslate"><span class="pre">time.Duration</span></code> (seconds)</p></li>
+<li><p>default: 10 minutes</p></li>
+</ul>
+</div>
+<div class="section" id="slashfractiondoublesign">
+<h3>SlashFractionDoubleSign<a class="headerlink" href="#slashfractiondoublesign" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>type: <code class="docutils literal notranslate"><span class="pre">Dec</span></code></p></li>
+<li><p>default: 1/20</p></li>
+</ul>
+</div>
+<div class="section" id="slashfractiondowntime">
+<h3>SlashFractionDowntime<a class="headerlink" href="#slashfractiondowntime" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>type: <code class="docutils literal notranslate"><span class="pre">Dec</span></code></p></li>
+<li><p>default: 1/10000</p></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="spec-oracle.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Oracle </p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="spec-staking.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Staking</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+
+    <div class="extra_footer container">
+      <div class="row">
+
+        <div class="col">
+
+          <div class="logos">
+            <a href="https://discord.gg/e29HWwC2Mz" rel="noopener" target="_blank"><img src="/discord.svg" alt="link to Terra discord room"></a>&nbsp;
+            <a href="https://medium.com/terra-money" rel="noopener" target="_blank"><img src="/medium.svg" alt="link to Terra medium"></a>&nbsp;
+            <a href="https://twitter.com/terra_money" rel="noopener" target="_blank"><img src="/twitter.svg" alt="link to Terra twitter"></a>&nbsp;
+            <a href="https://www.youtube.com/channel/UCoV1RXZ9ZBGcuu_PMTTlM0g" rel="noopener" target="_blank"><img src="/icon_youtube.png" alt="link to Terra youtube"></a>&nbsp;
+            <a href="https://t.me/terra_announcements" rel="noopener" target="_blank"><img src="/icon_telegram.png" alt="link to Terra telegram room"></a>
+          </div>
+
+        </div>
+
+        <div class="col-md-auto">
+
+          <a href="https://www.terra.money/" >terra.money</a> <br/>
+          <a href="mailto:general@terra.money" >Contact</a> <br/>
+          <a href="https://terra.breezy.hr/"> Careers</a> <br/>
+          <br/>
+
+        </div>
+
+        <div class="col-md-auto">
+
+          <a href="https://assets.website-files.com/611153e7af981472d8da199c/618b02d13e938ae1f8ad1e45_Terra_White_paper.pdf" >Whitepaper</a> <br/>
+          <a href="https://certik.org/projects/terra" >Security Audit</a> <br/>
+          <a href="https://agora.terra.money/" >Agora forum</a> <br/>
+          <br/>
+
+        </div>
+
+        <div class="col">
+          <a href="https://finder.terra.money/" >Terra Finder</a> <br/>
+          <a href="https://station.terra.money/" >Terra Station</a> <br/>
+          <a href="https://status.terra.money/" >Status</a> <br/>
+          <br/>
+
+        </div>
+
+      </div>
+    </div>
+
+
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+    <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  
+  </body>
+</html>
