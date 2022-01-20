@@ -33,6 +33,7 @@ sphinxcontrib-serializinghtml
 sphinx-book-theme
 sphinx-copybutton
 sphinx_design
+sphinx-notfound-page
 sphinx_panels
 sphinx-tabs
 urllib3
