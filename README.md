@@ -9,6 +9,22 @@
   </h4>
 </div>
 
+## Stallings notes
+
+Using Docker since it's easier than configuring your local machine. 
+
+First build the local Docker container:
+
+```
+make docker-make
+```
+
+Then you're ready to build the site: 
+
+```
+make docker-build
+```
+
 ## Building
 
 ### Getting the repo

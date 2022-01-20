@@ -1,0 +1,52 @@
+/* Make top level navbar items larger than children */
+li.toctree-l1 > a {
+  font-size: 1.2em;
+}
+
+/* Copy+paste code blocks override default pygment background colors */
+.highlight > pre {
+  background-color: #263238;
+  color: #EEFFFF;
+}
+
+/* Format social logos in the footer */
+.logos a {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  position: relative;
+  opacity: .5;
+  transition: .2s;
+  margin-right: 0.188rem;
+}
+
+/* Remove weird icon from search results and adjust padding */
+ul.search li {
+  background-image: unset;
+  padding: unset;
+}
+
+/* Color arrow and hamburger icon at the top of the page */
+#navbar-toggler {
+  color: #2646ae;
+}
+
+/* Color arrows in sidebar */
+label > i.fas {
+  color: #2646ae;
+}
+
+/* Make sure horizontal scrollbars don't appear for the sidebar */
+.bd-sidebar {
+  overflow-x: hidden;
+}
+
+/* Color page footer links */
+
+.footer a {
+     color: #C0C0C0;
+}
+
+.footer a:hover {
+     color: #808080;
+}
