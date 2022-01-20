@@ -49,6 +49,9 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', 'node_modules']
 # Copies files in these directories to the root of the build
 html_extra_path = ['img/', '.nojekyll']
 
+# No reason to link to images.
+html_scaled_image_link = False
+
 # -- Options for HTML output -------------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
