@@ -84,7 +84,7 @@ myst_footnote_transition = True
 myst_dmath_double_inline = True
 myst_all_links_external = True
 panels_add_bootstrap_css = True
-nitpicky = True
+nitpicky = False
 
 
 # Theme options
