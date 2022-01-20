@@ -16,7 +16,7 @@ mdit-py-plugins
 myst-parser
 packaging
 pydata-sphinx-theme
-Pygments
+Pygments >= 2.11.2
 pyparsing
 pytz
 PyYAML
