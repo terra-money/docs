@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Stallings notes &#8212; Terra Docs  documentation</title>
+    <title>Building &#8212; Terra Docs  documentation</title>
     
     <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 <link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -1309,11 +1309,6 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   Stallings notes
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#building">
    Building
   </a>
   <ul class="visible nav section-nav flex-column">
@@ -1322,6 +1317,13 @@
      Getting the repo
     </a>
    </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#test-locally-with-docker">
+   Test locally with Docker
+  </a>
+  <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#adding-an-article">
      Adding an article
@@ -1330,11 +1332,6 @@
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#editing-the-navigation">
      Editing the navigation
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#test-it-out-locally">
-     Test it out locally
     </a>
    </li>
   </ul>
@@ -1371,7 +1368,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Stallings notes</h1>
+                <h1>Building</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -1383,11 +1380,6 @@
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   Stallings notes
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#building">
    Building
   </a>
   <ul class="visible nav section-nav flex-column">
@@ -1396,6 +1388,13 @@
      Getting the repo
     </a>
    </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#test-locally-with-docker">
+   Test locally with Docker
+  </a>
+  <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#adding-an-article">
      Adding an article
@@ -1404,11 +1403,6 @@
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#editing-the-navigation">
      Editing the navigation
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#test-it-out-locally">
-     Test it out locally
     </a>
    </li>
   </ul>
@@ -1453,18 +1447,6 @@
     <a href="https://docs.terra.money/">Documentation Website</a>
   </h4>
 </div>
-<div class="section" id="stallings-notes">
-<h1>Stallings notes<a class="headerlink" href="#stallings-notes" title="Permalink to this headline">¶</a></h1>
-<p>Using Docker since it’s easier than configuring your local machine.</p>
-<p>First build the local Docker container:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">docker</span><span class="o">-</span><span class="n">make</span>
-</pre></div>
-</div>
-<p>Then you’re ready to build the site:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">docker</span><span class="o">-</span><span class="n">build</span>
-</pre></div>
-</div>
-</div>
 <div class="section" id="building">
 <h1>Building<a class="headerlink" href="#building" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="getting-the-repo">
@@ -1474,6 +1456,20 @@
 </pre></div>
 </div>
 </div>
+</div>
+<div class="section" id="test-locally-with-docker">
+<h1>Test locally with Docker<a class="headerlink" href="#test-locally-with-docker" title="Permalink to this headline">¶</a></h1>
+<p>Using Docker is easier than configuring your local machine to build <code class="docutils literal notranslate"><span class="pre">sphinx</span></code>:</p>
+<p>First build the local Docker container:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">docker</span><span class="o">-</span><span class="n">make</span>
+</pre></div>
+</div>
+<p>Then you’re ready to build the site:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">docker</span><span class="o">-</span><span class="n">build</span>
+</pre></div>
+</div>
+<p>You can view the site in your browser by navigating to <code class="docutils literal notranslate"><span class="pre">index.html</span></code> located in <code class="docutils literal notranslate"><span class="pre">&lt;PATH_TO_CLONED_REPO&gt;/_build/html/index.html</span></code>.</p>
+<p>Make sure to run <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">docker-build</span></code> each time you save your changes to view them live.</p>
 <div class="section" id="adding-an-article">
 <h2>Adding an article<a class="headerlink" href="#adding-an-article" title="Permalink to this headline">¶</a></h2>
 <p>All articles are markdown files, placed under the <code class="docutils literal notranslate"><span class="pre">/docs/</span></code> directory. You can create folders underneath the <code class="docutils literal notranslate"><span class="pre">/docs</span></code> directory, such as the following:</p>
@@ -1494,17 +1490,6 @@
 <div class="section" id="editing-the-navigation">
 <h2>Editing the navigation<a class="headerlink" href="#editing-the-navigation" title="Permalink to this headline">¶</a></h2>
 <p>To edit the navigation to include your new article, edit <code class="docutils literal notranslate"><span class="pre">/docs/.vuepress/config.js</span></code> and add your new article in the appropriate section in <code class="docutils literal notranslate"><span class="pre">themeConfig.sidebar</span></code>, following the other paths as examples.</p>
-</div>
-<div class="section" id="test-it-out-locally">
-<h2>Test it out locally<a class="headerlink" href="#test-it-out-locally" title="Permalink to this headline">¶</a></h2>
-<p>Make sure you install all the dependencies:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>npm install
-</pre></div>
-</div>
-<p>Build and run locally (hot-reloading dev server):</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>npm run dev
-</pre></div>
-</div>
 </div>
 </div>
 <div class="section" id="organization">
@@ -1548,9 +1533,7 @@
 <div class="section" id="built-with">
 <h1>Built With<a class="headerlink" href="#built-with" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li><p>Vuepress</p></li>
-<li><p>MathJax</p></li>
-<li><p>Terra Docs custom theme</p></li>
+<li><p>Sphinx Book Theme</p></li>
 </ul>
 </div>
 <div class="section" id="license">
