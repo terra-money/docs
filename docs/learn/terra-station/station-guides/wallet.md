@@ -2,6 +2,8 @@
 
 This guide is for advanced features of the Terra Station wallet. If this is your first time using Terra Station, follow the [Terra Station tutorial](../download/terra-station-desktop.md).
 
+For information on using multisig wallets in Terra Station, see [](multisig.md)
+
 ## Create a wallet
 
 1. Open the Terra Station desktop app and click **New wallet**.

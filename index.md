@@ -24,6 +24,15 @@ Welcome to the official documentation for Terra, a decentralized financial infra
 :::
 
 :::{grid-item-card}
+:link: docs/spacecamp/README.html
+:class-card: sd-text-center sd-shadow-md sd-rounded-3
+```{image} /img/spacecamp_icon-01.svg
+:class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
+```
+**Hack Week resources**  
+:::
+
+:::{grid-item-card}
 :link: docs/develop/dapp/README.html
 :class-card: sd-text-center sd-shadow-md sd-rounded-3
 ```{image} /img/icon_smartcontract.svg
@@ -39,15 +48,6 @@ Welcome to the official documentation for Terra, a decentralized financial infra
 :class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
 ```
 **Explore the ecosystem**  
-:::
-
-:::{grid-item-card}
-:link: docs/learn/protocol.html#governance
-:class-card: sd-text-center sd-shadow-md sd-rounded-3
-```{image} /img/icon_validator.svg
-:class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
-```
-**Participate in governance**  
 :::
 
 :::{grid-item-card}

@@ -40,3 +40,13 @@ label > i.fas {
 .bd-sidebar {
   overflow-x: hidden;
 }
+
+/* Color page footer links */
+
+.footer a {
+     color: #C0C0C0;
+}
+
+.footer a:hover {
+     color: #808080;
+}
