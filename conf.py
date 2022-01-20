@@ -48,7 +48,11 @@ templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', 'node_modules']
 
 # Copies files in these directories to the root of the build
-html_extra_path = ['img/', '.nojekyll']
+html_extra_path = [
+    'img/', 
+    '.nojekyll', 
+    'redirects',
+]
 
 # No reason to link to images.
 html_scaled_image_link = False
