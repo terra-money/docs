@@ -1,0 +1,1994 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Governance &#8212; Terra Docs  documentation</title>
+    
+    <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  
+    
+    <link rel="stylesheet"
+      href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+    <link rel="preload" as="font" type="font/woff2" crossorigin
+      href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+    <link rel="preload" as="font" type="font/woff2" crossorigin
+      href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+    
+      
+  
+    
+    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" />
+    
+    <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script src="../../../_static/sphinx-book-theme.9d8b4a8b9bb19db25eeaddc40d639ba2.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    <link rel="shortcut icon" href="../../../_static/docs_favicon.ico"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Market" href="spec-market.html" />
+    <link rel="prev" title="Fee grant" href="spec-feegrant.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<div class="col-12 col-md-3 bd-sidebar site-navigation " id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../../_static/docs_logo.svg" class="logo" alt="logo">
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../learn/README.html">
+   Learn
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../learn/terra-station/README.html">
+     Terra Station
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../learn/terra-station/download/README.html">
+       Download
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+      <label for="toctree-checkbox-3">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../learn/terra-station/download/terra-station-desktop.html">
+         Terra Station desktop
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../learn/terra-station/download/terra-station-extension.html">
+         Terra Station extension
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../learn/terra-station/download/terra-station-mobile.html">
+         Terra Station mobile
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../learn/terra-station/station-guides/README.html">
+       Terra Station guides
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+      <label for="toctree-checkbox-4">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../learn/terra-station/station-guides/wallet.html">
+         Wallet
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../learn/terra-station/station-guides/staking.html">
+         Manage Staking
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../learn/terra-station/station-guides/swap.html">
+         Mint, burn, or swap
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../learn/terra-station/station-guides/governance.html">
+         Governance
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../learn/terra-station/station-guides/contracts.html">
+         Contracts
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../learn/terra-station/station-guides/testnet.html">
+         Testnet
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../learn/protocol.html">
+     About the Terra Protocol
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../learn/fees.html">
+     Fees on Terra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../learn/glossary.html">
+     Glossary
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../README.html">
+   Develop
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../dapp/README.html">
+     Build a dApp
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+    <label for="toctree-checkbox-6">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../dapp/quick-start/README.html">
+       5-minute quickstart guide
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+      <label for="toctree-checkbox-7">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../dapp/quick-start/initial-setup.html">
+         Initial setup
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../dapp/quick-start/using-terrain-localterra.html">
+         Use Terrain with LocalTerra
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../dapp/quick-start/using-terrain-testnet.html">
+         Use Terrain with the testnet
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../dapp/smart-contracts/README.html">
+       In-depth dApp guide
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+      <label for="toctree-checkbox-8">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../dapp/smart-contracts/build-terra-dapp.html">
+         Build a simple Terra dApp
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../dapp/smart-contracts/set-up-local-environment.html">
+         Environment Setup
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../dapp/smart-contracts/write-smart-contract.html">
+         Writing the Contract
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../dapp/smart-contracts/interact-with-smart-contract.html">
+         Interacting with the Contract
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../dapp/smart-contracts/manage-cw20-tokens.html">
+         CW20 Tokens
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../how-to/README.html">
+     Guides
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+    <label for="toctree-checkbox-9">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../how-to/terrad/README.html">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         terrad
+        </span>
+       </code>
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+      <label for="toctree-checkbox-10">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../how-to/terrad/install-terrad.html">
+         Install terrad
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../how-to/terrad/using-terrad.html">
+         Using terrad
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../how-to/terrad/commands.html">
+         Commands
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../how-to/terrad/subcommands.html">
+         Subcommands
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../how-to/localterra/README.html">
+       LocalTerra
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+      <label for="toctree-checkbox-11">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../how-to/localterra/install-localterra.html">
+         Install LocalTerra
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../how-to/localterra/configure.html">
+         Configure LocalTerra
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../how-to/localterra/integrations.html">
+         Integrations
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../how-to/localterra/accounts.html">
+         Accounts
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../how-to/sign-with-multisig.html">
+       Sign with a multisig account
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../how-to/start-lcd.html">
+       Start the light client daemon (LCD)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../how-to/endpoints.html">
+       RPC endpoints
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 current active has-children">
+    <a class="reference internal" href="README.html">
+     Terra Core modules
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+    <label for="toctree-checkbox-12">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l3">
+      <a class="reference internal" href="spec-auth.html">
+       Auth
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spec-authz.html">
+       AuthZ
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spec-bank.html">
+       Bank
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spec-capability.html">
+       Capability
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spec-distribution.html">
+       Distribution
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spec-evidence.html">
+       Evidence
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spec-feegrant.html">
+       Fee grant
+      </a>
+     </li>
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
+       Governance
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spec-market.html">
+       Market
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spec-mint.html">
+       Mint
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spec-oracle.html">
+       Oracle
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spec-slashing.html">
+       Slashing
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spec-staking.html">
+       Staking
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spec-treasury.html">
+       Treasury
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spec-wasm.html">
+       WASM
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../sdks/README.html">
+     SDKs
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+    <label for="toctree-checkbox-13">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../sdks/terra-js/README.html">
+       Terra.js
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+      <label for="toctree-checkbox-14">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../sdks/terra-js/add-modules.html">
+         Add modules
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../sdks/terra-js/coin-and-coins.html">
+         Coin and Coins
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../sdks/terra-js/common-examples.html">
+         Common examples
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../sdks/terra-js/fees.html">
+         Fees
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../sdks/terra-js/keys.html">
+         Keys
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../sdks/terra-js/make-a-connection.html">
+         Make a connection
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../sdks/terra-js/msgAuthorization.html">
+         MsgAuthorization
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../sdks/terra-js/multisend.html">
+         MsgSend
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../sdks/terra-js/numeric.html">
+         Numeric
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../sdks/terra-js/oracle-feeder.html">
+         Oracle feeder
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../sdks/terra-js/query-data.html">
+         Query data
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../sdks/terra-js/smart-contracts.html">
+         Smart contracts
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../sdks/terra-js/station-extension.html">
+         Terra Station extension
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../sdks/terra-js/transactions.html">
+         Transactions
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../sdks/terra-js/wallets.html">
+         Wallets
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../sdks/terra-js/Websockets.html">
+         Websockets
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference external" href="https://terra-money.github.io/terra.py/">
+       Terra.py
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../reference/README.html">
+     Dev reference
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+    <label for="toctree-checkbox-15">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference external" href="https://lcd.terra.dev/swagger/">
+       Terra REST API
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference external" href="https://pkg.go.dev/github.com/terra-money/core">
+       Terra Core GoDoc
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../how-to/terrad/README.html">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         terrad
+        </span>
+       </code>
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+      <label for="toctree-checkbox-16">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../how-to/terrad/install-terrad.html">
+         Install terrad
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../how-to/terrad/using-terrad.html">
+         Using terrad
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../how-to/terrad/commands.html">
+         Commands
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../how-to/terrad/subcommands.html">
+         Subcommands
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../how-to/endpoints.html">
+       RPC endpoints
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../reference/history-and-changes.html">
+       History and changes
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../reference/migration-guide.html">
+       Columbus-5 upgrade
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../full-node/README.html">
+   Full node
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+  <label for="toctree-checkbox-17">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../full-node/run-a-full-terra-node/README.html">
+     Run a full Terra node
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+    <label for="toctree-checkbox-18">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../full-node/run-a-full-terra-node/system-config.html">
+       System configuration
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../full-node/run-a-full-terra-node/build-terra-core.html">
+       Build Terra core
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../full-node/run-a-full-terra-node/set-up-production.html">
+       Set up a production environment
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../full-node/run-a-full-terra-node/configure-general-settings.html">
+       Configure general settings
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../full-node/run-a-full-terra-node/join-a-network.html">
+       Join a network
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../full-node/run-a-full-terra-node/sync.html">
+       Sync
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../full-node/run-a-full-terra-node/updates-and-additional.html">
+       Updates and additional settings
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../full-node/manage-a-terra-validator/README.html">
+     Manage a validator
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
+    <label for="toctree-checkbox-19">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../full-node/manage-a-terra-validator/court-delegations.html">
+       Court delegations
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../full-node/manage-a-terra-validator/faq.html">
+       Validator FAQ
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../full-node/manage-a-terra-validator/implement-security.html">
+       Implement security practices
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../full-node/manage-a-terra-validator/set-up-oracle-feeder.html">
+       Set up an oracle feeder
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../full-node/manage-a-terra-validator/set-up-validator.html">
+       Register your Terra validator
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../full-node/manage-a-terra-validator/troubleshoot-validator-problems.html">
+       Troubleshoot validator problems
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../full-node/reference/README.html">
+     Node reference
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
+    <label for="toctree-checkbox-20">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference external" href="https://lcd.terra.dev/swagger/">
+       Terra REST API
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference external" href="https://pkg.go.dev/github.com/terra-money/core">
+       Terra Core GoDoc
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../how-to/terrad/README.html">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         terrad
+        </span>
+       </code>
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
+      <label for="toctree-checkbox-21">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../how-to/terrad/install-terrad.html">
+         Install terrad
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../how-to/terrad/using-terrad.html">
+         Using terrad
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../how-to/terrad/commands.html">
+         Commands
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../how-to/terrad/subcommands.html">
+         Subcommands
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../how-to/endpoints.html">
+       RPC endpoints
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../how-to/start-lcd.html">
+       Start the light client daemon (LCD)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../reference/history-and-changes.html">
+       History and changes
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../reference/migration-guide.html">
+       Columbus-5 upgrade
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../ecosystem/README.html">
+   Ecosystem
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
+  <label for="toctree-checkbox-22">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../ecosystem/explore.html">
+     Explore the ecosystem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../ecosystem/integrations.html">
+     Integrations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://www.terra.money/ecosystem">
+     dApps
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../../spacecamp/README.html">
+   Spacecamp
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
+  <label for="toctree-checkbox-23">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../learn/terra-station/README.html">
+     Terra Station
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
+    <label for="toctree-checkbox-24">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../learn/terra-station/download/README.html">
+       Download
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/>
+      <label for="toctree-checkbox-25">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../learn/terra-station/download/terra-station-desktop.html">
+         Terra Station desktop
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../learn/terra-station/download/terra-station-extension.html">
+         Terra Station extension
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../learn/terra-station/download/terra-station-mobile.html">
+         Terra Station mobile
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../learn/terra-station/station-guides/README.html">
+       Terra Station guides
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
+      <label for="toctree-checkbox-26">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../learn/terra-station/station-guides/wallet.html">
+         Wallet
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../learn/terra-station/station-guides/staking.html">
+         Manage Staking
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../learn/terra-station/station-guides/swap.html">
+         Mint, burn, or swap
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../learn/terra-station/station-guides/governance.html">
+         Governance
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../learn/terra-station/station-guides/contracts.html">
+         Contracts
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../learn/terra-station/station-guides/testnet.html">
+         Testnet
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../dapp/quick-start/README.html">
+     5-minute quickstart guide
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" type="checkbox"/>
+    <label for="toctree-checkbox-27">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../dapp/quick-start/initial-setup.html">
+       Initial setup
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../dapp/quick-start/using-terrain-localterra.html">
+       Use Terrain with LocalTerra
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../dapp/quick-start/using-terrain-testnet.html">
+       Use Terrain with the testnet
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../dapp/quick-start/using-terrain-localterra.html">
+     Use Terrain with LocalTerra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../dapp/quick-start/using-terrain-testnet.html">
+     Use Terrain with the testnet
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../dapp/smart-contracts/README.html">
+     In-depth dApp guide
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" type="checkbox"/>
+    <label for="toctree-checkbox-28">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../dapp/smart-contracts/build-terra-dapp.html">
+       Build a simple Terra dApp
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../dapp/smart-contracts/set-up-local-environment.html">
+       Environment Setup
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../dapp/smart-contracts/write-smart-contract.html">
+       Writing the Contract
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../dapp/smart-contracts/interact-with-smart-contract.html">
+       Interacting with the Contract
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../dapp/smart-contracts/manage-cw20-tokens.html">
+       CW20 Tokens
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../how-to/endpoints.html">
+     RPC endpoints
+    </a>
+   </li>
+   <li class="toctree-l2 current active has-children">
+    <a class="reference internal" href="README.html">
+     Terra Core modules
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" type="checkbox"/>
+    <label for="toctree-checkbox-29">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l3">
+      <a class="reference internal" href="spec-auth.html">
+       Auth
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spec-authz.html">
+       AuthZ
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spec-bank.html">
+       Bank
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spec-capability.html">
+       Capability
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spec-distribution.html">
+       Distribution
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spec-evidence.html">
+       Evidence
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spec-feegrant.html">
+       Fee grant
+      </a>
+     </li>
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
+       Governance
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spec-market.html">
+       Market
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spec-mint.html">
+       Mint
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spec-oracle.html">
+       Oracle
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spec-slashing.html">
+       Slashing
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spec-staking.html">
+       Staking
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spec-treasury.html">
+       Treasury
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spec-wasm.html">
+       WASM
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../sdks/terra-js/README.html">
+     Terra.js
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" type="checkbox"/>
+    <label for="toctree-checkbox-30">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../sdks/terra-js/add-modules.html">
+       Add modules
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../sdks/terra-js/coin-and-coins.html">
+       Coin and Coins
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../sdks/terra-js/common-examples.html">
+       Common examples
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../sdks/terra-js/fees.html">
+       Fees
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../sdks/terra-js/keys.html">
+       Keys
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../sdks/terra-js/make-a-connection.html">
+       Make a connection
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../sdks/terra-js/msgAuthorization.html">
+       MsgAuthorization
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../sdks/terra-js/multisend.html">
+       MsgSend
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../sdks/terra-js/numeric.html">
+       Numeric
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../sdks/terra-js/oracle-feeder.html">
+       Oracle feeder
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../sdks/terra-js/query-data.html">
+       Query data
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../sdks/terra-js/smart-contracts.html">
+       Smart contracts
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../sdks/terra-js/station-extension.html">
+       Terra Station extension
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../sdks/terra-js/transactions.html">
+       Transactions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../sdks/terra-js/wallets.html">
+       Wallets
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../sdks/terra-js/Websockets.html">
+       Websockets
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://terra-money.github.io/terra.py/">
+     Terra.py
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://faucet.terra.money/">
+     Faucet
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<!-- This is an invisible pixel that we watch to see if we've scrolled. -->
+<div class="sbt-scroll-pixel-helper"></div>
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            <div class="topbar-left">
+                
+                <label class="nav-toggle-button" for="__navigation">
+                    <div class="visually-hidden">Toggle navigation</div>
+                    <i class="fas fa-bars"></i>
+                </label>
+                
+            </div>
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/docs/develop/module-specifications/spec-governance.md.txt"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/terra-money/docs"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/terra-money/docs/issues/new?title=Issue%20on%20page%20%2Fdocs/develop/module-specifications/spec-governance.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/terra-money/docs/edit/master/docs/docs/develop/module-specifications/spec-governance.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#concepts">
+   Concepts
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#deposit-period">
+     Deposit Period
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#voting-period">
+     Voting Period
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tallying">
+     Tallying
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#proposal-implementation">
+     Proposal Implementation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data">
+   Data
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#proposal">
+     Proposal
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#message-types">
+   Message Types
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#msgsubmitproposal">
+     MsgSubmitProposal
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#msgdeposit">
+     MsgDeposit
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#msgvote">
+     MsgVote
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#proposals">
+   Proposals
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#text-proposal">
+     Text Proposal
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#parameter-change-proposals">
+     Parameter Change Proposals
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#software-upgrade-proposals">
+     Software Upgrade Proposals
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#transitions">
+   Transitions
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#end-block">
+     End-Block
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#parameters">
+   Parameters
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mindeposit">
+     MinDeposit
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#maxdepositperiod">
+     MaxDepositPeriod
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#quorum">
+     Quorum
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#threshold">
+     Threshold
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#veto">
+     Veto
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#votingperiod">
+     VotingPeriod
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Governance </h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#concepts">
+   Concepts
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#deposit-period">
+     Deposit Period
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#voting-period">
+     Voting Period
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tallying">
+     Tallying
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#proposal-implementation">
+     Proposal Implementation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data">
+   Data
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#proposal">
+     Proposal
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#message-types">
+   Message Types
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#msgsubmitproposal">
+     MsgSubmitProposal
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#msgdeposit">
+     MsgDeposit
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#msgvote">
+     MsgVote
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#proposals">
+   Proposals
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#text-proposal">
+     Text Proposal
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#parameter-change-proposals">
+     Parameter Change Proposals
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#software-upgrade-proposals">
+     Software Upgrade Proposals
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#transitions">
+   Transitions
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#end-block">
+     End-Block
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#parameters">
+   Parameters
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mindeposit">
+     MinDeposit
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#maxdepositperiod">
+     MaxDepositPeriod
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#quorum">
+     Quorum
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#threshold">
+     Threshold
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#veto">
+     Veto
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#votingperiod">
+     VotingPeriod
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="governance">
+<h1>Governance <img alt="../../../_images/Governance.svg" height="40px" src="../../../_images/Governance.svg" /><a class="headerlink" href="#governance" title="Permalink to this headline">¶</a></h1>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Terra’s Governance module inherits from Cosmos SDK’s <a class="reference external" href="https://docs.cosmos.network/master/modules/gov/"><code class="docutils literal notranslate"><span class="pre">gov</span></code></a> module. This document is a stub, and covers mainly important Terra-specific notes about how it is used.</p>
+</div>
+<p>Governance is the process through which members of the Terra community can effect change on the protocol by submitting petitions known as “proposals” and arriving at a popular consensus when a threshold amount of support has been reached. The proposal structure is versatile and allows for holders of staked Luna (those who have an interest in the long-term viability of the network) to voice their opinion on both blockchain parameter updates as well as the future development of the Terra protocol.</p>
+<p>Check the <a class="reference internal" href="../how-to/terrad/subcommands.html#tx-gov-submit-proposal"><span class="std std-doc">Governance section of the <code class="docutils literal notranslate"><span class="pre">terrad</span></code> Reference</span></a> to see examples of how to participate in the Governance process.</p>
+<p>To learn how to vote with your staked Luna or submit proposals, visit the <a class="reference internal" href="../../learn/terra-station/station-guides/governance.html"><span class="doc std std-doc">Terra Station governance guide</span></a>.</p>
+<div class="section" id="concepts">
+<h2>Concepts<a class="headerlink" href="#concepts" title="Permalink to this headline">¶</a></h2>
+<p>The following is the governance proposal procedure:</p>
+<div class="section" id="deposit-period">
+<h3>Deposit Period<a class="headerlink" href="#deposit-period" title="Permalink to this headline">¶</a></h3>
+<p>After a proposal is submitted, it enters the deposit period, where it must reach a total minimum deposit of 50 Luna within 2 weeks from the time of its submission. The deposit threshold is reached when the sum of the initial deposit (from the proposer) and the deposits from all other interested network participants meet or exceed 50 Luna.</p>
+<p>Deposits protect against unnecessary proposals and spam.</p>
+<p>Deposits get refunded if all of the following conditions are met:</p>
+<ul class="simple">
+<li><p>The minimum deposit of 50 Luna is reached within the two-week deposit period.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Quorum</span></code> is met: the number of total votes is greater than 40% of all staked Luna</p></li>
+<li><p>The total number of <code class="docutils literal notranslate"><span class="pre">NoWithVeto</span></code> votes is less than 33.4% of the total vote.</p></li>
+<li><p>A vote returns a majority of <code class="docutils literal notranslate"><span class="pre">Yes</span></code> or <code class="docutils literal notranslate"><span class="pre">No</span></code> votes.</p></li>
+</ul>
+<p>Deposits are burned under any of the following conditions:</p>
+<ul class="simple">
+<li><p>The minimum deposit of 50 Luna is not reached within the two-week deposit period.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Quorum</span></code> is not met: the number of total votes after the one-week voting period is less than 40% of all staked Luna.</p></li>
+<li><p>the number of <code class="docutils literal notranslate"><span class="pre">NoWithVeto</span></code> votes is above 33.4% of the total vote.</p></li>
+</ul>
+</div>
+<div class="section" id="voting-period">
+<h3>Voting Period<a class="headerlink" href="#voting-period" title="Permalink to this headline">¶</a></h3>
+<p>If the minimum deposit has been reached before the end of the deposit period, then the proposal goes into a one-week voting period. While the proposal is in voting, holders of staked Luna can cast votes for the proposal. The 4 voting options available are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Yes</span></code> - in favor</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">No</span></code> - not in favor</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NoWithVeto</span></code> - veto</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Abstain</span></code> - does not influence vote</p></li>
+</ul>
+<p>Voting is done by holders of bonded LUNA on a 1 bonded LUNA = 1 vote basis. As such, validators hold the most influence over the outcome of voting, and delegators by default inherit the vote of their validator if they don’t vote.</p>
+</div>
+<div class="section" id="tallying">
+<h3>Tallying<a class="headerlink" href="#tallying" title="Permalink to this headline">¶</a></h3>
+<p>For a proposal to pass, the following conditions must be met:</p>
+<ol class="arabic simple">
+<li><p>Voter participation must be at least <code class="docutils literal notranslate"><span class="pre">quorum</span></code> <span class="math notranslate nohighlight">\(Q\)</span>:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\frac{Yes + No + NoWithVeto}{Stake} \ge Q\]</div>
+<ol class="arabic simple">
+<li><p>The ratio of <code class="docutils literal notranslate"><span class="pre">NoWithVeto</span></code> votes must be less than <code class="docutils literal notranslate"><span class="pre">veto</span></code> <span class="math notranslate nohighlight">\(V\)</span>:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\frac{NoWithVeto}{Yes + No + NoWithVeto} \lt V\]</div>
+<ol class="arabic simple">
+<li><p>The ratio of <code class="docutils literal notranslate"><span class="pre">Yes</span></code> votes must be greater than <code class="docutils literal notranslate"><span class="pre">threshold</span></code> <span class="math notranslate nohighlight">\(T\)</span>:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\frac{Yes}{Yes + No + NoWithVeto} \gt T\]</div>
+<p>If any of the previous conditions are not met, the proposal is rejected. Proposals that get rejected with veto do not get their deposits refunded. The parameters <code class="docutils literal notranslate"><span class="pre">quorum</span></code>, <code class="docutils literal notranslate"><span class="pre">veto</span></code>, and <code class="docutils literal notranslate"><span class="pre">threshold</span></code> exist as blockchain parameters within the Governance module.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Deposits will not be refunded for proposals that are rejected with veto, do not meet quorum, or fail to reach the minimum deposit during the deposit period. Non-refunded deposits are burned.</p>
+</div>
+</div>
+<div class="section" id="proposal-implementation">
+<h3>Proposal Implementation<a class="headerlink" href="#proposal-implementation" title="Permalink to this headline">¶</a></h3>
+<p>Once a governance proposal passes, the changes described are put into effect by the proposal handler. Generic proposals such as a <code class="docutils literal notranslate"><span class="pre">TextProposal</span></code> must be reviewed by Terra protocol developers and the community for decisions on how to manually implement.</p>
+<p>Although parameter changes get updated immediately, they generally are not put into effect until the next epoch operation. Epochs occur every 100800 blocks or roughly every 7.7 days, given a 6.6-second block time.</p>
+</div>
+</div>
+<div class="section" id="data">
+<h2>Data<a class="headerlink" href="#data" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="proposal">
+<h3>Proposal<a class="headerlink" href="#proposal" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">type</span><span class="w"> </span><span class="nx">Proposal</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">	</span><span class="nx">Content</span><span class="w"> </span><span class="s">`json:&quot;content&quot; yaml:&quot;content&quot;`</span><span class="w"> </span><span class="c1">// Proposal content interface</span><span class="w"></span>
+
+<span class="w">	</span><span class="nx">ProposalID</span><span class="w">       </span><span class="kt">uint64</span><span class="w">         </span><span class="s">`json:&quot;id&quot; yaml:&quot;id&quot;`</span><span class="w">                                 </span><span class="c1">//  ID of the proposal</span><span class="w"></span>
+<span class="w">	</span><span class="nx">Status</span><span class="w">           </span><span class="nx">ProposalStatus</span><span class="w"> </span><span class="s">`json:&quot;proposal_status&quot; yaml:&quot;proposal_status&quot;`</span><span class="w">       </span><span class="c1">// Status of the Proposal {Pending, Active, Passed, Rejected}</span><span class="w"></span>
+<span class="w">	</span><span class="nx">FinalTallyResult</span><span class="w"> </span><span class="nx">TallyResult</span><span class="w">    </span><span class="s">`json:&quot;final_tally_result&quot; yaml:&quot;final_tally_result&quot;`</span><span class="w"> </span><span class="c1">// Result of Tallys</span><span class="w"></span>
+
+<span class="w">	</span><span class="nx">SubmitTime</span><span class="w">     </span><span class="nx">time</span><span class="p">.</span><span class="nx">Time</span><span class="w"> </span><span class="s">`json:&quot;submit_time&quot; yaml:&quot;submit_time&quot;`</span><span class="w">           </span><span class="c1">// Time of the block where TxGovSubmitProposal was included</span><span class="w"></span>
+<span class="w">	</span><span class="nx">DepositEndTime</span><span class="w"> </span><span class="nx">time</span><span class="p">.</span><span class="nx">Time</span><span class="w"> </span><span class="s">`json:&quot;deposit_end_time&quot; yaml:&quot;deposit_end_time&quot;`</span><span class="w"> </span><span class="c1">// Time that the Proposal would expire if deposit amount isn&#39;t met</span><span class="w"></span>
+<span class="w">	</span><span class="nx">TotalDeposit</span><span class="w">   </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">Coins</span><span class="w"> </span><span class="s">`json:&quot;total_deposit&quot; yaml:&quot;total_deposit&quot;`</span><span class="w">       </span><span class="c1">// Current deposit on this proposal. Initial value is set at InitialDeposit</span><span class="w"></span>
+
+<span class="w">	</span><span class="nx">VotingStartTime</span><span class="w"> </span><span class="nx">time</span><span class="p">.</span><span class="nx">Time</span><span class="w"> </span><span class="s">`json:&quot;voting_start_time&quot; yaml:&quot;voting_start_time&quot;`</span><span class="w"> </span><span class="c1">// Time of the block where MinDeposit was reached. -1 if MinDeposit is not reached</span><span class="w"></span>
+<span class="w">	</span><span class="nx">VotingEndTime</span><span class="w">   </span><span class="nx">time</span><span class="p">.</span><span class="nx">Time</span><span class="w"> </span><span class="s">`json:&quot;voting_end_time&quot; yaml:&quot;voting_end_time&quot;`</span><span class="w">     </span><span class="c1">// Time that the VotingPeriod for this proposal will end and votes will be tallied</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>A <code class="docutils literal notranslate"><span class="pre">Proposal</span></code> is a data structure representing a petition for a change that is submitted to the blockchain alongside a deposit. Once its deposit reaches a certain <a class="reference internal" href="#mindeposit"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">MinDeposit</span></code></span></a>, the proposal is confirmed and voting opens. Bonded Luna holders can then send <code class="docutils literal notranslate"><span class="pre">TxGovVote</span></code> transactions to vote on the proposal. Terra currently follows a simple voting scheme of 1 Bonded Luna = 1 Vote.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Content</span></code> of a proposal is the interface that contains the information about the <code class="docutils literal notranslate"><span class="pre">Proposal</span></code>, such as the <code class="docutils literal notranslate"><span class="pre">title</span></code>, <code class="docutils literal notranslate"><span class="pre">description</span></code>, and any notable changes. A <code class="docutils literal notranslate"><span class="pre">Content</span></code> type can be implemented by any module. The <code class="docutils literal notranslate"><span class="pre">ProposalRoute</span></code> of the <code class="docutils literal notranslate"><span class="pre">Content</span></code> returns a string which must be used to route the handler of the <code class="docutils literal notranslate"><span class="pre">Content</span></code> in the Governance keeper. This process allows the governance keeper to execute proposal logic implemented by any module. If a proposal passes, the handler is executed. Only if the handler is successful does the state get persisted and the proposal finally passes. Otherwise, the proposal is rejected.</p>
+</div>
+</div>
+<div class="section" id="message-types">
+<h2>Message Types<a class="headerlink" href="#message-types" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="msgsubmitproposal">
+<h3>MsgSubmitProposal<a class="headerlink" href="#msgsubmitproposal" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">type</span><span class="w"> </span><span class="nx">MsgSubmitProposal</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">	</span><span class="nx">Content</span><span class="w">        </span><span class="nx">Content</span><span class="w">        </span><span class="s">`json:&quot;content&quot; yaml:&quot;content&quot;`</span><span class="w"></span>
+<span class="w">	</span><span class="nx">InitialDeposit</span><span class="w"> </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">Coins</span><span class="w">      </span><span class="s">`json:&quot;initial_deposit&quot; yaml:&quot;initial_deposit&quot;`</span><span class="w"> </span><span class="c1">//  Initial deposit paid by sender. Must be strictly positive</span><span class="w"></span>
+<span class="w">	</span><span class="nx">Proposer</span><span class="w">       </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">AccAddress</span><span class="w"> </span><span class="s">`json:&quot;proposer&quot; yaml:&quot;proposer&quot;`</span><span class="w">               </span><span class="c1">//  Address of the proposer</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="msgdeposit">
+<h3>MsgDeposit<a class="headerlink" href="#msgdeposit" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">type</span><span class="w"> </span><span class="nx">MsgDeposit</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">	</span><span class="nx">ProposalID</span><span class="w"> </span><span class="kt">uint64</span><span class="w">         </span><span class="s">`json:&quot;proposal_id&quot; yaml:&quot;proposal_id&quot;`</span><span class="w"> </span><span class="c1">// ID of the proposal</span><span class="w"></span>
+<span class="w">	</span><span class="nx">Depositor</span><span class="w">  </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">AccAddress</span><span class="w"> </span><span class="s">`json:&quot;depositor&quot; yaml:&quot;depositor&quot;`</span><span class="w">     </span><span class="c1">// Address of the depositor</span><span class="w"></span>
+<span class="w">	</span><span class="nx">Amount</span><span class="w">     </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">Coins</span><span class="w">      </span><span class="s">`json:&quot;amount&quot; yaml:&quot;amount&quot;`</span><span class="w">           </span><span class="c1">// Coins to add to the proposal&#39;s deposit</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="msgvote">
+<h3>MsgVote<a class="headerlink" href="#msgvote" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">type</span><span class="w"> </span><span class="nx">MsgVote</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">	</span><span class="nx">ProposalID</span><span class="w"> </span><span class="kt">uint64</span><span class="w">         </span><span class="s">`json:&quot;proposal_id&quot; yaml:&quot;proposal_id&quot;`</span><span class="w"> </span><span class="c1">// ID of the proposal</span><span class="w"></span>
+<span class="w">	</span><span class="nx">Voter</span><span class="w">      </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">AccAddress</span><span class="w"> </span><span class="s">`json:&quot;voter&quot; yaml:&quot;voter&quot;`</span><span class="w">             </span><span class="c1">//  address of the voter</span><span class="w"></span>
+<span class="w">	</span><span class="nx">Option</span><span class="w">     </span><span class="nx">VoteOption</span><span class="w">     </span><span class="s">`json:&quot;option&quot; yaml:&quot;option&quot;`</span><span class="w">           </span><span class="c1">//  option from OptionSet chosen by the voter</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="proposals">
+<h2>Proposals<a class="headerlink" href="#proposals" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="text-proposal">
+<h3>Text Proposal<a class="headerlink" href="#text-proposal" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">type</span><span class="w"> </span><span class="nx">TextProposal</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">	</span><span class="nx">Title</span><span class="w">       </span><span class="kt">string</span><span class="w"> </span><span class="s">`json:&quot;title&quot; yaml:&quot;title&quot;`</span><span class="w"></span>
+<span class="w">	</span><span class="nx">Description</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="s">`json:&quot;description&quot; yaml:&quot;description&quot;`</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Text Proposals are used to create general-purpose petitions, such as asking core developers or community members to implement a specific feature. The community can reference a passed Text Proposal to the core developers or community members to indicate that a feature that potentially requires a soft or hard fork is in significant demand.</p>
+</div>
+<div class="section" id="parameter-change-proposals">
+<h3>Parameter Change Proposals<a class="headerlink" href="#parameter-change-proposals" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">type</span><span class="w"> </span><span class="nx">ParameterChangeProposal</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">	</span><span class="nx">Title</span><span class="w">       </span><span class="kt">string</span><span class="w">        </span><span class="s">`json:&quot;title&quot; yaml:&quot;title&quot;`</span><span class="w"></span>
+<span class="w">	</span><span class="nx">Description</span><span class="w"> </span><span class="kt">string</span><span class="w">        </span><span class="s">`json:&quot;description&quot; yaml:&quot;description&quot;`</span><span class="w"></span>
+<span class="w">	</span><span class="nx">Changes</span><span class="w">     </span><span class="p">[]</span><span class="nx">ParamChange</span><span class="w"> </span><span class="s">`json:&quot;changes&quot; yaml:&quot;changes&quot;`</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kd">type</span><span class="w"> </span><span class="nx">ParamChange</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">	</span><span class="nx">Subspace</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="s">`json:&quot;subspace&quot; yaml:&quot;subspace&quot;`</span><span class="w"></span>
+<span class="w">	</span><span class="nx">Key</span><span class="w">      </span><span class="kt">string</span><span class="w"> </span><span class="s">`json:&quot;key&quot; yaml:&quot;key&quot;`</span><span class="w"></span>
+<span class="w">	</span><span class="nx">Subkey</span><span class="w">   </span><span class="kt">string</span><span class="w"> </span><span class="s">`json:&quot;subkey,omitempty&quot; yaml:&quot;subkey,omitempty&quot;`</span><span class="w"></span>
+<span class="w">	</span><span class="nx">Value</span><span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="s">`json:&quot;value&quot; yaml:&quot;value&quot;`</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Parameter Change Proposals are actually located in the Params module, an internal module. It is shown here for your convenience.</p>
+</div>
+<p>Parameter Change Proposals are a special type of proposal which, once passed, will automatically go into effect by directly altering the network’s specified parameter.</p>
+</div>
+<div class="section" id="software-upgrade-proposals">
+<h3>Software Upgrade Proposals<a class="headerlink" href="#software-upgrade-proposals" title="Permalink to this headline">¶</a></h3>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>Software upgrade proposals exist because they are inherited from the Cosmos SDK, but they are temporarily unavailable because they have not been implemented yet. Therefore, they share the same semantics as a simple text proposal. If you submit this type of proposal, you might lose your Luna deposit.</p>
+</div>
+</div>
+</div>
+<div class="section" id="transitions">
+<h2>Transitions<a class="headerlink" href="#transitions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="end-block">
+<h3>End-Block<a class="headerlink" href="#end-block" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>This section was taken from the official Cosmos SDK docs and placed here for your convenience to understand the Governance process.</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">ProposalProcessingQueue</span></code> is a queue (<code class="docutils literal notranslate"><span class="pre">queue[proposalID]</span></code>) containing all the <code class="docutils literal notranslate"><span class="pre">ProposalID</span></code>s of proposals that reach <code class="docutils literal notranslate"><span class="pre">MinDeposit</span></code>. At the end of each block, all the proposals that have reached the end of their voting period are processed. To process a finished proposal, the application tallies the votes, computes the votes of each validator, and checks if every validator in the validator set has voted. If the proposal is accepted, deposits are refunded. Finally, the proposal content <code class="docutils literal notranslate"><span class="pre">Handler</span></code> is executed.</p>
+<div class="highlight-GO notranslate"><div class="highlight"><pre><span></span>for finishedProposalID in GetAllFinishedProposalIDs(block.Time)
+	proposal = load(Governance, &lt;proposalID|&#39;proposal&#39;&gt;) // proposal is a const key
+
+	validators = Keeper.getAllValidators()
+	tmpValMap := map(sdk.AccAddress)ValidatorGovInfo
+
+	// Initiate mapping at 0. This is the amount of shares of the validator&#39;s vote that will be overridden by their delegator&#39;s votes
+	for each validator in validators
+	tmpValMap(validator.OperatorAddr).Minus = 0
+
+	// Tally
+	voterIterator = rangeQuery(Governance, &lt;proposalID|&#39;addresses&#39;&gt;) //return all the addresses that voted on the proposal
+	for each (voterAddress, vote) in voterIterator
+	delegations = stakingKeeper.getDelegations(voterAddress) // get all delegations for current voter
+
+	for each delegation in delegations
+		// make sure delegation.Shares does NOT include shares being unbonded
+		tmpValMap(delegation.ValidatorAddr).Minus += delegation.Shares
+		proposal.updateTally(vote, delegation.Shares)
+
+	_, isVal = stakingKeeper.getValidator(voterAddress)
+	if (isVal)
+		tmpValMap(voterAddress).Vote = vote
+
+	tallyingParam = load(GlobalParams, &#39;TallyingParam&#39;)
+
+	// Update tally if validator voted they voted
+	for each validator in validators
+	if tmpValMap(validator).HasVoted
+		proposal.updateTally(tmpValMap(validator).Vote, (validator.TotalShares - tmpValMap(validator).Minus))
+
+	// Check if proposal is accepted or rejected
+	totalNonAbstain := proposal.YesVotes + proposal.NoVotes + proposal.NoWithVetoVotes
+	if (proposal.Votes.YesVotes/totalNonAbstain &gt; tallyingParam.Threshold AND proposal.Votes.NoWithVetoVotes/totalNonAbstain  &lt; tallyingParam.Veto)
+	//  proposal was accepted at the end of the voting period
+	//  refund deposits (non-voters already punished)
+	for each (amount, depositor) in proposal.Deposits
+		depositor.AtomBalance += amount
+
+	stateWriter, err := proposal.Handler()
+	if err != nil
+		// proposal passed but failed during state execution
+		proposal.CurrentStatus = ProposalStatusFailed
+		else
+		// proposal pass and state is persisted
+		proposal.CurrentStatus = ProposalStatusAccepted
+		stateWriter.save()
+	else
+	// proposal was rejected
+	proposal.CurrentStatus = ProposalStatusRejected
+
+	store(Governance, &lt;proposalID|&#39;proposal&#39;&gt;, proposal)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
+<p>The subspace for the Governance module is <code class="docutils literal notranslate"><span class="pre">gov</span></code>.</p>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">type</span><span class="w"> </span><span class="nx">DepositParams</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">	</span><span class="nx">MinDeposit</span><span class="w">       </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">Coins</span><span class="w">     </span><span class="s">`json:&quot;min_deposit,omitempty&quot; yaml:&quot;min_deposit,omitempty&quot;`</span><span class="w"></span>
+<span class="w">	</span><span class="nx">MaxDepositPeriod</span><span class="w"> </span><span class="nx">time</span><span class="p">.</span><span class="nx">Duration</span><span class="w"> </span><span class="s">`json:&quot;max_deposit_period,omitempty&quot; yaml:&quot;max_deposit_period,omitempty&quot;`</span><span class="w"> </span><span class="c1">//  Maximum period for Atom holders to deposit on a proposal. Initial value: 2 months</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kd">type</span><span class="w"> </span><span class="nx">TallyParams</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">	</span><span class="nx">Quorum</span><span class="w">    </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">Dec</span><span class="w"> </span><span class="s">`json:&quot;quorum,omitempty&quot; yaml:&quot;quorum,omitempty&quot;`</span><span class="w"></span>
+<span class="w">	</span><span class="nx">Threshold</span><span class="w"> </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">Dec</span><span class="w"> </span><span class="s">`json:&quot;threshold,omitempty&quot; yaml:&quot;threshold,omitempty&quot;`</span><span class="w"></span>
+<span class="w">	</span><span class="nx">Veto</span><span class="w">      </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">Dec</span><span class="w"> </span><span class="s">`json:&quot;veto,omitempty&quot; yaml:&quot;veto,omitempty&quot;`</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kd">type</span><span class="w"> </span><span class="nx">VotingParams</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">	</span><span class="nx">VotingPeriod</span><span class="w"> </span><span class="nx">time</span><span class="p">.</span><span class="nx">Duration</span><span class="w"> </span><span class="s">`json:&quot;voting_period,omitempty&quot; yaml:&quot;voting_period,omitempty&quot;`</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<div class="section" id="mindeposit">
+<h3>MinDeposit<a class="headerlink" href="#mindeposit" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>type: <code class="docutils literal notranslate"><span class="pre">Coins</span></code></p></li>
+<li><p>denom: <code class="docutils literal notranslate"><span class="pre">uluna</span></code></p></li>
+<li><p>amount: <code class="docutils literal notranslate"><span class="pre">50000000</span></code></p></li>
+</ul>
+<p>The minimum deposit amount for a proposal to enter a voting period. Currently 50 Luna.</p>
+</div>
+<div class="section" id="maxdepositperiod">
+<h3>MaxDepositPeriod<a class="headerlink" href="#maxdepositperiod" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>type: <code class="docutils literal notranslate"><span class="pre">time.Duration</span></code> (seconds)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;max_deposit_period&quot;:</span> <span class="pre">&quot;1209600s&quot;</span></code></p></li>
+</ul>
+<p>Maximum period for Luna holders to deposit on a proposal. Currently 2 weeks.</p>
+</div>
+<div class="section" id="quorum">
+<h3>Quorum<a class="headerlink" href="#quorum" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>type: <code class="docutils literal notranslate"><span class="pre">Dec</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;quorum&quot;:</span> <span class="pre">&quot;0.400000000000000000&quot;,</span></code></p></li>
+</ul>
+<p>Minimum percentage of total stake needed to vote for a result to be considered valid.</p>
+</div>
+<div class="section" id="threshold">
+<h3>Threshold<a class="headerlink" href="#threshold" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>type: <code class="docutils literal notranslate"><span class="pre">Dec</span></code></p></li>
+<li><p>default value: 50%</p></li>
+</ul>
+<p>Minimum proportion of Yes votes for a proposal to pass.</p>
+</div>
+<div class="section" id="veto">
+<h3>Veto<a class="headerlink" href="#veto" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>type: <code class="docutils literal notranslate"><span class="pre">Dec</span></code></p></li>
+<li><p>default value: <code class="docutils literal notranslate"><span class="pre">0.33</span></code></p></li>
+</ul>
+<p>Minimum value of Veto votes to Total votes ratio for proposal to be vetoed.</p>
+</div>
+<div class="section" id="votingperiod">
+<h3>VotingPeriod<a class="headerlink" href="#votingperiod" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>type: <code class="docutils literal notranslate"><span class="pre">time.Duration</span></code> (seconds)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;voting_period&quot;:</span> <span class="pre">&quot;604800s&quot;</span></code></p></li>
+</ul>
+<p>Length of the voting period. Currently 1 week.</p>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="spec-feegrant.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Fee grant</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="spec-market.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Market </p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+
+    <div class="extra_footer container">
+      <div class="row">
+
+        <div class="col">
+
+          <div class="logos">
+            <a href="https://discord.gg/e29HWwC2Mz" rel="noopener" target="_blank"><img src="/discord.svg" alt="link to Terra discord room"></a>&nbsp;
+            <a href="https://medium.com/terra-money" rel="noopener" target="_blank"><img src="/medium.svg" alt="link to Terra medium"></a>&nbsp;
+            <a href="https://twitter.com/terra_money" rel="noopener" target="_blank"><img src="/twitter.svg" alt="link to Terra twitter"></a>&nbsp;
+            <a href="https://www.youtube.com/channel/UCoV1RXZ9ZBGcuu_PMTTlM0g" rel="noopener" target="_blank"><img src="/icon_youtube.png" alt="link to Terra youtube"></a>&nbsp;
+            <a href="https://t.me/terra_announcements" rel="noopener" target="_blank"><img src="/icon_telegram.png" alt="link to Terra telegram room"></a>
+          </div>
+
+        </div>
+
+        <div class="col-md-auto">
+
+          <a href="https://www.terra.money/" >terra.money</a> <br/>
+          <a href="mailto:general@terra.money" >Contact</a> <br/>
+          <a href="https://terra.breezy.hr/"> Careers</a> <br/>
+          <br/>
+
+        </div>
+
+        <div class="col-md-auto">
+
+          <a href="https://assets.website-files.com/611153e7af981472d8da199c/618b02d13e938ae1f8ad1e45_Terra_White_paper.pdf" >Whitepaper</a> <br/>
+          <a href="https://certik.org/projects/terra" >Security Audit</a> <br/>
+          <a href="https://agora.terra.money/" >Agora forum</a> <br/>
+          <br/>
+
+        </div>
+
+        <div class="col">
+          <a href="https://finder.terra.money/" >Terra Finder</a> <br/>
+          <a href="https://station.terra.money/" >Terra Station</a> <br/>
+          <a href="https://status.terra.money/" >Status</a> <br/>
+          <br/>
+
+        </div>
+
+      </div>
+    </div>
+
+
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+    <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  
+  </body>
+</html>

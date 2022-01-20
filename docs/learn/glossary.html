@@ -1,0 +1,2407 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Glossary &#8212; Terra Docs  documentation</title>
+    
+    <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  
+    
+    <link rel="stylesheet"
+      href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+    <link rel="preload" as="font" type="font/woff2" crossorigin
+      href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+    <link rel="preload" as="font" type="font/woff2" crossorigin
+      href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+    
+      
+  
+    
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" />
+    
+    <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/sphinx-book-theme.9d8b4a8b9bb19db25eeaddc40d639ba2.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    <link rel="shortcut icon" href="../../_static/docs_favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Develop" href="../develop/README.html" />
+    <link rel="prev" title="Fees on Terra" href="fees.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<div class="col-12 col-md-3 bd-sidebar site-navigation " id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/docs_logo.svg" class="logo" alt="logo">
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="README.html">
+   Learn
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="terra-station/README.html">
+     Terra Station
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="terra-station/download/README.html">
+       Download
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+      <label for="toctree-checkbox-3">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="terra-station/download/terra-station-desktop.html">
+         Terra Station desktop
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="terra-station/download/terra-station-extension.html">
+         Terra Station extension
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="terra-station/download/terra-station-mobile.html">
+         Terra Station mobile
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="terra-station/station-guides/README.html">
+       Terra Station guides
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+      <label for="toctree-checkbox-4">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="terra-station/station-guides/wallet.html">
+         Wallet
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="terra-station/station-guides/staking.html">
+         Manage Staking
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="terra-station/station-guides/swap.html">
+         Mint, burn, or swap
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="terra-station/station-guides/governance.html">
+         Governance
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="terra-station/station-guides/contracts.html">
+         Contracts
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="terra-station/station-guides/testnet.html">
+         Testnet
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="protocol.html">
+     About the Terra Protocol
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="fees.html">
+     Fees on Terra
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Glossary
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../develop/README.html">
+   Develop
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../develop/dapp/README.html">
+     Build a dApp
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+    <label for="toctree-checkbox-6">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../develop/dapp/quick-start/README.html">
+       5-minute quickstart guide
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+      <label for="toctree-checkbox-7">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../develop/dapp/quick-start/initial-setup.html">
+         Initial setup
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../develop/dapp/quick-start/using-terrain-localterra.html">
+         Use Terrain with LocalTerra
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../develop/dapp/quick-start/using-terrain-testnet.html">
+         Use Terrain with the testnet
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../develop/dapp/smart-contracts/README.html">
+       In-depth dApp guide
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+      <label for="toctree-checkbox-8">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../develop/dapp/smart-contracts/build-terra-dapp.html">
+         Build a simple Terra dApp
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../develop/dapp/smart-contracts/set-up-local-environment.html">
+         Environment Setup
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../develop/dapp/smart-contracts/write-smart-contract.html">
+         Writing the Contract
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../develop/dapp/smart-contracts/interact-with-smart-contract.html">
+         Interacting with the Contract
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../develop/dapp/smart-contracts/manage-cw20-tokens.html">
+         CW20 Tokens
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../develop/how-to/README.html">
+     Guides
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+    <label for="toctree-checkbox-9">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../develop/how-to/terrad/README.html">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         terrad
+        </span>
+       </code>
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+      <label for="toctree-checkbox-10">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../develop/how-to/terrad/install-terrad.html">
+         Install terrad
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../develop/how-to/terrad/using-terrad.html">
+         Using terrad
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../develop/how-to/terrad/commands.html">
+         Commands
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../develop/how-to/terrad/subcommands.html">
+         Subcommands
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../develop/how-to/localterra/README.html">
+       LocalTerra
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+      <label for="toctree-checkbox-11">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../develop/how-to/localterra/install-localterra.html">
+         Install LocalTerra
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../develop/how-to/localterra/configure.html">
+         Configure LocalTerra
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../develop/how-to/localterra/integrations.html">
+         Integrations
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../develop/how-to/localterra/accounts.html">
+         Accounts
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../develop/how-to/sign-with-multisig.html">
+       Sign with a multisig account
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../develop/how-to/start-lcd.html">
+       Start the light client daemon (LCD)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../develop/how-to/endpoints.html">
+       RPC endpoints
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../develop/module-specifications/README.html">
+     Terra Core modules
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+    <label for="toctree-checkbox-12">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../develop/module-specifications/spec-auth.html">
+       Auth
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../develop/module-specifications/spec-authz.html">
+       AuthZ
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../develop/module-specifications/spec-bank.html">
+       Bank
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../develop/module-specifications/spec-capability.html">
+       Capability
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../develop/module-specifications/spec-distribution.html">
+       Distribution
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../develop/module-specifications/spec-evidence.html">
+       Evidence
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../develop/module-specifications/spec-feegrant.html">
+       Fee grant
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../develop/module-specifications/spec-governance.html">
+       Governance
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../develop/module-specifications/spec-market.html">
+       Market
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../develop/module-specifications/spec-mint.html">
+       Mint
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../develop/module-specifications/spec-oracle.html">
+       Oracle
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../develop/module-specifications/spec-slashing.html">
+       Slashing
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../develop/module-specifications/spec-staking.html">
+       Staking
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../develop/module-specifications/spec-treasury.html">
+       Treasury
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../develop/module-specifications/spec-wasm.html">
+       WASM
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../develop/sdks/README.html">
+     SDKs
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+    <label for="toctree-checkbox-13">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../develop/sdks/terra-js/README.html">
+       Terra.js
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+      <label for="toctree-checkbox-14">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../develop/sdks/terra-js/add-modules.html">
+         Add modules
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../develop/sdks/terra-js/coin-and-coins.html">
+         Coin and Coins
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../develop/sdks/terra-js/common-examples.html">
+         Common examples
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../develop/sdks/terra-js/fees.html">
+         Fees
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../develop/sdks/terra-js/keys.html">
+         Keys
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../develop/sdks/terra-js/make-a-connection.html">
+         Make a connection
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../develop/sdks/terra-js/msgAuthorization.html">
+         MsgAuthorization
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../develop/sdks/terra-js/multisend.html">
+         MsgSend
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../develop/sdks/terra-js/numeric.html">
+         Numeric
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../develop/sdks/terra-js/oracle-feeder.html">
+         Oracle feeder
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../develop/sdks/terra-js/query-data.html">
+         Query data
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../develop/sdks/terra-js/smart-contracts.html">
+         Smart contracts
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../develop/sdks/terra-js/station-extension.html">
+         Terra Station extension
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../develop/sdks/terra-js/transactions.html">
+         Transactions
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../develop/sdks/terra-js/wallets.html">
+         Wallets
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../develop/sdks/terra-js/Websockets.html">
+         Websockets
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference external" href="https://terra-money.github.io/terra.py/">
+       Terra.py
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../develop/reference/README.html">
+     Dev reference
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+    <label for="toctree-checkbox-15">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference external" href="https://lcd.terra.dev/swagger/">
+       Terra REST API
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference external" href="https://pkg.go.dev/github.com/terra-money/core">
+       Terra Core GoDoc
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../develop/how-to/terrad/README.html">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         terrad
+        </span>
+       </code>
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+      <label for="toctree-checkbox-16">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../develop/how-to/terrad/install-terrad.html">
+         Install terrad
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../develop/how-to/terrad/using-terrad.html">
+         Using terrad
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../develop/how-to/terrad/commands.html">
+         Commands
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../develop/how-to/terrad/subcommands.html">
+         Subcommands
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../develop/how-to/endpoints.html">
+       RPC endpoints
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../develop/reference/history-and-changes.html">
+       History and changes
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../develop/reference/migration-guide.html">
+       Columbus-5 upgrade
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../full-node/README.html">
+   Full node
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+  <label for="toctree-checkbox-17">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../full-node/run-a-full-terra-node/README.html">
+     Run a full Terra node
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+    <label for="toctree-checkbox-18">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../full-node/run-a-full-terra-node/system-config.html">
+       System configuration
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../full-node/run-a-full-terra-node/build-terra-core.html">
+       Build Terra core
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../full-node/run-a-full-terra-node/set-up-production.html">
+       Set up a production environment
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../full-node/run-a-full-terra-node/configure-general-settings.html">
+       Configure general settings
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../full-node/run-a-full-terra-node/join-a-network.html">
+       Join a network
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../full-node/run-a-full-terra-node/sync.html">
+       Sync
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../full-node/run-a-full-terra-node/updates-and-additional.html">
+       Updates and additional settings
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../full-node/manage-a-terra-validator/README.html">
+     Manage a validator
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
+    <label for="toctree-checkbox-19">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../full-node/manage-a-terra-validator/court-delegations.html">
+       Court delegations
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../full-node/manage-a-terra-validator/faq.html">
+       Validator FAQ
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../full-node/manage-a-terra-validator/implement-security.html">
+       Implement security practices
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../full-node/manage-a-terra-validator/set-up-oracle-feeder.html">
+       Set up an oracle feeder
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../full-node/manage-a-terra-validator/set-up-validator.html">
+       Register your Terra validator
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../full-node/manage-a-terra-validator/troubleshoot-validator-problems.html">
+       Troubleshoot validator problems
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../full-node/reference/README.html">
+     Node reference
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
+    <label for="toctree-checkbox-20">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference external" href="https://lcd.terra.dev/swagger/">
+       Terra REST API
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference external" href="https://pkg.go.dev/github.com/terra-money/core">
+       Terra Core GoDoc
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../develop/how-to/terrad/README.html">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         terrad
+        </span>
+       </code>
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
+      <label for="toctree-checkbox-21">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../develop/how-to/terrad/install-terrad.html">
+         Install terrad
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../develop/how-to/terrad/using-terrad.html">
+         Using terrad
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../develop/how-to/terrad/commands.html">
+         Commands
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../develop/how-to/terrad/subcommands.html">
+         Subcommands
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../develop/how-to/endpoints.html">
+       RPC endpoints
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../develop/how-to/start-lcd.html">
+       Start the light client daemon (LCD)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../develop/reference/history-and-changes.html">
+       History and changes
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../develop/reference/migration-guide.html">
+       Columbus-5 upgrade
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ecosystem/README.html">
+   Ecosystem
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
+  <label for="toctree-checkbox-22">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ecosystem/explore.html">
+     Explore the ecosystem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ecosystem/integrations.html">
+     Integrations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://www.terra.money/ecosystem">
+     dApps
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../spacecamp/README.html">
+   Spacecamp
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
+  <label for="toctree-checkbox-23">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="terra-station/README.html">
+     Terra Station
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
+    <label for="toctree-checkbox-24">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="terra-station/download/README.html">
+       Download
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/>
+      <label for="toctree-checkbox-25">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="terra-station/download/terra-station-desktop.html">
+         Terra Station desktop
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="terra-station/download/terra-station-extension.html">
+         Terra Station extension
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="terra-station/download/terra-station-mobile.html">
+         Terra Station mobile
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="terra-station/station-guides/README.html">
+       Terra Station guides
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
+      <label for="toctree-checkbox-26">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="terra-station/station-guides/wallet.html">
+         Wallet
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="terra-station/station-guides/staking.html">
+         Manage Staking
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="terra-station/station-guides/swap.html">
+         Mint, burn, or swap
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="terra-station/station-guides/governance.html">
+         Governance
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="terra-station/station-guides/contracts.html">
+         Contracts
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="terra-station/station-guides/testnet.html">
+         Testnet
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../develop/dapp/quick-start/README.html">
+     5-minute quickstart guide
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" type="checkbox"/>
+    <label for="toctree-checkbox-27">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../develop/dapp/quick-start/initial-setup.html">
+       Initial setup
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../develop/dapp/quick-start/using-terrain-localterra.html">
+       Use Terrain with LocalTerra
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../develop/dapp/quick-start/using-terrain-testnet.html">
+       Use Terrain with the testnet
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../develop/dapp/quick-start/using-terrain-localterra.html">
+     Use Terrain with LocalTerra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../develop/dapp/quick-start/using-terrain-testnet.html">
+     Use Terrain with the testnet
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../develop/dapp/smart-contracts/README.html">
+     In-depth dApp guide
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" type="checkbox"/>
+    <label for="toctree-checkbox-28">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../develop/dapp/smart-contracts/build-terra-dapp.html">
+       Build a simple Terra dApp
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../develop/dapp/smart-contracts/set-up-local-environment.html">
+       Environment Setup
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../develop/dapp/smart-contracts/write-smart-contract.html">
+       Writing the Contract
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../develop/dapp/smart-contracts/interact-with-smart-contract.html">
+       Interacting with the Contract
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../develop/dapp/smart-contracts/manage-cw20-tokens.html">
+       CW20 Tokens
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../develop/how-to/endpoints.html">
+     RPC endpoints
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../develop/module-specifications/README.html">
+     Terra Core modules
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" type="checkbox"/>
+    <label for="toctree-checkbox-29">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../develop/module-specifications/spec-auth.html">
+       Auth
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../develop/module-specifications/spec-authz.html">
+       AuthZ
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../develop/module-specifications/spec-bank.html">
+       Bank
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../develop/module-specifications/spec-capability.html">
+       Capability
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../develop/module-specifications/spec-distribution.html">
+       Distribution
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../develop/module-specifications/spec-evidence.html">
+       Evidence
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../develop/module-specifications/spec-feegrant.html">
+       Fee grant
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../develop/module-specifications/spec-governance.html">
+       Governance
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../develop/module-specifications/spec-market.html">
+       Market
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../develop/module-specifications/spec-mint.html">
+       Mint
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../develop/module-specifications/spec-oracle.html">
+       Oracle
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../develop/module-specifications/spec-slashing.html">
+       Slashing
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../develop/module-specifications/spec-staking.html">
+       Staking
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../develop/module-specifications/spec-treasury.html">
+       Treasury
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../develop/module-specifications/spec-wasm.html">
+       WASM
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../develop/sdks/terra-js/README.html">
+     Terra.js
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" type="checkbox"/>
+    <label for="toctree-checkbox-30">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../develop/sdks/terra-js/add-modules.html">
+       Add modules
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../develop/sdks/terra-js/coin-and-coins.html">
+       Coin and Coins
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../develop/sdks/terra-js/common-examples.html">
+       Common examples
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../develop/sdks/terra-js/fees.html">
+       Fees
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../develop/sdks/terra-js/keys.html">
+       Keys
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../develop/sdks/terra-js/make-a-connection.html">
+       Make a connection
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../develop/sdks/terra-js/msgAuthorization.html">
+       MsgAuthorization
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../develop/sdks/terra-js/multisend.html">
+       MsgSend
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../develop/sdks/terra-js/numeric.html">
+       Numeric
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../develop/sdks/terra-js/oracle-feeder.html">
+       Oracle feeder
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../develop/sdks/terra-js/query-data.html">
+       Query data
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../develop/sdks/terra-js/smart-contracts.html">
+       Smart contracts
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../develop/sdks/terra-js/station-extension.html">
+       Terra Station extension
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../develop/sdks/terra-js/transactions.html">
+       Transactions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../develop/sdks/terra-js/wallets.html">
+       Wallets
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../develop/sdks/terra-js/Websockets.html">
+       Websockets
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://terra-money.github.io/terra.py/">
+     Terra.py
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://faucet.terra.money/">
+     Faucet
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<!-- This is an invisible pixel that we watch to see if we've scrolled. -->
+<div class="sbt-scroll-pixel-helper"></div>
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            <div class="topbar-left">
+                
+                <label class="nav-toggle-button" for="__navigation">
+                    <div class="visually-hidden">Toggle navigation</div>
+                    <i class="fas fa-bars"></i>
+                </label>
+                
+            </div>
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/docs/learn/glossary.md.txt"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/terra-money/docs"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/terra-money/docs/issues/new?title=Issue%20on%20page%20%2Fdocs/learn/glossary.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/terra-money/docs/edit/master/docs/docs/learn/glossary.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#active-set">
+   Active set
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#air-drops">
+   Air drops
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#algorithmic-stablecoin">
+   Algorithmic stablecoin
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#arbitrage">
+   Arbitrage
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#blockchain">
+   Blockchain
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#blocks">
+   Blocks
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bluna">
+   bLuna
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bonded-validator">
+   Bonded validator
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bonding">
+   Bonding
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#burn">
+   Burn
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chai">
+   CHAI
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#columbus-5">
+   Columbus-5
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#commission">
+   Commission
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#community-pool">
+   Community pool
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#consensus">
+   Consensus
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cosmos-sdk">
+   Cosmos-SDK
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dapp">
+   dApp
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ddos">
+   DDoS
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#defi">
+   DeFi
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#delegate">
+   Delegate
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#delegator">
+   Delegator
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fees">
+   Fees
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fiat-currency">
+   Fiat currency
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#full-node">
+   Full node
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#luna">
+   Luna
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#governance">
+   Governance
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#governance-proposal">
+   Governance proposal
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inactive-set">
+   Inactive set
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#jailed">
+   Jailed
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#market-swap">
+   Market swap
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mint">
+   Mint
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#miss">
+   Miss
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module">
+   Module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#oracle">
+   Oracle
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#peg">
+   Peg
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pools">
+   Pools
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#proof-of-stake">
+   Proof of Stake
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#redelegate">
+   Redelegate
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rewards">
+   Rewards
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sdr">
+   SDR
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#seigniorage">
+   Seigniorage
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#self-delegation">
+   Self-delegation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#slashing">
+   Slashing
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#slippage">
+   Slippage
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#stake">
+   Stake
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#staking">
+   Staking
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tendermint-consensus">
+   Tendermint consensus
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#terra-core">
+   Terra core
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#terra-mainnet">
+   Terra mainnet
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#terra-stablecoins">
+   Terra stablecoins
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#terra-station">
+   Terra Station
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#terrad">
+   terrad
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#terravaloper-address">
+   Terravaloper address
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#testnet">
+   Testnet
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-terra-ecosystem">
+   The Terra ecosystem
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-terra-protocol">
+   The Terra protocol
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tobin-tax">
+   Tobin tax
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tombstone">
+   Tombstone
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#total-stake">
+   Total stake
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#unbonded-validator">
+   Unbonded validator
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#unbonding-validator">
+   Unbonding validator
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#unbonded-luna">
+   Unbonded Luna
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#unbonding">
+   Unbonding
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#unbonding-luna">
+   Unbonding Luna
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#undelegate">
+   Undelegate
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#uptime">
+   Uptime
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#validator">
+   Validator
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#weight">
+   Weight
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Glossary</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#active-set">
+   Active set
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#air-drops">
+   Air drops
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#algorithmic-stablecoin">
+   Algorithmic stablecoin
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#arbitrage">
+   Arbitrage
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#blockchain">
+   Blockchain
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#blocks">
+   Blocks
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bluna">
+   bLuna
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bonded-validator">
+   Bonded validator
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bonding">
+   Bonding
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#burn">
+   Burn
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chai">
+   CHAI
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#columbus-5">
+   Columbus-5
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#commission">
+   Commission
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#community-pool">
+   Community pool
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#consensus">
+   Consensus
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cosmos-sdk">
+   Cosmos-SDK
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dapp">
+   dApp
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ddos">
+   DDoS
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#defi">
+   DeFi
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#delegate">
+   Delegate
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#delegator">
+   Delegator
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fees">
+   Fees
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fiat-currency">
+   Fiat currency
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#full-node">
+   Full node
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#luna">
+   Luna
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#governance">
+   Governance
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#governance-proposal">
+   Governance proposal
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inactive-set">
+   Inactive set
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#jailed">
+   Jailed
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#market-swap">
+   Market swap
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mint">
+   Mint
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#miss">
+   Miss
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module">
+   Module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#oracle">
+   Oracle
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#peg">
+   Peg
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pools">
+   Pools
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#proof-of-stake">
+   Proof of Stake
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#redelegate">
+   Redelegate
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rewards">
+   Rewards
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sdr">
+   SDR
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#seigniorage">
+   Seigniorage
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#self-delegation">
+   Self-delegation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#slashing">
+   Slashing
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#slippage">
+   Slippage
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#stake">
+   Stake
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#staking">
+   Staking
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tendermint-consensus">
+   Tendermint consensus
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#terra-core">
+   Terra core
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#terra-mainnet">
+   Terra mainnet
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#terra-stablecoins">
+   Terra stablecoins
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#terra-station">
+   Terra Station
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#terrad">
+   terrad
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#terravaloper-address">
+   Terravaloper address
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#testnet">
+   Testnet
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-terra-ecosystem">
+   The Terra ecosystem
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-terra-protocol">
+   The Terra protocol
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tobin-tax">
+   Tobin tax
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tombstone">
+   Tombstone
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#total-stake">
+   Total stake
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#unbonded-validator">
+   Unbonded validator
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#unbonding-validator">
+   Unbonding validator
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#unbonded-luna">
+   Unbonded Luna
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#unbonding">
+   Unbonding
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#unbonding-luna">
+   Unbonding Luna
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#undelegate">
+   Undelegate
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#uptime">
+   Uptime
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#validator">
+   Validator
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#weight">
+   Weight
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="glossary">
+<h1>Glossary<a class="headerlink" href="#glossary" title="Permalink to this headline">¶</a></h1>
+<p>Use this glossary to learn about terms specific to the Terra Protocol.</p>
+<div class="section" id="active-set">
+<h2>Active set<a class="headerlink" href="#active-set" title="Permalink to this headline">¶</a></h2>
+<p>The top 130 <a class="reference internal" href="#validator"><span class="std std-doc">validators</span></a> that participate in consensus and receive rewards.</p>
+</div>
+<div class="section" id="air-drops">
+<h2>Air drops<a class="headerlink" href="#air-drops" title="Permalink to this headline">¶</a></h2>
+<p>Additional rewards given to <a class="reference internal" href="#delegator"><span class="std std-doc">delegators</span></a> through certain <a class="reference internal" href="#validator"><span class="std std-doc">validators</span></a>, separate from <a class="reference internal" href="#rewards"><span class="std std-doc">staking rewards</span></a>. Airdrops come from protocols in the Terra ecosystem to increase visibility. To claim an airdrop, visit the webpage of the protocol giving out the airdrop.</p>
+</div>
+<div class="section" id="algorithmic-stablecoin">
+<h2>Algorithmic stablecoin<a class="headerlink" href="#algorithmic-stablecoin" title="Permalink to this headline">¶</a></h2>
+<p>A cryptocurrency that tracks the price of any asset, usually currency. Algorithmic stablecoins maintain their price peg through a set of rules or software instead of an underlying asset.</p>
+<p>For more information on stablecoins created by the Terra protocol, see <a class="reference internal" href="#terra-stablecoins"><span class="std std-doc">Terra stablecoins</span></a></p>
+</div>
+<div class="section" id="arbitrage">
+<h2>Arbitrage<a class="headerlink" href="#arbitrage" title="Permalink to this headline">¶</a></h2>
+<p>To profit from price differences across different markets. Arbitrageurs buy coins in one market and sell them on another market for a higher price.</p>
+</div>
+<div class="section" id="blockchain">
+<h2>Blockchain<a class="headerlink" href="#blockchain" title="Permalink to this headline">¶</a></h2>
+<p>An unchangeable ledger of transactions copied among a network of independent computer systems.</p>
+</div>
+<div class="section" id="blocks">
+<h2>Blocks<a class="headerlink" href="#blocks" title="Permalink to this headline">¶</a></h2>
+<p>Groups of information stored on a <a class="reference internal" href="#blockchain"><span class="std std-doc">blockchain</span></a>. Each block contains transactions that are grouped, verified, and signed by validators.</p>
+</div>
+<div class="section" id="bluna">
+<h2>bLuna<a class="headerlink" href="#bluna" title="Permalink to this headline">¶</a></h2>
+<p>A token representing bonded Luna that can be traded freely or used as collateral on other protocols in the Terra network, such as <a class="reference external" href="https://anchorprotocol.com/">Anchor</a> and <a class="reference external" href="https://mirror.finance/">Mirror</a>. Bonded Luna takes 21 days to become unbonded.</p>
+</div>
+<div class="section" id="bonded-validator">
+<h2>Bonded validator<a class="headerlink" href="#bonded-validator" title="Permalink to this headline">¶</a></h2>
+<p>A <a class="reference internal" href="#validator"><span class="std std-doc">validator</span></a> in the <a class="reference internal" href="#active-set"><span class="std std-doc">active set</span></a> participating in consensus. Bonded validators earn <a class="reference internal" href="#rewards"><span class="std std-doc">rewards</span></a>.</p>
+</div>
+<div class="section" id="bonding">
+<h2>Bonding<a class="headerlink" href="#bonding" title="Permalink to this headline">¶</a></h2>
+<p>When a user <a class="reference internal" href="#delegate"><span class="std std-doc">delegates</span></a> or bonds Luna to a <a class="reference internal" href="#validator"><span class="std std-doc">validator</span></a> to receive <a class="reference internal" href="#rewards"><span class="std std-doc">staking rewards</span></a>. Validators never have ownership of a delegator’s <a class="reference internal" href="#luna"><span class="std std-doc">Luna</span></a>, even when bonded. Delegating, bonding, and staking generally refer to the same process.</p>
+</div>
+<div class="section" id="burn">
+<h2>Burn<a class="headerlink" href="#burn" title="Permalink to this headline">¶</a></h2>
+<p>The destruction of coins. The Terra protocol burns <a class="reference internal" href="#luna"><span class="std std-doc">Luna</span></a> to mint <a class="reference internal" href="#terra-stablecoins"><span class="std std-doc">Terra stablecoins</span></a> and vice versa. Burned coins are destroyed.</p>
+</div>
+<div class="section" id="chai">
+<h2>CHAI<a class="headerlink" href="#chai" title="Permalink to this headline">¶</a></h2>
+<p>A mobile payments app powered by Terra’s blockchain network.</p>
+</div>
+<div class="section" id="columbus-5">
+<h2>Columbus-5<a class="headerlink" href="#columbus-5" title="Permalink to this headline">¶</a></h2>
+<p>The current version of the <a class="reference internal" href="#terra-mainnet"><span class="std std-doc">Terra mainnet</span></a>.</p>
+</div>
+<div class="section" id="commission">
+<h2>Commission<a class="headerlink" href="#commission" title="Permalink to this headline">¶</a></h2>
+<p>The percentage of <a class="reference internal" href="#rewards"><span class="std std-doc">staking rewards</span></a> a <a class="reference internal" href="#validator"><span class="std std-doc">validator</span></a> keeps before distributing the rest of the rewards to <a class="reference internal" href="#delegator"><span class="std std-doc">delegators</span></a>. Commission is a validator’s income. Validators set their own commission rates.</p>
+</div>
+<div class="section" id="community-pool">
+<h2>Community pool<a class="headerlink" href="#community-pool" title="Permalink to this headline">¶</a></h2>
+<p>A special fund designated for funding community projects. Any community member can create a governance proposal to spend the tokens in the community pool. If the proposal passes, the funds are spent as specified in the proposal.</p>
+</div>
+<div class="section" id="consensus">
+<h2>Consensus<a class="headerlink" href="#consensus" title="Permalink to this headline">¶</a></h2>
+<p>A system used by <a class="reference internal" href="#validator"><span class="std std-doc">validators</span></a> or miners to agree that each <a class="reference internal" href="#blocks"><span class="std std-doc">block</span></a> of transactions in a <a class="reference internal" href="#blockchain"><span class="std std-doc">blockchain</span></a> is correct. The Terra blockchain uses the Tendermint consensus. Validators earn <a class="reference internal" href="#rewards"><span class="std std-doc">rewards</span></a> for participating in consensus. Visit the <a class="reference external" href="https://docs.tendermint.com/">Tendermint official documentation site</a> for more information.</p>
+</div>
+<div class="section" id="cosmos-sdk">
+<h2>Cosmos-SDK<a class="headerlink" href="#cosmos-sdk" title="Permalink to this headline">¶</a></h2>
+<p>The open-source framework the Terra blockchain is built on. For more information, check out the <a class="reference external" href="https://docs.cosmos.network/">Cosmos SDK Documentation</a>.</p>
+</div>
+<div class="section" id="dapp">
+<h2>dApp<a class="headerlink" href="#dapp" title="Permalink to this headline">¶</a></h2>
+<p>An application built on a decentralized platform. Protocol’s built on Terra are dApps.</p>
+</div>
+<div class="section" id="ddos">
+<h2>DDoS<a class="headerlink" href="#ddos" title="Permalink to this headline">¶</a></h2>
+<p>Distributed denial of service attack. When an attacker floods a network with traffic or requests in order to disrupt service.</p>
+</div>
+<div class="section" id="defi">
+<h2>DeFi<a class="headerlink" href="#defi" title="Permalink to this headline">¶</a></h2>
+<p>Decentralized finance. A movement away from traditional finance and toward systems that do not require financial intermediaries.</p>
+</div>
+<div class="section" id="delegate">
+<h2>Delegate<a class="headerlink" href="#delegate" title="Permalink to this headline">¶</a></h2>
+<p>When users or delegators add their <a class="reference internal" href="#luna"><span class="std std-doc">Luna</span></a> to a <a class="reference internal" href="#validator"><span class="std std-doc">validator’s</span></a> stake in exchange for rewards. Delegated Luna is bonded to a validator. Validators never have ownership of a <a class="reference internal" href="#delegator"><span class="std std-doc">delegator’s</span></a> Luna. Delegating, bonding, and staking generally refer to the same process.</p>
+</div>
+<div class="section" id="delegator">
+<h2>Delegator<a class="headerlink" href="#delegator" title="Permalink to this headline">¶</a></h2>
+<p>A user who <a class="reference internal" href="#delegate"><span class="std std-doc">delegates</span></a>, bonds, or stakes <a class="reference internal" href="#luna"><span class="std std-doc">Luna</span></a> to a <a class="reference internal" href="#validator"><span class="std std-doc">validator</span></a> to earn <a class="reference internal" href="#rewards"><span class="std std-doc">rewards</span></a>. Delegating, bonding, and staking generally refer to the same process.</p>
+<p>##Epoch</p>
+<p>A length of time measured in <a class="reference internal" href="#blocks"><span class="std std-doc">blocks</span></a>. An epoch for the governance module occurs every 100800 blocks, or roughly every 7.7 days, given a 6.6-second block time. Block times may vary.</p>
+</div>
+<div class="section" id="fees">
+<h2>Fees<a class="headerlink" href="#fees" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Gas</strong>: Compute fees added on to all transactions to avoid spamming. <a class="reference internal" href="#validator"><span class="std std-doc">Validators</span></a> set minimum gas prices and reject transactions that have implied gas prices below this threshold.</p></li>
+<li><p><strong>Spread fee</strong>: A variable fee on any transaction between <a class="reference internal" href="#terra-stablecoins"><span class="std std-doc">Terra</span></a> and <a class="reference internal" href="#luna"><span class="std std-doc">Luna</span></a>.</p></li>
+<li><p><strong>Tobin tax</strong>: A fee on any transaction between Terra stablecoin denominations.</p></li>
+</ul>
+<p>For more information on fees, visit <a class="reference internal" href="fees.html"><span class="doc std std-doc">Fees on Terra</span></a>.</p>
+</div>
+<div class="section" id="fiat-currency">
+<h2>Fiat currency<a class="headerlink" href="#fiat-currency" title="Permalink to this headline">¶</a></h2>
+<p>Currency issued by a government that is not backed by an underlying asset. USD is the fiat currency of the United States.</p>
+</div>
+<div class="section" id="full-node">
+<h2>Full node<a class="headerlink" href="#full-node" title="Permalink to this headline">¶</a></h2>
+<p>A computer connected to the <a class="reference internal" href="#terra-mainnet"><span class="std std-doc">Terra mainnet</span></a> able to validate transactions and interact with the Terra blockchain. All active <a class="reference internal" href="#validator"><span class="std std-doc">validators</span></a> run full nodes.</p>
+</div>
+<div class="section" id="luna">
+<h2>Luna<a class="headerlink" href="#luna" title="Permalink to this headline">¶</a></h2>
+<p>The native staking token of the Terra protocol. Luna supply expands and contracts in order to maintain the prices of <a class="reference internal" href="#terra-stablecoins"><span class="std std-doc">Terra stablecoins</span></a>. Luna is also used as a governance token. <a class="reference internal" href="#delegator"><span class="std std-doc">Delegators</span></a> can stake Luna to recieve rewards.</p>
+</div>
+<div class="section" id="governance">
+<h2>Governance<a class="headerlink" href="#governance" title="Permalink to this headline">¶</a></h2>
+<p>Governance is the democratic process that allows users and <a class="reference internal" href="#validator"><span class="std std-doc">validators</span></a> to make changes to the Terra protocol. Community members submit, vote, and implement proposals. One staked <a class="reference internal" href="#luna"><span class="std std-doc">Luna</span></a> is equal to one vote.</p>
+</div>
+<div class="section" id="governance-proposal">
+<h2>Governance proposal<a class="headerlink" href="#governance-proposal" title="Permalink to this headline">¶</a></h2>
+<p>A written submission for a change or addition to the <a class="reference internal" href="#the-terra-protocol"><span class="std std-doc">Terra protocol</span></a>. Topics of proposals can vary from community pool spending, software changes, parameter changes, or any change pertaining to the Terra protocol.</p>
+</div>
+<div class="section" id="inactive-set">
+<h2>Inactive set<a class="headerlink" href="#inactive-set" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="#validator"><span class="std std-doc">Validators</span></a> that are not in the <a class="reference internal" href="#active-set"><span class="std std-doc">active set</span></a>. These validators do not participate in <a class="reference internal" href="#consensus"><span class="std std-doc">consensus</span></a> and do not earn <a class="reference internal" href="#rewards"><span class="std std-doc">rewards</span></a>.</p>
+</div>
+<div class="section" id="jailed">
+<h2>Jailed<a class="headerlink" href="#jailed" title="Permalink to this headline">¶</a></h2>
+<p>Validators who misbehave are jailed or excluded from the <a class="reference internal" href="#active-set"><span class="std std-doc">active set</span></a> for a period amount of time.</p>
+</div>
+<div class="section" id="market-swap">
+<h2>Market swap<a class="headerlink" href="#market-swap" title="Permalink to this headline">¶</a></h2>
+<p>A swap in Terra Station that uses the Terra protocol’s market function. Market swaps occur between Terra stablecoin denominations or between Terra and Luna. Market swaps spend <a class="reference internal" href="#fees"><span class="std std-doc">gas</span></a> and incur either a <a class="reference internal" href="#fees"><span class="std std-doc">Tobin tax</span></a> or a <a class="reference internal" href="#fees"><span class="std std-doc">Spread fee</span></a>.</p>
+<p><strong>Examples</strong></p>
+<ul class="simple">
+<li><p>Swapping UST for KRT in Terra Station will charge a Tobin tax and gas fees.</p></li>
+<li><p>Swapping Luna for UST in Terra Station will charge a spread fee and gas fees.</p></li>
+</ul>
+<p>To learn how to use the market swap feature in Terra station, visit <a class="reference internal" href="terra-station/station-guides/swap.html"><span class="doc std std-doc">how to use Terra Station</span></a>.</p>
+<p>For more information on fees, visit <a class="reference internal" href="fees.html"><span class="doc std std-doc">Fees on Terra</span></a>.</p>
+</div>
+<div class="section" id="mint">
+<h2>Mint<a class="headerlink" href="#mint" title="Permalink to this headline">¶</a></h2>
+<p>The creation of new coins. Minting is the opposite of burning. The Terra protocol burns Luna to mint Terra stablecoins and vice versa.</p>
+</div>
+<div class="section" id="miss">
+<h2>Miss<a class="headerlink" href="#miss" title="Permalink to this headline">¶</a></h2>
+<p>When a vote fails to be included in consensus.</p>
+</div>
+<div class="section" id="module">
+<h2>Module<a class="headerlink" href="#module" title="Permalink to this headline">¶</a></h2>
+<p>A section of the Terra core that represents a particular function of the Terra protocol. Visit the <a class="reference internal" href="../develop/module-specifications/README.html"><span class="doc std std-doc">Terra core module specifications</span></a> for more information.</p>
+</div>
+<div class="section" id="oracle">
+<h2>Oracle<a class="headerlink" href="#oracle" title="Permalink to this headline">¶</a></h2>
+<p>A software that monitors the real-world price and exchange rates of different assets. Validators submit exchange rates to the protocol and vote on the correct rates. Oracles are used to relay current external exchange rates to the protocol.</p>
+<p>For more information, visit the <a class="reference internal" href="../develop/module-specifications/spec-oracle.html"><span class="doc std std-doc">oracle page</span></a>.</p>
+</div>
+<div class="section" id="peg">
+<h2>Peg<a class="headerlink" href="#peg" title="Permalink to this headline">¶</a></h2>
+<p>A currency rate that directly tracks an asset’s price. The peg for UST is the price of USD. The ideal peg ratio is 1:1.</p>
+</div>
+<div class="section" id="pools">
+<h2>Pools<a class="headerlink" href="#pools" title="Permalink to this headline">¶</a></h2>
+<p>Groups of tokens. Supply pools represent the total supply of tokens in a market.</p>
+</div>
+<div class="section" id="proof-of-stake">
+<h2>Proof of Stake<a class="headerlink" href="#proof-of-stake" title="Permalink to this headline">¶</a></h2>
+<p>Proof of Stake. A style of blockchain where validators are chosen to propose blocks according to the number of coins they hold.</p>
+</div>
+<div class="section" id="redelegate">
+<h2>Redelegate<a class="headerlink" href="#redelegate" title="Permalink to this headline">¶</a></h2>
+<p>When a delegator wants to transfer their bonded luna to a different validator. Redelegating Luna is instant and does not require a 21-day unbonding period.</p>
+</div>
+<div class="section" id="rewards">
+<h2>Rewards<a class="headerlink" href="#rewards" title="Permalink to this headline">¶</a></h2>
+<p>Revenue generated from fees given to validators and disbursed to delegators.</p>
+</div>
+<div class="section" id="sdr">
+<h2>SDR<a class="headerlink" href="#sdr" title="Permalink to this headline">¶</a></h2>
+<p>Special Drawing Rights. An international reserve asset and unit of account created by the IMF. SDR value is calculated daily using a basket of the world’s largest economies. The Terra protocol uses TerraSDR or SDT as its base currency for calculations and to set standards.</p>
+</div>
+<div class="section" id="seigniorage">
+<h2>Seigniorage<a class="headerlink" href="#seigniorage" title="Permalink to this headline">¶</a></h2>
+<p>The value of a coin minus the cost of its production. In the Terra protocol, the cost of minting is very small. All seigniorage in the Terra protocol is burned.</p>
+</div>
+<div class="section" id="self-delegation">
+<h2>Self-delegation<a class="headerlink" href="#self-delegation" title="Permalink to this headline">¶</a></h2>
+<p>The amount of Luna a validator bonds to themselves. Also referred to as self-bond.</p>
+</div>
+<div class="section" id="slashing">
+<h2>Slashing<a class="headerlink" href="#slashing" title="Permalink to this headline">¶</a></h2>
+<p>Punishment for validators that misbehave. Validators lose part of their stake when they get slashed.</p>
+<p>For more information, see <a class="reference internal" href="protocol.html#slashing"><span class="std std-doc">slashing</span></a> in the description of the Terra protocol.</p>
+</div>
+<div class="section" id="slippage">
+<h2>Slippage<a class="headerlink" href="#slippage" title="Permalink to this headline">¶</a></h2>
+<p>The difference in a coin’s price between the start and end of a transaction.</p>
+</div>
+<div class="section" id="stake">
+<h2>Stake<a class="headerlink" href="#stake" title="Permalink to this headline">¶</a></h2>
+<p>The amount of <a class="reference internal" href="#luna"><span class="std std-doc">Luna</span></a> bonded to a validator.</p>
+</div>
+<div class="section" id="staking">
+<h2>Staking<a class="headerlink" href="#staking" title="Permalink to this headline">¶</a></h2>
+<p>When a user delegates or bonds their Luna to an active validator to receive rewards. Bonded Luna adds to a validator’s stake. Validators provide their stakes as collateral to participate in the consensus process. Validators with larger stakes are chosen to participate more often. Validators receive staking rewards for their participation. A validator’s stake can be slashed if the validator misbehaves. Validators never have ownership of a delegator’s Luna, even when staking.</p>
+<p>For more information on staking, visit the <a class="reference internal" href="protocol.html#staking"><span class="std std-doc">concepts page</span></a>.</p>
+</div>
+<div class="section" id="tendermint-consensus">
+<h2>Tendermint consensus<a class="headerlink" href="#tendermint-consensus" title="Permalink to this headline">¶</a></h2>
+<p>The consensus procedure used by the Terra protocol. First, a validator proposes a new block. Other validators vote on the block in two rounds. If a block receives a two-thirds majority or greater of yes votes in both rounds, it gets added to the blockchain. Validators get rewarded with the block’s transaction fees. Proposers get rewarded extra. Each validator is chosen to propose based on their weight. Checkout the <a class="reference external" href="https://docs.tendermint.com/">Tendermint official documentation</a> for more information.</p>
+</div>
+<div class="section" id="terra-core">
+<h2>Terra core<a class="headerlink" href="#terra-core" title="Permalink to this headline">¶</a></h2>
+<p>The official source code for the Terra protocol.</p>
+<p>For more information on the Terra core, see <a class="reference internal" href="../develop/module-specifications/README.html"><span class="doc std std-doc">Terra core modules</span></a>.</p>
+</div>
+<div class="section" id="terra-mainnet">
+<h2>Terra mainnet<a class="headerlink" href="#terra-mainnet" title="Permalink to this headline">¶</a></h2>
+<p>The Terra protocol’s blockchain network where all transactions take place.</p>
+</div>
+<div class="section" id="terra-stablecoins">
+<h2>Terra stablecoins<a class="headerlink" href="#terra-stablecoins" title="Permalink to this headline">¶</a></h2>
+<p>Crypto assets that track the price of fiat currency enabled by the Terra protocol. Users mint new Terra stablecoins by burning Luna. Stablecoins are named for their fiat counterparts. For example, the base Terra stablecoin tracks the price of the IMF’s SDR, named TerraSDR, or SDT. Other stablecoin denominations include TerraUSD or UST, and TerraKRW or  KRT. All Terra stablecoin denominations exist in the same pool.</p>
+<p>For more information, see <a class="reference internal" href="protocol.html#stablecoins"><span class="std std-doc">stablecoins</span></a>.</p>
+</div>
+<div class="section" id="terra-station">
+<h2>Terra Station<a class="headerlink" href="#terra-station" title="Permalink to this headline">¶</a></h2>
+<p>Terra’s native wallet and platform for swaps, governance, and staking. In Station, you can send, receive, swap, and stake Terra coins. You can also participate in governance and vote on proposals.</p>
+<p>To learn how to install and get started using Terra Station, visit the <a class="reference internal" href="terra-station/download/README.html"><span class="doc std std-doc">Terra Station tutorial</span></a>.</p>
+<p>To learn how to use the advanced features of Terra Station, visit the <a class="reference internal" href="terra-station/station-guides/wallet.html"><span class="doc std std-doc">Terra Station how-to guide</span></a>.</p>
+</div>
+<div class="section" id="terrad">
+<h2>terrad<a class="headerlink" href="#terrad" title="Permalink to this headline">¶</a></h2>
+<p>The command line interface for interacting with a Terra node.</p>
+<p>For more information on terrad, see <a class="reference internal" href="../develop/how-to/terrad/README.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">terrad</span></code> guides</span></a>.</p>
+</div>
+<div class="section" id="terravaloper-address">
+<h2>Terravaloper address<a class="headerlink" href="#terravaloper-address" title="Permalink to this headline">¶</a></h2>
+<p>A validator’s public address beginning with <code class="docutils literal notranslate"><span class="pre">terravaloper</span></code> followed by a string of characters.</p>
+</div>
+<div class="section" id="testnet">
+<h2>Testnet<a class="headerlink" href="#testnet" title="Permalink to this headline">¶</a></h2>
+<p>A version of the mainnet just for testing. The testnet does not use real coins. You can use the testnet to get familiar with transactions.</p>
+</div>
+<div class="section" id="the-terra-ecosystem">
+<h2>The Terra ecosystem<a class="headerlink" href="#the-terra-ecosystem" title="Permalink to this headline">¶</a></h2>
+<p>A quickly expanding network of decentralized applications built on the Terra protocol.</p>
+</div>
+<div class="section" id="the-terra-protocol">
+<h2>The Terra protocol<a class="headerlink" href="#the-terra-protocol" title="Permalink to this headline">¶</a></h2>
+<p>The leading decentralized and open-source public blockchain protocol for algorithmic stablecoins. Using a combination of open market arbitrage incentives and decentralized oracle voting, the Terra protocol creates stablecoins that consistently track the price of any fiat currency.</p>
+<p>For more information on how the Terra protocol works, visit the <a class="reference internal" href="protocol.html"><span class="doc std std-doc">concepts page</span></a></p>
+</div>
+<div class="section" id="tobin-tax">
+<h2>Tobin tax<a class="headerlink" href="#tobin-tax" title="Permalink to this headline">¶</a></h2>
+<p>A fee added to every swap between Terra stablecoins (spot-trading). The rate varies, depending on the denomination. For example, while the rate for most denominations is .35%, the rate for MNT is 2%. To see the rates, <a class="reference external" href="https://lcd.terra.dev/terra/oracle/v1beta1/denoms/tobin_taxes">query the oracle</a>.</p>
+</div>
+<div class="section" id="tombstone">
+<h2>Tombstone<a class="headerlink" href="#tombstone" title="Permalink to this headline">¶</a></h2>
+<p>To block a validator from participating in consensus or oracle voting. Tombstoned validators cannot rejoin the active set.</p>
+</div>
+<div class="section" id="total-stake">
+<h2>Total stake<a class="headerlink" href="#total-stake" title="Permalink to this headline">¶</a></h2>
+<p>The total amount of Luna bonded to a delegator, including self-bonded Luna.</p>
+</div>
+<div class="section" id="unbonded-validator">
+<h2>Unbonded validator<a class="headerlink" href="#unbonded-validator" title="Permalink to this headline">¶</a></h2>
+<p>A validator that is not in the active set and does not participate in consensus or receive rewards. Some unbonded validators may be jailed.</p>
+</div>
+<div class="section" id="unbonding-validator">
+<h2>Unbonding validator<a class="headerlink" href="#unbonding-validator" title="Permalink to this headline">¶</a></h2>
+<p>A validator transitioning from the active set to the inactive set. An unbonding validator does not participate in consensus or earn rewards. The unbonding process takes 21 days.</p>
+</div>
+<div class="section" id="unbonded-luna">
+<h2>Unbonded Luna<a class="headerlink" href="#unbonded-luna" title="Permalink to this headline">¶</a></h2>
+<p>Luna that can be freely traded and is not staked to a validator.</p>
+</div>
+<div class="section" id="unbonding">
+<h2>Unbonding<a class="headerlink" href="#unbonding" title="Permalink to this headline">¶</a></h2>
+<p>When a delegator decides to undelegate their Luna from a validator. This process takes 21 days. No rewards accrue during this period. This action cannot be stopped once executed.</p>
+</div>
+<div class="section" id="unbonding-luna">
+<h2>Unbonding Luna<a class="headerlink" href="#unbonding-luna" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="#luna"><span class="std std-doc">Luna</span></a> that is transitioning from bonded to unbonded. Luna that is unbonding cannot be traded freely. The unbonding process takes 21 days. No rewards accrue during this period. This action cannot be stopped once executed.</p>
+</div>
+<div class="section" id="undelegate">
+<h2>Undelegate<a class="headerlink" href="#undelegate" title="Permalink to this headline">¶</a></h2>
+<p>When a <a class="reference internal" href="#delegator"><span class="std std-doc">delegator</span></a> no longer wants to have their Luna bonded to a validator. This process takes 21 days. No rewards accrue during this period. This action cannot be stopped once executed.</p>
+</div>
+<div class="section" id="uptime">
+<h2>Uptime<a class="headerlink" href="#uptime" title="Permalink to this headline">¶</a></h2>
+<p>The amount of time a <a class="reference internal" href="#validator"><span class="std std-doc">validator</span></a> is active in a given timeframe. Validators with low up time may be <a class="reference internal" href="#slashing"><span class="std std-doc">slashed</span></a>.</p>
+</div>
+<div class="section" id="validator">
+<h2>Validator<a class="headerlink" href="#validator" title="Permalink to this headline">¶</a></h2>
+<p>A Terra blockchain miner responsible for verifying transactions on the blockchain. Validators run programs called full nodes that allow them to participate in consensus, verify blocks, participate in governance, and receive rewards. The top 130 validators with the highest total stake can participate in consensus.</p>
+<p>For more information on validators, visit the <a class="reference internal" href="protocol.html#validators"><span class="std std-doc">concepts page</span></a>.</p>
+</div>
+<div class="section" id="weight">
+<h2>Weight<a class="headerlink" href="#weight" title="Permalink to this headline">¶</a></h2>
+<p>The measure of a <a class="reference internal" href="#validator"><span class="std std-doc">validator’s</span></a> total stake. Validators with higher weights get selected more often to propose blocks. A validator’s weight is also a measure of their voting power in <a class="reference internal" href="#governance"><span class="std std-doc">governance</span></a>.</p>
+</div>
+</div>
+
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="fees.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Fees on Terra</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../develop/README.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Develop</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+
+    <div class="extra_footer container">
+      <div class="row">
+
+        <div class="col">
+
+          <div class="logos">
+            <a href="https://discord.gg/e29HWwC2Mz" rel="noopener" target="_blank"><img src="/discord.svg" alt="link to Terra discord room"></a>&nbsp;
+            <a href="https://medium.com/terra-money" rel="noopener" target="_blank"><img src="/medium.svg" alt="link to Terra medium"></a>&nbsp;
+            <a href="https://twitter.com/terra_money" rel="noopener" target="_blank"><img src="/twitter.svg" alt="link to Terra twitter"></a>&nbsp;
+            <a href="https://www.youtube.com/channel/UCoV1RXZ9ZBGcuu_PMTTlM0g" rel="noopener" target="_blank"><img src="/icon_youtube.png" alt="link to Terra youtube"></a>&nbsp;
+            <a href="https://t.me/terra_announcements" rel="noopener" target="_blank"><img src="/icon_telegram.png" alt="link to Terra telegram room"></a>
+          </div>
+
+        </div>
+
+        <div class="col-md-auto">
+
+          <a href="https://www.terra.money/" >terra.money</a> <br/>
+          <a href="mailto:general@terra.money" >Contact</a> <br/>
+          <a href="https://terra.breezy.hr/"> Careers</a> <br/>
+          <br/>
+
+        </div>
+
+        <div class="col-md-auto">
+
+          <a href="https://assets.website-files.com/611153e7af981472d8da199c/618b02d13e938ae1f8ad1e45_Terra_White_paper.pdf" >Whitepaper</a> <br/>
+          <a href="https://certik.org/projects/terra" >Security Audit</a> <br/>
+          <a href="https://agora.terra.money/" >Agora forum</a> <br/>
+          <br/>
+
+        </div>
+
+        <div class="col">
+          <a href="https://finder.terra.money/" >Terra Finder</a> <br/>
+          <a href="https://station.terra.money/" >Terra Station</a> <br/>
+          <a href="https://status.terra.money/" >Status</a> <br/>
+          <br/>
+
+        </div>
+
+      </div>
+    </div>
+
+
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+    <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  
+  </body>
+</html>
