@@ -31,7 +31,6 @@ Complete this tutorial to install the Terra Station extension for the Google Chr
 
 ## Prerequisites
 
-- Download and install [Terra Station for desktop](terra-station-desktop.md).
 - Download [Google Chrome](https://www.google.com/chrome/).
 
 ## Install the Terra Station extension
