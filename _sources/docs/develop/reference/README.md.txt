@@ -6,6 +6,7 @@
 :maxdepth: 1
 Terra REST API <https://lcd.terra.dev/swagger/>
 Terra Core GoDoc <https://pkg.go.dev/github.com/terra-money/core>
+Block explorers <https://docs.terra.money/docs/ecosystem/integrations.html#block-explorers>
 ../how-to/terrad/README
 ../how-to/endpoints
 history-and-changes
