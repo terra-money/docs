@@ -25,7 +25,7 @@ Multisig wallets enable a wallet to be controlled by multiple parties. A wallet 
 5. Enter a wallet name and click **Submit**.
 
 
-# Create a multisig transaction
+## Create a multisig transaction
 
 Multisig wallet managers initiate transactions and send coded strings for multisig participants to sign.
 
@@ -47,7 +47,7 @@ Multisig wallet managers initiate transactions and send coded strings for multis
    Encoded multisig transaction strings can be sent using a regular messenger, as they are not sensitive information. They contain a simple description of the transaction.
    :::
 
-# Sign a multisig transaction
+## Sign a multisig transaction
 
 Upon receiving an encoded transaction string, multisig signers can use the following steps to sign:
 
@@ -63,7 +63,7 @@ Upon receiving an encoded transaction string, multisig signers can use the follo
 
 6. Copy the signature string provided and send it to the multisig wallet manager.
 
-# Post a multisig tx
+## Post a multisig tx
 
 The final step in a multisig transaction is for the wallet manager to input the signatures:
 
