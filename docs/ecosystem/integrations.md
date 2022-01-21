@@ -1,5 +1,39 @@
 # Integrations
 
+## Block explorers
+
+:::::::{grid} 2 2 2 3
+:gutter: 3
+
+:::{grid-item-card}
+:link: https://finder.terra.money/
+:class-card: sd-text-center sd-shadow-md sd-rounded-3
+```{image} /img/expl_finder.png
+:class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
+```
+**Terra Finder**
+:::
+
+:::{grid-item-card}
+:link: https://hubble.figment.io/terra/chains/columbus-5
+:class-card: sd-text-center sd-shadow-md sd-rounded-3
+```{image} /img/expl_hubble.png
+:class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
+```
+**Figment Hubble**
+:::
+
+:::{grid-item-card}
+:link: https://terra.stake.id/#/
+:class-card: sd-text-center sd-shadow-md sd-rounded-3
+```{image} /img/expl_stakeid.png
+:class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
+```
+**Stake.id**
+:::
+
+:::::::
+
 ## Applications
 
 :::::::{grid} 2 2 2 3
@@ -53,40 +87,6 @@ A payments product used in Mongolia
 ```
 **PayWithTerra**  
 An API gateway enabling merchants to accept Terra stablecoins
-:::
-
-:::::::
-
-## Block explorers
-
-:::::::{grid} 2 2 2 3
-:gutter: 3
-
-:::{grid-item-card}
-:link: https://finder.terra.money/
-:class-card: sd-text-center sd-shadow-md sd-rounded-3
-```{image} /img/expl_finder.png
-:class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
-```
-**Terra Finder**
-:::
-
-:::{grid-item-card}
-:link: https://hubble.figment.io/terra/chains/columbus-5
-:class-card: sd-text-center sd-shadow-md sd-rounded-3
-```{image} /img/expl_hubble.png
-:class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
-```
-**Figment Hubble**
-:::
-
-:::{grid-item-card}
-:link: https://terra.stake.id/#/
-:class-card: sd-text-center sd-shadow-md sd-rounded-3
-```{image} /img/expl_stakeid.png
-:class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
-```
-**Stake.id**
 :::
 
 :::::::

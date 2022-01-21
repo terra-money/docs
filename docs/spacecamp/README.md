@@ -14,7 +14,7 @@ Terrain Quickstart<../develop/dapp/quick-start/README>
 ../develop/sdks/terra-js/README
 Terra.py <https://terra-money.github.io/terra.py/>
 Faucet <https://faucet.terra.money/>
-Block explorers <https://docs.terra.money/docs/ecosystem/integrations.html#block-explorers>
+Block explorers <../ecosystem/integrations>
 ```
 
 :::::{grid} 2 2 2 3
