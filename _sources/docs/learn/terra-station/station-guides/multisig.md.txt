@@ -33,9 +33,8 @@ Multisig wallet managers initiate transactions and send coded strings for multis
 
 2. Make a transaction using your multisig wallet.
 
-  :::{admonition} Making your first transaction
+   :::{admonition} Making your first transaction
    :class: tip
-
    Brand new multisig wallets have no transaction histories. After your first transaction, you will be prompted to provide the wallet addresses again for the multisig wallet. Provide the wallet addresses used to create the wallet to proceed with your transaction.
    :::
 
@@ -44,6 +43,7 @@ Multisig wallet managers initiate transactions and send coded strings for multis
 4. Copy the multisig wallet address and the encoded string in the **Tx** box and send both to each of the multisig wallet signers.
 
    :::{admonition} Sending multisig strings
+   
    Encoded multisig transaction strings can be sent using a regular messenger, as they are not sensitive information. They contain a simple description of the transaction.
    :::
 
