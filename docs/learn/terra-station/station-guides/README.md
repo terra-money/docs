@@ -6,6 +6,7 @@ Use these how to guides to manage the advanced features of Terra Station. To get
 :hidden:
 :caption: Terra Station guides
 wallet
+multisig
 staking
 swap
 governance
