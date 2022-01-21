@@ -70,7 +70,7 @@ The open-source framework the Terra blockchain is built on. For more information
 
 ## dApp
 
-An application built on a decentralized platform. Protocol’s built on Terra are dApps.
+An application built on a decentralized platform.
 
 ## DDoS
 
@@ -109,11 +109,11 @@ Currency issued by a government that is not backed by an underlying asset. USD i
 
 ## Full node
 
-A computer connected to the [Terra mainnet](#terra-mainnet) able to validate transactions and interact with the Terra blockchain. All active [validators](#validator) run full nodes.
+A computer connected to the [Terra mainnet](#terra-mainnet) that is able to validate transactions and interact with the Terra blockchain. All active [validators](#validator) run full nodes.
 
 ## Luna
 
-The native staking token of the Terra protocol. Luna supply expands and contracts in order to maintain the prices of [Terra stablecoins](#terra-stablecoins). Luna is also used as a governance token. [Delegators](#delegator) can stake Luna to recieve rewards.
+The native staking token of the Terra protocol. Luna supply expands and contracts in order to maintain the prices of [Terra stablecoins](#terra-stablecoins). Luna is also used as a governance token. [Delegators](#delegator) can stake Luna to receive rewards.
 
 ## Governance
 
@@ -215,7 +215,7 @@ For more information on staking, visit the [concepts page](protocol.md#staking).
 
 ## Tendermint consensus
 
-The consensus procedure used by the Terra protocol. First, a validator proposes a new block. Other validators vote on the block in two rounds. If a block receives a two-thirds majority or greater of yes votes in both rounds, it gets added to the blockchain. Validators get rewarded with the block's transaction fees. Proposers get rewarded extra. Each validator is chosen to propose based on their weight. Checkout the [Tendermint official documentation](https://docs.tendermint.com/) for more information.
+The consensus procedure used by the Terra protocol. First, a validator proposes a new block. Other validators vote on the block in two rounds. If a block receives a two-thirds majority or greater of yes votes in both rounds, it gets added to the blockchain. Validators get rewarded with the block's transaction fees. Proposers get rewarded extra. Each validator is chosen to propose based on their weight. Check out the [Tendermint official documentation](https://docs.tendermint.com/) for more information.
 
 ## Terra core
 
