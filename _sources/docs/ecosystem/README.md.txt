@@ -17,7 +17,7 @@ dApps <https://www.terra.money/ecosystem>
 :class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
 ```
 **Ecosystem**  
-A list of ecosystem resources
+A list of ecosystem resources.
 :::
 
 :::{grid-item-card}
@@ -27,7 +27,7 @@ A list of ecosystem resources
 :class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
 ```
 **Integrations**    
-Block explorers, exchanges, and wallets
+Block explorers, exchanges, and wallets.
 :::
 
 :::{grid-item-card}
@@ -37,5 +37,5 @@ Block explorers, exchanges, and wallets
 :class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
 ```
 **dApps**  
-Discover new protocols building on Terra
+Discover new protocols building on Terra. 
 :::

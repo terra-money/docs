@@ -1,6 +1,6 @@
 # Terra Docs
 
-Welcome to the official documentation for Terra, a decentralized financial infrastructure powering the innovation of money. Terra provides the foundational building blocks for a new digital economy with its stablecoin protocol, oracle system, smart contracts, and plan for mass-user adoption.
+Welcome to the official documentation for Terra, a decentralized financial infrastructure powering the innovation of money. Terra provides the foundational building blocks for a new digital economy with its stablecoin protocol, oracle system, smart contracts, and plan for mass-user adoption.  
 
 :::::::{grid} 2 2 2 3
 :gutter: 3
@@ -12,6 +12,7 @@ Welcome to the official documentation for Terra, a decentralized financial infra
 :class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
 ```
 **What is Terra?**  
+Learn about Terra stablecoins, Luna, rewards, staking, and governance.
 :::
 
 :::{grid-item-card}
@@ -21,6 +22,7 @@ Welcome to the official documentation for Terra, a decentralized financial infra
 :class: sd-width-auto sd-pb-2 sd-animate-grow50-rot20
 ```
 **Get started with Station**  
+Create a wallet and stake Luna for rewards.
 :::
 
 :::{grid-item-card}
@@ -30,6 +32,7 @@ Welcome to the official documentation for Terra, a decentralized financial infra
 :class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
 ```
 **Hack Week resources**  
+A helpful list for Spacecamp hackers.
 :::
 
 :::{grid-item-card}
@@ -39,6 +42,7 @@ Welcome to the official documentation for Terra, a decentralized financial infra
 :class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
 ```
 **Build a dApp**  
+Set up your environment and start building.
 :::
 
 :::{grid-item-card}
@@ -48,6 +52,7 @@ Welcome to the official documentation for Terra, a decentralized financial infra
 :class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
 ```
 **Explore the ecosystem**  
+Discover Terra's vast network of dApps and exchanges.
 :::
 
 :::{grid-item-card}
@@ -57,6 +62,7 @@ Welcome to the official documentation for Terra, a decentralized financial infra
 :class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
 ```
 **Unearth Terra Core**  
+Learn about the modules at the heart of the protocol.
 :::
 
 :::{grid-item-card}
@@ -66,6 +72,7 @@ Welcome to the official documentation for Terra, a decentralized financial infra
 :class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
 ```
 **Run a full node**  
+Contribute to the security of the network.
 :::
 
 :::{grid-item-card}
@@ -75,6 +82,7 @@ Welcome to the official documentation for Terra, a decentralized financial infra
 :class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
 ```
 **Terra.js**  
+Build with Javascript.
 :::
 
 :::{grid-item-card}
@@ -84,6 +92,7 @@ Welcome to the official documentation for Terra, a decentralized financial infra
 :class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
 ```
 **Terra.py**  
+Build with Python.
 :::
 :::::::
 

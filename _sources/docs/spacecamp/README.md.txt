@@ -1,4 +1,4 @@
-# Terra Spacecamp resources <img src="/img/spacecamp_icon-01.svg" class="sd-pb-2" height="100px">
+# Terra Spacecamp Resources <img src="/img/spacecamp_icon-01.svg" class="sd-pb-2" height="100px">
 
 
 ```{toctree}
