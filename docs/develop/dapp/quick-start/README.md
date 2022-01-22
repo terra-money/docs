@@ -16,7 +16,7 @@ For more information on Terrain, visit [Terrain's readme](https://github.com/ibo
 :class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
 ```
 **Terrain setup**  
-Use this tutorial to setup Terrain in 5 minutes.
+Use this tutorial to set up Terrain in 5 minutes.
 :::
 
 :::{grid-item-card}
