@@ -26,6 +26,7 @@ Use this tutorial to set up Terrain in 5 minutes.
 :class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
 ```
 **Terrain and LocalTerra**  
+For systems with at least 16 GB of RAM. 
 :::
 
 :::{grid-item-card}
@@ -35,6 +36,7 @@ Use this tutorial to set up Terrain in 5 minutes.
 :class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
 ```
 **Terrain and the testnet**  
+For systems with less than 16 GB of RAM.
 :::
 
 :::::::
