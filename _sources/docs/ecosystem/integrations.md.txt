@@ -15,6 +15,15 @@
 :::
 
 :::{grid-item-card}
+:link: https://finder.extraterrestrial.money/
+:class-card: sd-text-center sd-shadow-md sd-rounded-3
+```{image} /img/ET.jpg
+:class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
+```
+**Extraterrestrial Finder**
+:::
+
+:::{grid-item-card}
 :link: https://hubble.figment.io/terra/chains/columbus-5
 :class-card: sd-text-center sd-shadow-md sd-rounded-3
 ```{image} /img/expl_hubble.png
