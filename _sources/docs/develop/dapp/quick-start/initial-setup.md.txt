@@ -46,7 +46,7 @@ npm install -g @iboss/terrain
 LocalTerra is a development environment designed to make it easy for smart contract developers to test their contracts locally.
 
 ::: {caution}
-Localterra may not work properly on machines with less than 16 GB of RAM. Please use the [Bombay testnet](using-terrain-testnet.md) if your device does not meet this requirement. 
+Localterra may not work properly on machines with less than 16 GB of RAM. Please use the [Bombay testnet](using-terrain-testnet.md) if your device does not meet this requirement.
 :::
 
 :::::::{grid}
@@ -59,6 +59,7 @@ Localterra may not work properly on machines with less than 16 GB of RAM. Please
 :class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
 ```
 **Terrain and LocalTerra**  
+16+ GB of RAM recommended.
 :::
 
 :::{grid-item-card}
@@ -68,6 +69,7 @@ Localterra may not work properly on machines with less than 16 GB of RAM. Please
 :class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
 ```
 **Terrain and the testnet**  
+8+ GB of RAM recommended.
 :::
 
 :::::::
