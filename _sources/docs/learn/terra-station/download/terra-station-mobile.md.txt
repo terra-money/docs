@@ -42,14 +42,16 @@ Complete this tutorial to get started with the Terra Station mobile app.
 
 1. Launch the Terra Station app and select **New wallet**
 
-   ```{image} /img/screens/mobile/new-wallet.png
+   ```{image} /img/screens/mobile/new-wallet.PNG
    :class: sd-p-3
+   :width: 300 px
    ```
 
 2. Enter a name for your wallet and a secure password. Confirm your password and tap **Next**
 
-   ```{image} /img/screens/mobile/new-input.png
+   ```{image} /img/screens/mobile/new-input.PNG
    :class: sd-p-3
+   :width: 300 px
    ```
 
 3. Using a pen and paper, write down your 24-word seed phrase exactly as it appears. Number each word to make verifying easier.
@@ -66,16 +68,18 @@ Complete this tutorial to get started with the Terra Station mobile app.
 
 4. Verify your writing to make sure every word is spelled correctly and in the right order. If you numbered your phrase, it can be helpful to verify it backward.
 
-   ```{image} /img/screens/mobile/seed.png
+   ```{image} /img/screens/mobile/seed.PNG
    :class: sd-p-3
+   :width: 300 px
    ```
 
 5. Tap **I have written down my seed**.
 
 6. Confirm your seed phrase by typing or selecting the correct words in each prompt.
 
-   ```{image} /img/screens/mobile/confirm.png
+   ```{image} /img/screens/mobile/confirm.PNG
    :class: sd-p-3
+   :width: 300 px
    ```
 
 7. Tap **Confirm and finish**.
