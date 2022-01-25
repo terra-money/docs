@@ -109,15 +109,35 @@ Now you have tokens on Terra!
 
 1. Open the Terra Station app extension and connect to your wallet. Tap **Swap**.
 
+   ```{image} /img/screens/mobile/swap-blank.PNG
+   :class: sd-p-3
+   :width: 300 px
+   ```
+
 2. In the first dropdown, select a coin and enter the value you want to swap.
 
 3. In the second dropdown, select a coin to receive.
+
+   ```{image} /img/screens/mobile/swap-fill.PNG
+   :class: sd-p-3
+   :width: 300 px
+   ```
 
 4. Tap **Next**.
 
 5. Select the coin you want to pay fees in.
 
+   ```{image} /img/screens/mobile/swap-confirm.PNG
+   :class: sd-p-3
+   :width: 300 px
+   ```
+
 5. Confirm your transaction amounts and tap **Confirm**.
+
+   ```{image} /img/screens/mobile/swap-success.PNG
+   :class: sd-p-3
+   :width: 300 px
+   ```
 
 Congratulations, you've just swapped coins!
 
@@ -125,11 +145,22 @@ Congratulations, you've just swapped coins!
 
 1. Open the Terra Station app extension and connect to your wallet.
 
-2. Tap on the token in your available balance that you want to send.
+   ```{image} /img/screens/mobile/wallet-full.PNG
+   :class: sd-p-3
+   :width: 300 px
+   ```
 
-3. Enter the address of the wallet you want to send tokens to
 
-4. Enter the amount you want to send. You can also add a memo to specify what the transaction is for.
+2. Tap on the token in your available balance that you want to send.  
+
+3. Enter the address of the wallet you want to send tokens to.  
+
+4. Enter the amount you want to send. You can also add a memo to specify what the transaction is for.  
+
+   ```{image} /img/screens/mobile/send-ust.PNG
+   :class: sd-p-3
+   :width: 300 px
+   ```
 
 5. Tap **Next**.
 
@@ -139,6 +170,11 @@ Congratulations, you've just swapped coins!
    :class: caution
    Always keep some coins to pay fees with. Never spend your entire wallet amount. Without money for fees, you can't make any transactions.
    :::
+
+   ```{image} /img/screens/mobile/confirm-send.PNG
+   :class: sd-p-3
+   :width: 300 px
+   ```
 
 7.  Enter your password and tap **Confirm**. Wait for the transaction to process. This generally takes a few seconds.
 
@@ -185,13 +221,29 @@ Congratulations, you've just withdrawn your staking rewards!
 
 2. In your browser, navigate to the dApp of your choice. For this tutorial, we'll use the [Anchor protocol WebApp](https://app.anchorprotocol.com/). Most dApps use a similar process, though others may vary.
 
+   ```{image} /img/screens/mobile/anchor.PNG
+   :class: sd-p-3
+   :width: 300 px
+   ```
+
 3. Tap the wallet icon at the top of the page.
 
 4. Wallet connect will open your Terra Station app.
 
+   ```{image} /img/screens/mobile/connect.PNG
+   :class: sd-p-3
+   :width: 300 px
+   ```
+
 5. When prompted, tap **Allow**.
 
-You can now make transactions on different dApps in the Terra ecosystem.
+
+   ```{image} /img/screens/mobile/connected.PNG
+   :class: sd-p-3
+   :width: 300 px
+   ```
+
+You can now make transactions on different dApps in the Terra ecosystem from your mobile device. 
 
 ## Next steps
 
