@@ -39,7 +39,7 @@ Spread fees are added to any [market swap](glossary.md#market-swap) between Terr
 
 For more information on spread fees, visit the [market module](../develop/module-specifications/spec-market.md).
 
-Every block, spread fees are sent to the Oracle reward pool and dispersed to validators over a period of 2 years. Validators then distribute  to validators in the form of staking rewards. For more information on the Oracle reward pool, visit the [Oracle module](../develop/module-specifications/spec-oracle.md).
+Every block, spread fees are sent to the Oracle reward pool and dispersed to validators over a period of 2 years. Validators then distribute  to delegators in the form of staking rewards. For more information on the Oracle reward pool, visit the [Oracle module](../develop/module-specifications/spec-oracle.md).
 
 ## Changes to fees
 
