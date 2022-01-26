@@ -123,6 +123,10 @@ Governance is the democratic process that allows users and [validators](#validat
 
 A written submission for a change or addition to the [Terra protocol](#the-terra-protocol). Topics of proposals can vary from community pool spending, software changes, parameter changes, or any change pertaining to the Terra protocol.
 
+## IBC
+
+Inter-Blockchain Communication. The technology that enables different [blockchains](#blockchain) to interact with each other. IBC allows for assets to be traded and transacted across different blockchains. 
+
 ## Inactive set
 
 [Validators](#validator) that are not in the [active set](#active-set). These validators do not participate in [consensus](#consensus) and do not earn [rewards](#rewards).
