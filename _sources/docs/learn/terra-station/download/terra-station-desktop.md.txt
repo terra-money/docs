@@ -33,12 +33,16 @@ For more guides on how to use Station's advanced features, visit the [Station gu
 
 ## Install Terra Station
 
-1. Click the download link for your operating system:
+1. Click the Terra Station download link for your operating system:
 
-   - [Terra Station for MacOS](https://github.com/terra-money/station-legacy/releases/download/v3.5.0/Terra.Station-1.1.0.dmg)
-   - [Terra Station for Windows](https://github.com/terra-money/station-legacy/releases/download/v3.5.0/Terra.Station.Setup.1.1.0.exe)
-   - [Terra Station for Linux(.deb)](https://github.com/terra-money/station-legacy/releases/download/v3.5.0/station-electron_1.1.1_amd64.deb)
-   - [Terra Station for Linux(.rpm)](https://github.com/terra-money/station-legacy/releases/download/v3.5.0/station-electron-1.1.1.x86_64.rpm)
+   - [MacOS](https://github.com/terra-money/station-desktop/releases/download/v1.2.0/Terra.Station-1.2.0.dmg)
+
+   - [MacOS M1 ](https://github.com/terra-money/station-desktop/releases/download/v1.2.0/Terra.Station-1.2.0-arm64.dmg)
+
+   - [Windows](https://github.com/terra-money/station-desktop/releases/download/v1.2.0/Terra.Station.Setup.1.2.0.exe)
+
+   - [Linux(.deb)](https://github.com/terra-money/station-desktop/releases/download/v1.2.0/Terra.Station_1.2.0_amd64.deb)
+   - [Linux(.rpm)](https://github.com/terra-money/station-desktop/releases/download/v1.2.0/Terra.Station-1.2.0.x86_64.rpm)
 
 2. Open the downloaded file and follow the instructions.
 
