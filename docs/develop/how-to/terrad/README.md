@@ -11,4 +11,5 @@ install-terrad
 using-terrad
 commands
 subcommands
+:orphan: terrad-m1
 ```
