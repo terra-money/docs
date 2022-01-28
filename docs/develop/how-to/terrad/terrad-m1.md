@@ -22,16 +22,12 @@
     
 5. Run `./terrad`
     
-   :::{admonition} 
-   :class: note
-   
+    If a security warning occurs:
     
    1. Navigate to system preferences→security & privacy. 
    2. Under the "General" tab, click "Allow anyway." 
    3. Run `./terrad` again. 
    4. When prompted, click "open." Repeat for other security errors. 
-
-
 6. Add `terrad` to your path:
     
    - Intel based macs: `cp terrad /usr/local/bin`
