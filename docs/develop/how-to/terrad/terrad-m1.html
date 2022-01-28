@@ -1349,36 +1349,42 @@
 <h1>Install <code class="docutils literal notranslate"><span class="pre">terrad</span></code> for M1 mac<a class="headerlink" href="#install-terrad-for-m1-mac" title="Permalink to this headline">¶</a></h1>
 <ol class="arabic">
 <li><p>Navigate to <a class="reference external" href="https://github.com/terra-money/core/tags">https://github.com/terra-money/core/tags</a> and click on the latest release.</p></li>
-<li><p>Download the correct .tar.gz file for your computer’s OS.</p></li>
+<li><p>Download the correct <code class="docutils literal notranslate"><span class="pre">.tar.gz</span></code> file for your computer’s OS.</p></li>
 <li><p>Open terminal and navigate to the downloaded file:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> Downloads/terra_0.5.1_Darwin_x86_64/
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> Downloads/terra_0.5.1_Darwin_x86_64/
 </pre></div>
 </div>
 </li>
 <li><p>Add <code class="docutils literal notranslate"><span class="pre">.dylib</span></code> to /lib:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="ddfb3463-d4b5-47b7-9b54-fc4ab5161077" name="4c618f77-f0fd-49ce-a25f-30ced19a2675" type="radio">
-</input><label class="sd-tab-label" for="ddfb3463-d4b5-47b7-9b54-fc4ab5161077">
+<input checked="checked" id="d27dd2eb-bd22-44e0-87f2-3df5b14c901c" name="e9ea8a52-124d-4af2-bcce-e43e8ef85e13" type="radio">
+</input><label class="sd-tab-label" for="d27dd2eb-bd22-44e0-87f2-3df5b14c901c">
 Intel-based</label><div class="sd-tab-content docutils">
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>cp libwasmvm.dylib /usr/local/lib
 </pre></div>
 </div>
 </div>
-<input id="0e0c98ff-5d20-4274-91e5-4d2d85548b84" name="4c618f77-f0fd-49ce-a25f-30ced19a2675" type="radio">
-</input><label class="sd-tab-label" for="0e0c98ff-5d20-4274-91e5-4d2d85548b84">
+<input id="9c1b90f3-e250-4601-b4ca-3adc246219d0" name="e9ea8a52-124d-4af2-bcce-e43e8ef85e13" type="radio">
+</input><label class="sd-tab-label" for="9c1b90f3-e250-4601-b4ca-3adc246219d0">
 M1</label><div class="sd-tab-content docutils">
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> /usr/local
-    
+
 mkdir lib
-    
+
 cp libwasmvm.dylib /usr/local/lib
 </pre></div>
 </div>
-<p>Note: if you receive a <code class="docutils literal notranslate"><span class="pre">permission</span> <span class="pre">denied</span></code> message, add <code class="docutils literal notranslate"><span class="pre">sudo</span></code> before each command.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you receive a <code class="docutils literal notranslate"><span class="pre">permission</span> <span class="pre">denied</span></code> message, add <code class="docutils literal notranslate"><span class="pre">sudo</span></code> before each command.</p>
+</div>
 </div>
 </div>
 </li>
 <li><p>Run <code class="docutils literal notranslate"><span class="pre">./terrad</span></code></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>./terrad
+</pre></div>
+</div>
 <div class="note admonition">
 <p class="admonition-title">If a security warning occurs:</p>
 <ol class="arabic simple">
@@ -1390,19 +1396,36 @@ cp libwasmvm.dylib /usr/local/lib
 </div>
 </li>
 <li><p>Add <code class="docutils literal notranslate"><span class="pre">terrad</span></code> to your path:</p>
-<ul class="simple">
-<li><p>Intel based macs: <code class="docutils literal notranslate"><span class="pre">cp</span> <span class="pre">terrad</span> <span class="pre">/usr/local/bin</span></code></p></li>
-<li><p>M1 macs:</p></li>
-</ul>
-<p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">/usr/local</span></code></p>
-<p><code class="docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">bin</span></code></p>
-<p><code class="docutils literal notranslate"><span class="pre">cp</span> <span class="pre">terrad</span> <span class="pre">/usr/local/bin</span></code></p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="cbbde8cf-59ed-46cf-9534-af504318fbc0" name="c9f5bdd5-bc79-41a2-9db1-64330851f204" type="radio">
+</input><label class="sd-tab-label" for="cbbde8cf-59ed-46cf-9534-af504318fbc0">
+Intel-based</label><div class="sd-tab-content docutils">
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>cp terrad /usr/local/bin
+</pre></div>
+</div>
+</div>
+<input id="7d3b51db-ebef-44c0-a640-94813708ec92" name="c9f5bdd5-bc79-41a2-9db1-64330851f204" type="radio">
+</input><label class="sd-tab-label" for="7d3b51db-ebef-44c0-a640-94813708ec92">
+M1</label><div class="sd-tab-content docutils">
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> /usr/local
+ 
+mkdir bin
+ 
+cp terrad /usr/local/bin
+</pre></div>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you receive a <code class="docutils literal notranslate"><span class="pre">permission</span> <span class="pre">denied</span></code> message, add <code class="docutils literal notranslate"><span class="pre">sudo</span></code> before each command.</p>
 </div>
+</div>
+</div>
 </li>
-<li><p>Run <code class="docutils literal notranslate"><span class="pre">terrad</span></code></p></li>
+<li><p>Start <code class="docutils literal notranslate"><span class="pre">terrad</span></code></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrad
+</pre></div>
+</div>
+</li>
 </ol>
 </div>
 
