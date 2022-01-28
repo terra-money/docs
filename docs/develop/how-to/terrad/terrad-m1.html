@@ -1351,15 +1351,32 @@
 <li><p>Navigate to <a class="reference external" href="https://github.com/terra-money/core/tags">https://github.com/terra-money/core/tags</a> and click on the latest release.</p></li>
 <li><p>Download the correct .tar.gz file for your computer’s OS.</p></li>
 <li><p>Open terminal and navigate to the downloaded file:</p>
-<p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">Downloads/terra_0.5.1_Darwin_x86_64/</span></code></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> Downloads/terra_0.5.1_Darwin_x86_64/
+</pre></div>
+</div>
 </li>
-<li><p>Add <code class="docutils literal notranslate"><span class="pre">.dylib</span></code> to /lib.</p>
-<p>Intel based macs:  <code class="docutils literal notranslate"><span class="pre">cp</span> <span class="pre">libwasmvm.dylib</span> <span class="pre">/usr/local/lib</span></code></p>
-<p>M1 macs:</p>
-<p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">/usr/local</span></code></p>
-<p><code class="docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">lib</span></code></p>
-<p><code class="docutils literal notranslate"><span class="pre">cp</span> <span class="pre">libwasmvm.dylib</span> <span class="pre">/usr/local/lib</span></code></p>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">.dylib</span></code> to /lib:</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="5e078ff6-5ad3-43aa-a675-7332f01f2889" name="eccb2f18-73d9-4fd7-9a5f-86250529a2c1" type="radio">
+</input><label class="sd-tab-label" for="5e078ff6-5ad3-43aa-a675-7332f01f2889">
+Intel-based</label><div class="sd-tab-content docutils">
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>cp libwasmvm.dylib /usr/local/lib
+</pre></div>
+</div>
+</div>
+<input id="7911738e-8b30-4c50-9b6f-25a0802b3432" name="eccb2f18-73d9-4fd7-9a5f-86250529a2c1" type="radio">
+</input><label class="sd-tab-label" for="7911738e-8b30-4c50-9b6f-25a0802b3432">
+M1</label><div class="sd-tab-content docutils">
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> /usr/local
+    
+mkdir lib
+    
+cp libwasmvm.dylib /usr/local/lib
+</pre></div>
+</div>
 <p>Note: if you receive a <code class="docutils literal notranslate"><span class="pre">permission</span> <span class="pre">denied</span></code> message, add <code class="docutils literal notranslate"><span class="pre">sudo</span></code> before each command.</p>
+</div>
+</div>
 </li>
 <li><p>Run <code class="docutils literal notranslate"><span class="pre">./terrad</span></code></p>
 <div class="note admonition">
