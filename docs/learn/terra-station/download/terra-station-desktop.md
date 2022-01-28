@@ -48,7 +48,13 @@ For more guides on how to use Station's advanced features, visit the [Station gu
 
 ## Create a wallet
 
-1. Open the Terra Station desktop app and click **New wallet**.
+1. Open the Terra Station desktop app and click **Connect**.
+
+2. Click **New Wallet**. 
+
+   ```{image} /img/screens/desktop/connect.png
+   :class: sd-p-3
+   ```
 
 2. Type in a secure wallet name and password.
 
@@ -66,13 +72,26 @@ For more guides on how to use Station's advanced features, visit the [Station gu
    - Never give your seed phrase to anyone, not even support staff.
    :::
 
+   ```{image} /img/screens/desktop/new-wallet.png
+   :class: sd-p-3
+   ```
+
 5. Verify your writing to make sure every word is spelled correctly and in the right order. If you numbered your phrase, it can be helpful to verify it backward.
 
-5. Check the box ensuring you wrote down your seed phrase, and click **Next**.
+5. Check the box ensuring you wrote down your seed phrase, and click **Submit**.
 
 6. Confirm your seed phrase by typing or selecting the correct words in each prompt.
 
-7. Click **Create a wallet**.
+   ```{image} /img/screens/desktop/seed.png
+   :class: sd-p-3
+   ```
+
+7. Click **Submit**.
+
+   ```{image} /img/screens/desktop/wallet.png
+   :class: sd-p-3
+   ```
+
 
 Congratulations! You have just created a Terra Station wallet.
 
