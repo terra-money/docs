@@ -4,22 +4,40 @@
 2. Download the correct .tar.gz file for your computer's OS.
 3. Open terminal and navigate to the downloaded file: 
     
-    `cd Downloads/terra_0.5.1_Darwin_x86_64/`
     
-4. Add `.dylib` to /lib.
+   ```sh
+   cd Downloads/terra_0.5.1_Darwin_x86_64/
+   ```
     
-    Intel based macs:  `cp libwasmvm.dylib /usr/local/lib`
+4. Add `.dylib` to /lib:
+
+   ::::{tab-set}
+   
+   :::{tab-item} Intel-based
+   
+   ```sh
+   cp libwasmvm.dylib /usr/local/lib
+   ```
+   
+   :::
+   
+   :::{tab-item} M1
+   ```sh
+   cd /usr/local
+       
+   mkdir lib
+       
+   cp libwasmvm.dylib /usr/local/lib
+   
+   
+   ```
+   Note: if you receive a `permission denied` message, add `sudo` before each command. 
+   :::
+   ::::
     
-    M1 macs:  
+
     
-    `cd /usr/local`
-    
-    `mkdir lib`
-    
-    `cp libwasmvm.dylib /usr/local/lib`
-    
-    Note: if you receive a `permission denied` message, add `sudo` before each command. 
-    
+
 5. Run `./terrad`
     
    :::{admonition} If a security warning occurs:
