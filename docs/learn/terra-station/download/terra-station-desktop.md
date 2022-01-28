@@ -60,7 +60,7 @@ For more guides on how to use Station's advanced features, visit the [Station gu
 
 3. Confirm your password.
 
-4. Using a pen and paper, write down your 24-word seed phrase exactly as it appears. Number each word to make verifying easier.
+4. Using pen and paper, write down your 24-word seed phrase exactly as it appears. Number each word to make verifying easier.
 
    :::{admonition} Protect your seed phrase
    :class: danger
@@ -120,15 +120,12 @@ Now you have tokens on Terra!
 
    ```{image} /img/screens/desktop/swap.png
    :class: sd-p-3
+   :width: 200 px
    ```
 
-2.  On the swap page, first select the coin you want to offer in the upper box and input the amount you want to swap. 
+2.  On the swap page, first select the coin you want to offer in the upper box and input the amount you want to swap.
 
-   ```{image} /img/screens/desktop/swap-blank.png
-   :class: sd-p-3
-   ```
-
-3. In the lower box, select the coin you want to recieve.
+3. In the lower box, select the coin you want to receive.
 
    ```{image} /img/screens/desktop/swap-luna.png
    :class: sd-p-3
@@ -150,20 +147,42 @@ Congratulations, you've just swapped coins!
 
 Stake your Luna to a validator to start earning rewards. Before you stake, make sure you have Luna in your wallet. You can transfer Luna from an [exchange](#receive-tokens-from-an-exchange) or [swap coins](#swap-coins) you have for Luna.
 
-1. Open Terra Station and click **Staking**.
+1. Open Terra Station and click **Stake**.
+
+   ```{image} /img/screens/desktop/stake.png
+   :class: sd-p-3
+   :width: 150 px
+   ```
 
 2. Select a Validator and click on their name in the **Moniker** column of the validator list.
 
+   ```{image} /img/screens/desktop/stake-page.png
+   :class: sd-p-3
+   ```
+
+
 3. In the **My delegations** section, click **Delegate**. A new window will appear.
 
-4. In the **Amount** field, specify the amount of Luna you want to delegate, and click **Next**.
+   ```{image} /img/screens/desktop/stake-validator.png
+   :class: sd-p-3
+   ```
+
+4. In the **Amount** field, specify the amount of Luna you want to delegate and specify which coin you want to pay fees with. 
+
+   ```{image} /img/screens/desktop/stake-delegate.png
+   :class: sd-p-3
+   ```
 
    :::{admonition} Keep coins for fees
    :class: warning
    Always keep some coins to pay fees with. Never stake your entire wallet amount. Without money for fees, you can't make any transactions.
    :::
 
-5. Double check the amounts and fees. Enter your password and click **Delegate**.
+5. Double-check the amounts and fees. Enter your password and click **Submit**.
+
+   ```{image} /img/screens/desktop/stake-success.png
+   :class: sd-p-3
+   ```
 
 Congratulations, you've just delegated Luna!
 
@@ -171,11 +190,24 @@ Congratulations, you've just delegated Luna!
 
 Rewards start accruing the moment you stake Luna. Monitor your rewards in the staking section of Terra Station. Once you have sufficient rewards, follow these steps to withdraw them:
 
-1. Open Terra Station and click **Staking**.
+1. Open Terra Station and click **Stake**.
 
-2. To claim all rewards, click **Withdraw all rewards** in the upper right corner of the staking page. To withdraw rewards only from a single validator, click on their name in the list and click **withdraw** on their page.  A new window will appear.
+   ```{image} /img/screens/desktop/stake.png
+   :class: sd-p-3
+   :width: 150 px
+   ```
+
+2. To claim all rewards, click **Withdraw all rewards** in the upper right corner of the staking page. To withdraw rewards only from a single validator, click on their name in the list and click **withdraw** on their page.
+
+   ```{image} /img/screens/desktop/stake-withdraw.png
+   :class: sd-p-3
+   ```
 
 3. Review the amounts and specify which coin you want to pay fees in.
+
+   ```{image} /img/screens/desktop/stake-rewards.png
+   :class: sd-p-3
+   ```
 
 4. Enter your password and click **withdraw**.
 
@@ -183,21 +215,36 @@ Congratulations, you've just withdrawn your staking rewards!
 
 ## Send tokens
 
+send-wallet.png
+send-luna.png
+send-submit.png
+
 1. Open the Terra Station desktop app and connect to your wallet.
 
 2. Click **Wallet** in the navigation bar.
 
 3. Click **Send** next to the token you want to send.
 
+   ```{image} /img/screens/desktop/send-wallet.png
+   :class: sd-p-3
+   ```
+
 4. Enter the address of the wallet you want to send tokens to.
+
+   ```{image} /img/screens/desktop/send-luna.png
+   :class: sd-p-3
+   ```
+
 
 5. Enter the amount you want to send. You can also add a memo for the transaction.
 
-6. Click **Next**.
+   ```{image} /img/screens/desktop/send-submit.png
+   :class: sd-p-3
+   ```
 
 7. Verify the transaction amounts and specify which token you want to pay fees in. Remember to always leave enough tokens in your account for other transactions.
 
-8.  Enter your password and click **Send**.
+8.  Enter your password and click **Submit**.
 
 After a few moments, the tokens will appear in the receiver's wallet.
 
