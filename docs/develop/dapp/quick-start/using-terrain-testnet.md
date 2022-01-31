@@ -85,6 +85,28 @@ If you get the following error:
 Wait a few seconds then try the deploy again.
 :::
 
+### Deploying with Terra Station
+Besides the CLI approach above, there is also the option of deploying and interacting with your contracts on testnet through the [Terra Station UI](https://station.terra.money/).
+
+1. Compile your project with `terrain`. If you have localterra running, this can be done with `terrain deploy <project> --signer validator`. This will build the wasm bytecode and output a **.wasm** file such as **artifacts/counter.wasm**
+    
+2. You can now upload this contract to the testnet via Station. Go to [https://station.terra.money/contract](https://station.terra.money/contract) and click on "Upload"
+
+3. Upload the .wasm bytecode. This step will generate a `codeId` which will be used for initializing the contract.
+
+4. Go back to the Contract page on [Station](https://station.terra.money/contract) and instantiate your contract by passing in the `codeId` and empty brackets (`{}`) for "Init msg"
+
+5. Now, the contract is deployed as a **MsgInstantiateContract** transaction type. You will be able to see the address of the newly initialized contract in the logs at the bottom of the transaction details ([example](https://finder.terra.money/testnet/tx/FF669A3E0CECDC6278A0E390FAF93E9531F43599B77A45BD18ECC6023E15ACB3))
+
+6. Search for your contract address in the Contract page on Terra Station. You can now execute a query or command against your contract. The payloads must be in JSON format. A command execution (with Execute) might look like:
+```
+{
+  "increment": {}
+}
+```
+
+*Optional:* If you have a frontend, update your client-side *refs.terrain.json* to reflect the latest codeId and deployed contract address.
+
 ## 5. Interact with the deployed contract
 
 The Terrain template comes with several predefined helpers in `lib/index.js`. Use them to start interacting with your smart contract:
