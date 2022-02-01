@@ -26,9 +26,9 @@ Use **Create** to initialize your contract after uploading.
 
 1. Click **Create**.
 
-2. Enter your contract code ID, `InitMsg JSON`, name, and description. Click **Next**.
+2. Enter your contract code ID, `InitMsg JSON`, name, and description.
 
-3. Confirm the fee amounts and enter your password. Click **Create**.
+3. Confirm the fee amounts and enter your password. Click **Submit**.
 
 Your contract is now initialized.
 
