@@ -10,7 +10,7 @@ Visit [build Terra core](../../../full-node/run-a-full-terra-node/build-terra-co
 
 In order to work with Terra Smart Contracts, you should have access to a Terra network that includes the WASM integration.
 
-In this tutorial, we will be using [LocalTerra](https://github.com/terra-money/localterra), a package that enables you to easily spin up a local, WASM-enabled private testnet. This reduces the friction of development by giving you complete control of a private Terra blockchain with the possibility to easily reset the world state.
+In this tutorial, you will be using [LocalTerra](https://github.com/terra-money/localterra), a package that enables you to easily spin up a local, WASM-enabled private testnet. This reduces the friction of development by giving you complete control of a private Terra blockchain with the possibility to easily reset the world state.
 
 To use **LocalTerra**, you should first make sure Docker is installed on your computer by following the [Docker get-started tutorial](https://www.docker.com/get-started). You will also need to set up and configure [Docker Compose](https://docs.docker.com/compose/install/) on your machine.
 
@@ -34,7 +34,7 @@ satisfy adjust timber high purchase tuition stool faith fine install that you un
 
 ## Install Rust
 
-While WASM smart contracts can theoretically be written in any programming language, we currently only recommend using Rust as it is the only language for which mature libraries and tooling exist for CosmWasm. For this tutorial, you'll need to also install the latest version of Rust by following the instructions [here](https://www.rust-lang.org/tools/install).
+While WASM smart contracts can theoretically be written in any programming language, it is currently only recommended to use Rust as it is the only language for which mature libraries and tooling exist for CosmWasm. For this tutorial, you'll need to also install the latest version of Rust by following the instructions [here](https://www.rust-lang.org/tools/install).
 
 Once you'll installed Rust and its toolchain (cargo et al.), you'll need to add the `wasm32-unknown-unknown` compilation target.
 
@@ -43,7 +43,7 @@ rustup default stable
 rustup target add wasm32-unknown-unknown
 ```
 
-Then, install `cargo-generate`, which we will need for bootstrapping new CosmWasm smart contracts via a template.
+Then, install `cargo-generate`, which you will need for bootstrapping new CosmWasm smart contracts via a template.
 
 ```sh
 cargo install cargo-generate --features vendored-openssl
