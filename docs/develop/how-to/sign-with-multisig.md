@@ -86,7 +86,7 @@ terrad tx send \
 
 ### Step 2: Create the multisig transaction
 
-We want to send 5 LUNA from our multisig account to `terra1fmcjjt6yc9wqup2r06urnrd928jhrde6gcld6n`.
+You want to send 5 LUNA from your multisig account to `terra1fmcjjt6yc9wqup2r06urnrd928jhrde6gcld6n`.
 
 ```bash
 terrad tx bank send \
