@@ -197,7 +197,7 @@ func (k Keeper) HandleEquivocationEvidence(ctx sdk.Context, evidence *types.Equi
 	if _, err := k.slashingKeeper.GetPubkey(ctx, consAddr.Bytes()); err != nil {
 		// Ignore evidence that cannot be handled.
 		//
-		// NOTE: We used to panic with:
+		// NOTE: Developers used to panic with:
 		// `panic(fmt.Sprintf("Validator consensus-address %v not found", consAddr))`,
 		// but this couples the expectations of the app to both Tendermint and
 		// the simulator.  Both are expected to provide the full range of
@@ -260,8 +260,7 @@ func (k Keeper) HandleEquivocationEvidence(ctx sdk.Context, evidence *types.Equi
 		"infraction_time", infractionTime,
 	)
 
-	// We need to retrieve the stake distribution which signed the block, so we
-	// subtract ValidatorUpdateDelay from the evidence height.
+	// To retrieve the stake distribution which signed the block, subtract ValidatorUpdateDelay from the evidence height.
 	// Note, that this *can* result in a negative "distributionHeight", up to
 	// -ValidatorUpdateDelay, i.e. at the end of the
 	// pre-genesis block (none) = at the beginning of the genesis block.
