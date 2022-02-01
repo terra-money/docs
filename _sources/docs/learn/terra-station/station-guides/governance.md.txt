@@ -16,9 +16,9 @@ Voting is an important way for community members to help the Terra protocol evol
 
 4. In the upper right corner, click **Vote**.
 
-5. Select your vote and click **Next**.
+5. Select your vote and enter your password.
 
-6. Enter your password and click **Vote**.
+6. Click **Submit**.
 
 Your vote will be submitted.
 
@@ -37,9 +37,9 @@ Users can vote on a proposal after a minimum deposit of 50 Luna is reached. To h
 
 4. In the upper right corner, click **Deposit**.
 
-5. Enter the amount of Luna you want to deposit and click **Next**.
+5. Enter the amount of Luna you want to deposit and enter your password.
 
-6. Enter your password and click **Deposit**.
+6.  Click **Submit**.
 
 Your deposit will be added to the proposal.
 
@@ -54,17 +54,13 @@ To prevent unnecessary proposals or abuse of the system, all governance proposal
 
 2. Click on **New proposal**.
 
-3. Select the type of proposal, and enter a title, a description, and the amount of Luna you want to deposit initially.
-
     :::{tip}
     Before uploading any proposal, try to get community feedback on [the Terra Agora research forum](https://agora.terra.money).
     Do not use text proposals to suggest parameter changes. For more information, visit the [Governance module reference page](../../../develop/module-specifications/spec-governance.md).
     :::
 
-4. Click **Next**.
+3. Select the type of proposal, and enter a title, a description, and the amount of Luna you want to deposit initially.
 
-5. Enter the amount of Luna you want to deposit and click **Next**.
-
-6. Enter your password and click **Propose**.
+4. Enter your password and click **Submit**.
 
 Your proposal will enter the two-week deposit period. After a minimum deposit of 50 Luna has been reached, your proposal will enter a one-week voting period. For more information on governance and voting options, visit the [governance overview](../../protocol.md#governance).
