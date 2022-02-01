@@ -284,10 +284,11 @@ In order for delegators to have some guarantee about how much `skin-in-the-game`
 
 We recommend the following for running Terra Core:
 
-- 4 core Compute Optimized CPU
-- 16GB RAM (32GB to export genesis)
-- 1TB storage (SSD or better)
-- At least 100mbps network bandwidth
+At least 300 mbps of network bandwidth
+- 4 core or higher CPU
+- 32GB RAM
+- 2TB NVME storage
+- At least 300mbps network bandwidth
 
 ### What are the software requirements?
 
