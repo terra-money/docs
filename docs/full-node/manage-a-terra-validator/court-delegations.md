@@ -4,7 +4,7 @@ Consider the following options to help improve your visibility and make yourself
 
 ## Set up a website
 
-Set up a website so that your delegators can find you. We recommend making a custom section for Terra delegators that instructs how to delegate Luna tokens.
+Set up a website so that your delegators can find you. It is recommended that you make a custom section for Terra delegators that instructs them how to delegate Luna tokens.
 
 ## Announce yourself on Discord
 
