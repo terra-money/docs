@@ -141,7 +141,7 @@ Delegators are free to choose validators according to their own criteria. This m
 
 - **Amount of self-bonded Luna:** The amount of Luna a validator self-bonds to its staking pool. A validator with a higher amount of self-bonded Luna has more skin in the game, making it more liable for its actions.
 
-- **Amount of delegated Luna:** The total amount of Luna delegated to a validator. A high stake shows that the community trusts this validator; however, this also means that a validator is a bigger target for hackers. Large stakes provide large voting power. This weakens the network. At any given time, if 33% or more of staked luna becomes inaccessible, the network will halt. Through incentives and education, we can prevent this by delegating away from validators that have too much voting power. Validators sometimes become less attractive as their amount of delegated Luna grows.
+- **Amount of delegated Luna:** The total amount of Luna delegated to a validator. A high stake shows that the community trusts this validator; however, this also means that a validator is a bigger target for hackers. Large stakes provide large voting power. This weakens the network. At any given time, if 33% or more of staked luna becomes inaccessible, the network will halt. Through incentives and education, this weakness can be prevented by delegating away from validators that have too much voting power. Validators sometimes become less attractive as their amount of delegated Luna grows.
 
 - **Commission rate:** The commission applied to rewards by a validator before being distributed to its delegators.
 
@@ -235,7 +235,7 @@ When a validator is selected to propose the next block, they must include at lea
 
 **Example:** There are 10 validators with equal stake. Each has a 1% commission and 20% self-bonded Luna. If a successful block collects 1005 SDT in fees, and the proposer includes 100% of the signatures in their block, they will receive the full 5% bonus.
 
-We can use a simple equation to find the reward $R$ for each validator:
+Use this simple equation to find the reward $R$ for each validator:
 
 $$9R ~ + ~ R ~ + ~ 5\%(R) ~ = ~ 1005 ~ \Leftrightarrow ~ R ~ = ~ 1005 ~/ ~10.05 ~ = ~ 100$$
 
@@ -273,7 +273,7 @@ If a validator misbehaves, their bonded stake along with their delegators' stake
 
 No, but self-bonding has benefits. A validator's total stake is made up of their self-bonded stake plus their delegated stake. This means that a validator can compensate for low amounts of self-bonded Luna by attracting more delegators. This is why reputation is very important for validators.
 
-Although validators are not required to self-bond Luna, we suggest all validators to have `skin-in-the-game`. This can help make a validator more trustworthy.
+Although validators are not required to self-bond Luna, all validators should have `skin-in-the-game`. This can help make a validator more trustworthy.
 
 In order for delegators to have some guarantee about how much `skin-in-the-game` their validator has, validators can signal a minimum amount of self-bonded Luna. If a validator's self-bond goes below the limit that it has predefined, this validator and all of its delegators will unbond.
 
@@ -282,7 +282,7 @@ In order for delegators to have some guarantee about how much `skin-in-the-game`
 
 ### What are the hardware requirements?
 
-We recommend the following for running Terra Core:
+The following requirements are recommended for running Terra Core:
 
 At least 300 mbps of network bandwidth
 - 4 core or higher CPU
