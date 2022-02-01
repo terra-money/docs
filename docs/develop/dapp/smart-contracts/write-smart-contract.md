@@ -76,7 +76,7 @@ On the Terra blockchain, the uploading of a contract's code and the instantiatio
 
 ### Example
 
-For our contract, we will expect a contract creator to supply the initial state in a JSON message:
+For our contract, you will expect a contract creator to supply the initial state in a JSON message:
 
 ```json
 {
@@ -101,7 +101,7 @@ pub struct InstantiateMsg {
 
 ### Logic
 
-Here we define our first entry-point, the `instantiate()`, or where the contract is instantiated and passed its `InstantiateMsg`. We extract the count from the message and set up our initial state, where:
+Here you will define our first entry-point, the `instantiate()`, or where the contract is instantiated and passed its `InstantiateMsg`. Extract the count from the message and set up your initial state, where:
 
 - `count` is assigned the count from the message
 - `owner` is assigned to the sender of the `MsgInstantiateContract`
@@ -159,7 +159,7 @@ Only the owner can reset the count to a specific number.
 
 ### Message Definition
 
-As for our `ExecuteMsg`, we will use an `enum` to multiplex over the different types of messages that our contract can understand. The `serde` attribute rewrites our attribute keys in snake case and lower case, so we'll have `increment` and `reset` instead of `Increment` and `Reset` when serializing and deserializing across JSON.
+As for your `ExecuteMsg`, you will use an `enum` to multiplex over the different types of messages that our contract can understand. The `serde` attribute rewrites our attribute keys in snake case and lower case, so we'll have `increment` and `reset` instead of `Increment` and `Reset` when serializing and deserializing across JSON.
 
 ```rust
 // src/msg.rs
@@ -204,7 +204,7 @@ pub fn try_increment(deps: DepsMut) -> Result<Response, ContractError> {
 }
 ```
 
-It is quite straightforward to follow the logic of `try_increment()`. We acquire a mutable reference to the storage to update the singleton located at key `b"config"`, made accessible through the `config` convenience function defined in the `src/state.rs`. We then update the present state's count by returning an `Ok` result with the new state. Finally, we terminate the contract's execution with an acknowledgement of success by returning an `Ok` result with the `Response`.
+It is quite straightforward to follow the logic of `try_increment()`. First, it acquires a mutable reference to the storage to update the singleton located at key `b"config"`, made accessible through the `config` convenience function defined in the `src/state.rs`. It then updates the present state's count by returning an `Ok` result with the new state. Finally, it terminates the contract's execution with an acknowledgement of success by returning an `Ok` result with the `Response`.
 
 ```rust
 // src/contract.rs
@@ -221,7 +221,7 @@ pub fn try_reset(deps: DepsMut, info: MessageInfo, count: i32) -> Result<Respons
 }
 ```
 
-The logic for reset is very similar to increment -- except this time, we first check that the message sender is permitted to invoke the reset function.
+The logic for reset is very similar to increment -- except this time, it first checks that the message sender is permitted to invoke the reset function.
 
 ## QueryMsg
 
@@ -249,7 +249,7 @@ Which should return:
 
 ### Message Definition
 
-To support queries against our contract for data, we'll have to define both a `QueryMsg` format (which represents requests), as well as provide the structure of the query's output -- `CountResponse` in this case. We must do this because `query()` will send back information to the user through JSON in a structure and we must make the shape of our response known.
+To support queries against our contract for data, we'll have to define both a `QueryMsg` format (which represents requests), as well as provide the structure of the query's output -- `CountResponse` in this case. You must do this because `query()` will send back information to the user through JSON in a structure and you must make the shape of your response known.
 
 Add the following to your `src/msg.rs`:
 
@@ -262,7 +262,7 @@ pub enum QueryMsg {
     GetCount {},
 }
 
-// We define a custom struct for each query response
+// Define a custom struct for each query response
 #[derive(Serialize, Deserialize, Clone, Debug, PartialEq, JsonSchema)]
 pub struct CountResponse {
     pub count: i32,
@@ -271,7 +271,7 @@ pub struct CountResponse {
 
 ### Logic
 
-The logic for `query()` should be similar to that of `execute()`, except that, since `query()` is called without the end-user making a transaction, we omit the `env` argument as there is no information.
+The logic for `query()` should be similar to that of `execute()`, except that, since `query()` is called without the end-user making a transaction, the `env` argument is ommitted as there is no information.
 
 ```rust
 // src/contract.rs
@@ -335,7 +335,7 @@ Please note that rust-optimizer will produce different contracts on Intel and AR
 
 ## Schemas
 
-In order to make use of JSON-schema auto-generation, we should register each of the data structures that we need schemas for.
+In order to make use of JSON-schema auto-generation, you should register each of the data structures that you need schemas for.
 
 ```rust
 // examples/schema.rs
