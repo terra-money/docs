@@ -8,6 +8,7 @@ terra-station/README
 protocol
 fees
 glossary
+community-trust
 ```
 
 :::::::{grid} 2 2 2 3
