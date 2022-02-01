@@ -16,7 +16,7 @@ const mk = new MnemonicKey();
 const wallet = terra.wallet(mk);
 ```
 
-In the above example, we used a `MnemonicKey` for our wallet, but any type of `Key` implementation can be used instead.
+In the above example, a `MnemonicKey` was specified for the wallet, but any type of `Key` implementation can be used instead.
 
 ## Usage
 
