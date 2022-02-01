@@ -126,7 +126,7 @@ To verify the validity of the snapshot, use a `sha512sum` to check it against a 
 
 ### Compare checksum with its on-chain version.  
 
-For this example, we will use the following snapshot URL:
+For this example, use the following snapshot URL:
 
 `https://dl2.quicksync.io/bombay-12-default.20220107.0510.tar.lz4`
 

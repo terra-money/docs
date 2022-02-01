@@ -109,7 +109,7 @@ regardless of whether the validator signed. After the index is determined, the
 Finally, to determine whether a validator crosses below the liveness threshold,
 the maximum number of blocks missed, `maxMissed`, which is
 `SignedBlocksWindow - (MinSignedPerWindow * SignedBlocksWindow)`, and the minimum
-height at which we can determine liveness, `minHeight`, are fetched. If the current block is
+height at which liveness can be determined, `minHeight`, are fetched. If the current block is
 greater than `minHeight` and the validator's `MissedBlocksCounter` is greater than
 `maxMissed`, they are slashed by `SlashFractionDowntime`, jailed
 for `DowntimeJailDuration`, and have the following values reset:
@@ -125,14 +125,14 @@ height := block.Height
 for vote in block.LastCommitInfo.Votes {
   signInfo := GetValidatorSigningInfo(vote.Validator.Address)
 
-  // This is a relative index, so we counts blocks the validator SHOULD have
-  // signed. We use the 0-value default signing info if not present, except for
+  // This is a relative index, so it counts blocks the validator SHOULD have
+  // signed. The 0-value default signing info is used if no signed block is present, except for
   // start height.
   index := signInfo.IndexOffset % SignedBlocksWindow()
   signInfo.IndexOffset++
 
   // Update MissedBlocksBitArray and MissedBlocksCounter. The MissedBlocksCounter
-  // just tracks the sum of MissedBlocksBitArray. That way we avoid needing to
+  // just tracks the sum of MissedBlocksBitArray to avoid needing to
   // read/write the whole array each time.
   missedPrevious := GetValidatorMissedBlockBitArray(vote.Validator.Address, index)
   missed := !signed
@@ -159,14 +159,14 @@ for vote in block.LastCommitInfo.Votes {
   minHeight := signInfo.StartHeight + SignedBlocksWindow()
   maxMissed := SignedBlocksWindow() - MinSignedPerWindow()
 
-  // If we are past the minimum height and the validator has missed too many
+  // If the minimum height has been reached and the validator has missed too many
   // jail and slash them.
   if height > minHeight && signInfo.MissedBlocksCounter > maxMissed {
     validator := ValidatorByConsAddr(vote.Validator.Address)
 
     // emit events...
 
-    // We need to retrieve the stake distribution which signed the block, so we
+    // To retrieve the stake distribution which signed the block,
     // subtract ValidatorUpdateDelay from the block height, and subtract an
     // additional 1 since this is the LastCommit.
     //
@@ -180,7 +180,7 @@ for vote in block.LastCommitInfo.Votes {
 
     signInfo.JailedUntil = block.Time.Add(DowntimeJailDuration())
 
-    // We need to reset the counter & array so that the validator won't be
+    // Reset the counter & array so that the validator won't be
     // immediately slashed for downtime upon rebonding.
     signInfo.MissedBlocksCounter = 0
     signInfo.IndexOffset = 0

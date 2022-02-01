@@ -1615,7 +1615,7 @@ regardless of whether the validator signed. After the index is determined, the
 <p>Finally, to determine whether a validator crosses below the liveness threshold,
 the maximum number of blocks missed, <code class="docutils literal notranslate"><span class="pre">maxMissed</span></code>, which is
 <code class="docutils literal notranslate"><span class="pre">SignedBlocksWindow</span> <span class="pre">-</span> <span class="pre">(MinSignedPerWindow</span> <span class="pre">*</span> <span class="pre">SignedBlocksWindow)</span></code>, and the minimum
-height at which we can determine liveness, <code class="docutils literal notranslate"><span class="pre">minHeight</span></code>, are fetched. If the current block is
+height at which liveness can be determined, <code class="docutils literal notranslate"><span class="pre">minHeight</span></code>, are fetched. If the current block is
 greater than <code class="docutils literal notranslate"><span class="pre">minHeight</span></code> and the validator’s <code class="docutils literal notranslate"><span class="pre">MissedBlocksCounter</span></code> is greater than
 <code class="docutils literal notranslate"><span class="pre">maxMissed</span></code>, they are slashed by <code class="docutils literal notranslate"><span class="pre">SlashFractionDowntime</span></code>, jailed
 for <code class="docutils literal notranslate"><span class="pre">DowntimeJailDuration</span></code>, and have the following values reset:
@@ -1629,14 +1629,14 @@ for <code class="docutils literal notranslate"><span class="pre">DowntimeJailDur
 <span class="k">for</span><span class="w"> </span><span class="nx">vote</span><span class="w"> </span><span class="nx">in</span><span class="w"> </span><span class="nx">block</span><span class="p">.</span><span class="nx">LastCommitInfo</span><span class="p">.</span><span class="nx">Votes</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="nx">signInfo</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">GetValidatorSigningInfo</span><span class="p">(</span><span class="nx">vote</span><span class="p">.</span><span class="nx">Validator</span><span class="p">.</span><span class="nx">Address</span><span class="p">)</span><span class="w"></span>
 
-<span class="w">  </span><span class="c1">// This is a relative index, so we counts blocks the validator SHOULD have</span><span class="w"></span>
-<span class="w">  </span><span class="c1">// signed. We use the 0-value default signing info if not present, except for</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// This is a relative index, so it counts blocks the validator SHOULD have</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// signed. The 0-value default signing info is used if no signed block is present, except for</span><span class="w"></span>
 <span class="w">  </span><span class="c1">// start height.</span><span class="w"></span>
 <span class="w">  </span><span class="nx">index</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">signInfo</span><span class="p">.</span><span class="nx">IndexOffset</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="nx">SignedBlocksWindow</span><span class="p">()</span><span class="w"></span>
 <span class="w">  </span><span class="nx">signInfo</span><span class="p">.</span><span class="nx">IndexOffset</span><span class="o">++</span><span class="w"></span>
 
 <span class="w">  </span><span class="c1">// Update MissedBlocksBitArray and MissedBlocksCounter. The MissedBlocksCounter</span><span class="w"></span>
-<span class="w">  </span><span class="c1">// just tracks the sum of MissedBlocksBitArray. That way we avoid needing to</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// just tracks the sum of MissedBlocksBitArray to avoid needing to</span><span class="w"></span>
 <span class="w">  </span><span class="c1">// read/write the whole array each time.</span><span class="w"></span>
 <span class="w">  </span><span class="nx">missedPrevious</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">GetValidatorMissedBlockBitArray</span><span class="p">(</span><span class="nx">vote</span><span class="p">.</span><span class="nx">Validator</span><span class="p">.</span><span class="nx">Address</span><span class="p">,</span><span class="w"> </span><span class="nx">index</span><span class="p">)</span><span class="w"></span>
 <span class="w">  </span><span class="nx">missed</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="p">!</span><span class="nx">signed</span><span class="w"></span>
@@ -1663,14 +1663,14 @@ for <code class="docutils literal notranslate"><span class="pre">DowntimeJailDur
 <span class="w">  </span><span class="nx">minHeight</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">signInfo</span><span class="p">.</span><span class="nx">StartHeight</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">SignedBlocksWindow</span><span class="p">()</span><span class="w"></span>
 <span class="w">  </span><span class="nx">maxMissed</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">SignedBlocksWindow</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">MinSignedPerWindow</span><span class="p">()</span><span class="w"></span>
 
-<span class="w">  </span><span class="c1">// If we are past the minimum height and the validator has missed too many</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// If the minimum height has been reached and the validator has missed too many</span><span class="w"></span>
 <span class="w">  </span><span class="c1">// jail and slash them.</span><span class="w"></span>
 <span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="nx">height</span><span class="w"> </span><span class="p">&gt;</span><span class="w"> </span><span class="nx">minHeight</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">signInfo</span><span class="p">.</span><span class="nx">MissedBlocksCounter</span><span class="w"> </span><span class="p">&gt;</span><span class="w"> </span><span class="nx">maxMissed</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="nx">validator</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">ValidatorByConsAddr</span><span class="p">(</span><span class="nx">vote</span><span class="p">.</span><span class="nx">Validator</span><span class="p">.</span><span class="nx">Address</span><span class="p">)</span><span class="w"></span>
 
 <span class="w">    </span><span class="c1">// emit events...</span><span class="w"></span>
 
-<span class="w">    </span><span class="c1">// We need to retrieve the stake distribution which signed the block, so we</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// To retrieve the stake distribution which signed the block,</span><span class="w"></span>
 <span class="w">    </span><span class="c1">// subtract ValidatorUpdateDelay from the block height, and subtract an</span><span class="w"></span>
 <span class="w">    </span><span class="c1">// additional 1 since this is the LastCommit.</span><span class="w"></span>
 <span class="w">    </span><span class="c1">//</span><span class="w"></span>
@@ -1684,7 +1684,7 @@ for <code class="docutils literal notranslate"><span class="pre">DowntimeJailDur
 
 <span class="w">    </span><span class="nx">signInfo</span><span class="p">.</span><span class="nx">JailedUntil</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">block</span><span class="p">.</span><span class="nx">Time</span><span class="p">.</span><span class="nx">Add</span><span class="p">(</span><span class="nx">DowntimeJailDuration</span><span class="p">())</span><span class="w"></span>
 
-<span class="w">    </span><span class="c1">// We need to reset the counter &amp; array so that the validator won&#39;t be</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// Reset the counter &amp; array so that the validator won&#39;t be</span><span class="w"></span>
 <span class="w">    </span><span class="c1">// immediately slashed for downtime upon rebonding.</span><span class="w"></span>
 <span class="w">    </span><span class="nx">signInfo</span><span class="p">.</span><span class="nx">MissedBlocksCounter</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
 <span class="w">    </span><span class="nx">signInfo</span><span class="p">.</span><span class="nx">IndexOffset</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>

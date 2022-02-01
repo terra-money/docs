@@ -1465,7 +1465,7 @@
 docker-compose up
 </pre></div>
 </div>
-<p>You should also have the latest version of <code class="docutils literal notranslate"><span class="pre">terrad</span></code> by building the latest version of Terra Core. We will configure it to use it against our isolated testnet environment.</p>
+<p>You should also have the latest version of <code class="docutils literal notranslate"><span class="pre">terrad</span></code> by building the latest version of Terra Core. You will configure <code class="docutils literal notranslate"><span class="pre">terrad</span></code> to use it against our isolated testnet environment.</p>
 <p>In a separate terminal, make sure to set up the following mnemonic:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrad keys add test1 --recover
 </pre></div>
@@ -1527,13 +1527,13 @@ creator: terra1dcegyrekltswvyy0xy69ydgxn9x8x32zdtapd8
 </div>
 <div class="section" id="creating-the-contract">
 <h2>Creating the Contract<a class="headerlink" href="#creating-the-contract" title="Permalink to this headline">¶</a></h2>
-<p>We have now uploaded the code for our contract, but we still don’t have a contract. Let’s create it, with the following InitMsg:</p>
+<p>You have now uploaded the code for your contract, but still don’t have a contract. Create it with the following InitMsg:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<p>We will compress the JSON into 1 line with <a class="reference external" href="https://goonlinetools.com/json-minifier/">this online tool</a>.</p>
+<p>You can compress the JSON into 1 line with <a class="reference external" href="https://goonlinetools.com/json-minifier/">this online tool</a>.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrad tx wasm instantiate <span class="m">1</span> <span class="s1">&#39;{&quot;count&quot;:0}&#39;</span> --from test1 --chain-id<span class="o">=</span>localterra --fees<span class="o">=</span>10000uluna --gas<span class="o">=</span>auto --broadcast-mode<span class="o">=</span>block
 </pre></div>
 </div>
@@ -1569,7 +1569,7 @@ tx: null
 timestamp: <span class="s2">&quot;&quot;</span>
 </pre></div>
 </div>
-<p>From the output, we see that our contract was created above at: <code class="docutils literal notranslate"><span class="pre">terra18vd8fpwxzck93qlwghaj6arh4p7c5n896xzem5</span></code>. Take note of this contract address, as we will need it for the next section.</p>
+<p>From the output, you can see that your contract was created above at: <code class="docutils literal notranslate"><span class="pre">terra18vd8fpwxzck93qlwghaj6arh4p7c5n896xzem5</span></code>. Take note of this contract address, as you will need it for the next section.</p>
 <p>Check out your contract information:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrad query wasm contract terra18vd8fpwxzck93qlwghaj6arh4p7c5n896xzem5
 address: terra18vd8fpwxzck93qlwghaj6arh4p7c5n896xzem5
@@ -1583,7 +1583,7 @@ migratable: <span class="nb">false</span>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="nv">eyJjb3VudCI6MH0</span><span class="o">=</span> <span class="p">|</span> base64 --decode
 </pre></div>
 </div>
-<p>This will produce the message we used when initializing the contract:</p>
+<p>This will produce the message you used when initializing the contract:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
@@ -1595,7 +1595,7 @@ migratable: <span class="nb">false</span>
 <li><p>Reset count to 5</p></li>
 <li><p>Increment twice</p></li>
 </ol>
-<p>If done properly, we should get a count of 7.</p>
+<p>If done properly, you should get a count of 7.</p>
 <div class="section" id="reset">
 <h3>Reset<a class="headerlink" href="#reset" title="Permalink to this headline">¶</a></h3>
 <p>First, to burn:</p>
@@ -1642,7 +1642,7 @@ migratable: <span class="nb">false</span>
 </div>
 <div class="section" id="whats-next">
 <h2>What’s Next?<a class="headerlink" href="#whats-next" title="Permalink to this headline">¶</a></h2>
-<p>We’ve only walked through a simple example of a smart contract, that modifies a simple balance within its internal state. Although this is enough to make a simple dApp, we can power more interesting applications by <strong>emitting messages</strong>, which will enable us to interact with other contracts as well as the rest of the blockchain’s module.</p>
+<p>We’ve only walked through a simple example of a smart contract, that modifies a simple balance within its internal state. Although this is enough to make a simple dApp, you can power more interesting applications by <strong>emitting messages</strong>, which will enable us to interact with other contracts as well as the rest of the blockchain’s module.</p>
 <p>Check out a couple more examples of smart contracts on Terra at our <a class="reference external" href="https://github.com/terra-money/cosmwasm-contracts">repo</a>.</p>
 </div>
 </div>

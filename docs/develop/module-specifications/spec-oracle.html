@@ -1834,19 +1834,19 @@
 <li><p>Choose <code class="docutils literal notranslate"><span class="pre">ReferenceTerra</span></code></p>
 <ul class="simple">
 <li><p>Let <code class="docutils literal notranslate"><span class="pre">Vote_j</span> <span class="pre">=</span> <span class="pre">Vote_j_1</span> <span class="pre">...</span> <span class="pre">Vote_j_n</span></code> be the <code class="docutils literal notranslate"><span class="pre">uluna</span></code> exchange rate votes for each terra for validator <code class="docutils literal notranslate"><span class="pre">Val_j</span></code> in a given <code class="docutils literal notranslate"><span class="pre">VotePeriod</span></code>. <code class="docutils literal notranslate"><span class="pre">n</span></code> = number of total terra whitelist</p></li>
-<li><p>For all terra whitelist  <code class="docutils literal notranslate"><span class="pre">w_1</span> <span class="pre">...</span> <span class="pre">w_n</span></code>, choose the index <code class="docutils literal notranslate"><span class="pre">r</span></code> with the highest voter turnout. If the vote turnout has multiple tie winner, we choose in alphabetical order. <code class="docutils literal notranslate"><span class="pre">w_r</span></code> is chosen as the <code class="docutils literal notranslate"><span class="pre">ReferenceTerra</span></code> from which to compute cross exchange rates.</p></li>
+<li><p>For all terra whitelist  <code class="docutils literal notranslate"><span class="pre">w_1</span> <span class="pre">...</span> <span class="pre">w_n</span></code>, choose the index <code class="docutils literal notranslate"><span class="pre">r</span></code> with the highest voter turnout. If the vote turnout has multiple tie winners, a winner is chosen in alphabetical order. <code class="docutils literal notranslate"><span class="pre">w_r</span></code> is chosen as the <code class="docutils literal notranslate"><span class="pre">ReferenceTerra</span></code> from which to compute cross exchange rates.</p></li>
 </ul>
 </li>
 <li><p>Compute Oracle Exchange Rate</p>
 <ul class="simple">
-<li><p>Each validator now calculate cross exchange rates(<code class="docutils literal notranslate"><span class="pre">CER</span></code>) for <code class="docutils literal notranslate"><span class="pre">w_i</span></code> as below.</p>
+<li><p>Each validator now calculates the cross exchange rates(<code class="docutils literal notranslate"><span class="pre">CER</span></code>) for <code class="docutils literal notranslate"><span class="pre">w_i</span></code> as below.</p>
 <ul>
 <li><p>for <code class="docutils literal notranslate"><span class="pre">i≠r</span></code>, <code class="docutils literal notranslate"><span class="pre">CER_j_i</span> <span class="pre">=</span> <span class="pre">Vote_j_r</span> <span class="pre">/</span> <span class="pre">Vote_j_i</span></code></p></li>
 <li><p>for <code class="docutils literal notranslate"><span class="pre">i=r</span></code>, <code class="docutils literal notranslate"><span class="pre">CER_j_i</span> <span class="pre">=</span> <span class="pre">Vote_j_r</span></code></p></li>
 </ul>
 </li>
 <li><p>Calculate power weighted median(<code class="docutils literal notranslate"><span class="pre">PWM</span></code>, across all validators) for each cross exchange rates <code class="docutils literal notranslate"><span class="pre">CER_j_iMCER_i</span></code> = <code class="docutils literal notranslate"><span class="pre">PWM</span></code>(for all j)[<code class="docutils literal notranslate"><span class="pre">CER_j_i</span></code>]</p></li>
-<li><p>Now we transform these <code class="docutils literal notranslate"><span class="pre">MCER_i</span></code>s into the original form uluna/terra as below</p>
+<li><p>These <code class="docutils literal notranslate"><span class="pre">MCER_i</span></code>s can then be transformed into the original form uluna/terra as below</p>
 <ul>
 <li><p>for <code class="docutils literal notranslate"><span class="pre">i≠r</span></code>, <code class="docutils literal notranslate"><span class="pre">LunaRate_i</span> <span class="pre">=</span> <span class="pre">MCER_r</span> <span class="pre">/</span> <span class="pre">MCER_i</span></code></p></li>
 <li><p>for <code class="docutils literal notranslate"><span class="pre">i=r</span></code>, <code class="docutils literal notranslate"><span class="pre">LunaRate_i</span> <span class="pre">=</span> <span class="pre">MCER_r</span></code></p></li>

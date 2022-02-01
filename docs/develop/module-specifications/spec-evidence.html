@@ -1698,7 +1698,7 @@ The stake that contributed to the infraction is slashed, even if it has been red
 <span class="w">	</span><span class="k">if</span><span class="w"> </span><span class="nx">_</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">k</span><span class="p">.</span><span class="nx">slashingKeeper</span><span class="p">.</span><span class="nx">GetPubkey</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span><span class="w"> </span><span class="nx">consAddr</span><span class="p">.</span><span class="nx">Bytes</span><span class="p">());</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">		</span><span class="c1">// Ignore evidence that cannot be handled.</span><span class="w"></span>
 <span class="w">		</span><span class="c1">//</span><span class="w"></span>
-<span class="w">		</span><span class="c1">// NOTE: We used to panic with:</span><span class="w"></span>
+<span class="w">		</span><span class="c1">// NOTE: Developers used to panic with:</span><span class="w"></span>
 <span class="w">		</span><span class="c1">// `panic(fmt.Sprintf(&quot;Validator consensus-address %v not found&quot;, consAddr))`,</span><span class="w"></span>
 <span class="w">		</span><span class="c1">// but this couples the expectations of the app to both Tendermint and</span><span class="w"></span>
 <span class="w">		</span><span class="c1">// the simulator.  Both are expected to provide the full range of</span><span class="w"></span>
@@ -1761,8 +1761,7 @@ The stake that contributed to the infraction is slashed, even if it has been red
 <span class="w">		</span><span class="s">&quot;infraction_time&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">infractionTime</span><span class="p">,</span><span class="w"></span>
 <span class="w">	</span><span class="p">)</span><span class="w"></span>
 
-<span class="w">	</span><span class="c1">// We need to retrieve the stake distribution which signed the block, so we</span><span class="w"></span>
-<span class="w">	</span><span class="c1">// subtract ValidatorUpdateDelay from the evidence height.</span><span class="w"></span>
+<span class="w">	</span><span class="c1">// To retrieve the stake distribution which signed the block, subtract ValidatorUpdateDelay from the evidence height.</span><span class="w"></span>
 <span class="w">	</span><span class="c1">// Note, that this *can* result in a negative &quot;distributionHeight&quot;, up to</span><span class="w"></span>
 <span class="w">	</span><span class="c1">// -ValidatorUpdateDelay, i.e. at the end of the</span><span class="w"></span>
 <span class="w">	</span><span class="c1">// pre-genesis block (none) = at the beginning of the genesis block.</span><span class="w"></span>

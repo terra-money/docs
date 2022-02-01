@@ -1662,7 +1662,7 @@
 <p>On the Terra blockchain, the uploading of a contract’s code and the instantiation of a contract are regarded as separate events, unlike on Ethereum. This is to allow a small set of vetted contract archetypes to exist as multiple instances sharing the same base code but configured with different parameters (imagine one canonical ERC20, and multiple tokens that use its code).</p>
 <div class="section" id="example">
 <h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
-<p>For our contract, we will expect a contract creator to supply the initial state in a JSON message:</p>
+<p>For our contract, you will expect a contract creator to supply the initial state in a JSON message:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
@@ -1685,7 +1685,7 @@
 </div>
 <div class="section" id="logic">
 <h3>Logic<a class="headerlink" href="#logic" title="Permalink to this headline">¶</a></h3>
-<p>Here we define our first entry-point, the <code class="docutils literal notranslate"><span class="pre">instantiate()</span></code>, or where the contract is instantiated and passed its <code class="docutils literal notranslate"><span class="pre">InstantiateMsg</span></code>. We extract the count from the message and set up our initial state, where:</p>
+<p>Here you will define our first entry-point, the <code class="docutils literal notranslate"><span class="pre">instantiate()</span></code>, or where the contract is instantiated and passed its <code class="docutils literal notranslate"><span class="pre">InstantiateMsg</span></code>. Extract the count from the message and set up your initial state, where:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">count</span></code> is assigned the count from the message</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">owner</span></code> is assigned to the sender of the <code class="docutils literal notranslate"><span class="pre">MsgInstantiateContract</span></code></p></li>
@@ -1742,7 +1742,7 @@
 </div>
 <div class="section" id="id2">
 <h3>Message Definition<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
-<p>As for our <code class="docutils literal notranslate"><span class="pre">ExecuteMsg</span></code>, we will use an <code class="docutils literal notranslate"><span class="pre">enum</span></code> to multiplex over the different types of messages that our contract can understand. The <code class="docutils literal notranslate"><span class="pre">serde</span></code> attribute rewrites our attribute keys in snake case and lower case, so we’ll have <code class="docutils literal notranslate"><span class="pre">increment</span></code> and <code class="docutils literal notranslate"><span class="pre">reset</span></code> instead of <code class="docutils literal notranslate"><span class="pre">Increment</span></code> and <code class="docutils literal notranslate"><span class="pre">Reset</span></code> when serializing and deserializing across JSON.</p>
+<p>As for your <code class="docutils literal notranslate"><span class="pre">ExecuteMsg</span></code>, you will use an <code class="docutils literal notranslate"><span class="pre">enum</span></code> to multiplex over the different types of messages that our contract can understand. The <code class="docutils literal notranslate"><span class="pre">serde</span></code> attribute rewrites our attribute keys in snake case and lower case, so we’ll have <code class="docutils literal notranslate"><span class="pre">increment</span></code> and <code class="docutils literal notranslate"><span class="pre">reset</span></code> instead of <code class="docutils literal notranslate"><span class="pre">Increment</span></code> and <code class="docutils literal notranslate"><span class="pre">Reset</span></code> when serializing and deserializing across JSON.</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="c1">// src/msg.rs</span>
 
 <span class="cp">#[derive(Serialize, Deserialize, Clone, Debug, PartialEq, JsonSchema)]</span><span class="w"></span>
@@ -1783,7 +1783,7 @@
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<p>It is quite straightforward to follow the logic of <code class="docutils literal notranslate"><span class="pre">try_increment()</span></code>. We acquire a mutable reference to the storage to update the singleton located at key <code class="docutils literal notranslate"><span class="pre">b&quot;config&quot;</span></code>, made accessible through the <code class="docutils literal notranslate"><span class="pre">config</span></code> convenience function defined in the <code class="docutils literal notranslate"><span class="pre">src/state.rs</span></code>. We then update the present state’s count by returning an <code class="docutils literal notranslate"><span class="pre">Ok</span></code> result with the new state. Finally, we terminate the contract’s execution with an acknowledgement of success by returning an <code class="docutils literal notranslate"><span class="pre">Ok</span></code> result with the <code class="docutils literal notranslate"><span class="pre">Response</span></code>.</p>
+<p>It is quite straightforward to follow the logic of <code class="docutils literal notranslate"><span class="pre">try_increment()</span></code>. First, it acquires a mutable reference to the storage to update the singleton located at key <code class="docutils literal notranslate"><span class="pre">b&quot;config&quot;</span></code>, made accessible through the <code class="docutils literal notranslate"><span class="pre">config</span></code> convenience function defined in the <code class="docutils literal notranslate"><span class="pre">src/state.rs</span></code>. It then updates the present state’s count by returning an <code class="docutils literal notranslate"><span class="pre">Ok</span></code> result with the new state. Finally, it terminates the contract’s execution with an acknowledgement of success by returning an <code class="docutils literal notranslate"><span class="pre">Ok</span></code> result with the <code class="docutils literal notranslate"><span class="pre">Response</span></code>.</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="c1">// src/contract.rs</span>
 
 <span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">try_reset</span><span class="p">(</span><span class="n">deps</span>: <span class="nc">DepsMut</span><span class="p">,</span><span class="w"> </span><span class="n">info</span>: <span class="nc">MessageInfo</span><span class="p">,</span><span class="w"> </span><span class="n">count</span>: <span class="kt">i32</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">Result</span><span class="o">&lt;</span><span class="n">Response</span><span class="p">,</span><span class="w"> </span><span class="n">ContractError</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -1798,7 +1798,7 @@
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<p>The logic for reset is very similar to increment – except this time, we first check that the message sender is permitted to invoke the reset function.</p>
+<p>The logic for reset is very similar to increment – except this time, it first checks that the message sender is permitted to invoke the reset function.</p>
 </div>
 </div>
 <div class="section" id="querymsg">
@@ -1824,7 +1824,7 @@
 </div>
 <div class="section" id="id5">
 <h3>Message Definition<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
-<p>To support queries against our contract for data, we’ll have to define both a <code class="docutils literal notranslate"><span class="pre">QueryMsg</span></code> format (which represents requests), as well as provide the structure of the query’s output – <code class="docutils literal notranslate"><span class="pre">CountResponse</span></code> in this case. We must do this because <code class="docutils literal notranslate"><span class="pre">query()</span></code> will send back information to the user through JSON in a structure and we must make the shape of our response known.</p>
+<p>To support queries against our contract for data, we’ll have to define both a <code class="docutils literal notranslate"><span class="pre">QueryMsg</span></code> format (which represents requests), as well as provide the structure of the query’s output – <code class="docutils literal notranslate"><span class="pre">CountResponse</span></code> in this case. You must do this because <code class="docutils literal notranslate"><span class="pre">query()</span></code> will send back information to the user through JSON in a structure and you must make the shape of your response known.</p>
 <p>Add the following to your <code class="docutils literal notranslate"><span class="pre">src/msg.rs</span></code>:</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="c1">// src/msg.rs</span>
 <span class="cp">#[derive(Serialize, Deserialize, Clone, Debug, PartialEq, JsonSchema)]</span><span class="w"></span>
@@ -1834,7 +1834,7 @@
 <span class="w">    </span><span class="n">GetCount</span><span class="w"> </span><span class="p">{},</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 
-<span class="c1">// We define a custom struct for each query response</span>
+<span class="c1">// Define a custom struct for each query response</span>
 <span class="cp">#[derive(Serialize, Deserialize, Clone, Debug, PartialEq, JsonSchema)]</span><span class="w"></span>
 <span class="k">pub</span><span class="w"> </span><span class="k">struct</span> <span class="nc">CountResponse</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="n">count</span>: <span class="kt">i32</span><span class="p">,</span><span class="w"></span>
@@ -1844,7 +1844,7 @@
 </div>
 <div class="section" id="id6">
 <h3>Logic<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
-<p>The logic for <code class="docutils literal notranslate"><span class="pre">query()</span></code> should be similar to that of <code class="docutils literal notranslate"><span class="pre">execute()</span></code>, except that, since <code class="docutils literal notranslate"><span class="pre">query()</span></code> is called without the end-user making a transaction, we omit the <code class="docutils literal notranslate"><span class="pre">env</span></code> argument as there is no information.</p>
+<p>The logic for <code class="docutils literal notranslate"><span class="pre">query()</span></code> should be similar to that of <code class="docutils literal notranslate"><span class="pre">execute()</span></code>, except that, since <code class="docutils literal notranslate"><span class="pre">query()</span></code> is called without the end-user making a transaction, the <code class="docutils literal notranslate"><span class="pre">env</span></code> argument is ommitted as there is no information.</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="c1">// src/contract.rs</span>
 
 <span class="cp">#[cfg_attr(not(feature = </span><span class="s">&quot;library&quot;</span><span class="cp">), entry_point)]</span><span class="w"></span>
@@ -1901,7 +1901,7 @@
 </div>
 <div class="section" id="schemas">
 <h2>Schemas<a class="headerlink" href="#schemas" title="Permalink to this headline">¶</a></h2>
-<p>In order to make use of JSON-schema auto-generation, we should register each of the data structures that we need schemas for.</p>
+<p>In order to make use of JSON-schema auto-generation, you should register each of the data structures that you need schemas for.</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="c1">// examples/schema.rs</span>
 
 <span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">env</span>::<span class="n">current_dir</span><span class="p">;</span><span class="w"></span>

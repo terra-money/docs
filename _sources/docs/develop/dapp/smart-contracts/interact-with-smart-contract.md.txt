@@ -13,7 +13,7 @@ cd localterra
 docker-compose up
 ```
 
-You should also have the latest version of `terrad` by building the latest version of Terra Core. We will configure it to use it against our isolated testnet environment.
+You should also have the latest version of `terrad` by building the latest version of Terra Core. You will configure `terrad` to use it against our isolated testnet environment.
 
 In a separate terminal, make sure to set up the following mnemonic:
 
@@ -87,7 +87,7 @@ creator: terra1dcegyrekltswvyy0xy69ydgxn9x8x32zdtapd8
 
 ## Creating the Contract
 
-We have now uploaded the code for our contract, but we still don't have a contract. Let's create it, with the following InitMsg:
+You have now uploaded the code for your contract, but still don't have a contract. Create it with the following InitMsg:
 
 ```json
 {
@@ -95,7 +95,7 @@ We have now uploaded the code for our contract, but we still don't have a contra
 }
 ```
 
-We will compress the JSON into 1 line with [this online tool](https://goonlinetools.com/json-minifier/).
+You can compress the JSON into 1 line with [this online tool](https://goonlinetools.com/json-minifier/).
 
 ```sh
 terrad tx wasm instantiate 1 '{"count":0}' --from test1 --chain-id=localterra --fees=10000uluna --gas=auto --broadcast-mode=block
@@ -135,7 +135,7 @@ tx: null
 timestamp: ""
 ```
 
-From the output, we see that our contract was created above at: `terra18vd8fpwxzck93qlwghaj6arh4p7c5n896xzem5`. Take note of this contract address, as we will need it for the next section.
+From the output, you can see that your contract was created above at: `terra18vd8fpwxzck93qlwghaj6arh4p7c5n896xzem5`. Take note of this contract address, as you will need it for the next section.
 
 Check out your contract information:
 
@@ -154,7 +154,7 @@ You can use the following to decode the Base64 InitMsg:
 echo eyJjb3VudCI6MH0= | base64 --decode
 ```
 
-This will produce the message we used when initializing the contract:
+This will produce the message you used when initializing the contract:
 
 ```json
 { "count": 0 }
@@ -167,7 +167,7 @@ Let's do the following:
 1. Reset count to 5
 2. Increment twice
 
-If done properly, we should get a count of 7.
+If done properly, you should get a count of 7.
 
 #### Reset
 
@@ -222,6 +222,6 @@ Excellent! Congratulations, you've created your first smart contract, and now kn
 
 ## What's Next?
 
-We've only walked through a simple example of a smart contract, that modifies a simple balance within its internal state. Although this is enough to make a simple dApp, we can power more interesting applications by **emitting messages**, which will enable us to interact with other contracts as well as the rest of the blockchain's module.
+We've only walked through a simple example of a smart contract, that modifies a simple balance within its internal state. Although this is enough to make a simple dApp, you can power more interesting applications by **emitting messages**, which will enable us to interact with other contracts as well as the rest of the blockchain's module.
 
 Check out a couple more examples of smart contracts on Terra at our [repo](https://github.com/terra-money/cosmwasm-contracts).

@@ -47,7 +47,7 @@ The following structure shows your scaffolded project:
 
 ## 3. Configure the testnet
 
-Before deploying we need to teach Terrain how to access our Bombay wallet. To do this you'll need to modify `keys.terrain.js` in the generated project.
+Before deploying, Terrain needs to learn how to access your Bombay wallet. To do this you'll need to modify `keys.terrain.js` in the generated project.
 
 Modify the configuration and input your seed phrase to look like this:
 

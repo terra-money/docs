@@ -1636,21 +1636,21 @@
 </ul>
 <ul>
 <li><p><a class="reference internal" href="#minspread"><span class="std std-doc"><strong>Minimum spread</strong></span></a> for Terra&lt;&gt;Luna swaps</p>
-<p>The minimum spread is 0.5%. Using the same exchange rates we used above, swapping 1 SDT will return 995 KRT worth of Luna (0.5% of 1000 is 5, which is taken as the swap fee). If you reverse the direction of the swap, 1 Luna would return 9.95 SDT (0.5% of 10 is 0.05), or 9,950 KRT (0.5% of 10,000 = 50).</p>
+<p>The minimum spread is 0.5%. Using the same exchange rates as above, swapping 1 SDT will return 995 KRT worth of Luna (0.5% of 1000 is 5, which is taken as the swap fee). If you reverse the direction of the swap, 1 Luna would return 9.95 SDT (0.5% of 10 is 0.05), or 9,950 KRT (0.5% of 10,000 = 50).</p>
 </li>
 </ul>
 </div>
 <div class="section" id="market-making-algorithm">
 <h3>Market Making Algorithm<a class="headerlink" href="#market-making-algorithm" title="Permalink to this headline">¶</a></h3>
 <p>Terra uses a Constant Product market-making algorithm to ensure liquidity for Terra&lt;&gt;Luna swaps. <a class="footnote-reference brackets" href="#id4" id="id2">2</a></p>
-<p>With Constant Product, we define a value <span class="math notranslate nohighlight">\(CP\)</span> set to the size of the Terra pool multiplied by a set <strong>fiat value of Luna</strong>, and ensure our market-maker maintains it as invariant during any swaps by adjusting the spread.</p>
+<p>With Constant Product, a value, <span class="math notranslate nohighlight">\(CP\)</span>, is set to the size of the Terra pool multiplied by a set <strong>fiat value of Luna</strong>, and ensure our market-maker maintains it as invariant during any swaps by adjusting the spread.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Our implementation of Constant Product diverges from Uniswap’s, as we use the fiat value of Luna instead of the size of the Luna pool. This nuance means changes in Luna’s price don’t affect the product, but rather the size of the Luna pool.</p>
+<p>The Terra blockchain’s implementation of Constant Product diverges from Uniswap’s, as the fiat value of Luna is used instead of the size of the Luna pool. This nuance means changes in the price of Luna does not affect the product, but rather the size of the Luna pool.</p>
 </div>
 <div class="math notranslate nohighlight">
 \[CP = Pool_{Terra} * Pool_{Luna} * (Price_{Luna}/Price_{SDR})\]</div>
-<p>For example, we’ll start with equal pools of Terra and Luna, both worth 1000 SDR total. The size of the Terra pool is 1000 SDT, and assuming the price of Luna&lt;&gt;SDR is 0.5, the size of the Luna pool is 2000 Luna. A swap of 100 SDT for Luna would return around 90.91 SDR worth of Luna (≈ 181.82 Luna). The offer of 100 SDT is added to the Terra pool, and the 90.91 SDT worth of Luna are taken out of the Luna pool.</p>
+<p>For example, start with equal pools of Terra and Luna, both worth 1000 SDR total. The size of the Terra pool is 1000 SDT, and assuming the price of Luna&lt;&gt;SDR is 0.5, the size of the Luna pool is 2000 Luna. A swap of 100 SDT for Luna would return around 90.91 SDR worth of Luna (≈ 181.82 Luna). The offer of 100 SDT is added to the Terra pool, and the 90.91 SDT worth of Luna are taken out of the Luna pool.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CP</span> <span class="o">=</span> <span class="mi">1000000</span> <span class="n">SDR</span>
 <span class="p">(</span><span class="mi">1000</span> <span class="n">SDT</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1000</span> <span class="n">SDR</span> <span class="n">of</span> <span class="n">Luna</span><span class="p">)</span> <span class="o">=</span> <span class="mi">1000000</span> <span class="n">SDR</span>
 <span class="p">(</span><span class="mi">1100</span> <span class="n">SDT</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mf">909.0909</span><span class="o">...</span> <span class="n">SDR</span> <span class="n">of</span> <span class="n">Luna</span><span class="p">)</span> <span class="o">=</span> <span class="mi">1000000</span> <span class="n">SDR</span>
@@ -1819,7 +1819,7 @@
 <hr class="footnotes docutils" />
 <dl class="footnote brackets">
 <dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>Initially we maintained a policy for zero-fee swaps. However, to prevent front-running attackers from exploiting the exchange-rate latency and profiting at the expense of users, we implemented the Tobin tax. For more information, see <a class="reference external" href="https://medium.com/terra-money/on-swap-fees-the-greedy-and-the-wise-b967f0c8914e">“On swap fees: the greedy and the wise”</a>.</p>
+<dd><p>Initially, the Terra blockchain maintained a policy for zero-fee swaps. However, to prevent front-running attackers from exploiting the exchange-rate latency and profiting at the expense of users, the Tobin tax was implemented. For more information, see <a class="reference external" href="https://medium.com/terra-money/on-swap-fees-the-greedy-and-the-wise-b967f0c8914e">“On swap fees: the greedy and the wise”</a>.</p>
 </dd>
 <dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
 <dd><p>For a more in-depth treatment of our updated market-making algorithm, check <a class="reference external" href="https://agora.terra.money/t/terra-stability-swap-mechanism-deep-dive-at-sfbw/135">Nick Platias’s SFBW 2019 presentation</a>.</p>

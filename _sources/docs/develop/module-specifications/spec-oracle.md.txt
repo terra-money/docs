@@ -41,15 +41,15 @@ Choose `ReferenceTerra` with the highest voter turnout. If the voting power of t
 1. Choose `ReferenceTerra`
 
    - Let `Vote_j = Vote_j_1 ... Vote_j_n` be the `uluna` exchange rate votes for each terra for validator `Val_j` in a given `VotePeriod`. `n` = number of total terra whitelist
-   - For all terra whitelist  `w_1 ... w_n`, choose the index `r` with the highest voter turnout. If the vote turnout has multiple tie winner, we choose in alphabetical order. `w_r` is chosen as the `ReferenceTerra` from which to compute cross exchange rates.
+   - For all terra whitelist  `w_1 ... w_n`, choose the index `r` with the highest voter turnout. If the vote turnout has multiple tie winners, a winner is chosen in alphabetical order. `w_r` is chosen as the `ReferenceTerra` from which to compute cross exchange rates.
 
 2. Compute Oracle Exchange Rate
 
-   - Each validator now calculate cross exchange rates(`CER`) for `w_i` as below.
+   - Each validator now calculates the cross exchange rates(`CER`) for `w_i` as below.
      - for `i≠r`, `CER_j_i = Vote_j_r / Vote_j_i`
      - for `i=r`, `CER_j_i = Vote_j_r`
    - Calculate power weighted median(`PWM`, across all validators) for each cross exchange rates `CER_j_iMCER_i` = `PWM`(for all j)[`CER_j_i`]
-   - Now we transform these `MCER_i`s into the original form uluna/terra as below
+   - These `MCER_i`s can then be transformed into the original form uluna/terra as below
      - for `i≠r`, `LunaRate_i = MCER_r / MCER_i`
      - for `i=r`, `LunaRate_i = MCER_r`
 

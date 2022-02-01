@@ -85,7 +85,7 @@ terrad keys add <your-key-name> --recover --account 1
 You are prompted to specify a passphrase and your mnemonic. To generate a different account, change the account number.
 
 ::: {danger}
-- Do not use the same passphrase for multiple keys. We are not responsible for the loss of funds. Do not lose or share your mnemonic with anyone.
+- Do not use the same passphrase for multiple keys. Do not lose or share your mnemonic with anyone.
 :::
 
 **Example**
@@ -1240,7 +1240,7 @@ terrad tx gov submit-proposal \
 
 ### Parameter-change proposals
 
-When you submit a proposal to change a parameter, we recommend you send the proposal as a JSON file.
+When you submit a proposal to change a parameter, it is recommended that you send the proposal as a JSON file.
 
 **Syntax**
 ```bash
@@ -1286,7 +1286,7 @@ Because parameter changes are evaluated but not validated, ensure that new value
 
 ### Community pool spend proposal
 
-When you submit a community pool spend proposal, we recommend you send the proposal as a JSON file.
+When you submit a community pool spend proposal, it is recommended that you send the proposal as a JSON file.
 
 **Syntax**
 ```bash
@@ -1335,7 +1335,7 @@ As of proposals [43](https://station.terra.money/proposal/43) and [172](https://
 
 Tax rate and reward weight are important monetary policy levers handled by the [`Treasury`](../../module-specifications/spec-treasury.md) module to modulate miner incentives toward stable demand and steady growth. Usually, they are automatically calibrated once per epoch by the protocol. However, they can be changed at any time, if an update proposal gets passed with enough supporters.
 
-When you submit a tax rate or reward weight update proposal, we recommend you send the proposal as a JSON file.
+When you submit a tax rate or reward weight update proposal, it is recommended that you send the proposal as a JSON file.
 
 For tax rate:
 

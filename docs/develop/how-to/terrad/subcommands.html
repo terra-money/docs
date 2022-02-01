@@ -4387,7 +4387,7 @@ rm ~/.bash_history
 <div class="admonition danger">
 <p class="admonition-title">Danger</p>
 <ul class="simple">
-<li><p>Do not use the same passphrase for multiple keys. We are not responsible for the loss of funds. Do not lose or share your mnemonic with anyone.</p></li>
+<li><p>Do not use the same passphrase for multiple keys. Do not lose or share your mnemonic with anyone.</p></li>
 </ul>
 </div>
 <p><strong>Example</strong></p>
@@ -5380,7 +5380,7 @@ terrad tx distribution fund-community-pool 100ukrw,200uusd</p>
 </div>
 <div class="section" id="parameter-change-proposals">
 <h3>Parameter-change proposals<a class="headerlink" href="#parameter-change-proposals" title="Permalink to this headline">¶</a></h3>
-<p>When you submit a proposal to change a parameter, we recommend you send the proposal as a JSON file.</p>
+<p>When you submit a proposal to change a parameter, it is recommended that you send the proposal as a JSON file.</p>
 <p><strong>Syntax</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad tx gov submit-proposal <span class="se">\</span>
     param-change &lt;path/to/proposal.json&gt; <span class="se">\</span>
@@ -5422,7 +5422,7 @@ terrad tx distribution fund-community-pool 100ukrw,200uusd</p>
 </div>
 <div class="section" id="community-pool-spend-proposal">
 <h3>Community pool spend proposal<a class="headerlink" href="#community-pool-spend-proposal" title="Permalink to this headline">¶</a></h3>
-<p>When you submit a community pool spend proposal, we recommend you send the proposal as a JSON file.</p>
+<p>When you submit a community pool spend proposal, it is recommended that you send the proposal as a JSON file.</p>
 <p><strong>Syntax</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad tx gov submit-proposal <span class="se">\</span>
     community-pool-spend &lt;path/to/proposal.json&gt; <span class="se">\</span>
@@ -5465,7 +5465,7 @@ terrad tx distribution fund-community-pool 100ukrw,200uusd</p>
 <p>As of proposals <a class="reference external" href="https://station.terra.money/proposal/43">43</a> and <a class="reference external" href="https://station.terra.money/proposal/172">172</a>, all seigniorage is burned, and the stability fee tax rate is fixed at zero.Although the Treasury module is no longer effectively used, the commands are kept for reference.</p>
 </div>
 <p>Tax rate and reward weight are important monetary policy levers handled by the <a class="reference internal" href="../../module-specifications/spec-treasury.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">Treasury</span></code></span></a> module to modulate miner incentives toward stable demand and steady growth. Usually, they are automatically calibrated once per epoch by the protocol. However, they can be changed at any time, if an update proposal gets passed with enough supporters.</p>
-<p>When you submit a tax rate or reward weight update proposal, we recommend you send the proposal as a JSON file.</p>
+<p>When you submit a tax rate or reward weight update proposal, it is recommended that you send the proposal as a JSON file.</p>
 <p>For tax rate:</p>
 <p><strong>Syntax</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad tx gov submit-proposal <span class="se">\</span>
