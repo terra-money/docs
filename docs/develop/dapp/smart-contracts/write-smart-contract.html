@@ -1605,7 +1605,7 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">execute()</span></code>: gets called when a user wants to invoke a method on the smart contract</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">query()</span></code>: gets called when a user wants to get data out of a smart contract</p></li>
 </ul>
-<p>In this section, we’ll define our expected messages alongside their implementation.</p>
+<p>In this section, you will define your expected messages alongside their implementation.</p>
 <div class="section" id="start-with-a-template">
 <h2>Start with a template<a class="headerlink" href="#start-with-a-template" title="Permalink to this headline">¶</a></h2>
 <p>In your working directory, quickly launch your smart contract with the recommended folder structure and build options by running the following commands:</p>
@@ -1642,15 +1642,15 @@
 <span class="k">pub</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">STATE</span>: <span class="nc">Item</span><span class="o">&lt;</span><span class="n">State</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Item</span>::<span class="n">new</span><span class="p">(</span><span class="s">&quot;state&quot;</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
-<p>Terra smart contracts have the ability to keep persistent state through Terra’s native LevelDB, a bytes-based key-value store. As such, any data you wish to persist should be assigned a unique key at which the data can be indexed and later retrieved. The singleton in our example above is assigned the key <code class="docutils literal notranslate"><span class="pre">config</span></code> (in bytes).</p>
+<p>Terra smart contracts have the ability to keep persistent state through Terra’s native LevelDB, a bytes-based key-value store. As such, any data you wish to persist should be assigned a unique key at which the data can be indexed and later retrieved. The singleton in the example above is assigned the key <code class="docutils literal notranslate"><span class="pre">config</span></code> (in bytes).</p>
 <p>Data can only be persisted as raw bytes, so any notion of structure or data type must be expressed as a pair of serializing and deserializing functions. For instance, objects must be stored as bytes, so you must supply both the function that encodes the object into bytes to save it on the blockchain, as well as the function that decodes the bytes back into data types that your contract logic can understand. The choice of byte representation is up to you, so long as it provides a clean, bi-directional mapping.</p>
 <p>Fortunately, the CosmWasm team have provided utility crates such as <a class="reference external" href="https://github.com/CosmWasm/cosmwasm/tree/master/packages/storage">cosmwasm_storage</a>, which provides convenient high-level abstractions for data containers such as a “singleton” and “bucket”, which automatically provide serialization and deserialization for commonly-used types such as structs and Rust numbers.</p>
 <p>Notice how the <code class="docutils literal notranslate"><span class="pre">State</span></code> struct holds both <code class="docutils literal notranslate"><span class="pre">count</span></code> and <code class="docutils literal notranslate"><span class="pre">owner</span></code>. In addition, the <code class="docutils literal notranslate"><span class="pre">derive</span></code> attribute is applied to auto-implement some useful traits:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Serialize</span></code>: provides serialization</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Deserialize</span></code>: provides deserialization</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Clone</span></code>: makes our struct copyable</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Debug</span></code>: enables our struct to be printed to string</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Clone</span></code>: makes the struct copyable</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Debug</span></code>: enables the struct to be printed to string</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">PartialEq</span></code>: gives us equality comparison</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">JsonSchema</span></code>: auto-generates a JSON schema for us</p></li>
 </ul>
@@ -1662,7 +1662,7 @@
 <p>On the Terra blockchain, the uploading of a contract’s code and the instantiation of a contract are regarded as separate events, unlike on Ethereum. This is to allow a small set of vetted contract archetypes to exist as multiple instances sharing the same base code but configured with different parameters (imagine one canonical ERC20, and multiple tokens that use its code).</p>
 <div class="section" id="example">
 <h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
-<p>For our contract, you will expect a contract creator to supply the initial state in a JSON message:</p>
+<p>For your contract, you will expect a contract creator to supply the initial state in a JSON message:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
@@ -1685,7 +1685,7 @@
 </div>
 <div class="section" id="logic">
 <h3>Logic<a class="headerlink" href="#logic" title="Permalink to this headline">¶</a></h3>
-<p>Here you will define our first entry-point, the <code class="docutils literal notranslate"><span class="pre">instantiate()</span></code>, or where the contract is instantiated and passed its <code class="docutils literal notranslate"><span class="pre">InstantiateMsg</span></code>. Extract the count from the message and set up your initial state, where:</p>
+<p>Here you will define your first entry-point, the <code class="docutils literal notranslate"><span class="pre">instantiate()</span></code>, or where the contract is instantiated and passed its <code class="docutils literal notranslate"><span class="pre">InstantiateMsg</span></code>. Extract the count from the message and set up your initial state, where:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">count</span></code> is assigned the count from the message</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">owner</span></code> is assigned to the sender of the <code class="docutils literal notranslate"><span class="pre">MsgInstantiateContract</span></code></p></li>
@@ -1742,7 +1742,7 @@
 </div>
 <div class="section" id="id2">
 <h3>Message Definition<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
-<p>As for your <code class="docutils literal notranslate"><span class="pre">ExecuteMsg</span></code>, you will use an <code class="docutils literal notranslate"><span class="pre">enum</span></code> to multiplex over the different types of messages that our contract can understand. The <code class="docutils literal notranslate"><span class="pre">serde</span></code> attribute rewrites our attribute keys in snake case and lower case, so we’ll have <code class="docutils literal notranslate"><span class="pre">increment</span></code> and <code class="docutils literal notranslate"><span class="pre">reset</span></code> instead of <code class="docutils literal notranslate"><span class="pre">Increment</span></code> and <code class="docutils literal notranslate"><span class="pre">Reset</span></code> when serializing and deserializing across JSON.</p>
+<p>As for your <code class="docutils literal notranslate"><span class="pre">ExecuteMsg</span></code>, you will use an <code class="docutils literal notranslate"><span class="pre">enum</span></code> to multiplex over the different types of messages that your contract can understand. The <code class="docutils literal notranslate"><span class="pre">serde</span></code> attribute rewrites your attribute keys in snake case and lower case, so you’ll have <code class="docutils literal notranslate"><span class="pre">increment</span></code> and <code class="docutils literal notranslate"><span class="pre">reset</span></code> instead of <code class="docutils literal notranslate"><span class="pre">Increment</span></code> and <code class="docutils literal notranslate"><span class="pre">Reset</span></code> when serializing and deserializing across JSON.</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="c1">// src/msg.rs</span>
 
 <span class="cp">#[derive(Serialize, Deserialize, Clone, Debug, PartialEq, JsonSchema)]</span><span class="w"></span>
@@ -1772,7 +1772,7 @@
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<p>This is our <code class="docutils literal notranslate"><span class="pre">execute()</span></code> method, which uses Rust’s pattern matching to route the received <code class="docutils literal notranslate"><span class="pre">ExecuteMsg</span></code> to the appropriate handling logic, either dispatching a <code class="docutils literal notranslate"><span class="pre">try_increment()</span></code> or a <code class="docutils literal notranslate"><span class="pre">try_reset()</span></code> call depending on the message received.</p>
+<p>This is your <code class="docutils literal notranslate"><span class="pre">execute()</span></code> method, which uses Rust’s pattern matching to route the received <code class="docutils literal notranslate"><span class="pre">ExecuteMsg</span></code> to the appropriate handling logic, either dispatching a <code class="docutils literal notranslate"><span class="pre">try_increment()</span></code> or a <code class="docutils literal notranslate"><span class="pre">try_reset()</span></code> call depending on the message received.</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">try_increment</span><span class="p">(</span><span class="n">deps</span>: <span class="nc">DepsMut</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">Result</span><span class="o">&lt;</span><span class="n">Response</span><span class="p">,</span><span class="w"> </span><span class="n">ContractError</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="n">STATE</span><span class="p">.</span><span class="n">update</span><span class="p">(</span><span class="n">deps</span><span class="p">.</span><span class="n">storage</span><span class="p">,</span><span class="w"> </span><span class="o">|</span><span class="k">mut</span><span class="w"> </span><span class="n">state</span><span class="o">|</span><span class="w"> </span>-&gt; <span class="nb">Result</span><span class="o">&lt;</span><span class="n">_</span><span class="p">,</span><span class="w"> </span><span class="n">ContractError</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">        </span><span class="n">state</span><span class="p">.</span><span class="n">count</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
@@ -1824,7 +1824,7 @@
 </div>
 <div class="section" id="id5">
 <h3>Message Definition<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
-<p>To support queries against our contract for data, we’ll have to define both a <code class="docutils literal notranslate"><span class="pre">QueryMsg</span></code> format (which represents requests), as well as provide the structure of the query’s output – <code class="docutils literal notranslate"><span class="pre">CountResponse</span></code> in this case. You must do this because <code class="docutils literal notranslate"><span class="pre">query()</span></code> will send back information to the user through JSON in a structure and you must make the shape of your response known.</p>
+<p>To support queries against the contract for data, you’ll have to define both a <code class="docutils literal notranslate"><span class="pre">QueryMsg</span></code> format (which represents requests), as well as provide the structure of the query’s output – <code class="docutils literal notranslate"><span class="pre">CountResponse</span></code> in this case. You must do this because <code class="docutils literal notranslate"><span class="pre">query()</span></code> will send back information to the user through JSON in a structure and you must make the shape of your response known.</p>
 <p>Add the following to your <code class="docutils literal notranslate"><span class="pre">src/msg.rs</span></code>:</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="c1">// src/msg.rs</span>
 <span class="cp">#[derive(Serialize, Deserialize, Clone, Debug, PartialEq, JsonSchema)]</span><span class="w"></span>

@@ -1475,14 +1475,14 @@ terrad keys add --multisig<span class="o">=</span>p2,p3,p1 --multisig-threshold<
 </div>
 <div class="section" id="step-1-create-the-multisig-key">
 <h3>Step 1: Create the multisig key<a class="headerlink" href="#step-1-create-the-multisig-key" title="Permalink to this headline">¶</a></h3>
-<p>Let’s assume that you have <code class="docutils literal notranslate"><span class="pre">test1</span></code> and <code class="docutils literal notranslate"><span class="pre">test2</span></code> want to make a multisig account with <code class="docutils literal notranslate"><span class="pre">test3</span></code>.</p>
-<p>First import the public keys of <code class="docutils literal notranslate"><span class="pre">test3</span></code> into your keyring.</p>
+<p>As an example, assume that you have <code class="docutils literal notranslate"><span class="pre">test1</span></code> and <code class="docutils literal notranslate"><span class="pre">test2</span></code> want to make a multisig account with <code class="docutils literal notranslate"><span class="pre">test3</span></code>.</p>
+<p>First, import the public keys of <code class="docutils literal notranslate"><span class="pre">test3</span></code> into your keyring:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrad keys add <span class="se">\</span>
     test3 <span class="se">\</span>
     --pubkey<span class="o">=</span>terrapub1addwnpepqgcxazmq6wgt2j4rdfumsfwla0zfk8e5sws3p3zg5dkm9007hmfysxas0u2
 </pre></div>
 </div>
-<p>Generate the multisig key with 2/3 threshold.</p>
+<p>Generate the multisig key with 2/3 threshold:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrad keys add <span class="se">\</span>
     multi <span class="se">\</span>
     --multisig<span class="o">=</span>test1,test2,test3 <span class="se">\</span>
@@ -1501,7 +1501,7 @@ terrad keys add --multisig<span class="o">=</span>p2,p3,p1 --multisig-threshold<
   pubkeys: <span class="o">[]</span>
 </pre></div>
 </div>
-<p>Let’s add 10 LUNA to the multisig wallet:</p>
+<p>Then, add 10 LUNA to the multisig wallet:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad tx send <span class="se">\</span>
     test1 <span class="se">\</span>
     terra1e0fx0q9meawrcq7fmma9x60gk35lpr4xk3884m <span class="se">\</span>
@@ -1515,7 +1515,7 @@ terrad keys add --multisig<span class="o">=</span>p2,p3,p1 --multisig-threshold<
 </div>
 <div class="section" id="step-2-create-the-multisig-transaction">
 <h3>Step 2: Create the multisig transaction<a class="headerlink" href="#step-2-create-the-multisig-transaction" title="Permalink to this headline">¶</a></h3>
-<p>You want to send 5 LUNA from your multisig account to <code class="docutils literal notranslate"><span class="pre">terra1fmcjjt6yc9wqup2r06urnrd928jhrde6gcld6n</span></code>.</p>
+<p>Send 5 LUNA from your multisig account to <code class="docutils literal notranslate"><span class="pre">terra1fmcjjt6yc9wqup2r06urnrd928jhrde6gcld6n</span></code>.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad tx bank send <span class="se">\</span>
     terra1e0fx0q9meawrcq7fmma9x60gk35lpr4xk3884m <span class="se">\</span>
     terra1fmcjjt6yc9wqup2r06urnrd928jhrde6gcld6n <span class="se">\</span>

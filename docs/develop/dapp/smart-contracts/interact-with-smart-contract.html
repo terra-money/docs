@@ -1465,7 +1465,7 @@
 docker-compose up
 </pre></div>
 </div>
-<p>You should also have the latest version of <code class="docutils literal notranslate"><span class="pre">terrad</span></code> by building the latest version of Terra Core. You will configure <code class="docutils literal notranslate"><span class="pre">terrad</span></code> to use it against our isolated testnet environment.</p>
+<p>You should also have the latest version of <code class="docutils literal notranslate"><span class="pre">terrad</span></code> by building the latest version of Terra Core. You will configure <code class="docutils literal notranslate"><span class="pre">terrad</span></code> to use it against your isolated testnet environment.</p>
 <p>In a separate terminal, make sure to set up the following mnemonic:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrad keys add test1 --recover
 </pre></div>
@@ -1516,7 +1516,7 @@ tx: null
 timestamp: <span class="s2">&quot;&quot;</span>
 </pre></div>
 </div>
-<p>As you can see, our contract was successfully instantiated with Code ID #1.</p>
+<p>As you can see, your contract was successfully instantiated with Code ID #1.</p>
 <p>You can check it out:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrad query wasm code <span class="m">1</span>
 codeid: <span class="m">1</span>
@@ -1623,7 +1623,7 @@ migratable: <span class="nb">false</span>
 </div>
 <div class="section" id="querying-count">
 <h3>Querying count<a class="headerlink" href="#querying-count" title="Permalink to this headline">¶</a></h3>
-<p>Let’s check the result of our executions!</p>
+<p>Check the result of your executions!</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;get_count&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
@@ -1643,7 +1643,7 @@ migratable: <span class="nb">false</span>
 <div class="section" id="whats-next">
 <h2>What’s Next?<a class="headerlink" href="#whats-next" title="Permalink to this headline">¶</a></h2>
 <p>We’ve only walked through a simple example of a smart contract, that modifies a simple balance within its internal state. Although this is enough to make a simple dApp, you can power more interesting applications by <strong>emitting messages</strong>, which will enable us to interact with other contracts as well as the rest of the blockchain’s module.</p>
-<p>Check out a couple more examples of smart contracts on Terra at our <a class="reference external" href="https://github.com/terra-money/cosmwasm-contracts">repo</a>.</p>
+<p>Check out a couple more examples of smart contracts using Terra’s smart contract <a class="reference external" href="https://github.com/terra-money/cosmwasm-contracts">repo</a>.</p>
 </div>
 </div>
 

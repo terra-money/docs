@@ -12,7 +12,7 @@ As a smart contract writer, your job is to define 3 functions that define your s
 - `execute()`: gets called when a user wants to invoke a method on the smart contract
 - `query()`: gets called when a user wants to get data out of a smart contract
 
-In this section, we'll define our expected messages alongside their implementation.
+In this section, you will define your expected messages alongside their implementation.
 
 ## Start with a template
 
@@ -50,7 +50,7 @@ pub struct State {
 pub const STATE: Item<State> = Item::new("state");
 ```
 
-Terra smart contracts have the ability to keep persistent state through Terra's native LevelDB, a bytes-based key-value store. As such, any data you wish to persist should be assigned a unique key at which the data can be indexed and later retrieved. The singleton in our example above is assigned the key `config` (in bytes).
+Terra smart contracts have the ability to keep persistent state through Terra's native LevelDB, a bytes-based key-value store. As such, any data you wish to persist should be assigned a unique key at which the data can be indexed and later retrieved. The singleton in the example above is assigned the key `config` (in bytes).
 
 Data can only be persisted as raw bytes, so any notion of structure or data type must be expressed as a pair of serializing and deserializing functions. For instance, objects must be stored as bytes, so you must supply both the function that encodes the object into bytes to save it on the blockchain, as well as the function that decodes the bytes back into data types that your contract logic can understand. The choice of byte representation is up to you, so long as it provides a clean, bi-directional mapping.
 
@@ -60,8 +60,8 @@ Notice how the `State` struct holds both `count` and `owner`. In addition, the `
 
 - `Serialize`: provides serialization
 - `Deserialize`: provides deserialization
-- `Clone`: makes our struct copyable
-- `Debug`: enables our struct to be printed to string
+- `Clone`: makes the struct copyable
+- `Debug`: enables the struct to be printed to string
 - `PartialEq`: gives us equality comparison
 - `JsonSchema`: auto-generates a JSON schema for us
 
@@ -76,7 +76,7 @@ On the Terra blockchain, the uploading of a contract's code and the instantiatio
 
 ### Example
 
-For our contract, you will expect a contract creator to supply the initial state in a JSON message:
+For your contract, you will expect a contract creator to supply the initial state in a JSON message:
 
 ```json
 {
@@ -101,7 +101,7 @@ pub struct InstantiateMsg {
 
 ### Logic
 
-Here you will define our first entry-point, the `instantiate()`, or where the contract is instantiated and passed its `InstantiateMsg`. Extract the count from the message and set up your initial state, where:
+Here you will define your first entry-point, the `instantiate()`, or where the contract is instantiated and passed its `InstantiateMsg`. Extract the count from the message and set up your initial state, where:
 
 - `count` is assigned the count from the message
 - `owner` is assigned to the sender of the `MsgInstantiateContract`
@@ -159,7 +159,7 @@ Only the owner can reset the count to a specific number.
 
 ### Message Definition
 
-As for your `ExecuteMsg`, you will use an `enum` to multiplex over the different types of messages that our contract can understand. The `serde` attribute rewrites our attribute keys in snake case and lower case, so we'll have `increment` and `reset` instead of `Increment` and `Reset` when serializing and deserializing across JSON.
+As for your `ExecuteMsg`, you will use an `enum` to multiplex over the different types of messages that your contract can understand. The `serde` attribute rewrites your attribute keys in snake case and lower case, so you'll have `increment` and `reset` instead of `Increment` and `Reset` when serializing and deserializing across JSON.
 
 ```rust
 // src/msg.rs
@@ -191,7 +191,7 @@ pub fn execute(
 }
 ```
 
-This is our `execute()` method, which uses Rust's pattern matching to route the received `ExecuteMsg` to the appropriate handling logic, either dispatching a `try_increment()` or a `try_reset()` call depending on the message received.
+This is your `execute()` method, which uses Rust's pattern matching to route the received `ExecuteMsg` to the appropriate handling logic, either dispatching a `try_increment()` or a `try_reset()` call depending on the message received.
 
 ```rust
 pub fn try_increment(deps: DepsMut) -> Result<Response, ContractError> {
@@ -249,7 +249,7 @@ Which should return:
 
 ### Message Definition
 
-To support queries against our contract for data, we'll have to define both a `QueryMsg` format (which represents requests), as well as provide the structure of the query's output -- `CountResponse` in this case. You must do this because `query()` will send back information to the user through JSON in a structure and you must make the shape of your response known.
+To support queries against the contract for data, you'll have to define both a `QueryMsg` format (which represents requests), as well as provide the structure of the query's output -- `CountResponse` in this case. You must do this because `query()` will send back information to the user through JSON in a structure and you must make the shape of your response known.
 
 Add the following to your `src/msg.rs`:
 
