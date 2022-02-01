@@ -18,11 +18,11 @@ To defend against this type of attack, the Market module enforces the following 
 
   For example, assume that the current Tobin tax for KRT is 0.35%, the oracle reports that the Luna<>SDT exchange rate is 10 and the Luna<>KRT exchange rate is 10,000. Swapping 1 SDT would return 0.1 Luna, which is 1,000 KRT. After the Tobin tax is applied, you will have 996.5 KRT (0.35% of 1,000 is 3.5), a better rate than any retail currency exchange and remittance[^1].
 
-[^1]: Initially we maintained a policy for zero-fee swaps. However, to prevent front-running attackers from exploiting the exchange-rate latency and profiting at the expense of users, we implemented the Tobin tax. For more information, see ["On swap fees: the greedy and the wise"](https://medium.com/terra-money/on-swap-fees-the-greedy-and-the-wise-b967f0c8914e).
+[^1]: Initially, the Terra blockchain maintained a policy for zero-fee swaps. However, to prevent front-running attackers from exploiting the exchange-rate latency and profiting at the expense of users, the Tobin tax was implemented. For more information, see ["On swap fees: the greedy and the wise"](https://medium.com/terra-money/on-swap-fees-the-greedy-and-the-wise-b967f0c8914e).
 
 - [**Minimum spread**](#minspread) for Terra<>Luna swaps
 
-  The minimum spread is 0.5%. Using the same exchange rates we used above, swapping 1 SDT will return 995 KRT worth of Luna (0.5% of 1000 is 5, which is taken as the swap fee). If you reverse the direction of the swap, 1 Luna would return 9.95 SDT (0.5% of 10 is 0.05), or 9,950 KRT (0.5% of 10,000 = 50).
+  The minimum spread is 0.5%. Using the same exchange rates as above, swapping 1 SDT will return 995 KRT worth of Luna (0.5% of 1000 is 5, which is taken as the swap fee). If you reverse the direction of the swap, 1 Luna would return 9.95 SDT (0.5% of 10 is 0.05), or 9,950 KRT (0.5% of 10,000 = 50).
 
 ### Market Making Algorithm
 
@@ -30,15 +30,15 @@ Terra uses a Constant Product market-making algorithm to ensure liquidity for Te
 
 [^2]: For a more in-depth treatment of our updated market-making algorithm, check [Nick Platias's SFBW 2019 presentation](https://agora.terra.money/t/terra-stability-swap-mechanism-deep-dive-at-sfbw/135).
 
-With Constant Product, we define a value $CP$ set to the size of the Terra pool multiplied by a set **fiat value of Luna**, and ensure our market-maker maintains it as invariant during any swaps by adjusting the spread.
+With Constant Product, a value, $CP$, is set to the size of the Terra pool multiplied by a set **fiat value of Luna**, and ensure our market-maker maintains it as invariant during any swaps by adjusting the spread.
 
 ::: {note}
-Our implementation of Constant Product diverges from Uniswap's, as we use the fiat value of Luna instead of the size of the Luna pool. This nuance means changes in Luna's price don't affect the product, but rather the size of the Luna pool.
+The Terra blockchain's implementation of Constant Product diverges from Uniswap's, as the fiat value of Luna is used instead of the size of the Luna pool. This nuance means changes in the price of Luna does not affect the product, but rather the size of the Luna pool.
 :::
 
 $$CP = Pool_{Terra} * Pool_{Luna} * (Price_{Luna}/Price_{SDR})$$
 
-For example, we'll start with equal pools of Terra and Luna, both worth 1000 SDR total. The size of the Terra pool is 1000 SDT, and assuming the price of Luna<>SDR is 0.5, the size of the Luna pool is 2000 Luna. A swap of 100 SDT for Luna would return around 90.91 SDR worth of Luna (≈ 181.82 Luna). The offer of 100 SDT is added to the Terra pool, and the 90.91 SDT worth of Luna are taken out of the Luna pool.
+For example, start with equal pools of Terra and Luna, both worth 1000 SDR total. The size of the Terra pool is 1000 SDT, and assuming the price of Luna<>SDR is 0.5, the size of the Luna pool is 2000 Luna. A swap of 100 SDT for Luna would return around 90.91 SDR worth of Luna (≈ 181.82 Luna). The offer of 100 SDT is added to the Terra pool, and the 90.91 SDT worth of Luna are taken out of the Luna pool.
 
 ```
 CP = 1000000 SDR
