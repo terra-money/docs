@@ -13,7 +13,7 @@ cd localterra
 docker-compose up
 ```
 
-You should also have the latest version of `terrad` by building the latest version of Terra Core. You will configure `terrad` to use it against our isolated testnet environment.
+You should also have the latest version of `terrad` by building the latest version of Terra Core. You will configure `terrad` to use it against your isolated testnet environment.
 
 In a separate terminal, make sure to set up the following mnemonic:
 
@@ -74,7 +74,7 @@ tx: null
 timestamp: ""
 ```
 
-As you can see, our contract was successfully instantiated with Code ID #1.
+As you can see, your contract was successfully instantiated with Code ID #1.
 
 You can check it out:
 
@@ -199,7 +199,7 @@ terrad tx wasm execute terra18vd8fpwxzck93qlwghaj6arh4p7c5n896xzem5 '{"increment
 
 #### Querying count
 
-Let's check the result of our executions!
+Check the result of your executions!
 
 ```json
 {
@@ -224,4 +224,4 @@ Excellent! Congratulations, you've created your first smart contract, and now kn
 
 We've only walked through a simple example of a smart contract, that modifies a simple balance within its internal state. Although this is enough to make a simple dApp, you can power more interesting applications by **emitting messages**, which will enable us to interact with other contracts as well as the rest of the blockchain's module.
 
-Check out a couple more examples of smart contracts on Terra at our [repo](https://github.com/terra-money/cosmwasm-contracts).
+Check out a couple more examples of smart contracts using Terra's smart contract [repo](https://github.com/terra-money/cosmwasm-contracts).

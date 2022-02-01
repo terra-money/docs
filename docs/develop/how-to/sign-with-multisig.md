@@ -38,9 +38,9 @@ This example uses `test1`, `test2`, `test3` keys from [LocalTerra](https://githu
 
 ### Step 1: Create the multisig key
 
-Let's assume that you have `test1` and `test2` want to make a multisig account with `test3`.
+As an example, assume that you have `test1` and `test2` want to make a multisig account with `test3`.
 
-First import the public keys of `test3` into your keyring.
+First, import the public keys of `test3` into your keyring:
 
 ```sh
 terrad keys add \
@@ -48,7 +48,7 @@ terrad keys add \
     --pubkey=terrapub1addwnpepqgcxazmq6wgt2j4rdfumsfwla0zfk8e5sws3p3zg5dkm9007hmfysxas0u2
 ```
 
-Generate the multisig key with 2/3 threshold.
+Generate the multisig key with 2/3 threshold:
 
 ```sh
 terrad keys add \
@@ -71,7 +71,7 @@ terrad keys show multi
   pubkeys: []
 ```
 
-Let's add 10 LUNA to the multisig wallet:
+Then, add 10 LUNA to the multisig wallet:
 
 ```bash
 terrad tx send \
@@ -86,7 +86,7 @@ terrad tx send \
 
 ### Step 2: Create the multisig transaction
 
-You want to send 5 LUNA from your multisig account to `terra1fmcjjt6yc9wqup2r06urnrd928jhrde6gcld6n`.
+Send 5 LUNA from your multisig account to `terra1fmcjjt6yc9wqup2r06urnrd928jhrde6gcld6n`.
 
 ```bash
 terrad tx bank send \
