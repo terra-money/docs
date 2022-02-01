@@ -583,8 +583,8 @@ func Sign(txf Factory, name string, txBuilder client.TxBuilder, overwriteSig boo
 	// nil signature.
 	//
 	// Note: this line is not needed for SIGN_MODE_LEGACY_AMINO, but putting it
-	// also doesn't affect its generated sign bytes, so for code's simplicity
-	// sake, we put it here.
+	// also doesn't affect its generated sign bytes, so for the code's simplicity
+	// sake, it is placed here.
 	sigData := signing.SingleSignatureData{
 		SignMode:  signMode,
 		Signature: nil,
