@@ -60,7 +60,7 @@ Running a full Terra node is a resource-intensive process that requires a persis
 
 Most validators will only need to open the following port:
 
-- `26656`: The default port for the P2P protocol. This port is used to communicate with other nodes and must be open to join a network. However, it does not have to be open to the public. For validator nodes, we recommend [configuring `persistent_peers`](updates-and-additional.md#additional-settings) and closing this port to the public.
+- `26656`: The default port for the P2P protocol. This port is used to communicate with other nodes and must be open to join a network. However, it does not have to be open to the public. For validator nodes, [configuring `persistent_peers`](updates-and-additional.md#additional-settings) and closing this port to the public is recommended.
 
 Additional ports:
 
