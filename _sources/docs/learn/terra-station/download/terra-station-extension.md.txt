@@ -161,7 +161,7 @@ After a few moments, the tokens will appear in the receiver's wallet.
 
 1. Open the Terra Station browser extension and connect to your wallet.
 
-2. Navigate to the dApp of your choice. We'll use the [Anchor protocol WebApp](https://app.anchorprotocol.com/) for this tutorial. Most dApps use a similar process, though others may vary.
+2. Navigate to the dApp of your choice. This tutorial will use the [Anchor protocol WebApp](https://app.anchorprotocol.com/). Most dApps use a similar process, though others may vary.
 
 3. To connect your wallet, click **Connect Wallet** at the top of the page.
 

@@ -219,7 +219,7 @@ Congratulations, you've just withdrawn your staking rewards!
 
 1. Open the Terra Station app and connect to your wallet.
 
-2. In your browser, navigate to the dApp of your choice. For this tutorial, we'll use the [Anchor protocol WebApp](https://app.anchorprotocol.com/). Most dApps use a similar process, though others may vary.
+2. In your browser, navigate to the dApp of your choice. This tutorial will use the [Anchor protocol WebApp](https://app.anchorprotocol.com/). Most dApps use a similar process, though others may vary.
 
    ```{image} /img/screens/mobile/anchor.PNG
    :class: sd-p-3
