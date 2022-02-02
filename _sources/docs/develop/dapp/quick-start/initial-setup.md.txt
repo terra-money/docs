@@ -35,6 +35,11 @@ cargo install cargo-run-script
 
 ## 2. Install Terrain
 
+:::{admonition} NPM on M1
+:class: tip
+Some npm versions on M1 may not be compatible If you are using an M1 Mac, 
+:::
+
 Use npm to install the terrain command-line tool globally:
 
 ```sh

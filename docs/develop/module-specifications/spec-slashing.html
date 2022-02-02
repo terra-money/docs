@@ -1566,7 +1566,7 @@ should be slashed, even if it has since been redelegated or has started unbondin
 <span class="p">}</span><span class="w"></span>
 
 <span class="c1">// only care if source gets slashed because we&#39;re already bonded to destination</span><span class="w"></span>
-<span class="c1">// so if destination validator gets slashed our delegation just has same shares</span><span class="w"></span>
+<span class="c1">// so if destination validator gets slashed the delegation just has same shares</span><span class="w"></span>
 <span class="c1">// of smaller pool.</span><span class="w"></span>
 <span class="nx">redels</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">getRedelegationsBySource</span><span class="p">(</span><span class="nx">validator</span><span class="p">.</span><span class="nx">Address</span><span class="p">)</span><span class="w"></span>
 <span class="k">for</span><span class="w"> </span><span class="nx">redel</span><span class="w"> </span><span class="nx">in</span><span class="w"> </span><span class="nx">redels</span><span class="w"> </span><span class="p">{</span><span class="w"></span>

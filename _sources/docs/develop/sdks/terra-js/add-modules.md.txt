@@ -244,7 +244,7 @@ export type ParamChange =
 
 If there are API endpoints that exist for the new module, you will need to add this functionality to `LCDClient` so that they are accessible.
 
-Assume that our `greeting` module has the following endpoints:
+Assume that the `greeting` module has the following endpoints:
 
 - `GET /greeting/hello/{accAddress}`
 - `GET /greeting/parameters`

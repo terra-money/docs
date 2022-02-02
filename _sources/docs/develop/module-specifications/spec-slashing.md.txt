@@ -59,7 +59,7 @@ for unbond in unbondings {
 }
 
 // only care if source gets slashed because we're already bonded to destination
-// so if destination validator gets slashed our delegation just has same shares
+// so if destination validator gets slashed the delegation just has same shares
 // of smaller pool.
 redels := getRedelegationsBySource(validator.Address)
 for redel in redels {
