@@ -13,7 +13,9 @@
 ### Who controls the Terra Community Trust?
 
 - Through community proposals, each member of the Terra Community Pool has the opportunity to control the trust.
+
 - The trust and trustees are managed consistently with the governance protocol of the Terra Blockchain and, with a few exceptions (i.e. no fraud or illegal or unethical actions), the trustees must manage the assets as directed by the Terra Community Pool through its community proposals.
+
 - If directed by the community, the trust has the ability to buy and sell property and enter into contracts, among other rights and privileges.
 
 ### What will be the purpose of the Terra Community Trust?
