@@ -1368,6 +1368,13 @@
   <a class="reference internal nav-link" href="#deploy">
    4. Deploy
   </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#deploying-with-terra-station">
+     Deploying with Terra Station
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#interact-with-the-deployed-contract">
@@ -1440,6 +1447,13 @@
   <a class="reference internal nav-link" href="#deploy">
    4. Deploy
   </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#deploying-with-terra-station">
+     Deploying with Terra Station
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#interact-with-the-deployed-contract">
@@ -1481,7 +1495,7 @@
 </div>
 <div class="section" id="create-a-bombay-wallet">
 <h2>1. Create a Bombay wallet<a class="headerlink" href="#create-a-bombay-wallet" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference internal" href="../../../learn/terra-station/download/terra-station-extension.html#create-a-wallet"><span class="std std-doc">Create a new wallet</span></a> using the Terra Station extension. It’s recommended to name this wallet Bombay or testnet so it’s easy to remember that it’s only used for Bombay.</p>
+<p><a class="reference internal" href="../../../learn/terra-station/download/terra-station-extension.html#create-a-wallet"><span class="std std-doc">Create a new wallet</span></a> using the Terra Station extension. It’s recommended to name this wallet “Bombay” or “testnet” so it’s easy to remember that it’s only used for Bombay.</p>
 <p>After creating a Bombay wallet and storing the seed phrase, request funds from the testnet faucet:</p>
 <p><a class="reference external" href="https://faucet.terra.money">https://faucet.terra.money</a></p>
 <div class="admonition danger">
@@ -1546,7 +1560,29 @@ npm install
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CLIError</span><span class="p">:</span> <span class="n">account</span> <span class="n">sequence</span> <span class="n">mismatch</span><span class="p">,</span> <span class="n">expected</span> <span class="mi">1</span><span class="p">,</span> <span class="n">got</span> <span class="mi">0</span><span class="p">:</span> <span class="n">incorrect</span> <span class="n">account</span> <span class="n">sequence</span>
 </pre></div>
 </div>
-<p>Wait a few seconds then try the deploy again.</p>
+<p>Wait a few seconds then try the deploy command again.</p>
+</div>
+<div class="section" id="deploying-with-terra-station">
+<h3>Deploying with Terra Station<a class="headerlink" href="#deploying-with-terra-station" title="Permalink to this headline">¶</a></h3>
+<p>Besides the CLI approach above, there is also the option of deploying and interacting with your contracts on testnet through the <a class="reference external" href="https://station.terra.money/">Terra Station UI</a>.</p>
+<ol class="arabic">
+<li><p>Compile your project with <code class="docutils literal notranslate"><span class="pre">terrain</span></code>. If you have localterra running, this can be done with <code class="docutils literal notranslate"><span class="pre">terrain</span> <span class="pre">deploy</span> <span class="pre">&lt;project&gt;</span> <span class="pre">--signer</span> <span class="pre">validator</span></code>. This will build the wasm bytecode and output a <strong>.wasm</strong> file such as <strong>artifacts/counter.wasm</strong></p></li>
+<li><p>You can now upload this contract to the testnet via Station. Go to <a class="reference external" href="https://station.terra.money/contract">https://station.terra.money/contract</a> and click on “Upload”</p></li>
+<li><p>Upload the .wasm bytecode. This step will generate a <code class="docutils literal notranslate"><span class="pre">codeId</span></code> which will be used for initializing the contract.</p></li>
+<li><p>Go back to the Contract page on <a class="reference external" href="https://station.terra.money/contract">Station</a> and instantiate your contract by passing in the <code class="docutils literal notranslate"><span class="pre">codeId</span></code> and empty brackets (<code class="docutils literal notranslate"><span class="pre">{}</span></code>) for “Init msg”.</p></li>
+<li><p>Now, the contract is deployed as a <strong>MsgInstantiateContract</strong> transaction type. You will be able to see the address of the newly initialized contract in the logs at the bottom of the transaction details. (<a class="reference external" href="https://finder.terra.money/testnet/tx/FF669A3E0CECDC6278A0E390FAF93E9531F43599B77A45BD18ECC6023E15ACB3">example</a>)</p></li>
+<li><p>Search for your contract address on the <strong>Contract</strong> page of Terra Station. You can now execute a query or command against your contract. The payloads must be in JSON format. A command execution (with Execute) might look like:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
+  <span class="s2">&quot;increment&quot;</span>: <span class="o">{}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Optional</p>
+<p>If you have a frontend, update your client-side <code class="docutils literal notranslate"><span class="pre">refs.terrain.json</span></code> to reflect the latest codeId and deployed contract address.</p>
+</div>
+</li>
+</ol>
 </div>
 </div>
 <div class="section" id="interact-with-the-deployed-contract">
@@ -1573,7 +1609,7 @@ npm install
 </div>
 <div class="section" id="front-end-scaffolding">
 <h2>6. Front-end scaffolding<a class="headerlink" href="#front-end-scaffolding" title="Permalink to this headline">¶</a></h2>
-<p>Terrain also scaffolds a very simple frontend.</p>
+<p>Terrain also scaffolds a very simple front-end.</p>
 <ol class="arabic">
 <li><p>In the Terra Station Chrome extension, <a class="reference internal" href="../../../learn/terra-station/station-guides/testnet.html"><span class="doc std std-doc">switch the network to <code class="docutils literal notranslate"><span class="pre">testnet</span></code></span></a>.</p></li>
 <li><p>To use the front end, run the following commands in order. The terrain sync-refs command copies your deployed contract addresses to the front-end part of the codebase.</p>
