@@ -1,4 +1,6 @@
-Terra Community Trust - FAQ
+# Terra Community Trust
+
+## FAQ
 
 ### What is a trust?
 
