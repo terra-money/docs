@@ -35,18 +35,13 @@ cargo install cargo-run-script
 
 ## 2. Install Terrain
 
-:::{admonition} NPM on M1
-:class: tip
-Some npm versions on M1 may not be compatible If you are using an M1 Mac, 
-:::
-
 Use npm to install the terrain command-line tool globally:
 
 ```sh
 npm install -g @iboss/terrain
 ```
 
-## 3. Download LocalTerra or configure testnet
+## 3. Download LocalTerra or configure the testnet
 
 LocalTerra is a development environment designed to make it easy for smart contract developers to test their contracts locally.
 
