@@ -8,7 +8,7 @@ The Bombay testnet is used for testing transactions on the Terra network.
 
 ## 1. Create a Bombay wallet
 
-[Create a new wallet](../../../learn/terra-station/download/terra-station-extension.md#create-a-wallet) using the Terra Station extension. It's recommended to name this wallet Bombay or testnet so it's easy to remember that it's only used for Bombay.
+[Create a new wallet](../../../learn/terra-station/download/terra-station-extension.md#create-a-wallet) using the Terra Station extension. It's recommended to name this wallet "Bombay" or "testnet" so it's easy to remember that it's only used for Bombay.
 
 After creating a Bombay wallet and storing the seed phrase, request funds from the testnet faucet:
 
@@ -82,8 +82,35 @@ If you get the following error:
    CLIError: account sequence mismatch, expected 1, got 0: incorrect account sequence
    ```
 
-Wait a few seconds then try the deploy again.
+Wait a few seconds then try the deploy command again.
 :::
+
+### Deploying with Terra Station
+
+Besides the CLI approach above, there is also the option of deploying and interacting with your contracts on testnet through the [Terra Station UI](https://station.terra.money/).
+
+1. Compile your project with `terrain`. If you have localterra running, this can be done with `terrain deploy <project> --signer validator`. This will build the wasm bytecode and output a **.wasm** file such as **artifacts/counter.wasm**
+
+2. You can now upload this contract to the testnet via Station. Go to [https://station.terra.money/contract](https://station.terra.money/contract) and click on "Upload"
+
+3. Upload the .wasm bytecode. This step will generate a `codeId` which will be used for initializing the contract.
+
+4. Go back to the Contract page on [Station](https://station.terra.money/contract) and instantiate your contract by passing in the `codeId` and empty brackets (`{}`) for "Init msg".
+
+5. Now, the contract is deployed as a **MsgInstantiateContract** transaction type. You will be able to see the address of the newly initialized contract in the logs at the bottom of the transaction details. ([example](https://finder.terra.money/testnet/tx/FF669A3E0CECDC6278A0E390FAF93E9531F43599B77A45BD18ECC6023E15ACB3))
+
+6. Search for your contract address on the **Contract** page of Terra Station. You can now execute a query or command against your contract. The payloads must be in JSON format. A command execution (with Execute) might look like:
+
+   ```sh
+   {
+     "increment": {}
+   }
+   ```
+
+   :::{admonition} Optional
+   :class: note
+   If you have a frontend, update your client-side `refs.terrain.json` to reflect the latest codeId and deployed contract address.
+   :::
 
 ## 5. Interact with the deployed contract
 
@@ -113,7 +140,7 @@ The Terrain template comes with several predefined helpers in `lib/index.js`. Us
 
 ## 6. Front-end scaffolding
 
-Terrain also scaffolds a very simple frontend.
+Terrain also scaffolds a very simple front-end.
 
 1. In the Terra Station Chrome extension, [switch the network to `testnet`](../../../learn/terra-station/station-guides/testnet.md).
 
@@ -134,3 +161,4 @@ Terrain also scaffolds a very simple frontend.
 ## Advanced usage
 
 For more advanced use cases such as deploying to the testnet or mainnet, see [Terrain's readme](https://github.com/iboss-ptk/terrain#readme).
+
