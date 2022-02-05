@@ -62,8 +62,8 @@ Notice how the `State` struct holds both `count` and `owner`. In addition, the `
 - `Deserialize`: provides deserialization
 - `Clone`: makes the struct copyable
 - `Debug`: enables the struct to be printed to string
-- `PartialEq`: gives us equality comparison
-- `JsonSchema`: auto-generates a JSON schema for us
+- `PartialEq`: provides equality comparison
+- `JsonSchema`: auto-generates a JSON schema
 
 `Addr`, refers to a human-readable Terra address prefixed with `terra...`. Its counterpart is the `CanonicalAddr`, which refers to a Terra address's native decoded Bech32 form in bytes.
 
