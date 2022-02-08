@@ -36,3 +36,16 @@ Visit [Wormhole's Portal Token Bridge](https://portalbridge.com/#/transfer) to g
 
 5. Enter the amount you want to bridge and click **Next**.
 
+### 2. Target
+
+1. Connect your target chain wallet by clicking **Connect**. Allow the connection if your wallet extension prompts you. 
+
+   :::{important}
+   Make sure your target wallet has tokens to pay fees in to redeem your tokens. 
+   :::
+
+   ```{image} /img/screens/wormhole/target.png
+   :class: sd-p-3
+   ```
+
+2. Click **Next**. 
