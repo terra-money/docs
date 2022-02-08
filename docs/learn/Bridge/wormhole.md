@@ -49,3 +49,29 @@ Visit [Wormhole's Portal Token Bridge](https://portalbridge.com/#/transfer) to g
    ```
 
 2. Click **Next**. 
+
+### 3. Send tokens
+
+1. Select a denomination to pay fees in.
+
+2. Click **Transfer**.
+
+3. When prompted, click **Confirm** to confirm the transfer.
+
+   ```{image} /img/screens/wormhole/send.png
+   :class: sd-p-3
+   ```
+
+5. Follow the steps in your wallet's browser extension to complete the transaction. 
+
+Your tokens will be sent to the Wormhole contract and you will receive Wormhole-wrapped tokens. These tokens can be traded on an exchange for native assets. [Click here to see available markets for wrapped tokens](https://docs.wormholenetwork.com/wormhole/overview-liquid-markets).
+
+### 4. Redeem tokens
+
+1. After your tokens have been sent, you can receive them on the target chain by clicking **Redeem**.
+
+2. Confirm the redemption in your wallet extension.
+
+Now that you have wrapped tokens in your wallet, you can trade them on an exchange for native assets. [Click here to see available markets for wrapped tokens](https://docs.wormholenetwork.com/wormhole/overview-liquid-markets).
+
+Congratulations! You have just used Wormhole's Portal Token Bridge. For more information, [visit the official Wormhole docs](https://docs.wormholenetwork.com/wormhole/).
