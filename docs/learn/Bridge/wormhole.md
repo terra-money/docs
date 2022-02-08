@@ -18,3 +18,21 @@ Use this tutorial to bridge your assets Terra between Terra and other chains usi
 
 Visit [Wormhole's Portal Token Bridge](https://portalbridge.com/#/transfer) to get started. 
 
+### 1. Source
+
+2. Select a **Source chain** and a **Target chain** from the dropdown choices. 
+
+3. Click **Connect** to connect your Terra Station wallet. Allow the connection if your wallet extension prompts you.
+
+4. Click **Select a token** and choose from the available tokens in your wallet. 
+
+   :::{important}
+   You should always check for markets and liquidity before sending tokens. [Click here to see available markets for wrapped tokens](https://docs.wormholenetwork.com/wormhole/overview-liquid-markets).
+   :::
+
+   ```{image} /img/screens/wormhole/source.png
+   :class: sd-p-3
+   ```
+
+5. Enter the amount you want to bridge and click **Next**.
+
