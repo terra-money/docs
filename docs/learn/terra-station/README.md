@@ -35,7 +35,7 @@ testnet
 ```{image} /img/StationWallet.svg
 :class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
 ```
-**Wallet and Send**  
+**Create a wallet**  
 :::
 
 :::{grid-item-card}
