@@ -11,6 +11,7 @@ send
 staking
 swap
 governance
+wormhole
 multisig
 contracts
 testnet
