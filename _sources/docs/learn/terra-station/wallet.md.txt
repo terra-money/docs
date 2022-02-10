@@ -1,6 +1,6 @@
 # Wallet <img src="/img/StationWallet.svg" height="40px">
 
-This guide is for advanced features of the Terra Station wallet. If this is your first time using Terra Station, follow the [Terra Station tutorial](../download/terra-station-desktop.md).
+This guide is for advanced features of the Terra Station wallet. If this is your first time using Terra Station, follow the [Terra Station tutorial](download/terra-station-desktop.md).
 
 For information on using multisig wallets in Terra Station, see [](multisig.md)
 
@@ -33,26 +33,6 @@ For information on using multisig wallets in Terra Station, see [](multisig.md)
 7. Click **Create a wallet**.
 
 Congratulations! You have just created a Terra Station wallet.
-
-## Send tokens
-
-1. Open the Terra Station desktop app and connect to your wallet.
-
-2. Click **Wallet** in the navigation bar.
-
-3. Click **Send** next to the token you want to send.
-
-4. Enter the address of the wallet you want to send tokens to.
-
-5. Enter the amount you want to send. You can also add a memo for the transaction.
-
-6. Click **Next**.
-
-7. Verify the transaction amounts and specify which token you want to pay fees in. Remember to always leave enough tokens in your account for other transactions.
-
-8.  Enter your password and click **Send**.
-
-After a few moments, the tokens will appear in the receiver's wallet.
 
 ## Select a wallet
 

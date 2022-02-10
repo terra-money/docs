@@ -1,6 +1,6 @@
 # Governance <img src="/img/Governance.svg" height="40px">
 
-If this is your first time using Terra Station, follow the [Terra Station tutorial](../download/terra-station-desktop.md).
+If this is your first time using Terra Station, follow the [Terra Station tutorial](download/terra-station-desktop.md).
 
 Governance is an important part of being involved in the Terra community. Use the following information to learn how to vote on and submit governance proposals in Terra Station. For more information on governance and voting options, visit [the governance overview](../../protocol.md#governance).
 

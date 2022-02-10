@@ -1,4 +1,4 @@
-# Wormhole tutorial
+# Wormhole Bridge tutorial
 
 Wormhole allows you to bridge tokens across different chains. Instead of swapping or converting assets directly, Wormhole locks your source assets in a smart contract and mints new Wormhole-wrapped assets on the target chain. You can then swap Wormhole-wrapped assets on an exchange for other assets on the target chain. 
 

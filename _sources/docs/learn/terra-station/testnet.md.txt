@@ -2,7 +2,7 @@
 
 The testnet is the testing environment for the Terra network. Use this guide to simulate transactions on the testnet.
 
-If this is your first time using Terra Station, follow the [Terra Station tutorial](../download/terra-station-desktop.md).
+If this is your first time using Terra Station, follow the [Terra Station tutorial](download/terra-station-desktop.md).
 
 ## Get testnet Luna
 1. Open Terra Station and connect your wallet.
