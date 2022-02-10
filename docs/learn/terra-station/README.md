@@ -6,8 +6,16 @@ Terra station is the official wallet of the Terra blockchain. If this is your fi
 :hidden:
 :caption: Terra Station
 download/README
-station-guides/README
+wallet
+send
+staking
+swap
+governance
+multisig
+contracts
+testnet
 ```
+
 :::::::{grid} 2 2 2 3
 :gutter: 3
 
@@ -22,16 +30,16 @@ station-guides/README
 :::
 
 :::{grid-item-card}
-:link: station-guides/wallet.html
+:link: wallet.html
 :class-card: sd-text-center sd-shadow-md sd-rounded-3
 ```{image} /img/StationWallet.svg
 :class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
 ```
-**Create a wallet**  
+**Wallet and Send**  
 :::
 
 :::{grid-item-card}
-:link: station-guides/swap.html
+:link: swap.html
 :class-card: sd-text-center sd-shadow-md sd-rounded-3
 ```{image} /img/Swap_ver1.svg
 :class: sd-width-auto sd-pb-2 sd-animate-grow50-rot20
@@ -40,7 +48,7 @@ station-guides/README
 :::
 
 :::{grid-item-card}
-:link: station-guides/staking.html
+:link: staking.html
 :class-card: sd-text-center sd-shadow-md sd-rounded-3
 ```{image} /img/Staking.svg
 :class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
@@ -58,14 +66,40 @@ station-guides/README
 :::
 
 :::{grid-item-card}
-:link: station-guides/governance.html
+:link: governance.html
 :class-card: sd-text-center sd-shadow-md sd-rounded-3
 ```{image} /img/Governance.svg
 :class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
 ```
-**Vote**  
+**Governance**  
+:::
+
+:::{grid-item-card}
+:link: contracts.html
+:class-card: sd-text-center sd-shadow-md sd-rounded-3
+```{image} /img/icon_smartcontract.svg
+:class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
+```
+**Contracts**  
 :::
 
 
+:::{grid-item-card}
+:link: testnet.html
+:class-card: sd-text-center sd-shadow-md sd-rounded-3
+```{image} /img/icon_node.svg
+:class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
+```
+**Testnet**  
+:::
+
+:::{grid-item-card}
+:link: https://faucet.terra.money/
+:class-card: sd-text-center sd-shadow-md sd-rounded-3
+```{image} /img/Faucet.svg
+:class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
+```
+**Faucet**  
+:::
 
 :::::::
