@@ -1510,7 +1510,7 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="slashing">
 <h1>Slashing<a class="headerlink" href="#slashing" title="Permalink to this headline">¶</a></h1>
-<p>The slashing module enables Terra to disincentivize any attributable action by a protocol-recognized actor with value at stake by penalizing them. The penalty is called <a class="reference external" href="../../learn/glossary.md#slashing">slashing</a>. Terra mainly uses the <a class="reference external" href="spec-staking.md"><code class="docutils literal notranslate"><span class="pre">Staking</span></code></a> module to slash when violating validator responsibilities, such as missing too many <code class="docutils literal notranslate"><span class="pre">VotePeriod</span></code>s in the exchange rate oracle. This module manages lower-level penalties at the Tendermint consensus level, such as double-signing.</p>
+<p>The slashing module enables Terra to disincentivize any attributable action by a protocol-recognized actor with value at stake by penalizing them. The penalty is called <a class="reference internal" href="../../learn/glossary.html#slashing"><span class="std std-doc">slashing</span></a>. Terra mainly uses the <a class="reference internal" href="spec-staking.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">Staking</span></code></span></a> module to slash when violating validator responsibilities, such as missing too many <code class="docutils literal notranslate"><span class="pre">VotePeriod</span></code>s in the exchange rate oracle. This module manages lower-level penalties at the Tendermint consensus level, such as double-signing.</p>
 <div class="section" id="message-types">
 <h2>Message Types<a class="headerlink" href="#message-types" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="msgunjail">
@@ -1579,7 +1579,7 @@ should be slashed, even if it has since been redelegated or has started unbondin
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<p>The validator is slashed and <a class="reference external" href="../../learn/glossary.md#tombstone">tombstoned</a>:</p>
+<p>The validator is slashed and <a class="reference internal" href="../../learn/glossary.html#tombstone"><span class="std std-doc">tombstoned</span></a>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curVal</span> <span class="o">:=</span> <span class="n">validator</span>
 <span class="n">oldVal</span> <span class="o">:=</span> <span class="n">loadValidator</span><span class="p">(</span><span class="n">evidence</span><span class="o">.</span><span class="n">Height</span><span class="p">,</span> <span class="n">evidence</span><span class="o">.</span><span class="n">Address</span><span class="p">)</span>
 

@@ -1624,12 +1624,12 @@
 <p>The delay lasts around one minute (our oracle <code class="docutils literal notranslate"><span class="pre">VotePeriod</span></code> is 30 seconds), which is negligible for nearly all practical transactions. However, front-running attackers could take advantage of this delay and extract value from the network.</p>
 <p>To defend against this type of attack, the Market module enforces the following swap fees:</p>
 <ul>
-<li><p><a class="reference external" href="#tobintax"><strong>Tobin tax</strong></a> for spot-converting Terra&lt;&gt;Terra swaps</p>
+<li><p><a class="reference internal" href="#tobintax"><span class="std std-doc"><strong>Tobin tax</strong></span></a> for spot-converting Terra&lt;&gt;Terra swaps</p>
 <p>For example, assume that the current Tobin tax for KRT is 0.35%, the oracle reports that the Luna&lt;&gt;SDT exchange rate is 10 and the Luna&lt;&gt;KRT exchange rate is 10,000. Swapping 1 SDT would return 0.1 Luna, which is 1,000 KRT. After the Tobin tax is applied, you will have 996.5 KRT (0.35% of 1,000 is 3.5), a better rate than any retail currency exchange and remittance<a class="footnote-reference brackets" href="#id3" id="id1">1</a>.</p>
 </li>
 </ul>
 <ul>
-<li><p><a class="reference external" href="#minspread"><strong>Minimum spread</strong></a> for Terra&lt;&gt;Luna swaps</p>
+<li><p><a class="reference internal" href="#minspread"><span class="std std-doc"><strong>Minimum spread</strong></span></a> for Terra&lt;&gt;Luna swaps</p>
 <p>The minimum spread is 0.5%. Using the same exchange rates as above, swapping 1 SDT will return 995 KRT worth of Luna (0.5% of 1000 is 5, which is taken as the swap fee). If you reverse the direction of the swap, 1 Luna would return 9.95 SDT (0.5% of 10 is 0.05), or 9,950 KRT (0.5% of 10,000 = 50).</p>
 </li>
 </ul>
@@ -1655,22 +1655,22 @@
 </div>
 <div class="section" id="virtual-liquidity-pools">
 <h3>Virtual Liquidity Pools<a class="headerlink" href="#virtual-liquidity-pools" title="Permalink to this headline">¶</a></h3>
-<p>The market starts out with two liquidity pools of equal sizes, one representing all denominations of Terra and another representing Luna. The parameter <a class="reference external" href="#basepool"><code class="docutils literal notranslate"><span class="pre">BasePool</span></code></a> defines the initial size, <span class="math notranslate nohighlight">\(Pool_{Base}\)</span>, of the Terra and Luna liquidity pools.</p>
+<p>The market starts out with two liquidity pools of equal sizes, one representing all denominations of Terra and another representing Luna. The parameter <a class="reference internal" href="#basepool"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">BasePool</span></code></span></a> defines the initial size, <span class="math notranslate nohighlight">\(Pool_{Base}\)</span>, of the Terra and Luna liquidity pools.</p>
 <p>Rather than keeping track of the sizes of the two pools, this information is encoded in a number <span class="math notranslate nohighlight">\(\delta\)</span>, which the blockchain stores as <code class="docutils literal notranslate"><span class="pre">TerraPoolDelta</span></code>. This represents the deviation of the Terra pool from its base size in units µSDR.</p>
 <p>The size of the Terra and Luna liquidity pools can be generated from <span class="math notranslate nohighlight">\(\delta\)</span> using the following formulas:</p>
 <div class="math notranslate nohighlight">
 \[Pool_{Terra} = Pool_{Base} + \delta\]</div>
 <div class="math notranslate nohighlight">
 \[Pool_{Luna} = ({Pool_{Base}})^2 / Pool_{Terra}\]</div>
-<p>At the <a class="reference external" href="#end-block">end of each block</a>, the market module attempts to replenish the pools by decreasing the magnitude of <span class="math notranslate nohighlight">\(\delta\)</span> between the Terra and Luna pools. The rate at which the pools will be replenished toward equilibrium is set by the parameter <a class="reference external" href="#poolrecoveryperiod"><code class="docutils literal notranslate"><span class="pre">PoolRecoveryPeriod</span></code></a>. Lower periods mean lower sensitivity to trades: previous trades are more quickly forgotten and the market is able to offer more liquidity.</p>
+<p>At the <a class="reference internal" href="#end-block"><span class="std std-doc">end of each block</span></a>, the market module attempts to replenish the pools by decreasing the magnitude of <span class="math notranslate nohighlight">\(\delta\)</span> between the Terra and Luna pools. The rate at which the pools will be replenished toward equilibrium is set by the parameter <a class="reference internal" href="#poolrecoveryperiod"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">PoolRecoveryPeriod</span></code></span></a>. Lower periods mean lower sensitivity to trades: previous trades are more quickly forgotten and the market is able to offer more liquidity.</p>
 <p>This mechanism ensures liquidity and acts as a low-pass filter, allowing for the spread fee (which is a function of <code class="docutils literal notranslate"><span class="pre">TerraPoolDelta</span></code>) to drop back down when there is a change in demand, causing a necessary change in supply which needs to be absorbed.</p>
 </div>
 <div class="section" id="swap-procedure">
 <h3>Swap Procedure<a class="headerlink" href="#swap-procedure" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
-<li><p>The Market module receives <a class="reference external" href="#msgswap"><code class="docutils literal notranslate"><span class="pre">MsgSwap</span></code></a> message and performs basic validation checks.</p></li>
-<li><p>Calculate exchange rate <span class="math notranslate nohighlight">\(ask\)</span> and <span class="math notranslate nohighlight">\(spread\)</span> using <a class="reference external" href="#functions"><code class="docutils literal notranslate"><span class="pre">k.ComputeSwap()</span></code></a>.</p></li>
-<li><p>Update <code class="docutils literal notranslate"><span class="pre">TerraPoolDelta</span></code> with <a class="reference external" href="#k-applyswaptopool"><code class="docutils literal notranslate"><span class="pre">k.ApplySwapToPool()</span></code></a>.</p></li>
+<li><p>The Market module receives <a class="reference internal" href="#msgswap"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">MsgSwap</span></code></span></a> message and performs basic validation checks.</p></li>
+<li><p>Calculate exchange rate <span class="math notranslate nohighlight">\(ask\)</span> and <span class="math notranslate nohighlight">\(spread\)</span> using <a class="reference internal" href="#functions"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">k.ComputeSwap()</span></code></span></a>.</p></li>
+<li><p>Update <code class="docutils literal notranslate"><span class="pre">TerraPoolDelta</span></code> with <span class="xref myst"><code class="docutils literal notranslate"><span class="pre">k.ApplySwapToPool()</span></code></span>.</p></li>
 <li><p>Transfer <code class="docutils literal notranslate"><span class="pre">OfferCoin</span></code> from account to module using <code class="docutils literal notranslate"><span class="pre">supply.SendCoinsFromAccountToModule()</span></code>.</p></li>
 <li><p>Burn offered coins, with <code class="docutils literal notranslate"><span class="pre">supply.BurnCoins()</span></code>.</p></li>
 <li><p>Let <span class="math notranslate nohighlight">\(fee = spread * ask\)</span>, this is the spread fee.</p></li>
@@ -1687,7 +1687,7 @@
 <p class="admonition-title">All seigniorage is Burned</p>
 <p>Seigniorage used to be an important part of the protocol, but is no longer necessary. As of Columbus-5, all seigniorage is burned, and the community pool is no longer funded. Swap fees are used instead of seigniorage as ballot rewards for the exchange rate oracle. The following information is kept as reference:</p>
 </div>
-<p>When Luna swaps into Terra, the Luna recaptured by the protocol was called seigniorage – the value generated from issuing new Terra. The total seigniorage at the end of each epoch was calculated and reintroduced into the economy as ballot rewards for the exchange rate oracle and to the community pool by the Treasury module, described more fully <a class="reference external" href="spec-treasury.md">here</a>. As of Columbus-5, all seigniorage is burned, and the community pool is no longer funded. Swap fees are used as ballot rewards for the exchange rate oracle.</p>
+<p>When Luna swaps into Terra, the Luna recaptured by the protocol was called seigniorage – the value generated from issuing new Terra. The total seigniorage at the end of each epoch was calculated and reintroduced into the economy as ballot rewards for the exchange rate oracle and to the community pool by the Treasury module, described more fully <a class="reference internal" href="spec-treasury.html"><span class="doc std std-doc">here</span></a>. As of Columbus-5, all seigniorage is burned, and the community pool is no longer funded. Swap fees are used as ballot rewards for the exchange rate oracle.</p>
 </div>
 </div>
 <div class="section" id="state">

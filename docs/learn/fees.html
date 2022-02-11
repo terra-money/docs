@@ -1408,18 +1408,18 @@
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p></p></th>
-<th class="head"><p><a class="reference external" href="#gas">Gas</a></p></th>
-<th class="head"><p><a class="reference external" href="#tobin-tax">Tobin</a></p></th>
-<th class="head"><p><a class="reference external" href="#spread-fee">Spread</a></p></th>
+<th class="head"><p><a class="reference internal" href="#gas"><span class="std std-doc">Gas</span></a></p></th>
+<th class="head"><p><a class="reference internal" href="#tobin-tax"><span class="std std-doc">Tobin</span></a></p></th>
+<th class="head"><p><a class="reference internal" href="#spread-fee"><span class="std std-doc">Spread</span></a></p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><a class="reference external" href="./glossary.md#market-swap">Market swaps</a> between stablecoins</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="glossary.html#market-swap"><span class="std std-doc">Market swaps</span></a> between stablecoins</p></td>
 <td><p>x</p></td>
 <td><p>x</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="./glossary.md#market-swap">Market swaps</a> between stablecoins and Luna</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="glossary.html#market-swap"><span class="std std-doc">Market swaps</span></a> between stablecoins and Luna</p></td>
 <td><p>x</p></td>
 <td><p></p></td>
 <td><p>x</p></td>
@@ -1430,7 +1430,7 @@
 Terraswap or other dApps may charge their own transaction fees on top of Terra network fees.</p>
 <div class="section" id="gas">
 <h2>Gas<a class="headerlink" href="#gas" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="glossary.md#fees">Gas</a> is a small computational fee that covers the cost of processing a transaction. Gas is estimated and added to every transaction in Terra Station. Any transaction that does not contain enough gas will not process.
+<p><a class="reference internal" href="glossary.html#fees"><span class="std std-doc">Gas</span></a> is a small computational fee that covers the cost of processing a transaction. Gas is estimated and added to every transaction in Terra Station. Any transaction that does not contain enough gas will not process.
 Gas on Terra works differently than it works on other blockchains:</p>
 <ul class="simple">
 <li><p>Validators can set their own minimum gas fees.</p></li>
@@ -1438,21 +1438,21 @@ Gas on Terra works differently than it works on other blockchains:</p>
 <li><p>Unused gas is not refunded.</p></li>
 <li><p>Transactions are not queued based on gas amounts, but in the order received.</p></li>
 </ul>
-<p>For an in-depth explanation of how gas fees are calculated, visit the <a class="reference external" href="../develop/how-to/terrad/using-terrad.md#fees">terrad reference</a> page.</p>
+<p>For an in-depth explanation of how gas fees are calculated, visit the <a class="reference internal" href="../develop/how-to/terrad/using-terrad.html#fees"><span class="std std-doc">terrad reference</span></a> page.</p>
 <p>To view current gas rates in your browser, visit the <a class="reference external" href="https://fcd.terra.dev/v1/txs/gas_prices">gas rates</a> FCD page.</p>
 <p>Every block, gas fees are sent to the reward pool and dispersed to validators who distribute them to delegators in the form of staking rewards.</p>
 </div>
 <div class="section" id="tobin-tax">
 <h2>Tobin tax<a class="headerlink" href="#tobin-tax" title="Permalink to this headline">¶</a></h2>
-<p>The Tobin tax is a fixed percentage fee added to any <a class="reference external" href="glossary.md#market-swap">market swap</a> between Terra stablecoin denominations. The rate varies depending on each Terra stablecoin. For example, while the rate for most denominations is .35%, the rate for MNT is 2%. To see the Tobin tax rates, <a class="reference external" href="https://lcd.terra.dev/terra/oracle/v1beta1/denoms/tobin_taxes">query the oracle</a>. When stablecoins have different Tobin tax rates, the higher tax rate will be used for the transaction.</p>
+<p>The Tobin tax is a fixed percentage fee added to any <a class="reference internal" href="glossary.html#market-swap"><span class="std std-doc">market swap</span></a> between Terra stablecoin denominations. The rate varies depending on each Terra stablecoin. For example, while the rate for most denominations is .35%, the rate for MNT is 2%. To see the Tobin tax rates, <a class="reference external" href="https://lcd.terra.dev/terra/oracle/v1beta1/denoms/tobin_taxes">query the oracle</a>. When stablecoins have different Tobin tax rates, the higher tax rate will be used for the transaction.</p>
 <p>The Tobin tax was created to discourage front-running the oracle and foreign exchange trading at the expense of users. For more information on the implementation of the Tobin tax, read <a class="reference external" href="https://medium.com/terra-money/on-swap-fees-the-greedy-and-the-wise-b967f0c8914e">“On swap fees: the greedy and the wise”</a>.</p>
-<p>Every block, Tobin tax fees are sent to the [Oracle reward pool] and <a class="reference external" href="https://docs.terra.money/docs/develop/module-specifications/spec-oracle.html#k-rewardballotwinners">dispersed to validators</a> that faithfully report correct exchange rates. Validators then distribute these fees to delegators in the form of staking rewards. For more information on the Oracle reward pool, visit the <a class="reference external" href="../develop/module-specifications/spec-oracle.md">Oracle module</a>.</p>
+<p>Every block, Tobin tax fees are sent to the [Oracle reward pool] and <a class="reference external" href="https://docs.terra.money/docs/develop/module-specifications/spec-oracle.html#k-rewardballotwinners">dispersed to validators</a> that faithfully report correct exchange rates. Validators then distribute these fees to delegators in the form of staking rewards. For more information on the Oracle reward pool, visit the <a class="reference internal" href="../develop/module-specifications/spec-oracle.html"><span class="doc std std-doc">Oracle module</span></a>.</p>
 </div>
 <div class="section" id="spread-fee">
 <h2>Spread fee<a class="headerlink" href="#spread-fee" title="Permalink to this headline">¶</a></h2>
-<p>Spread fees are added to any <a class="reference external" href="glossary.md#market-swap">market swap</a> between Terra and Luna. The minimum spread fee is .5%. During times of extreme volatility, the market module adjusts the spread fee to maintain a <a class="reference external" href="../develop/module-specifications/spec-market.md#market-making-algorithm">constant product</a> between the size of the Terra pool and the fiat value of the Luna pool, ensuring stability in the protocol. As the pools reach constant product equilibrium, The spread rate returns to a normal value.</p>
-<p>For more information on spread fees, visit the <a class="reference external" href="../develop/module-specifications/spec-market.md">market module</a>.</p>
-<p>Every block, spread fees are sent to the [Oracle reward pool] and <a class="reference external" href="https://docs.terra.money/docs/develop/module-specifications/spec-oracle.html#k-rewardballotwinners">dispersed to validators</a> that faithfully report correct exchange rates. Validators then distribute these fees to delegators in the form of staking rewards. For more information on the Oracle reward pool, visit the <a class="reference external" href="../develop/module-specifications/spec-oracle.md">Oracle module</a>.</p>
+<p>Spread fees are added to any <a class="reference internal" href="glossary.html#market-swap"><span class="std std-doc">market swap</span></a> between Terra and Luna. The minimum spread fee is .5%. During times of extreme volatility, the market module adjusts the spread fee to maintain a <a class="reference internal" href="../develop/module-specifications/spec-market.html#market-making-algorithm"><span class="std std-doc">constant product</span></a> between the size of the Terra pool and the fiat value of the Luna pool, ensuring stability in the protocol. As the pools reach constant product equilibrium, The spread rate returns to a normal value.</p>
+<p>For more information on spread fees, visit the <a class="reference internal" href="../develop/module-specifications/spec-market.html"><span class="doc std std-doc">market module</span></a>.</p>
+<p>Every block, spread fees are sent to the [Oracle reward pool] and <a class="reference external" href="https://docs.terra.money/docs/develop/module-specifications/spec-oracle.html#k-rewardballotwinners">dispersed to validators</a> that faithfully report correct exchange rates. Validators then distribute these fees to delegators in the form of staking rewards. For more information on the Oracle reward pool, visit the <a class="reference internal" href="../develop/module-specifications/spec-oracle.html"><span class="doc std std-doc">Oracle module</span></a>.</p>
 </div>
 <div class="section" id="changes-to-fees">
 <h2>Changes to fees<a class="headerlink" href="#changes-to-fees" title="Permalink to this headline">¶</a></h2>

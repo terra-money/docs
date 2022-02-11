@@ -1497,7 +1497,7 @@
 <p>The evidence module allows arbitrary evidence of misbehavior, such as equivocation and counterfactual signing, to be submitted and handled.</p>
 <p>Typically, standard evidence handling expects the underlying consensus engine, Tendermint, to automatically submit evidence when it is discovered by allowing clients and foreign chains to submit more complex evidence directly. The evidence module operates differently.</p>
 <p>All concrete evidence types must implement the <code class="docutils literal notranslate"><span class="pre">Evidence</span></code> interface contract. First, submitted <code class="docutils literal notranslate"><span class="pre">Evidence</span></code> is routed through the evidence module’s <code class="docutils literal notranslate"><span class="pre">Router</span></code>, where it attempts to find a corresponding registered <code class="docutils literal notranslate"><span class="pre">Handler</span></code> for that specific <code class="docutils literal notranslate"><span class="pre">Evidence</span></code> type. Each <code class="docutils literal notranslate"><span class="pre">Evidence</span></code> type must have a <code class="docutils literal notranslate"><span class="pre">Handler</span></code> registered with the evidence module’s keeper for it to be successfully routed and executed.</p>
-<p>Each corresponding handler must also fulfill the <code class="docutils literal notranslate"><span class="pre">Handler</span></code> interface contract. The <code class="docutils literal notranslate"><span class="pre">Handler</span></code> for a given <code class="docutils literal notranslate"><span class="pre">Evidence</span></code> type can perform any arbitrary state transitions, such as slashing, jailing, and <a class="reference external" href="../../learn/glossary.md#tombstone">tombstoning</a>.</p>
+<p>Each corresponding handler must also fulfill the <code class="docutils literal notranslate"><span class="pre">Handler</span></code> interface contract. The <code class="docutils literal notranslate"><span class="pre">Handler</span></code> for a given <code class="docutils literal notranslate"><span class="pre">Evidence</span></code> type can perform any arbitrary state transitions, such as slashing, jailing, and <a class="reference internal" href="../../learn/glossary.html#tombstone"><span class="std std-doc">tombstoning</span></a>.</p>
 <div class="section" id="concepts">
 <h2>Concepts<a class="headerlink" href="#concepts" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id1">
@@ -1675,7 +1675,7 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">block.Timestamp</span></code> is the current block timestamp.</p></li>
 </ul>
 <p>If valid <code class="docutils literal notranslate"><span class="pre">Equivocation</span></code> evidence is included in a block, the validator’s stake is
-reduced by <code class="docutils literal notranslate"><span class="pre">SlashFractionDoubleSign</span></code>, as defined by the <a class="reference external" href="spec-slashing.md">slashing module</a>. The reduction is implemented at the point when the infraction occurred instead of when the evidence was discovered.
+reduced by <code class="docutils literal notranslate"><span class="pre">SlashFractionDoubleSign</span></code>, as defined by the <a class="reference internal" href="spec-slashing.html"><span class="doc std std-doc">slashing module</span></a>. The reduction is implemented at the point when the infraction occurred instead of when the evidence was discovered.
 The stake that contributed to the infraction is slashed, even if it has been redelegated or started unbonding.</p>
 <p>Additionally, the validator is permanently jailed and tombstoned so that the validator cannot re-enter the validator set again.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
@@ -1785,7 +1785,7 @@ The stake that contributed to the infraction is slashed, even if it has been red
 </pre></div>
 </div>
 </div>
-</details><p>The slashing, jailing, and tombstoning calls are delegated through the slashing module, which emits informative events and finally delegates calls to the staking module. For more information about slashing and jailing, see <a class="reference external" href="spec-staking.md#transitions">transitions</a>.</p>
+</details><p>The slashing, jailing, and tombstoning calls are delegated through the slashing module, which emits informative events and finally delegates calls to the staking module. For more information about slashing and jailing, see <a class="reference internal" href="spec-staking.html#transitions"><span class="std std-doc">transitions</span></a>.</p>
 </div>
 </div>
 </div>

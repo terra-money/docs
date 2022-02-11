@@ -1483,29 +1483,29 @@
 <p>The node software is organized into the following individual modules that implement different parts of the Terra protocol. They are listed in the order in which they are initialized during genesis:</p>
 <ol class="arabic">
 <li><p><code class="docutils literal notranslate"><span class="pre">genaccounts</span></code> - import &amp; export genesis account</p></li>
-<li><p><a class="reference external" href="spec-distribution.md"><code class="docutils literal notranslate"><span class="pre">distribution</span></code></a>: distribute rewards between validators and delegators</p>
+<li><p><a class="reference internal" href="spec-distribution.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">distribution</span></code></span></a>: distribute rewards between validators and delegators</p>
 <ul class="simple">
 <li><p>tax and reward distribution</p></li>
 <li><p>community pool</p></li>
 </ul>
 </li>
-<li><p><a class="reference external" href="spec-staking.md"><code class="docutils literal notranslate"><span class="pre">staking</span></code></a>: validators and Luna</p></li>
-<li><p><a class="reference external" href="spec-auth.md"><code class="docutils literal notranslate"><span class="pre">auth</span></code></a>: ante handler</p>
+<li><p><a class="reference internal" href="spec-staking.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">staking</span></code></span></a>: validators and Luna</p></li>
+<li><p><a class="reference internal" href="spec-auth.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">auth</span></code></span></a>: ante handler</p>
 <ul class="simple">
 <li><p>vesting accounts</p></li>
 <li><p>stability layer fee</p></li>
 </ul>
 </li>
-<li><p><a class="reference external" href="spec-bank.md"><code class="docutils literal notranslate"><span class="pre">bank</span></code></a> - sending funds from account to account</p></li>
-<li><p><a class="reference external" href="spec-slashing.md"><code class="docutils literal notranslate"><span class="pre">slashing</span></code></a> - low-level Tendermint slashing (double-signing, etc)</p></li>
-<li><p><a class="reference external" href="spec-oracle.md"><code class="docutils literal notranslate"><span class="pre">oracle</span></code></a> - exchange rate feed oracle</p>
+<li><p><a class="reference internal" href="spec-bank.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">bank</span></code></span></a> - sending funds from account to account</p></li>
+<li><p><a class="reference internal" href="spec-slashing.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">slashing</span></code></span></a> - low-level Tendermint slashing (double-signing, etc)</p></li>
+<li><p><a class="reference internal" href="spec-oracle.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">oracle</span></code></span></a> - exchange rate feed oracle</p>
 <ul class="simple">
 <li><p>vote tallying weighted median</p></li>
 <li><p>ballot rewards</p></li>
 <li><p>slashing misbehaving oracles</p></li>
 </ul>
 </li>
-<li><p><a class="reference external" href="spec-treasury.md"><code class="docutils literal notranslate"><span class="pre">treasury</span></code></a>: miner incentive stabilization</p>
+<li><p><a class="reference internal" href="spec-treasury.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">treasury</span></code></span></a>: miner incentive stabilization</p>
 <ul class="simple">
 <li><p>macroeconomic monitoring</p></li>
 <li><p>monetary policy levers (Tax Rate, Reward Weight)</p></li>
@@ -1516,13 +1516,13 @@
 <p>As of proposals <a class="reference external" href="https://station.terra.money/proposal/43">43</a> and <a class="reference external" href="https://station.terra.money/proposal/172">172</a>, all seigniorage is burned, and the stability fee tax rate is zero.</p>
 </div>
 </li>
-<li><p><a class="reference external" href="spec-governance.md"><code class="docutils literal notranslate"><span class="pre">gov</span></code></a>: on-chain governance</p>
+<li><p><a class="reference internal" href="spec-governance.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">gov</span></code></span></a>: on-chain governance</p>
 <ul class="simple">
 <li><p>proposals</p></li>
 <li><p>parameter updating</p></li>
 </ul>
 </li>
-<li><p><a class="reference external" href="spec-market.md"><code class="docutils literal notranslate"><span class="pre">market</span></code></a>: price-stabilization</p>
+<li><p><a class="reference internal" href="spec-market.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">market</span></code></span></a>: price-stabilization</p>
 <ul class="simple">
 <li><p>Terra&lt;&gt;Terra spot-conversion, Tobin Tax</p></li>
 <li><p>Terra&lt;&gt;Luna market-maker, Constant-Product spread</p></li>
@@ -1562,12 +1562,12 @@
 <li><p>Crisis: Check all registered invariants and assert they remain true.</p></li>
 <li><p>Oracle</p>
 <ul class="simple">
-<li><p>If at the end of <code class="docutils literal notranslate"><span class="pre">VotePeriod</span></code>, run <a class="reference external" href="spec-oracle.md#voting-procedure">voting procedure</a> and update Luna exchange rate.</p></li>
-<li><p>If at the end of <code class="docutils literal notranslate"><span class="pre">SlashWindow</span></code>, penalize validators who <a class="reference external" href="spec-slashing.md">missed</a> more <code class="docutils literal notranslate"><span class="pre">VotePeriod</span></code>s than permitted.</p></li>
+<li><p>If at the end of <code class="docutils literal notranslate"><span class="pre">VotePeriod</span></code>, run <a class="reference internal" href="spec-oracle.html#voting-procedure"><span class="std std-doc">voting procedure</span></a> and update Luna exchange rate.</p></li>
+<li><p>If at the end of <code class="docutils literal notranslate"><span class="pre">SlashWindow</span></code>, penalize validators who <a class="reference internal" href="spec-slashing.html"><span class="doc std std-doc">missed</span></a> more <code class="docutils literal notranslate"><span class="pre">VotePeriod</span></code>s than permitted.</p></li>
 </ul>
 </li>
 <li><p>Governance: Remove inactive proposals, check active proposals whose voting periods have ended for passes, and run the registered proposal handler of the passed proposal.</p></li>
-<li><p>Market: <a class="reference external" href="spec-market.md#end-block">Replenish</a> liquidity pools, allowing spread fees to decrease.</p></li>
+<li><p>Market: <a class="reference internal" href="spec-market.html#end-block"><span class="std std-doc">Replenish</span></a> liquidity pools, allowing spread fees to decrease.</p></li>
 <li><p>Treasury: At the end of <code class="docutils literal notranslate"><span class="pre">epoch</span></code>, update indicators, burn seigniorage, and recalibrate monetary policy levers (tax-rate, reward-weight) for the next epoch.</p></li>
 </ol>
 <div class="warning admonition">
