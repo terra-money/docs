@@ -1602,14 +1602,14 @@
 <p class="admonition-title">Important</p>
 <p>Terra’s distribution module inherits from Cosmos SDK’s <a class="reference external" href="https://docs.cosmos.network/master/modules/distribution/"><code class="docutils literal notranslate"><span class="pre">distribution</span></code></a> module. This document is a stub and covers mainly important Terra-specific notes about how it is used.</p>
 </div>
-<p>The distribution module describes a mechanism that tracks collected fees and passively distributes them to validators and delegators. Additionally, the distribution module defines the <a class="reference internal" href="#community-pool"><span class="std std-doc">community pool</span></a>, which are funds under the control of on-chain governance.</p>
+<p>The distribution module describes a mechanism that tracks collected fees and passively distributes them to validators and delegators. Additionally, the distribution module defines the <a class="reference external" href="#community-pool">community pool</a>, which are funds under the control of on-chain governance.</p>
 <div class="section" id="concepts">
 <h2>Concepts<a class="headerlink" href="#concepts" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="validator-and-delegator-rewards">
 <h3>Validator and delegator rewards<a class="headerlink" href="#validator-and-delegator-rewards" title="Permalink to this headline">¶</a></h3>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>Passive distribution means that validators and delegators need to manually collect their fee rewards by <a class="reference internal" href="../how-to/terrad/subcommands.html#tx-distribution-withdraw-rewards"><span class="std std-doc">submitting withdrawal transactions</span></a>.</p>
+<p>Passive distribution means that validators and delegators need to manually collect their fee rewards by <a class="reference external" href="../how-to/terrad/subcommands.md#tx-distribution-withdraw-rewards">submitting withdrawal transactions</a>.</p>
 </div>
 <p>Collected rewards are pooled globally and distrubuted to validators and delegators. Each validator has the opportunity to charge delegators commission on the rewards collected on behalf of the delegators. Fees are collected directly into a global reward pool and a validator proposer-reward pool. Due to the nature of passive accounting, whenever changes to parameters which affect the rate of reward distribution occur, withdrawal of rewards must also occur.</p>
 </div>

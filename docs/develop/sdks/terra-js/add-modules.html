@@ -1465,7 +1465,7 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<ol class="arabic simple">
+<ol class="arabic simple" start="3">
 <li><p>Register the messages in <code class="docutils literal notranslate"><span class="pre">src/core/Msg.ts</span></code> so that they can be parsed correctly.</p></li>
 </ol>
 <p><code class="docutils literal notranslate"><span class="pre">src/core/Msg.ts</span></code></p>
@@ -1521,7 +1521,7 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<ol class="arabic simple">
+<ol class="arabic simple" start="4">
 <li><p>Register the messages to be exported in <code class="docutils literal notranslate"><span class="pre">src/core/index.ts</span></code>:</p></li>
 </ol>
 <div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="p">...</span>
@@ -1529,7 +1529,7 @@
 <span class="k">export</span> <span class="s1">&#39;greeting/msgs&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
-<ol class="arabic simple">
+<ol class="arabic simple" start="5">
 <li><p>Add parameter changes.</p></li>
 </ol>
 <p>Terra.js provides an easy way to generate <code class="docutils literal notranslate"><span class="pre">ParameterChangeProposal</span></code>s, which is a proposal for changing the blockchain parameters associated with a module. If your module has parameters that can be changed via proposal, you should create the following files:</p>
@@ -1576,7 +1576,7 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<ol class="arabic simple">
+<ol class="arabic simple" start="6">
 <li><p>Register parameter change types</p></li>
 </ol>
 <p><code class="docutils literal notranslate"><span class="pre">src/core/params/ParamChange.ts</span></code></p>
@@ -1669,7 +1669,7 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<ol class="arabic simple">
+<ol class="arabic simple" start="2">
 <li><p>Register the API functionality inside <code class="docutils literal notranslate"><span class="pre">src/client/lcd/api/index.ts</span></code>:</p></li>
 </ol>
 <div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">export</span> <span class="o">*</span> <span class="kr">from</span> <span class="s1">&#39;./AuthAPI&#39;</span><span class="p">;</span>
@@ -1689,7 +1689,7 @@
 <span class="k">export</span> <span class="o">*</span> <span class="kr">from</span> <span class="s1">&#39;./WasmAPI&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
-<ol class="arabic simple">
+<ol class="arabic simple" start="3">
 <li><p>Add the functionality to <code class="docutils literal notranslate"><span class="pre">src/client/lcd/LCDClient.ts</span></code>:</p></li>
 </ol>
 <div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="p">...</span>

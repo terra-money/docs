@@ -1794,24 +1794,24 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="oracle">
 <h1>Oracle <img alt="../../../_images/Oracle.svg" height="40px" src="../../../_images/Oracle.svg" /><a class="headerlink" href="#oracle" title="Permalink to this headline">¶</a></h1>
-<p>The Oracle module provides the Terra blockchain with an up-to-date and accurate price feed of exchange rates of Luna against various Terra pegs so that the <a class="reference internal" href="spec-market.html"><span class="doc std std-doc">Market</span></a> may provide fair exchanges between Terra&lt;&gt;Terra currency pairs, as well as Terra&lt;&gt;Luna.</p>
+<p>The Oracle module provides the Terra blockchain with an up-to-date and accurate price feed of exchange rates of Luna against various Terra pegs so that the <a class="reference external" href="spec-market.md">Market</a> may provide fair exchanges between Terra&lt;&gt;Terra currency pairs, as well as Terra&lt;&gt;Luna.</p>
 <p>As price information is extrinsic to the blockchain, the Terra network relies on validators to periodically vote on the current Luna exchange rate, with the protocol tallying up the results once per <code class="docutils literal notranslate"><span class="pre">VotePeriod</span></code> and updating the on-chain exchange rate as the weighted median of the ballot converted Cross Exchange Rates using <code class="docutils literal notranslate"><span class="pre">ReferenceTerra</span></code>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Since the Oracle service is powered by validators, you may find it interesting to look at the <a class="reference internal" href="spec-staking.html"><span class="doc std std-doc">Staking</span></a> module, which covers the logic for staking and validators.</p>
+<p>Since the Oracle service is powered by validators, you may find it interesting to look at the <a class="reference external" href="spec-staking.md">Staking</a> module, which covers the logic for staking and validators.</p>
 </div>
 <div class="section" id="concepts">
 <h2>Concepts<a class="headerlink" href="#concepts" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="voting-procedure">
 <h3>Voting Procedure<a class="headerlink" href="#voting-procedure" title="Permalink to this headline">¶</a></h3>
-<p>During each <a class="reference internal" href="#voteperiod"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">VotePeriod</span></code></span></a>, the Oracle module obtains consensus on the exchange rate of Luna against denominations specified in <a class="reference internal" href="#whitelist"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">Whitelist</span></code></span></a> by requiring all members of the validator set to submit a vote for Luna exchange rate before the end of the interval.</p>
+<p>During each <a class="reference external" href="#voteperiod"><code class="docutils literal notranslate"><span class="pre">VotePeriod</span></code></a>, the Oracle module obtains consensus on the exchange rate of Luna against denominations specified in <a class="reference external" href="#whitelist"><code class="docutils literal notranslate"><span class="pre">Whitelist</span></code></a> by requiring all members of the validator set to submit a vote for Luna exchange rate before the end of the interval.</p>
 <p>Validators must first pre-commit to an exchange rate. In the subsequent <code class="docutils literal notranslate"><span class="pre">VotePeriod</span></code>, validators submit and reveal their exchange rate alongside a proof that they had pre-committed at that price. This scheme forces the voter to commit to a submission before knowing the votes of others. This system reduces centralization and free-rider risk in the Oracle.</p>
 <div class="section" id="prevote-and-vote">
 <h4>Prevote and Vote<a class="headerlink" href="#prevote-and-vote" title="Permalink to this headline">¶</a></h4>
-<p>Let <span class="math notranslate nohighlight">\(P_t\)</span> be the current time interval of duration defined by <a class="reference internal" href="#voteperiod"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">VotePeriod</span></code></span></a>(currently set to 5 blockchain blocks) during which validators must submit two messages:</p>
+<p>Let <span class="math notranslate nohighlight">\(P_t\)</span> be the current time interval of duration defined by <a class="reference external" href="#voteperiod"><code class="docutils literal notranslate"><span class="pre">VotePeriod</span></code></a>(currently set to 5 blockchain blocks) during which validators must submit two messages:</p>
 <ul class="simple">
-<li><p>A <a class="reference internal" href="#msgexchangerateprevote"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">MsgExchangeRatePrevote</span></code></span></a>, containing the SHA256 hash of the exchange rate of Luna with respect to a Terra peg. A separate prevote must be submitted for each different denomination on which to report a Luna exchange rate. Prevotes can be overwritten by submitting another rate prevote within the same vote period.</p></li>
-<li><p>A <a class="reference internal" href="#msgexchangeratevote"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">MsgExchangeRateVote</span></code></span></a>, containing the salt used to create the hash for the prevote submitted in the previous interval <span class="math notranslate nohighlight">\(P_{t-1}\)</span>.</p></li>
+<li><p>A <a class="reference external" href="#msgexchangerateprevote"><code class="docutils literal notranslate"><span class="pre">MsgExchangeRatePrevote</span></code></a>, containing the SHA256 hash of the exchange rate of Luna with respect to a Terra peg. A separate prevote must be submitted for each different denomination on which to report a Luna exchange rate. Prevotes can be overwritten by submitting another rate prevote within the same vote period.</p></li>
+<li><p>A <a class="reference external" href="#msgexchangeratevote"><code class="docutils literal notranslate"><span class="pre">MsgExchangeRateVote</span></code></a>, containing the salt used to create the hash for the prevote submitted in the previous interval <span class="math notranslate nohighlight">\(P_{t-1}\)</span>.</p></li>
 </ul>
 </div>
 <div class="section" id="vote-tally">
@@ -1819,7 +1819,7 @@
 <p>At the end of <span class="math notranslate nohighlight">\(P_t\)</span>, the submitted votes are tallied.</p>
 <p>The submitted salt of each vote is used to verify consistency with the prevote submitted by the validator in <span class="math notranslate nohighlight">\(P_{t-1}\)</span>. If the validator has not submitted a prevote, or the SHA256 resulting from the salt does not match the hash from the prevote, the vote is dropped.</p>
 <p>For each denomination, if the total voting power of submitted votes exceeds 50%, the weighted median of the votes is recorded on-chain as the effective exchange rate for Luna against that denomination for the following <code class="docutils literal notranslate"><span class="pre">VotePeriod</span></code> <span class="math notranslate nohighlight">\(P_{t+1}\)</span>.</p>
-<p>Denominations receiving fewer than <a class="reference internal" href="#votethreshold"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">VoteThreshold</span></code></span></a> total voting power have their exchange rates deleted from the store, and no swaps can be made with it during the next <code class="docutils literal notranslate"><span class="pre">VotePeriod</span></code> <span class="math notranslate nohighlight">\(P_{t+1}\)</span>.</p>
+<p>Denominations receiving fewer than <a class="reference external" href="#votethreshold"><code class="docutils literal notranslate"><span class="pre">VoteThreshold</span></code></a> total voting power have their exchange rates deleted from the store, and no swaps can be made with it during the next <code class="docutils literal notranslate"><span class="pre">VotePeriod</span></code> <span class="math notranslate nohighlight">\(P_{t+1}\)</span>.</p>
 <p>Choose <code class="docutils literal notranslate"><span class="pre">ReferenceTerra</span></code> with the highest voter turnout. If the voting power of the two denominations is the same, select reference Terra in alphabetical order.</p>
 </div>
 <div class="section" id="compute-cross-exchange-rate-using-reference-terra">
@@ -1850,22 +1850,22 @@
 </li>
 <li><p>Reward ballot winners</p>
 <ul class="simple">
-<li><p>For <code class="docutils literal notranslate"><span class="pre">i=r</span></code>, same as before, reward ballot winners based <code class="docutils literal notranslate"><span class="pre">CER_j_i</span> <span class="pre">=</span> <span class="pre">Vote_j_r</span></code> ballot with <code class="docutils literal notranslate"><span class="pre">MCER_i</span></code> using <a class="reference internal" href="#tally"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">tally()</span></code></span></a>.</p></li>
-<li><p>For <code class="docutils literal notranslate"><span class="pre">i≠r</span></code>,  reward ballot winners based <code class="docutils literal notranslate"><span class="pre">CER_j_i</span> <span class="pre">=</span> <span class="pre">Vote_j_r</span> <span class="pre">/</span> <span class="pre">Vote_j_i</span></code> ballot with <code class="docutils literal notranslate"><span class="pre">MCER_i</span></code> using <a class="reference internal" href="#tally"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">tally()</span></code></span></a>.</p></li>
+<li><p>For <code class="docutils literal notranslate"><span class="pre">i=r</span></code>, same as before, reward ballot winners based <code class="docutils literal notranslate"><span class="pre">CER_j_i</span> <span class="pre">=</span> <span class="pre">Vote_j_r</span></code> ballot with <code class="docutils literal notranslate"><span class="pre">MCER_i</span></code> using <a class="reference external" href="#tally"><code class="docutils literal notranslate"><span class="pre">tally()</span></code></a>.</p></li>
+<li><p>For <code class="docutils literal notranslate"><span class="pre">i≠r</span></code>,  reward ballot winners based <code class="docutils literal notranslate"><span class="pre">CER_j_i</span> <span class="pre">=</span> <span class="pre">Vote_j_r</span> <span class="pre">/</span> <span class="pre">Vote_j_i</span></code> ballot with <code class="docutils literal notranslate"><span class="pre">MCER_i</span></code> using <a class="reference external" href="#tally"><code class="docutils literal notranslate"><span class="pre">tally()</span></code></a>.</p></li>
 </ul>
 </li>
 </ol>
 </div>
 <div class="section" id="ballot-rewards">
 <h4>Ballot Rewards<a class="headerlink" href="#ballot-rewards" title="Permalink to this headline">¶</a></h4>
-<p>After the votes are tallied, the winners of the ballots are determined with <a class="reference internal" href="#tally"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">tally()</span></code></span></a>.</p>
-<p>Voters that have managed to vote within a narrow band around the weighted median are rewarded from the oracle reward pool. This pool is funded by swap fees which are distributed over a 2-year window. See <span class="xref myst"><code class="docutils literal notranslate"><span class="pre">k.RewardBallotWinners()</span></code></span> for more details.</p>
+<p>After the votes are tallied, the winners of the ballots are determined with <a class="reference external" href="#tally"><code class="docutils literal notranslate"><span class="pre">tally()</span></code></a>.</p>
+<p>Voters that have managed to vote within a narrow band around the weighted median are rewarded from the oracle reward pool. This pool is funded by swap fees which are distributed over a 2-year window. See <a class="reference external" href="#k-rewardballotwinners"><code class="docutils literal notranslate"><span class="pre">k.RewardBallotWinners()</span></code></a> for more details.</p>
 <p>If the reward pool is empty, no rewards are distributed.</p>
 </div>
 </div>
 <div class="section" id="reward-band">
 <h3>Reward Band<a class="headerlink" href="#reward-band" title="Permalink to this headline">¶</a></h3>
-<p>Let <span class="math notranslate nohighlight">\(M\)</span> be the weighted median, <span class="math notranslate nohighlight">\(\sigma\)</span> be the standard deviation of the votes in the ballot, and <span class="math notranslate nohighlight">\(R\)</span> be the <a class="reference internal" href="#rewardband"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">RewardBand</span></code></span></a> parameter. The band around the median is set to be <span class="math notranslate nohighlight">\(\varepsilon = \max(\sigma, R/2)\)</span>. All valid (i.e. bonded and non-jailed) validators that submitted an exchange rate vote in the interval <span class="math notranslate nohighlight">\(\left[ M - \varepsilon, M + \varepsilon \right]\)</span> should be included in the set of winners, weighted by their relative vote power.</p>
+<p>Let <span class="math notranslate nohighlight">\(M\)</span> be the weighted median, <span class="math notranslate nohighlight">\(\sigma\)</span> be the standard deviation of the votes in the ballot, and <span class="math notranslate nohighlight">\(R\)</span> be the <a class="reference external" href="#rewardband"><code class="docutils literal notranslate"><span class="pre">RewardBand</span></code></a> parameter. The band around the median is set to be <span class="math notranslate nohighlight">\(\varepsilon = \max(\sigma, R/2)\)</span>. All valid (i.e. bonded and non-jailed) validators that submitted an exchange rate vote in the interval <span class="math notranslate nohighlight">\(\left[ M - \varepsilon, M + \varepsilon \right]\)</span> should be included in the set of winners, weighted by their relative vote power.</p>
 </div>
 <div class="section" id="slashing">
 <h3>Slashing<a class="headerlink" href="#slashing" title="Permalink to this headline">¶</a></h3>
@@ -1875,21 +1875,21 @@
 </div>
 <p>A <code class="docutils literal notranslate"><span class="pre">VotePeriod</span></code> during which either of the following events occurs is considered a “miss”:</p>
 <ul class="simple">
-<li><p>The validator fails to submit a vote for Luna exchange rate against <strong>each and every</strong> denomination specified in<a class="reference internal" href="#whitelist"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">Whitelist</span></code></span></a>.</p></li>
-<li><p>The validator fails to vote within the <a class="reference internal" href="#reward-band"><span class="std std-doc">reward band</span></a> around the weighted median for one or more denominations.</p></li>
+<li><p>The validator fails to submit a vote for Luna exchange rate against <strong>each and every</strong> denomination specified in<a class="reference external" href="#whitelist"><code class="docutils literal notranslate"><span class="pre">Whitelist</span></code></a>.</p></li>
+<li><p>The validator fails to vote within the <a class="reference external" href="#reward-band">reward band</a> around the weighted median for one or more denominations.</p></li>
 </ul>
-<p>During every <a class="reference internal" href="#slashwindow"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">SlashWindow</span></code></span></a>, participating validators must maintain a valid vote rate of at least <a class="reference internal" href="#minvalidperwindow"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">MinValidPerWindow</span></code></span></a> (5%), lest they get their stake slashed (currently set to <a class="reference internal" href="#slashfraction"><span class="std std-doc">0.01%</span></a>). The slashed validator is automatically temporarily “jailed” by the protocol (to protect the funds of delegators), and the operator is expected to fix the discrepancy promptly to resume validator participation.</p>
+<p>During every <a class="reference external" href="#slashwindow"><code class="docutils literal notranslate"><span class="pre">SlashWindow</span></code></a>, participating validators must maintain a valid vote rate of at least <a class="reference external" href="#minvalidperwindow"><code class="docutils literal notranslate"><span class="pre">MinValidPerWindow</span></code></a> (5%), lest they get their stake slashed (currently set to <a class="reference external" href="#slashfraction">0.01%</a>). The slashed validator is automatically temporarily “jailed” by the protocol (to protect the funds of delegators), and the operator is expected to fix the discrepancy promptly to resume validator participation.</p>
 </div>
 <div class="section" id="abstaining-from-voting">
 <h3>Abstaining from Voting<a class="headerlink" href="#abstaining-from-voting" title="Permalink to this headline">¶</a></h3>
-<p>A validator may abstain from voting by submitting a non-positive integer for the <code class="docutils literal notranslate"><span class="pre">ExchangeRate</span></code> field in <a class="reference internal" href="#msgexchangeratevote"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">MsgExchangeRateVote</span></code></span></a>. Doing so will absolve them of any penalties for missing <code class="docutils literal notranslate"><span class="pre">VotePeriod</span></code>s, but also disqualify them from receiving Oracle rewards for faithful reporting.</p>
+<p>A validator may abstain from voting by submitting a non-positive integer for the <code class="docutils literal notranslate"><span class="pre">ExchangeRate</span></code> field in <a class="reference external" href="#msgexchangeratevote"><code class="docutils literal notranslate"><span class="pre">MsgExchangeRateVote</span></code></a>. Doing so will absolve them of any penalties for missing <code class="docutils literal notranslate"><span class="pre">VotePeriod</span></code>s, but also disqualify them from receiving Oracle rewards for faithful reporting.</p>
 </div>
 </div>
 <div class="section" id="message-types">
 <h2>Message Types<a class="headerlink" href="#message-types" title="Permalink to this headline">¶</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The control flow for vote-tallying, Luna exchange rate updates, ballot rewards, and slashing happens at the end of every <code class="docutils literal notranslate"><span class="pre">VotePeriod</span></code>, and is found at the <a class="reference internal" href="#end-block"><span class="std std-doc">end-block ABCI function</span></a> rather than inside message handlers.</p>
+<p>The control flow for vote-tallying, Luna exchange rate updates, ballot rewards, and slashing happens at the end of every <code class="docutils literal notranslate"><span class="pre">VotePeriod</span></code>, and is found at the <a class="reference external" href="#end-block">end-block ABCI function</a> rather than inside message handlers.</p>
 </div>
 <div class="section" id="msgexchangerateprevote">
 <h3>MsgExchangeRatePrevote<a class="headerlink" href="#msgexchangerateprevote" title="Permalink to this headline">¶</a></h3>
@@ -1904,7 +1904,7 @@
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">Hash</span></code> is a hex string generated by the leading 20 bytes of the SHA256 hash (hex string) of a string of the format <code class="docutils literal notranslate"><span class="pre">salt:exchange_rate:denom:voter</span></code>, the metadata of the actual <code class="docutils literal notranslate"><span class="pre">MsgExchangeRateVote</span></code> to follow in the next <code class="docutils literal notranslate"><span class="pre">VotePeriod</span></code>. You can use the <a class="reference internal" href="#votehash"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">VoteHash()</span></code></span></a> function to help encode this hash. Note that since in the subsequent <code class="docutils literal notranslate"><span class="pre">MsgExchangeRateVote</span></code>, the salt will have to be revealed, the salt used must be regenerated for each prevote submission.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Hash</span></code> is a hex string generated by the leading 20 bytes of the SHA256 hash (hex string) of a string of the format <code class="docutils literal notranslate"><span class="pre">salt:exchange_rate:denom:voter</span></code>, the metadata of the actual <code class="docutils literal notranslate"><span class="pre">MsgExchangeRateVote</span></code> to follow in the next <code class="docutils literal notranslate"><span class="pre">VotePeriod</span></code>. You can use the <a class="reference external" href="#votehash"><code class="docutils literal notranslate"><span class="pre">VoteHash()</span></code></a> function to help encode this hash. Note that since in the subsequent <code class="docutils literal notranslate"><span class="pre">MsgExchangeRateVote</span></code>, the salt will have to be revealed, the salt used must be regenerated for each prevote submission.</p>
 <p><code class="docutils literal notranslate"><span class="pre">Denom</span></code> is the denomination of the currency for which the vote is being cast. For example, if the voter wishes to submit a prevote for the usd, then the correct <code class="docutils literal notranslate"><span class="pre">Denom</span></code> is <code class="docutils literal notranslate"><span class="pre">uusd</span></code>.</p>
 <p>The exchange rate used in the hash must be the open market exchange rate of Luna, with respect to the denomination matching <code class="docutils literal notranslate"><span class="pre">Denom</span></code>. For example, if <code class="docutils literal notranslate"><span class="pre">Denom</span></code> is <code class="docutils literal notranslate"><span class="pre">uusd</span></code> and the going exchange rate for Luna is 1 USD, then “1” must be used as the exchange rate, as <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">uluna</span></code> = <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">uusd</span></code>.</p>
 <p><code class="docutils literal notranslate"><span class="pre">Feeder</span></code> (<code class="docutils literal notranslate"><span class="pre">terra-</span></code> address) is used if the validator wishes to delegate oracle vote signing to a separate key (who “feeds” the price in lieu of the operator) to de-risk exposing their validator signing key.</p>
@@ -1989,7 +1989,7 @@
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">map[denom:</span> <span class="pre">string]Dec</span></code></p></li>
 </ul>
-<p>Stores the current Luna exchange rate against a given <code class="docutils literal notranslate"><span class="pre">denom</span></code>, which is used by the <a class="reference internal" href="spec-market.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">Market</span></code></span></a> module for pricing swaps.</p>
+<p>Stores the current Luna exchange rate against a given <code class="docutils literal notranslate"><span class="pre">denom</span></code>, which is used by the <a class="reference external" href="spec-market.md"><code class="docutils literal notranslate"><span class="pre">Market</span></code></a> module for pricing swaps.</p>
 </div>
 <div class="section" id="oracle-delegates">
 <h3>Oracle Delegates<a class="headerlink" href="#oracle-delegates" title="Permalink to this headline">¶</a></h3>
@@ -2028,7 +2028,7 @@
 </pre></div>
 </div>
 <p>At the end of every <code class="docutils literal notranslate"><span class="pre">VotePeriod</span></code>, a portion of swap fees are rewarded to the oracle ballot winners (validators who submitted an exchange rate vote within the band).</p>
-<p>The total amount of Luna rewarded per <code class="docutils literal notranslate"><span class="pre">VotePeriod</span></code> is equal to the current amount of Luna in the reward pool (the Luna owned by the Oracle module) divided by the parameter <a class="reference internal" href="#rewarddistributionwindow"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">RewardDistributionWindow</span></code></span></a>.</p>
+<p>The total amount of Luna rewarded per <code class="docutils literal notranslate"><span class="pre">VotePeriod</span></code> is equal to the current amount of Luna in the reward pool (the Luna owned by the Oracle module) divided by the parameter <a class="reference external" href="#rewarddistributionwindow"><code class="docutils literal notranslate"><span class="pre">RewardDistributionWindow</span></code></a>.</p>
 <p>Each winning validator gets a portion of the reward proportional to their winning vote weight for that period.</p>
 </div>
 <div class="section" id="slashandresetmisscounters">
@@ -2036,8 +2036,8 @@
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">func</span><span class="w"> </span><span class="nx">SlashAndResetMissCounters</span><span class="p">(</span><span class="nx">ctx</span><span class="w"> </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">Context</span><span class="p">,</span><span class="w"> </span><span class="nx">k</span><span class="w"> </span><span class="nx">Keeper</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
-<p>This function is called at the end of every <code class="docutils literal notranslate"><span class="pre">SlashWindow</span></code> and will check the miss counters of every validator to see if that validator met the minimum valid votes defined in the parameter <a class="reference internal" href="#minvalidperwindow"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">MinValidPerWindow</span></code></span></a> (did not miss more than the threshold).</p>
-<p>If a validator does not reach the criteria, their staked funds are slashed by <a class="reference internal" href="#slashfraction"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">SlashFraction</span></code></span></a>, and they are jailed.</p>
+<p>This function is called at the end of every <code class="docutils literal notranslate"><span class="pre">SlashWindow</span></code> and will check the miss counters of every validator to see if that validator met the minimum valid votes defined in the parameter <a class="reference external" href="#minvalidperwindow"><code class="docutils literal notranslate"><span class="pre">MinValidPerWindow</span></code></a> (did not miss more than the threshold).</p>
+<p>If a validator does not reach the criteria, their staked funds are slashed by <a class="reference external" href="#slashfraction"><code class="docutils literal notranslate"><span class="pre">SlashFraction</span></code></a>, and they are jailed.</p>
 <p>After checking all validators, all miss counters are reset back to zero for the next <code class="docutils literal notranslate"><span class="pre">SlashWindow</span></code>.</p>
 </div>
 </div>
@@ -2045,28 +2045,28 @@
 <h2>Transitions<a class="headerlink" href="#transitions" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="end-block">
 <h3>End-Block<a class="headerlink" href="#end-block" title="Permalink to this headline">¶</a></h3>
-<p>At the end of every block, the Oracle module checks whether it’s the last block of the <code class="docutils literal notranslate"><span class="pre">VotePeriod</span></code>. If it is, it runs the <a class="reference internal" href="#voting-procedure"><span class="std std-doc">Voting Procedure</span></a>:</p>
+<p>At the end of every block, the Oracle module checks whether it’s the last block of the <code class="docutils literal notranslate"><span class="pre">VotePeriod</span></code>. If it is, it runs the <a class="reference external" href="#voting-procedure">Voting Procedure</a>:</p>
 <ol class="arabic simple">
 <li><p>All current active Luna exchange rates are purged from the store</p></li>
 <li><p>Received votes are organized into ballots by denomination. Abstained votes, as well as votes by inactive or jailed validators are ignored</p></li>
 <li><p>Denominations not meeting the following requirements will be dropped:</p>
 <ul class="simple">
-<li><p>Must appear in the permitted denominations in <a class="reference internal" href="#whitelist"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">Whitelist</span></code></span></a></p></li>
-<li><p>Ballot for denomination must have at least <a class="reference internal" href="#votethreshold"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">VoteThreshold</span></code></span></a> total vote power</p></li>
+<li><p>Must appear in the permitted denominations in <a class="reference external" href="#whitelist"><code class="docutils literal notranslate"><span class="pre">Whitelist</span></code></a></p></li>
+<li><p>Ballot for denomination must have at least <a class="reference external" href="#votethreshold"><code class="docutils literal notranslate"><span class="pre">VoteThreshold</span></code></a> total vote power</p></li>
 <li><p>Choose <code class="docutils literal notranslate"><span class="pre">ReferenceTerra</span></code> with the highest voter turnout</p></li>
 </ul>
 </li>
 <li><p>For each remaining <code class="docutils literal notranslate"><span class="pre">denom</span></code> with a passing ballot:</p>
 <ul class="simple">
-<li><p>Tally up votes with <span class="xref myst"><code class="docutils literal notranslate"><span class="pre">Compute</span> <span class="pre">Cross</span> <span class="pre">Exchange</span> <span class="pre">Rate</span> <span class="pre">using</span> <span class="pre">Reference</span> <span class="pre">Terra</span></code></span> and find the weighted median exchange rate and winners with <a class="reference internal" href="#tally"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">tally()</span></code></span></a></p></li>
+<li><p>Tally up votes with <a class="reference external" href="#compute-cross-exchange-rate-using-reference-terra"><code class="docutils literal notranslate"><span class="pre">Compute</span> <span class="pre">Cross</span> <span class="pre">Exchange</span> <span class="pre">Rate</span> <span class="pre">using</span> <span class="pre">Reference</span> <span class="pre">Terra</span></code></a> and find the weighted median exchange rate and winners with <a class="reference external" href="#tally"><code class="docutils literal notranslate"><span class="pre">tally()</span></code></a></p></li>
 <li><p>Iterate through winners of the ballot and add their weight to their running total</p></li>
 <li><p>Set the Luna exchange rate on the blockchain for that Luna&lt;&gt;<code class="docutils literal notranslate"><span class="pre">denom</span></code> with <code class="docutils literal notranslate"><span class="pre">k.SetLunaExchangeRate()</span></code></p></li>
-<li><p>Emit a <span class="xref myst"><code class="docutils literal notranslate"><span class="pre">exchange_rate_update</span></code></span> event</p></li>
+<li><p>Emit a <a class="reference external" href="#exchange_rate_update"><code class="docutils literal notranslate"><span class="pre">exchange_rate_update</span></code></a> event</p></li>
 </ul>
 </li>
-<li><p>Count up the validators who <a class="reference internal" href="#slashing"><span class="std std-doc">missed</span></a> the Oracle vote and increase the appropriate miss counters</p></li>
-<li><p>If at the end of a <a class="reference internal" href="#slashwindow"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">SlashWindow</span></code></span></a>, penalize validators who have missed more than the penalty threshold (submitted fewer valid votes than <a class="reference internal" href="#minvalidperwindow"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">MinValidPerWindow</span></code></span></a>)</p></li>
-<li><p>Distribute rewards to ballot winners with <a class="reference internal" href="#k-rewardballotwinners"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">k.RewardBallotWinners()</span></code></span></a></p></li>
+<li><p>Count up the validators who <a class="reference external" href="#slashing">missed</a> the Oracle vote and increase the appropriate miss counters</p></li>
+<li><p>If at the end of a <a class="reference external" href="#slashwindow"><code class="docutils literal notranslate"><span class="pre">SlashWindow</span></code></a>, penalize validators who have missed more than the penalty threshold (submitted fewer valid votes than <a class="reference external" href="#minvalidperwindow"><code class="docutils literal notranslate"><span class="pre">MinValidPerWindow</span></code></a>)</p></li>
+<li><p>Distribute rewards to ballot winners with <a class="reference external" href="#krewardballotwinners"><code class="docutils literal notranslate"><span class="pre">k.RewardBallotWinners()</span></code></a></p></li>
 <li><p>Clear all prevotes (except ones for the next <code class="docutils literal notranslate"><span class="pre">VotePeriod</span></code>) and votes from the store</p></li>
 </ol>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
@@ -2143,7 +2143,7 @@ Events<div class="sd-summary-down docutils">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">int64</span></code></p></li>
 <li><p>default value: <code class="docutils literal notranslate"><span class="pre">BlocksPerYear</span></code> (2 year window)</p></li>
 </ul>
-<p>The number of blocks used to determine the amount rewarded to validators who voted within the reward band. The total amount of Luna rewarded per <code class="docutils literal notranslate"><span class="pre">VotePeriod</span></code> is equal to the current amount of Luna in the reward pool (the Luna owned by the Oracle module) divided by the parameter <a class="reference internal" href="#rewarddistributionwindow"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">RewardDistributionWindow</span></code></span></a>.</p>
+<p>The number of blocks used to determine the amount rewarded to validators who voted within the reward band. The total amount of Luna rewarded per <code class="docutils literal notranslate"><span class="pre">VotePeriod</span></code> is equal to the current amount of Luna in the reward pool (the Luna owned by the Oracle module) divided by the parameter <a class="reference external" href="#rewarddistributionwindow"><code class="docutils literal notranslate"><span class="pre">RewardDistributionWindow</span></code></a>.</p>
 </div>
 <div class="section" id="whitelist">
 <h3>Whitelist<a class="headerlink" href="#whitelist" title="Permalink to this headline">¶</a></h3>

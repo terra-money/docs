@@ -4393,7 +4393,7 @@ rm ~/.bash_history
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad keys add &lt;yourKeyName&gt; --recover
 </pre></div>
 </div>
-<p>For information about generating multisignature accounts and signing transactions, see <a class="reference internal" href="../sign-with-multisig.html"><span class="doc std std-doc">Sign with a multisig account</span></a>.</p>
+<p>For information about generating multisignature accounts and signing transactions, see <a class="reference external" href="../sign-with-multisig.md">Sign with a multisig account</a>.</p>
 </div>
 <div class="section" id="keys-show">
 <h2><code class="docutils literal notranslate"><span class="pre">keys</span> <span class="pre">show</span></code><a class="headerlink" href="#keys-show" title="Permalink to this headline">¶</a></h2>
@@ -5024,7 +5024,7 @@ rm ~/.bash_history
 <p class="admonition-title">Note</p>
 <p>As of proposals <a class="reference external" href="https://station.terra.money/proposal/43">43</a> and <a class="reference external" href="https://station.terra.money/proposal/172">172</a>, all seigniorage is burned, and the stability fee tax rate is fixed at zero.Although the Treasury module is no longer effectively used, the commands are kept for reference.</p>
 </div>
-<p>Retrieves the high-level settings for the treasury. For more information, see <a class="reference internal" href="../../module-specifications/spec-treasury.html#parameters"><span class="std std-doc">treasury parameters</span></a>.</p>
+<p>Retrieves the high-level settings for the treasury. For more information, see <a class="reference external" href="../../module-specifications/spec-treasury.md#parameters">treasury parameters</a>.</p>
 <p><strong>Syntax</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad query treasury params
 </pre></div>
@@ -5458,7 +5458,7 @@ terrad tx distribution fund-community-pool 100ukrw,200uusd</p>
 <p class="admonition-title">Note</p>
 <p>As of proposals <a class="reference external" href="https://station.terra.money/proposal/43">43</a> and <a class="reference external" href="https://station.terra.money/proposal/172">172</a>, all seigniorage is burned, and the stability fee tax rate is fixed at zero.Although the Treasury module is no longer effectively used, the commands are kept for reference.</p>
 </div>
-<p>Tax rate and reward weight are important monetary policy levers handled by the <a class="reference internal" href="../../module-specifications/spec-treasury.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">Treasury</span></code></span></a> module to modulate miner incentives toward stable demand and steady growth. Usually, they are automatically calibrated once per epoch by the protocol. However, they can be changed at any time, if an update proposal gets passed with enough supporters.</p>
+<p>Tax rate and reward weight are important monetary policy levers handled by the <a class="reference external" href="../../module-specifications/spec-treasury.md"><code class="docutils literal notranslate"><span class="pre">Treasury</span></code></a> module to modulate miner incentives toward stable demand and steady growth. Usually, they are automatically calibrated once per epoch by the protocol. However, they can be changed at any time, if an update proposal gets passed with enough supporters.</p>
 <p>When you submit a tax rate or reward weight update proposal, it is recommended that you send the proposal as a JSON file.</p>
 <p>For tax rate:</p>
 <p><strong>Syntax</strong></p>
@@ -5518,7 +5518,7 @@ terrad tx distribution fund-community-pool 100ukrw,200uusd</p>
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<p>Tax reward and reward weight updates that are passed by governance proposals are subject to <a class="reference internal" href="../../module-specifications/spec-treasury.html#policy-constraints"><span class="std std-doc">policy constraints</span></a>.</p>
+<p>Tax reward and reward weight updates that are passed by governance proposals are subject to <a class="reference external" href="../../module-specifications/spec-treasury.md#policy-constraints">policy constraints</a>.</p>
 </div>
 <div class="section" id="software-upgrade-proposals">
 <h3>Software upgrade proposals<a class="headerlink" href="#software-upgrade-proposals" title="Permalink to this headline">¶</a></h3>
@@ -5648,7 +5648,7 @@ terrad tx distribution fund-community-pool 100ukrw,200uusd</p>
     <span class="s2">&quot;terravaloper15h6vd5f0wqps26zjlwrc6chah08ryu4hzzdwhc&quot;</span> <span class="se">\</span>
 </pre></div>
 </div>
-<p>Given that oracle votes must be submitted in a feed over short time intervals (30 seconds), prevotes and votes must be submitted via some persistent server daemon, not manually. For more information, see the <a class="reference internal" href="../../module-specifications/spec-oracle.html"><span class="doc std std-doc">Oracle Module Specification</span></a>.</p>
+<p>Given that oracle votes must be submitted in a feed over short time intervals (30 seconds), prevotes and votes must be submitted via some persistent server daemon, not manually. For more information, see the <a class="reference external" href="../../module-specifications/spec-oracle.md">Oracle Module Specification</a>.</p>
 </div>
 <div class="section" id="tx-oracle-set-feeder">
 <h2><code class="docutils literal notranslate"><span class="pre">tx</span> <span class="pre">oracle</span> <span class="pre">set-feeder</span></code><a class="headerlink" href="#tx-oracle-set-feeder" title="Permalink to this headline">¶</a></h2>

@@ -31,7 +31,8 @@ The Tobin tax is a fixed percentage fee added to any [market swap](glossary.md#m
 
 The Tobin tax was created to discourage front-running the oracle and foreign exchange trading at the expense of users. For more information on the implementation of the Tobin tax, read ["On swap fees: the greedy and the wise"](https://medium.com/terra-money/on-swap-fees-the-greedy-and-the-wise-b967f0c8914e).
 
-Every block, Tobin tax fees are sent to the Oracle reward pool and dispersed to validators over a period of 2 years. Validators then distribute these fees to delegators in the form of staking rewards. For more information on the Oracle reward pool, visit the [Oracle module](../develop/module-specifications/spec-oracle.md).
+Every block, Tobin tax fees are sent to the [Oracle reward pool] and [dispersed to validators](https://docs.terra.money/docs/develop/module-specifications/spec-oracle.html#k-rewardballotwinners) that faithfully report correct exchange rates. Validators then distribute these fees to delegators in the form of staking rewards. For more information on the Oracle reward pool, visit the [Oracle module](../develop/module-specifications/spec-oracle.md).
+
 
 ## Spread fee
 
@@ -39,7 +40,7 @@ Spread fees are added to any [market swap](glossary.md#market-swap) between Terr
 
 For more information on spread fees, visit the [market module](../develop/module-specifications/spec-market.md).
 
-Every block, spread fees are sent to the Oracle reward pool and dispersed to validators over a period of 2 years. Validators then distribute these fees to delegators in the form of staking rewards. For more information on the Oracle reward pool, visit the [Oracle module](../develop/module-specifications/spec-oracle.md).
+Every block, spread fees are sent to the [Oracle reward pool] and [dispersed to validators](https://docs.terra.money/docs/develop/module-specifications/spec-oracle.html#k-rewardballotwinners) that faithfully report correct exchange rates. Validators then distribute these fees to delegators in the form of staking rewards. For more information on the Oracle reward pool, visit the [Oracle module](../develop/module-specifications/spec-oracle.md).
 
 ## Changes to fees
 

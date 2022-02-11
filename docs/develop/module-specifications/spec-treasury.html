@@ -1790,16 +1790,16 @@
 <p class="admonition-title">Important</p>
 <p>The treasury module logic is no longer effectively used by the Terra protocol. On March 3rd, 2021, the Terra community passed <a class="reference external" href="https://station.terra.money/proposal/43">governance proposal 43</a>, updating the seigniorage reward weight to burn all seigniorage. On January 6th, 2022, the Terra community passed <a class="reference external" href="https://station.terra.money/proposal/172">proposal 172</a>, which changed the stability fee tax rate to zero. Neither seigniorage nor the tax rate are currently used. The information in this section is kept as reference. Although the rates and parameters used in this section no longer have any effect on the protocol or transactions, they are still calculated as their logic is intact. The effective rates of seigniorage and stability fees are calculated as zero.</p>
 </div>
-<p>The Treasury module acts as the “central bank” of the Terra economy, measuring macroeconomic activity by <a class="reference internal" href="#observed-indicators"><span class="std std-doc">observing indicators</span></a> and adjusting <a class="reference internal" href="#monetary-policy-levers"><span class="std std-doc">monetary policy levers</span></a> to modulate miner incentives toward stable, long-term growth.</p>
+<p>The Treasury module acts as the “central bank” of the Terra economy, measuring macroeconomic activity by <a class="reference external" href="#observed-indicators">observing indicators</a> and adjusting <a class="reference external" href="#monetary-policy-levers">monetary policy levers</a> to modulate miner incentives toward stable, long-term growth.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>While the Treasury stabilizes miner demand by adjusting rewards, the <a class="reference internal" href="spec-market.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">market</span></code></span></a> module is responsible for Terra price stability through arbitrage and the market maker.</p>
+<p>While the Treasury stabilizes miner demand by adjusting rewards, the <a class="reference external" href="./spec-market.md"><code class="docutils literal notranslate"><span class="pre">market</span></code></a> module is responsible for Terra price stability through arbitrage and the market maker.</p>
 </div>
 <div class="section" id="concepts">
 <h2>Concepts<a class="headerlink" href="#concepts" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="observed-indicators">
 <h3>Observed indicators<a class="headerlink" href="#observed-indicators" title="Permalink to this headline">¶</a></h3>
-<p>The treasury observes three macroeconomic indicators for each epoch and keeps <a class="reference internal" href="#indicators"><span class="std std-doc">indicators</span></a> of their values during previous epochs:</p>
+<p>The treasury observes three macroeconomic indicators for each epoch and keeps <a class="reference external" href="#indicators">indicators</a> of their values during previous epochs:</p>
 <ul class="simple">
 <li><p><strong>Tax Rewards</strong>: <span class="math notranslate nohighlight">\(T\)</span>, the income generated from transaction and stability fees during an epoch.</p></li>
 <li><p><strong>Seigniorage Rewards</strong>: <span class="math notranslate nohighlight">\(S\)</span>, the amount of seigniorage generated from Luna swaps to Terra during an epoch which is destined for ballot rewards inside the <code class="docutils literal notranslate"><span class="pre">Oracle</span></code> rewards. As of Columbus-5, all seigniorage is burned.</p></li>
@@ -1809,20 +1809,20 @@
 <p class="admonition-title">Note</p>
 <p>As of proposals <a class="reference external" href="https://station.terra.money/proposal/43">43</a> and <a class="reference external" href="https://station.terra.money/proposal/172">172</a>, all seigniorage is burned, and the stability fee tax rate is zero.</p>
 </div>
-<p>These indicators can be used to derive two other values, the <strong>Tax Reward per unit Luna</strong> represented by <span class="math notranslate nohighlight">\(\tau = T / \lambda\)</span>, used in <a class="reference internal" href="#k-updatetaxpolicy"><span class="std std-doc">Updating Tax Rate</span></a>, and <strong>total mining rewards</strong> <span class="math notranslate nohighlight">\(R = T + S\)</span>: the sum of the Tax Rewards and the Seigniorage Rewards, used in <a class="reference internal" href="#k-updaterewardpolicy"><span class="std std-doc">Updating Reward Weight</span></a>.</p>
-<p>The protocol can compute and compare the short-term (<a class="reference internal" href="#windowshort"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">WindowShort</span></code></span></a>) and the long-term (<a class="reference internal" href="#windowlong"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">WindowLong</span></code></span></a>) rolling averages of the above indicators to determine the relative direction and velocity of the Terra economy.</p>
+<p>These indicators can be used to derive two other values, the <strong>Tax Reward per unit Luna</strong> represented by <span class="math notranslate nohighlight">\(\tau = T / \lambda\)</span>, used in <a class="reference external" href="#kupdatetaxpolicy">Updating Tax Rate</a>, and <strong>total mining rewards</strong> <span class="math notranslate nohighlight">\(R = T + S\)</span>: the sum of the Tax Rewards and the Seigniorage Rewards, used in <a class="reference external" href="#kupdaterewardpolicy">Updating Reward Weight</a>.</p>
+<p>The protocol can compute and compare the short-term (<a class="reference external" href="#windowshort"><code class="docutils literal notranslate"><span class="pre">WindowShort</span></code></a>) and the long-term (<a class="reference external" href="#windowlong"><code class="docutils literal notranslate"><span class="pre">WindowLong</span></code></a>) rolling averages of the above indicators to determine the relative direction and velocity of the Terra economy.</p>
 </div>
 <div class="section" id="monetary-policy-levers">
 <h3>Monetary policy levers<a class="headerlink" href="#monetary-policy-levers" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p><strong>Tax Rate</strong>: <span class="math notranslate nohighlight">\(r\)</span>, adjusts the amount of income gained from Terra transactions, limited by <a class="reference internal" href="#tax-caps"><span class="std std-doc"><em>tax cap</em></span></a>.</p></li>
+<li><p><strong>Tax Rate</strong>: <span class="math notranslate nohighlight">\(r\)</span>, adjusts the amount of income gained from Terra transactions, limited by <a class="reference external" href="#tax-caps"><em>tax cap</em></a>.</p></li>
 </ul>
 <div class="warning admonition">
 <p class="admonition-title">Note</p>
 <p>As of <a class="reference external" href="https://station.terra.money/proposal/172">proposal 172</a>, the stability fee tax rate is zero.</p>
 </div>
 <ul class="simple">
-<li><p><strong>Reward Weight</strong>: <span class="math notranslate nohighlight">\(w\)</span>, the portion of seigniorage allocated to the reward pool for <a class="reference internal" href="spec-oracle.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">Oracle</span></code></span></a> vote winners. This is given to validators who vote within the reward band of the weighted median exchange rate.</p></li>
+<li><p><strong>Reward Weight</strong>: <span class="math notranslate nohighlight">\(w\)</span>, the portion of seigniorage allocated to the reward pool for <a class="reference external" href="spec-oracle.md"><code class="docutils literal notranslate"><span class="pre">Oracle</span></code></a> vote winners. This is given to validators who vote within the reward band of the weighted median exchange rate.</p></li>
 </ul>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
@@ -1831,10 +1831,10 @@
 </div>
 <div class="section" id="updating-policies">
 <h3>Updating policies<a class="headerlink" href="#updating-policies" title="Permalink to this headline">¶</a></h3>
-<p>Both <a class="reference internal" href="#tax-rate"><span class="std std-doc">Tax Rate</span></a> and <a class="reference internal" href="#reward-weight"><span class="std std-doc">Reward Weight</span></a> are stored as values in the <code class="docutils literal notranslate"><span class="pre">KVStore</span></code> and can have their values updated through <a class="reference internal" href="#proposals"><span class="std std-doc">governance proposals</span></a> after they have passed. The Treasury recalibrates each lever once per epoch to stabilize unit returns for Luna, ensuring predictable mining rewards from staking:</p>
+<p>Both <a class="reference external" href="#tax-rate">Tax Rate</a> and <a class="reference external" href="#reward-weight">Reward Weight</a> are stored as values in the <code class="docutils literal notranslate"><span class="pre">KVStore</span></code> and can have their values updated through <a class="reference external" href="#proposals">governance proposals</a> after they have passed. The Treasury recalibrates each lever once per epoch to stabilize unit returns for Luna, ensuring predictable mining rewards from staking:</p>
 <ul class="simple">
-<li><p>For tax rate, to ensure that unit-mining rewards do not stay stagnant, the treasury adds a <a class="reference internal" href="#miningincrement"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">MiningIncrement</span></code></span></a> so mining rewards increase steadily over time, as described in <a class="reference internal" href="#k-updatetaxpolicy"><span class="std std-doc">k.updatetaxpolicy</span></a>.</p></li>
-<li><p>For reward weight, the treasury observes the portion of seigniorage needed to bear the overall reward profile, <a class="reference internal" href="#seigniorageburdentarget"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">SeigniorageBurdenTarget</span></code></span></a> and raises rates accordingly, as described in <a class="reference internal" href="#k-updaterewardpolicy"><span class="std std-doc">k.updaterewardpolicy</span></a>. The current reward weight is <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p></li>
+<li><p>For tax rate, to ensure that unit-mining rewards do not stay stagnant, the treasury adds a <a class="reference external" href="#miningincrement"><code class="docutils literal notranslate"><span class="pre">MiningIncrement</span></code></a> so mining rewards increase steadily over time, as described in <a class="reference external" href="#kupdatetaxpolicy">k.updatetaxpolicy</a>.</p></li>
+<li><p>For reward weight, the treasury observes the portion of seigniorage needed to bear the overall reward profile, <a class="reference external" href="#seigniorageburdentarget"><code class="docutils literal notranslate"><span class="pre">SeigniorageBurdenTarget</span></code></a> and raises rates accordingly, as described in <a class="reference external" href="#kupdaterewardpolicy">k.updaterewardpolicy</a>. The current reward weight is <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p></li>
 </ul>
 <div class="warning admonition">
 <p class="admonition-title">Note</p>
@@ -1843,7 +1843,7 @@
 </div>
 <div class="section" id="probation">
 <h3>Probation<a class="headerlink" href="#probation" title="Permalink to this headline">¶</a></h3>
-<p>A probationary period specified by the <a class="reference internal" href="#windowprobation"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">WindowProbation</span></code></span></a> prevents the network from updating the tax rate and reward weight during the first epochs after genesis to allow the blockchain to first obtain a critical mass of transactions and a mature, reliable history of indicators.</p>
+<p>A probationary period specified by the <a class="reference external" href="#windowprobation"><code class="docutils literal notranslate"><span class="pre">WindowProbation</span></code></a> prevents the network from updating the tax rate and reward weight during the first epochs after genesis to allow the blockchain to first obtain a critical mass of transactions and a mature, reliable history of indicators.</p>
 </div>
 </div>
 <div class="section" id="data">
@@ -1854,7 +1854,7 @@
 <p class="admonition-title">Note</p>
 <p>As of proposals <a class="reference external" href="https://station.terra.money/proposal/43">43</a> and <a class="reference external" href="https://station.terra.money/proposal/172">172</a>, all seigniorage is burned, and the stability fee tax rate is zero.</p>
 </div>
-<p>Policy updates from governance proposals and automatic calibration are constrained by the <a class="reference internal" href="#taxpolicy"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">TaxPolicy</span></code></span></a> and <a class="reference internal" href="#rewardpolicy"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">RewardPolicy</span></code></span></a> parameters, respectively. <code class="docutils literal notranslate"><span class="pre">PolicyConstraints</span></code> specifies the floor, ceiling, and max periodic changes for each variable.</p>
+<p>Policy updates from governance proposals and automatic calibration are constrained by the <a class="reference external" href="#taxpolicy"><code class="docutils literal notranslate"><span class="pre">TaxPolicy</span></code></a> and <a class="reference external" href="#rewardpolicy"><code class="docutils literal notranslate"><span class="pre">RewardPolicy</span></code></a> parameters, respectively. <code class="docutils literal notranslate"><span class="pre">PolicyConstraints</span></code> specifies the floor, ceiling, and max periodic changes for each variable.</p>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="c1">// PolicyConstraints defines constraints around updating a key Treasury variable</span><span class="w"></span>
 <span class="kd">type</span><span class="w"> </span><span class="nx">PolicyConstraints</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="nx">RateMin</span><span class="w">       </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">Dec</span><span class="w">  </span><span class="s">`json:&quot;rate_min&quot;`</span><span class="w"></span>
@@ -1895,7 +1895,7 @@
 <p class="admonition-title">Note</p>
 <p>As of proposals <a class="reference external" href="https://station.terra.money/proposal/43">43</a> and <a class="reference external" href="https://station.terra.money/proposal/172">172</a>, all seigniorage is burned, and the stability fee tax rate is zero.</p>
 </div>
-<p>The Treasury module defines special proposals which allow the <a class="reference internal" href="#tax-rate"><span class="std std-doc">Tax Rate</span></a> and <a class="reference internal" href="#reward-weight"><span class="std std-doc">Reward Weight</span></a> values in the <code class="docutils literal notranslate"><span class="pre">KVStore</span></code> to be voted on and changed accordingly, subject to the <a class="reference internal" href="#policy-constraints"><span class="std std-doc">policy constraints</span></a> imposed by <code class="docutils literal notranslate"><span class="pre">pc.Clamp()</span></code>.</p>
+<p>The Treasury module defines special proposals which allow the <a class="reference external" href="#tax-rate">Tax Rate</a> and <a class="reference external" href="#reward-weight">Reward Weight</a> values in the <code class="docutils literal notranslate"><span class="pre">KVStore</span></code> to be voted on and changed accordingly, subject to the <a class="reference external" href="#policy-constraints">policy constraints</a> imposed by <code class="docutils literal notranslate"><span class="pre">pc.Clamp()</span></code>.</p>
 <div class="section" id="taxrateupdateproposal">
 <h3>TaxRateUpdateProposal<a class="headerlink" href="#taxrateupdateproposal" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">type</span><span class="w"> </span><span class="nx">TaxRateUpdateProposal</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -1939,7 +1939,7 @@
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">map[string]Int</span></code></p></li>
 </ul>
-<p>The treasury keeps a <code class="docutils literal notranslate"><span class="pre">KVStore</span></code> that maps a denomination <code class="docutils literal notranslate"><span class="pre">denom</span></code> to an <code class="docutils literal notranslate"><span class="pre">sdk.Int</span></code>, which represents the maximum income that can be generated from taxes on a transaction in that same denomination. It is updated every epoch with the equivalent value of <a class="reference internal" href="#taxpolicy"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">TaxPolicy.Cap</span></code></span></a> at the current exchange rate.</p>
+<p>The treasury keeps a <code class="docutils literal notranslate"><span class="pre">KVStore</span></code> that maps a denomination <code class="docutils literal notranslate"><span class="pre">denom</span></code> to an <code class="docutils literal notranslate"><span class="pre">sdk.Int</span></code>, which represents the maximum income that can be generated from taxes on a transaction in that same denomination. It is updated every epoch with the equivalent value of <a class="reference external" href="#taxpolicy"><code class="docutils literal notranslate"><span class="pre">TaxPolicy.Cap</span></code></a> at the current exchange rate.</p>
 <p>For example, if a transaction’s value is 100 SDT with a tax rate of 5% and a tax cap of 1 SDT, the income generated is 1 SDT, not 5 SDT.</p>
 <div class="warning admonition">
 <p class="admonition-title">Note</p>
@@ -1958,7 +1958,7 @@
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">Coins</span></code></p></li>
 </ul>
-<p>The total supply of Luna at the beginning of the current epoch. This value is used in <a class="reference internal" href="#k-settleseigniorage"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">k.SettleSeigniorage()</span></code></span></a> to calculate the seigniorage distributed at the end of each epoch. As of Columbus 5, all seigniorage is burned.</p>
+<p>The total supply of Luna at the beginning of the current epoch. This value is used in <a class="reference external" href="#ksettleseigniorage"><code class="docutils literal notranslate"><span class="pre">k.SettleSeigniorage()</span></code></a> to calculate the seigniorage distributed at the end of each epoch. As of Columbus 5, all seigniorage is burned.</p>
 <p>Recording the initial issuance automatically uses the supply module to determine the total issuance of Luna. Peeking returns the epoch’s initial issuance of µLuna as <code class="docutils literal notranslate"><span class="pre">sdk.Int</span></code> instead of <code class="docutils literal notranslate"><span class="pre">sdk.Coins</span></code> for clarity.</p>
 <div class="warning admonition">
 <p class="admonition-title">Note</p>
@@ -2008,7 +2008,7 @@
 </div>
 <p>At the end of each epoch <span class="math notranslate nohighlight">\(t\)</span>, this function records the current values of tax rewards <span class="math notranslate nohighlight">\(T\)</span>, seigniorage rewards <span class="math notranslate nohighlight">\(S\)</span>, and total staked Luna <span class="math notranslate nohighlight">\(\lambda\)</span> before moving to the next epoch <span class="math notranslate nohighlight">\(t+1\)</span>.</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(T_t\)</span> is the current value in <a class="reference internal" href="#tax-proceeds"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">TaxProceeds</span></code></span></a>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(T_t\)</span> is the current value in <a class="reference external" href="#tax-proceeds"><code class="docutils literal notranslate"><span class="pre">TaxProceeds</span></code></a>.</p></li>
 <li><p><span class="math notranslate nohighlight">\(S_t = \Sigma * w\)</span>, with epoch seigniorage <span class="math notranslate nohighlight">\(\Sigma\)</span> and reward weight <span class="math notranslate nohighlight">\(w\)</span>.</p></li>
 <li><p><span class="math notranslate nohighlight">\(\lambda_t\)</span> is the result of <code class="docutils literal notranslate"><span class="pre">staking.TotalBondedTokens()</span></code>.</p></li>
 </ul>
@@ -2023,12 +2023,12 @@
 </pre></div>
 </div>
 <p>At the end of each epoch, this function calculates the next value of the tax rate monetary lever.</p>
-<p>Using <span class="math notranslate nohighlight">\(r_t\)</span> as the current tax rate and <span class="math notranslate nohighlight">\(n\)</span> as the <a class="reference internal" href="#miningincrement"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">MiningIncrement</span></code></span></a> parameter:</p>
+<p>Using <span class="math notranslate nohighlight">\(r_t\)</span> as the current tax rate and <span class="math notranslate nohighlight">\(n\)</span> as the <a class="reference external" href="#miningincrement"><code class="docutils literal notranslate"><span class="pre">MiningIncrement</span></code></a> parameter:</p>
 <ol class="arabic simple">
 <li><p>Calculate the rolling average <span class="math notranslate nohighlight">\(\tau_y\)</span> of tax rewards per unit Luna over the last year <code class="docutils literal notranslate"><span class="pre">WindowLong</span></code>.</p></li>
 <li><p>Calculate the rolling average <span class="math notranslate nohighlight">\(\tau_m\)</span> of tax rewards per unit Luna over the last month <code class="docutils literal notranslate"><span class="pre">WindowShort</span></code>.</p></li>
-<li><p>If <span class="math notranslate nohighlight">\(\tau_m = 0\)</span>, no tax revenue occurred in the last month. The tax rate should be set to the maximum permitted by the tax policy, subject to the rules of <code class="docutils literal notranslate"><span class="pre">pc.Clamp()</span></code>. For more information, see <span class="xref myst">constraints</span>.</p></li>
-<li><p>If <span class="math notranslate nohighlight">\(\tau_m &gt; 0\)</span>, the new Tax Rate is <span class="math notranslate nohighlight">\(r_{t+1} = (n r_t \tau_y)/\tau_m\)</span>, subject to the rules of <code class="docutils literal notranslate"><span class="pre">pc.Clamp()</span></code>. For more information, see <span class="xref myst">constraints</span>.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(\tau_m = 0\)</span>, no tax revenue occurred in the last month. The tax rate should be set to the maximum permitted by the tax policy, subject to the rules of <code class="docutils literal notranslate"><span class="pre">pc.Clamp()</span></code>. For more information, see <a class="reference external" href="#policyconstraints">constraints</a>.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(\tau_m &gt; 0\)</span>, the new Tax Rate is <span class="math notranslate nohighlight">\(r_{t+1} = (n r_t \tau_y)/\tau_m\)</span>, subject to the rules of <code class="docutils literal notranslate"><span class="pre">pc.Clamp()</span></code>. For more information, see <a class="reference external" href="#policyconstraints">constraints</a>.</p></li>
 </ol>
 <p>When monthly tax revenues dip below the yearly average, the treasury increases the tax rate. When monthly tax revenues go above the yearly average, the treasury decreases the tax rate.</p>
 <div class="warning admonition">
@@ -2042,12 +2042,12 @@
 </pre></div>
 </div>
 <p>At the end of each epoch, this function calculates the next value of the Reward Weight monetary lever.</p>
-<p>Using <span class="math notranslate nohighlight">\(w_t\)</span> as the current reward weight, and <span class="math notranslate nohighlight">\(b\)</span> as the <a class="reference internal" href="#seigniorageburdentarget"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">SeigniorageBurdenTarget</span></code></span></a> parameter:</p>
+<p>Using <span class="math notranslate nohighlight">\(w_t\)</span> as the current reward weight, and <span class="math notranslate nohighlight">\(b\)</span> as the <a class="reference external" href="#seigniorageburdentarget"><code class="docutils literal notranslate"><span class="pre">SeigniorageBurdenTarget</span></code></a> parameter:</p>
 <ol class="arabic simple">
 <li><p>Calculate the sum <span class="math notranslate nohighlight">\(S_m\)</span> of seigniorage rewards over the last month <code class="docutils literal notranslate"><span class="pre">WindowShort</span></code>.</p></li>
 <li><p>Calculate the sum <span class="math notranslate nohighlight">\(R_m\)</span> of total mining rewards over the last month <code class="docutils literal notranslate"><span class="pre">WindowShort</span></code>.</p></li>
-<li><p>If <span class="math notranslate nohighlight">\(R_m = 0\)</span> and <span class="math notranslate nohighlight">\(S_m = 0\)</span>, no mining or seigniorage rewards occurred in the last month. The reward weight should be set to the maximum permitted by the reward policy, subject to the rules of <code class="docutils literal notranslate"><span class="pre">pc.Clamp()</span></code>. For more information, see <span class="xref myst">constraints</span>.</p></li>
-<li><p>If <span class="math notranslate nohighlight">\(R_m &gt; 0\)</span> or <span class="math notranslate nohighlight">\(S_m &gt; 0\)</span>, the new Reward Weight is <span class="math notranslate nohighlight">\(w_{t+1} = b w_t S_m / R_m\)</span>, subject to the rules of <code class="docutils literal notranslate"><span class="pre">pc.Clamp()</span></code>. For more information, see <span class="xref myst">constraints</span>.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(R_m = 0\)</span> and <span class="math notranslate nohighlight">\(S_m = 0\)</span>, no mining or seigniorage rewards occurred in the last month. The reward weight should be set to the maximum permitted by the reward policy, subject to the rules of <code class="docutils literal notranslate"><span class="pre">pc.Clamp()</span></code>. For more information, see <a class="reference external" href="#policyconstraints">constraints</a>.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(R_m &gt; 0\)</span> or <span class="math notranslate nohighlight">\(S_m &gt; 0\)</span>, the new Reward Weight is <span class="math notranslate nohighlight">\(w_{t+1} = b w_t S_m / R_m\)</span>, subject to the rules of <code class="docutils literal notranslate"><span class="pre">pc.Clamp()</span></code>. For more information, see <a class="reference external" href="#policyconstraints">constraints</a>.</p></li>
 </ol>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
@@ -2060,7 +2060,7 @@
 </pre></div>
 </div>
 <p>This function is called at the end of an epoch to compute the Tax Caps for every denomination for the next epoch.</p>
-<p>For every denomination in circulation, the new Tax Cap for each denomination is set to be the global Tax Cap defined in the <a class="reference internal" href="#taxpolicy"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">TaxPolicy</span></code></span></a> parameter, at current exchange rates.</p>
+<p>For every denomination in circulation, the new Tax Cap for each denomination is set to be the global Tax Cap defined in the <a class="reference external" href="#taxpolicy"><code class="docutils literal notranslate"><span class="pre">TaxPolicy</span></code></a> parameter, at current exchange rates.</p>
 <div class="warning admonition">
 <p class="admonition-title">Note</p>
 <p>As of proposals <a class="reference external" href="https://station.terra.money/proposal/43">43</a> and <a class="reference external" href="https://station.terra.money/proposal/172">172</a>, all seigniorage is burned, and the stability fee tax rate is zero.</p>
@@ -2071,13 +2071,13 @@
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">k</span><span class="w"> </span><span class="nx">Keeper</span><span class="p">)</span><span class="w"> </span><span class="nx">SettleSeigniorage</span><span class="p">(</span><span class="nx">ctx</span><span class="w"> </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">Context</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
-<p>This function is called at the end of an epoch to compute seigniorage and forwards the funds to the <a class="reference internal" href="spec-oracle.html"><span class="doc std std-doc">oracle module</span></a> module for ballot rewards and the <a class="reference internal" href="spec-distribution.html"><span class="doc std std-doc">distribution module</span></a> for the community pool.</p>
+<p>This function is called at the end of an epoch to compute seigniorage and forwards the funds to the <a class="reference external" href="spec-oracle.md">oracle module</a> module for ballot rewards and the <a class="reference external" href="spec-distribution.md">distribution module</a> for the community pool.</p>
 <ol class="arabic">
-<li><p>The seigniorage <span class="math notranslate nohighlight">\(\Sigma\)</span> of the current epoch is calculated by taking the difference between the Luna supply at the start of the epoch (<a class="reference internal" href="#epoch-initial-issuance"><span class="std std-doc">epoch initial issuance</span></a>) and the Luna supply at the time of calling.</p>
-<p><span class="math notranslate nohighlight">\(\Sigma &gt; 0\)</span> when the current Luna supply is lower than it was at the start of the epoch because the Luna had been burned from Luna swaps into Terra. For more information, see <a class="reference internal" href="spec-market.html#seigniorage"><span class="std std-doc">seigniorage</span></a>.</p>
+<li><p>The seigniorage <span class="math notranslate nohighlight">\(\Sigma\)</span> of the current epoch is calculated by taking the difference between the Luna supply at the start of the epoch (<a class="reference external" href="#epoch-initial-issuance">epoch initial issuance</a>) and the Luna supply at the time of calling.</p>
+<p><span class="math notranslate nohighlight">\(\Sigma &gt; 0\)</span> when the current Luna supply is lower than it was at the start of the epoch because the Luna had been burned from Luna swaps into Terra. For more information, see <a class="reference external" href="spec-market.md#seigniorage">seigniorage</a>.</p>
 </li>
-<li><p>The reward weight <span class="math notranslate nohighlight">\(w\)</span> is the percentage of the seigniorage designated for ballot rewards. Amount <span class="math notranslate nohighlight">\(S\)</span> of new Luna is minted, and the <a class="reference internal" href="spec-oracle.html"><span class="doc std std-doc">oracle module</span></a> receives <span class="math notranslate nohighlight">\(S = \Sigma * w\)</span> of the seigniorage.</p></li>
-<li><p>The remainder of the coins <span class="math notranslate nohighlight">\(\Sigma - S\)</span> is sent to the <a class="reference internal" href="spec-distribution.html"><span class="doc std std-doc">distribution module</span></a> , where it is allocated into the community pool.</p></li>
+<li><p>The reward weight <span class="math notranslate nohighlight">\(w\)</span> is the percentage of the seigniorage designated for ballot rewards. Amount <span class="math notranslate nohighlight">\(S\)</span> of new Luna is minted, and the <a class="reference external" href="spec-oracle.md">oracle module</a> receives <span class="math notranslate nohighlight">\(S = \Sigma * w\)</span> of the seigniorage.</p></li>
+<li><p>The remainder of the coins <span class="math notranslate nohighlight">\(\Sigma - S\)</span> is sent to the <a class="reference external" href="spec-distribution.md">distribution module</a> , where it is allocated into the community pool.</p></li>
 </ol>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
@@ -2091,12 +2091,12 @@
 <h3>End-Block<a class="headerlink" href="#end-block" title="Permalink to this headline">¶</a></h3>
 <p>If the blockchain is at the final block of the epoch, the following procedure is run:</p>
 <ol class="arabic simple">
-<li><p>Update all the indicators with <a class="reference internal" href="#k-updateindicators"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">k.UpdateIndicators()</span></code></span></a></p></li>
-<li><p>If the current block is under <a class="reference internal" href="#probation"><span class="std std-doc">probation</span></a>, skip to step 6.</p></li>
-<li><p><a class="reference internal" href="#k-settleseigniorage"><span class="std std-doc">Settle seigniorage</span></a> accrued during the epoch and make funds available to ballot rewards and the community pool during the next epoch. As of Columbus-5, all seigniorage is burned.</p></li>
-<li><p>Calculate the <a class="reference internal" href="#k-updatetaxpolicy"><span class="std std-doc">Tax Rate</span></a>, <a class="reference internal" href="#k-updaterewardpolicy"><span class="std std-doc">Reward Weight</span></a>, and <a class="reference internal" href="#k-updatetaxcap"><span class="std std-doc">Tax Cap</span></a> for the next epoch. As of Columbus-5, all seigniorage is burned, and the reward weight is <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p></li>
+<li><p>Update all the indicators with <a class="reference external" href="#kupdateindicators"><code class="docutils literal notranslate"><span class="pre">k.UpdateIndicators()</span></code></a></p></li>
+<li><p>If the current block is under <a class="reference external" href="#probation">probation</a>, skip to step 6.</p></li>
+<li><p><a class="reference external" href="#ksettleseigniorage">Settle seigniorage</a> accrued during the epoch and make funds available to ballot rewards and the community pool during the next epoch. As of Columbus-5, all seigniorage is burned.</p></li>
+<li><p>Calculate the <a class="reference external" href="#kupdatetaxpolicy">Tax Rate</a>, <a class="reference external" href="#kupdaterewardpolicy">Reward Weight</a>, and <a class="reference external" href="#kupdatetaxcap">Tax Cap</a> for the next epoch. As of Columbus-5, all seigniorage is burned, and the reward weight is <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p></li>
 <li><p>Emit the <code class="docutils literal notranslate"><span class="pre">policy_update</span></code> event, recording the new policy lever values.</p></li>
-<li><p>Finally, record the Luna issuance with <a class="reference internal" href="#epoch-initial-issuance"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">k.RecordEpochInitialIssuance()</span></code></span></a>. It will be used to calculate the seigniorage for the next epoch.</p></li>
+<li><p>Finally, record the Luna issuance with <a class="reference external" href="#epoch-initial-issuance"><code class="docutils literal notranslate"><span class="pre">k.RecordEpochInitialIssuance()</span></code></a>. It will be used to calculate the seigniorage for the next epoch.</p></li>
 </ol>
 <table class="colwidths-auto table">
 <thead>
@@ -2154,7 +2154,7 @@
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<p>Constraints for updating the <a class="reference internal" href="#tax-rate"><span class="std std-doc">tax rate</span></a> monetary policy lever.</p>
+<p>Constraints for updating the <a class="reference external" href="#tax-rate">tax rate</a> monetary policy lever.</p>
 </div>
 <div class="section" id="rewardpolicy">
 <h3>RewardPolicy<a class="headerlink" href="#rewardpolicy" title="Permalink to this headline">¶</a></h3>
@@ -2170,7 +2170,7 @@
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<p>Constraints for updating the <a class="reference internal" href="#reward-weight"><span class="std std-doc">reward weight</span></a> monetary policy lever.</p>
+<p>Constraints for updating the <a class="reference external" href="#reward-weight">reward weight</a> monetary policy lever.</p>
 </div>
 <div class="section" id="seigniorageburdentarget">
 <h3>SeigniorageBurdenTarget<a class="headerlink" href="#seigniorageburdentarget" title="Permalink to this headline">¶</a></h3>
