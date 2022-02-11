@@ -1,5 +1,8 @@
 # Full node
 
+Use this section to learn all about running a full node on the Terra network. 
+
+
 ```{toctree}
 :hidden:
 run-a-full-terra-node/README
