@@ -1810,7 +1810,7 @@
 <h4>Prevote and Vote<a class="headerlink" href="#prevote-and-vote" title="Permalink to this headline">¶</a></h4>
 <p>Let <span class="math notranslate nohighlight">\(P_t\)</span> be the current time interval of duration defined by <a class="reference internal" href="#voteperiod"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">VotePeriod</span></code></span></a>(currently set to 5 blockchain blocks) during which validators must submit two messages:</p>
 <ul class="simple">
-<li><p>A <a class="reference internal" href="#msgexchangerateprevote"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">MsgExchangeRatePrevote</span></code></span></a>, containing the SHA256 hash of the exchange rate of Luna with respect to a Terra peg. A separate prevote must be submitted for each different denomination on which to report a Luna exchange rate.</p></li>
+<li><p>A <a class="reference internal" href="#msgexchangerateprevote"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">MsgExchangeRatePrevote</span></code></span></a>, containing the SHA256 hash of the exchange rate of Luna with respect to a Terra peg. A separate prevote must be submitted for each different denomination on which to report a Luna exchange rate. Prevotes can be overwritten by submitting another rate prevote within the same vote period.</p></li>
 <li><p>A <a class="reference internal" href="#msgexchangeratevote"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">MsgExchangeRateVote</span></code></span></a>, containing the salt used to create the hash for the prevote submitted in the previous interval <span class="math notranslate nohighlight">\(P_{t-1}\)</span>.</p></li>
 </ul>
 </div>
@@ -1827,31 +1827,31 @@
 <ol class="arabic simple">
 <li><p>Choose <code class="docutils literal notranslate"><span class="pre">ReferenceTerra</span></code></p>
 <ul class="simple">
-<li><p>Let <code class="docutils literal notranslate"><span class="pre">Vote_j</span> <span class="pre">=</span> <span class="pre">Vote_j_1</span> <span class="pre">...</span> <span class="pre">Vote_j_n</span></code> be the <code class="docutils literal notranslate"><span class="pre">uluna</span></code> exchange rate votes for each terra for validator <code class="docutils literal notranslate"><span class="pre">Val_j</span></code> in a given <code class="docutils literal notranslate"><span class="pre">VotePeriod</span></code>. <code class="docutils literal notranslate"><span class="pre">n</span></code> = number of total terra whitelist</p></li>
-<li><p>For all terra whitelist  <code class="docutils literal notranslate"><span class="pre">w_1</span> <span class="pre">...</span> <span class="pre">w_n</span></code>, choose the index <code class="docutils literal notranslate"><span class="pre">r</span></code> with the highest voter turnout. If the vote turnout has multiple tie winners, a winner is chosen in alphabetical order. <code class="docutils literal notranslate"><span class="pre">w_r</span></code> is chosen as the <code class="docutils literal notranslate"><span class="pre">ReferenceTerra</span></code> from which to compute cross exchange rates.</p></li>
+<li><p>Let <code class="docutils literal notranslate"><span class="pre">Vote_j</span> <span class="pre">=</span> <span class="pre">Vote_j_1</span> <span class="pre">...</span> <span class="pre">Vote_j_n</span></code> be the <code class="docutils literal notranslate"><span class="pre">uluna</span></code> exchange rate votes for each terra for validator <code class="docutils literal notranslate"><span class="pre">Val_j</span></code> in a given <code class="docutils literal notranslate"><span class="pre">VotePeriod</span></code>. <code class="docutils literal notranslate"><span class="pre">n</span></code> = number of total terra whitelist</p></li>
+<li><p>For all terra whitelist  <code class="docutils literal notranslate"><span class="pre">w_1</span> <span class="pre">...</span> <span class="pre">w_n</span></code>, choose the index <code class="docutils literal notranslate"><span class="pre">r</span></code> with the highest voter turnout. If the vote turnout has multiple tie winners, a winner is chosen in alphabetical order. <code class="docutils literal notranslate"><span class="pre">w_r</span></code> is chosen as the <code class="docutils literal notranslate"><span class="pre">ReferenceTerra</span></code> from which to compute cross exchange rates.</p></li>
 </ul>
 </li>
 <li><p>Compute Oracle Exchange Rate</p>
 <ul class="simple">
-<li><p>Each validator now calculates the cross exchange rates(<code class="docutils literal notranslate"><span class="pre">CER</span></code>) for <code class="docutils literal notranslate"><span class="pre">w_i</span></code> as below.</p>
+<li><p>Each validator now calculates the cross exchange rates(<code class="docutils literal notranslate"><span class="pre">CER</span></code>) for <code class="docutils literal notranslate"><span class="pre">w_i</span></code> as below.</p>
 <ul>
-<li><p>for <code class="docutils literal notranslate"><span class="pre">i≠r</span></code>, <code class="docutils literal notranslate"><span class="pre">CER_j_i</span> <span class="pre">=</span> <span class="pre">Vote_j_r</span> <span class="pre">/</span> <span class="pre">Vote_j_i</span></code></p></li>
-<li><p>for <code class="docutils literal notranslate"><span class="pre">i=r</span></code>, <code class="docutils literal notranslate"><span class="pre">CER_j_i</span> <span class="pre">=</span> <span class="pre">Vote_j_r</span></code></p></li>
+<li><p>for <code class="docutils literal notranslate"><span class="pre">i≠r</span></code>, <code class="docutils literal notranslate"><span class="pre">CER_j_i</span> <span class="pre">=</span> <span class="pre">Vote_j_r</span> <span class="pre">/</span> <span class="pre">Vote_j_i</span></code></p></li>
+<li><p>for <code class="docutils literal notranslate"><span class="pre">i=r</span></code>, <code class="docutils literal notranslate"><span class="pre">CER_j_i</span> <span class="pre">=</span> <span class="pre">Vote_j_r</span></code></p></li>
 </ul>
 </li>
-<li><p>Calculate power weighted median(<code class="docutils literal notranslate"><span class="pre">PWM</span></code>, across all validators) for each cross exchange rates <code class="docutils literal notranslate"><span class="pre">CER_j_iMCER_i</span></code> = <code class="docutils literal notranslate"><span class="pre">PWM</span></code>(for all j)[<code class="docutils literal notranslate"><span class="pre">CER_j_i</span></code>]</p></li>
-<li><p>These <code class="docutils literal notranslate"><span class="pre">MCER_i</span></code>s can then be transformed into the original form uluna/terra as below</p>
+<li><p>Calculate power weighted median(<code class="docutils literal notranslate"><span class="pre">PWM</span></code>, across all validators) for each cross exchange rates <code class="docutils literal notranslate"><span class="pre">CER_j_iMCER_i</span></code> = <code class="docutils literal notranslate"><span class="pre">PWM</span></code>(for all j)[<code class="docutils literal notranslate"><span class="pre">CER_j_i</span></code>]</p></li>
+<li><p>These <code class="docutils literal notranslate"><span class="pre">MCER_i</span></code>s can then be transformed into the original form uluna/terra as below</p>
 <ul>
-<li><p>for <code class="docutils literal notranslate"><span class="pre">i≠r</span></code>, <code class="docutils literal notranslate"><span class="pre">LunaRate_i</span> <span class="pre">=</span> <span class="pre">MCER_r</span> <span class="pre">/</span> <span class="pre">MCER_i</span></code></p></li>
-<li><p>for <code class="docutils literal notranslate"><span class="pre">i=r</span></code>, <code class="docutils literal notranslate"><span class="pre">LunaRate_i</span> <span class="pre">=</span> <span class="pre">MCER_r</span></code></p></li>
+<li><p>for <code class="docutils literal notranslate"><span class="pre">i≠r</span></code>, <code class="docutils literal notranslate"><span class="pre">LunaRate_i</span> <span class="pre">=</span> <span class="pre">MCER_r</span> <span class="pre">/</span> <span class="pre">MCER_i</span></code></p></li>
+<li><p>for <code class="docutils literal notranslate"><span class="pre">i=r</span></code>, <code class="docutils literal notranslate"><span class="pre">LunaRate_i</span> <span class="pre">=</span> <span class="pre">MCER_r</span></code></p></li>
 </ul>
 </li>
 </ul>
 </li>
 <li><p>Reward ballot winners</p>
 <ul class="simple">
-<li><p>For <code class="docutils literal notranslate"><span class="pre">i=r</span></code>, same as before, reward ballot winners based <code class="docutils literal notranslate"><span class="pre">CER_j_i</span> <span class="pre">=</span> <span class="pre">Vote_j_r</span></code> ballot with <code class="docutils literal notranslate"><span class="pre">MCER_i</span></code> using <a class="reference internal" href="#tally"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">tally()</span></code></span></a>.</p></li>
-<li><p>For <code class="docutils literal notranslate"><span class="pre">i≠r</span></code>,  reward ballot winners based <code class="docutils literal notranslate"><span class="pre">CER_j_i</span> <span class="pre">=</span> <span class="pre">Vote_j_r</span> <span class="pre">/</span> <span class="pre">Vote_j_i</span></code> ballot with <code class="docutils literal notranslate"><span class="pre">MCER_i</span></code> using <a class="reference internal" href="#tally"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">tally()</span></code></span></a>.</p></li>
+<li><p>For <code class="docutils literal notranslate"><span class="pre">i=r</span></code>, same as before, reward ballot winners based <code class="docutils literal notranslate"><span class="pre">CER_j_i</span> <span class="pre">=</span> <span class="pre">Vote_j_r</span></code> ballot with <code class="docutils literal notranslate"><span class="pre">MCER_i</span></code> using <a class="reference internal" href="#tally"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">tally()</span></code></span></a>.</p></li>
+<li><p>For <code class="docutils literal notranslate"><span class="pre">i≠r</span></code>,  reward ballot winners based <code class="docutils literal notranslate"><span class="pre">CER_j_i</span> <span class="pre">=</span> <span class="pre">Vote_j_r</span> <span class="pre">/</span> <span class="pre">Vote_j_i</span></code> ballot with <code class="docutils literal notranslate"><span class="pre">MCER_i</span></code> using <a class="reference internal" href="#tally"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">tally()</span></code></span></a>.</p></li>
 </ul>
 </li>
 </ol>
@@ -1859,7 +1859,8 @@
 <div class="section" id="ballot-rewards">
 <h4>Ballot Rewards<a class="headerlink" href="#ballot-rewards" title="Permalink to this headline">¶</a></h4>
 <p>After the votes are tallied, the winners of the ballots are determined with <a class="reference internal" href="#tally"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">tally()</span></code></span></a>.</p>
-<p>Voters that have managed to vote within a narrow band around the weighted median are rewarded with swap fees from the oracle reward pool. Swap fees from the reward pool are then distributed over a 2-year period. See <span class="xref myst"><code class="docutils literal notranslate"><span class="pre">k.RewardBallotWinners()</span></code></span> for more details.</p>
+<p>Voters that have managed to vote within a narrow band around the weighted median are rewarded from the oracle reward pool. This pool is funded by swap fees which are distributed over a 2-year window. See <span class="xref myst"><code class="docutils literal notranslate"><span class="pre">k.RewardBallotWinners()</span></code></span> for more details.</p>
+<p>If the reward pool is empty, no rewards are distributed.</p>
 </div>
 </div>
 <div class="section" id="reward-band">
@@ -1872,9 +1873,9 @@
 <p class="admonition-title">Danger</p>
 <p>Be sure to read this section carefully, as it concerns potential loss of funds.</p>
 </div>
-<p>A <code class="docutils literal notranslate"><span class="pre">VotePeriod</span></code> during which either of the following events occur is considered a “miss”:</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">VotePeriod</span></code> during which either of the following events occurs is considered a “miss”:</p>
 <ul class="simple">
-<li><p>The validator fails to submits a vote for Luna exchange rate against <strong>each and every</strong> denomination specified in<a class="reference internal" href="#whitelist"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">Whitelist</span></code></span></a>.</p></li>
+<li><p>The validator fails to submit a vote for Luna exchange rate against <strong>each and every</strong> denomination specified in<a class="reference internal" href="#whitelist"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">Whitelist</span></code></span></a>.</p></li>
 <li><p>The validator fails to vote within the <a class="reference internal" href="#reward-band"><span class="std std-doc">reward band</span></a> around the weighted median for one or more denominations.</p></li>
 </ul>
 <p>During every <a class="reference internal" href="#slashwindow"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">SlashWindow</span></code></span></a>, participating validators must maintain a valid vote rate of at least <a class="reference internal" href="#minvalidperwindow"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">MinValidPerWindow</span></code></span></a> (5%), lest they get their stake slashed (currently set to <a class="reference internal" href="#slashfraction"><span class="std std-doc">0.01%</span></a>). The slashed validator is automatically temporarily “jailed” by the protocol (to protect the funds of delegators), and the operator is expected to fix the discrepancy promptly to resume validator participation.</p>
@@ -1888,7 +1889,7 @@
 <h2>Message Types<a class="headerlink" href="#message-types" title="Permalink to this headline">¶</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The control flow for vote-tallying, Luna exchange rate updates, ballot rewards and slashing happens at the end of every <code class="docutils literal notranslate"><span class="pre">VotePeriod</span></code>, and is found at the <a class="reference internal" href="#end-block"><span class="std std-doc">end-block ABCI function</span></a> rather than inside message handlers.</p>
+<p>The control flow for vote-tallying, Luna exchange rate updates, ballot rewards, and slashing happens at the end of every <code class="docutils literal notranslate"><span class="pre">VotePeriod</span></code>, and is found at the <a class="reference internal" href="#end-block"><span class="std std-doc">end-block ABCI function</span></a> rather than inside message handlers.</p>
 </div>
 <div class="section" id="msgexchangerateprevote">
 <h3>MsgExchangeRatePrevote<a class="headerlink" href="#msgexchangerateprevote" title="Permalink to this headline">¶</a></h3>
@@ -1908,6 +1909,10 @@
 <p>The exchange rate used in the hash must be the open market exchange rate of Luna, with respect to the denomination matching <code class="docutils literal notranslate"><span class="pre">Denom</span></code>. For example, if <code class="docutils literal notranslate"><span class="pre">Denom</span></code> is <code class="docutils literal notranslate"><span class="pre">uusd</span></code> and the going exchange rate for Luna is 1 USD, then “1” must be used as the exchange rate, as <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">uluna</span></code> = <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">uusd</span></code>.</p>
 <p><code class="docutils literal notranslate"><span class="pre">Feeder</span></code> (<code class="docutils literal notranslate"><span class="pre">terra-</span></code> address) is used if the validator wishes to delegate oracle vote signing to a separate key (who “feeds” the price in lieu of the operator) to de-risk exposing their validator signing key.</p>
 <p><code class="docutils literal notranslate"><span class="pre">Validator</span></code> is the validator address (<code class="docutils literal notranslate"><span class="pre">terravaloper-</span></code>) of the original validator.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Validators can overwrite a prevote by submitting another prevote before the end of the vote period. The last prevote submitted will be used.</p>
+</div>
 </div>
 <div class="section" id="msgexchangeratevote">
 <h3>MsgExchangeRateVote<a class="headerlink" href="#msgexchangeratevote" title="Permalink to this headline">¶</a></h3>
@@ -2138,7 +2143,7 @@ Events<div class="sd-summary-down docutils">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">int64</span></code></p></li>
 <li><p>default value: <code class="docutils literal notranslate"><span class="pre">BlocksPerYear</span></code> (2 year window)</p></li>
 </ul>
-<p>The number of blocks during which oracle rewards from swap fees comes in and then are distributed.</p>
+<p>The number of blocks used to determine the amount rewarded to validators who voted within the reward band. The total amount of Luna rewarded per <code class="docutils literal notranslate"><span class="pre">VotePeriod</span></code> is equal to the current amount of Luna in the reward pool (the Luna owned by the Oracle module) divided by the parameter <a class="reference internal" href="#rewarddistributionwindow"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">RewardDistributionWindow</span></code></span></a>.</p>
 </div>
 <div class="section" id="whitelist">
 <h3>Whitelist<a class="headerlink" href="#whitelist" title="Permalink to this headline">¶</a></h3>
