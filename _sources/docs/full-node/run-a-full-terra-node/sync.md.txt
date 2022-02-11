@@ -21,7 +21,7 @@ Example of a removed private key:
 ```
 :::
 
-If you have an address book downloaded, you may keep it. Otherwise, you will need to download the [appropriate addressbook](https://docs.terra.money/How-to/Run-a-full-Terra-node/Joining-a-network.html#_2-download-genesis-file-and-address-book) prior to running  `terrad start`.
+If you have an address book downloaded, you may keep it. Otherwise, you will need to download the [appropriate addressbook](join-a-network.md#join-a-public-network) prior to running  `terrad start`.
 
 ## During Sync
 
