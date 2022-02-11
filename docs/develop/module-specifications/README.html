@@ -1468,24 +1468,24 @@
 <h1>Terra Core modules <img alt="../../../_images/icon_core.svg" height="40px" src="../../../_images/icon_core.svg" /><a class="headerlink" href="#terra-core-modules" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 </div>
-<p>These tips and guidelines help you to understand how Terra works and efficiently navigate the codebase of the Terra core, the official Golang reference implementation of the Terra node software.</p>
-<p>The Terra core is built using the <a class="reference external" href="https://cosmos.network/sdk">Cosmos SDK</a>, which provides a robust framework for constructing blockchains that run atop the <a class="reference external" href="https://tendermint.com/">Tendermint</a> consensus protocol.</p>
-<p>Review these projects before you explore the Terra developer documentation because they assume you are familiar with concepts such as ABCI, validators, keepers, message handlers, and so on.</p>
+<p>The Terra Core is the official Golang reference implementation of the Terra protocol.
+The Terra Core is built using the <a class="reference external" href="https://cosmos.network/sdk">Cosmos SDK</a>, which provides a robust framework for blockchains that run atop the <a class="reference external" href="https://tendermint.com/">Tendermint</a> consensus protocol.</p>
+<p>Before diving into the core modules, it may be useful to familiarize yourself with the <a class="reference external" href="https://docs.cosmos.network/">Cosmos</a> and <a class="reference external" href="https://docs.tendermint.com/master/tutorials/go.html">Tendermint</a> documentation.</p>
 <div class="section" id="how-to-use-the-terra-core-module-specifications">
 <h2>How to use the Terra Core module specifications<a class="headerlink" href="#how-to-use-the-terra-core-module-specifications" title="Permalink to this headline">¶</a></h2>
 <p>Each module specification begins with a short description of the module’s main function within the architecture of the system and an explanation of how it contributes to implementing Terra’s features.</p>
-<p>Then, each module specification provides a more detailed description of its main process and algorithms alongside any concepts you might need to know. Start here to understand a module so that you can take advantage of the cross-references to more specific sections deeper in the specification, such as specific state variables, message handlers and other functions in which you might be interested.</p>
-<p>These specifications are not an exhaustive reference, but they are a companion for users who need to work directly with the Terra Core codebase or understand it. The important functions in each module are described, and many of the trivial ones, such as getters and setters, are omitted for economy. Module logic is also located in either the message handler or block transitions, such as begin-blocker and end-blocker.</p>
-<p>At the end, the specification lists various module parameters alongside their default values with a brief explanation of their purpose, associated events / tags, and errors issued by the module.</p>
+<p>The body of each module specification provides a more detailed description of its main processes and algorithms alongside any concepts you might need to know. The body of each module specification also contains links to more granular information, such as specific state variables, message handlers, and other functions.</p>
+<p>These specifications are not an exhaustive reference and are provided as a companion guide for users who need to work directly with the Terra Core codebase or understand it. Though all the important functions in each module are described, more trivial functions, such as getters and setters, are omitted for clarity. Module logic is also located in either the message handler or block transitions, such as begin-blocker and end-blocker.</p>
+<p>The end of each module specification includes lists of various module parameters alongside their default values with a brief explanation of their purpose, associated events / tags, and errors issued by the module.</p>
 </div>
 <div class="section" id="module-architecture">
 <h2>Module architecture<a class="headerlink" href="#module-architecture" title="Permalink to this headline">¶</a></h2>
-<p>The node software is organized into the following individual modules that implement different parts of the Terra protocol. They are listed in the order in which they are initialized during genesis:</p>
+<p>The Terra Core is organized into the following individual modules that implement different parts of the Terra protocol. They are listed in the order in which they are initialized during genesis:</p>
 <ol class="arabic">
 <li><p><code class="docutils literal notranslate"><span class="pre">genaccounts</span></code> - import &amp; export genesis account</p></li>
 <li><p><a class="reference internal" href="spec-distribution.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">distribution</span></code></span></a>: distribute rewards between validators and delegators</p>
 <ul class="simple">
-<li><p>tax and reward distribution</p></li>
+<li><p>reward distribution</p></li>
 <li><p>community pool</p></li>
 </ul>
 </li>
@@ -1493,7 +1493,6 @@
 <li><p><a class="reference internal" href="spec-auth.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">auth</span></code></span></a>: ante handler</p>
 <ul class="simple">
 <li><p>vesting accounts</p></li>
-<li><p>stability layer fee</p></li>
 </ul>
 </li>
 <li><p><a class="reference internal" href="spec-bank.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">bank</span></code></span></a> - sending funds from account to account</p></li>
@@ -1537,7 +1536,7 @@
 </ol>
 <div class="section" id="inherited-modules">
 <h3>Inherited modules<a class="headerlink" href="#inherited-modules" title="Permalink to this headline">¶</a></h3>
-<p>Many of the modules in Terra Core are inherited from the Cosmos SDK and are configured to work with Terra through customization in either genesis parameters or by augmenting their functionality with additional code.</p>
+<p>Many of the modules in Terra Core inherit from the Cosmos SDK and are configured to work with Terra through customization in either genesis parameters or by augmenting their functionality with additional code.</p>
 </div>
 </div>
 <div class="section" id="block-lifecycle">
@@ -1553,13 +1552,13 @@
 <div class="section" id="process-messages">
 <h3>Process messages<a class="headerlink" href="#process-messages" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple" start="3">
-<li><p>Messages are routed to the modules that are responsible for working them and then processed by the appropriate message handlers.</p></li>
+<li><p>Messages are routed to their appropriate modules and then processed by the appropriate message handlers.</p></li>
 </ol>
 </div>
 <div class="section" id="end-block">
 <h3>End block<a class="headerlink" href="#end-block" title="Permalink to this headline">¶</a></h3>
-<ol class="arabic simple" start="4">
-<li><p>Crisis: Check all registered invariants and assert they remain true.</p></li>
+<ol class="arabic" start="4">
+<li><p>Crisis: Check all registered invariants and assert that they remain true.</p></li>
 <li><p>Oracle</p>
 <ul class="simple">
 <li><p>If at the end of <code class="docutils literal notranslate"><span class="pre">VotePeriod</span></code>, run <a class="reference internal" href="spec-oracle.html#voting-procedure"><span class="std std-doc">voting procedure</span></a> and update Luna exchange rate.</p></li>
@@ -1568,13 +1567,12 @@
 </li>
 <li><p>Governance: Remove inactive proposals, check active proposals whose voting periods have ended for passes, and run the registered proposal handler of the passed proposal.</p></li>
 <li><p>Market: <a class="reference internal" href="spec-market.html#end-block"><span class="std std-doc">Replenish</span></a> liquidity pools, allowing spread fees to decrease.</p></li>
-<li><p>Treasury: At the end of <code class="docutils literal notranslate"><span class="pre">epoch</span></code>, update indicators, burn seigniorage, and recalibrate monetary policy levers (tax-rate, reward-weight) for the next epoch.</p></li>
-</ol>
+<li><p>Treasury: At the end of every <code class="docutils literal notranslate"><span class="pre">epoch</span></code>, update indicators, burn seigniorage, and recalibrate monetary policy levers (tax-rate, reward-weight) for the next epoch.</p>
 <div class="warning admonition">
 <p class="admonition-title">Note</p>
 <p>As of proposals <a class="reference external" href="https://station.terra.money/proposal/43">43</a> and <a class="reference external" href="https://station.terra.money/proposal/172">172</a>, all seigniorage is burned, and the stability fee tax rate is zero.</p>
 </div>
-<ol class="arabic simple" start="9">
+</li>
 <li><p>Staking: The new set of active validators is determined from the top 130 Luna stakers. Validators that lose their spot within the set start the unbonding process.</p></li>
 </ol>
 </div>
@@ -1585,12 +1583,13 @@
 <h3>Currency denominations<a class="headerlink" href="#currency-denominations" title="Permalink to this headline">¶</a></h3>
 <p>Two types of tokens can be held by accounts and wallets in the Terra protocol:</p>
 <ul>
-<li><p>Terra stablecoins track the exchange rate of various fiat currencies. Each Terra stablecoin is named for its corresponding three-letter <a class="reference external" href="https://www.xe.com/iso4217.php">ISO 4217 fiat currency code</a>, written as <code class="docutils literal notranslate"><span class="pre">Terra&lt;currencycode&gt;</span></code>. When used as a value, the last letter of each currency code abbreviation is replaced with T to signify it as a Terra stablecoin. For example, the Terra stablecoin pegged to the Korean Won, KRW, is named  TerraKRW, and its abbreviation is KRT.</p>
-<p>The Terra protocol’s standard base currency is TerraSDR, or SDT, which pegs to the IMF’s Special Drawing Rights. The Terra protocol uses SDT to make calcualtions and set rate standards.</p>
+<li><p>Terra stablecoins, which track the exchange rate of various fiat currencies. Each Terra stablecoin is named for its corresponding three-letter <a class="reference external" href="https://www.xe.com/iso4217.php">ISO 4217 fiat currency code</a>, written as <code class="docutils literal notranslate"><span class="pre">Terra&lt;currencycode&gt;</span></code>. When used as a value, the last letter of each currency code abbreviation is replaced with T to signify it as a Terra stablecoin. For example, the Terra stablecoin pegged to the Korean Won, KRW, is named  TerraKRW, and its abbreviation is KRT.</p>
+<p>The Terra protocol’s standard base currency is TerraSDR, or SDT, which pegs to the IMF’s Special Drawing Rights. The Terra protocol uses SDT to make calculations and set rate standards.</p>
 </li>
-<li><p>Luna is the Terra protocol’s native staking asset. Delegators earn mining rewards when they stake their Luna to an active validator. Luna stabilizes the Terra economy by absorbing the price volatility of Terra stablecoins and is also used to make governance proposals.</p></li>
+<li><p>Luna, which is the Terra protocol’s native staking asset. Delegators earn mining rewards when they stake their Luna to an active validator. Luna stabilizes the Terra economy by absorbing the price volatility of Terra stablecoins and is also used to make governance proposals.</p></li>
 </ul>
 <p>The microunit (<span class="math notranslate nohighlight">\(\times 10^{-6}\)</span>) is the smallest atomic unit of both Terra stablecoins and Luna.</p>
+<p>Below are some examples of the different Terra stablecoins:</p>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="text-left head"><p>Denomination</p></th>
@@ -1627,7 +1626,7 @@
 </tr>
 </tbody>
 </table>
-<p>The Terra protocol is only aware of the value of fiat currencies through their Terra stablecoin counterparts, which are assumed to trade relatively close to the value of the fiat currency they are pegged to, due to arbitrage activity.</p>
+<p>The Terra protocol is able to set prices for each stablecoin denomination through the use of external price oracles in the <a class="reference internal" href="spec-oracle.html"><span class="doc std std-doc">oracle module</span></a>. Validators vote on the off-chain prices of Luna relative to each stablecoin’s real-world fiat counterpart. The weighted median of the exchange rate votes is used to set the exchange rates of Luna and Terra stablecoins used by the <a class="reference internal" href="spec-market.html"><span class="doc std std-doc">market module</span></a>. Because rates are set using an external price oracle, the market module is always able to swap stablecoins using current, real-world prices. The oracle also ensures that you can always trade $1 worth of Luna for 1 UST, regardless of the off-chain price of UST. Utilizing the market module exchange rates, arbitrageurs are incentivized to trade any off-peg Terra stablecoin on any external market, profiting from the price difference while simultaneously driving prices to match their fiat peg.</p>
 </div>
 </div>
 </div>
