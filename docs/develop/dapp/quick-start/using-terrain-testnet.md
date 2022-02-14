@@ -142,7 +142,7 @@ The Terrain template comes with several predefined helpers in `lib/index.js`. Us
 
 Terrain also scaffolds a very simple front-end.
 
-1. In the Terra Station Chrome extension, [switch the network to `testnet`](../../../learn/terra-station/station-guides/testnet.md).
+1. In the Terra Station Chrome extension, [switch the network to `testnet`](../../../learn/terra-station/testnet.md).
 
 2. To use the front end, run the following commands in order. The terrain sync-refs command copies your deployed contract addresses to the front-end part of the codebase.
 
