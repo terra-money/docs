@@ -35,7 +35,7 @@ The price stability of Terra is achieved by the protocol's algorithmic [market m
 The Terra protocol's market module enables users to always trade 1 USD worth of Luna for 1 UST, and vice versa, incentivizing users to maintain the price of Terra. This same principle is true for all Terra stablecoin denominations.
 
 Users can access the mint and burn function of the market module by performing [market swaps](./glossary.md#market-swap) in [Terra Station](./glossary.md#terra-station).
-To learn how to use the market swap feature of Terra Station, visit the [Terra Station market swap guide](./terra-station/station-guides/swap.md#market-swap).
+To learn how to use the market swap feature of Terra Station, visit the [Terra Station market swap guide](./terra-station/swap.md#market-swap).
 
 - **Example**  
   If 1 UST is trading at 1.01 USD, users can use the market swap feature of Terra Station to trade 1 USD of Luna for 1 UST. The market burns 1 USD of Luna and mints 1 UST. Users can then sell their 1 UST for 1.01 USD, profiting .01 USD through arbitrage, adding to the UST pool. This arbitrage continues until UST price falls back to match the price of USD, maintaining Terra's [peg](glossary.md#peg).
@@ -79,7 +79,7 @@ Staking is the process of bonding Luna to a validator in exchange for staking re
 
 The Terra protocol only allows the top 130 validators to participate in consensus. A validator's rank is determined by their stake or the total amount of Luna bonded to them. Although validators can bond Luna to themselves, they mainly amass larger stakes from delegators. Validators with larger stakes get chosen more often to propose new blocks and earn proportionally more rewards.
 
-To learn how to stake your Luna and earn staking rewards, visit the [Terra Station staking guide](terra-station/station-guides/staking.md)
+To learn how to stake your Luna and earn staking rewards, visit the [Terra Station staking guide](terra-station/staking.md)
 
 ### Delegators
 Delegators are users who want to receive rewards from consensus without running a full node. Any user that stakes Luna is a delegator. Delegators stake their Luna to a validator, adding to a validator’s weight, or total stake. In return, delegators receive a portion of transaction fees as staking rewards.
@@ -160,7 +160,7 @@ For more information on slashing, visit the [slashing module](../develop/module-
 
 The Terra protocol is a decentralized public [blockchain](glossary.md#blockchain) governed by community members. Governance is the democratic process that allows users and validators to make changes to the Terra protocol. Community members submit, vote, and implement proposals.
 
-To learn how to vote with your staked Luna or submit proposals, visit the [Terra Station governance guide](terra-station/station-guides/governance.md).
+To learn how to vote with your staked Luna or submit proposals, visit the [Terra Station governance guide](terra-station/governance.md).
 
 ### Proposals
 
