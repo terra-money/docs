@@ -257,9 +257,9 @@ Using $r_t$ as the current tax rate and $n$ as the [`MiningIncrement`](#miningin
 
 2. Calculate the rolling average $\tau_m$ of tax rewards per unit Luna over the last month `WindowShort`.
 
-3. If $\tau_m = 0$, no tax revenue occurred in the last month. The tax rate should be set to the maximum permitted by the tax policy, subject to the rules of `pc.Clamp()`. For more information, see [constraints](#policyconstraints).
+3. If $\tau_m = 0$, no tax revenue occurred in the last month. The tax rate should be set to the maximum permitted by the tax policy, subject to the rules of `pc.Clamp()`. For more information, see [constraints](#policy-constraints).
 
-4. If $\tau_m > 0$, the new Tax Rate is $r_{t+1} = (n r_t \tau_y)/\tau_m$, subject to the rules of `pc.Clamp()`. For more information, see [constraints](#policyconstraints).
+4. If $\tau_m > 0$, the new Tax Rate is $r_{t+1} = (n r_t \tau_y)/\tau_m$, subject to the rules of `pc.Clamp()`. For more information, see [constraints](#policy-constraints).
 
 When monthly tax revenues dip below the yearly average, the treasury increases the tax rate. When monthly tax revenues go above the yearly average, the treasury decreases the tax rate.
 
@@ -282,9 +282,9 @@ Using $w_t$ as the current reward weight, and $b$ as the [`SeigniorageBurdenTarg
 
 2. Calculate the sum $R_m$ of total mining rewards over the last month `WindowShort`.
 
-3. If $R_m = 0$ and $S_m = 0$, no mining or seigniorage rewards occurred in the last month. The reward weight should be set to the maximum permitted by the reward policy, subject to the rules of `pc.Clamp()`. For more information, see [constraints](#policyconstraints).
+3. If $R_m = 0$ and $S_m = 0$, no mining or seigniorage rewards occurred in the last month. The reward weight should be set to the maximum permitted by the reward policy, subject to the rules of `pc.Clamp()`. For more information, see [constraints](#policy-constraints).
 
-4. If $R_m > 0$ or $S_m > 0$, the new Reward Weight is $w_{t+1} = b w_t S_m / R_m$, subject to the rules of `pc.Clamp()`. For more information, see [constraints](#policyconstraints).
+4. If $R_m > 0$ or $S_m > 0$, the new Reward Weight is $w_{t+1} = b w_t S_m / R_m$, subject to the rules of `pc.Clamp()`. For more information, see [constraints](#policy-constraints).
 
 
 ::: {Important}

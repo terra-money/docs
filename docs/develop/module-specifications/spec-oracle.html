@@ -2058,10 +2058,10 @@
 </li>
 <li><p>For each remaining <code class="docutils literal notranslate"><span class="pre">denom</span></code> with a passing ballot:</p>
 <ul class="simple">
-<li><p>Tally up votes with <span class="xref myst"><code class="docutils literal notranslate"><span class="pre">Compute</span> <span class="pre">Cross</span> <span class="pre">Exchange</span> <span class="pre">Rate</span> <span class="pre">using</span> <span class="pre">Reference</span> <span class="pre">Terra</span></code></span> and find the weighted median exchange rate and winners with <a class="reference internal" href="#tally"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">tally()</span></code></span></a></p></li>
+<li><p>Tally up votes with <a class="reference internal" href="#compute-cross-exchange-rate-using-reference-terra"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">Compute</span> <span class="pre">Cross</span> <span class="pre">Exchange</span> <span class="pre">Rate</span> <span class="pre">using</span> <span class="pre">Reference</span> <span class="pre">Terra</span></code></span></a> and find the weighted median exchange rate and winners with <a class="reference internal" href="#tally"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">tally()</span></code></span></a></p></li>
 <li><p>Iterate through winners of the ballot and add their weight to their running total</p></li>
 <li><p>Set the Luna exchange rate on the blockchain for that Luna&lt;&gt;<code class="docutils literal notranslate"><span class="pre">denom</span></code> with <code class="docutils literal notranslate"><span class="pre">k.SetLunaExchangeRate()</span></code></p></li>
-<li><p>Emit a <span class="xref myst"><code class="docutils literal notranslate"><span class="pre">exchange_rate_update</span></code></span> event</p></li>
+<li><p>Emit an <code class="docutils literal notranslate"><span class="pre">exchange_rate_update</span></code> event</p></li>
 </ul>
 </li>
 <li><p>Count up the validators who <a class="reference internal" href="#slashing"><span class="std std-doc">missed</span></a> the Oracle vote and increase the appropriate miss counters</p></li>
