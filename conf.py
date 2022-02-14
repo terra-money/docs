@@ -36,7 +36,7 @@ extensions = ["myst_parser",
               'sphinx_tabs.tabs',
               'notfound.extension',
     ]
-myst_heading_anchors = 3
+myst_heading_anchors = 4
 notfound_urls_prefix = None
 
 # Add any paths that contain templates here, relative to this directory.
