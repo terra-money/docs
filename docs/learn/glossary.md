@@ -143,7 +143,7 @@ A swap in Terra Station that uses the Terra protocol's market function. Market s
 - Swapping UST for KRT in Terra Station will charge a Tobin tax and gas fees.
 - Swapping Luna for UST in Terra Station will charge a spread fee and gas fees.
 
-To learn how to use the market swap feature in Terra station, visit [how to use Terra Station](./terra-station/station-guides/swap.md).
+To learn how to use the market swap feature in Terra station, visit [how to use Terra Station](./terra-station/swap.md).
 
 For more information on fees, visit [Fees on Terra](fees.md).
 
@@ -243,7 +243,7 @@ Terra's native wallet and platform for swaps, governance, and staking. In Statio
 
 To learn how to install and get started using Terra Station, visit the [Terra Station tutorial](terra-station/download/README.md).
 
-To learn how to use the advanced features of Terra Station, visit the [Terra Station how-to guide](./terra-station/station-guides/wallet.md).
+To learn how to use the advanced features of Terra Station, visit the [Terra Station how-to guide](./terra-station/wallet.md).
 
 ## terrad
 
