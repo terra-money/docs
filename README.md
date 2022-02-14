@@ -13,7 +13,7 @@
 
 ## Building
 
-### Getting the repo
+## Getting the repo
 
 If you are contributing to the repository, make sure to fork this repo, and then clone your own fork. You will need to do this to make creating pull requests easier.
 
