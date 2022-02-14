@@ -273,7 +273,7 @@ At the end of every block, the Oracle module checks whether it's the last block 
    - Tally up votes with [`Compute Cross Exchange Rate using Reference Terra`](#compute-cross-exchange-rate-using-reference-terra) and find the weighted median exchange rate and winners with [`tally()`](#tally)
    - Iterate through winners of the ballot and add their weight to their running total
    - Set the Luna exchange rate on the blockchain for that Luna<>`denom` with `k.SetLunaExchangeRate()`
-   - Emit a [`exchange_rate_update`](#exchange_rate_update) event
+   - Emit an `exchange_rate_update` event
 
 5. Count up the validators who [missed](#slashing) the Oracle vote and increase the appropriate miss counters
 
