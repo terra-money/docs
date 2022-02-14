@@ -247,4 +247,4 @@ You can now make transactions on different dApps in the Terra ecosystem from you
 
 ## Next steps
 
-To use Terra Station on your computer, visit the [Terra Station desktop tutorial](terra-station-desktop.md). To learn how to use other Station features, visit the [Station guides](../station-guides/README.md).
+To use Terra Station on your computer, visit the [Terra Station desktop tutorial](terra-station-desktop.md). To learn how to use other Station features, visit the [Station guides](README.md).
