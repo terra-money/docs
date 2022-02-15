@@ -1,6 +1,17 @@
 # Bridges
 
-Source Chain:
+To locate the correct bridge, enter the source and destination for your transaction. 
+
+
+
+::::{grid} 2
+:gutter: 3
+
+:::{grid-item-card}
+:class-card: sd-text-center sd-shadow-md sd-rounded-3
+
+Source Chain:  
+
 <select id="sourceChain">
 
 <option value="terra">Terra</option>
@@ -19,7 +30,13 @@ Source Chain:
 <option value="optimisim">Optimisim</option>
 </select>
 
-Destination Chain:
+:::
+
+:::{grid-item-card}
+:class-card: sd-text-center sd-shadow-md sd-rounded-3
+
+Destination Chain:  
+
 <select id="destinationChain">
 
 <option value="ethereum">Ethereum</option>
@@ -37,6 +54,14 @@ Destination Chain:
 <option value="secret">Secret</option>
 <option value="optimisim">Optimisim</option>
 </select>
+
+:::
+
+
+
+
+:::{grid-item-card}
+:columns: 12
 
 <div class="bridgedocs" id="ethereum_terra">
   <h3>Terra <> Ethereum</h3>
@@ -102,3 +127,6 @@ Destination Chain:
   <h3>Terra <> Juno</h3>
   <p> Use Wormhole fool </p>
 </div>
+
+:::
+::::
