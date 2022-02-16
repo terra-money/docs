@@ -6,6 +6,7 @@ Welcome to the Terra developer documentation. If this is your first time buildin
 :hidden:
 dapp/README
 how-to/README.md
+endpoints.md
 module-specifications/README
 sdks/README
 reference/README
