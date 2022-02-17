@@ -236,7 +236,7 @@ func (k Keeper) RewardBallotWinners(ctx sdk.Context, ballotWinners types.ClaimPo
 
 At the end of every `VotePeriod`, a portion of swap fees are rewarded to the oracle ballot winners (validators who submitted an exchange rate vote within the band).
 
-The total amount of Luna rewarded per `VotePeriod` is equal to the current amount of Luna in the reward pool (the Luna owned by the Oracle module) divided by the parameter [`RewardDistributionWindow`](#rewarddistributionwindow).
+The total amount rewarded per `VotePeriod` is equal to the current amount of Luna and each of the other denominations specified in [`Whitelist`](#whitelist) in the reward pool (owned by the Oracle module) times `VotePeriod` divided by the parameter [`RewardDistributionWindow`](#rewarddistributionwindow).
 
 Each winning validator gets a portion of the reward proportional to their winning vote weight for that period. 
 
@@ -336,7 +336,7 @@ The tolerated error from the final weighted mean exchange rate that can receive 
 - type: `int64`
 - default value: `BlocksPerYear` (2 year window)
 
-The number of blocks used to determine the amount rewarded to validators who voted within the reward band. The total amount of Luna rewarded per `VotePeriod` is equal to the current amount of Luna in the reward pool (the Luna owned by the Oracle module) divided by the parameter [`RewardDistributionWindow`](#rewarddistributionwindow).
+The number of blocks used to determine the amount rewarded to validators who voted within the reward band. The total amount rewarded per `VotePeriod` is equal to the current amount of Luna and each of the other denominations specified in [`Whitelist`](#whitelist) in the reward pool (owned by the Oracle module) times `VotePeriod` divided by the parameter [`RewardDistributionWindow`](#rewarddistributionwindow).
 
 ### Whitelist
 
