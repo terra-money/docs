@@ -2018,7 +2018,9 @@
 </pre></div>
 </div>
 <p>At the end of every <code class="docutils literal notranslate"><span class="pre">VotePeriod</span></code>, a portion of swap fees are rewarded to the oracle ballot winners (validators who submitted an exchange rate vote within the band).</p>
-<p>The total amount of Luna rewarded per <code class="docutils literal notranslate"><span class="pre">VotePeriod</span></code> is equal to the current amount of Luna in the reward pool (the Luna owned by the Oracle module) divided by the parameter <a class="reference internal" href="#rewarddistributionwindow"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">RewardDistributionWindow</span></code></span></a>.</p>
+<p>The total amount of ballot rewards per <code class="docutils literal notranslate"><span class="pre">VotePeriod</span></code> is equal to the reward pool size (the value of coins owned by the oracle module) multiplied by the <code class="docutils literal notranslate"><span class="pre">VotePeriod</span></code> divided by the parameter <a class="reference internal" href="#rewarddistributionwindow"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">RewardDistributionWindow</span></code></span></a>.</p>
+<div class="math notranslate nohighlight">
+\[Total Period Rewards = Reward Pool * (VotePeriod / RewardDistributionWindow)\]</div>
 <p>Each winning validator gets a portion of the reward proportional to their winning vote weight for that period.</p>
 </div>
 <div class="section" id="slashandresetmisscounters">
@@ -2133,7 +2135,10 @@ Events<div class="sd-summary-down docutils">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">int64</span></code></p></li>
 <li><p>default value: <code class="docutils literal notranslate"><span class="pre">BlocksPerYear</span></code> (2 year window)</p></li>
 </ul>
-<p>The number of blocks used to determine the amount rewarded to validators who voted within the reward band. The total amount of Luna rewarded per <code class="docutils literal notranslate"><span class="pre">VotePeriod</span></code> is equal to the current amount of Luna in the reward pool (the Luna owned by the Oracle module) divided by the parameter <a class="reference internal" href="#rewarddistributionwindow"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">RewardDistributionWindow</span></code></span></a>.</p>
+<p>The number of blocks used to determine the amount rewarded to validators who voted within the reward band.</p>
+<p>The total amount of ballot rewards per <code class="docutils literal notranslate"><span class="pre">VotePeriod</span></code> is equal to the reward pool size (the value of coins owned by the oracle module) multiplied by the <code class="docutils literal notranslate"><span class="pre">VotePeriod</span></code> divided by the parameter <code class="docutils literal notranslate"><span class="pre">RewardDistributionWindow</span></code>.</p>
+<div class="math notranslate nohighlight">
+\[Total Period Rewards = Reward Pool * (VotePeriod / RewardDistributionWindow)\]</div>
 </div>
 <div class="section" id="whitelist">
 <h3>Whitelist<a class="headerlink" href="#whitelist" title="Permalink to this headline">¶</a></h3>
