@@ -1972,11 +1972,10 @@
 </div>
 <div class="section" id="what-are-the-slashing-conditions">
 <h3>What are the slashing conditions?<a class="headerlink" href="#what-are-the-slashing-conditions" title="Permalink to this headline">¶</a></h3>
-<p>If a validator misbehaves, their bonded stake along with their delegators’ stake will be slashed. The severity of the punishment depends on the type of fault. There are 3 main faults that can result in slashing of funds:</p>
+<p>If a validator misbehaves, their bonded stake along with their delegators’ stake will be slashed. The severity of the punishment depends on the type of fault. There are main faults that can result in slashing of funds:</p>
 <ul class="simple">
 <li><p><strong>Double-signing:</strong> If someone reports on chain A that a validator signed two blocks at the same height on chain A and chain B, and if chain A and chain B share a common ancestor, then this validator will get slashed on chain A.</p></li>
 <li><p><strong>Unavailability:</strong> If a validator’s signature has not been included in the last X blocks, the validator will get slashed by a marginal amount proportional to X. If X is above a certain limit, then the validator will get unbonded.</p></li>
-<li><p><strong>Non-voting:</strong> If a validator does not vote on a proposal, its stake will receive a minor slash.</p></li>
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
