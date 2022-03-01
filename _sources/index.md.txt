@@ -6,13 +6,13 @@ Welcome to the official documentation for Terra, a decentralized financial infra
 :gutter: 3
 
 :::{grid-item-card}
-:link: docs/learn/protocol.html
+:link: docs/develop/dapp/quick-start/README.html
 :class-card: sd-text-center sd-shadow-md sd-rounded-3
-```{image} /img/icon_terra.svg
+```{image} /img/Build_a_dApp_ver1.svg
 :class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
 ```
-**What is Terra?**  
-Learn about Terra stablecoins, Luna, rewards, staking, and governance.
+**Start building**  
+Set up your environment and get started with Terrain.
 :::
 
 :::{grid-item-card}
@@ -26,23 +26,23 @@ Create a wallet and stake Luna for rewards.
 :::
 
 :::{grid-item-card}
+:link: docs/learn/protocol.html
+:class-card: sd-text-center sd-shadow-md sd-rounded-3
+```{image} /img/icon_terra.svg
+:class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
+```
+**Learn about Terra**  
+Learn about Terra stablecoins, Luna, rewards, staking, and governance.
+:::
+
+:::{grid-item-card}
 :link: docs/spacecamp/README.html
 :class-card: sd-text-center sd-shadow-md sd-rounded-3
 ```{image} /img/spacecamp_icon-01.svg
 :class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
 ```
-**Hack Week resources**  
+**Hackathon resources**  
 A helpful list for Spacecamp hackers.
-:::
-
-:::{grid-item-card}
-:link: docs/develop/dapp/README.html
-:class-card: sd-text-center sd-shadow-md sd-rounded-3
-```{image} /img/Build_a_dApp_ver1.svg
-:class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
-```
-**Build a dApp**  
-Set up your environment and start building.
 :::
 
 :::{grid-item-card}
