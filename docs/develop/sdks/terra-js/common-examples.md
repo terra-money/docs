@@ -86,7 +86,7 @@ const result = await lcd.tx.broadcast(tx);
 console.log(result);
 ```
 
-## Swaping using the market module
+## Swapping using the market module
 
 The following code example shows how to swap native Terra assets using the market module: 
 
