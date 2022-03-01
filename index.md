@@ -38,7 +38,7 @@ A helpful list for Spacecamp hackers.
 :::{grid-item-card}
 :link: docs/develop/dapp/README.html
 :class-card: sd-text-center sd-shadow-md sd-rounded-3
-```{image} /img/icon_smartcontract.svg
+```{image} /img/Build_a_dApp_ver1.svg
 :class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
 ```
 **Build a dApp**  
