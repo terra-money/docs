@@ -1,23 +1,23 @@
 # Terra Station Mobile App
 
-Terra Station Mobile is an application to interact with Terra Core.
+Terra Station Mobile is an application that enables users to interact with Terra Core.
 
 Terra Station Mobile allows users to:
 
 - Create wallets and send tokens
-- Get involved with staking, by browsing through validator information and delegating Luna tokens
+- Get involved with staking by browsing through validator information and delegating Luna tokens.
 - Atomically swap currencies on the Terra network at the effective on-chain exchange rate
-- QRCode support for easy interactions when sending assets and recovering wallets
+- Use QRCodes for easy interactions when sending assets and recovering wallets
 
 ## URL Scheme
 
-Terra Station Mobile includes a custom [URL Scheme](https://developer.apple.com/documentation/xcode/defining-a-custom-url-scheme-for-your-app) to let developers trigger different actions in the app.
+Terra Station Mobile includes a custom [URL Scheme](https://developer.apple.com/documentation/xcode/defining-a-custom-url-scheme-for-your-app) that lets developers trigger different actions in the app.
 
-These URL handlers can be opened by scanning a QR code, or just opening the link directly.
+These URL handlers can be opened by scanning a QR code or opening the link directly.
 
 ### Send
 
-Send is used to prompt the user to send the specified funds to the desired recipient. This can be used to accept payment for goods and other point of sale configurations.
+The send function allows a user to send a specified amount of funds to a recipient. This function can be used to accept payment for goods and other point-of-sale configurations.
 
 #### URL
 
@@ -31,7 +31,7 @@ terrastation://send/?payload=${base64 json}
 | ------- | --------------------------------------------- | --------- |
 | address | Terra address to send funds to                |           |
 | token   | Native token denom or cw20 contract address   | ✔️        |
-| amount  | Amount of tokens in micro format |           |
+| amount  | Amount of tokens in micro format              |           |
 | memo    | Specific memo to include with the transaction |           |
 
 #### Example
@@ -63,4 +63,4 @@ terrastation://send/?payload=ewogICJhZGRyZXNzIjogInRlcnJhMWRjZWd5cmVrbHRzd3Z5eTB
 
 ![](/img/send_qrcode.png)
 
-**More details can be found on [GitHub](https://github.com/terra-money/station-mobile/#app-scheme).**
+**Find out more on [GitHub](https://github.com/terra-money/station-mobile/#app-scheme).**
