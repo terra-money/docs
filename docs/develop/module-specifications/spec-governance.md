@@ -48,7 +48,7 @@ For a proposal to pass, the following conditions must be met:
 
 1. Voter participation must be at least `quorum` $Q$:
 
-$$\frac{Yes + No + NoWithVeto}{Stake} \ge Q$$
+$$\frac{Yes + No + NoWithVeto + Abstain}{Stake} \ge Q$$
 
 2. The ratio of `NoWithVeto` votes must be less than `veto` $V$:
 
