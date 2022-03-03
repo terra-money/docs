@@ -177,6 +177,10 @@ Groups of tokens. Supply pools represent the total supply of tokens in a market.
 
 Proof of Stake. A style of blockchain where validators are chosen to propose blocks according to the number of coins they hold.
 
+## Quorum
+
+The minimum amount of votes needed to make an election viable. 40% of all staked Luna must vote to meet quorum. If quorum is not met before the voting period ends, the proposal fails, and the proposer's deposit is burned. 
+
 ## Redelegate
 
 When a delegator wants to transfer their bonded luna to a different validator. Redelegating Luna is instant and does not require a 21-day unbonding period.
