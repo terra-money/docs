@@ -24,6 +24,7 @@ oracle-feeder
 query-data
 smart-contracts
 station-extension
+station-mobile
 transactions
 wallets
 Websockets
