@@ -1,15 +1,14 @@
 # Bridge guide
 
-Not sure which bridge to use? Select your source and destination below:
+Not sure which bridge to use? Select a source or destination below:
 
 
 ::::{grid} 2
 :gutter: 3
 
-:::{grid-item-card}
+:::{grid-item-card} Source chain:
 :class-card: sd-text-center sd-shadow-md sd-rounded-3
 
-Source Chain:  
 
 <select id="sourceChain">
 
@@ -31,10 +30,8 @@ Source Chain:
 
 :::
 
-:::{grid-item-card}
+:::{grid-item-card} Destination Chain: 
 :class-card: sd-text-center sd-shadow-md sd-rounded-3
-
-Destination Chain:  
 
 <select id="destinationChain">
 
