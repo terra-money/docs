@@ -15,6 +15,7 @@ wormhole
 multisig
 contracts
 testnet
+keplr
 ```
 
 :::::::{grid} 2 2 2 3
