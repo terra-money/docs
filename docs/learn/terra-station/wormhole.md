@@ -1,13 +1,13 @@
 # Wormhole Bridge tutorial
 
-Wormhole allows you to bridge tokens across different chains. Instead of swapping or converting assets directly, Wormhole locks your source assets in a smart contract and mints new Wormhole-wrapped assets on the target chain. You can then swap Wormhole-wrapped assets on an exchange for other assets on the target chain. 
+Wormhole's Portal Bridge allows you to bridge tokens across different chains. Instead of swapping or converting assets directly, Wormhole locks your source assets in a smart contract and mints new Wormhole-wrapped assets on the target chain. You can then swap Wormhole-wrapped assets on an exchange for other assets on the target chain. 
 
 Use this tutorial to bridge your assets between Terra and other chains using Wormhole.
 
 ## Prerequisites
 
 - [The Terra Station browser extension](../terra-station/download/terra-station-extension.md) for tokens on the Terra blockchain.
-- A second wallet extension for tokens on another blockchain. 
+- A wallet on the chain you want to bridge. 
 
    :::{admonition} Paying for fees
    :class: tip
