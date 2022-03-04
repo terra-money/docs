@@ -78,10 +78,13 @@ Destination Chain:
 </div>
 
 <div class="bridgedocs" id="osmosis_terra" style="display: none;">
-  <h3>From Terra to Osmosis</h3>
-  <p> Download a [Keplr wallet](https://chrome.google.com/webstore/detail/keplr/dmkamcknogkgcdfhhbddcghachkejeap)</p>
- <h3>From Osmosis to Terra</h3>
-  <p> Download a [Keplr wallet](https://chrome.google.com/webstore/detail/keplr/dmkamcknogkgcdfhhbddcghachkejeap)</p>
+  <h3>Terra <> Osmosis</h3>
+
+  <p> 1. <a href="./terra-station/download/terra-station-extension.html">Download the Terra Station extension</a> and <a href="./terra-station/download/terra-station-extension.htmll#create-a-wallet">create a wallet</a>.</p>
+
+  <p> 2. Follow <a href="./terra-station/keplr.html">this tutorial</a> to <a href="./terra-station/keplr.html">connect your Terra Station Wallet to Keplr</a>.</p>
+
+  <p> 3. Use <a href="https://osmosis.zone/">Osmosis</a> to bridge your tokens.</p>
 
 </div>
 
@@ -97,12 +100,12 @@ Destination Chain:
 
 <div class="bridgedocs" id="arbitrum_terra" style="display: none;">
   <h3>Terra <> Arbitrum</h3>
-  <p> Use Wormhole fool </p>
+  <p> No official bridge yet. Check back soon! </p>
 </div>
 
 <div class="bridgedocs" id="optimisim_terra" style="display: none;">
   <h3>Terra <> Optimisim</h3>
-  <p> Use Wormhole fool </p>
+  <p> No official bridge yet. Check back soon!</p>
 </div>
 
 <div class="bridgedocs" id="solana_terra" style="display: none;">
@@ -112,25 +115,31 @@ Destination Chain:
 
 <div class="bridgedocs" id="sifchain_terra" style="display: none;">
   <h3>Terra <> Sifchain</h3>
-  <p> Use Wormhole fool </p>
+  <p> Use the <a href="https://dex.sifchain.finance/?#/balances">Sifchain bridge</a>. This Bridge may be blocked in some countries.</p>
 </div>
 
 <div class="bridgedocs" id="injective_terra" style="display: none;">
   <h3>Terra <> Injective</h3>
-  <p> Use Wormhole fool </p>
+  <p> Use the <a href="https://hub.injective.network/bridge/">Injective Bridge</a>.</p>
 </div>
 
 <div class="bridgedocs" id="secret_terra" style="display: none;">
   <h3>Terra <> Secret</h3>
-  <p> 1. Download Terra Station and Keplr </p>
-  <p> 2. Connect your Terra Station Wallet to Keplr </p>
-  <p> 3. Wrap and unwrap your tokens using<a href="https://wrap.scrt.network/">The Secret Network.</a></p>
+
+  <p> 1. <a href="./terra-station/download/terra-station-extension.html">Download the Terra Station extension</a> and <a href="./terra-station/download/terra-station-extension.htmll#create-a-wallet">create a wallet</a>.</p>
+
+  <p> 2. Follow <a href="./terra-station/keplr.html">this tutorial</a> to <a href="./terra-station/keplr.html">connect your Terra Station Wallet to Keplr</a>.</p>
+
+  <p> 3. Wrap and unwrap your tokens using <a href="https://wrap.scrt.network/">The Secret Network.</a></p>
 </div>
 
 <div class="bridgedocs" id="juno_terra" style="display: none;">
   <h3>Terra <> Juno</h3>
-  <p> 1. Download Terra Station and create a wallet. </p>
-  <p> 2. Download Keplr and import your Terra Station wallet mnemonic key.</p>
+
+  <p> 1. <a href="./terra-station/download/terra-station-extension.html">Download the Terra Station extension</a> and <a href="./terra-station/download/terra-station-extension.htmll#create-a-wallet">create a wallet</a>.</p>
+
+  <p> 2. Follow <a href="./terra-station/keplr.html">this tutorial</a> to <a href="./terra-station/keplr.html">connect your Terra Station Wallet to Keplr</a>.</p>
+
   <p> 3. Use <a href="https://junoswap.com/transfer">JunoSwap</a> to bridge your tokens.</p>
 </div>
 
