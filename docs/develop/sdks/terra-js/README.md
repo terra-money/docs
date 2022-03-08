@@ -15,6 +15,7 @@ add-modules
 coin-and-coins
 common-examples
 fees
+ibc
 keys
 make-a-connection
 msgAuthorization
