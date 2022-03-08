@@ -20,7 +20,7 @@ new MsgTransfer(
 
 ## Supported Channels 
 
-Channels are defined when a relayer is created between Terra and an external chain. For each new connected chain the channel ID is incremented.
+Channels are defined when a relayer is setup between Terra and an external chain. For each new connected chain the channel ID is incremented.
 
 You can use [Map of Zones](https://mapofzones.com/zone?period=24&source=columbus-5&tableOrderBy=success&tableOrderSort=desc&testnet=false) to find the available channels and their IDs.
 
@@ -39,6 +39,8 @@ const osmosisAddress = bech32.encode('osmo', decodedAddress.words));
 ```
 
 ## Complete example 
+
+The following example demonstrates how to send 1 UST from Terra to the Osmosis blockchain.
 
 ```JS
 import {
@@ -67,7 +69,7 @@ const transfer = new MsgTransfer(
   (Date.now() + 60 * 1000) * 1e6,
 );
 
-const tx = await wallet.createAndSignTx({ msgs: [swap] });
+const tx = await wallet.createAndSignTx({ msgs: [transfer] });
 const result = await lcd.tx.broadcast(tx);
 
 console.log(result);
