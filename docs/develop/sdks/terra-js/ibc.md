@@ -1,6 +1,6 @@
 # IBC Transfers
 
-Terra.js and Terra Station both support IBC transfers today, even if this functionality isn't exposed to the user through the wallet interface. It is up to the dapp frontend to initiate a transfer.
+Terra has full IBC transfer capabilities through both Terra.js and Terra Station. Although IBC functionality is not readily exposed through Terra Station’s front-end, it can be fully incorporated into any dApp. It is up to a dApp’s front end to initiate IBC transfers.
 
 ## MsgTransfer
 
@@ -20,7 +20,7 @@ new MsgTransfer(
 
 ## Supported Channels 
 
-Channels are defined when a relayer is setup between Terra and an external chain. For each new connected chain the channel ID is incremented.
+Channels are defined when a relayer is set up between Terra and an external chain. For each new connected chain the channel ID is incremented.
 
 You can use [Map of Zones](https://mapofzones.com/zone?period=24&source=columbus-5&tableOrderBy=success&tableOrderSort=desc&testnet=false) to find the available channels and their IDs.
 
@@ -75,4 +75,4 @@ const result = await lcd.tx.broadcast(tx);
 console.log(result);
 ```
 
-Instructions for initilizing LCDClient can be found [here](https://docs.terra.money/docs/develop/sdks/terra-js/common-examples.html#configuring-lcdclient).
+Instructions for initializing LCDClient can be found [here](https://docs.terra.money/docs/develop/sdks/terra-js/common-examples.html#configuring-lcdclient).
