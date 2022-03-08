@@ -60,22 +60,23 @@ Not sure which bridge to use? Select a source or destination below:
 :columns: 12
 
 <div class="bridgedocs" id="ethereum_terra">
-  <h3>Terra <> Ethereum</h3>
+  <h3>Bridge Terra and Ethereum</h3>
   <p> Use Wormhole's <a href="https://portalbridge.com/#/transfer">Portal Token Bridge.</a> Check out the <a href="https://docs.terra.money/docs/learn/terra-station/wormhole.html">Portal Token Bridge tutorial</a> for more information.  </p>
+  <img src="/img/bridges/portal.png" alt="Portal Token Bridge" width="500">
 </div>
 
 <div class="bridgedocs" id="bsc_terra" style="display: none;">
-  <h3>Terra <> BSC</h3>
+  <h3>Bridge Terra and BSC</h3>
   <p> Use Wormhole's <a href="https://portalbridge.com/#/transfer">Portal Token Bridge.</a> Check out the <a href="https://docs.terra.money/docs/learn/terra-station/wormhole.html">Portal Token Bridge tutorial</a> for more information.  </p>
 </div>
 
 <div class="bridgedocs" id="polygon_terra" style="display: none;">
-  <h3>Terra <> Polygon</h3>
+  <h3>Bridge Terra and Polygon</h3>
   <p> Use Wormhole's <a href="https://portalbridge.com/#/transfer">Portal Token Bridge.</a> Check out the <a href="https://docs.terra.money/docs/learn/terra-station/wormhole.html">Portal Token Bridge tutorial</a> for more information.  </p>
 </div>
 
 <div class="bridgedocs" id="osmosis_terra" style="display: none;">
-  <h3>Terra <> Osmosis</h3>
+  <h3>Bridge Terra and Osmosis</h3>
 
   <p> 1. <a href="./terra-station/download/terra-station-extension.html">Download the Terra Station extension</a> and <a href="./terra-station/download/terra-station-extension.htmll#create-a-wallet">create a wallet</a>.</p>
 
@@ -86,42 +87,42 @@ Not sure which bridge to use? Select a source or destination below:
 </div>
 
 <div class="bridgedocs" id="harmony_terra" style="display: none;">
-  <h3>Terra <> Harmony</h3>
+  <h3>Bridge Terra and Harmony</h3>
   <p> Follow the <a href="https://docs.harmony.one/home/general/ecosystem/terra">Harmony UST bridge guide.</a> </p>
 </div>
 
 <div class="bridgedocs" id="avalanche_terra" style="display: none;">
-  <h3>Terra <> Avalanche</h3>
+  <h3>Bridge Terra and Avalanche</h3>
   <p> Use Wormhole's <a href="https://portalbridge.com/#/transfer">Portal Token Bridge.</a> Check out the <a href="https://docs.terra.money/docs/learn/terra-station/wormhole.html">Portal Token Bridge tutorial</a> for more information.  </p>
 </div>
 
 <div class="bridgedocs" id="arbitrum_terra" style="display: none;">
-  <h3>Terra <> Arbitrum</h3>
+  <h3>Bridge Terra and Arbitrum</h3>
   <p> No official bridge yet. Check back soon! </p>
 </div>
 
 <div class="bridgedocs" id="optimisim_terra" style="display: none;">
-  <h3>Terra <> Optimisim</h3>
+  <h3>Bridge Terra and Optimisim</h3>
   <p> No official bridge yet. Check back soon!</p>
 </div>
 
 <div class="bridgedocs" id="solana_terra" style="display: none;">
-  <h3>Terra <> Solana</h3>
+  <h3>Bridge Terra and Solana</h3>
   <p> Use Wormhole's <a href="https://portalbridge.com/#/transfer">Portal Token Bridge.</a> Check out the <a href="https://docs.terra.money/docs/learn/terra-station/wormhole.html">Portal Token Bridge tutorial</a> for more information.  </p>
 </div>
 
 <div class="bridgedocs" id="sifchain_terra" style="display: none;">
-  <h3>Terra <> Sifchain</h3>
+  <h3>Bridge Terra and Sifchain</h3>
   <p> Use the <a href="https://dex.sifchain.finance/?#/balances">Sifchain bridge</a>. This Bridge may be blocked in some countries.</p>
 </div>
 
 <div class="bridgedocs" id="injective_terra" style="display: none;">
-  <h3>Terra <> Injective</h3>
+  <h3>Bridge Terra and Injective</h3>
   <p> Use the <a href="https://hub.injective.network/bridge/">Injective Bridge</a>.</p>
 </div>
 
 <div class="bridgedocs" id="secret_terra" style="display: none;">
-  <h3>Terra <> Secret</h3>
+  <h3>Bridge Terra and Secret</h3>
 
   <p> 1. <a href="./terra-station/download/terra-station-extension.html">Download the Terra Station extension</a> and <a href="./terra-station/download/terra-station-extension.htmll#create-a-wallet">create a wallet</a>.</p>
 
@@ -131,7 +132,7 @@ Not sure which bridge to use? Select a source or destination below:
 </div>
 
 <div class="bridgedocs" id="juno_terra" style="display: none;">
-  <h3>Terra <> Juno</h3>
+  <h3>Bridge Terra and Juno</h3>
 
   <p> 1. <a href="./terra-station/download/terra-station-extension.html">Download the Terra Station extension</a> and <a href="./terra-station/download/terra-station-extension.htmll#create-a-wallet">create a wallet</a>.</p>
 
