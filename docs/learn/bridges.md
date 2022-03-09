@@ -62,7 +62,6 @@ Not sure which bridge to use? Select a source or destination below:
 <div class="bridgedocs" id="ethereum_terra">
   <h3>Bridge Terra and Ethereum</h3>
   <p> Use Wormhole's <a href="https://portalbridge.com/#/transfer">Portal Token Bridge.</a> Check out the <a href="https://docs.terra.money/docs/learn/terra-station/wormhole.html">Portal Token Bridge tutorial</a> for more information.  </p>
-  <img src="/img/bridges/portal.png" alt="Portal Token Bridge" width="500">
 </div>
 
 <div class="bridgedocs" id="bsc_terra" style="display: none;">
