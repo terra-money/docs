@@ -72,6 +72,10 @@ html_favicon = "img/docs_favicon.ico"
 html_static_path = ['_static']
 html_css_files = ['custom.css']
 
+html_js_files = [
+    'custom.js',
+]
+
 pygments_style = 'material'
 
 myst_enable_extensions = [
