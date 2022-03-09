@@ -78,7 +78,7 @@ Not sure which bridge to use? Select a source or destination below:
 <div class="bridgedocs" id="osmosis_terra" style="display: none;">
   <h3>Bridge Terra and Osmosis</h3>
 
-  <p> 1. <a href="./terra-station/download/terra-station-extension.html">Download the Terra Station extension</a> and <a href="./terra-station/download/terra-station-extension.htmll#create-a-wallet">create a wallet</a>.</p>
+  <p> 1. <a href="./terra-station/download/terra-station-extension.html">Download the Terra Station extension</a> and <a href="./terra-station/download/terra-station-extension.html#create-a-wallet">create a wallet</a>.</p>
 
   <p> 2. Follow <a href="./terra-station/keplr.html">this tutorial</a> to <a href="./terra-station/keplr.html">connect your Terra Station Wallet to Keplr</a>.</p>
 
@@ -124,7 +124,7 @@ Not sure which bridge to use? Select a source or destination below:
 <div class="bridgedocs" id="secret_terra" style="display: none;">
   <h3>Bridge Terra and Secret</h3>
 
-  <p> 1. <a href="./terra-station/download/terra-station-extension.html">Download the Terra Station extension</a> and <a href="./terra-station/download/terra-station-extension.htmll#create-a-wallet">create a wallet</a>.</p>
+  <p> 1. <a href="./terra-station/download/terra-station-extension.html">Download the Terra Station extension</a> and <a href="./terra-station/download/terra-station-extension.html#create-a-wallet">create a wallet</a>.</p>
 
   <p> 2. Follow <a href="./terra-station/keplr.html">this tutorial</a> to <a href="./terra-station/keplr.html">connect your Terra Station Wallet to Keplr</a>.</p>
 
@@ -134,7 +134,7 @@ Not sure which bridge to use? Select a source or destination below:
 <div class="bridgedocs" id="juno_terra" style="display: none;">
   <h3>Bridge Terra and Juno</h3>
 
-  <p> 1. <a href="./terra-station/download/terra-station-extension.html">Download the Terra Station extension</a> and <a href="./terra-station/download/terra-station-extension.htmll#create-a-wallet">create a wallet</a>.</p>
+  <p> 1. <a href="./terra-station/download/terra-station-extension.html">Download the Terra Station extension</a> and <a href="./terra-station/download/terra-station-extension.html#create-a-wallet">create a wallet</a>.</p>
 
   <p> 2. Follow <a href="./terra-station/keplr.html">this tutorial</a> to <a href="./terra-station/keplr.html">connect your Terra Station Wallet to Keplr</a>.</p>
 

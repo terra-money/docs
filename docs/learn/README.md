@@ -9,7 +9,6 @@ protocol
 fees
 glossary
 community-trust
-bridges
 ```
 
 :::::::{grid} 2 2 2 3
