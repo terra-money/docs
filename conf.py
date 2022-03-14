@@ -17,10 +17,10 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'Terra Docs'
-copyright = '2021, Terraform Labs'
+project = 'Anchor Docs'
+copyright = '2022, Anchor Protocol'
 html_show_copyright = False
-#author = Terraform Labs
+#author = Anchor Protocol
 
 root_doc = "index"
 
@@ -96,7 +96,7 @@ myst_footnote_transition = True
 myst_dmath_double_inline = True
 myst_all_links_external = False
 panels_add_bootstrap_css = True
-nitpicky = True
+nitpicky = False
 
 
 # Theme options

@@ -1,123 +1,58 @@
-# Terra Docs
+# Anchor Docs
 
-Welcome to the official documentation for Terra, a decentralized financial infrastructure powering the innovation of money. Terra provides the foundational building blocks for a new digital economy with its stablecoin protocol, oracle system, smart contracts, and plan for mass-user adoption.  
+# 
 
-:::::::{grid} 2 2 2 3
-:gutter: 3
+You can access Anchor through the official [Web App](notion://www.notion.so/o/-MNbAlnRtgggkJfdtVsn/s/-MT-6Wb5pEQsulIrcwGJ/~/changes/gr4a3xt6eOR5RbmxYYbY/user-guide/webapp).
 
-:::{grid-item-card}
-:link: docs/develop/dapp/quick-start/README.html
-:class-card: sd-text-center sd-shadow-md sd-rounded-3
-```{image} /img/Build_a_dApp_ver1.svg
-:class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
-```
-**Start building**  
-Set up your environment and get started with Terrain.
-:::
+Welcome to the Anchor documentation site.
 
-:::{grid-item-card}
-:link: docs/learn/terra-station/README.html
-:class-card: sd-text-center sd-shadow-md sd-rounded-3
-```{image} /img/wallets_station.png
-:class: sd-width-auto sd-pb-2 sd-animate-grow50-rot20
-```
-**Get started with Station**  
-Create a wallet and stake Luna for rewards.
-:::
+# What is Anchor?
 
-:::{grid-item-card}
-:link: docs/learn/protocol.html
-:class-card: sd-text-center sd-shadow-md sd-rounded-3
-```{image} /img/icon_terra.svg
-:class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
-```
-**Learn about Terra**  
-Learn about Terra stablecoins, Luna, rewards, staking, and governance.
-:::
+**Anchor** is a decentralized savings protocol offering low-volatile yields on Terra stablecoin deposits. The Anchor rate is powered by a diversified stream of staking rewards from major proof-of-stake blockchains, and therefore can be expected to be much more stable than money market interest rates.  The Anchor community believes that a stable, reliable source of yield in Anchor has the opportunity to become the reference interest rate in crypto.
 
-:::{grid-item-card}
-:link: docs/spacecamp/README.html
-:class-card: sd-text-center sd-shadow-md sd-rounded-3
-```{image} /img/spacecamp_icon-01.svg
-:class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
-```
-**Hackathon resources**  
-A helpful list for Spacecamp hackers.
-:::
+The Anchor protocol defines a money market between a **lender**, looking to earn stable yields on their stablecoins, and a **borrower**, looking to borrow stablecoins on stakeable assets. To borrow stablecoins, the borrower locks up [Bonded Assets](notion://www.notion.so/o/-MNbAlnRtgggkJfdtVsn/s/-MT-6Wb5pEQsulIrcwGJ/~/changes/gr4a3xt6eOR5RbmxYYbY/protocol/bonded-assets-bassets) (bAssets) as collateral, and borrows stablecoins below the protocol-defined borrowing ratio. The diversified stream of staking rewards accruing to the global pool of collateral then gets converted to stablecoin, and then conferred to the lender in the form of a stable yield.
 
-:::{grid-item-card}
-:link: docs/ecosystem/README.html
-:class-card: sd-text-center sd-shadow-md sd-rounded-3
-```{image} /img/Ecosystem_ver1.svg
-:class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
-```
-**Explore the ecosystem**  
-Discover Terra's vast network of dApps and exchanges.
-:::
+Deposited stablecoins are represented by [Anchor Terra (aTerra)](notion://www.notion.so/o/-MNbAlnRtgggkJfdtVsn/s/-MT-6Wb5pEQsulIrcwGJ/~/changes/gr4a3xt6eOR5RbmxYYbY/protocol/money-market#anchor-terra-aterra). aTerra tokens are redeemable for the initial deposit along with accrued interest, allowing interest collection to be done just by holding on to them. Anchor is structured to provide depositors with:
 
-:::{grid-item-card}
-:link: docs/develop/module-specifications/README.html
-:class-card: sd-text-center sd-shadow-md sd-rounded-3
-```{image} /img/icon_core.svg
-:class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
-```
-**Unearth Terra Core**  
-Learn about the modules at the heart of the protocol.
-:::
+- **High, stable deposit yields** powered by rewards of [bAsset collaterals](notion://www.notion.so/o/-MNbAlnRtgggkJfdtVsn/s/-MT-6Wb5pEQsulIrcwGJ/~/changes/gr4a3xt6eOR5RbmxYYbY/protocol/money-market#borrowing-terra-stablecoins)
+    
+- **Instant withdrawals** through [pooled lending](notion://www.notion.so/o/-MNbAlnRtgggkJfdtVsn/s/-MT-6Wb5pEQsulIrcwGJ/~/changes/gr4a3xt6eOR5RbmxYYbY/protocol/money-market#depositing-terra-stablecoins) of stablecoin deposits
+    
+- **Principal protection** via [liquidation](notion://www.notion.so/o/-MNbAlnRtgggkJfdtVsn/s/-MT-6Wb5pEQsulIrcwGJ/~/changes/gr4a3xt6eOR5RbmxYYbY/protocol/loan-liquidation) of loans in risk of undercollateralization
+    
 
-:::{grid-item-card}
-:link: docs/full-node/run-a-full-terra-node/README.html
-:class-card: sd-text-center sd-shadow-md sd-rounded-3
-```{image} /img/icon_node.svg
-:class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
-```
-**Run a full node**  
-Contribute to the security of the network.
-:::
+Anchor is an open, permissionless savings protocol, meaning that any third-party application is free to connect and earn interest without restrictions. Through [Anchor Earn](notion://www.notion.so/o/-MNbAlnRtgggkJfdtVsn/s/-MT-6Wb5pEQsulIrcwGJ/~/changes/gr4a3xt6eOR5RbmxYYbY/developers-earn/anchor-earn-sdk), [Anchor.js](notion://www.notion.so/o/-MNbAlnRtgggkJfdtVsn/s/-MT-6Wb5pEQsulIrcwGJ/~/changes/gr4a3xt6eOR5RbmxYYbY/developers-terra/anchor.js) or [EthAnchor](notion://www.notion.so/o/-MNbAlnRtgggkJfdtVsn/s/-MT-6Wb5pEQsulIrcwGJ/~/changes/gr4a3xt6eOR5RbmxYYbY/developers-ethereum/ethanchor), developers can interact with Anchor using just a few lines of code.
 
-:::{grid-item-card}
-:link: docs/develop/sdks/terra-js/README.html
-:class-card: sd-text-center sd-shadow-md sd-rounded-3
-```{image} /img/terra_js.svg
-:class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
-```
-**Terra.js**  
-Build with Javascript.
-:::
+Further documentation of the Anchor Protocol is provided in the following pages.
 
-:::{grid-item-card}
-:link: https://terra-money.github.io/terra.py/
-:class-card: sd-text-center sd-shadow-md sd-rounded-3
-```{image} /img/terra_sdk.svg
-:class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
-```
-**Terra.py**  
-Build with Python.
-:::
-:::::::
+# Sections
 
+Learn more about Anchor Protocol, its core smart contracts, and Javascript SDK.
 
-```{toctree}
-:hidden:
-docs/learn/README
-```
+- Learn more about the [Protocol](notion://www.notion.so/o/-MNbAlnRtgggkJfdtVsn/s/-MT-6Wb5pEQsulIrcwGJ/~/changes/gr4a3xt6eOR5RbmxYYbY/protocol/overview).
+    
+- Read up on the specifications for the [Anchor Protocol](https://anchorprotocol.com/docs/anchor-v1.1.pdf) and [bAssets](https://anchorprotocol.com/docs/The_bAsset_Protocol.pdf).
+    
+- Check out the [Smart Contracts](notion://www.notion.so/o/-MNbAlnRtgggkJfdtVsn/s/-MT-6Wb5pEQsulIrcwGJ/~/changes/gr4a3xt6eOR5RbmxYYbY/smart-contracts/deployed-contracts).
+    
+- Build savings apps with [Anchor Earn](notion://www.notion.so/o/-MNbAlnRtgggkJfdtVsn/s/-MT-6Wb5pEQsulIrcwGJ/~/changes/gr4a3xt6eOR5RbmxYYbY/developers-earn/anchor-earn-sdk).
+    
+- Build apps using [Anchor.js](notion://www.notion.so/o/-MNbAlnRtgggkJfdtVsn/s/-MT-6Wb5pEQsulIrcwGJ/~/changes/gr4a3xt6eOR5RbmxYYbY/developers-terra/anchor.js).
+    
+- Cross chain apps on Ethereum using [EthAnchor](notion://www.notion.so/o/-MNbAlnRtgggkJfdtVsn/s/-MT-6Wb5pEQsulIrcwGJ/~/changes/gr4a3xt6eOR5RbmxYYbY/developers-ethereum/ethanchor)
+    
+
+# Community
+
+- [Telegram](https://t.me/anchor_official)
+    
+- [Twitter](https://twitter.com/anchor_protocol)
+    
+- [Discord](https://discord.gg/9aUYgpKZ9c)
+    
+- [Forum](https://forum.anchorprotocol.com/)
 
 ```{toctree}
 :hidden:
 docs/develop/README
-```
-
-```{toctree}
-:hidden:
-docs/full-node/README
-```
-
-```{toctree}
-:hidden:
-docs/ecosystem/README
-```
-
-```{toctree}
-:hidden:
-Spacecamp <docs/spacecamp/README.md>
 ```
