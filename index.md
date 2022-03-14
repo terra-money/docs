@@ -1,12 +1,10 @@
 # Anchor Docs
 
-# 
-
 You can access Anchor through the official [Web App](notion://www.notion.so/o/-MNbAlnRtgggkJfdtVsn/s/-MT-6Wb5pEQsulIrcwGJ/~/changes/gr4a3xt6eOR5RbmxYYbY/user-guide/webapp).
 
 Welcome to the Anchor documentation site.
 
-# What is Anchor?
+## What is Anchor?
 
 **Anchor** is a decentralized savings protocol offering low-volatile yields on Terra stablecoin deposits. The Anchor rate is powered by a diversified stream of staking rewards from major proof-of-stake blockchains, and therefore can be expected to be much more stable than money market interest rates.  The Anchor community believes that a stable, reliable source of yield in Anchor has the opportunity to become the reference interest rate in crypto.
 
@@ -25,7 +23,7 @@ Anchor is an open, permissionless savings protocol, meaning that any third-party
 
 Further documentation of the Anchor Protocol is provided in the following pages.
 
-# Sections
+## Sections
 
 Learn more about Anchor Protocol, its core smart contracts, and Javascript SDK.
 
@@ -42,7 +40,7 @@ Learn more about Anchor Protocol, its core smart contracts, and Javascript SDK.
 - Cross chain apps on Ethereum using [EthAnchor](notion://www.notion.so/o/-MNbAlnRtgggkJfdtVsn/s/-MT-6Wb5pEQsulIrcwGJ/~/changes/gr4a3xt6eOR5RbmxYYbY/developers-ethereum/ethanchor)
     
 
-# Community
+## Community
 
 - [Telegram](https://t.me/anchor_official)
     
