@@ -1,0 +1,1 @@
+# EthAnchor account contract
