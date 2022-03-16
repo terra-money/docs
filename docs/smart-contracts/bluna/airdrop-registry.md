@@ -1,1 +1,0 @@
-# Airdrop registry
