@@ -13,3 +13,10 @@ Even with a thorough understanding of Anchor Protocol, it is highly recommended 
 | [Reward](reward.md)       | Manages bETH reward distribution                                             |
 | [Token](token.md)         | Handles bETH balances of users                                               |
 | [Converter](converter.md) | Converts between Wormhole wrapped tokens and Anchor collateral bAsset tokens |
+
+```{toctree}
+:hidden:
+reward
+token
+converter
+```

@@ -22,3 +22,10 @@ Below are sections that contains the API documentation for using the EthAnchor A
 | [Redeeming Stablecoins](redeeming-stablecoins.md)           | Endpoints for redeeming wrapped Terra stablecoins from Anchor       |
 
 Fabricated transactions are unsigned Ethereum Tx payloads that include the user's desired EthAnchor operation. Users can then sign the Tx payload and broadcast it to the relevant Ethereum network to conduct the operation.
+
+```{toctree}
+:hidden:
+getting-market-information
+depositing-stablecoins
+redeeming-stablecoins
+```

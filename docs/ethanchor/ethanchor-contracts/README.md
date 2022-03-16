@@ -25,3 +25,11 @@ A proxy contract lies above the Router and ConversionPool contracts for routing 
 ## ExchangeRateFeeder
 
 The ExchangeRateFeeder contract calculates and determines the exchange rate between non-UST stablecoins and their aTerra counterparts.
+
+```{toctree}
+:hidden:
+deployed-contracts
+router
+conversionpool
+exchangeratefeeder
+```

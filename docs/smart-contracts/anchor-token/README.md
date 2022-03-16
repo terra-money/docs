@@ -16,3 +16,11 @@ Even with a thorough understanding of Anchor Protocol, it is highly recommended 
 | [Collector](collector.md)     | Accumulates protocol fees, converts them to ANC and distributes to ANC stakers |
 | [Distributor](distributor.md) | Holds ANC tokens which are to be used as borrower incentives                   |
 
+```{toctree}
+:hidden:
+gov
+staking
+community
+collector
+distributor
+```

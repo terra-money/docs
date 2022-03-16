@@ -52,3 +52,15 @@ Governance polls in Anchor follow the below procedure:
 | [Modify ANC Distribution](modify-the-distribution-model.md)       | Propose for changes related to Anchor token distribution                                            |
 | [Community Grants](spend-community-pool.md)                       | Propose for Anchor community funded development work                                                |
 | [Text Proposal](text-proposal.md)                                 | Submit a text proposal                                                                              |
+
+```{toctree}
+:hidden:
+modify-collateral-parameters
+modify-market-parameters
+modify-liquidation-parameters
+modify-governance-parameters
+modify-the-interest-model
+modify-the-distribution-model
+spend-community-pool
+text-proposal
+```

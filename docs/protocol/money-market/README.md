@@ -117,3 +117,8 @@ $$
 $$
 
 The borrow rate equation incentivizes markets to have sufficient liquidity at their equilibrium. An increase in borrow demand is met with higher borrow rates, incentivizing repayments, and restoring market liquidity.
+
+```{toctree}
+:hidden:
+deposit-rate-subsidization
+```

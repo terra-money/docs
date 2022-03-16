@@ -12,3 +12,9 @@ Even with a thorough understanding of Anchor Protocol, it is highly recommended 
 | ----------------------------------------------------------- | -------------------------------------------------------- |
 | [Liquidation Contract \[Legacy\]](liquidation-contract.md)  | OTC exchange contract for bAsset collateral liquidations |
 | [Liquidation Queue Contract](liquidation-queue-contract.md) | Contract for capital-efficient collateral liquidations   |
+
+```{toctree}
+:hidden:
+liquidation-contract
+liquidation-queue-contract
+```

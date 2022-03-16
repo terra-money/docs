@@ -37,3 +37,9 @@ Having well-established secondary markets for bAssets is vastly beneficial for A
 ### Reward Accruing
 
 Anchor's deposit rate subsidies are funded by bAsset rewards. bAsset rewards should be given out without interruption, as subsidies must be constantly distributed.
+
+```{toctree}
+:hidden:
+bonded-luna-bluna
+bonded-eth-beth
+```

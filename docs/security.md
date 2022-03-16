@@ -18,7 +18,7 @@ The Anchor community values the input of white hat hackers working in good faith
 
 ## Immunefi Bug Bounty Program
 
-[Anchor bug bounties](https://immunefi.com/bounty/anchor/) are available on [ImmuneFi's bug bounty platform](https://immunefi.com/bounty/anchor/). This bounty program applies to Anchor's smart contracts and app and is focused on preventing:&#x20;
+[Anchor bug bounties](https://immunefi.com/bounty/anchor/) are available on [ImmuneFi's bug bounty platform](https://immunefi.com/bounty/anchor/). This bounty program applies to Anchor's smart contracts and app and focuses on preventing:&#x20;
 
 * Thefts and freezing of principal of any amount&#x20;
 * Thefts and freezing of unclaimed yield of any amount&#x20;
