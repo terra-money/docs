@@ -41,6 +41,12 @@ You can view the site in your browser by navigating to `index.html` located in `
 
 Make sure to run `make docker-build` each time you save your changes to view them live.
 
+To auto-rebuild the site and refresh the browser use: 
+
+```
+make docker-watch
+```
+
 ### Adding an article
 
 All articles are markdown files, placed under the `/docs/` directory. You can create folders underneath the `/docs` directory, such as the following:
