@@ -63,8 +63,9 @@ html_scaled_image_link = False
 # a list of builtin themes.
 #
 html_theme = "sphinx_book_theme"
-html_logo = "img/docs_logo.svg"
-html_favicon = "img/docs_favicon.ico"
+
+#html_logo = "img/docs_logo.svg"
+#html_favicon = "img/docs_favicon.ico"
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -108,7 +109,7 @@ html_theme_options = {
     "use_issues_button": True,
     "use_repository_button": True,
     "use_download_button": True,
-    "logo_only": True,
+    "logo_only": False,
     "show_toc_level": 3,
     "extra_navbar": False,
 }
