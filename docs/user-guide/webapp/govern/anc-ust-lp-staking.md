@@ -1,1 +1,0 @@
-# ANC-UST LP staking

@@ -8,12 +8,9 @@ The Anchor community believes that size, visibility, and time are the true test 
 
 ## Audits
 
-- [Anchor Protocol Smart Contracts - Audit Report](https://anchorprotocol.com/docs/Audit%20Report%20-%20Anchor%20Protocol%20[20210308].pdf) by [Cryptonics](https://cryptonics.consulting/)
-    
-- [Anchor Token and Distributions Smart Contracts - Audit Report](https://anchorprotocol.com/docs/Audit%20Report%20-%20Anchor%20Protocol%20[20210406].pdf) by [Cryptonics](https://cryptonics.consulting/)
-    
-- [EthAnchor - Audit Report](https://anchorprotocol.com/docs/Audit%20Report%20-%20EthAnchor%20[09.07.2021].pdf) by [Solidified](https://solidified.io/)
-    
+* [Anchor Protocol Smart Contracts - Audit Report](https://anchorprotocol.com/docs/Audit%20Report%20-%20Anchor%20Protocol%20\[20210308].pdf) by [Cryptonics](https://cryptonics.consulting)
+* [Anchor Token and Distributions Smart Contracts - Audit Report](https://anchorprotocol.com/docs/Audit%20Report%20-%20Anchor%20Protocol%20\[20210406].pdf) by [Cryptonics](https://cryptonics.consulting)
+* [EthAnchor - Audit Report](https://anchorprotocol.com/docs/Audit%20Report%20-%20EthAnchor%20\[09.07.2021].pdf) by [Solidified](https://solidified.io)
 
 ## Anchor Bug Bounty Program
 
@@ -21,23 +18,15 @@ The Anchor community values the input of white hat hackers working in good faith
 
 ## Immunefi Bug Bounty Program
 
-[Anchor bug bounties](https://immunefi.com/bounty/anchor/) are available on [ImmuneFi's bug bounty platform](https://immunefi.com/bounty/anchor/). This bounty program applies to Anchor's smart contracts and app and is focused on preventing:
+[Anchor bug bounties](https://immunefi.com/bounty/anchor/) are available on [ImmuneFi's bug bounty platform](https://immunefi.com/bounty/anchor/). This bounty program applies to Anchor's smart contracts and app and focuses on preventing:&#x20;
 
-- Thefts and freezing of principal of any amount
-    
-- Thefts and freezing of unclaimed yield of any amount
-    
-- Theft of governance funds
-    
-- Governance activity disruption
-    
-- Website uptime disruption
-    
-- User data leaks
-    
-- Deletion of user data
-    
-- Access to sensitive pages without authorization
-    
+* Thefts and freezing of principal of any amount&#x20;
+* Thefts and freezing of unclaimed yield of any amount&#x20;
+* Theft of governance funds&#x20;
+* Governance activity disruption&#x20;
+* Website uptime disruption&#x20;
+* User data leaks&#x20;
+* Deletion of user data&#x20;
+* Access to sensitive pages without authorization&#x20;
 
 All rewards on ImmuneFi are distributed according to the [Immunefi Vulnerability Severity Classification System](https://immunefi.com/severity-updated/). Any vulnerability with regards to the use of centralized price feed oracles is ineligible for a reward. To view the current bounties and rewards, and to find out more information, visit the [Immunefi Anchor bounty page](https://immunefi.com/bounty/anchor/).

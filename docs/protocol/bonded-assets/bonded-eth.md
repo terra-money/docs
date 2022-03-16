@@ -1,1 +1,0 @@
-# Bonded ETH (bETH)

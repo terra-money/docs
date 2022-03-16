@@ -1,1 +1,0 @@
-# Validator's registry
