@@ -309,9 +309,9 @@ pub enum ExecuteMsg {
 
 ### `WithdrawCollateral`
 
-{% hint style="info" %}
+::: {note}
 Collaterals have to be first unlocked in the [Overseer](overseer.md) before they can be withdrawn by the user.
-{% endhint %}
+:::
 
 Withdraws specified amount of spendable collateral. Withdraws all spendable collateral if the `amount` field is not filled.
 
@@ -349,9 +349,9 @@ pub enum ExecuteMsg {
 
 ### `DepositCollateral`
 
-{% hint style="info" %}
+::: {note}
 Deposited collaterals have to be locked in the [Overseer](overseer.md) before they can be utilized in a loan position.
-{% endhint %}
+:::
 
 Deposits collateral. Issued when a user sends bAsset tokens to the Custody contract.
 
