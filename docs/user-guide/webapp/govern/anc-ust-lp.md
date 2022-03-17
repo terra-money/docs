@@ -16,9 +16,9 @@ The **ANC - UST LP** section of the **GOVERN** page displays:
 
 ## Providing (Pooling) liquidity to the ANC-UST pair
 
-{% hint style="info" %}
+::: {note}
 Users must have a balance of both ANC and UST tokens in order to provide liquidity.
-{% endhint %}
+:::
 
 1\. Navigate to the **GOVERN** page and click on **\[ANC - UST LP]**.
 
@@ -42,9 +42,9 @@ Users must have a balance of both ANC and UST tokens in order to provide liquidi
 
 6\. Liquidity provide complete. LP tokens are minted to the user.
 
-{% hint style="warning" %}
+::: {warning}
 LP tokens minted from provided liquidity must be staked to receive LP staking rewards.
-{% endhint %}
+:::
 
 ![](<../../../.gitbook/assets/Govern - LP - provide - 6.png>)
 

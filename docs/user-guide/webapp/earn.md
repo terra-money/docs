@@ -2,9 +2,9 @@
 
 The **EARN** page provides a savings account interface to earn Anchor yield on Terra stablecoins. It allows users to deposit and withdraw Terra stablecoins, track their current deposit value, history of transactions, current deposit annualized percentage rate (APY), and amount of interest earned from Anchor.
 
-{% hint style="info" %}
+::: {note}
 As of March 17th, 2021, Anchor only supports TerraUSD (UST) as the base currency. Other Terra stablecoins will be supported as UST pairs become more liquid.
-{% endhint %}
+:::
 
 The **EARN** page displays the following data:
 

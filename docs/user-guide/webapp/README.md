@@ -4,15 +4,15 @@
 
 The **Anchor WebApp** offers a graphical user interface for accessing Anchor's core user operations, such as depositing & redeeming Terra stablecoins, minting bAsset tokens, borrowing Terra stablecoins with bAssets as collateral, and participating in Anchor governance.
 
-{% hint style="warning" %}
+::: {warning}
 The Anchor web app requires [Google Chrome](https://www.google.com/chrome/) and [Station Extension](https://chrome.google.com/webstore/detail/terra-station/aiifbnbfobpmeekipheeijimdpnlpgpp) to be installed. Please follow the instructions below to set up your browser to be able to access the WebApp.
-{% endhint %}
+:::
 
 ## Terra Station Extension
 
-{% hint style="warning" %}
+::: {warning}
 As of March 17th, 2021, Station Extension is only available for Chromium-based web browsers.
-{% endhint %}
+:::
 
 Station Extension is a Chrome extension that lets users interact with smart contract web frontends with an embedded in-browser wallet. When a user makes an interaction on Anchor WebApp, the WebApp will generate a transaction in the proper format that encodes the user's desired operation. Station Extension will detect and prompt the user to sign and broadcast the transaction to actually execute the operation.
 
@@ -28,19 +28,19 @@ Station Extension is a Chrome extension that lets users interact with smart cont
 
 2\. Select **New Wallet**
 
-![](<../../.gitbook/assets/Picture 1 (2).png>)
+![](../../assets/ts-new-wallet.png)
 
 3\. Set a wallet name and password. **Make sure to record the created 24 word seed phrase in a secure storage**. Select **\[Next]** to proceed.
 
-![](<../../.gitbook/assets/Picture 2.png>)
+![](../../assets/ts-seed.png)
 
 4\. Confirm the created seed phrase by inputting the correct words.
 
-![](<../../.gitbook/assets/Picture 3.png>)
+![](../../assets/ts-confirm.png)
 
 5\. Select **\[Create a wallet]** to finish.
 
-![](<../../.gitbook/assets/Picture 4.png>)
+![](../../assets/ts-create.png)
 
 
 
@@ -48,7 +48,7 @@ Station Extension is a Chrome extension that lets users interact with smart cont
 
 Terra Station Extension allows users to connect and sign transactions with their Ledger Nano S or Nano X. To access Ledger from Station Extension, users should:&#x20;
 
-* Install Terra application using [Ledger Live](https://www.ledger.com/ledger-live/download/) application. The Developer Mode on Ledger Live application from Settings > Experimental Features must be enabled to install Terra application. \
+* Install Terra application using [Ledger Live](https://www.ledger.com/ledger-live/download/) application. The Developer Mode on Ledger Live application from Settings > Experimental Features must be enabled to install Terra application.  
 
 * The Ledger device must be connected to the user's computer via USB. Station Extension **does not support connecting with Bluetooth**.
 
@@ -60,7 +60,7 @@ To access Ledger from Terra Station Extension, the following steps are required:
 
 3\. Select **\[Access with ledger]** on Terra Station Extension menu
 
-![](<../../.gitbook/assets/Picture 5.png>)
+![](../../assets/ts-ledger.png)
 
 4\. Once Ledger has been successfully connected with Terra Station Extension, transactions can be signed with Ledger.
 
@@ -72,11 +72,11 @@ To access Ledger from Terra Station Extension, the following steps are required:
 
 1\. Select **\[Recover existing wallet]**
 
-![](<../../.gitbook/assets/Picture 6.png>)
+![](../../asset/ts-recover.png)
 
 2\. Enter a new wallet name and password.
 
-![](<../../.gitbook/assets/Screen Shot 2021-02-16 at 10.46.49 PM.png>)
+![](../../assets/ts-name.png)
 
 3\. Enter the 24 word seed phrase of the wallet to recover and select **\[Next]** to finish.
 
@@ -86,27 +86,26 @@ To access Ledger from Terra Station Extension, the following steps are required:
 
 1\. Select **\[Send]** button aligned to the tokens to send.
 
-![](<../../.gitbook/assets/Picture 7.png>)
-
+![](../../assets/ts-send.png)
 2\. Input the information below and select **\[Next]**:
 
 * Address of the recipient
 * Amount of tokens to send
 * Memo (optional)
 
-{% hint style="info" %}
+::: {note}
 Station Extension also support cross-chain token transfers to Ethereum addresses through the [Shuttle](https://github.com/terra-project/shuttle) bridge.&#x20;
-{% endhint %}
+:::
 
-![](<../../.gitbook/assets/Picture 8.png>)
+![](../../assets/send.png)
 
 3\. Set the denomination and amount of tokens to pay as transaction fees. Enter the password and click **\[Send]**.
 
-![](<../../.gitbook/assets/Picture 9.png>)
+![](../../assets/ts-send2.png)
 
 4\. Station Extension will display the transaction result. Select **\[Ok]** to return to the main page.&#x20;
 
-![](<../../.gitbook/assets/Picture 10.png>)
+![](../../assets/ts-send3.png)
 
 ## Obtaining Terra Stablecoins
 
@@ -123,13 +122,13 @@ Users can swap Luna or Terra stablecoins such as TerraKRW (KRT), or TerraSDR (SD
 
 1\. Navigate to the "Swap" page by clicking it on the sidebar. It should display a page similar to:
 
-![](<../../.gitbook/assets/Picture 11.png>)
+![](../../assets/ts-swap.png)
 
 2\. Select the coin denomination to swap and the coin denomination to receive in the "Swap coins" section, found at the bottom of the page. The swap will be conducted based on the current "Terra exchange rate".
 
-{% hint style="info" %}
-The approximate spread and fee for performing the swap will be shown. The rules for determining the fees are covered in [Terra Docs](https://docs.terra.money/dev/spec-market).
-{% endhint %}
+::: {note}
+The approximate spread and fee for performing the swap will be shown. The rules for determining the fees are covered in [Terra Docs](https://docs.terra.money).
+:::
 
 3\. Click **\[Next]** and sign the transaction to complete the swap.&#x20;
 

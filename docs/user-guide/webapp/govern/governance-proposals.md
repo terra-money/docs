@@ -62,7 +62,7 @@ The **Polls** section of the **GOVERN** page displays:&#x20;
 
 {% hint style="danger" %}
 Staked ANC tokens utilized in on-going polls **cannot be withdrawn** until the poll completes. In addition, the number of ANC used in a poll vote **cannot be modified** after the vote has been submitted.
-{% endhint %}
+:::
 
 ![](<../../../.gitbook/assets/Screen Shot 2021-03-11 at 2.43.23 PM.png>)
 
