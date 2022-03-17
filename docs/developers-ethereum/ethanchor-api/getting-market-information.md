@@ -6,9 +6,9 @@ General information about a stablecoin [market](../../protocol/money-market/#dep
 | ----------------------------------------------------------------------------- | ------ | ------------------------------------------------------ |
 | [`stablecoin_info`](getting-market-information.md#get-stablecoin-information) | GET    | Gets information about the specified stablecoin market |
 
-{% hint style="warning" %}
+::: {warning}
 Due to the asynchronous nature of EthAnchor, the actual aTerra exchange rate applied **will be different** to the exchange rate returned by `stablecoin_info`. The expected receive amount calculated using this value **WILL NOT** match the actual receive amount.
-{% endhint %}
+:::
 
 {% swagger baseUrl="https://eth-api.anchorprotocol.com" path="/api/v1/stablecoin_info/{stable_denom}" method="get" summary="Get stablecoin information" %}
 {% swagger-description %}

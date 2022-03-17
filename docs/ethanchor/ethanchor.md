@@ -1,8 +1,8 @@
 # EthAnchor
 
-{% hint style="info" %}
+::: {note}
 For those wishing to read up on the previous version of EthAnchor, click [here](../developers-ethereum/ethanchor.md).
-{% endhint %}
+:::
 
 ![](../.gitbook/assets/ethAnchor\_logo\_Black.png)
 
@@ -26,9 +26,9 @@ EthAnchor can be accessed either by direct interactions with the EthAnchor contr
 
 Supported Ethereum stablecoins and their APYs at the time of writing are listed below:&#x20;
 
-{% hint style="warning" %}
+::: {warning}
 Note that additional fees may be applied from WebApp implementations, resulting in a lower APY.
-{% endhint %}
+:::
 
 | Stablecoin Name | Symbol | APY          |
 | --------------- | ------ | ------------ |

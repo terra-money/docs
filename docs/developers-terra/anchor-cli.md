@@ -2,9 +2,9 @@
 
 `anchorcli` is a command-line interface for Anchor Protocol on Terra and allows more advanced users to perform operations directly from their shell or terminal without having to interact with a graphical interface. `anchorcli` is built on top of `terracli` and allows you to use keys saved in its keychain.
 
-{% hint style="info" %}
+::: {note}
 This section provides a brief guide on how to interact with Anchor Protocol via `anchorcli`. For further information, please check its [GitHub](https://github.com/Anchor-Protocol/anchorcli) and [Readme](https://www.npmjs.com/package/@anchor-protocol/anchorcli).
-{% endhint %}
+:::
 
 ## Installation
 

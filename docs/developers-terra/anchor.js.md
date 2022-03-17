@@ -2,13 +2,13 @@
 
 The Anchor.js JS SDK allows applications with JavaScript runtimes to interact with Anchor Protocol. It supports easy fabrication of messages relevant to Terra-side Anchor smart contracts, used to make contract calls or query contract states.
 
-{% hint style="info" %}
+::: {note}
 For those wishing to build applications that are centered around Anchor's earn/savings functionality, using [Anchor Earn](../developers-earn/anchor-earn-sdk.md) is recommended.
-{% endhint %}
+:::
 
-{% hint style="info" %}
+::: {note}
 This section only provides a brief overview of Anchor.js. For additional information, please refer to the [Anchor.js repository](https://github.com/Anchor-Protocol/anchor.js).
-{% endhint %}
+:::
 
 ### Installation
 

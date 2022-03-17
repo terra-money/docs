@@ -9,9 +9,9 @@ EthAnchor is built using various blockchain infrastructure, which charges fees o
 
 ## Shuttle Fee
 
-{% hint style="warning" %}
+::: {warning}
 Shuttle ignores transfer requests with a transfer value smaller than **1 UST**.
-{% endhint %}
+:::
 
 Cross-chain transfers of Terra stablecoins and aTerra tokens between Ethereum and Terra are facilitated with the use of [Shuttle](https://github.com/terra-project/shuttle). Shuttle charges a fee **only** for cross-chain token transfers from Terra to Ethereum, with the fee amount being:&#x20;
 
