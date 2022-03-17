@@ -1,33 +1,34 @@
 # Table of contents
 
-* [Home](README.md)
-* [Security](security.md)
+% "-e" = checked initially by Evan
+* [Home](README.md) -e
+* [Security](security.md) -e
 
 ## Protocol
 
-* [Overview](protocol/overview.md)
-* [Bonded Assets (bAssets)](protocol/bonded-assets-bassets/README.md)
-  * [Bonded Luna (bLuna)](protocol/bonded-assets-bassets/bonded-luna-bluna.md)
-  * [Bonded ETH (bETH)](protocol/bonded-assets-bassets/bonded-eth-beth.md)
-* [Money Market](protocol/money-market/README.md)
-  * [Deposit Rate Subsidization](protocol/money-market/deposit-rate-subsidization.md)
-* [Loan Liquidation](protocol/loan-liquidation.md)
-* [Anchor Token (ANC)](protocol/anchor-token-anc.md)
-* [Anchor Governance](protocol/anchor-governance/README.md)
-  * [Modify Collateral Attributes](protocol/anchor-governance/modify-collateral-parameters.md)
-  * [Modify Market Parameters](protocol/anchor-governance/modify-market-parameters.md)
-  * [Modify Liquidation Parameters](protocol/anchor-governance/modify-liquidation-parameters.md)
-  * [Modify ANC Parameters](protocol/anchor-governance/modify-anc-parameters.md)
-  * [Modify Governance Parameters](protocol/anchor-governance/modify-governance-parameters.md)
-  * [Modify Borrow Interest](protocol/anchor-governance/modify-the-interest-model.md)
-  * [Modify ANC Distribution](protocol/anchor-governance/modify-the-distribution-model.md)
-  * [Community Grants](protocol/anchor-governance/spend-community-pool.md)
-  * [Text Proposal](protocol/anchor-governance/text-proposal.md)
+* [Overview](protocol/overview.md) -e
+* [Bonded Assets (bAssets)](protocol/bonded-assets-bassets/README.md)-e
+  * [Bonded Luna (bLuna)](protocol/bonded-assets-bassets/bonded-luna-bluna.md) -e
+  * [Bonded ETH (bETH)](protocol/bonded-assets-bassets/bonded-eth-beth.md) -e
+* [Money Market](protocol/money-market/README.md) -e
+  * [Deposit Rate Subsidization](protocol/money-market/deposit-rate-subsidization.md) -e
+* [Loan Liquidation](protocol/loan-liquidation.md) -e
+* [Anchor Token (ANC)](protocol/anchor-token-anc.md) -e
+* [Anchor Governance](protocol/anchor-governance/README.md) -e
+  * [Modify Collateral Attributes](protocol/anchor-governance/modify-collateral-parameters.md) -e
+  * [Modify Market Parameters](protocol/anchor-governance/modify-market-parameters.md) -e
+  * [Modify Liquidation Parameters](protocol/anchor-governance/modify-liquidation-parameters.md) -e
+  * [Modify ANC Parameters](protocol/anchor-governance/modify-anc-parameters.md) -e
+  * [Modify Governance Parameters](protocol/anchor-governance/modify-governance-parameters.md) -e
+  * [Modify Borrow Interest](protocol/anchor-governance/modify-the-interest-model.md) -e
+  * [Modify ANC Distribution](protocol/anchor-governance/modify-the-distribution-model.md) -e
+  * [Community Grants](protocol/anchor-governance/spend-community-pool.md) -e
+  * [Text Proposal](protocol/anchor-governance/text-proposal.md) -e
 
 ## User Guide
 
-* [Interchain Transfers](user-guide/interchain-transfers.md)
-* [WebApp](user-guide/webapp/README.md)
+* [Interchain Transfers](user-guide/interchain-transfers.md) -e
+* [WebApp](user-guide/webapp/README.md) -e
   * [EARN](user-guide/webapp/earn.md)
   * [BORROW](user-guide/webapp/borrow.md)
   * [bASSET \[bLUNA\]](user-guide/webapp/bond.md)
