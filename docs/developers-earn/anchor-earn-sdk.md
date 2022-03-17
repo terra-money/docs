@@ -4,9 +4,9 @@
 
 Anchor Earn is a JavaScript SDK that specializes for integrations that are wishing to leverage the deposit functionality of Anchor.
 
-{% hint style="info" %}
+::: {note}
 Anchor Earn only covers the savings-related operations of Anchor. For a SDK with full functional coverage (e.g. minting bLuna, borrowing UST), [Anchor.js](https://docs.anchorprotocol.com/developers-terra/anchor.js) is recommended.
-{% endhint %}
+:::
 
 Anchor Earn is designed with interchain access in mind. Further releases of Anchor Earn are to enable integrations for interchain deposits, opening up savings for applications outside of the Terra blockchain. With the use of [EthAnchor](../developers-ethereum/ethanchor.md), BscAnchor, SolAnchor, etc., Anchor Earn is to be further expanded to enable savings regardless of blockchain or the type of stablecoin.
 
@@ -16,9 +16,9 @@ For those interested in reading the code, please refer to the [Anchor Earn repos
 
 ## Installation
 
-{% hint style="info" %}
+::: {note}
 Anchor Earn requires NPM and Node.js 12 or above for its proper usage.
-{% endhint %}
+:::
 
 Anchor Earn is available as a package on NPM. Add `@anchor-protocol/anchor-earn` to your JavaScript project's `package.json` as dependencies using preferred package manager:
 
@@ -72,9 +72,9 @@ const anchorEarn = new AnchorEarn({
 
 Creating an instance of the `Account` object generates a new blockchain account.
 
-{% hint style="info" %}
+::: {note}
 Tokens for testnet environments (e.g. Bombay) can be acquired using faucets, outlined in the [appendix](appendix.md#testnet-faucets) section.
-{% endhint %}
+:::
 
 **Method Parameters**
 
@@ -104,7 +104,7 @@ export class Account {
 `privateKey` and `mnemonic` constitute as your access key to your account, including the control of your assets.
 
 **PLEASE RECORD AND STORE THEM IN A SAFE PLACE AND NEVER SHARE EXTERNALLY.**
-{% endhint %}
+:::
 
 **Attributes**
 
@@ -136,9 +136,9 @@ const account = new MnemonicKey({
 
 ## Usage
 
-{% hint style="warning" %}
+::: {warning}
 For compatibility across tokens with various decimals, Anchor Earn unifies all currency amounts to use the **decimal representation**. As an example, a value of 10.1 in the amount field will lead to the utilization of 10.1 currency tokens.
-{% endhint %}
+:::
 
 ### Deposit Stablecoins to Anchor
 
@@ -177,9 +177,9 @@ const deposit = await anchorEarn.deposit({
 
 This method withdraws the specified amount of stablecoins (or their aTerra counterpart) from Anchor.
 
-{% hint style="warning" %}
+::: {warning}
 Note that the actual amount of stablecoins withdrawn will be smaller due to transfer fees (tax) enforced by the Terra blockchain.
-{% endhint %}
+:::
 
 **Method Parameters**
 
