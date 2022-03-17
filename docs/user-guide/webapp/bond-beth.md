@@ -11,7 +11,7 @@ Minting and redeeming bETH is a cross-chain operation, requiring interactions fr
 
 
 
-{% hint style="info" %}
+::: {note}
 Due to Wormhole's inability of generating custom CW20 tokens (required for bETH's reward-accruing features), there exists 2 bETH tokens on Terra:&#x20;
 
 * **Wormhole wrapped bETH (webETH)** - wrapped tokens transferred from Ethereum -> Terra.
@@ -24,7 +24,7 @@ Due to Wormhole's inability of generating custom CW20 tokens (required for bETH'
   * **Not redeemable to stETH once transferred back to Ethereum**
   * Minted by converting webETH tokens to bETH
   * Reward-accruing
-{% endhint %}
+:::
 
 bETH can be minted with ETH. This process requires the steps of: &#x20;
 
@@ -61,9 +61,9 @@ bETH tokens on Terra accrue rewards in TerraUSD, funded by staking rewards of Et
 
 bETH tokens can be minted by submitting ETH to Ethereum-side bETH smart contracts. The process is achievable via Lido's bETH WebApp.
 
-{% hint style="info" %}
+::: {note}
 Unlike bLUNA, bETH tokens are minted / redeemed through [Lido's web interface for bETH](https://anchor.lido.fi).
-{% endhint %}
+:::
 
 1\. Navigate to the **To bETH** page of Lido's web interface.
 
@@ -79,7 +79,7 @@ Unlike bLUNA, bETH tokens are minted / redeemed through [Lido's web interface fo
 **The Wormhole transaction ID link is extremely important to redeeming your tokens on the Terra side. Copy and paste it and don't close the page.**
 
 Redemptions can still be made if lost although with extra steps. The method of finding your transaction ID can be found [here](https://help.lido.fi/en/articles/5918594-how-to-find-the-link-to-claim-beth-on-terra).
-{% endhint %}
+:::
 
 ![](<../../.gitbook/assets/Minting bETH with ETH - 3.png>)
 
@@ -89,13 +89,13 @@ Redemptions can still be made if lost although with extra steps. The method of f
 
 ### 2. Redeeming Wormhole wrapped bETH tokens transferred to Terra
 
-{% hint style="warning" %}
+::: {warning}
 Unlike the previous Shuttle token bridge, the Wormhole bridge requires an extra step of redemption. **TOKENS WILL NOT SHOW UP ON YOUR WALLET UNTIL THEY HAVE BEEN REDEEMED**.
-{% endhint %}
+:::
 
-{% hint style="info" %}
+::: {note}
 Tutorials on redeeming tokens can be found [here (Wormhole's guide)](https://docs.wormholenetwork.com/wormhole/video-tutorial-how-to-use-wormhole) and [here (Lido's guide)](https://help.lido.fi/en/articles/5918594-how-to-find-the-link-to-claim-beth-on-terra).
-{% endhint %}
+:::
 
 Once complete, the specified Terra address will now hold an increased balance of webETH tokens.
 
@@ -157,13 +157,13 @@ Redemption is a two-step process, first requiring a cross-chain transfer, which 
 
 ### 2. Transferring webETH from Terra to Ethereum
 
-{% hint style="info" %}
+::: {note}
 Cross-chain transfers between Ethereum / Terra can be achieved through the [Wormhole bridge](https://wormholebridge.com). Tutorials on using the Wormhole bridge WebApp can be found [here](https://docs.wormholenetwork.com/wormhole/video-tutorial-how-to-use-wormhole).
-{% endhint %}
+:::
 
 {% hint style="danger" %}
 Transferred tokens need to be redeemed before they can be visible on your wallet.
-{% endhint %}
+:::
 
 
 
@@ -207,9 +207,9 @@ Transferred tokens need to be redeemed before they can be visible on your wallet
 
 ## Claiming accrued bETH rewards
 
-{% hint style="info" %}
+::: {note}
 bETH rewards only accrue only if the user is currently holding bETH tokens. Users do not accrue rewards from bETH tokens deposited to Anchor.
-{% endhint %}
+:::
 
 1\. Click the **Claim Rewards** button in the **CLAIMABLE REWARDS** section.
 

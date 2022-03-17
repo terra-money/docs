@@ -38,9 +38,9 @@ The **bASSET** page enables users to easily interact with bAsset tokens. Through
 
 * **BURN**: Burn bLuna through the bLuna protocol and redeem Luna. Redeemed Luna can be withdrawn after the Terra blockchain's unbonding period. Redemption is done with the current bLuna exchange rate but requires at least 21 days and the redemption amount may be affected by validator slashing.
 
-{% hint style="warning" %}
+::: {warning}
 Burn requests are processed in 3-day batches. Burn requests that are yet to be included in a batch are marked as **pending** in the **CLAIM** page.
-{% endhint %}
+:::
 
 ![](<../../.gitbook/assets/bAsset - bLuna - Burn - 2 copy.png>)
 
@@ -72,9 +72,9 @@ Burn requests are processed in 3-day batches. Burn requests that are yet to be i
 
 * **BURN**
 
-{% hint style="info" %}
+::: {note}
 bLuna burn requests currently in the unbonding period can be viewed at the [**CLAIM**](bond.md#withdrawing-luna-from-burnt-luna) tab.
-{% endhint %}
+:::
 
 ![](<../../.gitbook/assets/bAsset - bLuna - Burn - 5.png>)
 
@@ -84,9 +84,9 @@ bLuna burn requests currently in the unbonding period can be viewed at the [**CL
 
 ### Withdrawing Luna from burnt Luna
 
-{% hint style="info" %}
+::: {note}
 This subsection is only applicable for those that have burnt Luna through **BURN** and not **INSTANT BURN**.
-{% endhint %}
+:::
 
 1\. Click the **Withdraw** button in the **WITHDRAWABLE LUNA** section.
 
@@ -106,9 +106,9 @@ This subsection is only applicable for those that have burnt Luna through **BURN
 
 ## Claiming accrued bLuna rewards
 
-{% hint style="info" %}
+::: {note}
 bLuna rewards only accrue only if the user is currently holding bLuna tokens. Users do not accrue rewards from bLuna tokens deposited to Anchor.
-{% endhint %}
+:::
 
 1\. Click the **Claim Rewards** button in the **CLAIMABLE REWARDS** section.
 

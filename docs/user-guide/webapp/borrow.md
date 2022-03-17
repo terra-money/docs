@@ -4,9 +4,9 @@ The **BORROW** page can be used to borrow Terra stablecoins from Anchor. The pro
 
 Borrows can be made until the loan's borrowing usage reaches the borrowing limit, calculated based on collateral types, their prices, and deposit amount. Loans with a borrowing usage higher than the borrowing limit can be liquidated, and thus it is important for borrowers to closely maintain their borrowing usage as changes in collateral prices may occur.
 
-{% hint style="info" %}
+::: {note}
 As of March 17th, 2021, Anchor only supports Terra USD as the base currency.
-{% endhint %}
+:::
 
 The **BORROW** page displays:
 
@@ -26,9 +26,9 @@ The **BORROW** page displays:
 
 ## Providing bAsset collateral
 
-{% hint style="info" %}
+::: {note}
 Users should first obtain bAsset tokens in order to utilize them as loan collateral. bAsset minting can be done at the [**BOND**](bond.md) page in Anchor WebApp.
-{% endhint %}
+:::
 
 1\. Navigate to the **BORROW** page.
 
@@ -96,9 +96,9 @@ Users should first obtain bAsset tokens in order to utilize them as loan collate
 
 ## Withdrawing bAsset collateral
 
-{% hint style="info" %}
+::: {note}
 Withdrawn bAsset collaterals can be redeemed for their underlying assets at the Anchor WebApp's [**BOND**](bond.md) page.
-{% endhint %}
+:::
 
 1\. Navigate to the **BORROW** page.
 

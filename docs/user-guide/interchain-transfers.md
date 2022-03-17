@@ -1,8 +1,8 @@
 # Interchain Transfers
 
-{% hint style="warning" %}
+::: {warning}
 This page is only for token transfers via [Shuttle](https://github.com/terra-money/shuttle) only. For token transfers with Wormhole, please refer to the [Wormhole WebApp](https://wormholebridge.com/#/transfer) and[ documentation](https://docs.wormholenetwork.com/wormhole/) for its usage.
-{% endhint %}
+:::
 
 Native Terra tokens (TerraUSD, Luna) and ANC are interchain tokens -- they are available on the Terra blockchain and the Ethereum blockchain, also being available on the Binance Smart Chain (BSC) in the case for Native Terra tokens.
 
@@ -57,7 +57,7 @@ In order to sign transactions created through Terra Bridge, users must have the 
 
 #### 2. Specify Transfer Details
 
-![](<../.gitbook/assets/Screen Shot 2021-03-22 at 2.39.37 PM.png>)
+![](../assets/transfer.png)
 
 Before making the transfer, the details of the transfer should be specified by the user. The transfer details include:
 
@@ -69,35 +69,34 @@ Before making the transfer, the details of the transfer should be specified by t
 
 #### 3. Confirm Transfer Details
 
-![](<../.gitbook/assets/Screen Shot 2021-03-22 at 2.38.50 PM.png>)
+![](../assets/confirm.png)
 
 Confirm transfer details displayed on the WebApp and select **\[Confirm]** to proceed.
 
-{% hint style="warning" %}
+::: {warning}
 Shuttle applies a fee of **0.1%** (with a minimum 1 UST fee) for Terra to Ethereum transfers. Transfer requests below a transfer value of 1 UST are ignored.
-{% endhint %}
+:::
 
 #### 4. Sign and Broadcast the Transaction
 
-![](<../.gitbook/assets/Screen Shot 2021-03-22 at 2.41.28 PM.png>)
+![](../assets/sign.png)
 
 Confirm transaction details and click **\[Confirm]** to sign and broadcast a transaction that encodes the interchain transfer request. Note that this request may be made from a different extension / service depending on the selected source blockchain.
 
 #### 5. Transfer Request Complete
 
-![](<../.gitbook/assets/Screen Shot 2021-03-22 at 2.45.38 PM.png>)
+![](../assets/complete.png)
 
 A popup will show to display the details of the interchain transfer.
 
-{% hint style="info" %}
+::: {note}
 The Shuttle bridge waits for sufficient blockchain confirmations to occur on the source chain before making the transfer. It may take up to a few minutes for transferred token to be reflected on the destination chain.
-{% endhint %}
+:::
 
-###
 
 ### Terra Station
 
-![](<../.gitbook/assets/Screen Shot 2021-03-22 at 3.29.13 PM.png>)
+![](../assets/terra-station.png)
 
 Interchain transfers from Terra to Ethereum / BSC are also supported on **Terra Station**. Interchain token transfers through Terra Station can be achieved by following the below steps.
 
@@ -109,7 +108,7 @@ Select an asset to transfer and click **\[Send]**.
 
 #### 2. Specify Transfer Details
 
-![](<../.gitbook/assets/Screen Shot 2021-03-22 at 3.31.33 PM.png>)
+![](../assets/terra-station-select.png)
 
 Users should specify the transfer details listed below:
 
@@ -121,20 +120,20 @@ Click **\[Next]** after all details have been filled.
 
 #### 3. Confirm Transfer Details
 
-![](<../.gitbook/assets/Screen Shot 2021-03-22 at 3.35.34 PM.png>)
+![](../assets/terra-station-confirm.png)
 
 Confirm transaction details, fill in the password and click **\[Send]** to sign and broadcast a transaction that encodes the interchain transfer request.
 
-{% hint style="warning" %}
+::: {warning}
 Shuttle applies a fee of **0.1%** (with a minimum 1 UST fee) for Terra to Ethereum transfers. Transfer requests below a transfer value of 1 UST are ignored.
-{% endhint %}
+:::
 
 #### 4. Transfer Request Complete
 
-![](<../.gitbook/assets/Screen Shot 2021-03-22 at 3.37.51 PM.png>)
+![](../assets/terra-station-complete.png)
 
 A popup will show to display the details of the interchain transfer.
 
-{% hint style="info" %}
+::: {note}
 The Shuttle bridge waits for sufficient blockchain confirmations to occur on the source chain before making the transfer. It may take up to a few minutes for transferred token to be reflected on the destination chain.
-{% endhint %}
+:::
