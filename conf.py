@@ -36,7 +36,8 @@ extensions = ["myst_parser",
               'sphinx_tabs.tabs',
               'notfound.extension',
     ]
-myst_heading_anchors = 4
+# myst headings note: always include "." in link, as in [text](./path#heading)
+myst_heading_anchors = 3
 notfound_urls_prefix = None
 
 # Add any paths that contain templates here, relative to this directory.
@@ -110,6 +111,6 @@ html_theme_options = {
     "use_repository_button": True,
     "use_download_button": True,
     "logo_only": False,
-    "show_toc_level": 3,
+    "show_toc_level": 4,
     "extra_navbar": False,
 }
