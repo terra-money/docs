@@ -4,7 +4,7 @@ To prohibit borrowers from defaulting on their loans, Anchor incentivizes liquid
 
 The Liquidation Queue serves as the exchange point between Anchor collateral and UST. Using Anchor's Oracle Contract as the reference price feed, conversions between whitelisted bAssets and UST are facilitated.
 
-In addition to collateral liquidation, the Liquidation Queue handles calculations of collateral liquidation amounts in cases of [partial collateral liquidation](loan-liquidation.md#partial-liquidation).
+In addition to collateral liquidation, the Liquidation Queue handles calculations of collateral liquidation amounts in cases of [partial collateral liquidation](./loan-liquidation.md#partial-liquidation).
 
 ## Bids
 
@@ -85,13 +85,13 @@ $$
 \text{liquidationFactor} = \frac{\text{liability} - \text{safeRiskRatio} \cdot \text{borrowLimit}}{\text{collateralValue} \cdot \text{feeDeductor} - \text{safeRiskRatio} \cdot \text{borrowLimit}}
 $$
 
-The liquidation factor accounts for fees lost during bid execution( $$\text{feeDeductor}$$ ), such as the premium rate of bids, fees applied on bid execution, and taxes charged on native Terra transfers:
+The liquidation factor accounts for fees lost during bid execution( $\text{feeDeductor}$ ), such as the premium rate of bids, fees applied on bid execution, and taxes charged on native Terra transfers:
 
 $$
 \text{feeDeductor} = (1-\text{maxPremiumRate}) \cdot(1-\text{executionFee})\cdot(1-\text{terraTax})
 $$
 
-Note that $$\text{feeDeductor}$$ uses the maximum rate of fees that can be applied during liquidation, liquidating slightly more collateral than the minimum required (to reach the safe risk ratio).
+Note that $\text{feeDeductor}$ uses the maximum rate of fees that can be applied during liquidation, liquidating slightly more collateral than the minimum required (to reach the safe risk ratio).
 
 ### Multi-collateral Liquidation
 

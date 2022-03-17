@@ -2,7 +2,7 @@
 
 
 
-![](../.gitbook/assets/ANC\_300x300.png)
+![](../assets/ANC\_300x300.png)
 
 
 
@@ -14,11 +14,11 @@ ANC tokens are also used as incentives to bootstrap borrow demand and provide in
 
 ## Value Accrual
 
-{% hint style="info" %}
+:::{note}
 ANC rewards can also be earned by staking LP tokens of the ANC-UST Terraswap Pair.
-{% endhint %}
+:::
 
-![ANC Value Flow](<../.gitbook/assets/Screen Shot 2021-03-16 at 3.08.15 PM.png>)
+![ANC Value Flow](../assets/anc-value-flow.png)
 
 ANC tokens generate a buying pressure that increases proportionally with Anchor's AUM. Protocol fees are used to purchase ANC tokens from Terraswap, which are then distributed as staking rewards to ANC stakers.
 
@@ -36,7 +36,7 @@ Deposit yields in excess of the target deposit rate are accumulated to the yield
 
 #### Collateral Liquidation Fees
 
-Whenever a loan is liquidated, 1% of the liquidated collateral value is sent to the yield reserve, a portion of which is used to purchase ANC. This fee is applied separately from [bid premiums](loan-liquidation.md#premium-rate).
+Whenever a loan is liquidated, 1% of the liquidated collateral value is sent to the yield reserve, a portion of which is used to purchase ANC. This fee is applied separately from [bid premiums](./loan-liquidation.md#premium-rate).
 
 
 
@@ -46,9 +46,9 @@ ANC token deposits of Anchor governance polls that have failed to reach the requ
 
 ## Anchor Token Supply
 
-{% hint style="info" %}
+:::{note}
 The token distribution schedule listed below was estimated assuming the maximum borrower ANC emission rate (`Emission Cap`). At the maximum emssion rate, this distribution is expected to happen over 4 years. In practice, it is highly likely that the rate of ANC distribution to borrowers will be lower than the estimated values, increasing the distribution period to over 4 years.&#x20;
-{% endhint %}
+:::
 
 A total of **1,000,000,000 ANC** tokens are to be distributed over a period of at least 4 years. Once this total supply is distributed, there will be no more new ANC tokens introduced to the supply.
 
@@ -99,7 +99,7 @@ The Inflation rate of ANC tokens is designed to gradually decrease every year un
 
 ### Distribution to Borrowers
 
-ANC tokens allocated for borrower incentives are gradually distributed to borrowers through the [ANC emission control algorithm](money-market/deposit-rate-subsidization.md#anc-emission-feedback-control). This is further distributed to individual borrowers pro-rata to their amount of accrued borrow interest.&#x20;
+ANC tokens allocated for borrower incentives are gradually distributed to borrowers through the [ANC emission control algorithm](./money-market/deposit-rate-subsidization.md#anc-emission-feedback-control). This is further distributed to individual borrowers pro-rata to their amount of accrued borrow interest.&#x20;
 
 ANC incentives fuel a self-reinforcing adoption cycle, incentivizing more borrowers to deposit bAsset collaterals, bringing further buying pressure to ANC, further increasing borrow incentives.
 

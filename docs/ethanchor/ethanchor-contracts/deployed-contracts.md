@@ -18,15 +18,15 @@ Deposits and withdrawal requests made through supported Ethereum networks are ea
 
 {% tabs %}
 {% tab title="Mainnet" %}
-{% hint style="info" %}
+::: {note}
 Mainnet EthAnchor contracts use [Curve](https://curve.fi) for swapping stablecoins.
-{% endhint %}
+:::
 
 #### Core Contracts
 
-{% hint style="info" %}
+::: {note}
 EthAnchor core contracts have a proxy contract layer on top. Below are addresses of the proxy contracts (excluding ExchangeRateFeeder). Please note that the contract address of ExchangeRateFeeder may change as adjustments occur.
-{% endhint %}
+:::
 
 | Contract              | Contract Address                                                                                                                 |
 | --------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
@@ -62,15 +62,15 @@ EthAnchor core contracts have a proxy contract layer on top. Below are addresses
 {% endtab %}
 
 {% tab title="Testnet" %}
-{% hint style="info" %}
+::: {note}
 Testnet EthAnchor contracts use [Uniswap V2](https://app.uniswap.org/#/swap?use=V2) for swapping stablecoins.
-{% endhint %}
+:::
 
 #### Core Contracts
 
-{% hint style="info" %}
+::: {note}
 EthAnchor core contracts have a proxy contract layer on top. Below are addresses of the proxy contracts (excluding ExchangeRateFeeder). Please note that the contract address of ExchangeRateFeeder may change as adjustments occur.
-{% endhint %}
+:::
 
 | Contract              | Address                                                                                                                       |
 | --------------------- | ----------------------------------------------------------------------------------------------------------------------------- |

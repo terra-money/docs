@@ -1,8 +1,8 @@
 # Modify Governance Parameters
 
-{% hint style="warning" %}
+:::{warning}
 This poll type is yet to be supported by the official Anchor WebApp.
-{% endhint %}
+:::
 
 The **Modify Governance Parameters** poll types allows for the creation of polls that alter Anchor governance-related parameters.
 

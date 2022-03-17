@@ -1,8 +1,8 @@
 # Modify ANC Parameters
 
-{% hint style="warning" %}
+:::{warning}
 This poll type is yet to be supported by the official Anchor WebApp.
-{% endhint %}
+:::
 
 The **Modify ANC Parameters** poll enables users to submit governance polls that adjust parameter values that affect the Anchor Token (ANC).
 

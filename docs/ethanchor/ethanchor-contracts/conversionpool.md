@@ -22,9 +22,9 @@ function deposit(uint256 _amount) external;
 
 Deposits the specified amount of stablecoins.&#x20;
 
-{% hint style="warning" %}
+::: {warning}
 Actual amount deposited may be smaller than `_minAmountOut` due to cross-chain transfer fees.
-{% endhint %}
+:::
 
 ```
 function deposit(uint256 _amount, uint256 _minAmountOut) external; 
@@ -53,7 +53,7 @@ Redeems the specified amount of aTerra tokens.
 
 {% hint style="danger" %}
 Logic for enforcing `_minAmountOut` for `redeem` is yet to be implemented. Please be noted that the specified minimum amount will not be enforced.
-{% endhint %}
+:::
 
 ```
 function redeem(uint256 _amount, uint256 _minAmountOut) external; 

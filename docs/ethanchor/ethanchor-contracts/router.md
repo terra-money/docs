@@ -2,9 +2,9 @@
 
 The Router contract routes deposit/redeem requests by assigning operation contracts.
 
-{% hint style="warning" %}
+::: {warning}
 Note that the Router contract only supports wrapped UST and wrapped aUST for deposits and redemptions. For operations that involve non-UST stablecoins, interactions should be made via the ConversionPool contracts.
-{% endhint %}
+:::
 
 ## Functions
 

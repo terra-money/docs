@@ -16,10 +16,10 @@ Anchor Protocol can be subdivided to the below components:
 
 | Component                                                        | Description                                                                                |
 | ---------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
-| [Bonded Assets (bAssets)](bonded-assets-bassets/)                | Tokenized representations of bonded PoS assets                                             |
-| [Money Market](money-market/)                                    | Handles lending and borrowing of Terra stablecoins, with borrows collateralized by bAssets |
-| [Liquidation Contract](loan-liquidation.md)                      | Manages collateral liquidations of loans at risk of undercollateralization                 |
-| [Anchor Token (ANC) Contracts](../smart-contracts/anchor-token/) | Handles ANC-related operations and Anchor governance                                       |
+| [Bonded Assets (bAssets)](bonded-assets-bassets/README.md)                | Tokenized representations of bonded PoS assets                                             |
+| [Money Market](money-market/README.md)                                    | Handles lending and borrowing of Terra stablecoins, with borrows collateralized by bAssets |
+| [Liquidation Contract](./loan-liquidation.md)                      | Manages collateral liquidations of loans at risk of undercollateralization                 |
+| [Anchor Token (ANC) Contracts](../smart-contracts/anchor-token/README.md) | Handles ANC-related operations and Anchor governance                                       |
 
 ## Protocol Participants
 
@@ -33,17 +33,17 @@ In Anchor Protocol, depositors are incentivized to lend Terra stablecoins to Anc
 
 A **Depositor** is a user that lends Terra stablecoins to the Anchor money market. Deposited stablecoins are pooled and lent out to borrowers, with accrued interest pro-rata distributed to all depositors.
 
-Depositors receive newly minted [Anchor Terra (aTerra)](money-market/#anchor-terra-aterra) in exchange for their deposit. aTerra tokens represent a depositor's share in the stablecoin pool and can later be redeemed to claim the initial stablecoin deposit, along with accrued interest and depositor subsidies.
+Depositors receive newly minted [Anchor Terra (aTerra)](./money-market/README.md#usage) in exchange for their deposit. aTerra tokens represent a depositor's share in the stablecoin pool and can later be redeemed to claim the initial stablecoin deposit, along with accrued interest and depositor subsidies.
 
 
 
 ### Borrower
 
-**Borrowers** are entities that create bAsset-collateralized loan positions to borrow Terra stablecoins from the Anchor money market. bAssets that were whitelisted by Anchor can be deposited and locked to create a loan position. Positions are required to maintain a [loan-to-value (LTV)](money-market/#borrowing-terra-stablecoins) ratio below the set maximum.
+**Borrowers** are entities that create bAsset-collateralized loan positions to borrow Terra stablecoins from the Anchor money market. bAssets that were whitelisted by Anchor can be deposited and locked to create a loan position. Positions are required to maintain a [loan-to-value (LTV)](./money-market/README.md#borrowing-terra-stablecoins) ratio below the set maximum.
 
 By borrowing, users can gain access to liquidity without losing price exposure to their bAsset collateral. Borrowers are recommended to keep a close eye on their loan position's LTV ratio, as loans with LTV ratios over the set maximum are subject to liquidation.
 
-Anchor Protocol distributes [Anchor Tokens](anchor-token-anc.md) as incentives for borrowers. Further details on borrower ANC distribution can be found [here](money-market/deposit-rate-subsidization.md#borrower-anc-incentives).
+Anchor Protocol distributes [Anchor Tokens](./anchor-token-anc.md) as incentives for borrowers. Further details on borrower ANC distribution can be found [here](./money-market/deposit-rate-subsidization.md#borrower-anc-incentives).
 
 
 
@@ -72,6 +72,6 @@ As an entity crucial for protocol operation, Anchor's oracle feeder is initially
 | Name                                                       | Type               | Function                                |
 | ---------------------------------------------------------- | ------------------ | --------------------------------------- |
 | TerraUSD (UST)                                             | Native Terra Token | Stablecoin                              |
-| [Bonded Assets (bAssets)](bonded-assets-bassets/)          | Cw20 Token         | Loan collateral for Anchor money market |
-| [Anchor Terra (aTerra)](money-market/#anchor-terra-aterra) | Cw20 Token         | Deposit receipt for Anchor money market |
-| [Anchor Token (ANC)](anchor-token-anc.md)                  | Cw20 Token         | Governance token for Anchor Protocol    |
+| [Bonded Assets (bAssets)](./bonded-assets-bassets/README.md)          | Cw20 Token         | Loan collateral for Anchor money market |
+| [Anchor Terra (aTerra)](./money-market/README.md#usage) | Cw20 Token         | Deposit receipt for Anchor money market |
+| [Anchor Token (ANC)](./anchor-token-anc.md)                  | Cw20 Token         | Governance token for Anchor Protocol    |
