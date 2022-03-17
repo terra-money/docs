@@ -170,7 +170,7 @@ For money market and liquidations, a separate set of contracts are to be deploye
 ### **WARNING**
 
 Sending native tokens with a denomination not supported by the recipient contract will lead to **PERMANENT LOSS OF FUNDS**.
-{% endhint %}
+:::
 
 Below are addresses of money market and liquidation contracts that use **TerraUSD** as their base denomination.
 

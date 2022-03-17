@@ -1,8 +1,8 @@
 # Anchor Governance
 
-{% hint style="info" %}
+:::{note}
 It is recommended to first start a community discussion at the [Anchor Protocol Forum](https://forum.anchorprotocol.com) before submitting a poll.
-{% endhint %}
+:::
 
 Development and maturization of Anchor Protocol is driven by the Anchor community through democratic governance. Anchor does not contain any admin keys with privileged access. Anchor governance is configured to be the sole authority allowed to apply protocol changes or upgrades.
 
@@ -10,9 +10,9 @@ Following the initial deployment of Anchor smart contracts, the Anchor [Gov cont
 
 ## Anchor Governance Token (ANC)
 
-{% hint style="info" %}
+:::{note}
 Although a user receives 1 vote per staked ANC for every poll, voting in polls does not have any effect on the user's current staking balance.
-{% endhint %}
+:::
 
 Governance over Anchor is managed by stakers of [Anchor Tokens (ANC)](../anchor-token-anc.md). ANC acts as Anchor Protocol's governance token, used to vote on polls. Voting power is given proportional to the vote's amount of staked ANC. Voters are able to allocate a specific amount of voting power in staked ANC, capped by their total amount of ANC staked. Voters with a higher ANC stake are therefore given a greater degree of influence in deciding whether to apply the changes listed in a governance poll.
 
@@ -24,9 +24,9 @@ Polls consist of a text description of the proposition (with an optional URL to 
 
 Once submitted, a poll can be voted on by the community until its voting period has concluded. If the poll passes quorum and threshold conditions (defined below), it is ratified and its contents can automatically be applied after a set period of time. These changes take effect without requiring updates to the core Anchor Protocol contracts.
 
-{% hint style="danger" %}
+:::{danger}
 Staked ANC tokens utilized in on-going polls **cannot be withdrawn** until the poll completes. In addition, the number of ANC used in a poll vote **cannot be modified** after the vote has been submitted.
-{% endhint %}
+:::
 
 ## Poll Lifecycle
 
@@ -58,6 +58,7 @@ Governance polls in Anchor follow the below procedure:
 modify-collateral-parameters
 modify-market-parameters
 modify-liquidation-parameters
+modify-anc-parameters.md
 modify-governance-parameters
 modify-the-interest-model
 modify-the-distribution-model

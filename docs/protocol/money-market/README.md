@@ -1,8 +1,8 @@
 # Money Market
 
-{% hint style="info" %}
-ANC tokens are distributed to borrowers in the Anchor money market. For additional information on ANC distribution, see [here](../anchor-token-anc.md#distribution).
-{% endhint %}
+:::{note}
+ANC tokens are distributed to borrowers in the Anchor money market. For additional information on ANC distribution, see [here](./../anchor-token-anc.md#distribution-to-ecosystem-participants).
+:::
 
 Anchor's money market is a Compound-inspired lending protocol for lending out deposited Terra stablecoins to borrowers. Anchor sources its deposit yields from bAsset-collateralized loans, where rewards of their bAsset collaterals are utilized to subsidize the deposit rate.
 
@@ -18,13 +18,13 @@ Interest on borrows are computed via the interest index. The interest index exis
 
 The global interest index acts as the reference value for interest accrual, tracking the amount of interest that a single unit of Terra stablecoin liability would have accrued since protocol creation.
 
-For every user interaction, the global interest index is updated to reflect the interest accrued since last user interaction. The effective interest rate between current time $$\text{t}_\text{2}$$ and the time of last user interaction $$\text{t}_\text{1}$$ is proportional to the [borrow rate](./#algorithmic-interest-rate) at $$\text{t}_\text{1}$$ :
+For every user interaction, the global interest index is updated to reflect the interest accrued since last user interaction. The effective interest rate between current time $\text{t}_\text{2}$ and the time of last user interaction $\text{t}_\text{1}$ is proportional to the [borrow rate](./README.md#algorithmic-interest-rate) at $\text{t}_\text{1}$ :
 
 $$
 \text{effectiveRate} = \text{borrowRate}_{\text{t}_\text{1}}\cdot(\text{t}_\text{2}-\text{t}_\text{1})
 $$
 
-To account for the interest accrual of $$\text{effectiveRate}$$, the global interest index $$\text{Index}_{\text{global},\,\text{t}_\text{1}}$$ is updated to the interest-accrued value of $$\text{Index}_{\text{global},\,\text{t}_\text{2}}$$ :
+To account for the interest accrual of $\text{effectiveRate}$, the global interest index $\text{Index}_{\text{global},\,\text{t}_\text{1}}$ is updated to the interest-accrued value of $\text{Index}_{\text{global},\,\text{t}_\text{2}}$ :
 
 $$
 \text{Index}_{\text{global},\,\text{t}_\text{2}} = \text{Index}_{\text{global},\,\text{t}_\text{1}}\cdot(1+ \text{effectiveRate})
@@ -36,7 +36,7 @@ Note that interest only compounds when a user interaction occurs.
 
 For calculating the amount of borrow interest accrued to a specific borrower, the protocol snapshots the global interest index at the time of user's interaction. The snapshotted global index is stored as a user-specific value, named the user's interest index.
 
-Whenever a user makes an interaction, interest is accrued for the specific user's liability. If the stored user's interest index value is $$\text{Index}_{\text{user}}$$ and the current global interest index is $$\text{Index}_{\text{global}}$$ , the user's previous borrow liability amount of $$\text{liability}_{\text{user},\,\text{prev}}$$ is updated to an interest accrued value of $$\text{liability}_{\text{user},\,\text{current}}$$ by:
+Whenever a user makes an interaction, interest is accrued for the specific user's liability. If the stored user's interest index value is $\text{Index}_{\text{user}}$ and the current global interest index is $\text{Index}_{\text{global}}$ , the user's previous borrow liability amount of $\text{liability}_{\text{user},\,\text{prev}}$ is updated to an interest accrued value of $\text{liability}_{\text{user},\,\text{current}}$ by:
 
 $$
 \text{liability}_{\text{user},\,\text{current}} = \text{liability}_{\text{user},\,\text{prev}}\cdot\frac{\text{Index}_\text{global}}{\text{Index}_{\text{user}}}
@@ -64,13 +64,13 @@ $$
 \text{aTerraExchangeRate} = \frac{\text{liquidity} + \text{liabilities}}{\text{aTerraSupply}}
 $$
 
-where $$\text{liquidity}$$ and $$\text{liabilities}$$ each refer to the amount of deposited stablecoins that are yet to be lent out, and the interest-accrued amount of lent out stablecoins.
+where $\text{liquidity}$ and $\text{liabilities}$ each refer to the amount of deposited stablecoins that are yet to be lent out, and the interest-accrued amount of lent out stablecoins.
 
 #### Yield Reserve Collection
 
 Every epoch, rewards of deposited bAsset collaterals are collected by the money market. Claimed bAsset rewards, which are likely to be in a non-stablecoin denomination, are converted to Terra stablecoins and stockpiled separately in the market's **yield reserve** pool.&#x20;
 
-This process can only be triggered at most once in a 3-hour period. Markets wait for bAsset rewards to be transferred to the Terra blockchain as reward claims of bAssets (excluding bLuna) involve a cross-chain transaction. Auxiliary operations such as [ANC emission rate readjustment](deposit-rate-subsidization.md#borrower-anc-incentives) and [yield reserve distribution](deposit-rate-subsidization.md#direct-subsidization) are also conducted during this time.
+This process can only be triggered at most once in a 3-hour period. Markets wait for bAsset rewards to be transferred to the Terra blockchain as reward claims of bAssets (excluding bLuna) involve a cross-chain transaction. Auxiliary operations such as [ANC emission rate readjustment](./deposit-rate-subsidization.md#borrower-anc-incentives) and [yield reserve distribution](./deposit-rate-subsidization.md#direct-subsidization) are also conducted during this time.
 
 
 
@@ -100,13 +100,13 @@ Stablecoins borrowed from a market all follow a unified, algorithmically determi
 
 #### Utilization Ratio
 
-The utilization ratio quantifies a stablecoin's borrow demand relative to the amount of deposited stablecoins. In a market with $$\text{stablecoinsDeposited}$$ amount of deposits and $$\text{stablecoinsLent}$$ amount of borrows, utilization ratio is calculated as:
+The utilization ratio quantifies a stablecoin's borrow demand relative to the amount of deposited stablecoins. In a market with $\text{stablecoinsDeposited}$ amount of deposits and $\text{stablecoinsLent}$ amount of borrows, utilization ratio is calculated as:
 
 $$
 \text{utilizationRatio} = \frac{\text{stablecoinsLent}}{\text{stablecoinsDeposited}}
 $$
 
-where $$\text{stablecoinsLent}$$ and $$\text{stablecoinsDeposited}$$ are both interest-accrued values.
+where $\text{stablecoinsLent}$ and $\text{stablecoinsDeposited}$ are both interest-accrued values.
 
 #### Borrow Rate Model
 

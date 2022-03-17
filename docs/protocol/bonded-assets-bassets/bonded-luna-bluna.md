@@ -1,14 +1,14 @@
 # Bonded Luna (bLuna)
 
-{% hint style="info" %}
+:::{note}
 The below documentation only focuses on the high-level contents of bLuna. For more in-depth documentation on bLuna and stLuna, refer to the [Lido Terra Docs](https://docs.terra.lido.fi).
-{% endhint %}
+:::
 
 bLuna tokens are bAssets built for the Terra blockchain, their value backed by underlying Luna delegations. bLuna tokens follows full compliance with the [CW20 standard](https://github.com/CosmWasm/cosmwasm-plus/blob/master/packages/cw20/README.md), having the potential to be integrated into a wide variety of decentralized finance applications.
 
-{% hint style="info" %}
-bLuna tokens are used as collateral to borrow Terra stablecoins from Anchor. Learn more about creating loan positions [here](../money-market/).
-{% endhint %}
+:::{note}
+bLuna tokens are used as collateral to borrow Terra stablecoins from Anchor. Learn more about creating loan positions [here](../money-market/README.md).
+:::
 
 ## Concepts
 
@@ -30,9 +30,9 @@ The protocol applies a fee of **0.5%** to bLuna mints and burns whenever the exc
 
 The bLuna contract keeps a whitelist of validators, only permitting delegations to those included in the whitelist. This is crucial since all bLuna tokens equally share slashing risks, and delegations to low-performing validators could negatively affect all holders.
 
-{% hint style="success" %}
+:::{tip}
 The list of whitelisted validators can be viewed [here](https://docs.terra.lido.fi/introduction/validator\_whitelist).
-{% endhint %}
+:::
 
 #### Registration
 
@@ -63,31 +63,31 @@ The `withdraw_rate`, which determines the amount of Luna withdrawable per unbond
 
 ## Usage
 
-{% hint style="info" %}
+:::{important}
 A peg recovery fee of **0.5%** is applied to bLuna minting and redeeming when the bLuna exchange rate is lower than 1.
-{% endhint %}
+:::
 
 ### Minting bLuna
 
-{% hint style="success" %}
+:::{note}
 Following the bLuna upgrade performed as stated in [Anchor's governance poll 8](https://app.anchorprotocol.com/poll/8), users are no longer required to specify a validator when minting bLuna.
-{% endhint %}
+:::
 
 bLuna tokens are minted by delegating Luna via the bLuna contract. Given a single delegation, the exact number of validators that will receive delegations and the amount that they will receive depends on the current distribution of stake.
 
 The contract takes a sorted (ASC) list of validators, calculates the desired amount that each validator should have `target_stake = (total delegated + delegation_amount) / num_validators` and begins adding stake up to the desired amount, starting from the validator with the least stake. The exact amount of a single delegation is calculated as `target_stake - validator_stake`, and you'll have as many delegations as it takes to "drain" the `delegation_amount`.
 
-{% hint style="info" %}
+:::{note}
 Implementation of the stake distribution algorithm can be found [here](https://github.com/lidofinance/lido-terra-contracts/blob/main/contracts/lido\_terra\_validators\_registry/src/common.rs#L19).
-{% endhint %}
+:::
 
 The amount of bLuna minted is dependent on the current bLuna exchange rate -- minted bLuna amounts will be greater than the Luna amount sent when the bLuna exchange rate is below 1.
 
 ### Redeeming bLuna
 
-{% hint style="warning" %}
+:::{warning}
 Slashing occurrences between the time of request and withdrawal may affect the final amount later withdrawn.
-{% endhint %}
+:::
 
 Any bLuna holder can redeem their tokens for their underlying bonded Luna. Redemption is a two-step process; 1) requesting to unbond bLuna (undelegates underlying Luna) and 2) withdrawing undelegated Luna.
 

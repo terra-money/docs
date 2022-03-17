@@ -405,7 +405,7 @@ pub enum ExecuteMsg {
 **WARNING**\
 ****\
 ****Sending ANC tokens to the Gov contract without issuing this hook will lead to **PERMANENT LOSS OF FUNDS** and will be irrevocably donated to the reward pool for stakers.
-{% endhint %}
+:::
 
 Issued when sending ANC tokens to the Gov contract to add them to their ANC staking position.
 

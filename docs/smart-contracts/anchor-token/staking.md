@@ -184,7 +184,7 @@ pub enum ExecuteMsg {
 **WARNING**
 
 Sending LP tokens to the Staking contract without issuing this hook will lead to **PERMANENT LOSS OF FUNDS**.
-{% endhint %}
+:::
 
 Bonds LP tokens of the ANC-UST Terraswap pair.
 

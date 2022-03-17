@@ -1,8 +1,8 @@
 # Modify Liquidation Parameters
 
-{% hint style="warning" %}
+:::{warning}
 This poll type is yet to be supported by the official Anchor WebApp.
-{% endhint %}
+:::
 
 The **Modify Liquidation Parameters** poll type allows Anchor governance to calibrate parameter values that control the mechanics of collateral liquidation. 5 parameters `Safe Ratio`, `Bid Fee`, `Max Premium Rate`, `Partial Liquidation Threshold`, and `Valid Price Timeframe` constitute the control mechanism of liquidating collaterals.
 

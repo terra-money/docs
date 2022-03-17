@@ -1,22 +1,22 @@
 # Bonded ETH (bETH)
 
-![](../../.gitbook/assets/bETH\_03.png)
+![](../../assets/bETH\_03.png)
 
 bETH tokens are bAssets built for Ethereum 2.0 staking, with their token value backed by Ethereum 2.0 staking positions. bETH tokens exist on both on the Ethereum chain and the Terra chain, each complying to the [ERC20 standard](https://eips.ethereum.org/EIPS/eip-20) and the [CW20 standard](https://github.com/CosmWasm/cosmwasm-plus/blob/master/packages/cw20/README.md).
 
-{% hint style="info" %}
+::: {note}
 bETH tokens are used as collateral to borrow Terra stablecoins from Anchor. Learn more about creating loan positions [here](../money-market/).
-{% endhint %}
+:::
 
-bETH tokens are wrapped tokens of [Lido Finance](https://lido.fi)'s [staked ETH (stETH)](https://lido.fi/ethereum), refitted to follow the contract interfaces required to integrate with Anchor smart contracts.
+bETH tokens are wrapped tokens of [Lido Finance's staked ETH (stETH)](https://lido.fi/ethereum), refitted to follow the contract interfaces required to integrate with Anchor smart contracts.
 
 ## Concepts
 
 ### **bETH Exchange Rate**
 
-{% hint style="info" %}
+::: {note}
 stETH tokens are designed to closely track the value of ETH.
-{% endhint %}
+:::
 
 The bETH exchange rate determines the conversion rate when swapping stETH to bETH and vice versa. The exchange rate is calculated as the amount of stETH provided per bETH minted, the value initially starts with 1, and decreases with slashing events.
 
@@ -38,17 +38,17 @@ The Lido DAO is governed by holders of LDO, Lido's protocol token. The governanc
 
 ### Minting bETH with stETH
 
-{% hint style="info" %}
+:::{info}
 stETH can be minted through WebApp interfaces provided by Lido.
-{% endhint %}
+:::
 
 bETH is minted by submitting ETH or stETH to Ethereum-side bETH contracts, along with the Terra address to receive the resulting bETH tokens. Once submitted, bETH tokens (with the amount determined by the bETH exchange rate) are minted to the provided Terra address.
 
 ### Redeeming bETH for stETH
 
-{% hint style="warning" %}
+:::{warning}
 Slashing occurrences between the time of request and withdrawal may affect the final amount later withdrawn.
-{% endhint %}
+:::
 
 bETH holders can redeem their tokens for their underlying stETH. Redemption is a two-step process; 1) transferring bETH to Ethereum and 2) redeeming bETH to stETH.
 
@@ -62,9 +62,9 @@ bETH tokens can only be redeemed through Ethereum-side bETH contracts. bETH toke
 
 bETH tokens on Ethereum can be converted back to stETH, with the use of Ethereum-side bETH contracts. Conversion is conducted based on the bETH exchange rate.
 
-{% hint style="info" %}
+:::{info}
 Converting stETH to ETH can be proceeded via AMM protocols on Ethereum, most notably [Curve](https://curve.fi).
-{% endhint %}
+:::
 
 ### bETH Rewards
 
@@ -72,8 +72,8 @@ bETH tokens accrue **TerraUSD** rewards, funded from the Ethereum staking reward
 
 #### Claiming Rewards
 
-{% hint style="warning" %}
+:::{warning}
 Only bETH tokens on the Terra chain accrue rewards.
-{% endhint %}
+:::
 
 Holders of Terra-side bETH can send a request to the bETH contract, which prompts the transfer of accrued rewards to their account. As rewards accrue during the user's period of ownership, transferring bETH to a different user automatically credits accrued rewards to the previous holder.
