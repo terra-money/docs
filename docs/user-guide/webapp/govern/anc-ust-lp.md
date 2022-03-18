@@ -10,7 +10,7 @@ ANC rewards are accrued to LP stakers on a per-block basis, which they can later
 
 The **ANC - UST LP** section of the **GOVERN** page displays:
 
-* **APY**: Annualized percentage yield (APY) of liquidity rewards given to ANC-UST LP token stakers.\
+* **APY**: Annualized percentage yield (APY) of liquidity rewards given to ANC-UST LP token stakers.
 
 * **Total Staked**: Total number of ANC-UST LP tokens staked by all users.
 
@@ -22,23 +22,23 @@ Users must have a balance of both ANC and UST tokens in order to provide liquidi
 
 1\. Navigate to the **GOVERN** page and click on **\[ANC - UST LP]**.
 
-![](<../../../.gitbook/assets/Govern - LP - provide - 1.png>)
+![](../../../assets/Govern-LP-provide-1.png)
 
 2\. Select the **\[POOL]** tab.
 
-![](<../../../.gitbook/assets/Govern - LP - provide - 2.png>)
+![](../../../assets/Govern-LP-provide-2.png)
 
 3\. Select the **\[Provide]** tab.
 
-![](<../../../.gitbook/assets/Govern - LP - provide - 3.png>)
+![](../../../assets/Govern-LP-provide-3.png)
 
 4\. Enter the amount of ANC tokens to provide liquidity. The WebApp will automatically calculate the amount of UST required. Click **\[Add Liquidity]**.
 
-![](<../../../.gitbook/assets/Govern - LP - provide - 4.png>)
+![](../../../assets/Govern-LP-provide-4.png)
 
 5\. Station Extension should prompt you to sign a transaction that contains the liquidity provide operation. Confirm the details presented and enter your password to sign.
 
-![](<../../../.gitbook/assets/Govern - LP - provide - 5.png>)
+![](../../../assets/Govern-LP-provide-5.png)
 
 6\. Liquidity provide complete. LP tokens are minted to the user.
 
@@ -46,56 +46,56 @@ Users must have a balance of both ANC and UST tokens in order to provide liquidi
 LP tokens minted from provided liquidity must be staked to receive LP staking rewards.
 :::
 
-![](<../../../.gitbook/assets/Govern - LP - provide - 6.png>)
+![](../../../assets/Govern-LP-provide-6.png)
 
 ## Withdrawing liquidity from the ANC-UST pair
 
 1\. Navigate to the **GOVERN** page and click on **\[ANC - UST LP]**.
 
-![](<../../../.gitbook/assets/Govern - LP - withdraw - 1.png>)
+![](../../../assets/Govern-LP-withdraw-1.png)
 
 2\. Select the **\[POOL]** tab.
 
-![](<../../../.gitbook/assets/Govern - LP - withdraw - 2.png>)
+![](../../../assets/Govern-LP-withdraw-2.png)
 
 3\. Select the **\[Withdraw]** tab.
 
-![](<../../../.gitbook/assets/Govern - LP - withdraw - 3.png>)
+![](../../../assets/Govern-LP-withdraw-3.png)
 
 4\. Enter the amount of LP tokens to burn. The WebApp will display the estimated amount of ANC and UST tokens the user will receive. Click **\[Remove Liquidity]**.
 
-![](<../../../.gitbook/assets/Govern - LP - withdraw - 4.png>)
+![](../../../assets/Govern-LP-withdraw-4.png)
 
 5\. Station Extension should prompt you to sign a transaction that contains the liquidity withdraw operation. Confirm the details presented and enter your password to sign.
 
-![](<../../../.gitbook/assets/Govern - LP - withdraw - 5.png>)
+![](../../../assets/Govern-LP-withdraw-5.png)
 
 6\. Liquidity withdraw complete.
 
-![](<../../../.gitbook/assets/Govern - LP - withdraw - 6.png>)
+![](../../../assets/Govern-LP-withdraw-6.png)
 
 ## Staking / unstaking ANC-UST pair LP tokens.
 
 1\. Navigate to the **GOVERN** page and click on **\[ANC - UST LP]**.
 
-![](<../../../.gitbook/assets/Govern - LP - stake - 1.png>)
+![](../../../assets/Govern-LP-stake-1.png)
 
 2\. Select the **\[STAKE]** tab.
 
-![](<../../../.gitbook/assets/Govern - LP - stake - 2.png>)
+![](../../../assets/Govern-LP-stake-2.png)
 
 3\. Select whether to stake or unstake.
 
-![](<../../../.gitbook/assets/Govern - LP - stake -3.png>)
+![](../../../assets/Govern-LP-stake-3.png)
 
 4\. Enter amount to stake / unstake and click **\[Stake**] / **\[Unstake]**.
 
-![](<../../../.gitbook/assets/Govern - LP - stake - 4.png>)
+![](../../../assets/Govern-LP-stake-4.png)
 
 5\. Station Extension should prompt you to sign a transaction that contains the stake / unstake operation. Confirm the details presented and enter your password to sign.
 
-![](<../../../.gitbook/assets/Govern - LP - stake - 5.png>)
+![](../../../assets/Govern-LP-stake-5.png)
 
 6\. Stake / unstake complete.
 
-![](<../../../.gitbook/assets/Govern - LP - stake - 6.png>)
+![](../../../assets/Govern-LP-stake-6.png)
