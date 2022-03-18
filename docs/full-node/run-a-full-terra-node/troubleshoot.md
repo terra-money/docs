@@ -36,7 +36,7 @@ You can recreate a genesis version via the following steps:
  terrad collect-gentxs
 ```
 
-### Change personal data
+### Reset personal data
 
 :::{danger}
 You may be unable to use your node and its associated accounts after changing your personal data. Do not perform this action unless your node is disposable. 
