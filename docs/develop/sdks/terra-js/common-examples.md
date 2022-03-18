@@ -21,6 +21,103 @@ const lcd = new LCDClient({
 });
 ```
 
+## Get wallet balance (native tokens)
+
+```js
+// Replace with address to check.
+const address = 'terra1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
+const [balance] = await lcd.bank.balance(address);
+console.log(balance.toData());
+```
+
+Example response: 
+
+```js
+[
+  { denom: 'uluna', amount: '5030884' },
+  { denom: 'uusd', amount: '433108784' }
+]
+```
+
+## Get wallet balance (CW20 tokens)
+
+```js
+// ANC on bombay-12
+const tokenAddress = 'terra1747mad58h0w4y589y3sk84r5efqdev9q4r02pc';
+const walletAddress = 'terra1f44ddca9awepv2rnudztguq5rmrran2m20zzd6';
+const response = await lcd.wasm.contractQuery(tokenAddress, { balance: { address: walletAddress }});
+
+console.log(response);
+```
+
+Example response: 
+
+```js
+{ balance: '70258667' }
+```
+
+## Get transaction status 
+
+```js
+// Replace with TX hash to lookup.
+const hash = 'CAB264B3D92FF3DFE209DADE791A866876DE5DD2A320C1200F9C5EC5F0E7B14B';
+const txInfo = await lcd.tx.txInfo(hash);
+console.log(txInfo);
+```
+
+Example response (modified for readability): 
+
+```js
+TxInfo {
+  height: 8276372,
+  txhash: 'CAB264B3D92FF3DFE209DADE791A866876DE5DD2A320C1200F9C5EC5F0E7B14B',
+  raw_log: '[]',
+  logs: [
+    TxLog {
+      msg_index: 0,
+      log: '',
+      events: [Array],
+      eventsByType: [Object]
+    }
+  ],
+  gas_wanted: 177808,
+  gas_used: 128827,
+  tx: Tx {},
+  timestamp: '2022-03-17T18:34:06Z',
+  code: 0,
+  codespace: ''
+}
+```
+
+## Get link to transaction 
+
+```js
+const getTransactionLink = (hash, chainID) => `https://finder.terra.money/${chainID}/tx/${hash}`;
+const hash = 'CAB264B3D92FF3DFE209DADE791A866876DE5DD2A320C1200F9C5EC5F0E7B14B';
+
+console.log(getTransactionLink(hash, 'bombay-12'));
+```
+
+Example response: 
+
+```
+https://finder.terra.money/bombay-12/tx/CAB264B3D92FF3DFE209DADE791A866876DE5DD2A320C1200F9C5EC5F0E7B14B
+```
+
+## Get link to wallet address
+
+```js
+const getWalletLink = (address, chainID) => `https://finder.terra.money/${chainID}/address/${address}`;
+const address = 'terra1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
+console.log(getWalletLink(address, 'bombay-12'))
+```
+
+Example response: 
+
+```
+https://finder.terra.money/bombay-12/address/terra1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+```
+
 ## Sending native tokens
 
 The following code example shows how to send native tokens:
@@ -68,10 +165,13 @@ const mk = new MnemonicKey({
 
 const wallet = lcd.wallet(mk);
 
+// ANC on bombay-12
+const tokenAddress = 'terra1747mad58h0w4y589y3sk84r5efqdev9q4r02pc';
+
 // Transfer 1 ANC.
 const cw20Send = new MsgExecuteContract(
   wallet.key.accAddress,
-  "terra14z56l0fp2lsf86zy3hty2z47ezkhnthtr9yq76", // ANC token address.
+  tokenAddress,
   {
     transfer: {
       amount: "1000000",
