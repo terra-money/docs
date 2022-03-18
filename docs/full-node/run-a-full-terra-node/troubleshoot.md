@@ -57,3 +57,4 @@ A healthy node will have the following files in place and populated:
 
 You can proceed to [resync manually](sync.md) or [via quicksync](sync.md#quicksync). 
 
+
