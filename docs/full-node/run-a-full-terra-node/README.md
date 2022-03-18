@@ -21,4 +21,5 @@ configure-general-settings
 join-a-network
 sync
 updates-and-additional
+troubleshoot
 ```
