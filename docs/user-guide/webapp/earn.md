@@ -8,9 +8,9 @@ As of March 17th, 2021, Anchor only supports TerraUSD (UST) as the base currency
 
 The **EARN** page displays the following data:
 
-* **Total Deposit**: UST value of user's deposit. Includes accrued deposit interest.\
+* **Total Deposit**: UST value of user's deposit. Includes accrued deposit interest.
 
-* **Transaction History**: History of user's deposit & withdraw interactions. Displays the deposit / withdraw amount, sender / recipient, and transaction time.\
+* **Transaction History**: History of user's deposit & withdraw interactions. Displays the deposit / withdraw amount, sender / recipient, and transaction time.
 
 * **Interest**: Display data related to deposit interest.
   * **APY**: Current deposit APY.
@@ -21,34 +21,34 @@ The **EARN** page displays the following data:
 
 1\. Navigate to the **EARN** page and click the **\[Deposit]** button.&#x20;
 
-![](<../../.gitbook/assets/Earn - deposit - 1 (2).png>)
+![](../../assets/Earn-deposit-1(2).png)
 
 2\. Enter the amount of stablecoins to deposit and click the **\[Proceed]** button to confirm.
 
-![](<../../.gitbook/assets/Earn - deposit - 2.png>)
+![](../../assets/Earn-deposit-2.png)
 
 3\. Station Extension should prompt you to sign a transaction that contains the deposit operation. Confirm the details presented and enter your password to sign.
 
-![](<../../.gitbook/assets/Earn - deposit - 3.png>)
+![](../../assets/Earn-deposit-3.png)
 
 4\. Deposit complete.
 
-![](<../../.gitbook/assets/Earn - deposit - 4.png>)
+![](../../assets/Earn-deposit-4.png)
 
 ## Withdrawing Terra stablecoins
 
 1\. Navigate to the **EARN** page and click the **\[Withdraw]** button.&#x20;
 
-![](<../../.gitbook/assets/Earn - withdraw - 1.png>)
+![](../../assets/Earn-withdraw-1.png)
 
 2\. Enter the withdraw amount and click the **\[Proceed]** button to confirm.
 
-![](<../../.gitbook/assets/Earn - Withdraw - 2.png>)
+![](../../assets/Earn-Withdraw-2.png)
 
 3\. Station Extension should prompt you to sign a transaction that contains the withdraw operation. Confirm the details presented and enter your password to sign.
 
-![](<../../.gitbook/assets/Earn - Withdraw - 3.png>)
+![](../../assets/Earn-Withdraw-3.png)
 
 4\. Withdraw complete.
 
-![](<../../.gitbook/assets/Earn - Withdraw - 4.png>)
+![](../../assets/Earn-Withdraw-4.png)
