@@ -1385,6 +1385,31 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#get-wallet-balance-native-tokens">
+   Get wallet balance (native tokens)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#get-wallet-balance-cw20-tokens">
+   Get wallet balance (CW20 tokens)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#get-transaction-status">
+   Get transaction status
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#get-link-to-transaction">
+   Get link to transaction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#get-link-to-wallet-address">
+   Get link to wallet address
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#sending-native-tokens">
    Sending native tokens
   </a>
@@ -1442,6 +1467,31 @@
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#configuring-lcdclient">
    Configuring LCDClient
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#get-wallet-balance-native-tokens">
+   Get wallet balance (native tokens)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#get-wallet-balance-cw20-tokens">
+   Get wallet balance (CW20 tokens)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#get-transaction-status">
+   Get transaction status
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#get-link-to-transaction">
+   Get link to transaction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#get-link-to-wallet-address">
+   Get link to wallet address
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1510,6 +1560,93 @@
 </pre></div>
 </div>
 </div>
+<div class="section" id="get-wallet-balance-native-tokens">
+<h2>Get wallet balance (native tokens)<a class="headerlink" href="#get-wallet-balance-native-tokens" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="c1">// Replace with address to check.</span>
+<span class="kd">const</span> <span class="nx">address</span> <span class="o">=</span> <span class="s1">&#39;terra1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&#39;</span><span class="p">;</span>
+<span class="kd">const</span> <span class="p">[</span><span class="nx">balance</span><span class="p">]</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">lcd</span><span class="p">.</span><span class="nx">bank</span><span class="p">.</span><span class="nx">balance</span><span class="p">(</span><span class="nx">address</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">balance</span><span class="p">.</span><span class="nx">toData</span><span class="p">());</span>
+</pre></div>
+</div>
+<p>Example response:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+  <span class="p">{</span> <span class="nx">denom</span><span class="o">:</span> <span class="s1">&#39;uluna&#39;</span><span class="p">,</span> <span class="nx">amount</span><span class="o">:</span> <span class="s1">&#39;5030884&#39;</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="nx">denom</span><span class="o">:</span> <span class="s1">&#39;uusd&#39;</span><span class="p">,</span> <span class="nx">amount</span><span class="o">:</span> <span class="s1">&#39;433108784&#39;</span> <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-wallet-balance-cw20-tokens">
+<h2>Get wallet balance (CW20 tokens)<a class="headerlink" href="#get-wallet-balance-cw20-tokens" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="c1">// ANC on bombay-12</span>
+<span class="kd">const</span> <span class="nx">tokenAddress</span> <span class="o">=</span> <span class="s1">&#39;terra1747mad58h0w4y589y3sk84r5efqdev9q4r02pc&#39;</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">walletAddress</span> <span class="o">=</span> <span class="s1">&#39;terra1f44ddca9awepv2rnudztguq5rmrran2m20zzd6&#39;</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">lcd</span><span class="p">.</span><span class="nx">wasm</span><span class="p">.</span><span class="nx">contractQuery</span><span class="p">(</span><span class="nx">tokenAddress</span><span class="p">,</span> <span class="p">{</span> <span class="nx">balance</span><span class="o">:</span> <span class="p">{</span> <span class="nx">address</span><span class="o">:</span> <span class="nx">walletAddress</span> <span class="p">}});</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Example response:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="p">{</span> <span class="nx">balance</span><span class="o">:</span> <span class="s1">&#39;70258667&#39;</span> <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-transaction-status">
+<h2>Get transaction status<a class="headerlink" href="#get-transaction-status" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="c1">// Replace with TX hash to lookup.</span>
+<span class="kd">const</span> <span class="nx">hash</span> <span class="o">=</span> <span class="s1">&#39;CAB264B3D92FF3DFE209DADE791A866876DE5DD2A320C1200F9C5EC5F0E7B14B&#39;</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">txInfo</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">lcd</span><span class="p">.</span><span class="nx">tx</span><span class="p">.</span><span class="nx">txInfo</span><span class="p">(</span><span class="nx">hash</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">txInfo</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Example response (modified for readability):</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">TxInfo</span> <span class="p">{</span>
+  <span class="nx">height</span><span class="o">:</span> <span class="mf">8276372</span><span class="p">,</span>
+  <span class="nx">txhash</span><span class="o">:</span> <span class="s1">&#39;CAB264B3D92FF3DFE209DADE791A866876DE5DD2A320C1200F9C5EC5F0E7B14B&#39;</span><span class="p">,</span>
+  <span class="nx">raw_log</span><span class="o">:</span> <span class="s1">&#39;[]&#39;</span><span class="p">,</span>
+  <span class="nx">logs</span><span class="o">:</span> <span class="p">[</span>
+    <span class="nx">TxLog</span> <span class="p">{</span>
+      <span class="nx">msg_index</span><span class="o">:</span> <span class="mf">0</span><span class="p">,</span>
+      <span class="nx">log</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+      <span class="nx">events</span><span class="o">:</span> <span class="p">[</span><span class="nb">Array</span><span class="p">],</span>
+      <span class="nx">eventsByType</span><span class="o">:</span> <span class="p">[</span><span class="nb">Object</span><span class="p">]</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="nx">gas_wanted</span><span class="o">:</span> <span class="mf">177808</span><span class="p">,</span>
+  <span class="nx">gas_used</span><span class="o">:</span> <span class="mf">128827</span><span class="p">,</span>
+  <span class="nx">tx</span><span class="o">:</span> <span class="nx">Tx</span> <span class="p">{},</span>
+  <span class="nx">timestamp</span><span class="o">:</span> <span class="s1">&#39;2022-03-17T18:34:06Z&#39;</span><span class="p">,</span>
+  <span class="nx">code</span><span class="o">:</span> <span class="mf">0</span><span class="p">,</span>
+  <span class="nx">codespace</span><span class="o">:</span> <span class="s1">&#39;&#39;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-link-to-transaction">
+<h2>Get link to transaction<a class="headerlink" href="#get-link-to-transaction" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">getTransactionLink</span> <span class="o">=</span> <span class="p">(</span><span class="nx">hash</span><span class="p">,</span> <span class="nx">chainID</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="sb">`https://finder.terra.money/</span><span class="si">${</span><span class="nx">chainID</span><span class="si">}</span><span class="sb">/tx/</span><span class="si">${</span><span class="nx">hash</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">hash</span> <span class="o">=</span> <span class="s1">&#39;CAB264B3D92FF3DFE209DADE791A866876DE5DD2A320C1200F9C5EC5F0E7B14B&#39;</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">getTransactionLink</span><span class="p">(</span><span class="nx">hash</span><span class="p">,</span> <span class="s1">&#39;bombay-12&#39;</span><span class="p">));</span>
+</pre></div>
+</div>
+<p>Example response:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">finder</span><span class="o">.</span><span class="n">terra</span><span class="o">.</span><span class="n">money</span><span class="o">/</span><span class="n">bombay</span><span class="o">-</span><span class="mi">12</span><span class="o">/</span><span class="n">tx</span><span class="o">/</span><span class="n">CAB264B3D92FF3DFE209DADE791A866876DE5DD2A320C1200F9C5EC5F0E7B14B</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-link-to-wallet-address">
+<h2>Get link to wallet address<a class="headerlink" href="#get-link-to-wallet-address" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">getWalletLink</span> <span class="o">=</span> <span class="p">(</span><span class="nx">address</span><span class="p">,</span> <span class="nx">chainID</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="sb">`https://finder.terra.money/</span><span class="si">${</span><span class="nx">chainID</span><span class="si">}</span><span class="sb">/address/</span><span class="si">${</span><span class="nx">address</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">address</span> <span class="o">=</span> <span class="s1">&#39;terra1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&#39;</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">getWalletLink</span><span class="p">(</span><span class="nx">address</span><span class="p">,</span> <span class="s1">&#39;bombay-12&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Example response:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">finder</span><span class="o">.</span><span class="n">terra</span><span class="o">.</span><span class="n">money</span><span class="o">/</span><span class="n">bombay</span><span class="o">-</span><span class="mi">12</span><span class="o">/</span><span class="n">address</span><span class="o">/</span><span class="n">terra1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</span>
+</pre></div>
+</div>
+</div>
 <div class="section" id="sending-native-tokens">
 <h2>Sending native tokens<a class="headerlink" href="#sending-native-tokens" title="Permalink to this headline">¶</a></h2>
 <p>The following code example shows how to send native tokens:</p>
@@ -1554,10 +1691,13 @@
 
 <span class="kd">const</span> <span class="nx">wallet</span> <span class="o">=</span> <span class="nx">lcd</span><span class="p">.</span><span class="nx">wallet</span><span class="p">(</span><span class="nx">mk</span><span class="p">);</span>
 
+<span class="c1">// ANC on bombay-12</span>
+<span class="kd">const</span> <span class="nx">tokenAddress</span> <span class="o">=</span> <span class="s1">&#39;terra1747mad58h0w4y589y3sk84r5efqdev9q4r02pc&#39;</span><span class="p">;</span>
+
 <span class="c1">// Transfer 1 ANC.</span>
 <span class="kd">const</span> <span class="nx">cw20Send</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">MsgExecuteContract</span><span class="p">(</span>
   <span class="nx">wallet</span><span class="p">.</span><span class="nx">key</span><span class="p">.</span><span class="nx">accAddress</span><span class="p">,</span>
-  <span class="s2">&quot;terra14z56l0fp2lsf86zy3hty2z47ezkhnthtr9yq76&quot;</span><span class="p">,</span> <span class="c1">// ANC token address.</span>
+  <span class="nx">tokenAddress</span><span class="p">,</span>
   <span class="p">{</span>
     <span class="nx">transfer</span><span class="o">:</span> <span class="p">{</span>
       <span class="nx">amount</span><span class="o">:</span> <span class="s2">&quot;1000000&quot;</span><span class="p">,</span>
