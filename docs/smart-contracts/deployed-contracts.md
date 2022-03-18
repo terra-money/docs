@@ -166,7 +166,7 @@ For money market and liquidations, a separate set of contracts are to be deploye
 
 ### TerraUSD Market Smart Contracts
 
-{% hint style="danger" %}
+::: {danger}
 ### **WARNING**
 
 Sending native tokens with a denomination not supported by the recipient contract will lead to **PERMANENT LOSS OF FUNDS**.
