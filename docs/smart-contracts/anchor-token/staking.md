@@ -180,7 +180,7 @@ pub enum ExecuteMsg {
 
 ### `Bond`
 
-{% hint style="danger" %}
+::: {danger}
 **WARNING**
 
 Sending LP tokens to the Staking contract without issuing this hook will lead to **PERMANENT LOSS OF FUNDS**.
