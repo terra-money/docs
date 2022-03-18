@@ -60,7 +60,7 @@ The **Polls** section of the **GOVERN** page displays:&#x20;
 
 4\. Select whether to vote for (**YES**) or against (**NO**) the proposal, along with the amount of staked ANC to use as voting power.
 
-{% hint style="danger" %}
+::: {danger}
 Staked ANC tokens utilized in on-going polls **cannot be withdrawn** until the poll completes. In addition, the number of ANC used in a poll vote **cannot be modified** after the vote has been submitted.
 :::
 
