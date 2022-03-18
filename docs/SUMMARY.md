@@ -29,12 +29,12 @@
 
 * [Interchain Transfers](user-guide/interchain-transfers.md) -e
 * [WebApp](user-guide/webapp/README.md) -e
-  * [EARN](user-guide/webapp/earn.md)
-  * [BORROW](user-guide/webapp/borrow.md)
-  * [bASSET \[bLUNA\]](user-guide/webapp/bond.md)
-  * [bASSET \[bETH\]](user-guide/webapp/bond-beth.md)
-  * [GOVERN](user-guide/webapp/govern/README.md)
-    * [ANC - UST LP Staking](user-guide/webapp/govern/anc-ust-lp.md)
+  * [EARN](user-guide/webapp/earn.md) -e
+  * [BORROW](user-guide/webapp/borrow.md) -e
+  * [bASSET \[bLUNA\]](user-guide/webapp/bond.md) -e
+  * [bASSET \[bETH\]](user-guide/webapp/bond-beth.md) -e
+  * [GOVERN](user-guide/webapp/govern/README.md) -e
+    * [ANC - UST LP Staking](user-guide/webapp/govern/anc-ust-lp.md) -e
     * [Anchor Governance Staking](user-guide/webapp/govern/claim-anc-rewards.md)
     * [Claiming ANC Rewards](user-guide/webapp/govern/claiming-anc-rewards.md)
     * [Creating and voting on proposals](user-guide/webapp/govern/governance-proposals.md)
