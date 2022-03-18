@@ -51,7 +51,7 @@ function redeem(uint256 _amount) external;
 
 Redeems the specified amount of aTerra tokens.
 
-{% hint style="danger" %}
+::: {danger}
 Logic for enforcing `_minAmountOut` for `redeem` is yet to be implemented. Please be noted that the specified minimum amount will not be enforced.
 :::
 
