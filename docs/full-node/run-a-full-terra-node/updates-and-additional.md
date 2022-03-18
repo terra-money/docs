@@ -101,3 +101,53 @@ persistent_peers = "id100000000000000000000000000000000@1.2.3.4:26656,id20000000
 Integrate Terra with Coinbase via the Rosetta API. Rosetta is an open-source API that organizes blockchain data into a standardized format, making it easy for developers to build cross-chain applications. Instead of creating specific code for each chain, Rosetta allows different blockchains to integrate into any exchange that uses Rosetta API.
 
 For more information, visit the [Rosetta docs site](https://www.rosetta-api.org/docs/welcome.html).
+
+
+
+## Troubleshooting
+
+
+### Complete reset: checklist
+
+
+Sometimes you might need to resort to a complete reset of your `terrad`'s state. You can accomplish this with `terrad unsafe-reset-all`. 
+
+You should see a similar log: 
+
+```
+[ INF ] Removed existing address book file=/home/user/.terra/config/addrbook.json
+[ INF ] Removed all blockchain history dir=/home/user/.terra/data
+[ INF ] Reset private validator file to genesis state keyFile=/home/user/.terra/config/priv_validator_key.json stateFile=/home/user/.terra/data/priv_validator_state.json
+```
+
+As you can tell, this removes the data in `~/.terra/data` as well as the addressbook `~/.terra/config/addrbook.json`
+
+Make sure the addressbook is in the correct spot and actually contains peer addresses. If it's not -- download  [ here ](../run-a-full-terra-node/join-a-network.md#1-select-a-network) and place it in `~/.terra/config/`.
+
+
+--------------
+
+In the case you'd like to change the genesis version delete `~/.terra/config/genesis.json`.
+
+You can recreate it via the following steps:
+```bash
+ terrad add-genesis-account $(terrad keys show <account-name> -a) 100000000uluna,1000usd
+ terrad gentx <account-name> 10000000uluna --chain-id=<network-name> 
+ terrad collect-gentxs
+```
+--------------
+
+**WARNING** you will likely be unable to use this node and its associated accounts after the following operation. Make sure the node *is* disposable.
+In the case that you'd also like to *change your personal data to a completely pristine state* you could also delete both `~/.terra/config/priv_validator_state.json` and `~/.terra/config/node_key.json`. 
+
+
+--------------
+
+In the end, healthy node will have the following files in place and populated:
+
+- Addressbook `~/.terra/config/addrbook.json`
+- Genesis file `~/.terra/config/genesis.json`
+- Validator state  `~/.terra/config/priv_validator_state.json`
+- Node key `~/.terra/config/node_key.json`
+
+You can proceed to resync manually or [ via quicksync ](sync.md#quicksync). 
