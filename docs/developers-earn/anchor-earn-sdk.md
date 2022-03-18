@@ -100,7 +100,7 @@ export class Account {
 }
 ```
 
-{% hint style="danger" %}
+::: {danger}
 `privateKey` and `mnemonic` constitute as your access key to your account, including the control of your assets.
 
 **PLEASE RECORD AND STORE THEM IN A SAFE PLACE AND NEVER SHARE EXTERNALLY.**
