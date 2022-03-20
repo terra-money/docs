@@ -1,6 +1,6 @@
 # Configure general settings
 
-The following information describes the most important node configuration settings found in the `~/.terra/config/` directory. It is recommended that you update these settings with your own information.  
+The following information describes the most important node configuration settings found in the `~/.terra/config/` directory. It is recommended that you update these settings with your own information.
 
 :::{dropdown} Structure of .terra/config
 
@@ -69,4 +69,4 @@ For information about the available Terra REST API endpoints, see the [Swagger d
    swagger = true
    ```
 
-5. Restart the service via `systemctl restart terrad`. Once restarted, the LCD will be available (by default on port `127.0.0.1:26657`)
+5. Restart the service via `systemctl restart terrad`. Once restarted, the LCD will be available (by default on port `127.0.0.1:1317`)
