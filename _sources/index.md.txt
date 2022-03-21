@@ -38,11 +38,11 @@ Learn about Terra stablecoins, Luna, rewards, staking, and governance.
 :::{grid-item-card}
 :link: docs/spacecamp/README.html
 :class-card: sd-text-center sd-shadow-md sd-rounded-3
-```{image} /img/spacecamp_icon-01.svg
+```{image} /img/spacecamp_icon-02.svg
 :class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
 ```
 **Hackathon resources**  
-A helpful list for Spacecamp hackers.
+A helpful list for hackers.
 :::
 
 :::{grid-item-card}
@@ -119,5 +119,5 @@ docs/ecosystem/README
 
 ```{toctree}
 :hidden:
-Spacecamp <docs/spacecamp/README.md>
+docs/spacecamp/README
 ```
