@@ -38,6 +38,8 @@ After your proposal has been on the research forum for at least a week, you can 
 
 
 ### Submit a Parameter change proposal
+::::{dropdown} Submit a Parameter change proposal
+
 
 Follow these steps to submit your proposal using Terra Station:
 
@@ -55,10 +57,8 @@ Follow these steps to submit your proposal using Terra Station:
 5. Under the **Changes** section, enter a **subspace**, **key**, and **value**.
 
    ```{image} /img/screens/gov/param.png
-   :width: 500px
+   :class: sd-p-3
    ```
-
-   <img src="/img/screens/gov/param.png" alt="fishy" width="500px">
 
 5. Enter your password and click **Submit**.
 
@@ -72,12 +72,10 @@ Because parameter changes are evaluated but not validated, ensure that new value
 
 ::::
 
-:::{dropdown} Submit a text proposal
-
-:::
-
-::::{dropdown} Submit a Community pool spend proposal
-
+::: {dropdown} Submit a text proposal
+   ```{image} /img/screens/gov/param.png
+   :class: sd-p-3
+   ```
 :::
 
 ### Text proposal syntax
