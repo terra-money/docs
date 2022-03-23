@@ -100,7 +100,7 @@
   * [Getting Market Information](developers-ethereum/ethanchor-api/getting-market-information.md)
   * [Depositing Stablecoins](developers-ethereum/ethanchor-api/depositing-stablecoins.md)
   * [Redeeming Stablecoins](developers-ethereum/ethanchor-api/redeeming-stablecoins.md)
-* [Fees](developers-ethereum/fees.md) - s
+* [Fees](developers-ethereum/fees.md) - broken 
 
 ## External Resources
 
