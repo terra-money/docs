@@ -236,7 +236,9 @@ func (k Keeper) RewardBallotWinners(ctx sdk.Context, ballotWinners types.ClaimPo
 
 At the end of every `VotePeriod`, a portion of swap fees are rewarded to the oracle ballot winners (validators who submitted an exchange rate vote within the band).
 
-The total amount of Luna rewarded per `VotePeriod` is equal to the current amount of Luna in the reward pool (the Luna owned by the Oracle module) divided by the parameter [`RewardDistributionWindow`](#rewarddistributionwindow).
+The total amount of ballot rewards per `VotePeriod` is equal to the reward pool size (the value of coins owned by the oracle module) multiplied by the `VotePeriod` divided by the parameter [`RewardDistributionWindow`](#rewarddistributionwindow).
+
+$$Total Period Rewards = Reward Pool * (VotePeriod / RewardDistributionWindow)$$
 
 Each winning validator gets a portion of the reward proportional to their winning vote weight for that period. 
 
@@ -273,7 +275,7 @@ At the end of every block, the Oracle module checks whether it's the last block 
    - Tally up votes with [`Compute Cross Exchange Rate using Reference Terra`](#compute-cross-exchange-rate-using-reference-terra) and find the weighted median exchange rate and winners with [`tally()`](#tally)
    - Iterate through winners of the ballot and add their weight to their running total
    - Set the Luna exchange rate on the blockchain for that Luna<>`denom` with `k.SetLunaExchangeRate()`
-   - Emit a [`exchange_rate_update`](#exchange_rate_update) event
+   - Emit an `exchange_rate_update` event
 
 5. Count up the validators who [missed](#slashing) the Oracle vote and increase the appropriate miss counters
 
@@ -336,7 +338,11 @@ The tolerated error from the final weighted mean exchange rate that can receive 
 - type: `int64`
 - default value: `BlocksPerYear` (2 year window)
 
-The number of blocks used to determine the amount rewarded to validators who voted within the reward band. The total amount of Luna rewarded per `VotePeriod` is equal to the current amount of Luna in the reward pool (the Luna owned by the Oracle module) divided by the parameter [`RewardDistributionWindow`](#rewarddistributionwindow).
+The number of blocks used to determine the amount rewarded to validators who voted within the reward band. 
+
+The total amount of ballot rewards per `VotePeriod` is equal to the reward pool size (the value of coins owned by the oracle module) multiplied by the `VotePeriod` divided by the parameter `RewardDistributionWindow`.
+
+$$Total Period Rewards = Reward Pool * (VotePeriod / RewardDistributionWindow)$$
 
 ### Whitelist
 

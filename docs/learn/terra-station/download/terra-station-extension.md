@@ -41,7 +41,7 @@ Complete this tutorial to install the Terra Station extension for the Google Chr
 
 ## Create a wallet
 
-Use this tutorial to create a new wallet. To connect to an existing wallet, visit [how to connect to a wallet](../station-guides/wallet.md#connect-to-a-wallet-using-a-private-key).
+Use this tutorial to create a new wallet. To connect to an existing wallet, visit [how to connect to a wallet](../wallet.md#connect-to-a-wallet-using-a-private-key).
 
 1. Open the browser extension and click **New wallet**.
 
@@ -180,4 +180,4 @@ You can now make transactions on different dApps in the Terra ecosystem.
 
 ## Next steps
 
-For on-the-go transactions, check out the [Terra Station mobile app](terra-station-mobile.md). To learn how to use other Station features, visit the [Station guides](../station-guides/README.md).
+For on-the-go transactions, check out the [Terra Station mobile app](terra-station-mobile.md). To learn how to use other Station features, visit the [Station guides](../README.md).

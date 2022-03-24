@@ -13,7 +13,7 @@
 
 ## Building
 
-### Getting the repo
+## Getting the repo
 
 If you are contributing to the repository, make sure to fork this repo, and then clone your own fork. You will need to do this to make creating pull requests easier.
 
@@ -40,6 +40,12 @@ make docker-build
 You can view the site in your browser by navigating to `index.html` located in `<PATH_TO_CLONED_REPO>/_build/html/index.html`.
 
 Make sure to run `make docker-build` each time you save your changes to view them live.
+
+To auto-rebuild the site and refresh the browser use: 
+
+```
+make docker-watch
+```
 
 ### Adding an article
 

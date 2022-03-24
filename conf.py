@@ -36,7 +36,7 @@ extensions = ["myst_parser",
               'sphinx_tabs.tabs',
               'notfound.extension',
     ]
-myst_heading_anchors = 3
+myst_heading_anchors = 4
 notfound_urls_prefix = None
 
 # Add any paths that contain templates here, relative to this directory.
@@ -94,7 +94,7 @@ myst_enable_extensions = [
 ]
 myst_footnote_transition = True
 myst_dmath_double_inline = True
-myst_all_links_external = True
+myst_all_links_external = False
 panels_add_bootstrap_css = True
 nitpicky = True
 

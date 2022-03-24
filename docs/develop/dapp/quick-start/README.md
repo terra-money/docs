@@ -1,4 +1,4 @@
-# 5-minute quickstart guide
+# Terrain quickstart guide
 
 Use this quickstart guide to get started building your dApp. Terrain is a Terra development environment for better smart contract development experience
 
@@ -39,6 +39,16 @@ Use this tutorial to set up Terrain in 5 minutes.
 8+ GB of RAM recommended. 
 :::
 
+:::{grid-item-card}
+:link: contract-migration.html
+:class-card: sd-text-center sd-shadow-md sd-rounded-3
+```{image} /img/icon_smartcontract.svg
+:class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
+```
+**Contract migration with Terrain**  
+Learn how to migrate CosmWasm contracts on Terra. 
+:::
+
 :::::::
 
 ## Contents <img src="/img/Glossary.svg" height="30px">
@@ -48,5 +58,6 @@ Use this tutorial to set up Terrain in 5 minutes.
 initial-setup
 using-terrain-localterra
 using-terrain-testnet
+contract-migration
 
 ```

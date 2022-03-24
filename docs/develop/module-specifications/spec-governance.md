@@ -8,7 +8,7 @@ Governance is the process through which members of the Terra community can effec
 
 Check the [Governance section of the `terrad` Reference](../how-to/terrad/subcommands.md#tx-gov-submit-proposal) to see examples of how to participate in the Governance process.
 
-To learn how to vote with your staked Luna or submit proposals, visit the [Terra Station governance guide](../../learn/terra-station/station-guides/governance.md).
+To learn how to vote with your staked Luna or submit proposals, visit the [Terra Station governance guide](../../learn/terra-station/governance.md).
 
 ## Concepts
 
@@ -48,7 +48,7 @@ For a proposal to pass, the following conditions must be met:
 
 1. Voter participation must be at least `quorum` $Q$:
 
-$$\frac{Yes + No + NoWithVeto}{Stake} \ge Q$$
+$$\frac{Yes + No + NoWithVeto + Abstain}{Stake} \ge Q$$
 
 2. The ratio of `NoWithVeto` votes must be less than `veto` $V$:
 

@@ -29,7 +29,7 @@ Mobile
 
 This tutorial walks you through the process of using Terra Station, the official desktop wallet for Terra.
 
-For more guides on how to use Station's advanced features, visit the [Station guides](../station-guides/README.md) section.
+For more guides on how to use Station's advanced features, visit the [Station guides](../README.md).
 
 ## Install Terra Station
 
@@ -252,4 +252,4 @@ After a few moments, the tokens will appear in the receiver's wallet.
 
 To start using any of the many dApps the Terra ecosystem has to offer, check out the [Terra Station Chrome browser extension](terra-station-extension.md). For on-the-go transactions, check out the [Terra Station mobile app](terra-station-mobile.md).
 
-For more guides on how to use other Station features, visit the [Station guides](../station-guides/README.md).
+For more guides on how to use other Station features, visit the [Station guides](../README.md).
