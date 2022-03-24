@@ -6,6 +6,7 @@ Discover [how the Terra protocol works](protocol.md) and learn about [validators
 :hidden:
 terra-station/README
 protocol
+bridges
 fees
 glossary
 community-trust
