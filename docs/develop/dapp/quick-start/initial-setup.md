@@ -15,6 +15,7 @@ Terrain will help you:
 - [Docker](https://www.docker.com/)
 - [`docker-compose`](https://github.com/docker/compose)
 - [NPM](https://www.npmjs.com/)
+- [Node JS v16](https://nodejs.org/download/release/latest-v16.x/)
 
 ## 1. Set up Rust
 
