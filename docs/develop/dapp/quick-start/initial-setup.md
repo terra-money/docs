@@ -41,7 +41,7 @@ cargo install cargo-run-script
 Use npm to install the terrain command-line tool globally:
 
 ```sh
-npm install -g @iboss/terrain
+npm install -g @terra-money/terrain
 ```
 
 ## 3. Download LocalTerra or configure the testnet
