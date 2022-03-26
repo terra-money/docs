@@ -23,7 +23,7 @@ PyYAML
 requests
 snowballstemmer
 soupsieve
-Sphinx
+Sphinx = 4.4.0
 sphinx-autobuild
 sphinxcontrib-applehelp
 sphinxcontrib-devhelp
