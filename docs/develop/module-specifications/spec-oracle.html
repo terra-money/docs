@@ -1,28 +1,27 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Oracle &#8212; Terra Docs  documentation</title>
     
-    <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 <link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-  
+
     
-    <link rel="stylesheet"
-      href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
-  
-    
-      
-  
-    
-    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=4fea3ae4a0a4ba949df0a89bbae557cc2ce861ae" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/custom.css" />
@@ -31,20 +30,20 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" />
     
-    <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
-  
-    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/language_data.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
     <script src="../../../_static/custom.js"></script>
     <script src="../../../_static/design-tabs.js"></script>
-    <script src="../../../_static/sphinx-book-theme.9d8b4a8b9bb19db25eeaddc40d639ba2.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="shortcut icon" href="../../../_static/docs_favicon.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -57,7 +56,21 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -66,14 +79,10 @@
     <div class="container-xl">
       <div class="row">
           
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<div class="col-12 col-md-3 bd-sidebar site-navigation " id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -1304,86 +1313,176 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-</div>
-
-
-          
-
-
-          
-<!-- This is an invisible pixel that we watch to see if we've scrolled. -->
-<div class="sbt-scroll-pixel-helper"></div>
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            <div class="topbar-left">
-                
-                <label class="nav-toggle-button" for="__navigation">
-                    <div class="visually-hidden">Toggle navigation</div>
-                    <i class="fas fa-bars"></i>
-                </label>
-                
-            </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../../_sources/docs/develop/module-specifications/spec-oracle.md.txt"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/terra-money/docs"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/terra-money/docs/issues/new?title=Issue%20on%20page%20%2Fdocs/develop/module-specifications/spec-oracle.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
         </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
 
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/terra-money/docs"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/terra-money/docs/issues/new?title=Issue%20on%20page%20%2Fdocs/develop/module-specifications/spec-oracle.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../../_sources/docs/develop/module-specifications/spec-oracle.md.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#concepts">
    Concepts
@@ -1601,12 +1700,11 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Oracle </h1>
@@ -1840,41 +1938,42 @@
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="oracle">
-<h1>Oracle <img alt="../../../_images/Oracle.svg" height="40px" src="../../../_images/Oracle.svg" /><a class="headerlink" href="#oracle" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="oracle">
+<h1>Oracle <img alt="../../../_images/Oracle.svg" height="40px" src="../../../_images/Oracle.svg" /><a class="headerlink" href="#oracle" title="Permalink to this headline">#</a></h1>
 <p>The Oracle module provides the Terra blockchain with an up-to-date and accurate price feed of exchange rates of Luna against various Terra pegs so that the <a class="reference internal" href="spec-market.html"><span class="doc std std-doc">Market</span></a> may provide fair exchanges between Terra&lt;&gt;Terra currency pairs, as well as Terra&lt;&gt;Luna.</p>
 <p>As price information is extrinsic to the blockchain, the Terra network relies on validators to periodically vote on the current Luna exchange rate, with the protocol tallying up the results once per <code class="docutils literal notranslate"><span class="pre">VotePeriod</span></code> and updating the on-chain exchange rate as the weighted median of the ballot converted Cross Exchange Rates using <code class="docutils literal notranslate"><span class="pre">ReferenceTerra</span></code>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Since the Oracle service is powered by validators, you may find it interesting to look at the <a class="reference internal" href="spec-staking.html"><span class="doc std std-doc">Staking</span></a> module, which covers the logic for staking and validators.</p>
 </div>
-<div class="section" id="concepts">
-<h2>Concepts<a class="headerlink" href="#concepts" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="voting-procedure">
-<h3>Voting Procedure<a class="headerlink" href="#voting-procedure" title="Permalink to this headline">¶</a></h3>
+<section id="concepts">
+<h2>Concepts<a class="headerlink" href="#concepts" title="Permalink to this headline">#</a></h2>
+<section id="voting-procedure">
+<h3>Voting Procedure<a class="headerlink" href="#voting-procedure" title="Permalink to this headline">#</a></h3>
 <p>During each <a class="reference internal" href="#voteperiod"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">VotePeriod</span></code></span></a>, the Oracle module obtains consensus on the exchange rate of Luna against denominations specified in <a class="reference internal" href="#whitelist"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">Whitelist</span></code></span></a> by requiring all members of the validator set to submit a vote for Luna exchange rate before the end of the interval.</p>
 <p>Validators must first pre-commit to an exchange rate. In the subsequent <code class="docutils literal notranslate"><span class="pre">VotePeriod</span></code>, validators submit and reveal their exchange rate alongside a proof that they had pre-committed at that price. This scheme forces the voter to commit to a submission before knowing the votes of others. This system reduces centralization and free-rider risk in the Oracle.</p>
-<div class="section" id="prevote-and-vote">
-<h4>Prevote and Vote<a class="headerlink" href="#prevote-and-vote" title="Permalink to this headline">¶</a></h4>
+<section id="prevote-and-vote">
+<h4>Prevote and Vote<a class="headerlink" href="#prevote-and-vote" title="Permalink to this headline">#</a></h4>
 <p>Let <span class="math notranslate nohighlight">\(P_t\)</span> be the current time interval of duration defined by <a class="reference internal" href="#voteperiod"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">VotePeriod</span></code></span></a>(currently set to 5 blockchain blocks) during which validators must submit two messages:</p>
 <ul class="simple">
 <li><p>A <a class="reference internal" href="#msgexchangerateprevote"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">MsgExchangeRatePrevote</span></code></span></a>, containing the SHA256 hash of the exchange rate of Luna with respect to a Terra peg. A separate prevote must be submitted for each different denomination on which to report a Luna exchange rate. Prevotes can be overwritten by submitting another rate prevote within the same vote period.</p></li>
 <li><p>A <a class="reference internal" href="#msgexchangeratevote"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">MsgExchangeRateVote</span></code></span></a>, containing the salt used to create the hash for the prevote submitted in the previous interval <span class="math notranslate nohighlight">\(P_{t-1}\)</span>.</p></li>
 </ul>
-</div>
-<div class="section" id="vote-tally">
-<h4>Vote Tally<a class="headerlink" href="#vote-tally" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="vote-tally">
+<h4>Vote Tally<a class="headerlink" href="#vote-tally" title="Permalink to this headline">#</a></h4>
 <p>At the end of <span class="math notranslate nohighlight">\(P_t\)</span>, the submitted votes are tallied.</p>
 <p>The submitted salt of each vote is used to verify consistency with the prevote submitted by the validator in <span class="math notranslate nohighlight">\(P_{t-1}\)</span>. If the validator has not submitted a prevote, or the SHA256 resulting from the salt does not match the hash from the prevote, the vote is dropped.</p>
 <p>For each denomination, if the total voting power of submitted votes exceeds 50%, the weighted median of the votes is recorded on-chain as the effective exchange rate for Luna against that denomination for the following <code class="docutils literal notranslate"><span class="pre">VotePeriod</span></code> <span class="math notranslate nohighlight">\(P_{t+1}\)</span>.</p>
 <p>Denominations receiving fewer than <a class="reference internal" href="#votethreshold"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">VoteThreshold</span></code></span></a> total voting power have their exchange rates deleted from the store, and no swaps can be made with it during the next <code class="docutils literal notranslate"><span class="pre">VotePeriod</span></code> <span class="math notranslate nohighlight">\(P_{t+1}\)</span>.</p>
 <p>Choose <code class="docutils literal notranslate"><span class="pre">ReferenceTerra</span></code> with the highest voter turnout. If the voting power of the two denominations is the same, select reference Terra in alphabetical order.</p>
-</div>
-<div class="section" id="compute-cross-exchange-rate-using-reference-terra">
-<h4>Compute Cross Exchange Rate using Reference Terra<a class="headerlink" href="#compute-cross-exchange-rate-using-reference-terra" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="compute-cross-exchange-rate-using-reference-terra">
+<h4>Compute Cross Exchange Rate using Reference Terra<a class="headerlink" href="#compute-cross-exchange-rate-using-reference-terra" title="Permalink to this headline">#</a></h4>
 <ol class="arabic simple">
 <li><p>Choose <code class="docutils literal notranslate"><span class="pre">ReferenceTerra</span></code></p>
 <ul class="simple">
@@ -1906,20 +2005,20 @@
 </ul>
 </li>
 </ol>
-</div>
-<div class="section" id="ballot-rewards">
-<h4>Ballot Rewards<a class="headerlink" href="#ballot-rewards" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="ballot-rewards">
+<h4>Ballot Rewards<a class="headerlink" href="#ballot-rewards" title="Permalink to this headline">#</a></h4>
 <p>After the votes are tallied, the winners of the ballots are determined with <a class="reference internal" href="#tally"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">tally()</span></code></span></a>.</p>
 <p>Voters that have managed to vote within a narrow band around the weighted median are rewarded from the oracle reward pool. This pool is funded by swap fees which are distributed over a 2-year window. See <span class="xref myst"><code class="docutils literal notranslate"><span class="pre">k.RewardBallotWinners()</span></code></span> for more details.</p>
 <p>If the reward pool is empty, no rewards are distributed.</p>
-</div>
-</div>
-<div class="section" id="reward-band">
-<h3>Reward Band<a class="headerlink" href="#reward-band" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="reward-band">
+<h3>Reward Band<a class="headerlink" href="#reward-band" title="Permalink to this headline">#</a></h3>
 <p>Let <span class="math notranslate nohighlight">\(M\)</span> be the weighted median, <span class="math notranslate nohighlight">\(\sigma\)</span> be the standard deviation of the votes in the ballot, and <span class="math notranslate nohighlight">\(R\)</span> be the <a class="reference internal" href="#rewardband"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">RewardBand</span></code></span></a> parameter. The band around the median is set to be <span class="math notranslate nohighlight">\(\varepsilon = \max(\sigma, R/2)\)</span>. All valid (i.e. bonded and non-jailed) validators that submitted an exchange rate vote in the interval <span class="math notranslate nohighlight">\(\left[ M - \varepsilon, M + \varepsilon \right]\)</span> should be included in the set of winners, weighted by their relative vote power.</p>
-</div>
-<div class="section" id="slashing">
-<h3>Slashing<a class="headerlink" href="#slashing" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="slashing">
+<h3>Slashing<a class="headerlink" href="#slashing" title="Permalink to this headline">#</a></h3>
 <div class="admonition danger">
 <p class="admonition-title">Danger</p>
 <p>Be sure to read this section carefully, as it concerns potential loss of funds.</p>
@@ -1930,20 +2029,20 @@
 <li><p>The validator fails to vote within the <a class="reference internal" href="#reward-band"><span class="std std-doc">reward band</span></a> around the weighted median for one or more denominations.</p></li>
 </ul>
 <p>During every <a class="reference internal" href="#slashwindow"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">SlashWindow</span></code></span></a>, participating validators must maintain a valid vote rate of at least <a class="reference internal" href="#minvalidperwindow"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">MinValidPerWindow</span></code></span></a> (5%), lest they get their stake slashed (currently set to <a class="reference internal" href="#slashfraction"><span class="std std-doc">0.01%</span></a>). The slashed validator is automatically temporarily “jailed” by the protocol (to protect the funds of delegators), and the operator is expected to fix the discrepancy promptly to resume validator participation.</p>
-</div>
-<div class="section" id="abstaining-from-voting">
-<h3>Abstaining from Voting<a class="headerlink" href="#abstaining-from-voting" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="abstaining-from-voting">
+<h3>Abstaining from Voting<a class="headerlink" href="#abstaining-from-voting" title="Permalink to this headline">#</a></h3>
 <p>A validator may abstain from voting by submitting a non-positive integer for the <code class="docutils literal notranslate"><span class="pre">ExchangeRate</span></code> field in <a class="reference internal" href="#msgexchangeratevote"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">MsgExchangeRateVote</span></code></span></a>. Doing so will absolve them of any penalties for missing <code class="docutils literal notranslate"><span class="pre">VotePeriod</span></code>s, but also disqualify them from receiving Oracle rewards for faithful reporting.</p>
-</div>
-</div>
-<div class="section" id="message-types">
-<h2>Message Types<a class="headerlink" href="#message-types" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="message-types">
+<h2>Message Types<a class="headerlink" href="#message-types" title="Permalink to this headline">#</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The control flow for vote-tallying, Luna exchange rate updates, ballot rewards, and slashing happens at the end of every <code class="docutils literal notranslate"><span class="pre">VotePeriod</span></code>, and is found at the <a class="reference internal" href="#end-block"><span class="std std-doc">end-block ABCI function</span></a> rather than inside message handlers.</p>
 </div>
-<div class="section" id="msgexchangerateprevote">
-<h3>MsgExchangeRatePrevote<a class="headerlink" href="#msgexchangerateprevote" title="Permalink to this headline">¶</a></h3>
+<section id="msgexchangerateprevote">
+<h3>MsgExchangeRatePrevote<a class="headerlink" href="#msgexchangerateprevote" title="Permalink to this headline">#</a></h3>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="c1">// MsgExchangeRatePrevote - struct for prevoting on the ExchangeRateVote.</span><span class="w"></span>
 <span class="c1">// The purpose of prevote is to hide vote exchange rate with hash</span><span class="w"></span>
 <span class="c1">// which is formatted as hex string in SHA256(&quot;salt:exchange_rate:denom:voter&quot;)</span><span class="w"></span>
@@ -1964,9 +2063,9 @@
 <p class="admonition-title">Note</p>
 <p>Validators can overwrite a prevote by submitting another prevote before the end of the vote period. The last prevote submitted will be used.</p>
 </div>
-</div>
-<div class="section" id="msgexchangeratevote">
-<h3>MsgExchangeRateVote<a class="headerlink" href="#msgexchangeratevote" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="msgexchangeratevote">
+<h3>MsgExchangeRateVote<a class="headerlink" href="#msgexchangeratevote" title="Permalink to this headline">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">MsgExchangeRateVote</span></code> contains the actual exchange rate vote. The <code class="docutils literal notranslate"><span class="pre">Salt</span></code> parameter must match the salt used to create the prevote, otherwise the voter cannot be rewarded.</p>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="c1">// MsgExchangeRateVote - struct for voting on the exchange rate of Luna denominated in various Terra assets.</span><span class="w"></span>
 <span class="c1">// For example, if the validator believes that the effective exchange rate of Luna in USD is 10.39, that&#39;s</span><span class="w"></span>
@@ -1980,9 +2079,9 @@
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="msgdelegatefeedconsent">
-<h3>MsgDelegateFeedConsent<a class="headerlink" href="#msgdelegatefeedconsent" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="msgdelegatefeedconsent">
+<h3>MsgDelegateFeedConsent<a class="headerlink" href="#msgdelegatefeedconsent" title="Permalink to this headline">#</a></h3>
 <p>Validators may also elect to delegate voting rights to another key to prevent the block signing key from being kept online. To do so, they must submit a <code class="docutils literal notranslate"><span class="pre">MsgDelegateFeedConsent</span></code>, delegating their oracle voting rights to a <code class="docutils literal notranslate"><span class="pre">Delegate</span></code> that sign <code class="docutils literal notranslate"><span class="pre">MsgExchangeRatePrevote</span></code> and <code class="docutils literal notranslate"><span class="pre">MsgExchangeRateVote</span></code> on behalf of the validator.</p>
 <div class="admonition danger">
 <p class="admonition-title">Danger</p>
@@ -1996,9 +2095,9 @@
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="msgaggregateexchangerateprevote">
-<h3>MsgAggregateExchangeRatePrevote<a class="headerlink" href="#msgaggregateexchangerateprevote" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="msgaggregateexchangerateprevote">
+<h3>MsgAggregateExchangeRatePrevote<a class="headerlink" href="#msgaggregateexchangerateprevote" title="Permalink to this headline">#</a></h3>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">type</span><span class="w"> </span><span class="nx">MsgAggregateExchangeRatePrevote</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">	</span><span class="nx">Hash</span><span class="w">      </span><span class="nx">AggregateVoteHash</span><span class="w"> </span><span class="s">`json:&quot;hash&quot; yaml:&quot;hash&quot;`</span><span class="w"></span>
 <span class="w">	</span><span class="nx">Feeder</span><span class="w">    </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">AccAddress</span><span class="w">    </span><span class="s">`json:&quot;feeder&quot; yaml:&quot;feeder&quot;`</span><span class="w"></span>
@@ -2006,9 +2105,9 @@
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="msgaggregateexchangeratevote">
-<h3>MsgAggregateExchangeRateVote<a class="headerlink" href="#msgaggregateexchangeratevote" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="msgaggregateexchangeratevote">
+<h3>MsgAggregateExchangeRateVote<a class="headerlink" href="#msgaggregateexchangeratevote" title="Permalink to this headline">#</a></h3>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">type</span><span class="w"> </span><span class="nx">MsgAggregateExchangeRateVote</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">	</span><span class="nx">Salt</span><span class="w">          </span><span class="kt">string</span><span class="w">         </span><span class="s">`json:&quot;salt&quot; yaml:&quot;salt&quot;`</span><span class="w"></span>
 <span class="w">	</span><span class="nx">ExchangeRates</span><span class="w"> </span><span class="kt">string</span><span class="w">         </span><span class="s">`json:&quot;exchange_rates&quot; yaml:&quot;exchange_rates&quot;`</span><span class="w"> </span><span class="c1">// comma separated dec coins</span><span class="w"></span>
@@ -2017,64 +2116,64 @@
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="state">
-<h2>State<a class="headerlink" href="#state" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="prevotes">
-<h3>Prevotes<a class="headerlink" href="#prevotes" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="state">
+<h2>State<a class="headerlink" href="#state" title="Permalink to this headline">#</a></h2>
+<section id="prevotes">
+<h3>Prevotes<a class="headerlink" href="#prevotes" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">map[voter:</span> <span class="pre">ValAddress][denom:</span> <span class="pre">string]ExchangeRatePrevote</span></code></p></li>
 </ul>
 <p>Contains validator <code class="docutils literal notranslate"><span class="pre">voter</span></code>’s prevote for a given <code class="docutils literal notranslate"><span class="pre">denom</span></code> for the current <code class="docutils literal notranslate"><span class="pre">VotePeriod</span></code>.</p>
-</div>
-<div class="section" id="votes">
-<h3>Votes<a class="headerlink" href="#votes" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="votes">
+<h3>Votes<a class="headerlink" href="#votes" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">map[voter:</span> <span class="pre">ValAddress][denom:</span> <span class="pre">string]ExchangeRateVote</span></code></p></li>
 </ul>
 <p>Contains validator <code class="docutils literal notranslate"><span class="pre">voter</span></code>’s vote for a given <code class="docutils literal notranslate"><span class="pre">denom</span></code> for the current <code class="docutils literal notranslate"><span class="pre">VotePeriod</span></code>.</p>
-</div>
-<div class="section" id="luna-exchange-rate">
-<h3>Luna Exchange Rate<a class="headerlink" href="#luna-exchange-rate" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="luna-exchange-rate">
+<h3>Luna Exchange Rate<a class="headerlink" href="#luna-exchange-rate" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">map[denom:</span> <span class="pre">string]Dec</span></code></p></li>
 </ul>
 <p>Stores the current Luna exchange rate against a given <code class="docutils literal notranslate"><span class="pre">denom</span></code>, which is used by the <a class="reference internal" href="spec-market.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">Market</span></code></span></a> module for pricing swaps.</p>
-</div>
-<div class="section" id="oracle-delegates">
-<h3>Oracle Delegates<a class="headerlink" href="#oracle-delegates" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="oracle-delegates">
+<h3>Oracle Delegates<a class="headerlink" href="#oracle-delegates" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">map[operator:</span> <span class="pre">ValAddress]AccAddress</span></code></p></li>
 </ul>
 <p>Address of <code class="docutils literal notranslate"><span class="pre">operator</span></code>’s delegated price feeder.</p>
-</div>
-<div class="section" id="validator-misses">
-<h3>Validator Misses<a class="headerlink" href="#validator-misses" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="validator-misses">
+<h3>Validator Misses<a class="headerlink" href="#validator-misses" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">map[operator:</span> <span class="pre">ValAddress]int64</span></code></p></li>
 </ul>
 <p>An <code class="docutils literal notranslate"><span class="pre">int64</span></code> representing the number of <code class="docutils literal notranslate"><span class="pre">VotePeriods</span></code> that validator <code class="docutils literal notranslate"><span class="pre">operator</span></code> missed during the current <code class="docutils literal notranslate"><span class="pre">SlashWindow</span></code>.</p>
-</div>
-</div>
-<div class="section" id="functions">
-<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="votehash">
-<h3><code class="docutils literal notranslate"><span class="pre">VoteHash()</span></code><a class="headerlink" href="#votehash" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">#</a></h2>
+<section id="votehash">
+<h3><code class="docutils literal notranslate"><span class="pre">VoteHash()</span></code><a class="headerlink" href="#votehash" title="Permalink to this headline">#</a></h3>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">func</span><span class="w"> </span><span class="nx">VoteHash</span><span class="p">(</span><span class="nx">salt</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">rate</span><span class="w"> </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">Dec</span><span class="p">,</span><span class="w"> </span><span class="nx">denom</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">voter</span><span class="w"> </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">ValAddress</span><span class="p">)</span><span class="w"> </span><span class="p">([]</span><span class="kt">byte</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 <p>This function computes the truncated SHA256 hash value from <code class="docutils literal notranslate"><span class="pre">salt:rate:denom:voter</span></code> for an <code class="docutils literal notranslate"><span class="pre">ExchangeRateVote</span></code>, which is submitted in an <code class="docutils literal notranslate"><span class="pre">MsgExchangeRatePrevote</span></code> in the <code class="docutils literal notranslate"><span class="pre">VotePeriod</span></code> prior.</p>
-</div>
-<div class="section" id="tally">
-<h3><code class="docutils literal notranslate"><span class="pre">tally()</span></code><a class="headerlink" href="#tally" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="tally">
+<h3><code class="docutils literal notranslate"><span class="pre">tally()</span></code><a class="headerlink" href="#tally" title="Permalink to this headline">#</a></h3>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">func</span><span class="w"> </span><span class="nx">tally</span><span class="p">(</span><span class="nx">ctx</span><span class="w"> </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">Context</span><span class="p">,</span><span class="w"> </span><span class="nx">pb</span><span class="w"> </span><span class="nx">types</span><span class="p">.</span><span class="nx">ExchangeRateBallot</span><span class="p">,</span><span class="w"> </span><span class="nx">rewardBand</span><span class="w"> </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">Dec</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nx">weightedMedian</span><span class="w"> </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">Dec</span><span class="p">,</span><span class="w"> </span><span class="nx">ballotWinners</span><span class="w"> </span><span class="p">[]</span><span class="nx">types</span><span class="p">.</span><span class="nx">Claim</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 <p>This function contains the logic for tallying up the votes for a specific ballot of a denomination, and determines the weighted median <span class="math notranslate nohighlight">\(M\)</span> as well as the winners of the ballot.</p>
-</div>
-<div class="section" id="k-rewardballotwinners">
-<h3><code class="docutils literal notranslate"><span class="pre">k.RewardBallotWinners()</span></code><a class="headerlink" href="#k-rewardballotwinners" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="k-rewardballotwinners">
+<h3><code class="docutils literal notranslate"><span class="pre">k.RewardBallotWinners()</span></code><a class="headerlink" href="#k-rewardballotwinners" title="Permalink to this headline">#</a></h3>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">k</span><span class="w"> </span><span class="nx">Keeper</span><span class="p">)</span><span class="w"> </span><span class="nx">RewardBallotWinners</span><span class="p">(</span><span class="nx">ctx</span><span class="w"> </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">Context</span><span class="p">,</span><span class="w"> </span><span class="nx">ballotWinners</span><span class="w"> </span><span class="nx">types</span><span class="p">.</span><span class="nx">ClaimPool</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
@@ -2083,21 +2182,21 @@
 <div class="math notranslate nohighlight">
 \[Total Period Rewards = Reward Pool * (VotePeriod / RewardDistributionWindow)\]</div>
 <p>Each winning validator gets a portion of the reward proportional to their winning vote weight for that period.</p>
-</div>
-<div class="section" id="slashandresetmisscounters">
-<h3><code class="docutils literal notranslate"><span class="pre">SlashAndResetMissCounters()</span></code><a class="headerlink" href="#slashandresetmisscounters" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="slashandresetmisscounters">
+<h3><code class="docutils literal notranslate"><span class="pre">SlashAndResetMissCounters()</span></code><a class="headerlink" href="#slashandresetmisscounters" title="Permalink to this headline">#</a></h3>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">func</span><span class="w"> </span><span class="nx">SlashAndResetMissCounters</span><span class="p">(</span><span class="nx">ctx</span><span class="w"> </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">Context</span><span class="p">,</span><span class="w"> </span><span class="nx">k</span><span class="w"> </span><span class="nx">Keeper</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 <p>This function is called at the end of every <code class="docutils literal notranslate"><span class="pre">SlashWindow</span></code> and will check the miss counters of every validator to see if that validator met the minimum valid votes defined in the parameter <a class="reference internal" href="#minvalidperwindow"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">MinValidPerWindow</span></code></span></a> (did not miss more than the threshold).</p>
 <p>If a validator does not reach the criteria, their staked funds are slashed by <a class="reference internal" href="#slashfraction"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">SlashFraction</span></code></span></a>, and they are jailed.</p>
 <p>After checking all validators, all miss counters are reset back to zero for the next <code class="docutils literal notranslate"><span class="pre">SlashWindow</span></code>.</p>
-</div>
-</div>
-<div class="section" id="transitions">
-<h2>Transitions<a class="headerlink" href="#transitions" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="end-block">
-<h3>End-Block<a class="headerlink" href="#end-block" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="transitions">
+<h2>Transitions<a class="headerlink" href="#transitions" title="Permalink to this headline">#</a></h2>
+<section id="end-block">
+<h3>End-Block<a class="headerlink" href="#end-block" title="Permalink to this headline">#</a></h3>
 <p>At the end of every block, the Oracle module checks whether it’s the last block of the <code class="docutils literal notranslate"><span class="pre">VotePeriod</span></code>. If it is, it runs the <a class="reference internal" href="#voting-procedure"><span class="std std-doc">Voting Procedure</span></a>:</p>
 <ol class="arabic simple">
 <li><p>All current active Luna exchange rates are purged from the store</p></li>
@@ -2148,10 +2247,10 @@ Events<div class="sd-summary-down docutils">
 </tbody>
 </table>
 </div>
-</details></div>
-</div>
-<div class="section" id="parameters">
-<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
+</details></section>
+</section>
+<section id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">#</a></h2>
 <p>The subspace for the Oracle module is <code class="docutils literal notranslate"><span class="pre">oracle</span></code>.</p>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="c1">// Params oracle parameters</span><span class="w"></span>
 <span class="kd">type</span><span class="w"> </span><span class="nx">Params</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -2166,32 +2265,32 @@ Events<div class="sd-summary-down docutils">
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<div class="section" id="voteperiod">
-<h3>VotePeriod<a class="headerlink" href="#voteperiod" title="Permalink to this headline">¶</a></h3>
+<section id="voteperiod">
+<h3>VotePeriod<a class="headerlink" href="#voteperiod" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">int64</span></code></p></li>
 <li><p>default value: `5 blockchain blocks’</p></li>
 </ul>
 <p>The number of blocks during which voting takes place.</p>
-</div>
-<div class="section" id="votethreshold">
-<h3>VoteThreshold<a class="headerlink" href="#votethreshold" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="votethreshold">
+<h3>VoteThreshold<a class="headerlink" href="#votethreshold" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">Dec</span></code></p></li>
 <li><p>default value: 50%</p></li>
 </ul>
 <p>The minimum percentage of votes that must be received for a ballot to pass.</p>
-</div>
-<div class="section" id="rewardband">
-<h3>RewardBand<a class="headerlink" href="#rewardband" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="rewardband">
+<h3>RewardBand<a class="headerlink" href="#rewardband" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">Dec</span></code></p></li>
 <li><p>default value: 7%</p></li>
 </ul>
 <p>The tolerated error from the final weighted mean exchange rate that can receive rewards.</p>
-</div>
-<div class="section" id="rewarddistributionwindow">
-<h3>RewardDistributionWindow<a class="headerlink" href="#rewarddistributionwindow" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="rewarddistributionwindow">
+<h3>RewardDistributionWindow<a class="headerlink" href="#rewarddistributionwindow" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">int64</span></code></p></li>
 <li><p>default value: <code class="docutils literal notranslate"><span class="pre">BlocksPerYear</span></code> (2 year window)</p></li>
@@ -2200,47 +2299,49 @@ Events<div class="sd-summary-down docutils">
 <p>The total amount of ballot rewards per <code class="docutils literal notranslate"><span class="pre">VotePeriod</span></code> is equal to the reward pool size (the value of coins owned by the oracle module) multiplied by the <code class="docutils literal notranslate"><span class="pre">VotePeriod</span></code> divided by the parameter <code class="docutils literal notranslate"><span class="pre">RewardDistributionWindow</span></code>.</p>
 <div class="math notranslate nohighlight">
 \[Total Period Rewards = Reward Pool * (VotePeriod / RewardDistributionWindow)\]</div>
-</div>
-<div class="section" id="whitelist">
-<h3>Whitelist<a class="headerlink" href="#whitelist" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="whitelist">
+<h3>Whitelist<a class="headerlink" href="#whitelist" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">oracle.DenomList</span></code></p></li>
 <li><p>default: <code class="docutils literal notranslate"><span class="pre">[ukrt,</span> <span class="pre">uusd,</span> <span class="pre">usdr]</span></code></p></li>
 </ul>
 <p>The list of currencies that can be voted on. This is set to (µKRW, µSDR, µUSD) by default.</p>
-</div>
-<div class="section" id="slashfraction">
-<h3>SlashFraction<a class="headerlink" href="#slashfraction" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="slashfraction">
+<h3>SlashFraction<a class="headerlink" href="#slashfraction" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">Dec</span></code></p></li>
 <li><p>default: 0.01%</p></li>
 </ul>
 <p>The ratio of penalty on bonded tokens.</p>
-</div>
-<div class="section" id="slashwindow">
-<h3>SlashWindow<a class="headerlink" href="#slashwindow" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="slashwindow">
+<h3>SlashWindow<a class="headerlink" href="#slashwindow" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">int64</span></code></p></li>
 <li><p>default: <code class="docutils literal notranslate"><span class="pre">BlocksPerWeek</span></code></p></li>
 </ul>
 <p>The number of blocks for slashing tallying.</p>
-</div>
-<div class="section" id="minvalidperwindow">
-<h3>MinValidPerWindow<a class="headerlink" href="#minvalidperwindow" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="minvalidperwindow">
+<h3>MinValidPerWindow<a class="headerlink" href="#minvalidperwindow" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">Dec</span></code></p></li>
 <li><p>default: 5%</p></li>
 </ul>
 <p>The ratio of minimum valid oracle votes per slash window to avoid slashing.</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
 <div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="spec-mint.html" title="previous page">
         <i class="fas fa-angle-left"></i>
@@ -2257,68 +2358,25 @@ Events<div class="sd-summary-down docutils">
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+</p>
+        </footer>
+    </div>
     
-
-    <div class="extra_footer container">
-      <div class="row">
-
-        <div class="col">
-
-          <div class="logos">
-            <a href="https://discord.gg/e29HWwC2Mz" rel="noopener" target="_blank"><img src="/discord.svg" alt="link to Terra discord room"></a>&nbsp;
-            <a href="https://medium.com/terra-money" rel="noopener" target="_blank"><img src="/medium.svg" alt="link to Terra medium"></a>&nbsp;
-            <a href="https://twitter.com/terra_money" rel="noopener" target="_blank"><img src="/twitter.svg" alt="link to Terra twitter"></a>&nbsp;
-            <a href="https://www.youtube.com/channel/UCoV1RXZ9ZBGcuu_PMTTlM0g" rel="noopener" target="_blank"><img src="/icon_youtube.png" alt="link to Terra youtube"></a>&nbsp;
-            <a href="https://t.me/terra_announcements" rel="noopener" target="_blank"><img src="/icon_telegram.png" alt="link to Terra telegram room"></a>
-            <br/><br/>
-          </div>
-
-        </div>
-
-        <div class="col-md-auto">
-
-          <a href="https://www.terra.money/" >terra.money</a> <br/>
-          <a href="mailto:general@terra.money" >Contact</a> <br/>
-          <a href="https://terra.breezy.hr/"> Careers</a> <br/>
-          <br/>
-
-        </div>
-
-        <div class="col-md-auto">
-
-          <a href="https://assets.website-files.com/611153e7af981472d8da199c/618b02d13e938ae1f8ad1e45_Terra_White_paper.pdf" >Whitepaper</a> <br/>
-          <a href="https://certik.org/projects/terra" >Security Audit</a> <br/>
-          <a href="https://agora.terra.money/" >Agora forum</a> <br/>
-          <br/>
-
-        </div>
-
-        <div class="col">
-          <a href="https://finder.terra.money/" >Terra Finder</a> <br/>
-          <a href="https://station.terra.money/" >Terra Station</a> <br/>
-          <a href="https://status.terra.money/" >Status</a> <br/>
-          <br/>
-
-        </div>
-
-      </div>
-    </div>
-
-
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-    <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
   </body>
 </html>

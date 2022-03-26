@@ -4,7 +4,7 @@ Use this quickstart guide to get started building your dApp. Terrain is a Terra 
 
 This guide will walk you through setting up your environment, installing Terrain, and using the testnet or LocalTerra to interact with a network.
 
-For more information on Terrain, visit [Terrain's readme](https://github.com/iboss-ptk/terrain#readme).
+For more information on Terrain, visit [Terrain's readme](https://github.com/terra-money/terrain#readme).
 
 :::::::{grid}
 :gutter: 3
