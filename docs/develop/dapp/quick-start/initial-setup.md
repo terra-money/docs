@@ -12,6 +12,9 @@ Terrain will help you:
 
 ## Prerequisites
 
+- [Docker](https://www.docker.com/)
+- [`docker-compose`](https://github.com/docker/compose)
+
 ## 1. Set up Rust
 
 Rust is the main programming language used for CosmWasm smart contracts. While WASM smart contracts can theoretically be written in any programming language, CosmWasm libraries and tooling work best with Rust.
