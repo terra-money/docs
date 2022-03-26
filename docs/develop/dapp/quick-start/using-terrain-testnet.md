@@ -160,5 +160,5 @@ Terrain also scaffolds a very simple front-end.
 
 ## Advanced usage
 
-For more advanced use cases such as deploying to the testnet or mainnet, see [Terrain's readme](https://github.com/iboss-ptk/terrain#readme).
+For more advanced use cases such as deploying to the testnet or mainnet, see [Terrain's readme](https://github.com/terra-money/terrain#readme).
 
