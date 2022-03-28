@@ -1,8 +1,28 @@
 # Market <img src="/img/Market.svg" height="40px">
 
-The Market module enables atomic swaps between different Terra stablecoin denominations, and between Terra and Luna. This module ensures an available, liquid market, stable prices, and fair exchange rates between the protocol's assets.
+## Overview
 
-The price stability of TerraSDR is achieved through Terra<>Luna arbitrage activity against the protocol's algorithmic market-maker, which expands and contracts Terra's supply to maintain its peg.
+The market module is the heart of the Terra protocol, allowing users to always trade 1 USD of Terra for 1 USD of Luna. This simple mechanism ensures the price-stability of Terra stablecoins on external markets by incentivizing trades that maintain each stablecoin's price peg. Whenever stablecoins are trading above or below the prices of their fiat counterparts, an arbitrage opportunity is created. 
+
+## Exchange rates
+
+Validators import the real-time value of Luna against various fiat currencies using oracle feeders. Validators use these prices to calculate the exchange rates of Luna against each Terra stablecoin's fiat counterpart. Oracle exchange rates are listed as fiat amount per Luna. For example, if 1 Luna is trading at 100 USD, the rate would be reported as 100 USD/Luna. Validators submit these rates as votes, and the weighted median rates for each stablecoin are determined to be the effective exchange rates used by the Terra protocol in the market module. This process happens every 6 blocks. 
+
+When a trader wants to swap between Luna and Terra stablecoins, or exchange between stablecoin denomination, the current exchange rates are directly imported from the oracle module. 
+
+:::{note}
+On-chain, the Terra protocol makes no distinction between fiat denominations and their stablecoin counterparts. In the oracle module, validators submit the exchange rates of fiat against Luna. The market module then uses these fiat/Luna rates as the effective price rates for Terra stablecoins. The market module never requires the off-chain exchange rate between fiat and Terra stablecoins to calculate swaps. For this reason, 1 UST is always equal to the price of 1 USD on-chain, regardless of external market conditions. 
+:::
+
+## Swaps
+
+The market module is responsible for swaps between stablecoin denomintions and swaps between Terra and Luna. 
+
+### Stablecoins 
+
+To swap between stablecoins, 
+
+### Terra and Luna
 
 ## Concepts
 
@@ -24,6 +44,7 @@ To defend against this type of attack, the Market module enforces the following 
 
   The minimum spread is 0.5%. Using the same exchange rates as above, swapping 1 SDT will return 995 KRT worth of Luna (0.5% of 1000 is 5, which is taken as the swap fee). If you reverse the direction of the swap, 1 Luna would return 9.95 SDT (0.5% of 10 is 0.05), or 9,950 KRT (0.5% of 10,000 = 50).
 
+
 ### Market Making Algorithm
 
 Terra uses a Constant Product market-making algorithm to ensure liquidity for Terra<>Luna swaps. [^2]
@@ -36,7 +57,7 @@ With Constant Product, a value, $CP$, is set to the size of the Terra pool multi
 The Terra blockchain's implementation of Constant Product diverges from Uniswap's, as the fiat value of Luna is used instead of the size of the Luna pool. This nuance means changes in the price of Luna does not affect the product, but rather the size of the Luna pool.
 :::
 
-$$CP = Pool_{Terra} * Pool_{Luna} * (Price_{Luna}/Price_{SDR})$$
+$$CP = Pool_{Terra} * Pool_{Luna} * Price_{Luna}$$
 
 For example, start with equal pools of Terra and Luna, both worth 1000 SDR total. The size of the Terra pool is 1000 SDT, and assuming the price of Luna<>SDR is 0.5, the size of the Luna pool is 2000 Luna. A swap of 100 SDT for Luna would return around 90.91 SDR worth of Luna (≈ 181.82 Luna). The offer of 100 SDT is added to the Terra pool, and the 90.91 SDT worth of Luna are taken out of the Luna pool.
 
