@@ -49,10 +49,10 @@ The same arbitrage mechanism works in reverse for contraction.
 
 The Terra protocol is scalable: it is designed to maintain Terra's price stability regardless of market size, volatility, or demand. The monetary policies encoded into the protocol ensure its durability and resilience in all market fluctuations.
 
-### Seigniorage and deflation
+### Seigniorage
 
-[Seigniorage](glossary.md#seigniorage) is the value of a coin minus the cost of its production. In early versions of the Terra protocol, seigniorage was diverted to fund various community projects. While seigniorage can create enormous value, it also creates inflation in the system.
-All seigniorage in the Terra protocol is [burned](glossary.md#burn), making Luna deflationary in nature.
+[Seigniorage](glossary.md#seigniorage) is the value of a coin minus the cost of its production. In previous versions of the Terra protocol, seigniorage was diverted to fund the community and oracle reward pools. Since the Columbus-5 mainnet upgrade, 
+all seigniorage in the Terra protocol is [burned](glossary.md#burn). 
 
 ## Validators
 
