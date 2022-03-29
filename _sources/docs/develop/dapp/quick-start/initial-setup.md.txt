@@ -52,7 +52,7 @@ npm install -g @terra-money/terrain
 
 Depending on your setup, you can either install LocalTerra or use the Bombay testnet to power Terrain. 
 
-LocalTerra is a development environment designed to make it easy for smart contract developers to test their contracts locally. 
+LocalTerra is a development environment designed to make it easy for smart contract developers to test their contracts locally. Terrain can also interact with the Terra blockchain's live testing environment using the Bombay testnet. 
 
 ::: {caution}
 Localterra may not work properly on machines with less than 16 GB of RAM. Please use the [Bombay testnet](using-terrain-testnet.md) if your device does not meet this requirement.
@@ -60,6 +60,16 @@ Localterra may not work properly on machines with less than 16 GB of RAM. Please
 
 :::::::{grid}
 :gutter: 3
+
+:::{grid-item-card}
+:link: using-terrain-testnet.html
+:class-card: sd-text-center sd-shadow-md sd-rounded-3
+```{image} /img/icon_node.svg
+:class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
+```
+**Terrain and the testnet**  
+8+ GB of RAM recommended.
+:::
 
 :::{grid-item-card}
 :link: using-terrain-localterra.html
@@ -71,14 +81,5 @@ Localterra may not work properly on machines with less than 16 GB of RAM. Please
 16+ GB of RAM recommended.
 :::
 
-:::{grid-item-card}
-:link: using-terrain-testnet.html
-:class-card: sd-text-center sd-shadow-md sd-rounded-3
-```{image} /img/icon_node.svg
-:class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
-```
-**Terrain and the testnet**  
-8+ GB of RAM recommended.
-:::
 
 :::::::
