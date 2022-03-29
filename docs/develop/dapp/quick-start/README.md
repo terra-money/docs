@@ -56,8 +56,8 @@ Learn how to migrate CosmWasm contracts on Terra.
 ```{toctree}
 :maxdepth: 1
 initial-setup
-using-terrain-localterra
 using-terrain-testnet
+using-terrain-localterra
 contract-migration
 
 ```
