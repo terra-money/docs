@@ -1621,11 +1621,11 @@ title="Print to PDF"
 <p>In previous <a class="reference internal" href="README.html"><span class="doc std std-doc">Terrain tutorials</span></a>, you learned how to deploy the contract. Now you will be able to initialize it as migratable.</p>
 <p>After adding MigrateMsg to the smart contract, redeploy and add the <code class="docutils literal notranslate"><span class="pre">--set-signer-as-admin</span></code> flag.
 This flag tells Terra that the transaction signer is allowed to migrate the contract in the future:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">terrain</span> <span class="n">deploy</span> <span class="n">counter</span> <span class="o">--</span><span class="n">signer</span> <span class="n">validator</span> <span class="o">--</span><span class="nb">set</span><span class="o">-</span><span class="n">signer</span><span class="o">-</span><span class="k">as</span><span class="o">-</span><span class="n">admin</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">terrain</span> <span class="n">deploy</span> <span class="n">counter</span> <span class="o">--</span><span class="n">signer</span> <span class="n">test1</span> <span class="o">--</span><span class="nb">set</span><span class="o">-</span><span class="n">signer</span><span class="o">-</span><span class="k">as</span><span class="o">-</span><span class="n">admin</span>
 </pre></div>
 </div>
 <p>With the new contract deployed you can make some changes then migrate to the new code with the following command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">terrain</span> <span class="n">contract</span><span class="p">:</span><span class="n">migrate</span> <span class="n">counter</span> <span class="o">--</span><span class="n">signer</span> <span class="n">validator</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">terrain</span> <span class="n">contract</span><span class="p">:</span><span class="n">migrate</span> <span class="n">counter</span> <span class="o">--</span><span class="n">signer</span> <span class="n">test1</span>
 </pre></div>
 </div>
 </section>

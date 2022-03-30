@@ -90,7 +90,7 @@ The following structure shows your scaffolded project:
 To deploy the application, run the following command:
 
 ```sh
-terrain deploy counter --signer validator
+terrain deploy counter --signer test1
 ```
 
 The deploy command performs the following steps automatically:
