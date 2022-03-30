@@ -52,11 +52,11 @@ This flag tells Terra that the transaction signer is allowed to migrate the cont
 
 
    ```
-   terrain deploy counter --signer validator --set-signer-as-admin
+   terrain deploy counter --signer test1 --set-signer-as-admin
    ```
 
 With the new contract deployed you can make some changes then migrate to the new code with the following command: 
 
    ```
-   terrain contract:migrate counter --signer validator
+   terrain contract:migrate counter --signer test1
    ```

@@ -89,7 +89,7 @@ Wait a few seconds then try the deploy command again.
 
 Besides the CLI approach above, there is also the option of deploying and interacting with your contracts on testnet through the [Terra Station UI](https://station.terra.money/).
 
-1. Compile your project with `terrain`. If you have localterra running, this can be done with `terrain deploy <project> --signer validator`. This will build the wasm bytecode and output a **.wasm** file such as **artifacts/counter.wasm**
+1. Compile your project with `terrain`. If you have localterra running, this can be done with `terrain deploy <project> --signer test1`. This will build the wasm bytecode and output a **.wasm** file such as **artifacts/counter.wasm**
 
 2. You can now upload this contract to the testnet via Station. Go to [https://station.terra.money/contract](https://station.terra.money/contract) and click on "Upload"
 
