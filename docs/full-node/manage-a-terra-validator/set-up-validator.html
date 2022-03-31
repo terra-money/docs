@@ -1506,6 +1506,11 @@ title="Print to PDF"
    3. Confirm your validator is active
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#secure-your-keys-and-have-a-backup-plan">
+   4. Secure your keys and have a backup plan
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -1545,6 +1550,11 @@ title="Print to PDF"
    3. Confirm your validator is active
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#secure-your-keys-and-have-a-backup-plan">
+   4. Secure your keys and have a backup plan
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -1564,12 +1574,13 @@ title="Print to PDF"
 <ul class="simple">
 <li><p>You have completed <a class="reference internal" href="../run-a-full-terra-node/README.html"><span class="doc std std-doc">how to run a full Terra node</span></a>, which outlines how to install, connect, and configure a node.</p></li>
 <li><p>You are familiar with <a class="reference internal" href="../../develop/how-to/terrad/README.html"><span class="doc std std-doc">terrad</span></a>.</p></li>
-<li><p>you have read through <a class="reference internal" href="faq.html"><span class="doc std std-doc">the validator FAQ</span></a></p></li>
+<li><p>You have read through <a class="reference internal" href="faq.html"><span class="doc std std-doc">the validator FAQ</span></a></p></li>
+<li><p>You understand the <a class="reference internal" href="faq.html#what-are-the-different-types-of-keys"><span class="std std-doc">different keys</span></a> of a validator in the FAQ</p></li>
 </ul>
 </section>
 <section id="retrieve-your-pubkey">
 <h2>1. Retrieve your PubKey<a class="headerlink" href="#retrieve-your-pubkey" title="Permalink to this headline">#</a></h2>
-<p>The consensus PubKey of your node is required to create a new validator. Run:</p>
+<p>The Consensus PubKey of your node is required to create a new validator. Run:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>--pubkey<span class="o">=</span><span class="k">$(</span>terrad tendermint show-validator<span class="k">)</span>
 </pre></div>
 </div>
@@ -1580,7 +1591,7 @@ title="Print to PDF"
 <p class="admonition-title">Get tokens</p>
 <p>In order for Terrad to recognize a wallet address it must contain tokens. For the testnet, use <a class="reference external" href="https://faucet.terra.money/">the faucet</a> to send Luna to your wallet. If you are on mainnet, send funds from an existing wallet. 1-3 luna are sufficient for most setup processes.</p>
 </div>
-<p>To create the validator and initialize it with a self-delegation, run the following command. <code class="docutils literal notranslate"><span class="pre">key-name</span></code> is the name of the private key that is used to sign transactions.</p>
+<p>To create the validator and initialize it with a self-delegation, run the following command. <code class="docutils literal notranslate"><span class="pre">key-name</span></code> is the name of the Application Operator Key that is used to sign transactions.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad tx staking create-validator <span class="se">\</span>
     --amount<span class="o">=</span>5000000uluna <span class="se">\</span>
     --pubkey<span class="o">=</span><span class="k">$(</span>&lt;your-consensus-PubKey&gt;<span class="k">)</span> <span class="se">\</span>
@@ -1609,6 +1620,16 @@ title="Print to PDF"
 <p class="admonition-title">Note</p>
 <p>Only the top 130 validators in voting power are included in the active validator set.</p>
 </div>
+</section>
+<section id="secure-your-keys-and-have-a-backup-plan">
+<h2>4. Secure your keys and have a backup plan<a class="headerlink" href="#secure-your-keys-and-have-a-backup-plan" title="Permalink to this headline">#</a></h2>
+<p>In general a validator needs to do three things well</p>
+<ul class="simple">
+<li><p>Sign and commit blocks (using the Tendermint Consensus key)</p></li>
+<li><p>Provide Oracle FX rates via a feeder (using an Application Oracle Feeder key)</p></li>
+<li><p>Conduct on-chain operations such as voting on Governance proposals (using an Application Operator Key)</p></li>
+</ul>
+<p>Protecting and having a contingency backup plan for all your <a class="reference internal" href="faq.html#what-are-the-different-types-of-keys"><span class="std std-doc">keys</span></a> will help mitigate catastrophic hardware or software failures of the node.</p>
 </section>
 </section>
 
