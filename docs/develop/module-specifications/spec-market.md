@@ -2,7 +2,9 @@
 
 ## Overview
 
-The market module is the heart of the Terra protocol, allowing users to always trade 1 USD of Terra for 1 USD of Luna. This simple mechanism ensures the price-stability of Terra stablecoins on external markets by incentivizing trades that maintain each stablecoin's price peg. Whenever stablecoins are trading above or below the prices of their fiat counterparts, an arbitrage opportunity is created. 
+The market module is the heart of the Terra protocol, allowing users to always trade 1 USD of Terra for 1 USD of Luna. This simple mechanism ensures the price-stability of Terra stablecoins on external markets by incentivizing trades that maintain each stablecoin's price peg. Whenever Terra stablecoins are trading above or below the prices of their fiat counterparts, an arbitrage opportunity is created. Traders are incentivized to rebalance pools in external markets by profiting from the arbitrage trades against the market module. 
+
+
 
 ## Exchange rates
 
@@ -16,7 +18,8 @@ On-chain, the Terra protocol makes no distinction between fiat denominations and
 
 ## Swaps
 
-The market module is responsible for swaps between stablecoin denomintions and swaps between Terra and Luna. 
+The market module is responsible for swaps between Terra stablecoin denomintions and swaps between Terra stablecoins and Luna. 
+
 
 ### Stablecoins 
 
@@ -24,7 +27,36 @@ To swap between stablecoins,
 
 ### Terra and Luna
 
+### Swap Procedure
+
+The swap procedure logic can be found in [x/market/keeper/msg_server.go](https://github.com/terra-money/core/blob/main/x/market/keeper/msg_server.go). 
+
+1. The Market module receives a [`MsgSwap`](#msgswap) message and performs basic validation checks using `ValidateBasic`. 
+
+2. [`k.ComputeSwap()`](#functions) is called, and the oracle exchange rate is used to calculate the equivalent amount of the ask coin from the offer coin.
+
+3. The Spread fee or Tobin tax is calculated and subtracted from the ask amount. 
+
+4. The offer and ask amounts (minus the fee) are applied to the virtual pools, and the `TerraPoolDelta` is updated with [`k.ApplySwapToPool()`](#k-applyswaptopool).
+
+5. The `offerCoin` is transfered to the market module using `k.BankKeeper.SendCoinsFromAccountToModule()`.
+
+6. The `offerCoin` is burned using `k.BankKeeper.BurnCoins()`.
+
+7. The ask amount and spread fee are minted separately using `k.BankKeeper.MintCoins()`.
+
+8. The newly minted askCoins are sent to the trader using `k.BankKeeper.SendCoinsFromModuleToAccount()`.
+
+9. The swap fee is sent to the oracle account using `k.BankKeeper.SendCoinsFromModuleToModule()`. 
+
+10. The `swap` event is emitted to publicize the swap and record the spread fee.
+
+:::{note} If a trader's `Account` has insufficient balance to execute the swap, the swap transaction will fails.
+:::
+
+
 ## Concepts
+
 
 ### Swap Fees
 
@@ -86,29 +118,6 @@ At the [end of each block](#end-block), the market module attempts to replenish 
 
 This mechanism ensures liquidity and acts as a low-pass filter, allowing for the spread fee (which is a function of `TerraPoolDelta`) to drop back down when there is a change in demand, causing a necessary change in supply which needs to be absorbed.
 
-### Swap Procedure
-
-1. The Market module receives [`MsgSwap`](#msgswap) message and performs basic validation checks.
-
-2. Calculate exchange rate $ask$ and $spread$ using [`k.ComputeSwap()`](#functions).
-
-3. Update `TerraPoolDelta` with [`k.ApplySwapToPool()`](#k-applyswaptopool).
-
-4. Transfer `OfferCoin` from account to module using `supply.SendCoinsFromAccountToModule()`.
-
-5. Burn offered coins, with `supply.BurnCoins()`.
-
-6. Let $fee = spread * ask$, this is the spread fee.
-
-7. Mint $ask - fee$ coins of `AskDenom` with `supply.MintCoins()`. This implicitly applies the spread fee as the $fee$ coins are burned.
-
-8. Send newly minted coins to trader with `supply.SendCoinsFromModuleToAccount()`.
-
-9. Emit `swap` event to publicize the swap and record the spread fee.
-
-If the trader's `Account` has insufficient balance to execute the swap, the swap transaction fails.
-
-Upon successful completion of Terra<>Luna swaps, a portion of the coins to be credited to the user's account is withheld as the spread fee.
 
 ### Seigniorage
 
