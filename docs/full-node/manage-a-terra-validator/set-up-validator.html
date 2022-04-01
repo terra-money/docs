@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Register your Terra validator &#8212; Terra Docs  documentation</title>
+    <title>Register a validator &#8212; Terra Docs  documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -793,12 +793,17 @@
      </li>
      <li class="toctree-l3 current active">
       <a class="current reference internal" href="#">
-       Register your Terra validator
+       Register a validator
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="troubleshoot-validator-problems.html">
        Troubleshoot validator problems
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="restore.html">
+       Restore a validator
       </a>
      </li>
     </ul>
@@ -1486,37 +1491,42 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#prerequisites">
-   Prerequisites
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#retrieve-your-pubkey">
-   1. Retrieve your PubKey
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#create-a-new-validator">
-   2. Create a new validator
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#confirm-your-validator-is-active">
-   3. Confirm your validator is active
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#secure-your-keys-and-have-a-backup-plan">
-   4. Secure your keys and have a backup plan
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Register a validator
   </a>
   <ul class="visible nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#restoring-a-validator">
-     4.1 Restoring a validator
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#prerequisites">
+     Prerequisites
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#retrieve-your-pubkey">
+     1. Retrieve your PubKey
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-a-new-validator">
+     2. Create a new validator
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#confirm-your-validator-is-active">
+     3. Confirm your validator is active
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#secure-your-keys-and-have-a-backup-plan">
+     4. Secure your keys and have a backup plan
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#restore-a-validator">
+   Restore a validator
+  </a>
  </li>
 </ul>
 
@@ -1527,7 +1537,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Register your Terra validator</h1>
+                <h1>Register a validator</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -1537,37 +1547,42 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#prerequisites">
-   Prerequisites
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#retrieve-your-pubkey">
-   1. Retrieve your PubKey
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#create-a-new-validator">
-   2. Create a new validator
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#confirm-your-validator-is-active">
-   3. Confirm your validator is active
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#secure-your-keys-and-have-a-backup-plan">
-   4. Secure your keys and have a backup plan
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Register a validator
   </a>
   <ul class="visible nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#restoring-a-validator">
-     4.1 Restoring a validator
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#prerequisites">
+     Prerequisites
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#retrieve-your-pubkey">
+     1. Retrieve your PubKey
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-a-new-validator">
+     2. Create a new validator
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#confirm-your-validator-is-active">
+     3. Confirm your validator is active
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#secure-your-keys-and-have-a-backup-plan">
+     4. Secure your keys and have a backup plan
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#restore-a-validator">
+   Restore a validator
+  </a>
  </li>
 </ul>
 
@@ -1579,8 +1594,8 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="register-your-terra-validator">
-<h1>Register your Terra validator<a class="headerlink" href="#register-your-terra-validator" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="register-a-validator">
+<h1>Register a validator<a class="headerlink" href="#register-a-validator" title="Permalink to this headline">#</a></h1>
 <p>This is a detailed step-by-step guide for setting up a Terra validator. Please be aware that while it is easy to set up a rudimentary validating node, running a production-quality validator node with a robust architecture and security features requires an extensive setup.</p>
 <p>For more information on setting up a validator, see <a class="reference internal" href="README.html#additional-resources"><span class="std std-doc">additional resources</span></a>.</p>
 <section id="prerequisites">
@@ -1645,28 +1660,26 @@ title="Print to PDF"
 </ul>
 <p>Protecting and having a contingency backup plan for all your <a class="reference internal" href="faq.html#what-are-the-different-types-of-keys"><span class="std std-doc">keys</span></a> will help mitigate catastrophic hardware or software failures of the node.
 It is a good practice to test your backup plan on a testnet node in case of node failure.</p>
-<section id="restoring-a-validator">
-<h3>4.1 Restoring a validator<a class="headerlink" href="#restoring-a-validator" title="Permalink to this headline">#</a></h3>
-<p>A validator can be completely restored on a new Terra node given the following set of keys:</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="restore-a-validator">
+<h1>Restore a validator<a class="headerlink" href="#restore-a-validator" title="Permalink to this headline">#</a></h1>
+<p>A validator can be completely restored on a new Terra node with the following set of keys:</p>
 <ul class="simple">
-<li><p>Consensus key, stored in <code class="docutils literal notranslate"><span class="pre">~/.terra/config/priv_validator.json</span></code></p></li>
+<li><p>The Consensus key, stored in <code class="docutils literal notranslate"><span class="pre">~/.terra/config/priv_validator.json</span></code></p></li>
 <li><p>The mnemonic to the validator wallet</p></li>
 <li><p>The mnemonic to the oracle feeder wallet</p></li>
 </ul>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
 <p>Before proceeding, ensure that the existing validator is not active. Double voting has severe slashing consequences.</p>
-<div class="highlight-first notranslate"><div class="highlight"><pre><span></span>
-To restore a validator:
-
-1. Setup a full Terra node synced up to the latest block.
-2. Replace `~/.terra/config/priv_validator.json` of the new node with the associated file from the old node, then restart the node.
-3. Set up the price and oracle feeders.
-</pre></div>
 </div>
-</div>
-</section>
-</section>
+<p>To restore a validator:</p>
+<ol class="arabic simple">
+<li><p>Setup a full Terra node synced up to the latest block.</p></li>
+<li><p>Replace the <code class="docutils literal notranslate"><span class="pre">~/.terra/config/priv_validator.json</span></code> file of the new node with the associated file from the old node, then restart your node.</p></li>
+<li><p>Set up the <a class="reference internal" href="set-up-oracle-feeder.html"><span class="doc std std-doc">price and oracle feeders</span></a>.</p></li>
+</ol>
 </section>
 
 

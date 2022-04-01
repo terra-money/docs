@@ -32,4 +32,5 @@ implement-security
 set-up-oracle-feeder
 set-up-validator
 troubleshoot-validator-problems
+restore
 ```
