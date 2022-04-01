@@ -1,12 +1,17 @@
 # Keys
 
-To perform actions using an account and private-public key pairs with Terra.js, you need a an implementation of the [ *Key* ](https://github.com/terra-money/terra.js/blob/main/src/key/Key.ts) class, which provides an abstraction around signing functions of an account. There are multiple implementations available out of the box: 
-[ *RawKey* ](https://github.com/terra-money/terra.js/blob/main/src/key/RawKey.ts), [ *MnemonicKey* ](https://github.com/terra-money/terra.js/blob/main/src/key/MnemonicKey.ts) and [ *CLIKey* ](https://github.com/terra-money/terra.js/blob/main/src/key/CLIKey.ts). You can also create a custom signing solution by extending the base [ *Key* ](https://github.com/terra-money/terra.js/blob/main/src/key/Key.ts) class.
+To perform actions using an account and private-public key pairs with Terra.js, you need an implementation of the [ *Key* ](https://github.com/terra-money/terra.js/blob/main/src/key/Key.ts) class, which provides an abstraction around the signing functions of an account. There are multiple implementations available: 
+
+[ *RawKey* ](https://github.com/terra-money/terra.js/blob/main/src/key/RawKey.ts)
+[ *MnemonicKey* ](https://github.com/terra-money/terra.js/blob/main/src/key/MnemonicKey.ts) 
+[ *CLIKey* ](https://github.com/terra-money/terra.js/blob/main/src/key/CLIKey.ts) 
+
+You can also create a custom signing solution by extending the base [ *Key* ](https://github.com/terra-money/terra.js/blob/main/src/key/Key.ts) class.
 
 
-### `RawKey`
+## `RawKey`
 
-The most basic implementation of `Key` is `RawKey`, which is created with a plain private key. That is, it wraps the 32 bytes of the private key and supplies a corresponding public key.
+The most basic implementation of a `Key` is a `RawKey`, which is created using a plain private key. `RawKey`  wraps the 32 bytes of a private key and supplies a corresponding public key:
 
 ```ts
 import { RawKey } from '@terra-money/terra.js';
@@ -20,14 +25,14 @@ see(raw_key.privateKey)//<Buffer 53 e2 53 0b 29 c4 9d 54 b3 66 a4 61 7b d3 e2 6e
 see(raw_key.accAddress)//terra1ptj88nsljjr9agx07hahu6etv43acksy2q44sd
 ```
 
-### MnemonicKey
+## MnemonicKey
 
 
-Mnemonic Key derives itself from the 24 words of a [ BIP-39 ](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki) mnemonic as opposed to the bytes of the private key.
-`MnemonicKey` has varios levels of definition: 
+A `MnemonicKey` derives itself from a 24-word  [ BIP-39 ](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki) mnemonic as opposed to the bytes of a  private key.
+A `MnemonicKey` has various levels of definition: 
 - Supply no arguments for the mnemonic to be randomly generated ( effectively generating a random key ).
-- Supply only a 24-words BIP-39 mnemonic to generate a corresponding key.
-- Supply a full HD path (with a random or a particular mnenomic).
+- Supply only a 24-word BIP-39 mnemonic to generate a corresponding key.
+- Supply a full HD path (using either a  random or particular mnenomic).
 
 
 
@@ -62,7 +67,7 @@ const MNE_KEY_FULLY_RESOLVED = new MnemonicKey({
 
 ```
 
-##### Specifying HD path
+### Specifying an HD path
 
 `MnemonicKey` can used to recover a wallet with a particular BIP44 HD path: `m/44'/${coinType}'/${account}'/0/${index}`.
 
@@ -91,11 +96,11 @@ const mne_key = new MnemonicKey({
 
 
 
-### `CLIKey`
+## `CLIKey`
 
-> NOTE: This requires you to have `terrad` installed.
+> NOTE: This keytype requires you to have `terrad` installed.
 
-If you want to use keys stored in your `terrad` installation's keyring to sign transactions, you can use `CLIKey`. This also will work for keys that have been registered in your keyring with `--ledger`, using a Ledger hardware device.
+If you want to use keys stored in your `terrad` installation's keyring to sign transactions, you can use `CLIKey`. This approach also works for keys that have been registered in your keyring with `--ledger`, using a Ledger hardware device.
 
 ```ts
 import { StdFee, MsgSend } from '@terra-money/terra.js';
@@ -125,7 +130,7 @@ main().catch(console.error);
 
 ## Custom key implementation
 
-If you need to write your own key management solution, you will need to subclass the abstract `Key` class and provide your own signing function. Note that the key need not expose any details pertaining to the private key -- you could specify a `sign()` function that forwards the signing request to a server or to a hardware wallet, for instance. The remaining functions related to signing (`createSignature()` and `signTx()`) are automatically provided and use `sign()` underneath.
+If you need to write your own key management solution, you will need to subclass the abstract `Key` class and provide your own signing function. Instead of exposing details pertaining to your private key, you can specify a `sign()` function that forwards the signing request to a server or to a hardware wallet. The remaining functions related to signing (`createSignature()` and `signTx()`) are automatically provided and use `sign()` underneath.
 
 The following code listing is close to the implementation of `RawKey`, which illustrates how to write a custom `Key`:
 
@@ -164,4 +169,4 @@ export class NaiveCustomImplementation extends Key {
 }
 ```
 
-Note that you must call `super()` with the public key—this generates the relevant account and validator public keys associated with your key.
+Note that you must call `super()` with the public key to generate the relevant account and validator public keys associated with your key.
