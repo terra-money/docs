@@ -37,5 +37,5 @@ sphinx_design == 0.0.13
 sphinx-notfound-page == 0.8
 sphinx_panels == 0.6.0
 sphinx-tabs == 3.3.1
-urllib3 == 1.25.8
+urllib3 == 1.26.5
 
