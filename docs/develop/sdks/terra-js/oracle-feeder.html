@@ -3,8 +3,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta charset="utf-8" />
     <title>Oracle feeder &#8212; Terra Docs  documentation</title>
     
     <link href="../../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -1434,7 +1433,7 @@
             
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="oracle-feeder">
+  <div class="tex2jax_ignore mathjax_ignore section" id="oracle-feeder">
 <h1>Oracle feeder<a class="headerlink" href="#oracle-feeder" title="Permalink to this headline">¶</a></h1>
 <p>The following code segment demonstrates how to create a simple price oracle feeder with Terra.js by using a <a class="reference external" href="https://github.com/terra-money/LocalTerra">LocalTerra</a> network. The prices aren’t live in this example. It just tracks the public LCD node’s current registered oracle price and submits them to the local testnet.</p>
 <p>Note the following:</p>
@@ -1442,7 +1441,7 @@
 <li><p>Prevotes are automatically generated using <a class="reference external" href="https://terra-money.github.io/terra.js/classes/msgexchangeratevote.html#getprevote"><code class="docutils literal notranslate"><span class="pre">MsgAggregateExchangeRateVote.getPrevote()</span></code></a></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">MsgAggregateExchangeRateVote</span></code> messages must precede <code class="docutils literal notranslate"><span class="pre">MsgAggregateExchangeRatePrevote</span></code> messages in sequence inside a transaction otherwise the <code class="docutils literal notranslate"><span class="pre">MsgAggregateExchangeRatePrevote</span></code> would override the current registered outstanding prevote for the validator.</p></li>
 </ol>
-<section id="pseudo-feeder">
+<div class="section" id="pseudo-feeder">
 <h2>Pseudo feeder<a class="headerlink" href="#pseudo-feeder" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span> <span class="p">{</span> <span class="nx">randomBytes</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;crypto&#39;</span><span class="p">;</span>
 <span class="k">import</span> <span class="p">{</span>
@@ -1577,8 +1576,8 @@
 <span class="nx">main</span><span class="p">().</span><span class="k">catch</span><span class="p">(</span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">);</span>
 </pre></div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

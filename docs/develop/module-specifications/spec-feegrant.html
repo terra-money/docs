@@ -3,8 +3,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta charset="utf-8" />
     <title>Fee grant &#8212; Terra Docs  documentation</title>
     
     <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -1586,16 +1585,16 @@
             
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="fee-grant">
+  <div class="tex2jax_ignore mathjax_ignore section" id="fee-grant">
 <h1>Fee grant<a class="headerlink" href="#fee-grant" title="Permalink to this headline">¶</a></h1>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>Terra’s fee grant module inherits from the Cosmos SDK’s <a class="reference external" href="https://docs.cosmos.network/master/modules/feegrant/"><code class="docutils literal notranslate"><span class="pre">feegrant</span></code></a> module. This document is a stub and explains mainly important Terra-specific notes about how it is used.</p>
 </div>
 <p>This module allows an account, the granter, to permit another account, the grantee, to pay for fees from the granter’s account balance. Grantees will not need to maintain their own balance for paying fees.</p>
-<section id="concepts">
+<div class="section" id="concepts">
 <h2>Concepts<a class="headerlink" href="#concepts" title="Permalink to this headline">¶</a></h2>
-<section id="grant">
+<div class="section" id="grant">
 <h3>Grant<a class="headerlink" href="#grant" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">Grant</span></code> is stored in the KVStore to record a grant with full context.</p>
 <p>Every <code class="docutils literal notranslate"><span class="pre">grant</span></code> contains the following information:</p>
@@ -1631,11 +1630,11 @@
 </li>
 </ul>
 <p>Only one fee grant is allowed between a granter and a grantee. Self-grants are prohibited.</p>
-</section>
-<section id="fee-allowance-types">
+</div>
+<div class="section" id="fee-allowance-types">
 <h3>Fee allowance types<a class="headerlink" href="#fee-allowance-types" title="Permalink to this headline">¶</a></h3>
 <p>The following types of fee allowances can be granted.</p>
-<section id="basicallowance">
+<div class="section" id="basicallowance">
 <h4><code class="docutils literal notranslate"><span class="pre">BasicAllowance</span></code><a class="headerlink" href="#basicallowance" title="Permalink to this headline">¶</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">BasicAllowance</span></code> permits the grantee to pay fees by using funds from the granter’s account. If the threshold for either <code class="docutils literal notranslate"><span class="pre">spend_limit</span></code> or <code class="docutils literal notranslate"><span class="pre">expiration</span></code> is met, the grant is removed from the state.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">BasicAllowance</span> <span class="n">implements</span> <span class="n">Allowance</span> <span class="k">with</span> <span class="n">a</span> <span class="n">one</span><span class="o">-</span><span class="n">time</span> <span class="n">grant</span> <span class="n">of</span> <span class="n">tokens</span>
@@ -1659,8 +1658,8 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">expiration</span></code>: The date and time when the grant expires. This value is optional. If it is blank, the grant does not expire.</p></li>
 </ul>
 <p>To restrict the grantee when values for <code class="docutils literal notranslate"><span class="pre">spend_limit</span></code> and <code class="docutils literal notranslate"><span class="pre">expiration</span></code> are blank, revoke the grant.</p>
-</section>
-<section id="periodicallowance">
+</div>
+<div class="section" id="periodicallowance">
 <h4><code class="docutils literal notranslate"><span class="pre">PeriodicAllowance</span></code><a class="headerlink" href="#periodicallowance" title="Permalink to this headline">¶</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">PeriodicAllowance</span></code> is a repeating fee allowance for a specified period and for a specified maximum number of tokens that can spent within that period.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
@@ -1726,9 +1725,9 @@ message Grant {
 <li><p><code class="docutils literal notranslate"><span class="pre">period_can_spend</span></code>: The number of tokens remaining to be spent before the period_reset time.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">period_reset</span></code>: The time when the period ends and a new period begins.</p></li>
 </ul>
-</section>
-</section>
-<section id="fee-account-flag">
+</div>
+</div>
+<div class="section" id="fee-account-flag">
 <h3>Fee account flag<a class="headerlink" href="#fee-account-flag" title="Permalink to this headline">¶</a></h3>
 <p>To run transactions that use fee grant from the CLI, specify the <code class="docutils literal notranslate"><span class="pre">FeeAccount</span></code> flag followed by the granter’s account address. When this flag is set, <code class="docutils literal notranslate"><span class="pre">clientCtx</span></code> appends the granter’s account address.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
@@ -2271,23 +2270,23 @@ func (gr GasEstimateResponse) String() string {
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">terrad</span> <span class="n">tx</span> <span class="n">gov</span> <span class="n">submit</span><span class="o">-</span><span class="n">proposal</span> <span class="o">--</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Test Proposal&quot;</span> <span class="o">--</span><span class="n">description</span><span class="o">=</span><span class="s2">&quot;My awesome proposal&quot;</span> <span class="o">--</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;Text&quot;</span> <span class="o">--</span><span class="kn">from</span> <span class="nn">validator</span><span class="o">-</span><span class="n">key</span> <span class="o">--</span><span class="n">fee</span><span class="o">-</span><span class="n">account</span><span class="o">=</span><span class="n">terra1fmcjjt6yc9wqup2r06urnrd928jhrde6gcld6n</span> <span class="o">--</span><span class="n">chain</span><span class="o">-</span><span class="nb">id</span><span class="o">=</span><span class="n">testnet</span> <span class="o">--</span><span class="n">fees</span><span class="o">=</span><span class="s2">&quot;10uluna&quot;</span>
 </pre></div>
 </div>
-</section>
-<section id="granted-fee-deductions">
+</div>
+<div class="section" id="granted-fee-deductions">
 <h3>Granted fee deductions<a class="headerlink" href="#granted-fee-deductions" title="Permalink to this headline">¶</a></h3>
 <p>Fees are deducted from grants in the <code class="docutils literal notranslate"><span class="pre">auth</span></code> ante handler.</p>
-</section>
-<section id="gas">
+</div>
+<div class="section" id="gas">
 <h3>Gas<a class="headerlink" href="#gas" title="Permalink to this headline">¶</a></h3>
 <p>To prevent DoS attacks, using a filtered <code class="docutils literal notranslate"><span class="pre">feegrant</span></code> incurs gas. To ensure that all the grantee’s transactions conform to the filter set by the granter, the SDK iterates over the allowed messages in the filter and charges 10 gas per filtered message. Then, the SDK iterates over the messages sent by the grantee to ensure the messages adhere to the filter, which also charges 10 gas per message. If the SDK finds a message that does not conform to the filter, the SDK stops iterating, and the transaction fails.</p>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
 <p>Gas is charged against the granted allowance. Ensure all your existing messages conform to the filter before you send transactions using your allowance.</p>
 </div>
-</section>
-</section>
-<section id="state">
+</div>
+</div>
+<div class="section" id="state">
 <h2>State<a class="headerlink" href="#state" title="Permalink to this headline">¶</a></h2>
-<section id="feeallowance">
+<div class="section" id="feeallowance">
 <h3>FeeAllowance<a class="headerlink" href="#feeallowance" title="Permalink to this headline">¶</a></h3>
 <p>Fee allowances are identified by combining <code class="docutils literal notranslate"><span class="pre">Granter</span></code> (the account address that grants permission to another account to spend its available tokens on fees) with <code class="docutils literal notranslate"><span class="pre">Grantee</span></code> (the account address that receives permission to spend the granter’s tokens on fees).</p>
 <p>The following example shows how a fee allowance is stored in the state:</p>
@@ -2303,11 +2302,11 @@ type Grant struct {
 }
 </pre></div>
 </div>
-</section>
-</section>
-<section id="message-types">
+</div>
+</div>
+<div class="section" id="message-types">
 <h2>Message Types<a class="headerlink" href="#message-types" title="Permalink to this headline">¶</a></h2>
-<section id="msggrantallowance">
+<div class="section" id="msggrantallowance">
 <h3>MsgGrantAllowance<a class="headerlink" href="#msggrantallowance" title="Permalink to this headline">¶</a></h3>
 <p>A fee allowance grant will be created with the MsgGrantAllowance message.</p>
 <div class="highlight-proto notranslate"><div class="highlight"><pre><span></span><span class="c1">// MsgGrantAllowance adds permission for Grantee to spend up to Allowance</span>
@@ -2324,8 +2323,8 @@ type Grant struct {
 <span class="p">}</span>
 </pre></div>
 </div>
-</section>
-<section id="msgrevokeallowance">
+</div>
+<div class="section" id="msgrevokeallowance">
 <h3>MsgRevokeAllowance<a class="headerlink" href="#msgrevokeallowance" title="Permalink to this headline">¶</a></h3>
 <p>A fee allowance grant will be revokeed with the MsgRevokeAllowance message.</p>
 <div class="highlight-proto notranslate"><div class="highlight"><pre><span></span><span class="c1">// MsgRevokeAllowance removes any existing Allowance from Granter to Grantee.</span>
@@ -2338,9 +2337,9 @@ type Grant struct {
 <span class="p">}</span>
 </pre></div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
               </div>

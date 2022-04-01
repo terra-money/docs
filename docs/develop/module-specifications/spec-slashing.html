@@ -3,8 +3,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta charset="utf-8" />
     <title>Slashing &#8212; Terra Docs  documentation</title>
     
     <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -1570,29 +1569,29 @@
             
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="slashing">
+  <div class="tex2jax_ignore mathjax_ignore section" id="slashing">
 <h1>Slashing<a class="headerlink" href="#slashing" title="Permalink to this headline">¶</a></h1>
 <p>The slashing module enables Terra to disincentivize any attributable action by a protocol-recognized actor with value at stake by penalizing them. The penalty is called <a class="reference internal" href="../../learn/glossary.html#slashing"><span class="std std-doc">slashing</span></a>. Terra mainly uses the <a class="reference internal" href="spec-staking.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">Staking</span></code></span></a> module to slash when violating validator responsibilities, such as missing too many <code class="docutils literal notranslate"><span class="pre">VotePeriod</span></code>s in the exchange rate oracle. This module manages lower-level penalties at the Tendermint consensus level, such as double-signing.</p>
-<section id="message-types">
+<div class="section" id="message-types">
 <h2>Message Types<a class="headerlink" href="#message-types" title="Permalink to this headline">¶</a></h2>
-<section id="msgunjail">
+<div class="section" id="msgunjail">
 <h3>MsgUnjail<a class="headerlink" href="#msgunjail" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">type</span><span class="w"> </span><span class="nx">MsgUnjail</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="nx">ValidatorAddr</span><span class="w"> </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">ValAddress</span><span class="w"> </span><span class="s">`json:&quot;address&quot; yaml:&quot;address&quot;`</span><span class="w"> </span><span class="c1">// address of the validator operator</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-</section>
-<section id="transitions">
+</div>
+</div>
+<div class="section" id="transitions">
 <h2>Transitions<a class="headerlink" href="#transitions" title="Permalink to this headline">¶</a></h2>
-<section id="begin-block">
+<div class="section" id="begin-block">
 <h3>Begin-Block<a class="headerlink" href="#begin-block" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p>This section was taken from the official Cosmos SDK docs, and placed here for your convenience to understand the slashing module’s parameters.</p>
 </div></blockquote>
 <p>At the beginning of each block, the slashing module checks for evidence of infractions or downtime of validators, double-signing, and other low-level consensus penalties.</p>
-<section id="evidence-handling">
+<div class="section" id="evidence-handling">
 <h4>Evidence handling<a class="headerlink" href="#evidence-handling" title="Permalink to this headline">¶</a></h4>
 <p>Tendermint blocks can include evidence, which indicates that a validator committed malicious
 behavior. The relevant information is forwarded to the application as ABCI Evidence
@@ -1658,8 +1657,8 @@ should be slashed, even if it has since been redelegated or has started unbondin
 </pre></div>
 </div>
 <p>This process ensures that offending validators are punished with the same amount whether they act as a single validator with X stake or as N validators with a collective X stake. The amount slashed for all double-signature infractions committed within a single slashing period is capped. For more information, see <a class="reference external" href="https://docs.cosmos.network/master/modules/slashing/01_concepts.html#tombstone-caps">tombstone caps</a>.</p>
-</section>
-<section id="liveness-tracking">
+</div>
+<div class="section" id="liveness-tracking">
 <h4>Liveness tracking<a class="headerlink" href="#liveness-tracking" title="Permalink to this headline">¶</a></h4>
 <p>At the beginning of each block, the <code class="docutils literal notranslate"><span class="pre">ValidatorSigningInfo</span></code> for each
 validator is updated and whether they’ve crossed below the liveness threshold over a
@@ -1751,10 +1750,10 @@ for <code class="docutils literal notranslate"><span class="pre">DowntimeJailDur
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-</section>
-</section>
-<section id="parameters">
+</div>
+</div>
+</div>
+<div class="section" id="parameters">
 <h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
 <p>The subspace for the slashing module is <code class="docutils literal notranslate"><span class="pre">slashing</span></code>.</p>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">type</span><span class="w"> </span><span class="nx">Params</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -1767,50 +1766,50 @@ for <code class="docutils literal notranslate"><span class="pre">DowntimeJailDur
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<section id="maxevidenceage">
+<div class="section" id="maxevidenceage">
 <h3>MaxEvidenceAge<a class="headerlink" href="#maxevidenceage" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">time.Duration</span></code> (seconds)</p></li>
 <li><p>default: 2 minutes</p></li>
 </ul>
-</section>
-<section id="signedblockswindow">
+</div>
+<div class="section" id="signedblockswindow">
 <h3>SignedBlocksWindow<a class="headerlink" href="#signedblockswindow" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">int64</span></code></p></li>
 <li><p>default: <code class="docutils literal notranslate"><span class="pre">100</span></code></p></li>
 </ul>
-</section>
-<section id="minsignedperwindow">
+</div>
+<div class="section" id="minsignedperwindow">
 <h3>MinSignedPerWindow<a class="headerlink" href="#minsignedperwindow" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">Dec</span></code></p></li>
 <li><p>default: <code class="docutils literal notranslate"><span class="pre">5</span></code></p></li>
 </ul>
-</section>
-<section id="downtimejailduration">
+</div>
+<div class="section" id="downtimejailduration">
 <h3>DowntimeJailDuration<a class="headerlink" href="#downtimejailduration" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">time.Duration</span></code> (seconds)</p></li>
 <li><p>default: 10 minutes</p></li>
 </ul>
-</section>
-<section id="slashfractiondoublesign">
+</div>
+<div class="section" id="slashfractiondoublesign">
 <h3>SlashFractionDoubleSign<a class="headerlink" href="#slashfractiondoublesign" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">Dec</span></code></p></li>
 <li><p>default: 1/20</p></li>
 </ul>
-</section>
-<section id="slashfractiondowntime">
+</div>
+<div class="section" id="slashfractiondowntime">
 <h3>SlashFractionDowntime<a class="headerlink" href="#slashfractiondowntime" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">Dec</span></code></p></li>
 <li><p>default: 1/10000</p></li>
 </ul>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
               </div>

@@ -3,8 +3,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta charset="utf-8" />
     <title>AuthZ &#8212; Terra Docs  documentation</title>
     
     <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -1468,16 +1467,16 @@
             
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="authz">
+  <div class="tex2jax_ignore mathjax_ignore section" id="authz">
 <h1>AuthZ<a class="headerlink" href="#authz" title="Permalink to this headline">¶</a></h1>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>Terra’s fee grant module inherits from the Cosmos SDK’s <a class="reference external" href="https://docs.cosmos.network/master/modules/authz/"><code class="docutils literal notranslate"><span class="pre">authz</span></code></a> module. This document is a stub and explains mainly important Terra-specific notes about how it is used.</p>
 </div>
 <p>The authz (message authorization) module allows users to authorize another account to send messages on their behalf. Certain authorizations, such as the spending of another account’s tokens, can be parameterized to constrain the permissions of the grantee, such as setting a spending limit.</p>
-<section id="message-types">
+<div class="section" id="message-types">
 <h2>Message types<a class="headerlink" href="#message-types" title="Permalink to this headline">¶</a></h2>
-<section id="msggrantauthorization">
+<div class="section" id="msggrantauthorization">
 <h3>MsgGrantAuthorization<a class="headerlink" href="#msggrantauthorization" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="c1">// MsgGrantAuthorization grants the provided authorization to the grantee on the granter&#39;s</span><span class="w"></span>
 <span class="c1">// account during the provided period time</span><span class="w"></span>
@@ -1489,8 +1488,8 @@
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-<section id="msgrevokeauthorization">
+</div>
+<div class="section" id="msgrevokeauthorization">
 <h3>MsgRevokeAuthorization<a class="headerlink" href="#msgrevokeauthorization" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="c1">// MsgRevokeAuthorization revokes any authorization with the provided sdk.Msg type on the</span><span class="w"></span>
 <span class="c1">// granter&#39;s account with that has been granted to the grantee</span><span class="w"></span>
@@ -1503,8 +1502,8 @@
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-<section id="msgexecauthorized">
+</div>
+<div class="section" id="msgexecauthorized">
 <h3>MsgExecAuthorized<a class="headerlink" href="#msgexecauthorized" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="c1">// MsgExecAuthorized attempts to execute the provided messages using</span><span class="w"></span>
 <span class="c1">// authorizations granted to the grantee. Each message should have only</span><span class="w"></span>
@@ -1515,9 +1514,9 @@
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
               </div>

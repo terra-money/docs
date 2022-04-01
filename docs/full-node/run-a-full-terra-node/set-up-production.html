@@ -3,8 +3,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta charset="utf-8" />
     <title>Set up a production environment &#8212; Terra Docs  documentation</title>
     
     <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -1530,15 +1529,15 @@
             
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="set-up-a-production-environment">
+  <div class="tex2jax_ignore mathjax_ignore section" id="set-up-a-production-environment">
 <h1>Set up a production environment<a class="headerlink" href="#set-up-a-production-environment" title="Permalink to this headline">¶</a></h1>
 <p>Use the following information to set up and manage your production-level full Terra node.</p>
 <p>For information about running a validator node, visit the <a class="reference internal" href="../manage-a-terra-validator/README.html"><span class="doc std std-doc">validator guide</span></a>.</p>
-<section id="create-a-dedicated-user">
+<div class="section" id="create-a-dedicated-user">
 <h2>Create a dedicated user<a class="headerlink" href="#create-a-dedicated-user" title="Permalink to this headline">¶</a></h2>
 <p>Although <code class="docutils literal notranslate"><span class="pre">terrad</span></code> does not require a super user account, during the setup process you’ll need super user permission to create and modify some files. It is strongly recommended to use a normal user when running <code class="docutils literal notranslate"><span class="pre">terrad</span></code>.</p>
-</section>
-<section id="increase-the-maximum-files-terrad-can-open">
+</div>
+<div class="section" id="increase-the-maximum-files-terrad-can-open">
 <h2>Increase the maximum files <code class="docutils literal notranslate"><span class="pre">terrad</span></code> can open<a class="headerlink" href="#increase-the-maximum-files-terrad-can-open" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">terrad</span></code> is set to open 1024 files by default. It is recommended that you increase this amount.</p>
 <p>Modify <code class="docutils literal notranslate"><span class="pre">/etc/security/limits.conf</span></code><a class="reference external" href="https://linux.die.net/man/5/limits.conf">*</a> to increase the amount, where <code class="docutils literal notranslate"><span class="pre">nofile</span></code> is the number of files <code class="docutils literal notranslate"><span class="pre">terrad</span></code> can open.</p>
@@ -1549,12 +1548,12 @@
 <span class="c1"># ...</span>
 </pre></div>
 </div>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="run-the-server-as-a-daemon">
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="run-the-server-as-a-daemon">
 <h1>Run the server as a daemon<a class="headerlink" href="#run-the-server-as-a-daemon" title="Permalink to this headline">¶</a></h1>
 <p><code class="docutils literal notranslate"><span class="pre">terrad</span></code> must be running at all times. It is recommended that you register <code class="docutils literal notranslate"><span class="pre">terrad</span></code> as a <code class="docutils literal notranslate"><span class="pre">systemd</span></code> service so that it will be started automatically when the system reboots.</p>
-<section id="register-terrad-as-a-service">
+<div class="section" id="register-terrad-as-a-service">
 <h2>Register <code class="docutils literal notranslate"><span class="pre">terrad</span></code> as a service<a class="headerlink" href="#register-terrad-as-a-service" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
 <li><p>Create a service definition file in <code class="docutils literal notranslate"><span class="pre">/etc/systemd/system/terrad.service</span></code>.</p>
@@ -1587,7 +1586,7 @@
 <li><p>Run <code class="docutils literal notranslate"><span class="pre">systemctl</span> <span class="pre">daemon-reload</span></code> followed by <code class="docutils literal notranslate"><span class="pre">systemctl</span> <span class="pre">enable</span> <span class="pre">terrad</span></code>. This will register <code class="docutils literal notranslate"><span class="pre">terrad</span></code> as a system service and turn it on upon startup.</p></li>
 <li><p>Now start the serivce with <code class="docutils literal notranslate"><span class="pre">systemctl</span> <span class="pre">start</span> <span class="pre">terrad</span></code>.</p></li>
 </ol>
-<section id="controlling-the-service">
+<div class="section" id="controlling-the-service">
 <h3>Controlling the service<a class="headerlink" href="#controlling-the-service" title="Permalink to this headline">¶</a></h3>
 <p>Use <code class="docutils literal notranslate"><span class="pre">systemctl</span></code> to start, stop, and restart the service:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check health</span>
@@ -1600,8 +1599,8 @@ systemctl stop terrad
 systemctl restart terrad
 </pre></div>
 </div>
-</section>
-<section id="access-logs">
+</div>
+<div class="section" id="access-logs">
 <h3>Access logs<a class="headerlink" href="#access-logs" title="Permalink to this headline">¶</a></h3>
 <p>Use <code class="docutils literal notranslate"><span class="pre">journalctl</span> <span class="pre">-t</span></code> to access entire logs, entire logs in reverse, and the latest and continuous log.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Entire log reversed</span>
@@ -1612,9 +1611,9 @@ journalctl -t terrad
 journalctl -t terrad -f
 </pre></div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
               </div>

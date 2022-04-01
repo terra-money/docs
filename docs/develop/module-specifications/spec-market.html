@@ -3,8 +3,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta charset="utf-8" />
     <title>Market &#8212; Terra Docs  documentation</title>
     
     <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -1674,13 +1673,13 @@
             
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="market">
+  <div class="tex2jax_ignore mathjax_ignore section" id="market">
 <h1>Market <img alt="../../../_images/Market.svg" height="40px" src="../../../_images/Market.svg" /><a class="headerlink" href="#market" title="Permalink to this headline">¶</a></h1>
 <p>The Market module enables atomic swaps between different Terra stablecoin denominations, and between Terra and Luna. This module ensures an available, liquid market, stable prices, and fair exchange rates between the protocol’s assets.</p>
 <p>The price stability of TerraSDR is achieved through Terra&lt;&gt;Luna arbitrage activity against the protocol’s algorithmic market-maker, which expands and contracts Terra’s supply to maintain its peg.</p>
-<section id="concepts">
+<div class="section" id="concepts">
 <h2>Concepts<a class="headerlink" href="#concepts" title="Permalink to this headline">¶</a></h2>
-<section id="swap-fees">
+<div class="section" id="swap-fees">
 <h3>Swap Fees<a class="headerlink" href="#swap-fees" title="Permalink to this headline">¶</a></h3>
 <p>Because Terra’s price feed is derived from validator oracles, a delay exists between the price reported on-chain and the real-time price.</p>
 <p>The delay lasts around one minute (our oracle <code class="docutils literal notranslate"><span class="pre">VotePeriod</span></code> is 30 seconds), which is negligible for nearly all practical transactions. However, front-running attackers could take advantage of this delay and extract value from the network.</p>
@@ -1695,8 +1694,8 @@
 <p>The minimum spread is 0.5%. Using the same exchange rates as above, swapping 1 SDT will return 995 KRT worth of Luna (0.5% of 1000 is 5, which is taken as the swap fee). If you reverse the direction of the swap, 1 Luna would return 9.95 SDT (0.5% of 10 is 0.05), or 9,950 KRT (0.5% of 10,000 = 50).</p>
 </li>
 </ul>
-</section>
-<section id="market-making-algorithm">
+</div>
+<div class="section" id="market-making-algorithm">
 <h3>Market Making Algorithm<a class="headerlink" href="#market-making-algorithm" title="Permalink to this headline">¶</a></h3>
 <p>Terra uses a Constant Product market-making algorithm to ensure liquidity for Terra&lt;&gt;Luna swaps. <a class="footnote-reference brackets" href="#id4" id="id2">2</a></p>
 <p>With Constant Product, a value, <span class="math notranslate nohighlight">\(CP\)</span>, is set to the size of the Terra pool multiplied by a set <strong>fiat value of Luna</strong>, and ensure our market-maker maintains it as invariant during any swaps by adjusting the spread.</p>
@@ -1714,8 +1713,8 @@
 </div>
 <p>This is meant to be an example. In reality, liquidity pools are much larger, diminishing the magnitude of the spread.</p>
 <p>The primary advantage of Constant-Product is that it offers “unbounded” liquidity, and swaps of any size can be serviced.</p>
-</section>
-<section id="virtual-liquidity-pools">
+</div>
+<div class="section" id="virtual-liquidity-pools">
 <h3>Virtual Liquidity Pools<a class="headerlink" href="#virtual-liquidity-pools" title="Permalink to this headline">¶</a></h3>
 <p>The market starts out with two liquidity pools of equal sizes, one representing all denominations of Terra and another representing Luna. The parameter <a class="reference internal" href="#basepool"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">BasePool</span></code></span></a> defines the initial size, <span class="math notranslate nohighlight">\(Pool_{Base}\)</span>, of the Terra and Luna liquidity pools.</p>
 <p>Rather than keeping track of the sizes of the two pools, this information is encoded in a number <span class="math notranslate nohighlight">\(\delta\)</span>, which the blockchain stores as <code class="docutils literal notranslate"><span class="pre">TerraPoolDelta</span></code>. This represents the deviation of the Terra pool from its base size in units µSDR.</p>
@@ -1726,8 +1725,8 @@
 \[Pool_{Luna} = ({Pool_{Base}})^2 / Pool_{Terra}\]</div>
 <p>At the <a class="reference internal" href="#end-block"><span class="std std-doc">end of each block</span></a>, the market module attempts to replenish the pools by decreasing the magnitude of <span class="math notranslate nohighlight">\(\delta\)</span> between the Terra and Luna pools. The rate at which the pools will be replenished toward equilibrium is set by the parameter <a class="reference internal" href="#poolrecoveryperiod"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">PoolRecoveryPeriod</span></code></span></a>. Lower periods mean lower sensitivity to trades: previous trades are more quickly forgotten and the market is able to offer more liquidity.</p>
 <p>This mechanism ensures liquidity and acts as a low-pass filter, allowing for the spread fee (which is a function of <code class="docutils literal notranslate"><span class="pre">TerraPoolDelta</span></code>) to drop back down when there is a change in demand, causing a necessary change in supply which needs to be absorbed.</p>
-</section>
-<section id="swap-procedure">
+</div>
+<div class="section" id="swap-procedure">
 <h3>Swap Procedure<a class="headerlink" href="#swap-procedure" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
 <li><p>The Market module receives <a class="reference internal" href="#msgswap"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">MsgSwap</span></code></span></a> message and performs basic validation checks.</p></li>
@@ -1742,29 +1741,29 @@
 </ol>
 <p>If the trader’s <code class="docutils literal notranslate"><span class="pre">Account</span></code> has insufficient balance to execute the swap, the swap transaction fails.</p>
 <p>Upon successful completion of Terra&lt;&gt;Luna swaps, a portion of the coins to be credited to the user’s account is withheld as the spread fee.</p>
-</section>
-<section id="seigniorage">
+</div>
+<div class="section" id="seigniorage">
 <h3>Seigniorage<a class="headerlink" href="#seigniorage" title="Permalink to this headline">¶</a></h3>
 <div class="caution admonition">
 <p class="admonition-title">All seigniorage is Burned</p>
 <p>Seigniorage used to be an important part of the protocol, but is no longer necessary. As of Columbus-5, all seigniorage is burned, and the community pool is no longer funded. Swap fees are used instead of seigniorage as ballot rewards for the exchange rate oracle. The following information is kept as reference:</p>
 </div>
 <p>When Luna swaps into Terra, the Luna recaptured by the protocol was called seigniorage – the value generated from issuing new Terra. The total seigniorage at the end of each epoch was calculated and reintroduced into the economy as ballot rewards for the exchange rate oracle and to the community pool by the Treasury module, described more fully <a class="reference internal" href="spec-treasury.html"><span class="doc std std-doc">here</span></a>. As of Columbus-5, all seigniorage is burned, and the community pool is no longer funded. Swap fees are used as ballot rewards for the exchange rate oracle.</p>
-</section>
-</section>
-<section id="state">
+</div>
+</div>
+<div class="section" id="state">
 <h2>State<a class="headerlink" href="#state" title="Permalink to this headline">¶</a></h2>
-<section id="terra-pool-delta">
+<div class="section" id="terra-pool-delta">
 <h3>Terra Pool Delta δ<a class="headerlink" href="#terra-pool-delta" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">sdk.Dec</span></code></p></li>
 </ul>
 <p>This represents the difference between the current Terra pool size and its original base size, valued in µSDR.</p>
-</section>
-</section>
-<section id="message-types">
+</div>
+</div>
+<div class="section" id="message-types">
 <h2>Message Types<a class="headerlink" href="#message-types" title="Permalink to this headline">¶</a></h2>
-<section id="msgswap">
+<div class="section" id="msgswap">
 <h3>MsgSwap<a class="headerlink" href="#msgswap" title="Permalink to this headline">¶</a></h3>
 <p>A <code class="docutils literal notranslate"><span class="pre">MsgSwap</span></code> transaction denotes the <code class="docutils literal notranslate"><span class="pre">Trader</span></code>’s intent to swap their balance of <code class="docutils literal notranslate"><span class="pre">OfferCoin</span></code> for a new denomination <code class="docutils literal notranslate"><span class="pre">AskDenom</span></code>. Terra&lt;&gt;Terra swaps incur gas and the Tobin tax, and Terra&lt;&gt;Luna swaps incur gas and a spread fee.</p>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="c1">// MsgSwap contains a swap request</span><span class="w"></span>
@@ -1775,8 +1774,8 @@
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-<section id="msgswapsend">
+</div>
+<div class="section" id="msgswapsend">
 <h3>MsgSwapSend<a class="headerlink" href="#msgswapsend" title="Permalink to this headline">¶</a></h3>
 <p>A <code class="docutils literal notranslate"><span class="pre">MsgSwapSend</span></code> first swaps <code class="docutils literal notranslate"><span class="pre">OfferCoin</span></code> for <code class="docutils literal notranslate"><span class="pre">AskDenom</span></code> and then sends the acquired coins to <code class="docutils literal notranslate"><span class="pre">ToAddress</span></code>. Swap fees are charged to the sender.</p>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">type</span><span class="w"> </span><span class="nx">MsgSwapSend</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -1787,11 +1786,11 @@
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-</section>
-<section id="functions">
+</div>
+</div>
+<div class="section" id="functions">
 <h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
-<section id="k-computeswap">
+<div class="section" id="k-computeswap">
 <h3><code class="docutils literal notranslate"><span class="pre">k.ComputeSwap()</span></code><a class="headerlink" href="#k-computeswap" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">k</span><span class="w"> </span><span class="nx">Keeper</span><span class="p">)</span><span class="w"> </span><span class="nx">ComputeSwap</span><span class="p">(</span><span class="nx">ctx</span><span class="w"> </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">Context</span><span class="p">,</span><span class="w"> </span><span class="nx">offerCoin</span><span class="w"> </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">Coin</span><span class="p">,</span><span class="w"> </span><span class="nx">askDenom</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"></span>
 <span class="w">    </span><span class="p">(</span><span class="nx">retDecCoin</span><span class="w"> </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">DecCoin</span><span class="p">,</span><span class="w"> </span><span class="nx">spread</span><span class="w"> </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">Dec</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">Error</span><span class="p">)</span><span class="w"></span>
@@ -1807,8 +1806,8 @@
 <p class="admonition-title">Note</p>
 <p><code class="docutils literal notranslate"><span class="pre">k.ComputeSwap()</span></code> uses <code class="docutils literal notranslate"><span class="pre">k.ComputeInternalSwap()</span></code> internally, which only contains the logic for calculating proper ask coins to exchange, and not the Constant Product spread.</p>
 </div>
-</section>
-<section id="k-applyswaptopool">
+</div>
+<div class="section" id="k-applyswaptopool">
 <h3><code class="docutils literal notranslate"><span class="pre">k.ApplySwapToPool()</span></code><a class="headerlink" href="#k-applyswaptopool" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">k</span><span class="w"> </span><span class="nx">Keeper</span><span class="p">)</span><span class="w"> </span><span class="nx">ApplySwapToPool</span><span class="p">(</span><span class="nx">ctx</span><span class="w"> </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">Context</span><span class="p">,</span><span class="w"> </span><span class="nx">offerCoin</span><span class="w"> </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">Coin</span><span class="p">,</span><span class="w"> </span><span class="nx">askCoin</span><span class="w"> </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">DecCoin</span><span class="p">)</span><span class="w"> </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">Error</span><span class="w"></span>
 </pre></div>
@@ -1820,17 +1819,17 @@
 <li><p>for Terra to Luna, <span class="math notranslate nohighlight">\(\delta' = \delta + Offer_{\mu SDR}\)</span></p></li>
 <li><p>for Luna to Terra, <span class="math notranslate nohighlight">\(\delta' = \delta - Ask_{\mu SDR}\)</span></p></li>
 </ul>
-</section>
-</section>
-<section id="transitions">
+</div>
+</div>
+<div class="section" id="transitions">
 <h2>Transitions<a class="headerlink" href="#transitions" title="Permalink to this headline">¶</a></h2>
-<section id="end-block">
+<div class="section" id="end-block">
 <h3>End-Block<a class="headerlink" href="#end-block" title="Permalink to this headline">¶</a></h3>
 <p>The Market module calls <code class="docutils literal notranslate"><span class="pre">k.ReplenishPools()</span></code> at the end of every block, which decreases the value of <code class="docutils literal notranslate"><span class="pre">TerraPoolDelta</span></code> (the difference between Terra and Luna pools) depending on <code class="docutils literal notranslate"><span class="pre">PoolRecoveryPeriod</span></code>, <span class="math notranslate nohighlight">\(pr\)</span>.</p>
 <p>This allows the network to sharply increase spread fees during acute price fluctuations. After some time, the spread automatically returns to normal for long term price changes.</p>
-</section>
-</section>
-<section id="parameters">
+</div>
+</div>
+<div class="section" id="parameters">
 <h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
 <p>The subspace for the Market module is <code class="docutils literal notranslate"><span class="pre">market</span></code>.</p>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">type</span><span class="w"> </span><span class="nx">Params</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -1841,31 +1840,31 @@
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<section id="poolrecoveryperiod">
+<div class="section" id="poolrecoveryperiod">
 <h3>PoolRecoveryPeriod<a class="headerlink" href="#poolrecoveryperiod" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">int64</span></code></p></li>
 <li><p>default: <code class="docutils literal notranslate"><span class="pre">BlocksPerDay</span></code></p></li>
 </ul>
 <p>The number of blocks it takes for the Terra &amp; Luna pools to naturally “reset” toward equilibrium (<span class="math notranslate nohighlight">\(\delta \to 0\)</span>) through automated pool replenishing.</p>
-</section>
-<section id="basepool">
+</div>
+<div class="section" id="basepool">
 <h3>BasePool<a class="headerlink" href="#basepool" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">Dec</span></code></p></li>
 <li><p>default: 250,000 SDR (= 250,000,000,000 µSDR)</p></li>
 </ul>
 <p>The initial starting size of both Terra and Luna liquidity pools.</p>
-</section>
-<section id="minspread">
+</div>
+<div class="section" id="minspread">
 <h3>MinSpread<a class="headerlink" href="#minspread" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">Dec</span></code></p></li>
 <li><p>default: 0.5%</p></li>
 </ul>
 <p>The minimum spread charged on Terra&lt;&gt;Luna swaps to prevent leaking value from front-running attacks.</p>
-</section>
-<section id="tobintax">
+</div>
+<div class="section" id="tobintax">
 <h3>TobinTax<a class="headerlink" href="#tobintax" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">Dec</span></code></p></li>
@@ -1881,9 +1880,9 @@
 <dd><p>For a more in-depth treatment of our updated market-making algorithm, check <a class="reference external" href="https://agora.terra.money/t/terra-stability-swap-mechanism-deep-dive-at-sfbw/135">Nick Platias’s SFBW 2019 presentation</a>.</p>
 </dd>
 </dl>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
               </div>

@@ -3,8 +3,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta charset="utf-8" />
     <title>Bank &#8212; Terra Docs  documentation</title>
     
     <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -1458,16 +1457,16 @@
             
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="bank">
+  <div class="tex2jax_ignore mathjax_ignore section" id="bank">
 <h1>Bank<a class="headerlink" href="#bank" title="Permalink to this headline">¶</a></h1>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>Terra’s bank module inherits from the Cosmos SDK’s <a class="reference external" href="https://docs.cosmos.network/master/modules/bank/"><code class="docutils literal notranslate"><span class="pre">bank</span></code></a> module. This document is a stub and covers mainly important Terra-specific notes about how it is used.</p>
 </div>
 <p>The bank module is the base transactional layer of the Terra blockchain. This module allows assets to be sent from one <code class="docutils literal notranslate"><span class="pre">Account</span></code> to another. The bank module defines the following types of send transactions: <code class="docutils literal notranslate"><span class="pre">MsgSend</span></code> and <code class="docutils literal notranslate"><span class="pre">MsgMultiSend</span></code>.</p>
-<section id="message-types">
+<div class="section" id="message-types">
 <h2>Message types<a class="headerlink" href="#message-types" title="Permalink to this headline">¶</a></h2>
-<section id="msgsend">
+<div class="section" id="msgsend">
 <h3>MsgSend<a class="headerlink" href="#msgsend" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="c1">// MsgSend - high level transaction of the coin module</span><span class="w"></span>
 <span class="kd">type</span><span class="w"> </span><span class="nx">MsgSend</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -1478,8 +1477,8 @@
 </pre></div>
 </div>
 <p>The Bank module is used to send coins from one Terra account to another. <code class="docutils literal notranslate"><span class="pre">MsgSend</span></code> is constructed to facilitate the transfer. If the balance of coins in the sender <code class="docutils literal notranslate"><span class="pre">Account</span></code> is insufficient or the recipient <code class="docutils literal notranslate"><span class="pre">Account</span></code> is unable to receive the funds via the bank module, the transaction fails. Fees already paid through failed transactions are not refunded.</p>
-</section>
-<section id="msgmultisend">
+</div>
+<div class="section" id="msgmultisend">
 <h3>MsgMultiSend<a class="headerlink" href="#msgmultisend" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="c1">// MsgMultiSend - high level transaction of the coin module</span><span class="w"></span>
 <span class="kd">type</span><span class="w"> </span><span class="nx">MsgMultiSend</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -1489,9 +1488,9 @@
 </pre></div>
 </div>
 <p>To send multiple transactions at once, use <code class="docutils literal notranslate"><span class="pre">MsgMultiSend</span></code>. For each transaction, <code class="docutils literal notranslate"><span class="pre">Inputs</span></code> contains the incoming transactions, and <code class="docutils literal notranslate"><span class="pre">Outputs</span></code> contains the outgoing transactions. The <code class="docutils literal notranslate"><span class="pre">Inputs</span></code> coin balance must exactly match the <code class="docutils literal notranslate"><span class="pre">Outputs</span></code> coin balance. Batching transactions via <code class="docutils literal notranslate"><span class="pre">MsgMultiSend</span></code> conserves network bandwidth and gas fees. Taxes and fees already paid through failed transactions are not refunded.</p>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
               </div>

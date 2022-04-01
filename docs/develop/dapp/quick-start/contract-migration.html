@@ -3,8 +3,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta charset="utf-8" />
     <title>Migrating CosmWasm contracts on Terra &#8212; Terra Docs  documentation</title>
     
     <link href="../../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -1486,20 +1485,20 @@
             
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="migrating-cosmwasm-contracts-on-terra">
+  <div class="tex2jax_ignore mathjax_ignore section" id="migrating-cosmwasm-contracts-on-terra">
 <h1>Migrating CosmWasm contracts on Terra<a class="headerlink" href="#migrating-cosmwasm-contracts-on-terra" title="Permalink to this headline">¶</a></h1>
 <p>Contracts on Terra can be initialized as <span class="xref myst">migratable</span>, which allows the administrator to upload a new version of the contract and then send a migrate message to move to the new code.</p>
 <p>This tutorial uses <a class="reference internal" href="README.html"><span class="doc std std-doc">Terrain</span></a>, a Terra development suite designed to simplify the scaffolding, deployment, and migration of your contracts.</p>
 <p>If this is your first time using Terrain, visit the <a class="reference internal" href="initial-setup.html"><span class="doc std std-doc">Initial setup guide</span></a>.</p>
-<section id="overview">
+<div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
 <p>There two key components to a migratable contract:</p>
 <ul class="simple">
 <li><p>A <code class="docutils literal notranslate"><span class="pre">MigrateMsg</span></code> transaction.</p></li>
 <li><p>An admin set, which is the address that’s allowed to perform migrations.</p></li>
 </ul>
-</section>
-<section id="add-migratemsg-to-contract">
+</div>
+<div class="section" id="add-migratemsg-to-contract">
 <h2>1. Add <code class="docutils literal notranslate"><span class="pre">MigrateMsg</span></code> to contract<a class="headerlink" href="#add-migratemsg-to-contract" title="Permalink to this headline">¶</a></h2>
 <p>To implement support for <code class="docutils literal notranslate"><span class="pre">MigrateMsg</span></code>, add the following to <code class="docutils literal notranslate"><span class="pre">msg.rs</span></code>:</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[derive(Serialize, Deserialize, Clone, Debug, PartialEq, JsonSchema)]</span><span class="w"></span>
@@ -1510,8 +1509,8 @@
 <p class="admonition-title">Tip</p>
 <p>You can place this message anywhere, however; it is usually placed above the <code class="docutils literal notranslate"><span class="pre">InstantiateMsg</span></code> struct.</p>
 </div>
-</section>
-<section id="update-contract-rs">
+</div>
+<div class="section" id="update-contract-rs">
 <h2>2. Update <code class="docutils literal notranslate"><span class="pre">contract.rs</span></code><a class="headerlink" href="#update-contract-rs" title="Permalink to this headline">¶</a></h2>
 <p>Now that <code class="docutils literal notranslate"><span class="pre">MigrateMsg</span></code> is defined, you will need to update <code class="docutils literal notranslate"><span class="pre">contract.rs</span></code>:</p>
 <ol class="arabic">
@@ -1529,8 +1528,8 @@
 </div>
 </li>
 </ol>
-</section>
-<section id="call-migrate">
+</div>
+<div class="section" id="call-migrate">
 <h2>3. Call migrate<a class="headerlink" href="#call-migrate" title="Permalink to this headline">¶</a></h2>
 <p>In previous <a class="reference internal" href="README.html"><span class="doc std std-doc">Terrain tutorials</span></a>, you learned how to deploy the contract. Now you will be able to initialize it as migratable.</p>
 <p>After adding MigrateMsg to the smart contract, redeploy and add the <code class="docutils literal notranslate"><span class="pre">--set-signer-as-admin</span></code> flag.
@@ -1542,8 +1541,8 @@ This flag tells Terra that the transaction signer is allowed to migrate the cont
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">terrain</span> <span class="n">contract</span><span class="p">:</span><span class="n">migrate</span> <span class="n">counter</span> <span class="o">--</span><span class="n">signer</span> <span class="n">test1</span>
 </pre></div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

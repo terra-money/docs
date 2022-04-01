@@ -3,8 +3,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta charset="utf-8" />
     <title>Commands &#8212; Terra Docs  documentation</title>
     
     <link href="../../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -1784,10 +1783,10 @@
             
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="commands">
+  <div class="tex2jax_ignore mathjax_ignore section" id="commands">
 <h1>Commands<a class="headerlink" href="#commands" title="Permalink to this headline">¶</a></h1>
 <p>This section describes the commands available from <code class="docutils literal notranslate"><span class="pre">terrad</span></code>, the command line interface that connects a running <code class="docutils literal notranslate"><span class="pre">terrad</span></code> process.</p>
-<section id="add-genesis-account">
+<div class="section" id="add-genesis-account">
 <h2><code class="docutils literal notranslate"><span class="pre">add-genesis-account</span></code><a class="headerlink" href="#add-genesis-account" title="Permalink to this headline">¶</a></h2>
 <p>Adds a genesis account to <code class="docutils literal notranslate"><span class="pre">genesis.json</span></code>.</p>
 <p><strong>Syntax</strong></p>
@@ -1798,28 +1797,28 @@
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad add-genesis-account acc1 <span class="s1">&#39;200000000uluna,550000ukrw&#39;</span>
 </pre></div>
 </div>
-</section>
-<section id="collect-gentxs">
+</div>
+<div class="section" id="collect-gentxs">
 <h2><code class="docutils literal notranslate"><span class="pre">collect-gentxs</span></code><a class="headerlink" href="#collect-gentxs" title="Permalink to this headline">¶</a></h2>
 <p>Collects genesis transactions and outputs them to <code class="docutils literal notranslate"><span class="pre">genesis.json</span></code>.</p>
 <p><strong>Syntax</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad collect-gentxs
 </pre></div>
 </div>
-</section>
-<section id="debug">
+</div>
+<div class="section" id="debug">
 <h2><code class="docutils literal notranslate"><span class="pre">debug</span></code><a class="headerlink" href="#debug" title="Permalink to this headline">¶</a></h2>
 <p>Helps debug the application. For a list of syntax and subcommands, see the <a class="reference internal" href="subcommands.html#debug-addr"><span class="std std-doc">debug subcommands</span></a>.</p>
-</section>
-<section id="export">
+</div>
+<div class="section" id="export">
 <h2><code class="docutils literal notranslate"><span class="pre">export</span></code><a class="headerlink" href="#export" title="Permalink to this headline">¶</a></h2>
 <p>Exports the state to JSON.</p>
 <p><strong>Syntax</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad <span class="nb">export</span>
 </pre></div>
 </div>
-</section>
-<section id="gentx">
+</div>
+<div class="section" id="gentx">
 <h2><code class="docutils literal notranslate"><span class="pre">gentx</span></code><a class="headerlink" href="#gentx" title="Permalink to this headline">¶</a></h2>
 <p>Adds a genesis transaction to <code class="docutils literal notranslate"><span class="pre">genesis.json</span></code>.</p>
 <p><strong>Syntax</strong></p>
@@ -1837,16 +1836,16 @@
     --website<span class="o">=</span><span class="s2">&quot;...&quot;</span>
 </pre></div>
 </div>
-</section>
-<section id="help">
+</div>
+<div class="section" id="help">
 <h2><code class="docutils literal notranslate"><span class="pre">help</span></code><a class="headerlink" href="#help" title="Permalink to this headline">¶</a></h2>
 <p>Shows help information.</p>
 <p><strong>Syntax</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad <span class="nb">help</span>
 </pre></div>
 </div>
-</section>
-<section id="init">
+</div>
+<div class="section" id="init">
 <h2><code class="docutils literal notranslate"><span class="pre">init</span></code><a class="headerlink" href="#init" title="Permalink to this headline">¶</a></h2>
 <p>Initializes the configuration files for a validator and a node.</p>
 <p><strong>Syntax</strong></p>
@@ -1857,12 +1856,12 @@
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad init myNode
 </pre></div>
 </div>
-</section>
-<section id="keys">
+</div>
+<div class="section" id="keys">
 <h2><code class="docutils literal notranslate"><span class="pre">keys</span></code><a class="headerlink" href="#keys" title="Permalink to this headline">¶</a></h2>
 <p>Manages Keyring commands. For a list of syntax and subcommands, see the <a class="reference internal" href="subcommands.html#keys-add"><span class="std std-doc">keys subcommands</span></a>.</p>
-</section>
-<section id="migrate">
+</div>
+<div class="section" id="migrate">
 <h2><code class="docutils literal notranslate"><span class="pre">migrate</span></code><a class="headerlink" href="#migrate" title="Permalink to this headline">¶</a></h2>
 <p>Migrates the source genesis into the target version and prints to STDOUT.</p>
 <p><strong>Syntax</strong></p>
@@ -1873,40 +1872,40 @@
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad migrate /genesis.json --chain-id<span class="o">=</span>testnet --genesis-time<span class="o">=</span><span class="m">2020</span>-04-19T17:00:00Z --initial-height<span class="o">=</span><span class="m">4000</span>
 </pre></div>
 </div>
-</section>
-<section id="query">
+</div>
+<div class="section" id="query">
 <h2><code class="docutils literal notranslate"><span class="pre">query</span></code><a class="headerlink" href="#query" title="Permalink to this headline">¶</a></h2>
 <p>Manages queries. For a list of syntax and subcommands, see the <a class="reference internal" href="subcommands.html#query-authz-grants"><span class="std std-doc">query subcommands</span></a>.</p>
-</section>
-<section id="rosetta">
+</div>
+<div class="section" id="rosetta">
 <h2><code class="docutils literal notranslate"><span class="pre">rosetta</span></code><a class="headerlink" href="#rosetta" title="Permalink to this headline">¶</a></h2>
 <p>Creates a Rosetta server.</p>
 <p><strong>Syntax</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad rosetta
 </pre></div>
 </div>
-</section>
-<section id="start">
+</div>
+<div class="section" id="start">
 <h2><code class="docutils literal notranslate"><span class="pre">start</span></code><a class="headerlink" href="#start" title="Permalink to this headline">¶</a></h2>
 <p>Runs the full node application with Tendermint in or out of process. By default, the application runs with Tendermint in process.</p>
 <p><strong>Syntax</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad start
 </pre></div>
 </div>
-</section>
-<section id="status">
+</div>
+<div class="section" id="status">
 <h2><code class="docutils literal notranslate"><span class="pre">status</span></code><a class="headerlink" href="#status" title="Permalink to this headline">¶</a></h2>
 <p>Displays the status of a remote node.</p>
 <p><strong>Syntax</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad status
 </pre></div>
 </div>
-</section>
-<section id="tendermint">
+</div>
+<div class="section" id="tendermint">
 <h2><code class="docutils literal notranslate"><span class="pre">tendermint</span></code><a class="headerlink" href="#tendermint" title="Permalink to this headline">¶</a></h2>
 <p>Manages the Tendermint protocol.</p>
-</section>
-<section id="testnet">
+</div>
+<div class="section" id="testnet">
 <h2><code class="docutils literal notranslate"><span class="pre">testnet</span></code><a class="headerlink" href="#testnet" title="Permalink to this headline">¶</a></h2>
 <p>Creates a testnet with the specified number of directories and populates each directory with the necessary files.</p>
 <p><strong>Syntax</strong></p>
@@ -1917,8 +1916,8 @@
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad testnet --v <span class="m">6</span> --output-dir ./output --starting-ip-address <span class="m">192</span>.168.10.2
 </pre></div>
 </div>
-</section>
-<section id="tx">
+</div>
+<div class="section" id="tx">
 <h2><code class="docutils literal notranslate"><span class="pre">tx</span></code><a class="headerlink" href="#tx" title="Permalink to this headline">¶</a></h2>
 <p>Retrieves a transaction by its hash, account sequence, or signature. For a list of full syntax and subcommands, see the <a class="reference internal" href="subcommands.html#tx-authz-exec"><span class="std std-doc">tx subcommands</span></a>.</p>
 <p><strong>Syntax to query by hash</strong></p>
@@ -1933,8 +1932,8 @@
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad query tx --type<span class="o">=</span>signature &lt;sig1_base64,sig2_base64...&gt;
 </pre></div>
 </div>
-</section>
-<section id="txs">
+</div>
+<div class="section" id="txs">
 <h2><code class="docutils literal notranslate"><span class="pre">txs</span></code><a class="headerlink" href="#txs" title="Permalink to this headline">¶</a></h2>
 <p>Retrieves transactions that match the specified events where results are paginated.</p>
 <p><strong>Syntax</strong></p>
@@ -1945,16 +1944,16 @@
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad query txs --events <span class="s1">&#39;message.sender=cosmos1...&amp;message.action=withdraw_delegator_reward&#39;</span> --page <span class="m">1</span> --limit <span class="m">30</span>
 </pre></div>
 </div>
-</section>
-<section id="unsafe-reset-all">
+</div>
+<div class="section" id="unsafe-reset-all">
 <h2><code class="docutils literal notranslate"><span class="pre">unsafe-reset-all</span></code><a class="headerlink" href="#unsafe-reset-all" title="Permalink to this headline">¶</a></h2>
 <p>Resets the blockchain database, removes address book files, and resets <code class="docutils literal notranslate"><span class="pre">data/priv_validator_state.json</span></code> to the genesis state.</p>
 <p><strong>Syntax</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad unsafe-reset-all
 </pre></div>
 </div>
-</section>
-<section id="validate-genesis">
+</div>
+<div class="section" id="validate-genesis">
 <h2><code class="docutils literal notranslate"><span class="pre">validate-genesis</span></code><a class="headerlink" href="#validate-genesis" title="Permalink to this headline">¶</a></h2>
 <p>Validates the genesis file at the default location or at the location specified.</p>
 <p><strong>Syntax</strong></p>
@@ -1965,16 +1964,16 @@
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad validate-genesis &lt;/genesis.json&gt;
 </pre></div>
 </div>
-</section>
-<section id="version">
+</div>
+<div class="section" id="version">
 <h2><code class="docutils literal notranslate"><span class="pre">version</span></code><a class="headerlink" href="#version" title="Permalink to this headline">¶</a></h2>
 <p>Returns the version of Terra you’re running.</p>
 <p><strong>Syntax</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad version
 </pre></div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

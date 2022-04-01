@@ -3,8 +3,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta charset="utf-8" />
     <title>Interacting with the Contract &#8212; Terra Docs  documentation</title>
     
     <link href="../../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -1508,13 +1507,13 @@
             
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="interacting-with-the-contract">
+  <div class="tex2jax_ignore mathjax_ignore section" id="interacting-with-the-contract">
 <h1>Interacting with the Contract<a class="headerlink" href="#interacting-with-the-contract" title="Permalink to this headline">¶</a></h1>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>You can also follow these steps in the official desktop wallet for Terra, <a class="reference external" href="https://station.terra.money">Terra Station</a>.</p>
 </div>
-<section id="requirements">
+<div class="section" id="requirements">
 <h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
 <p>Make sure you have set up <strong>LocalTerra</strong> and that it is up and running:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> localterra
@@ -1530,8 +1529,8 @@ docker-compose up
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">satisfy</span> <span class="n">adjust</span> <span class="n">timber</span> <span class="n">high</span> <span class="n">purchase</span> <span class="n">tuition</span> <span class="n">stool</span> <span class="n">faith</span> <span class="n">fine</span> <span class="n">install</span> <span class="n">that</span> <span class="n">you</span> <span class="n">unaware</span> <span class="n">feed</span> <span class="n">domain</span> <span class="n">license</span> <span class="n">impose</span> <span class="n">boss</span> <span class="n">human</span> <span class="n">eager</span> <span class="n">hat</span> <span class="n">rent</span> <span class="n">enjoy</span> <span class="n">dawn</span>
 </pre></div>
 </div>
-</section>
-<section id="uploading-code">
+</div>
+<div class="section" id="uploading-code">
 <h2>Uploading Code<a class="headerlink" href="#uploading-code" title="Permalink to this headline">¶</a></h2>
 <p>Make sure that the <strong>optimized build</strong> of <code class="docutils literal notranslate"><span class="pre">my_first_contract.wasm</span></code> that you created in the last section is in your current working directory.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrad tx wasm store artifacts/my_first_contract.wasm --from test1 --chain-id<span class="o">=</span>localterra --gas<span class="o">=</span>auto --fees<span class="o">=</span>100000uluna --broadcast-mode<span class="o">=</span>block
@@ -1580,8 +1579,8 @@ codehash: <span class="nv">KVR4SWuieLxuZaStlvFoUY9YXlcLLMTHYVpkubdjHEI</span><sp
 creator: terra1dcegyrekltswvyy0xy69ydgxn9x8x32zdtapd8
 </pre></div>
 </div>
-</section>
-<section id="creating-the-contract">
+</div>
+<div class="section" id="creating-the-contract">
 <h2>Creating the Contract<a class="headerlink" href="#creating-the-contract" title="Permalink to this headline">¶</a></h2>
 <p>You have now uploaded the code for your contract, but still don’t have a contract. Create it with the following InitMsg:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
@@ -1643,8 +1642,8 @@ migratable: <span class="nb">false</span>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-<section id="executing-the-contract">
+</div>
+<div class="section" id="executing-the-contract">
 <h2>Executing the Contract<a class="headerlink" href="#executing-the-contract" title="Permalink to this headline">¶</a></h2>
 <p>Let’s do the following:</p>
 <ol class="arabic simple">
@@ -1652,7 +1651,7 @@ migratable: <span class="nb">false</span>
 <li><p>Increment twice</p></li>
 </ol>
 <p>If done properly, you should get a count of 7.</p>
-<section id="reset">
+<div class="section" id="reset">
 <h3>Reset<a class="headerlink" href="#reset" title="Permalink to this headline">¶</a></h3>
 <p>First, to burn:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
@@ -1665,8 +1664,8 @@ migratable: <span class="nb">false</span>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrad tx wasm execute terra18vd8fpwxzck93qlwghaj6arh4p7c5n896xzem5 <span class="s1">&#39;{&quot;reset&quot;:{&quot;count&quot;:5}}&#39;</span> --from test1 --chain-id<span class="o">=</span>localterra --fees<span class="o">=</span>1000000uluna --gas<span class="o">=</span>auto --broadcast-mode<span class="o">=</span>block
 </pre></div>
 </div>
-</section>
-<section id="incrementing">
+</div>
+<div class="section" id="incrementing">
 <h3>Incrementing<a class="headerlink" href="#incrementing" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;increment&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
@@ -1676,8 +1675,8 @@ migratable: <span class="nb">false</span>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrad tx wasm execute terra18vd8fpwxzck93qlwghaj6arh4p7c5n896xzem5 <span class="s1">&#39;{&quot;increment&quot;:{}}&#39;</span> --from test1 --chain-id<span class="o">=</span>localterra --gas<span class="o">=</span>auto --fees<span class="o">=</span>1000000uluna --broadcast-mode<span class="o">=</span>block
 </pre></div>
 </div>
-</section>
-<section id="querying-count">
+</div>
+<div class="section" id="querying-count">
 <h3>Querying count<a class="headerlink" href="#querying-count" title="Permalink to this headline">¶</a></h3>
 <p>Check the result of your executions!</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
@@ -1694,14 +1693,14 @@ migratable: <span class="nb">false</span>
 </pre></div>
 </div>
 <p>Excellent! Congratulations, you’ve created your first smart contract, and now know how to get developing with the Terra dApp Platform.</p>
-</section>
-</section>
-<section id="whats-next">
+</div>
+</div>
+<div class="section" id="whats-next">
 <h2>What’s Next?<a class="headerlink" href="#whats-next" title="Permalink to this headline">¶</a></h2>
 <p>We’ve only walked through a simple example of a smart contract, that modifies a simple balance within its internal state. Although this is enough to make a simple dApp, you can power more interesting applications by <strong>emitting messages</strong>, which will enable you to interact with other contracts as well as the rest of the blockchain’s module.</p>
 <p>Check out a couple more examples of smart contracts using Terra’s smart contract <a class="reference external" href="https://github.com/terra-money/cosmwasm-contracts">repo</a>.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

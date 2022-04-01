@@ -3,8 +3,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta charset="utf-8" />
     <title>Transactions &#8212; Terra Docs  documentation</title>
     
     <link href="../../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -1488,7 +1487,7 @@
             
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="transactions">
+  <div class="tex2jax_ignore mathjax_ignore section" id="transactions">
 <h1>Transactions<a class="headerlink" href="#transactions" title="Permalink to this headline">¶</a></h1>
 <p>This document explains how to influence the blockchain’s state by broadcasting transactions.</p>
 <p>Transactions include:</p>
@@ -1499,9 +1498,9 @@
 <li><p>a signature from a key</p></li>
 </ul>
 <p>The messages included in a transaction contain the information that will be routed to a proper message handler in the node, which in turn parses the inputs and determines the next state of the blockchain.</p>
-<section id="create-transactions">
+<div class="section" id="create-transactions">
 <h2>Create transactions<a class="headerlink" href="#create-transactions" title="Permalink to this headline">¶</a></h2>
-<section id="create-a-wallet">
+<div class="section" id="create-a-wallet">
 <h3>Create a wallet<a class="headerlink" href="#create-a-wallet" title="Permalink to this headline">¶</a></h3>
 <p>You will first want to create a wallet which you can use to sign transactions.</p>
 <div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span> <span class="p">{</span> <span class="nx">MnemonicKey</span><span class="p">,</span> <span class="nx">LCDClient</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@terra-money/terra.js&#39;</span><span class="p">;</span>
@@ -1514,8 +1513,8 @@
 <span class="kd">const</span> <span class="nx">wallet</span> <span class="o">=</span> <span class="nx">terra</span><span class="p">.</span><span class="nx">wallet</span><span class="p">(</span><span class="nx">mk</span><span class="p">);</span>
 </pre></div>
 </div>
-</section>
-<section id="create-messages">
+</div>
+<div class="section" id="create-messages">
 <h3>Create messages<a class="headerlink" href="#create-messages" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span> <span class="p">{</span> <span class="nx">MsgSend</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@terra-money/terra.js&#39;</span><span class="p">;</span>
 
@@ -1526,8 +1525,8 @@
 <span class="p">);</span>
 </pre></div>
 </div>
-</section>
-<section id="create-and-sign-transaction">
+</div>
+<div class="section" id="create-and-sign-transaction">
 <h3>Create and Sign Transaction<a class="headerlink" href="#create-and-sign-transaction" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">tx</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">wallet</span><span class="p">.</span><span class="nx">createAndSignTx</span><span class="p">({</span>
   <span class="nx">msgs</span><span class="o">:</span> <span class="p">[</span><span class="nx">send</span><span class="p">],</span>
@@ -1535,8 +1534,8 @@
 <span class="p">});</span>
 </pre></div>
 </div>
-</section>
-<section id="broadcast-transaction">
+</div>
+<div class="section" id="broadcast-transaction">
 <h3>Broadcast transaction<a class="headerlink" href="#broadcast-transaction" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">txResult</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">terra</span><span class="p">.</span><span class="nx">tx</span><span class="p">.</span><span class="nx">broadcast</span><span class="p">(</span><span class="nx">tx</span><span class="p">);</span>
 </pre></div>
@@ -1547,8 +1546,8 @@
 <span class="c1">// const asyncTxResult = await terra.tx.broadcastAsync(tx);</span>
 </pre></div>
 </div>
-</section>
-<section id="check-events">
+</div>
+<div class="section" id="check-events">
 <h3>Check events<a class="headerlink" href="#check-events" title="Permalink to this headline">¶</a></h3>
 <p>If you broadcasted the transaction with <code class="docutils literal notranslate"><span class="pre">block</span></code>, you can get the events emitted by your transaction.</p>
 <div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span> <span class="p">{</span> <span class="nx">isTxError</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&quot;@terra-money/terra.js&quot;</span><span class="p">;</span>
@@ -1563,9 +1562,9 @@
 <span class="nx">txResult</span><span class="p">.</span><span class="nx">logs</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">eventsByType</span><span class="p">.</span><span class="nx">store_code</span><span class="p">;</span>
 </pre></div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
               </div>

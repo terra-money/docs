@@ -3,8 +3,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta charset="utf-8" />
     <title>Validator FAQ &#8212; Terra Docs  documentation</title>
     
     <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -1812,39 +1811,39 @@
             
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="validator-faq">
+  <div class="tex2jax_ignore mathjax_ignore section" id="validator-faq">
 <h1>Validator FAQ<a class="headerlink" href="#validator-faq" title="Permalink to this headline">¶</a></h1>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>Read this document thoroughly before becoming a validator.</p>
 </div>
-<section id="general-concepts">
+<div class="section" id="general-concepts">
 <h2>General concepts<a class="headerlink" href="#general-concepts" title="Permalink to this headline">¶</a></h2>
-<section id="what-is-a-validator">
+<div class="section" id="what-is-a-validator">
 <h3>What is a validator?<a class="headerlink" href="#what-is-a-validator" title="Permalink to this headline">¶</a></h3>
 <p>The Terra Core is powered by the Tendermint consensus. Validators run full nodes, participate in consensus by broadcasting votes, commit new blocks to the blockchain, and participate in governance of the blockchain. Validators are able to cast votes on behalf of their delegators. A validator’s voting power is weighted according to their total stake.</p>
-</section>
-<section id="what-is-a-full-node">
+</div>
+<div class="section" id="what-is-a-full-node">
 <h3>What is a full node?<a class="headerlink" href="#what-is-a-full-node" title="Permalink to this headline">¶</a></h3>
 <p>A full node is a program that validates the transactions and blocks of a blockchain. Validators must run full nodes. Full nodes require more resources than light nodes,  which only processes block headers and a small subset of transactions. Running a full node means you are running a non-compromised and up-to-date version of the Terra Core software with low network latency and no downtime.</p>
 <p>It is possible and encouraged for any user to run full nodes even if they do not plan to be validators.</p>
-</section>
-<section id="what-is-staking">
+</div>
+<div class="section" id="what-is-staking">
 <h3>What is staking?<a class="headerlink" href="#what-is-staking" title="Permalink to this headline">¶</a></h3>
 <p>When Luna holders delegate their Luna to a validator, they are <em><strong>staking.</strong></em> Staking increases a validator’s weight, which helps them, and in return delegators get rewarded.</p>
 <p>The Columbus-5 Mainnet is a public Proof of Stake (PoS) blockchain. This means a validator’s weight (total stake) is determined by the amount of staking tokens (Luna) they delegate to themselves plus the Luna bonded to them by external delegators. The weight of a validator determines whether or not they are an active validator and how frequently they can propose a block. Validators with a higher weight will propose more blocks, and in turn make more revenue.</p>
 <p>The active validator set is made up of 130 validators, who hold the most Luna. The bottom validator’s stake always forms the barrier for entry into the network. Creating a validator with more stake than the bottom validator is the only way to enter the active set. If validators double-sign, or are frequently offline, they risk their staked Luna, including Luna delegated by users, being slashed by the protocol to penalize negligence and misbehavior.</p>
-</section>
-<section id="what-is-a-delegator">
+</div>
+<div class="section" id="what-is-a-delegator">
 <h3>What is a delegator?<a class="headerlink" href="#what-is-a-delegator" title="Permalink to this headline">¶</a></h3>
 <p>Delegators are Luna holders who want to receive staking rewards without the responsibility of running a validator. Through Terra Station, a user can delegate Luna to a validator and in exchange receive a part of a validator’s revenue. For more detail on how revenue is distributed, see <a class="reference internal" href="#what-are-the-incentives-to-stake"><span class="std std-doc">What are the incentives to stake?</span></a> and <a class="reference internal" href="#what-is-a-validators-commission"><span class="std std-doc">What is a validator’s commission?</span></a></p>
 <p>Delegators share the benefits and rewards of staking with their Validator. If a Validator is successful, its delegators will consistently share in the rewards structure. If a Validator is slashed, the delegator’s stake will also be slashed. This is why delegators should perform due-diligence on validators before delegating. Delegators can also diversify by spreading their stake over multiple validators.</p>
 <p>Delegators play a critical role in the system, as they are responsible for choosing validators. Being a delegator is not a passive role. Delegators should remain vigilant, actively monitor the actions of their validators, and re-delegate whenever they feel their current validator does not meet their needs.</p>
-</section>
-</section>
-<section id="becoming-a-validator">
+</div>
+</div>
+<div class="section" id="becoming-a-validator">
 <h2>Becoming a Validator<a class="headerlink" href="#becoming-a-validator" title="Permalink to this headline">¶</a></h2>
-<section id="how-do-i-become-a-validator">
+<div class="section" id="how-do-i-become-a-validator">
 <h3>How do I become a validator?<a class="headerlink" href="#how-do-i-become-a-validator" title="Permalink to this headline">¶</a></h3>
 <p>Any participant in the network can signal their intent to become a validator by creating a validator and registering its validator profile. The candidate then broadcasts a <code class="docutils literal notranslate"><span class="pre">create-validator</span></code> transaction, which contains the following data:</p>
 <ul class="simple">
@@ -1876,11 +1875,11 @@
 </div>
 <p>Once a validator is created and registered, Luna holders can delegate Luna to them, effectively adding stake to its pool. The total stake of a validator is the total of their self-bonded Luna plus the Luna bonded by external delegators.</p>
 <p><strong>Only the top 130 validators are considered active or <em>bonded validators</em></strong>. If a validator’s total stake dips below the top 130, the validator loses its validator privileges and no longer serves as part of the active set, entering into <strong>unbonding mode</strong> and eventually becoming <strong>unbonded</strong>, or inactive.</p>
-</section>
-</section>
-<section id="validator-keys-and-states">
+</div>
+</div>
+<div class="section" id="validator-keys-and-states">
 <h2>Validator keys and states<a class="headerlink" href="#validator-keys-and-states" title="Permalink to this headline">¶</a></h2>
-<section id="what-are-the-different-types-of-keys">
+<div class="section" id="what-are-the-different-types-of-keys">
 <h3>What are the different types of keys?<a class="headerlink" href="#what-are-the-different-types-of-keys" title="Permalink to this headline">¶</a></h3>
 <p>There are two types of keys:</p>
 <ul>
@@ -1903,8 +1902,8 @@
 <p class="admonition-title">Warning</p>
 <p>A validator requires all the keys above in order to identify itself on the network, sign blocks, sign oracle-related transactions and sign staking/operational transactions such as voting on Governance proposals. It is the validator’s sole responsibility to secure each and every one of these keys and have a contingency backup plan in the event of contingencies.</p>
 </div>
-</section>
-<section id="what-are-the-different-states-a-validator-can-be-in">
+</div>
+<div class="section" id="what-are-the-different-states-a-validator-can-be-in">
 <h3>What are the different states a validator can be in?<a class="headerlink" href="#what-are-the-different-states-a-validator-can-be-in" title="Permalink to this headline">¶</a></h3>
 <p>After a validator is created with the <code class="docutils literal notranslate"><span class="pre">create-validator</span></code> transaction, it can be in three states:</p>
 <ul class="simple">
@@ -1914,27 +1913,27 @@
 </ul>
 <p>All Delegators have the same state as their validator.</p>
 <p>Delegations are not necessarily bonded. Luna can be delegated and bonded, delegated and unbonding, delegated and unbonded, or liquid.</p>
-</section>
-<section id="what-is-self-bonding-how-can-i-increase-my-self-bond">
+</div>
+<div class="section" id="what-is-self-bonding-how-can-i-increase-my-self-bond">
 <h3>What is “self-bonding”? How can I increase my “self-bond”?<a class="headerlink" href="#what-is-self-bonding-how-can-i-increase-my-self-bond" title="Permalink to this headline">¶</a></h3>
 <p>A validator operator’s “self-bond” refers to the amount of Luna delegated to itself. You can increase your self-bond by delegating more Luna to your validator account.</p>
-</section>
-<section id="can-i-delegate-to-a-validator-outside-of-the-active-set">
+</div>
+<div class="section" id="can-i-delegate-to-a-validator-outside-of-the-active-set">
 <h3>Can I delegate to a validator outside of the active set?<a class="headerlink" href="#can-i-delegate-to-a-validator-outside-of-the-active-set" title="Permalink to this headline">¶</a></h3>
 <p>You can still delegate to a validator even if they do not appear on Terra Station. Simply add the terravaloper address of your desired validator to the end of the following URL:</p>
 <p><code class="docutils literal notranslate"><span class="pre">https://station.terra.money/validator/&lt;terravaloper-address&gt;</span></code></p>
 <p>Ask your validator for their terravaloper address.</p>
 <p>Be careful when delegating to validators outside of the active set. Some inactive validators may be jailed or are no longer supported. Station only displays active or recently active validators who are able to participate in consensus.</p>
-</section>
-<section id="is-there-a-faucet">
+</div>
+<div class="section" id="is-there-a-faucet">
 <h3>Is there a faucet?<a class="headerlink" href="#is-there-a-faucet" title="Permalink to this headline">¶</a></h3>
 <p>Use the <a class="reference external" href="https://faucet.terra.money/">Terra faucet</a> to obtain coins for the testnet.</p>
-</section>
-<section id="is-there-a-minimum-amount-of-luna-that-must-be-staked-to-be-an-active-bonded-validator">
+</div>
+<div class="section" id="is-there-a-minimum-amount-of-luna-that-must-be-staked-to-be-an-active-bonded-validator">
 <h3>Is there a minimum amount of Luna that must be staked to be an active (bonded) validator?<a class="headerlink" href="#is-there-a-minimum-amount-of-luna-that-must-be-staked-to-be-an-active-bonded-validator" title="Permalink to this headline">¶</a></h3>
 <p>There is no set minimum. The top 130 validators with the highest total stake (where total stake = self-bonded stake + delegated stake) make up the active validator set. The bottom 130th validator sets the barrier to entry for the active set.</p>
-</section>
-<section id="how-will-delegators-choose-their-validators">
+</div>
+<div class="section" id="how-will-delegators-choose-their-validators">
 <h3>How will delegators choose their validators?<a class="headerlink" href="#how-will-delegators-choose-their-validators" title="Permalink to this headline">¶</a></h3>
 <p>Delegators are free to choose validators according to their own criteria. This may include:</p>
 <ul class="simple">
@@ -1944,15 +1943,15 @@
 <li><p><strong>Track record:</strong> Delegators can look at the track record of a validator they plan to delegate to. This includes seniority, past votes on proposals, historical average uptime, and how often the node was compromised.</p></li>
 </ul>
 <p>Validators can also provide a website address to complete their resume. Validators need to build a good reputation to attract delegators. It’s good practice for validators to have their setup audited by third parties. Please note that the Terra team will not approve or conduct any audits.</p>
-</section>
-</section>
-<section id="responsibilities">
+</div>
+</div>
+<div class="section" id="responsibilities">
 <h2>Responsibilities<a class="headerlink" href="#responsibilities" title="Permalink to this headline">¶</a></h2>
-<section id="do-validators-need-to-be-publicly-identified">
+<div class="section" id="do-validators-need-to-be-publicly-identified">
 <h3>Do validators need to be publicly identified?<a class="headerlink" href="#do-validators-need-to-be-publicly-identified" title="Permalink to this headline">¶</a></h3>
 <p>No, they do not. Each delegator will value validators based on their own criteria. Validators are typically advised to register a website address when they nominate themselves so they can advertise their operation as they see fit.</p>
-</section>
-<section id="what-are-the-responsibilities-of-a-validator">
+</div>
+<div class="section" id="what-are-the-responsibilities-of-a-validator">
 <h3>What are the responsibilities of a validator?<a class="headerlink" href="#what-are-the-responsibilities-of-a-validator" title="Permalink to this headline">¶</a></h3>
 <p>A validator must:</p>
 <ul class="simple">
@@ -1961,13 +1960,13 @@
 <li><p><strong>Provide oversight and feedback on the correct deployment of community pool funds:</strong> The Terra protocol includes a governance system for proposals to facilitate the adoption of its currencies. Validators are expected to hold budget executors to provide transparency and to use funds efficiently.</p></li>
 <li><p><strong>Be active members of the community:</strong> Validators should always be up-to-date with the current state of the ecosystem so that they can easily adapt to any change.</p></li>
 </ul>
-</section>
-<section id="what-does-staking-imply">
+</div>
+<div class="section" id="what-does-staking-imply">
 <h3>What does staking imply?<a class="headerlink" href="#what-does-staking-imply" title="Permalink to this headline">¶</a></h3>
 <p>Think of staked Luna as a safety deposit on a validator’s activities. When a validator or a delegator wants to retrieve part or all of their deposit, they send an unbonding transaction. The staked Luna then undergoes a <em>three weeks unbonding period,</em> during which it is vulnerable to slashing risks for potential misbehavior committed by the validator before the start of the unbonding process.</p>
 <p>Validators receive block provisions, block rewards, and fee rewards and share these with their delegators. If a validator misbehaves, a certain portion of their total stake is slashed (the severity of the penalty depends on the type of misbehavior). This means that every user that bonds Luna to a slashed validator gets penalized in proportion to their stake. Delegators are incentivized to delegate to validators that function safely.</p>
-</section>
-<section id="can-a-validator-run-away-with-a-delegators-luna">
+</div>
+<div class="section" id="can-a-validator-run-away-with-a-delegators-luna">
 <h3>Can a validator run away with a delegators’ Luna?<a class="headerlink" href="#can-a-validator-run-away-with-a-delegators-luna" title="Permalink to this headline">¶</a></h3>
 <p><strong>No.</strong> By delegating to a validator, users delegate staking power. The more staking power a validator has, the more weight it has in the consensus and processes. This does not mean that the validator has custody of its delegators’ Luna.</p>
 <div class="admonition important">
@@ -1975,16 +1974,16 @@
 <p>It is impossible for a validator to run away with a delegator’s funds.</p>
 </div>
 <p>Although delegated funds cannot be stolen by validators, delegators are still liable if a validator misbehaves. When this happens, a delegator’s stake will be partially slashed in proportion to their relative stake.</p>
-</section>
-<section id="how-often-will-a-validator-be-chosen-to-propose-the-next-block-does-it-go-up-with-the-quantity-of-luna-staked">
+</div>
+<div class="section" id="how-often-will-a-validator-be-chosen-to-propose-the-next-block-does-it-go-up-with-the-quantity-of-luna-staked">
 <h3>How often will a validator be chosen to propose the next block? Does it go up with the quantity of Luna staked?<a class="headerlink" href="#how-often-will-a-validator-be-chosen-to-propose-the-next-block-does-it-go-up-with-the-quantity-of-luna-staked" title="Permalink to this headline">¶</a></h3>
 <p>The validator that is selected to mine the next block is called the <strong>proposer</strong>, or the “leader” in the consensus for the round. Each proposer is selected deterministically, and the frequency of being chosen is equal to the relative total stake of the validator (Total stake = self-bonded stake + delegators stake). For example, if the total bonded stake across all validators is 100 Luna, and a validator’s total stake is 10 Luna, then this validator will be chosen 10% of the time as the proposer.</p>
 <p>To understand more about the proposer selection process in Tendermint BFT consensus, read more <a class="reference external" href="https://docs.tendermint.com/master/spec/consensus/proposer-selection.html">in their official docs</a>.</p>
-</section>
-</section>
-<section id="incentives">
+</div>
+</div>
+<div class="section" id="incentives">
 <h2>Incentives<a class="headerlink" href="#incentives" title="Permalink to this headline">¶</a></h2>
-<section id="what-are-the-incentives-to-stake">
+<div class="section" id="what-are-the-incentives-to-stake">
 <h3>What are the incentives to stake?<a class="headerlink" href="#what-are-the-incentives-to-stake" title="Permalink to this headline">¶</a></h3>
 <p>Each member of a validator’s staking pool earns different types of revenue:</p>
 <ul class="simple">
@@ -1993,16 +1992,16 @@
 <li><p><strong>Swap fees</strong>: A small spread is charged on market swap transactions between Luna and any Terra currency, which is then used to reward validators that faithfully report oracle exchange rates. The fee for swaps between different Terra stablecoins is called the Tobin tax.</p></li>
 </ul>
 <p>This total revenue is divided among a validator’s staking pool according to each validator’s weight. The revenue is then divided among delegators in proportion to each delegator’s stake. Note that a commission on delegators’ revenue is applied by the validator before it is distributed.</p>
-</section>
-<section id="what-is-the-incentive-to-run-a-validator">
+</div>
+<div class="section" id="what-is-the-incentive-to-run-a-validator">
 <h3>What is the incentive to run a validator?<a class="headerlink" href="#what-is-the-incentive-to-run-a-validator" title="Permalink to this headline">¶</a></h3>
 <p>Validators earn more revenue than their delegators through commission. They also play a major role in determining on-chain exchange rates through the <a class="reference internal" href="../../develop/module-specifications/spec-oracle.html"><span class="doc std std-doc">oracle module</span></a>, where they get rewarded for faithfully reporting exchange rates with swap fees.</p>
-</section>
-<section id="what-is-a-validators-commission">
+</div>
+<div class="section" id="what-is-a-validators-commission">
 <h3>What is a validator’s commission?<a class="headerlink" href="#what-is-a-validators-commission" title="Permalink to this headline">¶</a></h3>
 <p>The revenue received by a validator’s pool is split between a validator and their delegators. A validator can apply a commission on the part of the revenue that goes to its delegators. This commission is set as a percentage. Each validator is free to set its initial commission, maximum daily commission change rate, and maximum commission. The mainnet enforces the parameters that each validator sets. These parameters can only be defined when initially declaring candidacy, and may only be constrained further after being declared.</p>
-</section>
-<section id="how-are-block-provisions-distributed">
+</div>
+<div class="section" id="how-are-block-provisions-distributed">
 <h3>How are block provisions distributed?<a class="headerlink" href="#how-are-block-provisions-distributed" title="Permalink to this headline">¶</a></h3>
 <p>Block provisions are distributed proportionally to each validator relative to their total stake. This means that even though each validator gains TerraSDR (SDT) with each provision, all validators will still maintain equal weight.</p>
 <p><strong>Example:</strong> Take 10 validators with equal staking power and a commission rate of 1%. The block provision is 1000 SDT and each validator has 20% self-bonded Luna. These tokens do not go directly to the proposer. Instead, they are evenly spread among validators. So now each validator’s pool has 100 SDT, which is distributed according to each participant’s stake:</p>
@@ -2012,11 +2011,11 @@
 <li><p>All delegators get: 100 SDT ~ * ~ 80% ~ - ~ Commission$ = 79.2 SDT</p></li>
 </ul>
 <p>Each delegator can claim its part of the 79.2 SDT in proportion to their stake in the pool. Note that the validator’s commission is not applied on block provisions. Block rewards (paid in SDT) are distributed according to the same mechanism.</p>
-</section>
-<section id="how-are-fees-distributed">
+</div>
+<div class="section" id="how-are-fees-distributed">
 <h3>How are fees distributed?<a class="headerlink" href="#how-are-fees-distributed" title="Permalink to this headline">¶</a></h3>
 <p>Fees are distributed to validators in the same way as commission: proportionally to each validator relative to their total stake. A Block proposer can also get a bonus if the proposer includes more than the minimum of required precommits.</p>
-<section id="rewards">
+<div class="section" id="rewards">
 <h4>Rewards<a class="headerlink" href="#rewards" title="Permalink to this headline">¶</a></h4>
 <p>When a validator is selected to propose the next block, they must include at least two thirds of the precommits for the previous block in the form of validator signatures. Proposers who include more than two thirds receive a bonus proportional to the amount of additional precomits. This reward ranges from 1% if the proposer includes two thirds of the precommits to 5% if the proposer includes 100% of the precommits. If a proposer waits too long however, other validators may timeout and move on to the next proposer. This is why validators have to find a balance between wait time to get the most signatures and the risk of losing out on proposing the next block. This feature aims to incentivize non-empty block proposals, better networking between validators, and to mitigate censorship.</p>
 <p><strong>Example:</strong> There are 10 validators with equal stake. Each has a 1% commission and 20% self-bonded Luna. If a successful block collects 1005 SDT in fees, and the proposer includes 100% of the signatures in their block, they will receive the full 5% bonus.</p>
@@ -2041,13 +2040,13 @@
 </ul>
 </li>
 </ul>
-</section>
-</section>
-<section id="how-does-luna-supply-behave-over-time">
+</div>
+</div>
+<div class="section" id="how-does-luna-supply-behave-over-time">
 <h3>How does Luna supply behave over time?<a class="headerlink" href="#how-does-luna-supply-behave-over-time" title="Permalink to this headline">¶</a></h3>
 <p>Luna is the native staking token for the Terra Proof of Stake chain. Luna represents mining power and serves as collateral for Terra stablecoins. When a Terra stablecoin’s price is low, the relevant Terra stablecoin is burned, and Luna is minted. This increases the price of the Terra stablecoin. In order to constrain Luna inflation, the protocol burns all seigniorage and dividends swap fees to the exchange rate oracle ballot winners, which then returns Luna supply towards a target. The Terra Protocol is deflationary in nature.</p>
-</section>
-<section id="what-are-the-slashing-conditions">
+</div>
+<div class="section" id="what-are-the-slashing-conditions">
 <h3>What are the slashing conditions?<a class="headerlink" href="#what-are-the-slashing-conditions" title="Permalink to this headline">¶</a></h3>
 <p>If a validator misbehaves, their bonded stake along with their delegators’ stake will be slashed. The severity of the punishment depends on the type of fault. There are main faults that can result in slashing of funds:</p>
 <ul class="simple">
@@ -2058,17 +2057,17 @@
 <p class="admonition-title">Warning</p>
 <p>Even if a validator does not intentionally misbehave, it can still be slashed if its node crashes, loses connectivity, gets DDoSed, or if its private key is compromised.</p>
 </div>
-</section>
-<section id="are-validators-required-to-self-bond-luna">
+</div>
+<div class="section" id="are-validators-required-to-self-bond-luna">
 <h3>Are validators required to self-bond Luna?<a class="headerlink" href="#are-validators-required-to-self-bond-luna" title="Permalink to this headline">¶</a></h3>
 <p>No, but self-bonding has benefits. A validator’s total stake is made up of their self-bonded stake plus their delegated stake. This means that a validator can compensate for low amounts of self-bonded Luna by attracting more delegators. This is why reputation is very important for validators.</p>
 <p>Although validators are not required to self-bond Luna, all validators should have <code class="docutils literal notranslate"><span class="pre">skin-in-the-game</span></code>. This can help make a validator more trustworthy.</p>
 <p>In order for delegators to have some guarantee about how much <code class="docutils literal notranslate"><span class="pre">skin-in-the-game</span></code> their validator has, validators can signal a minimum amount of self-bonded Luna. If a validator’s self-bond goes below the limit that it has predefined, this validator and all of its delegators will unbond.</p>
-</section>
-</section>
-<section id="technical-requirements">
+</div>
+</div>
+<div class="section" id="technical-requirements">
 <h2>Technical Requirements<a class="headerlink" href="#technical-requirements" title="Permalink to this headline">¶</a></h2>
-<section id="what-are-the-hardware-requirements">
+<div class="section" id="what-are-the-hardware-requirements">
 <h3>What are the hardware requirements?<a class="headerlink" href="#what-are-the-hardware-requirements" title="Permalink to this headline">¶</a></h3>
 <p>The following requirements are recommended for running Terra Core:</p>
 <p>At least 300 mbps of network bandwidth</p>
@@ -2078,18 +2077,18 @@
 <li><p>2TB NVME storage</p></li>
 <li><p>At least 300mbps network bandwidth</p></li>
 </ul>
-</section>
-<section id="what-are-the-software-requirements">
+</div>
+<div class="section" id="what-are-the-software-requirements">
 <h3>What are the software requirements?<a class="headerlink" href="#what-are-the-software-requirements" title="Permalink to this headline">¶</a></h3>
 <p>In addition to running a Terra Core node, validators should develop monitoring, alerting and management solutions.</p>
 <p>Validators should expect to perform regular software updates to accommodate upgrades and bug fixes. There will inevitably be issues with the network, and this requires vigilance.</p>
-</section>
-<section id="what-are-the-personnel-requirements">
+</div>
+<div class="section" id="what-are-the-personnel-requirements">
 <h3>What are the personnel requirements?<a class="headerlink" href="#what-are-the-personnel-requirements" title="Permalink to this headline">¶</a></h3>
 <p>A successful validator operation will require the efforts of multiple highly skilled individuals and continuous operational attention. Running a validator is considerably more involved than mining bitcoin.</p>
 <p>Running an effective operation is critical to avoiding unexpected unbonding or being slashed. This includes being able to respond to attacks, outages, as well as to maintain security and isolation in your data center.</p>
-</section>
-<section id="how-can-validators-protect-themselves-from-denial-of-service-attacks">
+</div>
+<div class="section" id="how-can-validators-protect-themselves-from-denial-of-service-attacks">
 <h3>How can validators protect themselves from Denial-of-Service attacks?<a class="headerlink" href="#how-can-validators-protect-themselves-from-denial-of-service-attacks" title="Permalink to this headline">¶</a></h3>
 <p>Denial-of-service attacks occur when an attacker sends a flood of internet traffic to a validator’s IP address. This can prevent a validator’s server from connecting to the internet.</p>
 <p>To do this, an attacker scans the network, tries to learn the IP address of various validator nodes, and disconnects them by flooding them with traffic.</p>
@@ -2097,9 +2096,9 @@
 <p>Validator nodes should only connect to full-nodes they trust. They can be run by the same validator or other validators they know. A validator node will typically run in a data center. Most data centers provide direct links to major cloud providers. A validator can use these links to connect to sentry nodes in the cloud. This shifts the burden of denial-of-service from the validator’s node directly to its sentry nodes. This may require new sentry nodes to be spun up or activated to mitigate attacks on existing ones.</p>
 <p>Sentry nodes can be quickly spun up or used to change IP addresses. Because links to the sentry nodes are in private IP space, an internet based attack can’t disturb them directly. This will ensure a validator’s block proposals and votes always make it to the rest of the network.</p>
 <p>For more on sentry node architecture, visit <a class="reference external" href="https://forum.cosmos.network/t/sentry-node-architecture-overview/454">the Cosmos forum</a>.</p>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
               </div>

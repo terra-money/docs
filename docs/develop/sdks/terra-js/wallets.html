@@ -3,8 +3,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta charset="utf-8" />
     <title>Wallets &#8212; Terra Docs  documentation</title>
     
     <link href="../../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -1468,9 +1467,9 @@
             
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="wallets">
+  <div class="tex2jax_ignore mathjax_ignore section" id="wallets">
 <h1>Wallets<a class="headerlink" href="#wallets" title="Permalink to this headline">¶</a></h1>
-<section id="create-a-wallet">
+<div class="section" id="create-a-wallet">
 <h2>Create a wallet<a class="headerlink" href="#create-a-wallet" title="Permalink to this headline">¶</a></h2>
 <p>Use <code class="docutils literal notranslate"><span class="pre">LCDClient.wallet()</span></code> to create a <code class="docutils literal notranslate"><span class="pre">Wallet</span></code> from a <code class="docutils literal notranslate"><span class="pre">Key</span></code>.</p>
 <div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span> <span class="p">{</span> <span class="nx">LCDClient</span><span class="p">,</span> <span class="nx">MnemonicKey</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@terra-money/terra.js&#39;</span><span class="p">;</span>
@@ -1485,18 +1484,18 @@
 </pre></div>
 </div>
 <p>In the above example, a <code class="docutils literal notranslate"><span class="pre">MnemonicKey</span></code> was specified for the wallet, but any type of <code class="docutils literal notranslate"><span class="pre">Key</span></code> implementation can be used instead.</p>
-</section>
-<section id="usage">
+</div>
+<div class="section" id="usage">
 <h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
-<section id="getting-account-number-and-sequence">
+<div class="section" id="getting-account-number-and-sequence">
 <h3>Getting account number and sequence<a class="headerlink" href="#getting-account-number-and-sequence" title="Permalink to this headline">¶</a></h3>
 <p>A wallet is connected to the Terra blockchain and can poll the values of an account’s account number and sequence directly:</p>
 <div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">await</span> <span class="nx">wallet</span><span class="p">.</span><span class="nx">accountNumber</span><span class="p">());</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">await</span> <span class="nx">wallet</span><span class="p">.</span><span class="nx">sequence</span><span class="p">());</span>
 </pre></div>
 </div>
-</section>
-<section id="creating-transactions">
+</div>
+<div class="section" id="creating-transactions">
 <h3>Creating transactions<a class="headerlink" href="#creating-transactions" title="Permalink to this headline">¶</a></h3>
 <p>A wallet makes it easy to create a transaction by automatically fetching the account number and sequence from the blockchain. The fee parameter is optional – if you don’t include it, Terra.js will automatically use your LCD’s fee estimation settings to simulate the transaction within the node and include the resultant fee in your transaction.</p>
 <div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">msgs</span> <span class="o">=</span> <span class="p">[</span> <span class="p">...</span> <span class="p">];</span> <span class="c1">// list of messages</span>
@@ -1521,9 +1520,9 @@
 <span class="p">});</span>
 </pre></div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
               </div>

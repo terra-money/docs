@@ -3,8 +3,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta charset="utf-8" />
     <title>Sync &#8212; Terra Docs  documentation</title>
     
     <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -1518,9 +1517,9 @@
             
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="sync">
+  <div class="tex2jax_ignore mathjax_ignore section" id="sync">
 <h1>Sync<a class="headerlink" href="#sync" title="Permalink to this headline">¶</a></h1>
-<section id="before-sync">
+<div class="section" id="before-sync">
 <h2>Before Sync<a class="headerlink" href="#before-sync" title="Permalink to this headline">¶</a></h2>
 <p>Certain files will need to be absent or deleted prior to download. A quicksync replaces blockchain data with a customized snapshot. For most use cases a “pruned” version is adequate. Pruned  versions will have certain transactions removed from the archive to make node performance smoother. If you are running a node for archival purposes, you will want an “archive” or “default” download.</p>
 <p>After choosing  the appropriate download type, examine your node and ensure  that <code class="docutils literal notranslate"><span class="pre">.terra/data</span></code> is empty.</p>
@@ -1537,16 +1536,16 @@
 </div>
 </div>
 <p>If you have an address book downloaded, you may keep it. Otherwise, you will need to download the <a class="reference internal" href="join-a-network.html#join-a-public-network"><span class="std std-doc">appropriate addressbook</span></a> prior to running  <code class="docutils literal notranslate"><span class="pre">terrad</span> <span class="pre">start</span></code>.</p>
-</section>
-<section id="during-sync">
+</div>
+<div class="section" id="during-sync">
 <h2>During Sync<a class="headerlink" href="#during-sync" title="Permalink to this headline">¶</a></h2>
 <p>After <a class="reference internal" href="join-a-network.html#join-a-public-network"><span class="std std-doc">Joining a public network</span></a>, your node will begin to sync.</p>
 <div class="caution admonition">
 <p class="admonition-title">Sync start times</p>
 <p>Nodes take at least an hour to start syncing. This wait is normal. Before troubleshooting a sync, please wait an hour for the sync to start.</p>
 </div>
-</section>
-<section id="monitor-the-sync">
+</div>
+<div class="section" id="monitor-the-sync">
 <h2>Monitor the sync<a class="headerlink" href="#monitor-the-sync" title="Permalink to this headline">¶</a></h2>
 <p>Your node is catching up with the network by replaying all the transactions from genesis and recreating the blockchain state locally. You can verify this process by checking the <code class="docutils literal notranslate"><span class="pre">latest_block_height</span></code> in the <code class="docutils literal notranslate"><span class="pre">SyncInfo</span></code> of the <code class="docutils literal notranslate"><span class="pre">terrad</span> <span class="pre">status</span></code> response:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span>  {
@@ -1559,8 +1558,8 @@
 </pre></div>
 </div>
 <p>Compare this height to the <strong>Latest Blocks</strong> on <a class="reference external" href="https://terra.stake.id/#/">stake.id</a> to see your progress.</p>
-</section>
-<section id="quicksync">
+</div>
+<div class="section" id="quicksync">
 <h2>Quicksync<a class="headerlink" href="#quicksync" title="Permalink to this headline">¶</a></h2>
 <p>You can significantly accelerate the synchronization process by providing <code class="docutils literal notranslate"><span class="pre">terrad</span></code> with a recent snapshot of the network state. Snapshots are made publicly available by the Terra community and can be downloaded at <a class="reference external" href="https://quicksync.io/networks/terra.html">https://quicksync.io/networks/terra.html</a>. Choose the snapshot corresponding to your network type (<code class="docutils literal notranslate"><span class="pre">testnet</span></code>/<code class="docutils literal notranslate"><span class="pre">mainnet</span></code>) and a mirror close to the location of your node server.</p>
 <p>Before downloading a snapshot, make sure that you have the streaming and unpacking utilities installed:</p>
@@ -1599,8 +1598,8 @@ aria2c -x5 https://dl2.quicksync.io/bombay-12-default.20220107.0510.tar.lz4
 </div>
 </li>
 </ol>
-</section>
-<section id="sync-complete">
+</div>
+<div class="section" id="sync-complete">
 <h2>Sync Complete<a class="headerlink" href="#sync-complete" title="Permalink to this headline">¶</a></h2>
 <p>You can tell that your node is in sync with the network when <code class="docutils literal notranslate"><span class="pre">SyncInfo.catching_up</span></code> in the <code class="docutils literal notranslate"><span class="pre">terrad</span> <span class="pre">status</span></code> response returns <code class="docutils literal notranslate"><span class="pre">false</span></code> and the <code class="docutils literal notranslate"><span class="pre">latest_block_height</span></code> corresponds to the public network blockheight found on <a class="reference external" href="https://terra.stake.id/#/"> stake.id </a>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad status  
@@ -1617,11 +1616,11 @@ aria2c -x5 https://dl2.quicksync.io/bombay-12-default.20220107.0510.tar.lz4
 </pre></div>
 </div>
 <p>Validators can view the status of the network using <a class="reference external" href="https://finder.terra.money">Terra Finder</a>.</p>
-</section>
-<section id="verify-the-snapshot">
+</div>
+<div class="section" id="verify-the-snapshot">
 <h2>Verify the snapshot<a class="headerlink" href="#verify-the-snapshot" title="Permalink to this headline">¶</a></h2>
 <p>To verify the validity of the snapshot, use a <code class="docutils literal notranslate"><span class="pre">sha512sum</span></code> to check it against a cosmos validator’s registry of transactions.</p>
-<section id="compare-checksum-with-its-on-chain-version">
+<div class="section" id="compare-checksum-with-its-on-chain-version">
 <h3>Compare checksum with its on-chain version.<a class="headerlink" href="#compare-checksum-with-its-on-chain-version" title="Permalink to this headline">¶</a></h3>
 <p>For this example, use the following snapshot URL:</p>
 <p><code class="docutils literal notranslate"><span class="pre">https://dl2.quicksync.io/bombay-12-default.20220107.0510.tar.lz4</span></code></p>
@@ -1657,20 +1656,20 @@ aria2c -x5 https://dl2.quicksync.io/bombay-12-default.20220107.0510.tar.lz4
 </div>
 </li>
 </ol>
-</section>
-</section>
-<section id="sync-faster-during-testing">
+</div>
+</div>
+<div class="section" id="sync-faster-during-testing">
 <h2>Sync faster during testing<a class="headerlink" href="#sync-faster-during-testing" title="Permalink to this headline">¶</a></h2>
 <p>Sometimes you may want to sync faster by foregoing checks. This command should only be used by advanced users in non-production environments. To speed up the sync process during testing, use the following command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad start --x-crisis-skip-assert-invariants
 </pre></div>
 </div>
-</section>
-<section id="congratulations">
+</div>
+<div class="section" id="congratulations">
 <h2>Congratulations!<a class="headerlink" href="#congratulations" title="Permalink to this headline">¶</a></h2>
 <p>You’ve successfully joined a network as a full node operator. If you are a validator, continue to <a class="reference internal" href="../manage-a-terra-validator/README.html"><span class="doc std std-doc">manage a Terra validator</span></a> for the next steps.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

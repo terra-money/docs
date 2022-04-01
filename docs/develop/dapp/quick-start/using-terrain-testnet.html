@@ -3,8 +3,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta charset="utf-8" />
     <title>Use Terrain with the testnet &#8212; Terra Docs  documentation</title>
     
     <link href="../../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -1542,16 +1541,16 @@
             
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="use-terrain-with-the-testnet">
+  <div class="tex2jax_ignore mathjax_ignore section" id="use-terrain-with-the-testnet">
 <h1>Use Terrain with the testnet<a class="headerlink" href="#use-terrain-with-the-testnet" title="Permalink to this headline">¶</a></h1>
 <p>The Bombay testnet is used for testing transactions on the Terra network.</p>
-<section id="prerequisites">
+<div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="../../../learn/terra-station/download/terra-station-extension.html"><span class="doc std std-doc">Install the Terra Station browser extension</span></a></p></li>
 </ul>
-</section>
-<section id="create-a-bombay-wallet">
+</div>
+<div class="section" id="create-a-bombay-wallet">
 <h2>1. Create a Bombay wallet<a class="headerlink" href="#create-a-bombay-wallet" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference internal" href="../../../learn/terra-station/download/terra-station-extension.html#create-a-wallet"><span class="std std-doc">Create a new wallet</span></a> using the Terra Station extension. It’s recommended to name this wallet “Bombay” or “testnet” so it’s easy to remember that it’s only used for Bombay.</p>
 <p>After creating a Bombay wallet and storing the seed phrase, request funds from the testnet faucet:</p>
@@ -1560,8 +1559,8 @@
 <p class="admonition-title">Danger</p>
 <p>Make sure you have your seed phrase stored somewhere since you will need it to complete this tutorial.</p>
 </div>
-</section>
-<section id="scaffold-your-dapp">
+</div>
+<div class="section" id="scaffold-your-dapp">
 <h2>2. Scaffold your dApp<a class="headerlink" href="#scaffold-your-dapp" title="Permalink to this headline">¶</a></h2>
 <p>Scaffold your new application:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrain new my-terra-dapp
@@ -1569,7 +1568,7 @@
 npm install
 </pre></div>
 </div>
-<section id="project-structure">
+<div class="section" id="project-structure">
 <h3>Project structure<a class="headerlink" href="#project-structure" title="Permalink to this headline">¶</a></h3>
 <p>The following structure shows your scaffolded project:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>.
@@ -1584,9 +1583,9 @@ npm install
 └── refs.terrain.json      # Deployed code and contract references.
 </pre></div>
 </div>
-</section>
-</section>
-<section id="configure-the-testnet">
+</div>
+</div>
+<div class="section" id="configure-the-testnet">
 <h2>3. Configure the testnet<a class="headerlink" href="#configure-the-testnet" title="Permalink to this headline">¶</a></h2>
 <p>Before deploying, Terrain needs to learn how to access your Bombay wallet. To do this you’ll need to modify <code class="docutils literal notranslate"><span class="pre">keys.terrain.js</span></code> in the generated project.</p>
 <p>Modify the configuration and input your seed phrase to look like this:</p>
@@ -1598,8 +1597,8 @@ npm install
 <span class="p">};</span>
 </pre></div>
 </div>
-</section>
-<section id="deploy">
+</div>
+<div class="section" id="deploy">
 <h2>4. Deploy<a class="headerlink" href="#deploy" title="Permalink to this headline">¶</a></h2>
 <p>To deploy the application, run the following command:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrain deploy counter --signer bombay --network testnet
@@ -1620,7 +1619,7 @@ npm install
 </div>
 <p>Wait a few seconds then try the deploy command again.</p>
 </div>
-<section id="deploying-with-terra-station">
+<div class="section" id="deploying-with-terra-station">
 <h3>Deploying with Terra Station<a class="headerlink" href="#deploying-with-terra-station" title="Permalink to this headline">¶</a></h3>
 <p>Besides the CLI approach above, there is also the option of deploying and interacting with your contracts on testnet through the <a class="reference external" href="https://station.terra.money/">Terra Station UI</a>.</p>
 <ol class="arabic">
@@ -1641,9 +1640,9 @@ npm install
 </div>
 </li>
 </ol>
-</section>
-</section>
-<section id="interact-with-the-deployed-contract">
+</div>
+</div>
+<div class="section" id="interact-with-the-deployed-contract">
 <h2>5. Interact with the deployed contract<a class="headerlink" href="#interact-with-the-deployed-contract" title="Permalink to this headline">¶</a></h2>
 <p>The Terrain template comes with several predefined helpers in <code class="docutils literal notranslate"><span class="pre">lib/index.js</span></code>. Use them to start interacting with your smart contract:</p>
 <ol class="arabic">
@@ -1664,8 +1663,8 @@ npm install
 </div>
 </li>
 </ol>
-</section>
-<section id="front-end-scaffolding">
+</div>
+<div class="section" id="front-end-scaffolding">
 <h2>6. Front-end scaffolding<a class="headerlink" href="#front-end-scaffolding" title="Permalink to this headline">¶</a></h2>
 <p>Terrain also scaffolds a very simple front-end.</p>
 <ol class="arabic">
@@ -1679,16 +1678,16 @@ npm install
 </li>
 <li><p>With <code class="docutils literal notranslate"><span class="pre">testnet</span></code> selected in Terra Station you can now increment and reset the counter from the front end.</p></li>
 </ol>
-</section>
-<section id="demo">
+</div>
+<div class="section" id="demo">
 <h2>Demo<a class="headerlink" href="#demo" title="Permalink to this headline">¶</a></h2>
 <p><img alt="" src="../../../../_images/tut_counter.gif" /></p>
-</section>
-<section id="advanced-usage">
+</div>
+<div class="section" id="advanced-usage">
 <h2>Advanced usage<a class="headerlink" href="#advanced-usage" title="Permalink to this headline">¶</a></h2>
 <p>For more advanced use cases such as deploying to the testnet or mainnet, see <a class="reference external" href="https://github.com/terra-money/terrain#readme">Terrain’s readme</a>.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

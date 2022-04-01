@@ -3,8 +3,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta charset="utf-8" />
     <title>Register a validator &#8212; Terra Docs  documentation</title>
     
     <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -1498,11 +1497,11 @@
             
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="register-a-validator">
+  <div class="tex2jax_ignore mathjax_ignore section" id="register-a-validator">
 <h1>Register a validator<a class="headerlink" href="#register-a-validator" title="Permalink to this headline">¶</a></h1>
 <p>This is a detailed step-by-step guide for setting up a Terra validator. Please be aware that while it is easy to set up a rudimentary validating node, running a production-quality validator node with a robust architecture and security features requires an extensive setup.</p>
 <p>For more information on setting up a validator, see <a class="reference internal" href="README.html#additional-resources"><span class="std std-doc">additional resources</span></a>.</p>
-<section id="prerequisites">
+<div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>You have completed <a class="reference internal" href="../run-a-full-terra-node/README.html"><span class="doc std std-doc">how to run a full Terra node</span></a>, which outlines how to install, connect, and configure a node.</p></li>
@@ -1510,15 +1509,15 @@
 <li><p>You have read through <a class="reference internal" href="faq.html"><span class="doc std std-doc">the validator FAQ</span></a></p></li>
 <li><p>You understand the <a class="reference internal" href="faq.html#what-are-the-different-types-of-keys"><span class="std std-doc">different keys</span></a> of a validator in the FAQ</p></li>
 </ul>
-</section>
-<section id="retrieve-your-pubkey">
+</div>
+<div class="section" id="retrieve-your-pubkey">
 <h2>1. Retrieve your PubKey<a class="headerlink" href="#retrieve-your-pubkey" title="Permalink to this headline">¶</a></h2>
 <p>The Consensus PubKey of your node is required to create a new validator. Run:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>--pubkey<span class="o">=</span><span class="k">$(</span>terrad tendermint show-validator<span class="k">)</span>
 </pre></div>
 </div>
-</section>
-<section id="create-a-new-validator">
+</div>
+<div class="section" id="create-a-new-validator">
 <h2>2. Create a new validator<a class="headerlink" href="#create-a-new-validator" title="Permalink to this headline">¶</a></h2>
 <div class="tip admonition">
 <p class="admonition-title">Get tokens</p>
@@ -1541,8 +1540,8 @@
 <p class="admonition-title">Warning</p>
 <p>When you specify commission parameters, the <code class="docutils literal notranslate"><span class="pre">commission-max-change-rate</span></code> is measured as a percentage-point change of the <code class="docutils literal notranslate"><span class="pre">commission-rate</span></code>. For example, a change from 1% to 2% is a 100% rate increase, but the <code class="docutils literal notranslate"><span class="pre">commission-max-change-rate</span></code> is measured as 1%.</p>
 </div>
-</section>
-<section id="confirm-your-validator-is-active">
+</div>
+<div class="section" id="confirm-your-validator-is-active">
 <h2>3. Confirm your validator is active<a class="headerlink" href="#confirm-your-validator-is-active" title="Permalink to this headline">¶</a></h2>
 <p>If running the following command returns something, your validator is active:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad query tendermint-validator-set <span class="p">|</span> grep <span class="s2">&quot;</span><span class="k">$(</span>terrad tendermint show-validator<span class="k">)</span><span class="s2">&quot;</span>
@@ -1553,8 +1552,8 @@
 <p class="admonition-title">Note</p>
 <p>Only the top 130 validators in voting power are included in the active validator set.</p>
 </div>
-</section>
-<section id="secure-your-keys-and-have-a-backup-plan">
+</div>
+<div class="section" id="secure-your-keys-and-have-a-backup-plan">
 <h2>4. Secure your keys and have a backup plan<a class="headerlink" href="#secure-your-keys-and-have-a-backup-plan" title="Permalink to this headline">¶</a></h2>
 <p>In general a validator needs to do three things well</p>
 <ul class="simple">
@@ -1564,9 +1563,9 @@
 </ul>
 <p>Protecting and having a contingency backup plan for all your <a class="reference internal" href="faq.html#what-are-the-different-types-of-keys"><span class="std std-doc">keys</span></a> will help mitigate catastrophic hardware or software failures of the node.
 It is a good practice to test your backup plan on a testnet node in case of node failure.</p>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="restore-a-validator">
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="restore-a-validator">
 <h1>Restore a validator<a class="headerlink" href="#restore-a-validator" title="Permalink to this headline">¶</a></h1>
 <p>A validator can be completely restored on a new Terra node with the following set of keys:</p>
 <ul class="simple">
@@ -1584,7 +1583,7 @@ It is a good practice to test your backup plan on a testnet node in case of node
 <li><p>Replace the <code class="docutils literal notranslate"><span class="pre">~/.terra/config/priv_validator.json</span></code> file of the new node with the associated file from the old node, then restart your node.</p></li>
 <li><p>Set up the <a class="reference internal" href="set-up-oracle-feeder.html"><span class="doc std std-doc">price and oracle feeders</span></a>.</p></li>
 </ol>
-</section>
+</div>
 
 
               </div>

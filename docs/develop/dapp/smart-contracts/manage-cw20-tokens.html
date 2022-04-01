@@ -3,8 +3,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta charset="utf-8" />
     <title>CW20 Tokens &#8212; Terra Docs  documentation</title>
     
     <link href="../../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -1464,21 +1463,21 @@
             
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="cw20-tokens">
+  <div class="tex2jax_ignore mathjax_ignore section" id="cw20-tokens">
 <h1>CW20 Tokens<a class="headerlink" href="#cw20-tokens" title="Permalink to this headline">¶</a></h1>
 <p>According to the <a class="reference external" href="https://docs.rs/crate/cw20/0.2.3">official documentation</a></p>
 <blockquote>
 <div><p>CW20 is a specification for fungible tokens based on CosmWasm. The name and design is loosely based on Ethereum’s ERC20 standard, but many changes have been made. The types in here can be imported by contracts that wish to implement this spec, or by contracts that call to any standard cw20 contract.</p>
 </div></blockquote>
-<section id="checking-cw20-balance">
+<div class="section" id="checking-cw20-balance">
 <h2>Checking CW20 balance<a class="headerlink" href="#checking-cw20-balance" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Query to <code class="docutils literal notranslate"><span class="pre">/wasm/contracts/&lt;tokenContractAddress&gt;/store</span></code> with query_msg <code class="docutils literal notranslate"><span class="pre">{&quot;balance&quot;:{&quot;address&quot;:&quot;&lt;userAddress&gt;&quot;}}</span></code></p></li>
 <li><p>Response: <code class="docutils literal notranslate"><span class="pre">{&quot;height&quot;:&quot;2947306&quot;,&quot;result&quot;:{&quot;balance&quot;:&quot;24732816921&quot;}}</span></code></p></li>
 <li><p><a class="reference external" href="https://bombay-lcd.terra.dev/wasm/contracts/terra1800p00qlxh0nmt0r0u9hv7m4lg042fnafng2t6/store?query_msg=%7B%22balance%22:%7B%22address%22:%22terra1dakqt3s8dywea9advxz4duxkuvglz3a34yczw9%22%7D%7D">Example</a></p></li>
 </ul>
-</section>
-<section id="interacting-with-cw20-contract">
+</div>
+<div class="section" id="interacting-with-cw20-contract">
 <h2>Interacting with CW20 contract<a class="headerlink" href="#interacting-with-cw20-contract" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>CW20 is a cosmwasm contract and <code class="docutils literal notranslate"><span class="pre">wasm/MsgExecuteContract</span></code> is used to interact with it</p></li>
@@ -1502,8 +1501,8 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-</section>
-<section id="sending-cw20-token-to-another-contract-and-execute-message">
+</div>
+<div class="section" id="sending-cw20-token-to-another-contract-and-execute-message">
 <h2>Sending CW20 token to another contract, and execute message<a class="headerlink" href="#sending-cw20-token-to-another-contract-and-execute-message" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Example</p>
@@ -1528,8 +1527,8 @@
 }
 </pre></div>
 </div>
-</section>
-<section id="transferring-cw20-token">
+</div>
+<div class="section" id="transferring-cw20-token">
 <h2>Transferring CW20 token<a class="headerlink" href="#transferring-cw20-token" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">transfer</span></code> is different to <code class="docutils literal notranslate"><span class="pre">send</span></code>, as in it only <strong>transfers</strong> ownership of CW20 balance within the contract, whereas <code class="docutils literal notranslate"><span class="pre">send</span></code> is capable of transferring &amp; relays a contract msg to be executed</p></li>
@@ -1549,8 +1548,8 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

@@ -3,8 +3,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta charset="utf-8" />
     <title>Common examples &#8212; Terra Docs  documentation</title>
     
     <link href="../../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -1554,9 +1553,9 @@
             
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="common-examples">
+  <div class="tex2jax_ignore mathjax_ignore section" id="common-examples">
 <h1>Common examples<a class="headerlink" href="#common-examples" title="Permalink to this headline">¶</a></h1>
-<section id="configuring-lcdclient">
+<div class="section" id="configuring-lcdclient">
 <h2>Configuring LCDClient<a class="headerlink" href="#configuring-lcdclient" title="Permalink to this headline">¶</a></h2>
 <p>The following code example shows how to initialize the LCDClient. The rest of the examples assume you initialized it by using this example or similar code.</p>
 <div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span> <span class="nx">fetch</span> <span class="kr">from</span> <span class="s1">&#39;isomorphic-fetch&#39;</span><span class="p">;</span>
@@ -1575,8 +1574,8 @@
 <span class="p">});</span>
 </pre></div>
 </div>
-</section>
-<section id="get-wallet-balance-native-tokens">
+</div>
+<div class="section" id="get-wallet-balance-native-tokens">
 <h2>Get wallet balance (native tokens)<a class="headerlink" href="#get-wallet-balance-native-tokens" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="c1">// Replace with address to check.</span>
 <span class="kd">const</span> <span class="nx">address</span> <span class="o">=</span> <span class="s1">&#39;terra1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&#39;</span><span class="p">;</span>
@@ -1591,8 +1590,8 @@
 <span class="p">]</span>
 </pre></div>
 </div>
-</section>
-<section id="get-wallet-balance-cw20-tokens">
+</div>
+<div class="section" id="get-wallet-balance-cw20-tokens">
 <h2>Get wallet balance (CW20 tokens)<a class="headerlink" href="#get-wallet-balance-cw20-tokens" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="c1">// ANC on bombay-12</span>
 <span class="kd">const</span> <span class="nx">tokenAddress</span> <span class="o">=</span> <span class="s1">&#39;terra1747mad58h0w4y589y3sk84r5efqdev9q4r02pc&#39;</span><span class="p">;</span>
@@ -1606,8 +1605,8 @@
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="p">{</span> <span class="nx">balance</span><span class="o">:</span> <span class="s1">&#39;70258667&#39;</span> <span class="p">}</span>
 </pre></div>
 </div>
-</section>
-<section id="get-transaction-status">
+</div>
+<div class="section" id="get-transaction-status">
 <h2>Get transaction status<a class="headerlink" href="#get-transaction-status" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="c1">// Replace with TX hash to lookup.</span>
 <span class="kd">const</span> <span class="nx">hash</span> <span class="o">=</span> <span class="s1">&#39;CAB264B3D92FF3DFE209DADE791A866876DE5DD2A320C1200F9C5EC5F0E7B14B&#39;</span><span class="p">;</span>
@@ -1637,8 +1636,8 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-</section>
-<section id="get-link-to-transaction">
+</div>
+<div class="section" id="get-link-to-transaction">
 <h2>Get link to transaction<a class="headerlink" href="#get-link-to-transaction" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">getTransactionLink</span> <span class="o">=</span> <span class="p">(</span><span class="nx">hash</span><span class="p">,</span> <span class="nx">chainID</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="sb">`https://finder.terra.money/</span><span class="si">${</span><span class="nx">chainID</span><span class="si">}</span><span class="sb">/tx/</span><span class="si">${</span><span class="nx">hash</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span>
 <span class="kd">const</span> <span class="nx">hash</span> <span class="o">=</span> <span class="s1">&#39;CAB264B3D92FF3DFE209DADE791A866876DE5DD2A320C1200F9C5EC5F0E7B14B&#39;</span><span class="p">;</span>
@@ -1650,8 +1649,8 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">finder</span><span class="o">.</span><span class="n">terra</span><span class="o">.</span><span class="n">money</span><span class="o">/</span><span class="n">bombay</span><span class="o">-</span><span class="mi">12</span><span class="o">/</span><span class="n">tx</span><span class="o">/</span><span class="n">CAB264B3D92FF3DFE209DADE791A866876DE5DD2A320C1200F9C5EC5F0E7B14B</span>
 </pre></div>
 </div>
-</section>
-<section id="get-link-to-wallet-address">
+</div>
+<div class="section" id="get-link-to-wallet-address">
 <h2>Get link to wallet address<a class="headerlink" href="#get-link-to-wallet-address" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">getWalletLink</span> <span class="o">=</span> <span class="p">(</span><span class="nx">address</span><span class="p">,</span> <span class="nx">chainID</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="sb">`https://finder.terra.money/</span><span class="si">${</span><span class="nx">chainID</span><span class="si">}</span><span class="sb">/address/</span><span class="si">${</span><span class="nx">address</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span>
 <span class="kd">const</span> <span class="nx">address</span> <span class="o">=</span> <span class="s1">&#39;terra1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&#39;</span><span class="p">;</span>
@@ -1662,8 +1661,8 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">finder</span><span class="o">.</span><span class="n">terra</span><span class="o">.</span><span class="n">money</span><span class="o">/</span><span class="n">bombay</span><span class="o">-</span><span class="mi">12</span><span class="o">/</span><span class="n">address</span><span class="o">/</span><span class="n">terra1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</span>
 </pre></div>
 </div>
-</section>
-<section id="sending-native-tokens">
+</div>
+<div class="section" id="sending-native-tokens">
 <h2>Sending native tokens<a class="headerlink" href="#sending-native-tokens" title="Permalink to this headline">¶</a></h2>
 <p>The following code example shows how to send native tokens:</p>
 <div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span> <span class="p">{</span> <span class="nx">LCDClient</span><span class="p">,</span> <span class="nx">MnemonicKey</span><span class="p">,</span> <span class="nx">MsgSend</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&quot;@terra-money/terra.js&quot;</span><span class="p">;</span>
@@ -1689,8 +1688,8 @@
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
 </pre></div>
 </div>
-</section>
-<section id="sending-cw20-tokens">
+</div>
+<div class="section" id="sending-cw20-tokens">
 <h2>Sending CW20 tokens<a class="headerlink" href="#sending-cw20-tokens" title="Permalink to this headline">¶</a></h2>
 <p>The following code example shows how to send CW20 tokens:</p>
 <div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span> <span class="p">{</span>
@@ -1728,8 +1727,8 @@
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
 </pre></div>
 </div>
-</section>
-<section id="swapping-using-the-market-module">
+</div>
+<div class="section" id="swapping-using-the-market-module">
 <h2>Swapping using the market module<a class="headerlink" href="#swapping-using-the-market-module" title="Permalink to this headline">¶</a></h2>
 <p>The following code example shows how to swap native Terra assets using the market module:</p>
 <div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span> <span class="p">{</span>
@@ -1760,8 +1759,8 @@
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
 </pre></div>
 </div>
-</section>
-<section id="swapping-a-native-terra-asset-for-a-cw20-token-using-terraswap">
+</div>
+<div class="section" id="swapping-a-native-terra-asset-for-a-cw20-token-using-terraswap">
 <h2>Swapping a native Terra asset for a CW20 token using Terraswap<a class="headerlink" href="#swapping-a-native-terra-asset-for-a-cw20-token-using-terraswap" title="Permalink to this headline">¶</a></h2>
 <p>The following code example shows how to swap a native asset for CW20 using Terraswap.</p>
 <p>Run this example on mainnet.</p>
@@ -1816,8 +1815,8 @@
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
 </pre></div>
 </div>
-</section>
-<section id="decoding-protobuf-encoded-messages">
+</div>
+<div class="section" id="decoding-protobuf-encoded-messages">
 <h2>Decoding Protobuf-encoded messages<a class="headerlink" href="#decoding-protobuf-encoded-messages" title="Permalink to this headline">¶</a></h2>
 <p>The following code example shows how to decode messages that have been encoded using Protobuf:</p>
 <div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span> <span class="p">{</span>
@@ -1843,8 +1842,8 @@
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">initMessages</span><span class="p">);</span>
 </pre></div>
 </div>
-</section>
-<section id="validate-a-terra-address">
+</div>
+<div class="section" id="validate-a-terra-address">
 <h2>Validate a Terra address<a class="headerlink" href="#validate-a-terra-address" title="Permalink to this headline">¶</a></h2>
 <p>The following code example shows how to do a basic verification on a Terra address.</p>
 <p>This is a basic version of the verification, it does not require external libraries as it performs a simple comparison with a regex string. It could give false positives since it doesn’t verify the checksum of the address.</p>
@@ -1884,8 +1883,8 @@
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">isValid</span><span class="p">(</span><span class="s1">&#39;random string&#39;</span><span class="p">));</span> <span class="c1">// false</span>
 </pre></div>
 </div>
-</section>
-<section id="avoid-status-500-timed-out-waiting-for-tx-to-be-included-in-a-block">
+</div>
+<div class="section" id="avoid-status-500-timed-out-waiting-for-tx-to-be-included-in-a-block">
 <h2>Avoid Status 500: timed out waiting for tx to be included in a block<a class="headerlink" href="#avoid-status-500-timed-out-waiting-for-tx-to-be-included-in-a-block" title="Permalink to this headline">¶</a></h2>
 <p>Occasionally the broadcast function of terra.js and <a class="reference external" href="http://terra.py">terra.py</a> throws the error <code class="docutils literal notranslate"><span class="pre">Status</span> <span class="pre">500:</span> <span class="pre">timed</span> <span class="pre">out</span> <span class="pre">waiting</span> <span class="pre">for</span> <span class="pre">tx</span> <span class="pre">to</span> <span class="pre">be</span> <span class="pre">included</span> <span class="pre">in</span> <span class="pre">a</span> <span class="pre">block</span></code>, even if transaction will confirmed onchain after a few seconds.</p>
 <p>This happens because the libraries use by default the <code class="docutils literal notranslate"><span class="pre">broadcast-mode</span> <span class="pre">=</span> <span class="pre">block</span></code>, with this mode the LCD to which you are broadcasting the transaction sends an http response to your request only when the transaction has been included in a block, but if the chain is overloaded the confirmation may take too long and trigger a timeout in the LCD.</p>
@@ -1913,8 +1912,8 @@
   <span class="p">})</span>
 </pre></div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

@@ -3,8 +3,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta charset="utf-8" />
     <title>Troubleshoot validator problems &#8212; Terra Docs  documentation</title>
     
     <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -1508,10 +1507,10 @@
             
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="troubleshoot-validator-problems">
+  <div class="tex2jax_ignore mathjax_ignore section" id="troubleshoot-validator-problems">
 <h1>Troubleshoot validator problems<a class="headerlink" href="#troubleshoot-validator-problems" title="Permalink to this headline">¶</a></h1>
 <p>Use this guide to solve the most common validator problems.</p>
-<section id="validator-has-0-voting-power">
+<div class="section" id="validator-has-0-voting-power">
 <h2>Validator has 0 voting power<a class="headerlink" href="#validator-has-0-voting-power" title="Permalink to this headline">¶</a></h2>
 <p>If your validator has 0 voting power, your validator has become auto-unbonded. On the mainnet, validators unbond when they do not vote on <code class="docutils literal notranslate"><span class="pre">9500</span></code> of the last <code class="docutils literal notranslate"><span class="pre">10000</span></code> blocks (<code class="docutils literal notranslate"><span class="pre">50</span></code> of the last <code class="docutils literal notranslate"><span class="pre">100</span></code> blocks on the testnet). Because blocks are proposed every ~5 seconds, a validator that is unresponsive for ~13 hours (~4 minutes on testnet) become unbonded. This problem usually happens when your <code class="docutils literal notranslate"><span class="pre">terrad</span></code> process crashes.</p>
 <p>To return the voting power back to your validator:</p>
@@ -1540,8 +1539,8 @@
 </pre></div>
 </div>
 <p>If your voting power is less than it was previously, you may have been slashed for downtime.</p>
-</section>
-<section id="terrad-crashes-because-of-too-many-open-files">
+</div>
+<div class="section" id="terrad-crashes-because-of-too-many-open-files">
 <h2><code class="docutils literal notranslate"><span class="pre">terrad</span></code> crashes because of too many open files<a class="headerlink" href="#terrad-crashes-because-of-too-many-open-files" title="Permalink to this headline">¶</a></h2>
 <p>The default number of files Linux can open per process is <code class="docutils literal notranslate"><span class="pre">1024</span></code>. <code class="docutils literal notranslate"><span class="pre">terrad</span></code> is known to open more than this amount, causing the process to crash.</p>
 <ol class="arabic">
@@ -1568,8 +1567,8 @@ WantedBy=multi-user.target
 </div>
 </li>
 </ol>
-</section>
-<section id="terrad-crashes-because-of-memory-fragmentation">
+</div>
+<div class="section" id="terrad-crashes-because-of-memory-fragmentation">
 <h2><code class="docutils literal notranslate"><span class="pre">terrad</span></code> crashes because of memory fragmentation<a class="headerlink" href="#terrad-crashes-because-of-memory-fragmentation" title="Permalink to this headline">¶</a></h2>
 <p>As described in <a class="reference external" href="https://github.com/terra-money/core/issues/592">this issue</a>, huge memory allocation can cause memory fragmentation issue. Temporal solution is just using small wasm cache size like 50~100MB.</p>
 <p><code class="docutils literal notranslate"><span class="pre">v0.5.10+</span></code>:</p>
@@ -1580,15 +1579,15 @@ WantedBy=multi-user.target
 <div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="n">write-vm-memory-cache-size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-<section id="oracle-voting-errors">
+</div>
+<div class="section" id="oracle-voting-errors">
 <h2>Oracle voting errors<a class="headerlink" href="#oracle-voting-errors" title="Permalink to this headline">¶</a></h2>
 <p>You might receive the following error message by the <a class="reference external" href="https://github.com/terra-money/oracle-feeder">Terra Oracle feeder</a>:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>`broadcast error: code: 3, raw_log: validator does not exist: terravaloperxxx`
 </pre></div>
 </div>
 <p>This message occurs for the following reasons:</p>
-<section id="the-validator-is-not-active">
+<div class="section" id="the-validator-is-not-active">
 <h3>The validator is not active<a class="headerlink" href="#the-validator-is-not-active" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p>The validator is jailed. To solve this problem, <code class="docutils literal notranslate"><span class="pre">unjail</span></code> the validator by running:</p>
@@ -1596,8 +1595,8 @@ WantedBy=multi-user.target
 </li>
 <li><p>The validator is not in the <a class="reference internal" href="../../learn/glossary.html#active-set"><span class="std std-doc">active validator set</span></a>. Only the top 130 validators are in this set. To fix this problem, increase your total stake to be larger than the 130th validator.</p></li>
 </ul>
-</section>
-<section id="the-network-is-wrong">
+</div>
+<div class="section" id="the-network-is-wrong">
 <h3>The network is wrong<a class="headerlink" href="#the-network-is-wrong" title="Permalink to this headline">¶</a></h3>
 <p>The oracle feeder might be submitting to the wrong network. To fix this problem, run the feeder with the lite client daemon (LCD) specified:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nom start vote --<span class="se">\</span>
@@ -1615,9 +1614,9 @@ WantedBy=multi-user.target
 </ul>
 <p>Ensure you specify the LCD for the same network to which your node is connecting.</p>
 <p>If you run a <a class="reference internal" href="../../develop/how-to/start-lcd.html"><span class="doc std std-doc">local LCD</span></a> (for example, localhost:1317), ensure your LCD is connecting to the same node.</p>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
               </div>

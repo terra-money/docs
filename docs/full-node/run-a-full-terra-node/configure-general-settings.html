@@ -3,8 +3,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta charset="utf-8" />
     <title>Configure general settings &#8212; Terra Docs  documentation</title>
     
     <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -1454,7 +1453,7 @@
             
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="configure-general-settings">
+  <div class="tex2jax_ignore mathjax_ignore section" id="configure-general-settings">
 <h1>Configure general settings<a class="headerlink" href="#configure-general-settings" title="Permalink to this headline">¶</a></h1>
 <p>The following information describes the most important node configuration settings found in the <code class="docutils literal notranslate"><span class="pre">~/.terra/config/</span></code> directory. It is recommended that you update these settings with your own information.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
@@ -1475,7 +1474,7 @@ Structure of .terra/config<div class="sd-summary-down docutils">
 </pre></div>
 </div>
 </div>
-</details><section id="initialize-and-configure-moniker">
+</details><div class="section" id="initialize-and-configure-moniker">
 <h2>Initialize and configure moniker<a class="headerlink" href="#initialize-and-configure-moniker" title="Permalink to this headline">¶</a></h2>
 <p>Initialize the node with a human-readable name:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad init &lt;your_custom_moniker&gt; <span class="c1"># ex., terrad init validator-joes-node</span>
@@ -1486,8 +1485,8 @@ Structure of .terra/config<div class="sd-summary-down docutils">
 <p>Monikers can only contain ASCII characters; using Unicode characters will render your node unreachable by other peers in the network.</p>
 </div>
 <p>You can update your node’s moniker by editing the <code class="docutils literal notranslate"><span class="pre">moniker</span></code> field in  <code class="docutils literal notranslate"><span class="pre">~/.terra/config/config.toml</span></code></p>
-</section>
-<section id="update-minimum-gas-prices">
+</div>
+<div class="section" id="update-minimum-gas-prices">
 <h2>Update minimum gas prices<a class="headerlink" href="#update-minimum-gas-prices" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Open <code class="docutils literal notranslate"><span class="pre">~/.terra/config/app.toml</span></code>.</p></li>
@@ -1503,8 +1502,8 @@ Structure of .terra/config<div class="sd-summary-down docutils">
 <span class="n">minimum-gas-prices</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;0.01133uluna,0.15uusd,0.104938usdr,169.77ukrw,428.571umnt,0.125ueur,0.98ucny,16.37ujpy,0.11ugbp,10.88uinr,0.19ucad,0.14uchf,0.19uaud,0.2usgd,4.62uthb,1.25usek,1.25unok,0.9udkk,2180.0uidr,7.6uphp,1.17uhkd&quot;</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-<section id="start-the-light-client-daemon-lcd">
+</div>
+<div class="section" id="start-the-light-client-daemon-lcd">
 <h2>Start the light client daemon (LCD)<a class="headerlink" href="#start-the-light-client-daemon-lcd" title="Permalink to this headline">¶</a></h2>
 <p>For information about the available Terra REST API endpoints, see the <a class="reference external" href="https://lcd.terra.dev/swagger/">Swagger documentation</a>. To enable the REST API and Swagger, and to start the LCD, complete the following steps:</p>
 <ol class="arabic">
@@ -1523,8 +1522,8 @@ Structure of .terra/config<div class="sd-summary-down docutils">
 </li>
 <li><p>Restart the service via <code class="docutils literal notranslate"><span class="pre">systemctl</span> <span class="pre">restart</span> <span class="pre">terrad</span></code>. Once restarted, the LCD will be available (by default on port <code class="docutils literal notranslate"><span class="pre">127.0.0.1:1317</span></code>)</p></li>
 </ol>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

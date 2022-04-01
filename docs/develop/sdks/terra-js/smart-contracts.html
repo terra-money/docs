@@ -3,8 +3,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta charset="utf-8" />
     <title>Smart contracts &#8212; Terra Docs  documentation</title>
     
     <link href="../../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -1464,10 +1463,10 @@
             
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="smart-contracts">
+  <div class="tex2jax_ignore mathjax_ignore section" id="smart-contracts">
 <h1>Smart contracts<a class="headerlink" href="#smart-contracts" title="Permalink to this headline">¶</a></h1>
 <p>This document explains how to perform tasks related to working with smart contracts with Terra.js.</p>
-<section id="upload-code">
+<div class="section" id="upload-code">
 <h2>Upload code<a class="headerlink" href="#upload-code" title="Permalink to this headline">¶</a></h2>
 <p>You will first need a compiled WASM smart contract’s binary to upload.</p>
 <div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span> <span class="p">{</span> <span class="nx">LCDClient</span><span class="p">,</span> <span class="nx">MsgStoreCode</span><span class="p">,</span> <span class="nx">MnemonicKey</span><span class="p">,</span> <span class="nx">isTxError</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@terra-money/terra.js&#39;</span><span class="p">;</span>
@@ -1508,8 +1507,8 @@
 <span class="p">}</span> <span class="o">=</span> <span class="nx">storeCodeTxResult</span><span class="p">.</span><span class="nx">logs</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">eventsByType</span><span class="p">;</span>
 </pre></div>
 </div>
-</section>
-<section id="create-a-contract">
+</div>
+<div class="section" id="create-a-contract">
 <h2>Create a contract<a class="headerlink" href="#create-a-contract" title="Permalink to this headline">¶</a></h2>
 <p>For Terra smart contracts, there is a distinction between uploading contract code and creating a contract. This allows multiple contracts to share the same code if there are only minor variations in their logic which can be configured at contract creation. This configuration is passed in an <strong>InitMsg</strong>, and provides the initial state for the contract.</p>
 <p>To create (instantiate) a smart contract, you must first know the code ID of an uploaded code. You will reference it in a <code class="docutils literal notranslate"><span class="pre">MsgInstantiateContract</span></code> alongside the InitMsg to create the contract. Upon successful creation, your contract will be located at an address that you specify.</p>
@@ -1544,8 +1543,8 @@
 <span class="p">}</span> <span class="o">=</span> <span class="nx">instantiateTxResult</span><span class="p">.</span><span class="nx">logs</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">eventsByType</span><span class="p">;</span>
 </pre></div>
 </div>
-</section>
-<section id="execute-a-contract">
+</div>
+<div class="section" id="execute-a-contract">
 <h2>Execute a contract<a class="headerlink" href="#execute-a-contract" title="Permalink to this headline">¶</a></h2>
 <p>Smart contracts respond to JSON messages called <strong>HandleMsg</strong> which can exist as different types. The smart contract writer should provide any end-users of the smart contract with the expected format of all the varieties of HandleMsg the contract is supposed to understand, in the form of a JSON schema. The schema thus provides an analog to Ethereum contracts’ ABI.</p>
 <div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span> <span class="p">{</span> <span class="nx">MsgExecuteContract</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@terra-money/terra.js&#39;</span><span class="p">;</span>
@@ -1564,8 +1563,8 @@
 <span class="kd">const</span> <span class="nx">executeTxResult</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">terra</span><span class="p">.</span><span class="nx">tx</span><span class="p">.</span><span class="nx">broadcast</span><span class="p">(</span><span class="nx">executeTx</span><span class="p">);</span>
 </pre></div>
 </div>
-</section>
-<section id="query-data-from-a-contract">
+</div>
+<div class="section" id="query-data-from-a-contract">
 <h2>Query data from a contract<a class="headerlink" href="#query-data-from-a-contract" title="Permalink to this headline">¶</a></h2>
 <p>A contract can define a query handler, which understands requests for data specified in a JSON message called a QueryMsg. Unlike the message handler, the query handler cannot modify the contract’s or blockchain’s state – it is a readonly operation. Therefore, a querying data from a contract does not use a message and transaction, but works directly through the <code class="docutils literal notranslate"><span class="pre">LCDClient</span></code> API.</p>
 <div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">terra</span><span class="p">.</span><span class="nx">wasm</span><span class="p">.</span><span class="nx">contractQuery</span><span class="p">(</span>
@@ -1574,8 +1573,8 @@
 <span class="p">);</span>
 </pre></div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

@@ -3,8 +3,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta charset="utf-8" />
     <title>Subcommands &#8212; Terra Docs  documentation</title>
     
     <link href="../../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -4370,10 +4369,10 @@
             
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="subcommands">
+  <div class="tex2jax_ignore mathjax_ignore section" id="subcommands">
 <h1>Subcommands<a class="headerlink" href="#subcommands" title="Permalink to this headline">¶</a></h1>
 <p>This section describes the subcommands available from <code class="docutils literal notranslate"><span class="pre">terrad</span></code>.</p>
-<section id="debug-addr">
+<div class="section" id="debug-addr">
 <h2><code class="docutils literal notranslate"><span class="pre">debug</span> <span class="pre">addr</span></code><a class="headerlink" href="#debug-addr" title="Permalink to this headline">¶</a></h2>
 <p>Changes an address from hex encoding to bech32.</p>
 <p><strong>Syntax</strong></p>
@@ -4384,8 +4383,8 @@
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad debug addr terra14h2od5f3vahd28uywwvt8sqbi52upnzagshtrm
 </pre></div>
 </div>
-</section>
-<section id="debug-pubkey">
+</div>
+<div class="section" id="debug-pubkey">
 <h2><code class="docutils literal notranslate"><span class="pre">debug</span> <span class="pre">pubkey</span></code><a class="headerlink" href="#debug-pubkey" title="Permalink to this headline">¶</a></h2>
 <p>Decodes a pubkey from proto JSON and displays the address.</p>
 <p><strong>Syntax</strong></p>
@@ -4396,8 +4395,8 @@
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad debug pubkey <span class="s1">&#39;{&quot;@type&quot;:&quot;/cosmos.crypto.secp256k1.PubKey&quot;,&quot;key&quot;:&quot;AurroA7jvfPd1AadmmOvWM2rJSwipXfRf8yD6pLbA2DJ&quot;}&#39;</span>
 </pre></div>
 </div>
-</section>
-<section id="debug-raw-bytes">
+</div>
+<div class="section" id="debug-raw-bytes">
 <h2><code class="docutils literal notranslate"><span class="pre">debug</span> <span class="pre">raw-bytes</span></code><a class="headerlink" href="#debug-raw-bytes" title="Permalink to this headline">¶</a></h2>
 <p>Changes raw bytes to hex.</p>
 <p><strong>Syntax</strong></p>
@@ -4408,8 +4407,8 @@
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad debug raw-bytes <span class="o">[</span><span class="m">72</span> <span class="m">101</span> <span class="m">108</span> <span class="m">108</span> <span class="m">111</span> <span class="m">44</span> <span class="m">32</span> <span class="m">112</span> <span class="m">108</span> <span class="m">97</span> <span class="m">121</span> <span class="m">103</span> <span class="m">114</span> <span class="m">111</span> <span class="m">117</span> <span class="m">110</span> <span class="m">100</span><span class="o">]</span>
 </pre></div>
 </div>
-</section>
-<section id="keys-add">
+</div>
+<div class="section" id="keys-add">
 <h2><code class="docutils literal notranslate"><span class="pre">keys</span> <span class="pre">add</span></code><a class="headerlink" href="#keys-add" title="Permalink to this headline">¶</a></h2>
 <p>Generates a public and private key pair for an account so that you can receive funds, send funds, create bonding transactions, and so on.</p>
 <div class="admonition tip">
@@ -4456,8 +4455,8 @@ rm ~/.bash_history
 </pre></div>
 </div>
 <p>For information about generating multisignature accounts and signing transactions, see <a class="reference internal" href="../sign-with-multisig.html"><span class="doc std std-doc">Sign with a multisig account</span></a>.</p>
-</section>
-<section id="keys-show">
+</div>
+<div class="section" id="keys-show">
 <h2><code class="docutils literal notranslate"><span class="pre">keys</span> <span class="pre">show</span></code><a class="headerlink" href="#keys-show" title="Permalink to this headline">¶</a></h2>
 <p>Retrieves an address for a specified account. The address is prefixed by <code class="docutils literal notranslate"><span class="pre">terra-</span></code>, for example <code class="docutils literal notranslate"><span class="pre">terra15h6vd5f0wqps26zjlwrc6chah08ryu4hzzdwhc</span></code>. To receive funds, you must give an account address to the sender.</p>
 <p><strong>Syntax</strong></p>
@@ -4476,16 +4475,16 @@ rm ~/.bash_history
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad tendermint show-address
 </pre></div>
 </div>
-</section>
-<section id="keys-list">
+</div>
+<div class="section" id="keys-list">
 <h2><code class="docutils literal notranslate"><span class="pre">keys</span> <span class="pre">list</span></code><a class="headerlink" href="#keys-list" title="Permalink to this headline">¶</a></h2>
 <p>Lists all your keys.</p>
 <p><strong>Syntax</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad keys list
 </pre></div>
 </div>
-</section>
-<section id="query-authz-grants">
+</div>
+<div class="section" id="query-authz-grants">
 <h2><code class="docutils literal notranslate"><span class="pre">query</span> <span class="pre">authz</span> <span class="pre">grants</span></code><a class="headerlink" href="#query-authz-grants" title="Permalink to this headline">¶</a></h2>
 <p>Retrieves all existing grants between a granter and a grantee.</p>
 <p><strong>Syntax</strong></p>
@@ -4500,8 +4499,8 @@ rm ~/.bash_history
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad query authz grants terra15h6vd5f0wqps26zjlwrc6chah08ryu4hzzdwhc terra14h2od5f3vahd28uywwvt8sqbi52upnzagshtrm /cosmos.bank.v1beta1.MsgSend
 </pre></div>
 </div>
-</section>
-<section id="query-bank-balances">
+</div>
+<div class="section" id="query-bank-balances">
 <h2><code class="docutils literal notranslate"><span class="pre">query</span> <span class="pre">bank</span> <span class="pre">balances</span></code><a class="headerlink" href="#query-bank-balances" title="Permalink to this headline">¶</a></h2>
 <p>Displays your account balance, account number, and sequence number (nonce).</p>
 <p><strong>Syntax</strong></p>
@@ -4517,16 +4516,16 @@ rm ~/.bash_history
 <p>When you query an account balance that has zero tokens or you fund an account before your node has fully synced with the chain, this error message is sent:</p>
 <p><code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">account</span> <span class="pre">with</span> <span class="pre">address</span> <span class="pre">&lt;account-address&gt;</span> <span class="pre">was</span> <span class="pre">found</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">state</span></code>.</p>
 </div>
-</section>
-<section id="query-bank-denom-metadata">
+</div>
+<div class="section" id="query-bank-denom-metadata">
 <h2><code class="docutils literal notranslate"><span class="pre">query</span> <span class="pre">bank</span> <span class="pre">denom-metadata</span></code><a class="headerlink" href="#query-bank-denom-metadata" title="Permalink to this headline">¶</a></h2>
 <p>Query the client metadata for coin denominations.</p>
-</section>
-<section id="query-bank-total">
+</div>
+<div class="section" id="query-bank-total">
 <h2><code class="docutils literal notranslate"><span class="pre">query</span> <span class="pre">bank</span> <span class="pre">total</span></code><a class="headerlink" href="#query-bank-total" title="Permalink to this headline">¶</a></h2>
 <p>Query the total supply of coins of the chain.</p>
-</section>
-<section id="query-distribution-rewards">
+</div>
+<div class="section" id="query-distribution-rewards">
 <h2><code class="docutils literal notranslate"><span class="pre">query</span> <span class="pre">distribution</span> <span class="pre">rewards</span></code><a class="headerlink" href="#query-distribution-rewards" title="Permalink to this headline">¶</a></h2>
 <p>Checks the all the current outstanding rewards that have not been withdrawn.</p>
 <p><strong>Syntax</strong></p>
@@ -4541,8 +4540,8 @@ rm ~/.bash_history
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad query distribution rewards terra14h2od5f3vahd28uywwvt8sqbi52upnzagshtrm terra19t4gde4f8ndwx67qhbnur9yqdc31xznpksajbcy
 </pre></div>
 </div>
-</section>
-<section id="query-distribution-commission">
+</div>
+<div class="section" id="query-distribution-commission">
 <h2><code class="docutils literal notranslate"><span class="pre">query</span> <span class="pre">distribution</span> <span class="pre">commission</span></code><a class="headerlink" href="#query-distribution-commission" title="Permalink to this headline">¶</a></h2>
 <p>Checks the current outstanding commission for a validator.</p>
 <p><strong>Syntax</strong></p>
@@ -4553,8 +4552,8 @@ rm ~/.bash_history
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad query distribution commission terra19t4gde4f8ndwx67qhbnur9yqdc31xznpksajbcy
 </pre></div>
 </div>
-</section>
-<section id="query-distribution-slashes">
+</div>
+<div class="section" id="query-distribution-slashes">
 <h2><code class="docutils literal notranslate"><span class="pre">query</span> <span class="pre">distribution</span> <span class="pre">slashes</span></code><a class="headerlink" href="#query-distribution-slashes" title="Permalink to this headline">¶</a></h2>
 <p>Checks historical slashes for a validator within a range of blocks.</p>
 <p><strong>Syntax</strong></p>
@@ -4565,16 +4564,16 @@ rm ~/.bash_history
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad query distribution slashes terra19t4gde4f8ndwx67qhbnur9yqdc31xznpksajbcy <span class="m">25</span> <span class="m">300</span>
 </pre></div>
 </div>
-</section>
-<section id="query-distribution-community-pool">
+</div>
+<div class="section" id="query-distribution-community-pool">
 <h2><code class="docutils literal notranslate"><span class="pre">query</span> <span class="pre">distribution</span> <span class="pre">community-pool</span></code><a class="headerlink" href="#query-distribution-community-pool" title="Permalink to this headline">¶</a></h2>
 <p>Checks all coins in the community pool.</p>
 <p><strong>Syntax</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad query distribution community-pool
 </pre></div>
 </div>
-</section>
-<section id="query-distribution-params">
+</div>
+<div class="section" id="query-distribution-params">
 <h2><code class="docutils literal notranslate"><span class="pre">query</span> <span class="pre">distribution</span> <span class="pre">params</span></code><a class="headerlink" href="#query-distribution-params" title="Permalink to this headline">¶</a></h2>
 <p>Checks the current distribution parameters.</p>
 <p><strong>Syntax</strong></p>
@@ -4588,8 +4587,8 @@ rm ~/.bash_history
 <span class="nt">withdraw_addr_enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-<section id="query-gov-deposit">
+</div>
+<div class="section" id="query-gov-deposit">
 <h2><code class="docutils literal notranslate"><span class="pre">query</span> <span class="pre">gov</span> <span class="pre">deposit</span></code><a class="headerlink" href="#query-gov-deposit" title="Permalink to this headline">¶</a></h2>
 <p>Retrieves information about a single proposal deposit on a proposal by its identifier.</p>
 <p><strong>Syntax</strong></p>
@@ -4600,8 +4599,8 @@ rm ~/.bash_history
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad query gov deposit <span class="m">4</span> terra1skjwj5whet0lpe65qaq4rpq03hjxlwd9nf39lk
 </pre></div>
 </div>
-</section>
-<section id="query-gov-deposits">
+</div>
+<div class="section" id="query-gov-deposits">
 <h2><code class="docutils literal notranslate"><span class="pre">query</span> <span class="pre">gov</span> <span class="pre">deposits</span></code><a class="headerlink" href="#query-gov-deposits" title="Permalink to this headline">¶</a></h2>
 <p>Retrieves all deposits submitted to a proposal after it is created.</p>
 <p><strong>Syntax</strong></p>
@@ -4612,8 +4611,8 @@ rm ~/.bash_history
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad query gov deposits <span class="m">5</span>
 </pre></div>
 </div>
-</section>
-<section id="query-gov-proposal">
+</div>
+<div class="section" id="query-gov-proposal">
 <h2><code class="docutils literal notranslate"><span class="pre">query</span> <span class="pre">gov</span> <span class="pre">proposal</span></code><a class="headerlink" href="#query-gov-proposal" title="Permalink to this headline">¶</a></h2>
 <p>Retrieves information about one proposal.</p>
 <p><code class="docutils literal notranslate"><span class="pre">proposal</span></code> retrieves information about one proposal.</p>
@@ -4625,8 +4624,8 @@ rm ~/.bash_history
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad query gov proposal <span class="m">3</span>
 </pre></div>
 </div>
-</section>
-<section id="query-gov-proposals">
+</div>
+<div class="section" id="query-gov-proposals">
 <h2><code class="docutils literal notranslate"><span class="pre">query</span> <span class="pre">gov</span> <span class="pre">proposals</span></code><a class="headerlink" href="#query-gov-proposals" title="Permalink to this headline">¶</a></h2>
 <p>Retrieves information about all available proposals.</p>
 <p><strong>Syntax</strong></p>
@@ -4637,8 +4636,8 @@ rm ~/.bash_history
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad query gov proposals --voter terra13a8ddv3h7kbcn73akcbpe7ueks22vaolewpaxmb
 </pre></div>
 </div>
-</section>
-<section id="query-gov-vote">
+</div>
+<div class="section" id="query-gov-vote">
 <h2><code class="docutils literal notranslate"><span class="pre">query</span> <span class="pre">gov</span> <span class="pre">vote</span></code><a class="headerlink" href="#query-gov-vote" title="Permalink to this headline">¶</a></h2>
 <p>Retrieves information about a single vote by a specific voter.</p>
 <p><strong>Syntax</strong></p>
@@ -4649,8 +4648,8 @@ rm ~/.bash_history
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad query gov vote <span class="m">7</span> terra13a8ddv3h7kbcn73akcbpe7ueks22vaolewpaxmb
 </pre></div>
 </div>
-</section>
-<section id="query-gov-votes">
+</div>
+<div class="section" id="query-gov-votes">
 <h2><code class="docutils literal notranslate"><span class="pre">query</span> <span class="pre">gov</span> <span class="pre">votes</span></code><a class="headerlink" href="#query-gov-votes" title="Permalink to this headline">¶</a></h2>
 <p>Retrieves all the votes submitted to the proposal.</p>
 <p><strong>Syntax</strong></p>
@@ -4661,8 +4660,8 @@ rm ~/.bash_history
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad query gov votes <span class="m">9</span>
 </pre></div>
 </div>
-</section>
-<section id="query-gov-tally">
+</div>
+<div class="section" id="query-gov-tally">
 <h2><code class="docutils literal notranslate"><span class="pre">query</span> <span class="pre">gov</span> <span class="pre">tally</span></code><a class="headerlink" href="#query-gov-tally" title="Permalink to this headline">¶</a></h2>
 <p>Retrieves the current tally for a specified proposal.</p>
 <p><strong>Syntax</strong></p>
@@ -4673,8 +4672,8 @@ rm ~/.bash_history
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad query gov tally <span class="m">4</span>
 </pre></div>
 </div>
-</section>
-<section id="query-gov-param">
+</div>
+<div class="section" id="query-gov-param">
 <h2><code class="docutils literal notranslate"><span class="pre">query</span> <span class="pre">gov</span> <span class="pre">param</span></code><a class="headerlink" href="#query-gov-param" title="Permalink to this headline">¶</a></h2>
 <p>Retrieves all the parameters for the specified governance process.</p>
 <p><strong>Syntax</strong></p>
@@ -4685,8 +4684,8 @@ rm ~/.bash_history
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad query gov param voting
 </pre></div>
 </div>
-</section>
-<section id="query-gov-params">
+</div>
+<div class="section" id="query-gov-params">
 <h2><code class="docutils literal notranslate"><span class="pre">query</span> <span class="pre">gov</span> <span class="pre">params</span></code><a class="headerlink" href="#query-gov-params" title="Permalink to this headline">¶</a></h2>
 <p>Retrieves all the parameters for all governance processes.</p>
 <p><strong>Syntax</strong></p>
@@ -4707,8 +4706,8 @@ rm ~/.bash_history
 <span class="w">  </span><span class="nt">max_deposit_period</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">48h0m0s</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-<section id="query-market-swap">
+</div>
+<div class="section" id="query-market-swap">
 <h2><code class="docutils literal notranslate"><span class="pre">query</span> <span class="pre">market</span> <span class="pre">swap</span></code><a class="headerlink" href="#query-market-swap" title="Permalink to this headline">¶</a></h2>
 <p>Determines the result of a swap without executing the swap.</p>
 <p><strong>Syntax</strong></p>
@@ -4720,40 +4719,40 @@ rm ~/.bash_history
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad query market swap 100000uluna usdr
 </pre></div>
 </div>
-</section>
-<section id="query-market-terra-pool-delta">
+</div>
+<div class="section" id="query-market-terra-pool-delta">
 <h2><code class="docutils literal notranslate"><span class="pre">query</span> <span class="pre">market</span> <span class="pre">terra-pool-delta</span></code><a class="headerlink" href="#query-market-terra-pool-delta" title="Permalink to this headline">¶</a></h2>
 <p>Retrieves the current value of the Terra pool delta.</p>
 <p><strong>Syntax</strong></p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrad query market terra-pool-delta
 </pre></div>
 </div>
-</section>
-<section id="query-market-params">
+</div>
+<div class="section" id="query-market-params">
 <h2><code class="docutils literal notranslate"><span class="pre">query</span> <span class="pre">market</span> <span class="pre">params</span></code><a class="headerlink" href="#query-market-params" title="Permalink to this headline">¶</a></h2>
 <p>Retrieves the market module’s parameters:</p>
 <p><strong>Syntax</strong></p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrad query market params
 </pre></div>
 </div>
-</section>
-<section id="query-mint-annual-provisions">
+</div>
+<div class="section" id="query-mint-annual-provisions">
 <h2><code class="docutils literal notranslate"><span class="pre">query</span> <span class="pre">mint</span> <span class="pre">annual-provisions</span></code><a class="headerlink" href="#query-mint-annual-provisions" title="Permalink to this headline">¶</a></h2>
 <p>Retrieves the value of annual provisions.</p>
 <p><strong>Syntax</strong></p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrad query mint annual-provisions
 </pre></div>
 </div>
-</section>
-<section id="query-mint-inflation">
+</div>
+<div class="section" id="query-mint-inflation">
 <h2><code class="docutils literal notranslate"><span class="pre">query</span> <span class="pre">mint</span> <span class="pre">inflation</span></code><a class="headerlink" href="#query-mint-inflation" title="Permalink to this headline">¶</a></h2>
 <p>Retrieves the current value of inflation.</p>
 <p><strong>Syntax</strong></p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrad query mint inflation
 </pre></div>
 </div>
-</section>
-<section id="query-mint-params">
+</div>
+<div class="section" id="query-mint-params">
 <h2><code class="docutils literal notranslate"><span class="pre">query</span> <span class="pre">mint</span> <span class="pre">params</span></code><a class="headerlink" href="#query-mint-params" title="Permalink to this headline">¶</a></h2>
 <p>Retrieves the mint module’s parameters.</p>
 <p><strong>Syntax</strong></p>
@@ -4769,40 +4768,40 @@ rm ~/.bash_history
 <span class="nt">blocks_per_year</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">6311520</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-<section id="query-oracle-actives">
+</div>
+<div class="section" id="query-oracle-actives">
 <h2><code class="docutils literal notranslate"><span class="pre">query</span> <span class="pre">oracle</span> <span class="pre">actives</span></code><a class="headerlink" href="#query-oracle-actives" title="Permalink to this headline">¶</a></h2>
 <p>Retrieves the active list of Terra assets recognized by type.</p>
 <p><strong>Syntax</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad query oracle actives
 </pre></div>
 </div>
-</section>
-<section id="query-oracle-aggregate-prevotes">
+</div>
+<div class="section" id="query-oracle-aggregate-prevotes">
 <h2><code class="docutils literal notranslate"><span class="pre">query</span> <span class="pre">oracle</span> <span class="pre">aggregate-prevotes</span></code><a class="headerlink" href="#query-oracle-aggregate-prevotes" title="Permalink to this headline">¶</a></h2>
 <p>Retrieves all outstanding aggregate prevotes.</p>
 <p><strong>Syntax</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad query oracle aggregate-prevotes
 </pre></div>
 </div>
-</section>
-<section id="query-oracle-aggregate-votes">
+</div>
+<div class="section" id="query-oracle-aggregate-votes">
 <h2><code class="docutils literal notranslate"><span class="pre">query</span> <span class="pre">oracle</span> <span class="pre">aggregate-votes</span></code><a class="headerlink" href="#query-oracle-aggregate-votes" title="Permalink to this headline">¶</a></h2>
 <p>Retrieves all outstanding aggregate votes.</p>
 <p><strong>Syntax</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad query oracle aggregate-votes
 </pre></div>
 </div>
-</section>
-<section id="query-oracle-exchange-rates">
+</div>
+<div class="section" id="query-oracle-exchange-rates">
 <h2><code class="docutils literal notranslate"><span class="pre">query</span> <span class="pre">oracle</span> <span class="pre">exchange-rates</span></code><a class="headerlink" href="#query-oracle-exchange-rates" title="Permalink to this headline">¶</a></h2>
 <p>Retrieves exchanges rates of Luna.</p>
 <p><strong>Syntax</strong></p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrad query oracle exchange-rates
 </pre></div>
 </div>
-</section>
-<section id="query-oracle-feeder">
+</div>
+<div class="section" id="query-oracle-feeder">
 <h2><code class="docutils literal notranslate"><span class="pre">query</span> <span class="pre">oracle</span> <span class="pre">feeder</span></code><a class="headerlink" href="#query-oracle-feeder" title="Permalink to this headline">¶</a></h2>
 <p>Retrieves the account to whitch the validator’s oracle voting right is delegated.</p>
 <p><strong>Syntax</strong></p>
@@ -4813,8 +4812,8 @@ rm ~/.bash_history
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrad query oracle feeder terravaloper15h6vd5f0wqps26zjlwrc6chah08ryu4hzzdwhc
 </pre></div>
 </div>
-</section>
-<section id="query-oracle-miss">
+</div>
+<div class="section" id="query-oracle-miss">
 <h2><code class="docutils literal notranslate"><span class="pre">query</span> <span class="pre">oracle</span> <span class="pre">miss</span></code><a class="headerlink" href="#query-oracle-miss" title="Permalink to this headline">¶</a></h2>
 <p>Retrieves the amount of vote periods missed in this oracle slash window.</p>
 <p><strong>Syntax</strong></p>
@@ -4825,8 +4824,8 @@ rm ~/.bash_history
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrad query oracle miss terravaloper15h6vd5f0wqps26zjlwrc6chah08ryu4hzzdwhc
 </pre></div>
 </div>
-</section>
-<section id="query-oracle-params">
+</div>
+<div class="section" id="query-oracle-params">
 <h2><code class="docutils literal notranslate"><span class="pre">query</span> <span class="pre">oracle</span> <span class="pre">params</span></code><a class="headerlink" href="#query-oracle-params" title="Permalink to this headline">¶</a></h2>
 <p>Retrieves the oracle module’s parameters.</p>
 <p><strong>Syntax</strong></p>
@@ -4852,24 +4851,24 @@ rm ~/.bash_history
 <span class="nt">min_valid_per_window</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;0.050000000000000000&quot;</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-<section id="query-oracle-tobin-taxes">
+</div>
+<div class="section" id="query-oracle-tobin-taxes">
 <h2><code class="docutils literal notranslate"><span class="pre">query</span> <span class="pre">oracle</span> <span class="pre">tobin-taxes</span></code><a class="headerlink" href="#query-oracle-tobin-taxes" title="Permalink to this headline">¶</a></h2>
 <p>Retrieves the current oracle tobin taxes.</p>
 <p><strong>Syntax</strong></p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrad query oracle tobin-taxes
 </pre></div>
 </div>
-</section>
-<section id="query-oracle-vote-targets">
+</div>
+<div class="section" id="query-oracle-vote-targets">
 <h2><code class="docutils literal notranslate"><span class="pre">query</span> <span class="pre">oracle</span> <span class="pre">vote-targets</span></code><a class="headerlink" href="#query-oracle-vote-targets" title="Permalink to this headline">¶</a></h2>
 <p>Retrieves the current oracle vote targets.</p>
 <p><strong>Syntax</strong></p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrad query oracle vote-targets
 </pre></div>
 </div>
-</section>
-<section id="query-slashing-signing-info">
+</div>
+<div class="section" id="query-slashing-signing-info">
 <h2><code class="docutils literal notranslate"><span class="pre">query</span> <span class="pre">slashing</span> <span class="pre">signing-info</span></code><a class="headerlink" href="#query-slashing-signing-info" title="Permalink to this headline">¶</a></h2>
 <p>Retrieves a validator’s signing info.</p>
 <p><strong>Syntax</strong></p>
@@ -4880,16 +4879,16 @@ rm ~/.bash_history
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad query slashing signing-info terravalconspub1atjdueldlxwft8d4729pqhdhm3nlss0u4wx7wpeqb1zhjf8yr1tn7cgw2b4q4yv9na
 </pre></div>
 </div>
-</section>
-<section id="query-slashing-signing-infos">
+</div>
+<div class="section" id="query-slashing-signing-infos">
 <h2><code class="docutils literal notranslate"><span class="pre">query</span> <span class="pre">slashing</span> <span class="pre">signing-infos</span></code><a class="headerlink" href="#query-slashing-signing-infos" title="Permalink to this headline">¶</a></h2>
 <p>Retrieves signing information of all validators.</p>
 <p><strong>Syntax</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad query slashing signing-infos
 </pre></div>
 </div>
-</section>
-<section id="query-slashing-params">
+</div>
+<div class="section" id="query-slashing-params">
 <h2><code class="docutils literal notranslate"><span class="pre">query</span> <span class="pre">slashing</span> <span class="pre">params</span></code><a class="headerlink" href="#query-slashing-params" title="Permalink to this headline">¶</a></h2>
 <p>Retrieves the genesis parameters for the slashing module.</p>
 <p><strong>Syntax</strong></p>
@@ -4904,8 +4903,8 @@ rm ~/.bash_history
 <span class="nt">slash_fraction_downtime</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;0.010000000000000000&quot;</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-<section id="query-staking-delegation">
+</div>
+<div class="section" id="query-staking-delegation">
 <h2><code class="docutils literal notranslate"><span class="pre">query</span> <span class="pre">staking</span> <span class="pre">delegation</span></code><a class="headerlink" href="#query-staking-delegation" title="Permalink to this headline">¶</a></h2>
 <p>Retrieves delegation information for a validator.</p>
 <p><strong>Syntax</strong></p>
@@ -4916,8 +4915,8 @@ rm ~/.bash_history
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad query staking delegation terra1gghjut3ccd8ay0zduzj64hwre2fxs9ld75ru9p terravaloper15h6vd5f0wqps26zjlwrc6chah08ryu4hzzdwhc
 </pre></div>
 </div>
-</section>
-<section id="query-staking-delegations">
+</div>
+<div class="section" id="query-staking-delegations">
 <h2><code class="docutils literal notranslate"><span class="pre">query</span> <span class="pre">staking</span> <span class="pre">delegations</span></code><a class="headerlink" href="#query-staking-delegations" title="Permalink to this headline">¶</a></h2>
 <p>Retrieves delegations for a delegator on all validators.</p>
 <p><strong>Syntax</strong></p>
@@ -4928,8 +4927,8 @@ rm ~/.bash_history
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad query staking delegations terra1gghjut3ccd8ay0zduzj64hwre2fxs9ld75ru9p
 </pre></div>
 </div>
-</section>
-<section id="query-staking-delegations-to">
+</div>
+<div class="section" id="query-staking-delegations-to">
 <h2><code class="docutils literal notranslate"><span class="pre">query</span> <span class="pre">staking</span> <span class="pre">delegations-to</span></code><a class="headerlink" href="#query-staking-delegations-to" title="Permalink to this headline">¶</a></h2>
 <p>Retrieves all of the delegations on a particular validator.</p>
 <p><strong>Syntax</strong></p>
@@ -4940,8 +4939,8 @@ rm ~/.bash_history
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad query staking delegations-to terravaloper15h6vd5f0wqps26zjlwrc6chah08ryu4hzzdwhc
 </pre></div>
 </div>
-</section>
-<section id="query-staking-historical-info">
+</div>
+<div class="section" id="query-staking-historical-info">
 <h2><code class="docutils literal notranslate"><span class="pre">query</span> <span class="pre">staking</span> <span class="pre">historical-info</span></code><a class="headerlink" href="#query-staking-historical-info" title="Permalink to this headline">¶</a></h2>
 <p>Retrieves all historical information at a specified height.</p>
 <p><strong>Syntax</strong></p>
@@ -4952,8 +4951,8 @@ rm ~/.bash_history
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad query staking historical-info <span class="m">23</span>
 </pre></div>
 </div>
-</section>
-<section id="query-staking-params">
+</div>
+<div class="section" id="query-staking-params">
 <h2><code class="docutils literal notranslate"><span class="pre">query</span> <span class="pre">staking</span> <span class="pre">params</span></code><a class="headerlink" href="#query-staking-params" title="Permalink to this headline">¶</a></h2>
 <p>Retrieves all staking parameters.</p>
 <p><strong>Syntax</strong></p>
@@ -4968,8 +4967,8 @@ rm ~/.bash_history
 <span class="nt">bond_denom</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">uluna</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-<section id="query-staking-pool">
+</div>
+<div class="section" id="query-staking-pool">
 <h2><code class="docutils literal notranslate"><span class="pre">query</span> <span class="pre">staking</span> <span class="pre">pool</span></code><a class="headerlink" href="#query-staking-pool" title="Permalink to this headline">¶</a></h2>
 <p>Retrieves amounts stored in the staking pool.</p>
 <p><strong>Syntax</strong></p>
@@ -4983,8 +4982,8 @@ rm ~/.bash_history
 <li><p>Current annual inflation and the block in which the last inflation was processed</p></li>
 <li><p>Last recorded bonded shares</p></li>
 </ul>
-</section>
-<section id="query-staking-redelegation">
+</div>
+<div class="section" id="query-staking-redelegation">
 <h2><code class="docutils literal notranslate"><span class="pre">query</span> <span class="pre">staking</span> <span class="pre">redelegation</span></code><a class="headerlink" href="#query-staking-redelegation" title="Permalink to this headline">¶</a></h2>
 <p>Retrieves redelegation information for an individual delegator between a source validator and a destination validator.</p>
 <p><strong>Syntax</strong></p>
@@ -4995,8 +4994,8 @@ rm ~/.bash_history
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad query staking redelegation terra1gghjut3ccd8ay0zduzj64hwre2fxs9ld75ru9p terravaloper1l2rsakp388kuv9k8qzq6lrm9taddae7fpx59wm terravaloper1gghjut3ccd8ay0zduzj64hwre2fxs9ldmqhffj
 </pre></div>
 </div>
-</section>
-<section id="query-staking-redelegations">
+</div>
+<div class="section" id="query-staking-redelegations">
 <h2><code class="docutils literal notranslate"><span class="pre">query</span> <span class="pre">staking</span> <span class="pre">redelegations</span></code><a class="headerlink" href="#query-staking-redelegations" title="Permalink to this headline">¶</a></h2>
 <p>Retrieves all redelegation information for a delegator.</p>
 <p><strong>Syntax</strong></p>
@@ -5007,8 +5006,8 @@ rm ~/.bash_history
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad query staking redelegations terra1gghjut3ccd8ay0zduzj64hwre2fxs9ld75ru9p
 </pre></div>
 </div>
-</section>
-<section id="query-staking-redelegations-from">
+</div>
+<div class="section" id="query-staking-redelegations-from">
 <h2><code class="docutils literal notranslate"><span class="pre">query</span> <span class="pre">staking</span> <span class="pre">redelegations-from</span></code><a class="headerlink" href="#query-staking-redelegations-from" title="Permalink to this headline">¶</a></h2>
 <p>Retrieves all the delegations that are redelegating from a specified validator:</p>
 <p><strong>Syntax</strong></p>
@@ -5019,8 +5018,8 @@ rm ~/.bash_history
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad query staking redelegations-from terravaloper1gghjut3ccd8ay0zduzj64hwre2fxs9ldmqhffj
 </pre></div>
 </div>
-</section>
-<section id="query-staking-unbonding-delegation">
+</div>
+<div class="section" id="query-staking-unbonding-delegation">
 <h2><code class="docutils literal notranslate"><span class="pre">query</span> <span class="pre">staking</span> <span class="pre">unbonding-delegation</span></code><a class="headerlink" href="#query-staking-unbonding-delegation" title="Permalink to this headline">¶</a></h2>
 <p>Retrieves information about unbonding delegations for a specified delegator and validator.</p>
 <p><strong>Syntax</strong></p>
@@ -5031,8 +5030,8 @@ rm ~/.bash_history
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad query staking unbonding-delegation terra1gghjut3ccd8ay0zduzj64hwre2fxs9ld75ru9p terravaloper1l2rsakp388kuv9k8qzq6lrm9taddae7fpx59wm
 </pre></div>
 </div>
-</section>
-<section id="query-staking-unbonding-delegations">
+</div>
+<div class="section" id="query-staking-unbonding-delegations">
 <h2><code class="docutils literal notranslate"><span class="pre">query</span> <span class="pre">staking</span> <span class="pre">unbonding-delegations</span></code><a class="headerlink" href="#query-staking-unbonding-delegations" title="Permalink to this headline">¶</a></h2>
 <p>Retrieves all your current unbonding delegations for a specified delegator.</p>
 <p><strong>Syntax</strong></p>
@@ -5043,8 +5042,8 @@ rm ~/.bash_history
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad query staking unbonding-delegations terra1gghjut3ccd8ay0zduzj64hwre2fxs9ld75ru9p
 </pre></div>
 </div>
-</section>
-<section id="query-staking-unbonding-delegations-from">
+</div>
+<div class="section" id="query-staking-unbonding-delegations-from">
 <h2><code class="docutils literal notranslate"><span class="pre">query</span> <span class="pre">staking</span> <span class="pre">unbonding-delegations-from</span></code><a class="headerlink" href="#query-staking-unbonding-delegations-from" title="Permalink to this headline">¶</a></h2>
 <p>Retrieves all the unbonding delegations from a specified validator.</p>
 <p><strong>Syntax</strong></p>
@@ -5055,8 +5054,8 @@ rm ~/.bash_history
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad query staking unbonding-delegations-from terravaloper1l2rsakp388kuv9k8qzq6lrm9taddae7fpx59wm
 </pre></div>
 </div>
-</section>
-<section id="query-staking-validators">
+</div>
+<div class="section" id="query-staking-validators">
 <h2><code class="docutils literal notranslate"><span class="pre">query</span> <span class="pre">staking</span> <span class="pre">validators</span></code><a class="headerlink" href="#query-staking-validators" title="Permalink to this headline">¶</a></h2>
 <p>Retrieves the list of all registered validators.</p>
 <p><strong>Syntax</strong></p>
@@ -5067,8 +5066,8 @@ rm ~/.bash_history
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad query staking validator terravaloper15h6vd5f0wqps26zjlwrc6chah08ryu4hzzdwhc
 </pre></div>
 </div>
-</section>
-<section id="query-treasury-indicators">
+</div>
+<div class="section" id="query-treasury-indicators">
 <h2><code class="docutils literal notranslate"><span class="pre">query</span> <span class="pre">treasury</span> <span class="pre">indicators</span></code><a class="headerlink" href="#query-treasury-indicators" title="Permalink to this headline">¶</a></h2>
 <div class="warning admonition">
 <p class="admonition-title">Note</p>
@@ -5079,8 +5078,8 @@ rm ~/.bash_history
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad query treasury indicators
 </pre></div>
 </div>
-</section>
-<section id="query-treasury-params">
+</div>
+<div class="section" id="query-treasury-params">
 <h2><code class="docutils literal notranslate"><span class="pre">query</span> <span class="pre">treasury</span> <span class="pre">params</span></code><a class="headerlink" href="#query-treasury-params" title="Permalink to this headline">¶</a></h2>
 <div class="warning admonition">
 <p class="admonition-title">Note</p>
@@ -5113,8 +5112,8 @@ rm ~/.bash_history
 <span class="nt">window_probation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">12</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-<section id="query-treasury-reward-weight">
+</div>
+<div class="section" id="query-treasury-reward-weight">
 <h2><code class="docutils literal notranslate"><span class="pre">query</span> <span class="pre">treasury</span> <span class="pre">reward-weight</span></code><a class="headerlink" href="#query-treasury-reward-weight" title="Permalink to this headline">¶</a></h2>
 <div class="warning admonition">
 <p class="admonition-title">Note</p>
@@ -5125,8 +5124,8 @@ rm ~/.bash_history
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad query treasury reward-weight
 </pre></div>
 </div>
-</section>
-<section id="query-treasury-seigniorage-proceeds">
+</div>
+<div class="section" id="query-treasury-seigniorage-proceeds">
 <h2><code class="docutils literal notranslate"><span class="pre">query</span> <span class="pre">treasury</span> <span class="pre">seigniorage-proceeds</span></code><a class="headerlink" href="#query-treasury-seigniorage-proceeds" title="Permalink to this headline">¶</a></h2>
 <div class="warning admonition">
 <p class="admonition-title">Note</p>
@@ -5137,8 +5136,8 @@ rm ~/.bash_history
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad query treasury seigniorage-proceeds
 </pre></div>
 </div>
-</section>
-<section id="query-treasury-tax-cap">
+</div>
+<div class="section" id="query-treasury-tax-cap">
 <h2><code class="docutils literal notranslate"><span class="pre">query</span> <span class="pre">treasury</span> <span class="pre">tax-cap</span></code><a class="headerlink" href="#query-treasury-tax-cap" title="Permalink to this headline">¶</a></h2>
 <div class="warning admonition">
 <p class="admonition-title">Note</p>
@@ -5153,8 +5152,8 @@ rm ~/.bash_history
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad query treasury tax-cap ukrw
 </pre></div>
 </div>
-</section>
-<section id="query-treasury-tax-caps">
+</div>
+<div class="section" id="query-treasury-tax-caps">
 <h2><code class="docutils literal notranslate"><span class="pre">query</span> <span class="pre">treasury</span> <span class="pre">tax-caps</span></code><a class="headerlink" href="#query-treasury-tax-caps" title="Permalink to this headline">¶</a></h2>
 <div class="warning admonition">
 <p class="admonition-title">Note</p>
@@ -5165,8 +5164,8 @@ rm ~/.bash_history
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad query treasury tax-caps
 </pre></div>
 </div>
-</section>
-<section id="query-treasury-tax-proceeds">
+</div>
+<div class="section" id="query-treasury-tax-proceeds">
 <h2><code class="docutils literal notranslate"><span class="pre">query</span> <span class="pre">treasury</span> <span class="pre">tax-proceeds</span></code><a class="headerlink" href="#query-treasury-tax-proceeds" title="Permalink to this headline">¶</a></h2>
 <div class="warning admonition">
 <p class="admonition-title">Note</p>
@@ -5177,8 +5176,8 @@ rm ~/.bash_history
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad query treasury tax-proceeds
 </pre></div>
 </div>
-</section>
-<section id="query-treasury-tax-rate">
+</div>
+<div class="section" id="query-treasury-tax-rate">
 <h2><code class="docutils literal notranslate"><span class="pre">query</span> <span class="pre">treasury</span> <span class="pre">tax-rate</span></code><a class="headerlink" href="#query-treasury-tax-rate" title="Permalink to this headline">¶</a></h2>
 <div class="warning admonition">
 <p class="admonition-title">Note</p>
@@ -5193,8 +5192,8 @@ rm ~/.bash_history
 <p class="admonition-title">Note</p>
 <p>As of proposal <a class="reference external" href="https://station.terra.money/proposal/172">172</a>, the stability fee tax rate is zero.</p>
 </div>
-</section>
-<section id="query-tx">
+</div>
+<div class="section" id="query-tx">
 <h2><code class="docutils literal notranslate"><span class="pre">query</span> <span class="pre">tx</span></code><a class="headerlink" href="#query-tx" title="Permalink to this headline">¶</a></h2>
 <p>Retrieves a transaction by its hash, account sequence, or signature.</p>
 <p><strong>Syntax to query by hash</strong></p>
@@ -5209,8 +5208,8 @@ rm ~/.bash_history
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad query tx --type<span class="o">=</span>signature &lt;sig1_base64,sig2_base64...&gt;
 </pre></div>
 </div>
-</section>
-<section id="query-txs">
+</div>
+<div class="section" id="query-txs">
 <h2><code class="docutils literal notranslate"><span class="pre">query</span> <span class="pre">txs</span></code><a class="headerlink" href="#query-txs" title="Permalink to this headline">¶</a></h2>
 <p>Retrieves transactions that match the specified events where results are paginated.</p>
 <p><strong>Syntax</strong></p>
@@ -5221,32 +5220,32 @@ rm ~/.bash_history
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad query txs --events <span class="s1">&#39;message.sender=cosmos1...&amp;message.action=withdraw_delegator_reward&#39;</span> --page <span class="m">1</span> --limit <span class="m">30</span>
 </pre></div>
 </div>
-</section>
-<section id="query-wasm-bytecode">
+</div>
+<div class="section" id="query-wasm-bytecode">
 <h2><code class="docutils literal notranslate"><span class="pre">query</span> <span class="pre">wasm</span> <span class="pre">bytecode</span></code><a class="headerlink" href="#query-wasm-bytecode" title="Permalink to this headline">¶</a></h2>
 <p>Retrieves the contract’s WASM bytecode by referencing its ID.</p>
 <p><strong>Syntax</strong></p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrad query wasm bytecode &lt;code-id&gt;
 </pre></div>
 </div>
-</section>
-<section id="query-wasm-code">
+</div>
+<div class="section" id="query-wasm-code">
 <h2><code class="docutils literal notranslate"><span class="pre">query</span> <span class="pre">wasm</span> <span class="pre">code</span></code><a class="headerlink" href="#query-wasm-code" title="Permalink to this headline">¶</a></h2>
 <p>Retrieves information about a piece of uploaded code by referencing its ID.</p>
 <p><strong>Syntax</strong></p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrad query wasm code &lt;code-id&gt;
 </pre></div>
 </div>
-</section>
-<section id="query-wasm-contract">
+</div>
+<div class="section" id="query-wasm-contract">
 <h2><code class="docutils literal notranslate"><span class="pre">query</span> <span class="pre">wasm</span> <span class="pre">contract</span></code><a class="headerlink" href="#query-wasm-contract" title="Permalink to this headline">¶</a></h2>
 <p>Retrieves the metadata information about an instantiated contract.</p>
 <p><strong>Syntax</strong></p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrad query wasm contract &lt;contract-address&gt;
 </pre></div>
 </div>
-</section>
-<section id="query-wasm-contract-store">
+</div>
+<div class="section" id="query-wasm-contract-store">
 <h2><code class="docutils literal notranslate"><span class="pre">query</span> <span class="pre">wasm</span> <span class="pre">contract-store</span></code><a class="headerlink" href="#query-wasm-contract-store" title="Permalink to this headline">¶</a></h2>
 <p>Retrieves data about the contract store of the address and prints the results.</p>
 <p><strong>Syntax</strong></p>
@@ -5258,8 +5257,8 @@ rm ~/.bash_history
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrad query wasm contract-store terra1plju286nnfj3z54wgcggd4enwaa9fgf5kgrgzl <span class="s1">&#39;{&quot;config&quot;:{}}&#39;</span>
 </pre></div>
 </div>
-</section>
-<section id="query-wasm-params">
+</div>
+<div class="section" id="query-wasm-params">
 <h2><code class="docutils literal notranslate"><span class="pre">query</span> <span class="pre">wasm</span> <span class="pre">params</span></code><a class="headerlink" href="#query-wasm-params" title="Permalink to this headline">¶</a></h2>
 <p>Retrieves the current WASM module’s parameters.</p>
 <p><strong>Syntax</strong></p>
@@ -5272,8 +5271,8 @@ rm ~/.bash_history
 <span class="nt">max_contract_msg_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1024</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-<section id="query-wasm-raw-store">
+</div>
+<div class="section" id="query-wasm-raw-store">
 <h2><code class="docutils literal notranslate"><span class="pre">query</span> <span class="pre">wasm</span> <span class="pre">raw-store</span></code><a class="headerlink" href="#query-wasm-raw-store" title="Permalink to this headline">¶</a></h2>
 <p>Retrieves the raw store of a contract and prints the results.</p>
 <p><strong>Syntax</strong></p>
@@ -5281,8 +5280,8 @@ rm ~/.bash_history
 </pre></div>
 </div>
 <p>If the data uses a <code class="docutils literal notranslate"><span class="pre">Singleton</span></code>, it has only a key. If the data uses a prefixed data store, such as <code class="docutils literal notranslate"><span class="pre">PrefixedStorage</span></code> or <code class="docutils literal notranslate"><span class="pre">Bucket</span></code>, it can accept a subkey too.</p>
-</section>
-<section id="tx-authz-exec">
+</div>
+<div class="section" id="tx-authz-exec">
 <h2><code class="docutils literal notranslate"><span class="pre">tx</span> <span class="pre">authz</span> <span class="pre">exec</span></code><a class="headerlink" href="#tx-authz-exec" title="Permalink to this headline">¶</a></h2>
 <p>Runs a transaction for the granter.</p>
 <p><strong>Syntax</strong></p>
@@ -5293,8 +5292,8 @@ rm ~/.bash_history
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad tx authz <span class="nb">exec</span> tx.json --from<span class="o">=</span>&lt;terra14h2od5f3vahd28uywwvt8sqbi52upnzagshtrm
 </pre></div>
 </div>
-</section>
-<section id="tx-authz-grant">
+</div>
+<div class="section" id="tx-authz-grant">
 <h2><code class="docutils literal notranslate"><span class="pre">tx</span> <span class="pre">authz</span> <span class="pre">grant</span></code><a class="headerlink" href="#tx-authz-grant" title="Permalink to this headline">¶</a></h2>
 <p>Authorizes another address to run transactions for you.</p>
 <p><strong>Syntax</strong></p>
@@ -5309,8 +5308,8 @@ rm ~/.bash_history
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad tx authz grant terra14h2od5f3vahd28uywwvt8sqbi52upnzagshtrm send /cosmos.bank.v1beta1.MsgSend --spend-limit<span class="o">=</span>15000uluna --from<span class="o">=</span>terra15h6vd5f0wqps26zjlwrc6chah08ryu4hzzdwhc
 </pre></div>
 </div>
-</section>
-<section id="tx-authz-revoke">
+</div>
+<div class="section" id="tx-authz-revoke">
 <h2><code class="docutils literal notranslate"><span class="pre">tx</span> <span class="pre">authz</span> <span class="pre">revoke</span></code><a class="headerlink" href="#tx-authz-revoke" title="Permalink to this headline">¶</a></h2>
 <p>Removes authorization from an account.</p>
 <p><strong>Syntax</strong></p>
@@ -5319,8 +5318,8 @@ rm ~/.bash_history
 </div>
 <p><strong>Example</strong>
 terrad tx authz revoke terra14h2od5f3vahd28uywwvt8sqbi52upnzagshtrm /cosmos.bank.v1beta1.MsgSend –from=terra15h6vd5f0wqps26zjlwrc6chah08ryu4hzzdwhc</p>
-</section>
-<section id="tx-bank-send">
+</div>
+<div class="section" id="tx-bank-send">
 <h2><code class="docutils literal notranslate"><span class="pre">tx</span> <span class="pre">bank</span> <span class="pre">send</span></code><a class="headerlink" href="#tx-bank-send" title="Permalink to this headline">¶</a></h2>
 <p>Sends coins from one account to another account.</p>
 <p><strong>Syntax</strong></p>
@@ -5345,8 +5344,8 @@ terrad tx authz revoke terra14h2od5f3vahd28uywwvt8sqbi52upnzagshtrm /cosmos.bank
     --chain-id<span class="o">=</span>testnet <span class="se">\</span>
 </pre></div>
 </div>
-</section>
-<section id="tx-distribution-fund-community-pool">
+</div>
+<div class="section" id="tx-distribution-fund-community-pool">
 <h2><code class="docutils literal notranslate"><span class="pre">tx</span> <span class="pre">distribution</span> <span class="pre">fund-community-pool</span></code><a class="headerlink" href="#tx-distribution-fund-community-pool" title="Permalink to this headline">¶</a></h2>
 <p>Funds the community pool with the specified amount.</p>
 <p><strong>Syntax</strong></p>
@@ -5355,8 +5354,8 @@ terrad tx authz revoke terra14h2od5f3vahd28uywwvt8sqbi52upnzagshtrm /cosmos.bank
 </div>
 <p><strong>Example</strong>
 terrad tx distribution fund-community-pool 100ukrw,200uusd</p>
-</section>
-<section id="tx-distribution-set-withdraw-addr">
+</div>
+<div class="section" id="tx-distribution-set-withdraw-addr">
 <h2><code class="docutils literal notranslate"><span class="pre">tx</span> <span class="pre">distribution</span> <span class="pre">set-withdraw-addr</span></code><a class="headerlink" href="#tx-distribution-set-withdraw-addr" title="Permalink to this headline">¶</a></h2>
 <p>Changes the default withdrawal address for rewards associated with an address.</p>
 <p><strong>Syntax</strong></p>
@@ -5367,16 +5366,16 @@ terrad tx distribution fund-community-pool 100ukrw,200uusd</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad tx distribution set-withdraw-addr terra13a8ddv3h7kbcn73akcbpe7ueks22vaolewpaxmb
 </pre></div>
 </div>
-</section>
-<section id="tx-distribution-withdraw-all-rewards">
+</div>
+<div class="section" id="tx-distribution-withdraw-all-rewards">
 <h2><code class="docutils literal notranslate"><span class="pre">tx</span> <span class="pre">distribution</span> <span class="pre">withdraw-all-rewards</span></code><a class="headerlink" href="#tx-distribution-withdraw-all-rewards" title="Permalink to this headline">¶</a></h2>
 <p>Withdraws all rewards.</p>
 <p><strong>Syntax</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad tx distribution withdraw-all-rewards
 </pre></div>
 </div>
-</section>
-<section id="tx-distribution-withdraw-rewards">
+</div>
+<div class="section" id="tx-distribution-withdraw-rewards">
 <h2><code class="docutils literal notranslate"><span class="pre">tx</span> <span class="pre">distribution</span> <span class="pre">withdraw-rewards</span></code><a class="headerlink" href="#tx-distribution-withdraw-rewards" title="Permalink to this headline">¶</a></h2>
 <p>Withdraws your rewards against a validator.</p>
 <p><strong>Syntax</strong></p>
@@ -5387,8 +5386,8 @@ terrad tx distribution fund-community-pool 100ukrw,200uusd</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad tx distribution withdraw-rewards terra19t4gde4f8ndwx67qhbnur9yqdc31xznpksajbcy
 </pre></div>
 </div>
-</section>
-<section id="tx-gov-deposit">
+</div>
+<div class="section" id="tx-gov-deposit">
 <h2><code class="docutils literal notranslate"><span class="pre">tx</span> <span class="pre">gov</span> <span class="pre">deposit</span></code><a class="headerlink" href="#tx-gov-deposit" title="Permalink to this headline">¶</a></h2>
 <p>For a proposal to be sent to the network, the amount deposited must be above a minimum amount specified by <code class="docutils literal notranslate"><span class="pre">minDeposit</span></code> (initial value is <code class="docutils literal notranslate"><span class="pre">50000000uluna</span></code>). If the proposal you previously created didn’t meet this requirement, you can still increase the total amount deposited to activate it. After the minimum deposit is reached, the voting period for the proposal begins.</p>
 <p><strong>Syntax</strong></p>
@@ -5407,11 +5406,11 @@ terrad tx distribution fund-community-pool 100ukrw,200uusd</p>
 <p class="admonition-title">Warning</p>
 <p>Proposals that don’t meet this requirement are deleted after <code class="docutils literal notranslate"><span class="pre">MaxDepositPeriod</span></code> is reached.</p>
 </div>
-</section>
-<section id="tx-gov-submit-proposal">
+</div>
+<div class="section" id="tx-gov-submit-proposal">
 <h2><code class="docutils literal notranslate"><span class="pre">tx</span> <span class="pre">gov</span> <span class="pre">submit-proposal</span></code><a class="headerlink" href="#tx-gov-submit-proposal" title="Permalink to this headline">¶</a></h2>
 <p>Submits proposals and deposits. To create a governance proposal, you must submit an initial deposit along with a title and description of your proposal. Alternatively, you can provide the proposal directly through the <code class="docutils literal notranslate"><span class="pre">--proposal</span></code> flag, which points to a JSON file containing the proposal.</p>
-<section id="text-proposals">
+<div class="section" id="text-proposals">
 <h3>Text proposals<a class="headerlink" href="#text-proposals" title="Permalink to this headline">¶</a></h3>
 <p><strong>Syntax</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad tx gov submit-proposal <span class="se">\</span>
@@ -5433,8 +5432,8 @@ terrad tx distribution fund-community-pool 100ukrw,200uusd</p>
     --chain-id<span class="o">=</span>columbus-5
 </pre></div>
 </div>
-</section>
-<section id="parameter-change-proposals">
+</div>
+<div class="section" id="parameter-change-proposals">
 <h3>Parameter-change proposals<a class="headerlink" href="#parameter-change-proposals" title="Permalink to this headline">¶</a></h3>
 <p>When you submit a proposal to change a parameter, it is recommended that you send the proposal as a JSON file.</p>
 <p><strong>Syntax</strong></p>
@@ -5475,8 +5474,8 @@ terrad tx distribution fund-community-pool 100ukrw,200uusd</p>
 <p class="admonition-title">Warning</p>
 <p>Because parameter changes are evaluated but not validated, ensure that new value you propose is valid for its parameter. For example, the proposed value for <code class="docutils literal notranslate"><span class="pre">MaxValidators</span></code> must be an integer, not a decimal.</p>
 </div>
-</section>
-<section id="community-pool-spend-proposal">
+</div>
+<div class="section" id="community-pool-spend-proposal">
 <h3>Community pool spend proposal<a class="headerlink" href="#community-pool-spend-proposal" title="Permalink to this headline">¶</a></h3>
 <p>When you submit a community pool spend proposal, it is recommended that you send the proposal as a JSON file.</p>
 <p><strong>Syntax</strong></p>
@@ -5513,8 +5512,8 @@ terrad tx distribution fund-community-pool 100ukrw,200uusd</p>
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-<section id="tax-rate-and-reward-weight-update-proposals">
+</div>
+<div class="section" id="tax-rate-and-reward-weight-update-proposals">
 <h3>Tax-rate and reward-weight update proposals<a class="headerlink" href="#tax-rate-and-reward-weight-update-proposals" title="Permalink to this headline">¶</a></h3>
 <div class="warning admonition">
 <p class="admonition-title">Note</p>
@@ -5581,8 +5580,8 @@ terrad tx distribution fund-community-pool 100ukrw,200uusd</p>
 </pre></div>
 </div>
 <p>Tax reward and reward weight updates that are passed by governance proposals are subject to <a class="reference internal" href="../../module-specifications/spec-treasury.html#policy-constraints"><span class="std std-doc">policy constraints</span></a>.</p>
-</section>
-<section id="software-upgrade-proposals">
+</div>
+<div class="section" id="software-upgrade-proposals">
 <h3>Software upgrade proposals<a class="headerlink" href="#software-upgrade-proposals" title="Permalink to this headline">¶</a></h3>
 <p>The proposal to upgrade the software follows the syntax of a <code class="docutils literal notranslate"><span class="pre">text</span></code> proposal.</p>
 <p><strong>Syntax</strong></p>
@@ -5618,9 +5617,9 @@ terrad tx distribution fund-community-pool 100ukrw,200uusd</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad tx gov submit-proposal cancel-software-upgrade --title <span class="s2">&quot;Upgrade to v0.5.0-beta3&quot;</span> --description <span class="s2">&quot;let&#39;s upgrade to v0.6.0-beta3&quot;</span>
 </pre></div>
 </div>
-</section>
-</section>
-<section id="tx-gov-vote">
+</div>
+</div>
+<div class="section" id="tx-gov-vote">
 <h2><code class="docutils literal notranslate"><span class="pre">tx</span> <span class="pre">gov</span> <span class="pre">vote</span></code><a class="headerlink" href="#tx-gov-vote" title="Permalink to this headline">¶</a></h2>
 <p>After a proposal’s deposit reaches the <code class="docutils literal notranslate"><span class="pre">MinDeposit</span></code> value, the voting period begins, and bonded Luna holders can vote.</p>
 <p><strong>Syntax</strong></p>
@@ -5637,8 +5636,8 @@ terrad tx distribution fund-community-pool 100ukrw,200uusd</p>
     --chain-id<span class="o">=</span>columbus-5
 </pre></div>
 </div>
-</section>
-<section id="tx-market-swap">
+</div>
+<div class="section" id="tx-market-swap">
 <h2><code class="docutils literal notranslate"><span class="pre">tx</span> <span class="pre">market</span> <span class="pre">swap</span></code><a class="headerlink" href="#tx-market-swap" title="Permalink to this headline">¶</a></h2>
 <p>Swaps any currency in the Terra ecosystem for another currency at the effective oracle exchange rate.</p>
 <p><strong>Syntax</strong></p>
@@ -5674,8 +5673,8 @@ terrad tx distribution fund-community-pool 100ukrw,200uusd</p>
     --from <span class="s2">&quot;terra13a8ddv3h7kbcn73akcbpe7ueks22vaolewpaxmb&quot;</span> <span class="se">\</span>
 </pre></div>
 </div>
-</section>
-<section id="tx-oracle-aggregate-prevote">
+</div>
+<div class="section" id="tx-oracle-aggregate-prevote">
 <h2><code class="docutils literal notranslate"><span class="pre">tx</span> <span class="pre">oracle</span> <span class="pre">aggregate-prevote</span></code><a class="headerlink" href="#tx-oracle-aggregate-prevote" title="Permalink to this headline">¶</a></h2>
 <p>Submits a <code class="docutils literal notranslate"><span class="pre">prevote</span></code> containing the hash of the actual vote in the first vote period. The hash is the leading 20 bytes of the SHA256 hexa string run over the string of the format <code class="docutils literal notranslate"><span class="pre">salt:price:denom:validator-address</span></code>.</p>
 <p><strong>Syntax</strong></p>
@@ -5692,8 +5691,8 @@ terrad tx distribution fund-community-pool 100ukrw,200uusd</p>
     <span class="s2">&quot;terravaloper15h6vd5f0wqps26zjlwrc6chah08ryu4hzzdwhc&quot;</span> <span class="se">\</span>
 </pre></div>
 </div>
-</section>
-<section id="tx-oracle-aggregate-vote">
+</div>
+<div class="section" id="tx-oracle-aggregate-vote">
 <h2><code class="docutils literal notranslate"><span class="pre">tx</span> <span class="pre">oracle</span> <span class="pre">aggregate-vote</span></code><a class="headerlink" href="#tx-oracle-aggregate-vote" title="Permalink to this headline">¶</a></h2>
 <p>Submits a <code class="docutils literal notranslate"><span class="pre">vote</span></code> containing the same salt of the hash submitted in the prevote phase to prove honestly. The hash is the leading 20 bytes of the SHA256 hexa string run over the string of the format <code class="docutils literal notranslate"><span class="pre">salt:price:denom:validator-address</span></code>. You submit this vote after <code class="docutils literal notranslate"><span class="pre">VotePeriod</span></code> has expired from the submission of the prevote.</p>
 <p><strong>Syntax</strong></p>
@@ -5711,8 +5710,8 @@ terrad tx distribution fund-community-pool 100ukrw,200uusd</p>
 </pre></div>
 </div>
 <p>Given that oracle votes must be submitted in a feed over short time intervals (30 seconds), prevotes and votes must be submitted via some persistent server daemon, not manually. For more information, see the <a class="reference internal" href="../../module-specifications/spec-oracle.html"><span class="doc std std-doc">Oracle Module Specification</span></a>.</p>
-</section>
-<section id="tx-oracle-set-feeder">
+</div>
+<div class="section" id="tx-oracle-set-feeder">
 <h2><code class="docutils literal notranslate"><span class="pre">tx</span> <span class="pre">oracle</span> <span class="pre">set-feeder</span></code><a class="headerlink" href="#tx-oracle-set-feeder" title="Permalink to this headline">¶</a></h2>
 <p>Delegates exchange-rate voting to another signing key.</p>
 <p><strong>Syntax</strong></p>
@@ -5724,8 +5723,8 @@ terrad tx distribution fund-community-pool 100ukrw,200uusd</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad tx oracle set-feeder terra14q7bu6p0aclm58dgirpo9mewh19nti5oxyamep
 </pre></div>
 </div>
-</section>
-<section id="tx-slashing-unjail">
+</div>
+<div class="section" id="tx-slashing-unjail">
 <h2><code class="docutils literal notranslate"><span class="pre">tx</span> <span class="pre">slashing</span> <span class="pre">unjail</span></code><a class="headerlink" href="#tx-slashing-unjail" title="Permalink to this headline">¶</a></h2>
 <p>Releases a jailed validator.</p>
 <p><strong>Syntax</strong></p>
@@ -5736,8 +5735,8 @@ terrad tx distribution fund-community-pool 100ukrw,200uusd</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad tx slashing unjail
 </pre></div>
 </div>
-</section>
-<section id="tx-staking-create-validator">
+</div>
+<div class="section" id="tx-staking-create-validator">
 <h2><code class="docutils literal notranslate"><span class="pre">tx</span> <span class="pre">staking</span> <span class="pre">create-validator</span></code><a class="headerlink" href="#tx-staking-create-validator" title="Permalink to this headline">¶</a></h2>
 <p>Creates a new validator that is initialized with a self-delegation.</p>
 <p><strong>Syntax</strong></p>
@@ -5756,8 +5755,8 @@ terrad tx distribution fund-community-pool 100ukrw,200uusd</p>
     --from<span class="o">=</span>&lt;key-name&gt; <span class="se">\</span>
 </pre></div>
 </div>
-</section>
-<section id="tx-staking-delegate">
+</div>
+<div class="section" id="tx-staking-delegate">
 <h2><code class="docutils literal notranslate"><span class="pre">tx</span> <span class="pre">staking</span> <span class="pre">delegate</span></code><a class="headerlink" href="#tx-staking-delegate" title="Permalink to this headline">¶</a></h2>
 <p>Delegates an amount of liquid coins from your wallet to a validator.</p>
 <p><strong>Syntax</strong></p>
@@ -5768,8 +5767,8 @@ terrad tx distribution fund-community-pool 100ukrw,200uusd</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad tx staking delegate terravaloper1l2rsakp388kuv9k8qzq6lrm9taddae7fpx59wm 2500stake
 </pre></div>
 </div>
-</section>
-<section id="tx-staking-edit-validator">
+</div>
+<div class="section" id="tx-staking-edit-validator">
 <h2><code class="docutils literal notranslate"><span class="pre">tx</span> <span class="pre">staking</span> <span class="pre">edit-validator</span></code><a class="headerlink" href="#tx-staking-edit-validator" title="Permalink to this headline">¶</a></h2>
 <p>Edits an existing validator account.</p>
 <p><strong>Syntax</strong></p>
@@ -5780,8 +5779,8 @@ terrad tx distribution fund-community-pool 100ukrw,200uusd</p>
     --min-self-delegation<span class="o">=</span><span class="s2">&quot;&lt;minimum-self-delegation-amount&quot;</span> <span class="se">\</span>
 </pre></div>
 </div>
-</section>
-<section id="tx-staking-redelegate">
+</div>
+<div class="section" id="tx-staking-redelegate">
 <h2><code class="docutils literal notranslate"><span class="pre">tx</span> <span class="pre">staking</span> <span class="pre">redelegate</span></code><a class="headerlink" href="#tx-staking-redelegate" title="Permalink to this headline">¶</a></h2>
 <p>Redelegates an amount of illiquid staking tokens from one validator to a different validator.</p>
 <p><strong>Syntax</strong></p>
@@ -5792,8 +5791,8 @@ terrad tx distribution fund-community-pool 100ukrw,200uusd</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad tx staking redelegate terravaloper1gghjut3ccd8ay0zduzj64hwre2fxs9ldmqhffj terravaloper1l2rsakp388kuv9k8qzq6lrm9taddae7fpx59wm 350stake
 </pre></div>
 </div>
-</section>
-<section id="tx-staking-unbond">
+</div>
+<div class="section" id="tx-staking-unbond">
 <h2><code class="docutils literal notranslate"><span class="pre">tx</span> <span class="pre">staking</span> <span class="pre">unbond</span></code><a class="headerlink" href="#tx-staking-unbond" title="Permalink to this headline">¶</a></h2>
 <p>Unbonds an amount of bonded shares from a validator.</p>
 <p><strong>Syntax</strong></p>
@@ -5804,16 +5803,16 @@ terrad tx distribution fund-community-pool 100ukrw,200uusd</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad tx staking unbond terravaloper1gghjut3ccd8ay0zduzj64hwre2fxs9ldmqhffj 600stake
 </pre></div>
 </div>
-</section>
-<section id="tx-wasm-clear-admin">
+</div>
+<div class="section" id="tx-wasm-clear-admin">
 <h2><code class="docutils literal notranslate"><span class="pre">tx</span> <span class="pre">wasm</span> <span class="pre">clear-admin</span></code><a class="headerlink" href="#tx-wasm-clear-admin" title="Permalink to this headline">¶</a></h2>
 <p>Removes the contract admin so that the contract cannot be migrated.</p>
 <p><strong>Syntax</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad tx wasm clear-admin &lt;contract-address&gt;
 </pre></div>
 </div>
-</section>
-<section id="tx-wasm-execute">
+</div>
+<div class="section" id="tx-wasm-execute">
 <h2><code class="docutils literal notranslate"><span class="pre">tx</span> <span class="pre">wasm</span> <span class="pre">execute</span></code><a class="headerlink" href="#tx-wasm-execute" title="Permalink to this headline">¶</a></h2>
 <p>Invokes processing functions on the smart contract.</p>
 <p><strong>Syntax</strong></p>
@@ -5821,8 +5820,8 @@ terrad tx distribution fund-community-pool 100ukrw,200uusd</p>
 </pre></div>
 </div>
 <p>Where <code class="docutils literal notranslate"><span class="pre">&lt;handle-msg&gt;</span></code> is a raw JSON string containing the <code class="docutils literal notranslate"><span class="pre">HandleMsg</span></code> that is parsed and routed to the correct message handling logic in the contract, and <code class="docutils literal notranslate"><span class="pre">&lt;coins&gt;</span></code> is the optional amount of coins specified in a comma-separated list that you want to send with your message, in case the logic requires some fees.</p>
-</section>
-<section id="tx-wasm-instantiate">
+</div>
+<div class="section" id="tx-wasm-instantiate">
 <h2><code class="docutils literal notranslate"><span class="pre">tx</span> <span class="pre">wasm</span> <span class="pre">instantiate</span></code><a class="headerlink" href="#tx-wasm-instantiate" title="Permalink to this headline">¶</a></h2>
 <p>Creates a new contract by referencing the code ID of a contract that has been uploaded.</p>
 <p><strong>Syntax</strong></p>
@@ -5834,8 +5833,8 @@ terrad tx distribution fund-community-pool 100ukrw,200uusd</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrad tx wasm instantiate <span class="m">1</span> <span class="s1">&#39;{&quot;arbiter&quot;: &quot;terra~~&quot;}&#39;</span> <span class="s2">&quot;1000000uluna&quot;</span>
 </pre></div>
 </div>
-</section>
-<section id="tx-wasm-migrate">
+</div>
+<div class="section" id="tx-wasm-migrate">
 <h2><code class="docutils literal notranslate"><span class="pre">tx</span> <span class="pre">wasm</span> <span class="pre">migrate</span></code><a class="headerlink" href="#tx-wasm-migrate" title="Permalink to this headline">¶</a></h2>
 <p>Updates the code ID of the contract to migrate to a new code ID. This command can be issued only from the key corresponding to the contract’s owner.</p>
 <p><strong>Syntax</strong></p>
@@ -5846,8 +5845,8 @@ terrad tx distribution fund-community-pool 100ukrw,200uusd</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrad tx wasm migrate terra... <span class="m">10</span> <span class="s1">&#39;{&quot;verifier&quot;: &quot;terra...&quot;}&#39;</span>
 </pre></div>
 </div>
-</section>
-<section id="tx-wasm-store">
+</div>
+<div class="section" id="tx-wasm-store">
 <h2><code class="docutils literal notranslate"><span class="pre">tx</span> <span class="pre">wasm</span> <span class="pre">store</span></code><a class="headerlink" href="#tx-wasm-store" title="Permalink to this headline">¶</a></h2>
 <p>Uploads a new WASM binary or migrates to existing binary to the Columbus-5 release.</p>
 <p><strong>Syntax for a new WASM binary</strong></p>
@@ -5859,16 +5858,16 @@ terrad tx distribution fund-community-pool 100ukrw,200uusd</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrad tx wasm store &lt;path-to-wasm-file&gt; --migrate-code-id <span class="m">3</span>
 </pre></div>
 </div>
-</section>
-<section id="tx-wasm-update-admin">
+</div>
+<div class="section" id="tx-wasm-update-admin">
 <h2><code class="docutils literal notranslate"><span class="pre">tx</span> <span class="pre">wasm</span> <span class="pre">update-admin</span></code><a class="headerlink" href="#tx-wasm-update-admin" title="Permalink to this headline">¶</a></h2>
 <p>Updates a contract owner to a new address. This command can be issued only from the key corresponding to the contract’s owner.</p>
 <p><strong>Syntax</strong></p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrad tx wasm update-admin &lt;contract-address&gt; &lt;new-owner&gt;
 </pre></div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

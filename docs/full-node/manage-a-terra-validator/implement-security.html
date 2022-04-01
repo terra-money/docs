@@ -3,8 +3,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta charset="utf-8" />
     <title>Implement security practices &#8212; Terra Docs  documentation</title>
     
     <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -1454,15 +1453,15 @@
             
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="implement-security-practices">
+  <div class="tex2jax_ignore mathjax_ignore section" id="implement-security-practices">
 <h1>Implement security practices<a class="headerlink" href="#implement-security-practices" title="Permalink to this headline">¶</a></h1>
 <p>Each validator candidate is encouraged to run its operations independently. Diverse individual setups increase the resilience of the network.</p>
-<section id="manage-digital-keys-with-hsm">
+<div class="section" id="manage-digital-keys-with-hsm">
 <h2>Manage digital keys with HSM<a class="headerlink" href="#manage-digital-keys-with-hsm" title="Permalink to this headline">¶</a></h2>
 <p>Key management is mission critical for validators. If an attacker gains access to a validator’s private key, it puts the validator’s entire delegated stake at risk. Hardware security modules are an important strategy for mitigating this risk.</p>
 <p>Consider implementing this <a class="reference external" href="https://github.com/iqlusioninc/tmkms">key-management method</a> by Iqulusion.</p>
-</section>
-<section id="defend-against-ddos-attacks">
+</div>
+<div class="section" id="defend-against-ddos-attacks">
 <h2>Defend against DDoS attacks<a class="headerlink" href="#defend-against-ddos-attacks" title="Permalink to this headline">¶</a></h2>
 <p>Validators are responsible for ensuring that the network can defend against denial of service attacks.</p>
 <p>Validators can mitigate these attacks by carefully structuring their network topology in a sentry node architecture.</p>
@@ -1495,8 +1494,8 @@
 <p class="admonition-title">Tip</p>
 <p>A node address has the following format: <code class="docutils literal notranslate"><span class="pre">nodeid&#64;ip:port</span></code>, you can get the nodeid by running <code class="docutils literal notranslate"><span class="pre">terrad</span> <span class="pre">tendermint</span> <span class="pre">show-node-id</span></code>, the default port is 26656.</p>
 </div>
-</section>
-<section id="environment-variables">
+</div>
+<div class="section" id="environment-variables">
 <h2>Environment Variables<a class="headerlink" href="#environment-variables" title="Permalink to this headline">¶</a></h2>
 <p>By default, uppercase environment variables with the following prefixes will replace lowercase command-line flags:</p>
 <ul class="simple">
@@ -1505,8 +1504,8 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">BC</span></code> (for democli or basecli flags)</p></li>
 </ul>
 <p>For example, the environment variable <code class="docutils literal notranslate"><span class="pre">TE_CHAIN_ID</span></code> will map to the command line flag <code class="docutils literal notranslate"><span class="pre">--chain-id</span></code>. While explicit command-line flags will take precedence over environment variables, environment variables will take precedence over any of your configuration files. For this reason, it is imperative that you lock down your environment so that any critical parameters are defined as flags on the CLI, or that you prevent modification of any environment variables.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

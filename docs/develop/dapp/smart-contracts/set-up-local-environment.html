@@ -3,8 +3,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta charset="utf-8" />
     <title>Environment Setup &#8212; Terra Docs  documentation</title>
     
     <link href="../../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -1454,14 +1453,14 @@
             
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="environment-setup">
+  <div class="tex2jax_ignore mathjax_ignore section" id="environment-setup">
 <h1>Environment Setup<a class="headerlink" href="#environment-setup" title="Permalink to this headline">¶</a></h1>
 <p>As a smart contract developer, you will need to write, compile, upload, and test your contracts before deploying them on the Columbus mainnet. The first step is to set up a specialized environment to streamline development.</p>
-<section id="install-terra-core-locally">
+<div class="section" id="install-terra-core-locally">
 <h2>Install Terra Core locally<a class="headerlink" href="#install-terra-core-locally" title="Permalink to this headline">¶</a></h2>
 <p>Visit <a class="reference internal" href="../../../full-node/run-a-full-terra-node/build-terra-core.html"><span class="doc std std-doc">build Terra core</span></a> to install the latest version of Terra Core to obtain a working version of <code class="docutils literal notranslate"><span class="pre">terrad</span></code>. You will need this to connect to your local Terra test network to work with smart contracts.</p>
-</section>
-<section id="download-localterra">
+</div>
+<div class="section" id="download-localterra">
 <h2>Download LocalTerra<a class="headerlink" href="#download-localterra" title="Permalink to this headline">¶</a></h2>
 <p>In order to work with Terra Smart Contracts, you should have access to a Terra network that includes the WASM integration.</p>
 <p>In this tutorial, you will be using <a class="reference external" href="https://github.com/terra-money/localterra">LocalTerra</a>, a package that enables you to easily spin up a local, WASM-enabled private testnet. This reduces the friction of development by giving you complete control of a private Terra blockchain with the possibility to easily reset the world state.</p>
@@ -1481,8 +1480,8 @@ docker-compose up
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">satisfy</span> <span class="n">adjust</span> <span class="n">timber</span> <span class="n">high</span> <span class="n">purchase</span> <span class="n">tuition</span> <span class="n">stool</span> <span class="n">faith</span> <span class="n">fine</span> <span class="n">install</span> <span class="n">that</span> <span class="n">you</span> <span class="n">unaware</span> <span class="n">feed</span> <span class="n">domain</span> <span class="n">license</span> <span class="n">impose</span> <span class="n">boss</span> <span class="n">human</span> <span class="n">eager</span> <span class="n">hat</span> <span class="n">rent</span> <span class="n">enjoy</span> <span class="n">dawn</span>
 </pre></div>
 </div>
-</section>
-<section id="install-rust">
+</div>
+<div class="section" id="install-rust">
 <h2>Install Rust<a class="headerlink" href="#install-rust" title="Permalink to this headline">¶</a></h2>
 <p>While WASM smart contracts can theoretically be written in any programming language, it is currently only recommended to use Rust as it is the only language for which mature libraries and tooling exist for CosmWasm. For this tutorial, you’ll need to also install the latest version of Rust by following the instructions <a class="reference external" href="https://www.rust-lang.org/tools/install">here</a>.</p>
 <p>Once you’ll installed Rust and its toolchain (cargo et al.), you’ll need to add the <code class="docutils literal notranslate"><span class="pre">wasm32-unknown-unknown</span></code> compilation target.</p>
@@ -1498,8 +1497,8 @@ rustup target add wasm32-unknown-unknown
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>cargo install cargo-run-script
 </pre></div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

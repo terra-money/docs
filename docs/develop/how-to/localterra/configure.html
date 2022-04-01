@@ -3,8 +3,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta charset="utf-8" />
     <title>Configure LocalTerra &#8212; Terra Docs  documentation</title>
     
     <link href="../../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -1454,7 +1453,7 @@
             
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="configure-localterra">
+  <div class="tex2jax_ignore mathjax_ignore section" id="configure-localterra">
 <h1>Configure LocalTerra<a class="headerlink" href="#configure-localterra" title="Permalink to this headline">¶</a></h1>
 <p>The majority of LocalTerra is implemented through a <code class="docutils literal notranslate"><span class="pre">docker-compose.yml</span></code> file, making it easily customizable. You can use LocalTerra as a starting point for setting up your own local Terra testnet with Docker containers.</p>
 <p>Out of the box, LocalTerra comes preconfigured with opinionated settings such as:</p>
@@ -1462,11 +1461,11 @@
 <li><p>ports defined for RPC (26657), LCD (1317) and FCD (3060)</p></li>
 <li><p>standard <a class="reference internal" href="accounts.html"><span class="doc std std-doc">accounts</span></a></p></li>
 </ul>
-<section id="modify-node-configuration">
+<div class="section" id="modify-node-configuration">
 <h2>Modify node configuration<a class="headerlink" href="#modify-node-configuration" title="Permalink to this headline">¶</a></h2>
 <p>You can modify the node configuration of your validator in the <code class="docutils literal notranslate"><span class="pre">config/config.toml</span></code> and <code class="docutils literal notranslate"><span class="pre">config/app.toml</span></code> files.</p>
-</section>
-<section id="speed-up-block-time">
+</div>
+<div class="section" id="speed-up-block-time">
 <h2>Speed up block time<a class="headerlink" href="#speed-up-block-time" title="Permalink to this headline">¶</a></h2>
 <p>LocalTerra is often used alongside a script written with the Terra.js SDK or Terra Python SDK as a convenient way to do integration tests. You can greatly improve the experience by speeding up the block time.</p>
 <p>To increase block time, edit the <code class="docutils literal notranslate"><span class="pre">[consensus]</span></code> parameters in the <code class="docutils literal notranslate"><span class="pre">config/config.toml</span></code> file, and specify your own values.</p>
@@ -1493,12 +1492,12 @@
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sed -E -i <span class="s1">&#39;/timeout_(propose|prevote|precommit|commit)/s/[0-9]+m?s/200ms/&#39;</span> config/config.toml
 </pre></div>
 </div>
-</section>
-<section id="modifying-genesis">
+</div>
+<div class="section" id="modifying-genesis">
 <h2>Modifying genesis<a class="headerlink" href="#modifying-genesis" title="Permalink to this headline">¶</a></h2>
 <p>You can change the <code class="docutils literal notranslate"><span class="pre">genesis.json</span></code> file by altering <code class="docutils literal notranslate"><span class="pre">config/genesis.json</span></code>. To load your changes, restart your LocalTerra.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

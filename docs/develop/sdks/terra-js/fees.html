@@ -3,8 +3,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta charset="utf-8" />
     <title>Fees &#8212; Terra Docs  documentation</title>
     
     <link href="../../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -1434,7 +1433,7 @@
             
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="fees">
+  <div class="tex2jax_ignore mathjax_ignore section" id="fees">
 <h1>Fees<a class="headerlink" href="#fees" title="Permalink to this headline">¶</a></h1>
 <div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span> <span class="p">{</span> <span class="nx">Fee</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@terra-money/terra.js&#39;</span><span class="p">;</span>
 
@@ -1444,7 +1443,7 @@
 <span class="kd">const</span> <span class="nx">tx</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">wallet</span><span class="p">.</span><span class="nx">createAndSignTx</span><span class="p">({</span> <span class="nx">msgs</span><span class="p">,</span> <span class="nx">fee</span> <span class="p">});</span>
 </pre></div>
 </div>
-<section id="automatic-fee-estimation">
+<div class="section" id="automatic-fee-estimation">
 <h2>Automatic fee estimation<a class="headerlink" href="#automatic-fee-estimation" title="Permalink to this headline">¶</a></h2>
 <p>If you don’t specify a fee when you create your transaction, it will automatically be estimated by simulating it within the node.</p>
 <div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">tx</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">wallet</span><span class="p">.</span><span class="nx">createAndSignTx</span><span class="p">({</span> <span class="nx">msgs</span> <span class="p">});</span>
@@ -1467,8 +1466,8 @@
 <span class="p">});</span>
 </pre></div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

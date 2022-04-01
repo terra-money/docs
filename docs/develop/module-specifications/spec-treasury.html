@@ -3,8 +3,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta charset="utf-8" />
     <title>Treasury &#8212; Terra Docs  documentation</title>
     
     <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -1846,7 +1845,7 @@
             
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="treasury">
+  <div class="tex2jax_ignore mathjax_ignore section" id="treasury">
 <h1>Treasury<a class="headerlink" href="#treasury" title="Permalink to this headline">¶</a></h1>
 <div class="danger admonition">
 <p class="admonition-title">Important</p>
@@ -1857,9 +1856,9 @@
 <p class="admonition-title">Important</p>
 <p>While the Treasury stabilizes miner demand by adjusting rewards, the <a class="reference internal" href="spec-market.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">market</span></code></span></a> module is responsible for Terra price stability through arbitrage and the market maker.</p>
 </div>
-<section id="concepts">
+<div class="section" id="concepts">
 <h2>Concepts<a class="headerlink" href="#concepts" title="Permalink to this headline">¶</a></h2>
-<section id="observed-indicators">
+<div class="section" id="observed-indicators">
 <h3>Observed indicators<a class="headerlink" href="#observed-indicators" title="Permalink to this headline">¶</a></h3>
 <p>The treasury observes three macroeconomic indicators for each epoch and keeps <a class="reference internal" href="#indicators"><span class="std std-doc">indicators</span></a> of their values during previous epochs:</p>
 <ul class="simple">
@@ -1873,8 +1872,8 @@
 </div>
 <p>These indicators can be used to derive two other values, the <strong>Tax Reward per unit Luna</strong> represented by <span class="math notranslate nohighlight">\(\tau = T / \lambda\)</span>, used in <a class="reference internal" href="#k-updatetaxpolicy"><span class="std std-doc">Updating Tax Rate</span></a>, and <strong>total mining rewards</strong> <span class="math notranslate nohighlight">\(R = T + S\)</span>: the sum of the Tax Rewards and the Seigniorage Rewards, used in <a class="reference internal" href="#k-updaterewardpolicy"><span class="std std-doc">Updating Reward Weight</span></a>.</p>
 <p>The protocol can compute and compare the short-term (<a class="reference internal" href="#windowshort"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">WindowShort</span></code></span></a>) and the long-term (<a class="reference internal" href="#windowlong"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">WindowLong</span></code></span></a>) rolling averages of the above indicators to determine the relative direction and velocity of the Terra economy.</p>
-</section>
-<section id="monetary-policy-levers">
+</div>
+<div class="section" id="monetary-policy-levers">
 <h3>Monetary policy levers<a class="headerlink" href="#monetary-policy-levers" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Tax Rate</strong>: <span class="math notranslate nohighlight">\(r\)</span>, adjusts the amount of income gained from Terra transactions, limited by <a class="reference internal" href="#tax-caps"><span class="std std-doc"><em>tax cap</em></span></a>.</p></li>
@@ -1890,8 +1889,8 @@
 <p class="admonition-title">Important</p>
 <p>As of Columbus-5, all seigniorage is burned and no longer funds the community pool or the oracle reward pool. Validators are rewarded for faithful oracle votes through swap fees.</p>
 </div>
-</section>
-<section id="updating-policies">
+</div>
+<div class="section" id="updating-policies">
 <h3>Updating policies<a class="headerlink" href="#updating-policies" title="Permalink to this headline">¶</a></h3>
 <p>Both <a class="reference internal" href="#tax-rate"><span class="std std-doc">Tax Rate</span></a> and <a class="reference internal" href="#reward-weight"><span class="std std-doc">Reward Weight</span></a> are stored as values in the <code class="docutils literal notranslate"><span class="pre">KVStore</span></code> and can have their values updated through <a class="reference internal" href="#proposals"><span class="std std-doc">governance proposals</span></a> after they have passed. The Treasury recalibrates each lever once per epoch to stabilize unit returns for Luna, ensuring predictable mining rewards from staking:</p>
 <ul class="simple">
@@ -1902,15 +1901,15 @@
 <p class="admonition-title">Note</p>
 <p>As of proposals <a class="reference external" href="https://station.terra.money/proposal/43">43</a> and <a class="reference external" href="https://station.terra.money/proposal/172">172</a>, all seigniorage is burned, and the stability fee tax rate is zero.</p>
 </div>
-</section>
-<section id="probation">
+</div>
+<div class="section" id="probation">
 <h3>Probation<a class="headerlink" href="#probation" title="Permalink to this headline">¶</a></h3>
 <p>A probationary period specified by the <a class="reference internal" href="#windowprobation"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">WindowProbation</span></code></span></a> prevents the network from updating the tax rate and reward weight during the first epochs after genesis to allow the blockchain to first obtain a critical mass of transactions and a mature, reliable history of indicators.</p>
-</section>
-</section>
-<section id="data">
+</div>
+</div>
+<div class="section" id="data">
 <h2>Data<a class="headerlink" href="#data" title="Permalink to this headline">¶</a></h2>
-<section id="policy-constraints">
+<div class="section" id="policy-constraints">
 <h3>Policy constraints<a class="headerlink" href="#policy-constraints" title="Permalink to this headline">¶</a></h3>
 <div class="warning admonition">
 <p class="admonition-title">Note</p>
@@ -1949,16 +1948,16 @@
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-</section>
-<section id="proposals">
+</div>
+</div>
+<div class="section" id="proposals">
 <h2>Proposals<a class="headerlink" href="#proposals" title="Permalink to this headline">¶</a></h2>
 <div class="warning admonition">
 <p class="admonition-title">Note</p>
 <p>As of proposals <a class="reference external" href="https://station.terra.money/proposal/43">43</a> and <a class="reference external" href="https://station.terra.money/proposal/172">172</a>, all seigniorage is burned, and the stability fee tax rate is zero.</p>
 </div>
 <p>The Treasury module defines special proposals which allow the <a class="reference internal" href="#tax-rate"><span class="std std-doc">Tax Rate</span></a> and <a class="reference internal" href="#reward-weight"><span class="std std-doc">Reward Weight</span></a> values in the <code class="docutils literal notranslate"><span class="pre">KVStore</span></code> to be voted on and changed accordingly, subject to the <a class="reference internal" href="#policy-constraints"><span class="std std-doc">policy constraints</span></a> imposed by <code class="docutils literal notranslate"><span class="pre">pc.Clamp()</span></code>.</p>
-<section id="taxrateupdateproposal">
+<div class="section" id="taxrateupdateproposal">
 <h3>TaxRateUpdateProposal<a class="headerlink" href="#taxrateupdateproposal" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">type</span><span class="w"> </span><span class="nx">TaxRateUpdateProposal</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">	</span><span class="nx">Title</span><span class="w">       </span><span class="kt">string</span><span class="w">  </span><span class="s">`json:&quot;title&quot; yaml:&quot;title&quot;`</span><span class="w">             </span><span class="c1">// Title of the Proposal</span><span class="w"></span>
@@ -1971,11 +1970,11 @@
 <p class="admonition-title">Note</p>
 <p>As of proposals <a class="reference external" href="https://station.terra.money/proposal/43">43</a> and <a class="reference external" href="https://station.terra.money/proposal/172">172</a>, all seigniorage is burned, and the stability fee tax rate is zero.</p>
 </div>
-</section>
-</section>
-<section id="state">
+</div>
+</div>
+<div class="section" id="state">
 <h2>State<a class="headerlink" href="#state" title="Permalink to this headline">¶</a></h2>
-<section id="tax-rate">
+<div class="section" id="tax-rate">
 <h3>Tax rate<a class="headerlink" href="#tax-rate" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">Dec</span></code></p></li>
@@ -1987,16 +1986,16 @@
 <p class="admonition-title">Note</p>
 <p>As of proposals <a class="reference external" href="https://station.terra.money/proposal/43">43</a> and <a class="reference external" href="https://station.terra.money/proposal/172">172</a>, all seigniorage is burned, and the stability fee tax rate is zero.</p>
 </div>
-</section>
-<section id="reward-weight">
+</div>
+<div class="section" id="reward-weight">
 <h3>Reward Weight<a class="headerlink" href="#reward-weight" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">Dec</span></code></p></li>
 <li><p>default: <code class="docutils literal notranslate"><span class="pre">1</span></code></p></li>
 </ul>
 <p>The value of the reward weight policy lever for the current epoch. As of Columbus-5, the reward weight is <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
-</section>
-<section id="tax-caps">
+</div>
+<div class="section" id="tax-caps">
 <h3>Tax caps<a class="headerlink" href="#tax-caps" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">map[string]Int</span></code></p></li>
@@ -2007,15 +2006,15 @@
 <p class="admonition-title">Note</p>
 <p>As of proposals <a class="reference external" href="https://station.terra.money/proposal/43">43</a> and <a class="reference external" href="https://station.terra.money/proposal/172">172</a>, all seigniorage is burned, and the stability fee tax rate is zero.</p>
 </div>
-</section>
-<section id="tax-proceeds">
+</div>
+<div class="section" id="tax-proceeds">
 <h3>Tax Proceeds<a class="headerlink" href="#tax-proceeds" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">Coins</span></code></p></li>
 </ul>
 <p>The tax rewards <span class="math notranslate nohighlight">\(T\)</span> for the current epoch.</p>
-</section>
-<section id="epoch-initial-issuance">
+</div>
+<div class="section" id="epoch-initial-issuance">
 <h3>Epoch initial issuance<a class="headerlink" href="#epoch-initial-issuance" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">Coins</span></code></p></li>
@@ -2026,11 +2025,11 @@
 <p class="admonition-title">Note</p>
 <p>As of proposals <a class="reference external" href="https://station.terra.money/proposal/43">43</a> and <a class="reference external" href="https://station.terra.money/proposal/172">172</a>, all seigniorage is burned, and the stability fee tax rate is zero.</p>
 </div>
-</section>
-<section id="indicators">
+</div>
+<div class="section" id="indicators">
 <h3>Indicators<a class="headerlink" href="#indicators" title="Permalink to this headline">¶</a></h3>
 <p>The Treasury keeps track of the following indicators for the present and previous epochs:</p>
-<section id="tax-rewards">
+<div class="section" id="tax-rewards">
 <h4>Tax rewards<a class="headerlink" href="#tax-rewards" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">Dec</span></code></p></li>
@@ -2040,8 +2039,8 @@
 <p class="admonition-title">Note</p>
 <p>As of proposals <a class="reference external" href="https://station.terra.money/proposal/43">43</a> and <a class="reference external" href="https://station.terra.money/proposal/172">172</a>, all seigniorage is burned, and the stability fee tax rate is zero.</p>
 </div>
-</section>
-<section id="seigniorage-rewards">
+</div>
+<div class="section" id="seigniorage-rewards">
 <h4>Seigniorage Rewards<a class="headerlink" href="#seigniorage-rewards" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">Dec</span></code></p></li>
@@ -2051,19 +2050,19 @@
 <p class="admonition-title">Note</p>
 <p>As of proposals <a class="reference external" href="https://station.terra.money/proposal/43">43</a> and <a class="reference external" href="https://station.terra.money/proposal/172">172</a>, all seigniorage is burned, and the stability fee tax rate is zero.</p>
 </div>
-</section>
-<section id="total-staked-luna">
+</div>
+<div class="section" id="total-staked-luna">
 <h4>Total Staked Luna<a class="headerlink" href="#total-staked-luna" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">Int</span></code></p></li>
 </ul>
 <p>The total staked Luna <span class="math notranslate nohighlight">\(\lambda\)</span> for each <code class="docutils literal notranslate"><span class="pre">epoch</span></code>.</p>
-</section>
-</section>
-</section>
-<section id="functions">
+</div>
+</div>
+</div>
+<div class="section" id="functions">
 <h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
-<section id="k-updateindicators">
+<div class="section" id="k-updateindicators">
 <h3><code class="docutils literal notranslate"><span class="pre">k.UpdateIndicators()</span></code><a class="headerlink" href="#k-updateindicators" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">k</span><span class="w"> </span><span class="nx">Keeper</span><span class="p">)</span><span class="w"> </span><span class="nx">UpdateIndicators</span><span class="p">(</span><span class="nx">ctx</span><span class="w"> </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">Context</span><span class="p">)</span><span class="w"></span>
 </pre></div>
@@ -2078,8 +2077,8 @@
 <p class="admonition-title">Note</p>
 <p>As of proposals <a class="reference external" href="https://station.terra.money/proposal/43">43</a> and <a class="reference external" href="https://station.terra.money/proposal/172">172</a>, all seigniorage is burned, and the stability fee tax rate is zero.</p>
 </div>
-</section>
-<section id="k-updatetaxpolicy">
+</div>
+<div class="section" id="k-updatetaxpolicy">
 <h3><code class="docutils literal notranslate"><span class="pre">k.UpdateTaxPolicy()</span></code><a class="headerlink" href="#k-updatetaxpolicy" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">k</span><span class="w"> </span><span class="nx">Keeper</span><span class="p">)</span><span class="w"> </span><span class="nx">UpdateTaxPolicy</span><span class="p">(</span><span class="nx">ctx</span><span class="w"> </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">Context</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nx">newTaxRate</span><span class="w"> </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">Dec</span><span class="p">)</span><span class="w"></span>
 </pre></div>
@@ -2097,8 +2096,8 @@
 <p class="admonition-title">Note</p>
 <p>As of proposals <a class="reference external" href="https://station.terra.money/proposal/43">43</a> and <a class="reference external" href="https://station.terra.money/proposal/172">172</a>, all seigniorage is burned, and the stability fee tax rate is zero.</p>
 </div>
-</section>
-<section id="k-updaterewardpolicy">
+</div>
+<div class="section" id="k-updaterewardpolicy">
 <h3><code class="docutils literal notranslate"><span class="pre">k.UpdateRewardPolicy()</span></code><a class="headerlink" href="#k-updaterewardpolicy" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">k</span><span class="w"> </span><span class="nx">Keeper</span><span class="p">)</span><span class="w"> </span><span class="nx">UpdateRewardPolicy</span><span class="p">(</span><span class="nx">ctx</span><span class="w"> </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">Context</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nx">newRewardWeight</span><span class="w"> </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">Dec</span><span class="p">)</span><span class="w"></span>
 </pre></div>
@@ -2115,8 +2114,8 @@
 <p class="admonition-title">Important</p>
 <p>As of Columbus-5, all seigniorage is burned and no longer funds the community or reward pools.</p>
 </div>
-</section>
-<section id="k-updatetaxcap">
+</div>
+<div class="section" id="k-updatetaxcap">
 <h3><code class="docutils literal notranslate"><span class="pre">k.UpdateTaxCap()</span></code><a class="headerlink" href="#k-updatetaxcap" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">k</span><span class="w"> </span><span class="nx">Keeper</span><span class="p">)</span><span class="w"> </span><span class="nx">UpdateTaxCap</span><span class="p">(</span><span class="nx">ctx</span><span class="w"> </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">Context</span><span class="p">)</span><span class="w"> </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">Coins</span><span class="w"></span>
 </pre></div>
@@ -2127,8 +2126,8 @@
 <p class="admonition-title">Note</p>
 <p>As of proposals <a class="reference external" href="https://station.terra.money/proposal/43">43</a> and <a class="reference external" href="https://station.terra.money/proposal/172">172</a>, all seigniorage is burned, and the stability fee tax rate is zero.</p>
 </div>
-</section>
-<section id="k-settleseigniorage">
+</div>
+<div class="section" id="k-settleseigniorage">
 <h3><code class="docutils literal notranslate"><span class="pre">k.SettleSeigniorage()</span></code><a class="headerlink" href="#k-settleseigniorage" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">k</span><span class="w"> </span><span class="nx">Keeper</span><span class="p">)</span><span class="w"> </span><span class="nx">SettleSeigniorage</span><span class="p">(</span><span class="nx">ctx</span><span class="w"> </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">Context</span><span class="p">)</span><span class="w"></span>
 </pre></div>
@@ -2145,11 +2144,11 @@
 <p class="admonition-title">Important</p>
 <p>As of Columbus-5, all seigniorage is burned and no longer funds the community pool or the oracle reward pool. Validators are rewarded for faithful oracle votes through swap fees.</p>
 </div>
-</section>
-</section>
-<section id="transitions">
+</div>
+</div>
+<div class="section" id="transitions">
 <h2>Transitions<a class="headerlink" href="#transitions" title="Permalink to this headline">¶</a></h2>
-<section id="end-block">
+<div class="section" id="end-block">
 <h3>End-Block<a class="headerlink" href="#end-block" title="Permalink to this headline">¶</a></h3>
 <p>If the blockchain is at the final block of the epoch, the following procedure is run:</p>
 <ol class="arabic simple">
@@ -2186,9 +2185,9 @@
 <p class="admonition-title">Note</p>
 <p>As of proposals <a class="reference external" href="https://station.terra.money/proposal/43">43</a> and <a class="reference external" href="https://station.terra.money/proposal/172">172</a>, all seigniorage is burned, and the stability fee tax rate is zero.</p>
 </div>
-</section>
-</section>
-<section id="parameters">
+</div>
+</div>
+<div class="section" id="parameters">
 <h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
 <p>The subspace for the Treasury module is <code class="docutils literal notranslate"><span class="pre">treasury</span></code>.</p>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">type</span><span class="w"> </span><span class="nx">Params</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -2202,7 +2201,7 @@
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<section id="taxpolicy">
+<div class="section" id="taxpolicy">
 <h3>TaxPolicy<a class="headerlink" href="#taxpolicy" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">PolicyConstraints</span></code></p></li>
@@ -2217,8 +2216,8 @@
 </pre></div>
 </div>
 <p>Constraints for updating the <a class="reference internal" href="#tax-rate"><span class="std std-doc">tax rate</span></a> monetary policy lever.</p>
-</section>
-<section id="rewardpolicy">
+</div>
+<div class="section" id="rewardpolicy">
 <h3>RewardPolicy<a class="headerlink" href="#rewardpolicy" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">PolicyConstraints</span></code></p></li>
@@ -2233,8 +2232,8 @@
 </pre></div>
 </div>
 <p>Constraints for updating the <a class="reference internal" href="#reward-weight"><span class="std std-doc">reward weight</span></a> monetary policy lever.</p>
-</section>
-<section id="seigniorageburdentarget">
+</div>
+<div class="section" id="seigniorageburdentarget">
 <h3>SeigniorageBurdenTarget<a class="headerlink" href="#seigniorageburdentarget" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">sdk.Dec</span></code></p></li>
@@ -2245,41 +2244,41 @@
 <p class="admonition-title">Note</p>
 <p>As of proposals <a class="reference external" href="https://station.terra.money/proposal/43">43</a> and <a class="reference external" href="https://station.terra.money/proposal/172">172</a>, all seigniorage is burned, and the stability fee tax rate is zero.</p>
 </div>
-</section>
-<section id="miningincrement">
+</div>
+<div class="section" id="miningincrement">
 <h3>MiningIncrement<a class="headerlink" href="#miningincrement" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">sdk.Dec</span></code></p></li>
 <li><p>default: 1.07 growth rate, 15% CAGR of <span class="math notranslate nohighlight">\(\tau\)</span></p></li>
 </ul>
 <p>Multiplier determining an annual growth rate for tax rate policy updates during epoch transition.</p>
-</section>
-<section id="windowshort">
+</div>
+<div class="section" id="windowshort">
 <h3>WindowShort<a class="headerlink" href="#windowshort" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">int64</span></code></p></li>
 <li><p>default: <code class="docutils literal notranslate"><span class="pre">4</span></code> (month = 4 weeks)</p></li>
 </ul>
 <p>A number of epochs that specifies a time interval for calculating the short-term moving average.</p>
-</section>
-<section id="windowlong">
+</div>
+<div class="section" id="windowlong">
 <h3>WindowLong<a class="headerlink" href="#windowlong" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">int64</span></code></p></li>
 <li><p>default: <code class="docutils literal notranslate"><span class="pre">52</span></code> (year = 52 weeks)</p></li>
 </ul>
 <p>A number of epochs that specifies a time interval for calculating the long-term moving average.</p>
-</section>
-<section id="windowprobation">
+</div>
+<div class="section" id="windowprobation">
 <h3>WindowProbation<a class="headerlink" href="#windowprobation" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">int64</span></code></p></li>
 <li><p>default: <code class="docutils literal notranslate"><span class="pre">18</span></code></p></li>
 </ul>
 <p>A number of epochs that specifies a time interval for the probationary period.</p>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
               </div>

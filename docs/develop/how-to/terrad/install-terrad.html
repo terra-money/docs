@@ -3,8 +3,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta charset="utf-8" />
     <title>Install terrad &#8212; Terra Docs  documentation</title>
     
     <link href="../../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -1498,25 +1497,25 @@
             
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="install-terrad">
+  <div class="tex2jax_ignore mathjax_ignore section" id="install-terrad">
 <h1>Install terrad<a class="headerlink" href="#install-terrad" title="Permalink to this headline">¶</a></h1>
 <p><code class="docutils literal notranslate"><span class="pre">terrad</span></code> is the command-line interface and daemon that connects to Terra and enables you to interact with the Terra blockchain. Terra core is the official Golang reference implementation of the Terra node software.</p>
 <p>This guide is for developers who want to install <code class="docutils literal notranslate"><span class="pre">terrad</span></code> and interact with Terra core without running a full node. If you want to run a full node or join a network, visit <a class="reference internal" href="../../../full-node/run-a-full-terra-node/README.html"><span class="doc std std-doc">Run a full Terra node </span></a>.</p>
-<section id="prerequisites">
+<div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://golang.org/doc/install">Golang v1.16.1 - go1.17.1 linux/amd64</a></p></li>
 <li><p>Ensure your <code class="docutils literal notranslate"><span class="pre">GOPATH</span></code> and <code class="docutils literal notranslate"><span class="pre">GOBIN</span></code> environment variables are set up correctly.</p></li>
 <li><p>Linux users: install <a class="reference external" href="http://linux-command.org/en/build-essential.html">build-essential</a>.</p></li>
 </ul>
-</section>
-<section id="from-binary">
+</div>
+<div class="section" id="from-binary">
 <h2>From binary<a class="headerlink" href="#from-binary" title="Permalink to this headline">¶</a></h2>
 <p>The easiest way to install <code class="docutils literal notranslate"><span class="pre">terrad</span></code> and Terra core is by downloading a pre-built binary for your operating system. You can find the latest binaries on the <a class="reference external" href="https://github.com/terra-money/core/releases">releases</a> page.</p>
-</section>
-<section id="from-source">
+</div>
+<div class="section" id="from-source">
 <h2>From source<a class="headerlink" href="#from-source" title="Permalink to this headline">¶</a></h2>
-<section id="get-the-terra-core-source-code">
+<div class="section" id="get-the-terra-core-source-code">
 <h3>1. Get the Terra core source code<a class="headerlink" href="#get-the-terra-core-source-code" title="Permalink to this headline">¶</a></h3>
 <p>Use <code class="docutils literal notranslate"><span class="pre">git</span></code> to retrieve <a class="reference external" href="https://github.com/terra-money/core/">Terra core</a>, and checkout the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch, which contains the latest stable release.</p>
 <p>If you are using LocalTerra or running a validator, use the <code class="docutils literal notranslate"><span class="pre">v0.x.x-oracle</span></code> tag. Otherwise, use the <code class="docutils literal notranslate"><span class="pre">v0.x.x</span></code> tag.</p>
@@ -1531,15 +1530,15 @@ git checkout <span class="o">[</span>latest version<span class="o">]</span>
 git checkout v0.5.6-oracle
 </pre></div>
 </div>
-</section>
-<section id="build-terra-core-from-source">
+</div>
+<div class="section" id="build-terra-core-from-source">
 <h3>2. Build Terra core from source<a class="headerlink" href="#build-terra-core-from-source" title="Permalink to this headline">¶</a></h3>
 <p>Build Terra core, and install the <code class="docutils literal notranslate"><span class="pre">terrad</span></code> executable to your <code class="docutils literal notranslate"><span class="pre">GOPATH</span></code> environment variable.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make install
 </pre></div>
 </div>
-</section>
-<section id="verify-your-terra-core-installation">
+</div>
+<div class="section" id="verify-your-terra-core-installation">
 <h3>3. Verify your Terra core installation<a class="headerlink" href="#verify-your-terra-core-installation" title="Permalink to this headline">¶</a></h3>
 <p>Verify that Terra core is installed correctly.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad version --long
@@ -1562,14 +1561,14 @@ go: go version go1.13.4 darwin/amd64
 </pre></div>
 </div>
 </div>
-</section>
-</section>
-<section id="next-steps">
+</div>
+</div>
+<div class="section" id="next-steps">
 <h2>Next steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
 <p>With <code class="docutils literal notranslate"><span class="pre">terrad</span></code> installed, you can set up a local testing environment using <a class="reference internal" href="../localterra/README.html"><span class="doc std std-doc">LocalTerra</span></a>.</p>
 <p>For more information on <code class="docutils literal notranslate"><span class="pre">terrad</span></code> commands and usage, see <a class="reference internal" href="using-terrad.html"><span class="doc std std-doc">Using terrad</span></a>.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

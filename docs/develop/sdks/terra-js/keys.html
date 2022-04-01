@@ -3,8 +3,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta charset="utf-8" />
     <title>Keys &#8212; Terra Docs  documentation</title>
     
     <link href="../../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -1536,10 +1535,10 @@
             
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="keys">
+  <div class="tex2jax_ignore mathjax_ignore section" id="keys">
 <h1>Keys<a class="headerlink" href="#keys" title="Permalink to this headline">¶</a></h1>
 <p>To perform actions using an account with Terra.js, you need a <strong>Key</strong>, which provides an abstraction around signing functions of an account.</p>
-<section id="key-interface">
+<div class="section" id="key-interface">
 <h2>Key interface<a class="headerlink" href="#key-interface" title="Permalink to this headline">¶</a></h2>
 <p>A <code class="docutils literal notranslate"><span class="pre">Key</span></code> provides the following interface:</p>
 <div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">interface</span> <span class="nx">Key</span> <span class="p">{</span>
@@ -1555,11 +1554,11 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-</section>
-<section id="key-implementations">
+</div>
+<div class="section" id="key-implementations">
 <h2>Key implementations<a class="headerlink" href="#key-implementations" title="Permalink to this headline">¶</a></h2>
 <p>Terra.js provides several standard <code class="docutils literal notranslate"><span class="pre">Key</span></code> implementations that provide a variety of ways to load an account with signing features into your program.</p>
-<section id="rawkey">
+<div class="section" id="rawkey">
 <h3><code class="docutils literal notranslate"><span class="pre">RawKey</span></code><a class="headerlink" href="#rawkey" title="Permalink to this headline">¶</a></h3>
 <p>The most basic implementation of <code class="docutils literal notranslate"><span class="pre">Key</span></code> is <code class="docutils literal notranslate"><span class="pre">RawKey</span></code>, which is created with a plain private key.</p>
 <div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span> <span class="p">{</span> <span class="nx">RawKey</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@terra-money/terra.js&#39;</span><span class="p">;</span>
@@ -1571,8 +1570,8 @@
 <div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">rk</span><span class="p">.</span><span class="nx">privateKey</span><span class="p">);</span>
 </pre></div>
 </div>
-</section>
-<section id="mnemonickey">
+</div>
+<div class="section" id="mnemonickey">
 <h3><code class="docutils literal notranslate"><span class="pre">MnemonicKey</span></code><a class="headerlink" href="#mnemonickey" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span> <span class="p">{</span> <span class="nx">MnemonicKey</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@terra-money/terra.js&#39;</span><span class="p">;</span>
 
@@ -1581,15 +1580,15 @@
 <span class="p">});</span>
 </pre></div>
 </div>
-<section id="generate-random-mnemonic">
+<div class="section" id="generate-random-mnemonic">
 <h4>Generate random mnemonic<a class="headerlink" href="#generate-random-mnemonic" title="Permalink to this headline">¶</a></h4>
 <p>If you want to generate a random mnemonic, you can create a <code class="docutils literal notranslate"><span class="pre">MnemonicKey</span></code> without any arguments:</p>
 <div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">mk</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">MnemonicKey</span><span class="p">();</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">mk</span><span class="p">.</span><span class="nx">mnemonic</span><span class="p">);</span>
 </pre></div>
 </div>
-</section>
-<section id="specifying-hd-path">
+</div>
+<div class="section" id="specifying-hd-path">
 <h4>Specifying HD path<a class="headerlink" href="#specifying-hd-path" title="Permalink to this headline">¶</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">MnemonicKey</span></code> can used to recover a wallet with a particular BIP44 HD path: <code class="docutils literal notranslate"><span class="pre">m/44'/${coinType}'/${account}'/0/${index}</span></code>.</p>
 <div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">mk</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">MnemonicKey</span><span class="p">({</span>
@@ -1607,9 +1606,9 @@
 <span class="p">});</span>
 </pre></div>
 </div>
-</section>
-</section>
-<section id="clikey">
+</div>
+</div>
+<div class="section" id="clikey">
 <h3><code class="docutils literal notranslate"><span class="pre">CLIKey</span></code><a class="headerlink" href="#clikey" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p>NOTE: This requires you to have <code class="docutils literal notranslate"><span class="pre">terrad</span></code> installed.</p>
@@ -1640,9 +1639,9 @@
 <span class="nx">main</span><span class="p">().</span><span class="k">catch</span><span class="p">(</span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">);</span>
 </pre></div>
 </div>
-</section>
-</section>
-<section id="custom-key-implementation">
+</div>
+</div>
+<div class="section" id="custom-key-implementation">
 <h2>Custom key implementation<a class="headerlink" href="#custom-key-implementation" title="Permalink to this headline">¶</a></h2>
 <p>If you need to write your own key management solution, you will need to subclass the abstract <code class="docutils literal notranslate"><span class="pre">Key</span></code> class and provide your own signing function. Note that the key need not expose any details pertaining to the private key – you could specify a <code class="docutils literal notranslate"><span class="pre">sign()</span></code> function that forwards the signing request to a server or to a hardware wallet, for instance. The remaining functions related to signing (<code class="docutils literal notranslate"><span class="pre">createSignature()</span></code> and <code class="docutils literal notranslate"><span class="pre">signTx()</span></code>) are automatically provided and use <code class="docutils literal notranslate"><span class="pre">sign()</span></code> underneath.</p>
 <p>The following code listing is the implementation of <code class="docutils literal notranslate"><span class="pre">RawKey</span></code>, which illustrates how to write a custom <code class="docutils literal notranslate"><span class="pre">Key</span></code>:</p>
@@ -1680,8 +1679,8 @@
 </pre></div>
 </div>
 <p>Note that you must call <code class="docutils literal notranslate"><span class="pre">super()</span></code> with the public key—this generates the relevant account and validator public keys associated with your key.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

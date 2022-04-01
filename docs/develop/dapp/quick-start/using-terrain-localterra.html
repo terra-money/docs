@@ -3,8 +3,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta charset="utf-8" />
     <title>Use Terrain with LocalTerra &#8212; Terra Docs  documentation</title>
     
     <link href="../../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -1518,10 +1517,10 @@
             
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="use-terrain-with-localterra">
+  <div class="tex2jax_ignore mathjax_ignore section" id="use-terrain-with-localterra">
 <h1>Use Terrain with LocalTerra<a class="headerlink" href="#use-terrain-with-localterra" title="Permalink to this headline">¶</a></h1>
 <p>LocalTerra is a complete Terra testnet and ecosystem containerized with Docker. Use LocalTerra to simulate transactions in a test environment.</p>
-<section id="prerequisites">
+<div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.docker.com/">Docker</a></p></li>
@@ -1549,8 +1548,8 @@ nvm use --lts
 </pre></div>
 </div>
 </div>
-</details></section>
-<section id="install-and-run-localterra">
+</details></div>
+<div class="section" id="install-and-run-localterra">
 <h2>1. Install and run LocalTerra<a class="headerlink" href="#install-and-run-localterra" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
 <li><p>To download LocalTerra, run the following commands:</p>
@@ -1566,8 +1565,8 @@ docker-compose up
 </li>
 <li><p>You will start seeing LocalTerra block activity in your terminal. Keep LocalTerra running while you perform the next steps in a new terminal window.</p></li>
 </ol>
-</section>
-<section id="scaffold-your-dapp">
+</div>
+<div class="section" id="scaffold-your-dapp">
 <h2>2. Scaffold your dApp<a class="headerlink" href="#scaffold-your-dapp" title="Permalink to this headline">¶</a></h2>
 <p>With Terrain installed you can now scaffold your new application in a new terminal window:</p>
 <ol class="arabic">
@@ -1587,7 +1586,7 @@ npm install
 </div>
 </li>
 </ol>
-<section id="project-structure">
+<div class="section" id="project-structure">
 <h3>Project structure<a class="headerlink" href="#project-structure" title="Permalink to this headline">¶</a></h3>
 <p>The following structure shows your scaffolded project:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>.
@@ -1602,9 +1601,9 @@ npm install
 └── refs.terrain.json      # Deployed code and contract references.
 </pre></div>
 </div>
-</section>
-</section>
-<section id="deploy">
+</div>
+</div>
+<div class="section" id="deploy">
 <h2>3. Deploy<a class="headerlink" href="#deploy" title="Permalink to this headline">¶</a></h2>
 <p>To deploy the application, run the following command:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrain deploy counter --signer test1
@@ -1621,8 +1620,8 @@ npm install
 <p class="admonition-title">Increase Docker memory</p>
 <p>If you are running LocalTerra and the previous <code class="docutils literal notranslate"><span class="pre">deploy</span></code> command is not working, try increasing Docker’s memory allowance by clicking on the Docker icon. Click <strong>Preferences</strong> and then <strong>Resources</strong>. Increase the memory to at least 4 gigs. Click <strong>Apply &amp; Restart</strong>. Run the deploy command again. You can increase again to 6 gigs if you are still having trouble.</p>
 </div>
-</section>
-<section id="interact-with-the-deployed-contract">
+</div>
+<div class="section" id="interact-with-the-deployed-contract">
 <h2>4. Interact with the deployed contract<a class="headerlink" href="#interact-with-the-deployed-contract" title="Permalink to this headline">¶</a></h2>
 <p>The template comes with several predefined helpers in <code class="docutils literal notranslate"><span class="pre">lib/index.js</span></code>. Use them to start interacting with your smart contract:</p>
 <ol class="arabic">
@@ -1651,8 +1650,8 @@ npm install
 <p class="admonition-title">Tip</p>
 <p>Before proceeding to the next section, kill the running command in your terminal by entering “Ctrl + C” .</p>
 </div>
-</section>
-<section id="front-end-scaffolding">
+</div>
+<div class="section" id="front-end-scaffolding">
 <h2>5. Front-end scaffolding<a class="headerlink" href="#front-end-scaffolding" title="Permalink to this headline">¶</a></h2>
 <p>Terrain also scaffolds a very simple front-end:</p>
 <ol class="arabic">
@@ -1672,16 +1671,16 @@ npm install
 </li>
 <li><p>With LocalTerra selected in Terra Station and the local seed phrase imported, you can now increment and reset the counter from the front end.</p></li>
 </ol>
-</section>
-<section id="demo">
+</div>
+<div class="section" id="demo">
 <h2>Demo<a class="headerlink" href="#demo" title="Permalink to this headline">¶</a></h2>
 <p><img alt="" src="../../../../_images/tut_counter.gif" /></p>
-</section>
-<section id="advanced-usage">
+</div>
+<div class="section" id="advanced-usage">
 <h2>Advanced usage<a class="headerlink" href="#advanced-usage" title="Permalink to this headline">¶</a></h2>
 <p>For more advanced use cases, like deploying to the testnet or mainnet, see <a class="reference external" href="https://github.com/terra-money/terrain#readme">Terrain’s readme</a>.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

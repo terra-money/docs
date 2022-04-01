@@ -3,8 +3,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta charset="utf-8" />
     <title>Updates and additional settings &#8212; Terra Docs  documentation</title>
     
     <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -1546,12 +1545,12 @@
             
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="updates-and-additional-settings">
+  <div class="tex2jax_ignore mathjax_ignore section" id="updates-and-additional-settings">
 <h1>Updates and additional settings<a class="headerlink" href="#updates-and-additional-settings" title="Permalink to this headline">¶</a></h1>
-<section id="upgrade-the-testnet">
+<div class="section" id="upgrade-the-testnet">
 <h2>Upgrade the testnet<a class="headerlink" href="#upgrade-the-testnet" title="Permalink to this headline">¶</a></h2>
 <p>These instructions are for full nodes running previous testnets that would like to upgrade to the latest testnet.</p>
-<section id="reset-data">
+<div class="section" id="reset-data">
 <h3>1. Reset data<a class="headerlink" href="#reset-data" title="Permalink to this headline">¶</a></h3>
 <p>Remove the outdated files and reset data:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rm ~/.terra/config/genesis.json
@@ -1564,8 +1563,8 @@ terrad unsafe-reset-all
 <p class="admonition-title">Danger</p>
 <p>Make sure that every node has a unique <code class="docutils literal notranslate"><span class="pre">priv_validator.json</span></code>. Do not copy the <code class="docutils literal notranslate"><span class="pre">priv_validator.json</span></code> from an old node to multiple new nodes. Running two nodes with the same <code class="docutils literal notranslate"><span class="pre">priv_validator.json</span></code> will cause you to double sign.</p>
 </div>
-</section>
-<section id="software-upgrade">
+</div>
+<div class="section" id="software-upgrade">
 <h3>2. Software upgrade<a class="headerlink" href="#software-upgrade" title="Permalink to this headline">¶</a></h3>
 <p>Now it is time to upgrade the software. Go to the project directory and run:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git checkout master <span class="o">&amp;&amp;</span> git pull
@@ -1578,9 +1577,9 @@ make
 </div>
 <p>The previous command uses <code class="docutils literal notranslate"><span class="pre">master</span></code> as it contains the latest stable release. See the <a class="reference external" href="https://github.com/terra-money/testnet">testnet repo</a> for details on which version is needed for which testnet, and the <a class="reference external" href="https://github.com/terra-money/core/releases">Terra Core release page</a> for details on each release.</p>
 <p>Your full node is now cleanly upgraded!</p>
-</section>
-</section>
-<section id="exporting-state">
+</div>
+</div>
+<div class="section" id="exporting-state">
 <h2>Exporting state<a class="headerlink" href="#exporting-state" title="Permalink to this headline">¶</a></h2>
 <p>Terra can export the entire application state to a JSON file. You can use this file for manual analysis or as the genesis file of a new network.</p>
 <p>Export state:</p>
@@ -1599,25 +1598,25 @@ make
 <p class="admonition-title">Tip</p>
 <p>For more information on seeds and peers, visit the <a class="reference external" href="https://github.com/tendermint/tendermint/blob/master/docs/tendermint-core/using-tendermint.md#peers">Tendermint documentation</a>.</p>
 </div>
-</section>
-<section id="additional-settings">
+</div>
+<div class="section" id="additional-settings">
 <h2>Additional Settings<a class="headerlink" href="#additional-settings" title="Permalink to this headline">¶</a></h2>
-<section id="seed-mode">
+<div class="section" id="seed-mode">
 <h3><code class="docutils literal notranslate"><span class="pre">seed_mode</span></code><a class="headerlink" href="#seed-mode" title="Permalink to this headline">¶</a></h3>
 <p>In seed mode, your node constantly crawls the network and looks for peers. If another node asks it for addresses, it responds and disconnects. Seed mode will not work if the peer-exchange reactor is disabled.</p>
 <div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="n">seed_mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-<section id="seeds">
+</div>
+<div class="section" id="seeds">
 <h3><code class="docutils literal notranslate"><span class="pre">seeds</span></code><a class="headerlink" href="#seeds" title="Permalink to this headline">¶</a></h3>
 <p>To manually identify seed nodes, edit the following setting in <code class="docutils literal notranslate"><span class="pre">config.toml</span></code>.</p>
 <div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="c1"># Comma separated list of seed nodes to connect to</span><span class="w"></span>
 <span class="n">seeds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;id100000000000000000000000000000000@1.2.3.4:26656,id200000000000000000000000000000000@2.3.4.5:4444&quot;</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-<section id="persistent-peers">
+</div>
+<div class="section" id="persistent-peers">
 <h3><code class="docutils literal notranslate"><span class="pre">persistent_peers</span></code><a class="headerlink" href="#persistent-peers" title="Permalink to this headline">¶</a></h3>
 <p>The nodes you specify are the trusted persistent peers that can help anchor your node in the p2p network. If the connection fails, they are dialed and automatically redialed for 24 hours. The automatic redial function uses exponential backoff and stops after 24 hours of trying to connect.</p>
 <p>If the value of <code class="docutils literal notranslate"><span class="pre">persistent_peers_max_dial_period</span></code> is more than zero, the pause between each call to each persistent peer will not exceed <code class="docutils literal notranslate"><span class="pre">persistent_peers_max_dial_period</span></code> during exponential backoff, and the automatic redial process continues.</p>
@@ -1625,14 +1624,14 @@ make
 <span class="n">persistent_peers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;id100000000000000000000000000000000@1.2.3.4:26656,id200000000000000000000000000000000@2.3.4.5:26656&quot;</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-<section id="rosetta">
+</div>
+<div class="section" id="rosetta">
 <h3>Rosetta<a class="headerlink" href="#rosetta" title="Permalink to this headline">¶</a></h3>
 <p>Integrate Terra with Coinbase via the Rosetta API. Rosetta is an open-source API that organizes blockchain data into a standardized format, making it easy for developers to build cross-chain applications. Instead of creating specific code for each chain, Rosetta allows different blockchains to integrate into any exchange that uses Rosetta API.</p>
 <p>For more information, visit the <a class="reference external" href="https://www.rosetta-api.org/docs/welcome.html">Rosetta docs site</a>.</p>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
               </div>

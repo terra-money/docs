@@ -3,8 +3,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta charset="utf-8" />
     <title>Auth &#8212; Terra Docs  documentation</title>
     
     <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -1498,18 +1497,18 @@
             
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="auth">
+  <div class="tex2jax_ignore mathjax_ignore section" id="auth">
 <h1>Auth<a class="headerlink" href="#auth" title="Permalink to this headline">¶</a></h1>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>Terra’s auth module inherits from Cosmos SDK’s <a class="reference external" href="https://docs.cosmos.network/master/modules/auth/"><code class="docutils literal notranslate"><span class="pre">auth</span></code></a> module. This document is a stub and covers mainly important Terra-specific notes about how it is used.</p>
 </div>
 <p>Terra’s Auth module extends the functionality from Cosmos SDK’s <code class="docutils literal notranslate"><span class="pre">auth</span></code> module with a modified ante handler, which applies basic transaction validity checks, such as signatures, nonces, and auxiliary fields. This module also defines a special vesting account type that handles the logic for token vesting from the Luna presale.</p>
-<section id="gas-fee">
+<div class="section" id="gas-fee">
 <h2>Gas Fee<a class="headerlink" href="#gas-fee" title="Permalink to this headline">¶</a></h2>
 <p>Like all transactions on the Terra blockchain, <a class="reference internal" href="spec-bank.html#msgsend"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">MsgSend</span></code></span></a> and <a class="reference internal" href="spec-bank.html#msgmultisend"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">MsgMultiSend</span></code></span></a> incur gas fees. These fees are determined by a validator’s minimum gas price and the complexity of the transaction. More complex transactions incur higher fees. Gas fees are specified by the sender when a transaction is outbound. For more information on how gas is calculated, see <a class="reference internal" href="../how-to/terrad/using-terrad.html#fees"><span class="std std-doc">fees</span></a>.</p>
-</section>
-<section id="parameters">
+</div>
+<div class="section" id="parameters">
 <h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
 <p>The subspace for the Auth module is <code class="docutils literal notranslate"><span class="pre">auth</span></code>.</p>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">type</span><span class="w"> </span><span class="nx">Params</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -1521,48 +1520,48 @@
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<section id="maxmemocharacters">
+<div class="section" id="maxmemocharacters">
 <h3>MaxMemoCharacters<a class="headerlink" href="#maxmemocharacters" title="Permalink to this headline">¶</a></h3>
 <p>The maximum permitted number of characters in the memo of a transaction.</p>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">uint64</span></code></p></li>
 <li><p>default: <code class="docutils literal notranslate"><span class="pre">256</span></code></p></li>
 </ul>
-</section>
-<section id="txsiglimit">
+</div>
+<div class="section" id="txsiglimit">
 <h3>TxSigLimit<a class="headerlink" href="#txsiglimit" title="Permalink to this headline">¶</a></h3>
 <p>The maximum number of signers in a transaction. A single transaction can have multiple messages and multiple signers. Because the sig verification cost is generally higher than other operations, the number of signers is limited to 100.</p>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">uint64</span></code></p></li>
 <li><p>default: <code class="docutils literal notranslate"><span class="pre">100</span></code></p></li>
 </ul>
-</section>
-<section id="txsizecostperbyte">
+</div>
+<div class="section" id="txsizecostperbyte">
 <h3>TxSizeCostPerByte<a class="headerlink" href="#txsizecostperbyte" title="Permalink to this headline">¶</a></h3>
 <p>The cost per byte used to compute the gas consumption of a transaction. <code class="docutils literal notranslate"><span class="pre">TxSizeCostPerByte</span> <span class="pre">*</span> <span class="pre">txsize</span></code>.</p>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">uint64</span></code></p></li>
 <li><p>default: <code class="docutils literal notranslate"><span class="pre">10</span></code></p></li>
 </ul>
-</section>
-<section id="sigverifycosted25519">
+</div>
+<div class="section" id="sigverifycosted25519">
 <h3>SigVerifyCostED25519<a class="headerlink" href="#sigverifycosted25519" title="Permalink to this headline">¶</a></h3>
 <p>The gas cost for verifying ED25519 signatures.</p>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">uint64</span></code></p></li>
 <li><p>default: <code class="docutils literal notranslate"><span class="pre">590</span></code></p></li>
 </ul>
-</section>
-<section id="sigverifycostsecp256k1">
+</div>
+<div class="section" id="sigverifycostsecp256k1">
 <h3>SigVerifyCostSecp256k1<a class="headerlink" href="#sigverifycostsecp256k1" title="Permalink to this headline">¶</a></h3>
 <p>The gas cost for verifying Secp256k1 signatures.</p>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">uint64</span></code></p></li>
 <li><p>default: <code class="docutils literal notranslate"><span class="pre">1000</span></code></p></li>
 </ul>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
               </div>

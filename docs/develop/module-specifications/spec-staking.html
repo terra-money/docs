@@ -3,8 +3,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta charset="utf-8" />
     <title>Staking &#8212; Terra Docs  documentation</title>
     
     <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -1624,12 +1623,12 @@
             
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="staking">
+  <div class="tex2jax_ignore mathjax_ignore section" id="staking">
 <h1>Staking<a class="headerlink" href="#staking" title="Permalink to this headline">¶</a></h1>
 <p>The staking module enables Terra’s proof-of-stake functionality by requiring validators to bond Luna, the native staking asset.</p>
-<section id="message-types">
+<div class="section" id="message-types">
 <h2>Message types<a class="headerlink" href="#message-types" title="Permalink to this headline">¶</a></h2>
-<section id="msgdelegate">
+<div class="section" id="msgdelegate">
 <h3>MsgDelegate<a class="headerlink" href="#msgdelegate" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">type</span><span class="w"> </span><span class="nx">MsgDelegate</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">	</span><span class="nx">DelegatorAddress</span><span class="w"> </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">AccAddress</span><span class="w"> </span><span class="s">`json:&quot;delegator_address&quot; yaml:&quot;delegator_address&quot;`</span><span class="w"></span>
@@ -1638,8 +1637,8 @@
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-<section id="msgundelegate">
+</div>
+<div class="section" id="msgundelegate">
 <h3>MsgUndelegate<a class="headerlink" href="#msgundelegate" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">type</span><span class="w"> </span><span class="nx">MsgUndelegate</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">	</span><span class="nx">DelegatorAddress</span><span class="w"> </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">AccAddress</span><span class="w"> </span><span class="s">`json:&quot;delegator_address&quot; yaml:&quot;delegator_address&quot;`</span><span class="w"></span>
@@ -1648,8 +1647,8 @@
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-<section id="msgbeginredelegate">
+</div>
+<div class="section" id="msgbeginredelegate">
 <h3>MsgBeginRedelegate<a class="headerlink" href="#msgbeginredelegate" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">type</span><span class="w"> </span><span class="nx">MsgBeginRedelegate</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">	</span><span class="nx">DelegatorAddress</span><span class="w">    </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">AccAddress</span><span class="w"> </span><span class="s">`json:&quot;delegator_address&quot; yaml:&quot;delegator_address&quot;`</span><span class="w"></span>
@@ -1659,8 +1658,8 @@
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-<section id="msgeditvalidator">
+</div>
+<div class="section" id="msgeditvalidator">
 <h3>MsgEditValidator<a class="headerlink" href="#msgeditvalidator" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">type</span><span class="w"> </span><span class="nx">MsgEditValidator</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">	</span><span class="nx">Description</span><span class="w">      </span><span class="nx">Description</span><span class="w">    </span><span class="s">`json:&quot;description&quot; yaml:&quot;description&quot;`</span><span class="w"></span>
@@ -1670,8 +1669,8 @@
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-<section id="msgcreatevalidator">
+</div>
+<div class="section" id="msgcreatevalidator">
 <h3>MsgCreateValidator<a class="headerlink" href="#msgcreatevalidator" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">type</span><span class="w"> </span><span class="nx">MsgCreateValidator</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">	</span><span class="nx">Description</span><span class="w">       </span><span class="nx">Description</span><span class="w">     </span><span class="s">`json:&quot;description&quot; yaml:&quot;description&quot;`</span><span class="w"></span>
@@ -1684,18 +1683,18 @@
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-</section>
-<section id="transitions">
+</div>
+</div>
+<div class="section" id="transitions">
 <h2>Transitions<a class="headerlink" href="#transitions" title="Permalink to this headline">¶</a></h2>
-<section id="end-block">
+<div class="section" id="end-block">
 <h3>End-Block<a class="headerlink" href="#end-block" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p>This section was taken from the official Cosmos SDK docs, and placed here for your convenience to understand the Staking module’s parameters.</p>
 </div></blockquote>
 <p>Each abci end block call, the operations to update queues and validator set
 changes are specified to execute.</p>
-<section id="validator-set-changes">
+<div class="section" id="validator-set-changes">
 <h4>Validator set changes<a class="headerlink" href="#validator-set-changes" title="Permalink to this headline">¶</a></h4>
 <p>The staking validator set is updated during this process by state transitions
 that run at the end of every block. As a part of this process, any updated
@@ -1717,15 +1716,15 @@ validators retrieved from the ValidatorsByPower index.</p></li>
 <p>In all cases, any validators leaving or entering the bonded validator set or
 changing balances and staying within the bonded validator set incur an update
 message that is passed back to Tendermint.</p>
-</section>
-<section id="queues">
+</div>
+<div class="section" id="queues">
 <h4>Queues<a class="headerlink" href="#queues" title="Permalink to this headline">¶</a></h4>
 <p>Within staking, certain state transitions are not instantaneous but happen
 over a duration of time, typically the unbonding period. When these
 transitions are mature, certain operations must take place to complete
 the state operation. It is achieved through the use of queues that are
 checked and processed at the end of each block.</p>
-<section id="unbonding-validators">
+<div class="section" id="unbonding-validators">
 <h5>Unbonding validators<a class="headerlink" href="#unbonding-validators" title="Permalink to this headline">¶</a></h5>
 <p>When a validator is kicked out of the bonded validator set, because either they are
 jailed or they don’t have sufficient bonded tokens, it begins the unbonding
@@ -1736,8 +1735,8 @@ after the unbonding period has passed.</p>
 <p>Each block the validator queue is to be checked for mature unbonding validators, namely with a completion time &lt;= current time. At this point, any mature validators that do not have any remaining delegations are deleted from state. For all other mature unbonding validators that still have remaining
 delegations, the <code class="docutils literal notranslate"><span class="pre">validator.Status</span></code> is switched from <code class="docutils literal notranslate"><span class="pre">sdk.Unbonding</span></code> to
 <code class="docutils literal notranslate"><span class="pre">sdk.Unbonded</span></code>.</p>
-</section>
-<section id="unbonding-delegations">
+</div>
+<div class="section" id="unbonding-delegations">
 <h5>Unbonding delegations<a class="headerlink" href="#unbonding-delegations" title="Permalink to this headline">¶</a></h5>
 <p>Complete the unbonding of all mature <code class="docutils literal notranslate"><span class="pre">UnbondingDelegations.Entries</span></code> within the
 <code class="docutils literal notranslate"><span class="pre">UnbondingDelegations</span></code> queue with the following procedure:</p>
@@ -1747,8 +1746,8 @@ delegations, the <code class="docutils literal notranslate"><span class="pre">va
 <li><p>Remove the <code class="docutils literal notranslate"><span class="pre">UnbondingDelegation</span></code> object from the store, if there are no
 remaining entries.</p></li>
 </ul>
-</section>
-<section id="redelegations">
+</div>
+<div class="section" id="redelegations">
 <h5>Redelegations<a class="headerlink" href="#redelegations" title="Permalink to this headline">¶</a></h5>
 <p>Complete the unbonding of all mature <code class="docutils literal notranslate"><span class="pre">Redelegation.Entries</span></code> within the
 <code class="docutils literal notranslate"><span class="pre">Redelegations</span></code> queue with the following procedure:</p>
@@ -1757,11 +1756,11 @@ remaining entries.</p></li>
 <li><p>Remove the <code class="docutils literal notranslate"><span class="pre">Redelegation</span></code> object from the store, if there are no
 remaining entries.</p></li>
 </ul>
-</section>
-</section>
-</section>
-</section>
-<section id="parameters">
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="parameters">
 <h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
 <p>The subspace for the Staking module is <code class="docutils literal notranslate"><span class="pre">staking</span></code>.</p>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">type</span><span class="w"> </span><span class="nx">Params</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -1772,40 +1771,40 @@ remaining entries.</p></li>
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<section id="unbondingtime">
+<div class="section" id="unbondingtime">
 <h3>UnbondingTime<a class="headerlink" href="#unbondingtime" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">time.Duration</span></code></p></li>
 <li><p>default: 3 weeks</p></li>
 </ul>
 <p>Time duration of unbonding in nanoseconds.</p>
-</section>
-<section id="maxvalidators">
+</div>
+<div class="section" id="maxvalidators">
 <h3>MaxValidators<a class="headerlink" href="#maxvalidators" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">uint16</span></code></p></li>
 <li><p>default: <code class="docutils literal notranslate"><span class="pre">130</span></code></p></li>
 </ul>
 <p>Maximum number of active validators.</p>
-</section>
-<section id="maxentries">
+</div>
+<div class="section" id="maxentries">
 <h3>MaxEntries<a class="headerlink" href="#maxentries" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">uint16</span></code></p></li>
 <li><p>default: <code class="docutils literal notranslate"><span class="pre">7</span></code></p></li>
 </ul>
 <p>Maximum entries for either unbonding delegation or redelegation per pair or trio. Be aware of potential overflow because this is user-determined.</p>
-</section>
-<section id="bonddenom">
+</div>
+<div class="section" id="bonddenom">
 <h3>BondDenom<a class="headerlink" href="#bonddenom" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">string</span></code></p></li>
 <li><p>default: <code class="docutils literal notranslate"><span class="pre">uluna</span></code></p></li>
 </ul>
 <p>Denomination of the asset required for staking.</p>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
               </div>
