@@ -47,30 +47,76 @@ To auto-rebuild the site and refresh the browser use:
 make docker-watch
 ```
 
-### Adding an article
 
-All articles are markdown files, placed under the `/docs/` directory. You can create folders underneath the `/docs` directory, such as the following:
 
+## Creating pages
+ 
+Pages can be written in markdown `.md` or restructured text `.rst`
+ 
+Add new pages to the `/docs/` folder. Link pages to the navigation by inputting their relative filepath in the toctree located in `index.md`. Second-level pages can be made by adding a toctree to a parent file.
+ 
+Markdown example:
+ 
+To link a top-level page, insert a toctree and filepath into `index.md`:
+ 
+````
+```{toctree}
+:hidden:
+/docs/top-level-page
+/docs/other-top-level-page
 ```
-/docs
-    /dev
-        README.md
-        spec-auth.md
-        ...
-    /node
-        README.md
-        installation.md
-        ...
-    README.md
+````
+ 
+This will list top-level-page in the navigation.
+ 
+To link a second-level page, add a filename's relative path to the toctree in the parent file.
+ 
+In `top-level-page.md`, input the following toctree
+ 
+````
+```{toctree}
+:hidden:
+/docs/second-level-page
 ```
-
-Notice how `README.md` serves as the default root of the folder.
-
-### Editing the navigation
-
-To edit the navigation to include your new article, edit `/docs/.vuepress/config.js` and add your new article in the appropriate section in `themeConfig.sidebar`, following the other paths as examples.
-
-## Organization
+````
+ 
+These two examples together will create the following navigation:
+ 
+Top level page
+- Second level page  
+Other top level page
+ 
+### Links
+ 
+All links written in markdown are relative. Full URLs will render as external filepaths.
+ 
+### Admonitions (note and warning boxes)
+ 
+Admonitions are made in markdown with the following syntax:
+ 
+```
+:::{warning}
+ 
+This is the body of my warning admonition.
+ 
+:::
+```
+ 
+Custom admonition syntax:
+ 
+```
+:::{admonition} This is my custom admonition title
+:class: warning
+ 
+This is the body of my admonition
+ 
+:::
+```
+ 
+For a list of all admonition types, visit https://sphinx-book-theme.readthedocs.io/en/latest/reference/kitchen-sink/paragraph-markup.html?highlight=admonition#admonitions
+ 
+ 
+ ## Organization
 
 ### Module Specs
 
@@ -112,15 +158,31 @@ Each module should be documented with the following subheaders:
 
    A section that covers the chain parameters that can be modified by governance via the `params` module
 
-## Built With
 
-- Sphinx Book Theme
+### For more info on configuring, visit:
+ 
+- [Sphinx Book Theme](https://sphinx-book-theme.readthedocs.io/en/stable/) for theme elements.
+- [Myst parser](https://myst-parser.readthedocs.io/en/latest/index.html) for markdown syntax.
+- [Sphinx-design](https://sphinx-design.readthedocs.io/en/sbt-theme/index.html) for tabs, cards, grids, dropdowns, and classes.
+ 
+## Extensions
+ 
+Extensions should be added to `requirements.txt` and `conf.py`.
+ 
+## Redirects
+ 
+Redirects are listed in `conf.py`. Visit https://documatt.gitlab.io/sphinx-reredirects/ for more info.
+ 
+## Theme
+ 
+Built using [Sphinx Book Theme](https://sphinx-book-theme.readthedocs.io/en/stable/). Visit https://sphinx-book-theme.readthedocs.io/en/latest/customize/custom-css.html for CSS customization.
+ 
 
 ## License
 
 This software is licensed under the MIT license. See [LICENSE](./LICENSE) for full disclosure.
 
-© 2020 Terraform Labs, PTE.
+© 2022 Terraform Labs, PTE.
 
 <hr/>
 
