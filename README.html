@@ -1406,15 +1406,20 @@
   <a class="reference internal nav-link" href="#test-locally-with-docker">
    Test locally with Docker
   </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-pages">
+   Creating pages
+  </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#adding-an-article">
-     Adding an article
+    <a class="reference internal nav-link" href="#links">
+     Links
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#editing-the-navigation">
-     Editing the navigation
+    <a class="reference internal nav-link" href="#admonitions-note-and-warning-boxes">
+     Admonitions (note and warning boxes)
     </a>
    </li>
   </ul>
@@ -1429,11 +1434,26 @@
      Module Specs
     </a>
    </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#for-more-info-on-configuring-visit">
+     For more info on configuring, visit:
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#built-with">
-   Built With
+  <a class="reference internal nav-link" href="#extensions">
+   Extensions
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#redirects">
+   Redirects
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#theme">
+   Theme
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
@@ -1475,15 +1495,20 @@
   <a class="reference internal nav-link" href="#test-locally-with-docker">
    Test locally with Docker
   </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-pages">
+   Creating pages
+  </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#adding-an-article">
-     Adding an article
+    <a class="reference internal nav-link" href="#links">
+     Links
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#editing-the-navigation">
-     Editing the navigation
+    <a class="reference internal nav-link" href="#admonitions-note-and-warning-boxes">
+     Admonitions (note and warning boxes)
     </a>
    </li>
   </ul>
@@ -1498,11 +1523,26 @@
      Module Specs
     </a>
    </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#for-more-info-on-configuring-visit">
+     For more info on configuring, visit:
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#built-with">
-   Built With
+  <a class="reference internal nav-link" href="#extensions">
+   Extensions
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#redirects">
+   Redirects
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#theme">
+   Theme
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
@@ -1555,26 +1595,59 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">docker</span><span class="o">-</span><span class="n">watch</span>
 </pre></div>
 </div>
-<div class="section" id="adding-an-article">
-<h2>Adding an article<a class="headerlink" href="#adding-an-article" title="Permalink to this headline">¶</a></h2>
-<p>All articles are markdown files, placed under the <code class="docutils literal notranslate"><span class="pre">/docs/</span></code> directory. You can create folders underneath the <code class="docutils literal notranslate"><span class="pre">/docs</span></code> directory, such as the following:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">docs</span>
-    <span class="o">/</span><span class="n">dev</span>
-        <span class="n">README</span><span class="o">.</span><span class="n">md</span>
-        <span class="n">spec</span><span class="o">-</span><span class="n">auth</span><span class="o">.</span><span class="n">md</span>
-        <span class="o">...</span>
-    <span class="o">/</span><span class="n">node</span>
-        <span class="n">README</span><span class="o">.</span><span class="n">md</span>
-        <span class="n">installation</span><span class="o">.</span><span class="n">md</span>
-        <span class="o">...</span>
-    <span class="n">README</span><span class="o">.</span><span class="n">md</span>
+</div>
+<div class="section" id="creating-pages">
+<h1>Creating pages<a class="headerlink" href="#creating-pages" title="Permalink to this headline">¶</a></h1>
+<p>Pages can be written in markdown <code class="docutils literal notranslate"><span class="pre">.md</span></code> or restructured text <code class="docutils literal notranslate"><span class="pre">.rst</span></code></p>
+<p>Add new pages to the <code class="docutils literal notranslate"><span class="pre">/docs/</span></code> folder. Link pages to the navigation by inputting their relative filepath in the toctree located in <code class="docutils literal notranslate"><span class="pre">index.md</span></code>. Second-level pages can be made by adding a toctree to a parent file.</p>
+<p>Markdown example:</p>
+<p>To link a top-level page, insert a toctree and filepath into <code class="docutils literal notranslate"><span class="pre">index.md</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```{toctree}
+:hidden:
+/docs/top-level-page
+/docs/other-top-level-page
+```
 </pre></div>
 </div>
-<p>Notice how <code class="docutils literal notranslate"><span class="pre">README.md</span></code> serves as the default root of the folder.</p>
+<p>This will list top-level-page in the navigation.</p>
+<p>To link a second-level page, add a filename’s relative path to the toctree in the parent file.</p>
+<p>In <code class="docutils literal notranslate"><span class="pre">top-level-page.md</span></code>, input the following toctree</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```{toctree}
+:hidden:
+/docs/second-level-page
+```
+</pre></div>
 </div>
-<div class="section" id="editing-the-navigation">
-<h2>Editing the navigation<a class="headerlink" href="#editing-the-navigation" title="Permalink to this headline">¶</a></h2>
-<p>To edit the navigation to include your new article, edit <code class="docutils literal notranslate"><span class="pre">/docs/.vuepress/config.js</span></code> and add your new article in the appropriate section in <code class="docutils literal notranslate"><span class="pre">themeConfig.sidebar</span></code>, following the other paths as examples.</p>
+<p>These two examples together will create the following navigation:</p>
+<p>Top level page</p>
+<ul class="simple">
+<li><p>Second level page<br />
+Other top level page</p></li>
+</ul>
+<div class="section" id="links">
+<h2>Links<a class="headerlink" href="#links" title="Permalink to this headline">¶</a></h2>
+<p>All links written in markdown are relative. Full URLs will render as external filepaths.</p>
+</div>
+<div class="section" id="admonitions-note-and-warning-boxes">
+<h2>Admonitions (note and warning boxes)<a class="headerlink" href="#admonitions-note-and-warning-boxes" title="Permalink to this headline">¶</a></h2>
+<p>Admonitions are made in markdown with the following syntax:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">:::{</span><span class="n">warning</span><span class="p">}</span>
+ 
+<span class="n">This</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">body</span> <span class="n">of</span> <span class="n">my</span> <span class="n">warning</span> <span class="n">admonition</span><span class="o">.</span>
+ 
+<span class="p">:::</span>
+</pre></div>
+</div>
+<p>Custom admonition syntax:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">:::{</span><span class="n">admonition</span><span class="p">}</span> <span class="n">This</span> <span class="ow">is</span> <span class="n">my</span> <span class="n">custom</span> <span class="n">admonition</span> <span class="n">title</span>
+<span class="p">:</span><span class="n">class</span><span class="p">:</span> <span class="n">warning</span>
+ 
+<span class="n">This</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">body</span> <span class="n">of</span> <span class="n">my</span> <span class="n">admonition</span>
+ 
+<span class="p">:::</span>
+</pre></div>
+</div>
+<p>For a list of all admonition types, visit <a class="reference external" href="https://sphinx-book-theme.readthedocs.io/en/latest/reference/kitchen-sink/paragraph-markup.html?highlight=admonition#admonitions">https://sphinx-book-theme.readthedocs.io/en/latest/reference/kitchen-sink/paragraph-markup.html?highlight=admonition#admonitions</a></p>
 </div>
 </div>
 <div class="section" id="organization">
@@ -1614,17 +1687,31 @@
 </li>
 </ol>
 </div>
-</div>
-<div class="section" id="built-with">
-<h1>Built With<a class="headerlink" href="#built-with" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="for-more-info-on-configuring-visit">
+<h2>For more info on configuring, visit:<a class="headerlink" href="#for-more-info-on-configuring-visit" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>Sphinx Book Theme</p></li>
+<li><p><a class="reference external" href="https://sphinx-book-theme.readthedocs.io/en/stable/">Sphinx Book Theme</a> for theme elements.</p></li>
+<li><p><a class="reference external" href="https://myst-parser.readthedocs.io/en/latest/index.html">Myst parser</a> for markdown syntax.</p></li>
+<li><p><a class="reference external" href="https://sphinx-design.readthedocs.io/en/sbt-theme/index.html">Sphinx-design</a> for tabs, cards, grids, dropdowns, and classes.</p></li>
 </ul>
+</div>
+</div>
+<div class="section" id="extensions">
+<h1>Extensions<a class="headerlink" href="#extensions" title="Permalink to this headline">¶</a></h1>
+<p>Extensions should be added to <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> and <code class="docutils literal notranslate"><span class="pre">conf.py</span></code>.</p>
+</div>
+<div class="section" id="redirects">
+<h1>Redirects<a class="headerlink" href="#redirects" title="Permalink to this headline">¶</a></h1>
+<p>Redirects are listed in <code class="docutils literal notranslate"><span class="pre">conf.py</span></code>. Visit <a class="reference external" href="https://documatt.gitlab.io/sphinx-reredirects/">https://documatt.gitlab.io/sphinx-reredirects/</a> for more info.</p>
+</div>
+<div class="section" id="theme">
+<h1>Theme<a class="headerlink" href="#theme" title="Permalink to this headline">¶</a></h1>
+<p>Built using <a class="reference external" href="https://sphinx-book-theme.readthedocs.io/en/stable/">Sphinx Book Theme</a>. Visit <a class="reference external" href="https://sphinx-book-theme.readthedocs.io/en/latest/customize/custom-css.html">https://sphinx-book-theme.readthedocs.io/en/latest/customize/custom-css.html</a> for CSS customization.</p>
 </div>
 <div class="section" id="license">
 <h1>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h1>
 <p>This software is licensed under the MIT license. See <a class="reference internal" href="LICENSE.html"><span class="doc std std-doc">LICENSE</span></a> for full disclosure.</p>
-<p>© 2020 Terraform Labs, PTE.</p>
+<p>© 2022 Terraform Labs, PTE.</p>
 <hr/>
 <p>&nbsp;</p>
 <p align="center">
