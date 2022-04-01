@@ -1510,6 +1510,13 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#secure-your-keys-and-have-a-backup-plan">
    4. Secure your keys and have a backup plan
   </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#restoring-a-validator">
+     4.1 Restoring a validator
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -1554,6 +1561,13 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#secure-your-keys-and-have-a-backup-plan">
    4. Secure your keys and have a backup plan
   </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#restoring-a-validator">
+     4.1 Restoring a validator
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -1629,7 +1643,29 @@ title="Print to PDF"
 <li><p>Provide Oracle FX rates via a feeder (using an Application Oracle Feeder key)</p></li>
 <li><p>Conduct on-chain operations such as voting on Governance proposals (using an Application Operator Key)</p></li>
 </ul>
-<p>Protecting and having a contingency backup plan for all your <a class="reference internal" href="faq.html#what-are-the-different-types-of-keys"><span class="std std-doc">keys</span></a> will help mitigate catastrophic hardware or software failures of the node.</p>
+<p>Protecting and having a contingency backup plan for all your <a class="reference internal" href="faq.html#what-are-the-different-types-of-keys"><span class="std std-doc">keys</span></a> will help mitigate catastrophic hardware or software failures of the node.
+It is a good practice to test your backup plan on a testnet node in case of node failure.</p>
+<section id="restoring-a-validator">
+<h3>4.1 Restoring a validator<a class="headerlink" href="#restoring-a-validator" title="Permalink to this headline">#</a></h3>
+<p>A validator can be completely restored on a new Terra node given the following set of keys:</p>
+<ul class="simple">
+<li><p>Consensus key, stored in <code class="docutils literal notranslate"><span class="pre">~/.terra/config/priv_validator.json</span></code></p></li>
+<li><p>The mnemonic to the validator wallet</p></li>
+<li><p>The mnemonic to the oracle feeder wallet</p></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Before proceeding, ensure that the existing validator is not active. Double voting has severe slashing consequences.</p>
+<div class="highlight-first notranslate"><div class="highlight"><pre><span></span>
+To restore a validator:
+
+1. Setup a full Terra node synced up to the latest block.
+2. Replace `~/.terra/config/priv_validator.json` of the new node with the associated file from the old node, then restart the node.
+3. Set up the price and oracle feeders.
+</pre></div>
+</div>
+</div>
+</section>
 </section>
 </section>
 

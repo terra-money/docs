@@ -68,3 +68,21 @@ In general a validator needs to do three things well
 - Conduct on-chain operations such as voting on Governance proposals (using an Application Operator Key)
 
 Protecting and having a contingency backup plan for all your [keys](faq.md#what-are-the-different-types-of-keys) will help mitigate catastrophic hardware or software failures of the node.
+It is a good practice to test your backup plan on a testnet node in case of node failure.
+
+### 4.1 Restoring a validator
+
+A validator can be completely restored on a new Terra node given the following set of keys:
+- Consensus key, stored in `~/.terra/config/priv_validator.json`
+- The mnemonic to the validator wallet
+- The mnemonic to the oracle feeder wallet
+
+::: {warning}
+Before proceeding, ensure that the existing validator is not active. Double voting has severe slashing consequences.
+:::first
+
+To restore a validator:
+
+1. Setup a full Terra node synced up to the latest block.
+2. Replace `~/.terra/config/priv_validator.json` of the new node with the associated file from the old node, then restart the node.
+3. Set up the price and oracle feeders.
