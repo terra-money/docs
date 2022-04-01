@@ -1395,55 +1395,34 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#key-interface">
-   Key interface
+  <a class="reference internal nav-link" href="#rawkey">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     RawKey
+    </span>
+   </code>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#key-implementations">
-   Key implementations
+  <a class="reference internal nav-link" href="#mnemonickey">
+   MnemonicKey
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#rawkey">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       RawKey
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mnemonickey">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       MnemonicKey
-      </span>
-     </code>
-    </a>
-    <ul class="visible nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#generate-random-mnemonic">
-       Generate random mnemonic
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#specifying-hd-path">
-       Specifying HD path
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#clikey">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       CLIKey
-      </span>
-     </code>
+    <a class="reference internal nav-link" href="#specifying-an-hd-path">
+     Specifying an HD path
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#clikey">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     CLIKey
+    </span>
+   </code>
+  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#custom-key-implementation">
@@ -1471,55 +1450,34 @@
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#key-interface">
-   Key interface
+  <a class="reference internal nav-link" href="#rawkey">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     RawKey
+    </span>
+   </code>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#key-implementations">
-   Key implementations
+  <a class="reference internal nav-link" href="#mnemonickey">
+   MnemonicKey
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#rawkey">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       RawKey
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mnemonickey">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       MnemonicKey
-      </span>
-     </code>
-    </a>
-    <ul class="visible nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#generate-random-mnemonic">
-       Generate random mnemonic
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#specifying-hd-path">
-       Specifying HD path
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#clikey">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       CLIKey
-      </span>
-     </code>
+    <a class="reference internal nav-link" href="#specifying-an-hd-path">
+     Specifying an HD path
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#clikey">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     CLIKey
+    </span>
+   </code>
+  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#custom-key-implementation">
@@ -1537,90 +1495,98 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="keys">
 <h1>Keys<a class="headerlink" href="#keys" title="Permalink to this headline">¶</a></h1>
-<p>To perform actions using an account with Terra.js, you need a <strong>Key</strong>, which provides an abstraction around signing functions of an account.</p>
-<div class="section" id="key-interface">
-<h2>Key interface<a class="headerlink" href="#key-interface" title="Permalink to this headline">¶</a></h2>
-<p>A <code class="docutils literal notranslate"><span class="pre">Key</span></code> provides the following interface:</p>
-<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">interface</span> <span class="nx">Key</span> <span class="p">{</span>
-  <span class="nx">publicKey</span>: <span class="kt">Buffer</span><span class="p">;</span>
-  <span class="nx">accAddress</span>: <span class="kt">AccAddress</span><span class="p">;</span>
-  <span class="nx">valAddress</span>: <span class="kt">ValAddress</span><span class="p">;</span>
-  <span class="nx">accPubKey</span>: <span class="kt">AccPubKey</span><span class="p">;</span>
-  <span class="nx">valPubKey</span>: <span class="kt">ValPubKey</span><span class="p">;</span>
-
-  <span class="nx">createSignature</span><span class="p">(</span><span class="nx">tx</span>: <span class="kt">StdSignMsg</span><span class="p">)</span><span class="o">:</span> <span class="nx">StdSignature</span><span class="p">;</span>
-  <span class="nx">signTx</span><span class="p">(</span><span class="nx">tx</span>: <span class="kt">StdSignMsg</span><span class="p">)</span><span class="o">:</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">StdTx</span><span class="o">&gt;</span><span class="p">;</span>
-  <span class="nx">sign</span><span class="p">(</span><span class="nx">payload</span>: <span class="kt">Buffer</span><span class="p">)</span><span class="o">:</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">Buffer</span><span class="o">&gt;</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="key-implementations">
-<h2>Key implementations<a class="headerlink" href="#key-implementations" title="Permalink to this headline">¶</a></h2>
-<p>Terra.js provides several standard <code class="docutils literal notranslate"><span class="pre">Key</span></code> implementations that provide a variety of ways to load an account with signing features into your program.</p>
+<p>To perform actions using an account and private-public key pairs with Terra.js, you need an implementation of the <a class="reference external" href="https://github.com/terra-money/terra.js/blob/main/src/key/Key.ts"> <em>Key</em> </a> class, which provides an abstraction around the signing functions of an account. There are multiple implementations available:</p>
+<p><a class="reference external" href="https://github.com/terra-money/terra.js/blob/main/src/key/RawKey.ts"> <em>RawKey</em> </a>
+<a class="reference external" href="https://github.com/terra-money/terra.js/blob/main/src/key/MnemonicKey.ts"> <em>MnemonicKey</em> </a>
+<a class="reference external" href="https://github.com/terra-money/terra.js/blob/main/src/key/CLIKey.ts"> <em>CLIKey</em> </a></p>
+<p>You can also create a custom signing solution by extending the base <a class="reference external" href="https://github.com/terra-money/terra.js/blob/main/src/key/Key.ts"> <em>Key</em> </a> class.</p>
 <div class="section" id="rawkey">
-<h3><code class="docutils literal notranslate"><span class="pre">RawKey</span></code><a class="headerlink" href="#rawkey" title="Permalink to this headline">¶</a></h3>
-<p>The most basic implementation of <code class="docutils literal notranslate"><span class="pre">Key</span></code> is <code class="docutils literal notranslate"><span class="pre">RawKey</span></code>, which is created with a plain private key.</p>
+<h2><code class="docutils literal notranslate"><span class="pre">RawKey</span></code><a class="headerlink" href="#rawkey" title="Permalink to this headline">¶</a></h2>
+<p>The most basic implementation of a <code class="docutils literal notranslate"><span class="pre">Key</span></code> is a <code class="docutils literal notranslate"><span class="pre">RawKey</span></code>, which is created using a plain private key. <code class="docutils literal notranslate"><span class="pre">RawKey</span></code>  wraps the 32 bytes of a private key and supplies a corresponding public key:</p>
 <div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span> <span class="p">{</span> <span class="nx">RawKey</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@terra-money/terra.js&#39;</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span><span class="nx">randomBytes</span><span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;crypto&#39;</span>
+<span class="kd">let</span> <span class="nx">see</span> <span class="o">=</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">;</span>
 
-<span class="kd">const</span> <span class="nx">rk</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">RawKey</span><span class="p">(</span><span class="s2">&quot;&lt;private key&gt;&quot;</span><span class="p">);</span>
-</pre></div>
-</div>
-<p>The private key associated with the <code class="docutils literal notranslate"><span class="pre">RawKey</span></code> is available through the instance:</p>
-<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">rk</span><span class="p">.</span><span class="nx">privateKey</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">raw_key</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">RawKey</span><span class="p">(</span><span class="nx">randomBytes</span><span class="p">(</span><span class="mf">32</span><span class="p">));</span>
+
+<span class="nx">see</span><span class="p">(</span><span class="nx">raw_key</span><span class="p">.</span><span class="nx">publicKey</span><span class="p">)</span><span class="c1">//SimplePublicKey { key: &#39;AlNdglClnFJMwdeFGlfFTAwbx7rxKxWbgN/lwj5mQ3vw&#39; }</span>
+<span class="nx">see</span><span class="p">(</span><span class="nx">raw_key</span><span class="p">.</span><span class="nx">privateKey</span><span class="p">)</span><span class="c1">//&lt;Buffer 53 e2 53 0b 29 c4 9d 54 b3 66 a4 61 7b d3 e2 6e 4c e5 41 cd 12 a6 e9 27 8a 97 61 1c 55 6e cd 4c&gt;</span>
+<span class="nx">see</span><span class="p">(</span><span class="nx">raw_key</span><span class="p">.</span><span class="nx">accAddress</span><span class="p">)</span><span class="c1">//terra1ptj88nsljjr9agx07hahu6etv43acksy2q44sd</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="mnemonickey">
-<h3><code class="docutils literal notranslate"><span class="pre">MnemonicKey</span></code><a class="headerlink" href="#mnemonickey" title="Permalink to this headline">¶</a></h3>
+<h2>MnemonicKey<a class="headerlink" href="#mnemonickey" title="Permalink to this headline">¶</a></h2>
+<p>A <code class="docutils literal notranslate"><span class="pre">MnemonicKey</span></code> derives itself from a 24-word  <a class="reference external" href="https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki"> BIP-39 </a> mnemonic as opposed to the bytes of a  private key.
+A <code class="docutils literal notranslate"><span class="pre">MnemonicKey</span></code> has various levels of definition:</p>
+<ul class="simple">
+<li><p>Supply no arguments for the mnemonic to be randomly generated ( effectively generating a random key ).</p></li>
+<li><p>Supply only a 24-word BIP-39 mnemonic to generate a corresponding key.</p></li>
+<li><p>Supply a full HD path (using either a  random or particular mnenomic).</p></li>
+</ul>
 <div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span> <span class="p">{</span> <span class="nx">MnemonicKey</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@terra-money/terra.js&#39;</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">see</span> <span class="o">=</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">;</span>
 
-<span class="kd">const</span> <span class="nx">mk</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">MnemonicKey</span><span class="p">({</span>
-  <span class="nx">mnemonic</span><span class="o">:</span> <span class="s2">&quot;&lt;24-word mnemonic&gt;&quot;</span><span class="p">,</span>
+<span class="kd">const</span> <span class="nx">MNE_KEY_RANDOM</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">MnemonicKey</span><span class="p">();</span>
+
+<span class="nx">see</span><span class="p">(</span><span class="nx">MNE_KEY_RANDOM</span><span class="p">.</span><span class="nx">mnemonic</span><span class="p">)</span>  <span class="c1">// famous { ... } myth world size</span>
+<span class="nx">see</span><span class="p">(</span><span class="nx">MNE_KEY_RANDOM</span><span class="p">.</span><span class="nx">privateKey</span><span class="p">)</span> <span class="c1">// &lt;Buffer 4f e5 { ... } 51 a4 41 9c&gt; </span>
+<span class="nx">see</span><span class="p">(</span><span class="nx">MNE_KEY_RANDOM</span><span class="p">.</span><span class="nx">publicKey</span><span class="p">)</span> <span class="c1">// SimplePublicKey { key: &#39;A8TNSJhn6gGHgY2ohJnkOaZz7Y0FaW/QeytGBaqCLIJU&#39; }</span>
+
+
+<span class="kd">const</span> <span class="nx">MNE_KEY_EXACT</span>  <span class="o">=</span> <span class="ow">new</span> <span class="nx">MnemonicKey</span><span class="p">({</span>
+  <span class="nx">mnemonic</span><span class="o">:</span> <span class="s2">&quot;squirrel future level fan world organ daring thing color orange sausage cross fault interest blast wink audit unfair satoshi solution track indoor sun edit&quot;</span><span class="p">,</span>
+<span class="p">});</span>
+
+<span class="kd">const</span> <span class="nx">MNE_KEY_RANDOM_WITH_HD_PATH</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">MnemonicKey</span><span class="p">({</span>
+  <span class="c1">// mnemonic: &quot;&quot;,   // optional, will be random if not provided</span>
+  <span class="nx">coinType</span>: <span class="kt">330</span><span class="p">,</span>               <span class="c1">// optional, default</span>
+  <span class="nx">account</span> : <span class="kt">0</span><span class="p">,</span>                 <span class="c1">// optional, default</span>
+  <span class="nx">index</span>   : <span class="kt">0</span><span class="p">,</span>                 <span class="c1">// optional, default</span>
+<span class="p">});</span>
+
+<span class="kd">const</span> <span class="nx">MNE_KEY_FULLY_RESOLVED</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">MnemonicKey</span><span class="p">({</span>
+  <span class="nx">mnemonic</span><span class="o">:</span> <span class="s2">&quot;squirrel future level fan world organ daring thing color orange sausage cross fault interest blast wink audit unfair satoshi solution track indoor sun edit&quot;</span><span class="p">,</span>   
+  <span class="nx">coinType</span>: <span class="kt">330</span><span class="p">,</span>               
+  <span class="nx">account</span> : <span class="kt">0</span><span class="p">,</span>                 
+  <span class="nx">index</span>   : <span class="kt">0</span><span class="p">,</span>                
 <span class="p">});</span>
 </pre></div>
 </div>
-<div class="section" id="generate-random-mnemonic">
-<h4>Generate random mnemonic<a class="headerlink" href="#generate-random-mnemonic" title="Permalink to this headline">¶</a></h4>
-<p>If you want to generate a random mnemonic, you can create a <code class="docutils literal notranslate"><span class="pre">MnemonicKey</span></code> without any arguments:</p>
-<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">mk</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">MnemonicKey</span><span class="p">();</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">mk</span><span class="p">.</span><span class="nx">mnemonic</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="specifying-hd-path">
-<h4>Specifying HD path<a class="headerlink" href="#specifying-hd-path" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="specifying-an-hd-path">
+<h3>Specifying an HD path<a class="headerlink" href="#specifying-an-hd-path" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">MnemonicKey</span></code> can used to recover a wallet with a particular BIP44 HD path: <code class="docutils literal notranslate"><span class="pre">m/44'/${coinType}'/${account}'/0/${index}</span></code>.</p>
-<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">mk</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">MnemonicKey</span><span class="p">({</span>
-  <span class="nx">mnemonic</span><span class="o">:</span> <span class="s2">&quot;&lt;seed-phrase&gt;&quot;</span><span class="p">,</span> <span class="c1">// optional, will be random if not provided</span>
-  <span class="nx">coinType</span>: <span class="kt">330</span><span class="p">,</span> <span class="c1">// optional, default</span>
-  <span class="nx">account</span>: <span class="kt">0</span><span class="p">,</span> <span class="c1">// optional, default</span>
-  <span class="nx">index</span>: <span class="kt">0</span><span class="p">,</span> <span class="c1">// optional, default</span>
-<span class="p">});</span>
-</pre></div>
+<div class="tip admonition">
+<p class="admonition-title">HD keys</p>
+<p>As per <a class="reference external" href="https://github.com/confio/cosmos-hd-key-derivation-spec"> <em>Cosmos HD Key Derivation</em> </a>:</p>
+<p>Cosmos blockchains support hierarchical deterministic key generation (HD keys) for deriving multiple cryptographic keypairs from a single secret value. This allows the user to use different keypairs for different accounts on one blockchain and create accounts on multiple blockchains without having to manage multiple secrets.</p>
 </div>
 <p>For example, to recover a mnemonic with the old Terra wallet HD path using coin type for ATOM (118):</p>
-<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">mk</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">MnemonicKey</span><span class="p">({</span>
-  <span class="nx">mnemonic</span><span class="o">:</span> <span class="s2">&quot;&lt;seed-phrase&gt;&quot;</span><span class="p">,</span>
-  <span class="nx">coinType</span>: <span class="kt">118</span>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">mne_key</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">MnemonicKey</span><span class="p">({</span>
+  <span class="nx">mnemonic</span><span class="o">:</span> <span class="s2">&quot;[ Your BIP39 mnemonic ]&quot;</span><span class="p">,</span>
+  <span class="nx">coinType</span>: <span class="kt">118</span>     <span class="c1">// &lt;--------- Cosmos&#39; coin type ( Terra had inherited initially )</span>
 <span class="p">});</span>
 </pre></div>
 </div>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki"> BIP-39 Mnemonics </a></p></li>
+<li><p>Coin Types Numbers <code class="docutils literal notranslate"><span class="pre">330</span></code> and <code class="docutils literal notranslate"><span class="pre">118</span></code> above refer to “coin-types” for <code class="docutils literal notranslate"><span class="pre">Cosmos</span></code> and <code class="docutils literal notranslate"><span class="pre">Terra</span></code> blockchains accordingly. These numbers are defined according to the <a class="reference external" href="https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki"> BIP044 </a> standard. You can find more information <a class="reference external" href="https://github.com/satoshilabs/slips/blob/master/slip-0044.md"> here </a>.</p></li>
+</ul>
 </div>
 </div>
 <div class="section" id="clikey">
-<h3><code class="docutils literal notranslate"><span class="pre">CLIKey</span></code><a class="headerlink" href="#clikey" title="Permalink to this headline">¶</a></h3>
+<h2><code class="docutils literal notranslate"><span class="pre">CLIKey</span></code><a class="headerlink" href="#clikey" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p>NOTE: This requires you to have <code class="docutils literal notranslate"><span class="pre">terrad</span></code> installed.</p>
+<div><p>NOTE: This keytype requires you to have <code class="docutils literal notranslate"><span class="pre">terrad</span></code> installed.</p>
 </div></blockquote>
-<p>If you want to use keys stored in your <code class="docutils literal notranslate"><span class="pre">terrad</span></code> installation’s keyring to sign transactions, you can use <code class="docutils literal notranslate"><span class="pre">CLIKey</span></code>. This also will work for keys that have been registered in your keyring with <code class="docutils literal notranslate"><span class="pre">--ledger</span></code>, using a Ledger hardware device.</p>
+<p>If you want to use keys stored in your <code class="docutils literal notranslate"><span class="pre">terrad</span></code> installation’s keyring to sign transactions, you can use <code class="docutils literal notranslate"><span class="pre">CLIKey</span></code>. This approach also works for keys that have been registered in your keyring with <code class="docutils literal notranslate"><span class="pre">--ledger</span></code>, using a Ledger hardware device.</p>
 <div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span> <span class="p">{</span> <span class="nx">StdFee</span><span class="p">,</span> <span class="nx">MsgSend</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@terra-money/terra.js&#39;</span><span class="p">;</span>
 <span class="k">import</span> <span class="p">{</span> <span class="nx">LocalTerra</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@terra-money/terra.js&#39;</span><span class="p">;</span>
 <span class="k">import</span> <span class="p">{</span> <span class="nx">CLIKey</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@terra-money/terra.js&#39;</span><span class="p">;</span>
 
-<span class="kd">const</span> <span class="nx">terra</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">LocalTerra</span><span class="p">();</span>
+<span class="kd">const</span> <span class="nx">terra</span>     <span class="o">=</span> <span class="ow">new</span> <span class="nx">LocalTerra</span><span class="p">();</span>
 <span class="kd">const</span> <span class="p">{</span> <span class="nx">test1</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">terra</span><span class="p">.</span><span class="nx">wallets</span><span class="p">;</span>
-<span class="kd">const</span> <span class="nx">cliKey</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">CLIKey</span><span class="p">(</span><span class="s1">&#39;test111&#39;</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">cliKey</span>    <span class="o">=</span> <span class="ow">new</span> <span class="nx">CLIKey</span><span class="p">(</span><span class="s1">&#39;test111&#39;</span><span class="p">);</span>
 <span class="kd">const</span> <span class="nx">cliWallet</span> <span class="o">=</span> <span class="nx">terra</span><span class="p">.</span><span class="nx">wallet</span><span class="p">(</span><span class="nx">cliKey</span><span class="p">);</span>
 
 <span class="kd">const</span> <span class="nx">send</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">MsgSend</span><span class="p">(</span><span class="nx">cliWallet</span><span class="p">.</span><span class="nx">key</span><span class="p">.</span><span class="nx">accAddress</span><span class="p">,</span> <span class="nx">test1</span><span class="p">.</span><span class="nx">key</span><span class="p">.</span><span class="nx">accAddress</span><span class="p">,</span> <span class="p">{</span>
@@ -1640,11 +1606,10 @@
 </pre></div>
 </div>
 </div>
-</div>
 <div class="section" id="custom-key-implementation">
 <h2>Custom key implementation<a class="headerlink" href="#custom-key-implementation" title="Permalink to this headline">¶</a></h2>
-<p>If you need to write your own key management solution, you will need to subclass the abstract <code class="docutils literal notranslate"><span class="pre">Key</span></code> class and provide your own signing function. Note that the key need not expose any details pertaining to the private key – you could specify a <code class="docutils literal notranslate"><span class="pre">sign()</span></code> function that forwards the signing request to a server or to a hardware wallet, for instance. The remaining functions related to signing (<code class="docutils literal notranslate"><span class="pre">createSignature()</span></code> and <code class="docutils literal notranslate"><span class="pre">signTx()</span></code>) are automatically provided and use <code class="docutils literal notranslate"><span class="pre">sign()</span></code> underneath.</p>
-<p>The following code listing is the implementation of <code class="docutils literal notranslate"><span class="pre">RawKey</span></code>, which illustrates how to write a custom <code class="docutils literal notranslate"><span class="pre">Key</span></code>:</p>
+<p>If you need to write your own key management solution, you will need to subclass the abstract <code class="docutils literal notranslate"><span class="pre">Key</span></code> class and provide your own signing function. Instead of exposing details pertaining to your private key, you can specify a <code class="docutils literal notranslate"><span class="pre">sign()</span></code> function that forwards the signing request to a server or to a hardware wallet. The remaining functions related to signing (<code class="docutils literal notranslate"><span class="pre">createSignature()</span></code> and <code class="docutils literal notranslate"><span class="pre">signTx()</span></code>) are automatically provided and use <code class="docutils literal notranslate"><span class="pre">sign()</span></code> underneath.</p>
+<p>The following code listing is close to the implementation of <code class="docutils literal notranslate"><span class="pre">RawKey</span></code>, which illustrates how to write a custom <code class="docutils literal notranslate"><span class="pre">Key</span></code>:</p>
 <div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span> <span class="nx">SHA256</span> <span class="kr">from</span> <span class="s1">&#39;crypto-js/sha256&#39;</span><span class="p">;</span>
 <span class="k">import</span> <span class="o">*</span> <span class="kr">as</span> <span class="nx">secp256k1</span> <span class="kr">from</span> <span class="s1">&#39;secp256k1&#39;</span><span class="p">;</span>
 <span class="k">import</span> <span class="p">{</span> <span class="nx">Key</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@terra-money/terra.js&#39;</span><span class="p">;</span>
@@ -1652,7 +1617,8 @@
 <span class="cm">/**</span>
 <span class="cm"> * An implementation of the Key interfaces that uses a raw private key.</span>
 <span class="cm"> */</span>
-<span class="k">export</span> <span class="kd">class</span> <span class="nx">RawKey</span> <span class="k">extends</span> <span class="nx">Key</span> <span class="p">{</span>
+<span class="k">export</span> <span class="kd">class</span> <span class="nx">NaiveCustomImplementation</span> <span class="k">extends</span> <span class="nx">Key</span> <span class="p">{</span>
+
   <span class="cm">/**</span>
 <span class="cm">   * Raw private key, in bytes.</span>
 <span class="cm">   */</span>
@@ -1663,7 +1629,7 @@
       <span class="ow">new</span> <span class="nb">Uint8Array</span><span class="p">(</span><span class="nx">privateKey</span><span class="p">),</span>
       <span class="kc">true</span>
     <span class="p">);</span>
-    <span class="k">super</span><span class="p">(</span><span class="nx">Buffer</span><span class="p">.</span><span class="kr">from</span><span class="p">(</span><span class="nx">publicKey</span><span class="p">));</span>
+    <span class="k">super</span><span class="p">(</span><span class="ow">new</span> <span class="nx">SimplePublicKey</span><span class="p">(</span><span class="nx">Buffer</span><span class="p">.</span><span class="kr">from</span><span class="p">(</span><span class="nx">publicKey</span><span class="p">).</span><span class="nx">toString</span><span class="p">(</span><span class="s1">&#39;base64&#39;</span><span class="p">)));</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">privateKey</span> <span class="o">=</span> <span class="nx">privateKey</span><span class="p">;</span>
   <span class="p">}</span>
 
@@ -1673,12 +1639,12 @@
       <span class="nb">Uint8Array</span><span class="p">.</span><span class="kr">from</span><span class="p">(</span><span class="nx">hash</span><span class="p">),</span>
       <span class="nb">Uint8Array</span><span class="p">.</span><span class="kr">from</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">privateKey</span><span class="p">)</span>
     <span class="p">);</span>
-    <span class="k">return</span> <span class="nx">Buffer</span><span class="p">.</span><span class="kr">from</span><span class="p">(</span><span class="nx">signature</span><span class="p">);</span>
+    <span class="k">return</span> <span class="ow">new</span> <span class="nb">Promise</span><span class="p">(()=&gt;{</span><span class="nx">Buffer</span><span class="p">.</span><span class="kr">from</span><span class="p">(</span><span class="nx">signature</span><span class="p">)});</span>
   <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Note that you must call <code class="docutils literal notranslate"><span class="pre">super()</span></code> with the public key—this generates the relevant account and validator public keys associated with your key.</p>
+<p>Note that you must call <code class="docutils literal notranslate"><span class="pre">super()</span></code> with the public key to generate the relevant account and validator public keys associated with your key.</p>
 </div>
 </div>
 
