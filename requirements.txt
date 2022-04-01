@@ -1,6 +1,6 @@
 alabaster ==0.7.12
 attrs == 21.4.0
-Babel == 2.8.0
+Babel == 2.9.1
 beautifulsoup4 ==4.10.0
 certifi ==2019.11.28
 charset-normalizer == 2.0.12
@@ -8,7 +8,7 @@ click == 8.0.4
 docutils ==0.16
 idna == 2.9
 imagesize ==1.2.0
-Jinja2 == 2.11.1
+Jinja2 == 2.11.3
 linkify-it-py == 1.0.3
 markdown-it-py == 2.0.1
 MarkupSafe == 1.1.1
@@ -38,5 +38,5 @@ sphinx-notfound-page == 0.8
 sphinx_panels == 0.6.0
 sphinx-reredirects
 sphinx-tabs == 3.3.1
-urllib3 == 1.25.8
+urllib3 == 1.26.5
 
