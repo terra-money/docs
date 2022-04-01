@@ -69,3 +69,6 @@ In general a validator needs to do three things well
 
 Protecting and having a contingency backup plan for all your [keys](faq.md#what-are-the-different-types-of-keys) will help mitigate catastrophic hardware or software failures of the node.
 It is a good practice to test your backup plan on a testnet node in case of node failure.
+
+:::{include} restore.md
+:::
