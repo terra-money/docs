@@ -31,6 +31,19 @@ reference/README
 ```{image} /img/terrain.png
 :class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
 ```
+
+
+**LocalTerra**  
+:::
+
+:::{grid-item-card}
+:link: sdks/terra-js/README.html
+:class-card: sd-text-center sd-shadow-md sd-rounded-3
+```{image} /img/terra_js.svg
+:class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
+```
+
+
 **Terrain**  
 
 :::
@@ -50,15 +63,7 @@ reference/README
 ```{image} /img/LocalTerra.svg
 :class: sd-width-auto sd-pb-2 sd-animate-grow50-rot20
 ```
-**LocalTerra**  
-:::
 
-:::{grid-item-card}
-:link: sdks/terra-js/README.html
-:class-card: sd-text-center sd-shadow-md sd-rounded-3
-```{image} /img/terra_js.svg
-:class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
-```
 **Terra.js**  
 :::
 
