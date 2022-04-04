@@ -6,7 +6,7 @@ Use this glossary to learn about terms specific to the Terra Protocol.
 
 The top 130 [validators](#validator) that participate in consensus and receive rewards.
 
-## Air drops
+## Airdrops
 
 Additional rewards given to [delegators](#delegator) through certain [validators](#validator), separate from [staking rewards](#rewards). Airdrops come from protocols in the Terra ecosystem to increase visibility. To claim an airdrop, visit the webpage of the protocol giving out the airdrop.
 

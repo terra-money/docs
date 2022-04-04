@@ -21,6 +21,4 @@ const c = new Coin('uluna', 123.3); // a DecCoin
 const d = new Coin('uluna', '123.3'); // a DecCoin
 ```
 
-If it is ambiguous,
-
-Although it is convenient to represent the numbers through JavaScript's native `Number` format, you should 
+Although it is convenient to represent the numbers through JavaScript's native `Number` format, you should refrain from doing so.
