@@ -51,7 +51,7 @@ The swap procedure logic can be found in [x/market/keeper/msg_server.go](https:/
 
 10. The `swap` event is emitted to publicize the swap and record the spread fee.
 
-:::{note} If a trader's `Account` has insufficient balance to execute the swap, the swap transaction will fails.
+:::{note} If a trader's `Account` has insufficient balance to execute a swap, the transaction will fail.
 :::
 
 
@@ -167,24 +167,31 @@ type MsgSwapSend struct {
 
 ## Functions
 
-### `k.ComputeSwap()`
+### `ComputeSwap`
+
+[View in Github](https://github.com/terra-money/core/blob/main/x/market/keeper/swap.go)
 
 ```go
-func (k Keeper) ComputeSwap(ctx sdk.Context, offerCoin sdk.Coin, askDenom string)
-    (retDecCoin sdk.DecCoin, spread sdk.Dec, err sdk.Error)
+func (k Keeper) ComputeSwap(ctx sdk.Context, offerCoin sdk.Coin, askDenom string) (retDecCoin sdk.DecCoin, spread sdk.Dec, err error)
 ```
 
-This function detects the swap type from the offer and ask denominations and returns:
+The `ComputeSwap()` function computes the ask amount  oracle exchange rate.
 
-1. The amount of asked coins that should be returned for a given `offerCoin`. This is achieved by first spot-converting `offerCoin` to µSDR and then from µSDR to the desired `askDenom` with the proper exchange rate reported by the Oracle.
+1. If both the ask and offer coins are the same denomination, return an error. 
 
-2. The spread percentage that should be taken as a swap fee given the swap type. Terra<>Terra swaps only have the Tobin Tax spread fee. Terra<>Luna swaps use the `MinSpread` or the Constant Product pricing spread, whichever is greater.
+2. Use `ComputeInternalSwap` to swap the offer coin amount to the base µSDR denomination for simplicity. 
 
-If the `offerCoin`'s denomination is the same as `askDenom`, this will raise `ErrRecursiveSwap`.
+3. Use `ComputeInternalSwap` again to return the ask coin amount based on the oracle exchange rate. 
+
+4. For swaps between Terra stablecoins, return the Tobin tax rates for both denominations and apply the higher rate. 
+
+5. For swaps between Terra and Luna, calculate and apply the spread fee. If the spread fee is less than 0.5%, apply the minimum spread fee. 
 
 ::: {note}
-`k.ComputeSwap()` uses `k.ComputeInternalSwap()` internally, which only contains the logic for calculating proper ask coins to exchange, and not the Constant Product spread.
+`k.ComputeSwap()` uses `k.ComputeInternalSwap()` internally to calcuate exchange rates based on the oracle price. `k.ComputeInternalSwap()` does not apply a spread fee. 
 :::
+
+### `ComputeInternalSwap
 
 ### `k.ApplySwapToPool()`
 
