@@ -203,16 +203,33 @@ func (k Keeper) ComputeInternalSwap(ctx sdk.Context, offerCoin sdk.DecCoin, askD
  
 1. If both the ask and offer coins are the same denomination, return an error. 
 
-2. Use [`k.OracleKeeper.GetLunaExchangeRate`](https://github.com/terra-money/core/blob/a048b26251a37d52d7139a6529358ffb95e14b6a/x/oracle/keeper/keeper.go#L71) to return the offer and ask rates from the oracle. All oracle exchange rates are denominated as an amount of Terrastablecoin per Luna. If the offer or ask coins are denominated in Luna, the rate is `1`, as 1 Luna/ 1 Luna = 1.
+2. Use [`k.OracleKeeper.GetLunaExchangeRate`](https://github.com/terra-money/core/blob/a048b26251a37d52d7139a6529358ffb95e14b6a/x/oracle/keeper/keeper.go#L71) to return the offer and ask rates from the oracle. All oracle exchange rates are denominated as an amount of Terra stablecoins per Luna. If the offer or ask coins are denominated in Luna, the rate is $1$, as $ 1\, \tfrac{Luna}{Luna} = 1$. 
 
 3. Calculate the ask amount using the offer amount using the following equation:
-
-retAmount := offerCoin.Amount.Mul(askRate).Quo(offerRate)
 
 $$ askAmount = offerCoin.Amount * askRate \div{offerRate} $$
 
 
-4. 
+**Example**: Luna to Terra: Swap 20 Luna to SDR:
+
+$offerCoin.Amount$: 20 Luna  
+$askRate$: 100 SDR/Luna  
+$offerRate$: 1  (1 Luna / 1 Luna)  
+
+$$ \mathrm{20 \,Luna * 100\, \tfrac{SDR}{Luna} \div{1}  = 2000 \,SDR} $$
+
+**Example**: Terra to Terra: Swap 100 USD to SDR:
+
+$offerCoin.Amount$: 100 USD  
+$askRate$: 100 SDR/Luna  
+$offerRate$: 140 USD/Luna
+
+$$ \mathrm{100 \,USD * 100\, \tfrac{SDR}{Luna} \div{140\, \tfrac{USD}{Luna}}  \approx 71.43 \,SDR} $$
+
+:::{admonition} Micro-denominaitons
+The market module uses micro-denominations in all coin calculations. For simplicity, the previous examples show whole values of coins. Micro denominations are one millionth of a coin. 
+:::
+
 
 
 ### `k.ApplySwapToPool()`
