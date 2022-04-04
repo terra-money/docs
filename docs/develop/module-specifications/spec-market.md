@@ -79,44 +79,10 @@ To defend against this type of attack, the Market module enforces the following 
 
 ### Market Making Algorithm
 
-Terra uses a Constant Product market-making algorithm to ensure liquidity for Terra<>Luna swaps. [^2]
 
-[^2]: For a more in-depth treatment of our updated market-making algorithm, check [Nick Platias's SFBW 2019 presentation](https://agora.terra.money/t/terra-stability-swap-mechanism-deep-dive-at-sfbw/135).
-
-With Constant Product, a value, $CP$, is set to the size of the Terra pool multiplied by a set **fiat value of Luna**, and ensure our market-maker maintains it as invariant during any swaps by adjusting the spread.
-
-::: {note}
-The Terra blockchain's implementation of Constant Product diverges from Uniswap's, as the fiat value of Luna is used instead of the size of the Luna pool. This nuance means changes in the price of Luna does not affect the product, but rather the size of the Luna pool.
-:::
-
-$$CP = Pool_{Terra} * Pool_{Luna} * Price_{Luna}$$
-
-For example, start with equal pools of Terra and Luna, both worth 1000 SDR total. The size of the Terra pool is 1000 SDT, and assuming the price of Luna<>SDR is 0.5, the size of the Luna pool is 2000 Luna. A swap of 100 SDT for Luna would return around 90.91 SDR worth of Luna (≈ 181.82 Luna). The offer of 100 SDT is added to the Terra pool, and the 90.91 SDT worth of Luna are taken out of the Luna pool.
-
-```
-CP = 1000000 SDR
-(1000 SDT) * (1000 SDR of Luna) = 1000000 SDR
-(1100 SDT) * (909.0909... SDR of Luna) = 1000000 SDR
-```
-
-This is meant to be an example. In reality, liquidity pools are much larger, diminishing the magnitude of the spread.
-
-The primary advantage of Constant-Product is that it offers “unbounded” liquidity, and swaps of any size can be serviced.
 
 ### Virtual Liquidity Pools
 
-The market starts out with two liquidity pools of equal sizes, one representing all denominations of Terra and another representing Luna. The parameter [`BasePool`](#basepool) defines the initial size, $Pool_{Base}$, of the Terra and Luna liquidity pools.
-
-Rather than keeping track of the sizes of the two pools, this information is encoded in a number $\delta$, which the blockchain stores as `TerraPoolDelta`. This represents the deviation of the Terra pool from its base size in units µSDR.
-
-The size of the Terra and Luna liquidity pools can be generated from $\delta$ using the following formulas:
-
-$$Pool_{Terra} = Pool_{Base} + \delta$$
-$$Pool_{Luna} = ({Pool_{Base}})^2 / Pool_{Terra}$$
-
-At the [end of each block](#end-block), the market module attempts to replenish the pools by decreasing the magnitude of $\delta$ between the Terra and Luna pools. The rate at which the pools will be replenished toward equilibrium is set by the parameter [`PoolRecoveryPeriod`](#poolrecoveryperiod). Lower periods mean lower sensitivity to trades: previous trades are more quickly forgotten and the market is able to offer more liquidity.
-
-This mechanism ensures liquidity and acts as a low-pass filter, allowing for the spread fee (which is a function of `TerraPoolDelta`) to drop back down when there is a change in demand, causing a necessary change in supply which needs to be absorbed.
 
 
 ### Seigniorage
@@ -131,11 +97,12 @@ When Luna swaps into Terra, the Luna recaptured by the protocol was called seign
 
 ## State
 
-### Terra Pool Delta δ
+### `terraPoolDelta`
 
 - type: `sdk.Dec`
 
- This represents the difference between the current Terra pool size and its original base size, valued in µSDR.
+The `terraPoolDelta` represents the difference between the current Terra pool size and its original [](#basepool) size. The `terraPoolDelta` is updated during any swap between Terra and Luna using [](#applyswaptopool). At the end of every block, the absolute value of the `terraPoolDelta` is lowered using [](#replenishpools). 
+
 
 ## Message Types
 
@@ -146,9 +113,9 @@ A `MsgSwap` transaction denotes the `Trader`'s intent to swap their balance of `
 ```go
 // MsgSwap contains a swap request
 type MsgSwap struct {
-	Trader    sdk.AccAddress `json:"trader" yaml:"trader"`         // Address of the trader
-	OfferCoin sdk.Coin       `json:"offer_coin" yaml:"offer_coin"` // Coin being offered
-	AskDenom  string         `json:"ask_denom" yaml:"ask_denom"`   // Denom of the coin to swap to
+	Trader    sdk.AccAddress `json:"trader,omitempty" yaml:"trader"`       // Trader's address
+	OfferCoin types.Coin     `json:"offer_coin" yaml:"offer_coin"`         //Coin being offered
+	AskDenom  string         `json:"ask_denom,omitempty" yaml:"ask_denom"` // Denom of the coin to swap to
 }
 ```
 
@@ -167,7 +134,7 @@ type MsgSwapSend struct {
 
 ## Functions
 
-The market module swap functions can be found in x/market/keeper/swap.go
+The market module swap functions can be found in [x/market/keeper/swap.go](https://github.com/terra-money/core/blob/main/x/market/keeper/swap.go). 
 
 
 ### `ComputeSwap`
@@ -254,59 +221,61 @@ $$ newterraPoolDelta = terraPoolDelta + offerCoin.Amount_\mathrm{µSDR} $$
 
 4. For Luna to Terra swaps, use [`ComputeInternalSwap`](#computeinternalswap) to swap the ask amount to µSDR. This amount is subtracted from the `terraPoolDelta` to calculate the new `terraPoolDelta`.
 
-$$ newterraPoolDelta = terraPoolDelta - askBaseCoin.Amount_\mathrm{µSDR} $$
+$$ terraPoolDelta_{new} = terraPoolDelta - askBaseCoin.Amount_\mathrm{µSDR} $$
 
 
-## End-Block
+### `EndBlocker`
 
-The Market module calls `k.ReplenishPools()` at the end of every block, which decreases the value of `terraPoolDelta` (the difference between Terra and Luna pools) depending on `PoolRecoveryPeriod`, $pr$.
+[View in Github](https://github.com/terra-money/core/blob/main/x/market/abci.go#L10)
 
-This allows the network to sharply increase spread fees during acute price fluctuations. After some time, the spread automatically returns to normal for long-term price changes.
+```go
+func EndBlocker(ctx sdk.Context, k keeper.Keeper)
+```
 
-func (k Keeper) ReplenishPools(ctx sdk.Context) {
-	poolDelta := k.GetTerraPoolDelta(ctx)
+At the end of every block, `k.EndBlocker()` calls the `k.ReplenishPools()` function to replenish the virtual liquidity pools towards `basePool` size by lowering the `terraPoolDelta`.
 
-	poolRecoveryPeriod := int64(k.PoolRecoveryPeriod(ctx))
-	poolRegressionAmt := poolDelta.QuoInt64(poolRecoveryPeriod)
+### `ReplenishPools`
 
-	// Replenish pools towards each base pool
-	// regressionAmt cannot make delta zero
-	poolDelta = poolDelta.Sub(poolRegressionAmt)
+[View in Github](https://github.com/terra-money/core/blob/main/x/market/keeper/keeper.go#L81)
 
-	k.SetTerraPoolDelta(ctx, poolDelta)
-}
+``` go
+func (k Keeper) ReplenishPools(ctx sdk.Context)
+```
+
+`k.ReplenishPools()` replenishes the virtual liquidity pools by moving the `terraPoolDelta` closer to the `basePool` amount. 
 
 1. Use `k.GetTerraPoolDelta()` to retrieve the current `terraPoolDelta`.
-2. Retrieve the `PoolRecoveryPeriod`
+2. Retrieve the `poolRecoveryPeriod`
 3. Calculate the `poolRegressionAmt` using the following formula:
 
-$$ poolRegressionAmt = \frac{terraPoolDelta}{poolRecoveryPeriod} $$
+$$ poolRegressionAmt = \frac{terraPoolDelta}{PoolRecoveryPeriod} $$
 
-4. Set a new `terraPoolDelta` by subtracting the `poolRegressionAmt` from the `terraPoolDelta`. This action replenishes the virtual liquidity pools toward the `basePool` amount. 
+4. Calculate a new `terraPoolDelta` by subtracting the `poolRegressionAmt` from the `terraPoolDelta`. This action replenishes the virtual liquidity pools toward the `basePool` amount. 
 
-$$ terraPoolDelta_{new} = terraPoolDelta_{current} - poolRegressionAmt $$
+$$ terraPoolDelta_{new} = terraPoolDelta - poolRegressionAmt $$
 
-
+5. Set the new `terraPoolDelta` using `k.SetTerraPoolDelta()`. 
 
 ## Parameters
 
-The subspace for the Market module is `market`.
+The subspace for the Market module is `market`. The following parameters can be altered using a [governance proposal](../../learn/protocol.md#proposals).
+
+[View in Github](https://github.com/terra-money/core/blob/main/x/market/types/market.pb.go#L27)
 
 ```go
 type Params struct {
-	PoolRecoveryPeriod int64   `json:"pool_recovery_period" yaml:"pool_recovery_period"`
-	BasePool           sdk.Dec `json:"base_pool" yaml:"base_pool"`
-	MinSpread          sdk.Dec `json:"min_spread" yaml:"min_spread"`
-	TobinTax           sdk.Dec `json:"tobin_tax" yaml:"tobin_tax"`
+	BasePool github_com_cosmos_cosmos_sdk_types.Dec
+	PoolRecoveryPeriod uint64   
+	MinStabilitySpread github_com_cosmos_cosmos_sdk_types.Dec
 }
 ```
 
 ### PoolRecoveryPeriod
 
-- type: `int64`
+- type: `uint64`
 - default: `BlocksPerDay`
 
-The number of blocks it takes for the Terra & Luna pools to naturally "reset" toward equilibrium ($\delta \to 0$) through automated pool replenishing.
+A set theoretical number of blocks used in [](#replenishpools) to bring the `terraPoolDelta` closer to zero and [replenish] the virtual liquidity pools toward their [`BasePool`](#basepool) size. 
 
 
 ### BasePool
@@ -314,18 +283,11 @@ The number of blocks it takes for the Terra & Luna pools to naturally "reset" to
 - type: `Dec`
 - default: 250,000 SDR (= 250,000,000,000 µSDR)
 
-The initial starting size of both Terra and Luna liquidity pools.
+The initial starting size of both Terra and Luna virtual liquidity pools. The constant product is set by squaring the basepool. Pools are adjusted based on swap amounts using [](#applyswaptopool). Every block, pools are rebalanced toward their `BasePool` levels by lowering the `terraPoolDelta` using the [`k.ReplenishPools()`](#replenishpools) function.
 
 ### MinSpread
 
 - type: `Dec`
 - default: 0.5%
 
-The minimum spread charged on Terra<>Luna swaps to prevent leaking value from front-running attacks.
-
-### TobinTax
-
-- type: `Dec`
-- default: 0.35%
-
-An additional fee for swapping between Terra currencies (spot-trading). The rate varies, depending on the denomination. For example, while the rate for most denominations is .35%, the rate for MNT is 2%. To see the rates, [query the oracle](https://lcd.terra.dev/terra/oracle/v1beta1/denoms/tobin_taxes).
+The minimum spread fee charged on any transaction between Terra and Luna.
