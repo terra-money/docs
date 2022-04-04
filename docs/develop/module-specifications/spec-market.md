@@ -254,14 +254,39 @@ $$ newterraPoolDelta = terraPoolDelta + offerCoin.Amount_\mathrm{µSDR} $$
 
 4. For Luna to Terra swaps, use [`ComputeInternalSwap`](#computeinternalswap) to swap the ask amount to µSDR. This amount is subtracted from the `terraPoolDelta` to calculate the new `terraPoolDelta`.
 
-$$ newterraPoolDelta = TerraPoolDelta - askBaseCoin.Amount_\mathrm{µSDR} $$
+$$ newterraPoolDelta = terraPoolDelta - askBaseCoin.Amount_\mathrm{µSDR} $$
 
 
 ## End-Block
 
-The Market module calls `k.ReplenishPools()` at the end of every block, which decreases the value of `TerraPoolDelta` (the difference between Terra and Luna pools) depending on `PoolRecoveryPeriod`, $pr$.
+The Market module calls `k.ReplenishPools()` at the end of every block, which decreases the value of `terraPoolDelta` (the difference between Terra and Luna pools) depending on `PoolRecoveryPeriod`, $pr$.
 
 This allows the network to sharply increase spread fees during acute price fluctuations. After some time, the spread automatically returns to normal for long-term price changes.
+
+func (k Keeper) ReplenishPools(ctx sdk.Context) {
+	poolDelta := k.GetTerraPoolDelta(ctx)
+
+	poolRecoveryPeriod := int64(k.PoolRecoveryPeriod(ctx))
+	poolRegressionAmt := poolDelta.QuoInt64(poolRecoveryPeriod)
+
+	// Replenish pools towards each base pool
+	// regressionAmt cannot make delta zero
+	poolDelta = poolDelta.Sub(poolRegressionAmt)
+
+	k.SetTerraPoolDelta(ctx, poolDelta)
+}
+
+1. Use `k.GetTerraPoolDelta()` to retrieve the current `terraPoolDelta`.
+2. Retrieve the `PoolRecoveryPeriod`
+3. Calculate the `poolRegressionAmt` using the following formula:
+
+$$ poolRegressionAmt = \frac{terraPoolDelta}{poolRecoveryPeriod} $$
+
+4. Set a new `terraPoolDelta` by subtracting the `poolRegressionAmt` from the `terraPoolDelta`. This action replenishes the virtual liquidity pools toward the `basePool` amount. 
+
+$$ terraPoolDelta_{new} = terraPoolDelta_{current} - poolRegressionAmt $$
+
+
 
 ## Parameters
 
@@ -282,6 +307,7 @@ type Params struct {
 - default: `BlocksPerDay`
 
 The number of blocks it takes for the Terra & Luna pools to naturally "reset" toward equilibrium ($\delta \to 0$) through automated pool replenishing.
+
 
 ### BasePool
 
