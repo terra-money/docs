@@ -16,7 +16,7 @@ Running a full Terra node is a resource-intensive process that requires a persis
 
 ## Prerequisites
 
-- [Golang v1.16.1 - go1.17.1 linux/amd64](https://go.dev/dl/)
+- [Golang v1.16.1 - go1.18 linux/amd64](https://go.dev/dl/)
 
   ::: {dropdown} Installing Go for MacOS & Linux
 
