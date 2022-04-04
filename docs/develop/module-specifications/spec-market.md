@@ -169,13 +169,13 @@ type MsgSwapSend struct {
 
 ### `ComputeSwap`
 
-[View in Github](https://github.com/terra-money/core/blob/main/x/market/keeper/swap.go)
+[View in Github](https://github.com/terra-money/core/blob/main/x/market/keeper/swap.go#L52)
 
 ```go
 func (k Keeper) ComputeSwap(ctx sdk.Context, offerCoin sdk.Coin, askDenom string) (retDecCoin sdk.DecCoin, spread sdk.Dec, err error)
 ```
 
-The `ComputeSwap()` function computes the ask amount  oracle exchange rate.
+The `ComputeSwap()` function computes the ask amount based on the offer amount based on the oracle exchange rate and applies a Tobin tax or spread fee. 
 
 1. If both the ask and offer coins are the same denomination, return an error. 
 
@@ -191,7 +191,29 @@ The `ComputeSwap()` function computes the ask amount  oracle exchange rate.
 `k.ComputeSwap()` uses `k.ComputeInternalSwap()` internally to calcuate exchange rates based on the oracle price. `k.ComputeInternalSwap()` does not apply a spread fee. 
 :::
 
-### `ComputeInternalSwap
+### `ComputeInternalSwap`
+
+[View in Github](https://github.com/terra-money/core/blob/main/x/market/keeper/swap.go#L134)
+
+``` go
+func (k Keeper) ComputeInternalSwap(ctx sdk.Context, offerCoin sdk.DecCoin, askDenom string) (sdk.DecCoin, error)
+```
+
+`K.ComputeInternalSwap()` swaps amounts based on oracle exchange rates without applying a spread fee. 
+ 
+1. If both the ask and offer coins are the same denomination, return an error. 
+
+2. Use [`k.OracleKeeper.GetLunaExchangeRate`](https://github.com/terra-money/core/blob/a048b26251a37d52d7139a6529358ffb95e14b6a/x/oracle/keeper/keeper.go#L71) to return the offer and ask rates from the oracle. All oracle exchange rates are denominated as an amount of Terrastablecoin per Luna. If the offer or ask coins are denominated in Luna, the rate is `1`, as 1 Luna/ 1 Luna = 1.
+
+3. Calculate the ask amount using the offer amount using the following equation:
+
+retAmount := offerCoin.Amount.Mul(askRate).Quo(offerRate)
+
+$$ askAmount = offerCoin.Amount * askRate \div{offerRate} $$
+
+
+4. 
+
 
 ### `k.ApplySwapToPool()`
 
