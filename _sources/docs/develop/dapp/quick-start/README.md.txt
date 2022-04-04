@@ -1,6 +1,6 @@
 # Terrain quickstart guide
 
-Use this quickstart guide to get started building your dApp. Terrain is a Terra development environment for better smart contract development experience
+Terrain is a Terra development environment that creates a better smart contract development experience.
 
 This guide will walk you through setting up your environment, installing Terrain, and using the testnet or LocalTerra to interact with a network.
 
