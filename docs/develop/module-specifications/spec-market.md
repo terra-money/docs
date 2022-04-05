@@ -33,13 +33,116 @@ To swap between stablecoins,
 
 Swap fees were implemented to protect against different market module attacks. 
 
+## Tobin Tax
+
+The Tobin tax is a fee applied to any swap between Terra stablecoin denomintations. This fee discourages forex trading in the market module at the expense of Luna holders. Because oracle rates are updated every 30 seconds, a malicious trader could exploit the delay by front-running the oracle. Tobin taxes are based on the volatility of each stablecoin denomination. The added Tobin tax is just high enough to make any front-running opprotunities not-profitable. 
+
+The Tobin tax rates vary between different stablecoins, ranging from .35% for UST and 2% for MNT.
+
+:::{dropdown} Tobin tax rates
+
+Tobin tax rates can be viewed in browser by [querying the oracle](https://lcd.terra.dev/terra/oracle/v1beta1/denoms/tobin_taxes).
+
+```
+{
+  "tobin_taxes": [
+    {
+      "name": "uaud",
+      "tobin_tax": "0.003500000000000000"
+    },
+    {
+      "name": "ucad",
+      "tobin_tax": "0.003500000000000000"
+    },
+    {
+      "name": "uchf",
+      "tobin_tax": "0.003500000000000000"
+    },
+    {
+      "name": "ucny",
+      "tobin_tax": "0.003500000000000000"
+    },
+    {
+      "name": "udkk",
+      "tobin_tax": "0.003500000000000000"
+    },
+    {
+      "name": "ueur",
+      "tobin_tax": "0.003500000000000000"
+    },
+    {
+      "name": "ugbp",
+      "tobin_tax": "0.003500000000000000"
+    },
+    {
+      "name": "uhkd",
+      "tobin_tax": "0.003500000000000000"
+    },
+    {
+      "name": "uidr",
+      "tobin_tax": "0.007500000000000000"
+    },
+    {
+      "name": "uinr",
+      "tobin_tax": "0.003500000000000000"
+    },
+    {
+      "name": "ujpy",
+      "tobin_tax": "0.003500000000000000"
+    },
+    {
+      "name": "ukrw",
+      "tobin_tax": "0.003500000000000000"
+    },
+    {
+      "name": "umnt",
+      "tobin_tax": "0.020000000000000000"
+    },
+    {
+      "name": "umyr",
+      "tobin_tax": "0.003500000000000000"
+    },
+    {
+      "name": "unok",
+      "tobin_tax": "0.003500000000000000"
+    },
+    {
+      "name": "uphp",
+      "tobin_tax": "0.007500000000000000"
+    },
+    {
+      "name": "usdr",
+      "tobin_tax": "0.003500000000000000"
+    },
+    {
+      "name": "usek",
+      "tobin_tax": "0.003500000000000000"
+    },
+    {
+      "name": "usgd",
+      "tobin_tax": "0.003500000000000000"
+    },
+    {
+      "name": "uthb",
+      "tobin_tax": "0.007500000000000000"
+    },
+    {
+      "name": "utwd",
+      "tobin_tax": "0.003500000000000000"
+    },
+    {
+      "name": "uusd",
+      "tobin_tax": "0.003500000000000000"
+    }
+  ]
+}
+```
+
+
+:::
+
 
 ## Spread fee
-
-Because Terra's price feed is derived from validator oracles, a delay exists between the price reported on-chain and the real-time price.
-
-The delay lasts around one minute (our oracle `VotePeriod` is 30 seconds), which is negligible for nearly all practical transactions. However, front-running attackers could take advantage of this delay and extract value from the network.
-
 
 ### Virtual Liquidity Pools
 
@@ -63,9 +166,15 @@ Even if the large trade is broken up into multiple small trades submitted at the
 
 
 
+### In-depth spread calculation
 
+[View in Github](https://github.com/terra-money/core/blob/main/x/market/keeper/swap.go)
 
+The following is an in-depth look at how the market module calculates the spread fee. 
 
+:::{dropdown} Spread fee code
+
+``` go
 basePool := k.BasePool(ctx)
 	minSpread := k.MinStabilitySpread(ctx)
 
@@ -100,10 +209,8 @@ basePool := k.BasePool(ctx)
 	if spread.LT(minSpread) {
 		spread = minSpread
 	}
-
-
-### In-depth spread calculation
-
+```
+:::
 
 #### Constant product
 
