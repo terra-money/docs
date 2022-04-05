@@ -27,17 +27,52 @@ To swap between stablecoins,
 
 ### Terra and Luna
 
+
+
+## Swap Fees
+
+Swap fees were implemented to protect against different market module attacks. 
+
+
+##
+
+Because Terra's price feed is derived from validator oracles, a delay exists between the price reported on-chain and the real-time price.
+
+The delay lasts around one minute (our oracle `VotePeriod` is 30 seconds), which is negligible for nearly all practical transactions. However, front-running attackers could take advantage of this delay and extract value from the network.
+
+
+
+
+
+### Virtual Liquidity Pools
+
+To protect against oracle attacks and to combat volatility, the market module uses virtual liquidity pools regulate transaction volume. 
+
+
+
+
+
+### Seigniorage
+
+::: {admonition} All seigniorage is Burned
+:class: Caution
+
+Seigniorage used to be an important part of the protocol, but is no longer necessary. As of Columbus-5, all seigniorage is burned, and the community pool is no longer funded. Swap fees are used instead of seigniorage as ballot rewards for the exchange rate oracle. The following information is kept as reference:
+:::
+
+When Luna swaps into Terra, the Luna recaptured by the protocol was called seigniorage -- the value generated from issuing new Terra. The total seigniorage at the end of each epoch was calculated and reintroduced into the economy as ballot rewards for the exchange rate oracle and to the community pool by the Treasury module, described more fully [here](spec-treasury.md). As of Columbus-5, all seigniorage is burned, and the community pool is no longer funded. Swap fees are used as ballot rewards for the exchange rate oracle.
+
 ### Swap Procedure
 
 The swap procedure logic can be found in [x/market/keeper/msg_server.go](https://github.com/terra-money/core/blob/main/x/market/keeper/msg_server.go). 
 
 1. The Market module receives a [`MsgSwap`](#msgswap) message and performs basic validation checks using `ValidateBasic`. 
 
-2. [`k.ComputeSwap()`](#functions) is called, and the oracle exchange rate is used to calculate the equivalent amount of the ask coin from the offer coin.
+2. [`k.ComputeSwap()`](#computeswap) is called, and the oracle exchange rate is used to calculate the equivalent amount of the ask coin from the offer coin.
 
 3. The Spread fee or Tobin tax is calculated and subtracted from the ask amount. 
 
-4. The offer and ask amounts (minus the fee) are applied to the virtual pools, and the `TerraPoolDelta` is updated with [`k.ApplySwapToPool()`](#k-applyswaptopool).
+4. The offer and ask amounts (minus the fee) are applied to the virtual pools, and the [`terraPoolDelta`](#terrapooldelta) is updated with [`k.ApplySwapToPool()`](#k-applyswaptopool).
 
 5. The `offerCoin` is transfered to the market module using `k.BankKeeper.SendCoinsFromAccountToModule()`.
 
@@ -51,49 +86,10 @@ The swap procedure logic can be found in [x/market/keeper/msg_server.go](https:/
 
 10. The `swap` event is emitted to publicize the swap and record the spread fee.
 
-:::{note} If a trader's `Account` has insufficient balance to execute a swap, the transaction will fail.
+:::{note}
+If a trader's `Account` does not contain enough coins to execute a swap, the transaction will fail.
 :::
 
-
-## Concepts
-
-
-### Swap Fees
-
-Because Terra's price feed is derived from validator oracles, a delay exists between the price reported on-chain and the real-time price.
-
-The delay lasts around one minute (our oracle `VotePeriod` is 30 seconds), which is negligible for nearly all practical transactions. However, front-running attackers could take advantage of this delay and extract value from the network.
-
-To defend against this type of attack, the Market module enforces the following swap fees:
-
-- [**Tobin tax**](#tobintax) for spot-converting Terra<>Terra swaps
-
-  For example, assume that the current Tobin tax for KRT is 0.35%, the oracle reports that the Luna<>SDT exchange rate is 10 and the Luna<>KRT exchange rate is 10,000. Swapping 1 SDT would return 0.1 Luna, which is 1,000 KRT. After the Tobin tax is applied, you will have 996.5 KRT (0.35% of 1,000 is 3.5), a better rate than any retail currency exchange and remittance[^1].
-
-[^1]: Initially, the Terra blockchain maintained a policy for zero-fee swaps. However, to prevent front-running attackers from exploiting the exchange-rate latency and profiting at the expense of users, the Tobin tax was implemented. For more information, see ["On swap fees: the greedy and the wise"](https://medium.com/terra-money/on-swap-fees-the-greedy-and-the-wise-b967f0c8914e).
-
-- [**Minimum spread**](#minspread) for Terra<>Luna swaps
-
-  The minimum spread is 0.5%. Using the same exchange rates as above, swapping 1 SDT will return 995 KRT worth of Luna (0.5% of 1000 is 5, which is taken as the swap fee). If you reverse the direction of the swap, 1 Luna would return 9.95 SDT (0.5% of 10 is 0.05), or 9,950 KRT (0.5% of 10,000 = 50).
-
-
-### Market Making Algorithm
-
-
-
-### Virtual Liquidity Pools
-
-
-
-### Seigniorage
-
-::: {admonition} All seigniorage is Burned
-:class: Caution
-
-Seigniorage used to be an important part of the protocol, but is no longer necessary. As of Columbus-5, all seigniorage is burned, and the community pool is no longer funded. Swap fees are used instead of seigniorage as ballot rewards for the exchange rate oracle. The following information is kept as reference:
-:::
-
-When Luna swaps into Terra, the Luna recaptured by the protocol was called seigniorage -- the value generated from issuing new Terra. The total seigniorage at the end of each epoch was calculated and reintroduced into the economy as ballot rewards for the exchange rate oracle and to the community pool by the Treasury module, described more fully [here](spec-treasury.md). As of Columbus-5, all seigniorage is burned, and the community pool is no longer funded. Swap fees are used as ballot rewards for the exchange rate oracle.
 
 ## State
 
@@ -242,10 +238,10 @@ At the end of every block, `k.EndBlocker()` calls the `k.ReplenishPools()` funct
 func (k Keeper) ReplenishPools(ctx sdk.Context)
 ```
 
-`k.ReplenishPools()` replenishes the virtual liquidity pools by moving the `terraPoolDelta` closer to the `basePool` amount. 
+`k.ReplenishPools()` replenishes the virtual liquidity pools by moving the `terraPoolDelta` closer to the `basePool` amount using the [`PoolRecoveryPeriod` parameter](#poolrecoveryperiod). 
 
 1. Use `k.GetTerraPoolDelta()` to retrieve the current `terraPoolDelta`.
-2. Retrieve the `poolRecoveryPeriod`
+2. Retrieve the `PoolRecoveryPeriod`
 3. Calculate the `poolRegressionAmt` using the following formula:
 
 $$ poolRegressionAmt = \frac{terraPoolDelta}{PoolRecoveryPeriod} $$
@@ -258,8 +254,6 @@ $$ terraPoolDelta_{new} = terraPoolDelta - poolRegressionAmt $$
 
 ## Parameters
 
-The subspace for the Market module is `market`. The following parameters can be altered using a [governance proposal](../../learn/protocol.md#proposals).
-
 [View in Github](https://github.com/terra-money/core/blob/main/x/market/types/market.pb.go#L27)
 
 ```go
@@ -269,6 +263,7 @@ type Params struct {
 	MinStabilitySpread github_com_cosmos_cosmos_sdk_types.Dec
 }
 ```
+The subspace for the Market module is `market`. The following parameters can be altered using a [governance proposal](../../learn/protocol.md#proposals).
 
 ### PoolRecoveryPeriod
 
@@ -276,7 +271,6 @@ type Params struct {
 - default: `BlocksPerDay`
 
 A set theoretical number of blocks used in [](#replenishpools) to bring the `terraPoolDelta` closer to zero and [replenish] the virtual liquidity pools toward their [`BasePool`](#basepool) size. 
-
 
 ### BasePool
 
