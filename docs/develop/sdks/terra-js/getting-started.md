@@ -75,6 +75,8 @@ const mk = new MnemonicKey({
 const wallet = lcd.wallet(mk);
 ```
 
+In general, it's better to store this data in your enviorment, i.e. use `process.env.SECRET_MNEMONIC` or `process.env.SECRET_PRIV_KEY`.
+
 Request funds for your test wallet [here](https://faucet.terra.money). We'll need these to perform swaps and pay for gas fees.
 
 ## Query the terraswap contract and setup the transaction
