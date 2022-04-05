@@ -34,21 +34,20 @@ To swap between stablecoins,
 Swap fees were implemented to protect against different market module attacks. 
 
 
-##
+## Spread fee
 
 Because Terra's price feed is derived from validator oracles, a delay exists between the price reported on-chain and the real-time price.
 
 The delay lasts around one minute (our oracle `VotePeriod` is 30 seconds), which is negligible for nearly all practical transactions. However, front-running attackers could take advantage of this delay and extract value from the network.
 
 
-
-
-
 ### Virtual Liquidity Pools
 
 To protect against oracle attacks and to combat volatility, the market module uses virtual liquidity pools regulate transaction volume. 
 
-The Terra protocol does not utilize liquidity pools to swap and price assets. 
+The Terra protocol does not use actual liquidity pools to swap and price assets. Instead, Terra and Luna are minted and burned according to the exchange rates from the oracle price feeder. 
+
+In order to track the flow of transactions and increase fees to discourage volatility, The Terra protocol uses a virtual pool model. All swap transactions between Terra and Luna are applied to virtual pools, changing their balances. 
 
 The Terrs and Luna virtual liquidity pools are 
 
@@ -102,6 +101,10 @@ basePool := k.BasePool(ctx)
 		spread = minSpread
 	}
 
+
+### In-depth spread calculation
+
+
 #### Constant product
 
 The Constant Product is defined as the $BasePool$ multiplied by itself. Because the product of the pools is constant, the Terra and Luna pools will always multiply to equal $BasePool^2$.
@@ -110,27 +113,37 @@ $$ ConstantProduct = basePool^2 $$
 
 #### Pool size
 
-In order to simplify
+Instead of tracking and storing the size of both the Luna and Terra virtual liquidity pools, the protocol only tracks and stores the [`terraPoolDelta`](#terrapooldelta). The [`terraPoolDelta`](#terrapooldelta) is the difference between the current size of the Terra pool and the [`basePool`](#basepool) parameter. Using the current [`terraPoolDelta`](#terrapooldelta) and the [`basePool`](#basepool) size, we can derive the size of the individual Terra and Luna virtual liquidity pools. 
 
 $$ TerraPool = basePool + TerraPoolDelta $$
 
 $$ LunaPool = \frac{CP}{TerraPool} $$
 
-#### AskBase calculation
+#### Calculate `AskBaseAmount`
 
-The `AskBaseAmount` is the ask amount returned from an offer amount, based on the virtual swap pool balances. This amount is different from the ask amount calculated using the oracle rate in [`k.ComputeSwap()`](#computeswap). The `AskBaseAmount` amount is used to calculate the spread fee. 
+:::{admonition} `AskBaseAmount`
+:class: caution
 
-To determine the ask 
+The `AskBaseAmount` is the ask amount returned from an offer amount based on the virtual swap pool balances. This amount is different from the ask amount calculated using the oracle rate in [`k.ComputeSwap()`](#computeswap). The `AskBaseAmount` amount is only used to calculate the spread fee. 
+:::
+
+To determine the `askBaseAmount`, use the following formula:
 
 $$ askBaseAmount = askPool - \frac{CP}{offerPool+offerBaseAmount} $$
 
 **Terra to Luna**
 
+For swaps from Terra to Luna, the `offerPool` is the `terraPool` and the `askPool` is the `lunaPool`. 
+
+$$ askBaseAmount = LunaPool - \frac{CP}{TerraPool+offerBaseAmount} $$
+
 **Luna to Terra**
 
-$$ askBaseAmount = askPool - \frac{CP}{offerPool+offerBaseAmount} $$
+For swaps from Luna to Terra, the `offerPool` is the `lunaPool` and the `askPool` is the `terraPool`.
 
-#### Spread fee ratio
+$$ askBaseAmount = TerraPool - \frac{CP}{LunaPool+offerBaseAmount} $$
+
+#### Calculate the spread fee ratio
 
 The spread fee ratio is calculated as a ratio using the following formula:
 
@@ -138,9 +151,11 @@ $$ SpreadFeeRatio = \frac{baseOfferAmount - baseAskAmount}{baseOfferAmount} $$
 
 If the spread fee ratio returned is below the [minimum spread parameter](#minspread), the minimum spread ratio will be used. 
 
-#### Spread fee calculation
+#### Apply the spread fee
 
 The spread fee is calculated by multiplying the [spread fee ratio](#spread-fee-ratio) by the ask amount returned from [`k.ComputeSwap()`](#computeswap). This fee is then subtracted from the ask amount to get the final spread fee. 
+
+$$ SpreadFee = Ask - (SpreadFeeRatio * Ask) $$
 
 ### Seigniorage
 
@@ -187,7 +202,7 @@ If a trader's `Account` does not contain enough coins to execute a swap, the tra
 
 - type: `sdk.Dec`
 
-The `terraPoolDelta` represents the difference between the current Terra pool size and its original [](#basepool) size. The `terraPoolDelta` is updated during any swap between Terra and Luna using [](#applyswaptopool). At the end of every block, the absolute value of the `terraPoolDelta` is lowered using [](#replenishpools). 
+The `terraPoolDelta` represents the difference between the current Terra pool size and its original [`basePool`](#basepool) size. The `terraPoolDelta` is updated during any swap between Terra and Luna using [`k.ApplySwapToPool()`](#applyswaptopool). At the end of every block, the absolute value of the `terraPoolDelta` is lowered using [`k.ReplenishPools()`](#replenishpools). 
 
 $$ terraPoolDelta = TerraPool - BasePool $$
 
