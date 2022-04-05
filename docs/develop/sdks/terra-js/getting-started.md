@@ -1,5 +1,15 @@
 # Getting started
 
+## Intro
+
+This is an in-depth guide on how to setup and use the `terra.js` module from scratch. By the end of this guide you'll be able to call an asset swap from your application.
+
+We'll cover how to:
+1. Setup a Terra lcd (light client daemon)
+2. Create/load in a wallet
+3. Query a contract
+4. Create, sign and broadcast a transaction
+
 ## Setting up your workspace
 
 To begin, create or navigate to your project directory.
