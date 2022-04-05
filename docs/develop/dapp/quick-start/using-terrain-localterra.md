@@ -10,6 +10,9 @@ LocalTerra is a complete Terra testnet and ecosystem containerized with Docker. 
 - [Terra Station Chrome extension](../../../learn/terra-station/download/terra-station-extension.md)
 - Node.js version 16+
 
+<sup>
+* If you are using Node 17 (but we do not officially support Node 17) you have to take in consideration the issue https://github.com/bitcoinjs/bip32/issues/59 and run the environment with  <b>--openssl-legacy-provider</b> or export the variable before executing the env <b>export NODE_OPTIONS=--openssl-legacy-provider.</b>
+</sup>
 
 (header_target)=
 :::{dropdown} Running NPM on M1 Macs
