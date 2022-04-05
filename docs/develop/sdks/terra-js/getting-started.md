@@ -54,7 +54,7 @@ const lcd = new LCDClient({
   URL: "https://bombay-lcd.terra.dev/", // Use "https://lcd.terra.dev" for prod "http://localhost:1317" for localterra.
   chainID: "bombay-12", // Use "columbus-5" for prod or "localterra".
   gasPrices: gasPricesCoins,
-  gasAdjustment: "1.5", // Increase gas price slightly to transactions go through smoothly.
+  gasAdjustment: "1.5", // Increase gas price slightly so transactions go through smoothly.
   gas: 10000000,
 })
 ```
