@@ -238,7 +238,7 @@ At the end of every block, `k.EndBlocker()` calls the `k.ReplenishPools()` funct
 func (k Keeper) ReplenishPools(ctx sdk.Context)
 ```
 
-`k.ReplenishPools()` replenishes the virtual liquidity pools by moving the `terraPoolDelta` closer to the `basePool` amount using the [`PoolRecoveryPeriod` parameter](#poolrecoveryperiod). 
+`k.ReplenishPools()` replenishes the virtual liquidity pool amounts toward `basePool`. 
 
 1. Use `k.GetTerraPoolDelta()` to retrieve the current `terraPoolDelta`.
 2. Retrieve the `PoolRecoveryPeriod`
@@ -270,7 +270,7 @@ The subspace for the Market module is `market`. The following parameters can be 
 - type: `uint64`
 - default: `BlocksPerDay`
 
-A set theoretical number of blocks used in [](#replenishpools) to bring the `terraPoolDelta` closer to zero and [replenish] the virtual liquidity pools toward their [`BasePool`](#basepool) size. 
+A set number of blocks used in [](#replenishpools) to bring the `terraPoolDelta` closer to zero and replenish the virtual liquidity pools toward their [`BasePool`](#basepool) size. 
 
 ### BasePool
 
