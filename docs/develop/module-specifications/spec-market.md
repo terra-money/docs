@@ -102,19 +102,45 @@ basePool := k.BasePool(ctx)
 		spread = minSpread
 	}
 
+#### Constant product
+
+The Constant Product is defined as the $BasePool$ multiplied by itself. Because the product of the pools is constant, the Terra and Luna pools will always multiply to equal $BasePool^2$.
 
 $$ ConstantProduct = basePool^2 $$
+
+#### Pool size
+
+In order to simplify
 
 $$ TerraPool = basePool + TerraPoolDelta $$
 
 $$ LunaPool = \frac{CP}{TerraPool} $$
 
+#### AskBase calculation
+
+The `AskBaseAmount` is the ask amount returned from an offer amount, based on the virtual swap pool balances. This amount is different from the ask amount calculated using the oracle rate in [`k.ComputeSwap()`](#computeswap). The `AskBaseAmount` amount is used to calculate the spread fee. 
+
+To determine the ask 
+
 $$ askBaseAmount = askPool - \frac{CP}{offerPool+offerBaseAmount} $$
 
-$$ spread = \frac{baseOfferAmount - baseAskAmount}{baseOfferAmount} $$ 
+**Terra to Luna**
 
+**Luna to Terra**
 
+$$ askBaseAmount = askPool - \frac{CP}{offerPool+offerBaseAmount} $$
 
+#### Spread fee ratio
+
+The spread fee ratio is calculated as a ratio using the following formula:
+
+$$ SpreadFeeRatio = \frac{baseOfferAmount - baseAskAmount}{baseOfferAmount} $$ 
+
+If the spread fee ratio returned is below the [minimum spread parameter](#minspread), the minimum spread ratio will be used. 
+
+#### Spread fee calculation
+
+The spread fee is calculated by multiplying the [spread fee ratio](#spread-fee-ratio) by the ask amount returned from [`k.ComputeSwap()`](#computeswap). This fee is then subtracted from the ask amount to get the final spread fee. 
 
 ### Seigniorage
 
