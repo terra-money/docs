@@ -48,6 +48,70 @@ The delay lasts around one minute (our oracle `VotePeriod` is 30 seconds), which
 
 To protect against oracle attacks and to combat volatility, the market module uses virtual liquidity pools regulate transaction volume. 
 
+The Terra protocol does not utilize liquidity pools to swap and price assets. 
+
+The Terrs and Luna virtual liquidity pools are 
+
+The oracle provides the fiat exchange rate data, and the market module mints and burns Terra or Luna at the current rates. To view the current rates, [query the Oracle](https://lcd.terra.dev/terra/oracle/v1beta1/denoms/exchange_rates). 
+
+The virtual liquidity pools are only used to produce a spread fee, limiting the amount of profitible arbitrage that can occur during certain periods. 
+
+When transaction volume is high in one direction, the unbalanced virtual pools will return a higher spread fee. 
+
+Even if the large trade is broken up into multiple small trades submitted at the same time, the `TerraPoolDelta` for that block will be the same. The spread fee will be applied equally, 
+
+
+
+
+
+
+
+
+basePool := k.BasePool(ctx)
+	minSpread := k.MinStabilitySpread(ctx)
+
+	// constant-product, which by construction is square of base(equilibrium) pool
+	cp := basePool.Mul(basePool)
+	terraPoolDelta := k.GetTerraPoolDelta(ctx)
+	terraPool := basePool.Add(terraPoolDelta)
+	lunaPool := cp.Quo(terraPool)
+
+	var offerPool sdk.Dec // base denom(usdr) unit
+	var askPool sdk.Dec   // base denom(usdr) unit
+	if offerCoin.Denom != core.MicroLunaDenom {
+		// Terra->Luna swap
+		offerPool = terraPool
+		askPool = lunaPool
+	} else {
+		// Luna->Terra swap
+		offerPool = lunaPool
+		askPool = terraPool
+	}
+
+	// Get cp(constant-product) based swap amount
+	// askBaseAmount = askPool - cp / (offerPool + offerBaseAmount)
+	// askBaseAmount is base denom(usdr) unit
+	askBaseAmount := askPool.Sub(cp.Quo(offerPool.Add(baseOfferDecCoin.Amount)))
+
+	// Both baseOffer and baseAsk are usdr units, so spread can be calculated by
+	// spread = (baseOfferAmt - baseAskAmt) / baseOfferAmt
+	baseOfferAmount := baseOfferDecCoin.Amount
+	spread = baseOfferAmount.Sub(askBaseAmount).Quo(baseOfferAmount)
+
+	if spread.LT(minSpread) {
+		spread = minSpread
+	}
+
+
+$$ ConstantProduct = basePool^2 $$
+
+$$ TerraPool = basePool + TerraPoolDelta $$
+
+$$ LunaPool = \frac{CP}{TerraPool} $$
+
+$$ askBaseAmount = askPool - \frac{CP}{offerPool+offerBaseAmount} $$
+
+$$ spread = \frac{baseOfferAmount - baseAskAmount}{baseOfferAmount} $$ 
 
 
 
@@ -99,10 +163,11 @@ If a trader's `Account` does not contain enough coins to execute a swap, the tra
 
 The `terraPoolDelta` represents the difference between the current Terra pool size and its original [](#basepool) size. The `terraPoolDelta` is updated during any swap between Terra and Luna using [](#applyswaptopool). At the end of every block, the absolute value of the `terraPoolDelta` is lowered using [](#replenishpools). 
 
+$$ terraPoolDelta = TerraPool - BasePool $$
 
 ## Message Types
 
-### MsgSwap
+### `MsgSwap`
 
 A `MsgSwap` transaction denotes the `Trader`'s intent to swap their balance of `OfferCoin` for a new denomination `AskDenom`. Terra<>Terra swaps incur gas and the Tobin tax, and Terra<>Luna swaps incur gas and a spread fee.
 
@@ -115,7 +180,7 @@ type MsgSwap struct {
 }
 ```
 
-### MsgSwapSend
+### `MsgSwapSend`
 
 A `MsgSwapSend` first swaps `OfferCoin` for `AskDenom` and then sends the acquired coins to `ToAddress`. Swap fees are charged to the sender.
 
@@ -179,21 +244,21 @@ $$ askAmount = offerCoin.Amount * askRate \div{offerRate} $$
 **Example**: Swap 100 USD to SDR:
 
 
-$offerCoin.Amount$: 100 USD  
-$askRate$: 100 SDR/Luna  
-$offerRate$: 140 USD/Luna  
+- $offerCoin.Amount$: 100 USD  
+- $askRate$: 100 SDR/Luna  
+- $offerRate$: 140 USD/Luna  
 
-$ \mathrm{100 \,USD * 100\, \tfrac{SDR}{Luna} \div{140\, \tfrac{USD}{Luna}}  \approx 71.43 \,SDR} $
+$$ \mathrm{100 \,USD * 100\, \tfrac{SDR}{Luna} \div{140\, \tfrac{USD}{Luna}}  \approx 71.43 \,SDR} $$
 
 
 
 **Example**: Swap 20 Luna to SDR:
 
-$offerCoin.Amount$: 20 Luna  
-$askRate$: 100 SDR/Luna  
-$offerRate$: 1  (1 Luna / 1 Luna)  
+- $offerCoin.Amount$: 20 Luna  
+- $askRate$: 100 SDR/Luna  
+- $offerRate$: 1  (1 Luna / 1 Luna)  
 
-$\mathrm{20 \,Luna * 100\, \tfrac{SDR}{Luna} \div{1}  = 2000 \,SDR} $
+$$\mathrm{20 \,Luna * 100\, \tfrac{SDR}{Luna} \div{1}  = 2000 \,SDR} $$
 
 
 
@@ -218,11 +283,11 @@ func (k Keeper) ApplySwapToPool(ctx sdk.Context, offerCoin sdk.Coin, askCoin sdk
 
 3. For Terra to Luna swaps, use [`ComputeInternalSwap`](#computeinternalswap) to swap the offer amount to µSDR. This amount is added to the `terraPoolDelta` to calculate the new `terraPoolDelta`.
 
-$$ newterraPoolDelta = terraPoolDelta + offerCoin.Amount_\mathrm{µSDR} $$
+$$ terraPoolDelta\,_2 = terraPoolDelta\,_1 + offerCoin.Amount_\mathrm{µSDR} $$
 
-4. For Luna to Terra swaps, use [`ComputeInternalSwap`](#computeinternalswap) to swap the ask amount to µSDR. This amount is subtracted from the `terraPoolDelta` to calculate the new `terraPoolDelta`.
+4. For Luna to Terra swaps, use [`ComputeInternalSwap`](#computeinternalswap) to swap the ask amount to µSDR. This amount is subtracted from the current `terraPoolDelta` ($terraPoolDelta\,_1$) to calculate the new `terraPoolDelta`($terraPoolDelta\,_2$).
 
-$$ terraPoolDelta_{new} = terraPoolDelta - askBaseCoin.Amount_\mathrm{µSDR} $$
+$$ terraPoolDelta\,_2 = terraPoolDelta\,_1 - askBaseCoin.Amount_\mathrm{µSDR} $$
 
 
 ### `EndBlocker`
@@ -253,7 +318,7 @@ $$ poolRegressionAmt = \frac{terraPoolDelta}{PoolRecoveryPeriod} $$
 
 4. Calculate a new `terraPoolDelta` by subtracting the `poolRegressionAmt` from the `terraPoolDelta`. This action replenishes the virtual liquidity pools toward the `basePool` amount. 
 
-$$ terraPoolDelta_{new} = terraPoolDelta - poolRegressionAmt $$
+$$ terraPoolDelta_2 = terraPoolDelta_1 - poolRegressionAmt $$
 
 5. Set the new `terraPoolDelta` using `k.SetTerraPoolDelta()`. 
 
@@ -270,21 +335,21 @@ type Params struct {
 ```
 The subspace for the Market module is `market`. The following parameters can be altered using a [governance proposal](../../learn/protocol.md#proposals).
 
-### PoolRecoveryPeriod
+### `PoolRecoveryPeriod`
 
 - type: `uint64`
 - default: `BlocksPerDay`
 
 A set number of blocks used in [](#replenishpools) to bring the `terraPoolDelta` closer to zero and replenish the virtual liquidity pools toward their [`BasePool`](#basepool) size. 
 
-### BasePool
+### `BasePool`
 
 - type: `Dec`
 - default: 250,000 SDR (= 250,000,000,000 µSDR)
 
-The initial starting size of both Terra and Luna virtual liquidity pools. The constant product is set by squaring the basepool. Pools are adjusted based on swap amounts using [](#applyswaptopool). Every block, pools are rebalanced toward their `BasePool` levels by lowering the `terraPoolDelta` using the [`k.ReplenishPools()`](#replenishpools) function.
+The initial starting size of both Terra and Luna virtual liquidity pools. The constant product is set by squaring the basepool. Pools are adjusted based on swap amounts using [`ApplyAwapToPool`](#applyswaptopool). Every block, pools are rebalanced toward their `BasePool` levels by lowering the `terraPoolDelta` using the [`k.ReplenishPools()`](#replenishpools) function.
 
-### MinSpread
+### `MinSpread`
 
 - type: `Dec`
 - default: 0.5%
