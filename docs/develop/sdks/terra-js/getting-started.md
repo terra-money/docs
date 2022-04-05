@@ -14,17 +14,22 @@ We'll cover how to:
 
 To begin, create or navigate to your project directory.
 ```console
-mkdir <my-terra-js-project> // This will create a new directory
+mkdir <my-terra-js-project> // create a new directory
 cd <my-terra-js-project>
 ```
 
-Then initialize your node package manager and install the `terra.js` package. This should autogenerate a number of new files. Lets also create an `index.js` file where we can start writing our code.
+Then initialize npm (node package manager) and install the `terra.js` package. This should autogenerate a number of new files. 
 
 If you do not already have npm installed. Follow these [instructions](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).
 
 ```console
 npm init -y // initalizes npm with standard configuration
 npm install @terra-money/terra.js // installs the terra.js library
+touch index.js // creates our index.js file to work from
+```
+
+Lets also create an `index.js` file where we can start writing our code.
+```console
 touch index.js // creates our index.js file to work from
 ```
 
