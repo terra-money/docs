@@ -27,10 +27,10 @@ Sphinx <5,>=3.5.4
 sphinxcontrib-applehelp
 sphinx-autobuild
 sphinxcontrib-devhelp
-sphinxcontrib-htmlhelp
+sphinxcontrib-htmlhelp >=2.0.0
 sphinxcontrib-jsmath
 sphinxcontrib-qthelp
-sphinxcontrib-serializinghtml
+sphinxcontrib-serializinghtml >=1.1.5
 sphinx-book-theme
 sphinx-copybutton
 sphinx_design
