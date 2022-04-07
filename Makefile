@@ -20,6 +20,9 @@ docker-make:
 docker-build: 
 	docker run --rm -v $$(pwd):/docs build-docs make html
 
+docker-watch: 
+	docker run -p 8000:8000 --rm -v $$(pwd):/docs build-docs sphinx-autobuild --host 0.0.0.0 . _build/html
+
 # Catch-all target: route all unknown targets to Sphinx using the new
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
 %: Makefile

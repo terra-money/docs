@@ -1,13 +1,13 @@
 # Wormhole Bridge tutorial
 
-Wormhole allows you to bridge tokens across different chains. Instead of swapping or converting assets directly, Wormhole locks your source assets in a smart contract and mints new Wormhole-wrapped assets on the target chain. You can then swap Wormhole-wrapped assets on an exchange for other assets on the target chain. 
+Wormhole's Portal Bridge allows you to bridge tokens across different chains. Instead of swapping or converting assets directly, Wormhole locks your source assets in a smart contract and mints new Wormhole-wrapped assets on the target chain. You can then swap Wormhole-wrapped assets on an exchange for other assets on the target chain. 
 
 Use this tutorial to bridge your assets between Terra and other chains using Wormhole.
 
 ## Prerequisites
 
 - [The Terra Station browser extension](../terra-station/download/terra-station-extension.md) for tokens on the Terra blockchain.
-- A second wallet extension for tokens on another blockchain. 
+- A wallet on the chain you want to bridge. 
 
    :::{admonition} Paying for fees
    :class: tip
@@ -20,11 +20,11 @@ Visit [Wormhole's Portal Token Bridge](https://portalbridge.com/#/transfer) to g
 
 ### 1. Source
 
-2. Select a **Source chain** and a **Target chain** from the dropdown choices. 
+1. Select a **Source chain** and a **Target chain** from the dropdown choices. 
 
-3. Click **Connect** to connect your Terra Station wallet. Allow the connection if your wallet extension prompts you.
+2. Click **Connect** to connect your Terra Station wallet. Allow the connection if your wallet extension prompts you.
 
-4. Click **Select a token** and choose from the available tokens in your wallet. 
+3. Click **Select a token** and choose from the available tokens in your wallet. 
 
    :::{important}
    You should always check for markets and liquidity before sending tokens. [Click here to see available markets for wrapped tokens](https://docs.wormholenetwork.com/wormhole/overview-liquid-markets).
@@ -34,7 +34,7 @@ Visit [Wormhole's Portal Token Bridge](https://portalbridge.com/#/transfer) to g
    :class: sd-p-3
    ```
 
-5. Enter the amount you want to bridge and click **Next**.
+4. Enter the amount you want to bridge and click **Next**.
 
 ### 2. Target
 
@@ -62,7 +62,7 @@ Visit [Wormhole's Portal Token Bridge](https://portalbridge.com/#/transfer) to g
    :class: sd-p-3
    ```
 
-5. Follow the steps in your wallet's browser extension to complete the transaction. 
+4. Follow the steps in your wallet's browser extension to complete the transaction. 
 
 Your tokens will be sent to the Wormhole contract and you will receive Wormhole-wrapped tokens. These tokens can be traded on an exchange for native assets. [Click here to see available markets for wrapped tokens](https://docs.wormholenetwork.com/wormhole/overview-liquid-markets).
 

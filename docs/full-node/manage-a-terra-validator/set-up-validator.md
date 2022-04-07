@@ -1,4 +1,4 @@
-# Register your Terra validator
+# Register a validator
 
 This is a detailed step-by-step guide for setting up a Terra validator. Please be aware that while it is easy to set up a rudimentary validating node, running a production-quality validator node with a robust architecture and security features requires an extensive setup.
 
@@ -8,11 +8,12 @@ For more information on setting up a validator, see [additional resources](READM
 
 - You have completed [how to run a full Terra node](../run-a-full-terra-node/README.md), which outlines how to install, connect, and configure a node.
 - You are familiar with [terrad](../../develop/how-to/terrad/README.md).
-- you have read through [the validator FAQ](faq.md)
+- You have read through [the validator FAQ](faq.md)
+- You understand the [different keys](faq.md#what-are-the-different-types-of-keys) of a validator in the FAQ
 
 ## 1. Retrieve your PubKey
 
-The consensus PubKey of your node is required to create a new validator. Run:
+The Consensus PubKey of your node is required to create a new validator. Run:
 
 ```bash
 --pubkey=$(terrad tendermint show-validator)
@@ -25,7 +26,7 @@ The consensus PubKey of your node is required to create a new validator. Run:
    In order for Terrad to recognize a wallet address it must contain tokens. For the testnet, use [the faucet](https://faucet.terra.money/) to send Luna to your wallet. If you are on mainnet, send funds from an existing wallet. 1-3 luna are sufficient for most setup processes.
    :::
 
-To create the validator and initialize it with a self-delegation, run the following command. `key-name` is the name of the private key that is used to sign transactions.
+To create the validator and initialize it with a self-delegation, run the following command. `key-name` is the name of the Application Operator Key that is used to sign transactions.
 
 ```bash
 terrad tx staking create-validator \
@@ -56,4 +57,18 @@ You are looking for the `bech32` encoded `address` in the `~/.terra/config/priv_
 
 ::: {note}
 Only the top 130 validators in voting power are included in the active validator set.
+:::
+
+## 4. Secure your keys and have a backup plan
+
+In general a validator needs to do three things well
+
+- Sign and commit blocks (using the Tendermint Consensus key)
+- Provide Oracle FX rates via a feeder (using an Application Oracle Feeder key)
+- Conduct on-chain operations such as voting on Governance proposals (using an Application Operator Key)
+
+Protecting and having a contingency backup plan for all your [keys](faq.md#what-are-the-different-types-of-keys) will help mitigate catastrophic hardware or software failures of the node.
+It is a good practice to test your backup plan on a testnet node in case of node failure.
+
+:::{include} restore.md
 :::

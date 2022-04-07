@@ -18,7 +18,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'Terra Docs'
-copyright = '2021, Terraform Labs'
+copyright = '2022, Terraform Labs'
 html_show_copyright = False
 #author = Terraform Labs
 
@@ -35,6 +35,7 @@ extensions = ["myst_parser",
               "sphinx_design",
               'sphinx_tabs.tabs',
               'notfound.extension',
+              'sphinx_reredirects',
     ]
 myst_heading_anchors = 4
 notfound_urls_prefix = None
@@ -72,6 +73,10 @@ html_favicon = "img/docs_favicon.ico"
 html_static_path = ['_static']
 html_css_files = ['custom.css']
 
+html_js_files = [
+    'custom.js',
+]
+
 pygments_style = 'material'
 
 myst_enable_extensions = [
@@ -107,4 +112,9 @@ html_theme_options = {
     "logo_only": True,
     "show_toc_level": 3,
     "extra_navbar": False,
+}
+
+# Redirects (visit https://documatt.gitlab.io/sphinx-reredirects/usage.html for more info)
+redirects = {
+    # "<source>": "<target>"
 }

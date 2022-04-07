@@ -6,7 +6,7 @@ Use this glossary to learn about terms specific to the Terra Protocol.
 
 The top 130 [validators](#validator) that participate in consensus and receive rewards.
 
-## Air drops
+## Airdrops
 
 Additional rewards given to [delegators](#delegator) through certain [validators](#validator), separate from [staking rewards](#rewards). Airdrops come from protocols in the Terra ecosystem to increase visibility. To claim an airdrop, visit the webpage of the protocol giving out the airdrop.
 
@@ -176,6 +176,10 @@ Groups of tokens. Supply pools represent the total supply of tokens in a market.
 ## Proof of Stake
 
 Proof of Stake. A style of blockchain where validators are chosen to propose blocks according to the number of coins they hold.
+
+## Quorum
+
+The minimum amount of votes needed to make an election viable. 40% of all staked Luna must vote to meet quorum. If quorum is not met before the voting period ends, the proposal fails, and the proposer's deposit is burned. 
 
 ## Redelegate
 

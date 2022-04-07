@@ -90,7 +90,7 @@ The following structure shows your scaffolded project:
 To deploy the application, run the following command:
 
 ```sh
-terrain deploy counter --signer validator
+terrain deploy counter --signer test1
 ```
 
 The deploy command performs the following steps automatically:
@@ -167,5 +167,5 @@ Terrain also scaffolds a very simple front-end:
 
 ## Advanced usage
 
-For more advanced use cases, like deploying to the testnet or mainnet, see [Terrain's readme](https://github.com/iboss-ptk/terrain#readme).
+For more advanced use cases, like deploying to the testnet or mainnet, see [Terrain's readme](https://github.com/terra-money/terrain#readme).
 
