@@ -15,7 +15,8 @@ jobs:
           persist-credentials: false
 
       - name: Build
-        uses: ammaraskar/sphinx-action@master
+      - name: Sphinx Docs build with ReadTheDocs Docker
+        uses: DavidLeoni/readthedocs-to-actions@v1.2
         with:
           docs-folder: "."
 
