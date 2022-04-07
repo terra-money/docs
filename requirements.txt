@@ -5,7 +5,7 @@ beautifulsoup4
 certifi
 charset-normalizer
 click
-docutils
+docutils ~=0.17.0
 idna
 imagesize
 Jinja2
@@ -23,7 +23,7 @@ PyYAML
 requests
 snowballstemmer
 soupsieve
-Sphinx
+Sphinx <5,>=3.5.4
 sphinxcontrib-applehelp
 sphinx-autobuild
 sphinxcontrib-devhelp
