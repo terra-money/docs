@@ -25,6 +25,7 @@ snowballstemmer
 soupsieve
 Sphinx
 sphinxcontrib-applehelp
+sphinx-autobuild
 sphinxcontrib-devhelp
 sphinxcontrib-htmlhelp
 sphinxcontrib-jsmath
@@ -35,5 +36,6 @@ sphinx-copybutton
 sphinx_design
 sphinx-notfound-page
 sphinx_panels
+sphinx-reredirects
 sphinx-tabs
 urllib3
