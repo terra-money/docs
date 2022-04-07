@@ -10,12 +10,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
         with:
           persist-credentials: false
 
-      - name: Sphinx Docs build with ReadTheDocs Docker
-        uses: DavidLeoni/readthedocs-to-actions@v1.2
+      - name: Build
+        uses: ammaraskar/sphinx-action@master
+        with:
+          docs-folder: "."
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3
