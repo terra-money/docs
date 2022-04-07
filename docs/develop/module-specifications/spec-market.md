@@ -40,6 +40,7 @@ The Tobin tax is a fee applied to any swap between Terra stablecoin denomintatio
 The Tobin tax rates vary between different stablecoins, ranging from .35% for UST and 2% for MNT.
 
 :::{dropdown} Tobin tax rates
+:icon: code
 
 Tobin tax rates can be viewed in browser by [querying the oracle](https://lcd.terra.dev/terra/oracle/v1beta1/denoms/tobin_taxes).
 
@@ -173,7 +174,7 @@ Even if the large trade is broken up into multiple small trades submitted at the
 The following is an in-depth look at how the market module calculates the spread fee. 
 
 :::{dropdown} Spread fee code
-
+:icon: code
 ``` go
 basePool := k.BasePool(ctx)
 	minSpread := k.MinStabilitySpread(ctx)
@@ -274,9 +275,107 @@ Seigniorage used to be an important part of the protocol, but is no longer neces
 
 When Luna swaps into Terra, the Luna recaptured by the protocol was called seigniorage -- the value generated from issuing new Terra. The total seigniorage at the end of each epoch was calculated and reintroduced into the economy as ballot rewards for the exchange rate oracle and to the community pool by the Treasury module, described more fully [here](spec-treasury.md). As of Columbus-5, all seigniorage is burned, and the community pool is no longer funded. Swap fees are used as ballot rewards for the exchange rate oracle.
 
-### Swap Procedure
+## Swap Procedure
 
-The swap procedure logic can be found in [x/market/keeper/msg_server.go](https://github.com/terra-money/core/blob/main/x/market/keeper/msg_server.go). 
+[View in Github](https://github.com/terra-money/core/blob/main/x/market/keeper/msg_server.go). 
+
+The following procedure details the logic of a [`MsgSwap`](#msgswap)
+
+:::{dropdown} Swap procedure code
+:icon: code
+``` go
+// handleMsgSwap handles the logic of a MsgSwap
+// This function does not repeat checks that have already been performed in msg.ValidateBasic()
+// Ex) assert(offerCoin.Denom != askDenom)
+func (k msgServer) handleSwapRequest(ctx sdk.Context,
+	trader sdk.AccAddress, receiver sdk.AccAddress,
+	offerCoin sdk.Coin, askDenom string) (*types.MsgSwapResponse, error) {
+
+	// Compute exchange rates between the ask and offer
+	swapDecCoin, spread, err := k.ComputeSwap(ctx, offerCoin, askDenom)
+	if err != nil {
+		return nil, err
+	}
+
+	// Charge a spread if applicable; the spread is burned
+	var feeDecCoin sdk.DecCoin
+	if spread.IsPositive() {
+		feeDecCoin = sdk.NewDecCoinFromDec(swapDecCoin.Denom, spread.Mul(swapDecCoin.Amount))
+	} else {
+		feeDecCoin = sdk.NewDecCoin(swapDecCoin.Denom, sdk.ZeroInt())
+	}
+
+	// Subtract fee from the swap coin
+	swapDecCoin.Amount = swapDecCoin.Amount.Sub(feeDecCoin.Amount)
+
+	// Update pool delta
+	err = k.ApplySwapToPool(ctx, offerCoin, swapDecCoin)
+	if err != nil {
+		return nil, err
+	}
+
+	// Send offer coins to module account
+	offerCoins := sdk.NewCoins(offerCoin)
+	err = k.BankKeeper.SendCoinsFromAccountToModule(ctx, trader, types.ModuleName, offerCoins)
+	if err != nil {
+		return nil, err
+	}
+
+	// Burn offered coins and subtract from the trader's account
+	err = k.BankKeeper.BurnCoins(ctx, types.ModuleName, offerCoins)
+	if err != nil {
+		return nil, err
+	}
+
+	// Mint asked coins and credit Trader's account
+	swapCoin, decimalCoin := swapDecCoin.TruncateDecimal()
+	feeDecCoin = feeDecCoin.Add(decimalCoin) // add truncated decimalCoin to swapFee
+	feeCoin, _ := feeDecCoin.TruncateDecimal()
+
+	mintCoins := sdk.NewCoins(swapCoin.Add(feeCoin))
+	err = k.BankKeeper.MintCoins(ctx, types.ModuleName, mintCoins)
+	if err != nil {
+		return nil, err
+	}
+
+	// Send swap coin to the trader
+	swapCoins := sdk.NewCoins(swapCoin)
+	err = k.BankKeeper.SendCoinsFromModuleToAccount(ctx, types.ModuleName, receiver, swapCoins)
+	if err != nil {
+		return nil, err
+	}
+
+	// Send swap fee to oracle account
+	if feeCoin.IsPositive() {
+		feeCoins := sdk.NewCoins(feeCoin)
+		err = k.BankKeeper.SendCoinsFromModuleToModule(ctx, types.ModuleName, oracletypes.ModuleName, feeCoins)
+		if err != nil {
+			return nil, err
+		}
+	}
+
+	ctx.EventManager().EmitEvents(sdk.Events{
+		sdk.NewEvent(
+			types.EventSwap,
+			sdk.NewAttribute(types.AttributeKeyOffer, offerCoin.String()),
+			sdk.NewAttribute(types.AttributeKeyTrader, trader.String()),
+			sdk.NewAttribute(types.AttributeKeyRecipient, receiver.String()),
+			sdk.NewAttribute(types.AttributeKeySwapCoin, swapCoin.String()),
+			sdk.NewAttribute(types.AttributeKeySwapFee, feeCoin.String()),
+		),
+		sdk.NewEvent(
+			sdk.EventTypeMessage,
+			sdk.NewAttribute(sdk.AttributeKeyModule, types.AttributeValueCategory),
+		),
+	})
+
+	return &types.MsgSwapResponse{
+		SwapCoin: swapCoin,
+		SwapFee:  feeCoin,
+	}, nil
+}
+```
+:::
 
 1. The Market module receives a [`MsgSwap`](#msgswap) message and performs basic validation checks using `ValidateBasic`. 
 
