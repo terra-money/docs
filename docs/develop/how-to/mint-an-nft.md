@@ -36,7 +36,7 @@ Open the Terra Station extension on your Google Chrome web browser. Click on the
 
 ### Switch to Test Wallet
 
-Next, you will click on _Switch wallet_, then click on the drop down menu that appears in the subsequent popup and finally select the test1 wallet from the drop down list that appears.
+Next, you will click on `Switch wallet`, then click on `Preconfigured wallets...` from the subsequent pop-up and finally select `test1` from the drop-down list that appears.
 
 <div align="center">
   <img src="../../../nft/switch_wallet.png" alt="Switch Wallet" style="border:1px solid black; width: 500px; margin: 10px 10px 20px 10px;"/>
