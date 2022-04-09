@@ -34,6 +34,12 @@ rustup default stable
 
 rustup target add wasm32-unknown-unknown
 
+# 2.1 M1 Macbook users
+# Be sure to have installed rust 1.59 or higher
+# you can verify by running `rustc --version`
+
+rustup target add aarch64-apple-darwin
+
 # 3. Install the following packages to generate the contract:
 
 cargo install cargo-generate --features vendored-openssl
@@ -46,6 +52,21 @@ Use npm to install the terrain command-line tool globally:
 
 ```sh
 npm install -g @terra-money/terrain
+```
+
+### 2.1 M1 Macbook users
+
+Double check you're not using @iboss/terrain, but @terra-money/terrain:
+
+```sh
+npm uninstall -g @iboss/terrain
+npm install -g @terra-money/terrain
+```
+
+Finally check you're using version 0.2 or higher:
+
+```sh
+terrain --version
 ```
 
 ## 3. Download LocalTerra or configure the testnet
