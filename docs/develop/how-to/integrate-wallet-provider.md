@@ -6,9 +6,7 @@
 
 In this guide, we'll go over how to set up a react app, integrate wallet provider, check the balance of the connected account and trigger a token swap. If you want to integrate Terra Station into an existing react app you can skip past the `Project Setup` section. 
 
-*Want to dive in? Use our premade React template*
-
-`npx terra-templates get wallet-provider:create-react-app your-terra-app`
+*Just want to dive in? Check out the getting started section for our premade templates [here](https://github.com/terra-money/wallet-provider/).*
  
 
 ## Prerequisites
@@ -24,6 +22,34 @@ To get started, we'll need basic React scaffolding. To generate this, run the fo
 npx create-react-app my-terra-app
 cd my-terra-app
 ```
+
+Next, let's install the `@terra-money/wallet-provider` package. 
+
+```sh
+npm install @terra-money/wallet-provider
+```
+Now we need to wrap our `App` with `<WalletProvider>` to give our components access to useful hooks and utilities we'll need to build out the integration. 
+
+Navigate to your `Index.js` and add teh following:
+
+```js
+import { getChainOptions, WalletProvider } from '@terra-money/wallet-provider';
+
+getChainOptions().then((chainOptions) => {
+  ReactDOM.render(
+    <WalletProvider {...chainOptions}>
+      <App />
+    </WalletProvider>,
+    document.getElementById('root')
+  );
+});
+```
+
+
+downgrade to 
+    "react-scripts": "4.0.3",
+ use this as reference with https://github.com/terra-money/wallet-provider/blob/main/templates/create-react-app/config-overrides.js
+ react-app-rewaired
 
 
 
