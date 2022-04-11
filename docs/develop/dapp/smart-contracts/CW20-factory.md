@@ -683,3 +683,191 @@ You should try to compile and deploy the smart contract to LocalTerra to confirm
 > git checkout 139f884926620988d2e6b40498d23534ab4e21d8
 ```
 :::
+
+# 3.Create and query token
+
+As of the first functionality of the smart contract the users must be able to create a token with the function from execute.rs defined below: 
+
+**tokens-factory/contracts/tokens-factory/src/models/execute.rs**
+```Rust
+fn execute_mint_token(deps: DepsMut, sender: Addr, token: Token) -> Result<Response, ContractError> {
+    /* Check token data validity like name, symbol, decimals, cap, 
+     marketing data... If the token is not compliant with standards
+     defined by the smart contract an error will be raised which
+     will block the token creation 
+     */
+    token.is_valid()?;
+
+    // ... else a data model is created...
+    let data = TokenInfo {
+        name: token.name,
+        symbol: token.symbol,
+        decimals: token.decimals,
+        total_supply: token.initial_balance.amount,
+        mint: token.mint,
+    };
+
+    // ... and stored into blockchain state.
+    TOKEN_INFO.save(deps.storage, &sender, &data)?;
+
+    // Furthermore is important to check if marketing data is available...
+    if let Some(marketing) = token.marketing {
+        let logo = if let Some(logo) = marketing.logo {
+            LOGO.save(deps.storage, &sender, &logo)?;
+
+            // ... e.g. logo available ...
+            match logo {
+                Logo::Url(url) => Some(LogoInfo::Url(url)),
+                Logo::Embedded(_) => Some(LogoInfo::Embedded),
+            }
+        } else {
+            None
+        };
+        
+        // .. afterwords create the respective that model that ...
+        let data = MarketingInfoResponse {
+            project: marketing.project,
+            description: marketing.description,
+            marketing: Some(sender.clone()),
+            logo,
+        };
+
+        // ... will be stored into the blockchain.
+        MARKETING_INFO.save(deps.storage, &sender, &data)?;
+    }
+
+    // if everything went well an Ok will be returned to the frontend.
+    Ok(Response::new()
+        .add_attribute("action", "mint_new_token")
+    )
+}
+```
+
+Another important functionality is to be able to retrieve all tokens created by the previous function. To do that the file that will need to be modified is query.rs: 
+
+**tokens-factory/contracts/tokens-factory/src/models/execute.rs**
+```Rust
+fn query_tokens(deps: Deps, creator: Option<String>) -> StdResult<TokensResponse> {
+    /* First check that will be performed is to validate if 
+    a creator exists...*/
+    let creator_address : Option<Addr> = match creator {
+        None => None,
+        Some(addr) => {
+            // ... if the creator exists validate it's address.
+            match deps.api.addr_validate(&addr) {
+                Err(err) => return Err(err),
+                Ok(addr) => Some(addr)
+            }
+        },
+    };
+
+    /* Matching the validated creator is important to be able to load 
+    the token minted by that creator...*/
+    match creator_address {
+        Some(address) => {
+            let token = TOKEN_INFO.load(deps.storage,&address)?;
+
+            /* "¿Why do we transform it to a vector?
+                Because of data consistency, no matters if is only one 
+                or multiple items frontend can expect reading an array 
+                which will reduce the implementation (and cognitive) complexity"*/
+            return Ok(TokensResponse{tokens: vec![token]});
+        },
+        None => {
+            // ... if the creator does not exist load all tokens... 
+            let tokens_map = TOKEN_INFO
+                .range(deps.storage, None, None, Order::Ascending)
+                .collect::<Vec<_>>();
+            // ... transform the tokens to a vector...
+            let tokens_list = tokens_map
+                .into_iter()
+                .map(|t|t.unwrap_or_default().1)
+                .collect();
+            
+            // ... return the vectors of TokenInformation
+            return Ok(TokensResponse{tokens: tokens_list});
+        }
+    }
+}
+```
+
+Having the below functionalities implemented is important but is also as important (if not more) as the feature to have the tests:
+
+**tokens-factory/contracts/tokens-factory/src/tests/tests.rs**
+```Rust
+#[test]
+fn test_mint_token() {
+    // GIVEN
+    let mut deps = mock_dependencies(&[]);
+    let info = mock_info("creator", &[]);
+    let env = mock_env();
+    let mint_new_token = ExecuteMsg::CreateNewToken {
+        token: Token {
+            name: "Fancy Money".to_string(),
+            symbol: "FAM".to_string(),
+            decimals: 2,
+            initial_balance: Cw20Coin {
+                address: "creator".to_string(),
+                amount : Uint128::new(123),
+            },
+            mint: Some(MinterResponse {
+                minter: "creator".to_string(),
+                cap: Some(Uint128::new(1234))
+            }),
+            marketing: None,
+        }
+    };
+    
+    // WHEN
+    instantiate(deps.as_mut(), env.clone(), info.clone(),InstantiateMsg{}).unwrap();
+    let res = execute(deps.as_mut(), env, info, mint_new_token).unwrap();
+    
+    // THEN
+    assert_eq!(1, res.attributes.len());
+    assert_eq!("mint_new_token", res.attributes.get(0).unwrap().value);
+}
+
+#[test]
+fn test_query_token() {
+    // GIVEN
+    let mut deps = mock_dependencies(&[]);
+    let info = mock_info("creator", &[]);
+    let env = mock_env();
+    let mint_new_token_msg = ExecuteMsg::CreateNewToken {
+        token: Token {
+            name: "Fancy Money".to_string(),
+            symbol: "FAM".to_string(),
+            decimals: 2,
+            initial_balance: Cw20Coin {
+                address: "creator".to_string(),
+                amount : Uint128::new(123),
+            },
+            mint: Some(MinterResponse {
+                minter: "creator".to_string(),
+                cap: Some(Uint128::new(1234))
+            }),
+            marketing: None,
+        }
+    };
+    let get_tokens_query = QueryMsg::GetTokens { creator: None };
+
+    // WHEN
+    instantiate(deps.as_mut(), env.clone(), info.clone(),InstantiateMsg{}).unwrap();
+    execute(deps.as_mut(), env.clone(), info, mint_new_token_msg).unwrap();
+    let res = query(deps.as_ref(), env, get_tokens_query).unwrap();
+    let res: TokensResponse = from_binary(&res).unwrap();
+    
+    // THEN
+    assert_eq!(1, res.tokens.len());
+
+    let token  = res.tokens.get(0).unwrap();
+    assert_eq!("Fancy Money", token.name);
+    assert_eq!("FAM", token.symbol);
+    assert_eq!(2, token.decimals);
+    
+}
+```
+
+:::{tip}
+To execute the tests you must use `cargo test` inside the `contracts/token-factory/` folder. The tests will not be documented that way you can [check the Rust official documentation](https://doc.rust-lang.org/book/ch11-01-writing-tests.html) to get to understand perfectly every single aspect of them.
+:::
