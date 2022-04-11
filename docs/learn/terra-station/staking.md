@@ -2,13 +2,25 @@
 
 Use this guide to manage your staking delegations in Terra Station. To learn how to stake or withdraw rewards, visit the Terra Station [desktop](download/terra-station-desktop.md) or [mobile](download/terra-station-mobile.md) tutorials.  
 
-If this is your first time using Terra Station, follow the [Terra Station tutorial](download/terra-station-desktop.md).
+
+
+Anyone who holds LUNA or TerraUSD can stake with a stake-supporting wallet via Terra Station. If this is your first time using Terra Station, follow the [Terra Station tutorial](download/terra-station-desktop.md).
+
+
+## Why Stake?
+
+When you stake your LUNA tokens, you can earn rewards.  Once you have delegated your tokens to one or more validator. The rewards will vary based on validator, size of the pool and commission fees. 
+
+
+As more LUNA holders stake their tokens to different validators across the network, the total voting power is split among more validators. This creates for a more safe and secure network for all users. The more that is delegated to different validators allows for the voting ratio to have an even spread.
+
 
 ## Stake Luna
 
-Stake your Luna to a validator to start earning rewards. Before you stake, make sure you have Luna in your wallet. You can transfer Luna from an [exchange](wallet.md) or [swap coins](wallet.md) you have for Luna.
+Stake your Luna to start earning rewards. In order to stake, make sure you have Luna in your wallet. You can transfer Luna from an [exchange](wallet.md) or [swap coins](wallet.md) coins you have for Luna. To stake LUNA, you would assign some or all of your LUNA Tokens to a validator which would increase their voting weight. Staking your tokens to a validator does NOT give the validator control over your tokens. At all times, you may choose to delegate more or withdraw your Tokens. 
 
-1. Open Terra Station and click **Staking**.
+
+1. Open Terra Station and click **Staking** from the column on the left.
 
 2. Select a Validator and click on their name in the **Moniker** column of the validator list.
 
@@ -81,3 +93,7 @@ Undelegating takes 21 days to complete. The only way to undo a delegating or und
 4. Confirm the amounts. Enter your password and click **Undelegate**.
 
 Your staked Luna is unbonding. Please check back in 21 days to complete the process.
+
+
+## What are the risks associated with Staking?
+When you stake your LUNA tokens, you do not have access to them for a minimum of 21 days.  
