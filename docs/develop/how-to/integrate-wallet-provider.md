@@ -28,9 +28,9 @@ Next, let's install the `@terra-money/wallet-provider` package.
 ```sh
 npm install @terra-money/wallet-provider
 ```
-Now we need to wrap our `App` with `<WalletProvider>` to give our components access to useful hooks and utilities we'll need to build out the integration. 
+Now we need to wrap our `App` with `<WalletProvider>` to give our components access to useful hooks and utilities we'll need to build out the integration. We'll also pass in information about Terra networks (e.g. the mainnet chainId) into the provider via `getChainOptions`. We'll need this information later. 
 
-Navigate to your `Index.js` and add teh following:
+Navigate to your `Index.js` and add the following:
 
 ```js
 import { getChainOptions, WalletProvider } from '@terra-money/wallet-provider';
@@ -45,13 +45,46 @@ getChainOptions().then((chainOptions) => {
 });
 ```
 
-
-downgrade to 
-    "react-scripts": "4.0.3",
- use this as reference with https://github.com/terra-money/wallet-provider/blob/main/templates/create-react-app/config-overrides.js
- react-app-rewaired
+*Getting polyfill errors? You can downgrade "react-scripts": "4.0.3" in your `package.json` and reinstall your depdencies as a quick fix. Or configure your webpack to include the necessary fallbacks. Here's an [example](https://github.com/terra-money/wallet-provider/blob/main/templates/create-react-app/config-overrides.js) that uses [react-app-rewired](https://www.npmjs.com/package/react-app-rewired).*
 
 
+Now that we've exposed our app to the `WalletProvider` we can start putting our imports to work. The `useWallet` hook gives us a bunch of functionality. First, let's use it to connect our terra station extension to our web browser.
+
+```js
+import { useWallet, WalletStatus } from '@terra-money/wallet-provider';
+import React from 'react';
+
+export function StationConnector() {
+  const {
+    status,
+    network,
+    wallets,
+    availableConnectTypes,
+    connect,
+    disconnect,
+  } = useWallet();
+
+  return (
+    <>
+        {JSON.stringify({ status, network, wallets }, null, 2 )}
+        {status === WalletStatus.WALLET_NOT_CONNECTED && (
+            <>
+            {availableConnectTypes.map((connectType) => (
+                <button
+                key={'connect-' + connectType}
+                onClick={() => connect(connectType)}
+                >
+                Connect {connectType}
+                </button>
+            ))}
+            </>
+        )}
+        {status === WalletStatus.WALLET_CONNECTED && (
+            <button onClick={() => disconnect()}>Disconnect</button>
+        )}
+    </>
+  );
+}
 
 
-
+```
