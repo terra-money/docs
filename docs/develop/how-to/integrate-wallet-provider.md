@@ -54,9 +54,9 @@ Create a new directory called `components`. This directory will house components
 
 ## 3. Putting `useWallet` to work
 
-Now that `App.js` is exposed to the `WalletProvider` we can start putting our imports to work. The `useWallet` hook gives us a bunch of functionality.
+Now that `App.js` is has inherited the context of `WalletProvider` we can start putting our imports to work. The `useWallet` hook gives us a bunch of functionality.
 
-First, let's use it to connect our terra station extension to our web browser. Create a new file in the `components` directory with the following.
+Let's use it to connect our terra station extension to our web browser. Create a new file in the `components` directory called `Connect.js`.
 
 ```js
 import { useWallet, WalletStatus } from '@terra-money/wallet-provider';
@@ -96,44 +96,43 @@ export default function Connect() {
   );
 }
 ```
-Import and add the `Connect` component to the `App` in `index.js` and you should notice some new text and buttons in your browser.
+Import and add the `Connect` component to the `App` in `index.js` — there should be some new text and buttons in your browser.
 
-The `status`, `network`, and `wallets` properties we get from `useWallet` provide useful information about the state of the terra wallet. Before connecting we see that the status is `WALLET_NOT_CONNECTED` and the network name is `mainnet` (this is comes from the `chainOptions` we passed down in ReactDOM render function). 
-
-Once connected with Terra Station, that status changes to `WALLET_CONNECTED` and the `wallets` array now has one entry with the `connectType` and `terraAddress` we used to connect. 
+The `status`, `network`, and `wallets` properties provide useful information about the state of the Terra wallet. Before connecting the `status` variable is `WALLET_NOT_CONNECTED`, and then on connection the status becomes `WALLET_CONNECTED`. In addition, the `wallets` array now has one entry with the `connectType` and `terraAddress` we used to connect. 
 
 You should be able to see these changes in real time.
 
 ## 4. Querying a wallet balance
 
-Now that we've connected our Terra station extension to our web application we can query data about the connected address.
+It's common to to show the connected users UST balance. To achieve this you need two hooks. The first is `useLCDClient`. An `LCDClient` is essentially a REST-based adapter for the Terra blockchain. You can use it to query an account balance. The second is `useConnectedWallet`, which tells us if a wallet is connected, and if so, basic data about that wallet. 
 
 ```js
 import { useConnectedWallet, useLCDClient } from '@terra-money/wallet-provider';
 import React, { useEffect, useState } from 'react';
 
 export default function Query() {
-  const lcd = useLCDClient();
+  const lcd = useLCDClient(); // LCD stands for Light Client Daemon
   const connectedWallet = useConnectedWallet();
-  const [bank, setBank] = useState(null);
+  const [balance, setBalance] = useState(null);
 
-  useEffect(() => {
-    if (connectedWallet) {
+  useEffect(() => { 
+    if (connectedWallet) { 
       lcd.bank.balance(connectedWallet.walletAddress).then(([coins]) => {
-        setBank(coins.toString());
+        setBalance(coins.toString());
       });
     } else {
-      setBank(null);
+      setBalance(null);
     }
-  }, [connectedWallet, lcd]);
+  }, [connectedWallet, lcd]); // useEffect is called when these variables change
 
   return (
     <div>
       <h1>Query</h1>
-      {bank && <>{bank}</>}
+      {balance && <>{balance}</>}
       {!connectedWallet && <p>Wallet not connected!</p>}
     </div>
   );
 }
 ```
+
 
