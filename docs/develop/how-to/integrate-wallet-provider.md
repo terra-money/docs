@@ -104,7 +104,7 @@ You should be able to see these changes in real time.
 
 ## 4. Querying a wallet balance
 
-It's common to to show the connected users UST balance. To achieve this you need two hooks. The first is `useLCDClient`. An `LCDClient` is essentially a REST-based adapter for the Terra blockchain. You can use it to query an account balance. The second is `useConnectedWallet`, which tells us if a wallet is connected, and if so, basic data about that wallet. 
+It's common to to show the connected users UST balance. To achieve this you need two hooks. The first is `useLCDClient`. An `LCDClient` is essentially a REST-based adapter for the Terra blockchain. You can use it to query an account balance. The second is `useConnectedWallet`, which tells us if a wallet is connected, and if so, basic information about that wallet such as its' address. 
 
 Note that if your wallet is empty you won't see any tokens.
 
@@ -142,119 +142,73 @@ You can convert the displayed balances to a more intelligble form by mutiplying 
 
 ## 5. Sending a transaction
 
+WalletProvider also helps create and send transactions to the Terra network. You'll also need `Terra.js` to help generate the sample transaction. 
+
+```sh
+npm install @terra-money/terra.js
+```
+
+Before broadcasting this example transaction, ensure you're on the Terra testnet. To change networks click the gear icon in your Terra station and select `testnet`. You can request tesnet funds from the [faucet](https://faucet.terra.money/). You'll receive luna which can be swapped for UST within the Station extension. 
+
 ```js
 import { Fee, MsgSend } from '@terra-money/terra.js';
-import {
-  CreateTxFailed,
-  Timeout,
-  TxFailed,
-  TxResult,
-  TxUnspecifiedError,
-  useConnectedWallet,
-  UserDenied,
-} from '@terra-money/wallet-provider';
+import { useConnectedWallet, UserDenied } from '@terra-money/wallet-provider';
 import React, { useCallback, useState } from 'react';
 
 const TEST_TO_ADDRESS = 'terra12hnhh5vtyg5juqnzm43970nh4fw42pt27nw9g9';
 
-export function TxSample() {
-  const [txResult, setTxResult] = useState<TxResult | null>(null);
-  const [txError, setTxError] = useState<string | null>(null);
+export default function Tx() {
+  const [txResult, setTxResult] = useState(null);
+  const [txError, setTxError] = useState(null);
 
   const connectedWallet = useConnectedWallet();
 
-  const proceed = useCallback(() => {
+  const testTx = useCallback(async () => {
     if (!connectedWallet) {
       return;
     }
-
     if (connectedWallet.network.chainID.startsWith('columbus')) {
-      alert(`Please only execute this example on Testnet`);
+      alert(`Only execute this example on Testnet`);
       return;
     }
-
-    setTxResult(null);
-    setTxError(null);
-
-    connectedWallet
-      .post({
+  
+    try {
+      const transactionMsg = {
         fee: new Fee(1000000, '200000uusd'),
         msgs: [
           new MsgSend(connectedWallet.walletAddress, TEST_TO_ADDRESS, {
             uusd: 1000000,
           }),
         ],
-      })
-      .then((nextTxResult: TxResult) => {
-        console.log(nextTxResult);
-        setTxResult(nextTxResult);
-      })
-      .catch((error: unknown) => {
-        if (error instanceof UserDenied) {
-          setTxError('User Denied');
-        } else if (error instanceof CreateTxFailed) {
-          setTxError('Create Tx Failed: ' + error.message);
-        } else if (error instanceof TxFailed) {
-          setTxError('Tx Failed: ' + error.message);
-        } else if (error instanceof Timeout) {
-          setTxError('Timeout');
-        } else if (error instanceof TxUnspecifiedError) {
-          setTxError('Unspecified Error: ' + error.message);
-        } else {
-          setTxError(
-            'Unknown Error: ' +
-              (error instanceof Error ? error.message : String(error)),
-          );
-        }
-      });
+      }
+
+      const tx = await connectedWallet.post(transactionMsg);
+      setTxResult(tx);
+    } catch (error) {
+      if (error instanceof UserDenied) {
+        setTxError('User Denied');
+      } else {
+        setTxError(
+          'Unknown Error: ' +
+          (error instanceof Error ? error.message : String(error)),
+        );
+      }
+    }
   }, [connectedWallet]);
 
   return (
-    <div>
-      <h1>Tx Sample</h1>
-
+    <>
       {connectedWallet?.availablePost && !txResult && !txError && (
-        <button onClick={proceed}>Send 1USD to {TEST_TO_ADDRESS}</button>
+        <button onClick={testTx}>Send 1USD to {TEST_TO_ADDRESS}</button>
       )}
 
-      {txResult && (
-        <>
-          <pre>{JSON.stringify(txResult, null, 2)}</pre>
-
-          {connectedWallet && txResult && (
-            <div>
-              <a
-                href={`https://finder.terra.money/${connectedWallet.network.chainID}/tx/${txResult.result.txhash}`}
-                target="_blank"
-                rel="noreferrer"
-              >
-                Open Tx Result in Terra Finder
-              </a>
-            </div>
-          )}
-        </>
-      )}
-
+      {txResult && <>{JSON.stringify(txResult, null, 2)}</>}
       {txError && <pre>{txError}</pre>}
-
-      {(!!txResult || !!txError) && (
-        <button
-          onClick={() => {
-            setTxResult(null);
-            setTxError(null);
-          }}
-        >
-          Clear result
-        </button>
-      )}
-
-      {!connectedWallet && <p>Wallet not connected!</p>}
 
       {connectedWallet && !connectedWallet.availablePost && (
         <p>This connection does not support post()</p>
       )}
-    </div>
+    </>
   );
 }
-
 ```
