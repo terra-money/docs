@@ -745,7 +745,7 @@ fn execute_mint_token(deps: DepsMut, sender: Addr, token: Token) -> Result<Respo
 
 Another important functionality is to be able to retrieve all tokens created by the previous function. To do that the file that will need to be modified is query.rs: 
 
-**tokens-factory/contracts/tokens-factory/src/models/execute.rs**
+**tokens-factory/contracts/tokens-factory/src/models/query.rs**
 ```Rust
 fn query_tokens(deps: Deps, creator: Option<String>) -> StdResult<TokensResponse> {
     /* First check that will be performed is to validate if 
@@ -870,4 +870,421 @@ fn test_query_token() {
 
 :::{tip}
 To execute the tests you must use `cargo test` inside the `contracts/token-factory/` folder. The tests will not be documented that way you can [check the Rust official documentation](https://doc.rust-lang.org/book/ch11-01-writing-tests.html) to get to understand perfectly every single aspect of them.
+:::
+
+:::{tip}
+If your code does not compile go to [GitHub and clone the repo](https://github.com/emidev98/tokens-factory/commit/84706de653ba1f73818c0c2fcccfcec2c3ee869c) with the commit title you need to continue with this guide.
+:::
+
+# 4.Transfer and query token balances
+
+Software projects are incremental which means that each time a new functionality is added to the smart contract an old piece of code maybe affected and maybe have to be changed. This time only 9 files will need to be modified: 
+
+**tokens-factory/contracts/tokens-factory/src/state.rs**
+```Rust
+/**
+ * CW20 token balances Map, the Key is composed by a tuple of 
+ * two &Addr, first &Addr being the address where the token 
+ * was created, second &Addr being the address of the token holder. 
+ * Finally an Uint128 which is the amount of tokens that the second
+ * &Addr holds.
+ */
+pub const BALANCES: Map<(&Addr,&Addr), Uint128> = Map::new("balance");
+
+```
+
+**tokens-factory/contracts/tokens-factory/src/contract/execute.rs**
+```Rust
+pub fn execute(
+    deps: DepsMut,
+    env: Env,
+    info: MessageInfo,
+    msg: ExecuteMsg,
+) -> Result<Response, ContractError> {
+    match msg {
+        // ... 
+        ExecuteMsg::Transfer { token_addr, recipient, amount } => {
+            execute_transfer(deps, env, info, token_addr, recipient, amount)
+        }
+        // ...
+    }
+}
+
+// ...
+
+
+fn create_new_token(deps: DepsMut, sender: Addr, token: Token) -> Result<Response, ContractError> {
+    // ... and stored into blockchain state.
+    TOKEN_INFO.save(deps.storage, &sender, &data)?;
+
+    // Store the initial balance into the contract bookings
+    BALANCES.save(
+        deps.storage,
+        (&sender,&sender),
+        &token.initial_balance.amount
+    )?;
+    // ...
+}
+
+//...
+pub fn execute_transfer(
+    deps: DepsMut,
+    _env: Env,
+    info: MessageInfo,
+    token_addr: String,
+    recipient: String,
+    amount: Uint128,
+) -> Result<Response, ContractError> {
+    // Validate that the amount is not 0
+    if amount == Uint128::zero() {
+        return Err(ContractError::InvalidZeroAmount {});
+    }
+    
+    // Validate addresses
+    let token_addr = deps.api.addr_validate(&token_addr)?;
+    let sender_addr = info.sender;
+    let recipient_addr = deps.api.addr_validate(&recipient)?;
+
+    /* Create reference tuples where first address is the token_address (creator_address)
+    and the second is the sender or received address. */
+    let sender_reference = (&token_addr, &sender_addr);
+    let recipient_reference = (&token_addr, &recipient_addr);
+
+    // Subtract funds from sender booking line
+    BALANCES.update(
+        deps.storage, 
+        sender_reference,  
+        |balance: Option<Uint128>| -> StdResult<_> {
+            Ok(balance.unwrap_or_default().checked_sub(amount)?)
+        }
+    )?;
+
+    // Add funds to recipient booking line
+    BALANCES.update(
+        deps.storage,
+        recipient_reference,
+        |balance: Option<Uint128>| -> StdResult<_> {
+            Ok(balance.unwrap_or_default().checked_add(amount)?)
+        }
+    )?;
+    
+    Ok(Response::new()
+        .add_attribute("action", "execute_transfer")
+        .add_attribute("from",sender_addr)
+        .add_attribute("to", recipient)
+        .add_attribute("amount", amount)
+    )
+}
+//...
+```
+
+**tokens-factory/contracts/tokens-factory/src/contract/query.rs**
+```Rust
+use cosmwasm_std::{entry_point, Addr};
+use cosmwasm_std::{Env, Deps, StdResult, Binary, to_binary, Order};
+
+use crate::models::query::{QueryMsg, BalanceResponse};
+use crate::models::responses::TokensResponse;
+use crate::state::{TOKEN_INFO, BALANCES};
+
+#[cfg_attr(not(feature = "library"), entry_point)]
+pub fn query(deps: Deps, _env: Env, msg: QueryMsg) -> StdResult<Binary> {
+    match msg {
+        QueryMsg::GetTokens { 
+            token_addr 
+        } => to_binary(&query_tokens(deps, token_addr)?),
+        QueryMsg::GetBalance {
+            token_addr, 
+            holder_addr 
+        } => to_binary(&query_balance(deps, token_addr, holder_addr)?)
+    }
+}
+
+fn query_tokens(deps: Deps, token_addr: Option<String>) -> StdResult<TokensResponse> {
+    /* First check that will be performed is to validate if 
+    a token address exists...*/
+    let token_addr : Option<Addr> = match token_addr {
+        None => None,
+        Some(addr) => {
+            // ... if the token address exists check if the address is valid.
+            match deps.api.addr_validate(&addr) {
+                Err(err) => return Err(err),
+                Ok(addr) => Some(addr)
+            }
+        },
+    };
+
+    /* Matching the validated token address is important to be able to load 
+    the token minted by that creator...*/
+    match token_addr {
+        Some(address) => {
+            let token = TOKEN_INFO.load(deps.storage,&address)?;
+
+            /* "¿Why do we transform it to a vector?
+            Because of data consistency, no matters if is only one 
+            or multiple items frontend can expect reading an array 
+            which will reduce the implementation (and cognitive ) complexity" */
+            return Ok(TokensResponse{tokens: vec![token]});
+        },
+        None => {
+            // ... if the creator is not send as parameter load all tokens... 
+            let tokens_map = TOKEN_INFO
+                .range(deps.storage, None, None, Order::Ascending)
+                .collect::<Vec<_>>();
+            // ... transform the tokens to a vector...
+            let tokens_list = tokens_map
+                .into_iter()
+                .map(|t|t.unwrap_or_default().1)
+                .collect();
+            
+            // ... return the vectors of TokenInformation
+            return Ok(TokensResponse{tokens: tokens_list});
+        }
+    }
+}
+
+pub fn query_balance(deps: Deps, token_addr: String, holder_addr: String) -> StdResult<BalanceResponse> {
+    // Validate that sent addresses are correctly formatted
+    let token_addr = deps.api.addr_validate(&token_addr)?;
+    let holder_addr = deps.api.addr_validate(&holder_addr)?;
+    
+    // Query balances by validated addresses tuple
+    let balance = BALANCES
+        .may_load(deps.storage, (&token_addr, &holder_addr))?
+        .unwrap_or_default();
+
+    Ok(BalanceResponse { balance })
+}
+```
+
+**tokens-factory/contracts/tokens-factory/src/models/error.rs**
+```Rust
+pub enum ContractError {
+    // ...
+
+    /* Coin modification */
+    #[error("InvalidZeroAmount")]
+    InvalidZeroAmount { },
+
+    // ...
+}
+```
+
+**tokens-factory/contracts/tokens-factory/src/models/execute.rs**
+```Rust
+//...
+use cosmwasm_std::Uint128;
+//...
+
+pub enum ExecuteMsg {
+    //...
+    
+    /**
+     * This function will allow users to transfer CW20 tokens 
+     * to different addresses and the smart contract will maintain
+     * an internal register of every single transaction like a 
+     * ledger itself. 
+     */
+    Transfer {
+        token_addr: String,
+        recipient: String,
+        amount: Uint128
+    }
+
+    //...
+}
+```
+
+**tokens-factory/contracts/tokens-factory/src/models/query.rs**
+```Rust
+use cosmwasm_std::Uint128;
+use schemars::JsonSchema;
+use serde::{Serialize, Deserialize};
+
+#[derive(Serialize, Deserialize, Clone, Debug, PartialEq, JsonSchema)]
+#[serde(rename_all = "snake_case")]
+pub enum QueryMsg {
+    /** GetTokens will return all tokens created by this smart contract.
+     * The method also accepts a token_addr which is the address of the 
+     * creator of the token.*/
+    GetTokens { token_addr: Option<String> },
+    
+    /** Given a token_addr returns the current balance of the 
+     * holder_addr, 0 if unset Return type: BalanceResponse.*/
+    GetBalance { token_addr: String, holder_addr: String },
+
+}
+
+#[derive(Serialize, Deserialize, Clone, PartialEq, JsonSchema, Debug)]
+pub struct BalanceResponse {
+    pub balance: Uint128,
+}
+```
+
+The tests implement a helper module that will allow you to implement common functions with testing propose e.g. instantiate, create_new_token... 
+
+**tokens-factory/contracts/tokens-factory/src/tests/mod.rs**
+```Rust
+pub mod tests;
+pub mod helper;
+```
+
+**tokens-factory/contracts/tokens-factory/src/tests/helper.rs**
+```Rust
+use cosmwasm_std::{testing::{mock_dependencies, mock_info, mock_env, MockStorage, MockApi, MockQuerier}, OwnedDeps, MessageInfo, Env, Uint128};
+use cw20::{Cw20Coin, MinterResponse};
+
+use crate::{contract::{instantiate::instantiate, execute::execute}, models::{instantiate::InstantiateMsg, execute::ExecuteMsg, Token}};
+
+pub struct Contract {
+    pub deps: OwnedDeps<MockStorage, MockApi, MockQuerier>, 
+    pub info: MessageInfo, 
+    pub env: Env,
+    pub token: Option<Token>
+}
+
+pub fn instantiate_contract() -> Contract {
+    // GIVEN
+    let mut deps = mock_dependencies(&[]);
+    let info = mock_info("creator", &[]);
+    let env = mock_env();
+    
+    // WHEN
+    let res = instantiate(deps.as_mut(), env.clone(), info.clone(), InstantiateMsg{ }).unwrap();
+    
+    // THEN
+    assert_eq!(2, res.attributes.len());
+    assert_eq!("instantiate", res.attributes.get(0).unwrap().value);
+    assert_eq!("creator", res.attributes.get(1).unwrap().value);
+
+    Contract { deps, info, env, token: None }
+}
+
+pub fn create_new_token(mut contract: Contract) -> Contract {
+    // GIVEN
+    let token = Token {
+        name: "Fancy Internet Money".to_string(),
+        symbol: "FIM".to_string(),
+        decimals: 2,
+        initial_balance: Cw20Coin {
+            address: "creator".to_string(),
+            amount : Uint128::new(123),
+        },
+        mint: Some(MinterResponse {
+            minter: "creator".to_string(),
+            cap: Some(Uint128::new(1234))
+        }),
+        marketing: None,
+    };
+
+    let create_new_token = ExecuteMsg::CreateNewToken { token: token.clone() };
+    
+    // WHEN
+    let res = execute(contract.deps.as_mut(), contract.env.clone(), contract.info.clone(), create_new_token).unwrap();
+    
+    // THEN
+    assert_eq!(1, res.attributes.len());
+    assert_eq!("create_new_token", res.attributes.get(0).unwrap().value);
+
+    contract.token = Some(token);
+    contract
+}
+```
+
+**tokens-factory/contracts/tokens-factory/src/tests/tests.rs**
+```Rust
+use cosmwasm_std::{from_binary, Uint128};
+use crate::contract::execute::execute;
+use crate::contract::query::query;
+use crate::models::execute::ExecuteMsg;
+use crate::models::responses::TokensResponse;
+use crate::models::query::{QueryMsg, BalanceResponse};
+use crate::tests::helper::{instantiate_contract, create_new_token};
+
+#[test]
+fn test_mint_token() {
+    // GIVEN
+    let contract = instantiate_contract();
+    
+    // WHEN and THEN (validation inside create_new_token)
+    create_new_token(contract);
+}
+
+#[test]
+fn test_query_token() {
+    // GIVEN
+    let contract = instantiate_contract();
+    let contract = create_new_token(contract);
+    let get_tokens_query = QueryMsg::GetTokens { token_addr: None };
+
+    // WHEN
+    let res = query(contract.deps.as_ref(), contract.env, get_tokens_query).unwrap();
+    let res: TokensResponse = from_binary(&res).unwrap();
+    
+    // THEN
+    assert_eq!(1, res.tokens.len());
+
+    let token  = res.tokens.get(0).unwrap();
+    assert_eq!("Fancy Internet Money", token.name);
+    assert_eq!("FIM", token.symbol);
+    assert_eq!(2, token.decimals);
+}
+
+#[test]
+fn test_transfer_token() {
+    // GIVEN
+    let contract = instantiate_contract();
+    let mut contract = create_new_token(contract);
+    let transfer_token = ExecuteMsg::Transfer { 
+        token_addr: "creator".to_string(),
+        recipient: "mod".to_string(),
+        amount: Uint128::new(23)
+    };
+
+    let creator_query = QueryMsg::GetBalance { 
+        token_addr: "creator".to_string(),
+        holder_addr: "creator".to_string(),
+    };
+
+    let mod_query = QueryMsg::GetBalance { 
+        token_addr: "creator".to_string(),
+        holder_addr: "mod".to_string(),
+    };
+
+    // WHEN
+    let transfer_res = execute(
+        contract.deps.as_mut(),
+        contract.env.clone(), 
+        contract.info.clone(),
+        transfer_token
+    ).unwrap();
+
+    let creator_query_res = query(
+        contract.deps.as_ref(),
+        contract.env.clone(), 
+        creator_query
+    ).unwrap();
+    let creator_query_res: BalanceResponse = from_binary(&creator_query_res).unwrap();
+
+    let mod_query_res = query(
+        contract.deps.as_ref(),
+        contract.env.clone(), 
+        mod_query
+    ).unwrap();
+    let mod_query_res: BalanceResponse = from_binary(&mod_query_res).unwrap();
+    
+    // THEN
+    let transfer_attr = transfer_res.attributes;
+    assert_eq!("execute_transfer".to_string(), transfer_attr.get(0).unwrap().value);
+    assert_eq!("creator".to_string(), transfer_attr.get(1).unwrap().value);
+    assert_eq!("mod".to_string(), transfer_attr.get(2).unwrap().value);
+    assert_eq!("23".to_string(), transfer_attr.get(3).unwrap().value);
+
+    assert_eq!(Uint128::new(100), creator_query_res.balance);
+    assert_eq!(Uint128::new(23), mod_query_res.balance);
+}
+```
+
+:::{tip}
+You can find the [new incremental here](https://github.com/emidev98/tokens-factory/commit/b9bcd0dd553f48a1e644eb1e693f7b409d9ec281).
 :::
