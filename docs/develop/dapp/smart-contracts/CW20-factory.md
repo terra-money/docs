@@ -1288,3 +1288,256 @@ fn test_transfer_token() {
 :::{tip}
 You can find the [new incremental here](https://github.com/emidev98/tokens-factory/commit/b9bcd0dd553f48a1e644eb1e693f7b409d9ec281).
 :::
+
+
+# 5.Send and burn
+
+Another two important functionalities to cover the [base of CW20 standard](https://github.com/CosmWasm/cw-plus/tree/main/packages/cw20#base) allows the user to take out of circulation tokens (aka burning them) and transfer tokens to a smart contract (that way other developers can increment the token functionalities).
+
+
+**tokens-factory/contracts/tokens-factory/src/models/execute.rs**
+```Rust
+// ...  
+
+pub enum ExecuteMsg {
+    // ...
+
+    /** Moves amount tokens from the info.sender account to the contract account. 
+     * contract must be an address of a contract that implements the Receiver interface. 
+     * The msg will be passed to the recipient contract, along with the amount. */
+    Send {
+        token_addr: String,
+        contract_addr: String,
+        amount: Uint128,
+        msg: Binary
+    },
+
+    /** Remove amount tokens from the balance of info.sender and reduce total_supply 
+     * by the same amount. */
+    Burn {
+        token_addr: String,
+        amount: Uint128
+    }
+}
+```
+
+**tokens-factory/contracts/tokens-factory/src/contract/execute.rs**
+```Rust
+// ...
+pub fn execute(
+    deps: DepsMut,
+    env: Env,
+    info: MessageInfo,
+    msg: ExecuteMsg,
+) -> Result<Response, ContractError> {
+    match msg {
+        // ...
+        ExecuteMsg::Send { token_addr, contract_addr, amount, msg } => {
+            send_token(deps, info.sender, token_addr, contract_addr, amount, msg)
+        },
+        ExecuteMsg::Burn { token_addr, amount } => {
+            burn_token(deps, info.sender, token_addr, amount)
+        }
+        // ...
+    }
+}
+
+// ...
+
+fn send_token(
+    deps: DepsMut, 
+    sender: Addr, 
+    token_addr: String, 
+    contract_addr: String, 
+    amount: Uint128, 
+    msg : Binary
+) -> Result<Response, ContractError> {
+    // Validate that the amount is not 0
+    if amount == Uint128::zero() {
+        return Err(ContractError::InvalidZeroAmount {});
+    }
+    
+    // Validate addresses
+    let token_addr = deps.api.addr_validate(&token_addr)?;
+    let contract_addr = deps.api.addr_validate(&contract_addr)?;
+
+    /* Create reference tuples where first address is the token_address (creator_address)
+    and the second is the sender or received address. */
+    let sender_reference = (&token_addr, &sender);
+    let contract_reference = (&token_addr, &contract_addr);
+
+    // Subtract funds from sender booking line
+    BALANCES.update(
+        deps.storage, 
+        sender_reference,  
+        |balance: Option<Uint128>| -> StdResult<_> {
+            Ok(balance.unwrap_or_default().checked_sub(amount)?)
+        }
+    )?;
+
+    // Add funds to recipient booking line
+    BALANCES.update(
+        deps.storage,
+        contract_reference,
+        |balance: Option<Uint128>| -> StdResult<_> {
+            Ok(balance.unwrap_or_default().checked_add(amount)?)
+        }
+    )?;
+    
+
+    let res = Response::new()
+        .add_attribute("action", "execute_send")
+        .add_attribute("from", &sender)
+        .add_attribute("to", &contract_addr)
+        .add_attribute("amount", amount)
+        .add_message(
+            // creates a cosmos_msg sending this struct to the named contract
+            Cw20ReceiveMsg {
+                sender: sender.into(),
+                amount,
+                msg,
+            }
+            .into_cosmos_msg(contract_addr)?,
+        );
+
+    Ok(res)
+}
+
+// ...
+
+fn burn_token(
+    deps: DepsMut, 
+    sender: Addr, 
+    token_addr: String, 
+    amount: Uint128
+) -> Result<Response, ContractError> {
+    if amount == Uint128::zero() {
+        return Err(ContractError::InvalidZeroAmount {});
+    }
+    
+    // Validate addresses
+    let token_addr = deps.api.addr_validate(&token_addr)?;
+
+    /* Create reference tuples where first address is the token_address (creator_address)
+    and the second is the sender or received address. */
+    let sender_reference = (&token_addr, &sender);
+
+    // lower balance
+    BALANCES.update(
+        deps.storage,
+        sender_reference,
+        |balance: Option<Uint128>| -> StdResult<_> {
+            Ok(balance.unwrap_or_default().checked_sub(amount)?)
+        },
+    )?;
+    // reduce total_supply
+    TOKEN_INFO.update(
+        deps.storage, 
+        &token_addr,
+        |info| -> StdResult<_> {
+            let mut info = info.unwrap();
+            info.total_supply = info.total_supply.checked_sub(amount)?;
+            Ok(info)
+        }
+    )?;
+
+    let res = Response::new()
+        .add_attribute("action", "execute_burn")
+        .add_attribute("from", sender)
+        .add_attribute("amount", amount);
+    Ok(res)
+}
+```
+
+
+**tokens-factory/contracts/tokens-factory/src/tests/tests.rs**
+```Rust
+#[test]
+fn test_send_token() {
+    // GIVEN
+    let contract = instantiate_contract();
+    let mut contract = create_new_token(contract);
+    let send_token = ExecuteMsg::Send { 
+        token_addr: "creator".to_string(),
+        contract_addr: "contract".to_string(),
+        msg: to_binary("Hello").unwrap(),
+        amount: Uint128::new(23)
+    };
+
+    let contract_query = QueryMsg::GetBalance { 
+        token_addr: "creator".to_string(),
+        holder_addr: "contract".to_string(),
+    };
+
+    // WHEN
+    let send_res = execute(
+        contract.deps.as_mut(),
+        contract.env.clone(), 
+        contract.info.clone(),
+        send_token
+    ).unwrap();
+
+    let contract_query_res = query(
+        contract.deps.as_ref(),
+        contract.env.clone(), 
+        contract_query
+    ).unwrap();
+    let contract_query_res: BalanceResponse = from_binary(&contract_query_res).unwrap();
+    
+    // THEN
+    let send_attr = send_res.attributes;
+    assert_eq!("execute_send".to_string(), send_attr.get(0).unwrap().value);
+    assert_eq!("creator".to_string(), send_attr.get(1).unwrap().value);
+    assert_eq!("contract".to_string(), send_attr.get(2).unwrap().value);
+    assert_eq!("23".to_string(), send_attr.get(3).unwrap().value);
+
+    assert_eq!(Uint128::new(23), contract_query_res.balance);
+}
+
+
+#[test]
+fn test_burn_token() {
+    // GIVEN
+    let contract = instantiate_contract();
+    let mut contract = create_new_token(contract);
+    let burn_token = ExecuteMsg::Burn { 
+        token_addr: "creator".to_string(),
+        amount: Uint128::new(23)
+    };
+
+    let creator_query = QueryMsg::GetBalance { 
+        token_addr: "creator".to_string(),
+        holder_addr: "creator".to_string(),
+    };
+
+    // WHEN
+    let transfer_res = execute(
+        contract.deps.as_mut(),
+        contract.env.clone(), 
+        contract.info.clone(),
+        burn_token
+    ).unwrap();
+
+    let creator_query_res = query(
+        contract.deps.as_ref(),
+        contract.env.clone(), 
+        creator_query
+    ).unwrap();
+    let creator_query_res: BalanceResponse = from_binary(&creator_query_res).unwrap();
+    
+    // THEN
+    let transfer_attr = transfer_res.attributes;
+    assert_eq!("execute_burn".to_string(), transfer_attr.get(0).unwrap().value);
+    assert_eq!("creator".to_string(), transfer_attr.get(1).unwrap().value);
+    assert_eq!("23".to_string(), transfer_attr.get(2).unwrap().value);
+
+    assert_eq!(Uint128::new(100), creator_query_res.balance);
+}
+```
+
+
+:::{tip}
+[New incremental here](https://github.com/emidev98/tokens-factory/commit/d046437e55d4f7910c76f9937cde2366aa0e649a).
+:::
+
+# 
