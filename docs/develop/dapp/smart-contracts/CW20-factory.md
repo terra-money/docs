@@ -1540,4 +1540,238 @@ fn test_burn_token() {
 [New incremental here](https://github.com/emidev98/tokens-factory/commit/d046437e55d4f7910c76f9937cde2366aa0e649a).
 :::
 
-# 
+# 6.Mint and download marketing data
+
+To complete the basic functionalities the user must be able to mint (create more units of already existent tokens) and query the marketing data of a specific token which is related to the token additional information and logo.
+
+**tokens-factory/contracts/tokens-factory/src/models/mod.rs**
+```Rust
+// ...
+
+impl TokenInfo {
+    pub fn get_cap(&self) -> Option<Uint128> {
+        self.mint.as_ref().and_then(|v| v.cap)
+    }
+}
+
+// ...
+```
+
+**tokens-factory/contracts/tokens-factory/src/models/execute.rs**
+```Rust
+// ...
+pub enum ExecuteMsg {
+    // ...
+
+    /** Allows users to mint more units of an existent token. If a max cap exists users 
+     * would not be allowed to mint more units of the existent token. */
+    Mint {
+        token_addr: String,
+        recipient: String,
+        amount: Uint128
+    }
+}
+```
+
+**tokens-factory/contracts/tokens-factory/src/models/query.rs**
+```Rust
+// ...
+pub enum QueryMsg {
+    // ...
+
+    /** Get token marketing information by token_addr */
+    MarketingInfo {token_addr: String },
+
+    /** Download the token logo located under token_addr */
+    DownloadLogo { token_addr: String }
+}
+// ...
+```
+
+**tokens-factory/contracts/tokens-factory/src/models/error.rs**
+```Rust
+// ...
+pub enum ContractError {
+    // ...
+    #[error("{0}")]
+    OverflowError(#[from] OverflowError),
+
+    #[error("CannotExceedCap")]
+    CannotExceedCap { },
+    // ...
+}
+// ...
+```
+
+**tokens-factory/contracts/tokens-factory/src/contract/execute.rs**
+```Rust
+// ...  
+#[cfg_attr(not(feature = "library"), entry_point)]
+pub fn execute(
+    deps: DepsMut,
+    env: Env,
+    info: MessageInfo,
+    msg: ExecuteMsg,
+) -> Result<Response, ContractError> {
+    match msg {
+        // ...
+        ExecuteMsg::Mint {token_addr, recipient, amount} => {
+            mint_tokens(deps, env, info.sender, token_addr, recipient, amount)
+        }
+        // ...
+    }
+}
+
+// ...
+
+pub fn mint_tokens(
+    deps: DepsMut,
+    _env: Env,
+    sender: Addr,
+    token_addr: String,
+    recipient: String,
+    amount: Uint128,
+) -> Result<Response, ContractError> {
+    // Validate non-zero amount ...
+    if amount == Uint128::zero() {
+        return Err(ContractError::InvalidZeroAmount {});
+    }
+    // ... validate addresses.
+    let token_addr = deps.api.addr_validate(&token_addr)?;
+    let recipient = deps.api.addr_validate(&recipient)?;
+
+    let token_info = TOKEN_INFO.load(deps.storage, &token_addr)?;
+    /* Validate if there is a minter configured for the contract if there is a minter 
+    validate that transaction sender is also the minter*/
+    if token_info.mint.is_none() || token_info.mint.as_ref().unwrap().minter != sender {
+        return Err(ContractError::Unauthorized {});
+    }
+
+    // Update supply and enforce cap
+    token_info.total_supply.checked_add(amount)?;
+    if let Some(limit) = token_info.get_cap() {
+        if token_info.total_supply.gt(&limit) {
+            return Err(ContractError::CannotExceedCap {});
+        }
+    }
+
+    TOKEN_INFO.save(deps.storage, &token_addr,&token_info)?;
+
+    // Add amount to the recipient address
+    BALANCES.update(
+        deps.storage,
+        (&token_addr, &recipient),
+        |balance: Option<Uint128>| -> StdResult<_> { Ok(balance.unwrap_or_default().checked_add(amount)?) },
+    )?;
+
+    Ok(Response::new()
+        .add_attribute("action", "execute_mint")
+        .add_attribute("to", recipient)
+        .add_attribute("amount", amount))
+}
+```
+
+**tokens-factory/contracts/tokens-factory/src/contract/query.rs**
+```Rust
+// ...
+pub fn query(deps: Deps, _env: Env, msg: QueryMsg) -> StdResult<Binary> {
+    match msg {
+        // ...
+        QueryMsg::DownloadLogo { 
+            token_addr
+        } => to_binary(&query_download_logo(deps, token_addr)?),
+        QueryMsg::MarketingInfo {
+            token_addr
+        } => to_binary(&query_marketing_info(deps, token_addr)?),
+    }
+}
+
+// ...
+
+pub fn query_download_logo(deps: Deps, token_addr: String) -> StdResult<DownloadLogoResponse> {
+    // Validate that sent addresses are correctly formatted
+    let token_addr = deps.api.addr_validate(&token_addr)?;
+    let logo = LOGO.load(deps.storage, &token_addr)?;
+    match logo {
+        Logo::Embedded(EmbeddedLogo::Svg(logo)) => Ok(DownloadLogoResponse {
+            mime_type: "image/svg+xml".to_owned(),
+            data: logo,
+        }),
+        Logo::Embedded(EmbeddedLogo::Png(logo)) => Ok(DownloadLogoResponse {
+            mime_type: "image/png".to_owned(),
+            data: logo,
+        }),
+        Logo::Url(_) => Err(StdError::not_found("logo")),
+    }
+}
+
+pub fn query_marketing_info(deps: Deps, token_addr: String) -> StdResult<MarketingInfoResponse> {
+    // Validate that sent addresses are correctly formatted
+    let token_addr = deps.api.addr_validate(&token_addr)?;
+    
+    Ok(MARKETING_INFO.may_load(deps.storage, &token_addr)?.unwrap_or_default())
+}
+```
+
+**tokens-factory/contracts/tokens-factory/src/tests/helper.rs**
+```Rust
+// ...
+pub fn create_new_token(mut contract: Contract) -> Contract {
+    // ...
+    let token = Token {
+        // ...
+        marketing: Some(TokenMarketingInfo {
+            project: Some("Fancy Project".to_string()),
+            description: Some("Fancy Description".to_string()),
+            marketing: None,
+            logo: Some(Logo::Url("https://www.fancy.token.money".to_string())),
+        }),
+        // ...
+    };
+    // ...
+}
+```
+
+
+**tokens-factory/contracts/tokens-factory/src/tests/test.rs**
+```Rust
+// ...
+#[test]
+fn test_query_marketing_data() {
+    // GIVEN
+    let contract = instantiate_contract();
+    let contract = create_new_token(contract);
+    let get_tokens_query = QueryMsg::MarketingInfo { token_addr: "creator".to_string() };
+
+    // WHEN
+    let res = query(contract.deps.as_ref(), contract.env, get_tokens_query).unwrap();
+    let res: MarketingInfoResponse = from_binary(&res).unwrap();
+    
+    // THEN
+    assert_eq!("Fancy Project", res.project.unwrap());
+    assert_eq!("Fancy Description", res.description.unwrap());
+    assert_eq!(Addr::unchecked("creator"), res.marketing.unwrap());
+    assert_eq!(LogoInfo::Url("https://www.fancy.token.money".to_string()), res.logo.unwrap());
+}
+
+
+#[test]
+fn test_query_download_logo() {
+    // GIVEN
+    let contract = instantiate_contract();
+    let contract = create_new_token(contract);
+    let get_tokens_query = QueryMsg::DownloadLogo { token_addr: "creator".to_string() };
+
+    // WHEN
+    let res = query(contract.deps.as_ref(), contract.env, get_tokens_query).unwrap_err();
+    
+    // THEN
+    assert_eq!(StdError::not_found("logo"), res);
+}
+// ...
+```
+
+
+:::{tip}
+[New incremental here](https://github.com/emidev98/tokens-factory/commit/8896906a57937ae48b3654594078f069c9da587d).
+:::
