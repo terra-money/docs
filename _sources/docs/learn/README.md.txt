@@ -9,6 +9,7 @@ protocol
 fees
 glossary
 community-trust
+assets
 ```
 
 :::::::{grid} 2 2 2 3
