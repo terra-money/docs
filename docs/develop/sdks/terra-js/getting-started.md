@@ -13,7 +13,7 @@ In this tutorial, you'll learn how to:
 By the end of this guide, you'll be able to execute a token swap from your application using Terra.js.
 
 ## Prerequisites
-- [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).
+- [npm and node.js](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 - Terra Station browser extension
 
 ## 1. Set up your project
@@ -31,7 +31,7 @@ By the end of this guide, you'll be able to execute a token swap from your appli
    cd <my-terra-js-project>
    ```
 
-3. Next, initialize npm (node package manager), install the `terra.js` package, and create an `index.js` file to house the code.
+3. Next, initialize npm, install the `terra.js` package, and create an `index.js` file to house the code:
 
 
 
@@ -41,7 +41,7 @@ By the end of this guide, you'll be able to execute a token swap from your appli
    touch index.js
    ```
 
-4. Add `"type": "module",` to the `package.json` file:
+4. Open the `package.json` file in a code editor and add `"type": "module",`.
 
    ```json
      {
@@ -55,7 +55,7 @@ By the end of this guide, you'll be able to execute a token swap from your appli
 
 Terra’s LCD or Light Client Daemon allows users to connect to the blockchain,  make queries, create wallets, and submit transactions. It's the main workhorse behind `terra.js`.
 
-1. Install a fetch library to make HTTP requests and dynamically pull recommended gas prices. You can use the one referenced below or choose your favorite. . 
+1. Install a fetch library to make HTTP requests and dynamically pull recommended gas prices. You can use the one referenced below or choose your favorite.
 
    ```sh
    npm install --save isomorphic-fetch
@@ -81,9 +81,7 @@ Terra’s LCD or Light Client Daemon allows users to connect to the blockchain, 
    ::: {admonition} Switching to LocalTerra or the mainnet
    :class: note
 
-   The previous code block shows how to connect to the Bombay testnet. To connect to the Columbus-5 mainnet for production, replace the testnet URL with `https://lcd.terra.dev`.  For Localterra, enter the following URL: `http://localhost:1317`. 
-   
-   To connect to LocalTerra, change the `URL` to `”http://localhost:1317”`. To connect to the Columbus-5 mainnet for production, use “`https://lcd.terra.dev`”.
+   The previous code block shows how to connect to the Bombay testnet. To connect to LocalTerra, change the `URL` to `”http://localhost:1317”`. To connect to the Columbus-5 mainnet for production, use “`https://lcd.terra.dev`”.
    
    You will also need to change the `chainID` from `"bombay-12"` to `”localterra”` or `"columbus-5"`. 
    :::
@@ -108,18 +106,17 @@ Terra’s LCD or Light Client Daemon allows users to connect to the blockchain, 
    :class: warning
    
    Although this tutorial has you input your mnemonic directly, this practice should be avoided in production. 
-   For security reasons, it's better to store your mnemonic key  data in your environment by using `process.env.SECRET_MNEMONIC` or `process.env.SECRET_PRIV_KEY`. This practice is more secure than aa hard-coded string.
+   For security reasons, it's better to store your mnemonic key  data in your environment by using `process.env.SECRET_MNEMONIC` or `process.env.SECRET_PRIV_KEY`. This practice is more secure than a hard-coded string.
    
    :::
 
-4. Request testnet funds for your wallet by navigating to the [Terra faucet](https://faucet.terra.money) and inputting your wallet address. You'll need these to perform swaps and pay for gas fees. Once the funds are in your wallet, you’re ready to move on to the next step. 
+4. Request testnet funds for your wallet by navigating to the [Terra faucet](https://faucet.terra.money) and inputting your wallet address. You'll need these funds to perform swaps and pay for gas fees. Once the funds are in your wallet, you’re ready to move on to the next step. 
 
 ## 4. Find a contract address
 
-To find the contract for a specific Terraswap pair, visit https://app.terraswap.io/  
+To find the contract address for a specific Terraswap pair, visit https://app.terraswap.io/  
 
 This tutorial uses the Luna/UST contract testnet address:
-
 
 `terra156v8s539wtz0sjpn8y8a8lfg8fhmwa7fy22aff`
 
@@ -163,7 +160,7 @@ Before you can perform a swap, you’ll need a belief price. You can calculate t
 
 ## 6. Broadcast the transaction
 
-1. Add the following code to `index.js` to create, sign, and broadcast the transaction. It's important to specify `uluna` as the fee denomination becuase Luna is the only denomination the faucet gave your wallet. 
+1. Add the following code to `index.js` to create, sign, and broadcast the transaction. It's important to specify `uluna` as the fee denomination becuase Luna is the only denomination the faucet sends. 
 
    ```ts
        const tx = await wallet.createAndSignTx({ msgs: [terraSwap], feeDenoms: ['uluna'] });
