@@ -11,6 +11,7 @@ open-source.md
 module-specifications/README
 sdks/README
 reference/README
+resources
 ```
 
 :::::::{grid} 2 2 2 3
