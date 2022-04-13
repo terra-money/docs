@@ -113,7 +113,7 @@ import { useConnectedWallet, useLCDClient } from '@terra-money/wallet-provider';
 import React, { useEffect, useState } from 'react';
 
 export default function Query() {
-  const lcd = useLCDClient(); // LCD stands for Light Client Daemon
+  const lcd = useLCDClient();
   const connectedWallet = useConnectedWallet();
   const [balance, setBalance] = useState(null);
 
@@ -125,7 +125,7 @@ export default function Query() {
     } else {
       setBalance(null);
     }
-  }, [connectedWallet, lcd]); // useEffect is called the value of these variables change
+  }, [connectedWallet, lcd]);
 
   return (
     <div>
@@ -148,7 +148,15 @@ WalletProvider also helps create and send transactions to the Terra network. You
 npm install @terra-money/terra.js
 ```
 
-Before broadcasting this example transaction, ensure you're on the Terra testnet. To change networks click the gear icon in your Terra station and select `testnet`. You can request tesnet funds from the [faucet](https://faucet.terra.money/). You'll receive luna which can be swapped for UST within the Station extension. 
+Before broadcasting this example transaction, ensure you're on the Terra testnet. To change networks click the gear icon in your Terra station and select `testnet`. 
+
+You can request tesnet funds from the [faucet](https://faucet.terra.money/). You'll receive luna which can be swapped for UST within the Station extension. 
+
+A UST transfer transaction needs a fee and a message containing the sender address, recipient address, and send amount (in this case 1 UST). Once the message is constructed, the `post` method on `connectedWallet` broadcasts it to the network.
+
+What happens if something goes wrong? Wallet provider also supplies us with useful error types. In this example we are handling the `UserDenied` error case. You can find other cases to handle [here](https://github.com/terra-money/wallet-provider/blob/4e601c2dece7bec92c9ce95991d2314220a2c954/packages/src/%40terra-money/wallet-controller/exception/mapExtensionTxError.ts#L23).
+
+*NOTE: 1000000 uusd = 1 UST*
 
 ```js
 import { Fee, MsgSend } from '@terra-money/terra.js';
@@ -163,7 +171,7 @@ export default function Tx() {
 
   const connectedWallet = useConnectedWallet();
 
-  const testTx = useCallback(async () => {
+  const sendTestTx = useCallback(async () => {
     if (!connectedWallet) {
       return;
     }
@@ -189,8 +197,7 @@ export default function Tx() {
         setTxError('User Denied');
       } else {
         setTxError(
-          'Unknown Error: ' +
-          (error instanceof Error ? error.message : String(error)),
+          'Unknown Error: ' + (error instanceof Error ? error.message : String(error)),
         );
       }
     }
@@ -199,7 +206,7 @@ export default function Tx() {
   return (
     <>
       {connectedWallet?.availablePost && !txResult && !txError && (
-        <button onClick={testTx}>Send 1USD to {TEST_TO_ADDRESS}</button>
+        <button onClick={sendTestTx}>Send 1USD to {TEST_TO_ADDRESS}</button>
       )}
 
       {txResult && <>{JSON.stringify(txResult, null, 2)}</>}
@@ -212,3 +219,5 @@ export default function Tx() {
   );
 }
 ```
+
+That's all! 
