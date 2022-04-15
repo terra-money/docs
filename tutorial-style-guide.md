@@ -21,7 +21,12 @@ The prerequisite section should be at the top of the tutorial. This section shou
 
 ## Titles
 
-Titles are written using sentence-style capitalization. The first word of a title is always capitalized. Avoid using gerunds in titles "Starting the LCD" becomes "Start the LCD." 
+Titles are written using sentence-style capitalization. The first word of a title is always capitalized. Avoid using gerunds in titles. 
+
+**Example**: 
+"# Starting The LCD" 
+becomes 
+"# Start the LCD" 
 
 ## Code
 
@@ -63,6 +68,40 @@ This is an example.
 
 ### Unordered lists
 
+## Text styles
+
+Don't use italics. Bold is used in the following cases:
+
+- When referring to interface buttons. "Click **Send**."
+- When denoting [examples](#examples). 
+
+Note: punctuation is never styled.
+
+## Links
+
+Use descriptive text for links. Avoid using "here" as a placeholder.  
+
+**Example**:
+
+"For mor examples, visit the [example page](example.com). 
+vs. 
+"For more examples, click [here](example.com)." 
+
+Descriptive links helps the user understand where they are going when they click the link. 
+
 ## Punctuation
 
-Don't use em dashes. Simplify your writing. 
+Simplify your writing. While tempting, em dashes promote unecessary complexity and ambiguous grammar. 
+
+Punctuation integral to a sentence should never be styled or included in a link.
+
+**Example**:
+
+Period outside of link: 
+"Visit the [example page](example.com). "
+vs 
+Comma outside of code: 
+"The three commands are `start`, `end`, and `help`. 
+
+
+Use the Oxford comma. 
