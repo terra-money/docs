@@ -8,7 +8,7 @@ If this is your first time using Terrain, visit the [Initial setup guide](initia
 
 ## Overview
 
-There two key components to a migratable contract: 
+There are two key components to a migratable contract: 
 
 - A `MigrateMsg` transaction. 
 - An admin set, which is the address that's allowed to perform migrations. 
