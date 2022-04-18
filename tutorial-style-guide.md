@@ -48,7 +48,7 @@ Code mentioned outside of code blocks should always be writen in tick marks exac
 
 Use the `k.FunctionExapmle` function to create an example. 
 
-Avoid starting or sentences with code, as it makes capitalization and puctiation difficult. Never the punctuation or capitalization of code. Write it exactly as it appears. 
+Avoid starting sentences with code, as it makes capitalization and puctiation difficult. Never alter the punctuation or capitalization of code. Write it exactly as it appears. 
 
 **Example**:  
 
