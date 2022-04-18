@@ -1,16 +1,19 @@
 # Signing Bytes
 
-This document explains how to sign arbitrary bytes with WalletProvider in a react-based web application. This action is useful for verifying account ownership without having to post a transaction. It's commonly used as a form of simple user authentication.
+This document explains how to sign arbitrary bytes with Wallet Provider in a react-based web application. This action is useful for verifying account ownership without having to post a transaction to the chain. It's commonly used as a form of simple user authentication.
 
-It will also cover common error handling.
+*You can find this code used in context [here](https://github.com/terra-money/wallet-provider/blob/main/templates/create-react-app/src/components/SignBytesSample.tsx). Not using react? Use [wallet-controller](https://www.npmjs.com/package/@terra-money/wallet-controller)*.
 
-## 1. Connected Wallet Setup
+Wallet Provider comes with a `useConnectedWallet` hook which let's you trigger actions from a Terra wallet that's connected to the web page. The `connectedWallet` object is includes a `.signBytes()` method which prompts the user to sign the data and then returns an object of type `SignBytesResult`. This object contains the address of the signer and the corresponding signed data. 
 
-To sign 
+The `verifyBytes` function then compares the original `TEST_BYTES` against the signature and public key pairing provided by the `SignBytesResult`. If it returns `true`, then the account is indeed under the owernship of the connected wallet and vice versa. In this way, the owner of the associated wallet is verified without having to produce an on-chain action or pay gas fees.
 
-WalletProvider comes with `useConnectedWallet` which detects 
+*You can see how the `verifyBytes` function works under the hood [here](https://github.com/terra-money/wallet-provider/blob/4e601c2dece7bec92c9ce95991d2314220a2c954/packages/src/%40terra-money/wallet-controller/verifyBytes.ts#L1).*
+
+Finally, Wallet Provider also supplies useful error types that can be used in conjunction with a `catch` to direct or notify the user of whether the signing was sucessful.
+
 ```ts
-import {
+ import {
   SignBytesFailed,
   SignBytesResult,
   Timeout,
@@ -20,32 +23,28 @@ import {
 } from '@terra-money/wallet-provider';
 import React, { useCallback, useState } from 'react';
 
-const TEST_BYTES = Buffer.from('hello terra');
+const TEST_BYTES = Buffer.from('hello'); // resolves to <Buffer 68 65 6c 6c 6f>
 
-export const SignBytes = () => {
+export function SignBytesSample() {
   const [txResult, setTxResult] = useState<SignBytesResult | null>(null);
   const [txError, setTxError] = useState<string | null>(null);
   const [verifyResult, setVerifyResult] = useState<string | null>(null);
 
   const connectedWallet = useConnectedWallet();
 
-  const send = useCallback(async () => {
+  const signBytes = useCallback(async () => {
     if (!connectedWallet) {
       return;
     }
 
-    setTxResult(null);
-    setTxError(null);
-    setVerifyResult(null);
-
     try {
-        const nextSignBytesResult: SignBytesResult = await connectedWallet.signBytes(TEST_BYTES);
-        setTxResult(nextSignBytesResult);
+        const signedBytes: SignBytesResult = await connectedWallet.signBytes(TEST_BYTES);
+        setTxResult(signedBytes);
         setTxError(null);
-        const result = verifyBytes(TEST_BYTES, nextSignBytesResult.result);
-        setVerifyResult(result ? 'Verify OK' : 'Verify failed');
+        const result = verifyBytes(TEST_BYTES, signedBytes.result);
+        setVerifyResult(result ? 'Verified' : 'Verification failed');
 
-    } catch (err) {
+    } catch (error) {
         setTxResult(null);
         setVerifyResult(null);
         if (error instanceof UserDenied) {
@@ -71,7 +70,7 @@ export const SignBytes = () => {
         !txResult &&
         !txError &&
         !verifyResult && (
-          <button onClick={() => send()}>
+          <button onClick={() => signBytes()}>
             Sign bytes with {connectedWallet.walletAddress}
           </button>
         )}
@@ -82,18 +81,6 @@ export const SignBytes = () => {
 
       {verifyResult && <pre>{verifyResult}</pre>}
 
-      {(!!txResult || !!txError || !!verifyResult) && (
-        <button
-          onClick={() => {
-            setTxResult(null);
-            setTxError(null);
-            setVerifyResult(null);
-          }}
-        >
-          Clear result
-        </button>
-      )}
-
       {!connectedWallet && <p>Wallet not connected!</p>}
 
       {connectedWallet && !connectedWallet.availableSignBytes && (
@@ -103,3 +90,5 @@ export const SignBytes = () => {
   );
 }
 ```
+
+You can find a working sandbox example of bytes signing with Terra Station [here](https://codesandbox.io/s/github/terra-money/wallet-provider/tree/main/templates/create-react-app).
