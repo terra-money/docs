@@ -8,8 +8,13 @@ LocalTerra is a complete Terra testnet and ecosystem containerized with Docker. 
 - [`docker-compose`](https://github.com/docker/compose)
 - At least 16 GB of RAM
 - [Terra Station Chrome extension](../../../learn/terra-station/download/terra-station-extension.md)
-- Node.js version 16+
+- Node.js version 16
 
+:::{admonition} Node version error
+:class: warning
+Use LTS Node.js 16 if you encounter the following error code:  
+`error:0308010C:digital envelope routines::unsupported`
+:::
 
 (header_target)=
 :::{dropdown} Running NPM on M1 Macs
