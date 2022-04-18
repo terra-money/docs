@@ -10,7 +10,11 @@ LocalTerra is a complete Terra testnet and ecosystem containerized with Docker. 
 - [Terra Station Chrome extension](../../../learn/terra-station/download/terra-station-extension.md)
 - Node.js version 16
 
-> If you encounter the next error code: <b>error:0308010C:digital envelope routines::unsupported</b> use LTS Node.js 16.
+:::{admonition} Node version error
+:class: warning
+Use LTS Node.js 16 if you encounter the following error code:  
+`error:0308010C:digital envelope routines::unsupported`
+:::
 
 (header_target)=
 :::{dropdown} Running NPM on M1 Macs
