@@ -2,7 +2,7 @@
 
 ## Block explorers
 
-:::::::{grid} 2 2 2 3
+:::::::{grid} 2
 :gutter: 3
 
 :::{grid-item-card}
@@ -15,12 +15,12 @@
 :::
 
 :::{grid-item-card}
-:link: https://finder.extraterrestrial.money/
+:link: https://terrasco.pe/
 :class-card: sd-text-center sd-shadow-md sd-rounded-3
-```{image} /img/ET.jpg
+```{image} /img/expl_terrascope.svg
 :class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
 ```
-**Extraterrestrial Finder**
+**Terrascope Finder**
 :::
 
 :::{grid-item-card}
