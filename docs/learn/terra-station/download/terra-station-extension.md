@@ -1,4 +1,4 @@
-# Terra Station extension
+# Terra Station Chrome extension
 
 ::::{grid} auto
 
@@ -14,6 +14,14 @@ Desktop
 ```{button-link} terra-station-extension.html
 :color: primary
 Chrome extension
+```
+:::
+
+:::{grid-item}
+```{button-link} terra-station-firefox.html
+:color: primary
+:outline:
+Firefox extension
 ```
 :::
 
