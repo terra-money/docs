@@ -18,6 +18,14 @@ Chrome extension
 :::
 
 :::{grid-item}
+```{button-link} terra-station-firefox.html
+:color: primary
+:outline:
+Firefox extension
+```
+:::
+
+:::{grid-item}
 ```{button-link} terra-station-mobile.html
 :color: primary
 :outline:
