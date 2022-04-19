@@ -1,4 +1,4 @@
-# Terra Station Chrome extension
+# Terra Station Firefox extension
 
 ::::{grid} auto
 
@@ -13,6 +13,7 @@ Desktop
 :::{grid-item}
 ```{button-link} terra-station-extension.html
 :color: primary
+:outline:
 Chrome extension
 ```
 :::
@@ -20,7 +21,6 @@ Chrome extension
 :::{grid-item}
 ```{button-link} terra-station-firefox.html
 :color: primary
-:outline:
 Firefox extension
 ```
 :::
@@ -35,15 +35,15 @@ Mobile
 
 ::::
 
-Complete this tutorial to install the Terra Station extension for the Google Chrome browser.
+Complete this tutorial to install the Terra Station extension for the Firefox browser.
 
 ## Prerequisites
 
-- Download [Google Chrome](https://www.google.com/chrome/).
+- Download [Firefox](https://www.mozilla.org/en-US/firefox/new/).
 
 ## Install the Terra Station extension
 
-1. Open your Chrome browser and visit the [the Terra Station web extension](https://chrome.google.com/webstore/detail/terra-station/aiifbnbfobpmeekipheeijimdpnlpgpp).
+1. Open your Firefox browser and visit the [the Terra Station Firefox extension](https://addons.mozilla.org/firefox/addon/terra-station-wallet/).
 
 2. Install the extension and add it to your browser.
 
@@ -52,11 +52,6 @@ Complete this tutorial to install the Terra Station extension for the Google Chr
 Use this tutorial to create a new wallet. To connect to an existing wallet, visit [how to connect to a wallet](../wallet.md#connect-to-a-wallet-using-a-private-key).
 
 1. Open the browser extension and click **New wallet**.
-
-   ```{image} /img/screens/ext-new-wallet.png
-   :class: sd-p-3
-   :width: 500px
-   ```
 
 2. Type in a secure wallet name and password.
 
@@ -78,26 +73,11 @@ Use this tutorial to create a new wallet. To connect to an existing wallet, visi
 6. Check the box ensuring you wrote down your seed phrase, and click **Submit**.
 
 
-   ```{image} /img/screens/ext-wallet-input.png
-   :class: sd-p-3
-   :width: 500px
-   ```
-
 7. Confirm your seed phrase by typing or selecting the correct words in each prompt.
-
-   ```{image} /img/screens/ext-confirm.png
-   :class: sd-p-3
-   :width: 500px
-   ```
 
 8. Click **Submit**.
 
 9. Click **Connect** to connect to your new wallet.
-
-   ```{image} /img/screens/ext-wallet-complete.png
-   :class: sd-p-3
-   :width: 500px
-   ```
 
 Congratulations! You have just created a Terra Station wallet.
 
@@ -105,19 +85,9 @@ Congratulations! You have just created a Terra Station wallet.
 
 1. Connect to your wallet and click **Buy** next to any token. Purchase your tokens using any exchange that supports Terra.
 
-   ```{image} /img/screens/ext-wallet-menu.png
-   :class: sd-p-3
-   :width: 500px
-   ```
-
    To view more exchanges, visit the [Integrations page](../../../ecosystem/integrations.md#exchanges).
 
 2. Purchase tokens using your preffered exchange.
-
-   ```{image} /img/screens/ext-buy.png
-   :class: sd-p-3
-   :width: 500px
-   ```
 
 1. Withdraw any token supported by the Terra network from your exchange. Every exchange is different. Please visit your exchange's web page for guides on how to withdraw tokens. Use the following steps as a generic guide.
 
@@ -140,26 +110,11 @@ Now you have tokens on Terra!
 
 2. Click **Send** next to the token you want to send.
 
-   ```{image} /img/screens/ext-wallet-send.png
-   :class: sd-p-3
-   :width: 500px
-   ```
-
 3. Enter the address of the wallet you want to send tokens to.
 
 4. Enter the amount you want to send. You can also add a memo for the transaction.
 
-   ```{image} /img/screens/ext-send-amount.png
-   :class: sd-p-3
-   :width: 500px
-   ```
-
 6. Verify the transaction amounts and specify which token you want to pay fees in. Remember to always leave enough tokens in your account for other transactions.
-
-   ```{image} /img/screens/ext-send-submit.png
-   :class: sd-p-3
-   :width: 500px
-   ```
 
 7.  Enter your password and click **Submit**.
 
@@ -173,16 +128,7 @@ After a few moments, the tokens will appear in the receiver's wallet.
 
 3. To connect your wallet, click **Connect Wallet** at the top of the page.
 
-   ```{image} /img/screens/ext-anchor.png
-   :class: sd-p-3
-   ```
-
 4. Select **Terra Station Wallet** to connect your wallet.  
-
-   ```{image} /img/screens/ext-connect-wallet.png
-   :class: sd-p-3
-   :width: 300 px
-   ```
 
 You can now make transactions on different dApps in the Terra ecosystem.
 
