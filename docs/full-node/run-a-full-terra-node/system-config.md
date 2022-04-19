@@ -9,10 +9,18 @@ Running a full Terra node is a resource-intensive process that requires a persis
 
 ##  Hardware requirements
 
+These are the the minimum requirements for running a full Terra node:
+
 - Four or more CPU cores
-- At least 2 TB of disk storage
 - At least 32 GB of memory
 - At least 300 mbps of network bandwidth
+- At least 2 TB NVME SSD 
+
+:::{admonition} Storage requirements
+:class: warning
+As the network grows, the minimum storage requirements will also grow. It is recommended that you use more than the minimum storage requirements to run a robust full node. 
+
+:::
 
 ## Prerequisites
 
