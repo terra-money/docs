@@ -25,7 +25,7 @@ see(raw_key.privateKey)//<Buffer 53 e2 53 0b 29 c4 9d 54 b3 66 a4 61 7b d3 e2 6e
 see(raw_key.accAddress)//terra1ptj88nsljjr9agx07hahu6etv43acksy2q44sd
 ```
 
-## MnemonicKey
+## `MnemonicKey`
 
 
 A `MnemonicKey` derives itself from a 24-word  [ BIP-39 ](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki) mnemonic as opposed to the bytes of a  private key.
@@ -33,8 +33,6 @@ A `MnemonicKey` has various levels of definition:
 - Supply no arguments for the mnemonic to be randomly generated ( effectively generating a random key ).
 - Supply only a 24-word BIP-39 mnemonic to generate a corresponding key.
 - Supply a full HD path (using either a  random or particular mnenomic).
-
-
 
 ```ts
 import { MnemonicKey } from '@terra-money/terra.js';
@@ -45,6 +43,7 @@ const MNE_KEY_RANDOM = new MnemonicKey();
 see(MNE_KEY_RANDOM.mnemonic)  // famous { ... } myth world size
 see(MNE_KEY_RANDOM.privateKey) // <Buffer 4f e5 { ... } 51 a4 41 9c> 
 see(MNE_KEY_RANDOM.publicKey) // SimplePublicKey { key: 'A8TNSJhn6gGHgY2ohJnkOaZz7Y0FaW/QeytGBaqCLIJU' }
+see(MNE_KEY_RANDOM.accAddress) // terra1l63e8q7yjyd77qanwfgvl43ulagf34a2xzcuv4
 
 
 const MNE_KEY_EXACT  = new MnemonicKey({
@@ -92,8 +91,6 @@ const mne_key = new MnemonicKey({
 - [ BIP-39 Mnemonics ](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki)
 
 - Coin Types Numbers `330` and `118` above refer to "coin-types" for `Cosmos` and `Terra` blockchains accordingly. These numbers are defined according to the [ BIP044 ](https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki) standard. You can find more information [ here ](https://github.com/satoshilabs/slips/blob/master/slip-0044.md).
-
-
 
 
 ## `CLIKey`
