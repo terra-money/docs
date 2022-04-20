@@ -1522,15 +1522,12 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#mnemonickey">
-   MnemonicKey
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     MnemonicKey
+    </span>
+   </code>
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#specifying-an-hd-path">
-     Specifying an HD path
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#clikey">
@@ -1540,6 +1537,13 @@ title="Print to PDF"
     </span>
    </code>
   </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#specifying-an-hd-path">
+     Specifying an HD path
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#custom-key-implementation">
@@ -1576,15 +1580,12 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#mnemonickey">
-   MnemonicKey
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     MnemonicKey
+    </span>
+   </code>
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#specifying-an-hd-path">
-     Specifying an HD path
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#clikey">
@@ -1594,6 +1595,13 @@ title="Print to PDF"
     </span>
    </code>
   </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#specifying-an-hd-path">
+     Specifying an HD path
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#custom-key-implementation">
@@ -1633,7 +1641,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="mnemonickey">
-<h2>MnemonicKey<a class="headerlink" href="#mnemonickey" title="Permalink to this headline">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">MnemonicKey</span></code><a class="headerlink" href="#mnemonickey" title="Permalink to this headline">#</a></h2>
 <p>A <code class="docutils literal notranslate"><span class="pre">MnemonicKey</span></code> derives itself from a 24-word  <a class="reference external" href="https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki"> BIP-39 </a> mnemonic as opposed to the bytes of a  private key.
 A <code class="docutils literal notranslate"><span class="pre">MnemonicKey</span></code> has various levels of definition:</p>
 <ul class="simple">
@@ -1649,6 +1657,7 @@ A <code class="docutils literal notranslate"><span class="pre">MnemonicKey</span
 <span class="nx">see</span><span class="p">(</span><span class="nx">MNE_KEY_RANDOM</span><span class="p">.</span><span class="nx">mnemonic</span><span class="p">)</span>  <span class="c1">// famous { ... } myth world size</span>
 <span class="nx">see</span><span class="p">(</span><span class="nx">MNE_KEY_RANDOM</span><span class="p">.</span><span class="nx">privateKey</span><span class="p">)</span> <span class="c1">// &lt;Buffer 4f e5 { ... } 51 a4 41 9c&gt; </span>
 <span class="nx">see</span><span class="p">(</span><span class="nx">MNE_KEY_RANDOM</span><span class="p">.</span><span class="nx">publicKey</span><span class="p">)</span> <span class="c1">// SimplePublicKey { key: &#39;A8TNSJhn6gGHgY2ohJnkOaZz7Y0FaW/QeytGBaqCLIJU&#39; }</span>
+<span class="nx">see</span><span class="p">(</span><span class="nx">MNE_KEY_RANDOM</span><span class="p">.</span><span class="nx">accAddress</span><span class="p">)</span> <span class="c1">// terra1l63e8q7yjyd77qanwfgvl43ulagf34a2xzcuv4</span>
 
 
 <span class="kd">const</span> <span class="nx">MNE_KEY_EXACT</span>  <span class="o">=</span> <span class="ow">new</span> <span class="nx">MnemonicKey</span><span class="p">({</span>
@@ -1670,26 +1679,6 @@ A <code class="docutils literal notranslate"><span class="pre">MnemonicKey</span
 <span class="p">});</span>
 </pre></div>
 </div>
-<section id="specifying-an-hd-path">
-<h3>Specifying an HD path<a class="headerlink" href="#specifying-an-hd-path" title="Permalink to this headline">#</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">MnemonicKey</span></code> can used to recover a wallet with a particular BIP44 HD path: <code class="docutils literal notranslate"><span class="pre">m/44'/${coinType}'/${account}'/0/${index}</span></code>.</p>
-<div class="tip admonition">
-<p class="admonition-title">HD keys</p>
-<p>As per <a class="reference external" href="https://github.com/confio/cosmos-hd-key-derivation-spec"> <em>Cosmos HD Key Derivation</em> </a>:</p>
-<p>Cosmos blockchains support hierarchical deterministic key generation (HD keys) for deriving multiple cryptographic keypairs from a single secret value. This allows the user to use different keypairs for different accounts on one blockchain and create accounts on multiple blockchains without having to manage multiple secrets.</p>
-</div>
-<p>For example, to recover a mnemonic with the old Terra wallet HD path using coin type for ATOM (118):</p>
-<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">mne_key</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">MnemonicKey</span><span class="p">({</span>
-  <span class="nx">mnemonic</span><span class="o">:</span> <span class="s2">&quot;[ Your BIP39 mnemonic ]&quot;</span><span class="p">,</span>
-  <span class="nx">coinType</span>: <span class="kt">118</span>     <span class="c1">// &lt;--------- Cosmos&#39; coin type ( Terra had inherited initially )</span>
-<span class="p">});</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p><a class="reference external" href="https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki"> BIP-39 Mnemonics </a></p></li>
-<li><p>Coin Types Numbers <code class="docutils literal notranslate"><span class="pre">330</span></code> and <code class="docutils literal notranslate"><span class="pre">118</span></code> above refer to “coin-types” for <code class="docutils literal notranslate"><span class="pre">Cosmos</span></code> and <code class="docutils literal notranslate"><span class="pre">Terra</span></code> blockchains accordingly. These numbers are defined according to the <a class="reference external" href="https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki"> BIP044 </a> standard. You can find more information <a class="reference external" href="https://github.com/satoshilabs/slips/blob/master/slip-0044.md"> here </a>.</p></li>
-</ul>
-</section>
 </section>
 <section id="clikey">
 <h2><code class="docutils literal notranslate"><span class="pre">CLIKey</span></code><a class="headerlink" href="#clikey" title="Permalink to this headline">#</a></h2>
@@ -1722,6 +1711,26 @@ A <code class="docutils literal notranslate"><span class="pre">MnemonicKey</span
 <span class="nx">main</span><span class="p">().</span><span class="k">catch</span><span class="p">(</span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">);</span>
 </pre></div>
 </div>
+<section id="specifying-an-hd-path">
+<h3>Specifying an HD path<a class="headerlink" href="#specifying-an-hd-path" title="Permalink to this headline">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">MnemonicKey</span></code> can used to recover a wallet with a particular BIP44 HD path: <code class="docutils literal notranslate"><span class="pre">m/44'/${coinType}'/${account}'/0/${index}</span></code>.</p>
+<div class="tip admonition">
+<p class="admonition-title">HD keys</p>
+<p>As per <a class="reference external" href="https://github.com/confio/cosmos-hd-key-derivation-spec"> <em>Cosmos HD Key Derivation</em> </a>:</p>
+<p>Cosmos blockchains support hierarchical deterministic key generation (HD keys) for deriving multiple cryptographic keypairs from a single secret value. This allows the user to use different keypairs for different accounts on one blockchain and create accounts on multiple blockchains without having to manage multiple secrets.</p>
+</div>
+<p>For example, to recover a mnemonic with the old Terra wallet HD path using coin type for ATOM (118):</p>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">mne_key</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">MnemonicKey</span><span class="p">({</span>
+  <span class="nx">mnemonic</span><span class="o">:</span> <span class="s2">&quot;[ Your BIP39 mnemonic ]&quot;</span><span class="p">,</span>
+  <span class="nx">coinType</span>: <span class="kt">118</span>     <span class="c1">// &lt;--------- Cosmos&#39; coin type ( Terra had inherited initially )</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki"> BIP-39 Mnemonics </a></p></li>
+<li><p>Coin Types Numbers <code class="docutils literal notranslate"><span class="pre">330</span></code> and <code class="docutils literal notranslate"><span class="pre">118</span></code> above refer to “coin-types” for <code class="docutils literal notranslate"><span class="pre">Cosmos</span></code> and <code class="docutils literal notranslate"><span class="pre">Terra</span></code> blockchains accordingly. These numbers are defined according to the <a class="reference external" href="https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki"> BIP044 </a> standard. You can find more information <a class="reference external" href="https://github.com/satoshilabs/slips/blob/master/slip-0044.md"> here </a>.</p></li>
+</ul>
+</section>
 </section>
 <section id="custom-key-implementation">
 <h2>Custom key implementation<a class="headerlink" href="#custom-key-implementation" title="Permalink to this headline">#</a></h2>
