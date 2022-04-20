@@ -66,33 +66,6 @@ const MNE_KEY_FULLY_RESOLVED = new MnemonicKey({
 
 ```
 
-### Specifying an HD path
-
-`MnemonicKey` can used to recover a wallet with a particular BIP44 HD path: `m/44'/${coinType}'/${account}'/0/${index}`.
-
-:::{admonition} HD keys
-:class: tip
-
-As per [ *Cosmos HD Key Derivation* ](https://github.com/confio/cosmos-hd-key-derivation-spec):
-
-Cosmos blockchains support hierarchical deterministic key generation (HD keys) for deriving multiple cryptographic keypairs from a single secret value. This allows the user to use different keypairs for different accounts on one blockchain and create accounts on multiple blockchains without having to manage multiple secrets.
-
-:::
-
-For example, to recover a mnemonic with the old Terra wallet HD path using coin type for ATOM (118):
-
-```ts
-const mne_key = new MnemonicKey({
-  mnemonic: "[ Your BIP39 mnemonic ]",
-  coinType: 118     // <--------- Cosmos' coin type ( Terra had inherited initially )
-});
-```
-
-- [ BIP-39 Mnemonics ](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki)
-
-- Coin Types Numbers `330` and `118` above refer to "coin-types" for `Cosmos` and `Terra` blockchains accordingly. These numbers are defined according to the [ BIP044 ](https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki) standard. You can find more information [ here ](https://github.com/satoshilabs/slips/blob/master/slip-0044.md).
-
-
 ## `CLIKey`
 
 > NOTE: This keytype requires you to have `terrad` installed.
@@ -124,6 +97,32 @@ async function main() {
 
 main().catch(console.error);
 ```
+
+### Specifying an HD path
+
+`MnemonicKey` can used to recover a wallet with a particular BIP44 HD path: `m/44'/${coinType}'/${account}'/0/${index}`.
+
+:::{admonition} HD keys
+:class: tip
+
+As per [ *Cosmos HD Key Derivation* ](https://github.com/confio/cosmos-hd-key-derivation-spec):
+
+Cosmos blockchains support hierarchical deterministic key generation (HD keys) for deriving multiple cryptographic keypairs from a single secret value. This allows the user to use different keypairs for different accounts on one blockchain and create accounts on multiple blockchains without having to manage multiple secrets.
+
+:::
+
+For example, to recover a mnemonic with the old Terra wallet HD path using coin type for ATOM (118):
+
+```ts
+const mne_key = new MnemonicKey({
+  mnemonic: "[ Your BIP39 mnemonic ]",
+  coinType: 118     // <--------- Cosmos' coin type ( Terra had inherited initially )
+});
+```
+
+- [ BIP-39 Mnemonics ](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki)
+
+- Coin Types Numbers `330` and `118` above refer to "coin-types" for `Cosmos` and `Terra` blockchains accordingly. These numbers are defined according to the [ BIP044 ](https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki) standard. You can find more information [ here ](https://github.com/satoshilabs/slips/blob/master/slip-0044.md).
 
 ## Custom key implementation
 
