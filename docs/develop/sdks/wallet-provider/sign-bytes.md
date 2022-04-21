@@ -14,7 +14,7 @@ The `verifyBytes` function then compares the original `TEST_BYTES` against the s
 You can see how the `verifyBytes` function works [here](https://github.com/terra-money/wallet-provider/blob/4e601c2dece7bec92c9ce95991d2314220a2c954/packages/src/%40terra-money/wallet-controller/verifyBytes.ts#L1).*
 :::
 
-Finally, Wallet Provider also supplies useful error types that can be used in conjunction with a `catch` to direct or notify the user of whether the signing was sucessful.
+Wallet Provider also supplies useful error types that can be used with a `catch` statement notify the user whether or not the signing was successful.
 
 ```ts
  import {
