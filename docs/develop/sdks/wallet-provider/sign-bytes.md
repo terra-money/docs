@@ -1,6 +1,6 @@
 # Signing Bytes
 
-This document explains how to sign arbitrary bytes with Wallet Provider in a react-based web application. This action is useful for verifying account ownership without having to post a transaction to the chain. It's commonly used as a form of simple user authentication.
+You can sign arbitrary bytes with [Wallet Provider](https://www.npmjs.com/package/@terra-money/wallet-provider) in a React-based web application. This action is useful for verifying account ownership without having to post a transaction to the chain, and is commonly used as a form of simple user authentication.
 
 :::{tip}
 Not using React? Use the [wallet-controller](https://www.npmjs.com/package/@terra-money/wallet-controller) instead.
