@@ -14,7 +14,7 @@ The `verifyBytes` function then compares the original `TEST_BYTES` against the s
 You can see how the `verifyBytes` function works [here](https://github.com/terra-money/wallet-provider/blob/4e601c2dece7bec92c9ce95991d2314220a2c954/packages/src/%40terra-money/wallet-controller/verifyBytes.ts#L1).*
 :::
 
-Wallet Provider also supplies useful error types that can be used with a `catch` statement notify the user whether or not the signing was successful.
+Wallet Provider also supplies useful error types that can be used with a `catch` statement notify the user whether or not the signing was successful:
 
 ```ts
  import {
@@ -94,6 +94,6 @@ export function SignBytesSample() {
   );
 }
 ```
-You can find this code used in context [here](https://github.com/terra-money/wallet-provider/blob/main/templates/create-react-app/src/components/SignBytesSample.tsx).
+You can find this code used in context in [Github](https://github.com/terra-money/wallet-provider/blob/main/templates/create-react-app/src/components/SignBytesSample.tsx).
 
-And a working sandbox example of bytes signing with Terra Station [here](https://codesandbox.io/s/github/terra-money/wallet-provider/tree/main/templates/create-react-app).
+You can view a working sandbox example of bytes signing with Terra Station on [codesandbox.io](https://codesandbox.io/s/github/terra-money/wallet-provider/tree/main/templates/create-react-app).
