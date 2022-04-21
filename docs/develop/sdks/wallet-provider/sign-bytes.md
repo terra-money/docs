@@ -4,7 +4,7 @@ This document explains how to sign arbitrary bytes with Wallet Provider in a rea
 
 *You can find this code used in context [here](https://github.com/terra-money/wallet-provider/blob/main/templates/create-react-app/src/components/SignBytesSample.tsx). Not using react? Use [wallet-controller](https://www.npmjs.com/package/@terra-money/wallet-controller)*.
 
-Wallet Provider comes with a `useConnectedWallet` hook which let's you trigger actions from a Terra wallet that's connected to the web page. The `connectedWallet` object is includes a `.signBytes()` method which prompts the user to sign the data and then returns an object of type `SignBytesResult`. This object contains the address of the signer and the corresponding signed data. 
+The Wallet Provider comes with a `useConnectedWallet` hook, which lets you trigger actions from a Terra wallet that's connected to the web page. The `connectedWallet` object includes a `.signBytes()` method, which prompts the user to sign the data and then returns an object of type `SignBytesResult`. The returned `SignBytesResult` object contains the address of the signer and the signed data.
 
 The `verifyBytes` function then compares the original `TEST_BYTES` against the signature and public key pairing provided by the `SignBytesResult`. If it returns `true`, then the account is indeed under the owernship of the connected wallet and vice versa. In this way, the owner of the associated wallet is verified without having to produce an on-chain action or pay gas fees.
 
