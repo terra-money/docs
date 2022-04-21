@@ -10,7 +10,9 @@ The Wallet Provider comes with a `useConnectedWallet` hook, which lets you trigg
 
 The `verifyBytes` function then compares the original `TEST_BYTES` against the signature and public key pairing returned by the `SignBytesResult`. If `verifyBytes` returns `true`, then the account is owned by the connected wallet. Likewise, if `verifyBytes` returns `false`, then the account is not owned by the connected wallet. In this way, the owner of the associated wallet is verified without having to produce an on-chain action or pay gas fees.
 
-*You can see how the `verifyBytes` function works under the hood [here](https://github.com/terra-money/wallet-provider/blob/4e601c2dece7bec92c9ce95991d2314220a2c954/packages/src/%40terra-money/wallet-controller/verifyBytes.ts#L1).*
+:::{tip}
+You can see how the `verifyBytes` function works [here](https://github.com/terra-money/wallet-provider/blob/4e601c2dece7bec92c9ce95991d2314220a2c954/packages/src/%40terra-money/wallet-controller/verifyBytes.ts#L1).*
+:::
 
 Finally, Wallet Provider also supplies useful error types that can be used in conjunction with a `catch` to direct or notify the user of whether the signing was sucessful.
 
