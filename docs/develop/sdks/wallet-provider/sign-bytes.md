@@ -94,5 +94,6 @@ export function SignBytesSample() {
   );
 }
 ```
+You can find this code used in context [here](https://github.com/terra-money/wallet-provider/blob/main/templates/create-react-app/src/components/SignBytesSample.tsx).
 
-You can find a working sandbox example of bytes signing with Terra Station [here](https://codesandbox.io/s/github/terra-money/wallet-provider/tree/main/templates/create-react-app).
+And a working sandbox example of bytes signing with Terra Station [here](https://codesandbox.io/s/github/terra-money/wallet-provider/tree/main/templates/create-react-app).
