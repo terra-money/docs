@@ -8,8 +8,8 @@ This guide is for developers who want to install `terrad` and interact with Terr
 ```{toctree}
 :maxdepth: 1
 install-terrad
+terrad-mac
 using-terrad
 commands
 subcommands
-:orphan: terrad-m1
 ```

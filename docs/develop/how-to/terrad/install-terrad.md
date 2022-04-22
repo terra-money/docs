@@ -1,4 +1,4 @@
-# Install terrad
+# Install `terrad`
 
 `terrad` is the command-line interface and daemon that connects to Terra and enables you to interact with the Terra blockchain. Terra core is the official Golang reference implementation of the Terra node software.
 
@@ -12,7 +12,7 @@ This guide is for developers who want to install `terrad` and interact with Terr
 
 ## From binary
 
-The easiest way to install `terrad` and Terra core is by downloading a pre-built binary for your operating system. You can find the latest binaries on the [releases](https://github.com/terra-money/core/releases) page.
+The easiest way to install `terrad` and Terra core is by downloading a pre-built binary for your operating system. You can find the latest binaries on the [releases](https://github.com/terra-money/core/releases) page. If you have a Mac, follow the [Mac installation instructions](./terrad-mac.md).
 
 ## From source
 
