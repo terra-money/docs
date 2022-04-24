@@ -178,3 +178,6 @@ If successful, you'll see a log of the successful transaction and some new UST t
 
 And that's it! You can find other pool addresses [here](https://app.terraswap.io/) to call other swaps. Be sure to use the correct testnet or mainnet contract address. 
 
+## More examples
+
+View the [Common examples]("common-examples.md) section for more information on using Terra.js.
