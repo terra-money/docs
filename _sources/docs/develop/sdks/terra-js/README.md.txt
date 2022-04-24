@@ -11,9 +11,10 @@ Terra.js seeks to provide a compatible way to work with the Terra blockchain wit
 
 ```{toctree}
 :maxdepth: 1
+getting-started
+common-examples
 add-modules
 coin-and-coins
-common-examples
 fees
 ibc
 keys

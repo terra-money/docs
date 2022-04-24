@@ -45,8 +45,8 @@
     <link rel="shortcut icon" href="../../../../_static/docs_favicon.ico"/>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="Fees" href="fees.html" />
-    <link rel="prev" title="Coin and Coins" href="coin-and-coins.html" />
+    <link rel="next" title="Add modules" href="add-modules.html" />
+    <link rel="prev" title="Get started with Terra.js" href="getting-started.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -550,6 +550,16 @@
       </label>
       <ul class="current">
        <li class="toctree-l4">
+        <a class="reference internal" href="getting-started.html">
+         Get started with Terra.js
+        </a>
+       </li>
+       <li class="toctree-l4 current active">
+        <a class="current reference internal" href="#">
+         Common examples
+        </a>
+       </li>
+       <li class="toctree-l4">
         <a class="reference internal" href="add-modules.html">
          Add modules
         </a>
@@ -557,11 +567,6 @@
        <li class="toctree-l4">
         <a class="reference internal" href="coin-and-coins.html">
          Coin and Coins
-        </a>
-       </li>
-       <li class="toctree-l4 current active">
-        <a class="current reference internal" href="#">
-         Common examples
         </a>
        </li>
        <li class="toctree-l4">
@@ -1293,6 +1298,16 @@
     </label>
     <ul class="current">
      <li class="toctree-l3">
+      <a class="reference internal" href="getting-started.html">
+       Get started with Terra.js
+      </a>
+     </li>
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
+       Common examples
+      </a>
+     </li>
+     <li class="toctree-l3">
       <a class="reference internal" href="add-modules.html">
        Add modules
       </a>
@@ -1300,11 +1315,6 @@
      <li class="toctree-l3">
       <a class="reference internal" href="coin-and-coins.html">
        Coin and Coins
-      </a>
-     </li>
-     <li class="toctree-l3 current active">
-      <a class="current reference internal" href="#">
-       Common examples
       </a>
      </li>
      <li class="toctree-l3">
@@ -1738,91 +1748,91 @@ title="Print to PDF"
 <section id="configuring-lcdclient">
 <h2>Configuring LCDClient<a class="headerlink" href="#configuring-lcdclient" title="Permalink to this headline">#</a></h2>
 <p>The following code example shows how to initialize the LCDClient. The rest of the examples assume you initialized it by using this example or similar code.</p>
-<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span> <span class="nx">fetch</span> <span class="kr">from</span> <span class="s1">&#39;isomorphic-fetch&#39;</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">MsgSend</span><span class="p">,</span> <span class="nx">MnemonicKey</span><span class="p">,</span> <span class="nx">Coins</span><span class="p">,</span> <span class="nx">LCDClient</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@terra-money/terra.js&#39;</span><span class="p">;</span>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="nx">fetch</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;isomorphic-fetch&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">MsgSend</span><span class="p">,</span><span class="w"> </span><span class="nx">MnemonicKey</span><span class="p">,</span><span class="w"> </span><span class="nx">Coins</span><span class="p">,</span><span class="w"> </span><span class="nx">LCDClient</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@terra-money/terra.js&#39;</span><span class="p">;</span><span class="w"></span>
 
-<span class="c1">// Fetch gas prices and convert to `Coin` format.</span>
-<span class="kd">const</span> <span class="nx">gasPrices</span> <span class="o">=</span> <span class="k">await</span> <span class="p">(</span><span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="s1">&#39;https://bombay-fcd.terra.dev/v1/txs/gas_prices&#39;</span><span class="p">)).</span><span class="nx">json</span><span class="p">();</span>
-<span class="kd">const</span> <span class="nx">gasPricesCoins</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">Coins</span><span class="p">(</span><span class="nx">gasPrices</span><span class="p">);</span>
+<span class="c1">// Fetch gas prices and convert to `Coin` format.</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">gasPrices</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="p">(</span><span class="k">await</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="s1">&#39;https://bombay-fcd.terra.dev/v1/txs/gas_prices&#39;</span><span class="p">)).</span><span class="nx">json</span><span class="p">();</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">gasPricesCoins</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Coins</span><span class="p">(</span><span class="nx">gasPrices</span><span class="p">);</span><span class="w"></span>
 
-<span class="kd">const</span> <span class="nx">lcd</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">LCDClient</span><span class="p">({</span>
-  <span class="nx">URL</span><span class="o">:</span> <span class="s2">&quot;https://bombay-lcd.terra.dev/&quot;</span><span class="p">,</span>
-  <span class="nx">chainID</span><span class="o">:</span> <span class="s2">&quot;bombay-12&quot;</span><span class="p">,</span>
-  <span class="nx">gasPrices</span>: <span class="kt">gasPricesCoins</span><span class="p">,</span>
-  <span class="nx">gasAdjustment</span><span class="o">:</span> <span class="s2">&quot;1.5&quot;</span><span class="p">,</span>
-  <span class="nx">gas</span>: <span class="kt">10000000</span><span class="p">,</span>
-<span class="p">});</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">lcd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">LCDClient</span><span class="p">({</span><span class="w"></span>
+<span class="w">  </span><span class="nx">URL</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;https://bombay-lcd.terra.dev/&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">chainID</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;bombay-12&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">gasPrices</span><span class="o">:</span><span class="w"> </span><span class="kt">gasPricesCoins</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">gasAdjustment</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;1.5&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">gas</span><span class="o">:</span><span class="w"> </span><span class="kt">10000000</span><span class="p">,</span><span class="w"></span>
+<span class="p">});</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
 <section id="get-wallet-balance-native-tokens">
 <h2>Get wallet balance (native tokens)<a class="headerlink" href="#get-wallet-balance-native-tokens" title="Permalink to this headline">#</a></h2>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="c1">// Replace with address to check.</span>
-<span class="kd">const</span> <span class="nx">address</span> <span class="o">=</span> <span class="s1">&#39;terra1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&#39;</span><span class="p">;</span>
-<span class="kd">const</span> <span class="p">[</span><span class="nx">balance</span><span class="p">]</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">lcd</span><span class="p">.</span><span class="nx">bank</span><span class="p">.</span><span class="nx">balance</span><span class="p">(</span><span class="nx">address</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">balance</span><span class="p">.</span><span class="nx">toData</span><span class="p">());</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="c1">// Replace with address to check.</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;terra1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">balance</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">lcd</span><span class="p">.</span><span class="nx">bank</span><span class="p">.</span><span class="nx">balance</span><span class="p">(</span><span class="nx">address</span><span class="p">);</span><span class="w"></span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">balance</span><span class="p">.</span><span class="nx">toData</span><span class="p">());</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Example response:</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
-  <span class="p">{</span> <span class="nx">denom</span><span class="o">:</span> <span class="s1">&#39;uluna&#39;</span><span class="p">,</span> <span class="nx">amount</span><span class="o">:</span> <span class="s1">&#39;5030884&#39;</span> <span class="p">},</span>
-  <span class="p">{</span> <span class="nx">denom</span><span class="o">:</span> <span class="s1">&#39;uusd&#39;</span><span class="p">,</span> <span class="nx">amount</span><span class="o">:</span> <span class="s1">&#39;433108784&#39;</span> <span class="p">}</span>
-<span class="p">]</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">denom</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;uluna&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">amount</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;5030884&#39;</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">denom</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;uusd&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">amount</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;433108784&#39;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="p">]</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
 <section id="get-wallet-balance-cw20-tokens">
 <h2>Get wallet balance (CW20 tokens)<a class="headerlink" href="#get-wallet-balance-cw20-tokens" title="Permalink to this headline">#</a></h2>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="c1">// ANC on bombay-12</span>
-<span class="kd">const</span> <span class="nx">tokenAddress</span> <span class="o">=</span> <span class="s1">&#39;terra1747mad58h0w4y589y3sk84r5efqdev9q4r02pc&#39;</span><span class="p">;</span>
-<span class="kd">const</span> <span class="nx">walletAddress</span> <span class="o">=</span> <span class="s1">&#39;terra1f44ddca9awepv2rnudztguq5rmrran2m20zzd6&#39;</span><span class="p">;</span>
-<span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">lcd</span><span class="p">.</span><span class="nx">wasm</span><span class="p">.</span><span class="nx">contractQuery</span><span class="p">(</span><span class="nx">tokenAddress</span><span class="p">,</span> <span class="p">{</span> <span class="nx">balance</span><span class="o">:</span> <span class="p">{</span> <span class="nx">address</span><span class="o">:</span> <span class="nx">walletAddress</span> <span class="p">}});</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="c1">// ANC on bombay-12</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">tokenAddress</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;terra1747mad58h0w4y589y3sk84r5efqdev9q4r02pc&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">walletAddress</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;terra1f44ddca9awepv2rnudztguq5rmrran2m20zzd6&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">lcd</span><span class="p">.</span><span class="nx">wasm</span><span class="p">.</span><span class="nx">contractQuery</span><span class="p">(</span><span class="nx">tokenAddress</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">balance</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">address</span><span class="o">:</span><span class="w"> </span><span class="nx">walletAddress</span><span class="w"> </span><span class="p">}});</span><span class="w"></span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Example response:</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="p">{</span> <span class="nx">balance</span><span class="o">:</span> <span class="s1">&#39;70258667&#39;</span> <span class="p">}</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"> </span><span class="nx">balance</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;70258667&#39;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
 <section id="get-transaction-status">
 <h2>Get transaction status<a class="headerlink" href="#get-transaction-status" title="Permalink to this headline">#</a></h2>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="c1">// Replace with TX hash to lookup.</span>
-<span class="kd">const</span> <span class="nx">hash</span> <span class="o">=</span> <span class="s1">&#39;CAB264B3D92FF3DFE209DADE791A866876DE5DD2A320C1200F9C5EC5F0E7B14B&#39;</span><span class="p">;</span>
-<span class="kd">const</span> <span class="nx">txInfo</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">lcd</span><span class="p">.</span><span class="nx">tx</span><span class="p">.</span><span class="nx">txInfo</span><span class="p">(</span><span class="nx">hash</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">txInfo</span><span class="p">);</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="c1">// Replace with TX hash to lookup.</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">hash</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;CAB264B3D92FF3DFE209DADE791A866876DE5DD2A320C1200F9C5EC5F0E7B14B&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">txInfo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">lcd</span><span class="p">.</span><span class="nx">tx</span><span class="p">.</span><span class="nx">txInfo</span><span class="p">(</span><span class="nx">hash</span><span class="p">);</span><span class="w"></span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">txInfo</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Example response (modified for readability):</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">TxInfo</span> <span class="p">{</span>
-  <span class="nx">height</span><span class="o">:</span> <span class="mf">8276372</span><span class="p">,</span>
-  <span class="nx">txhash</span><span class="o">:</span> <span class="s1">&#39;CAB264B3D92FF3DFE209DADE791A866876DE5DD2A320C1200F9C5EC5F0E7B14B&#39;</span><span class="p">,</span>
-  <span class="nx">raw_log</span><span class="o">:</span> <span class="s1">&#39;[]&#39;</span><span class="p">,</span>
-  <span class="nx">logs</span><span class="o">:</span> <span class="p">[</span>
-    <span class="nx">TxLog</span> <span class="p">{</span>
-      <span class="nx">msg_index</span><span class="o">:</span> <span class="mf">0</span><span class="p">,</span>
-      <span class="nx">log</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
-      <span class="nx">events</span><span class="o">:</span> <span class="p">[</span><span class="nb">Array</span><span class="p">],</span>
-      <span class="nx">eventsByType</span><span class="o">:</span> <span class="p">[</span><span class="nb">Object</span><span class="p">]</span>
-    <span class="p">}</span>
-  <span class="p">],</span>
-  <span class="nx">gas_wanted</span><span class="o">:</span> <span class="mf">177808</span><span class="p">,</span>
-  <span class="nx">gas_used</span><span class="o">:</span> <span class="mf">128827</span><span class="p">,</span>
-  <span class="nx">tx</span><span class="o">:</span> <span class="nx">Tx</span> <span class="p">{},</span>
-  <span class="nx">timestamp</span><span class="o">:</span> <span class="s1">&#39;2022-03-17T18:34:06Z&#39;</span><span class="p">,</span>
-  <span class="nx">code</span><span class="o">:</span> <span class="mf">0</span><span class="p">,</span>
-  <span class="nx">codespace</span><span class="o">:</span> <span class="s1">&#39;&#39;</span>
-<span class="p">}</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">TxInfo</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">height</span><span class="o">:</span><span class="w"> </span><span class="mf">8276372</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">txhash</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;CAB264B3D92FF3DFE209DADE791A866876DE5DD2A320C1200F9C5EC5F0E7B14B&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">raw_log</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;[]&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">logs</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">    </span><span class="nx">TxLog</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nx">msg_index</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nx">log</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nx">events</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nb">Array</span><span class="p">],</span><span class="w"></span>
+<span class="w">      </span><span class="nx">eventsByType</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nb">Object</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="p">],</span><span class="w"></span>
+<span class="w">  </span><span class="nx">gas_wanted</span><span class="o">:</span><span class="w"> </span><span class="mf">177808</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">gas_used</span><span class="o">:</span><span class="w"> </span><span class="mf">128827</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">tx</span><span class="o">:</span><span class="w"> </span><span class="nx">Tx</span><span class="w"> </span><span class="p">{},</span><span class="w"></span>
+<span class="w">  </span><span class="nx">timestamp</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;2022-03-17T18:34:06Z&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">code</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">codespace</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
 <section id="get-link-to-transaction">
 <h2>Get link to transaction<a class="headerlink" href="#get-link-to-transaction" title="Permalink to this headline">#</a></h2>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">getTransactionLink</span> <span class="o">=</span> <span class="p">(</span><span class="nx">hash</span><span class="p">,</span> <span class="nx">chainID</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="sb">`https://finder.terra.money/</span><span class="si">${</span><span class="nx">chainID</span><span class="si">}</span><span class="sb">/tx/</span><span class="si">${</span><span class="nx">hash</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span>
-<span class="kd">const</span> <span class="nx">hash</span> <span class="o">=</span> <span class="s1">&#39;CAB264B3D92FF3DFE209DADE791A866876DE5DD2A320C1200F9C5EC5F0E7B14B&#39;</span><span class="p">;</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">getTransactionLink</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">hash</span><span class="p">,</span><span class="w"> </span><span class="nx">chainID</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="sb">`https://finder.terra.money/</span><span class="si">${</span><span class="nx">chainID</span><span class="si">}</span><span class="sb">/tx/</span><span class="si">${</span><span class="nx">hash</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">hash</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;CAB264B3D92FF3DFE209DADE791A866876DE5DD2A320C1200F9C5EC5F0E7B14B&#39;</span><span class="p">;</span><span class="w"></span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">getTransactionLink</span><span class="p">(</span><span class="nx">hash</span><span class="p">,</span> <span class="s1">&#39;bombay-12&#39;</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">getTransactionLink</span><span class="p">(</span><span class="nx">hash</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;bombay-12&#39;</span><span class="p">));</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Example response:</p>
@@ -1832,9 +1842,9 @@ title="Print to PDF"
 </section>
 <section id="get-link-to-wallet-address">
 <h2>Get link to wallet address<a class="headerlink" href="#get-link-to-wallet-address" title="Permalink to this headline">#</a></h2>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">getWalletLink</span> <span class="o">=</span> <span class="p">(</span><span class="nx">address</span><span class="p">,</span> <span class="nx">chainID</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="sb">`https://finder.terra.money/</span><span class="si">${</span><span class="nx">chainID</span><span class="si">}</span><span class="sb">/address/</span><span class="si">${</span><span class="nx">address</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span>
-<span class="kd">const</span> <span class="nx">address</span> <span class="o">=</span> <span class="s1">&#39;terra1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&#39;</span><span class="p">;</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">getWalletLink</span><span class="p">(</span><span class="nx">address</span><span class="p">,</span> <span class="s1">&#39;bombay-12&#39;</span><span class="p">))</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">getWalletLink</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">address</span><span class="p">,</span><span class="w"> </span><span class="nx">chainID</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="sb">`https://finder.terra.money/</span><span class="si">${</span><span class="nx">chainID</span><span class="si">}</span><span class="sb">/address/</span><span class="si">${</span><span class="nx">address</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;terra1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">getWalletLink</span><span class="p">(</span><span class="nx">address</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;bombay-12&#39;</span><span class="p">))</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Example response:</p>
@@ -1845,98 +1855,98 @@ title="Print to PDF"
 <section id="sending-native-tokens">
 <h2>Sending native tokens<a class="headerlink" href="#sending-native-tokens" title="Permalink to this headline">#</a></h2>
 <p>The following code example shows how to send native tokens:</p>
-<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span> <span class="p">{</span> <span class="nx">LCDClient</span><span class="p">,</span> <span class="nx">MnemonicKey</span><span class="p">,</span> <span class="nx">MsgSend</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&quot;@terra-money/terra.js&quot;</span><span class="p">;</span>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">LCDClient</span><span class="p">,</span><span class="w"> </span><span class="nx">MnemonicKey</span><span class="p">,</span><span class="w"> </span><span class="nx">MsgSend</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@terra-money/terra.js&quot;</span><span class="p">;</span><span class="w"></span>
 
-<span class="c1">// const lcd = new LCDClient(...);</span>
+<span class="c1">// const lcd = new LCDClient(...);</span><span class="w"></span>
 
-<span class="kd">const</span> <span class="nx">mk</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">MnemonicKey</span><span class="p">({</span>
-  <span class="nx">mnemonic</span><span class="o">:</span> <span class="s1">&#39;satisfy adjust timber high purchase tuition stool faith fine install that you unaware feed domain license impose boss human eager hat rent enjoy dawn&#39;</span><span class="p">,</span>
-<span class="p">});</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">mk</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">MnemonicKey</span><span class="p">({</span><span class="w"></span>
+<span class="w">  </span><span class="nx">mnemonic</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;satisfy adjust timber high purchase tuition stool faith fine install that you unaware feed domain license impose boss human eager hat rent enjoy dawn&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="p">});</span><span class="w"></span>
 
-<span class="kd">const</span> <span class="nx">wallet</span> <span class="o">=</span> <span class="nx">lcd</span><span class="p">.</span><span class="nx">wallet</span><span class="p">(</span><span class="nx">mk</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">wallet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">lcd</span><span class="p">.</span><span class="nx">wallet</span><span class="p">(</span><span class="nx">mk</span><span class="p">);</span><span class="w"></span>
 
-<span class="c1">// Transfer 1 Luna.</span>
-<span class="kd">const</span> <span class="nx">send</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">MsgSend</span><span class="p">(</span>
-  <span class="nx">wallet</span><span class="p">.</span><span class="nx">key</span><span class="p">.</span><span class="nx">accAddress</span><span class="p">,</span>
-  <span class="s2">&quot;terra1dcegyrekltswvyy0xy69ydgxn9x8x32zdtapd8&quot;</span><span class="p">,</span>
-  <span class="p">{</span> <span class="nx">uluna</span><span class="o">:</span> <span class="s2">&quot;1000000&quot;</span> <span class="p">}</span>
-<span class="p">);</span>
+<span class="c1">// Transfer 1 Luna.</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">send</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">MsgSend</span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">key</span><span class="p">.</span><span class="nx">accAddress</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="s2">&quot;terra1dcegyrekltswvyy0xy69ydgxn9x8x32zdtapd8&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">uluna</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;1000000&quot;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="p">);</span><span class="w"></span>
 
-<span class="kd">const</span> <span class="nx">tx</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">wallet</span><span class="p">.</span><span class="nx">createAndSignTx</span><span class="p">({</span> <span class="nx">msgs</span><span class="o">:</span> <span class="p">[</span><span class="nx">send</span><span class="p">]</span> <span class="p">});</span>
-<span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">lcd</span><span class="p">.</span><span class="nx">tx</span><span class="p">.</span><span class="nx">broadcast</span><span class="p">(</span><span class="nx">tx</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">tx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">createAndSignTx</span><span class="p">({</span><span class="w"> </span><span class="nx">msgs</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nx">send</span><span class="p">]</span><span class="w"> </span><span class="p">});</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">lcd</span><span class="p">.</span><span class="nx">tx</span><span class="p">.</span><span class="nx">broadcast</span><span class="p">(</span><span class="nx">tx</span><span class="p">);</span><span class="w"></span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
 <section id="sending-cw20-tokens">
 <h2>Sending CW20 tokens<a class="headerlink" href="#sending-cw20-tokens" title="Permalink to this headline">#</a></h2>
 <p>The following code example shows how to send CW20 tokens:</p>
-<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span> <span class="p">{</span>
-  <span class="nx">LCDClient</span><span class="p">,</span>
-  <span class="nx">MnemonicKey</span><span class="p">,</span>
-  <span class="nx">MsgExecuteContract</span><span class="p">,</span>
-<span class="p">}</span> <span class="kr">from</span> <span class="s2">&quot;@terra-money/terra.js&quot;</span><span class="p">;</span>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">LCDClient</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">MnemonicKey</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">MsgExecuteContract</span><span class="p">,</span><span class="w"></span>
+<span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@terra-money/terra.js&quot;</span><span class="p">;</span><span class="w"></span>
 
-<span class="c1">// const lcd = new LCDClient(...);</span>
+<span class="c1">// const lcd = new LCDClient(...);</span><span class="w"></span>
 
-<span class="kd">const</span> <span class="nx">mk</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">MnemonicKey</span><span class="p">({</span>
-  <span class="nx">mnemonic</span><span class="o">:</span> <span class="s1">&#39;satisfy adjust timber high purchase tuition stool faith fine install that you unaware feed domain license impose boss human eager hat rent enjoy dawn&#39;</span><span class="p">,</span>
-<span class="p">});</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">mk</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">MnemonicKey</span><span class="p">({</span><span class="w"></span>
+<span class="w">  </span><span class="nx">mnemonic</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;satisfy adjust timber high purchase tuition stool faith fine install that you unaware feed domain license impose boss human eager hat rent enjoy dawn&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="p">});</span><span class="w"></span>
 
-<span class="kd">const</span> <span class="nx">wallet</span> <span class="o">=</span> <span class="nx">lcd</span><span class="p">.</span><span class="nx">wallet</span><span class="p">(</span><span class="nx">mk</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">wallet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">lcd</span><span class="p">.</span><span class="nx">wallet</span><span class="p">(</span><span class="nx">mk</span><span class="p">);</span><span class="w"></span>
 
-<span class="c1">// ANC on bombay-12</span>
-<span class="kd">const</span> <span class="nx">tokenAddress</span> <span class="o">=</span> <span class="s1">&#39;terra1747mad58h0w4y589y3sk84r5efqdev9q4r02pc&#39;</span><span class="p">;</span>
+<span class="c1">// ANC on bombay-12</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">tokenAddress</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;terra1747mad58h0w4y589y3sk84r5efqdev9q4r02pc&#39;</span><span class="p">;</span><span class="w"></span>
 
-<span class="c1">// Transfer 1 ANC.</span>
-<span class="kd">const</span> <span class="nx">cw20Send</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">MsgExecuteContract</span><span class="p">(</span>
-  <span class="nx">wallet</span><span class="p">.</span><span class="nx">key</span><span class="p">.</span><span class="nx">accAddress</span><span class="p">,</span>
-  <span class="nx">tokenAddress</span><span class="p">,</span>
-  <span class="p">{</span>
-    <span class="nx">transfer</span><span class="o">:</span> <span class="p">{</span>
-      <span class="nx">amount</span><span class="o">:</span> <span class="s2">&quot;1000000&quot;</span><span class="p">,</span>
-      <span class="nx">recipient</span>: <span class="kt">wallet.key.accAddress</span><span class="p">,</span>
-    <span class="p">},</span>
-  <span class="p">}</span>
-<span class="p">);</span>
+<span class="c1">// Transfer 1 ANC.</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">cw20Send</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">MsgExecuteContract</span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">key</span><span class="p">.</span><span class="nx">accAddress</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">tokenAddress</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">transfer</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nx">amount</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;1000000&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nx">recipient</span><span class="o">:</span><span class="w"> </span><span class="kt">wallet.key.accAddress</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">);</span><span class="w"></span>
 
-<span class="kd">const</span> <span class="nx">tx</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">wallet</span><span class="p">.</span><span class="nx">createAndSignTx</span><span class="p">({</span> <span class="nx">msgs</span><span class="o">:</span> <span class="p">[</span><span class="nx">cw20Send</span><span class="p">]</span> <span class="p">});</span>
-<span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">lcd</span><span class="p">.</span><span class="nx">tx</span><span class="p">.</span><span class="nx">broadcast</span><span class="p">(</span><span class="nx">tx</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">tx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">createAndSignTx</span><span class="p">({</span><span class="w"> </span><span class="nx">msgs</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nx">cw20Send</span><span class="p">]</span><span class="w"> </span><span class="p">});</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">lcd</span><span class="p">.</span><span class="nx">tx</span><span class="p">.</span><span class="nx">broadcast</span><span class="p">(</span><span class="nx">tx</span><span class="p">);</span><span class="w"></span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
 <section id="swapping-using-the-market-module">
 <h2>Swapping using the market module<a class="headerlink" href="#swapping-using-the-market-module" title="Permalink to this headline">#</a></h2>
 <p>The following code example shows how to swap native Terra assets using the market module:</p>
-<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span> <span class="p">{</span>
-  <span class="nx">LCDClient</span><span class="p">,</span>
-  <span class="nx">MnemonicKey</span><span class="p">,</span>
-  <span class="nx">MsgSwap</span><span class="p">,</span>
-  <span class="nx">Coin</span><span class="p">,</span>
-<span class="p">}</span> <span class="kr">from</span> <span class="s2">&quot;@terra-money/terra.js&quot;</span><span class="p">;</span>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">LCDClient</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">MnemonicKey</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">MsgSwap</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">Coin</span><span class="p">,</span><span class="w"></span>
+<span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@terra-money/terra.js&quot;</span><span class="p">;</span><span class="w"></span>
 
-<span class="c1">// const lcd = new LCDClient(...);</span>
+<span class="c1">// const lcd = new LCDClient(...);</span><span class="w"></span>
 
-<span class="kd">const</span> <span class="nx">mk</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">MnemonicKey</span><span class="p">({</span>
-  <span class="nx">mnemonic</span><span class="o">:</span> <span class="s1">&#39;satisfy adjust timber high purchase tuition stool faith fine install that you unaware feed domain license impose boss human eager hat rent enjoy dawn&#39;</span><span class="p">,</span>
-<span class="p">});</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">mk</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">MnemonicKey</span><span class="p">({</span><span class="w"></span>
+<span class="w">  </span><span class="nx">mnemonic</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;satisfy adjust timber high purchase tuition stool faith fine install that you unaware feed domain license impose boss human eager hat rent enjoy dawn&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="p">});</span><span class="w"></span>
 
-<span class="kd">const</span> <span class="nx">wallet</span> <span class="o">=</span> <span class="nx">lcd</span><span class="p">.</span><span class="nx">wallet</span><span class="p">(</span><span class="nx">mk</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">wallet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">lcd</span><span class="p">.</span><span class="nx">wallet</span><span class="p">(</span><span class="nx">mk</span><span class="p">);</span><span class="w"></span>
 
-<span class="c1">// Swap 1 Luna to UST.</span>
-<span class="kd">const</span> <span class="nx">swap</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">MsgSwap</span><span class="p">(</span>
-  <span class="nx">wallet</span><span class="p">.</span><span class="nx">key</span><span class="p">.</span><span class="nx">accAddress</span><span class="p">,</span>
-  <span class="ow">new</span> <span class="nx">Coin</span><span class="p">(</span><span class="s1">&#39;uluna&#39;</span><span class="p">,</span> <span class="s1">&#39;1000000&#39;</span><span class="p">),</span>
-  <span class="s1">&#39;uusd&#39;</span>
-<span class="p">);</span>
+<span class="c1">// Swap 1 Luna to UST.</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">swap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">MsgSwap</span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">key</span><span class="p">.</span><span class="nx">accAddress</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="ow">new</span><span class="w"> </span><span class="nx">Coin</span><span class="p">(</span><span class="s1">&#39;uluna&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;1000000&#39;</span><span class="p">),</span><span class="w"></span>
+<span class="w">  </span><span class="s1">&#39;uusd&#39;</span><span class="w"></span>
+<span class="p">);</span><span class="w"></span>
 
-<span class="kd">const</span> <span class="nx">tx</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">wallet</span><span class="p">.</span><span class="nx">createAndSignTx</span><span class="p">({</span> <span class="nx">msgs</span><span class="o">:</span> <span class="p">[</span><span class="nx">swap</span><span class="p">]</span> <span class="p">});</span>
-<span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">lcd</span><span class="p">.</span><span class="nx">tx</span><span class="p">.</span><span class="nx">broadcast</span><span class="p">(</span><span class="nx">tx</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">tx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">createAndSignTx</span><span class="p">({</span><span class="w"> </span><span class="nx">msgs</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nx">swap</span><span class="p">]</span><span class="w"> </span><span class="p">});</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">lcd</span><span class="p">.</span><span class="nx">tx</span><span class="p">.</span><span class="nx">broadcast</span><span class="p">(</span><span class="nx">tx</span><span class="p">);</span><span class="w"></span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
@@ -1944,82 +1954,82 @@ title="Print to PDF"
 <h2>Swapping a native Terra asset for a CW20 token using Terraswap<a class="headerlink" href="#swapping-a-native-terra-asset-for-a-cw20-token-using-terraswap" title="Permalink to this headline">#</a></h2>
 <p>The following code example shows how to swap a native asset for CW20 using Terraswap.</p>
 <p>Run this example on mainnet.</p>
-<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span> <span class="p">{</span>
-  <span class="nx">MsgExecuteContract</span><span class="p">,</span>
-  <span class="nx">MnemonicKey</span><span class="p">,</span>
-  <span class="nx">Coins</span><span class="p">,</span>
-  <span class="nx">LCDClient</span><span class="p">,</span>
-<span class="p">}</span> <span class="kr">from</span> <span class="s2">&quot;@terra-money/terra.js&quot;</span><span class="p">;</span>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">MsgExecuteContract</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">MnemonicKey</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">Coins</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">LCDClient</span><span class="p">,</span><span class="w"></span>
+<span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@terra-money/terra.js&quot;</span><span class="p">;</span><span class="w"></span>
 
-<span class="c1">// const lcd = new LCDClient(...);</span>
+<span class="c1">// const lcd = new LCDClient(...);</span><span class="w"></span>
 
-<span class="kd">const</span> <span class="nx">mk</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">MnemonicKey</span><span class="p">({</span>
-  <span class="nx">mnemonic</span><span class="o">:</span> <span class="s1">&#39;satisfy adjust timber high purchase tuition stool faith fine install that you unaware feed domain license impose boss human eager hat rent enjoy dawn&#39;</span><span class="p">,</span>
-<span class="p">});</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">mk</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">MnemonicKey</span><span class="p">({</span><span class="w"></span>
+<span class="w">  </span><span class="nx">mnemonic</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;satisfy adjust timber high purchase tuition stool faith fine install that you unaware feed domain license impose boss human eager hat rent enjoy dawn&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="p">});</span><span class="w"></span>
 
-<span class="kd">const</span> <span class="nx">wallet</span> <span class="o">=</span> <span class="nx">lcd</span><span class="p">.</span><span class="nx">wallet</span><span class="p">(</span><span class="nx">mk</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">wallet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">lcd</span><span class="p">.</span><span class="nx">wallet</span><span class="p">(</span><span class="nx">mk</span><span class="p">);</span><span class="w"></span>
 
-<span class="c1">// UST &lt;&gt; SCRT</span>
-<span class="kd">const</span> <span class="nx">pool</span> <span class="o">=</span> <span class="s2">&quot;terra1tq4mammgkqrxrmcfhwdz59mwvwf4qgy6rdrt46&quot;</span><span class="p">;</span>
+<span class="c1">// UST &lt;&gt; SCRT</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">pool</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;terra1tq4mammgkqrxrmcfhwdz59mwvwf4qgy6rdrt46&quot;</span><span class="p">;</span><span class="w"></span>
 
-<span class="c1">// Fetch the number of each asset in the pool.</span>
-<span class="kd">const</span> <span class="p">{</span> <span class="nx">assets</span> <span class="p">}</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">lcd</span><span class="p">.</span><span class="nx">wasm</span><span class="p">.</span><span class="nx">contractQuery</span><span class="p">(</span><span class="nx">pool</span><span class="p">,</span> <span class="p">{</span> <span class="nx">pool</span><span class="o">:</span> <span class="p">{}</span> <span class="p">});</span>
+<span class="c1">// Fetch the number of each asset in the pool.</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">assets</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">lcd</span><span class="p">.</span><span class="nx">wasm</span><span class="p">.</span><span class="nx">contractQuery</span><span class="p">(</span><span class="nx">pool</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">pool</span><span class="o">:</span><span class="w"> </span><span class="p">{}</span><span class="w"> </span><span class="p">});</span><span class="w"></span>
 
-<span class="c1">// Calculate belief price using pool balances.</span>
-<span class="kd">const</span> <span class="nx">beliefPrice</span> <span class="o">=</span> <span class="p">(</span><span class="nx">assets</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">amount</span> <span class="o">/</span> <span class="nx">assets</span><span class="p">[</span><span class="mf">1</span><span class="p">].</span><span class="nx">amount</span><span class="p">).</span><span class="nx">toFixed</span><span class="p">(</span><span class="mf">18</span><span class="p">);</span>
+<span class="c1">// Calculate belief price using pool balances.</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">beliefPrice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">assets</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">amount</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nx">assets</span><span class="p">[</span><span class="mf">1</span><span class="p">].</span><span class="nx">amount</span><span class="p">).</span><span class="nx">toFixed</span><span class="p">(</span><span class="mf">18</span><span class="p">);</span><span class="w"></span>
 
-<span class="c1">// Swap 1 UST to SCRT with 1% slippage tolerance.</span>
-<span class="kd">const</span> <span class="nx">terraSwap</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">MsgExecuteContract</span><span class="p">(</span>
-  <span class="nx">wallet</span><span class="p">.</span><span class="nx">key</span><span class="p">.</span><span class="nx">accAddress</span><span class="p">,</span>
-  <span class="nx">pool</span><span class="p">,</span> 
-  <span class="p">{</span>
-    <span class="nx">swap</span><span class="o">:</span> <span class="p">{</span>
-      <span class="nx">max_spread</span><span class="o">:</span> <span class="s2">&quot;0.01&quot;</span><span class="p">,</span>
-      <span class="nx">offer_asset</span><span class="o">:</span> <span class="p">{</span>
-        <span class="nx">info</span><span class="o">:</span> <span class="p">{</span>
-          <span class="nx">native_token</span><span class="o">:</span> <span class="p">{</span>
-            <span class="nx">denom</span><span class="o">:</span> <span class="s2">&quot;uusd&quot;</span><span class="p">,</span>
-          <span class="p">},</span>
-        <span class="p">},</span>
-        <span class="nx">amount</span><span class="o">:</span> <span class="s2">&quot;1000000&quot;</span><span class="p">,</span>
-      <span class="p">},</span>
-      <span class="nx">belief_price</span>: <span class="kt">beliefPrice</span><span class="p">,</span>
-    <span class="p">},</span>
-  <span class="p">},</span>
-  <span class="ow">new</span> <span class="nx">Coins</span><span class="p">({</span> <span class="nx">uusd</span><span class="o">:</span> <span class="s1">&#39;1000000&#39;</span> <span class="p">}),</span>
-<span class="p">);</span>
+<span class="c1">// Swap 1 UST to SCRT with 1% slippage tolerance.</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">terraSwap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">MsgExecuteContract</span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">key</span><span class="p">.</span><span class="nx">accAddress</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">pool</span><span class="p">,</span><span class="w"> </span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">swap</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nx">max_spread</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;0.01&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nx">offer_asset</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nx">info</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">          </span><span class="nx">native_token</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nx">denom</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;uusd&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="p">},</span><span class="w"></span>
+<span class="w">        </span><span class="p">},</span><span class="w"></span>
+<span class="w">        </span><span class="nx">amount</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;1000000&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="p">},</span><span class="w"></span>
+<span class="w">      </span><span class="nx">belief_price</span><span class="o">:</span><span class="w"> </span><span class="kt">beliefPrice</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="ow">new</span><span class="w"> </span><span class="nx">Coins</span><span class="p">({</span><span class="w"> </span><span class="nx">uusd</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;1000000&#39;</span><span class="w"> </span><span class="p">}),</span><span class="w"></span>
+<span class="p">);</span><span class="w"></span>
 
-<span class="kd">const</span> <span class="nx">tx</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">wallet</span><span class="p">.</span><span class="nx">createAndSignTx</span><span class="p">({</span> <span class="nx">msgs</span><span class="o">:</span> <span class="p">[</span><span class="nx">terraSwap</span><span class="p">]</span> <span class="p">});</span>
-<span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">lcd</span><span class="p">.</span><span class="nx">tx</span><span class="p">.</span><span class="nx">broadcast</span><span class="p">(</span><span class="nx">tx</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">tx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">createAndSignTx</span><span class="p">({</span><span class="w"> </span><span class="nx">msgs</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nx">terraSwap</span><span class="p">]</span><span class="w"> </span><span class="p">});</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">lcd</span><span class="p">.</span><span class="nx">tx</span><span class="p">.</span><span class="nx">broadcast</span><span class="p">(</span><span class="nx">tx</span><span class="p">);</span><span class="w"></span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
 <section id="decoding-protobuf-encoded-messages">
 <h2>Decoding Protobuf-encoded messages<a class="headerlink" href="#decoding-protobuf-encoded-messages" title="Permalink to this headline">#</a></h2>
 <p>The following code example shows how to decode messages that have been encoded using Protobuf:</p>
-<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span> <span class="p">{</span>
-  <span class="nx">LCDClient</span><span class="p">,</span>
-  <span class="nx">Tx</span><span class="p">,</span>
-<span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@terra-money/terra.js&#39;</span><span class="p">;</span>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">LCDClient</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">Tx</span><span class="p">,</span><span class="w"></span>
+<span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@terra-money/terra.js&#39;</span><span class="p">;</span><span class="w"></span>
 
-<span class="c1">// const lcd = new LCDClient(...);</span>
+<span class="c1">// const lcd = new LCDClient(...);</span><span class="w"></span>
 
-<span class="kd">const</span> <span class="nx">blockData</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">lcd</span><span class="p">.</span><span class="nx">tendermint</span><span class="p">.</span><span class="nx">blockInfo</span><span class="p">(</span><span class="mf">5923213</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">blockData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">lcd</span><span class="p">.</span><span class="nx">tendermint</span><span class="p">.</span><span class="nx">blockInfo</span><span class="p">(</span><span class="mf">5923213</span><span class="p">);</span><span class="w"></span>
 
-<span class="kd">const</span> <span class="nx">txInfos</span> <span class="o">=</span> <span class="nx">blockData</span><span class="p">.</span><span class="nx">block</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">txs</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">tx</span><span class="p">)</span> <span class="p">=&gt;</span> 
-  <span class="nx">Tx</span><span class="p">.</span><span class="nx">unpackAny</span><span class="p">({</span> <span class="nx">value</span>: <span class="kt">Buffer.from</span><span class="p">(</span><span class="nx">tx</span><span class="p">,</span> <span class="s1">&#39;base64&#39;</span><span class="p">)</span> <span class="p">})</span>
-<span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">txInfos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">blockData</span><span class="p">.</span><span class="nx">block</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">txs</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">tx</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span>
+<span class="w">  </span><span class="nx">Tx</span><span class="p">.</span><span class="nx">unpackAny</span><span class="p">({</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">Buffer.from</span><span class="p">(</span><span class="nx">tx</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;base64&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">})</span><span class="w"></span>
+<span class="p">);</span><span class="w"></span>
 
-<span class="c1">// Find messages where a contract was initialized. </span>
-<span class="kd">const</span> <span class="nx">initMessages</span> <span class="o">=</span> <span class="nx">txInfos</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">tx</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">tx</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">messages</span><span class="p">)</span>
-  <span class="p">.</span><span class="nx">flat</span><span class="p">()</span>
-  <span class="p">.</span><span class="nx">find</span><span class="p">(</span>
-    <span class="p">(</span><span class="nx">i</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">i</span><span class="p">.</span><span class="kr">constructor</span><span class="p">.</span><span class="nx">name</span> <span class="o">===</span> <span class="s1">&#39;MsgInstantiateContract&#39;</span>
-  <span class="p">);</span>
+<span class="c1">// Find messages where a contract was initialized. </span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">initMessages</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">txInfos</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">tx</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">tx</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">messages</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="p">.</span><span class="nx">flat</span><span class="p">()</span><span class="w"></span>
+<span class="w">  </span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="p">(</span><span class="nx">i</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">i</span><span class="p">.</span><span class="kr">constructor</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;MsgInstantiateContract&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="p">);</span><span class="w"></span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">initMessages</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">initMessages</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
@@ -2027,40 +2037,40 @@ title="Print to PDF"
 <h2>Validate a Terra address<a class="headerlink" href="#validate-a-terra-address" title="Permalink to this headline">#</a></h2>
 <p>The following code example shows how to do a basic verification on a Terra address.</p>
 <p>This is a basic version of the verification, it does not require external libraries as it performs a simple comparison with a regex string. It could give false positives since it doesn’t verify the checksum of the address.</p>
-<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="c1">// basic address validation (no library required)</span>
-<span class="kd">function</span> <span class="nx">isValid</span><span class="p">(</span><span class="nx">address</span><span class="p">)</span> <span class="p">{</span>
-  <span class="c1">// check the string format:</span>
-  <span class="c1">// - starts with &quot;terra1&quot;</span>
-  <span class="c1">// - length == 44 (&quot;terra1&quot; + 38)</span>
-  <span class="c1">// - contains only numbers and lower case letters</span>
-  <span class="k">return</span> <span class="sr">/(terra1[a-z0-9]{38})/g</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">address</span><span class="p">);</span>
-<span class="p">}</span>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="c1">// basic address validation (no library required)</span><span class="w"></span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">isValid</span><span class="p">(</span><span class="nx">address</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// check the string format:</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// - starts with &quot;terra1&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// - length == 44 (&quot;terra1&quot; + 38)</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// - contains only numbers and lower case letters</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="sr">/(terra1[a-z0-9]{38})/g</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">address</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">isValid</span><span class="p">(</span><span class="s1">&#39;terra1dcegyrekltswvyy0xy69ydgxn9x8x32zdtapd8&#39;</span><span class="p">));</span> <span class="c1">// true</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">isValid</span><span class="p">(</span><span class="s1">&#39;terra1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&#39;</span><span class="p">));</span> <span class="c1">// true (even if this doesn&#39;t have a valid checksum)</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">isValid</span><span class="p">(</span><span class="s1">&#39;cosmos1zz22dfpvw3zqpeyhvhmx944a588fgcalw744ts&#39;</span><span class="p">));</span> <span class="c1">// false</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">isValid</span><span class="p">(</span><span class="s1">&#39;random string&#39;</span><span class="p">));</span> <span class="c1">// false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">isValid</span><span class="p">(</span><span class="s1">&#39;terra1dcegyrekltswvyy0xy69ydgxn9x8x32zdtapd8&#39;</span><span class="p">));</span><span class="w"> </span><span class="c1">// true</span><span class="w"></span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">isValid</span><span class="p">(</span><span class="s1">&#39;terra1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&#39;</span><span class="p">));</span><span class="w"> </span><span class="c1">// true (even if this doesn&#39;t have a valid checksum)</span><span class="w"></span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">isValid</span><span class="p">(</span><span class="s1">&#39;cosmos1zz22dfpvw3zqpeyhvhmx944a588fgcalw744ts&#39;</span><span class="p">));</span><span class="w"> </span><span class="c1">// false</span><span class="w"></span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">isValid</span><span class="p">(</span><span class="s1">&#39;random string&#39;</span><span class="p">));</span><span class="w"> </span><span class="c1">// false</span><span class="w"></span>
 </pre></div>
 </div>
 <p>This is a more advanced verification that requires the bech32 library which is used to verify the checksum.</p>
-<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span> <span class="p">{</span> <span class="nx">bech32</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;bech32&#39;</span><span class="p">;</span>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">bech32</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;bech32&#39;</span><span class="p">;</span><span class="w"></span>
 
-<span class="c1">// advanced address validation, it verify also the bech32 checksum</span>
-<span class="kd">function</span> <span class="nx">isValid</span><span class="p">(</span><span class="nx">address</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">try</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="p">{</span> <span class="nx">prefix</span>: <span class="kt">decodedPrefix</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">bech32</span><span class="p">.</span><span class="nx">decode</span><span class="p">(</span><span class="nx">address</span><span class="p">);</span> <span class="c1">// throw error if checksum is invalid</span>
-    <span class="c1">// verify address prefix</span>
-    <span class="k">return</span> <span class="nx">decodedPrefix</span> <span class="o">===</span> <span class="s1">&#39;terra&#39;</span><span class="p">;</span>
-  <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
-    <span class="c1">// invalid checksum</span>
-    <span class="k">return</span> <span class="kc">false</span><span class="p">;</span> 
-  <span class="p">}</span>
-<span class="p">}</span>
+<span class="c1">// advanced address validation, it verify also the bech32 checksum</span><span class="w"></span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">isValid</span><span class="p">(</span><span class="nx">address</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">prefix</span><span class="o">:</span><span class="w"> </span><span class="kt">decodedPrefix</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">bech32</span><span class="p">.</span><span class="nx">decode</span><span class="p">(</span><span class="nx">address</span><span class="p">);</span><span class="w"> </span><span class="c1">// throw error if checksum is invalid</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// verify address prefix</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">decodedPrefix</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;terra&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// invalid checksum</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span><span class="w"> </span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">isValid</span><span class="p">(</span><span class="s1">&#39;terra1dcegyrekltswvyy0xy69ydgxn9x8x32zdtapd8&#39;</span><span class="p">));</span> <span class="c1">// true</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">isValid</span><span class="p">(</span><span class="s1">&#39;terra1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&#39;</span><span class="p">));</span> <span class="c1">// false</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">isValid</span><span class="p">(</span><span class="s1">&#39;cosmos1zz22dfpvw3zqpeyhvhmx944a588fgcalw744ts&#39;</span><span class="p">));</span> <span class="c1">// false</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">isValid</span><span class="p">(</span><span class="s1">&#39;random string&#39;</span><span class="p">));</span> <span class="c1">// false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">isValid</span><span class="p">(</span><span class="s1">&#39;terra1dcegyrekltswvyy0xy69ydgxn9x8x32zdtapd8&#39;</span><span class="p">));</span><span class="w"> </span><span class="c1">// true</span><span class="w"></span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">isValid</span><span class="p">(</span><span class="s1">&#39;terra1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&#39;</span><span class="p">));</span><span class="w"> </span><span class="c1">// false</span><span class="w"></span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">isValid</span><span class="p">(</span><span class="s1">&#39;cosmos1zz22dfpvw3zqpeyhvhmx944a588fgcalw744ts&#39;</span><span class="p">));</span><span class="w"> </span><span class="c1">// false</span><span class="w"></span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">isValid</span><span class="p">(</span><span class="s1">&#39;random string&#39;</span><span class="p">));</span><span class="w"> </span><span class="c1">// false</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
@@ -2070,26 +2080,26 @@ title="Print to PDF"
 <p>This happens because the libraries use by default the <code class="docutils literal notranslate"><span class="pre">broadcast-mode</span> <span class="pre">=</span> <span class="pre">block</span></code>, with this mode the LCD to which you are broadcasting the transaction sends an http response to your request only when the transaction has been included in a block, but if the chain is overloaded the confirmation may take too long and trigger a timeout in the LCD.</p>
 <p>To solve this problem it is recommended to use the <code class="docutils literal notranslate"><span class="pre">broadcast-mode</span> <span class="pre">=</span> <span class="pre">sync</span></code> and then iterate a request to the LCD with the txhash to understand when it has been included in a block.</p>
 <p>This is an example to do it in JavaScript:</p>
-<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="c1">// sign the tx</span>
-<span class="nx">wallet</span><span class="p">.</span><span class="nx">createAndSignTx</span><span class="p">(</span><span class="nx">YOUR_TX_HERE</span><span class="p">)</span>
-  <span class="c1">// use broadcastSync() instead of broadcast()</span>
-  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">tx</span> <span class="p">=&gt;</span> <span class="nx">terra</span><span class="p">.</span><span class="nx">tx</span><span class="p">.</span><span class="nx">broadcastSync</span><span class="p">(</span><span class="nx">tx</span><span class="p">))</span>
-  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="k">async</span> <span class="nx">result</span> <span class="p">=&gt;</span> <span class="p">{</span>
-    <span class="c1">// TODO: use a for or add a timeout to prevent infinite loops </span>
-    <span class="k">while</span><span class="p">(</span><span class="kc">true</span><span class="p">){</span>
-      <span class="c1">// query txhash</span>
-      <span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">terra</span><span class="p">.</span><span class="nx">tx</span><span class="p">.</span><span class="nx">txInfo</span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">txhash</span><span class="p">)</span>
-        <span class="p">.</span><span class="k">catch</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{})</span>
-      <span class="c1">// if hash is onchain return data</span>
-      <span class="k">if</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="k">return</span> <span class="nx">data</span>
-      <span class="c1">// else wait 250ms and then repeat</span>
-      <span class="k">await</span> <span class="ow">new</span> <span class="nb">Promise</span><span class="p">(</span><span class="nx">resolve</span> <span class="p">=&gt;</span> <span class="nx">setTimeout</span><span class="p">(</span><span class="nx">resolve</span><span class="p">,</span> <span class="mf">250</span><span class="p">))</span>
-    <span class="p">}</span>
-  <span class="p">})</span>
-  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">result</span> <span class="p">=&gt;</span> <span class="p">{</span>
-    <span class="c1">// this will be executed when the tx has been included into a block</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span>
-  <span class="p">})</span>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="c1">// sign the tx</span><span class="w"></span>
+<span class="nx">wallet</span><span class="p">.</span><span class="nx">createAndSignTx</span><span class="p">(</span><span class="nx">YOUR_TX_HERE</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// use broadcastSync() instead of broadcast()</span><span class="w"></span>
+<span class="w">  </span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">tx</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">terra</span><span class="p">.</span><span class="nx">tx</span><span class="p">.</span><span class="nx">broadcastSync</span><span class="p">(</span><span class="nx">tx</span><span class="p">))</span><span class="w"></span>
+<span class="w">  </span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="k">async</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// TODO: use a for or add a timeout to prevent infinite loops </span><span class="w"></span>
+<span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="kc">true</span><span class="p">){</span><span class="w"></span>
+<span class="w">      </span><span class="c1">// query txhash</span><span class="w"></span>
+<span class="w">      </span><span class="kd">const</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">terra</span><span class="p">.</span><span class="nx">tx</span><span class="p">.</span><span class="nx">txInfo</span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">txhash</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="p">.</span><span class="k">catch</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{})</span><span class="w"></span>
+<span class="w">      </span><span class="c1">// if hash is onchain return data</span><span class="w"></span>
+<span class="w">      </span><span class="k">if</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nx">data</span><span class="w"></span>
+<span class="w">      </span><span class="c1">// else wait 250ms and then repeat</span><span class="w"></span>
+<span class="w">      </span><span class="k">await</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Promise</span><span class="p">(</span><span class="nx">resolve</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">setTimeout</span><span class="p">(</span><span class="nx">resolve</span><span class="p">,</span><span class="w"> </span><span class="mf">250</span><span class="p">))</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="p">})</span><span class="w"></span>
+<span class="w">  </span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">result</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// this will be executed when the tx has been included into a block</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="p">})</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
@@ -2103,17 +2113,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="coin-and-coins.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="getting-started.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Coin and Coins</p>
+            <p class="prev-next-title">Get started with Terra.js</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="fees.html" title="next page">
+    <a class='right-next' id="next-link" href="add-modules.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Fees</p>
+        <p class="prev-next-title">Add modules</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

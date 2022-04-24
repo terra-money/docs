@@ -550,6 +550,16 @@
       </label>
       <ul class="current">
        <li class="toctree-l4">
+        <a class="reference internal" href="getting-started.html">
+         Get started with Terra.js
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="common-examples.html">
+         Common examples
+        </a>
+       </li>
+       <li class="toctree-l4">
         <a class="reference internal" href="add-modules.html">
          Add modules
         </a>
@@ -557,11 +567,6 @@
        <li class="toctree-l4">
         <a class="reference internal" href="coin-and-coins.html">
          Coin and Coins
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="common-examples.html">
-         Common examples
         </a>
        </li>
        <li class="toctree-l4">
@@ -1293,6 +1298,16 @@
     </label>
     <ul class="current">
      <li class="toctree-l3">
+      <a class="reference internal" href="getting-started.html">
+       Get started with Terra.js
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="common-examples.html">
+       Common examples
+      </a>
+     </li>
+     <li class="toctree-l3">
       <a class="reference internal" href="add-modules.html">
        Add modules
       </a>
@@ -1300,11 +1315,6 @@
      <li class="toctree-l3">
       <a class="reference internal" href="coin-and-coins.html">
        Coin and Coins
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="common-examples.html">
-       Common examples
       </a>
      </li>
      <li class="toctree-l3">
@@ -1578,86 +1588,86 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="msgsend">
 <h1>MsgSend<a class="headerlink" href="#msgsend" title="Permalink to this headline">#</a></h1>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">import</span> <span class="p">{</span>
-  <span class="nx">LCDClient</span><span class="p">,</span>
-  <span class="nx">MnemonicKey</span><span class="p">,</span>
-  <span class="nx">MsgMultiSend</span><span class="p">,</span>
-  <span class="nx">StdTx</span><span class="p">,</span>
-  <span class="nx">Account</span><span class="p">,</span>
-<span class="p">}</span> <span class="kr">from</span> <span class="s2">&quot;@terra-money/terra.js&quot;</span><span class="p">;</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">LCDClient</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">MnemonicKey</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">MsgMultiSend</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">StdTx</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">Account</span><span class="p">,</span><span class="w"></span>
+<span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@terra-money/terra.js&quot;</span><span class="p">;</span><span class="w"></span>
 
-<span class="kd">const</span> <span class="p">{</span>
-  <span class="nx">TESTNET_LCD_URL</span> <span class="o">=</span> <span class="s2">&quot;http://localhost:1317&quot;</span><span class="p">,</span>
-  <span class="nx">TESTNET_CHAIN_ID</span> <span class="o">=</span> <span class="s2">&quot;localterra&quot;</span><span class="p">,</span>
-<span class="p">}</span> <span class="o">=</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">TESTNET_LCD_URL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;http://localhost:1317&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">TESTNET_CHAIN_ID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;localterra&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">;</span><span class="w"></span>
 
-<span class="k">async</span> <span class="kd">function</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">LCDClient</span><span class="p">({</span>
-    <span class="nx">URL</span><span class="o">:</span> <span class="nx">TESTNET_LCD_URL</span><span class="p">,</span>
-    <span class="nx">chainID</span><span class="o">:</span> <span class="nx">TESTNET_CHAIN_ID</span><span class="p">,</span>
-    <span class="nx">gasPrices</span><span class="o">:</span> <span class="s2">&quot;0.15uluna&quot;</span><span class="p">,</span>
-    <span class="nx">gasAdjustment</span><span class="o">:</span> <span class="mf">1.4</span><span class="p">,</span>
-  <span class="p">});</span>
+<span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">LCDClient</span><span class="p">({</span><span class="w"></span>
+<span class="w">    </span><span class="nx">URL</span><span class="o">:</span><span class="w"> </span><span class="nx">TESTNET_LCD_URL</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">chainID</span><span class="o">:</span><span class="w"> </span><span class="nx">TESTNET_CHAIN_ID</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">gasPrices</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;0.15uluna&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">gasAdjustment</span><span class="o">:</span><span class="w"> </span><span class="mf">1.4</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="p">});</span><span class="w"></span>
 
-  <span class="kd">const</span> <span class="nx">keys</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="nx">test1</span><span class="o">:</span> <span class="ow">new</span> <span class="nx">MnemonicKey</span><span class="p">({</span>
-      <span class="nx">mnemonic</span><span class="o">:</span>
-        <span class="s2">&quot;notice oak worry limit wrap speak medal online prefer cluster roof addict wrist behave treat actual wasp year salad speed social layer crew genius&quot;</span><span class="p">,</span>
-    <span class="p">}),</span>
-    <span class="nx">test2</span><span class="o">:</span> <span class="ow">new</span> <span class="nx">MnemonicKey</span><span class="p">({</span>
-      <span class="nx">mnemonic</span><span class="o">:</span>
-        <span class="s2">&quot;quality vacuum heart guard buzz spike sight swarm shove special gym robust assume sudden deposit grid alcohol choice devote leader tilt noodle tide penalty&quot;</span><span class="p">,</span>
-    <span class="p">}),</span>
-    <span class="nx">test3</span><span class="o">:</span> <span class="ow">new</span> <span class="nx">MnemonicKey</span><span class="p">({</span>
-      <span class="nx">mnemonic</span><span class="o">:</span>
-        <span class="s2">&quot;symbol force gallery make bulk round subway violin worry mixture penalty kingdom boring survey tool fringe patrol sausage hard admit remember broken alien absorb&quot;</span><span class="p">,</span>
-    <span class="p">}),</span>
-  <span class="p">};</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">keys</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">test1</span><span class="o">:</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">MnemonicKey</span><span class="p">({</span><span class="w"></span>
+<span class="w">      </span><span class="nx">mnemonic</span><span class="o">:</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;notice oak worry limit wrap speak medal online prefer cluster roof addict wrist behave treat actual wasp year salad speed social layer crew genius&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="p">}),</span><span class="w"></span>
+<span class="w">    </span><span class="nx">test2</span><span class="o">:</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">MnemonicKey</span><span class="p">({</span><span class="w"></span>
+<span class="w">      </span><span class="nx">mnemonic</span><span class="o">:</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;quality vacuum heart guard buzz spike sight swarm shove special gym robust assume sudden deposit grid alcohol choice devote leader tilt noodle tide penalty&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="p">}),</span><span class="w"></span>
+<span class="w">    </span><span class="nx">test3</span><span class="o">:</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">MnemonicKey</span><span class="p">({</span><span class="w"></span>
+<span class="w">      </span><span class="nx">mnemonic</span><span class="o">:</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;symbol force gallery make bulk round subway violin worry mixture penalty kingdom boring survey tool fringe patrol sausage hard admit remember broken alien absorb&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="p">}),</span><span class="w"></span>
+<span class="w">  </span><span class="p">};</span><span class="w"></span>
 
-  <span class="kd">const</span> <span class="nx">wallet</span> <span class="o">=</span> <span class="nx">client</span><span class="p">.</span><span class="nx">wallet</span><span class="p">(</span><span class="nx">keys</span><span class="p">.</span><span class="nx">test1</span><span class="p">);</span>
-  <span class="kd">const</span> <span class="nx">output</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">MsgMultiSend</span><span class="p">.</span><span class="nx">Output</span><span class="p">(</span>
-    <span class="s2">&quot;terra199vw7724lzkwz6lf2hsx04lrxfkz09tg8dlp6r&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;1000000uluna&quot;</span>
-  <span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">wallet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">wallet</span><span class="p">(</span><span class="nx">keys</span><span class="p">.</span><span class="nx">test1</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">MsgMultiSend</span><span class="p">.</span><span class="nx">Output</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;terra199vw7724lzkwz6lf2hsx04lrxfkz09tg8dlp6r&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;1000000uluna&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="p">);</span><span class="w"></span>
 
-  <span class="kd">const</span> <span class="nx">tx</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">wallet</span><span class="p">.</span><span class="nx">createTx</span><span class="p">({</span>
-    <span class="nx">msgs</span><span class="o">:</span> <span class="p">[</span>
-      <span class="ow">new</span> <span class="nx">MsgMultiSend</span><span class="p">(</span>
-        <span class="p">[</span>
-          <span class="ow">new</span> <span class="nx">MsgMultiSend</span><span class="p">.</span><span class="nx">Input</span><span class="p">(</span><span class="nx">keys</span><span class="p">.</span><span class="nx">test1</span><span class="p">.</span><span class="nx">accAddress</span><span class="p">,</span> <span class="s2">&quot;1000000uluna&quot;</span><span class="p">),</span>
-          <span class="ow">new</span> <span class="nx">MsgMultiSend</span><span class="p">.</span><span class="nx">Input</span><span class="p">(</span><span class="nx">keys</span><span class="p">.</span><span class="nx">test2</span><span class="p">.</span><span class="nx">accAddress</span><span class="p">,</span> <span class="s2">&quot;1000000uluna&quot;</span><span class="p">),</span>
-          <span class="ow">new</span> <span class="nx">MsgMultiSend</span><span class="p">.</span><span class="nx">Input</span><span class="p">(</span><span class="nx">keys</span><span class="p">.</span><span class="nx">test3</span><span class="p">.</span><span class="nx">accAddress</span><span class="p">,</span> <span class="s2">&quot;1000000uluna&quot;</span><span class="p">),</span>
-        <span class="p">],</span>
-        <span class="p">[</span><span class="nx">output</span><span class="p">,</span> <span class="nx">output</span><span class="p">,</span> <span class="nx">output</span><span class="p">]</span>
-      <span class="p">),</span>
-    <span class="p">],</span>
-  <span class="p">});</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">tx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">createTx</span><span class="p">({</span><span class="w"></span>
+<span class="w">    </span><span class="nx">msgs</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">      </span><span class="ow">new</span><span class="w"> </span><span class="nx">MsgMultiSend</span><span class="p">(</span><span class="w"></span>
+<span class="w">        </span><span class="p">[</span><span class="w"></span>
+<span class="w">          </span><span class="ow">new</span><span class="w"> </span><span class="nx">MsgMultiSend</span><span class="p">.</span><span class="nx">Input</span><span class="p">(</span><span class="nx">keys</span><span class="p">.</span><span class="nx">test1</span><span class="p">.</span><span class="nx">accAddress</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;1000000uluna&quot;</span><span class="p">),</span><span class="w"></span>
+<span class="w">          </span><span class="ow">new</span><span class="w"> </span><span class="nx">MsgMultiSend</span><span class="p">.</span><span class="nx">Input</span><span class="p">(</span><span class="nx">keys</span><span class="p">.</span><span class="nx">test2</span><span class="p">.</span><span class="nx">accAddress</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;1000000uluna&quot;</span><span class="p">),</span><span class="w"></span>
+<span class="w">          </span><span class="ow">new</span><span class="w"> </span><span class="nx">MsgMultiSend</span><span class="p">.</span><span class="nx">Input</span><span class="p">(</span><span class="nx">keys</span><span class="p">.</span><span class="nx">test3</span><span class="p">.</span><span class="nx">accAddress</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;1000000uluna&quot;</span><span class="p">),</span><span class="w"></span>
+<span class="w">        </span><span class="p">],</span><span class="w"></span>
+<span class="w">        </span><span class="p">[</span><span class="nx">output</span><span class="p">,</span><span class="w"> </span><span class="nx">output</span><span class="p">,</span><span class="w"> </span><span class="nx">output</span><span class="p">]</span><span class="w"></span>
+<span class="w">      </span><span class="p">),</span><span class="w"></span>
+<span class="w">    </span><span class="p">],</span><span class="w"></span>
+<span class="w">  </span><span class="p">});</span><span class="w"></span>
 
-  <span class="kd">const</span> <span class="nx">signatures</span> <span class="o">=</span> <span class="k">await</span> <span class="nb">Promise</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span>
-    <span class="p">[</span><span class="s2">&quot;test1&quot;</span><span class="p">,</span> <span class="s2">&quot;test2&quot;</span><span class="p">,</span> <span class="s2">&quot;test3&quot;</span><span class="p">].</span><span class="nx">map</span><span class="p">(</span><span class="k">async</span> <span class="p">(</span><span class="nx">keyName</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-      <span class="kd">const</span> <span class="nx">key</span> <span class="o">=</span> <span class="nx">keys</span><span class="p">[</span><span class="nx">keyName</span><span class="p">]</span> <span class="kr">as</span> <span class="nx">MnemonicKey</span><span class="p">;</span>
-      <span class="kd">const</span> <span class="nx">acc</span> <span class="o">=</span> <span class="p">(</span><span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">auth</span><span class="p">.</span><span class="nx">accountInfo</span><span class="p">(</span><span class="nx">key</span><span class="p">.</span><span class="nx">accAddress</span><span class="p">))</span> <span class="kr">as</span> <span class="nx">Account</span><span class="p">;</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">signatures</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nb">Promise</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="p">[</span><span class="s2">&quot;test1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;test2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;test3&quot;</span><span class="p">].</span><span class="nx">map</span><span class="p">(</span><span class="k">async</span><span class="w"> </span><span class="p">(</span><span class="nx">keyName</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="kd">const</span><span class="w"> </span><span class="nx">key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">keys</span><span class="p">[</span><span class="nx">keyName</span><span class="p">]</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">MnemonicKey</span><span class="p">;</span><span class="w"></span>
+<span class="w">      </span><span class="kd">const</span><span class="w"> </span><span class="nx">acc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">auth</span><span class="p">.</span><span class="nx">accountInfo</span><span class="p">(</span><span class="nx">key</span><span class="p">.</span><span class="nx">accAddress</span><span class="p">))</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">Account</span><span class="p">;</span><span class="w"></span>
 
-      <span class="nx">tx</span><span class="p">.</span><span class="nx">account_number</span> <span class="o">=</span> <span class="nx">acc</span><span class="p">.</span><span class="nx">account_number</span><span class="p">;</span>
-      <span class="nx">tx</span><span class="p">.</span><span class="nx">sequence</span> <span class="o">=</span> <span class="nx">acc</span><span class="p">.</span><span class="nx">sequence</span><span class="p">;</span>
+<span class="w">      </span><span class="nx">tx</span><span class="p">.</span><span class="nx">account_number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">acc</span><span class="p">.</span><span class="nx">account_number</span><span class="p">;</span><span class="w"></span>
+<span class="w">      </span><span class="nx">tx</span><span class="p">.</span><span class="nx">sequence</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">acc</span><span class="p">.</span><span class="nx">sequence</span><span class="p">;</span><span class="w"></span>
 
-      <span class="k">return</span> <span class="nx">key</span><span class="p">.</span><span class="nx">createSignature</span><span class="p">(</span><span class="nx">tx</span><span class="p">);</span>
-    <span class="p">})</span>
-  <span class="p">);</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="nx">key</span><span class="p">.</span><span class="nx">createSignature</span><span class="p">(</span><span class="nx">tx</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">})</span><span class="w"></span>
+<span class="w">  </span><span class="p">);</span><span class="w"></span>
 
-  <span class="kd">const</span> <span class="nx">stdTx</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">StdTx</span><span class="p">(</span><span class="nx">tx</span><span class="p">.</span><span class="nx">msgs</span><span class="p">,</span> <span class="nx">tx</span><span class="p">.</span><span class="nx">fee</span><span class="p">,</span> <span class="nx">signatures</span><span class="p">,</span> <span class="nx">tx</span><span class="p">.</span><span class="nx">memo</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">stdTx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">StdTx</span><span class="p">(</span><span class="nx">tx</span><span class="p">.</span><span class="nx">msgs</span><span class="p">,</span><span class="w"> </span><span class="nx">tx</span><span class="p">.</span><span class="nx">fee</span><span class="p">,</span><span class="w"> </span><span class="nx">signatures</span><span class="p">,</span><span class="w"> </span><span class="nx">tx</span><span class="p">.</span><span class="nx">memo</span><span class="p">);</span><span class="w"></span>
 
-  <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">tx</span>
-    <span class="p">.</span><span class="nx">broadcastSync</span><span class="p">(</span><span class="nx">stdTx</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
-    <span class="p">})</span>
-    <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">err</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-      <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
-    <span class="p">});</span>
-<span class="p">}</span>
+<span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">tx</span><span class="w"></span>
+<span class="w">    </span><span class="p">.</span><span class="nx">broadcastSync</span><span class="p">(</span><span class="nx">stdTx</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">})</span><span class="w"></span>
+<span class="w">    </span><span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">});</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="nx">main</span><span class="p">().</span><span class="k">catch</span><span class="p">(</span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">);</span>
+<span class="nx">main</span><span class="p">().</span><span class="k">catch</span><span class="p">(</span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </section>

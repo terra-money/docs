@@ -550,6 +550,16 @@
       </label>
       <ul class="current">
        <li class="toctree-l4">
+        <a class="reference internal" href="getting-started.html">
+         Get started with Terra.js
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="common-examples.html">
+         Common examples
+        </a>
+       </li>
+       <li class="toctree-l4">
         <a class="reference internal" href="add-modules.html">
          Add modules
         </a>
@@ -557,11 +567,6 @@
        <li class="toctree-l4">
         <a class="reference internal" href="coin-and-coins.html">
          Coin and Coins
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="common-examples.html">
-         Common examples
         </a>
        </li>
        <li class="toctree-l4">
@@ -1293,6 +1298,16 @@
     </label>
     <ul class="current">
      <li class="toctree-l3">
+      <a class="reference internal" href="getting-started.html">
+       Get started with Terra.js
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="common-examples.html">
+       Common examples
+      </a>
+     </li>
+     <li class="toctree-l3">
       <a class="reference internal" href="add-modules.html">
        Add modules
       </a>
@@ -1300,11 +1315,6 @@
      <li class="toctree-l3">
       <a class="reference internal" href="coin-and-coins.html">
        Coin and Coins
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="common-examples.html">
-       Common examples
       </a>
      </li>
      <li class="toctree-l3">
@@ -1623,12 +1633,12 @@ title="Print to PDF"
 <section id="connect-to-a-chain">
 <h2>Connect to a chain<a class="headerlink" href="#connect-to-a-chain" title="Permalink to this headline">#</a></h2>
 <p>To perform these actions, connect to the blockchain by using an <code class="docutils literal notranslate"><span class="pre">LCDClient</span></code> object, which represents a connection to a node running the light client daemon (LCD). The LCD serves as a RESTful API over HTTP. Terra.js abstracts away the details of making raw API calls and provide an interface with which you can work.</p>
-<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span> <span class="p">{</span> <span class="nx">LCDClient</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@terra-money/terra.js&#39;</span><span class="p">;</span>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">LCDClient</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@terra-money/terra.js&#39;</span><span class="p">;</span><span class="w"></span>
 
-<span class="kd">const</span> <span class="nx">terra</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">LCDClient</span><span class="p">({</span>
-   <span class="nx">URL</span><span class="o">:</span> <span class="s1">&#39;https://lcd.terra.dev&#39;</span><span class="p">,</span>
-   <span class="nx">chainID</span><span class="o">:</span> <span class="s1">&#39;columbus-5&#39;</span>
-<span class="p">});</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">terra</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">LCDClient</span><span class="p">({</span><span class="w"></span>
+<span class="w">   </span><span class="nx">URL</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;https://lcd.terra.dev&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">   </span><span class="nx">chainID</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;columbus-5&#39;</span><span class="w"></span>
+<span class="p">});</span><span class="w"></span>
 </pre></div>
 </div>
 </section>

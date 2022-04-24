@@ -550,6 +550,16 @@
       </label>
       <ul class="current">
        <li class="toctree-l4">
+        <a class="reference internal" href="getting-started.html">
+         Get started with Terra.js
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="common-examples.html">
+         Common examples
+        </a>
+       </li>
+       <li class="toctree-l4">
         <a class="reference internal" href="add-modules.html">
          Add modules
         </a>
@@ -557,11 +567,6 @@
        <li class="toctree-l4">
         <a class="reference internal" href="coin-and-coins.html">
          Coin and Coins
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="common-examples.html">
-         Common examples
         </a>
        </li>
        <li class="toctree-l4">
@@ -1293,6 +1298,16 @@
     </label>
     <ul class="current">
      <li class="toctree-l3">
+      <a class="reference internal" href="getting-started.html">
+       Get started with Terra.js
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="common-examples.html">
+       Common examples
+      </a>
+     </li>
+     <li class="toctree-l3">
       <a class="reference internal" href="add-modules.html">
        Add modules
       </a>
@@ -1300,11 +1315,6 @@
      <li class="toctree-l3">
       <a class="reference internal" href="coin-and-coins.html">
        Coin and Coins
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="common-examples.html">
-       Common examples
       </a>
      </li>
      <li class="toctree-l3">
@@ -1649,42 +1659,42 @@ title="Print to PDF"
 <section id="upload-code">
 <h2>Upload code<a class="headerlink" href="#upload-code" title="Permalink to this headline">#</a></h2>
 <p>You will first need a compiled WASM smart contract’s binary to upload.</p>
-<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span> <span class="p">{</span> <span class="nx">LCDClient</span><span class="p">,</span> <span class="nx">MsgStoreCode</span><span class="p">,</span> <span class="nx">MnemonicKey</span><span class="p">,</span> <span class="nx">isTxError</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@terra-money/terra.js&#39;</span><span class="p">;</span>
-<span class="k">import</span> <span class="o">*</span> <span class="kr">as</span> <span class="nx">fs</span> <span class="kr">from</span> <span class="s1">&#39;fs&#39;</span><span class="p">;</span>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">LCDClient</span><span class="p">,</span><span class="w"> </span><span class="nx">MsgStoreCode</span><span class="p">,</span><span class="w"> </span><span class="nx">MnemonicKey</span><span class="p">,</span><span class="w"> </span><span class="nx">isTxError</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@terra-money/terra.js&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="k">import</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">fs</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;fs&#39;</span><span class="p">;</span><span class="w"></span>
 
-<span class="c1">// test1 key from localterra accounts</span>
-<span class="kd">const</span> <span class="nx">mk</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">MnemonicKey</span><span class="p">({</span>
-  <span class="nx">mnemonic</span><span class="o">:</span> <span class="s1">&#39;notice oak worry limit wrap speak medal online prefer cluster roof addict wrist behave treat actual wasp year salad speed social layer crew genius&#39;</span>
-<span class="p">})</span>
+<span class="c1">// test1 key from localterra accounts</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">mk</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">MnemonicKey</span><span class="p">({</span><span class="w"></span>
+<span class="w">  </span><span class="nx">mnemonic</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;notice oak worry limit wrap speak medal online prefer cluster roof addict wrist behave treat actual wasp year salad speed social layer crew genius&#39;</span><span class="w"></span>
+<span class="p">})</span><span class="w"></span>
 
-<span class="c1">// connect to localterra</span>
-<span class="kd">const</span> <span class="nx">terra</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">LCDClient</span><span class="p">({</span>
-  <span class="nx">URL</span><span class="o">:</span> <span class="s1">&#39;http://localhost:1317&#39;</span><span class="p">,</span>
-  <span class="nx">chainID</span><span class="o">:</span> <span class="s1">&#39;localterra&#39;</span>
-<span class="p">});</span>
+<span class="c1">// connect to localterra</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">terra</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">LCDClient</span><span class="p">({</span><span class="w"></span>
+<span class="w">  </span><span class="nx">URL</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;http://localhost:1317&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">chainID</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;localterra&#39;</span><span class="w"></span>
+<span class="p">});</span><span class="w"></span>
 
-<span class="kd">const</span> <span class="nx">wallet</span> <span class="o">=</span> <span class="nx">terra</span><span class="p">.</span><span class="nx">wallet</span><span class="p">(</span><span class="nx">mk</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">wallet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">terra</span><span class="p">.</span><span class="nx">wallet</span><span class="p">(</span><span class="nx">mk</span><span class="p">);</span><span class="w"></span>
 
-<span class="kd">const</span> <span class="nx">storeCode</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">MsgStoreCode</span><span class="p">(</span>
-  <span class="nx">wallet</span><span class="p">.</span><span class="nx">key</span><span class="p">.</span><span class="nx">accAddress</span><span class="p">,</span>
-  <span class="nx">fs</span><span class="p">.</span><span class="nx">readFileSync</span><span class="p">(</span><span class="s1">&#39;contract.wasm&#39;</span><span class="p">).</span><span class="nx">toString</span><span class="p">(</span><span class="s1">&#39;base64&#39;</span><span class="p">)</span>
-<span class="p">);</span>
-<span class="kd">const</span> <span class="nx">storeCodeTx</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">wallet</span><span class="p">.</span><span class="nx">createAndSignTx</span><span class="p">({</span>
-  <span class="nx">msgs</span><span class="o">:</span> <span class="p">[</span><span class="nx">storeCode</span><span class="p">],</span>
-<span class="p">});</span>
-<span class="kd">const</span> <span class="nx">storeCodeTxResult</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">terra</span><span class="p">.</span><span class="nx">tx</span><span class="p">.</span><span class="nx">broadcast</span><span class="p">(</span><span class="nx">storeCodeTx</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">storeCode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">MsgStoreCode</span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">key</span><span class="p">.</span><span class="nx">accAddress</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">fs</span><span class="p">.</span><span class="nx">readFileSync</span><span class="p">(</span><span class="s1">&#39;contract.wasm&#39;</span><span class="p">).</span><span class="nx">toString</span><span class="p">(</span><span class="s1">&#39;base64&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="p">);</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">storeCodeTx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">createAndSignTx</span><span class="p">({</span><span class="w"></span>
+<span class="w">  </span><span class="nx">msgs</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nx">storeCode</span><span class="p">],</span><span class="w"></span>
+<span class="p">});</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">storeCodeTxResult</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">terra</span><span class="p">.</span><span class="nx">tx</span><span class="p">.</span><span class="nx">broadcast</span><span class="p">(</span><span class="nx">storeCodeTx</span><span class="p">);</span><span class="w"></span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">storeCodeTxResult</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">storeCodeTxResult</span><span class="p">);</span><span class="w"></span>
 
-<span class="k">if</span> <span class="p">(</span><span class="nx">isTxError</span><span class="p">(</span><span class="nx">storeCodeTxResult</span><span class="p">))</span> <span class="p">{</span>
-  <span class="k">throw</span> <span class="ow">new</span> <span class="ne">Error</span><span class="p">(</span>
-    <span class="sb">`store code failed. code: </span><span class="si">${</span><span class="nx">storeCodeTxResult</span><span class="p">.</span><span class="nx">code</span><span class="si">}</span><span class="sb">, codespace: </span><span class="si">${</span><span class="nx">storeCodeTxResult</span><span class="p">.</span><span class="nx">codespace</span><span class="si">}</span><span class="sb">, raw_log: </span><span class="si">${</span><span class="nx">storeCodeTxResult</span><span class="p">.</span><span class="nx">raw_log</span><span class="si">}</span><span class="sb">`</span>
-  <span class="p">);</span>
-<span class="p">}</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">isTxError</span><span class="p">(</span><span class="nx">storeCodeTxResult</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="sb">`store code failed. code: </span><span class="si">${</span><span class="nx">storeCodeTxResult</span><span class="p">.</span><span class="nx">code</span><span class="si">}</span><span class="sb">, codespace: </span><span class="si">${</span><span class="nx">storeCodeTxResult</span><span class="p">.</span><span class="nx">codespace</span><span class="si">}</span><span class="sb">, raw_log: </span><span class="si">${</span><span class="nx">storeCodeTxResult</span><span class="p">.</span><span class="nx">raw_log</span><span class="si">}</span><span class="sb">`</span><span class="w"></span>
+<span class="w">  </span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="kd">const</span> <span class="p">{</span>
-  <span class="nx">store_code</span><span class="o">:</span> <span class="p">{</span> <span class="nx">code_id</span> <span class="p">},</span>
-<span class="p">}</span> <span class="o">=</span> <span class="nx">storeCodeTxResult</span><span class="p">.</span><span class="nx">logs</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">eventsByType</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">store_code</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">code_id</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
+<span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">storeCodeTxResult</span><span class="p">.</span><span class="nx">logs</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">eventsByType</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
@@ -1692,65 +1702,65 @@ title="Print to PDF"
 <h2>Create a contract<a class="headerlink" href="#create-a-contract" title="Permalink to this headline">#</a></h2>
 <p>For Terra smart contracts, there is a distinction between uploading contract code and creating a contract. This allows multiple contracts to share the same code if there are only minor variations in their logic which can be configured at contract creation. This configuration is passed in an <strong>InitMsg</strong>, and provides the initial state for the contract.</p>
 <p>To create (instantiate) a smart contract, you must first know the code ID of an uploaded code. You will reference it in a <code class="docutils literal notranslate"><span class="pre">MsgInstantiateContract</span></code> alongside the InitMsg to create the contract. Upon successful creation, your contract will be located at an address that you specify.</p>
-<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span> <span class="p">{</span> <span class="nx">MsgInstantiateContract</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@terra-money/terra.js&#39;</span><span class="p">;</span>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">MsgInstantiateContract</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@terra-money/terra.js&#39;</span><span class="p">;</span><span class="w"></span>
 
 
-<span class="kd">const</span> <span class="nx">instantiate</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">MsgInstantiateContract</span><span class="p">(</span>
-  <span class="nx">wallet</span><span class="p">.</span><span class="nx">key</span><span class="p">.</span><span class="nx">accAddress</span><span class="p">,</span>
-  <span class="o">+</span><span class="nx">code_id</span><span class="p">[</span><span class="mf">0</span><span class="p">],</span> <span class="c1">// code ID</span>
-  <span class="p">{</span>
-    <span class="nx">count</span>: <span class="kt">0</span><span class="p">,</span>
-  <span class="p">},</span> <span class="c1">// InitMsg</span>
-  <span class="p">{</span> <span class="nx">uluna</span>: <span class="kt">10000000</span><span class="p">,</span> <span class="nx">ukrw</span>: <span class="kt">1000000</span> <span class="p">},</span> <span class="c1">// init coins</span>
-  <span class="kc">false</span> <span class="c1">// migratable</span>
-<span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">instantiate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">MsgInstantiateContract</span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">key</span><span class="p">.</span><span class="nx">accAddress</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="o">+</span><span class="nx">code_id</span><span class="p">[</span><span class="mf">0</span><span class="p">],</span><span class="w"> </span><span class="c1">// code ID</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">count</span><span class="o">:</span><span class="w"> </span><span class="kt">0</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="p">},</span><span class="w"> </span><span class="c1">// InitMsg</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">uluna</span><span class="o">:</span><span class="w"> </span><span class="kt">10000000</span><span class="p">,</span><span class="w"> </span><span class="nx">ukrw</span><span class="o">:</span><span class="w"> </span><span class="kt">1000000</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="c1">// init coins</span><span class="w"></span>
+<span class="w">  </span><span class="kc">false</span><span class="w"> </span><span class="c1">// migratable</span><span class="w"></span>
+<span class="p">);</span><span class="w"></span>
 
-<span class="kd">const</span> <span class="nx">instantiateTx</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">wallet</span><span class="p">.</span><span class="nx">createAndSignTx</span><span class="p">({</span>
-  <span class="nx">msgs</span><span class="o">:</span> <span class="p">[</span><span class="nx">instantiate</span><span class="p">],</span>
-<span class="p">});</span>
-<span class="kd">const</span> <span class="nx">instantiateTxResult</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">terra</span><span class="p">.</span><span class="nx">tx</span><span class="p">.</span><span class="nx">broadcast</span><span class="p">(</span><span class="nx">instantiateTx</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">instantiateTx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">createAndSignTx</span><span class="p">({</span><span class="w"></span>
+<span class="w">  </span><span class="nx">msgs</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nx">instantiate</span><span class="p">],</span><span class="w"></span>
+<span class="p">});</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">instantiateTxResult</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">terra</span><span class="p">.</span><span class="nx">tx</span><span class="p">.</span><span class="nx">broadcast</span><span class="p">(</span><span class="nx">instantiateTx</span><span class="p">);</span><span class="w"></span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">instantiateTxResult</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">instantiateTxResult</span><span class="p">);</span><span class="w"></span>
 
-<span class="k">if</span> <span class="p">(</span><span class="nx">isTxError</span><span class="p">(</span><span class="nx">instantiateTxResult</span><span class="p">))</span> <span class="p">{</span>
-  <span class="k">throw</span> <span class="ow">new</span> <span class="ne">Error</span><span class="p">(</span>
-    <span class="sb">`instantiate failed. code: </span><span class="si">${</span><span class="nx">instantiateTxResult</span><span class="p">.</span><span class="nx">code</span><span class="si">}</span><span class="sb">, codespace: </span><span class="si">${</span><span class="nx">instantiateTxResult</span><span class="p">.</span><span class="nx">codespace</span><span class="si">}</span><span class="sb">, raw_log: </span><span class="si">${</span><span class="nx">instantiateTxResult</span><span class="p">.</span><span class="nx">raw_log</span><span class="si">}</span><span class="sb">`</span>
-  <span class="p">);</span>
-<span class="p">}</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">isTxError</span><span class="p">(</span><span class="nx">instantiateTxResult</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="sb">`instantiate failed. code: </span><span class="si">${</span><span class="nx">instantiateTxResult</span><span class="p">.</span><span class="nx">code</span><span class="si">}</span><span class="sb">, codespace: </span><span class="si">${</span><span class="nx">instantiateTxResult</span><span class="p">.</span><span class="nx">codespace</span><span class="si">}</span><span class="sb">, raw_log: </span><span class="si">${</span><span class="nx">instantiateTxResult</span><span class="p">.</span><span class="nx">raw_log</span><span class="si">}</span><span class="sb">`</span><span class="w"></span>
+<span class="w">  </span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="kd">const</span> <span class="p">{</span>
-  <span class="nx">instantiate_contract</span><span class="o">:</span> <span class="p">{</span> <span class="nx">contract_address</span> <span class="p">},</span>
-<span class="p">}</span> <span class="o">=</span> <span class="nx">instantiateTxResult</span><span class="p">.</span><span class="nx">logs</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">eventsByType</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">instantiate_contract</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">contract_address</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
+<span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">instantiateTxResult</span><span class="p">.</span><span class="nx">logs</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">eventsByType</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
 <section id="execute-a-contract">
 <h2>Execute a contract<a class="headerlink" href="#execute-a-contract" title="Permalink to this headline">#</a></h2>
 <p>Smart contracts respond to JSON messages called <strong>HandleMsg</strong> which can exist as different types. The smart contract writer should provide any end-users of the smart contract with the expected format of all the varieties of HandleMsg the contract is supposed to understand, in the form of a JSON schema. The schema thus provides an analog to Ethereum contracts’ ABI.</p>
-<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span> <span class="p">{</span> <span class="nx">MsgExecuteContract</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@terra-money/terra.js&#39;</span><span class="p">;</span>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">MsgExecuteContract</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@terra-money/terra.js&#39;</span><span class="p">;</span><span class="w"></span>
 
-<span class="kd">const</span> <span class="nx">execute</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">MsgExecuteContract</span><span class="p">(</span>
-  <span class="nx">wallet</span><span class="p">.</span><span class="nx">key</span><span class="p">.</span><span class="nx">accAddress</span><span class="p">,</span> <span class="c1">// sender</span>
-  <span class="nx">contract_address</span><span class="p">[</span><span class="mf">0</span><span class="p">],</span> <span class="c1">// contract account address</span>
-  <span class="p">{</span> <span class="p">...</span><span class="nx">executeMsg</span> <span class="p">},</span> <span class="c1">// handle msg</span>
-  <span class="p">{</span> <span class="nx">uluna</span>: <span class="kt">100000</span> <span class="p">}</span> <span class="c1">// coins</span>
-<span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">execute</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">MsgExecuteContract</span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">key</span><span class="p">.</span><span class="nx">accAddress</span><span class="p">,</span><span class="w"> </span><span class="c1">// sender</span><span class="w"></span>
+<span class="w">  </span><span class="nx">contract_address</span><span class="p">[</span><span class="mf">0</span><span class="p">],</span><span class="w"> </span><span class="c1">// contract account address</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="nx">executeMsg</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="c1">// handle msg</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">uluna</span><span class="o">:</span><span class="w"> </span><span class="kt">100000</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="c1">// coins</span><span class="w"></span>
+<span class="p">);</span><span class="w"></span>
 
-<span class="kd">const</span> <span class="nx">executeTx</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">wallet</span><span class="p">.</span><span class="nx">createAndSignTx</span><span class="p">({</span>
-  <span class="nx">msgs</span><span class="o">:</span> <span class="p">[</span><span class="nx">execute</span><span class="p">]</span>
-<span class="p">});</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">executeTx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">createAndSignTx</span><span class="p">({</span><span class="w"></span>
+<span class="w">  </span><span class="nx">msgs</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nx">execute</span><span class="p">]</span><span class="w"></span>
+<span class="p">});</span><span class="w"></span>
 
-<span class="kd">const</span> <span class="nx">executeTxResult</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">terra</span><span class="p">.</span><span class="nx">tx</span><span class="p">.</span><span class="nx">broadcast</span><span class="p">(</span><span class="nx">executeTx</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">executeTxResult</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">terra</span><span class="p">.</span><span class="nx">tx</span><span class="p">.</span><span class="nx">broadcast</span><span class="p">(</span><span class="nx">executeTx</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
 <section id="query-data-from-a-contract">
 <h2>Query data from a contract<a class="headerlink" href="#query-data-from-a-contract" title="Permalink to this headline">#</a></h2>
 <p>A contract can define a query handler, which understands requests for data specified in a JSON message called a QueryMsg. Unlike the message handler, the query handler cannot modify the contract’s or blockchain’s state – it is a readonly operation. Therefore, a querying data from a contract does not use a message and transaction, but works directly through the <code class="docutils literal notranslate"><span class="pre">LCDClient</span></code> API.</p>
-<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">terra</span><span class="p">.</span><span class="nx">wasm</span><span class="p">.</span><span class="nx">contractQuery</span><span class="p">(</span>
-  <span class="nx">contract_address</span><span class="p">[</span><span class="mf">0</span><span class="p">],</span>
-  <span class="p">{</span> <span class="nx">query</span><span class="o">:</span> <span class="p">{</span> <span class="nx">queryMsgArguments</span> <span class="p">}</span> <span class="p">}</span> <span class="c1">// query msg</span>
-<span class="p">);</span>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">terra</span><span class="p">.</span><span class="nx">wasm</span><span class="p">.</span><span class="nx">contractQuery</span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="nx">contract_address</span><span class="p">[</span><span class="mf">0</span><span class="p">],</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">query</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">queryMsgArguments</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="c1">// query msg</span><span class="w"></span>
+<span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </section>

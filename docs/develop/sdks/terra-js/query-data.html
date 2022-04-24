@@ -550,6 +550,16 @@
       </label>
       <ul class="current">
        <li class="toctree-l4">
+        <a class="reference internal" href="getting-started.html">
+         Get started with Terra.js
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="common-examples.html">
+         Common examples
+        </a>
+       </li>
+       <li class="toctree-l4">
         <a class="reference internal" href="add-modules.html">
          Add modules
         </a>
@@ -557,11 +567,6 @@
        <li class="toctree-l4">
         <a class="reference internal" href="coin-and-coins.html">
          Coin and Coins
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="common-examples.html">
-         Common examples
         </a>
        </li>
        <li class="toctree-l4">
@@ -1293,6 +1298,16 @@
     </label>
     <ul class="current">
      <li class="toctree-l3">
+      <a class="reference internal" href="getting-started.html">
+       Get started with Terra.js
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="common-examples.html">
+       Common examples
+      </a>
+     </li>
+     <li class="toctree-l3">
       <a class="reference internal" href="add-modules.html">
        Add modules
       </a>
@@ -1300,11 +1315,6 @@
      <li class="toctree-l3">
       <a class="reference internal" href="coin-and-coins.html">
        Coin and Coins
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="common-examples.html">
-       Common examples
       </a>
      </li>
      <li class="toctree-l3">
@@ -1579,14 +1589,14 @@ title="Print to PDF"
   <section class="tex2jax_ignore mathjax_ignore" id="query-data">
 <h1>Query data<a class="headerlink" href="#query-data" title="Permalink to this headline">#</a></h1>
 <p>After you’re connected to the blockchain via an <code class="docutils literal notranslate"><span class="pre">LCDClient</span></code> instance, you can query data from it. Data access is organized into various module APIs, which are accessible from within the <code class="docutils literal notranslate"><span class="pre">LCDClient</span></code> instance. Because they make HTTP requests in the background, they are Promises that can be awaited in order to not block during network IO.</p>
-<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">async</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">marketParams</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">terra</span><span class="p">.</span><span class="nx">market</span><span class="p">.</span><span class="nx">parameters</span><span class="p">();</span>
-  <span class="kd">const</span> <span class="nx">exchangeRates</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">terra</span><span class="p">.</span><span class="nx">oracle</span><span class="p">.</span><span class="nx">exchangeRates</span><span class="p">();</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">marketParams</span><span class="p">.</span><span class="nx">base_pool</span><span class="p">);</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">exchangeRates</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;uusd&#39;</span><span class="p">));</span>
-<span class="p">}</span>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">async</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">marketParams</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">terra</span><span class="p">.</span><span class="nx">market</span><span class="p">.</span><span class="nx">parameters</span><span class="p">();</span><span class="w"></span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">exchangeRates</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">terra</span><span class="p">.</span><span class="nx">oracle</span><span class="p">.</span><span class="nx">exchangeRates</span><span class="p">();</span><span class="w"></span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">marketParams</span><span class="p">.</span><span class="nx">base_pool</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">exchangeRates</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;uusd&#39;</span><span class="p">));</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="nx">main</span><span class="p">();</span>
+<span class="nx">main</span><span class="p">();</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Each module has its own set of querying functions. To get a comprehensive list, explore the module documentation:</p>

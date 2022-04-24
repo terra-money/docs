@@ -550,6 +550,16 @@
       </label>
       <ul class="current">
        <li class="toctree-l4">
+        <a class="reference internal" href="getting-started.html">
+         Get started with Terra.js
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="common-examples.html">
+         Common examples
+        </a>
+       </li>
+       <li class="toctree-l4">
         <a class="reference internal" href="add-modules.html">
          Add modules
         </a>
@@ -557,11 +567,6 @@
        <li class="toctree-l4">
         <a class="reference internal" href="coin-and-coins.html">
          Coin and Coins
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="common-examples.html">
-         Common examples
         </a>
        </li>
        <li class="toctree-l4">
@@ -1293,6 +1298,16 @@
     </label>
     <ul class="current">
      <li class="toctree-l3">
+      <a class="reference internal" href="getting-started.html">
+       Get started with Terra.js
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="common-examples.html">
+       Common examples
+      </a>
+     </li>
+     <li class="toctree-l3">
       <a class="reference internal" href="add-modules.html">
        Add modules
       </a>
@@ -1300,11 +1315,6 @@
      <li class="toctree-l3">
       <a class="reference internal" href="coin-and-coins.html">
        Coin and Coins
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="common-examples.html">
-       Common examples
       </a>
      </li>
      <li class="toctree-l3">
@@ -1691,15 +1701,15 @@ title="Print to PDF"
 <section id="rawkey">
 <h2><code class="docutils literal notranslate"><span class="pre">RawKey</span></code><a class="headerlink" href="#rawkey" title="Permalink to this headline">#</a></h2>
 <p>The most basic implementation of a <code class="docutils literal notranslate"><span class="pre">Key</span></code> is a <code class="docutils literal notranslate"><span class="pre">RawKey</span></code>, which is created using a plain private key. <code class="docutils literal notranslate"><span class="pre">RawKey</span></code>  wraps the 32 bytes of a private key and supplies a corresponding public key:</p>
-<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span> <span class="p">{</span> <span class="nx">RawKey</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@terra-money/terra.js&#39;</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span><span class="nx">randomBytes</span><span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;crypto&#39;</span>
-<span class="kd">let</span> <span class="nx">see</span> <span class="o">=</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">;</span>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">RawKey</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@terra-money/terra.js&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="nx">randomBytes</span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;crypto&#39;</span><span class="w"></span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">see</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">;</span><span class="w"></span>
 
-<span class="kd">const</span> <span class="nx">raw_key</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">RawKey</span><span class="p">(</span><span class="nx">randomBytes</span><span class="p">(</span><span class="mf">32</span><span class="p">));</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">raw_key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">RawKey</span><span class="p">(</span><span class="nx">randomBytes</span><span class="p">(</span><span class="mf">32</span><span class="p">));</span><span class="w"></span>
 
-<span class="nx">see</span><span class="p">(</span><span class="nx">raw_key</span><span class="p">.</span><span class="nx">publicKey</span><span class="p">)</span><span class="c1">//SimplePublicKey { key: &#39;AlNdglClnFJMwdeFGlfFTAwbx7rxKxWbgN/lwj5mQ3vw&#39; }</span>
-<span class="nx">see</span><span class="p">(</span><span class="nx">raw_key</span><span class="p">.</span><span class="nx">privateKey</span><span class="p">)</span><span class="c1">//&lt;Buffer 53 e2 53 0b 29 c4 9d 54 b3 66 a4 61 7b d3 e2 6e 4c e5 41 cd 12 a6 e9 27 8a 97 61 1c 55 6e cd 4c&gt;</span>
-<span class="nx">see</span><span class="p">(</span><span class="nx">raw_key</span><span class="p">.</span><span class="nx">accAddress</span><span class="p">)</span><span class="c1">//terra1ptj88nsljjr9agx07hahu6etv43acksy2q44sd</span>
+<span class="nx">see</span><span class="p">(</span><span class="nx">raw_key</span><span class="p">.</span><span class="nx">publicKey</span><span class="p">)</span><span class="c1">//SimplePublicKey { key: &#39;AlNdglClnFJMwdeFGlfFTAwbx7rxKxWbgN/lwj5mQ3vw&#39; }</span><span class="w"></span>
+<span class="nx">see</span><span class="p">(</span><span class="nx">raw_key</span><span class="p">.</span><span class="nx">privateKey</span><span class="p">)</span><span class="c1">//&lt;Buffer 53 e2 53 0b 29 c4 9d 54 b3 66 a4 61 7b d3 e2 6e 4c e5 41 cd 12 a6 e9 27 8a 97 61 1c 55 6e cd 4c&gt;</span><span class="w"></span>
+<span class="nx">see</span><span class="p">(</span><span class="nx">raw_key</span><span class="p">.</span><span class="nx">accAddress</span><span class="p">)</span><span class="c1">//terra1ptj88nsljjr9agx07hahu6etv43acksy2q44sd</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
@@ -1712,34 +1722,34 @@ A <code class="docutils literal notranslate"><span class="pre">MnemonicKey</span
 <li><p>Supply only a 24-word BIP-39 mnemonic to generate a corresponding key.</p></li>
 <li><p>Supply a full HD path (using either a  random or particular mnenomic).</p></li>
 </ul>
-<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span> <span class="p">{</span> <span class="nx">MnemonicKey</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@terra-money/terra.js&#39;</span><span class="p">;</span>
-<span class="kd">const</span> <span class="nx">see</span> <span class="o">=</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">;</span>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">MnemonicKey</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@terra-money/terra.js&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">see</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">;</span><span class="w"></span>
 
-<span class="kd">const</span> <span class="nx">MNE_KEY_RANDOM</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">MnemonicKey</span><span class="p">();</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">MNE_KEY_RANDOM</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">MnemonicKey</span><span class="p">();</span><span class="w"></span>
 
-<span class="nx">see</span><span class="p">(</span><span class="nx">MNE_KEY_RANDOM</span><span class="p">.</span><span class="nx">mnemonic</span><span class="p">)</span>  <span class="c1">// famous { ... } myth world size</span>
-<span class="nx">see</span><span class="p">(</span><span class="nx">MNE_KEY_RANDOM</span><span class="p">.</span><span class="nx">privateKey</span><span class="p">)</span> <span class="c1">// &lt;Buffer 4f e5 { ... } 51 a4 41 9c&gt; </span>
-<span class="nx">see</span><span class="p">(</span><span class="nx">MNE_KEY_RANDOM</span><span class="p">.</span><span class="nx">publicKey</span><span class="p">)</span> <span class="c1">// SimplePublicKey { key: &#39;A8TNSJhn6gGHgY2ohJnkOaZz7Y0FaW/QeytGBaqCLIJU&#39; }</span>
-<span class="nx">see</span><span class="p">(</span><span class="nx">MNE_KEY_RANDOM</span><span class="p">.</span><span class="nx">accAddress</span><span class="p">)</span> <span class="c1">// terra1l63e8q7yjyd77qanwfgvl43ulagf34a2xzcuv4</span>
+<span class="nx">see</span><span class="p">(</span><span class="nx">MNE_KEY_RANDOM</span><span class="p">.</span><span class="nx">mnemonic</span><span class="p">)</span><span class="w">  </span><span class="c1">// famous { ... } myth world size</span><span class="w"></span>
+<span class="nx">see</span><span class="p">(</span><span class="nx">MNE_KEY_RANDOM</span><span class="p">.</span><span class="nx">privateKey</span><span class="p">)</span><span class="w"> </span><span class="c1">// &lt;Buffer 4f e5 { ... } 51 a4 41 9c&gt; </span><span class="w"></span>
+<span class="nx">see</span><span class="p">(</span><span class="nx">MNE_KEY_RANDOM</span><span class="p">.</span><span class="nx">publicKey</span><span class="p">)</span><span class="w"> </span><span class="c1">// SimplePublicKey { key: &#39;A8TNSJhn6gGHgY2ohJnkOaZz7Y0FaW/QeytGBaqCLIJU&#39; }</span><span class="w"></span>
+<span class="nx">see</span><span class="p">(</span><span class="nx">MNE_KEY_RANDOM</span><span class="p">.</span><span class="nx">accAddress</span><span class="p">)</span><span class="w"> </span><span class="c1">// terra1l63e8q7yjyd77qanwfgvl43ulagf34a2xzcuv4</span><span class="w"></span>
 
 
-<span class="kd">const</span> <span class="nx">MNE_KEY_EXACT</span>  <span class="o">=</span> <span class="ow">new</span> <span class="nx">MnemonicKey</span><span class="p">({</span>
-  <span class="nx">mnemonic</span><span class="o">:</span> <span class="s2">&quot;squirrel future level fan world organ daring thing color orange sausage cross fault interest blast wink audit unfair satoshi solution track indoor sun edit&quot;</span><span class="p">,</span>
-<span class="p">});</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">MNE_KEY_EXACT</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">MnemonicKey</span><span class="p">({</span><span class="w"></span>
+<span class="w">  </span><span class="nx">mnemonic</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;squirrel future level fan world organ daring thing color orange sausage cross fault interest blast wink audit unfair satoshi solution track indoor sun edit&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="p">});</span><span class="w"></span>
 
-<span class="kd">const</span> <span class="nx">MNE_KEY_RANDOM_WITH_HD_PATH</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">MnemonicKey</span><span class="p">({</span>
-  <span class="c1">// mnemonic: &quot;&quot;,   // optional, will be random if not provided</span>
-  <span class="nx">coinType</span>: <span class="kt">330</span><span class="p">,</span>               <span class="c1">// optional, default</span>
-  <span class="nx">account</span> : <span class="kt">0</span><span class="p">,</span>                 <span class="c1">// optional, default</span>
-  <span class="nx">index</span>   : <span class="kt">0</span><span class="p">,</span>                 <span class="c1">// optional, default</span>
-<span class="p">});</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">MNE_KEY_RANDOM_WITH_HD_PATH</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">MnemonicKey</span><span class="p">({</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// mnemonic: &quot;&quot;,   // optional, will be random if not provided</span><span class="w"></span>
+<span class="w">  </span><span class="nx">coinType</span><span class="o">:</span><span class="w"> </span><span class="kt">330</span><span class="p">,</span><span class="w">               </span><span class="c1">// optional, default</span><span class="w"></span>
+<span class="w">  </span><span class="nx">account</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">0</span><span class="p">,</span><span class="w">                 </span><span class="c1">// optional, default</span><span class="w"></span>
+<span class="w">  </span><span class="nx">index</span><span class="w">   </span><span class="o">:</span><span class="w"> </span><span class="kt">0</span><span class="p">,</span><span class="w">                 </span><span class="c1">// optional, default</span><span class="w"></span>
+<span class="p">});</span><span class="w"></span>
 
-<span class="kd">const</span> <span class="nx">MNE_KEY_FULLY_RESOLVED</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">MnemonicKey</span><span class="p">({</span>
-  <span class="nx">mnemonic</span><span class="o">:</span> <span class="s2">&quot;squirrel future level fan world organ daring thing color orange sausage cross fault interest blast wink audit unfair satoshi solution track indoor sun edit&quot;</span><span class="p">,</span>   
-  <span class="nx">coinType</span>: <span class="kt">330</span><span class="p">,</span>               
-  <span class="nx">account</span> : <span class="kt">0</span><span class="p">,</span>                 
-  <span class="nx">index</span>   : <span class="kt">0</span><span class="p">,</span>                
-<span class="p">});</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">MNE_KEY_FULLY_RESOLVED</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">MnemonicKey</span><span class="p">({</span><span class="w"></span>
+<span class="w">  </span><span class="nx">mnemonic</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;squirrel future level fan world organ daring thing color orange sausage cross fault interest blast wink audit unfair satoshi solution track indoor sun edit&quot;</span><span class="p">,</span><span class="w">   </span>
+<span class="w">  </span><span class="nx">coinType</span><span class="o">:</span><span class="w"> </span><span class="kt">330</span><span class="p">,</span><span class="w">               </span>
+<span class="w">  </span><span class="nx">account</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">0</span><span class="p">,</span><span class="w">                 </span>
+<span class="w">  </span><span class="nx">index</span><span class="w">   </span><span class="o">:</span><span class="w"> </span><span class="kt">0</span><span class="p">,</span><span class="w">                </span>
+<span class="p">});</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
@@ -1749,29 +1759,29 @@ A <code class="docutils literal notranslate"><span class="pre">MnemonicKey</span
 <div><p>NOTE: This keytype requires you to have <code class="docutils literal notranslate"><span class="pre">terrad</span></code> installed.</p>
 </div></blockquote>
 <p>If you want to use keys stored in your <code class="docutils literal notranslate"><span class="pre">terrad</span></code> installation’s keyring to sign transactions, you can use <code class="docutils literal notranslate"><span class="pre">CLIKey</span></code>. This approach also works for keys that have been registered in your keyring with <code class="docutils literal notranslate"><span class="pre">--ledger</span></code>, using a Ledger hardware device.</p>
-<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span> <span class="p">{</span> <span class="nx">StdFee</span><span class="p">,</span> <span class="nx">MsgSend</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@terra-money/terra.js&#39;</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">LocalTerra</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@terra-money/terra.js&#39;</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">CLIKey</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@terra-money/terra.js&#39;</span><span class="p">;</span>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">StdFee</span><span class="p">,</span><span class="w"> </span><span class="nx">MsgSend</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@terra-money/terra.js&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">LocalTerra</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@terra-money/terra.js&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">CLIKey</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@terra-money/terra.js&#39;</span><span class="p">;</span><span class="w"></span>
 
-<span class="kd">const</span> <span class="nx">terra</span>     <span class="o">=</span> <span class="ow">new</span> <span class="nx">LocalTerra</span><span class="p">();</span>
-<span class="kd">const</span> <span class="p">{</span> <span class="nx">test1</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">terra</span><span class="p">.</span><span class="nx">wallets</span><span class="p">;</span>
-<span class="kd">const</span> <span class="nx">cliKey</span>    <span class="o">=</span> <span class="ow">new</span> <span class="nx">CLIKey</span><span class="p">(</span><span class="s1">&#39;test111&#39;</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">cliWallet</span> <span class="o">=</span> <span class="nx">terra</span><span class="p">.</span><span class="nx">wallet</span><span class="p">(</span><span class="nx">cliKey</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">terra</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">LocalTerra</span><span class="p">();</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">test1</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">terra</span><span class="p">.</span><span class="nx">wallets</span><span class="p">;</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">cliKey</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">CLIKey</span><span class="p">(</span><span class="s1">&#39;test111&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">cliWallet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">terra</span><span class="p">.</span><span class="nx">wallet</span><span class="p">(</span><span class="nx">cliKey</span><span class="p">);</span><span class="w"></span>
 
-<span class="kd">const</span> <span class="nx">send</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">MsgSend</span><span class="p">(</span><span class="nx">cliWallet</span><span class="p">.</span><span class="nx">key</span><span class="p">.</span><span class="nx">accAddress</span><span class="p">,</span> <span class="nx">test1</span><span class="p">.</span><span class="nx">key</span><span class="p">.</span><span class="nx">accAddress</span><span class="p">,</span> <span class="p">{</span>
-  <span class="nx">uluna</span>: <span class="kt">100000</span><span class="p">,</span>
-<span class="p">});</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">send</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">MsgSend</span><span class="p">(</span><span class="nx">cliWallet</span><span class="p">.</span><span class="nx">key</span><span class="p">.</span><span class="nx">accAddress</span><span class="p">,</span><span class="w"> </span><span class="nx">test1</span><span class="p">.</span><span class="nx">key</span><span class="p">.</span><span class="nx">accAddress</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">uluna</span><span class="o">:</span><span class="w"> </span><span class="kt">100000</span><span class="p">,</span><span class="w"></span>
+<span class="p">});</span><span class="w"></span>
 
-<span class="k">async</span> <span class="kd">function</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">tx</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">cliWallet</span><span class="p">.</span><span class="nx">createAndSignTx</span><span class="p">({</span>
-    <span class="nx">msgs</span><span class="o">:</span> <span class="p">[</span><span class="nx">send</span><span class="p">],</span>
-    <span class="nx">fee</span>: <span class="kt">new</span> <span class="nx">StdFee</span><span class="p">(</span><span class="mf">100000</span><span class="p">,</span> <span class="p">{</span> <span class="nx">uluna</span>: <span class="kt">100000</span> <span class="p">}),</span>
-  <span class="p">});</span>
+<span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">tx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">cliWallet</span><span class="p">.</span><span class="nx">createAndSignTx</span><span class="p">({</span><span class="w"></span>
+<span class="w">    </span><span class="nx">msgs</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nx">send</span><span class="p">],</span><span class="w"></span>
+<span class="w">    </span><span class="nx">fee</span><span class="o">:</span><span class="w"> </span><span class="kt">new</span><span class="w"> </span><span class="nx">StdFee</span><span class="p">(</span><span class="mf">100000</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">uluna</span><span class="o">:</span><span class="w"> </span><span class="kt">100000</span><span class="w"> </span><span class="p">}),</span><span class="w"></span>
+<span class="w">  </span><span class="p">});</span><span class="w"></span>
 
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">await</span> <span class="nx">terra</span><span class="p">.</span><span class="nx">tx</span><span class="p">.</span><span class="nx">broadcast</span><span class="p">(</span><span class="nx">tx</span><span class="p">));</span>
-<span class="p">}</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">await</span><span class="w"> </span><span class="nx">terra</span><span class="p">.</span><span class="nx">tx</span><span class="p">.</span><span class="nx">broadcast</span><span class="p">(</span><span class="nx">tx</span><span class="p">));</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="nx">main</span><span class="p">().</span><span class="k">catch</span><span class="p">(</span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">);</span>
+<span class="nx">main</span><span class="p">().</span><span class="k">catch</span><span class="p">(</span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <section id="specifying-an-hd-path">
@@ -1783,10 +1793,10 @@ A <code class="docutils literal notranslate"><span class="pre">MnemonicKey</span
 <p>Cosmos blockchains support hierarchical deterministic key generation (HD keys) for deriving multiple cryptographic keypairs from a single secret value. This allows the user to use different keypairs for different accounts on one blockchain and create accounts on multiple blockchains without having to manage multiple secrets.</p>
 </div>
 <p>For example, to recover a mnemonic with the old Terra wallet HD path using coin type for ATOM (118):</p>
-<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">mne_key</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">MnemonicKey</span><span class="p">({</span>
-  <span class="nx">mnemonic</span><span class="o">:</span> <span class="s2">&quot;[ Your BIP39 mnemonic ]&quot;</span><span class="p">,</span>
-  <span class="nx">coinType</span>: <span class="kt">118</span>     <span class="c1">// &lt;--------- Cosmos&#39; coin type ( Terra had inherited initially )</span>
-<span class="p">});</span>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">mne_key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">MnemonicKey</span><span class="p">({</span><span class="w"></span>
+<span class="w">  </span><span class="nx">mnemonic</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;[ Your BIP39 mnemonic ]&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">coinType</span><span class="o">:</span><span class="w"> </span><span class="kt">118</span><span class="w">     </span><span class="c1">// &lt;--------- Cosmos&#39; coin type ( Terra had inherited initially )</span><span class="w"></span>
+<span class="p">});</span><span class="w"></span>
 </pre></div>
 </div>
 <ul class="simple">
@@ -1799,38 +1809,38 @@ A <code class="docutils literal notranslate"><span class="pre">MnemonicKey</span
 <h2>Custom key implementation<a class="headerlink" href="#custom-key-implementation" title="Permalink to this headline">#</a></h2>
 <p>If you need to write your own key management solution, you will need to subclass the abstract <code class="docutils literal notranslate"><span class="pre">Key</span></code> class and provide your own signing function. Instead of exposing details pertaining to your private key, you can specify a <code class="docutils literal notranslate"><span class="pre">sign()</span></code> function that forwards the signing request to a server or to a hardware wallet. The remaining functions related to signing (<code class="docutils literal notranslate"><span class="pre">createSignature()</span></code> and <code class="docutils literal notranslate"><span class="pre">signTx()</span></code>) are automatically provided and use <code class="docutils literal notranslate"><span class="pre">sign()</span></code> underneath.</p>
 <p>The following code listing is close to the implementation of <code class="docutils literal notranslate"><span class="pre">RawKey</span></code>, which illustrates how to write a custom <code class="docutils literal notranslate"><span class="pre">Key</span></code>:</p>
-<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span> <span class="nx">SHA256</span> <span class="kr">from</span> <span class="s1">&#39;crypto-js/sha256&#39;</span><span class="p">;</span>
-<span class="k">import</span> <span class="o">*</span> <span class="kr">as</span> <span class="nx">secp256k1</span> <span class="kr">from</span> <span class="s1">&#39;secp256k1&#39;</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">Key</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@terra-money/terra.js&#39;</span><span class="p">;</span>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="nx">SHA256</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;crypto-js/sha256&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="k">import</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">secp256k1</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;secp256k1&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Key</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@terra-money/terra.js&#39;</span><span class="p">;</span><span class="w"></span>
 
 <span class="cm">/**</span>
 <span class="cm"> * An implementation of the Key interfaces that uses a raw private key.</span>
-<span class="cm"> */</span>
-<span class="k">export</span> <span class="kd">class</span> <span class="nx">NaiveCustomImplementation</span> <span class="k">extends</span> <span class="nx">Key</span> <span class="p">{</span>
+<span class="cm"> */</span><span class="w"></span>
+<span class="k">export</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">NaiveCustomImplementation</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">Key</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 
-  <span class="cm">/**</span>
+<span class="w">  </span><span class="cm">/**</span>
 <span class="cm">   * Raw private key, in bytes.</span>
-<span class="cm">   */</span>
-  <span class="k">public</span> <span class="nx">privateKey</span>: <span class="kt">Buffer</span><span class="p">;</span>
+<span class="cm">   */</span><span class="w"></span>
+<span class="w">  </span><span class="k">public</span><span class="w"> </span><span class="nx">privateKey</span><span class="o">:</span><span class="w"> </span><span class="kt">Buffer</span><span class="p">;</span><span class="w"></span>
 
-  <span class="kr">constructor</span><span class="p">(</span><span class="nx">privateKey</span>: <span class="kt">Buffer</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">publicKey</span> <span class="o">=</span> <span class="nx">secp256k1</span><span class="p">.</span><span class="nx">publicKeyCreate</span><span class="p">(</span>
-      <span class="ow">new</span> <span class="nb">Uint8Array</span><span class="p">(</span><span class="nx">privateKey</span><span class="p">),</span>
-      <span class="kc">true</span>
-    <span class="p">);</span>
-    <span class="k">super</span><span class="p">(</span><span class="ow">new</span> <span class="nx">SimplePublicKey</span><span class="p">(</span><span class="nx">Buffer</span><span class="p">.</span><span class="kr">from</span><span class="p">(</span><span class="nx">publicKey</span><span class="p">).</span><span class="nx">toString</span><span class="p">(</span><span class="s1">&#39;base64&#39;</span><span class="p">)));</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">privateKey</span> <span class="o">=</span> <span class="nx">privateKey</span><span class="p">;</span>
-  <span class="p">}</span>
+<span class="w">  </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">privateKey</span><span class="o">:</span><span class="w"> </span><span class="kt">Buffer</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">publicKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">secp256k1</span><span class="p">.</span><span class="nx">publicKeyCreate</span><span class="p">(</span><span class="w"></span>
+<span class="w">      </span><span class="ow">new</span><span class="w"> </span><span class="nb">Uint8Array</span><span class="p">(</span><span class="nx">privateKey</span><span class="p">),</span><span class="w"></span>
+<span class="w">      </span><span class="kc">true</span><span class="w"></span>
+<span class="w">    </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">super</span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nx">SimplePublicKey</span><span class="p">(</span><span class="nx">Buffer</span><span class="p">.</span><span class="kr">from</span><span class="p">(</span><span class="nx">publicKey</span><span class="p">).</span><span class="nx">toString</span><span class="p">(</span><span class="s1">&#39;base64&#39;</span><span class="p">)));</span><span class="w"></span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">privateKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">privateKey</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
 
-  <span class="k">public</span> <span class="nx">sign</span><span class="p">(</span><span class="nx">payload</span>: <span class="kt">Buffer</span><span class="p">)</span><span class="o">:</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">Buffer</span><span class="o">&gt;</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">hash</span> <span class="o">=</span> <span class="nx">Buffer</span><span class="p">.</span><span class="kr">from</span><span class="p">(</span><span class="nx">SHA256</span><span class="p">(</span><span class="nx">payload</span><span class="p">.</span><span class="nx">toString</span><span class="p">()).</span><span class="nx">toString</span><span class="p">(),</span> <span class="s1">&#39;hex&#39;</span><span class="p">);</span>
-    <span class="kd">const</span> <span class="p">{</span> <span class="nx">signature</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">secp256k1</span><span class="p">.</span><span class="nx">ecdsaSign</span><span class="p">(</span>
-      <span class="nb">Uint8Array</span><span class="p">.</span><span class="kr">from</span><span class="p">(</span><span class="nx">hash</span><span class="p">),</span>
-      <span class="nb">Uint8Array</span><span class="p">.</span><span class="kr">from</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">privateKey</span><span class="p">)</span>
-    <span class="p">);</span>
-    <span class="k">return</span> <span class="ow">new</span> <span class="nb">Promise</span><span class="p">(()=&gt;{</span><span class="nx">Buffer</span><span class="p">.</span><span class="kr">from</span><span class="p">(</span><span class="nx">signature</span><span class="p">)});</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<span class="w">  </span><span class="k">public</span><span class="w"> </span><span class="nx">sign</span><span class="p">(</span><span class="nx">payload</span><span class="o">:</span><span class="w"> </span><span class="kt">Buffer</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">Buffer</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">hash</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Buffer</span><span class="p">.</span><span class="kr">from</span><span class="p">(</span><span class="nx">SHA256</span><span class="p">(</span><span class="nx">payload</span><span class="p">.</span><span class="nx">toString</span><span class="p">()).</span><span class="nx">toString</span><span class="p">(),</span><span class="w"> </span><span class="s1">&#39;hex&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">signature</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">secp256k1</span><span class="p">.</span><span class="nx">ecdsaSign</span><span class="p">(</span><span class="w"></span>
+<span class="w">      </span><span class="nb">Uint8Array</span><span class="p">.</span><span class="kr">from</span><span class="p">(</span><span class="nx">hash</span><span class="p">),</span><span class="w"></span>
+<span class="w">      </span><span class="nb">Uint8Array</span><span class="p">.</span><span class="kr">from</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">privateKey</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Promise</span><span class="p">(()=&gt;{</span><span class="nx">Buffer</span><span class="p">.</span><span class="kr">from</span><span class="p">(</span><span class="nx">signature</span><span class="p">)});</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Note that you must call <code class="docutils literal notranslate"><span class="pre">super()</span></code> with the public key to generate the relevant account and validator public keys associated with your key.</p>

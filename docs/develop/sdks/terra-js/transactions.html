@@ -550,6 +550,16 @@
       </label>
       <ul class="current">
        <li class="toctree-l4">
+        <a class="reference internal" href="getting-started.html">
+         Get started with Terra.js
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="common-examples.html">
+         Common examples
+        </a>
+       </li>
+       <li class="toctree-l4">
         <a class="reference internal" href="add-modules.html">
          Add modules
         </a>
@@ -557,11 +567,6 @@
        <li class="toctree-l4">
         <a class="reference internal" href="coin-and-coins.html">
          Coin and Coins
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="common-examples.html">
-         Common examples
         </a>
        </li>
        <li class="toctree-l4">
@@ -1293,6 +1298,16 @@
     </label>
     <ul class="current">
      <li class="toctree-l3">
+      <a class="reference internal" href="getting-started.html">
+       Get started with Terra.js
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="common-examples.html">
+       Common examples
+      </a>
+     </li>
+     <li class="toctree-l3">
       <a class="reference internal" href="add-modules.html">
        Add modules
       </a>
@@ -1300,11 +1315,6 @@
      <li class="toctree-l3">
       <a class="reference internal" href="coin-and-coins.html">
        Coin and Coins
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="common-examples.html">
-       Common examples
       </a>
      </li>
      <li class="toctree-l3">
@@ -1683,63 +1693,63 @@ title="Print to PDF"
 <section id="create-a-wallet">
 <h3>Create a wallet<a class="headerlink" href="#create-a-wallet" title="Permalink to this headline">#</a></h3>
 <p>You will first want to create a wallet which you can use to sign transactions.</p>
-<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span> <span class="p">{</span> <span class="nx">MnemonicKey</span><span class="p">,</span> <span class="nx">LCDClient</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@terra-money/terra.js&#39;</span><span class="p">;</span>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">MnemonicKey</span><span class="p">,</span><span class="w"> </span><span class="nx">LCDClient</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@terra-money/terra.js&#39;</span><span class="p">;</span><span class="w"></span>
 
-<span class="kd">const</span> <span class="nx">mk</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">MnemonicKey</span><span class="p">();</span>
-<span class="kd">const</span> <span class="nx">terra</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">LCDClient</span><span class="p">({</span>
-  <span class="nx">URL</span><span class="o">:</span> <span class="s1">&#39;https://soju-lcd.terra.dev&#39;</span><span class="p">,</span>
-  <span class="nx">chainId</span><span class="o">:</span> <span class="s1">&#39;soju-0014&#39;</span>
-<span class="p">});</span>
-<span class="kd">const</span> <span class="nx">wallet</span> <span class="o">=</span> <span class="nx">terra</span><span class="p">.</span><span class="nx">wallet</span><span class="p">(</span><span class="nx">mk</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">mk</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">MnemonicKey</span><span class="p">();</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">terra</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">LCDClient</span><span class="p">({</span><span class="w"></span>
+<span class="w">  </span><span class="nx">URL</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;https://soju-lcd.terra.dev&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">chainId</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;soju-0014&#39;</span><span class="w"></span>
+<span class="p">});</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">wallet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">terra</span><span class="p">.</span><span class="nx">wallet</span><span class="p">(</span><span class="nx">mk</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
 <section id="create-messages">
 <h3>Create messages<a class="headerlink" href="#create-messages" title="Permalink to this headline">#</a></h3>
-<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span> <span class="p">{</span> <span class="nx">MsgSend</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@terra-money/terra.js&#39;</span><span class="p">;</span>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">MsgSend</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@terra-money/terra.js&#39;</span><span class="p">;</span><span class="w"></span>
 
-<span class="kd">const</span> <span class="nx">send</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">MsgSend</span><span class="p">(</span>
-  <span class="nx">wallet</span><span class="p">.</span><span class="nx">key</span><span class="p">.</span><span class="nx">accAddress</span><span class="p">,</span>
-  <span class="s2">&quot;&lt;random-terra-address&gt;&quot;</span><span class="p">,</span>
-  <span class="p">{</span> <span class="nx">uluna</span>: <span class="kt">1000</span> <span class="p">}</span>
-<span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">send</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">MsgSend</span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">key</span><span class="p">.</span><span class="nx">accAddress</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="s2">&quot;&lt;random-terra-address&gt;&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">uluna</span><span class="o">:</span><span class="w"> </span><span class="kt">1000</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
 <section id="create-and-sign-transaction">
 <h3>Create and Sign Transaction<a class="headerlink" href="#create-and-sign-transaction" title="Permalink to this headline">#</a></h3>
-<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">tx</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">wallet</span><span class="p">.</span><span class="nx">createAndSignTx</span><span class="p">({</span>
-  <span class="nx">msgs</span><span class="o">:</span> <span class="p">[</span><span class="nx">send</span><span class="p">],</span>
-  <span class="nx">memo</span><span class="o">:</span> <span class="s2">&quot;Hello&quot;</span>
-<span class="p">});</span>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">tx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">createAndSignTx</span><span class="p">({</span><span class="w"></span>
+<span class="w">  </span><span class="nx">msgs</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nx">send</span><span class="p">],</span><span class="w"></span>
+<span class="w">  </span><span class="nx">memo</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Hello&quot;</span><span class="w"></span>
+<span class="p">});</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
 <section id="broadcast-transaction">
 <h3>Broadcast transaction<a class="headerlink" href="#broadcast-transaction" title="Permalink to this headline">#</a></h3>
-<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">txResult</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">terra</span><span class="p">.</span><span class="nx">tx</span><span class="p">.</span><span class="nx">broadcast</span><span class="p">(</span><span class="nx">tx</span><span class="p">);</span>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">txResult</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">terra</span><span class="p">.</span><span class="nx">tx</span><span class="p">.</span><span class="nx">broadcast</span><span class="p">(</span><span class="nx">tx</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <p>The default broadcast mode is <code class="docutils literal notranslate"><span class="pre">block</span></code>, which waits until the transaction has been included in a block. This will give you the most information about the transaction, including events and errors while processing.</p>
 <p>You can also use <code class="docutils literal notranslate"><span class="pre">sync</span></code> or <code class="docutils literal notranslate"><span class="pre">async</span></code> broadcast modes.</p>
-<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="c1">// const syncTxResult = await terra.tx.broadcastSync(tx);</span>
-<span class="c1">// const asyncTxResult = await terra.tx.broadcastAsync(tx);</span>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="c1">// const syncTxResult = await terra.tx.broadcastSync(tx);</span><span class="w"></span>
+<span class="c1">// const asyncTxResult = await terra.tx.broadcastAsync(tx);</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
 <section id="check-events">
 <h3>Check events<a class="headerlink" href="#check-events" title="Permalink to this headline">#</a></h3>
 <p>If you broadcasted the transaction with <code class="docutils literal notranslate"><span class="pre">block</span></code>, you can get the events emitted by your transaction.</p>
-<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span> <span class="p">{</span> <span class="nx">isTxError</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&quot;@terra-money/terra.js&quot;</span><span class="p">;</span>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">isTxError</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@terra-money/terra.js&quot;</span><span class="p">;</span><span class="w"></span>
 
-<span class="kd">const</span> <span class="nx">txResult</span> <span class="o">=</span> <span class="nx">terra</span><span class="p">.</span><span class="nx">tx</span><span class="p">.</span><span class="nx">broadcast</span><span class="p">(</span><span class="nx">tx</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">txResult</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">terra</span><span class="p">.</span><span class="nx">tx</span><span class="p">.</span><span class="nx">broadcast</span><span class="p">(</span><span class="nx">tx</span><span class="p">);</span><span class="w"></span>
 
-<span class="k">if</span> <span class="p">(</span><span class="nx">isTxError</span><span class="p">(</span><span class="nx">txResult</span><span class="p">))</span> <span class="p">{</span>
-  <span class="k">throw</span> <span class="ow">new</span> <span class="ne">Error</span><span class="p">(</span><span class="sb">`encountered an error while running the transaction: </span><span class="si">${</span><span class="nx">txResult</span><span class="p">.</span><span class="nx">code</span><span class="si">}</span><span class="sb"> </span><span class="si">${</span><span class="nx">txResult</span><span class="p">.</span><span class="nx">codespace</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
-<span class="p">}</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">isTxError</span><span class="p">(</span><span class="nx">txResult</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="sb">`encountered an error while running the transaction: </span><span class="si">${</span><span class="nx">txResult</span><span class="p">.</span><span class="nx">code</span><span class="si">}</span><span class="sb"> </span><span class="si">${</span><span class="nx">txResult</span><span class="p">.</span><span class="nx">codespace</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="c1">// check for events from the first message</span>
-<span class="nx">txResult</span><span class="p">.</span><span class="nx">logs</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">eventsByType</span><span class="p">.</span><span class="nx">store_code</span><span class="p">;</span>
+<span class="c1">// check for events from the first message</span><span class="w"></span>
+<span class="nx">txResult</span><span class="p">.</span><span class="nx">logs</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">eventsByType</span><span class="p">.</span><span class="nx">store_code</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
