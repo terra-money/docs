@@ -6,7 +6,7 @@ Use this example to write Terra docs tutorials.
 # Title <!--- All headings use sentence-style capitalization -->
 
 <!--- provide a 2-4 sentence overview of the tutorial here. -->
-In this tutorial, you will learn how to...
+In this tutorial, you will learn how to organize and write a tutorial. 
 
 ## Prerequisites
 
