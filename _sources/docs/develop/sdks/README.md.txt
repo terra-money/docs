@@ -7,6 +7,7 @@
 :hidden:
 terra-js/README
 Terra.py <https://terra-money.github.io/terra.py/>
+wallet-provider/README
 ```
 :::::::{grid}
 :gutter: 3
