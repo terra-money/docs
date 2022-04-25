@@ -1,6 +1,6 @@
 # Terra Station extension
 
-The API for the Terra Station extension is undergoing rapid development and is highly unstable. If you are developing a dApp, please check regularly for updates as breaking changes may be introduced frequently.
+The API for the Terra Station extension gets updated periodically. If you are developing a dApp, please check regularly for updates as breaking changes may be introduced frequently.
 
 ## What is the Terra Station extension?
 

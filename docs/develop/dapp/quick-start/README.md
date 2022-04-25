@@ -58,6 +58,7 @@ Learn how to migrate CosmWasm contracts on Terra.
 initial-setup
 using-terrain-testnet
 using-terrain-localterra
+mint-an-nft
 contract-migration
 
 ```
