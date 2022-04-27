@@ -52,6 +52,11 @@ nvm alias default <INSERT NODE VERSION HERE>
 
 3. You will start seeing LocalTerra block activity in your terminal. Keep LocalTerra running while you perform the next steps in a new terminal window.
 
+:::{admonition} LocalTerra Accounts
+:class: note
+To view the LocalTerra wallet information, visit the [LocalTerra accounts page](../../how-to/localterra/accounts.md). 
+For more configuration options, visit the [LocalTerra configuration page](../../how-to/localterra/configure.md). 
+:::
 
 ## 2. Scaffold your dApp
 
