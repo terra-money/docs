@@ -36,7 +36,7 @@ nvm alias default <INSERT NODE VERSION HERE>
 ```
 :::
 
-## 1. Install and run LocalTerra
+## Install and run LocalTerra
 
 1. To download LocalTerra, run the following commands:
 
@@ -58,7 +58,11 @@ To view the LocalTerra wallet information, visit the [LocalTerra accounts page](
 For more configuration options, visit the [LocalTerra configuration page](../../how-to/localterra/configure.md). 
 :::
 
-## 2. Scaffold your dApp
+# Counter tutorial 
+
+After installing LocalTerra, you are ready to use Terrain. This short tutorial walks you through setting up your project and creating a simple counter. 
+
+## 1. Scaffold your dApp
 
 With Terrain installed you can now scaffold your new application in a new terminal window:
 
@@ -95,7 +99,7 @@ The following structure shows your scaffolded project:
 └── refs.terrain.json      # Deployed code and contract references.
 ```
 
-## 3. Deploy
+## 2. Deploy
 
 To deploy the application, run the following command:
 
@@ -116,7 +120,7 @@ The deploy command performs the following steps automatically:
 If you are running LocalTerra and the previous `deploy` command is not working, try increasing Docker's memory allowance by clicking on the Docker icon. Click **Preferences** and then **Resources**. Increase the memory to at least 4 gigs. Click **Apply & Restart**. Run the deploy command again. You can increase again to 6 gigs if you are still having trouble. 
 :::
 
-## 4. Interact with the deployed contract
+## 3. Interact with the deployed contract
 
 The template comes with several predefined helpers in `lib/index.js`. Use them to start interacting with your smart contract:
 
@@ -148,7 +152,7 @@ The template comes with several predefined helpers in `lib/index.js`. Use them t
 Before proceeding to the next section, kill the running command in your terminal by entering "Ctrl + C" . 
 :::
 
-## 5. Front-end scaffolding
+## 4. Front-end scaffolding
 
 Terrain also scaffolds a very simple front-end:
 

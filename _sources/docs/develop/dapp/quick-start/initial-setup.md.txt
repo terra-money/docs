@@ -1,4 +1,4 @@
-# Initial setup
+# Terrain initial setup
 
 This tutorial uses a Terra-specific development suite called Terrain.
 
@@ -12,10 +12,10 @@ Terrain will help you:
 
 ## Prerequisites
 
-- [Docker](https://www.docker.com/)
-- [`docker-compose`](https://github.com/docker/compose)
-- [NPM](https://www.npmjs.com/)
-- [Node JS v16](https://nodejs.org/download/release/latest-v16.x/)
+- [Install Docker](https://www.docker.com/)
+- [Install `docker-compose`](https://github.com/docker/compose)
+- [Install NPM](https://www.npmjs.com/)
+- [Install Node JS v16](https://nodejs.org/download/release/latest-v16.x/)
 
 ## 1. Set up Rust
 
@@ -48,7 +48,8 @@ Use npm to install the terrain command-line tool globally:
 npm install -g @terra-money/terrain
 ```
 
-## 3. Download LocalTerra or configure the testnet
+ 
+## Next steps: LocalTerra or Testnet
 
 Depending on your setup, you can either install LocalTerra or use the Bombay testnet to power Terrain. 
 
@@ -68,7 +69,7 @@ Localterra may not work properly on machines with less than 16 GB of RAM. Please
 :class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
 ```
 **Terrain and the testnet**  
-8+ GB of RAM recommended.
+8+ GB of RAM
 :::
 
 :::{grid-item-card}
@@ -78,7 +79,7 @@ Localterra may not work properly on machines with less than 16 GB of RAM. Please
 :class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
 ```
 **Terrain and LocalTerra**  
-16+ GB of RAM recommended.
+16+ GB of RAM
 :::
 
 

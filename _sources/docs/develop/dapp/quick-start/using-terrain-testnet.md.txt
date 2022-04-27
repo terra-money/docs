@@ -6,9 +6,9 @@ The Bombay testnet is used for testing transactions on the Terra network.
 
 - [Install the Terra Station browser extension](../../../learn/terra-station/download/terra-station-extension.md)
 
-## 1. Create a Bombay wallet
+## Create a Bombay wallet
 
-[Create a new wallet](../../../learn/terra-station/download/terra-station-extension.md#create-a-wallet) using the Terra Station extension. It's recommended to name this wallet "Bombay" or "testnet" so it's easy to remember that it's only used for Bombay.
+[Create a new wallet](../../../learn/terra-station/download/terra-station-extension.md#create-a-wallet) using the Terra Station extension. It's recommended that you name this wallet "Bombay" or "testnet" so it's easy to remember.
 
 After creating a Bombay wallet and storing the seed phrase, request funds from the testnet faucet:
 
@@ -18,7 +18,11 @@ https://faucet.terra.money
 Make sure you have your seed phrase stored somewhere since you will need it to complete this tutorial.
 :::
 
-## 2. Scaffold your dApp
+# Counter tutorial 
+
+After creating a testnet wallet, you are ready to use Terrain. This short tutorial walks you through setting up your project and creating a simple counter. 
+
+## 1. Scaffold your dApp
 
 Scaffold your new application:
 
@@ -45,7 +49,7 @@ The following structure shows your scaffolded project:
 └── refs.terrain.json      # Deployed code and contract references.
 ```
 
-## 3. Configure the testnet
+## 2. Configure the testnet
 
 Before deploying, Terrain needs to learn how to access your Bombay wallet. To do this you'll need to modify `keys.terrain.js` in the generated project.
 
@@ -60,7 +64,7 @@ module.exports = {
 };
 ```
 
-## 4. Deploy
+## 3. Deploy
 
 To deploy the application, run the following command:
 
@@ -112,7 +116,7 @@ Besides the CLI approach above, there is also the option of deploying and intera
    If you have a frontend, update your client-side `refs.terrain.json` to reflect the latest codeId and deployed contract address.
    :::
 
-## 5. Interact with the deployed contract
+## 4. Interact with the deployed contract
 
 The Terrain template comes with several predefined helpers in `lib/index.js`. Use them to start interacting with your smart contract:
 
@@ -138,7 +142,7 @@ The Terrain template comes with several predefined helpers in `lib/index.js`. Us
    { count: 1 }
    ```
 
-## 6. Front-end scaffolding
+## 5. Front-end scaffolding
 
 Terrain also scaffolds a very simple front-end.
 

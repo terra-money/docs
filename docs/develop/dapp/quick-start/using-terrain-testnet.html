@@ -46,7 +46,7 @@
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="Use Terrain with LocalTerra" href="using-terrain-localterra.html" />
-    <link rel="prev" title="Initial setup" href="initial-setup.html" />
+    <link rel="prev" title="Terrain initial setup" href="initial-setup.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -257,7 +257,7 @@
       <ul class="current">
        <li class="toctree-l4">
         <a class="reference internal" href="initial-setup.html">
-         Initial setup
+         Terrain initial setup
         </a>
        </li>
        <li class="toctree-l4 current active">
@@ -1155,7 +1155,7 @@
     <ul class="current">
      <li class="toctree-l3">
       <a class="reference internal" href="initial-setup.html">
-       Initial setup
+       Terrain initial setup
       </a>
      </li>
      <li class="toctree-l3 current active">
@@ -1606,64 +1606,78 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#prerequisites">
-   Prerequisites
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#create-a-bombay-wallet">
-   1. Create a Bombay wallet
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#scaffold-your-dapp">
-   2. Scaffold your dApp
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Use Terrain with the testnet
   </a>
   <ul class="visible nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#project-structure">
-     Project structure
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#prerequisites">
+     Prerequisites
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-a-bombay-wallet">
+     Create a Bombay wallet
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#configure-the-testnet">
-   3. Configure the testnet
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#deploy">
-   4. Deploy
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#counter-tutorial">
+   Counter tutorial
   </a>
   <ul class="visible nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#deploying-with-terra-station">
-     Deploying with Terra Station
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#scaffold-your-dapp">
+     1. Scaffold your dApp
+    </a>
+    <ul class="visible nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#project-structure">
+       Project structure
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#configure-the-testnet">
+     2. Configure the testnet
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#deploy">
+     3. Deploy
+    </a>
+    <ul class="visible nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#deploying-with-terra-station">
+       Deploying with Terra Station
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#interact-with-the-deployed-contract">
+     4. Interact with the deployed contract
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#front-end-scaffolding">
+     5. Front-end scaffolding
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#demo">
+     Demo
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#advanced-usage">
+     Advanced usage
     </a>
    </li>
   </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#interact-with-the-deployed-contract">
-   5. Interact with the deployed contract
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#front-end-scaffolding">
-   6. Front-end scaffolding
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#demo">
-   Demo
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#advanced-usage">
-   Advanced usage
-  </a>
  </li>
 </ul>
 
@@ -1684,64 +1698,78 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#prerequisites">
-   Prerequisites
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#create-a-bombay-wallet">
-   1. Create a Bombay wallet
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#scaffold-your-dapp">
-   2. Scaffold your dApp
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Use Terrain with the testnet
   </a>
   <ul class="visible nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#project-structure">
-     Project structure
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#prerequisites">
+     Prerequisites
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-a-bombay-wallet">
+     Create a Bombay wallet
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#configure-the-testnet">
-   3. Configure the testnet
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#deploy">
-   4. Deploy
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#counter-tutorial">
+   Counter tutorial
   </a>
   <ul class="visible nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#deploying-with-terra-station">
-     Deploying with Terra Station
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#scaffold-your-dapp">
+     1. Scaffold your dApp
+    </a>
+    <ul class="visible nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#project-structure">
+       Project structure
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#configure-the-testnet">
+     2. Configure the testnet
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#deploy">
+     3. Deploy
+    </a>
+    <ul class="visible nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#deploying-with-terra-station">
+       Deploying with Terra Station
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#interact-with-the-deployed-contract">
+     4. Interact with the deployed contract
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#front-end-scaffolding">
+     5. Front-end scaffolding
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#demo">
+     Demo
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#advanced-usage">
+     Advanced usage
     </a>
    </li>
   </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#interact-with-the-deployed-contract">
-   5. Interact with the deployed contract
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#front-end-scaffolding">
-   6. Front-end scaffolding
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#demo">
-   Demo
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#advanced-usage">
-   Advanced usage
-  </a>
  </li>
 </ul>
 
@@ -1763,8 +1791,8 @@ title="Print to PDF"
 </ul>
 </section>
 <section id="create-a-bombay-wallet">
-<h2>1. Create a Bombay wallet<a class="headerlink" href="#create-a-bombay-wallet" title="Permalink to this headline">#</a></h2>
-<p><a class="reference internal" href="../../../learn/terra-station/download/terra-station-extension.html#create-a-wallet"><span class="std std-doc">Create a new wallet</span></a> using the Terra Station extension. It’s recommended to name this wallet “Bombay” or “testnet” so it’s easy to remember that it’s only used for Bombay.</p>
+<h2>Create a Bombay wallet<a class="headerlink" href="#create-a-bombay-wallet" title="Permalink to this headline">#</a></h2>
+<p><a class="reference internal" href="../../../learn/terra-station/download/terra-station-extension.html#create-a-wallet"><span class="std std-doc">Create a new wallet</span></a> using the Terra Station extension. It’s recommended that you name this wallet “Bombay” or “testnet” so it’s easy to remember.</p>
 <p>After creating a Bombay wallet and storing the seed phrase, request funds from the testnet faucet:</p>
 <p><a class="reference external" href="https://faucet.terra.money">https://faucet.terra.money</a></p>
 <div class="admonition danger">
@@ -1772,8 +1800,12 @@ title="Print to PDF"
 <p>Make sure you have your seed phrase stored somewhere since you will need it to complete this tutorial.</p>
 </div>
 </section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="counter-tutorial">
+<h1>Counter tutorial<a class="headerlink" href="#counter-tutorial" title="Permalink to this headline">#</a></h1>
+<p>After creating a testnet wallet, you are ready to use Terrain. This short tutorial walks you through setting up your project and creating a simple counter.</p>
 <section id="scaffold-your-dapp">
-<h2>2. Scaffold your dApp<a class="headerlink" href="#scaffold-your-dapp" title="Permalink to this headline">#</a></h2>
+<h2>1. Scaffold your dApp<a class="headerlink" href="#scaffold-your-dapp" title="Permalink to this headline">#</a></h2>
 <p>Scaffold your new application:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrain new my-terra-dapp
 <span class="nb">cd</span> my-terra-dapp
@@ -1798,7 +1830,7 @@ npm install
 </section>
 </section>
 <section id="configure-the-testnet">
-<h2>3. Configure the testnet<a class="headerlink" href="#configure-the-testnet" title="Permalink to this headline">#</a></h2>
+<h2>2. Configure the testnet<a class="headerlink" href="#configure-the-testnet" title="Permalink to this headline">#</a></h2>
 <p>Before deploying, Terrain needs to learn how to access your Bombay wallet. To do this you’ll need to modify <code class="docutils literal notranslate"><span class="pre">keys.terrain.js</span></code> in the generated project.</p>
 <p>Modify the configuration and input your seed phrase to look like this:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">module</span><span class="o">.</span><span class="n">exports</span> <span class="o">=</span> <span class="p">{</span>
@@ -1811,7 +1843,7 @@ npm install
 </div>
 </section>
 <section id="deploy">
-<h2>4. Deploy<a class="headerlink" href="#deploy" title="Permalink to this headline">#</a></h2>
+<h2>3. Deploy<a class="headerlink" href="#deploy" title="Permalink to this headline">#</a></h2>
 <p>To deploy the application, run the following command:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrain deploy counter --signer bombay --network testnet
 </pre></div>
@@ -1855,7 +1887,7 @@ npm install
 </section>
 </section>
 <section id="interact-with-the-deployed-contract">
-<h2>5. Interact with the deployed contract<a class="headerlink" href="#interact-with-the-deployed-contract" title="Permalink to this headline">#</a></h2>
+<h2>4. Interact with the deployed contract<a class="headerlink" href="#interact-with-the-deployed-contract" title="Permalink to this headline">#</a></h2>
 <p>The Terrain template comes with several predefined helpers in <code class="docutils literal notranslate"><span class="pre">lib/index.js</span></code>. Use them to start interacting with your smart contract:</p>
 <ol class="arabic">
 <li><p>Run <code class="docutils literal notranslate"><span class="pre">terrain</span> <span class="pre">console</span> <span class="pre">--network</span> <span class="pre">testnet</span></code>.</p></li>
@@ -1877,7 +1909,7 @@ npm install
 </ol>
 </section>
 <section id="front-end-scaffolding">
-<h2>6. Front-end scaffolding<a class="headerlink" href="#front-end-scaffolding" title="Permalink to this headline">#</a></h2>
+<h2>5. Front-end scaffolding<a class="headerlink" href="#front-end-scaffolding" title="Permalink to this headline">#</a></h2>
 <p>Terrain also scaffolds a very simple front-end.</p>
 <ol class="arabic">
 <li><p>In the Terra Station Chrome extension, <a class="reference internal" href="../../../learn/terra-station/testnet.html"><span class="doc std std-doc">switch the network to <code class="docutils literal notranslate"><span class="pre">testnet</span></code></span></a>.</p></li>
@@ -1913,7 +1945,7 @@ npm install
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Initial setup</p>
+            <p class="prev-next-title">Terrain initial setup</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="using-terrain-localterra.html" title="next page">
