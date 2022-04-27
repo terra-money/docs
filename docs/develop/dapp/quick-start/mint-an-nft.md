@@ -232,7 +232,7 @@ From here, you can **View** relevant information about your NFT or **Send** your
  
 ## Congratulations!
  
-You have now minted your first NFT on the Terra blockchain! If you have your own unique digital creation that you would like to share with the world, you can follow these instructions using the mainnet network and your personal Terra Station wallet.
+You've just minted your first NFT on the Terra blockchain! If you have your own unique digital creation that you would like to share with the world, you can follow these instructions using the mainnet network and your personal Terra Station wallet.
  
 :::{admonition} Mint NFTs on the mainnet
  
