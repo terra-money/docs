@@ -46,7 +46,7 @@ Use Terra<span/>.js to create bots, power NFT mints, and for all-purpose back en
 
 ### Terra<span/>.py
 
- If you are a Python developer, use Terra<span/>.py for on-chain analytics, Jupyter Notebooks, data processing, and other mathematical processes best suited for Python. Follow the [Terra.py](https://terra-money.github.io/terra.py/tutorial.html) tutorial to get started.
+Use Terra<span/>.py for on-chain analytics, Jupyter Notebooks, data processing, and other mathematical processes. Follow the [Terra.py](https://terra-money.github.io/terra.py/tutorial.html) tutorial to get started.
  
 ### Wallet Provider and Templates: 
 
