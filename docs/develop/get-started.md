@@ -64,7 +64,7 @@ Terra also provides other tools for building:
 
 ### TerraWiki<span/>.org
 
-Check out the Terra Wiki for tutorials, reference material, and troubleshooting guides. Written by devs, for devs, [terrawiki.org](http://terrawiki.org) is the community documentation platform for all things Terra. Start browsing, or log in and create your own article.
+Written by devs, for devs, [terrawiki.org](http://terrawiki.org) is the community documentation platform for all things Terra, including community-generated tutorials, reference material, and troubleshooting guides. Start browsing, or log in and create your own article.
 
 ### Agora Developers' Forum
 
