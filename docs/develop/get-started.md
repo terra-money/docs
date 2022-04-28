@@ -31,7 +31,7 @@ The [NFT minting](./dapp/quick-start/mint-an-nft.md) tutorial walks you through 
 
 :::{admonition} Terra Academy
 :class: tip
-If you want to take interactive courses about programming in Rust, CosmWasm libraries, and developing your own smart contracts, visit [the Terra Academy](https://academy.terra.money)
+For interactive courses on developing smart contracts using Rust and CosmWasm libraries, visit [Terra Academy](https://academy.terra.money).
 :::
 
 ## Development Suite
