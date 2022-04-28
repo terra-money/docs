@@ -78,6 +78,8 @@ Take interactive courses and learn about coding in Rust, using CosmWasm librarie
 
 If you would like to connect with the developer community and ask questions related to software development on Terra, join the [Terra Discord server](https://discord.com/invite/EuKCeGFb93).
 
-Pick up the `Developer Role` by clicking on the Green Bug icon `🪲` under the `🪲 | dev-roles` channel.
+1.  Select `Developer Role` by clicking on the Green Bug icon `🪲` under the `🪲 | dev-roles` channel.
 
-Once you subscribe, a new section of developer channels should appear under `🪲 DEV` where you may select the relevant location to ask your questions and receive support.
+2. Once you are subscribed, a new section with the Terra developer channels appears under `🪲 DEV`. 
+
+3. Select the relevant channel to ask your questions and receive support.
