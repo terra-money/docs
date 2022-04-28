@@ -5,7 +5,7 @@
 ```{toctree}
 :maxdepth: 1
 terra-js/README
-Terra.py <./terra-py/README>
+Terra.py <https://terra-money.github.io/terra.py/index.html>
 wallet-provider/README
 ```
 :::::::{grid}
@@ -21,7 +21,7 @@ wallet-provider/README
 :::
 
 :::{grid-item-card}
-:link: ../sdks/terra-py/README.html
+:link: https://terra-money.github.io/terra.py/index.html
 :class-card: sd-text-center sd-shadow-md sd-rounded-3
 ```{image} /img/terra_sdk.svg
 :class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
