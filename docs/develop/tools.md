@@ -38,11 +38,11 @@ Set up your own blockchain testnet in less than one minute. LocalTerra is a cont
 
 ## Terra<span/>.js
 
-If you are familiar with Javascript, use Terra<span/>.js to create bots, power NFT mints, and for all-purpose back end services. Follow the [Terra.js tutorial](./sdks/terra-js/getting-started.md) to get started.
+Use Terra<span/>.js to create bots, power NFT mints, and for all-purpose back end services. Follow the [Terra.js tutorial](./sdks/terra-js/getting-started.md) to get started.
 
 ## Terra<span/>.py
 
- If you are a Python developer, use Terra<span/>.py for on-chain analytics, Jupyter Notebooks, data processing, and other mathematical processes best suited for Python. Follow the [Terra.py tutorial](./sdks/terra-py/README.md) to get started.
+Use Terra<span/>.py for on-chain analytics, Jupyter Notebooks, data processing, and other mathematical processes best suited for Python. Follow the [Terra.py tutorial](./sdks/terra-py/README.md) to get started.
  
 ## Wallet Provider and Templates: 
 
