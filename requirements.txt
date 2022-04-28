@@ -13,6 +13,7 @@ linkify-it-py
 markdown-it-py
 MarkupSafe
 mdit-py-plugins
+#myst-nb for python docs
 myst-parser
 packaging
 pydata-sphinx-theme

@@ -92,6 +92,7 @@ myst_enable_extensions = [
     "linkify",
     "substitution",
     "tasklist",
+    # "myst_nb", for python docs
 ]
 myst_footnote_transition = True
 myst_dmath_double_inline = True
