@@ -25,7 +25,7 @@ Follow the [Terrain with LocalTerra tutorial](./dapp/quick-start/using-terrain-l
 
 ### 3. Mint an NFT
 
-Now that you are familiar with Terrain and LocalTerra, mint an NFT with Terrain. 
+Now that you are familiar with Terrain and LocalTerra, you can mint an NFT with Terrain. 
 
 The [NFT minting](./dapp/quick-start/mint-an-nft.md) tutorial walks you through the creation of an NFT minting application using the dApp scaffolding and front end provided by Terrain. 
 
