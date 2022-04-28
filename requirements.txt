@@ -5,7 +5,7 @@ beautifulsoup4
 certifi
 charset-normalizer
 click
-docutils ~=0.17.0
+docutils
 idna
 imagesize
 Jinja2
@@ -33,7 +33,7 @@ sphinxcontrib-jsmath
 sphinxcontrib-qthelp
 sphinxcontrib-serializinghtml >=1.1.5
 sphinxcontrib.youtube
-sphinx-book-theme
+sphinx-book-theme ~=0.2.0
 sphinx-copybutton
 sphinx_design
 sphinx-notfound-page
