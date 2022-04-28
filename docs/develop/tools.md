@@ -2,7 +2,7 @@
 
 Terra provides a variety of tools for builders that make up the Terra Development Suite. Use this guide to find the right tool for you. 
 
-If you want to know where to start, visit the [beginner's guide](get-started). 
+If you are new to Terra, start with the [beginner's guide](get-started). 
 
 
 ``` python
