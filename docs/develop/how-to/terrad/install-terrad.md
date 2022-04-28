@@ -10,6 +10,11 @@ This guide is for developers who want to install `terrad` and interact with Terr
 - Ensure your `GOPATH` and `GOBIN` environment variables are set up correctly.
 - Linux users: install [build-essential](http://linux-command.org/en/build-essential.html).
 
+:::{admonition} Terrad for Mac
+:class: danger
+If you are using a Mac, follow the [`terrad` Mac installation guide](./terrad-mac.md).
+:::
+
 ## From binary
 
 The easiest way to install `terrad` and Terra core is by downloading a pre-built binary for your operating system. You can find the latest binaries on the [releases](https://github.com/terra-money/core/releases) page. If you have a Mac, follow the [Mac installation instructions](./terrad-mac.md).
