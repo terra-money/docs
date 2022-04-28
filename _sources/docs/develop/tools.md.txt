@@ -29,11 +29,11 @@ Terra Development Suite
 
 ## Terrain
 
-Terra’s all-in-one development environment, Terrain provides front-end and smart contract scaffolding for your dApp. Get started in 5 minutes with the [quickstart guide](./get-started.md)
+Terra’s all-in-one development environment, Terrain provides front-end and smart contract scaffolding for your dApp. Get started in 5 minutes with the [quickstart guide](./get-started.md). 
 
 ## LocalTerra
 
-Set up your own blockchain testnet in less than one minute. LocalTerra is a containerized version of the Terra blockchain, complete with a functional validator set and block creation. Visit the [LocalTerra guide](./dapp/quick-start/using-terrain-localterra.md) to get started
+Set up your own blockchain testnet in less than one minute. LocalTerra is a containerized version of the Terra blockchain, complete with a functional validator set and block creation. Visit the [LocalTerra guide](./dapp/quick-start/using-terrain-localterra.md) to get started. 
 
 ## Terra<span/>.js
 
@@ -53,7 +53,7 @@ Use these tools to interact with the Terra blockchain.
 
 #### Terrad
 
-The command line interface and node daemon for interacting with the Terra blockchain. Use `terrad` to run a full node or interact with the chain. Follow the [`terrad` install guide](./how-to/terrad/install-terrad.md) to get started
+The command line interface and node daemon for interacting with the Terra blockchain. Use `terrad` to run a full node or interact with the chain. Follow the [`terrad` install guide](./how-to/terrad/install-terrad.md) to get started. 
 
 #### Finder
 
