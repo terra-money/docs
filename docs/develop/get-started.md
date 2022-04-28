@@ -42,7 +42,7 @@ Now you can dive into the other tools in the Terra Development Suite:
 
 ### Terra<span/>.js
 
-If you are familiar with Javascript, use Terra<span/>.js to create bots, power NFT mints, and for all-purpose back end services. Follow the [Terra.js tutorial](./sdks/terra-js/getting-started.md) to get started.
+Use Terra<span/>.js to create bots, power NFT mints, and for all-purpose back end services. Follow the [Terra.js tutorial](./sdks/terra-js/getting-started.md) to get started.
 
 ### Terra<span/>.py
 
