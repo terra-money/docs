@@ -29,7 +29,7 @@ Terra Development Suite
 
 ## Terrain
 
-Terra’s all-in-one development environment, Terrain will help you build your dApp, develop smart contracts, and interact with the Terra blockchain. Terrain provides both front and back end services for your dApp. Get started in 5 minutes with the [quickstart guide]([https://docs.terra.money/docs/develop/dapp/quick-start/README.html](https://docs.terra.money/docs/develop/dapp/quick-start/README.html))
+Terra’s all-in-one development environment, Terrain provides front-end and smart contract scaffolding for your dApp, so that you can begin developing on Terra. Get started in 5 minutes with the [quickstart guide]([https://docs.terra.money/docs/develop/dapp/quick-start/README.html](https://docs.terra.money/docs/develop/dapp/quick-start/README.html))
 
 ## LocalTerra
 
