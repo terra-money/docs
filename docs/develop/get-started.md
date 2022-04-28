@@ -5,7 +5,7 @@ Use this beginner-friendly guide to start building on Terra.
 :::{admonition} Learn about Terra
 :class: note
 
-If you want to learn about how Terra works, Luna, validators, or governance, visit the [Terra protocol overview](../learn/protocol.md). 
+To learn more about about Terra concepts like Luna, validators, and governance, visit the [Terra protocol overview](../learn/protocol.md). 
 :::
 
 
