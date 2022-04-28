@@ -1,4 +1,4 @@
-# Which tools to use <img src="/img/build_a_dApp_ver2.svg" height="40px">
+# Which tools to use
 
 Terra provides a variety of tools for builders that make up the Terra Development Suite. Use this guide to find the right tool for you. 
 
