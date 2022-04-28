@@ -20,12 +20,23 @@ resources
 :gutter: 3
 
 :::{grid-item-card}
-:link: dapp/README.html
+:link: get-started.html
 :class-card: sd-text-center sd-shadow-md sd-rounded-3
 ```{image} /img/Build_a_dApp_ver2.svg
 :class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
 ```
 **Start building**  
+
+:::
+
+:::{grid-item-card}
+:link: tools.html
+:class-card: sd-text-center sd-shadow-md sd-rounded-3
+```{image} /img/Terrad.svg
+:class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
+```
+**Tools**
+
 :::
 
 :::{grid-item-card}
@@ -36,15 +47,6 @@ resources
 ```
 **Terrain**  
 
-:::
-
-:::{grid-item-card}
-:link: how-to/terrad/README.html
-:class-card: sd-text-center sd-shadow-md sd-rounded-3
-```{image} /img/Terrad.svg
-:class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
-```
-**`terrad`**  
 :::
 
 :::{grid-item-card}

@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Governance &#8212; Terra Docs  documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -21,14 +20,14 @@
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
@@ -39,11 +38,11 @@
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
-    <script src="../../../_static/custom.js"></script>
     <script src="../../../_static/design-tabs.js"></script>
+    <script src="../../../_static/sphinx-book-theme.9d8b4a8b9bb19db25eeaddc40d639ba2.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../../../_static/custom.js"></script>
     <link rel="shortcut icon" href="../../../_static/docs_favicon.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -57,20 +56,6 @@
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
-
     
     <div class="container-fluid" id="banner"></div>
 
@@ -79,10 +64,14 @@
     <div class="container-xl">
       <div class="row">
           
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<div class="col-12 col-md-3 bd-sidebar site-navigation " id="site-navigation">
+    
+        <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -1456,13 +1445,8 @@
 </ul>
 
     </div>
-</nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-        </div>
-    </div>
-    <div id="rtd-footer-container"></div>
+</nav> <!-- To handle the deprecated key -->
+
 </div>
 
 
@@ -1470,162 +1454,77 @@
 
 
           
-<!-- A tiny helper pixel to detect if we've scrolled -->
+<!-- This is an invisible pixel that we watch to see if we've scrolled. -->
 <div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="header-article row sticky-top noprint">
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            <div class="topbar-left">
+                
+                <label class="nav-toggle-button" for="__navigation">
+                    <div class="visually-hidden">Toggle navigation</div>
+                    <i class="fas fa-bars"></i>
+                </label>
+                
+            </div>
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
         
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-expand"></i>
-  </span>
-
-</button>
-
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/terra-money/docs"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/terra-money/docs/issues/new?title=Issue%20on%20page%20%2Fdocs/develop/module-specifications/spec-governance.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../../../_sources/docs/develop/module-specifications/spec-governance.md.txt"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.md</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
-
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/docs/develop/module-specifications/spec-governance.md.txt"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/terra-money/docs"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/terra-money/docs/issues/new?title=Issue%20on%20page%20%2Fdocs/develop/module-specifications/spec-governance.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
     </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#concepts">
    Concepts
@@ -1760,11 +1659,12 @@ title="Print to PDF"
  </li>
 </ul>
 
-    </nav>
-</div>
+            </nav>
+        </div>
     </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Governance </h1>
@@ -1915,11 +1815,10 @@ title="Print to PDF"
                     </div>
                 </div>
             </div>
-            <main id="main-content" role="main">
-                
+            
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="governance">
+  <div class="tex2jax_ignore mathjax_ignore section" id="governance">
 <h1>Governance <img alt="../../../_images/Governance.svg" height="40px" src="../../../_images/Governance.svg" /><a class="headerlink" href="#governance" title="Permalink to this headline">#</a></h1>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
@@ -1928,10 +1827,10 @@ title="Print to PDF"
 <p>Governance is the process through which members of the Terra community can effect change on the protocol by submitting petitions known as “proposals” and arriving at a popular consensus when a threshold amount of support has been reached. The proposal structure is versatile and allows for holders of staked Luna (those who have an interest in the long-term viability of the network) to voice their opinion on both blockchain parameter updates as well as the future development of the Terra protocol.</p>
 <p>Check the <a class="reference internal" href="../how-to/terrad/subcommands.html#tx-gov-submit-proposal"><span class="std std-doc">Governance section of the <code class="docutils literal notranslate"><span class="pre">terrad</span></code> Reference</span></a> to see examples of how to participate in the Governance process.</p>
 <p>To learn how to vote with your staked Luna or submit proposals, visit the <a class="reference internal" href="../../learn/terra-station/governance.html"><span class="doc std std-doc">Terra Station governance guide</span></a>.</p>
-<section id="concepts">
+<div class="section" id="concepts">
 <h2>Concepts<a class="headerlink" href="#concepts" title="Permalink to this headline">#</a></h2>
 <p>The following is the governance proposal procedure:</p>
-<section id="deposit-period">
+<div class="section" id="deposit-period">
 <h3>Deposit Period<a class="headerlink" href="#deposit-period" title="Permalink to this headline">#</a></h3>
 <p>After a proposal is submitted, it enters the deposit period, where it must reach a total minimum deposit of 50 Luna within 2 weeks from the time of its submission. The deposit threshold is reached when the sum of the initial deposit (from the proposer) and the deposits from all other interested network participants meet or exceed 50 Luna.</p>
 <p>Deposits protect against unnecessary proposals and spam.</p>
@@ -1948,8 +1847,8 @@ title="Print to PDF"
 <li><p><code class="docutils literal notranslate"><span class="pre">Quorum</span></code> is not met: the number of total votes after the one-week voting period is less than 40% of all staked Luna.</p></li>
 <li><p>the number of <code class="docutils literal notranslate"><span class="pre">NoWithVeto</span></code> votes is above 33.4% of the total vote.</p></li>
 </ul>
-</section>
-<section id="voting-period">
+</div>
+<div class="section" id="voting-period">
 <h3>Voting Period<a class="headerlink" href="#voting-period" title="Permalink to this headline">#</a></h3>
 <p>If the minimum deposit has been reached before the end of the deposit period, then the proposal goes into a one-week voting period. While the proposal is in voting, holders of staked Luna can cast votes for the proposal. The 4 voting options available are:</p>
 <ul class="simple">
@@ -1959,8 +1858,8 @@ title="Print to PDF"
 <li><p><code class="docutils literal notranslate"><span class="pre">Abstain</span></code> - does not influence vote</p></li>
 </ul>
 <p>Voting is done by holders of bonded LUNA on a 1 bonded LUNA = 1 vote basis. As such, validators hold the most influence over the outcome of voting, and delegators by default inherit the vote of their validator if they don’t vote.</p>
-</section>
-<section id="tallying">
+</div>
+<div class="section" id="tallying">
 <h3>Tallying<a class="headerlink" href="#tallying" title="Permalink to this headline">#</a></h3>
 <p>For a proposal to pass, the following conditions must be met:</p>
 <ol class="arabic simple">
@@ -1983,16 +1882,16 @@ title="Print to PDF"
 <p class="admonition-title">Warning</p>
 <p>Deposits will not be refunded for proposals that are rejected with veto, do not meet quorum, or fail to reach the minimum deposit during the deposit period. Non-refunded deposits are burned.</p>
 </div>
-</section>
-<section id="proposal-implementation">
+</div>
+<div class="section" id="proposal-implementation">
 <h3>Proposal Implementation<a class="headerlink" href="#proposal-implementation" title="Permalink to this headline">#</a></h3>
 <p>Once a governance proposal passes, the changes described are put into effect by the proposal handler. Generic proposals such as a <code class="docutils literal notranslate"><span class="pre">TextProposal</span></code> must be reviewed by Terra protocol developers and the community for decisions on how to manually implement.</p>
 <p>Although parameter changes get updated immediately, they generally are not put into effect until the next epoch operation. Epochs occur every 100800 blocks or roughly every 7.7 days, given a 6.6-second block time.</p>
-</section>
-</section>
-<section id="data">
+</div>
+</div>
+<div class="section" id="data">
 <h2>Data<a class="headerlink" href="#data" title="Permalink to this headline">#</a></h2>
-<section id="proposal">
+<div class="section" id="proposal">
 <h3>Proposal<a class="headerlink" href="#proposal" title="Permalink to this headline">#</a></h3>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">type</span><span class="w"> </span><span class="nx">Proposal</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">	</span><span class="nx">Content</span><span class="w"> </span><span class="s">`json:&quot;content&quot; yaml:&quot;content&quot;`</span><span class="w"> </span><span class="c1">// Proposal content interface</span><span class="w"></span>
@@ -2012,11 +1911,11 @@ title="Print to PDF"
 </div>
 <p>A <code class="docutils literal notranslate"><span class="pre">Proposal</span></code> is a data structure representing a petition for a change that is submitted to the blockchain alongside a deposit. Once its deposit reaches a certain <a class="reference internal" href="#mindeposit"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">MinDeposit</span></code></span></a>, the proposal is confirmed and voting opens. Bonded Luna holders can then send <code class="docutils literal notranslate"><span class="pre">TxGovVote</span></code> transactions to vote on the proposal. Terra currently follows a simple voting scheme of 1 Bonded Luna = 1 Vote.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">Content</span></code> of a proposal is the interface that contains the information about the <code class="docutils literal notranslate"><span class="pre">Proposal</span></code>, such as the <code class="docutils literal notranslate"><span class="pre">title</span></code>, <code class="docutils literal notranslate"><span class="pre">description</span></code>, and any notable changes. A <code class="docutils literal notranslate"><span class="pre">Content</span></code> type can be implemented by any module. The <code class="docutils literal notranslate"><span class="pre">ProposalRoute</span></code> of the <code class="docutils literal notranslate"><span class="pre">Content</span></code> returns a string which must be used to route the handler of the <code class="docutils literal notranslate"><span class="pre">Content</span></code> in the Governance keeper. This process allows the governance keeper to execute proposal logic implemented by any module. If a proposal passes, the handler is executed. Only if the handler is successful does the state get persisted and the proposal finally passes. Otherwise, the proposal is rejected.</p>
-</section>
-</section>
-<section id="message-types">
+</div>
+</div>
+<div class="section" id="message-types">
 <h2>Message Types<a class="headerlink" href="#message-types" title="Permalink to this headline">#</a></h2>
-<section id="msgsubmitproposal">
+<div class="section" id="msgsubmitproposal">
 <h3>MsgSubmitProposal<a class="headerlink" href="#msgsubmitproposal" title="Permalink to this headline">#</a></h3>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">type</span><span class="w"> </span><span class="nx">MsgSubmitProposal</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">	</span><span class="nx">Content</span><span class="w">        </span><span class="nx">Content</span><span class="w">        </span><span class="s">`json:&quot;content&quot; yaml:&quot;content&quot;`</span><span class="w"></span>
@@ -2025,8 +1924,8 @@ title="Print to PDF"
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-<section id="msgdeposit">
+</div>
+<div class="section" id="msgdeposit">
 <h3>MsgDeposit<a class="headerlink" href="#msgdeposit" title="Permalink to this headline">#</a></h3>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">type</span><span class="w"> </span><span class="nx">MsgDeposit</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">	</span><span class="nx">ProposalID</span><span class="w"> </span><span class="kt">uint64</span><span class="w">         </span><span class="s">`json:&quot;proposal_id&quot; yaml:&quot;proposal_id&quot;`</span><span class="w"> </span><span class="c1">// ID of the proposal</span><span class="w"></span>
@@ -2035,8 +1934,8 @@ title="Print to PDF"
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-<section id="msgvote">
+</div>
+<div class="section" id="msgvote">
 <h3>MsgVote<a class="headerlink" href="#msgvote" title="Permalink to this headline">#</a></h3>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">type</span><span class="w"> </span><span class="nx">MsgVote</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">	</span><span class="nx">ProposalID</span><span class="w"> </span><span class="kt">uint64</span><span class="w">         </span><span class="s">`json:&quot;proposal_id&quot; yaml:&quot;proposal_id&quot;`</span><span class="w"> </span><span class="c1">// ID of the proposal</span><span class="w"></span>
@@ -2045,11 +1944,11 @@ title="Print to PDF"
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-</section>
-<section id="proposals">
+</div>
+</div>
+<div class="section" id="proposals">
 <h2>Proposals<a class="headerlink" href="#proposals" title="Permalink to this headline">#</a></h2>
-<section id="text-proposal">
+<div class="section" id="text-proposal">
 <h3>Text Proposal<a class="headerlink" href="#text-proposal" title="Permalink to this headline">#</a></h3>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">type</span><span class="w"> </span><span class="nx">TextProposal</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">	</span><span class="nx">Title</span><span class="w">       </span><span class="kt">string</span><span class="w"> </span><span class="s">`json:&quot;title&quot; yaml:&quot;title&quot;`</span><span class="w"></span>
@@ -2058,8 +1957,8 @@ title="Print to PDF"
 </pre></div>
 </div>
 <p>Text Proposals are used to create general-purpose petitions, such as asking core developers or community members to implement a specific feature. The community can reference a passed Text Proposal to the core developers or community members to indicate that a feature that potentially requires a soft or hard fork is in significant demand.</p>
-</section>
-<section id="parameter-change-proposals">
+</div>
+<div class="section" id="parameter-change-proposals">
 <h3>Parameter Change Proposals<a class="headerlink" href="#parameter-change-proposals" title="Permalink to this headline">#</a></h3>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">type</span><span class="w"> </span><span class="nx">ParameterChangeProposal</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">	</span><span class="nx">Title</span><span class="w">       </span><span class="kt">string</span><span class="w">        </span><span class="s">`json:&quot;title&quot; yaml:&quot;title&quot;`</span><span class="w"></span>
@@ -2080,18 +1979,18 @@ title="Print to PDF"
 <p>Parameter Change Proposals are actually located in the Params module, an internal module. It is shown here for your convenience.</p>
 </div>
 <p>Parameter Change Proposals are a special type of proposal which, once passed, will automatically go into effect by directly altering the network’s specified parameter.</p>
-</section>
-<section id="software-upgrade-proposals">
+</div>
+<div class="section" id="software-upgrade-proposals">
 <h3>Software Upgrade Proposals<a class="headerlink" href="#software-upgrade-proposals" title="Permalink to this headline">#</a></h3>
 <div class="admonition danger">
 <p class="admonition-title">Danger</p>
 <p>Software upgrade proposals exist because they are inherited from the Cosmos SDK, but they are temporarily unavailable because they have not been implemented yet. Therefore, they share the same semantics as a simple text proposal. If you submit this type of proposal, you might lose your Luna deposit.</p>
 </div>
-</section>
-</section>
-<section id="transitions">
+</div>
+</div>
+<div class="section" id="transitions">
 <h2>Transitions<a class="headerlink" href="#transitions" title="Permalink to this headline">#</a></h2>
-<section id="end-block">
+<div class="section" id="end-block">
 <h3>End-Block<a class="headerlink" href="#end-block" title="Permalink to this headline">#</a></h3>
 <blockquote>
 <div><p>This section was taken from the official Cosmos SDK docs and placed here for your convenience to understand the Governance process.</p>
@@ -2151,9 +2050,9 @@ title="Print to PDF"
 	store(Governance, &lt;proposalID|&#39;proposal&#39;&gt;, proposal)
 </pre></div>
 </div>
-</section>
-</section>
-<section id="parameters">
+</div>
+</div>
+<div class="section" id="parameters">
 <h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">#</a></h2>
 <p>The subspace for the Governance module is <code class="docutils literal notranslate"><span class="pre">gov</span></code>.</p>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">type</span><span class="w"> </span><span class="nx">DepositParams</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -2172,7 +2071,7 @@ title="Print to PDF"
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<section id="mindeposit">
+<div class="section" id="mindeposit">
 <h3>MinDeposit<a class="headerlink" href="#mindeposit" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">Coins</span></code></p></li>
@@ -2180,57 +2079,55 @@ title="Print to PDF"
 <li><p>amount: <code class="docutils literal notranslate"><span class="pre">50000000</span></code></p></li>
 </ul>
 <p>The minimum deposit amount for a proposal to enter a voting period. Currently 50 Luna.</p>
-</section>
-<section id="maxdepositperiod">
+</div>
+<div class="section" id="maxdepositperiod">
 <h3>MaxDepositPeriod<a class="headerlink" href="#maxdepositperiod" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">time.Duration</span></code> (seconds)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">&quot;max_deposit_period&quot;:</span> <span class="pre">&quot;1209600s&quot;</span></code></p></li>
 </ul>
 <p>Maximum period for Luna holders to deposit on a proposal. Currently 2 weeks.</p>
-</section>
-<section id="quorum">
+</div>
+<div class="section" id="quorum">
 <h3>Quorum<a class="headerlink" href="#quorum" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">Dec</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">&quot;quorum&quot;:</span> <span class="pre">&quot;0.400000000000000000&quot;,</span></code></p></li>
 </ul>
 <p>Minimum percentage of total stake needed to vote for a result to be considered valid.</p>
-</section>
-<section id="threshold">
+</div>
+<div class="section" id="threshold">
 <h3>Threshold<a class="headerlink" href="#threshold" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">Dec</span></code></p></li>
 <li><p>default value: 50%</p></li>
 </ul>
 <p>Minimum proportion of Yes votes for a proposal to pass.</p>
-</section>
-<section id="veto">
+</div>
+<div class="section" id="veto">
 <h3>Veto<a class="headerlink" href="#veto" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">Dec</span></code></p></li>
 <li><p>default value: <code class="docutils literal notranslate"><span class="pre">0.33</span></code></p></li>
 </ul>
 <p>Minimum value of Veto votes to Total votes ratio for proposal to be vetoed.</p>
-</section>
-<section id="votingperiod">
+</div>
+<div class="section" id="votingperiod">
 <h3>VotingPeriod<a class="headerlink" href="#votingperiod" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">time.Duration</span></code> (seconds)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">&quot;voting_period&quot;:</span> <span class="pre">&quot;604800s&quot;</span></code></p></li>
 </ul>
 <p>Length of the voting period. Currently 1 week.</p>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
               </div>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
+            
+                <!-- Previous / next buttons -->
 <div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="spec-feegrant.html" title="previous page">
         <i class="fas fa-angle-left"></i>
@@ -2247,17 +2144,62 @@ title="Print to PDF"
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            </footer>
+            
         </div>
     </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-</p>
-        </footer>
-    </div>
+    <footer class="footer">
+  <p>
     
-</div>
+
+    <div class="extra_footer container">
+      <div class="row">
+
+        <div class="col">
+
+          <div class="logos">
+            <a href="https://discord.gg/e29HWwC2Mz" rel="noopener" target="_blank"><img src="/discord.svg" alt="link to Terra discord room"></a>&nbsp;
+            <a href="https://medium.com/terra-money" rel="noopener" target="_blank"><img src="/medium.svg" alt="link to Terra medium"></a>&nbsp;
+            <a href="https://twitter.com/terra_money" rel="noopener" target="_blank"><img src="/twitter.svg" alt="link to Terra twitter"></a>&nbsp;
+            <a href="https://www.youtube.com/channel/UCoV1RXZ9ZBGcuu_PMTTlM0g" rel="noopener" target="_blank"><img src="/icon_youtube.png" alt="link to Terra youtube"></a>&nbsp;
+            <a href="https://t.me/terra_announcements" rel="noopener" target="_blank"><img src="/icon_telegram.png" alt="link to Terra telegram room"></a>
+            <br/><br/>
+          </div>
+
+        </div>
+
+        <div class="col-md-auto">
+
+          <a href="https://www.terra.money/" >terra.money</a> <br/>
+          <a href="mailto:general@terra.money" >Contact</a> <br/>
+          <a href="https://terra.breezy.hr/"> Careers</a> <br/>
+          <br/>
+
+        </div>
+
+        <div class="col-md-auto">
+
+          <a href="https://assets.website-files.com/611153e7af981472d8da199c/618b02d13e938ae1f8ad1e45_Terra_White_paper.pdf" >Whitepaper</a> <br/>
+          <a href="https://certik.org/projects/terra" >Security Audit</a> <br/>
+          <a href="https://agora.terra.money/" >Agora forum</a> <br/>
+          <br/>
+
+        </div>
+
+        <div class="col">
+          <a href="https://finder.terra.money/" >Terra Finder</a> <br/>
+          <a href="https://station.terra.money/" >Terra Station</a> <br/>
+          <a href="https://status.terra.money/" >Status</a> <br/>
+          <br/>
+
+        </div>
+
+      </div>
+    </div>
+
+
+  </p>
+</footer>
+</main>
 
 
       </div>
@@ -2265,7 +2207,6 @@ title="Print to PDF"
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
   <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-
 
   </body>
 </html>

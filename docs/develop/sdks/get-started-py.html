@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Terra.py &#8212; Terra Docs  documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -21,14 +20,14 @@
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
@@ -39,9 +38,9 @@
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
-    <script src="../../../_static/custom.js"></script>
     <script src="../../../_static/design-tabs.js"></script>
+    <script src="../../../_static/sphinx-book-theme.9d8b4a8b9bb19db25eeaddc40d639ba2.js"></script>
+    <script src="../../../_static/custom.js"></script>
     <link rel="shortcut icon" href="../../../_static/docs_favicon.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -55,20 +54,6 @@
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
-
     
     <div class="container-fluid" id="banner"></div>
 
@@ -77,10 +62,14 @@
     <div class="container-xl">
       <div class="row">
           
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<div class="col-12 col-md-3 bd-sidebar site-navigation " id="site-navigation">
+    
+        <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -1454,13 +1443,8 @@
 </ul>
 
     </div>
-</nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-        </div>
-    </div>
-    <div id="rtd-footer-container"></div>
+</nav> <!-- To handle the deprecated key -->
+
 </div>
 
 
@@ -1468,162 +1452,77 @@
 
 
           
-<!-- A tiny helper pixel to detect if we've scrolled -->
+<!-- This is an invisible pixel that we watch to see if we've scrolled. -->
 <div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="header-article row sticky-top noprint">
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            <div class="topbar-left">
+                
+                <label class="nav-toggle-button" for="__navigation">
+                    <div class="visually-hidden">Toggle navigation</div>
+                    <i class="fas fa-bars"></i>
+                </label>
+                
+            </div>
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
         
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-expand"></i>
-  </span>
-
-</button>
-
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/terra-money/docs"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/terra-money/docs/issues/new?title=Issue%20on%20page%20%2Fdocs/develop/sdks/get-started-py.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../../../_sources/docs/develop/sdks/get-started-py.md.txt"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.md</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
-
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/docs/develop/sdks/get-started-py.md.txt"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/terra-money/docs"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/terra-money/docs/issues/new?title=Issue%20on%20page%20%2Fdocs/develop/sdks/get-started-py.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
     </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
    Terra
@@ -1695,11 +1594,12 @@ title="Print to PDF"
  </li>
 </ul>
 
-    </nav>
-</div>
+            </nav>
+        </div>
     </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Terra<span/>.py</h1>
@@ -1787,19 +1687,18 @@ title="Print to PDF"
                     </div>
                 </div>
             </div>
-            <main id="main-content" role="main">
-                
+            
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="terra-span-py">
+  <div class="tex2jax_ignore mathjax_ignore section" id="terra-span-py">
 <h1>Terra<span/>.py<a class="headerlink" href="#terra-span-py" title="Permalink to this headline">#</a></h1>
 <p>The Terra Python Software Development Kit (SDK) is a library toolkit used for developing software for interacting with the Terra blockchain. In this tutorial, you will learn how you can install the Terra Python SDK, as well as any necessary dependencies, and how you can carry out various transactions utilizing this technology.</p>
 <p>For more information on Terra<span/>.py, visit the <a class="reference external" href="https://terra-money.github.io/terra.py/">Terra<span/>.py docs</a>.</p>
-<section id="requirements">
+<div class="section" id="requirements">
 <h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">#</a></h2>
 <p>The Terra Python SDK requires <a href="https://www.python.org/downloads/">Python v3.7+</a>.</p>
-</section>
-<section id="installation">
+</div>
+<div class="section" id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
 <li><p>The Terra Python SDK may be installed, preferably in a <a class="reference external" href="https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/">virtual environment</a>, by running the following command in your terminal:</p></li>
@@ -1817,9 +1716,9 @@ poetry install
 </pre></div>
 </div>
 <br/>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="usage-examples">
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="usage-examples">
 <h1>Usage Examples<a class="headerlink" href="#usage-examples" title="Permalink to this headline">#</a></h1>
 <p>The Terra Python SDK can be used to carry out a variety of transactions on the Terra blockchain. This tutorial covers the following examples:</p>
 <div align="center">
@@ -1827,11 +1726,11 @@ poetry install
 <p><a class="reference internal" href="#swapping-digital-currencies"><span class="std std-doc"><em>Swapping Digital Currencies</em></span></a></p>
 <p><a class="reference internal" href="#interacting-with-smart-contracts"><span class="std std-doc"><em>Interacting with Smart Contracts</em></span></a></p>
 </div>
-<section id="localterra-for-development-testing">
+<div class="section" id="localterra-for-development-testing">
 <h2>LocalTerra for Development &amp; Testing<a class="headerlink" href="#localterra-for-development-testing" title="Permalink to this headline">#</a></h2>
 <p>For testing your transactions, it is recommended that you install and run LocalTerra on your personal computer. Instructions on how to get LocalTerra up and running may be found in the <a class="reference external" href="https://github.com/terra-money/LocalTerra">LocalTerra Github repository</a>. If you would rather test on a network similar to <code class="docutils literal notranslate"><span class="pre">mainnet</span></code>, the live Terra blockchain, then you may utilize <code class="docutils literal notranslate"><span class="pre">testnet</span></code>. However, you will be limited on the number of transactions that you may make per day. This is to protect computing resources from scripts that may spam the network. Once you are comfortable enough to make transactions on the live Terra blockchain, you may utilize <code class="docutils literal notranslate"><span class="pre">mainnet</span></code> to carry out transactions with your own assets.</p>
-</section>
-<section id="connecting-to-your-wallet">
+</div>
+<div class="section" id="connecting-to-your-wallet">
 <h2>Connecting to Your Wallet<a class="headerlink" href="#connecting-to-your-wallet" title="Permalink to this headline">#</a></h2>
 <p>In order to conduct transactions on Terra, you will need to be able to send requests to the underlying blockchain. This may be done via instantiating an LCDClient which can be used to communicate to the corresponding Terra Lite Client Daemon (LCD) node.</p>
 <p>After you have instantiated your client to communicate with the appropriate network, you may initialize the wallet with which you would like to carry out transactions. On LocalTerra, you may pass in a name of a preconfigured testing wallet (test1-10), each of which contains more than adequate funds for testing purposes. On testnet or mainnet, you will need to pass in the mnemonic key associated with your wallet.</p>
@@ -1879,8 +1778,8 @@ poetry install
 <span class="n">wallet</span> <span class="o">=</span> <span class="n">terra</span><span class="o">.</span><span class="n">wallet</span><span class="p">(</span><span class="n">mk</span><span class="p">)</span>
 </pre></div>
 </div>
-</section>
-<section id="quick-note-on-gas-fees">
+</div>
+<div class="section" id="quick-note-on-gas-fees">
 <h2>Quick Note on Gas &amp; Fees<a class="headerlink" href="#quick-note-on-gas-fees" title="Permalink to this headline">#</a></h2>
 <p>All transactions on the blockchain will require some effort from computational resources in order to be processed and accepted. The computational work expended due to processing a transaction is quantified in units of <code class="docutils literal notranslate"><span class="pre">gas</span></code>.</p>
 <p>Because the amount of gas needed may not be predetermined, the signer of the transaction must send the amount of gas that they would like to use along with the transaction. Fees are calculated by multiplying the gas amount specified in the transaction by either a user-specified price or by utilizing preset prices for each unit of gas. Current rates per unit of gas may be viewed on the <a class="reference external" href="https://fcd.terra.dev/v1/txs/gas_prices">gas rates FCD page</a>.</p>
@@ -1926,8 +1825,8 @@ poetry install
 <p class="admonition-title">Note</p>
 <p>The “u” preceding the name of each currency is the unit symbol for micro. This means that each price is given in millionths of the corresponding cryptocurrency asset. Each currency name refers to its corresponding Terra token. For example, the “uusd”: “0.15” entry corresponds to a 0.00000015 UST cost for each unit of gas expended per transaction.</p>
 </div>
-</section>
-<section id="signing-and-sending-transactions">
+</div>
+<div class="section" id="signing-and-sending-transactions">
 <h2>Signing and Sending Transactions<a class="headerlink" href="#signing-and-sending-transactions" title="Permalink to this headline">#</a></h2>
 <p>After initializing your LCDClient and wallet, you may try to carry out a simple transfer of funds. This involves initializing the addresses of your sender and receiver wallets, setting the relevant parameters to carry out the transaction, and creating, signing, and finally sending the request to the node for execution. In this example, you will be sending 1 Luna from your previously initialized wallet to another testing wallet, test2. For this example, fees will be paid in TerraUSD (UST), as specified in the <code class="docutils literal notranslate"><span class="pre">fee_denoms</span></code> parameter.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">terra_sdk.client.lcd.api.tx</span> <span class="kn">import</span> <span class="n">CreateTxOptions</span>
@@ -1965,8 +1864,8 @@ poetry install
 <p class="admonition-title">Note on Gas Estimation</p>
 <p>In <code class="docutils literal notranslate"><span class="pre">CreateTxOptions</span></code>, the setting of the <code class="docutils literal notranslate"><span class="pre">gas</span></code> parameter to <code class="docutils literal notranslate"><span class="pre">auto</span></code> estimates the amount of gas that may be needed for processing the transaction. The <code class="docutils literal notranslate"><span class="pre">gas_adjustment</span></code> parameter allows for this value to be increased in order to meet the minimum gas requirement for processing if the estimated value is determined to be too small. In order to ensure acceptance of your transaction, this example sets this parameter to a value of 1.5. You may experiment with different parameter values to evaluate which configuration is best for you.</p>
 </div>
-</section>
-<section id="swapping-digital-currencies">
+</div>
+<div class="section" id="swapping-digital-currencies">
 <h2>Swapping Digital Currencies<a class="headerlink" href="#swapping-digital-currencies" title="Permalink to this headline">#</a></h2>
 <p>If you would like to swap one of your Terra assets for another, you may broadcast a swap message to the Terra node. In this example, you will utilize your previously initialized wallet, test1, to swap 1 Luna to UST. You also specify that you will pay the transaction fee with your TerraKRW (KRT) assets.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">terra_sdk.client.lcd.api.tx</span> <span class="kn">import</span> <span class="n">CreateTxOptions</span>
@@ -1998,7 +1897,7 @@ poetry install
 <span class="n">result</span> <span class="o">=</span> <span class="n">terra</span><span class="o">.</span><span class="n">tx</span><span class="o">.</span><span class="n">broadcast</span><span class="p">(</span><span class="n">tx</span><span class="p">)</span>
 </pre></div>
 </div>
-<section id="swap-and-send">
+<div class="section" id="swap-and-send">
 <h3>Swap and Send<a class="headerlink" href="#swap-and-send" title="Permalink to this headline">#</a></h3>
 <p>You may also swap and send funds to an address of your choice utilizing a swap and send message. In this example, you will swap 1 Luna for UST and then send the resulting funds to another testing wallet.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">terra_sdk.client.lcd.api.tx</span> <span class="kn">import</span> <span class="n">CreateTxOptions</span>
@@ -2032,9 +1931,9 @@ poetry install
 <span class="n">result</span> <span class="o">=</span> <span class="n">terra</span><span class="o">.</span><span class="n">tx</span><span class="o">.</span><span class="n">broadcast</span><span class="p">(</span><span class="n">tx</span><span class="p">)</span>
 </pre></div>
 </div>
-</section>
-</section>
-<section id="interacting-with-smart-contracts">
+</div>
+</div>
+<div class="section" id="interacting-with-smart-contracts">
 <h2>Interacting with Smart Contracts<a class="headerlink" href="#interacting-with-smart-contracts" title="Permalink to this headline">#</a></h2>
 <p>In order to interact with a smart contract on Terra, you will have to either deploy your own smart contract on LocalTerra or utilize one of the many exceptional contracts available on the testnet or mainnet. In this example, you will deposit 1 UST into Anchor utilizing the Terra Python SDK on the testnet. Anchor is a decentralized savings protocol that offers low-volatile yields on Terra stablecoin deposits. You may interact with Anchor by going to the <a class="reference external" href="https://app.anchorprotocol.com/earn">Anchor EARN page</a>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">terra_sdk.client.lcd.api.tx</span> <span class="kn">import</span> <span class="n">CreateTxOptions</span>
@@ -2068,20 +1967,18 @@ poetry install
 <span class="n">result</span> <span class="o">=</span> <span class="n">terra</span><span class="o">.</span><span class="n">tx</span><span class="o">.</span><span class="n">broadcast</span><span class="p">(</span><span class="n">tx</span><span class="p">)</span>
 </pre></div>
 </div>
-</section>
-<section id="next-steps">
+</div>
+<div class="section" id="next-steps">
 <h2>Next steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">#</a></h2>
 <p>For more information on your next steps with Terra<span/>.py, visit the <a class="reference external" href="https://terra-money.github.io/terra.py/">Terra<span/>.py docs</a>.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
+            
+                <!-- Previous / next buttons -->
 <div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="terra-js/Websockets.html" title="previous page">
         <i class="fas fa-angle-left"></i>
@@ -2098,17 +1995,62 @@ poetry install
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            </footer>
+            
         </div>
     </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-</p>
-        </footer>
-    </div>
+    <footer class="footer">
+  <p>
     
-</div>
+
+    <div class="extra_footer container">
+      <div class="row">
+
+        <div class="col">
+
+          <div class="logos">
+            <a href="https://discord.gg/e29HWwC2Mz" rel="noopener" target="_blank"><img src="/discord.svg" alt="link to Terra discord room"></a>&nbsp;
+            <a href="https://medium.com/terra-money" rel="noopener" target="_blank"><img src="/medium.svg" alt="link to Terra medium"></a>&nbsp;
+            <a href="https://twitter.com/terra_money" rel="noopener" target="_blank"><img src="/twitter.svg" alt="link to Terra twitter"></a>&nbsp;
+            <a href="https://www.youtube.com/channel/UCoV1RXZ9ZBGcuu_PMTTlM0g" rel="noopener" target="_blank"><img src="/icon_youtube.png" alt="link to Terra youtube"></a>&nbsp;
+            <a href="https://t.me/terra_announcements" rel="noopener" target="_blank"><img src="/icon_telegram.png" alt="link to Terra telegram room"></a>
+            <br/><br/>
+          </div>
+
+        </div>
+
+        <div class="col-md-auto">
+
+          <a href="https://www.terra.money/" >terra.money</a> <br/>
+          <a href="mailto:general@terra.money" >Contact</a> <br/>
+          <a href="https://terra.breezy.hr/"> Careers</a> <br/>
+          <br/>
+
+        </div>
+
+        <div class="col-md-auto">
+
+          <a href="https://assets.website-files.com/611153e7af981472d8da199c/618b02d13e938ae1f8ad1e45_Terra_White_paper.pdf" >Whitepaper</a> <br/>
+          <a href="https://certik.org/projects/terra" >Security Audit</a> <br/>
+          <a href="https://agora.terra.money/" >Agora forum</a> <br/>
+          <br/>
+
+        </div>
+
+        <div class="col">
+          <a href="https://finder.terra.money/" >Terra Finder</a> <br/>
+          <a href="https://station.terra.money/" >Terra Station</a> <br/>
+          <a href="https://status.terra.money/" >Status</a> <br/>
+          <br/>
+
+        </div>
+
+      </div>
+    </div>
+
+
+  </p>
+</footer>
+</main>
 
 
       </div>
@@ -2116,7 +2058,6 @@ poetry install
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
   <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-
 
   </body>
 </html>

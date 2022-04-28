@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mint an NFT using Terrain &#8212; Terra Docs  documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -21,14 +20,14 @@
     href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
@@ -39,9 +38,9 @@
     <script src="../../../../_static/doctools.js"></script>
     <script src="../../../../_static/clipboard.min.js"></script>
     <script src="../../../../_static/copybutton.js"></script>
-    <script src="../../../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
-    <script src="../../../../_static/custom.js"></script>
     <script src="../../../../_static/design-tabs.js"></script>
+    <script src="../../../../_static/sphinx-book-theme.9d8b4a8b9bb19db25eeaddc40d639ba2.js"></script>
+    <script src="../../../../_static/custom.js"></script>
     <link rel="shortcut icon" href="../../../../_static/docs_favicon.ico"/>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
@@ -55,20 +54,6 @@
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
-
     
     <div class="container-fluid" id="banner"></div>
 
@@ -77,10 +62,14 @@
     <div class="container-xl">
       <div class="row">
           
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<div class="col-12 col-md-3 bd-sidebar site-navigation " id="site-navigation">
+    
+        <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../../../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -1454,13 +1443,8 @@
 </ul>
 
     </div>
-</nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-        </div>
-    </div>
-    <div id="rtd-footer-container"></div>
+</nav> <!-- To handle the deprecated key -->
+
 </div>
 
 
@@ -1468,162 +1452,77 @@
 
 
           
-<!-- A tiny helper pixel to detect if we've scrolled -->
+<!-- This is an invisible pixel that we watch to see if we've scrolled. -->
 <div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="header-article row sticky-top noprint">
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            <div class="topbar-left">
+                
+                <label class="nav-toggle-button" for="__navigation">
+                    <div class="visually-hidden">Toggle navigation</div>
+                    <i class="fas fa-bars"></i>
+                </label>
+                
+            </div>
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
         
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-expand"></i>
-  </span>
-
-</button>
-
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/terra-money/docs"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/terra-money/docs/issues/new?title=Issue%20on%20page%20%2Fdocs/develop/dapp/quick-start/mint-an-nft.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../../../../_sources/docs/develop/dapp/quick-start/mint-an-nft.md.txt"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.md</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
-
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../../_sources/docs/develop/dapp/quick-start/mint-an-nft.md.txt"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/terra-money/docs"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/terra-money/docs/issues/new?title=Issue%20on%20page%20%2Fdocs/develop/dapp/quick-start/mint-an-nft.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
     </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#prerequisites">
    Prerequisites
@@ -1676,11 +1575,12 @@ title="Print to PDF"
  </li>
 </ul>
 
-    </nav>
-</div>
+            </nav>
+        </div>
     </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Mint an NFT using Terrain</h1>
@@ -1749,15 +1649,14 @@ title="Print to PDF"
                     </div>
                 </div>
             </div>
-            <main id="main-content" role="main">
-                
+            
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="mint-an-nft-using-terrain">
+  <div class="tex2jax_ignore mathjax_ignore section" id="mint-an-nft-using-terrain">
 <h1>Mint an NFT using Terrain<a class="headerlink" href="#mint-an-nft-using-terrain" title="Permalink to this headline">#</a></h1>
 <p>NFTs, or non-fungible tokens, are unique digital assets that can be showcased, bought, and sold on the blockchain. Purchasing an NFT gives you ownership over the unique digital creation, similar to buying a distinct painting or art piece.</p>
 <p>In this tutorial, you will learn how to mint your own NFT using the <a class="reference external" href="https://github.com/terran6/nft-on-terra.git">NFT Terrain application</a> and LocalTerra.</p>
-<section id="prerequisites">
+<div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.google.com/chrome/downloads/">Download Google Chrome</a></p></li>
@@ -1773,8 +1672,8 @@ title="Print to PDF"
 <p class="admonition-title">RAM requirements</p>
 <p>This tutorial utilizes LocalTerra which requires at least 16gb of RAM to run properly.</p>
 </div>
-</section>
-<section id="create-your-project">
+</div>
+<div class="section" id="create-your-project">
 <h2>1. Create your project<a class="headerlink" href="#create-your-project" title="Permalink to this headline">#</a></h2>
 <p>After installing all the <a class="reference internal" href="#prerequisites"><span class="std std-doc">prerequisites</span></a> listed above, use the following steps to set up your environment and clone the <a class="reference external" href="https://github.com/terran6/nft-on-terra.git">NFT minting repository</a>, which contains the NFT minting smart contract as well as the corresponding front-end application.</p>
 <ol class="arabic">
@@ -1797,8 +1696,8 @@ npm install
 </li>
 </ol>
 <p>After all the dependencies have been installed, you can close this terminal window.</p>
-</section>
-<section id="start-localterra">
+</div>
+<div class="section" id="start-localterra">
 <h2>2. Start LocalTerra<a class="headerlink" href="#start-localterra" title="Permalink to this headline">#</a></h2>
 <p>LocalTerra is a complete Terra testnet and ecosystem containerized with Docker. In this tutorial, you will use LocalTerra to simulate transactions in a local testing environment.</p>
 <p>After <a class="reference external" href="https://docs.terra.money/docs/develop/dapp/quick-start/using-terrain-localterra.html#install-and-run-localterra">downloading LocalTerra</a> and all its dependencies, open a new terminal window and run the following commands:</p>
@@ -1807,8 +1706,8 @@ docker-compose up
 </pre></div>
 </div>
 <p>After running LocalTerra successfully, you will start seeing simulated blockchain transactions.</p>
-</section>
-<section id="set-up-your-wallet">
+</div>
+<div class="section" id="set-up-your-wallet">
 <h2>3. Set up your wallet<a class="headerlink" href="#set-up-your-wallet" title="Permalink to this headline">#</a></h2>
 <p>In order to use your Terra Station wallet with LocalTerra, you will need to configure your wallet to run on your LocalTerra network.</p>
 <ol class="arabic simple">
@@ -1830,8 +1729,8 @@ docker-compose up
     <img src="../../../../nft/test_wallet.png" alt="Switch Wallet" style="border:1px solid black; width: 500px; margin: 10px 10px 20px 10px;"/>
   </div>
 <p>Now that you have successfully switched to the testing wallet on LocalTerra, you will be able to deploy your smart contract.</p>
-</section>
-<section id="update-the-instantiate-message">
+</div>
+<div class="section" id="update-the-instantiate-message">
 <h2>4. Update the instantiate message<a class="headerlink" href="#update-the-instantiate-message" title="Permalink to this headline">#</a></h2>
 <p>Before you can deploy your contract and begin minting your NFT, you’ll need to change the <code class="docutils literal notranslate"><span class="pre">config.terrain.json</span></code> file in your cloned repository.</p>
 <ol class="arabic simple">
@@ -1861,8 +1760,8 @@ docker-compose up
 </li>
 </ol>
 <p>Be sure to save the changes to your <code class="docutils literal notranslate"><span class="pre">config.terrain.json</span></code> file.</p>
-</section>
-<section id="deploy-your-contract-to-localterra">
+</div>
+<div class="section" id="deploy-your-contract-to-localterra">
 <h2>5. Deploy your contract to LocalTerra<a class="headerlink" href="#deploy-your-contract-to-localterra" title="Permalink to this headline">#</a></h2>
 <p>You are finally ready to deploy your contract and run the NFT minting application. Make sure you have installed Terrain before proceeding.</p>
 <ol class="arabic">
@@ -1874,8 +1773,8 @@ docker-compose up
 </div>
 </li>
 </ol>
-</section>
-<section id="launch-the-nft-frontend-app">
+</div>
+<div class="section" id="launch-the-nft-frontend-app">
 <h2>5. Launch the NFT frontend app<a class="headerlink" href="#launch-the-nft-frontend-app" title="Permalink to this headline">#</a></h2>
 <p>Once the contract deployment is successfully completed, you can run the frontend application to mint your NFT.</p>
 <ol class="arabic">
@@ -1912,8 +1811,8 @@ npm install
 <p class="admonition-title">NFT hosting</p>
 <p>Most NFT creators host their NFTs using IPFS (Interplanetary File System). There are a variety of resources available to post an NFT on IPFS, such as <a class="reference external" href="https://www.pinata.cloud/">Pinata</a>. In this example, the image used is available at <a class="reference external" href="https://assets.terra.money/icon/60/Luna.png">https://assets.terra.money/icon/60/Luna.png</a> .</p>
 </div>
-</section>
-<section id="mint-your-nft">
+</div>
+<div class="section" id="mint-your-nft">
 <h2>6. Mint your NFT<a class="headerlink" href="#mint-your-nft" title="Permalink to this headline">#</a></h2>
 <p>Your NFT is ready to mint!</p>
 <ol class="arabic simple">
@@ -1925,8 +1824,8 @@ npm install
     <img src="../../../../nft/nft_minted.png" alt="Minted NFT" style="border:1px solid black; width: 500px; margin: 10px 10px 20px 10px;"/>
   </div>
 <p>Congratulations, You just minted your first NFT!</p>
-</section>
-<section id="view-your-new-nft">
+</div>
+<div class="section" id="view-your-new-nft">
 <h2>View Your New NFT<a class="headerlink" href="#view-your-new-nft" title="Permalink to this headline">#</a></h2>
 <ol class="arabic">
 <li><p>Before you can view your NFT, you’ll need to locate your contract address. Open the <code class="docutils literal notranslate"><span class="pre">refs.terrain.json</span></code> file located in your cloned repository and copy the contract address listed after <code class="docutils literal notranslate"><span class="pre">&quot;default&quot;</span></code>:</p>
@@ -1961,24 +1860,22 @@ npm install
     <img src="../../../../nft/nft_station.png" alt="NFT Collection" style="border:1px solid black; width: 500px; margin: 10px 10px 20px 10px;"/>
   </div>
 <p>From here, you can <strong>View</strong> relevant information about your NFT or <strong>Send</strong> your NFT to any specified wallet address.</p>
-</section>
-<section id="congratulations">
+</div>
+<div class="section" id="congratulations">
 <h2>Congratulations!<a class="headerlink" href="#congratulations" title="Permalink to this headline">#</a></h2>
 <p>You’ve just minted your first NFT on the Terra blockchain! If you have your own unique digital creation that you would like to share with the world, you can follow these instructions using the mainnet network and your personal Terra Station wallet.</p>
 <div class="admonition-mint-nfts-on-the-mainnet admonition">
 <p class="admonition-title">Mint NFTs on the mainnet</p>
 <p>LocalTerra is not needed for deployments on the mainnet and is primarily used for local testing and development purposes.</p>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
+            
+                <!-- Previous / next buttons -->
 <div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="using-terrain-localterra.html" title="previous page">
         <i class="fas fa-angle-left"></i>
@@ -1995,17 +1892,62 @@ npm install
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            </footer>
+            
         </div>
     </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-</p>
-        </footer>
-    </div>
+    <footer class="footer">
+  <p>
     
-</div>
+
+    <div class="extra_footer container">
+      <div class="row">
+
+        <div class="col">
+
+          <div class="logos">
+            <a href="https://discord.gg/e29HWwC2Mz" rel="noopener" target="_blank"><img src="/discord.svg" alt="link to Terra discord room"></a>&nbsp;
+            <a href="https://medium.com/terra-money" rel="noopener" target="_blank"><img src="/medium.svg" alt="link to Terra medium"></a>&nbsp;
+            <a href="https://twitter.com/terra_money" rel="noopener" target="_blank"><img src="/twitter.svg" alt="link to Terra twitter"></a>&nbsp;
+            <a href="https://www.youtube.com/channel/UCoV1RXZ9ZBGcuu_PMTTlM0g" rel="noopener" target="_blank"><img src="/icon_youtube.png" alt="link to Terra youtube"></a>&nbsp;
+            <a href="https://t.me/terra_announcements" rel="noopener" target="_blank"><img src="/icon_telegram.png" alt="link to Terra telegram room"></a>
+            <br/><br/>
+          </div>
+
+        </div>
+
+        <div class="col-md-auto">
+
+          <a href="https://www.terra.money/" >terra.money</a> <br/>
+          <a href="mailto:general@terra.money" >Contact</a> <br/>
+          <a href="https://terra.breezy.hr/"> Careers</a> <br/>
+          <br/>
+
+        </div>
+
+        <div class="col-md-auto">
+
+          <a href="https://assets.website-files.com/611153e7af981472d8da199c/618b02d13e938ae1f8ad1e45_Terra_White_paper.pdf" >Whitepaper</a> <br/>
+          <a href="https://certik.org/projects/terra" >Security Audit</a> <br/>
+          <a href="https://agora.terra.money/" >Agora forum</a> <br/>
+          <br/>
+
+        </div>
+
+        <div class="col">
+          <a href="https://finder.terra.money/" >Terra Finder</a> <br/>
+          <a href="https://station.terra.money/" >Terra Station</a> <br/>
+          <a href="https://status.terra.money/" >Status</a> <br/>
+          <br/>
+
+        </div>
+
+      </div>
+    </div>
+
+
+  </p>
+</footer>
+</main>
 
 
       </div>
@@ -2013,7 +1955,6 @@ npm install
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
   <script src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-
 
   </body>
 </html>

@@ -38,7 +38,7 @@ For interactive courses on developing smart contracts using Rust and CosmWasm li
 
 Congrats! You have the basics down! 
 
-Now you can dive into the other tools in the Terra Development Suite:
+Now you can dive into the other tools in the Terra Development Suite. Visit the [tool guide](tools.md) for more info. 
 
 ### Terra<span/>.js
 

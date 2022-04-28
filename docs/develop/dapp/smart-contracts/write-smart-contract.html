@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Writing the Contract &#8212; Terra Docs  documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -21,14 +20,14 @@
     href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
@@ -39,9 +38,9 @@
     <script src="../../../../_static/doctools.js"></script>
     <script src="../../../../_static/clipboard.min.js"></script>
     <script src="../../../../_static/copybutton.js"></script>
-    <script src="../../../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
-    <script src="../../../../_static/custom.js"></script>
     <script src="../../../../_static/design-tabs.js"></script>
+    <script src="../../../../_static/sphinx-book-theme.9d8b4a8b9bb19db25eeaddc40d639ba2.js"></script>
+    <script src="../../../../_static/custom.js"></script>
     <link rel="shortcut icon" href="../../../../_static/docs_favicon.ico"/>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
@@ -55,20 +54,6 @@
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
-
     
     <div class="container-fluid" id="banner"></div>
 
@@ -77,10 +62,14 @@
     <div class="container-xl">
       <div class="row">
           
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<div class="col-12 col-md-3 bd-sidebar site-navigation " id="site-navigation">
+    
+        <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../../../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -1454,13 +1443,8 @@
 </ul>
 
     </div>
-</nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-        </div>
-    </div>
-    <div id="rtd-footer-container"></div>
+</nav> <!-- To handle the deprecated key -->
+
 </div>
 
 
@@ -1468,162 +1452,77 @@
 
 
           
-<!-- A tiny helper pixel to detect if we've scrolled -->
+<!-- This is an invisible pixel that we watch to see if we've scrolled. -->
 <div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="header-article row sticky-top noprint">
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            <div class="topbar-left">
+                
+                <label class="nav-toggle-button" for="__navigation">
+                    <div class="visually-hidden">Toggle navigation</div>
+                    <i class="fas fa-bars"></i>
+                </label>
+                
+            </div>
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
         
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-expand"></i>
-  </span>
-
-</button>
-
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/terra-money/docs"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/terra-money/docs/issues/new?title=Issue%20on%20page%20%2Fdocs/develop/dapp/smart-contracts/write-smart-contract.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../../../../_sources/docs/develop/dapp/smart-contracts/write-smart-contract.md.txt"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.md</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
-
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../../_sources/docs/develop/dapp/smart-contracts/write-smart-contract.md.txt"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/terra-money/docs"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/terra-money/docs/issues/new?title=Issue%20on%20page%20%2Fdocs/develop/dapp/smart-contracts/write-smart-contract.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
     </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#start-with-a-template">
    Start with a template
@@ -1738,11 +1637,12 @@ title="Print to PDF"
  </li>
 </ul>
 
-    </nav>
-</div>
+            </nav>
+        </div>
     </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Writing the Contract</h1>
@@ -1873,11 +1773,10 @@ title="Print to PDF"
                     </div>
                 </div>
             </div>
-            <main id="main-content" role="main">
-                
+            
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="writing-the-contract">
+  <div class="tex2jax_ignore mathjax_ignore section" id="writing-the-contract">
 <h1>Writing the Contract<a class="headerlink" href="#writing-the-contract" title="Permalink to this headline">#</a></h1>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
@@ -1891,7 +1790,7 @@ title="Print to PDF"
 <li><p><code class="docutils literal notranslate"><span class="pre">query()</span></code>: gets called when a user wants to get data out of a smart contract</p></li>
 </ul>
 <p>In this section, you will define your expected messages alongside their implementation.</p>
-<section id="start-with-a-template">
+<div class="section" id="start-with-a-template">
 <h2>Start with a template<a class="headerlink" href="#start-with-a-template" title="Permalink to this headline">#</a></h2>
 <p>In your working directory, quickly launch your smart contract with the recommended folder structure and build options by running the following commands:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>cargo generate --git https://github.com/CosmWasm/cw-template.git --branch <span class="m">0</span>.16 --name my-first-contract
@@ -1899,8 +1798,8 @@ title="Print to PDF"
 </pre></div>
 </div>
 <p>This helps get you started by providing the basic boilerplate and structure for a smart contract. You’ll find in the <code class="docutils literal notranslate"><span class="pre">src/lib.rs</span></code> file that the standard CosmWasm entrypoints <code class="docutils literal notranslate"><span class="pre">instantiate()</span></code>, <code class="docutils literal notranslate"><span class="pre">execute()</span></code>, and <code class="docutils literal notranslate"><span class="pre">query()</span></code> are properly exposed and hooked up.</p>
-</section>
-<section id="contract-state">
+</div>
+<div class="section" id="contract-state">
 <h2>Contract State<a class="headerlink" href="#contract-state" title="Permalink to this headline">#</a></h2>
 <p>The starting template has the basic following state:</p>
 <ul class="simple">
@@ -1940,12 +1839,12 @@ title="Print to PDF"
 <li><p><code class="docutils literal notranslate"><span class="pre">JsonSchema</span></code>: auto-generates a JSON schema</p></li>
 </ul>
 <p><code class="docutils literal notranslate"><span class="pre">Addr</span></code>, refers to a human-readable Terra address prefixed with <code class="docutils literal notranslate"><span class="pre">terra...</span></code>. Its counterpart is the <code class="docutils literal notranslate"><span class="pre">CanonicalAddr</span></code>, which refers to a Terra address’s native decoded Bech32 form in bytes.</p>
-</section>
-<section id="instantiatemsg">
+</div>
+<div class="section" id="instantiatemsg">
 <h2>InstantiateMsg<a class="headerlink" href="#instantiatemsg" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">InstantiateMsg</span></code> is provided when a user creates a contract on the blockchain through a <code class="docutils literal notranslate"><span class="pre">MsgInstantiateContract</span></code>. This provides the contract with its configuration as well as its initial state.</p>
 <p>On the Terra blockchain, the uploading of a contract’s code and the instantiation of a contract are regarded as separate events, unlike on Ethereum. This is to allow a small set of vetted contract archetypes to exist as multiple instances sharing the same base code but configured with different parameters (imagine one canonical ERC20, and multiple tokens that use its code).</p>
-<section id="example">
+<div class="section" id="example">
 <h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">#</a></h3>
 <p>For your contract, you will expect a contract creator to supply the initial state in a JSON message:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
@@ -1953,8 +1852,8 @@ title="Print to PDF"
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-<section id="message-definition">
+</div>
+<div class="section" id="message-definition">
 <h3>Message Definition<a class="headerlink" href="#message-definition" title="Permalink to this headline">#</a></h3>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="c1">// src/msg.rs</span>
 
@@ -1967,8 +1866,8 @@ title="Print to PDF"
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-<section id="logic">
+</div>
+<div class="section" id="logic">
 <h3>Logic<a class="headerlink" href="#logic" title="Permalink to this headline">#</a></h3>
 <p>Here you will define your first entry-point, the <code class="docutils literal notranslate"><span class="pre">instantiate()</span></code>, or where the contract is instantiated and passed its <code class="docutils literal notranslate"><span class="pre">InstantiateMsg</span></code>. Extract the count from the message and set up your initial state, where:</p>
 <ul class="simple">
@@ -1997,14 +1896,14 @@ title="Print to PDF"
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-</section>
-<section id="executemsg">
+</div>
+</div>
+<div class="section" id="executemsg">
 <h2>ExecuteMsg<a class="headerlink" href="#executemsg" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">ExecuteMsg</span></code> is a JSON message passed to the <code class="docutils literal notranslate"><span class="pre">execute()</span></code> function through a <code class="docutils literal notranslate"><span class="pre">MsgExecuteContract</span></code>. Unlike the <code class="docutils literal notranslate"><span class="pre">InstantiateMsg</span></code>, the <code class="docutils literal notranslate"><span class="pre">ExecuteMsg</span></code> can exist as several different types of messages, to account for the different types of functions that a smart contract can expose to a user. The <code class="docutils literal notranslate"><span class="pre">execute()</span></code> function demultiplexes these different types of messages to its appropriate message handler logic.</p>
-<section id="id1">
+<div class="section" id="id1">
 <h3>Example<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
-<section id="increment">
+<div class="section" id="increment">
 <h4>Increment<a class="headerlink" href="#increment" title="Permalink to this headline">#</a></h4>
 <p>Any user can increment the current count by 1.</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
@@ -2012,8 +1911,8 @@ title="Print to PDF"
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-<section id="reset">
+</div>
+<div class="section" id="reset">
 <h4>Reset<a class="headerlink" href="#reset" title="Permalink to this headline">#</a></h4>
 <p>Only the owner can reset the count to a specific number.</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
@@ -2023,9 +1922,9 @@ title="Print to PDF"
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-</section>
-<section id="id2">
+</div>
+</div>
+<div class="section" id="id2">
 <h3>Message Definition<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
 <p>As for your <code class="docutils literal notranslate"><span class="pre">ExecuteMsg</span></code>, you will use an <code class="docutils literal notranslate"><span class="pre">enum</span></code> to multiplex over the different types of messages that your contract can understand. The <code class="docutils literal notranslate"><span class="pre">serde</span></code> attribute rewrites your attribute keys in snake case and lower case, so you’ll have <code class="docutils literal notranslate"><span class="pre">increment</span></code> and <code class="docutils literal notranslate"><span class="pre">reset</span></code> instead of <code class="docutils literal notranslate"><span class="pre">Increment</span></code> and <code class="docutils literal notranslate"><span class="pre">Reset</span></code> when serializing and deserializing across JSON.</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="c1">// src/msg.rs</span>
@@ -2038,8 +1937,8 @@ title="Print to PDF"
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-<section id="id3">
+</div>
+<div class="section" id="id3">
 <h3>Logic<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="c1">// src/contract.rs</span>
 
@@ -2084,14 +1983,14 @@ title="Print to PDF"
 </pre></div>
 </div>
 <p>The logic for reset is very similar to increment – except this time, it first checks that the message sender is permitted to invoke the reset function.</p>
-</section>
-</section>
-<section id="querymsg">
+</div>
+</div>
+<div class="section" id="querymsg">
 <h2>QueryMsg<a class="headerlink" href="#querymsg" title="Permalink to this headline">#</a></h2>
-<section id="id4">
+<div class="section" id="id4">
 <h3>Example<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
 <p>The template contract only supports one type of <code class="docutils literal notranslate"><span class="pre">QueryMsg</span></code>:</p>
-<section id="balance">
+<div class="section" id="balance">
 <h4>Balance<a class="headerlink" href="#balance" title="Permalink to this headline">#</a></h4>
 <p>The request:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
@@ -2105,9 +2004,9 @@ title="Print to PDF"
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-</section>
-<section id="id5">
+</div>
+</div>
+<div class="section" id="id5">
 <h3>Message Definition<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
 <p>To support queries against the contract for data, you’ll have to define both a <code class="docutils literal notranslate"><span class="pre">QueryMsg</span></code> format (which represents requests), as well as provide the structure of the query’s output – <code class="docutils literal notranslate"><span class="pre">CountResponse</span></code> in this case. You must do this because <code class="docutils literal notranslate"><span class="pre">query()</span></code> will send back information to the user through JSON in a structure and you must make the shape of your response known.</p>
 <p>Add the following to your <code class="docutils literal notranslate"><span class="pre">src/msg.rs</span></code>:</p>
@@ -2126,8 +2025,8 @@ title="Print to PDF"
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-<section id="id6">
+</div>
+<div class="section" id="id6">
 <h3>Logic<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
 <p>The logic for <code class="docutils literal notranslate"><span class="pre">query()</span></code> should be similar to that of <code class="docutils literal notranslate"><span class="pre">execute()</span></code>, except that, since <code class="docutils literal notranslate"><span class="pre">query()</span></code> is called without the end-user making a transaction, the <code class="docutils literal notranslate"><span class="pre">env</span></code> argument is ommitted as there is no information.</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="c1">// src/contract.rs</span>
@@ -2145,15 +2044,15 @@ title="Print to PDF"
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-</section>
-<section id="building-the-contract">
+</div>
+</div>
+<div class="section" id="building-the-contract">
 <h2>Building the Contract<a class="headerlink" href="#building-the-contract" title="Permalink to this headline">#</a></h2>
 <p>To build your contract, run the following command. This will check for any preliminary errors before optimizing.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>cargo wasm
 </pre></div>
 </div>
-<section id="optimizing-your-build">
+<div class="section" id="optimizing-your-build">
 <h3>Optimizing your build<a class="headerlink" href="#optimizing-your-build" title="Permalink to this headline">#</a></h3>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
@@ -2182,9 +2081,9 @@ title="Print to PDF"
 <p class="admonition-title">Important</p>
 <p>Please note that rust-optimizer will produce different contracts on Intel and ARM machines. So for reproducible builds you’ll have to stick to one.</p>
 </div>
-</section>
-</section>
-<section id="schemas">
+</div>
+</div>
+<div class="section" id="schemas">
 <h2>Schemas<a class="headerlink" href="#schemas" title="Permalink to this headline">#</a></h2>
 <p>In order to make use of JSON-schema auto-generation, you should register each of the data structures that you need schemas for.</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="c1">// examples/schema.rs</span>
@@ -2234,16 +2133,14 @@ title="Print to PDF"
 </pre></div>
 </div>
 <p>You can use an online tool such as <a class="reference external" href="https://www.jsonschemavalidator.net/">JSON Schema Validator</a> to test your input against the generated JSON schema.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
+            
+                <!-- Previous / next buttons -->
 <div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="set-up-local-environment.html" title="previous page">
         <i class="fas fa-angle-left"></i>
@@ -2260,17 +2157,62 @@ title="Print to PDF"
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            </footer>
+            
         </div>
     </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-</p>
-        </footer>
-    </div>
+    <footer class="footer">
+  <p>
     
-</div>
+
+    <div class="extra_footer container">
+      <div class="row">
+
+        <div class="col">
+
+          <div class="logos">
+            <a href="https://discord.gg/e29HWwC2Mz" rel="noopener" target="_blank"><img src="/discord.svg" alt="link to Terra discord room"></a>&nbsp;
+            <a href="https://medium.com/terra-money" rel="noopener" target="_blank"><img src="/medium.svg" alt="link to Terra medium"></a>&nbsp;
+            <a href="https://twitter.com/terra_money" rel="noopener" target="_blank"><img src="/twitter.svg" alt="link to Terra twitter"></a>&nbsp;
+            <a href="https://www.youtube.com/channel/UCoV1RXZ9ZBGcuu_PMTTlM0g" rel="noopener" target="_blank"><img src="/icon_youtube.png" alt="link to Terra youtube"></a>&nbsp;
+            <a href="https://t.me/terra_announcements" rel="noopener" target="_blank"><img src="/icon_telegram.png" alt="link to Terra telegram room"></a>
+            <br/><br/>
+          </div>
+
+        </div>
+
+        <div class="col-md-auto">
+
+          <a href="https://www.terra.money/" >terra.money</a> <br/>
+          <a href="mailto:general@terra.money" >Contact</a> <br/>
+          <a href="https://terra.breezy.hr/"> Careers</a> <br/>
+          <br/>
+
+        </div>
+
+        <div class="col-md-auto">
+
+          <a href="https://assets.website-files.com/611153e7af981472d8da199c/618b02d13e938ae1f8ad1e45_Terra_White_paper.pdf" >Whitepaper</a> <br/>
+          <a href="https://certik.org/projects/terra" >Security Audit</a> <br/>
+          <a href="https://agora.terra.money/" >Agora forum</a> <br/>
+          <br/>
+
+        </div>
+
+        <div class="col">
+          <a href="https://finder.terra.money/" >Terra Finder</a> <br/>
+          <a href="https://station.terra.money/" >Terra Station</a> <br/>
+          <a href="https://status.terra.money/" >Status</a> <br/>
+          <br/>
+
+        </div>
+
+      </div>
+    </div>
+
+
+  </p>
+</footer>
+</main>
 
 
       </div>
@@ -2278,7 +2220,6 @@ title="Print to PDF"
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
   <script src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-
 
   </body>
 </html>

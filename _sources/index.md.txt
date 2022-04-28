@@ -6,7 +6,7 @@ Welcome to the official documentation for Terra, a decentralized financial infra
 :gutter: 3
 
 :::{grid-item-card}
-:link: docs/develop/dapp/quick-start/README.html
+:link: docs/develop/get-started.html
 :class-card: sd-text-center sd-shadow-md sd-rounded-3
 ```{image} /img/Build_a_dApp_ver1.svg
 :class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
