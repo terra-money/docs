@@ -31,6 +31,7 @@ sphinxcontrib-htmlhelp >=2.0.0
 sphinxcontrib-jsmath
 sphinxcontrib-qthelp
 sphinxcontrib-serializinghtml >=1.1.5
+sphinxcontrib.youtube
 sphinx-book-theme
 sphinx-copybutton
 sphinx_design

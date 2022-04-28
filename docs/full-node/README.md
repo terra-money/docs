@@ -9,6 +9,7 @@ run-a-full-terra-node/README
 manage-a-terra-validator/README
 reference/README
 ../develop/endpoints
+resources
 ```
 
 :::::::{grid} 2 2 2 3
