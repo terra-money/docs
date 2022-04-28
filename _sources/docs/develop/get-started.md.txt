@@ -19,13 +19,13 @@ Follow the [Terrain setup tutorial](./dapp/quick-start/initial-setup.md) to get 
 
 ### 2. Download LocalTerra and start building
 
-LocalTerra is a scaled-down Terra blockchain that allows you to test your dApp locally. LocalTerra provides a single validator node and [10 configurable wallet accounts](./how-to/localterra/accounts.md). 
+LocalTerra is a scaled-down Terra blockchain that allows you to test your dApp locally. LocalTerra provides a single validator node and [10 preconfigured wallet accounts](./how-to/localterra/accounts.md). 
 
 Follow the [Terrain with LocalTerra tutorial](./dapp/quick-start/using-terrain-localterra.md) to start using Terrain and create a simple counter app. 
 
 ### 3. Mint an NFT
 
-Now that you are familiar with Terrain and LocalTerra, you can mint an NFT with Terrain. 
+Now that you are familiar with Terrain and LocalTerra, you can try minting an NFT with Terrain. 
 
 The [NFT minting](./dapp/quick-start/mint-an-nft.md) tutorial walks you through the creation of an NFT minting application using the dApp scaffolding and front end provided by Terrain. 
 
