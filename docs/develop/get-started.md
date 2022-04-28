@@ -19,9 +19,7 @@ Follow the [Terrain setup tutorial](./dapp/quick-start/initial-setup.md) to get 
 
 ### 2. Download LocalTerra and start building
 
-LocalTerra is a mini Terra blockchain that runs locally on your machine. You can use Terrain as a test environment for your projects. 
-
-When you start LocalTerra, you’ll see a single validator writing transactions to your mini blockchain. LocalTerra comes with [10 configurable wallet accounts](./how-to/localterra/accounts.md) to make testing easier. 
+LocalTerra is a scaled-down Terra blockchain that allows you to test your dApp locally. LocalTerra provides a single validator node and [10 configurable wallet accounts](./how-to/localterra/accounts.md). 
 
 Follow the [Terrain with LocalTerra tutorial](./dapp/quick-start/using-terrain-localterra.md) to start using Terrain and create a simple counter app. 
 
