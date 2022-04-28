@@ -5,7 +5,7 @@
 ```{toctree}
 :maxdepth: 1
 terra-js/README
-Terra.py <https://terra-money.github.io/terra.py/index.html>
+Terra.py <./get-started-py.md>
 wallet-provider/README
 ```
 :::::::{grid}
