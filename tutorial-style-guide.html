@@ -1,0 +1,2051 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tutorial style guide &#8212; Terra Docs  documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/design-tabs.js"></script>
+    <script src="_static/sphinx-book-theme.9d8b4a8b9bb19db25eeaddc40d639ba2.js"></script>
+    <script src="_static/custom.js"></script>
+    <link rel="shortcut icon" href="_static/docs_favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<div class="col-12 col-md-3 bd-sidebar site-navigation " id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/docs_logo.svg" class="logo" alt="logo">
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="docs/learn/README.html">
+   Learn
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="docs/learn/terra-station/README.html">
+     Terra Station
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="docs/learn/terra-station/download/README.html">
+       Download
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+      <label for="toctree-checkbox-3">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="docs/learn/terra-station/download/terra-station-desktop.html">
+         Terra Station desktop
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="docs/learn/terra-station/download/terra-station-extension.html">
+         Terra Station Chrome extension
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="docs/learn/terra-station/download/terra-station-mobile.html">
+         Terra Station mobile
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/learn/terra-station/wallet.html">
+       Wallet
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/learn/terra-station/send.html">
+       Send
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/learn/terra-station/staking.html">
+       Manage Staking
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/learn/terra-station/swap.html">
+       Mint, burn, or swap
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/learn/terra-station/governance.html">
+       Governance
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/learn/terra-station/wormhole.html">
+       Wormhole Bridge tutorial
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/learn/terra-station/multisig.html">
+       Multisig wallets
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/learn/terra-station/contracts.html">
+       Contract
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/learn/terra-station/testnet.html">
+       Testnet
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/learn/terra-station/keplr.html">
+       Connect your Station Wallet to Keplr
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="docs/learn/protocol.html">
+     About the Terra Protocol
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="docs/learn/fees.html">
+     Fees on Terra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="docs/learn/glossary.html">
+     Glossary
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="docs/learn/community-trust.html">
+     Terra Community Trust
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="docs/learn/assets.html">
+     Terra Brand Assets
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="docs/develop/README.html">
+   Develop
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="docs/develop/get-started.html">
+     How to get started
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="docs/develop/tools.html">
+     Which tools to use
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="docs/develop/dapp/README.html">
+     Build a dApp
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="docs/develop/dapp/quick-start/README.html">
+       Terrain quickstart guide
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+      <label for="toctree-checkbox-6">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="docs/develop/dapp/quick-start/initial-setup.html">
+         Terrain initial setup
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="docs/develop/dapp/quick-start/using-terrain-testnet.html">
+         Use Terrain with the testnet
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="docs/develop/dapp/quick-start/using-terrain-localterra.html">
+         Use Terrain with LocalTerra
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="docs/develop/dapp/quick-start/mint-an-nft.html">
+         Mint an NFT using Terrain
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="docs/develop/dapp/quick-start/contract-migration.html">
+         Migrating CosmWasm contracts on Terra
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="docs/develop/dapp/smart-contracts/README.html">
+       In-depth dApp guide
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+      <label for="toctree-checkbox-7">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="docs/develop/dapp/smart-contracts/build-terra-dapp.html">
+         Build a simple Terra dApp
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="docs/develop/dapp/smart-contracts/set-up-local-environment.html">
+         Environment Setup
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="docs/develop/dapp/smart-contracts/write-smart-contract.html">
+         Writing the Contract
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="docs/develop/dapp/smart-contracts/interact-with-smart-contract.html">
+         Interacting with the Contract
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="docs/develop/dapp/smart-contracts/manage-cw20-tokens.html">
+         CW20 Tokens
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="docs/develop/how-to/README.html">
+     Guides
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+    <label for="toctree-checkbox-8">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="docs/develop/how-to/terrad/README.html">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         terrad
+        </span>
+       </code>
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+      <label for="toctree-checkbox-9">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="docs/develop/how-to/terrad/install-terrad.html">
+         Install
+         <code class="docutils literal notranslate">
+          <span class="pre">
+           terrad
+          </span>
+         </code>
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="docs/develop/how-to/terrad/terrad-mac.html">
+         Install
+         <code class="docutils literal notranslate">
+          <span class="pre">
+           terrad
+          </span>
+         </code>
+         for Mac (Intel or M1)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="docs/develop/how-to/terrad/using-terrad.html">
+         Using
+         <code class="docutils literal notranslate">
+          <span class="pre">
+           terrad
+          </span>
+         </code>
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="docs/develop/how-to/terrad/commands.html">
+         Commands
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="docs/develop/how-to/terrad/subcommands.html">
+         Subcommands
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="docs/develop/how-to/localterra/README.html">
+       LocalTerra
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+      <label for="toctree-checkbox-10">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="docs/develop/how-to/localterra/install-localterra.html">
+         Install LocalTerra
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="docs/develop/how-to/localterra/configure.html">
+         Configure LocalTerra
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="docs/develop/how-to/localterra/integrations.html">
+         Integrations
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="docs/develop/how-to/localterra/accounts.html">
+         Accounts
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/develop/how-to/sign-with-multisig.html">
+       Sign with a multisig account
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/develop/how-to/start-lcd.html">
+       Start the light client daemon (LCD)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/develop/how-to/mint-an-nft.html">
+       Minting an NFT on the Terra Blockchain
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="docs/develop/endpoints.html">
+     RPC and LCD endpoints
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="docs/develop/open-source.html">
+     Open source contract comparison
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="docs/develop/module-specifications/README.html">
+     Terra Core modules
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+    <label for="toctree-checkbox-11">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/develop/module-specifications/spec-auth.html">
+       Auth
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/develop/module-specifications/spec-authz.html">
+       AuthZ
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/develop/module-specifications/spec-bank.html">
+       Bank
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/develop/module-specifications/spec-capability.html">
+       Capability
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/develop/module-specifications/spec-distribution.html">
+       Distribution
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/develop/module-specifications/spec-evidence.html">
+       Evidence
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/develop/module-specifications/spec-feegrant.html">
+       Fee grant
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/develop/module-specifications/spec-governance.html">
+       Governance
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/develop/module-specifications/spec-market.html">
+       Market
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/develop/module-specifications/spec-mint.html">
+       Mint
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/develop/module-specifications/spec-oracle.html">
+       Oracle
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/develop/module-specifications/spec-slashing.html">
+       Slashing
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/develop/module-specifications/spec-staking.html">
+       Staking
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/develop/module-specifications/spec-treasury.html">
+       Treasury
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/develop/module-specifications/spec-wasm.html">
+       WASM
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="docs/develop/sdks/README.html">
+     SDKs
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+    <label for="toctree-checkbox-12">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="docs/develop/sdks/terra-js/README.html">
+       Terra.js
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+      <label for="toctree-checkbox-13">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="docs/develop/sdks/terra-js/getting-started.html">
+         Get started with Terra.js
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="docs/develop/sdks/terra-js/common-examples.html">
+         Common examples
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="docs/develop/sdks/terra-js/add-modules.html">
+         Add modules
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="docs/develop/sdks/terra-js/coin-and-coins.html">
+         Coin and Coins
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="docs/develop/sdks/terra-js/fees.html">
+         Fees
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="docs/develop/sdks/terra-js/ibc.html">
+         IBC Transfers
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="docs/develop/sdks/terra-js/keys.html">
+         Keys
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="docs/develop/sdks/terra-js/make-a-connection.html">
+         Make a connection
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="docs/develop/sdks/terra-js/msgAuthorization.html">
+         MsgAuthorization
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="docs/develop/sdks/terra-js/multisend.html">
+         MsgSend
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="docs/develop/sdks/terra-js/numeric.html">
+         Numeric
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="docs/develop/sdks/terra-js/oracle-feeder.html">
+         Oracle feeder
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="docs/develop/sdks/terra-js/query-data.html">
+         Query data
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="docs/develop/sdks/terra-js/smart-contracts.html">
+         Smart contracts
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="docs/develop/sdks/terra-js/transactions.html">
+         Transactions
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="docs/develop/sdks/terra-js/wallets.html">
+         Wallets
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="docs/develop/sdks/terra-js/Websockets.html">
+         Websockets
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/develop/sdks/get-started-py.html">
+       Terra
+       <span>
+       </span>
+       .py
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="docs/develop/sdks/wallet-provider/README.html">
+       Wallet Provider
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+      <label for="toctree-checkbox-14">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="docs/develop/sdks/wallet-provider/wallet-provider-tutorial.html">
+         Get started with Wallet Provider
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="docs/develop/sdks/wallet-provider/station-extension.html">
+         Terra Station extension
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="docs/develop/sdks/wallet-provider/station-mobile.html">
+         Terra Station Mobile App
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="docs/develop/sdks/wallet-provider/sign-bytes.html">
+         Signing Bytes
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="docs/develop/reference/README.html">
+     Dev reference
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+    <label for="toctree-checkbox-15">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/develop/resources.html">
+       Developer resources
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference external" href="https://lcd.terra.dev/swagger/">
+       Terra REST API
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference external" href="https://pkg.go.dev/github.com/terra-money/core">
+       Terra Core GoDoc
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/ecosystem/integrations.html">
+       Block explorers
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="docs/develop/how-to/terrad/README.html">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         terrad
+        </span>
+       </code>
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+      <label for="toctree-checkbox-16">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="docs/develop/how-to/terrad/install-terrad.html">
+         Install
+         <code class="docutils literal notranslate">
+          <span class="pre">
+           terrad
+          </span>
+         </code>
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="docs/develop/how-to/terrad/terrad-mac.html">
+         Install
+         <code class="docutils literal notranslate">
+          <span class="pre">
+           terrad
+          </span>
+         </code>
+         for Mac (Intel or M1)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="docs/develop/how-to/terrad/using-terrad.html">
+         Using
+         <code class="docutils literal notranslate">
+          <span class="pre">
+           terrad
+          </span>
+         </code>
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="docs/develop/how-to/terrad/commands.html">
+         Commands
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="docs/develop/how-to/terrad/subcommands.html">
+         Subcommands
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/develop/endpoints.html">
+       RPC and LCD endpoints
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/develop/reference/history-and-changes.html">
+       History and changes
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/develop/reference/migration-guide.html">
+       Columbus-5 upgrade
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="docs/develop/resources.html">
+     Developer resources
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="docs/full-node/README.html">
+   Full node
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+  <label for="toctree-checkbox-17">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="docs/full-node/run-a-full-terra-node/README.html">
+     Run a full Terra node
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+    <label for="toctree-checkbox-18">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/full-node/run-a-full-terra-node/system-config.html">
+       System configuration
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/full-node/run-a-full-terra-node/build-terra-core.html">
+       Build Terra core
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/full-node/run-a-full-terra-node/set-up-production.html">
+       Set up a production environment
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/full-node/run-a-full-terra-node/configure-general-settings.html">
+       Configure general settings
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/full-node/run-a-full-terra-node/join-a-network.html">
+       Join a network
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/full-node/run-a-full-terra-node/sync.html">
+       Sync
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/full-node/run-a-full-terra-node/updates-and-additional.html">
+       Updates and additional settings
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/full-node/run-a-full-terra-node/troubleshoot.html">
+       Reset and troubleshooting
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="docs/full-node/manage-a-terra-validator/README.html">
+     Manage a validator
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
+    <label for="toctree-checkbox-19">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/full-node/manage-a-terra-validator/court-delegations.html">
+       Court delegations
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/full-node/manage-a-terra-validator/faq.html">
+       Validator FAQ
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/full-node/manage-a-terra-validator/implement-security.html">
+       Implement security practices
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/full-node/manage-a-terra-validator/set-up-oracle-feeder.html">
+       Set up an oracle feeder
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/full-node/manage-a-terra-validator/set-up-validator.html">
+       Register a validator
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/full-node/manage-a-terra-validator/troubleshoot-validator-problems.html">
+       Troubleshoot validator problems
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/full-node/manage-a-terra-validator/restore.html">
+       Restore a validator
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="docs/full-node/reference/README.html">
+     Node reference
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
+    <label for="toctree-checkbox-20">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference external" href="https://lcd.terra.dev/swagger/">
+       Terra REST API
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference external" href="https://pkg.go.dev/github.com/terra-money/core">
+       Terra Core GoDoc
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/ecosystem/integrations.html">
+       Block explorers
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="docs/develop/how-to/terrad/README.html">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         terrad
+        </span>
+       </code>
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
+      <label for="toctree-checkbox-21">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="docs/develop/how-to/terrad/install-terrad.html">
+         Install
+         <code class="docutils literal notranslate">
+          <span class="pre">
+           terrad
+          </span>
+         </code>
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="docs/develop/how-to/terrad/terrad-mac.html">
+         Install
+         <code class="docutils literal notranslate">
+          <span class="pre">
+           terrad
+          </span>
+         </code>
+         for Mac (Intel or M1)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="docs/develop/how-to/terrad/using-terrad.html">
+         Using
+         <code class="docutils literal notranslate">
+          <span class="pre">
+           terrad
+          </span>
+         </code>
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="docs/develop/how-to/terrad/commands.html">
+         Commands
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="docs/develop/how-to/terrad/subcommands.html">
+         Subcommands
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/develop/endpoints.html">
+       RPC and LCD endpoints
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/develop/how-to/start-lcd.html">
+       Start the light client daemon (LCD)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/develop/reference/history-and-changes.html">
+       History and changes
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/develop/reference/migration-guide.html">
+       Columbus-5 upgrade
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="docs/develop/endpoints.html">
+     RPC and LCD endpoints
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="docs/full-node/resources.html">
+     Full node resources
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="docs/ecosystem/README.html">
+   Ecosystem
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
+  <label for="toctree-checkbox-22">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="docs/ecosystem/explore.html">
+     Explore the ecosystem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="docs/ecosystem/integrations.html">
+     Integrations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://www.terra.money/ecosystem">
+     dApps
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="docs/spacecamp/README.html">
+   Hackathon resources
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
+  <label for="toctree-checkbox-23">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="docs/learn/terra-station/README.html">
+     Terra Station
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
+    <label for="toctree-checkbox-24">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="docs/learn/terra-station/download/README.html">
+       Download
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/>
+      <label for="toctree-checkbox-25">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="docs/learn/terra-station/download/terra-station-desktop.html">
+         Terra Station desktop
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="docs/learn/terra-station/download/terra-station-extension.html">
+         Terra Station Chrome extension
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="docs/learn/terra-station/download/terra-station-mobile.html">
+         Terra Station mobile
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/learn/terra-station/wallet.html">
+       Wallet
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/learn/terra-station/send.html">
+       Send
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/learn/terra-station/staking.html">
+       Manage Staking
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/learn/terra-station/swap.html">
+       Mint, burn, or swap
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/learn/terra-station/governance.html">
+       Governance
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/learn/terra-station/wormhole.html">
+       Wormhole Bridge tutorial
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/learn/terra-station/multisig.html">
+       Multisig wallets
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/learn/terra-station/contracts.html">
+       Contract
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/learn/terra-station/testnet.html">
+       Testnet
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/learn/terra-station/keplr.html">
+       Connect your Station Wallet to Keplr
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="docs/develop/dapp/quick-start/README.html">
+     Terrain Quickstart
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
+    <label for="toctree-checkbox-26">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/develop/dapp/quick-start/initial-setup.html">
+       Terrain initial setup
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/develop/dapp/quick-start/using-terrain-testnet.html">
+       Use Terrain with the testnet
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/develop/dapp/quick-start/using-terrain-localterra.html">
+       Use Terrain with LocalTerra
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/develop/dapp/quick-start/mint-an-nft.html">
+       Mint an NFT using Terrain
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/develop/dapp/quick-start/contract-migration.html">
+       Migrating CosmWasm contracts on Terra
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="docs/develop/dapp/quick-start/using-terrain-localterra.html">
+     Use Terrain with LocalTerra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="docs/develop/dapp/quick-start/using-terrain-testnet.html">
+     Use Terrain with the testnet
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="docs/develop/dapp/smart-contracts/README.html">
+     In-depth dApp guide
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" type="checkbox"/>
+    <label for="toctree-checkbox-27">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/develop/dapp/smart-contracts/build-terra-dapp.html">
+       Build a simple Terra dApp
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/develop/dapp/smart-contracts/set-up-local-environment.html">
+       Environment Setup
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/develop/dapp/smart-contracts/write-smart-contract.html">
+       Writing the Contract
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/develop/dapp/smart-contracts/interact-with-smart-contract.html">
+       Interacting with the Contract
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/develop/dapp/smart-contracts/manage-cw20-tokens.html">
+       CW20 Tokens
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="docs/develop/endpoints.html">
+     RPC and LCD endpoints
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="docs/develop/module-specifications/README.html">
+     Terra Core modules
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" type="checkbox"/>
+    <label for="toctree-checkbox-28">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/develop/module-specifications/spec-auth.html">
+       Auth
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/develop/module-specifications/spec-authz.html">
+       AuthZ
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/develop/module-specifications/spec-bank.html">
+       Bank
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/develop/module-specifications/spec-capability.html">
+       Capability
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/develop/module-specifications/spec-distribution.html">
+       Distribution
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/develop/module-specifications/spec-evidence.html">
+       Evidence
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/develop/module-specifications/spec-feegrant.html">
+       Fee grant
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/develop/module-specifications/spec-governance.html">
+       Governance
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/develop/module-specifications/spec-market.html">
+       Market
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/develop/module-specifications/spec-mint.html">
+       Mint
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/develop/module-specifications/spec-oracle.html">
+       Oracle
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/develop/module-specifications/spec-slashing.html">
+       Slashing
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/develop/module-specifications/spec-staking.html">
+       Staking
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/develop/module-specifications/spec-treasury.html">
+       Treasury
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/develop/module-specifications/spec-wasm.html">
+       WASM
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="docs/develop/sdks/terra-js/README.html">
+     Terra.js
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" type="checkbox"/>
+    <label for="toctree-checkbox-29">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/develop/sdks/terra-js/getting-started.html">
+       Get started with Terra.js
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/develop/sdks/terra-js/common-examples.html">
+       Common examples
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/develop/sdks/terra-js/add-modules.html">
+       Add modules
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/develop/sdks/terra-js/coin-and-coins.html">
+       Coin and Coins
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/develop/sdks/terra-js/fees.html">
+       Fees
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/develop/sdks/terra-js/ibc.html">
+       IBC Transfers
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/develop/sdks/terra-js/keys.html">
+       Keys
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/develop/sdks/terra-js/make-a-connection.html">
+       Make a connection
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/develop/sdks/terra-js/msgAuthorization.html">
+       MsgAuthorization
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/develop/sdks/terra-js/multisend.html">
+       MsgSend
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/develop/sdks/terra-js/numeric.html">
+       Numeric
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/develop/sdks/terra-js/oracle-feeder.html">
+       Oracle feeder
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/develop/sdks/terra-js/query-data.html">
+       Query data
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/develop/sdks/terra-js/smart-contracts.html">
+       Smart contracts
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/develop/sdks/terra-js/transactions.html">
+       Transactions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/develop/sdks/terra-js/wallets.html">
+       Wallets
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docs/develop/sdks/terra-js/Websockets.html">
+       Websockets
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://terra-money.github.io/terra.py/">
+     Terra.py
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://faucet.terra.money/">
+     Faucet
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="docs/ecosystem/integrations.html">
+     Block explorers
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<!-- This is an invisible pixel that we watch to see if we've scrolled. -->
+<div class="sbt-scroll-pixel-helper"></div>
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            <div class="topbar-left">
+                
+                <label class="nav-toggle-button" for="__navigation">
+                    <div class="visually-hidden">Toggle navigation</div>
+                    <i class="fas fa-bars"></i>
+                </label>
+                
+            </div>
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/tutorial-style-guide.md.txt"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/terra-money/docs"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/terra-money/docs/issues/new?title=Issue%20on%20page%20%2Ftutorial-style-guide.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#audience">
+   Audience
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#writing-style">
+   Writing style
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#simplicity">
+     Simplicity
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#voice">
+   Voice
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#structure">
+   Structure
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#title">
+     Title
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#intro">
+     Intro
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#prerequisites">
+     Prerequisites
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#steps">
+     Steps
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#endings">
+     Endings
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#formatting">
+   Formatting
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#code">
+     Code
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#inline-code">
+     Inline code
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#examples">
+     Examples
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#headings">
+     Headings
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lists">
+     Lists
+    </a>
+    <ul class="visible nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ordered-lists">
+       Ordered lists
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#unordered-lists">
+       Unordered lists
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#text-styles">
+     Text styles
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#links">
+     Links
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#punctuation">
+     Punctuation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#notes-and-admonitions">
+     Notes and admonitions
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Tutorial style guide</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#audience">
+   Audience
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#writing-style">
+   Writing style
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#simplicity">
+     Simplicity
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#voice">
+   Voice
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#structure">
+   Structure
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#title">
+     Title
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#intro">
+     Intro
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#prerequisites">
+     Prerequisites
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#steps">
+     Steps
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#endings">
+     Endings
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#formatting">
+   Formatting
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#code">
+     Code
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#inline-code">
+     Inline code
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#examples">
+     Examples
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#headings">
+     Headings
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lists">
+     Lists
+    </a>
+    <ul class="visible nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ordered-lists">
+       Ordered lists
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#unordered-lists">
+       Unordered lists
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#text-styles">
+     Text styles
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#links">
+     Links
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#punctuation">
+     Punctuation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#notes-and-admonitions">
+     Notes and admonitions
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="tutorial-style-guide">
+<h1>Tutorial style guide<a class="headerlink" href="#tutorial-style-guide" title="Permalink to this headline">#</a></h1>
+<p>Tutorials are guides that walk users through specific actions to achieve a goal. Tutorials should start from scratch. Tutorials should teach the basics of getting started and include one real-world example of a specific action.</p>
+<p>For more information on tutorials, visit the <a class="reference external" href="https://diataxis.fr/tutorials/">Diataxis framework site</a></p>
+<div class="section" id="audience">
+<h2>Audience<a class="headerlink" href="#audience" title="Permalink to this headline">#</a></h2>
+<p>The audience for a tutorial is a complete beginner. Do not assume any prerequisites, other than the very basics: they have a terminal and a code editor installed, and they know how to copy, paste, and press enter. All other instructions should be written out. Any required dependencies or installations should be included in the <a class="reference internal" href="#prerequisites"><span class="std std-doc">prerequisites</span></a> section.</p>
+<p>Users of a tutorial should be able to walk through an entire tutorial and complete a specific task.</p>
+</div>
+<div class="section" id="writing-style">
+<h2>Writing style<a class="headerlink" href="#writing-style" title="Permalink to this headline">#</a></h2>
+<p>Tutorials are written in inviting and clear language. Tutorials should include the necessary information to help a user achieve a specific task. Tutorials start from the beginning and do not assume prior knowledge of the subject.</p>
+<p>Tutorials are action-oriented. Try not to include information that is not necessary to the action being described. If you want to include supplemental information, create an <a class="reference external" href="https://diataxis.fr/explanation/">explanation</a> page and link out to it.</p>
+<div class="section" id="simplicity">
+<h3>Simplicity<a class="headerlink" href="#simplicity" title="Permalink to this headline">#</a></h3>
+<p>Simplicity is at the heart of the Terra style. Writers and readers will understand each other better with a minimalist writing approach. Writing in this style does not mean that you should be less descriptive or vague. It means that clarity is emphasized over complexity.</p>
+<p>Writing in shorter sentences can give your writing more clarity. Try to limit the number of clauses in a sentence, and simplify your language. Avoid jargon and overly-technical language.</p>
+<p>Blocks of text are daunting and are usually left unread in action-based tutorials. Instead, limit paragraphs to three sentences.</p>
+<p>Remember, you are writing to show off the functionality of Terra, and not using Terra to show off your writing.</p>
+<p>Readability is key.</p>
+</div>
+</div>
+<div class="section" id="voice">
+<h2>Voice<a class="headerlink" href="#voice" title="Permalink to this headline">#</a></h2>
+<p>All writing in the Terra docs is written in second or third person.</p>
+<p>First-person language such as “I,” “we,” “us,” or “let’s” should be avoided in all situations.</p>
+<p><strong>Examples</strong>:</p>
+<ul class="simple">
+<li><p>“We recommend,” becomes “it is recommended.”</p></li>
+<li><p>“Let’s use the following command,” becomes “use the following command.”</p></li>
+<li><p>“Our project,” becomes “your project.”</p></li>
+</ul>
+</div>
+<div class="section" id="structure">
+<h2>Structure<a class="headerlink" href="#structure" title="Permalink to this headline">#</a></h2>
+<div class="section" id="title">
+<h3>Title<a class="headerlink" href="#title" title="Permalink to this headline">#</a></h3>
+<p>Titles are written using sentence-style capitalization. The first word of a title is always capitalized. Most tutorials should be labeled <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">Get</span> <span class="pre">started</span> <span class="pre">with</span> <span class="pre">____</span></code> or <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">____</span> <span class="pre">tutorial</span></code> .</p>
+<p>Titles should clearly reflect what the tutorial is about. Use imperatives in titles rather than gerunds.</p>
+<p><strong>Example</strong>:
+“# Starting The LCD”
+becomes
+“# Start the LCD”</p>
+</div>
+<div class="section" id="intro">
+<h3>Intro<a class="headerlink" href="#intro" title="Permalink to this headline">#</a></h3>
+<p>The intro is a brief, 2-3 sentence introduction to the tutorial. You can include a basic overview of the tutorial in the intro.</p>
+<p><strong>Example</strong>:</p>
+<p>“Terrad is the command line interface and node daemon for interacting with the Terra blockchain. In this tutorial, you will learn how to install Terrad, make a query, and…”</p>
+</div>
+<div class="section" id="prerequisites">
+<h3>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h3>
+<p>The prerequisite section should be at the top of the tutorial below the intro. This section should include all relevant dependencies necessary for completing the tutorial. List out prerequisites as links to a URL. Use an unordered list. List specific version numbers if necessary. All prerequisites for the tutorial should be listed in this section. Avoid ambushing users mid-tutorial with dependencies that aren’t listed in the prerequisites.</p>
+<p><strong>Example</strong>:</p>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span><span class="gu">## Prerequisites</span>
+
+<span class="k">-</span> [<span class="nt">Install Terra.js</span>](<span class="na">link-to-Station-installation</span>)
+<span class="k">-</span> [<span class="nt">Create a wallet</span>](<span class="na">link-to-wallet-tutorial</span>)
+<span class="k">-</span> [<span class="nt">Node v17.0.0</span>](<span class="na">link-to-installation-guide</span>)
+<span class="k">-</span> ...
+</pre></div>
+</div>
+</div>
+<div class="section" id="steps">
+<h3>Steps<a class="headerlink" href="#steps" title="Permalink to this headline">#</a></h3>
+<p>The steps make up the body of a tutorial. Step headings are numbered and describe the actions outlined in each step.</p>
+<p>If a step contains more than one specific action, it should be broken up into substeps. Number all substeps using an <a class="reference internal" href="#ordered-lists"><span class="std std-doc">ordred list</span></a>.</p>
+<p><strong>Example</strong>:</p>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span><span class="gu">## 1. Set up your environment</span>
+
+Before you can begin making transactions, you will need to scaffold your application.
+
+<span class="k">1.</span> Use the following command to create a directory for your project:
+
+<span class="sb">   ```sh</span>
+   mkdir my-terra-dapp
+<span class="sb">   ```</span>
+
+<span class="k">2.</span> Enter your project directory and run <span class="sb">`npm install`</span>:
+
+<span class="sb">   ```sh</span>
+   <span class="nb">cd</span> my-terra-dapp
+   npm install
+<span class="sb">   ```</span>
+</pre></div>
+</div>
+<p>See the <a class="reference internal" href="#headings"><span class="std std-doc">headings</span></a> section for more information.</p>
+</div>
+<div class="section" id="endings">
+<h3>Endings<a class="headerlink" href="#endings" title="Permalink to this headline">#</a></h3>
+<p>Congratulate users upon completing a tutorial. A good tutorial will leave a user feeling accomplished. Provide a user with a direction for the next steps after completing a tutorial.</p>
+<p><strong>Example</strong>: Congratulations! You’ve just written your first Terra tutorial. To learn more about technical documentation, visit the <a class="reference external" href="https://diataxis.fr/tutorials/">diataxis guides</a>.</p>
+</div>
+</div>
+<div class="section" id="formatting">
+<h2>Formatting<a class="headerlink" href="#formatting" title="Permalink to this headline">#</a></h2>
+<p>Markdown takes the guesswork out of formatting. Rely on Markdown to format and standardize your documentation. Do not use special HTML code to format text. The point of Markdown is to be consistent. Do not use breaks <code class="docutils literal notranslate"><span class="pre">&lt;br/&gt;</span></code> unless absolutely necessary. Avoid using lines to denote sections. Headings denote sections.</p>
+<p>Limiting your styling will make your writing clearer and more succinct.</p>
+<div class="section" id="code">
+<h3>Code<a class="headerlink" href="#code" title="Permalink to this headline">#</a></h3>
+<p>Code should be in blocks. A command that a user needs to execute should be written in a code block rather than inline. Use <code class="docutils literal notranslate"><span class="pre">inline</span> <span class="pre">code</span></code> to refer to specific parts of code.</p>
+<p><strong>Example</strong>:  Use the <code class="docutils literal notranslate"><span class="pre">start</span></code> command to run the application:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>npm start
+</pre></div>
+</div>
+<p>Use notes in code blocks sparingly, if at all. Most notes should be written above the code block. Annotations should be reserved for long code blocks.</p>
+<p>Code blocks in tutorials should be written so that a user can copy and paste them directly into their terminal using the copy button on each code block.</p>
+<p>Avoid using multiple commands in a code block. Commands should be separated and listed in substeps.</p>
+</div>
+<div class="section" id="inline-code">
+<h3>Inline code<a class="headerlink" href="#inline-code" title="Permalink to this headline">#</a></h3>
+<p>Code mentioned outside of code blocks should always be written in tick marks exactly as it appears.</p>
+<p><strong>Example</strong>:</p>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">k.FunctionExapmle</span></code> function to create an example.</p>
+<p>Avoid starting sentences with code, as it makes capitalization and punctuation difficult. Never alter the punctuation or capitalization of code. Write it exactly as it appears.</p>
+<p><strong>Example</strong>:</p>
+<p>All code goes inside <code class="docutils literal notranslate"><span class="pre">tick</span></code> marks, even when referring to specific <code class="docutils literal notranslate"><span class="pre">variables</span></code>.</p>
+</div>
+<div class="section" id="examples">
+<h3>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">#</a></h3>
+<p>Examples are denoted in the following format:</p>
+<p><strong>Example</strong>: You can put a short intro to the example here.</p>
+<p>This is an example.</p>
+</div>
+<div class="section" id="headings">
+<h3>Headings<a class="headerlink" href="#headings" title="Permalink to this headline">#</a></h3>
+<p>Headings denote sections in a document. Each page should contain only one first-level heading as its title. Headings below the title can be nested. Do not skip heading levels. Avoid using more than three heading levels in a document.</p>
+<p>Headings that denote chronological steps are numbered. Headings used to denote non-chronological sections, such as explanations or stand-alone information, are not numbered.</p>
+<p>All headings follow sentence-style capitalization. Avoid starting a heading with in-line code. Headings should not have ending punctuation.</p>
+</div>
+<div class="section" id="lists">
+<h3>Lists<a class="headerlink" href="#lists" title="Permalink to this headline">#</a></h3>
+<div class="section" id="ordered-lists">
+<h4>Ordered lists<a class="headerlink" href="#ordered-lists" title="Permalink to this headline">#</a></h4>
+<ol class="arabic simple">
+<li><p>Any steps that need to be completed sequentially are ordered.</p></li>
+<li><p>Ordered lists must contain at least two steps.</p></li>
+</ol>
+</div>
+<div class="section" id="unordered-lists">
+<h4>Unordered lists<a class="headerlink" href="#unordered-lists" title="Permalink to this headline">#</a></h4>
+<ul class="simple">
+<li><p>Use unordered lists to list non-sequential information.</p></li>
+<li><p>Use sentence-style capitalization and punctuation in unordered lists.</p></li>
+<li><p>Unordered lists must contain at least two components.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="text-styles">
+<h3>Text styles<a class="headerlink" href="#text-styles" title="Permalink to this headline">#</a></h3>
+<p>Don’t use italics. Bold is used in the following cases:</p>
+<ul class="simple">
+<li><p>When referring to interface buttons. “Click <strong>Send</strong>.”</p></li>
+<li><p>When denoting <a class="reference internal" href="#examples"><span class="std std-doc">examples</span></a>.</p></li>
+</ul>
+<p>Ending punctuation is never stylized or included in links.</p>
+<p><strong>Example</strong>: Open the window and click <strong>Next</strong>. Select a fee to submit a <span class="xref myst">transaction</span>.</p>
+</div>
+<div class="section" id="links">
+<h3>Links<a class="headerlink" href="#links" title="Permalink to this headline">#</a></h3>
+<p>Use descriptive text for links. Avoid using “here” as a placeholder.  All links are written in markdown format.</p>
+<p><strong>Example</strong>:</p>
+<p>Incorrect: For more examples, click <span class="xref myst">here</span>.</p>
+<p>Correct: For mor examples, visit the <span class="xref myst">example page</span>.</p>
+<p>Descriptive links help the user understand where they are going.</p>
+</div>
+<div class="section" id="punctuation">
+<h3>Punctuation<a class="headerlink" href="#punctuation" title="Permalink to this headline">#</a></h3>
+<p>Simplify your writing. While tempting, em dashes promote unnecessary complexity and ambiguous grammar.</p>
+<p>Use the Oxford comma.</p>
+<p>Punctuation integral to a sentence should never be styled or included in a link.</p>
+<p><strong>Examples</strong>:</p>
+<p>Period outside of link:
+“Visit the <span class="xref myst">example page</span>. “</p>
+<p>Commas outside of code:
+“The three commands are <code class="docutils literal notranslate"><span class="pre">start</span></code>, <code class="docutils literal notranslate"><span class="pre">end</span></code>, and <code class="docutils literal notranslate"><span class="pre">help</span></code>.</p>
+</div>
+<div class="section" id="notes-and-admonitions">
+<h3>Notes and admonitions<a class="headerlink" href="#notes-and-admonitions" title="Permalink to this headline">#</a></h3>
+<p>All notes, warnings, tips, or other admonitions must be written in an admonition box. Don’t use subtext or other formatting elements. If a note is important, it goes in a box. If it is not important, leave it out.</p>
+<p>Try to use custom titles for all admonitions.</p>
+<p><strong>Example</strong>:</p>
+<div class="admonition-writing-admonitions admonition">
+<p class="admonition-title">Writing admonitions</p>
+<p>Admonitions are brief and direct. They provide important information to the user. Don’t overuse admonitions.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+
+    <div class="extra_footer container">
+      <div class="row">
+
+        <div class="col">
+
+          <div class="logos">
+            <a href="https://discord.gg/e29HWwC2Mz" rel="noopener" target="_blank"><img src="/discord.svg" alt="link to Terra discord room"></a>&nbsp;
+            <a href="https://medium.com/terra-money" rel="noopener" target="_blank"><img src="/medium.svg" alt="link to Terra medium"></a>&nbsp;
+            <a href="https://twitter.com/terra_money" rel="noopener" target="_blank"><img src="/twitter.svg" alt="link to Terra twitter"></a>&nbsp;
+            <a href="https://www.youtube.com/channel/UCoV1RXZ9ZBGcuu_PMTTlM0g" rel="noopener" target="_blank"><img src="/icon_youtube.png" alt="link to Terra youtube"></a>&nbsp;
+            <a href="https://t.me/terra_announcements" rel="noopener" target="_blank"><img src="/icon_telegram.png" alt="link to Terra telegram room"></a>
+            <br/><br/>
+          </div>
+
+        </div>
+
+        <div class="col-md-auto">
+
+          <a href="https://www.terra.money/" >terra.money</a> <br/>
+          <a href="mailto:general@terra.money" >Contact</a> <br/>
+          <a href="https://terra.breezy.hr/"> Careers</a> <br/>
+          <br/>
+
+        </div>
+
+        <div class="col-md-auto">
+
+          <a href="https://assets.website-files.com/611153e7af981472d8da199c/618b02d13e938ae1f8ad1e45_Terra_White_paper.pdf" >Whitepaper</a> <br/>
+          <a href="https://certik.org/projects/terra" >Security Audit</a> <br/>
+          <a href="https://agora.terra.money/" >Agora forum</a> <br/>
+          <br/>
+
+        </div>
+
+        <div class="col">
+          <a href="https://finder.terra.money/" >Terra Finder</a> <br/>
+          <a href="https://station.terra.money/" >Terra Station</a> <br/>
+          <a href="https://status.terra.money/" >Status</a> <br/>
+          <br/>
+
+        </div>
+
+      </div>
+    </div>
+
+
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+  </body>
+</html>
