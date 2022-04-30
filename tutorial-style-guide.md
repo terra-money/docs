@@ -1,17 +1,18 @@
 # Tutorial style guide
 
-Tutorials are guides that walk users through specific actions to achieve a goal. Tutorials should start from scratch. Tutorials should teach the basics of getting started, and include one real-world example of a specific action. 
+Tutorials are guides that walk users through specific actions to achieve a goal. Tutorials should start from scratch. Tutorials should teach the basics of getting started and include one real-world example of a specific action. 
 
 For more information on tutorials, visit the [Diataxis framework site](https://diataxis.fr/tutorials/)
 
 ## Audience
 
-The audience for a tutorial is a complete beginner. Do not assume any prerequisites, other than the very basics: they have a terminal and a code editor installed, and they know how to copy, paste, and press enter. All other instruction should be written out. Any required dependencies or installations should be included in the [prerequisites](#prerequisites) section.
+The audience for a tutorial is a complete beginner. Do not assume any prerequisites, other than the very basics: they have a terminal and a code editor installed, and they know how to copy, paste, and press enter. All other instructions should be written out. Any required dependencies or installations should be included in the [prerequisites](#prerequisites) section.
 
+Users of a tutorial should be able to walk through an entire tutorial and complete a specific task.
 
 ## Writing style
 
-Tutorials are written in inviting and clear language. Tutorials should include the necessary information to help a user achieve a specific task. Tutorials start from the begining, and do not assume prior knowledge of the subject. 
+Tutorials are written in inviting and clear language. Tutorials should include the necessary information to help a user achieve a specific task. Tutorials start from the beginning and do not assume prior knowledge of the subject. 
 
 Tutorials are action-oriented. Try not to include information that is not necessary to the action being described. If you want to include supplemental information, create an [explanation](https://diataxis.fr/explanation/) page and link out to it. 
 
@@ -19,17 +20,19 @@ Tutorials are action-oriented. Try not to include information that is not necess
 
 Simplicity is at the heart of the Terra style. Writers and readers will understand each other better with a minimalist writing approach. Writing in this style does not mean that you should be less descriptive or vague. It means that clarity is emphasized over complexity. 
 
-Writing in shorter sentences can give your writing more clarity. Try to limit the amount of clauses in a sentence, and simplify your language. Avoid jargon and overly-technical language. 
+Writing in shorter sentences can give your writing more clarity. Try to limit the number of clauses in a sentence, and simplify your language. Avoid jargon and overly-technical language. 
 
-Blocks of text are daunitng and are usually left unread in action-based tutorials. Instead, limit paragraphs to three sentences. 
+Blocks of text are daunting and are usually left unread in action-based tutorials. Instead, limit paragraphs to three sentences. 
 
-Remeber, you are writing to show off the functionality of Terra, and not using Terra to show off your writing. 
+Remember, you are writing to show off the functionality of Terra, and not using Terra to show off your writing. 
+
+Readability is key. 
 
 ## Voice
 
 All writing in the Terra docs is written in second or third person. 
 
-First person language such as "I," "we," "us," or "let's" should be avoided in all situations. 
+First-person language such as "I," "we," "us," or "let's" should be avoided in all situations. 
 
 **Examples**: 
 - "We recommend," becomes "it is recommended."
@@ -40,7 +43,7 @@ First person language such as "I," "we," "us," or "let's" should be avoided in a
 
 ### Title
 
-Titles are written using sentence-style capitalization. The first word of a title is always capitalized. Most tutorials should be labeled "Get started with ____" . 
+Titles are written using sentence-style capitalization. The first word of a title is always capitalized. Most tutorials should be labeled `# Get started with ____` or `# ____ tutorial` . 
 
 Titles should clearly reflect what the tutorial is about. Use imperatives in titles rather than gerunds.
 
@@ -55,7 +58,7 @@ The intro is a brief, 2-3 sentence introduction to the tutorial. You can include
 
 **Example**:
 
-"Terra.js is the Terra network's Javascript SDK. In this tutorial, you will learn how to set up your environment, make a transaction, and..."
+"Terrad is the command line interface and node daemon for interacting with the Terra blockchain. In this tutorial, you will learn how to install Terrad, make a query, and..."
 
 
 ### Prerequisites
@@ -102,9 +105,19 @@ If a step contains more than one specific action, it should be broken up into su
 
    ```
 
-See [headings](#headings) for more information.
+See the [headings](#headings) section for more information.
+
+### Endings
+
+Congratulate users upon completing a tutorial. A good tutorial will leave a user feeling accomplished. Provide a user with a direction for the next steps after completing a tutorial. 
+
+**Example**: Congratulations! You've just written your first Terra tutorial. To learn more about technical documentation, visit the [diataxis guides](https://diataxis.fr/tutorials/).
 
 ## Formatting
+
+Markdown takes the guesswork out of formatting. Rely on Markdown to format and standardize your documentation. Do not use special HTML code to format text. The point of Markdown is to be consistent. Do not use breaks `<br/>` unless absolutely necessary. Avoid using lines to denote sections. Headings denote sections. 
+
+Limiting your styling will make your writing clearer and more succinct.
 
 ### Code
 
@@ -116,17 +129,21 @@ Code should be in blocks. A command that a user needs to execute should be writt
 npm start
 ```
 
-Use notes in code blocks sparingly. Most notes should be written above the code block. Anotations should be rederved for long code blocks. Code blocks in tutorials should be writtwen so that a user can copy and paste directy into their terminal using the copy button on each code block. 
+Use notes in code blocks sparingly, if at all. Most notes should be written above the code block. Annotations should be reserved for long code blocks. 
+
+Code blocks in tutorials should be written so that a user can copy and paste them directly into their terminal using the copy button on each code block. 
+
+Avoid using multiple commands in a code block. Commands should be separated and listed in substeps. 
 
 ### Inline code
 
-Code mentioned outside of code blocks should always be writen in tick marks exactly as it appears.
+Code mentioned outside of code blocks should always be written in tick marks exactly as it appears.
 
 **Example**:  
 
 Use the `k.FunctionExapmle` function to create an example. 
 
-Avoid starting sentences with code, as it makes capitalization and puctiation difficult. Never alter the punctuation or capitalization of code. Write it exactly as it appears. 
+Avoid starting sentences with code, as it makes capitalization and punctuation difficult. Never alter the punctuation or capitalization of code. Write it exactly as it appears. 
 
 **Example**:  
 
@@ -142,17 +159,25 @@ This is an example.
 
 ### Headings
 
-Headings denote sections in a document. Each page should contain a only one first level heading as its title. Headings below the title can be nested. Do not skip heading levels. Avoid using more than three heading levels in a document.
+Headings denote sections in a document. Each page should contain only one first-level heading as its title. Headings below the title can be nested. Do not skip heading levels. Avoid using more than three heading levels in a document.
 
 Headings that denote chronological steps are numbered. Headings used to denote non-chronological sections, such as explanations or stand-alone information, are not numbered.
 
-All headings follow sentence-style capitalizaiton. Avoid starting a heading with in-line code. Headings should not have ending punctuation. 
+All headings follow sentence-style capitalization. Avoid starting a heading with in-line code. Headings should not have ending punctuation. 
 
 ### Lists
 
 #### Ordered lists
 
+1. Any steps that need to be completed sequentially are ordered.
+
+2. Ordered lists must contain at least two steps. 
+
 #### Unordered lists
+
+- Use unordered lists to list non-sequential information.
+- Use sentence-style capitalization and punctuation in unordered lists. 
+- Unordered lists must contain at least two components. 
 
 ### Text styles
 
@@ -161,33 +186,48 @@ Don't use italics. Bold is used in the following cases:
 - When referring to interface buttons. "Click **Send**."
 - When denoting [examples](#examples). 
 
-Note: punctuation is never styled.
+Ending punctuation is never stylized or included in links. 
+
+**Example**: Open the window and click **Next**. Select a fee to submit a [transaction](link).
 
 ### Links
 
-Use descriptive text for links. Avoid using "here" as a placeholder.  
+Use descriptive text for links. Avoid using "here" as a placeholder.  All links are written in markdown format. 
 
 **Example**:
 
-"For mor examples, visit the [example page](example.com). 
-vs. 
-"For more examples, click [here](example.com)." 
+Incorrect: For more examples, click [here](example.com).
 
-Descriptive links helps the user understand where they are going when they click the link. 
+Correct: For mor examples, visit the [example page](example.com). 
+
+Descriptive links help the user understand where they are going.
 
 ### Punctuation
 
-Simplify your writing. While tempting, em dashes promote unecessary complexity and ambiguous grammar. 
+Simplify your writing. While tempting, em dashes promote unnecessary complexity and ambiguous grammar. 
+
+Use the Oxford comma. 
 
 Punctuation integral to a sentence should never be styled or included in a link.
 
-**Example**:
+**Examples**:
 
 Period outside of link: 
 "Visit the [example page](example.com). "
-vs 
-Comma outside of code: 
+
+Commas outside of code: 
 "The three commands are `start`, `end`, and `help`. 
 
+### Notes and admonitions:
 
-Use the Oxford comma. 
+All notes, warnings, tips, or other admonitions must be written in an admonition box. Don't use subtext or other formatting elements. If a note is important, it goes in a box. If it is not important, leave it out. 
+
+Try to use custom titles for all admonitions. 
+
+**Example**:
+
+:::{admonition} Writing admonitions
+
+Admonitions are brief and direct. They provide important information to the user. Don't overuse admonitions. 
+
+:::
