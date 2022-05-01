@@ -99,7 +99,7 @@ Besides the CLI approach above, there is also the option of deploying and intera
 
 3. Upload the .wasm bytecode. This step will generate a `codeId` which will be used for initializing the contract.
 
-4. Go back to the Contract page on [Station](https://station.terra.money/contract) and instantiate your contract by passing in the `codeId` and empty brackets (`{}`) for "Init msg".
+4. Go back to the Contract page on [Station](https://station.terra.money/contract) and instantiate your contract by passing in the `codeId` and parameter (`{ "count": 0}`) for "Init msg".
 
 5. Now, the contract is deployed as a **MsgInstantiateContract** transaction type. You will be able to see the address of the newly initialized contract in the logs at the bottom of the transaction details. ([example](https://finder.terra.money/testnet/tx/FF669A3E0CECDC6278A0E390FAF93E9531F43599B77A45BD18ECC6023E15ACB3))
 
