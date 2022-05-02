@@ -330,12 +330,30 @@ fn main() {
     export_schema(&schema_for!(QueryMsg), &out_dir);
 }
 ```
-### 3. Generate the new schema
+### 3. Generate and test the schema 
 
-1. Navigate to `/token-factory/contracts/cw20-factory-token`
-2. Execute `cargo schema` to generate the new schema. 
-3. Open `terrain.config.json` 
-4. Copy the `instantiateMsg` property in to `terrain.config.json`. This allows you to send the correct data to the smart contract upon instantiation:
+1. Navigate to `/token-factory/contracts/cw20-factory-token`:
+
+```
+cd `/token-factory/contracts/cw20-factory-token`
+```
+
+2. Generate the new schema:
+
+```
+cargo schema
+```
+
+3. Test the schema:
+
+```
+cargo test
+```
+
+### 4. Modify `terrain.config.json` 
+
+1. Open `terrain.config.json`.
+2. Copy the `instantiateMsg` property in to `terrain.config.json`. This allows you to send the correct data to the smart contract upon instantiation:
 
 ```Json
 {
@@ -359,6 +377,8 @@ fn main() {
 }
 ```
 
+### 5. Redeploy the smart contract
+
 5. Deploy the contract again to confirm that the workplace still compiles. 
 ```sh
 terrain code: cw20-factory-token
@@ -373,11 +393,11 @@ git checkout fdba3c89c464860fe8cd9aa17f1344d82d613522
 ```
 :::
 
-### 4. Deploy the contract to crates.io
+### 4. Use crate.io to implement the CW20 Token Factory as a dependency
 
-For the purpose of this tutorial, crates.io is used to implement the CW20 Token Factory as a dependency. One benefit of using crates.io is that the CW20 Token Factory will be platform agnostic, so you can use Linux, Windows or Mac.
+For the purpose of this tutorial, [crates.io](https:\\crates.io) is used to implement the CW20 Token Factory as a dependency. This ensures that CW20 Token Factory will be platform agnostic, so you can use Linux, Windows or Mac.
 
- As the deployment to crates.io is out of scope of this tutorial, we have [deployed the CW20 Token Factory package to Crates](https://crates.io/crates/cw20-factory-token), which you can use in the following steps of the guide.
+As the deployment to crates.io is out of scope of this tutorial, we have [deployed the CW20 Token Factory package to Crates](https://crates.io/crates/cw20-factory-token), which you can use in the following steps of the guide.
 
 # 3. Create the Token Factory smart contract
 
