@@ -9,6 +9,25 @@ you will:
 - Bind 1 UST to each minted CW20 Token.
 - Display the total amount of UST stored in the smart contract.
 
+This tutorial contains the following sections:
+
+- [Prerequisites](#prerequisites)
+- [1. Instantiate a new app using Terrain](#1-instantiate-a-new-app-using-terrain)
+- [2. Instantiate the `token-factory` and `cw20-factory-token` contracts](#2-instantiate-the--token-factory--and--cw20-factory-token--contracts)
+- [3. Modify the mnemonics passphrase](#3-modify-the-mnemonics-passphrase)
+- [3. Deploy the smart contracts](#3-deploy-the-smart-contracts)
+- [4. Modify the CW20 Factory Token smart contract](#4-modify-the-cw20-factory-token-smart-contract)
+    + [a. Add the the CW20 base](#1-add-the-the-cw20-base)
+    + [b. Modify the contract files](#2-modify-the-contract-files)
+    + [c. Generate and test the schema](#3-generate-and-test-the-schema)
+    + [d. Modify `terrain.config.json`](#4-modify--terrainconfigjson-)
+    + [e. Redeploy the smart contract](#5-redeploy-the-smart-contract)
+    + [f. Use crate.io to implement the CW20 Token Factory as a dependency](#4-use-crateio-to-implement-the-cw20-token-factory-as-a-dependency)
+- [3. Create the Token Factory smart contract](#3-create-the-token-factory-smart-contract)
+    + [a. Generate and test the schema](#3-generate-and-test-the-schema-1)
+    + [b. Deploy the smart contract to LocalTerra](#4-deploy-the-smart-contract-to-localterra)
+
+
 ## Prerequisites
 
 To complete this tutorial, you must have the following:
