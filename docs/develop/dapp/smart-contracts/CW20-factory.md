@@ -13,15 +13,15 @@ you will:
 
 To complete this tutorial, you must have the following:
 
-- [A Terrain development environment]https://docs.terra.money/docs/develop/dapp/quick-start/initial-setup.html#initial-setup)
+- [A Terrain development environment](https://docs.terra.money/docs/develop/dapp/quick-start/initial-setup.html#initial-setup)
 - [A LocalTerra node](https://docs.terra.money/docs/develop/dapp/quick-start/using-terrain-localterra.html#install-and-run-localterra)
 - [The Terra Station Extension wallet to interact with the smart contract](https://docs.terra.money/docs/learn/terra-station/download/terra-station-extension.html)
 - An IDE or text editor of your choice. For the purpose of this tutorial, Visual Studio Code will be used.
 - A command line interface
 
-# 1.Instantiate and configure a new app using Terrain
+# 1. Instantiate a new app using Terrain
 
-Create a new app:
+a. Instantiate a new app using Terrain:
 
 ```sh
 terrain new token-factory
@@ -35,7 +35,19 @@ generating:
 - frontend... done
 ```
 
-# 2.Create the `token-factory` and `cw20-factory-token` contracts
+b. Navigate to the `contracts` folder.
+
+```
+cd contracts/
+```
+
+c. Terrain automatically generates a sample `counter` contract in the `contracts` folder. Delete the `counter` smart contract folder to ensure a clean workspace:
+
+```
+rm -r counter/
+```
+
+# 2. Instantiate the `token-factory` and `cw20-factory-token` contracts
 
 a. Navigate to the `token-factory` directory:
 
@@ -43,36 +55,39 @@ a. Navigate to the `token-factory` directory:
 cd token-factory
 ```
 
-b. Open the project. For the purpose of this tutorial, Visual Studio Code is used:
-
-```sh
-code .
-```
-
- c. Create the `token-factory` and `cw20-factory-token` contracts:
+b. Instantiate the `token-factory` contract:
     
 ```sh
 terrain code:new token-factory
-terrain code:new cw20-factory-token
 ```
-When the contracts are generated, the following displays:
+
+When the contract is generated, the following displays:
 ```sh
 generating contract... done
 ```
 
-d. (Optional) Navigate to the `contracts` folder and delete the `counter` smart contract folder to ensure a clean workspace:
+
+c. Instantiate the `cw20-factory-token` contract:
+
 ```
-cd contracts/
-rm -r counter/
+terrain code:new cw20-factory-token
 ```
+
+When the contract is generated, the following displays:
+```sh
+generating contract... done
+```
+
 # 3. Modify the mnemonics passphrase
 
+Before editing the smart contracts that you instantiated in step 2, modify the mnemonics passphrase that will be used to do deploy to LocalTerra:
 
 a. Navigate to ` /token-factory`
 ```
 cd /token-factory
 ```
-b. Open `/keys.terrain.js` and set the `mnemonic` passphrase to the following. This passphrase  is used to deploy to LocalTerra:
+
+b. Open `/keys.terrain.js` and set the `mnemonic` passphrase to the following:
 
 ```
 notice oak worry limit wrap speak medal online prefer cluster roof addict wrist behave treat actual wasp year salad speed social layer crew genius
@@ -86,7 +101,7 @@ notice oak worry limit wrap speak medal online prefer cluster roof addict wrist 
 ```
 :::
 
-Your `keys.terrain.js` should now look like the following:
+The `module.exports` section of your `keys.terrain.js` file should now look similar to the following:
 
 ```js
 module.exports = {
@@ -105,26 +120,32 @@ a. Deploy the `token-factory` contract:
 terrain deploy token-factory --signer test
 ```
 
-a. Deploy the `cw20-factory-token` contract:
+b. Deploy the `cw20-factory-token` contract:
 ```
 terrain deploy cw20-factory-token --signer test
 ```
 
-# 4. Create the CW20 Factory Token smart contract
+# 4. Modify the CW20 Factory Token smart contract
 
-The CW20 Factory Token contract implements the [CW20 Base](https://github.com/CosmWasm/cw-plus/tree/0.9.x/contracts/cw20-base).
-This allows:
+In this section, you will modify the the CW20 Factory Token contract instantiated by Terrain. The CW20 Factory Token contract implements the [CW20 Base](https://github.com/CosmWasm/cw-plus/tree/0.9.x/contracts/cw20-base), along with several custom files.
+
+To modify the CW20 Factory Token contract, follow the procedure below.
+
+### 1. Add the the CW20 base 
+First, add the [CW20 Base](https://github.com/CosmWasm/cw-plus/tree/main/contracts/cw20-base), which implements the CW20 token base functionalities. This allows:
 
 - the smart contract to be easily deployed to LocalTerra 
 - Functionality extension using the [migration implementation](https://docs.terra.money/docs/develop/dapp/quick-start/contract-migration.html). 
 
-To implement the CW20 Factory Token contract, follow the procedure below:
+To add the CW20 Base to the CW20 Factory Token smart contract, do the following:
 
-### 1. Add the the CW20 base 
-First, add the [CW20 Base](https://github.com/CosmWasm/cw-plus/tree/main/contracts/cw20-base), which implements the CW20 token base functionalities:
+1. Navigate to `/token-factory/contracts/cw20-factory-token/`.
 
-1. Navigate to /token-factory/contracts/cw20-factory-token/ 
-2. Open Cargo.toml and add the following to the dependencies:
+```
+cd /token-factory/contracts/cw20-factory-token/
+```
+
+2. Open `cargo.toml` and add the following to the dependencies:
 
 ```rust
 # ...
@@ -135,7 +156,7 @@ cw20-base = {  version = "0.8.1", features = ["library"] }
 # ...
 ```
 ### 2. Modify the contract files 
-Now that you've add the `CW20 Base` to implement the CW20 token base logic,  modify the following files:
+Now that you've add the `CW20 Base` to implement the CW20 token base logic, modify the following files:
 
 - `msg.rs`
 - `lib.rs`
@@ -585,7 +606,7 @@ pub struct MigrateMsg {}
 
   
 
-f. Open state.rs and add the following:
+f. Open `state.rs` and add the following:
 
 ```rust
 
@@ -1892,6 +1913,7 @@ export_schema(&schema_for!(QueryMsg), &out_dir);
   
 
 l. Navigate to `token-factory/contracts/token-factory/src/`.
+
 m. Open `test.rs` and add the following:
 
 ```rust
@@ -2428,12 +2450,12 @@ a. Navigate to `/tokens-factory/contracts/token-factory`.
 ```bash
 cd /tokens-factory/contracts/token-factory
 ```
-b. Generate the schema and run the tests using `cargo`:
+b. Generate the schema:
 ```bash
  cargo schema
 ```
 
-You will see output like the following:
+You will see output similar to the following:
 
 ```
 Finished dev [unoptimized + debuginfo] target(s) in 0.02s
@@ -2451,9 +2473,17 @@ Created ~/Documents/github/tokens-factory/contracts/token-factory/schema/instant
 Created ~/Documents/github/tokens-factory/contracts/token-factory/schema/execute_msg.json
 
 Created ~/Documents/github/tokens-factory/contracts/token-factory/schema/query_msg.json
+```
 
->~/Documents/github/tokens-factory/contracts/token-factory$ cargo test
+c. Run the tests:
 
+```
+cargo test
+```
+
+You will see output similar to the following:
+
+```
 Finished test [unoptimized + debuginfo] target(s) in 0.02s
 
 Running unittests (target/debug/deps/token_factory-03f77bf897cd72b7)
