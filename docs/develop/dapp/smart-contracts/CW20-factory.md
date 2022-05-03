@@ -1392,7 +1392,7 @@ Ok(Response::default())
 
 ```
 
-i. Open `test.rs` and add the following:
+g. Open `test.rs` and add the following:
 
 ```rust
 
@@ -1928,8 +1928,9 @@ data: None,
 
   
 
-j. Navigate to `token-factory/contracts/token-factory/examples/`.
-k. Open `schema.rs`.
+h. Navigate to `token-factory/contracts/token-factory/examples/`.
+
+i. Open `schema.rs`.
 
 ```rust
 
@@ -1973,9 +1974,9 @@ export_schema(&schema_for!(QueryMsg), &out_dir);
 
   
 
-l. Navigate to `token-factory/contracts/token-factory/src/`.
+j. Navigate to `token-factory/contracts/token-factory/src/`.
 
-m. Open `test.rs` and add the following:
+k. Open `test.rs` and add the following:
 
 ```rust
 
@@ -2503,9 +2504,9 @@ data: None,
 
 ```
 
- ### 3. Generate and test the schema 
+### 3. Generate and test the schema 
 
-Now you have created the Token Factory smart contract, build the schema and execute the tests to validate that the main functionalities work as expected:
+Now you have modified the Token Factory smart contract files, build the schema and execute the tests to validate that the code works as expected:
 
 a. Navigate to `/tokens-factory/contracts/token-factory`.
 ```bash
@@ -2581,11 +2582,13 @@ test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; fini
 
 ```
 
-  
+### 4. Modify terrain.config.json
+a. Open terrain.config.json.
+b. Modify the property `instantiateMsg`, using your `<token_contract_code_id>`. **The `<token_contract_code_id>` should not be surrounded by quotes**:
 
-Modify the property `instantiateMsg` from `terrain.config.json`. In order to know which **token_contract_code_id** to use you can check the file **refs.terrain.json** from workspace's root under the **cw20-token-factory** object:
-
-> /token-factory/terrain.config.json
+:::{tip}
+To determine which to `<token_contract_code_id>`, check the file `refs.terrain.json` from workspace's root under the `cw20-token-factory` object.
+:::
 
 ```Json
 
@@ -2601,7 +2604,7 @@ Modify the property `instantiateMsg` from `terrain.config.json`. In order to kno
 
 "stable_denom" : "uusd",
 
-"token_contract_code_id" : insert your token_contract_id_here (without quotes)
+"token_contract_code_id" : <token_contract_id>
 
 }
 
@@ -2615,9 +2618,9 @@ Modify the property `instantiateMsg` from `terrain.config.json`. In order to kno
 
 ```
 
-   ### 4. Deploy the smart contract to LocalTerra
+### 4. Deploy the smart contract to LocalTerra
 
-To finish the smart contracts lets deploy the token-factory your LocalTerra instance:
+Now that you have created, modified and tested each smart contract, deploy the `token-factory` your LocalTerra instance using Terrain:
 
 ```bash
 
