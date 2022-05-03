@@ -1,17 +1,8 @@
 # Build a CW20 tokens factory  
 
-In this tutorial, you will build a CW20 Tokens factory. To build the CW20 tokens factory,
-you will:
+In this tutorial, you will build a CW20 Tokens factory. CW20 is a specification for fungible tokens based on CosmWasm. In this tutorial, you will do the following:
 
-- Use Terrain to instantiate a new app.
-- Modify a smart contract to allow minting of [CW20 Tokens](https://github.com/CosmWasm/cw-plus/tree/main/packages/cw20).
-- Write tests for the smart contract.
-- Bind 1 UST to each minted CW20 Token.
-- Display the total amount of UST stored in the smart contract.
-
-This tutorial contains the following sections:
-
-- [Prerequisites](#prerequisites)
+- [0. Complete the prerequisites](#prerequisites)
 - [1. Instantiate a new app using Terrain](#1-instantiate-a-new-app-using-terrain)
 - [2. Instantiate the `token-factory` and `cw20-factory-token` contracts](#2-instantiate-the--token-factory--and--cw20-factory-token--contracts)
 - [3. Modify the mnemonics passphrase](#3-modify-the-mnemonics-passphrase)
