@@ -71,5 +71,6 @@ using-terrain-testnet
 using-terrain-localterra
 mint-an-nft
 contract-migration
+cw20-factory
 
 ```

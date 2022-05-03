@@ -7,7 +7,6 @@ set-up-local-environment
 write-smart-contract
 interact-with-smart-contract
 manage-cw20-tokens
-CW20-factory
 ```
 ## Overview
 
