@@ -149,13 +149,13 @@ First, add the [CW20 Base](https://github.com/CosmWasm/cw-plus/tree/main/contrac
 
 To add the CW20 Base to the CW20 Factory Token smart contract, do the following:
 
-1. Navigate to `/token-factory/contracts/cw20-factory-token/`.
+a. Navigate to `/token-factory/contracts/cw20-factory-token/`.
 
 ```
 cd /token-factory/contracts/cw20-factory-token/
 ```
 
-2. Open `cargo.toml` and add the following to the dependencies:
+b. Open `cargo.toml` and add the following to the dependencies:
 
 ```rust
 # ...
@@ -175,12 +175,12 @@ Now that you've add the `CW20 Base` to implement the CW20 token base logic, modi
 
 To modify the contract files, follow the procedure below.
 
-1. Navigate to `/token-factory/contracts/cw20-factory-token/src`.
+a. Navigate to `/token-factory/contracts/cw20-factory-token/src`.
 
 ```
 cd /token-factory/contracts/cw20-factory-token/src
 ```
-2. Open `msg.rs` and paste the following:
+b. Open `msg.rs` and paste the following:
 
 ```Rust
 use schemars::JsonSchema;
@@ -190,16 +190,16 @@ use serde::{Deserialize, Serialize};
 pub struct MigrateMsg {}
 ```
 
-3. Save and close `msg.rs`.
+c. Save and close `msg.rs`.
 
-4. Open `lib.rs` and paste the following:
+d. Open `lib.rs` and paste the following:
 ```Rust
 pub mod contract;
 pub mod msg;
 ```
-5. Save and close `lib.rs`.
+e. Save and close `lib.rs`.
 
-6. Open `contract.rs` and paste the following:
+f. Open `contract.rs` and paste the following:
 ```Rust
 #[cfg(not(feature = "library"))]
 use cosmwasm_std::entry_point;
@@ -318,9 +318,9 @@ pub fn migrate(_deps: DepsMut, _env: Env, _msg: MigrateMsg) -> StdResult<Respons
     Ok(Response::default())
 }
 ```
-7. Save and close `contract.rs`.
+g. Save and close `contract.rs`.
 
-8. Open `schemas.rs` and paste the following:
+h. Open `schemas.rs` and paste the following:
 ```Rust
 use std::env::current_dir;
 use std::fs::create_dir_all;
@@ -342,19 +342,19 @@ fn main() {
 ```
 ### 3. Generate and test the schema 
 
-1. Navigate to `/token-factory/contracts/cw20-factory-token`:
+a. Navigate to `/token-factory/contracts/cw20-factory-token`:
 
 ```
 cd `/token-factory/contracts/cw20-factory-token`
 ```
 
-2. Generate the new schema:
+b. Generate the new schema:
 
 ```
 cargo schema
 ```
 
-3. Test the schema:
+c. Test the schema:
 
 ```
 cargo test
@@ -362,8 +362,8 @@ cargo test
 
 ### 4. Modify `terrain.config.json` 
 
-1. Open `terrain.config.json`.
-2. Copy the `instantiateMsg` property in to `terrain.config.json`. This allows you to send the correct data to the smart contract upon instantiation:
+a. Open `terrain.config.json`.
+b. Copy the `instantiateMsg` property in to `terrain.config.json`. This allows you to send the correct data to the smart contract upon instantiation:
 
 ```Json
 {
@@ -389,7 +389,7 @@ cargo test
 
 ### 5. Redeploy the smart contract
 
-5. Deploy the contract again to confirm that the workplace still compiles. 
+Deploy the contract again to confirm that the workplace still compiles. 
 ```sh
 terrain code: cw20-factory-token
 ```
@@ -531,7 +531,9 @@ expected_amount: Uint128
 }
 ```
 
-c. Open `msg.rs` and add the following:
+c. Close and save `error.rs`.
+
+d. Open `msg.rs` and add the following:
 
 ```rust
 
@@ -656,9 +658,9 @@ pub struct MigrateMsg {}
 
 ```
 
-  
+e. Close and save `msg.rs`.
 
-d. Open `state.rs` and add the following:
+f. Open `state.rs` and add the following:
 
 ```rust
 
@@ -702,9 +704,9 @@ pub const MINTED_TOKENS: Item<Vec<String>> = Item::new("minted_tokens");
 
 ```
 
-  
+g. Close and save `state.rs`.
 
-e. Open `lib.rs` and add the following:
+h. Open `lib.rs` and add the following:
 
 ```rust
 
@@ -1383,7 +1385,9 @@ Ok(Response::default())
 
 ```
 
-g. Open `test.rs` and add the following:
+i. Close and save `lib.rs`.
+
+j. Open `test.rs` and add the following:
 
 ```rust
 
