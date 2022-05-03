@@ -399,7 +399,7 @@ b. Modify the `instantiateMsg` property in the `terrain.config.json` so that it 
 Deploy the contract again to confirm that the workplace still compiles. 
 
 ```sh
-terrain code: cw20-factory-token
+terrain deploy cw20-factory-token --signer test
 ```
 
 :::{tip}
@@ -415,7 +415,7 @@ git checkout fdba3c89c464860fe8cd9aa17f1344d82d613522
 
 For the purpose of this tutorial, [crates.io](https:\\crates.io) is used to implement the CW20 Token Factory as a dependency. This ensures that CW20 Token Factory is platform agnostic, so you can use Linux, Windows or Mac.
 
-As the deployment to crates.io is out of scope of this tutorial, we have [deployed the CW20 Token Factory package to crates.io](https://crates.io/crates/cw20-factory-token). You can use this  deployment when you add the CW20 Token Factory contract as a dependency of the Token Factory contract in the the nect section.
+As the deployment to crates.io is out of scope of this tutorial, you can find [deployed the CW20 Token Factory package to crates.io](https://crates.io/crates/cw20-factory-token). You can use this  deployment when you add the CW20 Token Factory contract as a dependency of the Token Factory contract in the the next section.
 
 # 3. Create the Token Factory smart contract
 
@@ -440,13 +440,9 @@ b. Open `cargo.toml` and add the dependencies inside the header:
 ```rust
 # ...
 [dependencies]
-
 cw2 = "0.8.1"
-
 cw20 = "0.8.1"
-
 cw20-base = { version = "0.8.1", features = ["library"] }
-
 cw20-factory-token = { version = "0.5.0", features = ["library"] }
 
 # ...
