@@ -2509,7 +2509,7 @@ data: None,
 
 ### 3. Generate and test the schema 
 
-Now you have modified the Token Factory smart contract files, build the schema and execute the tests to validate that the code works as expected:
+Now you have modified the Token Factory smart contract files, generate the schema and execute the tests to validate that the code works as expected:
 
 a. Navigate to `/tokens-factory/contracts/token-factory`.
 ```bash
@@ -2586,12 +2586,14 @@ test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; fini
 ```
 
 ### 4. Modify `terrain.config.json`
-a. Open terrain.config.json.
+a. Open `terrain.config.json`.
+
 b. Modify the property `instantiateMsg`, using your `<token_contract_code_id>`. **The `<token_contract_code_id>` should not be surrounded by quotes**:
 
 :::{tip}
 To determine which to `<token_contract_code_id>`, check the file `refs.terrain.json` from workspace's root under the `cw20-token-factory` object.
 :::
+
 
 ```Json
 
