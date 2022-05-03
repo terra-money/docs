@@ -1,6 +1,6 @@
-# Build a CW20 tokens factory  
+# Build a CW20 tokens factory
 
-In this tutorial, you will build a CW20 Tokens factory. CW20 is a specification for fungible tokens based on CosmWasm. In this tutorial, you will do the following:
+In this tutorial, you'll build a CW20 token factory. A token factory allows any ​CosmosSDK address — including a contract — to mint new fungible tokens based. To accomplish this you'll do the following:
 
 - [0. Complete the prerequisites](#prerequisites)
 - [1. Instantiate a new app using Terrain](#1-instantiate-a-new-app-using-terrain)
@@ -8,22 +8,22 @@ In this tutorial, you will build a CW20 Tokens factory. CW20 is a specification 
 - [3. Modify the mnemonics passphrase](#3-modify-the-mnemonics-passphrase)
 - [4. Deploy the smart contracts](#4-deploy-the-smart-contracts)
 - [5. Modify the CW20 Factory Token smart contract](#5-modify-the-cw20-factory-token-smart-contract)
-    + [1. Add the the CW20 base](#1-add-the-the-cw20-base)
-    + [2. Modify the contract files](#2-modify-the-contract-files)
-    + [3. Generate and test the schema](#3-generate-and-test-the-schema)
-    + [4. Modify `terrain.config.json`](#4-modify--terrainconfigjson-)
-    + [5. Test the smart contract deployment](#5-redeploy-the-smart-contract)
-    + [6. Use crate.io to implement the CW20 Token Factory as a dependency](#4-use-crateio-to-implement-the-cw20-token-factory-as-a-dependency)
+  - [1. Add the the CW20 base](#1-add-the-the-cw20-base)
+  - [2. Modify the contract files](#2-modify-the-contract-files)
+  - [3. Generate and test the schema](#3-generate-and-test-the-schema)
+  - [4. Modify `terrain.config.json`](#4-modify--terrainconfigjson-)
+  - [5. Test the smart contract deployment](#5-redeploy-the-smart-contract)
+  - [6. Use crate.io to implement the CW20 Token Factory as a dependency](#4-use-crateio-to-implement-the-cw20-token-factory-as-a-dependency)
 - [6. Modify the Token Factory smart contract](#3-create-the-token-factory-smart-contract)
-    + [1. Add the dependencies](#1-add-the-dependencies)
-    + [2. Modify the contract files](#2-modify-the-contract-files-1)
-    + [3. Generate and test the schema](#3-generate-and-test-the-schema-1)
-    + [4. Modify terrain.config.json](#4-modify-terrainconfigjson)
+  - [1. Add the dependencies](#1-add-the-dependencies)
+  - [2. Modify the contract files](#2-modify-the-contract-files-1)
+  - [3. Generate and test the schema](#3-generate-and-test-the-schema-1)
+  - [4. Modify terrain.config.json](#4-modify-terrainconfigjson)
 - [7. Deploy the smart contract to LocalTerra](#4-deploy-the-smart-contract-to-localterra)
 
 ## Prerequisites
 
-To complete this tutorial, you must have the following:
+First, set up your environment:
 
 - [A Terrain development environment](https://docs.terra.money/docs/develop/dapp/quick-start/initial-setup.html#initial-setup)
 - [A LocalTerra node](https://docs.terra.money/docs/develop/dapp/quick-start/using-terrain-localterra.html#install-and-run-localterra)
@@ -42,7 +42,7 @@ terrain new token-factory
 When the app is generated, the following displays:
 
 ```sh
-generating: 
+generating:
 - contract... done
 - frontend... done
 ```
@@ -68,16 +68,16 @@ cd token-factory
 ```
 
 b. Instantiate the `token-factory` contract:
-    
+
 ```sh
 terrain code:new token-factory
 ```
 
 When the contract is generated, the following displays:
+
 ```sh
 generating contract... done
 ```
-
 
 c. Instantiate the `cw20-factory-token` contract:
 
@@ -86,20 +86,22 @@ terrain code:new cw20-factory-token
 ```
 
 When the contract is generated, the following displays:
+
 ```sh
 generating contract... done
 ```
 
 # 3. Modify the mnemonics passphrase
 
-Before editing the smart contracts that you instantiated in step 2, modify the mnemonics passphrase that will be used to do deploy to LocalTerra:
+Before editing the smart contracts you instantiated in step 2, modify the mnemonic you'll use to do deploy the contract to LocalTerra:
 
 a. Navigate to ` /token-factory`
+
 ```
 cd /token-factory
 ```
 
-b. Open `/keys.terrain.js` and set the `mnemonic` passphrase to the following:
+b. Open `/keys.terrain.js` and set the `mnemonic`s to the following:
 
 ```
 notice oak worry limit wrap speak medal online prefer cluster roof addict wrist behave treat actual wasp year salad speed social layer crew genius
@@ -111,6 +113,7 @@ Because the wallet contains funds, it is recommended that you also import the pa
 ```
 notice oak worry limit wrap speak medal online prefer cluster roof addict wrist behave treat actual wasp year salad speed social layer crew genius
 ```
+
 :::
 
 The `module.exports` section of your `keys.terrain.js` file should now look similar to the following:
@@ -120,36 +123,42 @@ module.exports = {
   test: {
     mnemonic:
       "notice oak worry limit wrap speak medal online prefer cluster roof addict wrist behave treat actual wasp year salad speed social layer crew genius",
-  }
+  },
 };
 ```
 
 # 4. Deploy the smart contracts
+
+The `token-factory` contract mints new `cw20-factory-token` tokens, increases the supply of minted tokens, burns tokens to return UST and tracks all tokens created.
+
 Deploy each smart contract to validate that the development environment is configured correctly:
 
 a. Deploy the `token-factory` contract:
+
 ```
 terrain deploy token-factory --signer test
 ```
 
 b. Deploy the `cw20-factory-token` contract:
+
 ```
 terrain deploy cw20-factory-token --signer test
 ```
 
 # 5. Modify the CW20 Factory Token smart contract
 
-In this section, you will modify the the CW20 Factory Token contract instantiated by Terrain. The CW20 Factory Token contract implements the [CW20 Base](https://github.com/CosmWasm/cw-plus/tree/0.9.x/contracts/cw20-base), along with several custom files.
+In this section, you will modify the `cw20-factory-token` contract that you instantiated. Thiscontract implements the [CW20 Base](https://github.com/CosmWasm/cw-plus/tree/0.9.x/contracts/cw20-base), along with several custom files.
 
-To modify the CW20 Factory Token contract, follow the procedure below.
+To modify the `cw20-factory-token` contract, follow the procedure below.
 
-### 1. Add the the CW20 base 
-First, add the [CW20 Base](https://github.com/CosmWasm/cw-plus/tree/main/contracts/cw20-base), which implements the CW20 token base functionalities. This allows:
+### 1. Add the the CW20 base
 
-- the smart contract to be easily deployed to LocalTerra 
-- Functionality extension using the [migration implementation](https://docs.terra.money/docs/develop/dapp/quick-start/contract-migration.html). 
+First, add the [CW20 Base](https://github.com/CosmWasm/cw-plus/tree/main/contracts/cw20-base), which implements the base CW20 token functionalities. This allows:
 
-To add the CW20 Base to the CW20 Factory Token smart contract, do the following:
+- the smart contract to be easily deployed to LocalTerra
+- extended functionality using the [migration implementation](https://docs.terra.money/docs/develop/dapp/quick-start/contract-migration.html).
+
+To add the CW20 Base to the `cw20-factory-token` contract, do the following:
 
 a. Navigate to `/token-factory/contracts/cw20-factory-token/`.
 
@@ -157,7 +166,7 @@ a. Navigate to `/token-factory/contracts/cw20-factory-token/`.
 cd /token-factory/contracts/cw20-factory-token/
 ```
 
-b. Open `cargo.toml` and add the following to the dependencies:
+b. Open `cargo.toml` and add this to the dependencies:
 
 ```rust
 # ...
@@ -167,8 +176,10 @@ cw20-base = {  version = "0.8.1", features = ["library"] }
 
 # ...
 ```
-### 2. Modify the contract files 
-Now that you've add the `CW20 Base` to implement the CW20 token base logic, modify the following files:
+
+### 2. Modify the contract files
+
+Now that you've added the `CW20 Base` to implement the base CW20 token logic, modify the following files:
 
 - `msg.rs`
 - `lib.rs`
@@ -182,6 +193,7 @@ a. Navigate to `/token-factory/contracts/cw20-factory-token/src`.
 ```
 cd /token-factory/contracts/cw20-factory-token/src
 ```
+
 b. Open `msg.rs` and paste the following:
 
 ```Rust
@@ -195,13 +207,16 @@ pub struct MigrateMsg {}
 c. Save and close `msg.rs`.
 
 d. Open `lib.rs` and paste the following:
+
 ```Rust
 pub mod contract;
 pub mod msg;
 ```
+
 e. Save and close `lib.rs`.
 
 f. Open `contract.rs` and paste the following:
+
 ```Rust
 #[cfg(not(feature = "library"))]
 use cosmwasm_std::entry_point;
@@ -320,6 +335,7 @@ pub fn migrate(_deps: DepsMut, _env: Env, _msg: MigrateMsg) -> StdResult<Respons
     Ok(Response::default())
 }
 ```
+
 g. Save and close `contract.rs`.
 
 h. Open `schemas.rs` and paste the following:
@@ -346,7 +362,7 @@ fn main() {
 
 i. Close and save `schemas.rs`:
 
-### 3. Generate and test the schema 
+### 3. Generate and test the schema
 
 a. Navigate to `/token-factory/contracts/cw20-factory-token`:
 
@@ -366,11 +382,11 @@ c. Test the schema:
 cargo test
 ```
 
-### 4. Modify `terrain.config.json` 
+### 4. Modify `terrain.config.json`
 
 a. Open `terrain.config.json`.
 
-b. Modify the `instantiateMsg` property in the `terrain.config.json` so that it contains the `name`, `symbol`, `decimals` and `initial_balances` shown below. This allows you to send the correct data to the smart contract upon instantiation:
+b. Modify the `InstantiateMsg` property in the `terrain.config.json` so that it contains the `name`, `symbol`, `decimals` and `initial_balances` shown below. This allows you to send the correct data to the smart contract upon instantiation:
 
 ```Json
 {
@@ -396,7 +412,7 @@ b. Modify the `instantiateMsg` property in the `terrain.config.json` so that it 
 
 ### 5. Test the smart contract deployment
 
-Deploy the contract again to confirm that the workplace still compiles. 
+Deploy the contract again to confirm that the workplace still compiles.
 
 ```sh
 terrain deploy cw20-factory-token --signer test
@@ -404,22 +420,24 @@ terrain deploy cw20-factory-token --signer test
 
 :::{tip}
 If your code is not working as expected, you can [clone the repo with all the changes described above](https://github.com/emidev98/token-factory/commit/fdba3c89c464860fe8cd9aa17f1344d82d613522) so that you can continue with the tutorial. To clone the repo, do the following:
+
 ```
 git clone -n https://github.com/emidev98/token-factory
 cd token-factory
 git checkout fdba3c89c464860fe8cd9aa17f1344d82d613522
 ```
+
 :::
 
 ### 6. Use crate.io to implement the CW20 Token Factory as a dependency
 
-For the purpose of this tutorial, [crates.io](https:\\crates.io) is used to implement the CW20 Token Factory as a dependency. This ensures that CW20 Token Factory is platform agnostic, so you can use Linux, Windows or Mac.
+For the purpose of this tutorial, [crates.io](https:\crates.io) is used to implement the CW20 Token Factory as a dependency. This ensures that CW20 Token Factory is platform agnostic, so you can use Linux, Windows or Mac.
 
-As the deployment to crates.io is out of scope of this tutorial, you can find [deployed the CW20 Token Factory package to crates.io](https://crates.io/crates/cw20-factory-token). You can use this  deployment when you add the CW20 Token Factory contract as a dependency of the Token Factory contract in the the next section.
+As the deployment to crates.io is out of scope for this tutorial, you can find [the CW20 Token Factory package deployed to crates.io](https://crates.io/crates/cw20-factory-token). You can use this deployment when you add the CW20 Token Factory contract as a dependency of the Token Factory contract in the the next section.
 
 # 3. Create the Token Factory smart contract
 
-The Token Factory contract mints new tokens, increases the supply of minted tokens, burns tokens to return UST and tracks all tokens created. To set up the contract, follow the procedure below:  
+To set up the contract, follow the procedure below:
 
 ### 1. Add the dependencies
 
@@ -427,7 +445,7 @@ In this section, you will add the following dependencies to `cargo.toml`:
 
 - `cw2`
 - `cw20`
-- `cw20-base` 
+- `cw20-base`
 - `cw20-factory-token`
 
 To add the dependencies, do the following:
@@ -436,7 +454,6 @@ a. Navigate to `/token-factory/contracts/token-factory`.
 
 b. Open `cargo.toml` and add the dependencies inside the header:
 
- 
 ```rust
 # ...
 [dependencies]
@@ -449,7 +466,8 @@ cw20-factory-token = { version = "0.5.0", features = ["library"] }
 
 ```
 
-### 2. Modify the contract files 
+### 2. Modify the contract files
+
 Now that you've added the dependencies, modify the following files:
 
 - `error.rs`
@@ -458,7 +476,7 @@ Now that you've added the dependencies, modify the following files:
 - `contract.rs`
 - `test.rs`
 
-To modify the contract files, follow the procedure below.
+To modify the contract files, follow the procedure below:
 
 a. Navigate to `/token-factory/contracts/token-factory/src`.
 
@@ -470,67 +488,41 @@ use cosmwasm_std::{StdError, Uint128};
 
 use thiserror::Error;
 
-  
+
 
 #[derive(Error, Debug, PartialEq)]
 
 pub enum ContractError {
+    #[error("{0}")]
+    Std(#[from] StdError),
 
-#[error("{0}")]
+    #[error("Unauthorized")]
+    Unauthorized {},
 
-Std(#[from] StdError),
+    #[error("NotReceivedFunds")]
+    NotReceivedFunds {},
 
-  
+    #[error("NotAllowZeroAmount")]
+    NotAllowZeroAmount {},
 
-#[error("Unauthorized")]
 
-Unauthorized {},
+    #[error("NotAllowedDenom")]
+    NotAllowedDenom {
+        denom: String
+    },
 
-  
 
-#[error("NotReceivedFunds")]
+    #[error("NotAllowedMultipleDenoms")]
+    NotAllowedMultipleDenoms {},
 
-NotReceivedFunds {},
+    #[error("TokenAddressMustBeWhitelisted")]
+    TokenAddressMustBeWhitelisted {},
 
-  
-
-#[error("NotAllowZeroAmount")]
-
-NotAllowZeroAmount {},
-
-  
-
-#[error("NotAllowedDenom")]
-
-NotAllowedDenom {
-
-denom: String
-
-},
-
-  
-
-#[error("NotAllowedMultipleDenoms")]
-
-NotAllowedMultipleDenoms {},
-
-  
-
-#[error("TokenAddressMustBeWhitelisted")]
-
-TokenAddressMustBeWhitelisted {},
-
-  
-
-#[error("ReceivedFundsMismatchWithMintAmount")]
-
-ReceivedFundsMismatchWithMintAmount {
-
-received_amount: Uint128,
-
-expected_amount: Uint128
-
-},
+    #[error("ReceivedFundsMismatchWithMintAmount")]
+    ReceivedFundsMismatchWithMintAmount {
+        received_amount: Uint128,
+        expected_amount: Uint128
+    },
 
 }
 ```
@@ -547,7 +539,7 @@ use schemars::JsonSchema;
 
 use serde::{Deserialize, Serialize};
 
-  
+
 
 #[derive(Serialize, Deserialize, Clone, Debug, PartialEq, JsonSchema)]
 
@@ -559,7 +551,7 @@ https://docs.terra.money/docs/develop/module-specifications/spec-market.html#mar
 
 pub stable_denom: String,
 
-  
+
 
 /* Id of the contract uploaded for the first time to the chain
 
@@ -569,7 +561,7 @@ pub token_contract_code_id: u64,
 
 }
 
-  
+
 
 #[derive(Serialize, Deserialize, Clone, Debug, PartialEq, JsonSchema)]
 
@@ -583,7 +575,7 @@ the new pegged token 1:1 with UST or to increase circulation supply. */
 
 Deposit(DepositType),
 
-  
+
 
 /* Handle burn of pegged tokens 1:1 with UST which are added to
 
@@ -599,8 +591,8 @@ token_address: String
 
 }
 
-  
-  
+
+
 
 #[derive(Serialize, Deserialize, Clone, Debug, PartialEq, JsonSchema)]
 
@@ -626,7 +618,7 @@ recipient: String,
 
 }
 
-  
+
 
 #[derive(Serialize, Deserialize, Clone, Debug, PartialEq, JsonSchema)]
 
@@ -640,7 +632,7 @@ GetMintedTokens { },
 
 }
 
-  
+
 
 #[derive(Serialize, Deserialize, Clone, Debug, PartialEq, JsonSchema)]
 
@@ -652,13 +644,13 @@ pub minted_tokens: Vec<String>
 
 }
 
-  
+
 
 #[derive(Serialize, Deserialize, Clone, Debug, PartialEq, JsonSchema)]
 
 pub struct MigrateMsg {}
 
-  
+
 
 ```
 
@@ -672,11 +664,11 @@ use schemars::JsonSchema;
 
 use serde::{Deserialize, Serialize};
 
-  
+
 
 use cw_storage_plus::Item;
 
-  
+
 
 #[derive(Serialize, Deserialize, Clone, Debug, PartialEq, JsonSchema)]
 
@@ -688,7 +680,7 @@ https://docs.terra.money/docs/develop/module-specifications/spec-market.html#mar
 
 pub stable_denom: String,
 
-  
+
 
 /* Id of the contract uploaded to the chain used to instantiate
 
@@ -700,7 +692,7 @@ pub token_contract_code_id: u64,
 
 }
 
-  
+
 
 pub const CONFIG: Item<Config> = Item::new("config");
 
@@ -727,6 +719,7 @@ mod test;
 pub use crate::error::ContractError;
 
 ```
+
 f. Open `contract.rs` and add the following:
 
 ```rust
@@ -753,7 +746,7 @@ Response, StdError, StdResult, SubMsg, Uint128, WasmMsg,
 
 use cw2::set_contract_version;
 
-  
+
 
 /* Define contract name and version */
 
@@ -763,7 +756,7 @@ const CONTRACT_VERSION: &str = env!("CARGO_PKG_VERSION");
 
 const INSTANTIATE_REPLY_ID: u64 = 1;
 
-  
+
 
 #[cfg_attr(not(feature = "library"), entry_point)]
 
@@ -797,13 +790,13 @@ token_contract_code_id: msg.token_contract_code_id,
 
 set_contract_version(deps.storage, CONTRACT_NAME, CONTRACT_VERSION)?;
 
-  
+
 
 CONFIG.save(deps.storage, &state)?;
 
 MINTED_TOKENS.save(deps.storage, &Vec::new())?;
 
-  
+
 
 Ok(Response::new()
 
@@ -819,7 +812,7 @@ msg.token_contract_code_id.to_string(),
 
 }
 
-  
+
 
 #[cfg_attr(not(feature = "library"), entry_point)]
 
@@ -859,7 +852,7 @@ token_address,
 
 }
 
-  
+
 
 pub fn match_deposit(
 
@@ -905,7 +898,7 @@ recipient,
 
 }
 
-  
+
 
 pub fn execute_instantiate_token(
 
@@ -925,7 +918,7 @@ let received_funds = get_received_funds(&deps, &info)?;
 
 let mut expected_amount = Uint128::zero();
 
-  
+
 
 /* Add all initial token supply */
 
@@ -937,7 +930,7 @@ token_data
 
 .for_each(|t| expected_amount += t.amount);
 
-  
+
 
 /* Check if received_funds is different than
 
@@ -955,7 +948,7 @@ expected_amount,
 
 }
 
-  
+
 
 /* If a minter exists replace the minter address with
 
@@ -977,7 +970,7 @@ Some(e)
 
 };
 
-  
+
 
 /* Create a WasmMsg to mint new CW20-base token.
 
@@ -997,7 +990,7 @@ label: token_data.name,
 
 };
 
-  
+
 
 /* Define the SubMessage on CosmWasm API to allow a callback on reply
 
@@ -1011,7 +1004,7 @@ More Info: https://docs.cosmwasm.com/docs/1.0/smart-contracts/message/submessage
 
 let sub_msg = SubMsg::reply_on_success(instantiate_message, INSTANTIATE_REPLY_ID);
 
-  
+
 
 /* Respond with the method name and SubMsg.
 
@@ -1029,13 +1022,13 @@ Ok(Response::new()
 
 }
 
-  
+
 
 pub fn get_received_funds(deps: &Deps, info: &MessageInfo) -> Result<Coin, ContractError> {
 
 let config = CONFIG.load(deps.storage)?;
 
-  
+
 
 match info.funds.get(0) {
 
@@ -1051,7 +1044,7 @@ return Err(ContractError::NotAllowZeroAmount {});
 
 }
 
-  
+
 
 /* Allow to receive only token denomination defined
 
@@ -1067,7 +1060,7 @@ denom: received.denom.to_string(),
 
 }
 
-  
+
 
 /* Only one token can be received */
 
@@ -1085,7 +1078,7 @@ Ok(received.clone())
 
 }
 
-  
+
 
 pub fn execute_mint(
 
@@ -1111,7 +1104,7 @@ let token_addr_from_list = MINTED_TOKENS
 
 .find(|t| t == &token_address);
 
-  
+
 
 /* Check if the token to be minted exists in the list, otherwise
 
@@ -1125,7 +1118,7 @@ return Err(ContractError::TokenAddressMustBeWhitelisted {});
 
 }
 
-  
+
 
 /* Create an execute message to mint new units of an existent token */
 
@@ -1145,7 +1138,7 @@ funds: vec![],
 
 };
 
-  
+
 
 /* This type of SubMessage will never reply as no further operation is needed,
 
@@ -1155,7 +1148,7 @@ More Info: https://docs.cosmwasm.com/docs/1.0/smart-contracts/message/submessage
 
 let mint_sub_msg = SubMsg::new(execute_mint);
 
-  
+
 
 Ok(Response::new()
 
@@ -1165,7 +1158,7 @@ Ok(Response::new()
 
 }
 
-  
+
 
 pub fn execute_burn_from(
 
@@ -1191,7 +1184,7 @@ let token_addr_from_list = MINTED_TOKENS
 
 .find(|t| t == &token_address);
 
-  
+
 
 /* Check if the token to be burned exists in the list, otherwise
 
@@ -1205,7 +1198,7 @@ return Err(ContractError::TokenAddressMustBeWhitelisted {});
 
 }
 
-  
+
 
 /* Amount of tokens to be burned must not be zero */
 
@@ -1215,7 +1208,7 @@ return Err(ContractError::NotAllowZeroAmount {});
 
 }
 
-  
+
 
 /* Create a SubMessage to decrease the circulating supply of existent
 
@@ -1239,7 +1232,7 @@ funds: vec![],
 
 });
 
-  
+
 
 /* Create a SubMessage to transfer fund from this smart contract to
 
@@ -1253,7 +1246,7 @@ amount: coins(amount.u128(), config.stable_denom),
 
 }));
 
-  
+
 
 Ok(Response::new()
 
@@ -1263,7 +1256,7 @@ Ok(Response::new()
 
 }
 
-  
+
 
 /* In order to handle any callback from previous SubMessages "reply"
 
@@ -1285,13 +1278,13 @@ id => Err(StdError::generic_err(format!("Unknown reply id: {}", id))),
 
 }
 
-  
+
 
 fn handle_instantiate_reply(deps: DepsMut, msg: Reply) -> StdResult<Response> {
 
 let result = msg.result.into_result().map_err(StdError::generic_err)?;
 
-  
+
 
 /* Find the event type instantiate_contract which contains the contract_address*/
 
@@ -1305,7 +1298,7 @@ let event = result
 
 .ok_or_else(|| StdError::generic_err("cannot find `instantiate_contract` event"))?;
 
-  
+
 
 /* Find the contract_address from instantiate_contract event*/
 
@@ -1321,7 +1314,7 @@ let contract_address = &event
 
 .value;
 
-  
+
 
 /* Update the state of the contract adding the new generated MINTED_TOKEN */
 
@@ -1333,7 +1326,7 @@ Ok(tokens)
 
 })?;
 
-  
+
 
 Ok(Response::new()
 
@@ -1343,7 +1336,7 @@ Ok(Response::new()
 
 }
 
-  
+
 
 #[cfg_attr(not(feature = "library"), entry_point)]
 
@@ -1359,7 +1352,7 @@ QueryMsg::GetMintedTokens {} => to_binary(&query_minted_tokens(deps)?),
 
 }
 
-  
+
 
 fn query_minted_tokens(deps: Deps) -> StdResult<MintedTokens> {
 
@@ -1371,7 +1364,7 @@ minted_tokens: MINTED_TOKENS.load(deps.storage)?,
 
 }
 
-  
+
 
 /* In case you want to upgrade this contract you can find information about
 
@@ -1421,7 +1414,7 @@ SubMsgExecutionResponse, Uint128, WasmMsg,
 
 use cw20::{Cw20Coin, MinterResponse};
 
-  
+
 
 #[test]
 
@@ -1431,13 +1424,13 @@ fn test_instantiate() {
 
 let mut deps = mock_dependencies(&[]);
 
-  
+
 
 // WHEN
 
 let res = do_instantiate(deps.as_mut());
 
-  
+
 
 // THEN
 
@@ -1471,7 +1464,7 @@ attrs
 
 }
 
-  
+
 
 #[test]
 
@@ -1481,7 +1474,7 @@ fn test_mint_token() {
 
 let mut deps = mock_dependencies(&[]);
 
-  
+
 
 // WHEN
 
@@ -1489,7 +1482,7 @@ do_instantiate(deps.as_mut());
 
 let res = do_mint_new_token(deps.as_mut());
 
-  
+
 
 // THEN
 
@@ -1499,7 +1492,7 @@ assert_eq!(1, res_attr.len());
 
 assert_eq!("instantiate_token", res_attr.get(0).unwrap().value);
 
-  
+
 
 let res_message = res.messages;
 
@@ -1557,7 +1550,7 @@ assert_eq!(&success_reply, res_message.get(0).unwrap());
 
 }
 
-  
+
 
 #[test]
 
@@ -1571,7 +1564,7 @@ let env = mock_env();
 
 let query_minted_tokens = QueryMsg::GetMintedTokens {};
 
-  
+
 
 // WHEN
 
@@ -1585,7 +1578,7 @@ let query_res = query(deps.as_ref(), env, query_minted_tokens).unwrap();
 
 let query_res: MintedTokens = from_binary(&query_res).unwrap();
 
-  
+
 
 // THEN
 
@@ -1615,7 +1608,7 @@ query_res
 
 }
 
-  
+
 
 #[test]
 
@@ -1649,7 +1642,7 @@ recipient: "creator".to_string(),
 
 });
 
-  
+
 
 // WHEN
 
@@ -1661,7 +1654,7 @@ do_reply_instantiate_event(deps.as_mut());
 
 let execute_res = execute(deps.as_mut(), env, info, msg).unwrap();
 
-  
+
 
 // THEN
 
@@ -1699,7 +1692,7 @@ execute_res
 
 }
 
-  
+
 
 #[test]
 
@@ -1721,7 +1714,7 @@ token_address: "bit_money_contract_address".to_string()
 
 };
 
-  
+
 
 // WHEN
 
@@ -1731,11 +1724,11 @@ do_reply_instantiate_event(deps.as_mut());
 
 do_mint_new_token(deps.as_mut());
 
-  
+
 
 let res = execute(deps.as_mut(), env, info, exec_burn_tokens).unwrap();
 
-  
+
 
 // THEN
 
@@ -1745,13 +1738,13 @@ assert_eq!(1, res_attr.len());
 
 assert_eq!("burn", res_attr.get(0).unwrap().value);
 
-  
+
 
 let res_message = res.messages;
 
 assert_eq!(2, res_message.len());
 
-  
+
 
 let message_reply = SubMsg::new(
 
@@ -1785,7 +1778,7 @@ res_message
 
 }
 
-  
+
 
 /*
 
@@ -1793,7 +1786,7 @@ res_message
 
 */
 
-  
+
 
 fn do_instantiate(deps: DepsMut) -> Response {
 
@@ -1809,13 +1802,13 @@ let info = mock_info("creator", &[]);
 
 let env = mock_env();
 
-  
+
 
 instantiate(deps, env, info, instantiate_msg).unwrap()
 
 }
 
-  
+
 
 fn do_mint_new_token(deps: DepsMut) -> Response {
 
@@ -1865,13 +1858,13 @@ marketing: None,
 
 let msg = ExecuteMsg::Deposit(DepositType::Instantiate(token_msg.clone()));
 
-  
+
 
 execute(deps, env.clone(), info.clone(), msg).unwrap()
 
 }
 
-  
+
 
 /* Confirm reply event form instantiate method. That way
 
@@ -1881,7 +1874,7 @@ fn do_reply_instantiate_event(deps: DepsMut) -> Response {
 
 let env = mock_env();
 
-  
+
 
 let event = Event::new("instantiate_contract")
 
@@ -1893,7 +1886,7 @@ let event = Event::new("instantiate_contract")
 
 .add_attribute("contract_address", "bit_money_contract_address");
 
-  
+
 
 reply(
 
@@ -1925,9 +1918,7 @@ data: None,
 
 ```
 
-  
-
-h. Navigate to `token-factory/contracts/token-factory/examples/`.
+h. Navigate to `token-factory/contracts/token-factory/examples`.
 
 i. Open `schema.rs`.
 
@@ -1937,15 +1928,15 @@ use std::env::current_dir;
 
 use std::fs::create_dir_all;
 
-  
+
 
 use cosmwasm_schema::{export_schema, remove_schemas, schema_for};
 
-  
+
 
 use token_factory::msg::{ExecuteMsg, QueryMsg};
 
-  
+
 
 fn main() {
 
@@ -1957,7 +1948,7 @@ create_dir_all(&out_dir).unwrap();
 
 remove_schemas(&out_dir).unwrap();
 
-  
+
 
 export_schema(&schema_for!(token_factory::msg::InstantiateMsg), &out_dir);
 
@@ -1967,13 +1958,11 @@ export_schema(&schema_for!(QueryMsg), &out_dir);
 
 }
 
-  
+
 
 ```
 
-  
-
-j. Navigate to `token-factory/contracts/token-factory/src/`.
+j. Navigate to `token-factory/contracts/token-factory/src`.
 
 k. Open `test.rs` and add the following:
 
@@ -2005,7 +1994,7 @@ SubMsgExecutionResponse, Uint128, WasmMsg,
 
 use cw20::{Cw20Coin, MinterResponse};
 
-  
+
 
 #[test]
 
@@ -2015,13 +2004,13 @@ fn test_instantiate() {
 
 let mut deps = mock_dependencies(&[]);
 
-  
+
 
 // WHEN
 
 let res = do_instantiate(deps.as_mut());
 
-  
+
 
 // THEN
 
@@ -2055,7 +2044,7 @@ attrs
 
 }
 
-  
+
 
 #[test]
 
@@ -2065,7 +2054,7 @@ fn test_mint_token() {
 
 let mut deps = mock_dependencies(&[]);
 
-  
+
 
 // WHEN
 
@@ -2073,7 +2062,7 @@ do_instantiate(deps.as_mut());
 
 let res = do_mint_new_token(deps.as_mut());
 
-  
+
 
 // THEN
 
@@ -2083,7 +2072,7 @@ assert_eq!(1, res_attr.len());
 
 assert_eq!("instantiate_token", res_attr.get(0).unwrap().value);
 
-  
+
 
 let res_message = res.messages;
 
@@ -2141,7 +2130,7 @@ assert_eq!(&success_reply, res_message.get(0).unwrap());
 
 }
 
-  
+
 
 #[test]
 
@@ -2155,7 +2144,7 @@ let env = mock_env();
 
 let query_minted_tokens = QueryMsg::GetMintedTokens {};
 
-  
+
 
 // WHEN
 
@@ -2169,7 +2158,7 @@ let query_res = query(deps.as_ref(), env, query_minted_tokens).unwrap();
 
 let query_res: MintedTokens = from_binary(&query_res).unwrap();
 
-  
+
 
 // THEN
 
@@ -2199,7 +2188,7 @@ query_res
 
 }
 
-  
+
 
 #[test]
 
@@ -2233,7 +2222,7 @@ recipient: "creator".to_string(),
 
 });
 
-  
+
 
 // WHEN
 
@@ -2245,7 +2234,7 @@ do_reply_instantiate_event(deps.as_mut());
 
 let execute_res = execute(deps.as_mut(), env, info, msg).unwrap();
 
-  
+
 
 // THEN
 
@@ -2279,7 +2268,7 @@ execute_res
 
 }
 
-  
+
 
 #[test]
 
@@ -2301,7 +2290,7 @@ token_address: "bit_money_contract_address".to_string(),
 
 };
 
-  
+
 
 // WHEN
 
@@ -2311,11 +2300,11 @@ do_reply_instantiate_event(deps.as_mut());
 
 do_mint_new_token(deps.as_mut());
 
-  
+
 
 let res = execute(deps.as_mut(), env, info, exec_burn_tokens).unwrap();
 
-  
+
 
 // THEN
 
@@ -2363,7 +2352,7 @@ res.messages
 
 }
 
-  
+
 
 /*
 
@@ -2371,7 +2360,7 @@ res.messages
 
 */
 
-  
+
 
 fn do_instantiate(deps: DepsMut) -> Response {
 
@@ -2387,13 +2376,13 @@ let info = mock_info("creator", &[]);
 
 let env = mock_env();
 
-  
+
 
 instantiate(deps, env, info, instantiate_msg).unwrap()
 
 }
 
-  
+
 
 fn do_mint_new_token(deps: DepsMut) -> Response {
 
@@ -2443,13 +2432,13 @@ marketing: None,
 
 let msg = ExecuteMsg::Deposit(DepositType::Instantiate(token_msg.clone()));
 
-  
+
 
 execute(deps, env.clone(), info.clone(), msg).unwrap()
 
 }
 
-  
+
 
 /* Confirm reply event form instantiate method. That way
 
@@ -2459,7 +2448,7 @@ fn do_reply_instantiate_event(deps: DepsMut) -> Response {
 
 let env = mock_env();
 
-  
+
 
 let event = Event::new("instantiate_contract")
 
@@ -2471,7 +2460,7 @@ let event = Event::new("instantiate_contract")
 
 .add_attribute("contract_address", "bit_money_contract_address");
 
-  
+
 
 reply(
 
@@ -2503,22 +2492,25 @@ data: None,
 
 ```
 
-### 3. Generate and test the schema 
+### 3. Generate and test the schema
 
-Now you have modified the Token Factory smart contract files, generate the schema and execute the tests to validate that the code works as expected:
+Now you have modified the `token-factory` contract, generate the schema and run the tests to validate that the code works as expected:
 
 a. Navigate to `/tokens-factory/contracts/token-factory`.
+
 ```bash
 cd /tokens-factory/contracts/token-factory
 ```
+
 b. Generate the schema:
+
 ```bash
  cargo schema
 ```
 
-You will see output similar to the following:
+You should see output similar to:
 
-```
+```sh
 Finished dev [unoptimized + debuginfo] target(s) in 0.02s
 
 Running `target/debug/examples/schema`
@@ -2538,18 +2530,18 @@ Created ~/Documents/github/tokens-factory/contracts/token-factory/schema/query_m
 
 c. Run the tests:
 
-```
+```sh
 cargo test
 ```
 
 You will see output similar to the following:
 
-```
+```sh
 Finished test [unoptimized + debuginfo] target(s) in 0.02s
 
 Running unittests (target/debug/deps/token_factory-03f77bf897cd72b7)
 
-  
+
 
 running 5 tests
 
@@ -2563,33 +2555,33 @@ test test::tests::test_mint_existent_token ... ok
 
 test test::tests::test_reply_instantiate_event ... ok
 
-  
+
 
 test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 
-  
+
 
 Doc-tests token-factory
 
-  
+
 
 running 0 tests
 
-  
+
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 
 ```
 
 ### 4. Modify `terrain.config.json`
+
 a. Open `terrain.config.json`.
 
-b. Modify the property `instantiateMsg`, using your `<token_contract_code_id>`. **The `<token_contract_code_id>` should not be surrounded by quotes**:
+b. Modify the property `InstantiateMsg`, using your `<token_contract_code_id>`. **The `<token_contract_code_id>` should not be surrounded by quotes**:
 
 :::{tip}
-To determine which to `<token_contract_code_id>`, check the file `refs.terrain.json` from workspace's root under the `cw20-token-factory` object.
+To determine which `<token_contract_code_id>`, check the file `refs.terrain.json` from the workspace's root under the `cw20-token-factory` object.
 :::
-
 
 ```Json
 
@@ -2621,12 +2613,10 @@ To determine which to `<token_contract_code_id>`, check the file `refs.terrain.j
 
 # 7. Deploy the smart contract to LocalTerra
 
-Now that you have created, modified and tested each smart contract, deploy the `token-factory` your LocalTerra instance using Terrain:
+Now that you've created, modified and tested each smart contract, deploy the `token-factory` to your LocalTerra instance using Terrain:
 
-```bash
-
+```sh
 terrain deploy token-factory --signer test
-
 ```
 
 :::{tip}
