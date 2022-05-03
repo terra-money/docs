@@ -416,12 +416,23 @@ git checkout fdba3c89c464860fe8cd9aa17f1344d82d613522
 
 For the purpose of this tutorial, [crates.io](https:\\crates.io) is used to implement the CW20 Token Factory as a dependency. This ensures that CW20 Token Factory will be platform agnostic, so you can use Linux, Windows or Mac.
 
-As the deployment to crates.io is out of scope of this tutorial, we have [deployed the CW20 Token Factory package to Crates](https://crates.io/crates/cw20-factory-token), which you can use in the following steps of the guide.
+As the deployment to crates.io is out of scope of this tutorial, we have [deployed the CW20 Token Factory package to Crates](https://crates.io/crates/cw20-factory-token). You can use this cargo deployment when you add the CW20 Token Factory contract as a dependency of the Token Factory contract in the the nect section.
 
 # 3. Create the Token Factory smart contract
 
 The Token Factory contract mints new tokens, increases the supply of minted tokens, burns tokens to return UST and tracks all tokens created. To set up the contract, follow the procedure below:  
-  
+
+### 1. Add the dependencies
+
+In this section, you will add the following dependencies to `cargo.toml`:
+
+- `cw2`
+- `cw20`
+- `cw20-base` 
+- `cw20-factory-token`
+
+To add the dependencies, do the following:
+
 a. Navigate to `/token-factory/contracts/token-factory`.
 
 b. Open `cargo.toml` and add the dependencies inside the header:
@@ -443,9 +454,20 @@ cw20-factory-token = { version = "0.5.0", features = ["library"] }
 
 ```
 
-c. Navigate to `/token-factory/contracts/token-factory/src`.
+### 2. Modify the contract files 
+Now that you've added the dependencies, modify the following files:
 
-d. Open `error.rs` and add the following:
+- `error.rs`
+- `msg.rs`
+- `lib.rs`
+- `contract.rs`
+- `test.rs`
+
+To modify the contract files, follow the procedure below.
+
+a. Navigate to `/token-factory/contracts/token-factory/src`.
+
+b. Open `error.rs` and add the following:
 
 ```rust
 
@@ -518,7 +540,7 @@ expected_amount: Uint128
 }
 ```
 
-e. Open `msg.rs` and add the following:
+c. Open `msg.rs` and add the following:
 
 ```rust
 
@@ -645,7 +667,7 @@ pub struct MigrateMsg {}
 
   
 
-f. Open `state.rs` and add the following:
+d. Open `state.rs` and add the following:
 
 ```rust
 
@@ -691,7 +713,7 @@ pub const MINTED_TOKENS: Item<Vec<String>> = Item::new("minted_tokens");
 
   
 
-g. Open `lib.rs` and add the following:
+e. Open `lib.rs` and add the following:
 
 ```rust
 
@@ -708,7 +730,7 @@ mod test;
 pub use crate::error::ContractError;
 
 ```
-h. Open `contract.rs` and add the following:
+f. Open `contract.rs` and add the following:
 
 ```rust
 
