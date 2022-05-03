@@ -2584,7 +2584,7 @@ test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; fini
 
 ```
 
-### 4. Modify terrain.config.json
+### 4. Modify `terrain.config.json`
 a. Open terrain.config.json.
 b. Modify the property `instantiateMsg`, using your `<token_contract_code_id>`. **The `<token_contract_code_id>` should not be surrounded by quotes**:
 
@@ -2620,7 +2620,7 @@ To determine which to `<token_contract_code_id>`, check the file `refs.terrain.j
 
 ```
 
-### 4. Deploy the smart contract to LocalTerra
+# 7. Deploy the smart contract to LocalTerra
 
 Now that you have created, modified and tested each smart contract, deploy the `token-factory` your LocalTerra instance using Terrain:
 
