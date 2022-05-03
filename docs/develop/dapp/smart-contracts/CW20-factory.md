@@ -12,7 +12,7 @@ In this tutorial, you will build a CW20 Tokens factory. CW20 is a specification 
     + [2. Modify the contract files](#2-modify-the-contract-files)
     + [3. Generate and test the schema](#3-generate-and-test-the-schema)
     + [4. Modify `terrain.config.json`](#4-modify--terrainconfigjson-)
-    + [5. Redeploy the smart contract](#5-redeploy-the-smart-contract)
+    + [5. Test the smart contract deployment](#5-redeploy-the-smart-contract)
     + [6. Use crate.io to implement the CW20 Token Factory as a dependency](#4-use-crateio-to-implement-the-cw20-token-factory-as-a-dependency)
 - [6. Modify the Token Factory smart contract](#3-create-the-token-factory-smart-contract)
     + [1. Add the dependencies](#1-add-the-dependencies)
@@ -351,7 +351,7 @@ i. Close and save `schemas.rs`:
 a. Navigate to `/token-factory/contracts/cw20-factory-token`:
 
 ```
-cd `/token-factory/contracts/cw20-factory-token`
+cd /token-factory/contracts/cw20-factory-token
 ```
 
 b. Generate the new schema:
@@ -369,7 +369,8 @@ cargo test
 ### 4. Modify `terrain.config.json` 
 
 a. Open `terrain.config.json`.
-b. Copy the `instantiateMsg` property in to `terrain.config.json`. This allows you to send the correct data to the smart contract upon instantiation:
+
+b. Modify the `instantiateMsg` property in the `terrain.config.json` so that it contains the `name`, `symbol`, `decimals` and `initial_balances` shown below. This allows you to send the correct data to the smart contract upon instantiation:
 
 ```Json
 {
@@ -393,7 +394,7 @@ b. Copy the `instantiateMsg` property in to `terrain.config.json`. This allows y
 }
 ```
 
-### 5. Redeploy the smart contract
+### 5. Test the smart contract deployment
 
 Deploy the contract again to confirm that the workplace still compiles. 
 
@@ -412,9 +413,9 @@ git checkout fdba3c89c464860fe8cd9aa17f1344d82d613522
 
 ### 6. Use crate.io to implement the CW20 Token Factory as a dependency
 
-For the purpose of this tutorial, [crates.io](https:\\crates.io) is used to implement the CW20 Token Factory as a dependency. This ensures that CW20 Token Factory will be platform agnostic, so you can use Linux, Windows or Mac.
+For the purpose of this tutorial, [crates.io](https:\\crates.io) is used to implement the CW20 Token Factory as a dependency. This ensures that CW20 Token Factory is platform agnostic, so you can use Linux, Windows or Mac.
 
-As the deployment to crates.io is out of scope of this tutorial, we have [deployed the CW20 Token Factory package to Crates](https://crates.io/crates/cw20-factory-token). You can use this cargo deployment when you add the CW20 Token Factory contract as a dependency of the Token Factory contract in the the nect section.
+As the deployment to crates.io is out of scope of this tutorial, we have [deployed the CW20 Token Factory package to crates.io](https://crates.io/crates/cw20-factory-token). You can use this  deployment when you add the CW20 Token Factory contract as a dependency of the Token Factory contract in the the nect section.
 
 # 3. Create the Token Factory smart contract
 
