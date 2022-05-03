@@ -121,6 +121,10 @@ Markdown takes the guesswork out of formatting. Rely on Markdown to format and s
 
 Limiting your styling will make your writing clearer and more succinct.
 
+### Filenames
+
+When naming your files or folders, use all lower case. Do not use spaces or underscores. Keep filenames succinct.
+
 ### Code
 
 Code should be in blocks. A command that a user needs to execute should be written in a code block rather than inline. Use `inline code` to refer to specific parts of code. 
