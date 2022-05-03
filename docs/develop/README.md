@@ -8,6 +8,7 @@ get-started
 tools
 dapp/README
 how-to/README.md
+token-factory/README
 endpoints.md
 open-source.md
 module-specifications/README
