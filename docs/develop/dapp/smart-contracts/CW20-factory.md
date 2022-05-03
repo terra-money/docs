@@ -13,7 +13,7 @@ In this tutorial, you will build a CW20 Tokens factory. CW20 is a specification 
     + [3. Generate and test the schema](#3-generate-and-test-the-schema)
     + [4. Modify `terrain.config.json`](#4-modify--terrainconfigjson-)
     + [5. Redeploy the smart contract](#5-redeploy-the-smart-contract)
-    + [4. Use crate.io to implement the CW20 Token Factory as a dependency](#4-use-crateio-to-implement-the-cw20-token-factory-as-a-dependency)
+    + [6. Use crate.io to implement the CW20 Token Factory as a dependency](#4-use-crateio-to-implement-the-cw20-token-factory-as-a-dependency)
 - [6. Modify the Token Factory smart contract](#3-create-the-token-factory-smart-contract)
     + [1. Add the dependencies](#1-add-the-dependencies)
     + [2. Modify the contract files](#2-modify-the-contract-files-1)
@@ -410,7 +410,7 @@ git checkout fdba3c89c464860fe8cd9aa17f1344d82d613522
 ```
 :::
 
-### 4. Use crate.io to implement the CW20 Token Factory as a dependency
+### 6. Use crate.io to implement the CW20 Token Factory as a dependency
 
 For the purpose of this tutorial, [crates.io](https:\\crates.io) is used to implement the CW20 Token Factory as a dependency. This ensures that CW20 Token Factory will be platform agnostic, so you can use Linux, Windows or Mac.
 
