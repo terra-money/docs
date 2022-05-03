@@ -83,6 +83,8 @@ The steps make up the body of a tutorial. Step headings are numbered and describ
 
 If a step contains more than one specific action, it should be broken up into substeps. Number all substeps using an [ordred list](#ordered-lists).
 
+Try to limit substeps to 7. Never have more than 10. Create a new step to break things up. 
+
 **Example**:
 
    ```md
@@ -164,6 +166,19 @@ Headings denote sections in a document. Each page should contain only one first-
 Headings that denote chronological steps are numbered. Headings used to denote non-chronological sections, such as explanations or stand-alone information, are not numbered.
 
 All headings follow sentence-style capitalization. Avoid starting a heading with in-line code. Headings should not have ending punctuation. 
+
+Level 1 headings should only be used for titles. 
+
+Try to use only three heading levels. Do not use more than 4 levels. 
+**Example**:
+``` md
+# Title heading only
+## Level 2
+### Level 3 
+#### Avoid using level 4 headings
+##### Never use more than 4 levels
+
+```
 
 ### Lists
 
