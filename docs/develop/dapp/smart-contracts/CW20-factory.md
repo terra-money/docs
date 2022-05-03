@@ -321,6 +321,7 @@ pub fn migrate(_deps: DepsMut, _env: Env, _msg: MigrateMsg) -> StdResult<Respons
 g. Save and close `contract.rs`.
 
 h. Open `schemas.rs` and paste the following:
+
 ```Rust
 use std::env::current_dir;
 use std::fs::create_dir_all;
@@ -340,6 +341,9 @@ fn main() {
     export_schema(&schema_for!(QueryMsg), &out_dir);
 }
 ```
+
+i. Close and save `schemas.rs`:
+
 ### 3. Generate and test the schema 
 
 a. Navigate to `/token-factory/contracts/cw20-factory-token`:
@@ -390,12 +394,13 @@ b. Copy the `instantiateMsg` property in to `terrain.config.json`. This allows y
 ### 5. Redeploy the smart contract
 
 Deploy the contract again to confirm that the workplace still compiles. 
+
 ```sh
 terrain code: cw20-factory-token
 ```
 
 :::{tip}
-if your code is not working as expected, you can [clone the repo with all the changes described above](https://github.com/emidev98/token-factory/commit/fdba3c89c464860fe8cd9aa17f1344d82d613522) so that you can continue with the tutorial. To clone the repo, do the following:
+If your code is not working as expected, you can [clone the repo with all the changes described above](https://github.com/emidev98/token-factory/commit/fdba3c89c464860fe8cd9aa17f1344d82d613522) so that you can continue with the tutorial. To clone the repo, do the following:
 ```
 git clone -n https://github.com/emidev98/token-factory
 cd token-factory
@@ -2622,8 +2627,6 @@ Now that you have created, modified and tested each smart contract, deploy the `
 terrain deploy token-factory --signer test
 
 ```
-
-  
 
 :::{tip}
 
