@@ -51,7 +51,7 @@ The Terra protocol is scalable: it is designed to maintain Terra's price stabili
 
 ### Seigniorage
 
-[Seigniorage](glossary.md#seigniorage) is the value of a coin minus the cost of its production. In previous versions of the Terra protocol, seigniorage was diverted to fund the community and oracle reward pools. Since the Columbus-5 mainnet upgrade, 
+[Seigniorage](glossary.md#seigniorage) is the value of a coin minus the cost of its production. In order to mint UST, an equal value of Luna needs to be offered for burning. In the Terra protocol's seigniorage mechanism, a percentage of offered Luna can be recaptured as seigniorage revenue by sending it to a specified pool before burning. In previous versions of the Terra protocol, seigniorage was diverted to fund the community and oracle reward pools. Since the Columbus-5 mainnet upgrade, 
 all seigniorage in the Terra protocol is [burned](glossary.md#burn). 
 
 ## Validators
