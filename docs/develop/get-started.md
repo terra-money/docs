@@ -19,7 +19,7 @@ Follow the [Terrain setup tutorial](terrain/initial-setup.md) to get started usi
 
 ### 2. Download LocalTerra and start building
 
-LocalTerra is a scaled-down Terra blockchain that allows you to test your dApp locally. LocalTerra provides a single validator node and [10 preconfigured wallet accounts](./how-to/localterra/accounts.md). 
+LocalTerra is a scaled-down Terra blockchain that allows you to test your dApp locally. LocalTerra provides a single validator node and [10 preconfigured wallet accounts](localterra/accounts.md). 
 
 Follow the [Terrain with LocalTerra tutorial](terrain/using-terrain-localterra.md) to start using Terrain and create a simple counter app. 
 

@@ -78,6 +78,6 @@ export PATH=$PATH:$(go env GOPATH)/bin
 
 ## Next steps
 
-With `terrad` installed, you can set up a local testing environment using [LocalTerra](../localterra/README.md).
+With `terrad` installed, you can set up a local testing environment using [LocalTerra](../../localterra/README.md).
 
 For more information on `terrad` commands and usage, see [](using-terrad.md).

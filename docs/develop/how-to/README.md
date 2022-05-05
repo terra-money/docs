@@ -1,6 +1,6 @@
 # Guides
 
-Use these guides to learn about using and installing [`terrad`](terrad/README.md), the command line interface and node daemon for the Terra network, and [LocalTerra](localterra/README.md), a local testing environment.
+Use these guides to learn about using and installing [`terrad`](terrad/README.md), the command line interface and node daemon for the Terra network, and [LocalTerra](../localterra/README.md), a local testing environment.
 
 If this is your first time building on Terra and you want to set up your environment, use the [quickstart guide](../terrain/README.md).
 

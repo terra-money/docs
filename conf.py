@@ -120,17 +120,22 @@ html_theme_options = {
 # Absolute:"/<file>" 
 # Ending in: "<file>"
 redirects = {
+    
     # "<source>": "<target>"
     
     # Terrain
     "docs/develop/dapp/quick-start/README.html": "/docs/develop/terrain/README.html",
 
+    # LocalTerra
+    "docs/develop/how-to/localterra/README.html": "/docs/develop/localterra/README.html",
+
     # Terra.js
     "docs/develop/sdks/terra-js/README.html": "/docs/develop/terra-js/README.html",
+
+    # Terra.py
+    "docs/develop/sdks/get-started-py.html": "/docs/develop/terra-py/get-started-py.html",
 
     # Wallet Provider
     "docs/develop/sdks/wallet-provider/README.html": "/docs/develop/wallet-provider/README.html",
 
-    # Terra.py
-    "docs/develop/sdks/get-started-py.md": "/docs/develop/terra-py/get-started-py.md",
 }
