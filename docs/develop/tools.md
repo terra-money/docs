@@ -52,7 +52,7 @@ Use these tools to interact with the Terra blockchain.
 
 #### Terrad
 
-The command line interface and node daemon for interacting with the Terra blockchain. Use `terrad` to run a full node or interact with the chain. Follow the [`terrad` install guide](./how-to/terrad/install-terrad.md) to get started.
+The command line interface and node daemon for interacting with the Terra blockchain. Use `terrad` to run a full node or interact with the chain. Follow the [`terrad` install guide](terrad/install-terrad.md) to get started.
 
 #### Finder
 

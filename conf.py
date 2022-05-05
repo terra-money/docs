@@ -120,7 +120,7 @@ html_theme_options = {
 # Absolute:"/<file>" 
 # Ending in: "<file>"
 redirects = {
-    
+
     # "<source>": "<target>"
     
     # Terrain
@@ -137,5 +137,9 @@ redirects = {
 
     # Wallet Provider
     "docs/develop/sdks/wallet-provider/README.html": "/docs/develop/wallet-provider/README.html",
+
+    # terrad
+    "docs/develop/how-to/terrad/README.html": "/docs/develop/terrad/README.html",
+
 
 }

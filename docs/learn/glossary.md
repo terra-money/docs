@@ -253,7 +253,7 @@ To learn how to use the advanced features of Terra Station, visit the [Terra Sta
 
 The command line interface for interacting with a Terra node.
 
-For more information on terrad, see [`terrad` guides](../develop/how-to/terrad/README.md).
+For more information on terrad, see [`terrad` guides](../develop/terrad/README.md).
 
 ## Terravaloper address
 

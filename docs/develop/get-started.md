@@ -58,7 +58,7 @@ Terra also provides other tools for building:
 
 - [Finder](https://finder.terra.money): Terra’s multi-purpose block explorer. 
 - [Faucet](https://faucet.terra.money): Get tokens sent to your testnet address. 
-- [`terrad`](./how-to/terrad/install-terrad.md): the node daemon and command line interface that connects to the Terra network. 
+- [`terrad`](terrad/install-terrad.md): the node daemon and command line interface that connects to the Terra network. 
 
 ## Resources
 
