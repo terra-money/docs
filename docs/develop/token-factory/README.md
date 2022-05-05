@@ -6,8 +6,8 @@ and then get started building.
  
 # What is a CW20 Tokens Factory?
 
-A CW20 Tokens Factory is a Terra DApp that mint, burn, track 
-and increase the supply of custom
+A CW20 Tokens Factory is a Terra DApp that mints, burns, tracks 
+and increases the supply of custom
 [CW20](https://docs.rs/crate/cw20/0.2.3)-compatible tokens.
 The DApp is created using Terrain, and has the following structure:
 
