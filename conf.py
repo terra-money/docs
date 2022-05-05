@@ -121,11 +121,13 @@ html_theme_options = {
 # Ending in: "<file>"
 redirects = {
     # "<source>": "<target>"
-    # Terrain redirects
+    
+    # Terrain
     "docs/develop/dapp/quick-start/README.html": "/docs/develop/terrain/README.html",
 
-    # Terra.js redirects
-    "docs/develop/sdks/terra-js/README.md": "/docs/develop/terra-js/README.md",
+    # Terra.js
+    "docs/develop/sdks/terra-js/README.html": "/docs/develop/terra-js/README.html",
 
-    #
+    # Terra.py
+    "docs/develop/sdks/wallet-provider/README.html": "/docs/develop/wallet-provider/README.html",
 }

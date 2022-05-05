@@ -44,7 +44,7 @@ Use Terra<span/>.py for on-chain analysis, Jupyter Notebooks, data processing, a
 
 ## Wallet Provider and Templates:
 
-Wallet Provider makes it easy to connect a React-based web app to Terra Station. There are multiple [templates](https://templates.terra.money/) available for frontend frameworks like Vue, React, and Vite. Follow the [Wallet Provider tutorial](./sdks/wallet-provider/wallet-provider-tutorial.md) to get started.
+Wallet Provider makes it easy to connect a React-based web app to Terra Station. There are multiple [templates](https://templates.terra.money/) available for frontend frameworks like Vue, React, and Vite. Follow the [Wallet Provider tutorial](wallet-provider/wallet-provider-tutorial.md) to get started.
 
 ### Other Tools
 

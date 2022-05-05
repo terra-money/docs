@@ -50,7 +50,7 @@ Use Terra<span/>.py for on-chain analytics, Jupyter Notebooks, data processing, 
  
 ### Wallet Provider and Templates: 
 
-If you have a back end for your app and want a front end to connect to Terra Station, use Wallet provider and Terra Templates. Follow the [Wallet Provider tutorial](./sdks/wallet-provider/wallet-provider-tutorial.md) to get started. 
+If you have a back end for your app and want a front end to connect to Terra Station, use Wallet provider and Terra Templates. Follow the [Wallet Provider tutorial](wallet-provider/wallet-provider-tutorial.md) to get started. 
 
 ### Other Tools
 
