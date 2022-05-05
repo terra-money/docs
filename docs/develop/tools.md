@@ -32,11 +32,11 @@ Terra’s all-in-one development environment, Terrain provides front-end and sma
 
 ## LocalTerra
 
-Set up your own blockchain testnet in less than a minute. LocalTerra is a containerized version of the Terra blockchain, complete with a functional validator set and block creation. Visit the [LocalTerra guide](./dapp/quick-start/using-terrain-localterra.md) to get started.
+Set up your own blockchain testnet in less than a minute. LocalTerra is a containerized version of the Terra blockchain, complete with a functional validator set and block creation. Visit the [LocalTerra guide](terrain/using-terrain-localterra.md) to get started.
 
 ## Terra<span/>.js
 
-Use Terra<span/>.js to create bots, mint NFTs, and build out backend services. Follow the [Terra.js tutorial](./sdks/terra-js/getting-started.md) to get started.
+Use Terra<span/>.js to create bots, mint NFTs, and build out backend services. Follow the [Terra.js tutorial](terra-js/getting-started.md) to get started.
 
 ## Terra<span/>.py
 

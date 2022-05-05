@@ -15,19 +15,19 @@ Follow the steps below to get started with Terrain and build your own dApp!
 
 Terrain is a user-friendly development environment for developing smart contracts. Terrain makes it easy to create smart contract templates, deploy them to the Terra blockchain, and connect them to a frontend app.
 
-Follow the [Terrain setup tutorial](./dapp/quick-start/initial-setup.md) to get started using Terrain. 
+Follow the [Terrain setup tutorial](terrain/initial-setup.md) to get started using Terrain. 
 
 ### 2. Download LocalTerra and start building
 
 LocalTerra is a scaled-down Terra blockchain that allows you to test your dApp locally. LocalTerra provides a single validator node and [10 preconfigured wallet accounts](./how-to/localterra/accounts.md). 
 
-Follow the [Terrain with LocalTerra tutorial](./dapp/quick-start/using-terrain-localterra.md) to start using Terrain and create a simple counter app. 
+Follow the [Terrain with LocalTerra tutorial](terrain/using-terrain-localterra.md) to start using Terrain and create a simple counter app. 
 
 ### 3. Mint an NFT
 
 Now that you are familiar with Terrain and LocalTerra, you can try minting an NFT with Terrain. 
 
-The [NFT minting](./dapp/quick-start/mint-an-nft.md) tutorial walks you through the creation of an NFT minting application using the dApp scaffolding and front end provided by Terrain. 
+The [NFT minting](terrain/mint-an-nft.md) tutorial walks you through the creation of an NFT minting application using the dApp scaffolding and front end provided by Terrain. 
 
 :::{admonition} Terra Academy
 :class: tip
@@ -42,7 +42,7 @@ Now you can dive into the other tools in the Terra Development Suite. Visit the 
 
 ### Terra<span/>.js
 
-Use Terra<span/>.js to create bots, power NFT mints, and for all-purpose back end services. Follow the [Terra.js tutorial](./sdks/terra-js/getting-started.md) to get started.
+Use Terra<span/>.js to create bots, power NFT mints, and for all-purpose back end services. Follow the [Terra.js tutorial](terra-js/getting-started.md) to get started.
 
 ### Terra<span/>.py
 

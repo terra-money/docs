@@ -1,4 +1,0 @@
-
-[submodule "terra.py"]
-	path = terra.py
-	url = https://github.com/terra-money/terra.py.git

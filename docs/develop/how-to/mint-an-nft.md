@@ -11,8 +11,8 @@ In this tutorial, you will learn how to mint your own NFT using the [NFT Terrain
 - [Create a Terra Station wallet](../../learn/terra-station/download/terra-station-extension.md)
 - [Install npm](https://kinsta.com/blog/how-to-install-node-js/)
 - [Install git](https://git-scm.com/downloads)
-- [Install Terrain](../dapp/quick-start/initial-setup.md)
-- [Install LocalTerra](../dapp/quick-start/using-terrain-localterra.md)
+- [Install Terrain](../terrain/initial-setup.md)
+- [Install LocalTerra](../terrain/using-terrain-localterra.md)
 - 16+ gb of RAM
  
 :::{admonition} RAM requirements

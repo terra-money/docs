@@ -117,6 +117,15 @@ html_theme_options = {
 }
 
 # Redirects (visit https://documatt.gitlab.io/sphinx-reredirects/usage.html for more info)
+# Absolute:"/<file>" 
+# Ending in: "<file>"
 redirects = {
     # "<source>": "<target>"
+    # Terrain redirects
+    "docs/develop/dapp/quick-start/README.html": "/docs/develop/terrain/README.html",
+
+    # Terra.js redirects
+    "docs/develop/sdks/terra-js/README.md": "/docs/develop/terra-js/README.md",
+
+    #
 }
