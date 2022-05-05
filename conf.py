@@ -113,6 +113,7 @@ html_theme_options = {
     "use_download_button": True,
     "logo_only": True,
     "show_toc_level": 3,
+    "show_navbar_depth": 1,
     "extra_navbar": False,
 }
 

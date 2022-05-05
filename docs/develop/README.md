@@ -6,15 +6,21 @@ Welcome to the Terra developer documentation. If this is your first time buildin
 :hidden:
 get-started
 tools
-dapp/README
-how-to/README.md
+dev-suite.md
+cli-and-tools.md
+guides
+reference/README.md
+resources.md
+```
+
+
 endpoints.md
 open-source.md
 module-specifications/README
 sdks/README
 reference/README
 resources
-```
+
 
 :::::::{grid} 2 2 2 3
 :gutter: 3

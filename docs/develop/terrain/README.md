@@ -1,4 +1,4 @@
-# Terrain quickstart guide
+# Terrain
 
 Terrain is a Terra development environment that creates a better smart contract development experience.
 
