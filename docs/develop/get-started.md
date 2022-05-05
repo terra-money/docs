@@ -1,4 +1,4 @@
-## How to get started <img src="/img/icon_innovation.svg" height="40px">
+## Get started <img src="/img/icon_innovation.svg" height="40px">
 
 Use this beginner-friendly guide to start building on Terra. 
 

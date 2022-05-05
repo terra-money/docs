@@ -10,4 +10,5 @@ localterra/README.md
 wallet-provider/README.md
 terra-js/README.md
 terra-py/get-started-py.md
+cli-and-tools.md
 ```
