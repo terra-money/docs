@@ -128,6 +128,9 @@ redirects = {
     # Terra.js
     "docs/develop/sdks/terra-js/README.html": "/docs/develop/terra-js/README.html",
 
-    # Terra.py
+    # Wallet Provider
     "docs/develop/sdks/wallet-provider/README.html": "/docs/develop/wallet-provider/README.html",
+
+    # Terra.py
+    "docs/develop/sdks/get-started-py.md": "/docs/develop/terra-py/get-started-py.md",
 }
