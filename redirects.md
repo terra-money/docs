@@ -8,6 +8,6 @@ docs/develop/dapp/quick-start/*, [](docs/develop/terrain/*)
 
 "./docs/develop/how-to/terrad/README.md: [](docs/develop/terrad/README.md)
 
-"./docs/develop/how-to/sign-with-multisig.md: [](/docs/develop/how-to/sign-with-multisig.md)
-"./docs/develop/how-to/start-lcd.md: [](/docs/develop/how-to/start-lcd.md)
-"./docs/develop/how-to/README.md: [](/docs/develop/how-to/README.md)
+"./docs/develop/how-to/sign-with-multisig.md: [](docs/develop/guides/sign-with-multisig.md)
+"./docs/develop/how-to/start-lcd.md: [](docs/develop/guides/start-lcd.md)
+"./docs/develop/how-to/README.md: [](docs/develop/guides/README.md)

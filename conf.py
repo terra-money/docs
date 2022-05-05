@@ -142,5 +142,9 @@ redirects = {
     # terrad
     "docs/develop/how-to/terrad/README.html": "/docs/develop/terrad/README.html",
 
+    # Guides
+    "docs/develop/how-to/sign-with-multisig.html": "docs/develop/guides/sign-with-multisig.html",
+    "docs/develop/how-to/start-lcd.html": "docs/develop/guides/start-lcd.html",
+    "docs/develop/how-to/README.html": "docs/develop/guides/README.html",
 
 }
