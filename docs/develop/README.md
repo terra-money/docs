@@ -5,9 +5,10 @@ Welcome to the Terra developer documentation. If this is your first time buildin
 ```{toctree}
 :hidden:
 get-started
-tools
+tools.md
 dev-suite.md
 guides/README.md
+module-specifications/README.md
 reference/README.md
 resources.md
 ```

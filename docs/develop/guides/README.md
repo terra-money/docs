@@ -11,6 +11,7 @@ localterra/README
 sign-with-multisig
 start-lcd
 mint-an-nft
+smart-contracts/README
 ```
 
 :::::::{grid} 2 2 2 3
