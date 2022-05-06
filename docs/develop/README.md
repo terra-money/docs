@@ -5,21 +5,15 @@ Welcome to the Terra developer documentation. If this is your first time buildin
 ```{toctree}
 :hidden:
 get-started
-tools.md
-dev-suite.md
+which-tools.md
+developer-tools.md
 guides/README.md
 module-specifications/README.md
+open-source
+endpoints
 reference/README.md
 resources.md
 ```
-
-
-endpoints.md
-open-source.md
-module-specifications/README
-sdks/README
-reference/README
-resources
 
 
 :::::::{grid} 2 2 2 3
@@ -31,8 +25,8 @@ resources
 ```{image} /img/Build_a_dApp_ver2.svg
 :class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
 ```
-**Start building**  
-
+**Start building** 
+Set up your environment and start building.
 :::
 
 :::{grid-item-card}
@@ -41,8 +35,8 @@ resources
 ```{image} /img/Terrad.svg
 :class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
 ```
-**Tools**
-
+**Tool guide**
+Not sure what to use? Check out the Tool guide.
 :::
 
 :::{grid-item-card}
@@ -52,7 +46,17 @@ resources
 :class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
 ```
 **Terrain**  
+The all-in-one tool for dApp development.
+:::
 
+:::{grid-item-card}
+:link: mint-an-nft.html
+:class-card: sd-text-center sd-shadow-md sd-rounded-3
+```{image} /img/bullet_terra.svg
+:class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
+```
+**Mint an NFT**  
+Learn how to mint your own NFTs using Terrain. 
 :::
 
 :::{grid-item-card}
@@ -62,42 +66,7 @@ resources
 :class: sd-width-auto sd-pb-2 sd-animate-grow50-rot20
 ```
 **LocalTerra**  
-:::
-
-:::{grid-item-card}
-:link: sdks/terra-js/README.html
-:class-card: sd-text-center sd-shadow-md sd-rounded-3
-```{image} /img/terra_js.svg
-:class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
-```
-**Terra.js**  
-:::
-
-:::{grid-item-card}
-:link: https://terra-money.github.io/terra.py/
-:class-card: sd-text-center sd-shadow-md sd-rounded-3
-```{image} /img/terra_sdk.svg
-:class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
-```
-**Terra.py**  
-:::
-
-:::{grid-item-card}
-:link: module-specifications/README.html
-:class-card: sd-text-center sd-shadow-md sd-rounded-3
-```{image} /img/icon_core.svg
-:class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
-```
-**Core modules**  
-:::
-
-:::{grid-item-card}
-:link: how-to/sign-with-multisig.html
-:class-card: sd-text-center sd-shadow-md sd-rounded-3
-```{image} /img/Ecosystem_ver2.svg
-:class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
-```
-**Multisig**  
+Run a local Terra blockchain in Docker.
 :::
 
 :::{grid-item-card}
@@ -106,7 +75,8 @@ resources
 ```{image} /img/Faucet.svg
 :class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
 ```
-**Faucet**  
+**Faucet** 
+Get testnet funds. 
 :::
 
 :::::::
