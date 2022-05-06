@@ -1910,9 +1910,9 @@ only the height of the last withdrawal and its current properties.</p>
 <div class="section" id="begin-block">
 <h3>Begin-Block<a class="headerlink" href="#begin-block" title="Permalink to this headline">#</a></h3>
 <blockquote>
-<div><p>This section derives from the official Cosmos SDK docs, and placed here for your convenience to understand the distribution module’s parameters.</p>
+<div><p>This section derives from the official Cosmos SDK docs, and is placed here for your convenience to understand the distribution module’s parameters.</p>
 </div></blockquote>
-<p>At the beginning of the block, the distribution module will set the proposer for determining distribution during endblock and distribute rewards for the previous block.</p>
+<p>At the beginning of each block, the distribution module will set the proposer for determining distribution during endblock and distribute rewards for the previous block.</p>
 <p>The fees received are transferred to the Distribution <code class="docutils literal notranslate"><span class="pre">ModuleAccount</span></code>, which tracks the flow of coins in and out of the module. Fees are also allocated to the proposer, community fund, and global pool:</p>
 <ul class="simple">
 <li><p>Proposer: When a validator is the proposer of a round, that validator and its delegators receive 1-5% of the fee rewards.</p></li>
