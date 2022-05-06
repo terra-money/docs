@@ -30,7 +30,7 @@ Set up your environment and start building.
 :::
 
 :::{grid-item-card}
-:link: tools.html
+:link: which-tools.html
 :class-card: sd-text-center sd-shadow-md sd-rounded-3
 ```{image} /img/Terrad.svg
 :class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
