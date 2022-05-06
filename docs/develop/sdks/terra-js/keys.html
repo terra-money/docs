@@ -1550,15 +1550,6 @@
     </span>
    </code>
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#clikey">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     CLIKey
-    </span>
-   </code>
-  </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#specifying-an-hd-path">
@@ -1606,15 +1597,6 @@
    <code class="docutils literal notranslate">
     <span class="pre">
      MnemonicKey
-    </span>
-   </code>
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#clikey">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     CLIKey
     </span>
    </code>
   </a>
@@ -1699,38 +1681,6 @@ A <code class="docutils literal notranslate"><span class="pre">MnemonicKey</span
 <span class="w">  </span><span class="nx">account</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">0</span><span class="p">,</span><span class="w">                 </span>
 <span class="w">  </span><span class="nx">index</span><span class="w">   </span><span class="o">:</span><span class="w"> </span><span class="kt">0</span><span class="p">,</span><span class="w">                </span>
 <span class="p">});</span><span class="w"></span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="clikey">
-<h2><code class="docutils literal notranslate"><span class="pre">CLIKey</span></code><a class="headerlink" href="#clikey" title="Permalink to this headline">#</a></h2>
-<blockquote>
-<div><p>NOTE: This keytype requires you to have <code class="docutils literal notranslate"><span class="pre">terrad</span></code> installed.</p>
-</div></blockquote>
-<p>If you want to use keys stored in your <code class="docutils literal notranslate"><span class="pre">terrad</span></code> installation’s keyring to sign transactions, you can use <code class="docutils literal notranslate"><span class="pre">CLIKey</span></code>. This approach also works for keys that have been registered in your keyring with <code class="docutils literal notranslate"><span class="pre">--ledger</span></code>, using a Ledger hardware device.</p>
-<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">StdFee</span><span class="p">,</span><span class="w"> </span><span class="nx">MsgSend</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@terra-money/terra.js&#39;</span><span class="p">;</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">LocalTerra</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@terra-money/terra.js&#39;</span><span class="p">;</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">CLIKey</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@terra-money/terra.js&#39;</span><span class="p">;</span><span class="w"></span>
-
-<span class="kd">const</span><span class="w"> </span><span class="nx">terra</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">LocalTerra</span><span class="p">();</span><span class="w"></span>
-<span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">test1</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">terra</span><span class="p">.</span><span class="nx">wallets</span><span class="p">;</span><span class="w"></span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">cliKey</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">CLIKey</span><span class="p">(</span><span class="s1">&#39;test111&#39;</span><span class="p">);</span><span class="w"></span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">cliWallet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">terra</span><span class="p">.</span><span class="nx">wallet</span><span class="p">(</span><span class="nx">cliKey</span><span class="p">);</span><span class="w"></span>
-
-<span class="kd">const</span><span class="w"> </span><span class="nx">send</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">MsgSend</span><span class="p">(</span><span class="nx">cliWallet</span><span class="p">.</span><span class="nx">key</span><span class="p">.</span><span class="nx">accAddress</span><span class="p">,</span><span class="w"> </span><span class="nx">test1</span><span class="p">.</span><span class="nx">key</span><span class="p">.</span><span class="nx">accAddress</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="nx">uluna</span><span class="o">:</span><span class="w"> </span><span class="kt">100000</span><span class="p">,</span><span class="w"></span>
-<span class="p">});</span><span class="w"></span>
-
-<span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">tx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">cliWallet</span><span class="p">.</span><span class="nx">createAndSignTx</span><span class="p">({</span><span class="w"></span>
-<span class="w">    </span><span class="nx">msgs</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nx">send</span><span class="p">],</span><span class="w"></span>
-<span class="w">    </span><span class="nx">fee</span><span class="o">:</span><span class="w"> </span><span class="kt">new</span><span class="w"> </span><span class="nx">StdFee</span><span class="p">(</span><span class="mf">100000</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">uluna</span><span class="o">:</span><span class="w"> </span><span class="kt">100000</span><span class="w"> </span><span class="p">}),</span><span class="w"></span>
-<span class="w">  </span><span class="p">});</span><span class="w"></span>
-
-<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">await</span><span class="w"> </span><span class="nx">terra</span><span class="p">.</span><span class="nx">tx</span><span class="p">.</span><span class="nx">broadcast</span><span class="p">(</span><span class="nx">tx</span><span class="p">));</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-
-<span class="nx">main</span><span class="p">().</span><span class="k">catch</span><span class="p">(</span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <div class="section" id="specifying-an-hd-path">
