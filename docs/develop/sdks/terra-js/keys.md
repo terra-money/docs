@@ -66,37 +66,6 @@ const MNE_KEY_FULLY_RESOLVED = new MnemonicKey({
 
 ```
 
-## `CLIKey`
-
-> NOTE: This keytype requires you to have `terrad` installed.
-
-If you want to use keys stored in your `terrad` installation's keyring to sign transactions, you can use `CLIKey`. This approach also works for keys that have been registered in your keyring with `--ledger`, using a Ledger hardware device.
-
-```ts
-import { StdFee, MsgSend } from '@terra-money/terra.js';
-import { LocalTerra } from '@terra-money/terra.js';
-import { CLIKey } from '@terra-money/terra.js';
-
-const terra     = new LocalTerra();
-const { test1 } = terra.wallets;
-const cliKey    = new CLIKey('test111');
-const cliWallet = terra.wallet(cliKey);
-
-const send = new MsgSend(cliWallet.key.accAddress, test1.key.accAddress, {
-  uluna: 100000,
-});
-
-async function main() {
-  const tx = await cliWallet.createAndSignTx({
-    msgs: [send],
-    fee: new StdFee(100000, { uluna: 100000 }),
-  });
-
-  console.log(await terra.tx.broadcast(tx));
-}
-
-main().catch(console.error);
-```
 
 ### Specifying an HD path
 
