@@ -112,9 +112,9 @@ type CommunityPoolSpendProposal struct {
 
 ### Begin-Block
 
-> This section derives from the official Cosmos SDK docs, and placed here for your convenience to understand the distribution module's parameters.
+> This section derives from the official Cosmos SDK docs, and is placed here for your convenience to understand the distribution module's parameters.
 
-At the beginning of the block, the distribution module will set the proposer for determining distribution during endblock and distribute rewards for the previous block.
+At the beginning of each block, the distribution module will set the proposer for determining distribution during endblock and distribute rewards for the previous block.
 
 The fees received are transferred to the Distribution `ModuleAccount`, which tracks the flow of coins in and out of the module. Fees are also allocated to the proposer, community fund, and global pool:
 
