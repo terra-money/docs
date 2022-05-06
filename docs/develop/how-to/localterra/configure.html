@@ -1595,10 +1595,10 @@
   <div class="tex2jax_ignore mathjax_ignore section" id="configure-localterra">
 <h1>Configure LocalTerra<a class="headerlink" href="#configure-localterra" title="Permalink to this headline">#</a></h1>
 <p>The majority of LocalTerra is implemented through a <code class="docutils literal notranslate"><span class="pre">docker-compose.yml</span></code> file, making it easily customizable. You can use LocalTerra as a starting point for setting up your own local Terra testnet with Docker containers.</p>
-<p>Out of the box, LocalTerra comes preconfigured with opinionated settings such as:</p>
+<p>Out of the box, LocalTerra comes with several preconfigured settings such as:</p>
 <ul class="simple">
-<li><p>ports defined for RPC (26657), LCD (1317) and FCD (3060)</p></li>
-<li><p>standard <a class="reference internal" href="accounts.html"><span class="doc std std-doc">accounts</span></a></p></li>
+<li><p>Ports defined for RPC (26657), LCD (1317) and FCD (3060).</p></li>
+<li><p>Standard <a class="reference internal" href="accounts.html"><span class="doc std std-doc">accounts</span></a>.</p></li>
 </ul>
 <div class="section" id="modify-node-configuration">
 <h2>Modify node configuration<a class="headerlink" href="#modify-node-configuration" title="Permalink to this headline">#</a></h2>
@@ -1606,7 +1606,7 @@
 </div>
 <div class="section" id="speed-up-block-time">
 <h2>Speed up block time<a class="headerlink" href="#speed-up-block-time" title="Permalink to this headline">#</a></h2>
-<p>LocalTerra is often used alongside a script written with the Terra.js SDK or Terra Python SDK as a convenient way to do integration tests. You can greatly improve the experience by speeding up the block time.</p>
+<p>LocalTerra is often used alongside a script written with the Terra.js or <a class="reference external" href="http://Terra.py">Terra.py</a> as a convenient way to do integration tests. You can greatly improve the experience by speeding up the block time.</p>
 <p>To increase block time, edit the <code class="docutils literal notranslate"><span class="pre">[consensus]</span></code> parameters in the <code class="docutils literal notranslate"><span class="pre">config/config.toml</span></code> file, and specify your own values.</p>
 <p>The following example configures all timeouts to <code class="docutils literal notranslate"><span class="pre">200ms</span></code>:</p>
 <div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="w">##### consensus configuration options #####</span>
