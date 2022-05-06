@@ -167,10 +167,19 @@ redirects = {
 
     # Wallet Provider
     "docs/develop/sdks/wallet-provider/README.html": "/docs/develop/wallet-provider/README.html",
+    "docs/develop/sdks/wallet-provider/sign-bytes.html": "/docs/develop/wallet-provider/sign-bytes.html",
+    "docs/develop/sdks/wallet-provider/station-extension.html": "/docs/develop/wallet-provider/station-extension.html",
+    "docs/develop/sdks/wallet-provider/station-mobile.html": "/docs/develop/wallet-provider/station-mobile.html",
+    "docs/develop/sdks/wallet-provider/wallet-provider-tutorial.html": "/docs/develop/wallet-provider/wallet-provider-tutorial.html",
 
     # terrad
     "docs/develop/how-to/terrad/README.html": "/docs/develop/terrad/README.html",
-
+    "docs/develop/how-to/terrad/commands.html": "/docs/develop/terrad/commands.html",
+    "docs/develop/how-to/terrad/install-terrad.html": "/docs/develop/terrad/install-terrad.html",
+    "docs/develop/how-to/terrad/subcommands.html": "/docs/develop/terrad/subcommands.html",
+    "docs/develop/how-to/terrad/terrad-mac.html": "/docs/develop/terrad/terrad-mac.html",
+    "docs/develop/how-to/terrad/using-terrad.html": "/docs/develop/terrad/using-terrad.html",
+  
     # Guides
     "docs/develop/how-to/sign-with-multisig.html": "/docs/develop/guides/sign-with-multisig.html",
     "docs/develop/how-to/start-lcd.html": "/docs/develop/guides/start-lcd.html",
