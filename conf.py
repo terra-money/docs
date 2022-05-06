@@ -186,6 +186,6 @@ redirects = {
     "docs/develop/how-to/README.html": "/docs/develop/guides/README.html",
 
     # Smart contract guide
-    "docs/develop/dapp/smart-contracts/README.html": "/docs/develop/dapp/smart-contracts/README.html",
+    "docs/develop/dapp/smart-contracts/README.html": "/docs/develop/guides/smart-contracts/README.html",
 
 }
