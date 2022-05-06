@@ -1,4 +1,4 @@
-# Mint an NFT using Terrain
+# Mint an NFT using Terrain <img src="/img/bullet_terra.png" height="40px">
  
 NFTs, or non-fungible tokens, are unique digital assets that can be showcased, bought, and sold on the blockchain. Purchasing an NFT gives you ownership over the unique digital creation, similar to buying a distinct painting or art piece.
  
