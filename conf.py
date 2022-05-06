@@ -126,13 +126,42 @@ redirects = {
     
     # Terrain
     "docs/develop/dapp/quick-start/README.html": "/docs/develop/terrain/README.html",
-
+    "docs/develop/dapp/quick-start/contract-migration.html": "/docs/develop/terrain/contract-migration.html",
+    "docs/develop/dapp/quick-start/cw20-factory.md.html": "/docs/develop/terrain/cw20-factory.md.html",
+    "docs/develop/dapp/quick-start/initial-setup.md.html": "/docs/develop/terrain/initial-setup.md.html",
+    "docs/develop/dapp/quick-start/mint-an-nft.md.html": "/docs/develop/terrain/mint-an-nft.md.html",
+    "docs/develop/dapp/quick-start/using-terrain-localterra.md.html": "/docs/develop/terrain/using-terrain-localterra.md.html",
+    "docs/develop/dapp/quick-start/using-terrain-testnet.md.html": "/docs/develop/terrain/using-terrain-testnet.md.html",
+  
     # LocalTerra
     "docs/develop/how-to/localterra/README.html": "/docs/develop/localterra/README.html",
+    "docs/develop/how-to/localterra/accounts.html": "/docs/develop/localterra/accounts.html",
+    "docs/develop/how-to/localterra/configure.html": "/docs/develop/localterra/configure.html",
+    "docs/develop/how-to/localterra/install-localterra.html": "/docs/develop/localterra/install-localterra.html",
+    "docs/develop/how-to/localterra/integrations.html": "/docs/develop/localterra/integrations.html",
 
     # Terra.js
     "docs/develop/sdks/terra-js/README.html": "/docs/develop/terra-js/README.html",
-
+    "docs/develop/sdks/terra-js/getting-started.html": "/docs/develop/terra-js/getting-started.html",
+    "docs/develop/sdks/terra-js/common-examples.html": "/docs/develop/terra-js/common-examples.html",
+    "docs/develop/sdks/terra-js/add-modules.html": "/docs/develop/terra-js/add-modules.html",
+    "docs/develop/sdks/terra-js/coin-and-coins.html": "/docs/develop/terra-js/coin-and-coins.html",
+    "docs/develop/sdks/terra-js/fees.html": "/docs/develop/terra-js/fees.html",
+    "docs/develop/sdks/terra-js/ibc.html": "/docs/develop/terra-js/ibc.html",
+    "docs/develop/sdks/terra-js/keys.html": "/docs/develop/terra-js/keys.html",
+    "docs/develop/sdks/terra-js/make-a-connection.html": "/docs/develop/terra-js/make-a-connection.html",
+    "docs/develop/sdks/terra-js/msgAuthorization.html": "/docs/develop/terra-js/msgAuthorization.html",
+    "docs/develop/sdks/terra-js/multisend.html": "/docs/develop/terra-js/multisend.html",
+    "docs/develop/sdks/terra-js/numeric.html": "/docs/develop/terra-js/numeric.html",
+    "docs/develop/sdks/terra-js/oracle-feeder.html": "/docs/develop/terra-js/oracle-feeder.html",
+    "docs/develop/sdks/terra-js/query-data.html": "/docs/develop/terra-js/query-data.html",
+    "docs/develop/sdks/terra-js/smart-contracts.html": "/docs/develop/terra-js/smart-contracts.html",
+    "docs/develop/sdks/terra-js/station-extension.html": "/docs/develop/terra-js/station-extension.html",
+    "docs/develop/sdks/terra-js/station-mobile.html": "/docs/develop/terra-js/station-mobile.html",
+    "docs/develop/sdks/terra-js/transactions.html": "/docs/develop/terra-js/transactions.html",
+    "docs/develop/sdks/terra-js/wallets.html": "/docs/develop/terra-js/wallets.html",
+    "docs/develop/sdks/terra-js/Websockets.html": "/docs/develop/terra-js/Websockets.html",
+  
     # Terra.py
     "docs/develop/sdks/get-started-py.html": "/docs/develop/terra-py/get-started-py.html",
 
