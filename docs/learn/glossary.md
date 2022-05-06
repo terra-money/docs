@@ -195,7 +195,7 @@ Special Drawing Rights. An international reserve asset and unit of account creat
 
 ## Seigniorage
 
-The value of a coin minus the cost of its production. In the Terra protocol, the cost of minting is very small. All seigniorage in the Terra protocol is burned.
+The value of a coin minus the cost of its production. In order to mint UST, an equal value of Luna needs to be offered for burning. In the Terra protocol's seigniorage mechanism, a percentage of offered Luna can be recaptured as seigniorage revenue by sending it to a specified pool before burning. In previous versions of the Terra protocol, seigniorage was diverted to fund the community and oracle reward pools. Since the Columbus-5 mainnet upgrade, all seigniorage in the Terra protocol is [burned](#burn). 
 
 ## Self-delegation
 

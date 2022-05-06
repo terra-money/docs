@@ -2,10 +2,10 @@
 
 The majority of LocalTerra is implemented through a `docker-compose.yml` file, making it easily customizable. You can use LocalTerra as a starting point for setting up your own local Terra testnet with Docker containers.
 
-Out of the box, LocalTerra comes preconfigured with opinionated settings such as:
+Out of the box, LocalTerra comes with several preconfigured settings such as:
 
-- ports defined for RPC (26657), LCD (1317) and FCD (3060)
-- standard [accounts](accounts.md)
+- Ports defined for RPC (26657), LCD (1317) and FCD (3060).
+- Standard [accounts](accounts.md).
 
 ## Modify node configuration
 
@@ -13,7 +13,7 @@ You can modify the node configuration of your validator in the `config/config.to
 
 ## Speed up block time
 
-LocalTerra is often used alongside a script written with the Terra.js SDK or Terra Python SDK as a convenient way to do integration tests. You can greatly improve the experience by speeding up the block time.
+LocalTerra is often used alongside a script written with the Terra.js or Terra.py as a convenient way to do integration tests. You can greatly improve the experience by speeding up the block time.
 
 To increase block time, edit the `[consensus]` parameters in the `config/config.toml` file, and specify your own values.
 
