@@ -1,4 +1,4 @@
-# Build a CW20 tokens factory
+# Build a CW20 token factory <img src="/img/Staking.svg" height="40px">
 
 In this tutorial, you'll build a CW20 token factory. A token factory allows any ​CosmosSDK address — including a contract — to mint new fungible tokens based. To accomplish this you'll do the following:
 
@@ -31,7 +31,7 @@ First, set up your environment:
 - An IDE or text editor of your choice. For the purpose of this tutorial, Visual Studio Code will be used.
 - A command line interface
 
-# 1. Instantiate a new app using Terrain
+## Instantiate a new app using Terrain
 
 a. Instantiate a new app using Terrain:
 
@@ -59,7 +59,7 @@ c. Terrain automatically generates a sample `counter` contract in the `contracts
 rm -r counter/
 ```
 
-# 2. Instantiate the `token-factory` and `cw20-factory-token` contracts
+## Instantiate the `token-factory` and `cw20-factory-token` contracts
 
 a. Navigate to the `token-factory` directory:
 
@@ -91,7 +91,7 @@ When the contract is generated, the following displays:
 generating contract... done
 ```
 
-# 3. Modify the mnemonics passphrase
+## Modify the mnemonics passphrase
 
 Before editing the smart contracts you instantiated in step 2, modify the mnemonic you'll use to do deploy the contract to LocalTerra:
 
@@ -127,7 +127,7 @@ module.exports = {
 };
 ```
 
-# 4. Deploy the smart contracts
+## Deploy the smart contracts
 
 The `token-factory` contract mints new `cw20-factory-token` tokens, increases the supply of minted tokens, burns tokens to return UST and tracks all tokens created.
 
@@ -145,7 +145,7 @@ b. Deploy the `cw20-factory-token` contract:
 terrain deploy cw20-factory-token --signer test
 ```
 
-# 5. Modify the CW20 Factory Token smart contract
+## Modify the CW20 Factory Token smart contract
 
 In this section, you will modify the `cw20-factory-token` contract that you instantiated. This contract implements the [CW20 Base](https://github.com/CosmWasm/cw-plus/tree/0.9.x/contracts/cw20-base), along with several custom files.
 
@@ -435,7 +435,7 @@ For the purpose of this tutorial, [crates.io](https:\crates.io) is used to imple
 
 As the deployment to crates.io is out of scope for this tutorial, you can find [the CW20 Token Factory package deployed to crates.io](https://crates.io/crates/cw20-factory-token). You can use this deployment when you add the CW20 Token Factory contract as a dependency of the Token Factory contract in the the next section.
 
-# 3. Create the Token Factory smart contract
+## Create the Token Factory smart contract
 
 To set up the contract, follow the procedure below:
 
@@ -1377,7 +1377,7 @@ To determine which `<token_contract_code_id>`, check the file `refs.terrain.json
 }
 ```
 
-# 7. Deploy the smart contract to LocalTerra
+## Deploy the smart contract to LocalTerra
 
 Now that you've created, modified and tested each smart contract, deploy the `token-factory` to your LocalTerra instance using Terrain:
 
