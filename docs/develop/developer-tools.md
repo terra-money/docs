@@ -1,17 +1,18 @@
 # Developer Tools
 
-The [Terra Development Suite](./which-tools.md) has everything you need to build on Terra. 
-
 If this is your first time building on Terra, check out the [Getting started guide](./get-started.md). 
+
+
+## Terra Development Suite
+
+The [Terra Development Suite](./which-tools.md) has everything you need to build on Terra. 
 
 Not sure which tool to use? Check out the [tool guide](./which-tools.md).
 
-## Terra Development Suite
 
 ```{toctree}
 :hidden:
 :maxdepth: 1
-../tools.md
 terrain/README.md
 localterra/README.md
 wallet-provider/README.md
