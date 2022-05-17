@@ -99,6 +99,11 @@ Build with Python.
 
 ```{toctree}
 :hidden:
+docs/migration/README
+```
+
+```{toctree}
+:hidden:
 docs/learn/README
 ```
 
