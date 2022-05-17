@@ -14,7 +14,7 @@ TODO: Offer suggestions, like bridging USDC from Axelar.
 
 2. No stablecoin tax queries to the treasury module.
 
-Terra 2.0 has removed the tresury module. Any queries to the tresury module to query the TaxRate or TaxCap will now fail. Without the native stablecoins this logic isn't nessesary, so it can be removed. 
+Terra 2.0 has removed the treasury module. Any queries to the treasury module to query the TaxRate or TaxCap will now fail. Without the native stablecoins this logic isn't necessary, so it can be removed. 
 
 3. No market module.
 
