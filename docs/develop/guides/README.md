@@ -10,7 +10,7 @@ Not sure which tool to use? Check out the [tool page](../which-tools.md).
 ```{toctree}
 :maxdepth: 1
 ../get-started.md
-../tools
+../which-tools.md
 ../terrain/initial-setup.md
 ../terrain/using-terrain-localterra.md
 ../terrain/mint-an-nft

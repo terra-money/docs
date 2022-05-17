@@ -1,10 +1,5 @@
 # Build a dApp
 
-```{toctree}
-:hidden:
-quick-start/README
-smart-contracts/README
-```
 Use these guides to setup your environment and build a dApp. If this is your first time building on Terra, use the [quickstart guide](../terrain/README.md) to set up your environment.
 
 :::::::{grid}

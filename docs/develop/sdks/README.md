@@ -2,12 +2,7 @@
 
 [Terra.js](../terra-js/README.md) and [Terra.py](https://terra-money.github.io/terra.py/) are the official Javascript and Python SDKs for Terra.
 
-```{toctree}
-:maxdepth: 1
-terra-js/README
-Terra.py <./get-started-py.md>
-wallet-provider/README
-```
+
 :::::::{grid}
 :gutter: 3
 

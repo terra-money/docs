@@ -6,10 +6,6 @@ Use the following common examples to learn how to use Terra.js. If this is your 
 If you are new to Terra and don't know where to start, visit the [getting started guide](../get-started.md).
 :::
 
-```{toctree}
-../terra-js/common-examples.md
-```
-
 ## Configuring LCDClient
 
 The following code example shows how to initialize the LCDClient. The rest of the examples assume you initialized it by using this example or similar code.
