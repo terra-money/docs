@@ -55,7 +55,7 @@ Once in your Terra directory, we can begin the process of creating a new validat
    ```
 2. Check version:
    ```sh
-   [TERRA] version
+   terrad version
    ```
 
 ## Create GenTx
