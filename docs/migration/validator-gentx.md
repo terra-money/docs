@@ -13,7 +13,7 @@ Follow this guide to become a validator on the new Terra chain. This guide will 
 
 In order to create a gentx, ensure you have fulfilled all the prerequsites.
 
-1. First, fork the new Terra chain within your directory of choice and navigate to the Terra directory.
+1. First, fork the Terra 2.0 chain within your directory of choice and navigate to the Terra2.0 directory.
 
    ```sh
    git clone [LINK TO TERRA 2.0]
@@ -45,9 +45,9 @@ In order to create a gentx, ensure you have fulfilled all the prerequsites.
    go version
    ```
 
-## Install Terra
+## Install Terra 2.0
 
-Once in your Terra directory, we can begin the process of creating a new validator. All validators that want to launch chain with Terra need to run the following, which will create the JSON information for their validator. It will generate the validator ID, commission rate, initial balance, stake, etc. However, this info must be developed off chain first, so Terra can include in genesis.
+Once in your Terra 2.0 directory, we can begin the process of creating a new validator. All validators that want to launch chain with Terra 2.0 need to run the following, which will create the JSON information for their validator. It will generate the validator ID, commission rate, initial balance, stake, etc. However, this info must be developed off chain first, so Terra 2.0 can include in genesis.
 
 1. Install Terra by running the following:
    ```sh
@@ -60,7 +60,7 @@ Once in your Terra directory, we can begin the process of creating a new validat
 
 ## Create GenTx
 
-For a full explanantion of the gentx command, run `[TERRA] gentx` in your terminal.
+For a full explanantion of the gentx command, run `terrad gentx` in your terminal.
 
 1. Initialize validator. (replace MONIKER_NAME)
 
@@ -177,7 +177,7 @@ After this is completed, the json must be uploaded to the genesis file github re
 
 ## After May 27th
 
-Once official genesis file has been upload, download the approved Terra genesis file.
+Once official genesis file has been upload, download the approved Terra 2.0 genesis file.
 
 1. Run the following:
    ```sh
