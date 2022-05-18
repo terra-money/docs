@@ -1,20 +1,20 @@
 # Migrating dapps from Terra Classic to Terra 2.0
 
-Terra 2.0 will be starting from a blank state when it comes to CosmWasm. This means no existing code IDs or smart contracts will be migrated.  
+Terra 2.0 will be starting from a blank state when it comes to CosmWasm. This means no existing code IDs or smart contracts will be migrated.
 
-CosmWasm smart contracts will need to be uploaded to the new chain and instantiated. 
+CosmWasm smart contracts will need to be uploaded to the new chain and instantiated.
 
 In addition to needing to re-deploy smart contracts there are some breaking changes developers should be aware of.
 
 ### 1. No UST or other native stablecoins (KRT, SDT, etc).
 
-Terra 2.0 has removed all native stablecoins. Any logic that accepts, queries, or sends stablecoins will need to be removed or updated. 
+Terra 2.0 has removed all native stablecoins. Any logic that accepts, queries, or sends stablecoins will need to be removed or updated.
 
-TODO: Offer suggestions, like bridging USDC from Axelar. 
+TODO: Offer suggestions, like bridging USDC from Axelar.
 
 ### 2. No stablecoin tax queries to the treasury module.
 
-Terra 2.0 has removed the treasury module. Any queries to the treasury module to query the TaxRate or TaxCap will now fail. Without the native stablecoins this logic isn't necessary, so it can be removed. 
+Terra 2.0 has removed the treasury module. Any queries to the treasury module to query the TaxRate or TaxCap will now fail. Without the native stablecoins this logic isn't necessary, so it can be removed.
 
 ### 3. No market module.
 
@@ -29,3 +29,22 @@ Terra 2.0 has removed the oracle module. Any queries to fetch ExchangeRates from
 TODO: Suggest using an oracle provider like Band which will [work over IBC](https://docs.bandchain.org/client-library/protocol-buffers/oracle-module.html).
 
 ## Examples
+
+The following are code snippets with functionality that will no longer be supported.
+
+All `oracle` related methods are now deprecated.
+
+```ts
+// Retrieves active denominations (uKRW, uUSD etc.)
+const activeDenoms = await lcd.oracle.activeDenoms();
+```
+
+`MsgSwap` and `uusd` (which represents UST) are now deprecated.
+
+```ts
+// Swaps 1 Luna for UST
+const swap = new MsgSwap(
+  'terra...9fj',
+  new Coin('uluna', '1000000'),
+  'uusd'
+```
