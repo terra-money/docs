@@ -135,7 +135,7 @@ Dexes:
 
 **Terra Classic**:
 
-To continue supporting Luna Classic (LUNC), the Terra Classic LCD address needs to be altered to [https://](https://class.lcd.terra.dev)classic.lcd.terra.dev
+To continue supporting Luna Classic (LUNC), the Terra Classic LCD address needs to be altered to `https://classic.lcd.terra.dev`.
 
 **Terra**:
 
