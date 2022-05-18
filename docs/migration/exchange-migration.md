@@ -9,7 +9,7 @@ Per [governance proposal 1623](https://station.terra.money/proposal/1623), a new
     - The original Cosmos chain will still run, with market swaps (mint/burn function) disabled. 
     - All balances will remain as they are.
     - Luna will become Luna Classic (LUNC).
-    - Stablecoins (UST) will remain. 
+    - Stablecoins (UST, KRT, EUT, etc.) will remain. 
 
 
 2. The new chain will be called **Terra**, and will assume all Terra branding assets.
@@ -20,7 +20,7 @@ Per [governance proposal 1623](https://station.terra.money/proposal/1623), a new
 
 ## Branding
 
-The old chain will be branded to Luna classic. The new chain will assume the name "Terra." 
+The old chain will be branded Terra Classic. The new chain will assume the name "Terra." 
 
 ### Naming convention:
 
@@ -29,12 +29,8 @@ The old chain will be branded to Luna classic. The new chain will assume the nam
 The original Terra chain will be rebranded as Terra Classic.
 
 - Official chain name: Terra Classic
-- All Luna currently on exchanges needs to be renamed as Luna Classic (LUNC). 
+- All Luna currently on exchanges needs to be renamed Luna Classic (LUNC). 
 - All Terra stablecoins will retain their original naming convention: TerraUSD(UST) 
-
-Remove all Terra branding from UST and/or replace with Classic branding. Same with LUNC. 
-
-All old chain tokens become Terra Classic. (On Terra classic chain, not new chain)
 
 **Terra**:
 
@@ -61,5 +57,6 @@ The new chain will assume the original assets of the Terra brand. You can downlo
 [Terra_LOGO.ai](../../_static/brand-assets/Terra_LOGO.ai)
 [Terra  logos](../../_static/brand-assets/Terra.zip)
 [Luna logos](../../_static/brand-assets/Luna.zip)
+
 
 
