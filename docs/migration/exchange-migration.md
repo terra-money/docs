@@ -104,27 +104,12 @@ Exchange receives a total of 100 LUNA in the airdrop.
 
 For questions regarding multisig wallets, refer to the [multisig guide](../develop/guides/sign-with-multisig.md).
 
-## Token standards
-
-**Terra Classic**:
-
-| Name | Symbol | Signing Algorithm | Curve | Notes |
-| --- | --- | --- | --- | --- |
-| TerraUSD | UST | ECDSA | secp256k1 |  |
-| LUNA Classic | LUNC | ECDSA | secp256k1 |  |
-
-**Terra**:
-
-| Name | Symbol | Signing Algorithm | Curve | Notes |
-| --- | --- | --- | --- | --- |
-| LUNA | LUNA | ECDSA | secp256k1 |  |
-
 ## Base pairs
 
 Exchanges:
 
 - LUNC/USDT
-- USTC/USDT
+- UST/USDT
 
 Dexes:
 
@@ -135,8 +120,8 @@ Dexes:
 
 **Terra Classic**:
 
-To continue supporting Luna Classic (LUNC), the Terra Classic LCD address needs to be altered to `https://classic.lcd.terra.dev`.
+To continue supporting Luna Classic (LUNC), the Terra Classic LCD address needs to be altered to `https://classic.lcd.terra.dev`, and `https://classic.fcd.terra.dev` for FCD. 
 
 **Terra**:
 
-The current primary LCD endpoint ([https://lcd.terra.dev](https://lcd.terra.dev)) will support the new Terra chain when it’s launched on 05/27. This should make integration with the new Terra chain seamless. 
+The current primary LCD ([https://lcd.terra.dev](https://lcd.terra.dev)) and FCD ([https://fcd.terra.dev](https://fcd.terra.dev)) endpoints will support the new Terra chain when it’s launched on 05/27. This should make integration with the new Terra chain seamless. 
