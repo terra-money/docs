@@ -8,6 +8,7 @@ write-smart-contract
 interact-with-smart-contract
 manage-cw20-tokens
 ```
+
 ## Overview
 
 A smart contract is a contract whose terms are expressed as a computer program with logic and state persisted on the blockchain. Smart contracts can automatically carry out its terms and conditions with total transparency and no counter-party risk.
@@ -18,12 +19,12 @@ Smart contracts allow users to extend the capabilities of the Terra blockchain b
 
 The following table maps commonly-used Ethereum developer tools to their Terra counterparts.
 
-|                    | Terra                                                                                                                 | Ethereum        |
-| ------------------ | --------------------------------------------------------------------------------------------------------------------- | --------------- |
-| Frontend SDK       | [Terra.js](https://terra-money.github.io/terra.js/), [Terra SDK](https://terra-money.github.io/terra.py/) | Web3.js, Web3py |
-| Browser Extension  | Station CX                                                                                                            | MetaMask, MEW   |
-| Local Testnet      | [LocalTerra](https://github.com/terra-money/LocalTerra)                                                             | Ganache         |
-| Contract Language  | [Rust](https://www.rust-lang.org/)                                                                                 | Solidity, Vyper |
+|                   | Terra                                                                                                     | Ethereum        |
+| ----------------- | --------------------------------------------------------------------------------------------------------- | --------------- |
+| Frontend SDK      | [Terra.js](https://terra-money.github.io/terra.js/), [Terra SDK](https://terra-money.github.io/terra.py/) | Web3.js, Web3py |
+| Browser Extension | Station CX                                                                                                | MetaMask, MEW   |
+| Local Testnet     | [LocalTerra](https://github.com/terra-money/LocalTerra)                                                   | Ganache         |
+| Contract Language | [Rust](https://www.rust-lang.org/)                                                                        | Solidity, Vyper |
 
 ## Why build on Terra?
 
@@ -33,7 +34,7 @@ Terra is powered by Tendermint BFT consensus, using a dPoS-like scheme driven by
 
 ### Ready for DeFi applications
 
-With fundamental infrastructure such as price oracles, on-chain swaps, stablecoin assets in a variety of denominations, community governance and automated monetary and fiscal policy, the Terra blockchain acts as its own autonomous sovereign economy driven by its users, and provides all the necessary incentive mechanics and modular plumbing to power modern DeFi smart contracts.
+With fundamental infrastructure such as on-chain swaps, stablecoin assets in a variety of denominations, community governance and automated monetary and fiscal policy, the Terra blockchain acts as its own autonomous sovereign economy driven by its users, and provides all the necessary incentive mechanics and modular plumbing to power modern DeFi smart contracts.
 
 ### Active user base with real-world usage
 

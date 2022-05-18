@@ -6,24 +6,6 @@ The price stability of TerraSDR is achieved through Terra<>Luna arbitrage activi
 
 ## Concepts
 
-### Swap Fees
-
-Because Terra's price feed is derived from validator oracles, a delay exists between the price reported on-chain and the real-time price.
-
-The delay lasts around one minute (our oracle `VotePeriod` is 30 seconds), which is negligible for nearly all practical transactions. However, front-running attackers could take advantage of this delay and extract value from the network.
-
-To defend against this type of attack, the Market module enforces the following swap fees:
-
-- [**Tobin tax**](#tobintax) for spot-converting Terra<>Terra swaps
-
-  For example, assume that the current Tobin tax for KRT is 0.35%, the oracle reports that the Luna<>SDT exchange rate is 10 and the Luna<>KRT exchange rate is 10,000. Swapping 1 SDT would return 0.1 Luna, which is 1,000 KRT. After the Tobin tax is applied, you will have 996.5 KRT (0.35% of 1,000 is 3.5), a better rate than any retail currency exchange and remittance[^1].
-
-[^1]: Initially, the Terra blockchain maintained a policy for zero-fee swaps. However, to prevent front-running attackers from exploiting the exchange-rate latency and profiting at the expense of users, the Tobin tax was implemented. For more information, see ["On swap fees: the greedy and the wise"](https://medium.com/terra-money/on-swap-fees-the-greedy-and-the-wise-b967f0c8914e).
-
-- [**Minimum spread**](#minspread) for Terra<>Luna swaps
-
-  The minimum spread is 0.5%. Using the same exchange rates as above, swapping 1 SDT will return 995 KRT worth of Luna (0.5% of 1000 is 5, which is taken as the swap fee). If you reverse the direction of the swap, 1 Luna would return 9.95 SDT (0.5% of 10 is 0.05), or 9,950 KRT (0.5% of 10,000 = 50).
-
 ### Market Making Algorithm
 
 Terra uses a Constant Product market-making algorithm to ensure liquidity for Terra<>Luna swaps. [^2]
@@ -94,10 +76,8 @@ Upon successful completion of Terra<>Luna swaps, a portion of the coins to be cr
 ::: {admonition} All seigniorage is Burned
 :class: Caution
 
-Seigniorage used to be an important part of the protocol, but is no longer necessary. As of Columbus-5, all seigniorage is burned, and the community pool is no longer funded. Swap fees are used instead of seigniorage as ballot rewards for the exchange rate oracle. The following information is kept as reference:
+Seigniorage used to be an important part of the protocol, but is no longer necessary. As of Columbus-5, all seigniorage is burned, and the community pool is no longer funded.
 :::
-
-When Luna swaps into Terra, the Luna recaptured by the protocol was called seigniorage -- the value generated from issuing new Terra. The total seigniorage at the end of each epoch was calculated and reintroduced into the economy as ballot rewards for the exchange rate oracle and to the community pool by the Treasury module, described more fully [here](spec-treasury.md). As of Columbus-5, all seigniorage is burned, and the community pool is no longer funded. Swap fees are used as ballot rewards for the exchange rate oracle.
 
 ## State
 
@@ -105,7 +85,7 @@ When Luna swaps into Terra, the Luna recaptured by the protocol was called seign
 
 - type: `sdk.Dec`
 
- This represents the difference between the current Terra pool size and its original base size, valued in µSDR.
+This represents the difference between the current Terra pool size and its original base size, valued in µSDR.
 
 ## Message Types
 
