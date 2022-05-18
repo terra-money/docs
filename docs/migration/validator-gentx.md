@@ -1,6 +1,6 @@
 # Validator migration guide
 
-Follow this guide to become a validator on the Terra 2.0 chain. This guide walks you through making a `gentx` file that will be added to the validator chain.
+Follow this guide to become a validator on the Terra 2.0 chain. This guide walks you through making a `gentx` file that will be added to the validator chain. All validators that want to be included in the Terra 2.0 chain must follow these steps. 
 
 ## Prerequisites
 
@@ -9,8 +9,7 @@ Follow this guide to become a validator on the Terra 2.0 chain. This guide walks
 
 ## Initial setup
 
-In order to create a gentx, ensure you have fulfilled all the prerequisites.
-
+In order to create a `gentx`, ensure you have fulfilled all the prerequisites.
 
 1. Install [Go 1.17+ from the official site](https://go.dev/dl/). Ensure that your `GOPATH` and `GOBIN` environment variables are properly set up by using the following commands:
 
@@ -45,7 +44,7 @@ In order to create a gentx, ensure you have fulfilled all the prerequisites.
 
 ## Install The Terra 2.0 Core
 
-Once in your Terra 2.0 Core directory, we can begin the process of creating a new validator. All validators wanting to launch on the Terra 2.0 chain need to run the following, which will create the JSON information for their validator. It will generate the validator ID, commission rate, initial balance, stake, etc. This info must be developed off-chain first, so Terra 2.0 can include in genesis.
+Once in your Terra 2.0 Core directory, you can begin the process of creating a new validator. All validators wanting to launch on the Terra 2.0 chain must run the following commands to create the JSON information for their validator. These commands will generate the validator ID, commission rate, initial balance, stake, etc. This info must be developed off-chain first so it can be included in the Terra 2.0 genesis. 
 
 1. Install The Terra 2.0 Core by running the following:
 
@@ -101,15 +100,13 @@ For a full explanation of the gentx command, run `terrad gentx` in your terminal
    curl -s  [REPLACE https://gist.githubusercontent.com/octalmage/b546eb74a0ae2852a759a0990b8beaad/raw/ee9817f9b7fcf0205fc0b3dc62220f8f78d1595f/pre-genesis.json] [REPLACE >~/.terrad/config/genesis.json]
    ```
 
-4. Create a validator within the pre-genesis:
+4. Create a validator within the pre-genesis with the following command. In the `gentx` you will chose how much of your balance will be self-staked to your validator. A minimum of 1 unit must be self-staked. 
 
    ```sh
    terrad gentx <KEY-NAME> 1000000000ustake --chain-id=spoon-1
    ```
-
-   In the `gentx`, the validator will chose how much of their balance they will be self-staked. A minimum of 1 unit must be self-staked. 
    
-   If you wish to add more information, you might consider running the following instead:
+   If you want to add more information, run the following instead:
 
    ```sh
    terrad gentx <KEY-NAME> \
@@ -126,7 +123,7 @@ For a full explanation of the gentx command, run `terrad gentx` in your terminal
 
 ## Edit Your `gentx` JSON
 
-If you wish to edit certain values within your genTx before submitting, you can modify your file.
+If you want to edit certain values within your genTx before submitting, you can modify your file.
 
 ```sh
 cat [PATH TO GENTX]
