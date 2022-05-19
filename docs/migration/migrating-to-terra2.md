@@ -18,15 +18,36 @@ Terra 2.0 has removed the treasury module. Any queries to the treasury module to
 
 ### 3. No market module.
 
-Any attempts to swap Luna for UST or other stablecoins through the market module will now fail. Specifically the `market/MsgSwap` message has been removed.
-
-TODO: Suggest using a dex instead.
+Any attempts to swap Luna for UST or other stablecoins through the market module will now fail. Specifically the `market/MsgSwap` message has been removed. However, LUNA can still be swapped onchain for other assets using a DEX. This includes any liquid stablecoins on Terra.
 
 ### 4. No oracle module.
 
-Terra 2.0 has removed the oracle module. Any queries to fetch ExchangeRates from the oracle module will now fail.
+Terra 2.0 has removed the oracle module. Any queries to fetch ExchangeRates from the oracle module will now fail. However, there are other oracle solutions that can be employed.
 
-TODO: Suggest using an oracle provider like Band which will [work over IBC](https://docs.bandchain.org/client-library/protocol-buffers/oracle-module.html).
+[Band protocol](https://docs.bandchain.org/introduction/overview.html) is one such solution. Band works over IBC. See the [oracle module documentation](https://docs.bandchain.org/client-library/protocol-buffers/oracle-module.html) for more details
+
+## Examples of Deprecated Functionality
+
+The following are code snippets with functionality that will no longer be supported.
+
+1. All `oracle` and `market` related methods are now deprecated.
+
+```ts
+const activeDenoms = await lcd.oracle.activeDenoms();
+const exchangeRate = await lcd.oracle.exchangeRates();
+const oracleParams = await lcd.oracle.parameters();
+const marketParams = await lcd.market.parameters();
+```
+
+2. `MsgSwap` and `uusd` (which represents UST) are now deprecated.
+
+```ts
+// Used to swap 1 Luna for UST
+const swap = new MsgSwap(
+  'terra...9fj',
+  new Coin('uluna', '1000000'),
+  'uusd'
+```
 
 ## Migrating CW20/CW721 balances
 
