@@ -140,9 +140,7 @@ _Exchange User Assets_
 **_Pre-attack aUST holders : 10% allocation (100 M)_**
 
 ```math
-10% x Total LUNA Supply x
-
-Total aUST owned by Exchange pre-attack / Total aUST supply pre-attack
+10% x Total LUNA Supply x Total aUST owned by Exchange pre-attack / Total aUST supply pre-attack
 
 = 0.1 x 1B x 100M / 1B
 
@@ -169,7 +167,13 @@ Total aUST owned by Exchange pre-attack / Total aUST supply pre-attack
 = 20M LUNA
 ```
 
-Total Exchange Allocation = 3.5M + 10M + 1M + 20M = 34.5M LUNA
+**Total Exchange Allocation**
+
+```math
+= 3.5M + 10M + 1M + 20M
+
+= 34.5M LUNA
+```
 
 ---
 
@@ -215,7 +219,13 @@ Total Exchange Allocation = 3.5M + 10M + 1M + 20M = 34.5M LUNA
 = 2000 LUNA
 ```
 
-Total Allocation to User A = 35 + 1000 + 10 + 2000 = 3045 LUNA
+**Total Allocation to User A**
+
+```math
+ = 35 + 1000 + 10 + 2000
+
+ = 3045 LUNA
+```
 
 ## Multisig guide
 
@@ -242,11 +252,3 @@ To continue supporting Luna Classic (LUNC), the Terra Classic LCD address needs 
 **Terra**:
 
 The current primary LCD ([https://lcd.terra.dev](https://lcd.terra.dev)) and FCD ([https://fcd.terra.dev](https://fcd.terra.dev)) endpoints will support the new Terra chain when it’s launched on 05/27. This should make integration with the new Terra chain seamless.
-
-```
-
-```
-
-```
-
-```
