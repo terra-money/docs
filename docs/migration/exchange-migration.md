@@ -78,7 +78,7 @@ You can download these assets using the links below:
 
 All airdrop allocations to UST & LUNA holders will be based on the above snapshots. You may review the exchange-relevant allocations below.  Note that these allocations *exclude* the Community pool allocation of 25% and the pre-attack aUST holders allocation of 10% as they are irrelevant to exchanges.  You may review the original token distribution proposal [here](https://agora.terra.money/t/terra-ecosystem-revival-plan-2-updated-and-final/18498). 
 
-Once normalized, the remaining exchange-relevant allocations are as follows: 
+<!-- Once normalized, the remaining exchange-relevant allocations are as follows: 
 
 - Pre-attack LUNA holders:
     - 35% allocation * (100 / 65) or ~53.8461%
@@ -98,7 +98,7 @@ Exchange receives a total of 100 LUNA in the airdrop.
 - Post-attack UST holders receive a total of ~30.7692 LUNA (30.7692% of total).
     - Calculation: 20 * (100 / 65)
 
-53.8461 + 15.3846 + 30.7692 **≈** 100 LUNA
+53.8461 + 15.3846 + 30.7692 **≈** 100 LUNA -->
 
 ## Multisig guide
 
