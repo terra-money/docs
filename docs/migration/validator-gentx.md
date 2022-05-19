@@ -38,7 +38,7 @@ In order to create a `gentx`, ensure you have fulfilled all the prerequisites.
 3. Clone and enter the Terra 2.0 Core repo:
 
    ```sh
-   git clone [https://github.com/terra-money/new-core.git]
+   git clone https://github.com/terra-money/new-core.git
    cd [TERRA]
    ```
 
