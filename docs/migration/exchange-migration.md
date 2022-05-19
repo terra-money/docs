@@ -1,25 +1,27 @@
 # Exchange migration guide
-Use this guide to rebrand the original Terra chain as Terra Classic and integrate the new Terra chain. 
+
+Use this guide to rebrand the original Terra chain as Terra Classic and integrate the new Terra chain.
 
 ## General info
 
-Per [governance proposal 1623](https://station.terra.money/proposal/1623), a new chain will be created and will assume the Terra name. 
+Per [governance proposal 1623](https://station.terra.money/proposal/1623), a new chain will be created and will assume the Terra name.
 
-1\. The original chain will still function and be re-branded as **Terra Classic**. 
-- The original Cosmos chain will still run, with market swaps (mint/burn function) disabled. 
+1\. The original chain will still function and be re-branded as **Terra Classic**.
+
+- The original Cosmos chain will still run, with market swaps (mint/burn function) disabled.
 - All balances will remain as they are.
 - Luna will become Luna Classic (LUNC).
-- Terra stablecoins (UST, KRT, EUT, etc.) will remain. 
-
+- Terra stablecoins (UST, KRT, EUT, etc.) will remain.
 
 2\. The new chain will be called **Terra**, and will assume all Terra branding assets.
-- The new chain is also a Cosmos chain, but will not have the treasury, oracle, or market modules of the original chain. 
-- The new chain's native mining token will be Luna. 
+
+- The new chain is also a Cosmos chain, but will not have the treasury, oracle, or market modules of the original chain.
+- The new chain's native mining token will be Luna.
 - There will be no Terra stablecoins (UST, KRT, EUT, etc.) on the new chain.
 
 ## Branding
 
-The original chain will be branded **Terra Classic**. The new chain will assume the name **Terra**. 
+The original chain will be branded **Terra Classic**. The new chain will assume the name **Terra**.
 
 ### Naming convention:
 
@@ -28,12 +30,12 @@ The original chain will be branded **Terra Classic**. The new chain will assume 
 The original Terra chain will be rebranded as Terra Classic.
 
 - Official chain name: Terra Classic
-- All Luna currently on exchanges needs to be renamed Luna Classic (LUNC). 
-- All Terra stablecoins will retain their original naming convention: TerraUSD(UST) 
+- All Luna currently on exchanges needs to be renamed Luna Classic (LUNC).
+- All Terra stablecoins will retain their original naming convention: TerraUSD(UST)
 
 **Terra**:
 
-The new chain will assume the name Terra. 
+The new chain will assume the name Terra.
 
 - Official chain name: Terra
 - Luna (LUNA) will be the main staking asset of the chain.
@@ -41,11 +43,11 @@ The new chain will assume the name Terra.
 
 ### Logos and assets
 
-Please update all logos and branding according to the following conventions. 
+Please update all logos and branding according to the following conventions.
 
 **Terra Classic**:
 
-The old chain will be rebranded using Terra Classic brand assets, including new logos for both LUNC and UST. You will need to remove all current Logos from the original chain and implement the Terra Classic brand assets on your exchange.  
+The old chain will be rebranded using Terra Classic brand assets, including new logos for both LUNC and UST. You will need to remove all current Logos from the original chain and implement the Terra Classic brand assets on your exchange.
 
 You can download these assets using the link below:
 
@@ -53,13 +55,13 @@ You can download these assets using the link below:
 
 **Terra**:
 
-The new chain will assume the original assets of the Terra brand.   
+The new chain will assume the original assets of the Terra brand.
 
 You can download these assets using the links below:
 
-- [Terra_LOGO.ai](../../_static/brand-assets/Terra_LOGO.ai)  
-- [Terra  logos](../../_static/brand-assets/Terra.zip)  
-- [Luna logos](../../_static/brand-assets/Luna.zip)  
+- [Terra_LOGO.ai](../../_static/brand-assets/Terra_LOGO.ai)
+- [Terra logos](../../_static/brand-assets/Terra.zip)
+- [Luna logos](../../_static/brand-assets/Luna.zip)
 
 ## Mainnet launch schedule
 
@@ -70,133 +72,160 @@ You can download these assets using the links below:
 
 ## Snapshots and Airdrop
 
-***Pre-attack*** snapshot to be taken at Terra Classic block [7544910](https://finder.terra.money/mainnet/blocks/7544910) (2022.05.07 14:00:04 UTC)
+**_Pre-attack_** snapshot to be taken at Terra Classic block [7544910](https://finder.terra.money/mainnet/blocks/7544910) (2022.05.07 14:00:04 UTC)
 
-***Post-attack*** snapshot to be taken at Terra Classic block [7790000](https://finder.terra.money/mainnet/blocks/7790000) (2022.05.27 08:59:51 UTC)
+**_Post-attack_** snapshot to be taken at Terra Classic block [7790000](https://finder.terra.money/mainnet/blocks/7790000) (2022.05.27 08:59:51 UTC)
 
-**Note:** *Post-attack block is estimated for May 27th and may be subject to change.  Calculations described below should be carried out and resulting values should be utilized to properly calculate airdrop quantities.*
+**Note:** _Post-attack block is estimated for May 27th and may be subject to change. Calculations described below should be carried out and resulting values should be utilized to properly calculate airdrop quantities._
 
 ### Airdrop allocations
 
-All airdrop allocations to UST & LUNA holders will be based on the above snapshots. You may review the exchange-relevant allocations below. Note that these allocations *exclude* the Community pool allocation of 25% and the pre-attack aUST holders allocation of 10% as they are irrelevant to exchanges. You may review the original token distribution proposal [here](https://agora.terra.money/t/terra-ecosystem-revival-plan-2-updated-and-final/18498).
+All airdrop allocations to UST & LUNA holders will be based on the above snapshots. You may review the exchange-relevant allocations below. Note that these allocations _exclude_ the Community pool allocation of 25% as it is irrelevant to exchanges. You may review the original token distribution text proposal [here](https://agora.terra.money/t/terra-ecosystem-revival-plan-2-updated-and-final/18498).
 
-**Exchange Allocation Example**:
+### Exchange Allocation Example
 
-**Scenario**:
+The following is an example token allocation using dummy numbers. It considers both pre and post-attack snapshots. Note, these example allocation calculations disregard tokens held in wallets owned by Terraform Labs.
 
-Total LUNA Airdrop Supply : 1 Billion
+---
 
-Total LUNA owned by User A pre-attack: 100
+**Total LUNA Airdrop Supply : 1 Billion**
 
-Total LUNA owned by Exchange pre-attack: 10M
+---
 
-Total LUNA supply pre-attack (less TFL wallet):  1B
+_Overall Assets in Terra Ecosystem_
 
-Total aUST owned by User A pre-attack: 10k
+| Assets in Terra |  Snapshot   | Amount |
+| --------------- | :---------: | -----: |
+| LUNA            | pre-attack  |     1B |
+| aUST            | pre-attack  |     1B |
+| LUNA            | post-attack |     1B |
+| UST             | post-attack |     1B |
 
-Total aUST owned by Exchange pre-attack: 100M
+---
 
-Total aUST supply pre-attack (less TFL wallet): 1B
+_Exchange Assets_
 
-Total LUNA owned by User A post-attack: 100
+| Asset Owned by Exchange |  Snapshot   | Amount |
+| ----------------------- | :---------: | -----: |
+| LUNA                    | pre-attack  |    10M |
+| aUST                    | pre-attack  |   100M |
+| LUNA                    | post-attack |    10M |
+| UST                     | post-attack |   100M |
 
-Total LUNA owned by Exchange post-attack: 10M
+---
 
-Total LUNA supply post-attack (less TFL wallet):  1B
+_Exchange User Assets_
 
-Total UST owned by User A post-attack: 10k
+| Asset Owned by Exchange User |  Snapshot   | Amount |
+| ---------------------------- | :---------: | -----: |
+| LUNA                         | pre-attack  |    100 |
+| aUST                         | pre-attack  |    10k |
+| LUNA                         | post-attack |    100 |
+| UST                          | post-attack |    10k |
 
-Total UST owned by Exchange post-attack: 100M
+---
 
-Total UST supply post-attack (less TFL wallet): 1B
+**Airdrop Calculation for Exchange**
 
-**Allocation to exchange based on groups**
+**_Pre-attack LUNA holders 35% allocation (350 M)_**
 
-***Pre-attack LUNA holders 35% allocation (350 M)***
+```math
+35% * Total LUNA Supply * Total LUNA owned by Exchange pre-attack / Total LUNA supply pre-attack
 
-35% x Total LUNA Supply x
+= 0.35 x 1B x 10M / 1B
 
-Total LUNA owned by Exchange pre-attack / Total LUNA supply pre-attack (less TFL wallet)
+= 3.5M LUNA
+```
 
-= 0.35 x 1Billion x 10Million / 1 Billion
+**_Pre-attack aUST holders : 10% allocation (100 M)_**
 
-= 3.5 Million
+```math
+10% x Total LUNA Supply x Total aUST owned by Exchange pre-attack / Total aUST supply pre-attack
 
-***Pre-attack aUST holders : 10% allocation (100 M)***
+= 0.1 x 1B x 100M / 1B
 
-10% x Total LUNA Supply x
+= 10M LUNA
+```
 
-Total aUST owned by Exchange pre-attack / Total aUST supply pre-attack (less TFL wallet)
+**_Post-attack LUNA holders : 10% allocation (100 M)_**
 
-= 0.1 x 1Billion x 100Million / 1 Billion
+```math
+10% x Total LUNA Supply x Total LUNA owned by Exchange post-attack / Total LUNA supply post-attack
 
-= 10 Million
+= 0.1 x 1B x 10M / 1B
 
-***Post-attack LUNA holders : 10% allocation (100 M)***
+= 1M LUNA
+```
 
-10% x Total LUNA Supply x
+**_Post-attack UST holders : 20% allocation (200 M)_**
 
-Total LUNA owned by Exchange post-attack / Total LUNA supply post-attack (less TFL wallet)
+```math
+10% x Total LUNA Supply x Total UST owned by Exchange post-attack / Total UST supply post-attack
 
-= 0.1 x 1Billion x 10Million / 1 Billion
+= 0.2 x 1B x 100M / 1B
 
-= 1 Million
+= 20M LUNA
+```
 
-***Post-attack UST holders : 20% allocation (200 M)***
+**Total Exchange Allocation**
 
-10% x Total LUNA Supply x
+```math
+= 3.5M + 10M + 1M + 20M
 
-Total UST owned by Exchange post-attack / Total UST supply post-attack (less TFL wallet)
+= 34.5M LUNA
+```
 
-= 0.2 x 1Billion x 100Million / 1 Billion
+---
 
-= 20 Million
-
-Total Amount Received by Exchange = 3.5M + 10M + 1M + 20M = 34.5M
-
-**Airdrop calculation for User A**
+**Airdrop Calculation for User A**
 
 **Pre-attack LUNA holders allocation : 3.5M**
 
-(Total LUNA owned by User A pre-attack / Total LUNA owned by Exchange pre-attack)
+```math
+(Total LUNA owned by User A pre-attack / Total LUNA owned by Exchange pre-attack) x Pre-attack LUNA holders allocation
 
-x
+= (100 / 10M) x 3.5M
 
-Pre-attack LUNA holders allocation
-
-= (100 / 10M) x 3.5M = 35
+= 35 LUNA
+```
 
 **Pre-attack aUST holders allocation: 10M**
 
-(Total aUST owned by User A pre-attack / Total aUST owned by Exchange pre-attack)
+```math
+(Total aUST owned by User A pre-attack / Total aUST owned by Exchange pre-attack) x Pre-attack aUST holders allocation
 
-x
+= (10k / 100M) x 10M
 
-Pre-attack aUST holders allocation
-
-= (10k / 100M) x 10M = 1000
+= 1000 LUNA
+```
 
 **Post-attack LUNA holders allocation: 1M**
 
-(Total LUNA owned by User A post-attack / Total LUNA owned by Exchange post-attack)
+```math
+(Total LUNA owned by User A post-attack / Total LUNA owned by Exchange post-attack) x Post-attack LUNA holders allocation
 
-x
+= (100 / 10M) x 1M
 
-Post-attack LUNA holders allocation
-
-= (100 / 10M) x 1M = 10
+= 10 LUNA
+```
 
 **Post-attack UST holders allocation: 20M**
 
-(Total UST owned by User A post-attack / Total UST owned by Exchange post-attack)
+```math
+(Total UST owned by User A post-attack / Total UST owned by Exchange post-attack) x Post-attack UST holders allocation
 
-x
+= (10k / 100M) x 20M
 
-Post-attack UST holders allocation
+= 2000 LUNA
+```
 
-= (10k / 100M) x 20M = 2000
+**Total Allocation to User A**
 
-Allocation to User A = 35 + 1000 + 10 + 2000 = 3045
+```math
+ = 35 + 1000 + 10 + 2000
+
+ = 3045 LUNA
+```
 
 ## Multisig guide
 
@@ -218,8 +247,8 @@ Dexes:
 
 **Terra Classic**:
 
-To continue supporting Luna Classic (LUNC), the Terra Classic LCD address needs to be altered to `https://classic.lcd.terra.dev`, and `https://classic.fcd.terra.dev` for FCD. 
+To continue supporting Luna Classic (LUNC), the Terra Classic LCD address needs to be altered to `https://classic.lcd.terra.dev`, and `https://classic.fcd.terra.dev` for FCD.
 
 **Terra**:
 
-The current primary LCD ([https://lcd.terra.dev](https://lcd.terra.dev)) and FCD ([https://fcd.terra.dev](https://fcd.terra.dev)) endpoints will support the new Terra chain when it’s launched on 05/27. This should make integration with the new Terra chain seamless. 
+The current primary LCD ([https://lcd.terra.dev](https://lcd.terra.dev)) and FCD ([https://fcd.terra.dev](https://fcd.terra.dev)) endpoints will support the new Terra chain when it’s launched on 05/27. This should make integration with the new Terra chain seamless.
