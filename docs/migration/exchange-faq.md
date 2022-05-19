@@ -7,6 +7,6 @@
 
 Exchanges cannot be excluded from the whale cap.
 
-## Is bonded LUNA included un the post-attack LUNA snapshot?
+## Is bonded LUNA included in the post-attack LUNA snapshot?
 
 TBA
