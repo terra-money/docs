@@ -4,7 +4,7 @@ Follow this guide to become a validator on the Terra 2.0 chain. This guide walks
 
 ## Prerequisites
 
-- Terra 2.0 Core
+- [Terra Core](https://github.com/terra-money/new-core)
 - [Go 1.17+](https://go.dev/dl/)
 
 ## Initial setup
@@ -38,15 +38,15 @@ In order to create a `gentx`, ensure you have fulfilled all the prerequisites.
 3. Clone and enter the Terra 2.0 Core repo:
 
    ```sh
-   git clone [LINK TO TERRA 2.0]
-   cd [TERRA 2.0]
+   git clone [https://github.com/terra-money/new-core.git]
+   cd [TERRA]
    ```
 
 ## Install The Terra 2.0 Core
 
 Once in your Terra 2.0 Core directory, you can begin the process of creating a new validator. All validators wanting to launch on the Terra 2.0 chain must run the following commands to create the JSON information for their validator. These commands will generate the validator ID, commission rate, initial balance, stake, etc. This info must be developed off-chain first so it can be included in the Terra 2.0 genesis. 
 
-1. Install The Terra 2.0 Core by running the following:
+1. Install The Terra Core by running the following:
 
    ```sh
    make install
