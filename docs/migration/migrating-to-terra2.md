@@ -48,3 +48,11 @@ const swap = new MsgSwap(
   new Coin('uluna', '1000000'),
   'uusd'
 ```
+
+## Migrating CW20/CW721 balances
+
+We've created a tool that will generate a snapshot of CW20 or CW721 holders and balances at a specific block height.
+
+[token-snapshot](https://github.com/emidev98/token-snapshot)
+
+Once a snapshot is created you can airdrop the correct balances to users as defined by the snapshot.

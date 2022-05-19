@@ -89,17 +89,9 @@ When users or delegators add their [Luna](#luna) to a [validator's](#validator) 
 
 A user who [delegates](#delegate), bonds, or stakes [Luna](#luna) to a [validator](#validator) to earn [rewards](#rewards). Delegating, bonding, and staking generally refer to the same process.
 
-## Epoch
-
-A length of time measured in [blocks](#blocks). An epoch for the governance module occurs every 100800 blocks, or roughly every 7.7 days, given a 6.6-second block time. Block times may vary.
-
 ## Fees
 
 - **Gas**: Compute fees added on to all transactions to avoid spamming. [Validators](#validator) set minimum gas prices and reject transactions that have implied gas prices below this threshold.
-
-- **Spread fee**: A variable fee on any transaction between [Terra](#terra-stablecoins) and [Luna](#luna).
-
-- **Tobin tax**: A fee on any transaction between Terra stablecoin denominations.
 
 For more information on fees, visit [Fees on Terra](fees.md).
 
@@ -113,7 +105,7 @@ A computer connected to the [Terra mainnet](#terra-mainnet) that is able to vali
 
 ## Luna
 
-The native staking token of the Terra protocol. Luna supply expands and contracts in order to maintain the prices of [Terra stablecoins](#terra-stablecoins). Luna is also used as a governance token. [Delegators](#delegator) can stake Luna to receive rewards.
+The native staking token of the Terra protocol. Luna is also used as a governance token. [Delegators](#delegator) can stake Luna to receive rewards.
 
 ## Governance
 
@@ -135,22 +127,6 @@ Inter-Blockchain Communication. The technology that enables different [blockchai
 
 Validators who misbehave are jailed or excluded from the [active set](#active-set) for a period amount of time.
 
-## Market swap
-
-A swap in Terra Station that uses the Terra protocol's market function. Market swaps occur between Terra stablecoin denominations or between Terra and Luna. Market swaps spend [gas](#fees) and incur either a [Tobin tax](#fees) or a [Spread fee](#fees).
-
-**Examples**
-- Swapping UST for KRT in Terra Station will charge a Tobin tax and gas fees.
-- Swapping Luna for UST in Terra Station will charge a spread fee and gas fees.
-
-To learn how to use the market swap feature in Terra station, visit [how to use Terra Station](./terra-station/swap.md).
-
-For more information on fees, visit [Fees on Terra](fees.md).
-
-## Mint
-
-The creation of new coins. Minting is the opposite of burning. The Terra protocol burns Luna to mint Terra stablecoins and vice versa.
-
 ## Miss
 
 When a vote fails to be included in consensus.
@@ -158,16 +134,6 @@ When a vote fails to be included in consensus.
 ## Module
 
 A section of the Terra core that represents a particular function of the Terra protocol. Visit the [Terra core module specifications](../develop/module-specifications/README.md) for more information.
-
-## Oracle
-
-A software that monitors the real-world price and exchange rates of different assets. Validators submit exchange rates to the protocol and vote on the correct rates. Oracles are used to relay current external exchange rates to the protocol.
-
-For more information, visit the [oracle page](../develop/module-specifications/spec-oracle.md).
-
-## Peg
-
-A currency rate that directly tracks an asset's price. The peg for UST is the price of USD. The ideal peg ratio is 1:1.
 
 ## Pools
 
@@ -188,14 +154,6 @@ When a delegator wants to transfer their bonded luna to a different validator. R
 ## Rewards
 
 Revenue generated from fees given to validators and disbursed to delegators.
-
-## SDR
-
-Special Drawing Rights. An international reserve asset and unit of account created by the IMF. SDR value is calculated daily using a basket of the world's largest economies. The Terra protocol uses TerraSDR or SDT as its base currency for calculations and to set standards.
-
-## Seigniorage
-
-The value of a coin minus the cost of its production. In order to mint UST, an equal value of Luna needs to be offered for burning. In the Terra protocol's seigniorage mechanism, a percentage of offered Luna can be recaptured as seigniorage revenue by sending it to a specified pool before burning. In previous versions of the Terra protocol, seigniorage was diverted to fund the community and oracle reward pools. Since the Columbus-5 mainnet upgrade, all seigniorage in the Terra protocol is [burned](#burn). 
 
 ## Self-delegation
 
@@ -235,12 +193,6 @@ For more information on the Terra core, see [Terra core modules](../develop/modu
 
 The Terra protocol's blockchain network where all transactions take place.
 
-## Terra stablecoins
-
-Crypto assets that track the price of fiat currency enabled by the Terra protocol. Users mint new Terra stablecoins by burning Luna. Stablecoins are named for their fiat counterparts. For example, the base Terra stablecoin tracks the price of the IMF’s SDR, named TerraSDR, or SDT. Other stablecoin denominations include TerraUSD or UST, and TerraKRW or  KRT. All Terra stablecoin denominations exist in the same pool.
-
-For more information, see [stablecoins](protocol.md#stablecoins).
-
 ## Terra Station
 
 Terra's native wallet and platform for swaps, governance, and staking. In Station, you can send, receive, swap, and stake Terra coins. You can also participate in governance and vote on proposals.
@@ -266,16 +218,6 @@ A version of the mainnet just for testing. The testnet does not use real coins. 
 ## The Terra ecosystem
 
 A quickly expanding network of decentralized applications built on the Terra protocol.
-
-## The Terra protocol
-
-The leading decentralized and open-source public blockchain protocol for algorithmic stablecoins. Using a combination of open market arbitrage incentives and decentralized oracle voting, the Terra protocol creates stablecoins that consistently track the price of any fiat currency.
-
-For more information on how the Terra protocol works, visit the [concepts page](./protocol.md)
-
-## Tobin tax
-
-A fee added to every swap between Terra stablecoins (spot-trading). The rate varies, depending on the denomination. For example, while the rate for most denominations is .35%, the rate for MNT is 2%. To see the rates, [query the oracle](https://lcd.terra.dev/terra/oracle/v1beta1/denoms/tobin_taxes).
 
 ## Tombstone
 
