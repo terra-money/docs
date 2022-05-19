@@ -80,7 +80,7 @@ You can download these assets using the links below:
 
 ### Airdrop allocations
 
-All airdrop allocations to UST & LUNA holders will be based on the above snapshots. You may review the exchange-relevant allocations below. Note that these allocations _excludes_ the Community pool allocation of 25% as it is irrelevant to exchanges. You may review the original token distribution text proposal [here](https://agora.terra.money/t/terra-ecosystem-revival-plan-2-updated-and-final/18498).
+All airdrop allocations to UST & LUNA holders will be based on the above snapshots. You may review the exchange-relevant allocations below. Note that these allocations _exclude_ the Community pool allocation of 25% as it is irrelevant to exchanges. You may review the original token distribution text proposal [here](https://agora.terra.money/t/terra-ecosystem-revival-plan-2-updated-and-final/18498).
 
 ### Exchange Allocation Example
 
