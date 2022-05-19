@@ -76,9 +76,11 @@ You can download these assets using the links below:
 
 **Note:** *Post-attack block is estimated for May 27th and may be subject to change.  Calculations described below should be carried out and resulting values should be utilized to properly calculate airdrop quantities.*
 
-All airdrop allocations to UST & LUNA holders will be based on the above snapshots. You may review the exchange-relevant allocations below.  Note that these allocations *exclude* the Community pool allocation of 25% and the pre-attack aUST holders allocation of 10% as they are irrelevant to exchanges.  You may review the original token distribution proposal [here](https://agora.terra.money/t/terra-ecosystem-revival-plan-2-updated-and-final/18498). 
+### Airdrop allocations
 
-<!-- Once normalized, the remaining exchange-relevant allocations are as follows: 
+All airdrop allocations to UST & LUNA holders will be based on the above snapshots. You may review the exchange-relevant allocations below. Note that these allocations *exclude* the Community pool allocation of 25% and the pre-attack aUST holders allocation of 10% as they are irrelevant to exchanges. You may review the original token distribution proposal [here](https://agora.terra.money/t/terra-ecosystem-revival-plan-2-updated-and-final/18498).
+
+Once normalized, the remaining exchange-relevant allocations are as follows:
 
 - Pre-attack LUNA holders:
     - 35% allocation * (100 / 65) or ~53.8461%
@@ -87,7 +89,7 @@ All airdrop allocations to UST & LUNA holders will be based on the above snapsho
 - Post-attack UST holders:
     - 20% allocation * (100 / 65) or ~30.7692%
 
-**Exchange Allocation Example**:
+Exchange Allocation Example:
 
 Exchange receives a total of 100 LUNA in the airdrop.
 
@@ -98,7 +100,125 @@ Exchange receives a total of 100 LUNA in the airdrop.
 - Post-attack UST holders receive a total of ~30.7692 LUNA (30.7692% of total).
     - Calculation: 20 * (100 / 65)
 
-53.8461 + 15.3846 + 30.7692 **≈** 100 LUNA -->
+53.8461 + 15.3846 + 30.7692 ≈ 100 LUNA
+
+**Exchange Allocation Example**:
+
+**Scenario**:
+
+Total LUNA Airdrop Supply : 1 Billion
+
+Total LUNA owned by User A pre-attack: 100
+
+Total LUNA owned by Exchange pre-attack: 10M
+
+Total LUNA supply pre-attack (less TFL wallet):  1B
+
+Total aUST owned by User A pre-attack: 10k
+
+Total aUST owned by Exchange pre-attack: 100M
+
+Total aUST supply pre-attack (less TFL wallet): 1B
+
+Total LUNA owned by User A post-attack: 100
+
+Total LUNA owned by Exchange post-attack: 10M
+
+Total LUNA supply post-attack (less TFL wallet):  1B
+
+Total UST owned by User A post-attack: 10k
+
+Total UST owned by Exchange post-attack: 100M
+
+Total UST supply post-attack (less TFL wallet): 1B
+
+**Allocation to exchange based on groups**
+
+***Pre-attack LUNA holders 35% allocation (350 M)***
+
+35% x Total LUNA Supply x
+
+Total LUNA owned by Exchange pre-attack / Total LUNA supply pre-attack (less TFL wallet)
+
+= 0.35 x 1Billion x 10Million / 1 Billion
+
+= 3.5 Million
+
+***Pre-attack aUST holders : 10% allocation (100 M)***
+
+10% x Total LUNA Supply x
+
+Total aUST owned by Exchange pre-attack / Total aUST supply pre-attack (less TFL wallet)
+
+= 0.1 x 1Billion x 100Million / 1 Billion
+
+= 10 Million
+
+***Post-attack LUNA holders : 10% allocation (100 M)***
+
+10% x Total LUNA Supply x
+
+Total LUNA owned by Exchange post-attack / Total LUNA supply post-attack (less TFL wallet)
+
+= 0.1 x 1Billion x 10Million / 1 Billion
+
+= 1 Million
+
+***Post-attack UST holders : 20% allocation (200 M)***
+
+10% x Total LUNA Supply x
+
+Total UST owned by Exchange post-attack / Total UST supply post-attack (less TFL wallet)
+
+= 0.2 x 1Billion x 100Million / 1 Billion
+
+= 20 Million
+
+Total Amount Received by Exchange = 3.5M + 10M + 1M + 20M = 34.5M
+
+**Airdrop calculation for User A**
+
+**Pre-attack LUNA holders allocation : 3.5M**
+
+(Total LUNA owned by User A pre-attack / Total LUNA owned by Exchange pre-attack)
+
+x
+
+Pre-attack LUNA holders allocation
+
+= (100 / 10M) x 3.5M = 35
+
+**Pre-attack aUST holders allocation: 10M**
+
+(Total aUST owned by User A pre-attack / Total aUST owned by Exchange pre-attack)
+
+x
+
+Pre-attack aUST holders allocation
+
+= (10k / 100M) x 10M = 1000
+
+**Post-attack LUNA holders allocation: 1M**
+
+(Total LUNA owned by User A post-attack / Total LUNA owned by Exchange post-attack)
+
+x
+
+Post-attack LUNA holders allocation
+
+= (100 / 10M) x 1M = 10
+
+**Post-attack UST holders allocation: 20M**
+
+(Total UST owned by User A post-attack / Total UST owned by Exchange post-attack)
+
+x
+
+Post-attack UST holders allocation
+
+= (10k / 100M) x 20M = 2000
+
+Allocation to User A = 35 + 1000 + 10 + 2000 = 3045
 
 ## Multisig guide
 
