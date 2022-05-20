@@ -226,7 +226,7 @@ _Exchange User Assets_
 ```math
  = 35 + 1000 + 10 + 1500
 
- = 2645 LUNA
+ = 2545 LUNA
 ```
 
 ## Multisig guide
