@@ -1,4 +1,6 @@
-# Frequently Asked Questions - Exchanges
+# Exchange migration FAQ
+
+This is a list of frequesntly asked questions. This list will be added to regularly as questions come in. 
 
 - [Are exchanges excluded from the whale cap?](#are-exchanges-excluded-from-the-whale-cap)
 - [Is bonded luna included in post attack luna snapshot?](#is-bonded-luna-included-in-the-post-attack-luna-snapshot)
