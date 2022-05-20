@@ -9,4 +9,4 @@ Exchanges cannot be excluded from the whale cap. The genesis of Terra 2.0 will b
 
 ## Is bonded LUNA included in the post-attack LUNA snapshot?
 
-TBA
+Yes, along with liquid staking derivatives.
