@@ -1,6 +1,6 @@
 # Terra Docs
 
-Welcome to the official documentation for Terra, a decentralized public blockchain powering the innovation of money. 
+Welcome to the official documentation for Terra, a decentralized public blockchain powering the innovation of money. These docs outline the new Terra chain, and will be updated regularly. If you are looking for the documentation for Terra Classic, visit the [Terra Classic docs site](https://classic-docs.terra.money/). 
 
 :::::::{grid} 2
 :gutter: 3
