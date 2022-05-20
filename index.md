@@ -1,9 +1,20 @@
 # Terra Docs
 
-Welcome to the official documentation for Terra, a decentralized public blockchain powering the innovation of money.
+Welcome to the official documentation for Terra, a decentralized public blockchain powering the innovation of money. 
 
-:::::::{grid} 2 2 2 3
+:::::::{grid} 2
 :gutter: 3
+:class-row: sd-align-major-center
+
+:::{grid-item-card}
+:link: https://migrate.terra.money
+:class-card: sd-text-center sd-shadow-md sd-rounded-3
+```{image} /img/Swap_ver1.svg
+:class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
+```
+**Terra migration guides**  
+Move from Terra Classic to the new Terra chain.
+:::
 
 :::{grid-item-card}
 :link: docs/develop/get-started.html
@@ -32,67 +43,7 @@ Create a wallet and stake Luna for rewards.
 :class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
 ```
 **Learn about Terra**  
-Learn about Terra stablecoins, Luna, rewards, staking, and governance.
-:::
-
-:::{grid-item-card}
-:link: docs/spacecamp/README.html
-:class-card: sd-text-center sd-shadow-md sd-rounded-3
-```{image} /img/spacecamp_icon-02.svg
-:class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
-```
-**Hackathon resources**  
-A helpful list for hackers.
-:::
-
-:::{grid-item-card}
-:link: docs/ecosystem/README.html
-:class-card: sd-text-center sd-shadow-md sd-rounded-3
-```{image} /img/Ecosystem_ver1.svg
-:class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
-```
-**Explore the ecosystem**  
-Discover Terra's vast network of dApps and exchanges.
-:::
-
-:::{grid-item-card}
-:link: docs/develop/module-specifications/README.html
-:class-card: sd-text-center sd-shadow-md sd-rounded-3
-```{image} /img/icon_core.svg
-:class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
-```
-**Unearth Terra Core**  
-Learn about the modules at the heart of the protocol.
-:::
-
-:::{grid-item-card}
-:link: docs/full-node/run-a-full-terra-node/README.html
-:class-card: sd-text-center sd-shadow-md sd-rounded-3
-```{image} /img/icon_node.svg
-:class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
-```
-**Run a full node**  
-Contribute to the security of the network.
-:::
-
-:::{grid-item-card}
-:link: docs/develop/sdks/terra-js/README.html
-:class-card: sd-text-center sd-shadow-md sd-rounded-3
-```{image} /img/terra_js.svg
-:class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
-```
-**Terra.js**  
-Build with Javascript.
-:::
-
-:::{grid-item-card}
-:link: https://terra-money.github.io/terra.py/
-:class-card: sd-text-center sd-shadow-md sd-rounded-3
-```{image} /img/terra_sdk.svg
-:class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
-```
-**Terra.py**  
-Build with Python.
+Learn about Luna, rewards, staking, and governance.
 :::
 :::::::
 
@@ -117,12 +68,3 @@ docs/develop/README
 docs/full-node/README
 ```
 
-```{toctree}
-:hidden:
-docs/ecosystem/README
-```
-
-```{toctree}
-:hidden:
-docs/spacecamp/README
-```
