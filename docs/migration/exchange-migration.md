@@ -253,4 +253,4 @@ To continue supporting Luna Classic (LUNC), the Terra Classic LCD address needs 
 
 **Terra**:
 
-The current primary LCD ([https://lcd.terra.dev](https://lcd.terra.dev)) and FCD ([https://fcd.terra.dev](https://fcd.terra.dev)) endpoints will support the new Terra chain upon launched on 05/27. This should make integration with the new Terra chain seamless.
+The current primary LCD ([https://lcd.terra.dev](https://lcd.terra.dev)) and FCD ([https://fcd.terra.dev](https://fcd.terra.dev)) endpoints will support the new Terra chain upon launch on 05/27. This should make integration with the new Terra chain seamless.
