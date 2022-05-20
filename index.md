@@ -7,7 +7,7 @@ Welcome to the official documentation for Terra, a decentralized public blockcha
 :class-row: sd-align-major-center
 
 :::{grid-item-card}
-:link: https://migrate.terra.money
+:link: docs/migration/README.html
 :class-card: sd-text-center sd-shadow-md sd-rounded-3
 ```{image} /img/Swap_ver1.svg
 :class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
