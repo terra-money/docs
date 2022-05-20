@@ -1,18 +1,32 @@
 # Guides
 
-Use these guides to learn about using and installing [`terrad`](terrad/README.md), the command line interface and node daemon for the Terra network, and [LocalTerra](localterra/README.md), a local testing environment.
+Use these guides to start building! 
 
-If this is your first time building on Terra and you want to set up your environment, use the [quickstart guide](../dapp/quick-start/README.md).
+If this is your first time building on Terra, check out the [Getting started guide](../get-started.md). 
+Not sure which tool to use? Check out the [tool page](../which-tools.md).
+
+## Contents <img src="/img/Glossary.svg" height="30px">
 
 ```{toctree}
-:hidden:
-terrad/README
-localterra/README
+:maxdepth: 1
+../get-started.md
+../which-tools.md
+../terrain/initial-setup.md
+../terrain/using-terrain-localterra.md
+../terrain/mint-an-nft
+../terrain/cw20-factory
+../terrain/contract-migration.md
+../terra-js/getting-started.md
+../terra-py/get-started-py.md
+../wallet-provider/wallet-provider-tutorial.md
+../localterra/README.md
 sign-with-multisig
 start-lcd
-mint-an-nft
+smart-contracts/README
+../terrad/README.md
 ```
 
+<!---
 :::::::{grid} 2 2 2 3
 :gutter: 3
 
@@ -116,3 +130,4 @@ mint-an-nft
 :::
 
 :::::::
+--->

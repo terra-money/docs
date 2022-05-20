@@ -197,19 +197,15 @@ To understand more about the proposer selection process in Tendermint BFT consen
 
 ### What are the incentives to stake?
 
-Each member of a validator's staking pool earns different types of revenue:
+Each member of a validator's staking pool earns revenue:
 
 - **Compute fees (gas)**: To prevent spamming, validators can set minimum gas fees for transactions to be included in their mempool. At the end of every block, compute fees are disbursed to the participating validators proportional to their stake.
-
-- **Stability fees**: To stabilize the value of Luna, the protocol charges a small fee ranging from 0.1% to 1% on every Terra transaction, capped at 1 TerraSDR. This is paid in any Terra currency, and is disbursed proportional to each validators' stake at the end of every block in TerraSDR.
-
-- **Swap fees**: A small spread is charged on market swap transactions between Luna and any Terra currency, which is then used to reward validators that faithfully report oracle exchange rates. The fee for swaps between different Terra stablecoins is called the Tobin tax.
 
 This total revenue is divided among a validator's staking pool according to each validator's weight. The revenue is then divided among delegators in proportion to each delegator's stake. Note that a commission on delegators' revenue is applied by the validator before it is distributed.
 
 ### What is the incentive to run a validator?
 
-Validators earn more revenue than their delegators through commission. They also play a major role in determining on-chain exchange rates through the [oracle module](../../develop/module-specifications/spec-oracle.md), where they get rewarded for faithfully reporting exchange rates with swap fees.
+Validators earn more revenue than their delegators through commission. 
 
 ### What is a validator's commission?
 
@@ -217,17 +213,7 @@ The revenue received by a validator's pool is split between a validator and thei
 
 ### How are block provisions distributed?
 
-Block provisions are distributed proportionally to each validator relative to their total stake. This means that even though each validator gains TerraSDR \(SDT\) with each provision, all validators will still maintain equal weight.
-
- **Example:** Take 10 validators with equal staking power and a commission rate of 1%. The block provision is 1000 SDT and each validator has 20% self-bonded Luna. These tokens do not go directly to the proposer. Instead, they are evenly spread among validators. So now each validator's pool has 100 SDT, which is distributed according to each participant's stake:
-
-- Commission: 100 SDT ~ * ~ 80\% ~ * ~ 1\%$ = 0.8 SDT
-
-- Each validator gets: 100 SDT ~ * ~ 20\% ~ + ~ Commission$ = 20.8 SDT
-
-- All delegators get: 100 SDT ~ * ~ 80\% ~ - ~ Commission$ = 79.2 SDT
-
-Each delegator can claim its part of the 79.2 SDT in proportion to their stake in the pool. Note that the validator's commission is not applied on block provisions. Block rewards (paid in SDT) are distributed according to the same mechanism.
+Block provisions are distributed proportionally to each validator relative to their total stake. This means that even though each validator gains rewards with each provision, all validators will still maintain equal weight.
 
 ### How are fees distributed?
 
@@ -254,10 +240,6 @@ $$9R ~ + ~ R ~ + ~ 5\%(R) ~ = ~ 1005 ~ \Leftrightarrow ~ R ~ = ~ 1005 ~/ ~10.05 
   - Commission: 100 SDT ~ * ~ 80\% ~ * ~ 1\%$ = 0.8 SDT
   - Validator's reward: 100 SDT ~ * ~ 20\% ~ + ~ Commission$ = 20.8 SDT
   - Delegators' rewards: 100 SDT ~ * ~ 80\% ~ - ~ Commission$ = 79.2 SDT \(each delegator will be able to claim its portion of these rewards in proportion to their stake\)
-
-### How does Luna supply behave over time?
-
-Luna is the native staking token for the Terra Proof of Stake chain. Luna represents mining power and serves as collateral for Terra stablecoins. When a Terra stablecoin's price is low, the relevant Terra stablecoin is burned, and Luna is minted. This increases the price of the Terra stablecoin. In order to constrain Luna inflation, the protocol burns all seigniorage and dividends swap fees to the exchange rate oracle ballot winners, which then returns Luna supply towards a target. The Terra Protocol is deflationary in nature.
 
 ### What are the slashing conditions?
 

@@ -1,4 +1,4 @@
-# In-depth dApp guide
+# Smart contract guide
 
 ```{toctree}
 :hidden:
@@ -23,7 +23,7 @@ The following table maps commonly-used Ethereum developer tools to their Terra c
 | Frontend SDK       | [Terra.js](https://terra-money.github.io/terra.js/), [Terra SDK](https://terra-money.github.io/terra.py/) | Web3.js, Web3py |
 | Browser Extension  | Station CX                                                                                                            | MetaMask, MEW   |
 | Local Testnet      | [LocalTerra](https://github.com/terra-money/LocalTerra)                                                             | Ganache         |
-| Contract Language  | [Rust](https://www.rust-lang.org/)                                                                                    | Solidity, Vyper |
+| Contract Language  | [Rust](https://www.rust-lang.org/)                                                                                 | Solidity, Vyper |
 
 ## Why build on Terra?
 

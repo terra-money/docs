@@ -1,4 +1,4 @@
-# Terrain quickstart guide
+# Terrain 
 
 Terrain is a Terra development environment that creates a better smart contract development experience.
 
@@ -47,7 +47,17 @@ Use this tutorial to set up Terrain in 5 minutes.
 :class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
 ```
 **Mint an NFT using Terrain**  
-Learn how to mint your own NFTs with Terrain. 
+Learn how to mint your own NFTs using Terrain. 
+:::
+
+:::{grid-item-card}
+:link: cw20-factory.html
+:class-card: sd-text-center sd-shadow-md sd-rounded-3
+```{image} /img/Staking.svg
+:class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
+```
+**Token factory tutorial**  
+Build a CW20 token factory using Terrain. 
 :::
 
 :::{grid-item-card}
@@ -61,6 +71,7 @@ Learn how to migrate CosmWasm contracts on Terra.
 :::
 
 :::::::
+
 
 ## Contents <img src="/img/Glossary.svg" height="30px">
 

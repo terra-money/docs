@@ -6,6 +6,11 @@
 - [`docker-compose`](https://github.com/docker/compose)
 - Supported known architecture: x86_64
 
+::: {admonition} Terrain and LocalTerra
+:class: tip
+If you are using LocalTerra with Terrain, use the [Terrain and LocalTerra install guide](../terrain/using-terrain-localterra.md).
+:::
+
 ## Installation
 
 1. Run the following commands:

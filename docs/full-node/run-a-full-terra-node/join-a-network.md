@@ -8,7 +8,7 @@ Validators can set up a private Terra network to become familiar with running a 
 
 ::: {admonition} LocalTerra
 :class: tip
-If you are a developer and want to set up a local, WASM-enabled, private testnet for smart contracts, visit [install LocalTerra](../../develop/how-to/localterra/README.md).
+If you are a developer and want to set up a local, WASM-enabled, private testnet for smart contracts, visit [install LocalTerra](../../develop/localterra/README.md).
 
 :::
 

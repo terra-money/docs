@@ -23,7 +23,7 @@ The easiest way to install `terrad` and Terra core is by downloading a pre-built
 
 ### 1. Get the Terra core source code
 
-Use `git` to retrieve [Terra core](https://github.com/terra-money/core/), and checkout the `main` branch, which contains the latest stable release.
+Use `git` to retrieve [Terra core](https://github.com/terra-money/core/), and check out the `main` branch, which contains the latest stable release.
 
 If you are using LocalTerra or running a validator, use the `v0.x.x-oracle` tag. Otherwise, use the `v0.x.x` tag.
 
@@ -78,6 +78,6 @@ export PATH=$PATH:$(go env GOPATH)/bin
 
 ## Next steps
 
-With `terrad` installed, you can set up a local testing environment using [LocalTerra](../localterra/README.md).
+With `terrad` installed, you can set up a local testing environment using [LocalTerra](../../localterra/README.md).
 
 For more information on `terrad` commands and usage, see [](using-terrad.md).

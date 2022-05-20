@@ -1,4 +1,4 @@
-# Minting an NFT on the Terra Blockchain
+# Mint an NFT using Terrain <img src="/img/bullet_terra.svg" height="40px">
  
 NFTs, or non-fungible tokens, are unique digital assets that can be showcased, bought, and sold on the blockchain. Purchasing an NFT gives you ownership over the unique digital creation, similar to buying a distinct painting or art piece.
  
@@ -7,12 +7,12 @@ In this tutorial, you will learn how to mint your own NFT using the [NFT Terrain
 ## Prerequisites
  
 - [Download Google Chrome](https://www.google.com/chrome/downloads/)
-- [Download the Terra Station extension](../../learn/terra-station/download/terra-station-extension.md)
-- [Create a Terra Station wallet](../../learn/terra-station/download/terra-station-extension.md)
+- [Download the Terra Station extension](../../../learn/terra-station/download/terra-station-extension.md)
+- [Create a Terra Station wallet](../../../learn/terra-station/download/terra-station-extension.md)
 - [Install npm](https://kinsta.com/blog/how-to-install-node-js/)
 - [Install git](https://git-scm.com/downloads)
-- [Install Terrain](../dapp/quick-start/initial-setup.md)
-- [Install LocalTerra](../dapp/quick-start/using-terrain-localterra.md)
+- [Install Terrain](initial-setup.md)
+- [Install LocalTerra](using-terrain-localterra.md)
 - 16+ gb of RAM
  
 :::{admonition} RAM requirements
@@ -68,19 +68,19 @@ In order to use your Terra Station wallet with LocalTerra, you will need to conf
 1. Open the Terra Station extension in your Google Chrome web browser. Click the gear icon in the upper right corner and change the network from **mainnet** to  **localterra**.
  
   <div align="center">
-    <img src="../../../nft/extension_localterra.png" alt="Switch to LocalTerra" style="border:1px solid black; width: 500px; margin: 10px 10px 20px 10px;"/>
+    <img src="../../../../nft/extension_localterra.png" alt="Switch to LocalTerra" style="border:1px solid black; width: 500px; margin: 10px 10px 20px 10px;"/>
   </div>
  
 2. Click **Switch wallet**.
  
   <div align="center">
-    <img src="../../../nft/switch_wallet.png" alt="Switch Wallet" style="border:1px solid black; width: 500px; margin: 10px 10px 20px 10px;"/>
+    <img src="../../../../nft/switch_wallet.png" alt="Switch Wallet" style="border:1px solid black; width: 500px; margin: 10px 10px 20px 10px;"/>
   </div>
  
 3. Click **Preconfigured wallets…** and select `test1` from the drop-down list.
  
   <div align="center">
-    <img src="../../../nft/test_wallet.png" alt="Switch Wallet" style="border:1px solid black; width: 500px; margin: 10px 10px 20px 10px;"/>
+    <img src="../../../../nft/test_wallet.png" alt="Switch Wallet" style="border:1px solid black; width: 500px; margin: 10px 10px 20px 10px;"/>
   </div>
  
 Now that you have successfully switched to the testing wallet on LocalTerra, you will be able to deploy your smart contract.
@@ -92,7 +92,7 @@ Before you can deploy your contract and begin minting your NFT, you'll need to c
 1. In your Terra Station extension, open your `test1` wallet and copy the wallet address:
  
   <div align="center">
-    <img src="../../../nft/copy_address.png" alt="Switch Wallet" style="border:1px solid black; width: 500px; margin: 10px 10px 20px 10px;"/>
+    <img src="../../../../nft/copy_address.png" alt="Switch Wallet" style="border:1px solid black; width: 500px; margin: 10px 10px 20px 10px;"/>
   </div>
  
  
@@ -165,7 +165,7 @@ Your chrome browser should open and you should be browsing the frontend applicat
    ```
  
   <div align="center">
-    <img src="../../../nft/application.png" alt="NFT Minting Application" style="border:1px solid black; width: 500px; margin: 10px 10px 20px 10px;"/>
+    <img src="../../../../nft/application.png" alt="NFT Minting Application" style="border:1px solid black; width: 500px; margin: 10px 10px 20px 10px;"/>
   </div>
  
 :::{admonition} NFT hosting
@@ -185,7 +185,7 @@ Your NFT is ready to mint!
 After a few seconds, the frontend webpage will display your NFT.
  
   <div align="center">
-    <img src="../../../nft/nft_minted.png" alt="Minted NFT" style="border:1px solid black; width: 500px; margin: 10px 10px 20px 10px;"/>
+    <img src="../../../../nft/nft_minted.png" alt="Minted NFT" style="border:1px solid black; width: 500px; margin: 10px 10px 20px 10px;"/>
   </div>
  
 Congratulations, You just minted your first NFT!
@@ -212,27 +212,27 @@ Congratulations, You just minted your first NFT!
  
  
   <div align="center">
-    <img src="../../../nft/connect_wallet.png" alt="Connect Wallet" style="border:1px solid black; width: 500px; margin: 10px 10px 20px 10px;"/>
+    <img src="../../../../nft/connect_wallet.png" alt="Connect Wallet" style="border:1px solid black; width: 500px; margin: 10px 10px 20px 10px;"/>
   </div>
  
  
 3. Click **Add tokens >** located in the middle of the page to open the contract search window. Paste your contract address in the search bar. Click the **+** button located next to the address of your NFT collection.
  
   <div align="center">
-    <img src="../../../nft/nft_search.png" alt="Search NFT Collection" style="border:1px solid black; width: 500px; margin: 10px 10px 20px 10px;"/>
+    <img src="../../../../nft/nft_search.png" alt="Search NFT Collection" style="border:1px solid black; width: 500px; margin: 10px 10px 20px 10px;"/>
   </div>
  
 4. Close the search window and you will be presented with information on your NFT collection.
  
   <div align="center">
-    <img src="../../../nft/nft_station.png" alt="NFT Collection" style="border:1px solid black; width: 500px; margin: 10px 10px 20px 10px;"/>
+    <img src="../../../../nft/nft_station.png" alt="NFT Collection" style="border:1px solid black; width: 500px; margin: 10px 10px 20px 10px;"/>
   </div>
  
 From here, you can **View** relevant information about your NFT or **Send** your NFT to any specified wallet address.
  
 ## Congratulations!
  
-You have now minted your first NFT on the Terra blockchain! If you have your own unique digital creation that you would like to share with the world, you can follow these instructions using the mainnet network and your personal Terra Station wallet.
+You've just minted your first NFT on the Terra blockchain! If you have your own unique digital creation that you would like to share with the world, you can follow these instructions using the mainnet network and your personal Terra Station wallet.
  
 :::{admonition} Mint NFTs on the mainnet
  
