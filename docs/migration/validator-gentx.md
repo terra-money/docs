@@ -6,7 +6,7 @@ Follow this guide to become a validator on the Terra 2.0 chain. This guide walks
 
 - [Terra Core](https://github.com/terra-money/new-core)
 - [Go 1.17+](https://go.dev/dl/)
-- Generate a NEW Terravaloper Address and submit a [PR here] (https://github.com/terra-money/validator-profiles/blob/master/new-addresses.csv)
+- Generate a NEW Terravaloper Address and submit a [PR here](https://github.com/terra-money/validator-profiles/blob/master/new-addresses.csv)
 ## Initial setup
 
 In order to create a `gentx`, ensure you have fulfilled all the prerequisites.
