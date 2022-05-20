@@ -159,7 +159,7 @@ _Exchange User Assets_
 = 1M LUNA
 ```
 
-**_Post-attack UST holders : 15% allocation (200 M)_**
+**_Post-attack UST holders : 15% allocation (150 M)_**
 
 ```math
 10% x Total LUNA Supply x Total UST owned by Exchange post-attack / Total UST supply post-attack
