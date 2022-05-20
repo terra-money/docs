@@ -76,15 +76,17 @@ You can download these assets using the links below:
 
 **_Post-attack_** snapshot to be taken at Terra Classic block [7790000](https://finder.terra.money/mainnet/blocks/7790000) (2022.05.27 08:59:51 UTC)
 
-**Note:** _Post-attack block is estimated for May 27th and may be subject to change. Calculations described below should be carried out and resulting values should be utilized to properly calculate airdrop quantities._
+**Note:** The post-attack block is estimated to occur on May 27th. This block time may be subject to change. Calculations described below should be carried out and resulting values should be utilized to properly calculate airdrop quantities.
 
 ### Airdrop allocations
 
-All airdrop allocations to UST & LUNA holders will be based on the above snapshots. You may review the exchange-relevant allocations below. Note that these allocations _exclude_ the Community pool allocation of 25% as it is irrelevant to exchanges. You may review the original token distribution text proposal [here](https://agora.terra.money/t/terra-ecosystem-revival-plan-2-updated-and-final/18498).
+All airdrop allocations to UST and LUNA holders will be based on the snapshots listed above. You may review the exchange-relevant allocations below. Note that these allocations _exclude_ the Community pool allocation of 25% as it is irrelevant to exchanges. You may review the original token distribution text proposal [on the Agora forum](https://agora.terra.money/t/terra-ecosystem-revival-plan-2-updated-and-final/18498).
+
+**Note:** Wallets owned by Terraform Labs are excluded from any airdrop allocations. Wallets owned by Terraform Labs will not recieve any token allocation at genesis.
 
 ### Exchange Allocation Example
 
-The following is an example token allocation using dummy numbers. It considers both pre and post-attack snapshots. Note, these example allocation calculations disregard tokens held in wallets owned by Terraform Labs.
+The following is an example token allocation using made-up numbers. None of the following balances are real. This example considers both pre and post-attack snapshots, and excludes wallets owned by TFL and the community pool. 
 
 ---
 
@@ -247,8 +249,8 @@ Dexes:
 
 **Terra Classic**:
 
-To continue supporting Luna Classic (LUNC), the Terra Classic LCD address needs to be altered to `https://classic.lcd.terra.dev`, and `https://classic.fcd.terra.dev` for FCD.
+To continue supporting Luna Classic (LUNC), the Terra Classic LCD address needs to be altered to `https://classic.lcd.terra.dev`. The FCD address will be `https://classic.fcd.terra.dev`. 
 
 **Terra**:
 
-The current primary LCD ([https://lcd.terra.dev](https://lcd.terra.dev)) and FCD ([https://fcd.terra.dev](https://fcd.terra.dev)) endpoints will support the new Terra chain when it’s launched on 05/27. This should make integration with the new Terra chain seamless.
+The current primary LCD ([https://lcd.terra.dev](https://lcd.terra.dev)) and FCD ([https://fcd.terra.dev](https://fcd.terra.dev)) endpoints will support the new Terra chain upon launched on 05/27. This should make integration with the new Terra chain seamless.
