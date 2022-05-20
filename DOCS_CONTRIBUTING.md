@@ -29,7 +29,7 @@ To contribute a doc-change proposal, use the following workflow:
 1. Work on only one change in one pull request.
 1. Follow these conventions:
 
-    1. Make your changes adhering to the [Terra Docs Style Guide](STYLE-GUIDE.md) and the coding conventions described below. Generally, a commit serves a single purpose and differences should be easy to understand. Do not mix formatting fixes or code moves with actual code changes.
+    1. Make your changes adhering to the [Terra Docs Style Guide](DOCS_STYLE_GUIDE.md) and the coding conventions described below. Generally, a commit serves a single purpose and differences should be easy to understand. Do not mix formatting fixes or code moves with actual code changes.
     1. Commit your changes. Write a simple, straightforward commit message. To learn more, see [How to Write a Git Commit Message](https://chris.beams.io/posts/git-commit/).
     1. Push your changes to your remote fork.
     1. Create a PR on the Terra Docs repository.

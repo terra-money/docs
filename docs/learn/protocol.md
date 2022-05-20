@@ -44,7 +44,7 @@ Staked Luna never leaves the possession of the delegator. Even though it can’t
 
 To start receiving rewards, delegators bond their Luna to a validator. The bonding process adds a delegator's Luna to a validator's stake, which helps validators to participate in consensus.
 
-Luna exists in the following three phrases:
+Luna exists in the following three phases:
 
 - **Unbonded**: Luna that can be freely traded and is not staked to a validator.
 - **Bonded**: Luna that is staked to a validator. Bonded Luna accrues staking rewards. Luna bonded to validators in Terra Station can’t be traded freely.
