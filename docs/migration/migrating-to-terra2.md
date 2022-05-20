@@ -10,7 +10,7 @@ In addition to needing to re-deploy smart contracts there are some breaking chan
 
 Terra 2.0 has removed all native stablecoins. Any logic that accepts, queries, or sends stablecoins will need to be removed or updated.
 
-TODO: Offer suggestions, like bridging USDC from Axelar.
+We are working on getting alternative stablecoins on chain as soon as possible.
 
 ### 2. No stablecoin tax queries to the treasury module.
 
