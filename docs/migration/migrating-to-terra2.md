@@ -4,13 +4,13 @@ Terra 2.0 will be starting from a blank state when it comes to CosmWasm. This me
 
 CosmWasm smart contracts will need to be uploaded to the new chain and instantiated.
 
-In addition to needing to re-deploy smart contracts there are some breaking changes developers should be aware of.
+In addition to needing to re-deploy smart contracts, there are some breaking changes that developers should be aware of.
 
 ### 1. No UST or other native stablecoins (KRT, SDT, etc).
 
-Terra 2.0 has removed all native stablecoins. Any logic that accepts, queries, or sends stablecoins will need to be removed or updated.
+Terra 2.0 has removed all native stablecoins. Any logic that accepts, queries, or sends Terra stablecoins will need to be removed or updated.
 
-We are working on getting alternative stablecoins on chain as soon as possible.
+Terra developers are working on getting alternative stablecoins on chain as soon as possible.
 
 ### 2. No stablecoin tax queries to the treasury module.
 
@@ -18,11 +18,11 @@ Terra 2.0 has removed the treasury module. Any queries to the treasury module to
 
 ### 3. No market module.
 
-Any attempts to swap Luna for UST or other stablecoins through the market module will now fail. Specifically the `market/MsgSwap` message has been removed. However, LUNA can still be swapped onchain for other assets using a DEX. This includes any liquid stablecoins on Terra.
+Any attempts to swap Luna for UST or other stablecoins through the market module will fail. Specifically the `market/MsgSwap` message has been removed. However, LUNA can still be swapped onchain for other assets using a DEX. This includes any liquid stablecoins on Terra.
 
 ### 4. No oracle module.
 
-Terra 2.0 has removed the oracle module. Any queries to fetch ExchangeRates from the oracle module will now fail. However, there are other oracle solutions that can be employed.
+Terra 2.0 has removed the oracle module. Any queries to fetch ExchangeRates from the oracle module will fail. However, there are other oracle solutions that can be employed.
 
 [Band protocol](https://docs.bandchain.org/introduction/overview.html) is one such solution. Band works over IBC. See the [oracle module documentation](https://docs.bandchain.org/client-library/protocol-buffers/oracle-module.html) for more details
 
@@ -51,8 +51,8 @@ const swap = new MsgSwap(
 
 ## Migrating CW20/CW721 balances
 
-We've created a tool that will generate a snapshot of CW20 or CW721 holders and balances at a specific block height.
+A tool was created that will generate a snapshot of CW20 or CW721 holders and balances at a specific block height:
 
 [token-snapshot](https://github.com/emidev98/token-snapshot)
 
-Once a snapshot is created you can airdrop the correct balances to users as defined by the snapshot.
+Once a snapshot is created, you can airdrop the correct balances to users as defined by the snapshot.
