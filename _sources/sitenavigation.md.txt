@@ -11,7 +11,7 @@ Home
 │   ├── Terra.js
 │   ├── Terra.py
 │   ├── LocalTerra
-│   ├──Terrad
+│   ├── Terrad
 │   ├──
 │   ├──
 

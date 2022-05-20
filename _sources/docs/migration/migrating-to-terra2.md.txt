@@ -1,0 +1,58 @@
+# Migrating dapps from Terra Classic to Terra 2.0
+
+Terra 2.0 will be starting from a blank state when it comes to CosmWasm. This means no existing code IDs or smart contracts will be migrated.
+
+CosmWasm smart contracts will need to be uploaded to the new chain and instantiated.
+
+In addition to needing to re-deploy smart contracts, there are some breaking changes that developers should be aware of.
+
+### 1. No UST or other native stablecoins (KRT, SDT, etc).
+
+Terra 2.0 has removed all native stablecoins. Any logic that accepts, queries, or sends Terra stablecoins will need to be removed or updated.
+
+Terra developers are working on getting alternative stablecoins on chain as soon as possible.
+
+### 2. No stablecoin tax queries to the treasury module.
+
+Terra 2.0 has removed the treasury module. Any queries to the treasury module to query the TaxRate or TaxCap will now fail. Without the native stablecoins this logic isn't necessary, so it can be removed.
+
+### 3. No market module.
+
+Any attempts to swap Luna for UST or other stablecoins through the market module will fail. Specifically the `market/MsgSwap` message has been removed. However, LUNA can still be swapped onchain for other assets using a DEX. This includes any liquid stablecoins on Terra.
+
+### 4. No oracle module.
+
+Terra 2.0 has removed the oracle module. Any queries to fetch ExchangeRates from the oracle module will fail. However, there are other oracle solutions that can be employed.
+
+[Band protocol](https://docs.bandchain.org/introduction/overview.html) is one such solution. Band works over IBC. See the [oracle module documentation](https://docs.bandchain.org/client-library/protocol-buffers/oracle-module.html) for more details
+
+## Examples of Deprecated Functionality
+
+The following are code snippets with functionality that will no longer be supported.
+
+1. All `oracle` and `market` related methods are now deprecated.
+
+```ts
+const activeDenoms = await lcd.oracle.activeDenoms();
+const exchangeRate = await lcd.oracle.exchangeRates();
+const oracleParams = await lcd.oracle.parameters();
+const marketParams = await lcd.market.parameters();
+```
+
+2. `MsgSwap` and `uusd` (which represents UST) are now deprecated.
+
+```ts
+// Used to swap 1 Luna for UST
+const swap = new MsgSwap(
+  'terra...9fj',
+  new Coin('uluna', '1000000'),
+  'uusd'
+```
+
+## Migrating CW20/CW721 balances
+
+A tool was created that will generate a snapshot of CW20 or CW721 holders and balances at a specific block height:
+
+[token-snapshot](https://github.com/emidev98/token-snapshot)
+
+Once a snapshot is created, you can airdrop the correct balances to users as defined by the snapshot.
