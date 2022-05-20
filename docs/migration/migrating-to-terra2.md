@@ -1,4 +1,8 @@
-# Migrating dapps from Terra Classic to Terra 2.0
+# dApp migration guide
+
+Use this guide to Migrate from Terra Classic to the new Terra chain. 
+
+## Changes
 
 Terra 2.0 will be starting from a blank state when it comes to CosmWasm. This means no existing code IDs or smart contracts will be migrated.
 
