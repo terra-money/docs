@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Migrating dapps from Terra Classic to Terra 2.0 &#8212; Terra Docs  documentation</title>
+    <title>dApp migration guide &#8212; Terra Docs  documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -108,7 +108,7 @@
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Migrating dapps from Terra Classic to Terra 2.0
+     dApp migration guide
     </a>
    </li>
    <li class="toctree-l2">
@@ -1160,24 +1160,31 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#no-ust-or-other-native-stablecoins-krt-sdt-etc">
-   1. No UST or other native stablecoins (KRT, SDT, etc).
+  <a class="reference internal nav-link" href="#changes">
+   Changes
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#no-stablecoin-tax-queries-to-the-treasury-module">
-   2. No stablecoin tax queries to the treasury module.
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#no-market-module">
-   3. No market module.
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#no-oracle-module">
-   4. No oracle module.
-  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#no-ust-or-other-native-stablecoins-krt-sdt-etc">
+     1. No UST or other native stablecoins (KRT, SDT, etc).
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#no-stablecoin-tax-queries-to-the-treasury-module">
+     2. No stablecoin tax queries to the treasury module.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#no-market-module">
+     3. No market module.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#no-oracle-module">
+     4. No oracle module.
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#examples-of-deprecated-functionality">
@@ -1199,7 +1206,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Migrating dapps from Terra Classic to Terra 2.0</h1>
+                <h1>dApp migration guide</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -1210,24 +1217,31 @@
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#no-ust-or-other-native-stablecoins-krt-sdt-etc">
-   1. No UST or other native stablecoins (KRT, SDT, etc).
+  <a class="reference internal nav-link" href="#changes">
+   Changes
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#no-stablecoin-tax-queries-to-the-treasury-module">
-   2. No stablecoin tax queries to the treasury module.
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#no-market-module">
-   3. No market module.
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#no-oracle-module">
-   4. No oracle module.
-  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#no-ust-or-other-native-stablecoins-krt-sdt-etc">
+     1. No UST or other native stablecoins (KRT, SDT, etc).
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#no-stablecoin-tax-queries-to-the-treasury-module">
+     2. No stablecoin tax queries to the treasury module.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#no-market-module">
+     3. No market module.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#no-oracle-module">
+     4. No oracle module.
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#examples-of-deprecated-functionality">
@@ -1248,28 +1262,32 @@
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="migrating-dapps-from-terra-classic-to-terra-2-0">
-<h1>Migrating dapps from Terra Classic to Terra 2.0<a class="headerlink" href="#migrating-dapps-from-terra-classic-to-terra-2-0" title="Permalink to this headline">#</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="dapp-migration-guide">
+<h1>dApp migration guide<a class="headerlink" href="#dapp-migration-guide" title="Permalink to this headline">#</a></h1>
+<p>Use this guide to Migrate from Terra Classic to the new Terra chain.</p>
+<div class="section" id="changes">
+<h2>Changes<a class="headerlink" href="#changes" title="Permalink to this headline">#</a></h2>
 <p>Terra 2.0 will be starting from a blank state when it comes to CosmWasm. This means no existing code IDs or smart contracts will be migrated.</p>
 <p>CosmWasm smart contracts will need to be uploaded to the new chain and instantiated.</p>
 <p>In addition to needing to re-deploy smart contracts, there are some breaking changes that developers should be aware of.</p>
 <div class="section" id="no-ust-or-other-native-stablecoins-krt-sdt-etc">
-<h2>1. No UST or other native stablecoins (KRT, SDT, etc).<a class="headerlink" href="#no-ust-or-other-native-stablecoins-krt-sdt-etc" title="Permalink to this headline">#</a></h2>
+<h3>1. No UST or other native stablecoins (KRT, SDT, etc).<a class="headerlink" href="#no-ust-or-other-native-stablecoins-krt-sdt-etc" title="Permalink to this headline">#</a></h3>
 <p>Terra 2.0 has removed all native stablecoins. Any logic that accepts, queries, or sends Terra stablecoins will need to be removed or updated.</p>
 <p>Terra developers are working on getting alternative stablecoins on chain as soon as possible.</p>
 </div>
 <div class="section" id="no-stablecoin-tax-queries-to-the-treasury-module">
-<h2>2. No stablecoin tax queries to the treasury module.<a class="headerlink" href="#no-stablecoin-tax-queries-to-the-treasury-module" title="Permalink to this headline">#</a></h2>
+<h3>2. No stablecoin tax queries to the treasury module.<a class="headerlink" href="#no-stablecoin-tax-queries-to-the-treasury-module" title="Permalink to this headline">#</a></h3>
 <p>Terra 2.0 has removed the treasury module. Any queries to the treasury module to query the TaxRate or TaxCap will now fail. Without the native stablecoins this logic isn’t necessary, so it can be removed.</p>
 </div>
 <div class="section" id="no-market-module">
-<h2>3. No market module.<a class="headerlink" href="#no-market-module" title="Permalink to this headline">#</a></h2>
+<h3>3. No market module.<a class="headerlink" href="#no-market-module" title="Permalink to this headline">#</a></h3>
 <p>Any attempts to swap Luna for UST or other stablecoins through the market module will fail. Specifically the <code class="docutils literal notranslate"><span class="pre">market/MsgSwap</span></code> message has been removed. However, LUNA can still be swapped onchain for other assets using a DEX. This includes any liquid stablecoins on Terra.</p>
 </div>
 <div class="section" id="no-oracle-module">
-<h2>4. No oracle module.<a class="headerlink" href="#no-oracle-module" title="Permalink to this headline">#</a></h2>
+<h3>4. No oracle module.<a class="headerlink" href="#no-oracle-module" title="Permalink to this headline">#</a></h3>
 <p>Terra 2.0 has removed the oracle module. Any queries to fetch ExchangeRates from the oracle module will fail. However, there are other oracle solutions that can be employed.</p>
 <p><a class="reference external" href="https://docs.bandchain.org/introduction/overview.html">Band protocol</a> is one such solution. Band works over IBC. See the <a class="reference external" href="https://docs.bandchain.org/client-library/protocol-buffers/oracle-module.html">oracle module documentation</a> for more details</p>
+</div>
 </div>
 <div class="section" id="examples-of-deprecated-functionality">
 <h2>Examples of Deprecated Functionality<a class="headerlink" href="#examples-of-deprecated-functionality" title="Permalink to this headline">#</a></h2>
