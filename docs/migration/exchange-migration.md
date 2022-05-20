@@ -86,7 +86,7 @@ All airdrop allocations to UST and LUNA holders will be based on the snapshots l
 
 ### Exchange Allocation Example
 
-The following is an example token allocation using made-up numbers. None of the following balances are real. This example considers both pre and post-attack snapshots, and excludes wallets owned by TFL and the community pool. 
+The following is an example token allocation using made-up numbers. None of the following balances are real. This example considers both pre and post-attack snapshots, and excludes wallets owned by TFL and the community pool.
 
 ---
 
@@ -162,7 +162,7 @@ _Exchange User Assets_
 **_Post-attack UST holders : 15% allocation (150 M)_**
 
 ```math
-10% x Total LUNA Supply x Total UST owned by Exchange post-attack / Total UST supply post-attack
+15% x Total LUNA Supply x Total UST owned by Exchange post-attack / Total UST supply post-attack
 
 = 0.15 x 1B x 100M / 1B
 
@@ -249,7 +249,7 @@ Dexes:
 
 **Terra Classic**:
 
-To continue supporting Luna Classic (LUNC), the Terra Classic LCD address needs to be altered to `https://classic.lcd.terra.dev`. The FCD address will be `https://classic.fcd.terra.dev`. 
+To continue supporting Luna Classic (LUNC), the Terra Classic LCD address needs to be altered to `https://classic.lcd.terra.dev`. The FCD address will be `https://classic.fcd.terra.dev`.
 
 **Terra**:
 
