@@ -1,6 +1,6 @@
 # dApp migration guide
 
-Use this guide to migrate from Terra Classic to the new Terra chain. 
+Use this guide to migrate from Terra Classic to the new Terra chain.
 
 ## Changes
 
@@ -37,8 +37,7 @@ The following are code snippets with functionality that will no longer be suppor
 1. All `oracle` and `market` related methods are now deprecated.
 
 ```ts
-const activeDenoms = await lcd.oracle.activeDenoms();
-const exchangeRate = await lcd.oracle.exchangeRates();
+// all methods in these modules, including parameters() are deprecated
 const oracleParams = await lcd.oracle.parameters();
 const marketParams = await lcd.market.parameters();
 ```
@@ -51,6 +50,22 @@ const swap = new MsgSwap(
   'terra...9fj',
   new Coin('uluna', '1000000'),
   'uusd'
+```
+
+3. TaxRate queries using the Terra Querier are deprecated.
+
+```rust
+pub fn compute_tax(deps: Deps, coin: &Coin) -> StdResult<Uint256> {
+    let terra_querier = TerraQuerier::new(&deps.querier);
+    let tax_rate = Decimal256::from((terra_querier.query_tax_rate()?).rate);
+    let tax_cap = Uint256::from((terra_querier.query_tax_cap(coin.denom.to_string())?).cap);
+    let amount = Uint256::from(coin.amount);
+    Ok(std::cmp::min(
+        amount * Decimal256::one() - amount / (Decimal256::one() + tax_rate),
+        tax_cap,
+    ))
+}
+
 ```
 
 ## Migrating CW20/CW721 balances
