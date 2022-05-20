@@ -80,7 +80,7 @@ You can download these assets using the links below:
 
 ### Airdrop allocations
 
-All airdrop allocations to UST and LUNA holders will be based on the snapshots listed above. You may review the exchange-relevant allocations below. Note that these allocations _exclude_ the Community pool allocation of 25% as it is irrelevant to exchanges. You may review the original token distribution text proposal [on the Agora forum](https://agora.terra.money/t/terra-ecosystem-revival-plan-2-updated-and-final/18498).
+All airdrop allocations to UST and LUNA holders will be based on the snapshots listed above. You may review the exchange-relevant allocations below. Note that these allocations _exclude_ the Community pool allocation of 30% as it is irrelevant to exchanges. You may review the original token distribution text proposal [on the Agora forum](https://agora.terra.money/t/terra-ecosystem-revival-plan-2-updated-and-final/18498).
 
 **Note:** Wallets owned by Terraform Labs are excluded from any airdrop allocations. Wallets owned by Terraform Labs will not recieve any token allocation at genesis.
 
@@ -159,22 +159,22 @@ _Exchange User Assets_
 = 1M LUNA
 ```
 
-**_Post-attack UST holders : 20% allocation (200 M)_**
+**_Post-attack UST holders : 15% allocation (200 M)_**
 
 ```math
 10% x Total LUNA Supply x Total UST owned by Exchange post-attack / Total UST supply post-attack
 
-= 0.2 x 1B x 100M / 1B
+= 0.15 x 1B x 100M / 1B
 
-= 20M LUNA
+= 15M LUNA
 ```
 
 **Total Exchange Allocation**
 
 ```math
-= 3.5M + 10M + 1M + 20M
+= 3.5M + 10M + 1M + 15M
 
-= 34.5M LUNA
+= 29.5M LUNA
 ```
 
 ---
@@ -211,22 +211,22 @@ _Exchange User Assets_
 = 10 LUNA
 ```
 
-**Post-attack UST holders allocation: 20M**
+**Post-attack UST holders allocation: 15M**
 
 ```math
 (Total UST owned by User A post-attack / Total UST owned by Exchange post-attack) x Post-attack UST holders allocation
 
-= (10k / 100M) x 20M
+= (10k / 100M) x 15M
 
-= 2000 LUNA
+= 1500 LUNA
 ```
 
 **Total Allocation to User A**
 
 ```math
- = 35 + 1000 + 10 + 2000
+ = 35 + 1000 + 10 + 1500
 
- = 3045 LUNA
+ = 2545 LUNA
 ```
 
 ## Multisig guide
