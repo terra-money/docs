@@ -11,7 +11,7 @@ Per [governance proposal 1623](https://station.terra.money/proposal/1623), a new
 - The original Cosmos chain will still run, with market swaps (mint/burn function) disabled.
 - All balances will remain as they are.
 - Luna will become Luna Classic (LUNC).
-- Terra stablecoins (UST, KRT, EUT, etc.) will remain and renamed Terra Classic stablecoins (USTC, KRTC, EUTC, etc.). 
+- Terra stablecoins (UST, KRT, EUT, etc.) will be renamed Terra Classic stablecoins (USTC, KRTC, EUTC, etc.). 
 
 2\. The new chain will be called **Terra**, and will assume all Terra branding assets.
 
