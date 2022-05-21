@@ -11,7 +11,7 @@ Per [governance proposal 1623](https://station.terra.money/proposal/1623), a new
 - The original Cosmos chain will still run, with market swaps (mint/burn function) disabled.
 - All balances will remain as they are.
 - Luna will become Luna Classic (LUNC).
-- Terra stablecoins (UST, KRT, EUT, etc.) will remain.
+- Terra stablecoins (UST, KRT, EUT, etc.) will remain and renamed Terra Classic stablecoins (USTC, KRTC, EUTC, etc.). 
 
 2\. The new chain will be called **Terra**, and will assume all Terra branding assets.
 
@@ -31,7 +31,7 @@ The original Terra chain will be rebranded as Terra Classic.
 
 - Official chain name: Terra Classic
 - All Luna currently on exchanges needs to be renamed Luna Classic (LUNC).
-- All Terra stablecoins will retain their original naming convention: TerraUSD(UST)
+- All Terra stablecoins will be rebranded as Terra Classic stablecoins. For example, TerraUSD(UST) will be renamed TerraClassicUSD(USTC) and TerraKRW(KRT) will become TerraClassicKRW(KRTC), etc. 
 
 **Terra**:
 
@@ -47,7 +47,7 @@ Please update all logos and branding according to the following conventions.
 
 **Terra Classic**:
 
-The old chain will be rebranded using Terra Classic brand assets, including new logos for both LUNC and UST. You will need to remove all current Logos from the original chain and implement the Terra Classic brand assets on your exchange.
+The old chain will be rebranded using Terra Classic brand assets, including new logos for both LUNC and USTC. You will need to remove all current Logos from the original chain and implement the Terra Classic brand assets on your exchange.
 
 You can download these assets using the link below:
 
@@ -238,7 +238,7 @@ For questions regarding multisig wallets, refer to the [multisig guide](../devel
 Exchanges:
 
 - LUNC/USDT
-- UST/USDT
+- USTC/USDT
 
 Dexes:
 
