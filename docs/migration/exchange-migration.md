@@ -43,25 +43,27 @@ The new chain will assume the name Terra.
 
 ### Logos and assets
 
-Please update all logos and branding according to the following conventions.
+Please update all logos and branding according to the following conventions:
+
+[Adobe Illustrator Terra Classic and new Terra chain files](../../_static/brand-assets/TerraLogos%20(1).ai). 
 
 **Terra Classic**:
 
 The old chain will be rebranded using Terra Classic brand assets, including new logos for both LUNC and USTC. You will need to remove all current Logos from the original chain and implement the Terra Classic brand assets on your exchange.
 
-You can download these assets using the link below:
+You can download these assets using the links below:
 
-- [TerraLunaClassic-logos.ai](../../_static/brand-assets/TerraLunaClassic-logos.ai)
+- [Terra Classic logos](../../_static/brand-assets/03_TerraClassic-20220522T084541Z-001.zip)
+- [Luna Classic logos](../../_static/brand-assets/04_LunaClassic-20220522T084636Z-001.zip)
+- [Classic stablecoin logos](../../_static/brand-assets/05_Stablecoins-20220522T084321Z-001.zip)
 
 **Terra**:
 
-The new chain will assume the original assets of the Terra brand.
+The new chain will be branded with the following assets:
 
-You can download these assets using the links below:
 
-- [Terra_LOGO.ai](../../_static/brand-assets/Terra_LOGO.ai)
-- [Terra logos](../../_static/brand-assets/Terra.zip)
-- [Luna logos](../../_static/brand-assets/Luna.zip)
+- [Terra logos](../../_static/brand-assets/01_Terra-20220522T084318Z-001.zip)
+- [Luna logos](../../_static/brand-assets/02_Luna-20220522T084315Z-001.zip)
 
 ## Mainnet launch schedule
 
