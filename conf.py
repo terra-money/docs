@@ -51,8 +51,8 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', 'node_modules']
 
 # Copies files in these directories to the root of the build
 html_extra_path = [
-    'img/', 
-    '.nojekyll', 
+    'img/',
+    '.nojekyll',
     'redirects',
 ]
 
