@@ -38,7 +38,7 @@ In order for Terrad to recognize a wallet address, it must contain tokens. For t
 Run the following commands to add your account and set the initial balance:
 
 ```bash
-terrad add-genesis-account $(terrad keys show <account-name> -a) 100000000uluna,1000usd
+terrad add-genesis-account $(terrad keys show <account-name> -a) 100000000uluna
 terrad gentx <my-account> 10000000uluna --chain-id=<testnet-name>
 terrad collect-gentxs
 ```
@@ -55,7 +55,7 @@ If the private Terra network is set up correctly, your `terrad` node will be run
 
 ## Join a public network
 
-These instructions are for setting up a brand new full node from scratch. You can join a public Terra network, such as the Columbus mainnet or Bombay testnet, by completing the following steps:
+These instructions are for setting up a brand new full node from scratch. You can join a public Terra network, such as the mainnet or testnet, by completing the following steps:
 
 
 ### 1. Select a network
