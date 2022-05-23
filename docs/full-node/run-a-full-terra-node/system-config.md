@@ -24,13 +24,13 @@ As the network grows, the minimum storage requirements will also grow. It is rec
 
 ## Prerequisites
 
-- [Golang v1.16.1 - go1.17.1 linux/amd64](https://go.dev/dl/)
+- [Golang v1.18+ linux/amd64](https://go.dev/dl/)
 
   ::: {dropdown} Installing Go for MacOS & Linux
 
   Go releases can be found here: [ https://go.dev/dl/ ](https://go.dev/dl/)
 
-  In your browser, you can right-click the correct release (v1.16.1 - go1.17.1) and `Copy link`.
+  In your browser, you can right-click the correct release (V1.18) and `Copy link`.
 
   ```bash
   # 1. Download the archive
@@ -43,7 +43,7 @@ As the network grows, the minimum storage requirements will also grow. It is rec
 
   # 2. Unpack:
 
-  sudo tar -C /usr/local -xzf go1.17.1.linux-amd64.tar.gz
+  sudo tar -C /usr/local -xzf go1.18.2.linux-amd64.tar.gz
 
   # 3. Add the path to the go-binary to your system path:
   # (for this to persist, add this line to your ~/.profile or ~/.bashrc or  ~/.zshrc)
@@ -54,7 +54,7 @@ As the network grows, the minimum storage requirements will also grow. It is rec
 
   go version
 
-  # go version go1.17.1 linux/amd64
+  # go version go1.18.2 linux/amd64
 
   ```
 

@@ -30,7 +30,7 @@ make
 ```
 
 ::: {tip}
-If you have issues at this step, please check that you have a compatible version of GO installed (v1.16.1-go1.17.1).
+If you have issues at this step, please check that you have a compatible version of GO installed (v1.18+).
 :::
 
 The previous command uses `master` as it contains the latest stable release. See the [testnet repo](https://github.com/terra-money/testnet) for details on which version is needed for which testnet, and the [Terra Core release page](https://github.com/terra-money/core/releases) for details on each release.
