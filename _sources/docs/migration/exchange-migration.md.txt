@@ -45,7 +45,7 @@ The new chain will assume the name Terra.
 
 Please update all logos and branding according to the following conventions:
 
-[Adobe Illustrator Terra Classic and new Terra chain files](../../_static/brand-assets/TerraLogos%20(1).ai). 
+[Adobe Illustrator Terra Classic and new Terra chain files](../../_static/brand-assets/TerraLogos%20(2).ai). 
 
 **Terra Classic**:
 
@@ -63,7 +63,7 @@ The new chain will be branded with the following assets:
 
 
 - [Terra logos](../../_static/brand-assets/01_Terra-20220522T084318Z-001.zip)
-- [Luna logos](../../_static/brand-assets/02_Luna-20220522T084315Z-001.zip)
+- [Luna logos](../../_static/brand-assets/02_Luna-20220523T184554Z-001.zip)
 
 ## Mainnet launch schedule
 
