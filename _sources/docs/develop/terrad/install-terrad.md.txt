@@ -6,7 +6,7 @@ This guide is for developers who want to install `terrad` and interact with Terr
 
 ### Prerequisites
 
-- [Golang v1.16.1 - go1.17.1 linux/amd64](https://golang.org/doc/install)
+- [Golang v1.18 linux/amd64](https://golang.org/doc/install)
 - Ensure your `GOPATH` and `GOBIN` environment variables are set up correctly.
 - Linux users: install [build-essential](http://linux-command.org/en/build-essential.html).
 
@@ -65,7 +65,7 @@ client_name: terrad
 version: 0.3.0-24-g3684f77
 commit: 3684f77faadf6cf200d18e15763316d5d9c5a496
 build_tags: netgo,ledger
-go: go version go1.13.4 darwin/amd64
+go: go version go1.18.2 darwin/amd64
 ```
 
 ::: {tip}

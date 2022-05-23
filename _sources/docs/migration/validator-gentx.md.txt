@@ -5,19 +5,19 @@ Follow this guide to become a validator on the Terra 2.0 chain. This guide walks
 ## Prerequisites
 
 - [Terra Core](https://github.com/terra-money/new-core)
-- [Go 1.17+](https://go.dev/dl/)
+- [Go 1.18+](https://go.dev/dl/)
 
 ## Initial setup
 
 In order to create a `gentx`, ensure you have fulfilled all the prerequisites.
 
-1. Install [Go 1.17+ from the official site](https://go.dev/dl/). Ensure that your `GOPATH` and `GOBIN` environment variables are properly set up by using the following commands:
+1. Install [Go 1.18+ from the official site](https://go.dev/dl/). Ensure that your `GOPATH` and `GOBIN` environment variables are properly set up by using the following commands:
 
    For Windows:
 
    ```sh
-   wget <https://golang.org/dl/go1.17.1.linux-amd64.tar.gz>
-   sudo tar -C /usr/local -xzf go1.17.1.linux-amd64.tar.gz
+   wget <https://golang.org/dl/go1.18.1.linux-amd64.tar.gz>
+   sudo tar -C /usr/local -xzf go1.18.1.linux-amd64.tar.gz
    export PATH=$PATH:/usr/local/go/bin
    export PATH=$PATH:$(go env GOPATH)/bin
    ```
