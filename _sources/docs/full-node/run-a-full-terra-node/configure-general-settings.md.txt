@@ -45,8 +45,7 @@ You can update your node's moniker by editing the `moniker` field in  `~/.terra/
 # The minimum gas prices a validator is willing to accept for processing a
 # transaction. A transaction's fees must meet the minimum of any denomination
 # specified in this config (e.g. 0.25token1;0.0001token2).
-minimum-gas-prices = "0.01133uluna,0.15uusd,0.104938usdr,169.77ukrw,428.571umnt,0.125ueur,0.98ucny,16.37ujpy,0.11ugbp,10.88uinr,0.19ucad,0.14uchf,0.19uaud,0.2usgd,4.62uthb,1.25usek,1.25unok,0.9udkk,2180.0uidr,7.6uphp,1.17uhkd"
-```
+minimum-gas-prices = "0.01133uluna"
 
 ## Start the light client daemon (LCD)
 
@@ -70,3 +69,11 @@ For information about the available Terra REST API endpoints, see the [Swagger d
    ```
 
 5. Restart the service via `systemctl restart terrad`. Once restarted, the LCD will be available (by default on port `127.0.0.1:1317`)
+
+## Set up `external_address` in `config.toml`
+
+In order to be added to the address book in seed nodes, you need to configure `external_address` in `config.toml`.  This addition will prevent continuous reconnections. The default P2P_PORT is 26656.
+
+   ```toml
+   $ sed -i -e 's/external_address = \"\"/external_address = \"'$(curl httpbin.org/ip | jq -r .origin)':26656\"/g' ~/.terra/config/config.toml
+```

@@ -1170,8 +1170,19 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#start-the-light-client-daemon-lcd">
-   Start the light client daemon (LCD)
+  <a class="reference internal nav-link" href="#set-up-external-address-in-config-toml">
+   Set up
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     external_address
+    </span>
+   </code>
+   in
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     config.toml
+    </span>
+   </code>
   </a>
  </li>
 </ul>
@@ -1205,8 +1216,19 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#start-the-light-client-daemon-lcd">
-   Start the light client daemon (LCD)
+  <a class="reference internal nav-link" href="#set-up-external-address-in-config-toml">
+   Set up
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     external_address
+    </span>
+   </code>
+   in
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     config.toml
+    </span>
+   </code>
   </a>
  </li>
 </ul>
@@ -1261,25 +1283,27 @@ Structure of .terra/config<div class="sd-summary-down docutils">
 <li><p>You can <a class="reference external" href="https://fcd.terra.dev/v1/txs/gas_prices">query FCD</a> to view the current gas prices.</p></li>
 </ul>
 <p><strong>Example</strong>:</p>
-<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="c1"># The minimum gas prices a validator is willing to accept for processing a</span><span class="w"></span>
-<span class="c1"># transaction. A transaction&#39;s fees must meet the minimum of any denomination</span><span class="w"></span>
-<span class="c1"># specified in this config (e.g. 0.25token1;0.0001token2).</span><span class="w"></span>
-<span class="n">minimum-gas-prices</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;0.01133uluna,0.15uusd,0.104938usdr,169.77ukrw,428.571umnt,0.125ueur,0.98ucny,16.37ujpy,0.11ugbp,10.88uinr,0.19ucad,0.14uchf,0.19uaud,0.2usgd,4.62uthb,1.25usek,1.25unok,0.9udkk,2180.0uidr,7.6uphp,1.17uhkd&quot;</span><span class="w"></span>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span># The minimum gas prices a validator is willing to accept for processing a
+# transaction. A transaction&#39;s fees must meet the minimum of any denomination
+# specified in this config (e.g. 0.25token1;0.0001token2).
+minimum-gas-prices = &quot;0.01133uluna&quot;
+
+## Start the light client daemon (LCD)
+
+For information about the available Terra REST API endpoints, see the [Swagger documentation](https://lcd.terra.dev/swagger/). To enable the REST API and Swagger, and to start the LCD, complete the following steps:
+
+1. Open `~/.terra/config/app.toml`.
+
+2. Locate the `API Configuration` section (`[api]`).
+
+3. Change `enable = false` to `enable = true`.
+
+   ```toml
+   # Enable defines if the API server should be enabled.
+   enable = true
 </pre></div>
 </div>
-</div>
-<div class="section" id="start-the-light-client-daemon-lcd">
-<h2>Start the light client daemon (LCD)<a class="headerlink" href="#start-the-light-client-daemon-lcd" title="Permalink to this headline">#</a></h2>
-<p>For information about the available Terra REST API endpoints, see the <a class="reference external" href="https://lcd.terra.dev/swagger/">Swagger documentation</a>. To enable the REST API and Swagger, and to start the LCD, complete the following steps:</p>
-<ol class="arabic">
-<li><p>Open <code class="docutils literal notranslate"><span class="pre">~/.terra/config/app.toml</span></code>.</p></li>
-<li><p>Locate the <code class="docutils literal notranslate"><span class="pre">API</span> <span class="pre">Configuration</span></code> section (<code class="docutils literal notranslate"><span class="pre">[api]</span></code>).</p></li>
-<li><p>Change <code class="docutils literal notranslate"><span class="pre">enable</span> <span class="pre">=</span> <span class="pre">false</span></code> to <code class="docutils literal notranslate"><span class="pre">enable</span> <span class="pre">=</span> <span class="pre">true</span></code>.</p>
-<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="c1"># Enable defines if the API server should be enabled.</span><span class="w"></span>
-<span class="n">enable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
-</pre></div>
-</div>
-</li>
+<ol class="arabic" start="4">
 <li><p>Optional: Swagger defines if swagger documentation should automatically be registered. To enable Swagger, change <code class="docutils literal notranslate"><span class="pre">swagger</span> <span class="pre">=</span> <span class="pre">false</span> <span class="pre">to</span> </code>swagger = true`.</p>
 <div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="n">swagger</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
 </pre></div>
@@ -1287,6 +1311,13 @@ Structure of .terra/config<div class="sd-summary-down docutils">
 </li>
 <li><p>Restart the service via <code class="docutils literal notranslate"><span class="pre">systemctl</span> <span class="pre">restart</span> <span class="pre">terrad</span></code>. Once restarted, the LCD will be available (by default on port <code class="docutils literal notranslate"><span class="pre">127.0.0.1:1317</span></code>)</p></li>
 </ol>
+</div>
+<div class="section" id="set-up-external-address-in-config-toml">
+<h2>Set up <code class="docutils literal notranslate"><span class="pre">external_address</span></code> in <code class="docutils literal notranslate"><span class="pre">config.toml</span></code><a class="headerlink" href="#set-up-external-address-in-config-toml" title="Permalink to this headline">#</a></h2>
+<p>In order to be added to the address book in seed nodes, you need to configure <code class="docutils literal notranslate"><span class="pre">external_address</span></code> in <code class="docutils literal notranslate"><span class="pre">config.toml</span></code>.  This addition will prevent continuous reconnections. The default P2P_PORT is 26656.</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span>$ sed -i -e &#39;s/external_address = \&quot;\&quot;/external_address = \&quot;&#39;$(curl httpbin.org/ip | jq -r .origin)&#39;:26656\&quot;/g&#39; ~/.terra/config/config.toml
+</pre></div>
+</div>
 </div>
 </div>
 
