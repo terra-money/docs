@@ -1348,7 +1348,37 @@
             
         </div>
     </div>
-    <footer class="footer">
+    <script>
+  const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+  const currentTheme = localStorage.getItem("theme");
+
+  const setDarkTheme = () => {
+    document.body.classList.remove('light-theme');
+    document.body.classList.add("dark-theme");
+    localStorage.setItem("theme", "dark-theme");
+  }
+
+  const setLightTheme = () => {
+    document.body.classList.remove('dark-theme');
+    document.body.classList.add("light-theme");
+    localStorage.setItem("theme", "light-theme");
+  }
+
+  if (currentTheme === null) {
+    if (prefersDarkScheme.matches) {
+      setDarkTheme();
+    } else if (!prefersDarkScheme.matches) {
+      setLightTheme();
+    }
+  } else {
+    if (currentTheme === "dark-theme") {
+      setDarkTheme();
+    } else if (currentTheme === "light-theme") {
+      setLightTheme();
+    }
+  }
+  </script>
+<footer class="footer">
   <p>
     
 
