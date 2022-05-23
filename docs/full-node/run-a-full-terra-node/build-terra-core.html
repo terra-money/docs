@@ -1203,18 +1203,18 @@
 <p>Terra core is the official Golang reference implementation of the Terra node software. Use this guide to install Terra core and <code class="docutils literal notranslate"><span class="pre">terrad</span></code>, the command-line interface and daemon that connects to Terra and enables you to interact with the Terra blockchain.</p>
 <div class="section" id="get-the-terra-core-source-code">
 <h2>Get the Terra core source code<a class="headerlink" href="#get-the-terra-core-source-code" title="Permalink to this headline">#</a></h2>
-<ol class="arabic">
-<li><p>Use <code class="docutils literal notranslate"><span class="pre">git</span></code> to retrieve <a class="reference external" href="https://github.com/terra-money/core/">Terra core</a>, and check out the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch, which contains the latest stable release.</p>
-<ul class="simple">
-<li><p>If you are using LocalTerra or running a validator, use the <code class="docutils literal notranslate"><span class="pre">v0.x.x-oracle</span></code> tag. Otherwise, use the <code class="docutils literal notranslate"><span class="pre">v0.x.x</span></code> tag.</p></li>
-<li><p>You can find out the latest tag on the <a class="reference external" href="https://github.com/terra-money/core/tags">tags page</a> or via autocomplete in your terminal: type <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">v</span></code> and press <code class="docutils literal notranslate"><span class="pre">&lt;TAB&gt;</span></code>.</p></li>
-</ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/terra-money/core
-<span class="nb">cd</span> core
-git checkout <span class="o">[</span>latest version<span class="o">]</span> <span class="c1"># ex., git checkout v0.5.13-oracle</span>
+<ol class="arabic simple">
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">git</span></code> to retrieve <a class="reference external" href="https://github.com/terra-money/core/">Terra core</a>, and check out the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch, which contains the latest stable release.</p></li>
+</ol>
+<p>You can find out the latest tag on the <a class="reference external" href="https://github.com/terra-money/core/tags">tags page</a> or via autocomplete in your terminal: type <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">v</span></code> and press <code class="docutils literal notranslate"><span class="pre">&lt;TAB&gt;</span></code>.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>```bash
+git clone https://github.com/terra-money/core
+cd core
+git checkout [latest version] # ex., git checkout v2.0.0-rc.0
+```
 </pre></div>
 </div>
-</li>
+<ol class="arabic" start="2">
 <li><p>Build Terra core. This will install the <code class="docutils literal notranslate"><span class="pre">terrad</span></code> executable to your <a class="reference external" href="https://go.dev/doc/gopath_code"> <code class="docutils literal notranslate"><span class="pre">GOPATH</span></code> </a> environment variable.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make install
 </pre></div>
@@ -1231,8 +1231,8 @@ client_name: terrad
 version: <span class="m">0</span>.3.0-24-g3684f77
 commit: 3684f77faadf6cf200d18e15763316d5d9c5a496
 build_tags: netgo,ledger
-go: go version go1.13.4 darwin/amd64
-<span class="c1"># ...And a bunch of dependenecies</span>
+go: go version go1.18.2 darwin/amd64
+<span class="c1"># ...followed by a lot of dependenecies</span>
 </pre></div>
 </div>
 </li>

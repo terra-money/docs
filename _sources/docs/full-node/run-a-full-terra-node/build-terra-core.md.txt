@@ -6,13 +6,12 @@ Terra core is the official Golang reference implementation of the Terra node sof
 
 1. Use `git` to retrieve [Terra core](https://github.com/terra-money/core/), and check out the `main` branch, which contains the latest stable release.
 
-    - If you are using LocalTerra or running a validator, use the `v0.x.x-oracle` tag. Otherwise, use the `v0.x.x` tag.
-    - You can find out the latest tag on the [tags page](https://github.com/terra-money/core/tags) or via autocomplete in your terminal: type `git checkout v` and press `<TAB>`.
+You can find out the latest tag on the [tags page](https://github.com/terra-money/core/tags) or via autocomplete in your terminal: type `git checkout v` and press `<TAB>`.
 
     ```bash
     git clone https://github.com/terra-money/core
     cd core
-    git checkout [latest version] # ex., git checkout v0.5.13-oracle
+    git checkout [latest version] # ex., git checkout v2.0.0-rc.0
     ```
 
 
@@ -37,8 +36,8 @@ Terra core is the official Golang reference implementation of the Terra node sof
    version: 0.3.0-24-g3684f77
    commit: 3684f77faadf6cf200d18e15763316d5d9c5a496
    build_tags: netgo,ledger
-   go: go version go1.13.4 darwin/amd64
-   # ...And a bunch of dependenecies
+   go: go version go1.18.2 darwin/amd64
+   # ...followed by a lot of dependenecies
    ```
 
 ::: {tip}

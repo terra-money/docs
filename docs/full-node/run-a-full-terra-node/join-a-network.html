@@ -1325,7 +1325,7 @@
 <div class="section" id="add-your-account-to-the-genesis">
 <h3>Add your account to the genesis<a class="headerlink" href="#add-your-account-to-the-genesis" title="Permalink to this headline">#</a></h3>
 <p>Run the following commands to add your account and set the initial balance:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad add-genesis-account <span class="k">$(</span>terrad keys show &lt;account-name&gt; -a<span class="k">)</span> 100000000uluna,1000usd
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad add-genesis-account <span class="k">$(</span>terrad keys show &lt;account-name&gt; -a<span class="k">)</span> 100000000uluna
 terrad gentx &lt;my-account&gt; 10000000uluna --chain-id<span class="o">=</span>&lt;testnet-name&gt;
 terrad collect-gentxs
 </pre></div>
@@ -1342,7 +1342,7 @@ terrad collect-gentxs
 </div>
 <div class="section" id="join-a-public-network">
 <h2>Join a public network<a class="headerlink" href="#join-a-public-network" title="Permalink to this headline">#</a></h2>
-<p>These instructions are for setting up a brand new full node from scratch. You can join a public Terra network, such as the Columbus mainnet or Bombay testnet, by completing the following steps:</p>
+<p>These instructions are for setting up a brand new full node from scratch. You can join a public Terra network, such as the mainnet or testnet, by completing the following steps:</p>
 <div class="section" id="select-a-network">
 <h3>1. Select a network<a class="headerlink" href="#select-a-network" title="Permalink to this headline">#</a></h3>
 <p>Specify the network you want to join by choosing the corresponding <strong>genesis file</strong> and <strong>seeds</strong>:</p>
