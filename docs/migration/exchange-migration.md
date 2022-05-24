@@ -231,6 +231,10 @@ _Exchange User Assets_
  = 2545 LUNA
 ```
 
+## Use different seeds
+
+To avoid user confusion and prevent the sending of funds to the wrong accounts, ensure that the Terra Classic and new Terra chain addresses have different seeds on your exchange. You may want to include a warning to users to make sure they are transacting on the correct chain to the correct address. 
+
 ## Multisig guide
 
 For questions regarding multisig wallets, refer to the [multisig guide](../develop/guides/sign-with-multisig.md).
@@ -246,6 +250,16 @@ Dexes:
 
 - LUNC/ETH
 - LUNC/USDC
+
+## Networks
+
+**Terra Classic**
+Mainnet: `columbus-5`
+Testnet: `bombay-12`
+
+**Terra**
+Mainnet: `phoenix-1`
+Testnet: `pisco-1`
 
 ## Integration
 
