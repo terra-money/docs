@@ -2,6 +2,11 @@
 
 Follow this guide to become a validator on the Terra 2.0 chain. This guide walks you through making a `gentx` file that will be added to the validator chain. All validators that want to be included in the Terra 2.0 chain must follow these steps. 
 
+## Networks
+
+Terra 2.0 testnet: `pisco-1`
+Terra 2.0 mainnet: `phoenix-1`
+
 ## Prerequisites
 
 - [Terra Core](https://github.com/terra-money/new-core)
@@ -62,10 +67,10 @@ Once in your Terra 2.0 Core directory, you can begin the process of creating a n
 
 For a full explanation of the gentx command, run `terrad gentx` in your terminal.
 
-1. Run the following command to initialize your validator on the Terra 2.0 chain. The `moniker-name` is your local moniker, and the `chain-id` is the chain you will be joining.
+1. Run the following command to initialize your validator on the Terra 2.0 chain. The `moniker-name` is your local moniker, and the `chain-id` is the chain you will be joining (`phoenix-1`).
 
    ```sh
-   terrad init <MONIKER-NAME> --chain-id=[GIVEN BY TERRA]
+   terrad init <MONIKER-NAME> --chain-id phoenix-1
    ```
 
 2. Add a key for your validator. <br/>

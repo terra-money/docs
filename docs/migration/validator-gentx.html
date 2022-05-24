@@ -1160,6 +1160,11 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#networks">
+   Networks
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#prerequisites">
    Prerequisites
   </a>
@@ -1231,6 +1236,11 @@
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#networks">
+   Networks
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#prerequisites">
    Prerequisites
   </a>
@@ -1293,6 +1303,11 @@
   <div class="tex2jax_ignore mathjax_ignore section" id="validator-migration-guide">
 <h1>Validator migration guide<a class="headerlink" href="#validator-migration-guide" title="Permalink to this headline">#</a></h1>
 <p>Follow this guide to become a validator on the Terra 2.0 chain. This guide walks you through making a <code class="docutils literal notranslate"><span class="pre">gentx</span></code> file that will be added to the validator chain. All validators that want to be included in the Terra 2.0 chain must follow these steps.</p>
+<div class="section" id="networks">
+<h2>Networks<a class="headerlink" href="#networks" title="Permalink to this headline">#</a></h2>
+<p>Terra 2.0 testnet: <code class="docutils literal notranslate"><span class="pre">pisco-1</span></code>
+Terra 2.0 mainnet: <code class="docutils literal notranslate"><span class="pre">phoenix-1</span></code></p>
+</div>
 <div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
@@ -1351,8 +1366,8 @@ sudo tar -C /usr/local -xzf go1.18.1.linux-amd64.tar.gz
 <h2>Create <code class="docutils literal notranslate"><span class="pre">gentx</span></code><a class="headerlink" href="#create-gentx" title="Permalink to this headline">#</a></h2>
 <p>For a full explanation of the gentx command, run <code class="docutils literal notranslate"><span class="pre">terrad</span> <span class="pre">gentx</span></code> in your terminal.</p>
 <ol class="arabic">
-<li><p>Run the following command to initialize your validator on the Terra 2.0 chain. The <code class="docutils literal notranslate"><span class="pre">moniker-name</span></code> is your local moniker, and the <code class="docutils literal notranslate"><span class="pre">chain-id</span></code> is the chain you will be joining.</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrad init &lt;MONIKER-NAME&gt; --chain-id<span class="o">=[</span>GIVEN BY TERRA<span class="o">]</span>
+<li><p>Run the following command to initialize your validator on the Terra 2.0 chain. The <code class="docutils literal notranslate"><span class="pre">moniker-name</span></code> is your local moniker, and the <code class="docutils literal notranslate"><span class="pre">chain-id</span></code> is the chain you will be joining (<code class="docutils literal notranslate"><span class="pre">phoenix-1</span></code>).</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrad init &lt;MONIKER-NAME&gt; --chain-id phoenix-1
 </pre></div>
 </div>
 </li>
