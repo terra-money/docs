@@ -254,12 +254,12 @@ Dexes:
 ## Networks
 
 **Terra Classic**
-Mainnet: `columbus-5`
-Testnet: `bombay-12`
+- Mainnet: `columbus-5`
+- Testnet: `bombay-12`
 
 **Terra**
-Mainnet: `phoenix-1`
-Testnet: `pisco-1`
+- Mainnet: `phoenix-1`
+- Testnet: `pisco-1`
 
 ## Integration
 
