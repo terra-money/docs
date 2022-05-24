@@ -4,8 +4,8 @@ Follow this guide to become a validator on the Terra 2.0 chain. This guide walks
 
 ## Networks
 
-Terra 2.0 testnet: `pisco-1`
-Terra 2.0 mainnet: `phoenix-1`
+- Terra 2.0 testnet: `pisco-1`
+- Terra 2.0 mainnet: `phoenix-1`
 
 ## Prerequisites
 
