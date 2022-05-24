@@ -22,7 +22,6 @@ make-a-connection
 msgAuthorization
 multisend
 numeric
-oracle-feeder
 query-data
 smart-contracts
 transactions
