@@ -251,6 +251,15 @@ Dexes:
 - LUNC/ETH
 - LUNC/USDC
 
+## Terra 2.0 Code and audit
+
+**Code**
+- https://github.com/terra-money/core
+
+**Audit**
+- https://github.com/SCV-Security/PublicReports/blob/main/Others/TerraMoney/TerraMoney%20-%20Core%20v2%20-%20Audit%20Test%20Report%20v1.0.pdf
+
+
 ## Networks
 
 **Terra Classic**
