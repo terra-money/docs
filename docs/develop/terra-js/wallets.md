@@ -5,11 +5,11 @@
 Use `LCDClient.wallet()` to create a `Wallet` from a `Key`.
 
 ```ts
-import { LCDClient, MnemonicKey } from '@terra-money/terra.js';
+import { LCDClient, MnemonicKey } from "@terra-money/terra.js";
 
 const terra = new LCDClient({
-  URL: 'https://lcd.terra.dev',
-  chainId: 'columbus-5'
+  URL: "https://lcd.terra.dev",
+  chainId: "phoenix-1",
 });
 
 const mk = new MnemonicKey();
@@ -55,7 +55,7 @@ You can also use the convenience function `Wallet.createAndSignTx()`, which auto
 ```ts
 const tx = await wallet.createAndSignTx({
   msgs,
-  fee,  
-  memo: 'this is optional'
+  fee,
+  memo: "this is optional",
 });
 ```

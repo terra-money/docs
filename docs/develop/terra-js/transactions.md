@@ -18,12 +18,12 @@ The messages included in a transaction contain the information that will be rout
 You will first want to create a wallet which you can use to sign transactions.
 
 ```ts
-import { MnemonicKey, LCDClient } from '@terra-money/terra.js';
+import { MnemonicKey, LCDClient } from "@terra-money/terra.js";
 
 const mk = new MnemonicKey();
 const terra = new LCDClient({
-  URL: 'https://bombay-lcd.terra.dev',
-  chainID: 'bombay-12'
+  URL: "https://pisco-lcd.terra.dev",
+  chainID: "pisco-1",
 });
 const wallet = terra.wallet(mk);
 ```
@@ -31,13 +31,11 @@ const wallet = terra.wallet(mk);
 ### Create messages
 
 ```ts
-import { MsgSend } from '@terra-money/terra.js';
+import { MsgSend } from "@terra-money/terra.js";
 
-const send = new MsgSend(
-  wallet.key.accAddress,
-  "<random-terra-address>",
-  { uluna: 1000 }
-);
+const send = new MsgSend(wallet.key.accAddress, "<random-terra-address>", {
+  uluna: 1000,
+});
 ```
 
 ### Create and Sign Transaction
@@ -45,7 +43,7 @@ const send = new MsgSend(
 ```ts
 const tx = await wallet.createAndSignTx({
   msgs: [send],
-  memo: "Hello"
+  memo: "Hello",
 });
 ```
 
@@ -54,6 +52,7 @@ const tx = await wallet.createAndSignTx({
 ```ts
 const txResult = await terra.tx.broadcast(tx);
 ```
+
 The default broadcast mode is `block`, which waits until the transaction has been included in a block. This will give you the most information about the transaction, including events and errors while processing.
 
 You can also use `sync` or `async` broadcast modes.
@@ -73,7 +72,9 @@ import { isTxError } from "@terra-money/terra.js";
 const txResult = terra.tx.broadcast(tx);
 
 if (isTxError(txResult)) {
-  throw new Error(`encountered an error while running the transaction: ${txResult.code} ${txResult.codespace}`);
+  throw new Error(
+    `encountered an error while running the transaction: ${txResult.code} ${txResult.codespace}`
+  );
 }
 
 // check for events from the first message
