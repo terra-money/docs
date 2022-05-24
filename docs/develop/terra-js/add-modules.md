@@ -2,7 +2,7 @@
 
 When a new module is added to Terra core, you must add it to several places in Terra.js too. To add it, complete the following steps:
 
-##  Create a new folder
+## Create a new folder
 
 In the `src/core` folder, create a new folder and name it after the new module. For example,`src/core/greeting`.
 
@@ -17,22 +17,20 @@ For this example, let's assume that you are creating a two new messages, `MsgHel
 `src/core/greeting/msgs/MsgHello.ts`
 
 ```ts
-import { JSONSerializable } from '../../../util/json';
-import { AccAddress } from '../../strings'
+import { JSONSerializable } from "../../../util/json";
+import { AccAddress } from "../../strings";
 
 /**
  * Just a simple greeting on the blockchain.
  */
 export class MsgHello extends JSONSerializable<MsgHello.Data> {
-  constructor(
-    public recipient: AccAddress
-  ) {
+  constructor(public recipient: AccAddress) {
     super();
   }
 
   public static fromData(data: MsgHello.Data): MsgHello {
     const {
-      value: { recipient }
+      value: { recipient },
     } = data;
     return new MsgHello(recipient);
   }
@@ -40,9 +38,9 @@ export class MsgHello extends JSONSerializable<MsgHello.Data> {
   public toData(): MsgHello.Data {
     const { recipient } = this;
     return {
-      type: 'greeting/MsgHello',
+      type: "greeting/MsgHello",
       value: {
-        recipient
+        recipient,
       },
     };
   }
@@ -50,13 +48,12 @@ export class MsgHello extends JSONSerializable<MsgHello.Data> {
 
 export namespace MsgHello {
   export interface Data {
-    type: 'greeting/MsgHello';
+    type: "greeting/MsgHello";
     value: {
-      recipient: AccAddress
+      recipient: AccAddress;
     };
   }
 }
-
 ```
 
 1. Create the following file, which will index your new messages.
@@ -64,11 +61,11 @@ export namespace MsgHello {
 `src/core/greeting/msgs/index.ts`
 
 ```ts
-import { MsgHello } from './MsgHello';
-import { MsgGoodbye } from './MsgGoodbye';
+import { MsgHello } from "./MsgHello";
+import { MsgGoodbye } from "./MsgGoodbye";
 
-export * from './MsgHello';
-export * from './MsgGoodbye';
+export * from "./MsgHello";
+export * from "./MsgGoodbye";
 
 export type GreetingMsg = MsgHello | MsgGoodbye;
 
@@ -97,9 +94,7 @@ export type Msg =
   | DistributionMsg
   | GovMsg
   | GreetingMsg // ADD HERE
-  | MarketMsg
   | MsgAuthMsg
-  | OracleMsg
   | SlashingMsg
   | StakingMsg
   | WasmMsg;
@@ -113,9 +108,7 @@ export namespace Msg {
     | DistributionMsg.Data
     | GovMsg.Data
     | Greeting.Data // ADD HERE
-    | MarketMsg.Data
     | MsgAuthMsg.Data
-    | OracleMsg.Data
     | SlashingMsg.Data
     | StakingMsg.Data
     | WasmMsg.Data;
@@ -149,29 +142,19 @@ Terra.js provides an easy way to generate `ParameterChangeProposal`s, which is a
 `src/core/greeting/params.ts`
 
 ```ts
-import { ParamChange } from '..';
-import { Convert } from '../../util/convert';
+import { ParamChange } from "..";
+import { Convert } from "../../util/convert";
 
-type MaxHellos = ParamChange.Type<
-  'greeting',
-  'maxhellos',
-  number
->;
+type MaxHellos = ParamChange.Type<"greeting", "maxhellos", number>;
 
-type MaxGoodbyes = ParamChange.Type<
-  'greeting',
-  'maxgoodbyes',
-  number
->;
+type MaxGoodbyes = ParamChange.Type<"greeting", "maxgoodbyes", number>;
 
-export type GreetingParamChange =
-  | MaxHellos
-  | MaxGoodbyes;
+export type GreetingParamChange = MaxHellos | MaxGoodbyes;
 
 export namespace GreetingParamChange {
   export type Data =
     | ParamChange.Data.Type<MaxHellos>
-    | ParamChange.Data.Type<MaxGoodbyes>
+    | ParamChange.Data.Type<MaxGoodbyes>;
 }
 
 export interface GreetingParamChanges {
@@ -203,11 +186,8 @@ import { GreetingParamChange, GreetingParamChanges } from '../greeting/params';
 export type ParamChanges = DistributionParamChanges &
   GovParamChanges &
   GreetingParamChanges & // ADD HERE
-  MarketParamChanges &
-  OracleParamChanges &
   SlashingParamChanges &
   StakingParamChanges &
-  TreasuryParamChanges &
   WasmParamChanges;
 
 export namespace ParamChanges {
@@ -215,11 +195,8 @@ export namespace ParamChanges {
     ...DistributionParamChanges.ConversionTable,
     ...GovParamChanges.ConversionTable,
     ...GreetingParamChanges.ConverstionTable, // ADD HERE
-    ...MarketParamChanges.ConversionTable,
-    ...OracleParamChanges.ConversionTable,
     ...SlashingParamChanges.ConversionTable,
     ...StakingParamChanges.ConversionTable,
-    ...TreasuryParamChanges.ConversionTable,
     ...WasmParamChanges.ConversionTable,
   };
 
@@ -229,11 +206,8 @@ export type ParamChange =
   | DistributionParamChange
   | GovParamChange
   | GreetingParamChange // ADD HERE
-  | MarketParamChange
-  | OracleParamChange
   | SlashingParamChange
   | StakingParamChange
-  | TreasuryParamChange
   | WasmParamChange;
 
 ...
@@ -271,16 +245,16 @@ export class GreetingAPI extends BaseAPI {
   public async hello(accAddress: AccAddress): Promise<AccAddress[]> {
     return this.c
       .get<AccAddress[]>(`/greeting/hello/${accAddress}`)
-      .then(d => d.result);
+      .then((d) => d.result);
   }
 
   public async parameters(): Promise<GreetingParams> {
     return this.c
       .get<GreetingParams.Data>(`/greeting/parameters`)
-      .then(d => d.result)
-      .then(d => ({
+      .then((d) => d.result)
+      .then((d) => ({
         max_hellos: Number.parseInt(d.max_hellos),
-        max_goodbyes: Number.parseInt(d.max_goodbyes)
+        max_goodbyes: Number.parseInt(d.max_goodbyes),
       }));
   }
 }
@@ -289,21 +263,18 @@ export class GreetingAPI extends BaseAPI {
 2. Register the API functionality inside `src/client/lcd/api/index.ts`:
 
 ```ts
-export * from './AuthAPI';
-export * from './BankAPI';
-export * from './DistributionAPI';
-export * from './GovAPI';
-export * from './GreetingAPI'; // ADD HERE
-export * from './MarketAPI';
-export * from './MsgAuthAPI';
-export * from './OracleAPI';
-export * from './SlashingAPI';
-export * from './StakingAPI';
-export * from './SupplyAPI';
-export * from './TendermintAPI';
-export * from './TreasuryAPI';
-export * from './TxAPI';
-export * from './WasmAPI';
+export * from "./AuthAPI";
+export * from "./BankAPI";
+export * from "./DistributionAPI";
+export * from "./GovAPI";
+export * from "./GreetingAPI"; // ADD HERE
+export * from "./MsgAuthAPI";
+export * from "./SlashingAPI";
+export * from "./StakingAPI";
+export * from "./SupplyAPI";
+export * from "./TendermintAPI";
+export * from "./TxAPI";
+export * from "./WasmAPI";
 ```
 
 3. Add the functionality to `src/client/lcd/LCDClient.ts`:
@@ -316,14 +287,11 @@ import {
   DistributionAPI,
   GovAPI,
   GreetingAPI, // ADD HERE
-  MarketAPI,
   MsgAuthAPI,
-  OracleAPI,
   SlashingAPI,
   StakingAPI,
   SupplyAPI,
   TendermintAPI,
-  TreasuryAPI,
   TxAPI,
   WasmAPI,
 } from './api';
@@ -340,14 +308,11 @@ export class LCDClient {
   public distribution: DistributionAPI;
   public gov: GovAPI;
   public greeting: GreetingAPI; // ADD HERE
-  public market: MarketAPI;
   public msgauth: MsgAuthAPI;
-  public oracle: OracleAPI;
   public slashing: SlashingAPI;
   public staking: StakingAPI;
   public supply: SupplyAPI;
   public tendermint: TendermintAPI;
-  public treasury: TreasuryAPI;
   public wasm: WasmAPI;
   public tx: TxAPI;
 
@@ -370,14 +335,11 @@ export class LCDClient {
     this.distribution = new DistributionAPI(this.apiRequester);
     this.gov = new GovAPI(this.apiRequester);
     this.greeting = new GreetingAPI(this.apiRequester); // ADD HERE
-    this.market = new MarketAPI(this.apiRequester);
     this.msgauth = new MsgAuthAPI(this.apiRequester);
-    this.oracle = new OracleAPI(this.apiRequester);
     this.slashing = new SlashingAPI(this.apiRequester);
     this.staking = new StakingAPI(this.apiRequester);
     this.supply = new SupplyAPI(this.apiRequester);
     this.tendermint = new TendermintAPI(this.apiRequester);
-    this.treasury = new TreasuryAPI(this.apiRequester);
     this.wasm = new WasmAPI(this.apiRequester);
     this.tx = new TxAPI(this);
   }
