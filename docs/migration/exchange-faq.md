@@ -60,6 +60,10 @@ Wasm contract address lengths have changed. For more info, please check here: ht
 
 Yes, they do. 
 
+### What are the contract addresses for LUNA and LUNC?
+
+Neither LUNA nor LUNC will have contract addresses because they are both native. 
+
 ## Block and heights
 
 ### Is there any change in the block structure?
