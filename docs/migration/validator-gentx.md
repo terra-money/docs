@@ -100,12 +100,6 @@ For a full explanation of the gentx command, run `terrad gentx` in your terminal
    Never store your mnemonic phrase on a digital device. Always write down your mnemonic using a pen and paper. Verify your mnemonic before proceeding. 
    :::
 
-3. Download the pre-genesis file:
-
-   ```sh
-   curl -s  [REPLACE https://gist.githubusercontent.com/octalmage/b546eb74a0ae2852a759a0990b8beaad/raw/ee9817f9b7fcf0205fc0b3dc62220f8f78d1595f/pre-genesis.json] [REPLACE >~/.terrad/config/genesis.json]
-   ```
-
 4. Create a validator within the pre-genesis with the following command. In the `gentx` you will chose how much of your balance will be self-staked to your validator. A minimum of 1 unit must be self-staked. 
 
    ```sh
@@ -126,70 +120,6 @@ For a full explanation of the gentx command, run `terrad gentx` in your terminal
    ```
 
    Run `terrad gentx` for all flags and details.
-
-## Edit Your `gentx` JSON
-
-If you want to edit certain values within your genTx before submitting, you can modify your file.
-
-```sh
-cat [PATH TO GENTX]
-```
-
-Your gentx file will look similar to the following:
-
-```json
-{
-  "body": {
-    "messages": [
-      {
-        "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
-        "description": {
-          "moniker": "terraTestValidator",
-          "identity": "",
-          "website": "",
-          "security_contact": "",
-          "details": ""
-        },
-        "commission": {
-          "rate": "0.100000000000000000",
-          "max_rate": "0.200000000000000000",
-          "max_change_rate": "0.010000000000000000"
-        },
-        "min_self_delegation": "1",
-        "delegator_address": "terra1gzk0hh9a2q8ww7dlezasdfac8jsysn843pslc0",
-        "validator_address": "terravaloper1gzk0hh9a2q8ww7dlezasdfac8jsysn84ya9rk4",
-        "pubkey": {
-          "@type": "/cosmos.crypto.ed25519.PubKey",
-          "key": "pXSxbRVvosMyr5j2MyfsD5cMnF5HWweoyQWkxPWX8c8="
-        },
-        "value": { "denom": "ustake", "amount": "1000000000" }
-      }
-    ],
-    "memo": "bf095c0babb4170104e2e22ed447a1379a10a57a@192.168.1.83:26656",
-    "timeout_height": "0",
-    "extension_options": [],
-    "non_critical_extension_options": []
-  },
-  "auth_info": {
-    "signer_infos": [
-      {
-        "public_key": {
-          "@type": "/cosmos.crypto.secp256k1.PubKey",
-          "key": "AtUavwnTnvGS9FAmrSKH5oBjEEdjMmaFen84XxmW57pu"
-        },
-        "mode_info": { "single": { "mode": "SIGN_MODE_DIRECT" } },
-        "sequence": "0"
-      }
-    ],
-    "fee": { "amount": [], "gas_limit": "200000", "payer": "", "granter": "" }
-  },
-  "signatures": [
-    "8WYYuvE5xm6UOUPN5GPPB+UjEkgrZ3v4T5AqCUQZb51WgJYE1hHKZlHaCnfRd76uMDRsyA5g7in/RcVkITz9jg=="
-  ]
-}
-```
-
-You can edit various parts of the `gentx` JSON, such as commission, memo, etc.
 
 ## Upload `gentx`
 
