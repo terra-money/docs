@@ -18,7 +18,7 @@ Follow this guide to become a validator on the Terra 2.0 chain. This guide walks
 - [Official Terra V2 Validator Genesis Guide](https://github.com/terra-money/genesis-tools/blob/main/LAUNCH.md)
 - [Cosmos SDK: How to run a node](https://docs.cosmos.network/master/run-node/run-node.html)
 - [What is GenTX](https://docs.cosmos.network/master/run-node/run-node.html#adding-genesis-accounts)
-- [Validator tutorial]([https://docs.terra.money/docs/full-node/manage-a-terra-validator/README.html](https://docs.terra.money/docs/full-node/manage-a-terra-validator/README.html))
+- [Validator tutorial](https://docs.terra.money/docs/full-node/manage-a-terra-validator/README.html)
     
 ## Timeline (Expected)
 
