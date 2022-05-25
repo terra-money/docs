@@ -14,8 +14,6 @@ Additional rewards given to [delegators](#delegator) through certain [validators
 
 A cryptocurrency that tracks the price of any asset, usually currency. Algorithmic stablecoins maintain their price peg through a set of rules or software instead of an underlying asset.
 
-For more information on stablecoins created by the Terra protocol, see [Terra stablecoins](#terra-stablecoins)
-
 ## Arbitrage
 
 To profit from price differences across different markets. Arbitrageurs buy coins in one market and sell them on another market for a higher price.
@@ -30,7 +28,7 @@ Groups of information stored on a [blockchain](#blockchain). Each block contains
 
 ## bLuna
 
-A token representing bonded Luna that can be traded freely or used as collateral on other protocols in the Terra network, such as [Anchor](https://anchorprotocol.com/) and [Mirror](https://mirror.finance/). Bonded Luna takes 21 days to become unbonded.
+A token representing bonded Luna that can be traded freely or used as collateral on other protocols in the Terra network, such as [Anchor](https://anchorprotocol.com/). Bonded Luna takes 21 days to become unbonded.
 
 ## Bonded validator
 
@@ -50,7 +48,7 @@ A mobile payments app powered by Terra's blockchain network.
 
 ## Columbus-5
 
-The current version of the [Terra mainnet](#terra-mainnet).
+The current version of the [Terra Classic mainnet](#terra-mainnet).
 
 ## Commission
 
@@ -84,7 +82,6 @@ Decentralized finance. A movement away from traditional finance and toward syste
 
 When users or delegators add their [Luna](#luna) to a [validator's](#validator) stake in exchange for rewards. Delegated Luna is bonded to a validator. Validators never have ownership of a [delegator's](#delegator) Luna. Delegating, bonding, and staking generally refer to the same process.
 
-
 ## Delegator
 
 A user who [delegates](#delegate), bonds, or stakes [Luna](#luna) to a [validator](#validator) to earn [rewards](#rewards). Delegating, bonding, and staking generally refer to the same process.
@@ -117,7 +114,7 @@ A written submission for a change or addition to the [Terra protocol](#the-terra
 
 ## IBC
 
-Inter-Blockchain Communication. The technology that enables different [blockchains](#blockchain) to interact with each other. IBC allows for assets to be traded and transacted across different blockchains. 
+Inter-Blockchain Communication. The technology that enables different [blockchains](#blockchain) to interact with each other. IBC allows for assets to be traded and transacted across different blockchains.
 
 ## Inactive set
 
@@ -145,7 +142,7 @@ Proof of Stake. A style of blockchain where validators are chosen to propose blo
 
 ## Quorum
 
-The minimum amount of votes needed to make an election viable. 40% of all staked Luna must vote to meet quorum. If quorum is not met before the voting period ends, the proposal fails, and the proposer's deposit is burned. 
+The minimum amount of votes needed to make an election viable. 40% of all staked Luna must vote to meet quorum. If quorum is not met before the voting period ends, the proposal fails, and the proposer's deposit is burned.
 
 ## Redelegate
 
@@ -167,7 +164,7 @@ For more information, see [slashing](protocol.md#slashing) in the description of
 
 ## Slippage
 
-The difference in a coin's price between the start and end of a transaction.  
+The difference in a coin's price between the start and end of a transaction.
 
 ## Stake
 

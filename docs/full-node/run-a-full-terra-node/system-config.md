@@ -7,18 +7,18 @@ This guide has been tested against Linux distributions only. To ensure a success
 
 Running a full Terra node is a resource-intensive process that requires a persistent server. If you want to use Terra without downloading the entire blockchain, use [Terra Station](https://station.terra.money/).
 
-##  Hardware requirements
+## Hardware requirements
 
 These are the the minimum requirements for running a full Terra node:
 
 - Four or more CPU cores
 - At least 32 GB of memory
 - At least 300 mbps of network bandwidth
-- At least 2 TB NVME SSD 
+- At least 2 TB NVME SSD
 
 :::{admonition} Storage requirements
 :class: warning
-As the network grows, the minimum storage requirements will also grow. It is recommended that you use more than the minimum storage requirements to run a robust full node. 
+As the network grows, the minimum storage requirements will also grow. It is recommended that you use more than the minimum storage requirements to run a robust full node.
 
 :::
 
@@ -35,7 +35,7 @@ As the network grows, the minimum storage requirements will also grow. It is rec
   ```bash
   # 1. Download the archive
 
-  wget https://go.dev/dl/go1.17.1.linux-amd64.tar.gz
+  wget https://go.dev/dl/go1.18.2.linux-amd64.tar.gz
 
   # Optional: remove previous /go files:
 
@@ -60,7 +60,7 @@ As the network grows, the minimum storage requirements will also grow. It is rec
 
   :::
 
-- Linux users:  `sudo apt-get install -y build-essential`
+- Linux users: `sudo apt-get install -y build-essential`
 
 ## Commonly used ports
 

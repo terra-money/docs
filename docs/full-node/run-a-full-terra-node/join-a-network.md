@@ -4,7 +4,7 @@ It is highly recommended that you set up a local private network before joining 
 
 ## Set up a local private network
 
-Validators can set up a private Terra network to become familiar with running a full Terra node before joining a public network.  
+Validators can set up a private Terra network to become familiar with running a full Terra node before joining a public network.
 
 ::: {admonition} LocalTerra
 :class: tip
@@ -20,7 +20,7 @@ The simplest Terra network you can set up is a local testnet with just a single 
 
    ```bash
      terrad init --chain-id=<testnet-name> <node-moniker>
-     ```
+   ```
 
 2. Generate a Terra account. Replace the variable with your account name:
 
@@ -57,23 +57,22 @@ If the private Terra network is set up correctly, your `terrad` node will be run
 
 These instructions are for setting up a brand new full node from scratch. You can join a public Terra network, such as the mainnet or testnet, by completing the following steps:
 
-
 ### 1. Select a network
 
 Specify the network you want to join by choosing the corresponding **genesis file** and **seeds**:
 
-| Network      | Type | Genesis|Addressbook|
-| :--- | :--- | :--- | :--- |
-| `columbus-5` | Mainnet      |[Genesis Link](https://columbus-genesis.s3.ap-northeast-1.amazonaws.com/columbus-5-genesis.json)| [Addressbook Link](https://network.terra.dev/addrbook.json)|
-| `bombay-12`  | Testnet      |[Genesis Link](https://raw.githubusercontent.com/terra-money/testnet/master/bombay-12/genesis.json)|[ Addressbook Link ](https://raw.githubusercontent.com/terra-money/testnet/master/bombay-12/addrbook.json)|
-
+| Network      | Type                    | Genesis                                                                                             | Addressbook                                                                                                |
+| :----------- | :---------------------- | :-------------------------------------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------- |
+| `phoenix-1`  | Mainnet                 | [Genesis Link]()                                                                                    | [Addressbook Link]()                                                                                       |
+| `pisco-1`    | Testnet                 | [Genesis Link]()                                                                                    | [Addressbook Link]()                                                                                       |
+| `columbus-5` | Mainnet (Terra Classic) | [Genesis Link](https://columbus-genesis.s3.ap-northeast-1.amazonaws.com/columbus-5-genesis.json)    | [Addressbook Link](https://network.terra.dev/addrbook.json)                                                |
+| `bombay-12`  | Testnet (Terra Classic) | [Genesis Link](https://raw.githubusercontent.com/terra-money/testnet/master/bombay-12/genesis.json) | [ Addressbook Link ](https://raw.githubusercontent.com/terra-money/testnet/master/bombay-12/addrbook.json) |
 
 :::{admonition} Selecting a network
 :class: tip
 Note that the versions of the network listed above are the [ latest versions ](https://github.com/terra-money/testnet/tree/master#latest-networks). To find earlier versions, please consult the [networks repo](https://github.com/terra-money/testnet).
 
 :::
-
 
 ### 2. Download genesis file and address book
 
@@ -104,48 +103,50 @@ terrad start
 terrad status
 # It will take a few seconds for terrad to start.
 ```
+
 :::{dropdown} Healthy Node Status Example
 
 ```json
 {
   "NodeInfo": {
     "protocol_version": {
-      "p2p"  : "8",
+      "p2p": "8",
       "block": "11",
-      "app"  : "0"
+      "app": "0"
     },
-    "id"         : "terradocs-id",
+    "id": "terradocs-id",
     "listen_addr": "tcp://0.0.0.0:26656",
-    "network"    : "bombay-12",
-    "version"    : "0.34.14",
-    "channels"   : "40202122233038606100",
-    "moniker"    : "terradocs",
-    "other"      : {
-      "tx_index"   : "on",
+    "network": "bombay-12",
+    "version": "0.34.14",
+    "channels": "40202122233038606100",
+    "moniker": "terradocs",
+    "other": {
+      "tx_index": "on",
       "rpc_address": "tcp://127.0.0.1:26657"
     }
   },
   "SyncInfo": {
-    "latest_block_hash"    : "19ABCBA90BF3E76A0635E6C961AB2CECC7DB2B1F1338057DB334568128E0776E",
-    "latest_app_hash"      : "8DFE69CF66FBE7ADCDB5B430A0C679C45B6AEBDDAE23835ABDC4ACBC704F7525",
-    "latest_block_height"  : "7333450",
-    "latest_block_time"    : "2022-01-08T05:24:57.383258076Z",
-    "earliest_block_hash"  : "E88E3641A488EBA3D402FC072879C6399AA2CDC7B6CC5A3061E5A64D9FFD3BDE",
-    "earliest_app_hash"    : "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "latest_block_hash": "19ABCBA90BF3E76A0635E6C961AB2CECC7DB2B1F1338057DB334568128E0776E",
+    "latest_app_hash": "8DFE69CF66FBE7ADCDB5B430A0C679C45B6AEBDDAE23835ABDC4ACBC704F7525",
+    "latest_block_height": "7333450",
+    "latest_block_time": "2022-01-08T05:24:57.383258076Z",
+    "earliest_block_hash": "E88E3641A488EBA3D402FC072879C6399AA2CDC7B6CC5A3061E5A64D9FFD3BDE",
+    "earliest_app_hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
     "earliest_block_height": "5900001",
-    "earliest_block_time"  : "2021-09-28T09:00:00Z",
-    "catching_up"          : false                         
+    "earliest_block_time": "2021-09-28T09:00:00Z",
+    "catching_up": false
   },
   "ValidatorInfo": {
     "Address": "29E58C21B6612227C9C9BD9E6D4D99897E032572",
-    "PubKey" : {
-      "type" : "tendermint/PubKeyEd25519",
+    "PubKey": {
+      "type": "tendermint/PubKeyEd25519",
       "value": "7cZq+Fp9xU8mZ9xR7q4NpDOX0UicmPC68P/4krCn8Hs="
     },
     "VotingPower": "0"
   }
 }
 ```
+
 :::
 
 Your node is now syncing. This process will take a long time. Make sure you've set it up on a stable connection so you can leave while it syncs.
