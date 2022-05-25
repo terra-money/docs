@@ -79,7 +79,7 @@ terrad tx bank send \
     terra1ru2ySENDER-EXAMPLEtf9cva9kp33h0jnsm9ss \
     terra1rRECIPIENT-EXAMPLEtf9cva9kp33h0jnsm9ss \
     1ukrw \
-    --chain-id=bombay-12 \
+    --chain-id=pisco-1 \
     --dry-run
 ```
 
@@ -109,7 +109,7 @@ terrad tx sign \
 
 ```bash
 terrad tx sign \
-    --chain-id=bombay-12 \
+    --chain-id=pisco-1 \
     --from=terra1EXAMPLEy09tEXAMPLEtf9EXAMPLE3h0EXAMPLEss unsignedTx.json
 ```
 
