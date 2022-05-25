@@ -13,7 +13,7 @@ terrad add-genesis-account <address-or-key-name> '<amount><coin-denominator>,<am
 
 **Example**
 ```bash
-terrad add-genesis-account acc1 '200000000uluna,550000ukrw'
+terrad add-genesis-account acc1 '200000000uluna'
 ```
 
 ## `collect-gentxs`

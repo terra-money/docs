@@ -1252,11 +1252,6 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taxes">
-     Taxes
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#automatic-fee-estimation">
      Automatic Fee Estimation
     </a>
@@ -1343,11 +1338,6 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taxes">
-     Taxes
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#automatic-fee-estimation">
      Automatic Fee Estimation
     </a>
@@ -1376,13 +1366,13 @@
 <p>To query the state and send transactions, you must connect to a node, which is the access point to the entire network of peer connections. You can either run your own full node or connect to someone else’s.</p>
 <div class="section" id="running-your-own-full-node">
 <h3>Running your own full node<a class="headerlink" href="#running-your-own-full-node" title="Permalink to this headline">#</a></h3>
-<p>Running your own full node is the most secure option, but it comes with relatively high resource requirements. For more information about the requirements to run your own full node and a tutorial for installing <code class="docutils literal notranslate"><span class="pre">terrad</span></code>, see <span class="xref myst">installation</span>. For a tutorial that explains how to connect to an existing Terra network, see <span class="xref myst">joining a network</span>.</p>
+<p>Running your own full node is the most secure option, but it comes with relatively high resource requirements. For more information about the requirements to run your own full node and a tutorial for installing <code class="docutils literal notranslate"><span class="pre">terrad</span></code>, see <a class="reference internal" href="../../full-node/run-a-full-terra-node/build-terra-core.html"><span class="doc std std-doc">installation</span></a>. For a tutorial that explains how to connect to an existing Terra network, see <a class="reference internal" href="../../full-node/run-a-full-terra-node/join-a-network.html"><span class="doc std std-doc">joining a network</span></a>.</p>
 </div>
 <div class="section" id="connecting-to-a-remote-full-node">
 <h3>Connecting to a remote full node<a class="headerlink" href="#connecting-to-a-remote-full-node" title="Permalink to this headline">#</a></h3>
 <p>If you don’t want to run your own full node, you can connect to someone else’s full node. As you consider your options for operators, prioritize operators you trust because malicious operators might intentionally return incorrect query results or censor your transactions. However, they will never be able to steal your funds because your private keys are stored locally on your computer or on your Ledger hardware device. Possible options of full-node operators include validators, wallet providers or exchanges.</p>
 <p>To connect to the full-node, you need an address in the <code class="docutils literal notranslate"><span class="pre">https://&lt;host&gt;:&lt;port&gt;</span></code> format, for example <code class="docutils literal notranslate"><span class="pre">https://77.87.106.33:26657</span></code>. This address has to be communicated by the full-node operator you choose to trust. You will use this address in the following section.</p>
-<p>If you are not running a node yet would like to communicate through terrad, lists of public nodes can be found <a class="reference external" href="https://docs.terra.money/Reference/endpoints.html#private-rpc-endpoints">here</a>.</p>
+<p>If you are not running a node yet would like to communicate through terrad, lists of public nodes can be found <a class="reference internal" href="../endpoints.html"><span class="doc std std-doc">here</span></a>.</p>
 </div>
 </div>
 <div class="section" id="configuring-terrad">
@@ -1435,7 +1425,7 @@ terrad query distr rewards &lt;delegatorAddress&gt;
 </div>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
-Example: simulate a KRW transfer:<div class="sd-summary-down docutils">
+Example: simulate a Luna transfer:<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
@@ -1443,7 +1433,7 @@ Example: simulate a KRW transfer:<div class="sd-summary-down docutils">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad tx bank send <span class="se">\</span>
     terra1ru2ySENDER-EXAMPLEtf9cva9kp33h0jnsm9ss <span class="se">\</span>
     terra1rRECIPIENT-EXAMPLEtf9cva9kp33h0jnsm9ss <span class="se">\</span>
-    1ukrw <span class="se">\</span>
+    1uluna <span class="se">\</span>
     --chain-id<span class="o">=</span>pisco-1 <span class="se">\</span>
     --dry-run
 </pre></div>
@@ -1489,7 +1479,7 @@ Example: Sign an unsigned transaction<div class="sd-summary-down docutils">
 <span class="w">        </span><span class="nt">&quot;to_address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;terra1rRECIPIENT-EXAMPLEtf9cva9kp33h0jnsm9ss&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">        </span><span class="nt">&quot;amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
 <span class="w">          </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;denom&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ukrw&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;denom&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uluna&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">            </span><span class="nt">&quot;amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="w"></span>
 <span class="w">          </span><span class="p">}</span><span class="w"></span>
 <span class="w">        </span><span class="p">]</span><span class="w"></span>
@@ -1557,14 +1547,10 @@ Example: Sign an unsigned transaction<div class="sd-summary-down docutils">
 </pre></div>
 </div>
 <p>If you use fees, validators will calculate the implied <code class="docutils literal notranslate"><span class="pre">minGasPrices</span></code> by dividing your fee with the estimated gas consumption, to properly assign the right priority to your transaction.</p>
-<p>To use gas prices (use a comma-separated list of amount and denominations).</p>
+<p>To use gas prices:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad tx send ... --gas-prices<span class="o">=</span><span class="m">0</span>.05uluna
 </pre></div>
 </div>
-</div>
-<div class="section" id="taxes">
-<h3>Taxes<a class="headerlink" href="#taxes" title="Permalink to this headline">#</a></h3>
-<p>Taxes in Terra must be included in the fee amount. Users can make transactions with existing methods without the <code class="docutils literal notranslate"><span class="pre">--fees</span></code> flag but with gas prices flag. This will automatically calculate the tax and return fees in addition to the existing gas fees.</p>
 </div>
 <div class="section" id="automatic-fee-estimation">
 <h3>Automatic Fee Estimation<a class="headerlink" href="#automatic-fee-estimation" title="Permalink to this headline">#</a></h3>

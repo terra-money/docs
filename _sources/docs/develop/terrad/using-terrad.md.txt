@@ -8,7 +8,7 @@ To query the state and send transactions, you must connect to a node, which is t
 
 ### Running your own full node
 
-Running your own full node is the most secure option, but it comes with relatively high resource requirements. For more information about the requirements to run your own full node and a tutorial for installing `terrad`, see [installation](../../../full-node/run-a-full-terra-node/build-terra-core.md). For a tutorial that explains how to connect to an existing Terra network, see [joining a network](../../../full-node/run-a-full-terra-node/join-a-network.md).
+Running your own full node is the most secure option, but it comes with relatively high resource requirements. For more information about the requirements to run your own full node and a tutorial for installing `terrad`, see [installation](../../full-node/run-a-full-terra-node/build-terra-core.md). For a tutorial that explains how to connect to an existing Terra network, see [joining a network](../../full-node/run-a-full-terra-node/join-a-network.md).
 
 ### Connecting to a remote full node
 
@@ -16,7 +16,7 @@ If you don't want to run your own full node, you can connect to someone else's f
 
 To connect to the full-node, you need an address in the `https://<host>:<port>` format, for example `https://77.87.106.33:26657`. This address has to be communicated by the full-node operator you choose to trust. You will use this address in the following section.
 
-If you are not running a node yet would like to communicate through terrad, lists of public nodes can be found [here](https://docs.terra.money/Reference/endpoints.html#private-rpc-endpoints).
+If you are not running a node yet would like to communicate through terrad, lists of public nodes can be found [here](../endpoints.md).
 
 ## Configuring terrad
 
@@ -72,13 +72,13 @@ terrad tx bank send \
     --dry-run
 ```
 
-::: {dropdown} Example: simulate a KRW transfer:
+::: {dropdown} Example: simulate a Luna transfer:
 
 ```bash
 terrad tx bank send \
     terra1ru2ySENDER-EXAMPLEtf9cva9kp33h0jnsm9ss \
     terra1rRECIPIENT-EXAMPLEtf9cva9kp33h0jnsm9ss \
-    1ukrw \
+    1uluna \
     --chain-id=pisco-1 \
     --dry-run
 ```
@@ -125,7 +125,7 @@ A healthy response should looks simillar to the following:
         "to_address": "terra1rRECIPIENT-EXAMPLEtf9cva9kp33h0jnsm9ss",
         "amount": [
           {
-            "denom": "ukrw",
+            "denom": "uluna",
             "amount": "1"
           }
         ]
@@ -206,15 +206,11 @@ terrad tx send ... --fees=100000uluna
 
 If you use fees, validators will calculate the implied `minGasPrices` by dividing your fee with the estimated gas consumption, to properly assign the right priority to your transaction.
 
-To use gas prices (use a comma-separated list of amount and denominations).
+To use gas prices:
 
 ```bash
 terrad tx send ... --gas-prices=0.05uluna
 ```
-
-### Taxes
-
-Taxes in Terra must be included in the fee amount. Users can make transactions with existing methods without the `--fees` flag but with gas prices flag. This will automatically calculate the tax and return fees in addition to the existing gas fees.
 
 ### Automatic Fee Estimation
 
