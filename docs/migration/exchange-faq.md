@@ -1,6 +1,6 @@
-# Exchange migration FAQ
+# Exchange Migration FAQ
 
-This is a list of frequently asked questions. This list will be added to regularly as questions come in. 
+This is a list of frequently asked questions. It will evolve as new questions arise. 
 
 :::{contents}
 :local:
@@ -10,7 +10,7 @@ This is a list of frequently asked questions. This list will be added to regular
 
 ### Are exchanges excluded from the whale cap?
 
-Exchanges cannot be excluded from the whale cap. The genesis of Terra 2.0 will be generated programmatically by each validator using on-chain, verifiable data, which means there's no way for them to verify individual balances of users on an exchange. 
+Exchanges cannot be excluded from the whale cap. The genesis of Terra 2.0 will be generated programmatically by each validator using on-chain, verifiable data, which means there's no way for them to verify individual user balances on an exchange. 
 
 ### Is bonded LUNA included in the post-attack LUNA snapshot?
 
@@ -32,7 +32,7 @@ The post-attack snapshot will be taken at Terra Classic block 7790000. It is rec
 
 No changes. if you are using the old tx format, the only thing you need to do is change the “bank/MsgSend” to “cosmos-sdk/MsgSend”.
 
-### Is there any change to the broadcast interface for Terra classic or Terra 2.0?
+### Is there any change to the broadcast interface for Terra Classic or Terra 2.0?
 
 No, the broadcast interface is the same.  
 
@@ -54,7 +54,7 @@ Yes, the address format is the same. The same address will be generated from the
 
 Yes, Wasm tx types need to be `cosmwasm.wasm.v1.MsgExecuteContract`.
 
-Wasm contract address lengths have changed. For more info, please check here: https://github.com/terra-money/core/blob/main/WASM_MIGRATE.md#contract-address .
+Wasm contract address lengths have changed. For more info, please check here: https://github.com/terra-money/core/blob/main/WASM_MIGRATE.md#contract-address.
 
 ### Do account numbers need to be reset?
 
@@ -74,16 +74,15 @@ Terra classic is the same currently active original chain. The block height will
 
 The new Terra 2.0 chain will start from a height of `1`.
 
-
 ### Can you clarify the differences between the block and transaction parsing logics of classic vs new Luna?
 
 There will be no changes, except that `MsgTypes` will change from `terra.wasm.v1beta1.MsgExecuteContract` to `cosmwasm.wasm.v1.MsgExecuteContract` for the new chain. 
 
 ## Upgrades 
 
-### Does Terra.JS need to be upgraded?
+### Does Terra.js need to be upgraded?
 
-Yes, there will be a new release of Terra.js. However, the interface will not change.
+Yes, there will be a new release of Terra.js. However, the interface will not change significantly.
 For more information, see [](../develop/terra-js/terra-classic.md). 
 
 ### Are there any changes to the API interface?
@@ -92,7 +91,7 @@ No, there will be no change to the API interface.
 
 ### Will there be an LUNC node upgrade release on 05/27?
 
-There will be no upgrades released for the Lunc node. Only the new 2.0 chain will have a node release. 
+There will be no upgrades released for the Luna Classic (LUNC) node. Only the new 2.0 chain will have a node release. 
 
 ## Luna and tokens
 
@@ -112,7 +111,7 @@ Yes, the new chain will use micro-denominations, such as `uluna`.
 
 ### Will the new chain still support other tokens, such as ANC?
 
-It is up to each team. Each token team will have to relaunch the token in the new chain with a snapshot.
+It is up to each team. Each token team will have to relaunch the token to the new chain with a snapshot.
 
 ## Multisig 
 
@@ -128,7 +127,7 @@ Please visit https://docs.terra.money/docs/develop/guides/sign-with-multisig.htm
 
 ### How do I get the "threshold number of signatures"?
 
-Use the following:  https://lcd.terra.dev/cosmos/auth/v1beta1/accounts/terra1dp0taj85ruc299rkdvzp4z5pfg6z6swaed74e6
+Use the following: https://lcd.terra.dev/cosmos/auth/v1beta1/accounts/terra1dp0taj85ruc299rkdvzp4z5pfg6z6swaed74e6
 
 ### Is the "@type" of multisig tx always "bank/MsgSend"?
 
