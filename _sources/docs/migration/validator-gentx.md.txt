@@ -39,13 +39,15 @@ Follow this guide to become a validator on the Terra 2.0 chain. This guide walks
 
 ## Snapshot
 
-1\. Stop node:
+The following steps cover how to take the pre- and post-attack snapshots. 
+
+1\. Stop your node:
 
 ```sh
 sudo systemctl stop terrad
 ```
 
-2\. Checkout state exporter and install:
+2\. Clone, checkout, and install the Terra Core Genesis state exporter:
 
 ```sh
 git clone https://github.com/terra-money/core-genesis-exporter
@@ -53,51 +55,56 @@ cd core-genesis-exporter
 make install
 ```
 
-3\. Verify the exporter binary versions:
+3\. Verify the exporter binary version:
 
 ```sh
 terrad version --long
-core: [placeholder]
-git commit: [placeholder]
-go.sum hash: [placeholder]
+```
+
+Which will return the following: 
+
+```sh
+core: <current-version>
+git commit: <current-version>
+go.sum hash: <current-version>
 build tags: netgo ledger
 ```
 
-4\. Take pre-attack snapshot:
+4\. Take the pre-attack snapshot:
 
 ```sh
 terrad export --height 7544910 > pre-attack-snapshot.json
 ```
 
-5\. Take post-attack snapshot:
+5\. Take the post-attack snapshot:
 
 ```sh
 terrad export --height 7790000 > post-attack-snapshot.json
 ```
 
-6\. Verify the SHA256 of the (sorted) pre-attack & post-attack export snapshots:
+6\. Verify the SHA256 hash of the (sorted) pre-attack & post-attack export snapshots:
 
 ```sh
 # pre-attack
 jq -S -c -M '' pre-attack-snapshot.json | shasum -a 256
-[placeholder]
+<hash output>
 
 # post-attack
 jq -S -c -M '' post-attack-snapshot.json | shasum -a 256
-[placeholder]
+<hash output>
 ```
 
 ## Penultimate Genesis
 
-Assume these steps will happen in the same machine as [Snapshot](#Snapshot).
+Assume these steps will happen in the same machine as your [snapshot](#Snapshot).
 
-1\. Checkout genesis builder:
+1\. Clone and checkout genesis builder:
 
 ```sh
 git clone https://github.com/terra-money/genesis-tools
 ```
 
-2\. Move pre-attack and post-attack snapshots into genesis-tools:
+2\. Move pre-attack and post-attack snapshots into `genesis-tools`:
 
 ```sh
 mv ./pre-attack-snapshot.json ./post-attack-snapshot.json ./genesis-tools
@@ -126,7 +133,7 @@ jq -S -c -M '' penultimate-genesis.json | shasum -a 256
 # GenTx
 Assume this steps will be happening in new validator machine with validator setup (`terra init`).
 
-1\. Checkout and install Terra 2.0 core:
+1\. Checkout and install the Terra 2.0 core:
 
 ```sh
 # checkout and install
@@ -146,7 +153,7 @@ go.sum hash: [placeholder]
 build tags: netgo ledger
 ```
 
-3\. Prepare Environment:
+3\. Prepare your environment:
 
 ```sh
 # install or move penultimate-genesis.json to server
@@ -179,7 +186,7 @@ ls ~/.terra/config/gentx/*
 
 Assume these steps will happen in the same machine as [GenTx](#GenTx).
 
-1\. Download gentx files and locate to terra home config:
+1\. Download gentx files and change into the terra home config:
 
 ```sh
 git clone https://github.com/terra-money/genesis-tools
@@ -187,13 +194,13 @@ cd genesis-tools
 mv ./gentx/* ~/.terra/config/gentx/
 ```
 
-2\. Execute collect-gentxs:
+2\. Execute `collect-gentxs`:
 
 ```sh
 terrad collect-gentxs
 ```
 
-3\. Verify the SHA256 of the (sorted) final genesis:
+3\. Verify the SHA256 hash of the (sorted) final genesis:
 
 ```sh
 jq -S -c -M '' ~/.terra/config/genesis.json | shasum -a 256
@@ -202,7 +209,7 @@ jq -S -c -M '' ~/.terra/config/genesis.json | shasum -a 256
 
 ## Launch Network
 
-Execute binary and wait until network launch:
+Execute the binary and wait until network launch:
 
 ```sh
 sudo systemctl start terrad

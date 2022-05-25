@@ -1342,51 +1342,55 @@
 </div>
 <div class="section" id="snapshot">
 <h2>Snapshot<a class="headerlink" href="#snapshot" title="Permalink to this headline">#</a></h2>
-<p>1. Stop node:</p>
+<p>The following steps cover how to take the pre- and post-attack snapshots.</p>
+<p>1. Stop your node:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo systemctl stop terrad
 </pre></div>
 </div>
-<p>2. Checkout state exporter and install:</p>
+<p>2. Clone, checkout, and install the Terra Core Genesis state exporter:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/terra-money/core-genesis-exporter
 <span class="nb">cd</span> core-genesis-exporter
 make install
 </pre></div>
 </div>
-<p>3. Verify the exporter binary versions:</p>
+<p>3. Verify the exporter binary version:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrad version --long
-core: <span class="o">[</span>placeholder<span class="o">]</span>
-git commit: <span class="o">[</span>placeholder<span class="o">]</span>
-go.sum hash: <span class="o">[</span>placeholder<span class="o">]</span>
+</pre></div>
+</div>
+<p>Which will return the following:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>core: &lt;current-version&gt;
+git commit: &lt;current-version&gt;
+go.sum hash: &lt;current-version&gt;
 build tags: netgo ledger
 </pre></div>
 </div>
-<p>4. Take pre-attack snapshot:</p>
+<p>4. Take the pre-attack snapshot:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrad <span class="nb">export</span> --height <span class="m">7544910</span> &gt; pre-attack-snapshot.json
 </pre></div>
 </div>
-<p>5. Take post-attack snapshot:</p>
+<p>5. Take the post-attack snapshot:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrad <span class="nb">export</span> --height <span class="m">7790000</span> &gt; post-attack-snapshot.json
 </pre></div>
 </div>
-<p>6. Verify the SHA256 of the (sorted) pre-attack &amp; post-attack export snapshots:</p>
+<p>6. Verify the SHA256 hash of the (sorted) pre-attack &amp; post-attack export snapshots:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># pre-attack</span>
 jq -S -c -M <span class="s1">&#39;&#39;</span> pre-attack-snapshot.json <span class="p">|</span> shasum -a <span class="m">256</span>
-<span class="o">[</span>placeholder<span class="o">]</span>
+&lt;<span class="nb">hash</span> output&gt;
 
 <span class="c1"># post-attack</span>
 jq -S -c -M <span class="s1">&#39;&#39;</span> post-attack-snapshot.json <span class="p">|</span> shasum -a <span class="m">256</span>
-<span class="o">[</span>placeholder<span class="o">]</span>
+&lt;<span class="nb">hash</span> output&gt;
 </pre></div>
 </div>
 </div>
 <div class="section" id="penultimate-genesis">
 <h2>Penultimate Genesis<a class="headerlink" href="#penultimate-genesis" title="Permalink to this headline">#</a></h2>
-<p>Assume these steps will happen in the same machine as <span class="xref myst">Snapshot</span>.</p>
-<p>1. Checkout genesis builder:</p>
+<p>Assume these steps will happen in the same machine as your <span class="xref myst">snapshot</span>.</p>
+<p>1. Clone and checkout genesis builder:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/terra-money/genesis-tools
 </pre></div>
 </div>
-<p>2. Move pre-attack and post-attack snapshots into genesis-tools:</p>
+<p>2. Move pre-attack and post-attack snapshots into <code class="docutils literal notranslate"><span class="pre">genesis-tools</span></code>:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>mv ./pre-attack-snapshot.json ./post-attack-snapshot.json ./genesis-tools
 </pre></div>
 </div>
@@ -1411,7 +1415,7 @@ jq -S -c -M <span class="s1">&#39;&#39;</span> post-attack-snapshot.json <span c
 <div class="tex2jax_ignore mathjax_ignore section" id="gentx">
 <h1>GenTx<a class="headerlink" href="#gentx" title="Permalink to this headline">#</a></h1>
 <p>Assume this steps will be happening in new validator machine with validator setup (<code class="docutils literal notranslate"><span class="pre">terra</span> <span class="pre">init</span></code>).</p>
-<p>1. Checkout and install Terra 2.0 core:</p>
+<p>1. Checkout and install the Terra 2.0 core:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># checkout and install</span>
 git clone https://github.com/terra-money/core
 <span class="nb">cd</span> core
@@ -1427,7 +1431,7 @@ go.sum hash: <span class="o">[</span>placeholder<span class="o">]</span>
 build tags: netgo ledger
 </pre></div>
 </div>
-<p>3. Prepare Environment:</p>
+<p>3. Prepare your environment:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># install or move penultimate-genesis.json to server</span>
 wget <span class="o">[</span>placeholder<span class="o">]</span>
 
@@ -1453,17 +1457,17 @@ mv ./penultimate-genesis.json ~/.terra/genesis.json
 <div class="section" id="collect-gentxs">
 <h2>Collect GenTxs<a class="headerlink" href="#collect-gentxs" title="Permalink to this headline">#</a></h2>
 <p>Assume these steps will happen in the same machine as <span class="xref myst">GenTx</span>.</p>
-<p>1. Download gentx files and locate to terra home config:</p>
+<p>1. Download gentx files and change into the terra home config:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/terra-money/genesis-tools
 <span class="nb">cd</span> genesis-tools
 mv ./gentx/* ~/.terra/config/gentx/
 </pre></div>
 </div>
-<p>2. Execute collect-gentxs:</p>
+<p>2. Execute <code class="docutils literal notranslate"><span class="pre">collect-gentxs</span></code>:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrad collect-gentxs
 </pre></div>
 </div>
-<p>3. Verify the SHA256 of the (sorted) final genesis:</p>
+<p>3. Verify the SHA256 hash of the (sorted) final genesis:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>jq -S -c -M <span class="s1">&#39;&#39;</span> ~/.terra/config/genesis.json <span class="p">|</span> shasum -a <span class="m">256</span>
 <span class="o">[</span>placeholder<span class="o">]</span>
 </pre></div>
@@ -1471,7 +1475,7 @@ mv ./gentx/* ~/.terra/config/gentx/
 </div>
 <div class="section" id="launch-network">
 <h2>Launch Network<a class="headerlink" href="#launch-network" title="Permalink to this headline">#</a></h2>
-<p>Execute binary and wait until network launch:</p>
+<p>Execute the binary and wait until network launch:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo systemctl start terrad
 </pre></div>
 </div>
