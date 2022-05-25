@@ -1,6 +1,6 @@
 # Exchange migration guide
 
-Use this guide to rebrand the original Terra chain as Terra Classic and integrate the new Terra chain.
+Use this guide to rebrand the original Terra chain as Terra Classic and integrate the new Terra chain. Please read this page entirely, as it contains important information. Check out the [Exchange FAQ](./exchange-faq.md) for answers to your frequently asked questions. 
 
 ## General info
 
