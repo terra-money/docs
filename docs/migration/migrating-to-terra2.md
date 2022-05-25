@@ -75,3 +75,7 @@ A tool was created that will generate a snapshot of CW20 or CW721 holders and ba
 [token-snapshot](https://github.com/emidev98/token-snapshot)
 
 Once a snapshot is created, you can airdrop the correct balances to users as defined by the snapshot.
+
+## Terra.js changes
+
+Outside of the deprecation of the treasury, market, and oracle modules, Terra.js functionality remains relatively unchanged. There are a few additions to allow for legacy commands which are explained in [Using Terra Classic](../develop/terra-js/terra-classic.md). 
