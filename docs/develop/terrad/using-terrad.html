@@ -447,11 +447,6 @@
         </a>
        </li>
        <li class="toctree-l4">
-        <a class="reference internal" href="../terra-js/oracle-feeder.html">
-         Oracle feeder
-        </a>
-       </li>
-       <li class="toctree-l4">
         <a class="reference internal" href="../terra-js/query-data.html">
          Query data
         </a>
@@ -1405,10 +1400,10 @@ Example: simulate a KRW transfer:<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad tx bank send <span class="se">\</span>
-    terra1ru2ySENDER-EXAMPLEtf9cva9kp33h0jnsm9ss <span class="se">\ </span> 
+    terra1ru2ySENDER-EXAMPLEtf9cva9kp33h0jnsm9ss <span class="se">\</span>
     terra1rRECIPIENT-EXAMPLEtf9cva9kp33h0jnsm9ss <span class="se">\</span>
     1ukrw <span class="se">\</span>
-    --chain-id<span class="o">=</span>bombay-12 <span class="se">\</span>
+    --chain-id<span class="o">=</span>pisco-1 <span class="se">\</span>
     --dry-run
 </pre></div>
 </div>
@@ -1439,7 +1434,7 @@ Example: Sign an unsigned transaction<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad tx sign <span class="se">\</span>
-    --chain-id<span class="o">=</span>bombay-12 <span class="se">\</span>
+    --chain-id<span class="o">=</span>pisco-1 <span class="se">\</span>
     --from<span class="o">=</span>terra1EXAMPLEy09tEXAMPLEtf9EXAMPLE3h0EXAMPLEss unsignedTx.json
 </pre></div>
 </div>
@@ -1522,7 +1517,7 @@ Example: Sign an unsigned transaction<div class="sd-summary-down docutils">
 </div>
 <p>If you use fees, validators will calculate the implied <code class="docutils literal notranslate"><span class="pre">minGasPrices</span></code> by dividing your fee with the estimated gas consumption, to properly assign the right priority to your transaction.</p>
 <p>To use gas prices (use a comma-separated list of amount and denominations).</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad tx send ... --gas-prices<span class="o">=</span><span class="m">0</span>.15uusd
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad tx send ... --gas-prices<span class="o">=</span><span class="m">0</span>.05uluna
 </pre></div>
 </div>
 </div>
@@ -1537,13 +1532,13 @@ Example: Sign an unsigned transaction<div class="sd-summary-down docutils">
 <p>The adjustment can be controlled via the <code class="docutils literal notranslate"><span class="pre">--gas-adjustment</span></code> flag, whose default value is 1.0.</p>
 <p>To get a direct fee estimation from <code class="docutils literal notranslate"><span class="pre">terrad</span></code>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad tx estimate-fee ...<span class="se">\</span>
-    --gas-prices<span class="o">=</span><span class="m">0</span>.15uusd
+    --gas-prices<span class="o">=</span><span class="m">0</span>.01uluna
     --gas-adjustment<span class="o">=</span><span class="m">1</span>.4
 </pre></div>
 </div>
 <p>To create and send transactions using fee-estimation, use the template below as a format:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad tx send ... <span class="se">\</span>
-    --gas-prices<span class="o">=</span><span class="m">0</span>.15uusd
+    --gas-prices<span class="o">=</span><span class="m">0</span>.01uluna
     --gas<span class="o">=</span>auto
     --gas-adjustment<span class="o">=</span><span class="m">1</span>.4
 </pre></div>

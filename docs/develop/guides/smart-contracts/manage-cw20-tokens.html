@@ -445,11 +445,6 @@
         </a>
        </li>
        <li class="toctree-l4">
-        <a class="reference internal" href="../../terra-js/oracle-feeder.html">
-         Oracle feeder
-        </a>
-       </li>
-       <li class="toctree-l4">
         <a class="reference internal" href="../../terra-js/query-data.html">
          Query data
         </a>
@@ -1154,34 +1149,6 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#checking-cw20-balance">
-   Checking CW20 balance
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#interacting-with-cw20-contract">
-   Interacting with CW20 contract
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#sending-cw20-token-to-another-contract-and-execute-message">
-   Sending CW20 token to another contract, and execute message
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#transferring-cw20-token">
-   Transferring CW20 token
-  </a>
- </li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -1194,34 +1161,6 @@
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#checking-cw20-balance">
-   Checking CW20 balance
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#interacting-with-cw20-contract">
-   Interacting with CW20 contract
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#sending-cw20-token-to-another-contract-and-execute-message">
-   Sending CW20 token to another contract, and execute message
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#transferring-cw20-token">
-   Transferring CW20 token
-  </a>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
@@ -1234,86 +1173,6 @@
 <blockquote>
 <div><p>CW20 is a specification for fungible tokens based on CosmWasm. The name and design is loosely based on Ethereum’s ERC20 standard, but many changes have been made. The types in here can be imported by contracts that wish to implement this spec, or by contracts that call to any standard cw20 contract.</p>
 </div></blockquote>
-<div class="section" id="checking-cw20-balance">
-<h2>Checking CW20 balance<a class="headerlink" href="#checking-cw20-balance" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p>Query to <code class="docutils literal notranslate"><span class="pre">/wasm/contracts/&lt;tokenContractAddress&gt;/store</span></code> with query_msg <code class="docutils literal notranslate"><span class="pre">{&quot;balance&quot;:{&quot;address&quot;:&quot;&lt;userAddress&gt;&quot;}}</span></code></p></li>
-<li><p>Response: <code class="docutils literal notranslate"><span class="pre">{&quot;height&quot;:&quot;2947306&quot;,&quot;result&quot;:{&quot;balance&quot;:&quot;24732816921&quot;}}</span></code></p></li>
-<li><p><a class="reference external" href="https://bombay-lcd.terra.dev/wasm/contracts/terra1800p00qlxh0nmt0r0u9hv7m4lg042fnafng2t6/store?query_msg=%7B%22balance%22:%7B%22address%22:%22terra1dakqt3s8dywea9advxz4duxkuvglz3a34yczw9%22%7D%7D">Example</a></p></li>
-</ul>
-</div>
-<div class="section" id="interacting-with-cw20-contract">
-<h2>Interacting with CW20 contract<a class="headerlink" href="#interacting-with-cw20-contract" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p>CW20 is a cosmwasm contract and <code class="docutils literal notranslate"><span class="pre">wasm/MsgExecuteContract</span></code> is used to interact with it</p></li>
-<li><p>Breakdown of message payload format is as follows (similar to <code class="docutils literal notranslate"><span class="pre">bank/MsgSend</span></code> but <code class="docutils literal notranslate"><span class="pre">execute_msg</span></code> is added):</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-  <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;wasm/MsgExecuteContract&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="o">//</span> <span class="n">sender</span> <span class="n">address</span>
-    <span class="s2">&quot;sender&quot;</span><span class="p">:</span> <span class="s2">&quot;terra1zyrpkll2xpgcdsz42xm3k8qfnddcdu0w7jzx6y&quot;</span><span class="p">,</span>
-
-    <span class="o">//</span> <span class="n">token</span> <span class="n">contract</span> <span class="n">address</span>
-    <span class="s2">&quot;contract&quot;</span><span class="p">:</span> <span class="s2">&quot;terra1rz5chzn0g07hp5jx63srpkhv8hd7x8pss20w2e&quot;</span><span class="p">,</span>
-
-    <span class="o">//</span> <span class="n">base64</span><span class="o">-</span><span class="n">encoded</span> <span class="n">payload</span> <span class="n">of</span> <span class="n">contract</span> <span class="n">execution</span> <span class="n">message</span> <span class="p">(</span><span class="n">refer</span> <span class="n">to</span> <span class="n">below</span><span class="p">)</span>
-    <span class="s2">&quot;execute_msg&quot;</span><span class="p">:</span> <span class="s2">&quot;ewogICJzZW5kIjogewogICAgImFtb3VudCI6ICIxMDAwMDAwMDAwIiwKICAgICJjb250cmFjdCI6IDxyZWNpcGllbnRDb250cmFjdEFkZHJlc3M+LAogICAgIm1zZyI6ICJleUp6YjIxbFgyMWxjM05oWjJVaU9udDlmUT09IiAKICB9Cn0=&quot;</span><span class="p">,</span>
-
-    <span class="o">//</span> <span class="n">used</span> <span class="ow">in</span> <span class="n">case</span> <span class="n">you</span> <span class="n">are</span> <span class="n">sending</span> <span class="n">native</span> <span class="n">tokens</span> <span class="n">along</span> <span class="k">with</span> <span class="n">this</span> <span class="n">message</span>
-    <span class="s2">&quot;coins&quot;</span><span class="p">:</span> <span class="p">[]</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="sending-cw20-token-to-another-contract-and-execute-message">
-<h2>Sending CW20 token to another contract, and execute message<a class="headerlink" href="#sending-cw20-token-to-another-contract-and-execute-message" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p>Example</p>
-<ul>
-<li><p><a class="reference external" href="https://finder.terra.money/columbus-5/tx/99CFBABE9DBC1059EF40B985D17ED9CCBA11570B28B032D4E57D527FD298F60A">Finder</a></p></li>
-<li><p><a class="reference external" href="https://lcd.terra.dev/txs/99CFBABE9DBC1059EF40B985D17ED9CCBA11570B28B032D4E57D527FD298F60A">Raw result</a></p></li>
-</ul>
-</li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>// base64-encode the below message (without the comments), send that as `execute_msg`
-{
-  &quot;send&quot;: {
-    // amount of CW20 tokens being transferred
-    &quot;amount&quot;: &quot;1000000000&quot;,
-
-    // recipient of this transfer
-    &quot;contract&quot;: &lt;recipientContractAddress&gt;,
-
-    // execute_msg to be executed in the context of recipient contract
-    &quot;msg&quot;: &quot;eyJzb21lX21lc3NhZ2UiOnt9fQ==&quot; 
-  }
-}
-</pre></div>
-</div>
-</div>
-<div class="section" id="transferring-cw20-token">
-<h2>Transferring CW20 token<a class="headerlink" href="#transferring-cw20-token" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">transfer</span></code> is different to <code class="docutils literal notranslate"><span class="pre">send</span></code>, as in it only <strong>transfers</strong> ownership of CW20 balance within the contract, whereas <code class="docutils literal notranslate"><span class="pre">send</span></code> is capable of transferring &amp; relays a contract msg to be executed</p></li>
-<li><p>Example</p>
-<ul>
-<li><p><a class="reference external" href="https://finder.terra.money/columbus-5/tx/F424552E25FDE52FEC229E04AE719A5B91D99E1088DC5F4978B263516A269FB1">Finder</a></p></li>
-<li><p><a class="reference external" href="https://lcd.terra.dev/txs/F424552E25FDE52FEC229E04AE719A5B91D99E1088DC5F4978B263516A269FB1">Raw result</a></p></li>
-</ul>
-</li>
-<li><p>Find other messages at <a class="reference external" href="https://docs.rs/crate/cw20/0.8.1">cw20 documentation</a></p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-  <span class="s2">&quot;transfer&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="s2">&quot;amount&quot;</span><span class="p">:</span> <span class="s2">&quot;1000000&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;recipient&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;recipient&gt;&quot;</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</div>
 </div>
 
 

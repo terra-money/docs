@@ -41,7 +41,7 @@ terrastation://send/?payload=${base64 json}
 ```
 {
   "address": "terra1dcegyrekltswvyy0xy69ydgxn9x8x32zdtapd8",
-  "token": "uusd",
+  "token": "uluna",
   "amount": "250000",
   "memo": "Order #1122"
 }

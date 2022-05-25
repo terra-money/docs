@@ -447,11 +447,6 @@
         </a>
        </li>
        <li class="toctree-l4">
-        <a class="reference internal" href="../terra-js/oracle-feeder.html">
-         Oracle feeder
-        </a>
-       </li>
-       <li class="toctree-l4">
         <a class="reference internal" href="../terra-js/query-data.html">
          Query data
         </a>
@@ -1277,7 +1272,7 @@
 <p><a class="reference external" href="https://github.com/terra-money/wallet-provider">Wallet Provider</a> makes it easy to build Terra Station (browser extension and mobile) functionality into your React application. It contains custom hooks that drastically simplify common tasks like connecting a wallet and triggering transactions.</p>
 <p>This guide will cover how to set up a React app, integrate Wallet Provider, check the balance of the connected account, and call a token swap. If you want to integrate Terra Station into an existing react app you can skip past the <code class="docutils literal notranslate"><span class="pre">Project</span> <span class="pre">Setup</span></code> section.</p>
 <div class="tip admonition">
-<p class="admonition-title">Just want to dive in? </p>
+<p class="admonition-title">Just want to dive in?</p>
 <p>Check out the getting started section for the premade templates <a class="reference external" href="https://github.com/terra-money/wallet-provider/">in Github</a>.</p>
 </div>
 <p>If you’re using a frontend framework other than React you’ll need to use <a class="reference external" href="https://www.npmjs.com/package/&#64;terra-money/wallet-controller">Wallet Controller</a> instead. Controller provides the sub-structure of Provider. You can see an example of how Wallet Controller works in the <a class="reference external" href="https://githubbox.com/terra-money/wallet-provider/tree/main/templates/vue">Vue.js template example</a>.</p>
@@ -1310,18 +1305,21 @@
 <p>Next, you’ll wrap your <code class="docutils literal notranslate"><span class="pre">App</span></code> with <code class="docutils literal notranslate"><span class="pre">&lt;WalletProvider&gt;</span></code> to give all your components access to useful data, hooks, and utilities. You’ll also need to pass in information about Terra networks, such as the mainnet or chainId, into the provider via <code class="docutils literal notranslate"><span class="pre">getChainOptions</span></code>.</p>
 <ol class="arabic">
 <li><p>Navigate to your <code class="docutils literal notranslate"><span class="pre">Index.js</span></code> in a code editor and replace the code with the following:</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span>import ReactDOM from &#39;react-dom&#39;;
-import &#39;./index.css&#39;;
-import App from &#39;./App&#39;;
-import reportWebVitals from &#39;./reportWebVitals&#39;;
-import { getChainOptions, WalletProvider } from &#39;@terra-money/wallet-provider&#39;;
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span>import ReactDOM from &quot;react-dom&quot;;
+import &quot;./index.css&quot;;
+import App from &quot;./App&quot;;
+import reportWebVitals from &quot;./reportWebVitals&quot;;
+import {
+  getChainOptions,
+  WalletProvider,
+} from &quot;@terra-money/wallet-provider&quot;;
 
 getChainOptions().then((chainOptions) =&gt; {
   ReactDOM.render(
     &lt;WalletProvider {...chainOptions}&gt;
       &lt;App /&gt;
     &lt;/WalletProvider&gt;,
-    document.getElementById(&#39;root&#39;),
+    document.getElementById(&quot;root&quot;)
   );
 });
 
@@ -1376,8 +1374,8 @@ Getting <code class="docutils literal notranslate"><span class="pre">polyfill</s
 <ol class="arabic">
 <li><p>Create a new file in the <code class="docutils literal notranslate"><span class="pre">components</span></code> directory called <code class="docutils literal notranslate"><span class="pre">Connect.js</span></code>.</p></li>
 <li><p>Populate the <code class="docutils literal notranslate"><span class="pre">Connect.js</span></code> file with the following:</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span>import { useWallet, WalletStatus } from &#39;@terra-money/wallet-provider&#39;;
-import React from &#39;react&#39;;
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span>import { useWallet, WalletStatus } from &quot;@terra-money/wallet-provider&quot;;
+import React from &quot;react&quot;;
 export default function Connect() {
   const {
     status,
@@ -1389,24 +1387,22 @@ export default function Connect() {
   } = useWallet();
   return (
     &lt;&gt;
-        {JSON.stringify({ status, network, wallets }, null, 2 )} 
-        {status === WalletStatus.WALLET_NOT_CONNECTED &amp;&amp; (
-            &lt;&gt;
-            {availableConnectTypes.map((connectType) =&gt; (
-                &lt;button
-                    key={&#39;connect-&#39; + connectType}
-                    onClick={() =&gt; connect(connectType)}
-                &gt;
-                    Connect {connectType}
-                &lt;/button&gt;
-            ))}
-            &lt;/&gt;
-        )}
-        {status === WalletStatus.WALLET_CONNECTED &amp;&amp; (
-            &lt;button onClick={() =&gt; disconnect()}&gt;
-                Disconnect
+      {JSON.stringify({ status, network, wallets }, null, 2)}
+      {status === WalletStatus.WALLET_NOT_CONNECTED &amp;&amp; (
+        &lt;&gt;
+          {availableConnectTypes.map((connectType) =&gt; (
+            &lt;button
+              key={&quot;connect-&quot; + connectType}
+              onClick={() =&gt; connect(connectType)}
+            &gt;
+              Connect {connectType}
             &lt;/button&gt;
-        )}
+          ))}
+        &lt;/&gt;
+      )}
+      {status === WalletStatus.WALLET_CONNECTED &amp;&amp; (
+        &lt;button onClick={() =&gt; disconnect()}&gt;Disconnect&lt;/button&gt;
+      )}
     &lt;/&gt;
   );
 }
@@ -1414,25 +1410,20 @@ export default function Connect() {
 </div>
 </li>
 <li><p>Open <code class="docutils literal notranslate"><span class="pre">App.js</span></code> in your code editor and replace the code with the following:</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span>import &#39;./App.css&#39;;
-import Connect from &#39;./components/Connect&#39;;
-
-
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span>import &quot;./App.css&quot;;
+import Connect from &quot;./components/Connect&quot;;
 
 function App() {
   return (
     &lt;div className=&quot;App&quot;&gt;
       &lt;header className=&quot;App-header&quot;&gt;
         &lt;Connect /&gt;
-
-
-        &lt;/header&gt;
+      &lt;/header&gt;
     &lt;/div&gt;
   );
 }
 
 export default App;
-
 </pre></div>
 </div>
 </li>
@@ -1444,21 +1435,24 @@ export default App;
 </div>
 <div class="section" id="querying-a-wallet-balance">
 <h2>4. Querying a wallet balance<a class="headerlink" href="#querying-a-wallet-balance" title="Permalink to this headline">#</a></h2>
-<p>It’s common for an app to show the connected user’s UST balance. To achieve this you’ll need two hooks. The first is <code class="docutils literal notranslate"><span class="pre">useLCDClient</span></code>. An <code class="docutils literal notranslate"><span class="pre">LCDClient</span></code> is essentially a REST-based adapter for the Terra blockchain. You can use it to query an account balance. The second is <code class="docutils literal notranslate"><span class="pre">useConnectedWallet</span></code>, which tells you if a wallet is connected, and if so, basic information about that wallet such as its address.</p>
+<p>It’s common for an app to show the connected user’s LUNA balance. To achieve this you’ll need two hooks. The first is <code class="docutils literal notranslate"><span class="pre">useLCDClient</span></code>. An <code class="docutils literal notranslate"><span class="pre">LCDClient</span></code> is essentially a REST-based adapter for the Terra blockchain. You can use it to query an account balance. The second is <code class="docutils literal notranslate"><span class="pre">useConnectedWallet</span></code>, which tells you if a wallet is connected, and if so, basic information about that wallet such as its address.</p>
 <p>Note that if your wallet is empty you won’t see any tokens.</p>
 <ol class="arabic">
 <li><p>Create a file in your <code class="docutils literal notranslate"><span class="pre">Components</span></code> folder named <code class="docutils literal notranslate"><span class="pre">Query.js</span></code>.</p></li>
 <li><p>Populate <code class="docutils literal notranslate"><span class="pre">Query.js</span></code> with the following:</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span>import { useConnectedWallet, useLCDClient } from &#39;@terra-money/wallet-provider&#39;;
-import React, { useEffect, useState } from &#39;react&#39;;
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span>import {
+  useConnectedWallet,
+  useLCDClient,
+} from &quot;@terra-money/wallet-provider&quot;;
+import React, { useEffect, useState } from &quot;react&quot;;
 
 export default function Query() {
   const lcd = useLCDClient(); // LCD stands for Light Client Daemon
   const connectedWallet = useConnectedWallet();
   const [balance, setBalance] = useState(null);
 
-  useEffect(() =&gt; { 
-    if (connectedWallet) { 
+  useEffect(() =&gt; {
+    if (connectedWallet) {
       lcd.bank.balance(connectedWallet.walletAddress).then(([coins]) =&gt; {
         setBalance(coins.toString());
       });
@@ -1478,10 +1472,9 @@ export default function Query() {
 </div>
 </li>
 <li><p>Open <code class="docutils literal notranslate"><span class="pre">App.js</span></code> in your code editor and add <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">Query</span> <span class="pre">from</span> <span class="pre">'./components/Query'</span></code> to line 3, and <code class="docutils literal notranslate"> <span class="pre">&lt;Query</span> <span class="pre">/&gt;</span></code> to line 11. The whole file should look like the following:</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span>import &#39;./App.css&#39;;
-import Connect from &#39;./components/Connect&#39;;
-import Query from &#39;./components/Query&#39;
-
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span>import &quot;./App.css&quot;;
+import Connect from &quot;./components/Connect&quot;;
+import Query from &quot;./components/Query&quot;;
 
 function App() {
   return (
@@ -1489,14 +1482,12 @@ function App() {
       &lt;header className=&quot;App-header&quot;&gt;
         &lt;Connect /&gt;
         &lt;Query /&gt;
-
-        &lt;/header&gt;
+      &lt;/header&gt;
     &lt;/div&gt;
   );
 }
 
 export default App;
-
 </pre></div>
 </div>
 </li>
@@ -1510,20 +1501,23 @@ export default App;
 </pre></div>
 </div>
 <p>Before broadcasting this example transaction, ensure you’re on the Terra testnet. To change networks click the gear icon in your Terra station and select <code class="docutils literal notranslate"><span class="pre">testnet</span></code>.</p>
-<p>You can request tesnet funds from the <a class="reference external" href="https://faucet.terra.money/">faucet</a>. You’ll receive luna which can be swapped for UST within the Station extension.</p>
-<p>A UST transfer transaction needs a fee and a message containing the sender address, recipient address, and send amount (in this case 1 UST). Once the message is constructed, the <code class="docutils literal notranslate"><span class="pre">post</span></code> method on <code class="docutils literal notranslate"><span class="pre">connectedWallet</span></code> broadcasts it to the network.</p>
+<p>You can request tesnet funds from the <a class="reference external" href="https://faucet.terra.money/">faucet</a>.</p>
+<p>A LUNA transfer transaction needs a fee and a message containing the sender address, recipient address, and send amount (in this case 1 LUNA). Once the message is constructed, the <code class="docutils literal notranslate"><span class="pre">post</span></code> method on <code class="docutils literal notranslate"><span class="pre">connectedWallet</span></code> broadcasts it to the network.</p>
 <div class="note admonition">
-<p class="admonition-title">What happens if something goes wrong? </p>
+<p class="admonition-title">What happens if something goes wrong?</p>
 <p>Wallet provider also supplies useful error types. This example will handle the <code class="docutils literal notranslate"><span class="pre">UserDenied</span></code> error case. You can find other cases to handle <a class="reference external" href="https://github.com/terra-money/wallet-provider/blob/4e601c2dece7bec92c9ce95991d2314220a2c954/packages/src/%40terra-money/wallet-controller/exception/mapExtensionTxError.ts#L23">on Github</a>.</p>
 </div>
 <ol class="arabic">
 <li><p>Create a file in your <code class="docutils literal notranslate"><span class="pre">Components</span></code> folder named <code class="docutils literal notranslate"><span class="pre">Tx.js</span></code>.</p></li>
 <li><p>Populate <code class="docutils literal notranslate"><span class="pre">Tx.js</span></code> with the following:</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span>import { Fee, MsgSend } from &#39;@terra-money/terra.js&#39;;
-import { useConnectedWallet, UserDenied } from &#39;@terra-money/wallet-provider&#39;;
-import React, { useCallback, useState } from &#39;react&#39;;
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span>import { Fee, MsgSend } from &quot;@terra-money/terra.js&quot;;
+import {
+  useConnectedWallet,
+  UserDenied,
+} from &quot;@terra-money/wallet-provider&quot;;
+import React, { useCallback, useState } from &quot;react&quot;;
 
-const TEST_TO_ADDRESS = &#39;terra12hnhh5vtyg5juqnzm43970nh4fw42pt27nw9g9&#39;;
+const TEST_TO_ADDRESS = &quot;terra12hnhh5vtyg5juqnzm43970nh4fw42pt27nw9g9&quot;;
 
 export default function Tx() {
   const [txResult, setTxResult] = useState(null);
@@ -1535,30 +1529,30 @@ export default function Tx() {
     if (!connectedWallet) {
       return;
     }
-    if (connectedWallet.network.chainID.startsWith(&#39;columbus&#39;)) {
+    if (connectedWallet.network.chainID.startsWith(&quot;phoenix&quot;)) {
       alert(`Please only execute this example on Testnet`);
       return;
     }
-  
+
     try {
       const transactionMsg = {
-        fee: new Fee(1000000, &#39;200000uusd&#39;),
+        fee: new Fee(1000000, &quot;20000uluna&quot;),
         msgs: [
           new MsgSend(connectedWallet.walletAddress, TEST_TO_ADDRESS, {
-            uusd: 1000000,
+            uluna: 1000000,
           }),
         ],
-      }
+      };
 
       const tx = await connectedWallet.post(transactionMsg);
       setTxResult(tx);
     } catch (error) {
       if (error instanceof UserDenied) {
-        setTxError(&#39;User Denied&#39;);
+        setTxError(&quot;User Denied&quot;);
       } else {
         setTxError(
-          &#39;Unknown Error: &#39; +
-          (error instanceof Error ? error.message : String(error)),
+          &quot;Unknown Error: &quot; +
+            (error instanceof Error ? error.message : String(error))
         );
       }
     }
@@ -1583,14 +1577,14 @@ export default function Tx() {
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Because all coins are denominated in micro-units, you will need to multiply any coins by <span class="math notranslate nohighlight">\(10^6\)</span> . For example, 1000000 uusd = 1 UST.</p>
+<p>Because all coins are denominated in micro-units, you will need to multiply any coins by <span class="math notranslate nohighlight">\(10^6\)</span> . For example, 1000000 uluna = 1 LUNA.</p>
 </div>
 </li>
 <li><p>Open <code class="docutils literal notranslate"><span class="pre">App.js</span></code> in your code editor and add <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">Tx</span> <span class="pre">from</span> <span class="pre">'./components/Tx'</span></code> to line 4, and <code class="docutils literal notranslate"> <span class="pre">&lt;Tx</span> <span class="pre">/&gt;</span></code> to line 12. The whole file should look like the following:</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span>import &#39;./App.css&#39;;
-import Connect from &#39;./components/Connect&#39;;
-import Query from &#39;./components/Query&#39;;
-import Tx from &#39;./components/Tx&#39;;
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span>import &quot;./App.css&quot;;
+import Connect from &quot;./components/Connect&quot;;
+import Query from &quot;./components/Query&quot;;
+import Tx from &quot;./components/Tx&quot;;
 
 function App() {
   return (
@@ -1599,17 +1593,16 @@ function App() {
         &lt;Connect /&gt;
         &lt;Query /&gt;
         &lt;Tx /&gt;
-        &lt;/header&gt;
+      &lt;/header&gt;
     &lt;/div&gt;
   );
 }
 
 export default App;
-
 </pre></div>
 </div>
 </li>
-<li><p>Refresh your browser. You’ll see a new <strong>Send</strong> button.  Click the button to send your transaction. Your station extension will ask you to confirm the transaction.</p></li>
+<li><p>Refresh your browser. You’ll see a new <strong>Send</strong> button. Click the button to send your transaction. Your station extension will ask you to confirm the transaction.</p></li>
 </ol>
 <p>That’s all! You can find more examples of <code class="docutils literal notranslate"><span class="pre">WalletProvider</span></code> capabilities in the following example templates:</p>
 <ul class="simple">

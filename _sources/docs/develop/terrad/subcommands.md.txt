@@ -7,11 +7,13 @@ This section describes the subcommands available from `terrad`.
 Changes an address from hex encoding to bech32.
 
 **Syntax**
+
 ```bash
 terrad debug addr <address>
 ```
 
 **Example**
+
 ```bash
 terrad debug addr terra14h2od5f3vahd28uywwvt8sqbi52upnzagshtrm
 ```
@@ -21,11 +23,13 @@ terrad debug addr terra14h2od5f3vahd28uywwvt8sqbi52upnzagshtrm
 Decodes a pubkey from proto JSON and displays the address.
 
 **Syntax**
+
 ```bash
 terrad debug pubkey <pubkey>
 ```
 
 **Example**
+
 ```bash
 terrad debug pubkey '{"@type":"/cosmos.crypto.secp256k1.PubKey","key":"AurroA7jvfPd1AadmmOvWM2rJSwipXfRf8yD6pLbA2DJ"}'
 ```
@@ -35,11 +39,13 @@ terrad debug pubkey '{"@type":"/cosmos.crypto.secp256k1.PubKey","key":"AurroA7jv
 Changes raw bytes to hex.
 
 **Syntax**
+
 ```bash
 terrad debug raw-bytes <raw-bytes>
 ```
 
 **Example**
+
 ```bash
 terrad debug raw-bytes [72 101 108 108 111 44 32 112 108 97 121 103 114 111 117 110 100]
 ```
@@ -53,6 +59,7 @@ For security purposes, run this command on an offline computer.
 :::
 
 **Syntax**
+
 ```bash
 terrad keys add <your-key-name>
 ```
@@ -74,6 +81,7 @@ After you have triple-checked your mnemonic and safely stored it, you can delete
 history -c
 rm ~/.bash_history
 ```
+
 :::
 
 To generate more accounts from the same mnemonic, run:
@@ -85,10 +93,12 @@ terrad keys add <your-key-name> --recover --account 1
 You are prompted to specify a passphrase and your mnemonic. To generate a different account, change the account number.
 
 ::: {danger}
+
 - Do not use the same passphrase for multiple keys. Do not lose or share your mnemonic with anyone.
-:::
+  :::
 
 **Example**
+
 ```bash
 terrad keys add myAccount
 ```
@@ -96,6 +106,7 @@ terrad keys add myAccount
 In some cases, you might need to recover your key. If you have the mnemonic that was used to generate your private key, you can recover it and re-register your key. Issuing the following command will prompt you to enter your 24-word mnemonic.
 
 **Syntax**
+
 ```bash
 terrad keys add <yourKeyName> --recover
 ```
@@ -107,11 +118,13 @@ For information about generating multisignature accounts and signing transaction
 Retrieves an address for a specified account. The address is prefixed by `terra-`, for example `terra15h6vd5f0wqps26zjlwrc6chah08ryu4hzzdwhc`. To receive funds, you must give an account address to the sender.
 
 **Syntax**
+
 ```bash
 terrad keys show <account-name>
 ```
 
 **Example**
+
 ```bash
 terrad keys show myAccount
 ```
@@ -133,6 +146,7 @@ terrad tendermint show-address
 Lists all your keys.
 
 **Syntax**
+
 ```bash
 terrad keys list
 ```
@@ -142,11 +156,13 @@ terrad keys list
 Retrieves all existing grants between a granter and a grantee.
 
 **Syntax**
+
 ```bash
 terrad query authz grants <granter-address> <grantee-address>
 ```
 
 **Example**
+
 ```bash
 terrad query authz grants terra15h6vd5f0wqps26zjlwrc6chah08ryu4hzzdwhc terra14h2od5f3vahd28uywwvt8sqbi52upnzagshtrm
 ```
@@ -156,16 +172,19 @@ Additionally, the `grants` command can retrieve the specific grant between a gra
 ```bash
 terrad query authz grants terra15h6vd5f0wqps26zjlwrc6chah08ryu4hzzdwhc terra14h2od5f3vahd28uywwvt8sqbi52upnzagshtrm /cosmos.bank.v1beta1.MsgSend
 ```
+
 ## `query bank balances`
 
 Displays your account balance, account number, and sequence number (nonce).
 
 **Syntax**
+
 ```bash
 terrad query bank balances <account-address>
 ```
 
 **Example**
+
 ```bash
 terrad query bank balances terra15h6vd5f0wqps26zjlwrc6chah08ryu4hzzdwhc
 ```
@@ -189,6 +208,7 @@ Query the total supply of coins of the chain.
 Checks the all the current outstanding rewards that have not been withdrawn.
 
 **Syntax**
+
 ```bash
 terrad query distribution rewards
 ```
@@ -199,7 +219,7 @@ Check the current rewards earned by a specific delegator by appending the `<dele
 terrad query distribution rewards terra14h2od5f3vahd28uywwvt8sqbi52upnzagshtrm
 ```
 
-Check the current rewards earned by a delegator and restricted to one validator by appending the `<delegator-address>` followed by the  `<validator-address>` at the end of the command statement, as shown in the following example:
+Check the current rewards earned by a delegator and restricted to one validator by appending the `<delegator-address>` followed by the `<validator-address>` at the end of the command statement, as shown in the following example:
 
 ```bash
 terrad query distribution rewards terra14h2od5f3vahd28uywwvt8sqbi52upnzagshtrm terra19t4gde4f8ndwx67qhbnur9yqdc31xznpksajbcy
@@ -210,11 +230,13 @@ terrad query distribution rewards terra14h2od5f3vahd28uywwvt8sqbi52upnzagshtrm t
 Checks the current outstanding commission for a validator.
 
 **Syntax**
+
 ```bash
 terrad query distribution commission <validator_address>
 ```
 
 **Example**
+
 ```bash
 terrad query distribution commission terra19t4gde4f8ndwx67qhbnur9yqdc31xznpksajbcy
 ```
@@ -224,11 +246,13 @@ terrad query distribution commission terra19t4gde4f8ndwx67qhbnur9yqdc31xznpksajb
 Checks historical slashes for a validator within a range of blocks.
 
 **Syntax**
+
 ```bash
 terrad query distribution slashes <validator-address> <start-block-height> <end-block-height>
 ```
 
 **Example**
+
 ```bash
 terrad query distribution slashes terra19t4gde4f8ndwx67qhbnur9yqdc31xznpksajbcy 25 300
 ```
@@ -238,6 +262,7 @@ terrad query distribution slashes terra19t4gde4f8ndwx67qhbnur9yqdc31xznpksajbcy 
 Checks all coins in the community pool.
 
 **Syntax**
+
 ```bash
 terrad query distribution community-pool
 ```
@@ -247,6 +272,7 @@ terrad query distribution community-pool
 Checks the current distribution parameters.
 
 **Syntax**
+
 ```bash
 terrad query distribution params
 ```
@@ -265,11 +291,13 @@ withdraw_addr_enabled: true
 Retrieves information about a single proposal deposit on a proposal by its identifier.
 
 **Syntax**
+
 ```bash
 terrad query gov deposit <proposal-id> <depositor-address>
 ```
 
 **Example**
+
 ```bash
 terrad query gov deposit 4 terra1skjwj5whet0lpe65qaq4rpq03hjxlwd9nf39lk
 ```
@@ -279,11 +307,13 @@ terrad query gov deposit 4 terra1skjwj5whet0lpe65qaq4rpq03hjxlwd9nf39lk
 Retrieves all deposits submitted to a proposal after it is created.
 
 **Syntax**
+
 ```bash
 terrad query gov deposits <proposal-id>
 ```
 
 **Example**
+
 ```bash
 terrad query gov deposits 5
 ```
@@ -295,11 +325,13 @@ Retrieves information about one proposal.
 `proposal` retrieves information about one proposal.
 
 **Syntax**
+
 ```bash
 terrad query gov proposal <proposal-id>
 ```
 
 **Example**
+
 ```bash
 terrad query gov proposal 3
 ```
@@ -309,6 +341,7 @@ terrad query gov proposal 3
 Retrieves information about all available proposals.
 
 **Syntax**
+
 ```bash
 terrad query gov proposals
 ```
@@ -324,11 +357,13 @@ terrad query gov proposals --voter terra13a8ddv3h7kbcn73akcbpe7ueks22vaolewpaxmb
 Retrieves information about a single vote by a specific voter.
 
 **Syntax**
+
 ```bash
 terrad query gov vote <proposal-id> <voter-address>
 ```
 
 **Example**
+
 ```bash
 terrad query gov vote 7 terra13a8ddv3h7kbcn73akcbpe7ueks22vaolewpaxmb
 ```
@@ -338,11 +373,13 @@ terrad query gov vote 7 terra13a8ddv3h7kbcn73akcbpe7ueks22vaolewpaxmb
 Retrieves all the votes submitted to the proposal.
 
 **Syntax**
+
 ```bash
 terrad query gov votes <proposal-id>
 ```
 
 **Example**
+
 ```bash
 terrad query gov votes 9
 ```
@@ -352,11 +389,13 @@ terrad query gov votes 9
 Retrieves the current tally for a specified proposal.
 
 **Syntax**
+
 ```bash
 terrad query gov tally <proposal-id>
 ```
 
 **Example**
+
 ```bash
 terrad query gov tally 4
 ```
@@ -366,11 +405,13 @@ terrad query gov tally 4
 Retrieves all the parameters for the specified governance process.
 
 **Syntax**
+
 ```bash
 terrad query gov param <process-type>
 ```
 
 **Example**
+
 ```bash
 terrad query gov param voting
 ```
@@ -380,6 +421,7 @@ terrad query gov param voting
 Retrieves all the parameters for all governance processes.
 
 **Syntax**
+
 ```bash
 terrad query gov params
 ```
@@ -400,45 +442,12 @@ deposit_parmas:
   max_deposit_period: 48h0m0s
 ```
 
-## `query market swap`
-
-Determines the result of a swap without executing the swap.
-
-**Syntax**
-```bash
-terrad query market swap <offer-coin> <ask-denom>
-```
-
-where `offer-coin` is the coin to be traded and `ask-denom` is the denomination to be swapped into.
-
-**Example**
-```bash
-terrad query market swap 100000uluna usdr
-```
-
-## `query market terra-pool-delta`
-
-Retrieves the current value of the Terra pool delta.
-
-**Syntax**
-```sh
-terrad query market terra-pool-delta
-```
-
-## `query market params`
-
-Retrieves the market module's parameters:
-
-**Syntax**
-```sh
-terrad query market params
-```
-
 ## `query mint annual-provisions`
 
 Retrieves the value of annual provisions.
 
 **Syntax**
+
 ```sh
 terrad query mint annual-provisions
 ```
@@ -448,6 +457,7 @@ terrad query mint annual-provisions
 Retrieves the current value of inflation.
 
 **Syntax**
+
 ```sh
 terrad query mint inflation
 ```
@@ -457,6 +467,7 @@ terrad query mint inflation
 Retrieves the mint module's parameters.
 
 **Syntax**
+
 ```sh
 terrad query mint params
 ```
@@ -472,128 +483,18 @@ goal_bonded: "0.670000000000000000"
 blocks_per_year: 6311520
 ```
 
-## `query oracle actives`
-
-Retrieves the active list of Terra assets recognized by type.
-
-**Syntax**
-```bash
-terrad query oracle actives
-```
-
-## `query oracle aggregate-prevotes`
-
-Retrieves all outstanding aggregate prevotes.
-
-**Syntax**
-```bash
-terrad query oracle aggregate-prevotes
-```
-
-## `query oracle aggregate-votes`
-
-Retrieves all outstanding aggregate votes.
-
-**Syntax**
-```bash
-terrad query oracle aggregate-votes
-```
-
-## `query oracle exchange-rates`
-
-Retrieves exchanges rates of Luna.
-
-**Syntax**
-```sh
-terrad query oracle exchange-rates
-```
-
-## `query oracle feeder`
-
-Retrieves the account to whitch the validator's oracle voting right is delegated.
-
-**Syntax**
-```sh
-terrad query oracle feeder <validator-address>
-```
-
-**Example**
-```sh
-terrad query oracle feeder terravaloper15h6vd5f0wqps26zjlwrc6chah08ryu4hzzdwhc
-```
-
-## `query oracle miss`
-
-Retrieves the amount of vote periods missed in this oracle slash window.
-
-**Syntax**
-```sh
-terrad query oracle miss <validator-address>
-```
-
-**Example**
-```sh
-terrad query oracle miss terravaloper15h6vd5f0wqps26zjlwrc6chah08ryu4hzzdwhc
-```
-
-## `query oracle params`
-
-Retrieves the oracle module's parameters.
-
-**Syntax**
-```sh
-terrad query oracle params
-```
-
-The parameters are returned in the following format:
-
-```yaml
-vote_period: 5
-vote_threshold: "0.500000000000000000"
-reward_band: "0.020000000000000000"
-reward_distribution_window: 5256000
-whitelist:
-  - name: ukrw
-    tobin_tax: "0.002500000000000000"
-  - name: usdr
-    tobin_tax: "0.002500000000000000"
-  - name: uusd
-    tobin_tax: "0.002500000000000000"
-  - name: umnt
-    tobin_tax: "0.020000000000000000"
-slash_fraction: "0.000100000000000000"
-slash_window: 100800
-min_valid_per_window: "0.050000000000000000"
-```
-
-## `query oracle tobin-taxes`
-
-Retrieves the current oracle tobin taxes.
-
-**Syntax**
-```sh
-terrad query oracle tobin-taxes
-```
-
-## `query oracle vote-targets`
-
-Retrieves the current oracle vote targets.
-
-**Syntax**
-```sh
-terrad query oracle vote-targets
-```
-
 ## `query slashing signing-info`
 
 Retrieves a validator's signing info.
 
 **Syntax**
+
 ```bash
 terrad query slashing signing-info <validator-consensus-public-key>
 ```
 
 **Example**
+
 ```bash
 terrad query slashing signing-info terravalconspub1atjdueldlxwft8d4729pqhdhm3nlss0u4wx7wpeqb1zhjf8yr1tn7cgw2b4q4yv9na
 ```
@@ -603,6 +504,7 @@ terrad query slashing signing-info terravalconspub1atjdueldlxwft8d4729pqhdhm3nls
 Retrieves signing information of all validators.
 
 **Syntax**
+
 ```bash
 terrad query slashing signing-infos
 ```
@@ -612,6 +514,7 @@ terrad query slashing signing-infos
 Retrieves the genesis parameters for the slashing module.
 
 **Syntax**
+
 ```bash
 terrad query slashing params
 ```
@@ -631,11 +534,13 @@ slash_fraction_downtime: "0.010000000000000000"
 Retrieves delegation information for a validator.
 
 **Syntax**
+
 ```bash
 terrad query staking delegation <delegator-address> <validator-address>
 ```
 
 **Example**
+
 ```bash
 terrad query staking delegation terra1gghjut3ccd8ay0zduzj64hwre2fxs9ld75ru9p terravaloper15h6vd5f0wqps26zjlwrc6chah08ryu4hzzdwhc
 ```
@@ -645,11 +550,13 @@ terrad query staking delegation terra1gghjut3ccd8ay0zduzj64hwre2fxs9ld75ru9p ter
 Retrieves delegations for a delegator on all validators.
 
 **Syntax**
+
 ```bash
 terrad query staking delegations <delegator-address>
 ```
 
 **Example**
+
 ```bash
 terrad query staking delegations terra1gghjut3ccd8ay0zduzj64hwre2fxs9ld75ru9p
 ```
@@ -659,11 +566,13 @@ terrad query staking delegations terra1gghjut3ccd8ay0zduzj64hwre2fxs9ld75ru9p
 Retrieves all of the delegations on a particular validator.
 
 **Syntax**
+
 ```bash
 terrad query staking delegations-to <validator-address>
 ```
 
 **Example**
+
 ```bash
 terrad query staking delegations-to terravaloper15h6vd5f0wqps26zjlwrc6chah08ryu4hzzdwhc
 ```
@@ -673,11 +582,13 @@ terrad query staking delegations-to terravaloper15h6vd5f0wqps26zjlwrc6chah08ryu4
 Retrieves all historical information at a specified height.
 
 **Syntax**
+
 ```bash
 terrad query staking historical-info <height>
 ```
 
 **Example**
+
 ```bash
 terrad query staking historical-info 23
 ```
@@ -687,6 +598,7 @@ terrad query staking historical-info 23
 Retrieves all staking parameters.
 
 **Syntax**
+
 ```bash
 terrad query staking params
 ```
@@ -706,6 +618,7 @@ bond_denom: uluna
 Retrieves amounts stored in the staking pool.
 
 **Syntax**
+
 ```bash
 terrad query staking pool
 ```
@@ -722,11 +635,13 @@ The following information is returned:
 Retrieves redelegation information for an individual delegator between a source validator and a destination validator.
 
 **Syntax**
+
 ```bash
 terrad query staking redelegation <delegator-address> <src-val-addr> <dst-val-addr>
 ```
 
 **Example**
+
 ```bash
 terrad query staking redelegation terra1gghjut3ccd8ay0zduzj64hwre2fxs9ld75ru9p terravaloper1l2rsakp388kuv9k8qzq6lrm9taddae7fpx59wm terravaloper1gghjut3ccd8ay0zduzj64hwre2fxs9ldmqhffj
 ```
@@ -736,11 +651,13 @@ terrad query staking redelegation terra1gghjut3ccd8ay0zduzj64hwre2fxs9ld75ru9p t
 Retrieves all redelegation information for a delegator.
 
 **Syntax**
+
 ```bash
 terrad query staking redelegations <delegator-address>
 ```
 
 **Example**
+
 ```bash
 terrad query staking redelegations terra1gghjut3ccd8ay0zduzj64hwre2fxs9ld75ru9p
 ```
@@ -750,11 +667,13 @@ terrad query staking redelegations terra1gghjut3ccd8ay0zduzj64hwre2fxs9ld75ru9p
 Retrieves all the delegations that are redelegating from a specified validator:
 
 **Syntax**
+
 ```bash
 terrad query staking redelegations-from <validator-address>
 ```
 
 **Example**
+
 ```bash
 terrad query staking redelegations-from terravaloper1gghjut3ccd8ay0zduzj64hwre2fxs9ldmqhffj
 ```
@@ -764,11 +683,13 @@ terrad query staking redelegations-from terravaloper1gghjut3ccd8ay0zduzj64hwre2f
 Retrieves information about unbonding delegations for a specified delegator and validator.
 
 **Syntax**
+
 ```bash
 terrad query staking unbonding-delegation <delegator-address> <validator-address>
 ```
 
 **Example**
+
 ```bash
 terrad query staking unbonding-delegation terra1gghjut3ccd8ay0zduzj64hwre2fxs9ld75ru9p terravaloper1l2rsakp388kuv9k8qzq6lrm9taddae7fpx59wm
 ```
@@ -778,11 +699,13 @@ terrad query staking unbonding-delegation terra1gghjut3ccd8ay0zduzj64hwre2fxs9ld
 Retrieves all your current unbonding delegations for a specified delegator.
 
 **Syntax**
+
 ```bash
 terrad query staking unbonding-delegations <delegator-address>
 ```
 
 **Example**
+
 ```bash
 terrad query staking unbonding-delegations terra1gghjut3ccd8ay0zduzj64hwre2fxs9ld75ru9p
 ```
@@ -792,11 +715,13 @@ terrad query staking unbonding-delegations terra1gghjut3ccd8ay0zduzj64hwre2fxs9l
 Retrieves all the unbonding delegations from a specified validator.
 
 **Syntax**
+
 ```bash
 terrad query staking unbonding-delegations-from <validator-address>
 ```
 
 **Example**
+
 ```bash
 terrad query staking unbonding-delegations-from terravaloper1l2rsakp388kuv9k8qzq6lrm9taddae7fpx59wm
 ```
@@ -806,6 +731,7 @@ terrad query staking unbonding-delegations-from terravaloper1l2rsakp388kuv9k8qzq
 Retrieves the list of all registered validators.
 
 **Syntax**
+
 ```bash
 terrad query staking validators
 ```
@@ -816,167 +742,24 @@ To retrieve the information of a single validator, append the validator address 
 terrad query staking validator terravaloper15h6vd5f0wqps26zjlwrc6chah08ryu4hzzdwhc
 ```
 
-## `query treasury indicators`
-
-::: {admonition} Note
-:class: warning
-As of proposals [43](https://station.terra.money/proposal/43) and [172](https://station.terra.money/proposal/172), all seigniorage is burned, and the stability fee tax rate is fixed at zero.Although the Treasury module is no longer effectively used, the commands are kept for reference.
-:::
-
-Retrieves treasury indicators.
-
-**Syntax**
-```bash
-terrad query treasury indicators
-```
-
-## `query treasury params`
-
-::: {admonition} Note
-:class: warning
-As of proposals [43](https://station.terra.money/proposal/43) and [172](https://station.terra.money/proposal/172), all seigniorage is burned, and the stability fee tax rate is fixed at zero.Although the Treasury module is no longer effectively used, the commands are kept for reference.
-:::
-
-Retrieves the high-level settings for the treasury. For more information, see [treasury parameters](../../module-specifications/spec-treasury.md#parameters).
-
-**Syntax**
-```bash
-terrad query treasury params
-```
-
-The parameters are returned in the following format:
-
-```yaml
-tax_policy:
-  ratemin: "0.00000000000000000"
-  ratemax: "0.00000000000000000"
-  cap:
-    denom: usdr
-    amount: "000000"
-  changeratemax: "0.0000000000000000"
-reward_policy:
-  ratemin: "0.00000000000000000"
-  ratemax: "0.00000000000000000"
-  cap:
-    denom: unused
-    amount: "0"
-  changeratemax: "0.0000000000000000"
-seigniorage_burden_target: "0.0000000000000000"
-mining_increment: "0.00000000000000000"
-window_short: 4
-window_long: 52
-window_probation: 12
-```
-
-## `query treasury reward-weight`
-
-::: {admonition} Note
-:class: warning
-As of proposals [43](https://station.terra.money/proposal/43) and [172](https://station.terra.money/proposal/172), all seigniorage is burned, and the stability fee tax rate is fixed at zero.Although the Treasury module is no longer effectively used, the commands are kept for reference.
-:::
-
-Retrieves the reward weight of the current epoch. The reward weight is the portion of seigniorage that is designated as ballot rewards for the winners of exchange-rate oracle.
-
-**Syntax**
-```bash
-terrad query treasury reward-weight
-```
-
-## `query treasury seigniorage-proceeds`
-
-::: {admonition} Note
-:class: warning
-As of proposals [43](https://station.terra.money/proposal/43) and [172](https://station.terra.money/proposal/172), all seigniorage is burned, and the stability fee tax rate is fixed at zero.Although the Treasury module is no longer effectively used, the commands are kept for reference.
-:::
-
-Retrieves the amount of seigniorage denominated in uluna in the current epoch.
-
-**Syntax**
-```bash
-terrad query treasury seigniorage-proceeds
-```
-
-## `query treasury tax-cap`
-
-::: {admonition} Note
-:class: warning
-As of proposals [43](https://station.terra.money/proposal/43) and [172](https://station.terra.money/proposal/172), all seigniorage is burned, and the stability fee tax rate is fixed at zero. This command is here for reference.
-:::
-
-Retrieves the current stability tax cap of the specified denomination. Stability fees are capped at some fixed amount of SDT to avoid penalizing large transactions.
-
-**Syntax**
-```bash
-terrad query treasury tax-cap <denomination>
-```
-
-
-**Example**
-```bash
-terrad query treasury tax-cap ukrw
-```
-
-## `query treasury tax-caps`
-
-::: {admonition} Note
-:class: warning
-As of proposals [43](https://station.terra.money/proposal/43) and [172](https://station.terra.money/proposal/172), all seigniorage is burned, and the stability fee tax rate is fixed at zero.Although the Treasury module is no longer effectively used, the commands are kept for reference.
-:::
-
-Retrieves the current stability tax cap of all assets.
-
-**Syntax**
-```bash
-terrad query treasury tax-caps
-```
-
-## `query treasury tax-proceeds`
-
-::: {admonition} Note
-:class: warning
-As of proposals [43](https://station.terra.money/proposal/43) and [172](https://station.terra.money/proposal/172), all seigniorage is burned, and the stability fee tax rate is fixed at zero.Although the Treasury module is no longer effectively used, the commands are kept for reference.
-:::
-
-Retrieves the cumulative tax proceeds.
-
-**Syntax**
-```bash
-terrad query treasury tax-proceeds
-```
-
-## `query treasury tax-rate`
-
-::: {admonition} Note
-:class: warning
-As of proposals [43](https://station.terra.money/proposal/43) and [172](https://station.terra.money/proposal/172), all seigniorage is burned, and the stability fee tax rate is fixed at zero.Although the Treasury module is no longer effectively used, the commands are kept for reference.
-:::
-
-Retrieves the stability tax rate of the current epoch.
-
-**Syntax**
-```bash
-terrad query treasury tax-rate
-```
-
-::: {note}
-As of proposal [172](https://station.terra.money/proposal/172), the stability fee tax rate is zero.   
-:::
-
 ## `query tx`
 
 Retrieves a transaction by its hash, account sequence, or signature.
 
 **Syntax to query by hash**
+
 ```bash
 terrad query tx <hash>
 ```
 
 **Syntax to query by account sequence**
+
 ```bash
 terrad query tx --type=acc_seq <address>:<sequence>
 ```
 
 **Syntax to query by signature**
+
 ```bash
 terrad query tx --type=signature <sig1_base64,sig2_base64...>
 ```
@@ -986,11 +769,13 @@ terrad query tx --type=signature <sig1_base64,sig2_base64...>
 Retrieves transactions that match the specified events where results are paginated.
 
 **Syntax**
+
 ```bash
 terrad query txs --events '<event>' --page <page-number> --limit <number-of-results>
 ```
 
 **Example**
+
 ```bash
 terrad query txs --events 'message.sender=cosmos1...&message.action=withdraw_delegator_reward' --page 1 --limit 30
 ```
@@ -1000,6 +785,7 @@ terrad query txs --events 'message.sender=cosmos1...&message.action=withdraw_del
 Retrieves the contract's WASM bytecode by referencing its ID.
 
 **Syntax**
+
 ```sh
 terrad query wasm bytecode <code-id>
 ```
@@ -1009,6 +795,7 @@ terrad query wasm bytecode <code-id>
 Retrieves information about a piece of uploaded code by referencing its ID.
 
 **Syntax**
+
 ```sh
 terrad query wasm code <code-id>
 ```
@@ -1018,6 +805,7 @@ terrad query wasm code <code-id>
 Retrieves the metadata information about an instantiated contract.
 
 **Syntax**
+
 ```sh
 terrad query wasm contract <contract-address>
 ```
@@ -1027,12 +815,15 @@ terrad query wasm contract <contract-address>
 Retrieves data about the contract store of the address and prints the results.
 
 **Syntax**
+
 ```sh
 terrad query wasm contract-store <contract-address> <query-msg>
 ```
+
 where `<query-msg>` is a JSON string that encodes the QueryMsg.
 
 **Example**
+
 ```sh
 terrad query wasm contract-store terra1plju286nnfj3z54wgcggd4enwaa9fgf5kgrgzl '{"config":{}}'
 ```
@@ -1042,6 +833,7 @@ terrad query wasm contract-store terra1plju286nnfj3z54wgcggd4enwaa9fgf5kgrgzl '{
 Retrieves the current WASM module's parameters.
 
 **Syntax**
+
 ```sh
 terrad query wasm params
 ```
@@ -1059,6 +851,7 @@ max_contract_msg_size: 1024
 Retrieves the raw store of a contract and prints the results.
 
 **Syntax**
+
 ```sh
 terrad query wasm raw-store <contract-address> <key> <subkey>
 ```
@@ -1070,11 +863,13 @@ If the data uses a `Singleton`, it has only a key. If the data uses a prefixed d
 Runs a transaction for the granter.
 
 **Syntax**
+
 ```bash
 terrad tx authz exec <msg-tx-json-filename> --from=<grantee-address>
 ```
 
 **Example**
+
 ```bash
 terrad tx authz exec tx.json --from=<terra14h2od5f3vahd28uywwvt8sqbi52upnzagshtrm
 ```
@@ -1084,11 +879,13 @@ terrad tx authz exec tx.json --from=<terra14h2od5f3vahd28uywwvt8sqbi52upnzagshtr
 Authorizes another address to run transactions for you.
 
 **Syntax**
+
 ```bash
 terrad tx authz grant <grantee-address> <authorization-type> --from=<your-address>
 ```
 
 **Example**
+
 ```bash
 terrad tx authz grant terra14h2od5f3vahd28uywwvt8sqbi52upnzagshtrm send /cosmos.bank.v1beta1.MsgSend --from=terra15h6vd5f0wqps26zjlwrc6chah08ryu4hzzdwhc
 ```
@@ -1104,6 +901,7 @@ terrad tx authz grant terra14h2od5f3vahd28uywwvt8sqbi52upnzagshtrm send /cosmos.
 Removes authorization from an account.
 
 **Syntax**
+
 ```bash
 terrad tx authz revoke <grantee-address> <authorization-type> --from=<granter-address>
 ```
@@ -1116,6 +914,7 @@ terrad tx authz revoke terra14h2od5f3vahd28uywwvt8sqbi52upnzagshtrm /cosmos.bank
 Sends coins from one account to another account.
 
 **Syntax**
+
 ```bash
 terrad tx bank send \
     <from-key-or-address> \
@@ -1131,6 +930,7 @@ where
 - `<coins>` is a comma-separated list of coins specified as `<amount><coin-denominator>`. For example, `1000usdr` or `1000uluna,1000usdr`.
 
 **Example**
+
 ```bash
 terrad tx bank send \
     terra15h6vd5f0wqps26zjlwrc6chah08ryu4hzzdwhc \
@@ -1144,23 +944,26 @@ terrad tx bank send \
 Funds the community pool with the specified amount.
 
 **Syntax**
+
 ```bash
 terrad tx distribution fund-community-pool <amount>
 ```
 
 **Example**
-terrad tx distribution fund-community-pool 100ukrw,200uusd
+terrad tx distribution fund-community-pool 100uluna
 
 ## `tx distribution set-withdraw-addr`
 
 Changes the default withdrawal address for rewards associated with an address.
 
 **Syntax**
+
 ```bash
 terrad tx distribution set-withdraw-addr <withdrawal-address>
 ```
 
 **Example**
+
 ```bash
 terrad tx distribution set-withdraw-addr terra13a8ddv3h7kbcn73akcbpe7ueks22vaolewpaxmb
 ```
@@ -1170,6 +973,7 @@ terrad tx distribution set-withdraw-addr terra13a8ddv3h7kbcn73akcbpe7ueks22vaole
 Withdraws all rewards.
 
 **Syntax**
+
 ```bash
 terrad tx distribution withdraw-all-rewards
 ```
@@ -1179,11 +983,13 @@ terrad tx distribution withdraw-all-rewards
 Withdraws your rewards against a validator.
 
 **Syntax**
+
 ```bash
 terrad tx distribution withdraw-rewards <validator-address>
 ```
 
 **Example**
+
 ```bash
 terrad tx distribution withdraw-rewards terra19t4gde4f8ndwx67qhbnur9yqdc31xznpksajbcy
 ```
@@ -1193,6 +999,7 @@ terrad tx distribution withdraw-rewards terra19t4gde4f8ndwx67qhbnur9yqdc31xznpks
 For a proposal to be sent to the network, the amount deposited must be above a minimum amount specified by `minDeposit` (initial value is `50000000uluna`). If the proposal you previously created didn't meet this requirement, you can still increase the total amount deposited to activate it. After the minimum deposit is reached, the voting period for the proposal begins.
 
 **Syntax**
+
 ```bash
 terrad tx gov deposit <proposal-id> "<deposit-amount>" \
     --from=<name> \
@@ -1200,10 +1007,11 @@ terrad tx gov deposit <proposal-id> "<deposit-amount>" \
 ```
 
 **Example**
+
 ```bash
 terrad tx gov deposit 15 "10000000luluna" \
     --from=terra13a8ddv3h7kbcn73akcbpe7ueks22vaolewpaxmb \
-    --chain-id=columbus-5
+    --chain-id=phoenix-1
 ```
 
 ::: {warning}
@@ -1217,6 +1025,7 @@ Submits proposals and deposits. To create a governance proposal, you must submit
 ### Text proposals
 
 **Syntax**
+
 ```bash
 terrad tx gov submit-proposal \
     --title=<title> \
@@ -1228,6 +1037,7 @@ terrad tx gov submit-proposal \
 ```
 
 **Example**
+
 ```bash
 terrad tx gov submit-proposal \
     --title=Funding for NFT platform \
@@ -1235,7 +1045,7 @@ terrad tx gov submit-proposal \
     --type="Text" \
     --deposit="100000uluna" \
     --from=terra13a8ddv3h7kbcn73akcbpe7ueks22vaolewpaxmb \
-    --chain-id=columbus-5
+    --chain-id=phoenix-1
 ```
 
 ### Parameter-change proposals
@@ -1243,6 +1053,7 @@ terrad tx gov submit-proposal \
 When you submit a proposal to change a parameter, it is recommended that you send the proposal as a JSON file.
 
 **Syntax**
+
 ```bash
 terrad tx gov submit-proposal \
     param-change <path/to/proposal.json> \
@@ -1251,11 +1062,12 @@ terrad tx gov submit-proposal \
 ```
 
 **Example**
+
 ```bash
 terrad tx gov submit-proposal \
     param-change /proposals/proposal.json \
     --from=terra13a8ddv3h7kbcn73akcbpe7ueks22vaolewpaxmb \
-    --chain-id=columbus-5
+    --chain-id=phoenix-1
 ```
 
 where `proposal.json` contains the following information:
@@ -1289,6 +1101,7 @@ Because parameter changes are evaluated but not validated, ensure that new value
 When you submit a community pool spend proposal, it is recommended that you send the proposal as a JSON file.
 
 **Syntax**
+
 ```bash
 terrad tx gov submit-proposal \
     community-pool-spend <path/to/proposal.json> \
@@ -1297,11 +1110,12 @@ terrad tx gov submit-proposal \
 ```
 
 **Example**
+
 ```bash
 terrad tx gov submit-proposal \
     community-pool-spend /proposals/proposal.json \
     --from=terra13a8ddv3h7kbcn73akcbpe7ueks22vaolewpaxmb \
-    --chain-id=columbus-5
+    --chain-id=phoenix-1
 ```
 
 where `proposal.json` contains the following information:
@@ -1326,92 +1140,12 @@ where `proposal.json` contains the following information:
 }
 ```
 
-### Tax-rate and reward-weight update proposals
-
-::: {admonition} Note
-:class: warning
-As of proposals [43](https://station.terra.money/proposal/43) and [172](https://station.terra.money/proposal/172), all seigniorage is burned, and the stability fee tax rate is fixed at zero.Although the Treasury module is no longer effectively used, the commands are kept for reference.
-:::
-
-Tax rate and reward weight are important monetary policy levers handled by the [`Treasury`](../../module-specifications/spec-treasury.md) module to modulate miner incentives toward stable demand and steady growth. Usually, they are automatically calibrated once per epoch by the protocol. However, they can be changed at any time, if an update proposal gets passed with enough supporters.
-
-When you submit a tax rate or reward weight update proposal, it is recommended that you send the proposal as a JSON file.
-
-For tax rate:
-
-**Syntax**
-```bash
-terrad tx gov submit-proposal \
-    tax-rate-update <path/to/proposal.json> \
-    --from=<name> \
-    --chain-id=<chain_id>
-```
-
-**Example**
-```bash
-terrad tx gov submit-proposal \
-    tax-rate-update /proposals/proposal.json \
-    --from=terra13a8ddv3h7kbcn73akcbpe7ueks22vaolewpaxmb \
-    --chain-id=columbus-5
-```
-
-where `proposal.json` contains the following information:
-
-```json
-{
-  "title": "Update Tax-Rate",
-  "description": "Let's update the tax-rate to 1.5%",
-  "tax_rate": "0.015",
-  "deposit": [
-    {
-      "denom": "uluna",
-      "amount": "10000"
-    }
-  ]
-}
-```
-
-For reward weight:
-
-**Syntax**
-```bash
-terrad tx gov submit-proposal \
-    reward-weight-update <path/to/proposal.json> \
-    --from=<name> \
-    --chain-id=<chain_id>
-```
-
-**Example**
-```bash
-terrad tx gov submit-proposal \
-    reward-weight-update /proposals/proposal.json \
-    --from=terra13a8ddv3h7kbcn73akcbpe7ueks22vaolewpaxmb \
-    --chain-id=columbus-5
-```
-
-where `proposal.json` contains the following information:
-
-```json
-{
-  "title": "Update Reward Weight",
-  "description": "Let's update reward weight to 1.5%",
-  "reward_weight": "0.015",
-  "deposit": [
-    {
-      "denom": "uluna",
-      "amount": "10000"
-    }
-  ]
-}
-```
-
-Tax reward and reward weight updates that are passed by governance proposals are subject to [policy constraints](../../module-specifications/spec-treasury.md#policy-constraints).
-
 ### Software upgrade proposals
 
 The proposal to upgrade the software follows the syntax of a `text` proposal.
 
 **Syntax**
+
 ```bash
 terrad tx gov submit-proposal software-upgrade <name> \
     --title=<title> \
@@ -1425,6 +1159,7 @@ terrad tx gov submit-proposal software-upgrade <name> \
 ```
 
 **Example**
+
 ```bash
 terrad tx gov submit-proposal software-upgrade v0.5.0-beta3 \
     --title="Upgrade to v0.6.0-beta3" \
@@ -1434,17 +1169,19 @@ terrad tx gov submit-proposal software-upgrade v0.5.0-beta3 \
     --type="Text" \
     --deposit="50000000uluna" \
     --from=terra13a8ddv3h7kbcn73akcbpe7ueks22vaolewpaxmb \
-    --chain-id=columbus-5
+    --chain-id=phoenix-1
 ```
 
 To cancel a software upgrade:
 
 **Syntax**
+
 ```bash
 terrad tx gov submit-proposal cancel-software-upgrade --title "<title>" --description "<description>"
 ```
 
 **Example**
+
 ```bash
 terrad tx gov submit-proposal cancel-software-upgrade --title "Upgrade to v0.5.0-beta3" --description "let's upgrade to v0.6.0-beta3"
 ```
@@ -1454,6 +1191,7 @@ terrad tx gov submit-proposal cancel-software-upgrade --title "Upgrade to v0.5.0
 After a proposal's deposit reaches the `MinDeposit` value, the voting period begins, and bonded Luna holders can vote.
 
 **Syntax**
+
 ```bash
 terrad tx gov vote \
     <proposal-id> <vote-type> \
@@ -1462,112 +1200,12 @@ terrad tx gov vote \
 ```
 
 **Example**
+
 ```bash
 terrad tx gov vote \
     7 yes \
     --from=terra13a8ddv3h7kbcn73akcbpe7ueks22vaolewpaxmb \
-    --chain-id=columbus-5
-```
-
-## `tx market swap`
-
-Swaps any currency in the Terra ecosystem for another currency at the effective oracle exchange rate.
-
-**Syntax**
-```bash
-terrad tx market swap \
-    <offer-coin> \
-    <ask-denom>  \
-    --from <address> \
-```
-
-where `<offer-coin>` is the coin to be traded, and `<ask-denom>` is the denomination of the coin to be swapped into.
-
-**Example**
-```bash
-terrad tx market swap \
-    "1000ukrw" \
-    "usdr" \
-    --from "terra13a8ddv3h7kbcn73akcbpe7ueks22vaolewpaxmb" \
-```
-
-For Terra<>Luna swaps, the constant-product spread pricing model is enforced to limit consensus-related attack vectors. Terra<>Terra swaps have a constant Tobin tax.
-
-Optionally, you can specify a recipient in the command statement to both swap and send in one transaction.
-
-**Syntax**
-```bash
-terrad tx market swap \
-    <offer-coin> \
-    <ask-denom> \
-    <recipient-address>
-    --from <address> \
-```
-
-**Example**
-```bash
-terrad tx market swap \
-    "1000ukrw" \
-    "usdr"  \
-    "terra1s5afhd6gxevu37mkqcvvsj8qeylhn0rzn7cdaq"
-    --from "terra13a8ddv3h7kbcn73akcbpe7ueks22vaolewpaxmb" \
-```
-
-## `tx oracle aggregate-prevote`
-
-Submits a `prevote` containing the hash of the actual vote in the first vote period. The hash is the leading 20 bytes of the SHA256 hexa string run over the string of the format `salt:price:denom:validator-address`.
-
-**Syntax**
-```bash
-terrad tx oracle aggregate-prevote \
-    <salt> \
-    <exchange-rates> \
-    <validator-address> \
-```
-
-**Example**
-```bash
-terrad tx oracle aggregate-prevote \
-    "1234" \
-    "8888.0ukrw,1.243uusd,0.99usdr" \
-    "terravaloper15h6vd5f0wqps26zjlwrc6chah08ryu4hzzdwhc" \
-```
-
-## `tx oracle aggregate-vote`
-
-Submits a `vote` containing the same salt of the hash submitted in the prevote phase to prove honestly. The hash is the leading 20 bytes of the SHA256 hexa string run over the string of the format `salt:price:denom:validator-address`. You submit this vote after `VotePeriod` has expired from the submission of the prevote.
-
-**Syntax**
-```bash
-terrad tx oracle aggregate-vote \
-    <salt> \
-    <exchange-rates>  \
-    <validator-address> \
-```
-
-**Example**
-```bash
-terrad tx oracle aggregate-vote \
-    "1234" \
-    "8888.0ukrw,1.243uusd,0.99usdr" \
-    "terravaloper15h6vd5f0wqps26zjlwrc6chah08ryu4hzzdwhc" \
-```
-
-Given that oracle votes must be submitted in a feed over short time intervals (30 seconds), prevotes and votes must be submitted via some persistent server daemon, not manually. For more information, see the [Oracle Module Specification](../../module-specifications/spec-oracle.md).
-
-## `tx oracle set-feeder`
-
-Delegates exchange-rate voting to another signing key.
-
-**Syntax**
-```bash
-terrad tx oracle set-feeder <feeder-address>
-```
-where `feeder-address` is the address to which you will delegate your voting rights. For you to receive credit, the feeder still must submit votes on behalf of your validator.
-
-**Example**
-```bash
-terrad tx oracle set-feeder terra14q7bu6p0aclm58dgirpo9mewh19nti5oxyamep
+    --chain-id=phoenix-1
 ```
 
 ## `tx slashing unjail`
@@ -1575,11 +1213,13 @@ terrad tx oracle set-feeder terra14q7bu6p0aclm58dgirpo9mewh19nti5oxyamep
 Releases a jailed validator.
 
 **Syntax**
+
 ```bash
 terrad tx slashing unjail
 ```
 
 **Example**
+
 ```bash
 terrad tx slashing unjail
 ```
@@ -1589,6 +1229,7 @@ terrad tx slashing unjail
 Creates a new validator that is initialized with a self-delegation.
 
 **Syntax**
+
 ```bash
 terrad tx staking create-validator \
     --amount=<uluna-amount> \
@@ -1610,11 +1251,13 @@ terrad tx staking create-validator \
 Delegates an amount of liquid coins from your wallet to a validator.
 
 **Syntax**
+
 ```bash
 terrad tx staking delegate <validator-address> <amount>
 ```
 
 **Example**
+
 ```bash
 terrad tx staking delegate terravaloper1l2rsakp388kuv9k8qzq6lrm9taddae7fpx59wm 2500stake
 ```
@@ -1624,6 +1267,7 @@ terrad tx staking delegate terravaloper1l2rsakp388kuv9k8qzq6lrm9taddae7fpx59wm 2
 Edits an existing validator account.
 
 **Syntax**
+
 ```bash
 terrad tx staking edit-validator \
     --moniker="<moniker>" \
@@ -1637,11 +1281,13 @@ terrad tx staking edit-validator \
 Redelegates an amount of illiquid staking tokens from one validator to a different validator.
 
 **Syntax**
+
 ```bash
 terrad tx staking redelegate <from-validator-address> <to-validator-address> <amount>
 ```
 
 **Example**
+
 ```bash
 terrad tx staking redelegate terravaloper1gghjut3ccd8ay0zduzj64hwre2fxs9ldmqhffj terravaloper1l2rsakp388kuv9k8qzq6lrm9taddae7fpx59wm 350stake
 ```
@@ -1651,11 +1297,13 @@ terrad tx staking redelegate terravaloper1gghjut3ccd8ay0zduzj64hwre2fxs9ldmqhffj
 Unbonds an amount of bonded shares from a validator.
 
 **Syntax**
+
 ```bash
 terrad tx staking unbond <validator-address> <stake-amount>
 ```
 
 **Example**
+
 ```bash
 terrad tx staking unbond terravaloper1gghjut3ccd8ay0zduzj64hwre2fxs9ldmqhffj 600stake
 ```
@@ -1665,6 +1313,7 @@ terrad tx staking unbond terravaloper1gghjut3ccd8ay0zduzj64hwre2fxs9ldmqhffj 600
 Removes the contract admin so that the contract cannot be migrated.
 
 **Syntax**
+
 ```bash
 terrad tx wasm clear-admin <contract-address>
 ```
@@ -1674,6 +1323,7 @@ terrad tx wasm clear-admin <contract-address>
 Invokes processing functions on the smart contract.
 
 **Syntax**
+
 ```sh
 terrad tx wasm execute <contract-address> <handle-msg> <coins>
 ```
@@ -1685,6 +1335,7 @@ Where `<handle-msg>` is a raw JSON string containing the `HandleMsg` that is par
 Creates a new contract by referencing the code ID of a contract that has been uploaded.
 
 **Syntax**
+
 ```sh
 terrad tx wasm instantiate <code-id> <init-msg> <coins>
 ```
@@ -1692,6 +1343,7 @@ terrad tx wasm instantiate <code-id> <init-msg> <coins>
 where `<init-msg>` is a JSON string containing the `InitMsg` to initialize your contract's state, and `<coins>` is the optional amount of coins specified in a comma-separated list that you want to send to the new contract account.
 
 **Example**
+
 ```sh
 terrad tx wasm instantiate 1 '{"arbiter": "terra~~"}' "1000000uluna"
 ```
@@ -1701,36 +1353,35 @@ terrad tx wasm instantiate 1 '{"arbiter": "terra~~"}' "1000000uluna"
 Updates the code ID of the contract to migrate to a new code ID. This command can be issued only from the key corresponding to the contract's owner.
 
 **Syntax**
+
 ```sh
 terrad tx wasm migrate <contract-address> <new-code-id> <migrate-msg>
 ```
 
 **Example**
+
 ```sh
 terrad tx wasm migrate terra... 10 '{"verifier": "terra..."}'
 ```
 
 ## `tx wasm store`
 
-Uploads a new WASM binary or migrates to existing binary to the Columbus-5 release.
+Uploads a new WASM binary or migrates to existing binary to the phoenix-1 release.
 
 **Syntax for a new WASM binary**
+
 ```sh
 terrad tx wasm store <path-to-wasm-file>
 ```
 
 where `<path-to-wasm-file>` is the path of a file that is the compiled binary of the smart contract code that you want to upload.
 
-**Syntax to migrate to Columbus-5**
-```sh
-terrad tx wasm store <path-to-wasm-file> --migrate-code-id 3
-```
-
 ## `tx wasm update-admin`
 
 Updates a contract owner to a new address. This command can be issued only from the key corresponding to the contract's owner.
 
 **Syntax**
+
 ```sh
 terrad tx wasm update-admin <contract-address> <new-owner>
 ```

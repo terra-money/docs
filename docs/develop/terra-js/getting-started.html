@@ -445,11 +445,6 @@
         </a>
        </li>
        <li class="toctree-l4">
-        <a class="reference internal" href="oracle-feeder.html">
-         Oracle feeder
-        </a>
-       </li>
-       <li class="toctree-l4">
         <a class="reference internal" href="query-data.html">
          Query data
         </a>
@@ -1175,8 +1170,8 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#create-a-bombay-testnet-wallet">
-   3. Create a Bombay testnet wallet
+  <a class="reference internal nav-link" href="#create-a-pisco-testnet-wallet">
+   3. Create a pisco testnet wallet
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1235,8 +1230,8 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#create-a-bombay-testnet-wallet">
-   3. Create a Bombay testnet wallet
+  <a class="reference internal nav-link" href="#create-a-pisco-testnet-wallet">
+   3. Create a pisco testnet wallet
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1275,7 +1270,7 @@
 <ol class="arabic simple">
 <li><p><a class="reference internal" href="#set-up-your-project"><span class="std std-doc">Set up your project</span></a></p></li>
 <li><p><a class="reference internal" href="#initialize-the-lcd"><span class="std std-doc">Set up a Terra LCD (light client daemon)</span></a></p></li>
-<li><p><a class="reference internal" href="#create-a-bombay-testnet-wallet"><span class="std std-doc">Create and connect  a wallet</span></a></p></li>
+<li><p><a class="reference internal" href="#create-a-pisco-testnet-wallet"><span class="std std-doc">Create and connect a wallet</span></a></p></li>
 <li><p><a class="reference internal" href="#query-a-terraswap-contract-and-set-up-the-transaction"><span class="std std-doc">Query a swap contract</span></a></p></li>
 <li><p><a class="reference internal" href="#broadcast-the-transaction"><span class="std std-doc">Create, sign, and broadcast a transaction</span></a></p></li>
 </ol>
@@ -1308,11 +1303,11 @@ touch index.js
 </div>
 </li>
 <li><p>Open the <code class="docutils literal notranslate"><span class="pre">package.json</span></code> file in a code editor and add <code class="docutils literal notranslate"><span class="pre">&quot;type&quot;:</span> <span class="pre">&quot;module&quot;,</span></code>.</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="c1">// ...</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;module&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="c1">// ...</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// ...</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;module&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// ...</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 </li>
@@ -1320,7 +1315,7 @@ touch index.js
 </div>
 <div class="section" id="initialize-the-lcd">
 <h2>2. Initialize the LCD<a class="headerlink" href="#initialize-the-lcd" title="Permalink to this headline">#</a></h2>
-<p>Terra’s LCD or Light Client Daemon allows users to connect to the blockchain,  make queries, create wallets, and submit transactions. It’s the main workhorse behind <code class="docutils literal notranslate"><span class="pre">terra.js</span></code>.</p>
+<p>Terra’s LCD or Light Client Daemon allows users to connect to the blockchain, make queries, create wallets, and submit transactions. It’s the main workhorse behind <code class="docutils literal notranslate"><span class="pre">terra.js</span></code>.</p>
 <ol class="arabic">
 <li><p>Install a fetch library to make HTTP requests and dynamically pull recommended gas prices. You can use the one referenced below or choose your favorite.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>npm install --save isomorphic-fetch
@@ -1328,14 +1323,16 @@ touch index.js
 </div>
 </li>
 <li><p>Open your <code class="docutils literal notranslate"><span class="pre">index.js</span></code> file in a code editor and input the following to initialize the LCD:</p>
-<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="nx">fetch</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;isomorphic-fetch&#39;</span><span class="p">;</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Coins</span><span class="p">,</span><span class="w"> </span><span class="nx">LCDClient</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@terra-money/terra.js&#39;</span><span class="p">;</span><span class="w"></span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">gasPrices</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="s1">&#39;https://bombay-fcd.terra.dev/v1/txs/gas_prices&#39;</span><span class="p">);</span><span class="w"></span>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="nx">fetch</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;isomorphic-fetch&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Coins</span><span class="p">,</span><span class="w"> </span><span class="nx">LCDClient</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@terra-money/terra.js&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">gasPrices</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="s2">&quot;https://pisco-fcd.terra.dev/v1/txs/gas_prices&quot;</span><span class="w"></span>
+<span class="p">);</span><span class="w"></span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">gasPricesJson</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">gasPrices</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span><span class="w"></span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">gasPricesCoins</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Coins</span><span class="p">(</span><span class="nx">gasPricesJson</span><span class="p">);</span><span class="w"> </span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">gasPricesCoins</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Coins</span><span class="p">(</span><span class="nx">gasPricesJson</span><span class="p">);</span><span class="w"></span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">lcd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">LCDClient</span><span class="p">({</span><span class="w"></span>
-<span class="w">  </span><span class="nx">URL</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;https://bombay-lcd.terra.dev/&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Use &quot;https://lcd.terra.dev&quot; for prod &quot;http://localhost:1317&quot; for localterra.</span><span class="w"></span>
-<span class="w">  </span><span class="nx">chainID</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;bombay-12&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Use &quot;columbus-5&quot; for production or &quot;localterra&quot;.</span><span class="w"></span>
+<span class="w">  </span><span class="nx">URL</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;https://pisco-lcd.terra.dev&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Use &quot;https://lcd.terra.dev&quot; for prod &quot;http://localhost:1317&quot; for localterra.</span><span class="w"></span>
+<span class="w">  </span><span class="nx">chainID</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;pisco-1&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Use &quot;phoenix-1&quot; for production or &quot;localterra&quot;.</span><span class="w"></span>
 <span class="w">  </span><span class="nx">gasPrices</span><span class="o">:</span><span class="w"> </span><span class="kt">gasPricesCoins</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="nx">gasAdjustment</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;1.5&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Increase gas price slightly so transactions go through smoothly.</span><span class="w"></span>
 <span class="w">  </span><span class="nx">gas</span><span class="o">:</span><span class="w"> </span><span class="kt">10000000</span><span class="p">,</span><span class="w"></span>
@@ -1344,21 +1341,21 @@ touch index.js
 </div>
 <div class="note admonition">
 <p class="admonition-title">Switching to LocalTerra or the mainnet</p>
-<p>The previous code block shows how to connect to the Bombay testnet. To connect to LocalTerra, change the <code class="docutils literal notranslate"><span class="pre">URL</span></code> to <code class="docutils literal notranslate"><span class="pre">”http://localhost:1317”</span></code>. To connect to the Columbus-5 mainnet for production, use “<code class="docutils literal notranslate"><span class="pre">https://lcd.terra.dev</span></code>”.</p>
-<p>You will also need to change the <code class="docutils literal notranslate"><span class="pre">chainID</span></code> from <code class="docutils literal notranslate"><span class="pre">&quot;bombay-12&quot;</span></code> to <code class="docutils literal notranslate"><span class="pre">”localterra”</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;columbus-5&quot;</span></code>.</p>
+<p>The previous code block shows how to connect to the pisco testnet. To connect to LocalTerra, change the <code class="docutils literal notranslate"><span class="pre">URL</span></code> to <code class="docutils literal notranslate"><span class="pre">”http://localhost:1317”</span></code>. To connect to the phoenix-1 mainnet for production, use “<code class="docutils literal notranslate"><span class="pre">https://lcd.terra.dev</span></code>”.</p>
+<p>You will also need to change the <code class="docutils literal notranslate"><span class="pre">chainID</span></code> from <code class="docutils literal notranslate"><span class="pre">&quot;pisco-1&quot;</span></code> to <code class="docutils literal notranslate"><span class="pre">”localterra”</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;phoenix-1&quot;</span></code>.</p>
 </div>
 </li>
 </ol>
 </div>
-<div class="section" id="create-a-bombay-testnet-wallet">
-<h2>3. Create a Bombay testnet wallet<a class="headerlink" href="#create-a-bombay-testnet-wallet" title="Permalink to this headline">#</a></h2>
+<div class="section" id="create-a-pisco-testnet-wallet">
+<h2>3. Create a pisco testnet wallet<a class="headerlink" href="#create-a-pisco-testnet-wallet" title="Permalink to this headline">#</a></h2>
 <ol class="arabic">
 <li><p>You’ll need a wallet to sign and submit transactions. <span class="xref myst">Create a new wallet</span> using the Terra Station extension. Be sure to save your mnemonic key!</p></li>
 <li><p>After creating your wallet, you’ll need to set it to use the testnet. Click the gear icon in the extension and change the network from <code class="docutils literal notranslate"><span class="pre">mainnet</span></code> to <code class="docutils literal notranslate"><span class="pre">testnet</span></code>.</p></li>
 <li><p>Add the following code to your <code class="docutils literal notranslate"><span class="pre">index.js</span></code> file and input your mnemonic key:</p>
-<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">MnemonicKey</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@terra-money/terra.js&#39;</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">MnemonicKey</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@terra-money/terra.js&quot;</span><span class="p">;</span><span class="w"></span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">mk</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">MnemonicKey</span><span class="p">({</span><span class="w"></span>
-<span class="w">  </span><span class="nx">mnemonic</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39; //Input your 24-word mnemonic key here//&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">mnemonic</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot; //Input your 24-word mnemonic key here//&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="p">});</span><span class="w"></span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">wallet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">lcd</span><span class="p">.</span><span class="nx">wallet</span><span class="p">(</span><span class="nx">mk</span><span class="p">);</span><span class="w"></span>
 </pre></div>
@@ -1366,7 +1363,7 @@ touch index.js
 <div class="warning admonition">
 <p class="admonition-title">Mnemonic security</p>
 <p>Although this tutorial has you input your mnemonic directly, this practice should be avoided in production.
-For security reasons, it’s better to store your mnemonic key  data in your environment by using <code class="docutils literal notranslate"><span class="pre">process.env.SECRET_MNEMONIC</span></code> or <code class="docutils literal notranslate"><span class="pre">process.env.SECRET_PRIV_KEY</span></code>. This practice is more secure than a hard-coded string.</p>
+For security reasons, it’s better to store your mnemonic key data in your environment by using <code class="docutils literal notranslate"><span class="pre">process.env.SECRET_MNEMONIC</span></code> or <code class="docutils literal notranslate"><span class="pre">process.env.SECRET_PRIV_KEY</span></code>. This practice is more secure than a hard-coded string.</p>
 </div>
 </li>
 <li><p>Request testnet funds for your wallet by navigating to the <a class="reference external" href="https://faucet.terra.money">Terra faucet</a> and inputting your wallet address. You’ll need these funds to perform swaps and pay for gas fees. Once the funds are in your wallet, you’re ready to move on to the next step.</p></li>
@@ -1375,26 +1372,23 @@ For security reasons, it’s better to store your mnemonic key  data in your env
 <div class="section" id="find-a-contract-address">
 <h2>4. Find a contract address<a class="headerlink" href="#find-a-contract-address" title="Permalink to this headline">#</a></h2>
 <p>To find the contract address for a specific Terraswap pair, visit <a class="reference external" href="https://app.terraswap.io/">https://app.terraswap.io/</a></p>
-<p>This tutorial uses the Luna/UST contract testnet address:</p>
-<p><code class="docutils literal notranslate"><span class="pre">terra156v8s539wtz0sjpn8y8a8lfg8fhmwa7fy22aff</span></code></p>
 </div>
 <div class="section" id="query-a-terraswap-contract-and-set-up-the-transaction">
 <h2>5. Query a Terraswap contract and set up the transaction<a class="headerlink" href="#query-a-terraswap-contract-and-set-up-the-transaction" title="Permalink to this headline">#</a></h2>
-<p>Before you can perform a swap, you’ll need a belief price. You can calculate the belief price of UST by querying the proportion of the Luna and UST pools. The belief price +/- the <code class="docutils literal notranslate"><span class="pre">max_spread</span></code> is the range of possible acceptable prices for this swap.</p>
+<p>Before you can perform a swap, you’ll need a belief price. You can calculate the belief price of one token by querying the proportion of the two pooled tokens. The belief price +/- the <code class="docutils literal notranslate"><span class="pre">max_spread</span></code> is the range of possible acceptable prices for this swap.</p>
 <ol class="arabic">
 <li><p>Add the following code to your <code class="docutils literal notranslate"><span class="pre">index.js</span></code> file. Make sure the contract address is correct.</p>
-<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">pool</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;terra156v8s539wtz0sjpn8y8a8lfg8fhmwa7fy22aff&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// The LUNA/UST terraswap contract address on Bombay.</span><span class="w"></span>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">pool</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&lt;INSERT_POOL_ADDRESS&gt;&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// A terraswap contract address on pisco.</span><span class="w"></span>
 <span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">assets</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">lcd</span><span class="p">.</span><span class="nx">wasm</span><span class="p">.</span><span class="nx">contractQuery</span><span class="p">(</span><span class="nx">pool</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">pool</span><span class="o">:</span><span class="w"> </span><span class="p">{}</span><span class="w"> </span><span class="p">});</span><span class="w"> </span><span class="c1">// Fetch the amount of each asset in the pool.</span><span class="w"></span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">beliefPrice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">assets</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">amount</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nx">assets</span><span class="p">[</span><span class="mf">1</span><span class="p">].</span><span class="nx">amount</span><span class="p">).</span><span class="nx">toFixed</span><span class="p">(</span><span class="mf">18</span><span class="p">);</span><span class="w"> </span><span class="c1">// Calculate belief price using proportion of pool balances.</span><span class="w"></span>
 </pre></div>
 </div>
 </li>
 <li><p>Next, generate a message to broadcast to the network:</p>
-<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">MsgExecuteContract</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@terra-money/terra.js&#39;</span><span class="p">;</span><span class="w"></span>
-<span class="c1">// Swap LUNA to UST with 0.1% slippage tolerance.</span><span class="w"></span>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">MsgExecuteContract</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@terra-money/terra.js&quot;</span><span class="p">;</span><span class="w"></span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">terraSwap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">MsgExecuteContract</span><span class="p">(</span><span class="w"></span>
 <span class="w">  </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">key</span><span class="p">.</span><span class="nx">accAddress</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="nx">pool</span><span class="p">,</span><span class="w"> </span>
+<span class="w">  </span><span class="nx">pool</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="nx">swap</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">      </span><span class="nx">max_spread</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;0.001&quot;</span><span class="p">,</span><span class="w"></span>
@@ -1409,7 +1403,7 @@ For security reasons, it’s better to store your mnemonic key  data in your env
 <span class="w">      </span><span class="nx">belief_price</span><span class="o">:</span><span class="w"> </span><span class="kt">beliefPrice</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="p">},</span><span class="w"></span>
 <span class="w">  </span><span class="p">},</span><span class="w"></span>
-<span class="w">  </span><span class="ow">new</span><span class="w"> </span><span class="nx">Coins</span><span class="p">({</span><span class="w"> </span><span class="nx">uluna</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;100000&#39;</span><span class="w"> </span><span class="p">})</span><span class="w"></span>
+<span class="w">  </span><span class="ow">new</span><span class="w"> </span><span class="nx">Coins</span><span class="p">({</span><span class="w"> </span><span class="nx">uluna</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;100000&quot;</span><span class="w"> </span><span class="p">})</span><span class="w"></span>
 <span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
@@ -1420,9 +1414,12 @@ For security reasons, it’s better to store your mnemonic key  data in your env
 <h2>6. Broadcast the transaction<a class="headerlink" href="#broadcast-the-transaction" title="Permalink to this headline">#</a></h2>
 <ol class="arabic">
 <li><p>Add the following code to <code class="docutils literal notranslate"><span class="pre">index.js</span></code> to create, sign, and broadcast the transaction. It’s important to specify <code class="docutils literal notranslate"><span class="pre">uluna</span></code> as the fee denomination becuase Luna is the only denomination the faucet sends.</p>
-<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">tx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">createAndSignTx</span><span class="p">({</span><span class="w"> </span><span class="nx">msgs</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nx">terraSwap</span><span class="p">],</span><span class="w"> </span><span class="nx">feeDenoms</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;uluna&#39;</span><span class="p">]</span><span class="w"> </span><span class="p">});</span><span class="w"></span>
-<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">lcd</span><span class="p">.</span><span class="nx">tx</span><span class="p">.</span><span class="nx">broadcast</span><span class="p">(</span><span class="nx">tx</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span><span class="w"></span>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">tx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">createAndSignTx</span><span class="p">({</span><span class="w"></span>
+<span class="w">  </span><span class="nx">msgs</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nx">terraSwap</span><span class="p">],</span><span class="w"></span>
+<span class="w">  </span><span class="nx">feeDenoms</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;uluna&quot;</span><span class="p">],</span><span class="w"></span>
+<span class="p">});</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">lcd</span><span class="p">.</span><span class="nx">tx</span><span class="p">.</span><span class="nx">broadcast</span><span class="p">(</span><span class="nx">tx</span><span class="p">);</span><span class="w"></span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </li>
@@ -1432,12 +1429,12 @@ For security reasons, it’s better to store your mnemonic key  data in your env
 </div>
 </li>
 </ol>
-<p>If successful, you’ll see a log of the successful transaction and some new UST tokens in your wallet.</p>
+<p>If successful, you’ll see a log of the successful transaction and some new tokens in your wallet.</p>
 <p>And that’s it! You can find other pool addresses <a class="reference external" href="https://app.terraswap.io/">here</a> to call other swaps. Be sure to use the correct testnet or mainnet contract address.</p>
 </div>
 <div class="section" id="more-examples">
 <h2>More examples<a class="headerlink" href="#more-examples" title="Permalink to this headline">#</a></h2>
-<p>View the <span class="xref myst">Common examples</span> section for more information on using Terra.js.</p>
+<p>View the <a class="reference internal" href="common-examples.html"><span class="doc std std-doc">Common examples</span></a> section for more information on using Terra.js.</p>
 </div>
 </div>
 

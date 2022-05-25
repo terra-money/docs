@@ -45,7 +45,7 @@
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Smart contracts" href="smart-contracts.html" />
-    <link rel="prev" title="Oracle feeder" href="oracle-feeder.html" />
+    <link rel="prev" title="Numeric" href="numeric.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -442,11 +442,6 @@
        <li class="toctree-l4">
         <a class="reference internal" href="numeric.html">
          Numeric
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="oracle-feeder.html">
-         Oracle feeder
         </a>
        </li>
        <li class="toctree-l4 current active">
@@ -1175,31 +1170,18 @@
   <div class="tex2jax_ignore mathjax_ignore section" id="query-data">
 <h1>Query data<a class="headerlink" href="#query-data" title="Permalink to this headline">#</a></h1>
 <p>After you’re connected to the blockchain via an <code class="docutils literal notranslate"><span class="pre">LCDClient</span></code> instance, you can query data from it. Data access is organized into various module APIs, which are accessible from within the <code class="docutils literal notranslate"><span class="pre">LCDClient</span></code> instance. Because they make HTTP requests in the background, they are Promises that can be awaited in order to not block during network IO.</p>
-<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">async</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">marketParams</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">terra</span><span class="p">.</span><span class="nx">market</span><span class="p">.</span><span class="nx">parameters</span><span class="p">();</span><span class="w"></span>
-<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">exchangeRates</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">terra</span><span class="p">.</span><span class="nx">oracle</span><span class="p">.</span><span class="nx">exchangeRates</span><span class="p">();</span><span class="w"></span>
-<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">marketParams</span><span class="p">.</span><span class="nx">base_pool</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">exchangeRates</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;uusd&#39;</span><span class="p">));</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-
-<span class="nx">main</span><span class="p">();</span><span class="w"></span>
-</pre></div>
-</div>
 <p>Each module has its own set of querying functions. To get a comprehensive list, explore the module documentation:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://terra-money.github.io/terra.js/classes/AuthAPI.html"><code class="docutils literal notranslate"><span class="pre">auth</span></code></a></p></li>
 <li><p><a class="reference external" href="https://terra-money.github.io/terra.js/classes/BankAPI.html"><code class="docutils literal notranslate"><span class="pre">bank</span></code></a></p></li>
 <li><p><a class="reference external" href="https://terra-money.github.io/terra.js/classes/DistributionAPI.html"><code class="docutils literal notranslate"><span class="pre">distribution</span></code></a></p></li>
 <li><p><a class="reference external" href="https://terra-money.github.io/terra.js/classes/GovAPI.html"><code class="docutils literal notranslate"><span class="pre">gov</span></code></a></p></li>
-<li><p><a class="reference external" href="https://terra-money.github.io/terra.js/classes/MarketAPI.html"><code class="docutils literal notranslate"><span class="pre">market</span></code></a></p></li>
 <li><p><a class="reference external" href="https://terra-money.github.io/terra.js/classes/MintAPI.html"><code class="docutils literal notranslate"><span class="pre">mint</span></code></a></p></li>
 <li><p><a class="reference external" href="https://terra-money.github.io/terra.js/classes/MsgAuthAPI.html"><code class="docutils literal notranslate"><span class="pre">msgauth</span></code></a></p></li>
-<li><p><a class="reference external" href="https://terra-money.github.io/terra.js/classes/OracleAPI.html"><code class="docutils literal notranslate"><span class="pre">oracle</span></code></a></p></li>
 <li><p><a class="reference external" href="https://terra-money.github.io/terra.js/classes/SlashingAPI.html"><code class="docutils literal notranslate"><span class="pre">slashing</span></code></a></p></li>
 <li><p><a class="reference external" href="https://terra-money.github.io/terra.js/classes/StakingAPI.html"><code class="docutils literal notranslate"><span class="pre">staking</span></code></a></p></li>
 <li><p><a class="reference external" href="https://terra-money.github.io/terra.js/classes/SupplyAPI.html"><code class="docutils literal notranslate"><span class="pre">supply</span></code></a></p></li>
 <li><p><a class="reference external" href="https://terra-money.github.io/terra.js/classes/TendermintAPI.html"><code class="docutils literal notranslate"><span class="pre">tendermint</span></code></a></p></li>
-<li><p><a class="reference external" href="https://terra-money.github.io/terra.js/classes/TreasuryAPI.html"><code class="docutils literal notranslate"><span class="pre">treasury</span></code></a></p></li>
 <li><p><a class="reference external" href="https://terra-money.github.io/terra.js/classes/TxAPI.html"><code class="docutils literal notranslate"><span class="pre">tx</span></code></a></p></li>
 <li><p><a class="reference external" href="https://terra-money.github.io/terra.js/classes/WasmAPI.html"><code class="docutils literal notranslate"><span class="pre">wasm</span></code></a></p></li>
 </ul>
@@ -1211,11 +1193,11 @@
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="oracle-feeder.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="numeric.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Oracle feeder</p>
+            <p class="prev-next-title">Numeric</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="smart-contracts.html" title="next page">

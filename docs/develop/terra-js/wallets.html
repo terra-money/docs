@@ -445,11 +445,6 @@
         </a>
        </li>
        <li class="toctree-l4">
-        <a class="reference internal" href="oracle-feeder.html">
-         Oracle feeder
-        </a>
-       </li>
-       <li class="toctree-l4">
         <a class="reference internal" href="query-data.html">
          Query data
         </a>
@@ -1237,11 +1232,11 @@
 <div class="section" id="create-a-wallet">
 <h2>Create a wallet<a class="headerlink" href="#create-a-wallet" title="Permalink to this headline">#</a></h2>
 <p>Use <code class="docutils literal notranslate"><span class="pre">LCDClient.wallet()</span></code> to create a <code class="docutils literal notranslate"><span class="pre">Wallet</span></code> from a <code class="docutils literal notranslate"><span class="pre">Key</span></code>.</p>
-<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">LCDClient</span><span class="p">,</span><span class="w"> </span><span class="nx">MnemonicKey</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@terra-money/terra.js&#39;</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">LCDClient</span><span class="p">,</span><span class="w"> </span><span class="nx">MnemonicKey</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@terra-money/terra.js&quot;</span><span class="p">;</span><span class="w"></span>
 
 <span class="kd">const</span><span class="w"> </span><span class="nx">terra</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">LCDClient</span><span class="p">({</span><span class="w"></span>
-<span class="w">  </span><span class="nx">URL</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;https://lcd.terra.dev&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="nx">chainId</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;columbus-5&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="nx">URL</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;https://lcd.terra.dev&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">chainId</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;phoenix-1&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="p">});</span><span class="w"></span>
 
 <span class="kd">const</span><span class="w"> </span><span class="nx">mk</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">MnemonicKey</span><span class="p">();</span><span class="w"></span>
@@ -1280,8 +1275,8 @@
 <p>You can also use the convenience function <code class="docutils literal notranslate"><span class="pre">Wallet.createAndSignTx()</span></code>, which automatically generates a signed transaction to be broadcast:</p>
 <div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">tx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">createAndSignTx</span><span class="p">({</span><span class="w"></span>
 <span class="w">  </span><span class="nx">msgs</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="nx">fee</span><span class="p">,</span><span class="w">  </span>
-<span class="w">  </span><span class="nx">memo</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;this is optional&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="nx">fee</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">memo</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;this is optional&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="p">});</span><span class="w"></span>
 </pre></div>
 </div>

@@ -445,11 +445,6 @@
         </a>
        </li>
        <li class="toctree-l4">
-        <a class="reference internal" href="oracle-feeder.html">
-         Oracle feeder
-        </a>
-       </li>
-       <li class="toctree-l4">
         <a class="reference internal" href="query-data.html">
          Query data
         </a>
@@ -1233,22 +1228,20 @@
 <p><code class="docutils literal notranslate"><span class="pre">src/core/greeting/msgs</span></code></p>
 <p>For this example, let’s assume that you are creating a two new messages, <code class="docutils literal notranslate"><span class="pre">MsgHello</span></code> and <code class="docutils literal notranslate"><span class="pre">MsgGoodbye</span></code>. The following example shows the code for <code class="docutils literal notranslate"><span class="pre">MsgHello</span></code>, and you can extrapolate from it the way to implement <code class="docutils literal notranslate"><span class="pre">MsgGoodbye</span></code>.</p>
 <p><code class="docutils literal notranslate"><span class="pre">src/core/greeting/msgs/MsgHello.ts</span></code></p>
-<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">JSONSerializable</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;../../../util/json&#39;</span><span class="p">;</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">AccAddress</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;../../strings&#39;</span><span class="w"></span>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">JSONSerializable</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;../../../util/json&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">AccAddress</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;../../strings&quot;</span><span class="p">;</span><span class="w"></span>
 
 <span class="cm">/**</span>
 <span class="cm"> * Just a simple greeting on the blockchain.</span>
 <span class="cm"> */</span><span class="w"></span>
 <span class="k">export</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">MsgHello</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">JSONSerializable</span><span class="o">&lt;</span><span class="nx">MsgHello</span><span class="p">.</span><span class="nx">Data</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="kr">constructor</span><span class="p">(</span><span class="w"></span>
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nx">recipient</span><span class="o">:</span><span class="w"> </span><span class="kt">AccAddress</span><span class="w"></span>
-<span class="w">  </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="kr">constructor</span><span class="p">(</span><span class="k">public</span><span class="w"> </span><span class="nx">recipient</span><span class="o">:</span><span class="w"> </span><span class="kt">AccAddress</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="k">super</span><span class="p">();</span><span class="w"></span>
 <span class="w">  </span><span class="p">}</span><span class="w"></span>
 
 <span class="w">  </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="nx">fromData</span><span class="p">(</span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="kt">MsgHello.Data</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">MsgHello</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">      </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">recipient</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="w">      </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">recipient</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">data</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">MsgHello</span><span class="p">(</span><span class="nx">recipient</span><span class="p">);</span><span class="w"></span>
 <span class="w">  </span><span class="p">}</span><span class="w"></span>
@@ -1256,9 +1249,9 @@
 <span class="w">  </span><span class="k">public</span><span class="w"> </span><span class="nx">toData</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="nx">MsgHello</span><span class="p">.</span><span class="nx">Data</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">recipient</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">      </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;greeting/MsgHello&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;greeting/MsgHello&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">      </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nx">recipient</span><span class="w"></span>
+<span class="w">        </span><span class="nx">recipient</span><span class="p">,</span><span class="w"></span>
 <span class="w">      </span><span class="p">},</span><span class="w"></span>
 <span class="w">    </span><span class="p">};</span><span class="w"></span>
 <span class="w">  </span><span class="p">}</span><span class="w"></span>
@@ -1266,9 +1259,9 @@
 
 <span class="k">export</span><span class="w"> </span><span class="nx">namespace</span><span class="w"> </span><span class="nx">MsgHello</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="k">export</span><span class="w"> </span><span class="kd">interface</span><span class="w"> </span><span class="nx">Data</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;greeting/MsgHello&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;greeting/MsgHello&quot;</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">      </span><span class="nx">recipient</span><span class="o">:</span><span class="w"> </span><span class="kt">AccAddress</span><span class="w"></span>
+<span class="w">      </span><span class="nx">recipient</span><span class="o">:</span><span class="w"> </span><span class="kt">AccAddress</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="p">};</span><span class="w"></span>
 <span class="w">  </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
@@ -1278,11 +1271,11 @@
 <li><p>Create the following file, which will index your new messages.</p></li>
 </ol>
 <p><code class="docutils literal notranslate"><span class="pre">src/core/greeting/msgs/index.ts</span></code></p>
-<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">MsgHello</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./MsgHello&#39;</span><span class="p">;</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">MsgGoodbye</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./MsgGoodbye&#39;</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">MsgHello</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./MsgHello&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">MsgGoodbye</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./MsgGoodbye&quot;</span><span class="p">;</span><span class="w"></span>
 
-<span class="k">export</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./MsgHello&#39;</span><span class="p">;</span><span class="w"></span>
-<span class="k">export</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./MsgGoodbye&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="k">export</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./MsgHello&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="k">export</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./MsgGoodbye&quot;</span><span class="p">;</span><span class="w"></span>
 
 <span class="k">export</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="nx">GreetingMsg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">MsgHello</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">MsgGoodbye</span><span class="p">;</span><span class="w"></span>
 
@@ -1310,9 +1303,7 @@
 <span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="nx">DistributionMsg</span><span class="w"></span>
 <span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="nx">GovMsg</span><span class="w"></span>
 <span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="nx">GreetingMsg</span><span class="w"> </span><span class="c1">// ADD HERE</span><span class="w"></span>
-<span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="nx">MarketMsg</span><span class="w"></span>
 <span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="nx">MsgAuthMsg</span><span class="w"></span>
-<span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="nx">OracleMsg</span><span class="w"></span>
 <span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="nx">SlashingMsg</span><span class="w"></span>
 <span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="nx">StakingMsg</span><span class="w"></span>
 <span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="nx">WasmMsg</span><span class="p">;</span><span class="w"></span>
@@ -1326,9 +1317,7 @@
 <span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="nx">DistributionMsg</span><span class="p">.</span><span class="nx">Data</span><span class="w"></span>
 <span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="nx">GovMsg</span><span class="p">.</span><span class="nx">Data</span><span class="w"></span>
 <span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="nx">Greeting</span><span class="p">.</span><span class="nx">Data</span><span class="w"> </span><span class="c1">// ADD HERE</span><span class="w"></span>
-<span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="nx">MarketMsg</span><span class="p">.</span><span class="nx">Data</span><span class="w"></span>
 <span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="nx">MsgAuthMsg</span><span class="p">.</span><span class="nx">Data</span><span class="w"></span>
-<span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="nx">OracleMsg</span><span class="p">.</span><span class="nx">Data</span><span class="w"></span>
 <span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="nx">SlashingMsg</span><span class="p">.</span><span class="nx">Data</span><span class="w"></span>
 <span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="nx">StakingMsg</span><span class="p">.</span><span class="nx">Data</span><span class="w"></span>
 <span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="nx">WasmMsg</span><span class="p">.</span><span class="nx">Data</span><span class="p">;</span><span class="w"></span>
@@ -1360,29 +1349,19 @@
 </ol>
 <p>Terra.js provides an easy way to generate <code class="docutils literal notranslate"><span class="pre">ParameterChangeProposal</span></code>s, which is a proposal for changing the blockchain parameters associated with a module. If your module has parameters that can be changed via proposal, you should create the following files:</p>
 <p><code class="docutils literal notranslate"><span class="pre">src/core/greeting/params.ts</span></code></p>
-<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ParamChange</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;..&#39;</span><span class="p">;</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Convert</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;../../util/convert&#39;</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ParamChange</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;..&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Convert</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;../../util/convert&quot;</span><span class="p">;</span><span class="w"></span>
 
-<span class="kr">type</span><span class="w"> </span><span class="nx">MaxHellos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ParamChange</span><span class="p">.</span><span class="nx">Type</span><span class="o">&lt;</span><span class="w"></span>
-<span class="w">  </span><span class="s1">&#39;greeting&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="s1">&#39;maxhellos&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="kt">number</span><span class="w"></span>
-<span class="o">&gt;</span><span class="p">;</span><span class="w"></span>
+<span class="kr">type</span><span class="w"> </span><span class="nx">MaxHellos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ParamChange</span><span class="p">.</span><span class="nx">Type</span><span class="o">&lt;</span><span class="s2">&quot;greeting&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;maxhellos&quot;</span><span class="p">,</span><span class="w"> </span><span class="kt">number</span><span class="o">&gt;</span><span class="p">;</span><span class="w"></span>
 
-<span class="kr">type</span><span class="w"> </span><span class="nx">MaxGoodbyes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ParamChange</span><span class="p">.</span><span class="nx">Type</span><span class="o">&lt;</span><span class="w"></span>
-<span class="w">  </span><span class="s1">&#39;greeting&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="s1">&#39;maxgoodbyes&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="kt">number</span><span class="w"></span>
-<span class="o">&gt;</span><span class="p">;</span><span class="w"></span>
+<span class="kr">type</span><span class="w"> </span><span class="nx">MaxGoodbyes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ParamChange</span><span class="p">.</span><span class="nx">Type</span><span class="o">&lt;</span><span class="s2">&quot;greeting&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;maxgoodbyes&quot;</span><span class="p">,</span><span class="w"> </span><span class="kt">number</span><span class="o">&gt;</span><span class="p">;</span><span class="w"></span>
 
-<span class="k">export</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="nx">GreetingParamChange</span><span class="w"> </span><span class="o">=</span><span class="w"></span>
-<span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="nx">MaxHellos</span><span class="w"></span>
-<span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="nx">MaxGoodbyes</span><span class="p">;</span><span class="w"></span>
+<span class="k">export</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="nx">GreetingParamChange</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">MaxHellos</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">MaxGoodbyes</span><span class="p">;</span><span class="w"></span>
 
 <span class="k">export</span><span class="w"> </span><span class="nx">namespace</span><span class="w"> </span><span class="nx">GreetingParamChange</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="k">export</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="nx">Data</span><span class="w"> </span><span class="o">=</span><span class="w"></span>
 <span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="nx">ParamChange</span><span class="p">.</span><span class="nx">Data</span><span class="p">.</span><span class="nx">Type</span><span class="o">&lt;</span><span class="nx">MaxHellos</span><span class="o">&gt;</span><span class="w"></span>
-<span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="nx">ParamChange</span><span class="p">.</span><span class="nx">Data</span><span class="p">.</span><span class="nx">Type</span><span class="o">&lt;</span><span class="nx">MaxGoodbyes</span><span class="o">&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="nx">ParamChange</span><span class="p">.</span><span class="nx">Data</span><span class="p">.</span><span class="nx">Type</span><span class="o">&lt;</span><span class="nx">MaxGoodbyes</span><span class="o">&gt;</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 
 <span class="k">export</span><span class="w"> </span><span class="kd">interface</span><span class="w"> </span><span class="nx">GreetingParamChanges</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -1413,11 +1392,8 @@
 <span class="k">export</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="nx">ParamChanges</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">DistributionParamChanges</span><span class="w"> </span><span class="o">&amp;</span><span class="w"></span>
 <span class="w">  </span><span class="nx">GovParamChanges</span><span class="w"> </span><span class="o">&amp;</span><span class="w"></span>
 <span class="w">  </span><span class="nx">GreetingParamChanges</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="c1">// ADD HERE</span><span class="w"></span>
-<span class="w">  </span><span class="nx">MarketParamChanges</span><span class="w"> </span><span class="o">&amp;</span><span class="w"></span>
-<span class="w">  </span><span class="nx">OracleParamChanges</span><span class="w"> </span><span class="o">&amp;</span><span class="w"></span>
 <span class="w">  </span><span class="nx">SlashingParamChanges</span><span class="w"> </span><span class="o">&amp;</span><span class="w"></span>
 <span class="w">  </span><span class="nx">StakingParamChanges</span><span class="w"> </span><span class="o">&amp;</span><span class="w"></span>
-<span class="w">  </span><span class="nx">TreasuryParamChanges</span><span class="w"> </span><span class="o">&amp;</span><span class="w"></span>
 <span class="w">  </span><span class="nx">WasmParamChanges</span><span class="p">;</span><span class="w"></span>
 
 <span class="k">export</span><span class="w"> </span><span class="nx">namespace</span><span class="w"> </span><span class="nx">ParamChanges</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -1425,11 +1401,8 @@
 <span class="w">    </span><span class="p">...</span><span class="nx">DistributionParamChanges</span><span class="p">.</span><span class="nx">ConversionTable</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="p">...</span><span class="nx">GovParamChanges</span><span class="p">.</span><span class="nx">ConversionTable</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="p">...</span><span class="nx">GreetingParamChanges</span><span class="p">.</span><span class="nx">ConverstionTable</span><span class="p">,</span><span class="w"> </span><span class="c1">// ADD HERE</span><span class="w"></span>
-<span class="w">    </span><span class="p">...</span><span class="nx">MarketParamChanges</span><span class="p">.</span><span class="nx">ConversionTable</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="p">...</span><span class="nx">OracleParamChanges</span><span class="p">.</span><span class="nx">ConversionTable</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="p">...</span><span class="nx">SlashingParamChanges</span><span class="p">.</span><span class="nx">ConversionTable</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="p">...</span><span class="nx">StakingParamChanges</span><span class="p">.</span><span class="nx">ConversionTable</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="p">...</span><span class="nx">TreasuryParamChanges</span><span class="p">.</span><span class="nx">ConversionTable</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="p">...</span><span class="nx">WasmParamChanges</span><span class="p">.</span><span class="nx">ConversionTable</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="p">};</span><span class="w"></span>
 
@@ -1439,11 +1412,8 @@
 <span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="nx">DistributionParamChange</span><span class="w"></span>
 <span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="nx">GovParamChange</span><span class="w"></span>
 <span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="nx">GreetingParamChange</span><span class="w"> </span><span class="c1">// ADD HERE</span><span class="w"></span>
-<span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="nx">MarketParamChange</span><span class="w"></span>
-<span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="nx">OracleParamChange</span><span class="w"></span>
 <span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="nx">SlashingParamChange</span><span class="w"></span>
 <span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="nx">StakingParamChange</span><span class="w"></span>
-<span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="nx">TreasuryParamChange</span><span class="w"></span>
 <span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="nx">WasmParamChange</span><span class="p">;</span><span class="w"></span>
 
 <span class="p">...</span><span class="w"></span>
@@ -1480,16 +1450,16 @@
 <span class="w">  </span><span class="k">public</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="nx">hello</span><span class="p">(</span><span class="nx">accAddress</span><span class="o">:</span><span class="w"> </span><span class="kt">AccAddress</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">AccAddress</span><span class="p">[]</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">c</span><span class="w"></span>
 <span class="w">      </span><span class="p">.</span><span class="nx">get</span><span class="o">&lt;</span><span class="nx">AccAddress</span><span class="p">[]</span><span class="o">&gt;</span><span class="p">(</span><span class="sb">`/greeting/hello/</span><span class="si">${</span><span class="nx">accAddress</span><span class="si">}</span><span class="sb">`</span><span class="p">)</span><span class="w"></span>
-<span class="w">      </span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">d</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">d</span><span class="p">.</span><span class="nx">result</span><span class="p">);</span><span class="w"></span>
+<span class="w">      </span><span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">d</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">d</span><span class="p">.</span><span class="nx">result</span><span class="p">);</span><span class="w"></span>
 <span class="w">  </span><span class="p">}</span><span class="w"></span>
 
 <span class="w">  </span><span class="k">public</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="nx">parameters</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">GreetingParams</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">c</span><span class="w"></span>
 <span class="w">      </span><span class="p">.</span><span class="nx">get</span><span class="o">&lt;</span><span class="nx">GreetingParams</span><span class="p">.</span><span class="nx">Data</span><span class="o">&gt;</span><span class="p">(</span><span class="sb">`/greeting/parameters`</span><span class="p">)</span><span class="w"></span>
-<span class="w">      </span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">d</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">d</span><span class="p">.</span><span class="nx">result</span><span class="p">)</span><span class="w"></span>
-<span class="w">      </span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">d</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">({</span><span class="w"></span>
+<span class="w">      </span><span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">d</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">d</span><span class="p">.</span><span class="nx">result</span><span class="p">)</span><span class="w"></span>
+<span class="w">      </span><span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">d</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">({</span><span class="w"></span>
 <span class="w">        </span><span class="nx">max_hellos</span><span class="o">:</span><span class="w"> </span><span class="kt">Number.parseInt</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">max_hellos</span><span class="p">),</span><span class="w"></span>
-<span class="w">        </span><span class="nx">max_goodbyes</span><span class="o">:</span><span class="w"> </span><span class="kt">Number.parseInt</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">max_goodbyes</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="nx">max_goodbyes</span><span class="o">:</span><span class="w"> </span><span class="kt">Number.parseInt</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">max_goodbyes</span><span class="p">),</span><span class="w"></span>
 <span class="w">      </span><span class="p">}));</span><span class="w"></span>
 <span class="w">  </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
@@ -1498,21 +1468,18 @@
 <ol class="arabic simple" start="2">
 <li><p>Register the API functionality inside <code class="docutils literal notranslate"><span class="pre">src/client/lcd/api/index.ts</span></code>:</p></li>
 </ol>
-<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./AuthAPI&#39;</span><span class="p">;</span><span class="w"></span>
-<span class="k">export</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./BankAPI&#39;</span><span class="p">;</span><span class="w"></span>
-<span class="k">export</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./DistributionAPI&#39;</span><span class="p">;</span><span class="w"></span>
-<span class="k">export</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./GovAPI&#39;</span><span class="p">;</span><span class="w"></span>
-<span class="k">export</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./GreetingAPI&#39;</span><span class="p">;</span><span class="w"> </span><span class="c1">// ADD HERE</span><span class="w"></span>
-<span class="k">export</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./MarketAPI&#39;</span><span class="p">;</span><span class="w"></span>
-<span class="k">export</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./MsgAuthAPI&#39;</span><span class="p">;</span><span class="w"></span>
-<span class="k">export</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./OracleAPI&#39;</span><span class="p">;</span><span class="w"></span>
-<span class="k">export</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./SlashingAPI&#39;</span><span class="p">;</span><span class="w"></span>
-<span class="k">export</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./StakingAPI&#39;</span><span class="p">;</span><span class="w"></span>
-<span class="k">export</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./SupplyAPI&#39;</span><span class="p">;</span><span class="w"></span>
-<span class="k">export</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./TendermintAPI&#39;</span><span class="p">;</span><span class="w"></span>
-<span class="k">export</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./TreasuryAPI&#39;</span><span class="p">;</span><span class="w"></span>
-<span class="k">export</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./TxAPI&#39;</span><span class="p">;</span><span class="w"></span>
-<span class="k">export</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./WasmAPI&#39;</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./AuthAPI&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="k">export</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./BankAPI&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="k">export</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./DistributionAPI&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="k">export</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./GovAPI&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="k">export</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./GreetingAPI&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// ADD HERE</span><span class="w"></span>
+<span class="k">export</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./MsgAuthAPI&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="k">export</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./SlashingAPI&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="k">export</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./StakingAPI&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="k">export</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./SupplyAPI&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="k">export</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./TendermintAPI&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="k">export</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./TxAPI&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="k">export</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./WasmAPI&quot;</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
 <ol class="arabic simple" start="3">
@@ -1525,14 +1492,11 @@
 <span class="w">  </span><span class="nx">DistributionAPI</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="nx">GovAPI</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="nx">GreetingAPI</span><span class="p">,</span><span class="w"> </span><span class="c1">// ADD HERE</span><span class="w"></span>
-<span class="w">  </span><span class="nx">MarketAPI</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="nx">MsgAuthAPI</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="nx">OracleAPI</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="nx">SlashingAPI</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="nx">StakingAPI</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="nx">SupplyAPI</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="nx">TendermintAPI</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="nx">TreasuryAPI</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="nx">TxAPI</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="nx">WasmAPI</span><span class="p">,</span><span class="w"></span>
 <span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./api&#39;</span><span class="p">;</span><span class="w"></span>
@@ -1549,14 +1513,11 @@
 <span class="w">  </span><span class="k">public</span><span class="w"> </span><span class="nx">distribution</span><span class="o">:</span><span class="w"> </span><span class="kt">DistributionAPI</span><span class="p">;</span><span class="w"></span>
 <span class="w">  </span><span class="k">public</span><span class="w"> </span><span class="nx">gov</span><span class="o">:</span><span class="w"> </span><span class="kt">GovAPI</span><span class="p">;</span><span class="w"></span>
 <span class="w">  </span><span class="k">public</span><span class="w"> </span><span class="nx">greeting</span><span class="o">:</span><span class="w"> </span><span class="kt">GreetingAPI</span><span class="p">;</span><span class="w"> </span><span class="c1">// ADD HERE</span><span class="w"></span>
-<span class="w">  </span><span class="k">public</span><span class="w"> </span><span class="nx">market</span><span class="o">:</span><span class="w"> </span><span class="kt">MarketAPI</span><span class="p">;</span><span class="w"></span>
 <span class="w">  </span><span class="k">public</span><span class="w"> </span><span class="nx">msgauth</span><span class="o">:</span><span class="w"> </span><span class="kt">MsgAuthAPI</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="k">public</span><span class="w"> </span><span class="nx">oracle</span><span class="o">:</span><span class="w"> </span><span class="kt">OracleAPI</span><span class="p">;</span><span class="w"></span>
 <span class="w">  </span><span class="k">public</span><span class="w"> </span><span class="nx">slashing</span><span class="o">:</span><span class="w"> </span><span class="kt">SlashingAPI</span><span class="p">;</span><span class="w"></span>
 <span class="w">  </span><span class="k">public</span><span class="w"> </span><span class="nx">staking</span><span class="o">:</span><span class="w"> </span><span class="kt">StakingAPI</span><span class="p">;</span><span class="w"></span>
 <span class="w">  </span><span class="k">public</span><span class="w"> </span><span class="nx">supply</span><span class="o">:</span><span class="w"> </span><span class="kt">SupplyAPI</span><span class="p">;</span><span class="w"></span>
 <span class="w">  </span><span class="k">public</span><span class="w"> </span><span class="nx">tendermint</span><span class="o">:</span><span class="w"> </span><span class="kt">TendermintAPI</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="k">public</span><span class="w"> </span><span class="nx">treasury</span><span class="o">:</span><span class="w"> </span><span class="kt">TreasuryAPI</span><span class="p">;</span><span class="w"></span>
 <span class="w">  </span><span class="k">public</span><span class="w"> </span><span class="nx">wasm</span><span class="o">:</span><span class="w"> </span><span class="kt">WasmAPI</span><span class="p">;</span><span class="w"></span>
 <span class="w">  </span><span class="k">public</span><span class="w"> </span><span class="nx">tx</span><span class="o">:</span><span class="w"> </span><span class="kt">TxAPI</span><span class="p">;</span><span class="w"></span>
 
@@ -1579,14 +1540,11 @@
 <span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">distribution</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">DistributionAPI</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">apiRequester</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">gov</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">GovAPI</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">apiRequester</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">greeting</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">GreetingAPI</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">apiRequester</span><span class="p">);</span><span class="w"> </span><span class="c1">// ADD HERE</span><span class="w"></span>
-<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">market</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">MarketAPI</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">apiRequester</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">msgauth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">MsgAuthAPI</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">apiRequester</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">oracle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">OracleAPI</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">apiRequester</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">slashing</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">SlashingAPI</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">apiRequester</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">staking</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">StakingAPI</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">apiRequester</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">supply</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">SupplyAPI</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">apiRequester</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">tendermint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">TendermintAPI</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">apiRequester</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">treasury</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">TreasuryAPI</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">apiRequester</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">wasm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">WasmAPI</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">apiRequester</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">tx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">TxAPI</span><span class="p">(</span><span class="k">this</span><span class="p">);</span><span class="w"></span>
 <span class="w">  </span><span class="p">}</span><span class="w"></span>

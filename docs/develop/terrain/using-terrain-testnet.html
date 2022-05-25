@@ -445,11 +445,6 @@
         </a>
        </li>
        <li class="toctree-l4">
-        <a class="reference internal" href="../terra-js/oracle-feeder.html">
-         Oracle feeder
-        </a>
-       </li>
-       <li class="toctree-l4">
         <a class="reference internal" href="../terra-js/query-data.html">
          Query data
         </a>
@@ -1170,8 +1165,8 @@
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#create-a-bombay-wallet">
-     Create a Bombay wallet
+    <a class="reference internal nav-link" href="#create-a-pisco-wallet">
+     Create a Pisco wallet
     </a>
    </li>
   </ul>
@@ -1263,8 +1258,8 @@
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#create-a-bombay-wallet">
-     Create a Bombay wallet
+    <a class="reference internal nav-link" href="#create-a-pisco-wallet">
+     Create a Pisco wallet
     </a>
    </li>
   </ul>
@@ -1336,17 +1331,17 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="use-terrain-with-the-testnet">
 <h1>Use Terrain with the testnet<a class="headerlink" href="#use-terrain-with-the-testnet" title="Permalink to this headline">#</a></h1>
-<p>The Bombay testnet is used for testing transactions on the Terra network.</p>
+<p>The Pisco testnet is used for testing transactions on the Terra network.</p>
 <div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p><span class="xref myst">Install the Terra Station browser extension</span></p></li>
 </ul>
 </div>
-<div class="section" id="create-a-bombay-wallet">
-<h2>Create a Bombay wallet<a class="headerlink" href="#create-a-bombay-wallet" title="Permalink to this headline">#</a></h2>
-<p><span class="xref myst">Create a new wallet</span> using the Terra Station extension. It’s recommended that you name this wallet “Bombay” or “testnet” so it’s easy to remember.</p>
-<p>After creating a Bombay wallet and storing the seed phrase, request funds from the testnet faucet:</p>
+<div class="section" id="create-a-pisco-wallet">
+<h2>Create a Pisco wallet<a class="headerlink" href="#create-a-pisco-wallet" title="Permalink to this headline">#</a></h2>
+<p><span class="xref myst">Create a new wallet</span> using the Terra Station extension. It’s recommended that you name this wallet “Pisco” or “testnet” so it’s easy to remember.</p>
+<p>After creating a Pisco wallet and storing the seed phrase, request funds from the testnet faucet:</p>
 <p><a class="reference external" href="https://faucet.terra.money">https://faucet.terra.money</a></p>
 <div class="admonition danger">
 <p class="admonition-title">Danger</p>
@@ -1384,12 +1379,12 @@ npm install
 </div>
 <div class="section" id="configure-the-testnet">
 <h2>2. Configure the testnet<a class="headerlink" href="#configure-the-testnet" title="Permalink to this headline">#</a></h2>
-<p>Before deploying, Terrain needs to learn how to access your Bombay wallet. To do this you’ll need to modify <code class="docutils literal notranslate"><span class="pre">keys.terrain.js</span></code> in the generated project.</p>
+<p>Before deploying, Terrain needs to learn how to access your Pisco wallet. To do this you’ll need to modify <code class="docutils literal notranslate"><span class="pre">keys.terrain.js</span></code> in the generated project.</p>
 <p>Modify the configuration and input your seed phrase to look like this:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">module</span><span class="o">.</span><span class="n">exports</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="n">bombay</span><span class="p">:</span> <span class="p">{</span>
+  <span class="n">pisco</span><span class="p">:</span> <span class="p">{</span>
     <span class="n">mnemonic</span><span class="p">:</span>
-      <span class="s2">&quot;PLACE_YOUR_BOMBAY_SEED_PHRASE_HERE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;PLACE_YOUR_PISCO_SEED_PHRASE_HERE&quot;</span><span class="p">,</span>
   <span class="p">},</span>
 <span class="p">};</span>
 </pre></div>
@@ -1398,7 +1393,7 @@ npm install
 <div class="section" id="deploy">
 <h2>3. Deploy<a class="headerlink" href="#deploy" title="Permalink to this headline">#</a></h2>
 <p>To deploy the application, run the following command:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrain deploy counter --signer bombay --network testnet
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrain deploy counter --signer pisco --network testnet
 </pre></div>
 </div>
 <p>The deploy command performs the following steps automatically:</p>
@@ -1445,10 +1440,10 @@ npm install
 <ol class="arabic">
 <li><p>Run <code class="docutils literal notranslate"><span class="pre">terrain</span> <span class="pre">console</span> <span class="pre">--network</span> <span class="pre">testnet</span></code>.</p></li>
 <li><p>With the console open, increment the counter by running the following:</p>
-<div class="highlight-JavaScript notranslate"><div class="highlight"><pre><span></span><span class="k">await</span><span class="w"> </span><span class="nx">lib</span><span class="p">.</span><span class="nx">increment</span><span class="p">(</span><span class="nx">wallets</span><span class="p">.</span><span class="nx">bombay</span><span class="p">);</span><span class="w"></span>
+<div class="highlight-JavaScript notranslate"><div class="highlight"><pre><span></span><span class="k">await</span><span class="w"> </span><span class="nx">lib</span><span class="p">.</span><span class="nx">increment</span><span class="p">(</span><span class="nx">wallets</span><span class="p">.</span><span class="nx">pisco</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
-<p>Make sure to pass your Bombay wallet to the increment command. <code class="docutils literal notranslate"><span class="pre">terrain</span> <span class="pre">console</span></code> makes wallets specified in <code class="docutils literal notranslate"><span class="pre">keys.terrain.js</span></code> available in the <code class="docutils literal notranslate"><span class="pre">wallets</span></code> object.</p>
+<p>Make sure to pass your Pisco wallet to the increment command. <code class="docutils literal notranslate"><span class="pre">terrain</span> <span class="pre">console</span></code> makes wallets specified in <code class="docutils literal notranslate"><span class="pre">keys.terrain.js</span></code> available in the <code class="docutils literal notranslate"><span class="pre">wallets</span></code> object.</p>
 <p>You can get the current count by using:</p>
 <div class="highlight-JavaScript notranslate"><div class="highlight"><pre><span></span><span class="k">await</span><span class="w"> </span><span class="nx">lib</span><span class="p">.</span><span class="nx">getCount</span><span class="p">()</span><span class="w"></span>
 </pre></div>

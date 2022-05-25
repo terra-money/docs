@@ -445,11 +445,6 @@
         </a>
        </li>
        <li class="toctree-l4">
-        <a class="reference internal" href="oracle-feeder.html">
-         Oracle feeder
-        </a>
-       </li>
-       <li class="toctree-l4">
         <a class="reference internal" href="query-data.html">
          Query data
         </a>
@@ -1202,7 +1197,7 @@
 <h1>Fees<a class="headerlink" href="#fees" title="Permalink to this headline">#</a></h1>
 <div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Fee</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@terra-money/terra.js&#39;</span><span class="p">;</span><span class="w"></span>
 
-<span class="kd">const</span><span class="w"> </span><span class="nx">msgs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">MsgSend</span><span class="p">(</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">),</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">MsgSwap</span><span class="p">(</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">),</span><span class="w"> </span><span class="p">];</span><span class="w"> </span><span class="c1">// messages</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">msgs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">MsgSend</span><span class="p">(</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">),</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">MsgExecuteContract</span><span class="p">(</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">),</span><span class="w"> </span><span class="p">];</span><span class="w"> </span><span class="c1">// messages</span><span class="w"></span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">fee</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Fee</span><span class="p">(</span><span class="mf">50000</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">uluna</span><span class="o">:</span><span class="w"> </span><span class="kt">4500000</span><span class="w"> </span><span class="p">});</span><span class="w"></span>
 
 <span class="kd">const</span><span class="w"> </span><span class="nx">tx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">createAndSignTx</span><span class="p">({</span><span class="w"> </span><span class="nx">msgs</span><span class="p">,</span><span class="w"> </span><span class="nx">fee</span><span class="w"> </span><span class="p">});</span><span class="w"></span>
@@ -1216,10 +1211,10 @@
 </div>
 <p>You can define the fee estimation parameters when you create your <code class="docutils literal notranslate"><span class="pre">LCDClient</span></code> instance. The defaults are:</p>
 <div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">terra</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">LCDClient</span><span class="p">({</span><span class="w"></span>
-<span class="w">  </span><span class="nx">URL</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;https://lcd.terra.dev&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="nx">chainID</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;columbus-5&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">URL</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;https://lcd.terra.dev&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">chainID</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;phoenix-1&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="nx">gasPrices</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">uluna</span><span class="o">:</span><span class="w"> </span><span class="kt">0.015</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="w">  </span><span class="nx">gasAdjustment</span><span class="o">:</span><span class="w"> </span><span class="kt">1.4</span><span class="w"></span>
+<span class="w">  </span><span class="nx">gasAdjustment</span><span class="o">:</span><span class="w"> </span><span class="kt">1.4</span><span class="p">,</span><span class="w"></span>
 <span class="p">});</span><span class="w"></span>
 </pre></div>
 </div>
@@ -1227,7 +1222,7 @@
 <div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">tx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">createAndSignTx</span><span class="p">({</span><span class="w"></span>
 <span class="w">  </span><span class="nx">msgs</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="nx">gasPrices</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ukrw</span><span class="o">:</span><span class="w"> </span><span class="kt">0.01</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="w">  </span><span class="nx">gasAdjustment</span><span class="o">:</span><span class="w"> </span><span class="kt">1.9</span><span class="w"></span>
+<span class="w">  </span><span class="nx">gasAdjustment</span><span class="o">:</span><span class="w"> </span><span class="kt">1.9</span><span class="p">,</span><span class="w"></span>
 <span class="p">});</span><span class="w"></span>
 </pre></div>
 </div>

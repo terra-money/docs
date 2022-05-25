@@ -445,11 +445,6 @@
         </a>
        </li>
        <li class="toctree-l4">
-        <a class="reference internal" href="oracle-feeder.html">
-         Oracle feeder
-        </a>
-       </li>
-       <li class="toctree-l4">
         <a class="reference internal" href="query-data.html">
          Query data
         </a>
@@ -1268,12 +1263,12 @@
 <div class="section" id="create-a-wallet">
 <h3>Create a wallet<a class="headerlink" href="#create-a-wallet" title="Permalink to this headline">#</a></h3>
 <p>You will first want to create a wallet which you can use to sign transactions.</p>
-<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">MnemonicKey</span><span class="p">,</span><span class="w"> </span><span class="nx">LCDClient</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@terra-money/terra.js&#39;</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">MnemonicKey</span><span class="p">,</span><span class="w"> </span><span class="nx">LCDClient</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@terra-money/terra.js&quot;</span><span class="p">;</span><span class="w"></span>
 
 <span class="kd">const</span><span class="w"> </span><span class="nx">mk</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">MnemonicKey</span><span class="p">();</span><span class="w"></span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">terra</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">LCDClient</span><span class="p">({</span><span class="w"></span>
-<span class="w">  </span><span class="nx">URL</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;https://bombay-lcd.terra.dev&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="nx">chainID</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;bombay-12&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="nx">URL</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;https://pisco-lcd.terra.dev&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">chainID</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;pisco-1&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="p">});</span><span class="w"></span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">wallet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">terra</span><span class="p">.</span><span class="nx">wallet</span><span class="p">(</span><span class="nx">mk</span><span class="p">);</span><span class="w"></span>
 </pre></div>
@@ -1281,13 +1276,11 @@
 </div>
 <div class="section" id="create-messages">
 <h3>Create messages<a class="headerlink" href="#create-messages" title="Permalink to this headline">#</a></h3>
-<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">MsgSend</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@terra-money/terra.js&#39;</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">MsgSend</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@terra-money/terra.js&quot;</span><span class="p">;</span><span class="w"></span>
 
-<span class="kd">const</span><span class="w"> </span><span class="nx">send</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">MsgSend</span><span class="p">(</span><span class="w"></span>
-<span class="w">  </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">key</span><span class="p">.</span><span class="nx">accAddress</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="s2">&quot;&lt;random-terra-address&gt;&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">uluna</span><span class="o">:</span><span class="w"> </span><span class="kt">1000</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
-<span class="p">);</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">send</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">MsgSend</span><span class="p">(</span><span class="nx">wallet</span><span class="p">.</span><span class="nx">key</span><span class="p">.</span><span class="nx">accAddress</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;&lt;random-terra-address&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">uluna</span><span class="o">:</span><span class="w"> </span><span class="kt">1000</span><span class="p">,</span><span class="w"></span>
+<span class="p">});</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1295,7 +1288,7 @@
 <h3>Create and Sign Transaction<a class="headerlink" href="#create-and-sign-transaction" title="Permalink to this headline">#</a></h3>
 <div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">tx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">createAndSignTx</span><span class="p">({</span><span class="w"></span>
 <span class="w">  </span><span class="nx">msgs</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nx">send</span><span class="p">],</span><span class="w"></span>
-<span class="w">  </span><span class="nx">memo</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Hello&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="nx">memo</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="p">});</span><span class="w"></span>
 </pre></div>
 </div>
@@ -1320,7 +1313,9 @@
 <span class="kd">const</span><span class="w"> </span><span class="nx">txResult</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">terra</span><span class="p">.</span><span class="nx">tx</span><span class="p">.</span><span class="nx">broadcast</span><span class="p">(</span><span class="nx">tx</span><span class="p">);</span><span class="w"></span>
 
 <span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">isTxError</span><span class="p">(</span><span class="nx">txResult</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="sb">`encountered an error while running the transaction: </span><span class="si">${</span><span class="nx">txResult</span><span class="p">.</span><span class="nx">code</span><span class="si">}</span><span class="sb"> </span><span class="si">${</span><span class="nx">txResult</span><span class="p">.</span><span class="nx">codespace</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="sb">`encountered an error while running the transaction: </span><span class="si">${</span><span class="nx">txResult</span><span class="p">.</span><span class="nx">code</span><span class="si">}</span><span class="sb"> </span><span class="si">${</span><span class="nx">txResult</span><span class="p">.</span><span class="nx">codespace</span><span class="si">}</span><span class="sb">`</span><span class="w"></span>
+<span class="w">  </span><span class="p">);</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 
 <span class="c1">// check for events from the first message</span><span class="w"></span>

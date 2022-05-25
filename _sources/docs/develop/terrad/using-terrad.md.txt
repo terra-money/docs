@@ -71,17 +71,19 @@ terrad tx bank send \
     --chain-id=<chain-id> \
     --dry-run
 ```
+
 ::: {dropdown} Example: simulate a KRW transfer:
+
 ```bash
 terrad tx bank send \
-    terra1ru2ySENDER-EXAMPLEtf9cva9kp33h0jnsm9ss \  
+    terra1ru2ySENDER-EXAMPLEtf9cva9kp33h0jnsm9ss \
     terra1rRECIPIENT-EXAMPLEtf9cva9kp33h0jnsm9ss \
     1ukrw \
-    --chain-id=bombay-12 \
+    --chain-id=pisco-1 \
     --dry-run
 ```
-:::
 
+:::
 
 ### Generating a transaction without sending
 
@@ -104,12 +106,15 @@ terrad tx sign \
 ```
 
 ::: {dropdown} Example: Sign an unsigned transaction
+
 ```bash
 terrad tx sign \
-    --chain-id=bombay-12 \
+    --chain-id=pisco-1 \
     --from=terra1EXAMPLEy09tEXAMPLEtf9EXAMPLE3h0EXAMPLEss unsignedTx.json
 ```
+
 A healthy response should looks simillar to the following:
+
 ```json
 {
   "body": {
@@ -173,7 +178,6 @@ You can broadcast the signed transaction to a node by providing the JSON file to
 terrad tx broadcast --node=<node> signedSendTx.json
 ```
 
-
 ## Fees
 
 Transactions on the Terra Protocol network need to include a transaction fee in order to be processed. This fee pays for the gas required to run the transaction. The formula is the following:
@@ -205,7 +209,7 @@ If you use fees, validators will calculate the implied `minGasPrices` by dividin
 To use gas prices (use a comma-separated list of amount and denominations).
 
 ```bash
-terrad tx send ... --gas-prices=0.15uusd
+terrad tx send ... --gas-prices=0.05uluna
 ```
 
 ### Taxes
@@ -224,7 +228,7 @@ To get a direct fee estimation from `terrad`:
 
 ```bash
 terrad tx estimate-fee ...\
-    --gas-prices=0.15uusd
+    --gas-prices=0.01uluna
     --gas-adjustment=1.4
 ```
 
@@ -232,7 +236,7 @@ To create and send transactions using fee-estimation, use the template below as 
 
 ```bash
 terrad tx send ... \
-    --gas-prices=0.15uusd
+    --gas-prices=0.01uluna
     --gas=auto
     --gas-adjustment=1.4
 ```

@@ -17,21 +17,6 @@
 [Reddit](https://www.reddit.com/r/terraluna/): the community-run Terra Reddit<br>
 [LunaLoot](https://lunaloot.com/): the official Terra merch shop<br>
 
-## Mirror Website and Socials
-
-[Website](https://mirror.finance/): the official Mirror Protocol landing page<br>
-[Terra-side](https://terra.mirror.finance/): the official Mirror Protocol on Terra<br>
-[Eth-side](https://eth.mirror.finance/): the official Mirror Protocol UI bridge to Ethereum<br>
-[Docs](https://docs.mirror.finance): the official documentation for Mirror Protocol<br>
-[White Paper](https://mirror.finance/MirrorWP.pdf): the official Mirror Protocol White Paper<br>
-[Github](https://github.com/Mirror-Protocol): the official Mirror Protocol GitHub hosting all Mirror public repos<br>
-[Discord](https://discord.com/invite/KYC22sngFn): the official Mirror Discord for developers and enthusiasts to engage in focused discussions<br>
-[Telegram](https://t.me/mirror_protocol): the official Mirror Telegram for enthusiasts to engage in discussions<br>
-[Twitter](https://twitter.com/mirror_protocol): the official Mirror Twitter for all major news and updates regarding Mirror and its ecosystem<br>
-[Forum](https://forum.mirror.finance/): the official Mirror Forum for technical discussions related to Mirror iterations<br>
-[Medium](https://medium.com/mirror-protocol): the official Mirror Medium for all major partnership announcements and monthly ecosystem updates<br>
-[Youtube](https://www.youtube.com/watch?v=zdh0vHpw8yM): the official Mirror Youtube for Mirror panel discussions and monthly AMAs<br>
-
 ## Anchor Website and Socials
 
 [Website](https://anchorprotocol.com/): the official Anchor Protocol landing page<br>
@@ -47,7 +32,6 @@
 
 ## Analytics
 
-[Chaiscan](https://www.chaiscan.com/): provides CHAI daily & monthly users and transaction numbers (by DSRV)<br>
 [Flipside Crypto](http://terra.flipsidecrypto.com/): provides insights into Terra’s ecosystem, including ecosystem usage, stakeholder behaviors, staking patterns, and economics<br>
 [Smartstake](http://terra.smartstake.io/): provides data on staking APR and MIR airdrops<br>
 [Megastake](http://lunarichlist.com/): provides a list of the top LUNA wallets<br>
@@ -55,22 +39,17 @@
 [Blocktivity](http://blocktivity.info/): provides Terra price history, ecosystem and activity data<br>
 [Messari](https://messari.io/asset/terra): provides Terra project overview, news & research, historical data, and metrics<br>
 [Token Terminal](https://terminal.tokenterminal.com/dashboard/Terra): provides data on Terra P/S, VOL/MC, GMV & rankings with other blockchains<br>
-[Token Terminal Mirror](https://terminal.tokenterminal.com/dashboard/MirrorProtocol): provides data on Mirror P/S, VOL/MC, GMV & rankings with other dapps<br>
 [AssetDash](https://assetdash.com/?q=luna): ranks LUNA with other assets<br>
 [Luna Whale](https://www.lunawhale.com/): provides insights into LUNA whale activity (by DSRV)<br>
 [TerraSwap Dashboard](https://alpac4.com/TerraSwapDashboard): provides insights on volume and liquidity on TerraSwap, Terra’s AMM DEX<br>
-[Mirror Market](https://mirrormarket.finance/): provides tracking and data insights on the Mirror ecosystem<br>
 [Anchor Simulator](https://anchor-simulator.com/): enables users to estimate earnings on Anchor using different strategies<br>
 [Ape Board](https://apeboard.finance/dashboard): enables users to track portfolio across the entire Terra ecosystem on one dashboard<br>
 
 ## Applications
 
-[Mirror Protocol](https://mirror.finance/): a DeFi protocol that enables the creation of synthetic assets<br>
 [Anchor Protocol](https://anchor.money/): a high-yield savings protocol<br>
-[CHAI](https://chai.finance/): a payments product used by 5% of the population in South Korea<br>
 [BuzLink](https://buzlink.io/): a viral marketing product to scale social referrals<br>
 [MemePay](https://www.meme.mn/nav/home): a payments product used by 3% of the population in Mongolia<br>
-[Pylon Protocol](https://www.pylon.money): A suite of savings and payments products powered by yield redirection<br>
 
 ## Applications Powered By Terra
 
@@ -92,7 +71,6 @@
 
 [Bug Bounty](https://www.terra.money/bugcrowd): the official Terra Bug Bounty program<br>
 [Project Surge](https://medium.com/terra-money/introducing-project-surge-49cfe8141284): program involving community in Terra’s BD pipeline<br>
-[Terraform Capital](https://capital.terra.money/): launch capital program funding audits for projects that incorporate LUNA/Terra stablecoins<br>
 
 ## Ecosystem Partnerships
 
@@ -106,31 +84,20 @@
 
 #### Ethereum
 
-- [Uniswap](https://eth.mirror.finance/): DEX for Terra assets and MIR-incentivized liquidity pools<br>
-- [Sushiswap](https://sushiswap.fi/): DEX for Terra assets and SUSHI-incentivized UST Onsen pool<br>
-- [Curve](https://www.curve.fi/ust): Deep liquidity stablecoin pool for UST<br>
-- [Balancer](https://balancer.exchange/#/swap): UST/USDC pool<br>
+- [Uniswap](https://eth.mirror.finance/): DEX for Terra assets<br>
+- [Sushiswap](https://app.sushi.com/): DEX for Terra assets<br>
 - [1inch](https://1inch.exchange/): DEX aggregator for Terra assets<br>
 - [Matcha.xyz](http://matcha.xyz/): DEX aggregator for Terra assets<br>
-- [Yearn Finance](https://yearn.finance/vaults): crvUST vault<br>
-- [Harvest Finance](https://harvest.finance/): automated yield-farming for mAsset and UST pools<br>
 - [Zapper.fi](http://zapper.fi/): DeFi dashboard for managing UST<br>
 - [Lido](https://lido.fi/) - liquid staking derivatives<br>
 - [Persistence](https://persistence.one/): Terra stablecoin-powered institutional DeFi<br>
-- [Unilend](https://unilend.finance/) - lending and borrowing using mirror assets<br>
-- [CREAM Finance](https://cream.finance/) - lending and borrowing for UST<br>
-- [Stabilize Protocol](https://www.stabilize.finance/): STBZ-incentivized UST stablecoin pool<br>
-- [Pickle Finance](https://app.pickle.finance/jars): incentivized UST/MIR pool<br>
-- [Set Protocol](https://www.tokensets.com): FAANG index set of 5 mAssets (Facebook, Amazon, Apple, Netflix & Google) on Uniswap<br>
+- [CREAM Finance](https://cream.finance/) - lending and borrowing for LUNA<br>
 - [Ren Protocol](https://renproject.io/): renVM bridge to transport $renLUNA to Ethereum<br>
 
 #### Binance Smart Chain
 
 - [PancakeSwap](https://pancakeswap.finance/): DEX for Terra assets and CAKE-incentivized liquidity pools<br>
-- [StableXSwap](https://www.stablex.finance/#/swap): stablecoin pool for UST<br>
-- [Beefy Finance](https://beefy.finance/): yield farming optimizer for UST and mAsset pools<br>
-- [Smoothy Finance](https://smoothy.finance/#/swap): stablecoin AMM for UST<br>
-- [Acryptos](https://app.acryptos.com/): yield farming optimizer for UST and MIR pools<br>
+- [Beefy Finance](https://beefy.finance/): yield farming optimizer for LUNA pools<br>
 
 ## Educational
 
@@ -186,7 +153,6 @@
 Terra Station Extension: [Chrome](https://chrome.google.com/webstore/detail/terra-station/aiifbnbfobpmeekipheeijimdpnlpgpp)<br>
 Terra Station Desktop: [MacOS](https://github.com/terra-money/station-legacy/releases/download/v3.5.0/Terra.Station-1.1.0.dmg) | [Windows](https://github.com/terra-money/station-legacy/releases/download/v3.5.0/Terra.Station.Setup.1.1.0.exe) | [Linux (deb)](https://github.com/terra-money/station-legacy/releases/download/v3.5.0/station-electron_1.1.1_amd64.deb) | [Linux (rpm)](https://github.com/terra-money/station-legacy/releases/download/v3.5.0/station-electron-1.1.1.x86_64.rpm)<br>
 Terra Station Mobile: [iOS](https://apps.apple.com/app/id1548434735) | [Android](https://play.google.com/store/apps/details?id=money.terra.station)<br>
-[Mirror Wallet](https://mirrorwallet.com/): Invest and trade cryptocurrencies and mirror assets<br>
 [MathWallet](https://mathwallet.org/en-us/): multi-platform crypto wallet for Terra assets<br>
 [Ledger Nano X/S](https://support.ledger.com/hc/en-us/articles/360017698979-Terra-LUNA-): hardware wallet by the Ledger team<br>
 [Oxis](https://www.oxis.com/): non-custodial wallet with fiat to crypto on and offramps & trading functionality<br>

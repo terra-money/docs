@@ -445,11 +445,6 @@
         </a>
        </li>
        <li class="toctree-l4">
-        <a class="reference internal" href="../terra-js/oracle-feeder.html">
-         Oracle feeder
-        </a>
-       </li>
-       <li class="toctree-l4">
         <a class="reference internal" href="../terra-js/query-data.html">
          Query data
         </a>
@@ -1195,18 +1190,6 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#swapping-digital-currencies">
-   Swapping Digital Currencies
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#swap-and-send">
-     Swap and Send
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#interacting-with-smart-contracts">
    Interacting with Smart Contracts
   </a>
@@ -1272,18 +1255,6 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#swapping-digital-currencies">
-   Swapping Digital Currencies
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#swap-and-send">
-     Swap and Send
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#interacting-with-smart-contracts">
    Interacting with Smart Contracts
   </a>
@@ -1334,7 +1305,7 @@ poetry install
 <p>The Terra Python SDK can be used to carry out a variety of transactions on the Terra blockchain. This tutorial covers the following examples:</p>
 <div align="center">
 <p><a class="reference internal" href="#signing-and-sending-transactions"><span class="std std-doc"><em>Signing and Sending Transactions</em></span></a></p>
-<p><a class="reference internal" href="#swapping-digital-currencies"><span class="std std-doc"><em>Swapping Digital Currencies</em></span></a></p>
+<p><span class="xref myst"><em>Swapping Digital Currencies</em></span></p>
 <p><a class="reference internal" href="#interacting-with-smart-contracts"><span class="std std-doc"><em>Interacting with Smart Contracts</em></span></a></p>
 </div>
 </div>
@@ -1366,8 +1337,8 @@ poetry install
 
 <span class="c1"># Create client to communicate with testnet.</span>
 <span class="n">terra</span> <span class="o">=</span> <span class="n">LCDClient</span><span class="p">(</span>
-    <span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://bombay-lcd.terra.dev/&quot;</span><span class="p">,</span>
-    <span class="n">chain_id</span><span class="o">=</span><span class="s2">&quot;bombay-12&quot;</span>
+    <span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://pisco-lcd.terra.dev/&quot;</span><span class="p">,</span>
+    <span class="n">chain_id</span><span class="o">=</span><span class="s2">&quot;pisco-1&quot;</span>
 <span class="p">)</span>
 
 <span class="c1"># Initialize wallet with associated mnemonic key.</span>
@@ -1382,7 +1353,7 @@ poetry install
 <span class="c1"># Create client to communicate with mainnet.</span>
 <span class="n">terra</span> <span class="o">=</span> <span class="n">LCDClient</span><span class="p">(</span>
     <span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://lcd.terra.dev&quot;</span><span class="p">,</span>
-    <span class="n">chain_id</span><span class="o">=</span><span class="s2">&quot;columbus-5&quot;</span>
+    <span class="n">chain_id</span><span class="o">=</span><span class="s2">&quot;phoenix-1&quot;</span>
 <span class="p">)</span>
 
 <span class="c1"># Initialize wallet with associated mnemonic key.</span>
@@ -1406,41 +1377,19 @@ poetry install
 </div>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-  <span class="s2">&quot;uluna&quot;</span><span class="p">:</span> <span class="s2">&quot;0.01133&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;usdr&quot;</span><span class="p">:</span> <span class="s2">&quot;0.104938&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;uusd&quot;</span><span class="p">:</span> <span class="s2">&quot;0.15&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;ukrw&quot;</span><span class="p">:</span> <span class="s2">&quot;170.0&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;umnt&quot;</span><span class="p">:</span> <span class="s2">&quot;428.571&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;ueur&quot;</span><span class="p">:</span> <span class="s2">&quot;0.125&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;ucny&quot;</span><span class="p">:</span> <span class="s2">&quot;0.98&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;ujpy&quot;</span><span class="p">:</span> <span class="s2">&quot;16.37&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;ugbp&quot;</span><span class="p">:</span> <span class="s2">&quot;0.11&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;uinr&quot;</span><span class="p">:</span> <span class="s2">&quot;10.88&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;ucad&quot;</span><span class="p">:</span> <span class="s2">&quot;0.19&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;uchf&quot;</span><span class="p">:</span> <span class="s2">&quot;0.14&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;uaud&quot;</span><span class="p">:</span> <span class="s2">&quot;0.19&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;usgd&quot;</span><span class="p">:</span> <span class="s2">&quot;0.2&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;uthb&quot;</span><span class="p">:</span> <span class="s2">&quot;4.62&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;usek&quot;</span><span class="p">:</span> <span class="s2">&quot;1.25&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;unok&quot;</span><span class="p">:</span> <span class="s2">&quot;1.25&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;udkk&quot;</span><span class="p">:</span> <span class="s2">&quot;0.9&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;uidr&quot;</span><span class="p">:</span> <span class="s2">&quot;2180.0&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;uphp&quot;</span><span class="p">:</span> <span class="s2">&quot;7.6&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;uhkd&quot;</span><span class="p">:</span> <span class="s2">&quot;1.17&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;umyr&quot;</span><span class="p">:</span> <span class="s2">&quot;0.6&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;utwd&quot;</span><span class="p">:</span> <span class="s2">&quot;4.0&quot;</span>
+  <span class="s2">&quot;uluna&quot;</span><span class="p">:</span> <span class="s2">&quot;0.01133&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 </div></blockquote>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The “u” preceding the name of each currency is the unit symbol for micro. This means that each price is given in millionths of the corresponding cryptocurrency asset. Each currency name refers to its corresponding Terra token. For example, the “uusd”: “0.15” entry corresponds to a 0.00000015 UST cost for each unit of gas expended per transaction.</p>
+<p>The “u” preceding the name of each currency is the unit symbol for micro. This means that each price is given in millionths of the corresponding cryptocurrency asset. Each currency name refers to its corresponding Terra token. For example, the “uluna”: “0.15” entry corresponds to a 0.00000015 LUNA cost for each unit of gas expended per transaction.</p>
 </div>
 </div>
 <div class="section" id="signing-and-sending-transactions">
 <h2>Signing and Sending Transactions<a class="headerlink" href="#signing-and-sending-transactions" title="Permalink to this headline">#</a></h2>
-<p>After initializing your LCDClient and wallet, you may try to carry out a simple transfer of funds. This involves initializing the addresses of your sender and receiver wallets, setting the relevant parameters to carry out the transaction, and creating, signing, and finally sending the request to the node for execution. In this example, you will be sending 1 Luna from your previously initialized wallet to another testing wallet, test2. For this example, fees will be paid in TerraUSD (UST), as specified in the <code class="docutils literal notranslate"><span class="pre">fee_denoms</span></code> parameter.</p>
+<p>After initializing your LCDClient and wallet, you may try to carry out a simple transfer of funds. This involves initializing the addresses of your sender and receiver wallets, setting the relevant parameters to carry out the transaction, and creating, signing, and finally sending the request to the node for execution. In this example, you will be sending 1 Luna from your previously initialized wallet to another testing wallet, test2. For this example, fees will be paid in Luna (LUNA), as specified in the <code class="docutils literal notranslate"><span class="pre">fee_denoms</span></code> parameter.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">terra_sdk.client.lcd.api.tx</span> <span class="kn">import</span> <span class="n">CreateTxOptions</span>
 <span class="kn">from</span> <span class="nn">terra_sdk.core.bank</span> <span class="kn">import</span> <span class="n">MsgSend</span>
 <span class="kn">from</span> <span class="nn">terra_sdk.core</span> <span class="kn">import</span> <span class="n">Coins</span><span class="p">,</span> <span class="n">Coin</span>
@@ -1460,7 +1409,7 @@ poetry install
     <span class="p">],</span>
     <span class="n">gas</span><span class="o">=</span><span class="s2">&quot;auto&quot;</span><span class="p">,</span>
     <span class="n">gas_prices</span><span class="o">=</span><span class="n">Coins</span><span class="p">(</span><span class="n">gas_price_dict</span><span class="p">),</span>
-    <span class="n">fee_denoms</span><span class="o">=</span><span class="s2">&quot;uusd&quot;</span><span class="p">,</span>
+    <span class="n">fee_denoms</span><span class="o">=</span><span class="s2">&quot;uluna&quot;</span><span class="p">,</span>
     <span class="n">gas_adjustment</span><span class="o">=</span><span class="mf">1.5</span>
 <span class="p">)</span>
 
@@ -1477,108 +1426,9 @@ poetry install
 <p>In <code class="docutils literal notranslate"><span class="pre">CreateTxOptions</span></code>, the setting of the <code class="docutils literal notranslate"><span class="pre">gas</span></code> parameter to <code class="docutils literal notranslate"><span class="pre">auto</span></code> estimates the amount of gas that may be needed for processing the transaction. The <code class="docutils literal notranslate"><span class="pre">gas_adjustment</span></code> parameter allows for this value to be increased in order to meet the minimum gas requirement for processing if the estimated value is determined to be too small. In order to ensure acceptance of your transaction, this example sets this parameter to a value of 1.5. You may experiment with different parameter values to evaluate which configuration is best for you.</p>
 </div>
 </div>
-<div class="section" id="swapping-digital-currencies">
-<h2>Swapping Digital Currencies<a class="headerlink" href="#swapping-digital-currencies" title="Permalink to this headline">#</a></h2>
-<p>If you would like to swap one of your Terra assets for another, you may broadcast a swap message to the Terra node. In this example, you will utilize your previously initialized wallet, test1, to swap 1 Luna to UST. You also specify that you will pay the transaction fee with your TerraKRW (KRT) assets.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">terra_sdk.client.lcd.api.tx</span> <span class="kn">import</span> <span class="n">CreateTxOptions</span>
-<span class="kn">from</span> <span class="nn">terra_sdk.core.market</span> <span class="kn">import</span> <span class="n">MsgSwap</span>
-<span class="kn">from</span> <span class="nn">terra_sdk.core</span> <span class="kn">import</span> <span class="n">Coins</span><span class="p">,</span> <span class="n">Coin</span>
-
-<span class="c1"># Initialize trader wallet address.</span>
-<span class="n">trader_address</span> <span class="o">=</span> <span class="n">wallet</span><span class="o">.</span><span class="n">key</span><span class="o">.</span><span class="n">acc_address</span>
-
-<span class="c1"># Set relevant parameters for transaction.</span>
-<span class="n">tx_options</span> <span class="o">=</span> <span class="n">CreateTxOptions</span><span class="p">(</span>
-    <span class="n">msgs</span><span class="o">=</span><span class="p">[</span>
-        <span class="n">MsgSwap</span><span class="p">(</span>
-            <span class="n">trader</span><span class="o">=</span><span class="n">trader_address</span><span class="p">,</span>
-            <span class="n">offer_coin</span><span class="o">=</span><span class="n">Coin</span><span class="p">(</span><span class="s2">&quot;uluna&quot;</span><span class="p">,</span> <span class="mi">1000000</span><span class="p">),</span>
-            <span class="n">ask_denom</span><span class="o">=</span><span class="s2">&quot;uusd&quot;</span>
-        <span class="p">)</span>
-    <span class="p">],</span>
-    <span class="n">gas</span><span class="o">=</span><span class="s2">&quot;auto&quot;</span><span class="p">,</span>
-    <span class="n">gas_prices</span><span class="o">=</span><span class="n">Coins</span><span class="p">(</span><span class="n">gas_price_dict</span><span class="p">),</span>
-    <span class="n">fee_denoms</span><span class="o">=</span><span class="s2">&quot;ukrw&quot;</span><span class="p">,</span>
-    <span class="n">gas_adjustment</span><span class="o">=</span><span class="mf">1.5</span>
-<span class="p">)</span>
-
-<span class="c1"># Create and sign transaction.</span>
-<span class="n">tx</span> <span class="o">=</span> <span class="n">wallet</span><span class="o">.</span><span class="n">create_and_sign_tx</span><span class="p">(</span><span class="n">options</span><span class="o">=</span><span class="n">tx_options</span><span class="p">)</span>
-
-<span class="c1"># Broadcast the request for execution to the Terra node.</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">terra</span><span class="o">.</span><span class="n">tx</span><span class="o">.</span><span class="n">broadcast</span><span class="p">(</span><span class="n">tx</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="section" id="swap-and-send">
-<h3>Swap and Send<a class="headerlink" href="#swap-and-send" title="Permalink to this headline">#</a></h3>
-<p>You may also swap and send funds to an address of your choice utilizing a swap and send message. In this example, you will swap 1 Luna for UST and then send the resulting funds to another testing wallet.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">terra_sdk.client.lcd.api.tx</span> <span class="kn">import</span> <span class="n">CreateTxOptions</span>
-<span class="kn">from</span> <span class="nn">terra_sdk.core.market</span> <span class="kn">import</span> <span class="n">MsgSwapSend</span>
-<span class="kn">from</span> <span class="nn">terra_sdk.core</span> <span class="kn">import</span> <span class="n">Coins</span><span class="p">,</span> <span class="n">Coin</span>
-
-<span class="c1"># Initialize sender and recipient wallet addresses.</span>
-<span class="n">sender_address</span> <span class="o">=</span> <span class="n">wallet</span><span class="o">.</span><span class="n">key</span><span class="o">.</span><span class="n">acc_address</span>
-<span class="n">recipient_address</span> <span class="o">=</span> <span class="n">terra</span><span class="o">.</span><span class="n">wallets</span><span class="p">[</span><span class="s2">&quot;test2&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">key</span><span class="o">.</span><span class="n">acc_address</span>
-
-<span class="c1"># Set relevant parameters for transaction.</span>
-<span class="n">tx_options</span> <span class="o">=</span> <span class="n">CreateTxOptions</span><span class="p">(</span>
-    <span class="n">msgs</span><span class="o">=</span><span class="p">[</span>
-        <span class="n">MsgSwapSend</span><span class="p">(</span>
-            <span class="n">from_address</span><span class="o">=</span><span class="n">sender_address</span><span class="p">,</span>
-            <span class="n">to_address</span><span class="o">=</span><span class="n">recipient_address</span><span class="p">,</span>
-            <span class="n">offer_coin</span><span class="o">=</span><span class="n">Coin</span><span class="p">(</span><span class="s2">&quot;uluna&quot;</span><span class="p">,</span> <span class="mi">1000000</span><span class="p">),</span>
-            <span class="n">ask_denom</span><span class="o">=</span><span class="s2">&quot;uusd&quot;</span>
-        <span class="p">)</span>
-    <span class="p">],</span>
-    <span class="n">gas</span><span class="o">=</span><span class="s2">&quot;auto&quot;</span><span class="p">,</span>
-    <span class="n">gas_prices</span><span class="o">=</span><span class="n">Coins</span><span class="p">(</span><span class="n">gas_price_dict</span><span class="p">),</span>
-    <span class="n">fee_denoms</span><span class="o">=</span><span class="s2">&quot;ukrw&quot;</span><span class="p">,</span>
-    <span class="n">gas_adjustment</span><span class="o">=</span><span class="mf">1.5</span>
-<span class="p">)</span>
-
-<span class="c1"># Create and sign transaction.</span>
-<span class="n">tx</span> <span class="o">=</span> <span class="n">wallet</span><span class="o">.</span><span class="n">create_and_sign_tx</span><span class="p">(</span><span class="n">options</span><span class="o">=</span><span class="n">tx_options</span><span class="p">)</span>
-
-<span class="c1"># Broadcast the request for execution to the Terra node.</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">terra</span><span class="o">.</span><span class="n">tx</span><span class="o">.</span><span class="n">broadcast</span><span class="p">(</span><span class="n">tx</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
 <div class="section" id="interacting-with-smart-contracts">
 <h2>Interacting with Smart Contracts<a class="headerlink" href="#interacting-with-smart-contracts" title="Permalink to this headline">#</a></h2>
-<p>In order to interact with a smart contract on Terra, you will have to either deploy your own smart contract on LocalTerra or utilize one of the many exceptional contracts available on the testnet or mainnet. In this example, you will deposit 1 UST into Anchor utilizing the Terra Python SDK on the testnet. Anchor is a decentralized savings protocol that offers low-volatile yields on Terra stablecoin deposits. You may interact with Anchor by going to the <a class="reference external" href="https://app.anchorprotocol.com/earn">Anchor EARN page</a>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">terra_sdk.client.lcd.api.tx</span> <span class="kn">import</span> <span class="n">CreateTxOptions</span>
-<span class="kn">from</span> <span class="nn">terra_sdk.core.wasm</span> <span class="kn">import</span> <span class="n">MsgExecuteContract</span>
-<span class="kn">from</span> <span class="nn">terra_sdk.core</span> <span class="kn">import</span> <span class="n">Coins</span><span class="p">,</span> <span class="n">Coin</span>
-
-<span class="c1"># Initialize sender wallet and smart contract addresses.</span>
-<span class="n">sender_address</span> <span class="o">=</span> <span class="n">wallet</span><span class="o">.</span><span class="n">key</span><span class="o">.</span><span class="n">acc_address</span>
-<span class="n">anchor_contract_address</span> <span class="o">=</span> <span class="s2">&quot;terra15dwd5mj8v59wpj0wvt233mf5efdff808c5tkal&quot;</span>
-
-<span class="c1"># Set relevant parameters for transactions.</span>
-<span class="n">tx_options</span> <span class="o">=</span> <span class="n">CreateTxOptions</span><span class="p">(</span>
-    <span class="n">msgs</span><span class="o">=</span><span class="p">[</span>
-        <span class="n">MsgExecuteContract</span><span class="p">(</span>
-            <span class="n">sender</span><span class="o">=</span><span class="n">sender_address</span><span class="p">,</span>
-            <span class="n">contract</span><span class="o">=</span><span class="n">anchor_contract_address</span><span class="p">,</span>
-            <span class="n">execute_msg</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;deposit_stable&quot;</span><span class="p">:</span> <span class="p">{}},</span>
-            <span class="n">coins</span><span class="o">=</span><span class="n">Coins</span><span class="p">([</span><span class="n">Coin</span><span class="p">(</span><span class="s2">&quot;uusd&quot;</span><span class="p">,</span> <span class="mi">1000000</span><span class="p">)])</span>
-        <span class="p">)</span>
-    <span class="p">],</span>
-    <span class="n">gas</span><span class="o">=</span><span class="s2">&quot;auto&quot;</span><span class="p">,</span>
-    <span class="n">gas_prices</span><span class="o">=</span><span class="n">Coins</span><span class="p">(</span><span class="n">gas_price_dict</span><span class="p">),</span>
-    <span class="n">fee_denoms</span><span class="o">=</span><span class="s2">&quot;uusd&quot;</span><span class="p">,</span>
-    <span class="n">gas_adjustment</span><span class="o">=</span><span class="mf">1.5</span>
-<span class="p">)</span>
-
-<span class="c1"># Create and sign transaction.</span>
-<span class="n">tx</span> <span class="o">=</span> <span class="n">wallet</span><span class="o">.</span><span class="n">create_and_sign_tx</span><span class="p">(</span><span class="n">options</span><span class="o">=</span><span class="n">tx_options</span><span class="p">)</span>
-
-<span class="c1"># Broadcast the request for execution to the Terra node.</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">terra</span><span class="o">.</span><span class="n">tx</span><span class="o">.</span><span class="n">broadcast</span><span class="p">(</span><span class="n">tx</span><span class="p">)</span>
-</pre></div>
-</div>
+<p>In order to interact with a smart contract on Terra, you will have to either deploy your own smart contract on LocalTerra or utilize one of the many exceptional contracts available on the testnet or mainnet.</p>
 </div>
 <div class="section" id="next-steps">
 <h2>Next steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">#</a></h2>
