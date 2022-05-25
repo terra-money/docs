@@ -1,16 +1,16 @@
 # Use Terrain with the testnet
 
-The Bombay testnet is used for testing transactions on the Terra network.
+The Pisco testnet is used for testing transactions on the Terra network.
 
 ## Prerequisites
 
 - [Install the Terra Station browser extension](../../../learn/terra-station/download/terra-station-extension.md)
 
-## Create a Bombay wallet
+## Create a Pisco wallet
 
-[Create a new wallet](../../../learn/terra-station/download/terra-station-extension.md#create-a-wallet) using the Terra Station extension. It's recommended that you name this wallet "Bombay" or "testnet" so it's easy to remember.
+[Create a new wallet](../../../learn/terra-station/download/terra-station-extension.md#create-a-wallet) using the Terra Station extension. It's recommended that you name this wallet "Pisco" or "testnet" so it's easy to remember.
 
-After creating a Bombay wallet and storing the seed phrase, request funds from the testnet faucet:
+After creating a Pisco wallet and storing the seed phrase, request funds from the testnet faucet:
 
 https://faucet.terra.money
 
@@ -18,9 +18,9 @@ https://faucet.terra.money
 Make sure you have your seed phrase stored somewhere since you will need it to complete this tutorial.
 :::
 
-# Counter tutorial 
+# Counter tutorial
 
-After creating a testnet wallet, you are ready to use Terrain. This short tutorial walks you through setting up your project and creating a simple counter. 
+After creating a testnet wallet, you are ready to use Terrain. This short tutorial walks you through setting up your project and creating a simple counter.
 
 ## 1. Scaffold your dApp
 
@@ -51,15 +51,15 @@ The following structure shows your scaffolded project:
 
 ## 2. Configure the testnet
 
-Before deploying, Terrain needs to learn how to access your Bombay wallet. To do this you'll need to modify `keys.terrain.js` in the generated project.
+Before deploying, Terrain needs to learn how to access your Pisco wallet. To do this you'll need to modify `keys.terrain.js` in the generated project.
 
 Modify the configuration and input your seed phrase to look like this:
 
 ```
 module.exports = {
-  bombay: {
+  pisco: {
     mnemonic:
-      "PLACE_YOUR_BOMBAY_SEED_PHRASE_HERE",
+      "PLACE_YOUR_PISCO_SEED_PHRASE_HERE",
   },
 };
 ```
@@ -69,22 +69,22 @@ module.exports = {
 To deploy the application, run the following command:
 
 ```sh
-terrain deploy counter --signer bombay --network testnet
+terrain deploy counter --signer pisco --network testnet
 ```
 
 The deploy command performs the following steps automatically:
 
-* Builds the counter smart contract.
-* Optimizes the counter smart contract.
-* Uploads counter smart contract to testnet.
-* Instantiates the deployed smart contract.
+- Builds the counter smart contract.
+- Optimizes the counter smart contract.
+- Uploads counter smart contract to testnet.
+- Instantiates the deployed smart contract.
 
 :::{warning}
 If you get the following error:
 
-   ```
-   CLIError: account sequence mismatch, expected 1, got 0: incorrect account sequence
-   ```
+```
+CLIError: account sequence mismatch, expected 1, got 0: incorrect account sequence
+```
 
 Wait a few seconds then try the deploy command again.
 :::
@@ -125,10 +125,10 @@ The Terrain template comes with several predefined helpers in `lib/index.js`. Us
 2. With the console open, increment the counter by running the following:
 
    ```JavaScript
-   await lib.increment(wallets.bombay);
+   await lib.increment(wallets.pisco);
    ```
 
-   Make sure to pass your Bombay wallet to the increment command. `terrain console` makes wallets specified in `keys.terrain.js` available in the `wallets` object.
+   Make sure to pass your Pisco wallet to the increment command. `terrain console` makes wallets specified in `keys.terrain.js` available in the `wallets` object.
 
    You can get the current count by using:
 
@@ -165,4 +165,3 @@ Terrain also scaffolds a very simple front-end.
 ## Advanced usage
 
 For more advanced use cases such as deploying to the testnet or mainnet, see [Terrain's readme](https://github.com/terra-money/terrain#readme).
-

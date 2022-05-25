@@ -25,19 +25,10 @@ The easiest way to install `terrad` and Terra core is by downloading a pre-built
 
 Use `git` to retrieve [Terra core](https://github.com/terra-money/core/), and check out the `main` branch, which contains the latest stable release.
 
-If you are using LocalTerra or running a validator, use the `v0.x.x-oracle` tag. Otherwise, use the `v0.x.x` tag.
-
 ```bash
 git clone https://github.com/terra-money/core
 cd core
 git checkout [latest version]
-```
-
-**Example:**
-```bash
-git clone https://github.com/terra-money/core
-cd core
-git checkout v0.5.6-oracle
 ```
 
 ### 2. Build Terra core from source
@@ -74,6 +65,7 @@ If the `terrad: command not found` error message is returned, confirm that the G
 ```
 export PATH=$PATH:$(go env GOPATH)/bin
 ```
+
 :::
 
 ## Next steps
