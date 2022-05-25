@@ -1,5 +1,12 @@
 # Terra.js <img src="/img/terra_js.svg" height="40px">
 
+:::{admonition} Using Terra.js on the new Terra chain
+:class: tip
+
+Outside of the deprecation of the treasury, market, and oracle modules, Terra.js functionality remains relatively unchanged. There are a few additions to allow for legacy commands which are explained in the [Using Terra Classic](./terra-classic.md) page. 
+:::
+
+
 Terra.js seeks to provide a compatible way to work with the Terra blockchain within JavaScript runtimes, such as Node.js and the browser. Terra.js enables the following functions:
 
 - Deserializing blockchain data into JavaScript objects with native data types and methods
