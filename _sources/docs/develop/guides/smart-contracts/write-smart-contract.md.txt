@@ -4,7 +4,7 @@
 To better understand the building blocks of the smart contract you will build in this tutorial, view the [complete contract](https://github.com/CosmWasm/cw-template).
 :::
 
-A smart contract can be considered an instance of a singleton object whose internal state is persisted on the blockchain. Users can trigger state changes through sending it JSON messages, and users can also query its state through sending a request formatted as a JSON message. These messages are different than Terra blockchain messages such as `MsgSend` and `MsgSwap`.
+A smart contract can be considered an instance of a singleton object whose internal state is persisted on the blockchain. Users can trigger state changes through sending it JSON messages, and users can also query its state through sending a request formatted as a JSON message. These messages are different than Terra blockchain messages such as `MsgSend` and `MsgExecuteContract`.
 
 As a smart contract writer, your job is to define 3 functions that define your smart contract's interface:
 
@@ -66,7 +66,6 @@ Notice how the `State` struct holds both `count` and `owner`. In addition, the `
 - `JsonSchema`: auto-generates a JSON schema
 
 `Addr`, refers to a human-readable Terra address prefixed with `terra...`. Its counterpart is the `CanonicalAddr`, which refers to a Terra address's native decoded Bech32 form in bytes.
-
 
 ## InstantiateMsg
 
@@ -316,9 +315,10 @@ docker run --rm -v "$(pwd)":/code \
   --mount type=volume,source="$(basename "$(pwd)")_cache",target=/code/target \
   --mount type=volume,source=registry_cache,target=/usr/local/cargo/registry \
   cosmwasm/rust-optimizer-arm64:0.12.4
-  ```
+```
 
 If you are developing with a Windows exposed Docker daemon connected to WSL 1:
+
 ```sh
 docker run --rm -v "$(wslpath -w $(pwd))":/code \
   --mount type=volume,source="$(basename "$(pwd)")_cache",target=/code/target \
@@ -331,7 +331,6 @@ This will result in an optimized build of `artifacts/my_first_contract.wasm` or 
 ::: {Important}
 Please note that rust-optimizer will produce different contracts on Intel and ARM machines. So for reproducible builds you'll have to stick to one.
 :::
-
 
 ## Schemas
 

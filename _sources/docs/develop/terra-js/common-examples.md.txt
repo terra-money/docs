@@ -8,7 +8,7 @@ If you are new to Terra and don't know where to start, visit the [getting starte
 
 ## Configuring LCDClient
 
-The following code example shows how to initialize the LCDClient. The rest of the examples assume you initialized it by using this example or similar code.
+The following code example shows how to initialize the LCDClient. The rest of the examples assume you initialized it by using this example or similar code. The LCDCClient configuration accepts a boolean `legacy` value that is false by default. When set to `true` the LCD will connect to Terra Classic.
 
 ```ts
 import fetch from "isomorphic-fetch";
@@ -26,6 +26,7 @@ const lcd = new LCDClient({
   gasPrices: gasPricesCoins,
   gasAdjustment: "1.5",
   gas: 10000000,
+  legacy: false, // false by default, change to true if you want to interact with Terra Classic
 });
 ```
 

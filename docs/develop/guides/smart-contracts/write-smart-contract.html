@@ -1413,7 +1413,7 @@
 <p class="admonition-title">See also</p>
 <p>To better understand the building blocks of the smart contract you will build in this tutorial, view the <a class="reference external" href="https://github.com/CosmWasm/cw-template">complete contract</a>.</p>
 </div>
-<p>A smart contract can be considered an instance of a singleton object whose internal state is persisted on the blockchain. Users can trigger state changes through sending it JSON messages, and users can also query its state through sending a request formatted as a JSON message. These messages are different than Terra blockchain messages such as <code class="docutils literal notranslate"><span class="pre">MsgSend</span></code> and <code class="docutils literal notranslate"><span class="pre">MsgSwap</span></code>.</p>
+<p>A smart contract can be considered an instance of a singleton object whose internal state is persisted on the blockchain. Users can trigger state changes through sending it JSON messages, and users can also query its state through sending a request formatted as a JSON message. These messages are different than Terra blockchain messages such as <code class="docutils literal notranslate"><span class="pre">MsgSend</span></code> and <code class="docutils literal notranslate"><span class="pre">MsgExecuteContract</span></code>.</p>
 <p>As a smart contract writer, your job is to define 3 functions that define your smart contract’s interface:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">instantiate()</span></code>: a constructor which is called during contract instantiation to provide initial state</p></li>

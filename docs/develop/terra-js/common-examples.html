@@ -1312,7 +1312,7 @@
 </div>
 <div class="section" id="configuring-lcdclient">
 <h2>Configuring LCDClient<a class="headerlink" href="#configuring-lcdclient" title="Permalink to this headline">#</a></h2>
-<p>The following code example shows how to initialize the LCDClient. The rest of the examples assume you initialized it by using this example or similar code.</p>
+<p>The following code example shows how to initialize the LCDClient. The rest of the examples assume you initialized it by using this example or similar code. The LCDCClient configuration accepts a boolean <code class="docutils literal notranslate"><span class="pre">legacy</span></code> value that is false by default. When set to <code class="docutils literal notranslate"><span class="pre">true</span></code> the LCD will connect to Terra Classic.</p>
 <div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="nx">fetch</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;isomorphic-fetch&quot;</span><span class="p">;</span><span class="w"></span>
 <span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">MsgSend</span><span class="p">,</span><span class="w"> </span><span class="nx">MnemonicKey</span><span class="p">,</span><span class="w"> </span><span class="nx">Coins</span><span class="p">,</span><span class="w"> </span><span class="nx">LCDClient</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@terra-money/terra.js&quot;</span><span class="p">;</span><span class="w"></span>
 
@@ -1328,6 +1328,7 @@
 <span class="w">  </span><span class="nx">gasPrices</span><span class="o">:</span><span class="w"> </span><span class="kt">gasPricesCoins</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="nx">gasAdjustment</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;1.5&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="nx">gas</span><span class="o">:</span><span class="w"> </span><span class="kt">10000000</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">legacy</span><span class="o">:</span><span class="w"> </span><span class="kt">false</span><span class="p">,</span><span class="w"> </span><span class="c1">// false by default, change to true if you want to interact with Terra Classic</span><span class="w"></span>
 <span class="p">});</span><span class="w"></span>
 </pre></div>
 </div>
