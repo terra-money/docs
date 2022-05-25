@@ -1,4 +1,4 @@
-# Developer Tools
+# Tools
 
 If this is your first time building on Terra, check out the [Getting started guide](./get-started.md). 
 
@@ -18,11 +18,14 @@ localterra/README.md
 wallet-provider/README.md
 terra-js/README.md
 terra-py/get-started-py.md
-terrad-and-tools.md
+terrad/README.md
+Block explorer <https://finder.terra.money>
+Faucet <https://faucet.terra.money>
 ```
 
-:::::::{grid} 2
+:::::::{grid} 2 2 2 3
 :gutter: 3
+:class-row: sd-align-major-center
 
 :::{grid-item-card}
 :link: dapp/quick-start/README.html
@@ -75,13 +78,44 @@ Terra's Python SDK.
 :::
 
 :::{grid-item-card}
-:link: terrad-and-tools.html
+:link: terrad/README.html
 :class-card: sd-text-center sd-shadow-md sd-rounded-3
-```{image} /img/icon_apps.svg
+
+```{image} /img/Terrad.svg
 :class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
 ```
-**More tools**  
-CLI, block explorer, testnet faucet. 
+
+**`terrad`**  
+
+Interact with a Terra node. 
 :::
+
+:::{grid-item-card}
+:link: https://finder.terra.money/
+:class-card: sd-text-center sd-shadow-md sd-rounded-3
+
+```{image} /img/expl_finder.png
+:class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
+```
+
+**Finder**  
+
+Explore the blockchain.
+:::
+
+:::{grid-item-card}
+:link: https://faucet.terra.money/
+:class-card: sd-text-center sd-shadow-md sd-rounded-3
+
+```{image} /img/Faucet.svg
+:class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
+```
+
+**Faucet**  
+
+Get testnet funds. 
+:::
+
+
 
 :::::::
