@@ -2,9 +2,9 @@
 
 This is a history of changes to the Terra core.
 
-## Columbus-5
+## Network Changelogs
 
-Columbus-5 is the current Terra Mainnet.
+Phoneix-1 is the current Terra Mainnet. The following guides and changelogs are for Terra Classic.
 
 - [Mainnet Changelog](https://github.com/terra-money/core/blob/main/CHANGELOG.md)
 - [Columbus-5 Upgrade Guide](https://github.com/terra-money/mainnet/wiki/Columbus-5-Upgrade-Instructions)

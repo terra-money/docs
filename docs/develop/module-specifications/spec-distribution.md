@@ -16,10 +16,6 @@ Passive distribution means that validators and delegators need to manually colle
 
 Collected rewards are pooled globally and distrubuted to validators and delegators. Each validator has the opportunity to charge delegators commission on the rewards collected on behalf of the delegators. Fees are collected directly into a global reward pool and a validator proposer-reward pool. Due to the nature of passive accounting, whenever changes to parameters which affect the rate of reward distribution occur, withdrawal of rewards must also occur.
 
-### Community pool
-
-The community pool is a reserve of tokens designated for funding projects that promote further adoption and stimulate growth for the Terra economy. The comminuty pool used to be funded by seigniorage. As of Columbus-5, all seigniorage is burned, and the community pool no longer receives funding.
-
 ## State
 
 > This section was taken from the official Cosmos SDK docs, and placed here for your convenience to understand the distribution module's parameters and genesis variables.
@@ -62,7 +58,6 @@ type MsgSetWithdrawAddress struct {
 }
 ```
 
-
 ### MsgWithdrawDelegatorReward
 
 ```go
@@ -73,7 +68,6 @@ type MsgWithdrawDelegatorReward struct {
 }
 ```
 
-
 ### MsgWithdrawValidatorCommission
 
 ```go
@@ -81,7 +75,6 @@ type MsgWithdrawValidatorCommission struct {
 	ValidatorAddress sdk.ValAddress `json:"validator_address" yaml:"validator_address"`
 }
 ```
-
 
 ### MsgFundCommunityPool
 
@@ -91,7 +84,6 @@ type MsgFundCommunityPool struct {
 	Depositor sdk.AccAddress `json:"depositor" yaml:"depositor"`
 }
 ```
-
 
 ## Proposals
 
@@ -119,7 +111,6 @@ At the beginning of each block, the distribution module will set the proposer fo
 The fees received are transferred to the Distribution `ModuleAccount`, which tracks the flow of coins in and out of the module. Fees are also allocated to the proposer, community fund, and global pool:
 
 - Proposer: When a validator is the proposer of a round, that validator and its delegators receive 1-5% of the fee rewards.
-- Community fund: The reserve community tax is charged and distributed to the community pool. As of Columbus-5, this tax is no longer charged and the community pool no longer receives funding.
 - Global pool: The remainder of the funds is allocated to the global pool, where they are distributed proportionally by voting power to all bonded validators independent of whether they voted. This allocation is called social distribution. Social distribution is applied to the proposer validator in addition to the proposer reward.
 
 The proposer reward is calculated from precommits Tendermint messages to incentivize validators to wait and include additional precommits in the block. All provision rewards are added to a provision reward pool, which each validator holds individually (`ValidatorDistribution.ProvisionsRewardPool`).

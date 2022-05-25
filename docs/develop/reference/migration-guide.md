@@ -1,6 +1,6 @@
 # Columbus-5 upgrade
 
-Columbus-5 is the newest iteration of the Terra Mainnet. Use these guides to upgrade to Columbus-5.
+Columbus-5 is the newest iteration of the Terra Classic Mainnet. Use these guides to upgrade to Columbus-5.
 
 ## Migration Guides
 
@@ -29,12 +29,13 @@ go: go version go1.16.5 darwin/amd64
 - **Note:** For JavaScript developers: `npm i -S @terra-money/terra.js@^2`
 
 ### Schedule
+
 **Columbus-5:** Columbus-4 will be halted at block height `#4,724,000`.  
 Expected Timeline:
 
->Wed Sep 29 2021 23:00:00 GMT-0800 (PDT)
-Thu Sep 30 2021 07:00:00 GMT+0000 (UTC)
-Thu Sep 30 2021 16:00:00 GMT+0900 (KST)
+> Wed Sep 29 2021 23:00:00 GMT-0800 (PDT)
+> Thu Sep 30 2021 07:00:00 GMT+0000 (UTC)
+> Thu Sep 30 2021 16:00:00 GMT+0900 (KST)
 
 ### Bombay-12 Testnet
 
@@ -56,9 +57,9 @@ For detailed instructions, see the [Bombay-12 testnet release guide](https://git
 
 ### Release Notes
 
-- [Terra Core v0.5.5](https://github.com/terra-money/core/releases/tag/v0.5.5)  
-- [Cosmos SDK v0.43.0 (Stargate)](https://github.com/cosmos/cosmos-sdk/releases/tag/v0.43.0)  
-- [CosmWasm v0.16.0](https://github.com/CosmWasm/cosmwasm/releases/tag/v0.16.0)  
+- [Terra Core v0.5.5](https://github.com/terra-money/core/releases/tag/v0.5.5)
+- [Cosmos SDK v0.43.0 (Stargate)](https://github.com/cosmos/cosmos-sdk/releases/tag/v0.43.0)
+- [CosmWasm v0.16.0](https://github.com/CosmWasm/cosmwasm/releases/tag/v0.16.0)
 
 ### Reference
 
