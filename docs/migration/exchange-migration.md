@@ -88,13 +88,18 @@ All airdrop allocations to UST and LUNA holders will be based on the snapshots l
 
 ### Exchange Allocation Example
 
-The following is an example token allocation using made-up numbers. None of the following balances are real. This example considers both pre and post-attack snapshots and excludes wallets owned by TFL and the community pool.
+:::{admonition} Airdrop example
+:class: warning
+The following is an example token allocation using made-up numbers. **None of the following balances are real**. This example considers both pre- and post-attack snapshots and excludes wallets owned by TFL and the community pool.
+:::
 
----
+:::{dropdown} Click here to see an airdrop allocation example.
+
+**None of the following balances are real.** 
+
+The following is an example token allocation using made-up numbers. This example considers both pre- and post-attack snapshots and excludes wallets owned by TFL and the community pool.
 
 **Total LUNA Airdrop Supply: 1 Billion**
-
----
 
 _Overall Assets in Terra Ecosystem_
 
@@ -230,6 +235,9 @@ _Exchange User Assets_
 
  = 2545 LUNA
 ```
+
+:::
+
 
 ## Use different seeds
 
