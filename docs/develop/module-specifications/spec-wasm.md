@@ -47,7 +47,7 @@ You can execute a smart contract to invoke one of its defined functions by sendi
 - Specify which function to call with a `HandleMsg`.
 - Send funds to the contract, which may be expected during execution.
 
-The `HandleMsg` is a JSON message that contains function call arguments and gets routed to the appropriate handling logic. From there, the contract executes the function's instructions during which the contract's own state can be modified. The contract can only modify outside state, such as state in other contracts or modules, after its own execution has ended, by returning a list of blockchain messages, such as `MsgSend` and `MsgSwap`. These messages are appended to the same transaction as the `MsgExecuteContract`, and, if any of the messages are invalid, the whole transaction is invalidated.
+The `HandleMsg` is a JSON message that contains function call arguments and gets routed to the appropriate handling logic. From there, the contract executes the function's instructions during which the contract's own state can be modified. The contract can only modify outside state, such as state in other contracts or modules, after its own execution has ended, by returning a list of blockchain messages, such as `MsgSend` and `MsgExecuteContract`. These messages are appended to the same transaction as the `MsgExecuteContract`, and, if any of the messages are invalid, the whole transaction is invalidated.
 
 #### Migration
 
@@ -201,7 +201,6 @@ type MsgUpdateContractOwner struct {
 	Contract sdk.AccAddress `json:"contract" yaml:"contract"`
 }
 ```
-
 
 ## Parameters
 

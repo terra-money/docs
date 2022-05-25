@@ -117,18 +117,14 @@ Terra’s LCD or Light Client Daemon allows users to connect to the blockchain, 
 
 To find the contract address for a specific Terraswap pair, visit https://app.terraswap.io/
 
-This tutorial uses the Luna/UST contract testnet address:
-
-`terra156v8s539wtz0sjpn8y8a8lfg8fhmwa7fy22aff`
-
 ## 5. Query a Terraswap contract and set up the transaction
 
-Before you can perform a swap, you’ll need a belief price. You can calculate the belief price of UST by querying the proportion of the Luna and UST pools. The belief price +/- the `max_spread` is the range of possible acceptable prices for this swap.
+Before you can perform a swap, you’ll need a belief price. You can calculate the belief price of one token by querying the proportion of the two pooled tokens. The belief price +/- the `max_spread` is the range of possible acceptable prices for this swap.
 
 1. Add the following code to your `index.js` file. Make sure the contract address is correct.
 
    ```ts
-   const pool = "terra156v8s539wtz0sjpn8y8a8lfg8fhmwa7fy22aff"; // The LUNA/UST terraswap contract address on pisco.
+   const pool = "<INSERT_POOL_ADDRESS>"; // A terraswap contract address on pisco.
    const { assets } = await lcd.wasm.contractQuery(pool, { pool: {} }); // Fetch the amount of each asset in the pool.
    const beliefPrice = (assets[0].amount / assets[1].amount).toFixed(18); // Calculate belief price using proportion of pool balances.
    ```
@@ -137,7 +133,6 @@ Before you can perform a swap, you’ll need a belief price. You can calculate t
 
    ```ts
    import { MsgExecuteContract } from "@terra-money/terra.js";
-   // Swap LUNA to UST with 0.1% slippage tolerance.
    const terraSwap = new MsgExecuteContract(
      wallet.key.accAddress,
      pool,
@@ -178,10 +173,10 @@ Before you can perform a swap, you’ll need a belief price. You can calculate t
    node index.js
    ```
 
-If successful, you'll see a log of the successful transaction and some new UST tokens in your wallet.
+If successful, you'll see a log of the successful transaction and some new tokens in your wallet.
 
 And that's it! You can find other pool addresses [here](https://app.terraswap.io/) to call other swaps. Be sure to use the correct testnet or mainnet contract address.
 
 ## More examples
 
-View the [Common examples]("common-examples.md) section for more information on using Terra.js.
+View the [Common examples](common-examples.md) section for more information on using Terra.js.

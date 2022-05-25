@@ -40,7 +40,7 @@ const osmosisAddress = bech32.encode('osmo', decodedAddress.words));
 
 ## Complete example
 
-The following example demonstrates how to send 1 UST from Terra to the Osmosis blockchain.
+The following example demonstrates how to send 1 LUNA from Terra to the Osmosis blockchain.
 
 ```JS
 import {
@@ -58,7 +58,7 @@ const mk = new MnemonicKey({
 
 const wallet = lcd.wallet(mk);
 
-// Send 1 UST to the Osmosis blockchain.
+// Send 1 LUNA to the Osmosis blockchain.
 const transfer = new MsgTransfer(
  'transfer',
  'channel-1',

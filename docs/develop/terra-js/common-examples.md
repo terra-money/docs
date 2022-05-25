@@ -218,7 +218,7 @@ const mk = new MnemonicKey({
 
 const wallet = lcd.wallet(mk);
 
-// UST <> SCRT
+// LUNA <> OTHER_TOKEN
 const pool = "<INSERT_TOKEN_POOL_ADDRESS>";
 
 // Fetch the number of each asset in the pool.
