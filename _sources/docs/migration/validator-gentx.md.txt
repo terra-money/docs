@@ -45,7 +45,7 @@ All validators that want to be included in the Terra 2.0 chain must follow the s
 
 ## Snapshot
 
-The following steps cover how to take the pre- and post-attack snapshots. 
+This section covers how to take the pre- and post-attack snapshots. The following steps need to be run on your existing validator's machine. 
 
 1\. Stop your node:
 
@@ -102,7 +102,7 @@ jq -S -c -M '' post-attack-snapshot.json | shasum -a 256
 
 ## Penultimate Genesis
 
-Assume these steps will happen in the same machine as your [snapshot](#Snapshot).
+The following steps need to be run on the same machine as your [snapshot](#Snapshot).
 
 1\. Clone and checkout genesis builder:
 
@@ -136,8 +136,15 @@ jq -S -c -M '' penultimate-genesis.json | shasum -a 256
 [placeholder]
 ```
 
-# GenTx
-Assume this steps will be happening in new validator machine with validator setup (`terra init`).
+## Set up a new validator
+
+Set up a new validator on a new machine by following the steps outlined in the [full node tutorial](https://docs.terra.money/docs/full-node/run-a-full-terra-node/README.html). 
+
+After [configuring your general settings](https://docs.terra.money/docs/full-node/run-a-full-terra-node/configure-general-settings.html), continue to the next section. 
+
+## GenTx
+
+Complete the following steps on your new validator's machine. 
 
 1\. Checkout and install the Terra 2.0 core:
 
@@ -182,7 +189,7 @@ terrad gentx [key-name] [amount-to-stake] \
     ...
 ```
 
-5\. Upload generated GenTx file to this repository's gentx folder via PR:
+5\. Upload the generated GenTx file to this repository's gentx folder via PR:
 
 ```sh
 ls ~/.terra/config/gentx/*
@@ -190,7 +197,7 @@ ls ~/.terra/config/gentx/*
 
 ## Collect GenTxs
 
-Assume these steps will happen in the same machine as [GenTx](#GenTx).
+The following steps need to be run on the same machine as your [GenTx](#GenTx).
 
 1\. Download gentx files and change into the terra home config:
 
@@ -215,7 +222,7 @@ jq -S -c -M '' ~/.terra/config/genesis.json | shasum -a 256
 
 ## Launch Network
 
-Execute the binary and wait until network launch:
+Execute the `terrad` binary on your new validator's machine and wait until network launch:
 
 ```sh
 sudo systemctl start terrad
