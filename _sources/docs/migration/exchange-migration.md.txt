@@ -254,7 +254,7 @@ Dexes:
 ## Initial supply and inflation
 
 - The initial supply of Luna at the genesis of the new Terra chain will be 1 billion coins. 
-- The mint module will release new coins every block as staking rewards at a default rate of 7% p.a.
+- The mint module will release new coins every block as staking rewards at a default rate of around 7% p.a.
 
 ## Terra 2.0 Code and audit
 
