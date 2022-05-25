@@ -1,5 +1,9 @@
 # Mint
 
+The mint module is responsible for releasing new Luna as staking rewards every block. These rewards are called inflation rewards, as they gradually add to the total supply of Luna. 
+
+The minting rate for these rewards is variable and based on the amount of Luna staked. In order to maintain a target percentage of staked Luna, 
+
 ## Concepts
 
 ### The minting mechanism
