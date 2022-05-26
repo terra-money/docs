@@ -16,7 +16,7 @@ import { MsgSend, MnemonicKey, Coins, LCDClient } from "@terra-money/terra.js";
 
 // Fetch gas prices and convert to `Coin` format.
 const gasPrices = await (
-  await fetch("https://pisco-fcd.terra.dev/v1/txs/gas_prices")
+  await fetch("https://pisco-api.terra.dev/gas-prices", { redirect: 'follow' })
 ).json();
 const gasPricesCoins = new Coins(gasPrices);
 

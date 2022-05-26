@@ -66,7 +66,7 @@ Terra’s LCD or Light Client Daemon allows users to connect to the blockchain, 
    import fetch from "isomorphic-fetch";
    import { Coins, LCDClient } from "@terra-money/terra.js";
    const gasPrices = await fetch(
-     "https://pisco-fcd.terra.dev/v1/txs/gas_prices"
+     "https://pisco-api.terra.dev/gas-prices", { redirect: 'follow' }
    );
    const gasPricesJson = await gasPrices.json();
    const gasPricesCoins = new Coins(gasPricesJson);

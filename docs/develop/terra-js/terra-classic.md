@@ -6,14 +6,16 @@ Terra.js can be configured to work with Terra Classic by passing a boolean `isCl
 
 ```ts
 const gasPrices = await(
-  await fetch("https://bombay-fcd.terra.dev/v1/txs/gas_prices")
+  await fetch("https://columbus-api.terra.dev/gas-prices", {
+    redirect: "follow",
+  })
 ).json();
 
 const gasPricesCoins = new Coins(gasPrices);
 
 const lcd = new LCDClient({
-  URL: "https://bombay-lcd.terra.dev/",
-  chainID: "bombay-12",
+  URL: "https://columbus-lcd.terra.dev/",
+  chainID: "columbus-5",
   gasPrices: gasPricesCoins,
   gasAdjustment: "1.5",
   gas: 10000000,
