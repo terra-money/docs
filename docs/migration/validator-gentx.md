@@ -28,20 +28,22 @@ All validators that want to be included in the Terra 2.0 chain must follow the s
     
 ## Timeline (Expected)
 
-* Fri May 27 2022 18:00:00 GMT+0900 (KST)
-* Fri May 26 2022 09:00:00 GMT+0000 (UTC)
+- Fri May 27 2022 18:00:00 GMT+0900 (KST)
+- Thu May 27 2022 09:00:00 GMT+0000 (UTC)
 
     Share `preultimate-genesis.json` and start to collect gen_txs from the validators.
 
-* Fri May 28 2022 12:00:00 GMT+0900 (KST)
-* Fri May 28 2022 03:00:00 GMT+0000 (UTC)
+- Sat May 28 2022 12:00:00 GMT+0900 (KST)
+- Sat May 28 2022 03:00:00 GMT+0000 (UTC)
 
     Finish collecting gen_txs and build & share `genesis.json`
 
-* Fri May 28 2022 15:00:00 GMT+0900 (KST)
-* Fri May 28 2022 06:00:00 GMT+0000 (UTC)
+- Sat May 28 2022 15:00:00 GMT+0900 (KST)
+- Sat May 28 2022 06:00:00 GMT+0000 (UTC)
 
     Launch network
+
+
 
 ## Snapshot
 
