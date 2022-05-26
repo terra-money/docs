@@ -291,3 +291,16 @@ func (k Keeper) HandleEquivocationEvidence(ctx sdk.Context, evidence *types.Equi
 :::
 
 The slashing, jailing, and tombstoning calls are delegated through the slashing module, which emits informative events and finally delegates calls to the staking module. For more information about slashing and jailing, see [transitions](spec-staking.md#transitions).
+
+## Parameters
+
+The genesis parameters outlined in the [Genesis Builder Script](https://github.com/terra-money/genesis-tools/blob/6ec96530820f7055cce6dd767a1d8c321d702fab/src/genesis_builder.py#L75) are as follows:
+
+```py
+    # Consensus Params: Evidence
+    genesis['consensus_params']['evidence'] = {
+        'max_age_num_blocks': '100000',
+        'max_age_duration': '172800000000000',
+        'max_bytes': '1000000'
+    }
+	```

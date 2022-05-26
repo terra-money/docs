@@ -16,12 +16,21 @@ The subspace for the Auth module is `auth`.
 
 ```go
 type Params struct {
-	MaxMemoCharacters      uint64 `json:"max_memo_characters" yaml:"max_memo_characters"`
-	TxSigLimit             uint64 `json:"tx_sig_limit" yaml:"tx_sig_limit"`
-	TxSizeCostPerByte      uint64 `json:"tx_size_cost_per_byte" yaml:"tx_size_cost_per_byte"`
-	SigVerifyCostED25519   uint64 `json:"sig_verify_cost_ed25519" yaml:"sig_verify_cost_ed25519"`
-	SigVerifyCostSecp256k1 uint64 `json:"sig_verify_cost_secp256k1" yaml:"sig_verify_cost_secp256k1"`
+  MaxMemoCharacters      uint64 `json:"max_memo_characters" yaml:"max_memo_characters"`
+  TxSigLimit             uint64 `json:"tx_sig_limit" yaml:"tx_sig_limit"`
+  TxSizeCostPerByte      uint64 `json:"tx_size_cost_per_byte" yaml:"tx_size_cost_per_byte"`
+  SigVerifyCostED25519   uint64 `json:"sig_verify_cost_ed25519" yaml:"sig_verify_cost_ed25519"`
+  SigVerifyCostSecp256k1 uint64 `json:"sig_verify_cost_secp256k1" yaml:"sig_verify_cost_secp256k1"`
 }
+```
+
+### Genesis parameters
+
+The genesis parameters outlined in the [Genesis Builder Script](https://github.com/terra-money/genesis-tools/blob/6ec96530820f7055cce6dd767a1d8c321d702fab/src/genesis_builder.py#L75) are as follows:
+
+``` py
+    # Auth: set max memo characters to 512
+    genesis['app_state']['auth']['params']['max_memo_characters'] = '512'
 ```
 
 ### MaxMemoCharacters
@@ -29,14 +38,14 @@ type Params struct {
 The maximum permitted number of characters in the memo of a transaction.
 
 - type: `uint64`
-- default: `256`
+- genesis: `512`
 
 ### TxSigLimit
 
-The maximum number of signers in a transaction. A single transaction can have multiple messages and multiple signers. Because the sig verification cost is generally higher than other operations, the number of signers is limited to 100.
+The maximum number of signers in a transaction. A single transaction can have multiple messages and multiple signers.
 
 - type: `uint64`
-- default: `100`
+- default: `7`
 
 ### TxSizeCostPerByte
 
