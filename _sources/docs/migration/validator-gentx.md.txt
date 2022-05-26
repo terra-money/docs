@@ -125,7 +125,7 @@ python3 ./genesis-builder.py \
     ./post-attack-snapshot.json \
     ./genesis-validators.json \
     --genesis-time=2022-05-28T06:00:00.000000Z \
-    --pretty=false --chain-id=pisco-1 \
+    --pretty=false --chain-id=phoenix-1 \
     > penultimate-genesis.json
 ```
 

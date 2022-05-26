@@ -1256,7 +1256,7 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="using-terra-classic">
 <h1>Using Terra Classic<a class="headerlink" href="#using-terra-classic" title="Permalink to this headline">#</a></h1>
-<p>Terra.js can be configured to work with Terra Classic by passing a boolean <code class="docutils literal notranslate"><span class="pre">legacy</span></code> value to the LCD.</p>
+<p>Terra.js can be configured to work with Terra Classic by passing a boolean <code class="docutils literal notranslate"><span class="pre">isClassic</span></code> value to the LCD.</p>
 <div class="section" id="lcdclient">
 <h2>LCDClient<a class="headerlink" href="#lcdclient" title="Permalink to this headline">#</a></h2>
 <div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">gasPrices</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="p">(</span><span class="w"></span>
@@ -1271,25 +1271,25 @@
 <span class="w">  </span><span class="nx">gasPrices</span><span class="o">:</span><span class="w"> </span><span class="kt">gasPricesCoins</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="nx">gasAdjustment</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;1.5&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="nx">gas</span><span class="o">:</span><span class="w"> </span><span class="kt">10000000</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="nx">legacy</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// false by default, change to true if you want to interact with Terra Classic</span><span class="w"></span>
+<span class="w">  </span><span class="nx">isClassic</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// false by default, change to true if you want to interact with Terra Classic</span><span class="w"></span>
 <span class="p">});</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="conversion-functions">
 <h2>Conversion Functions<a class="headerlink" href="#conversion-functions" title="Permalink to this headline">#</a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">legacy</span></code> boolean can also be specified for most unit conversion functions in Terra.js. If unspecified, these methods will simply use the Luna version specified in the LCD config. The following are two examples of methods that accept this boolean value.</p>
-<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="nx">toAmino</span><span class="p">(</span><span class="nx">legacy?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="w"></span>
-<span class="k">public</span><span class="w"> </span><span class="nx">fromData</span><span class="p">(</span><span class="nx">legacy?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="w"></span>
+<p>The <code class="docutils literal notranslate"><span class="pre">isCLassic</span></code> boolean can also be specified for most unit conversion functions in Terra.js. If unspecified, these methods will simply use the Luna version specified in the LCD config. The following are two examples of methods that accept this boolean value.</p>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="nx">toAmino</span><span class="p">(</span><span class="nx">isClassic?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="w"></span>
+<span class="k">public</span><span class="w"> </span><span class="nx">fromData</span><span class="p">(</span><span class="nx">isClassic?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="signing-messages-with-keys">
 <h2>Signing Messages with Keys<a class="headerlink" href="#signing-messages-with-keys" title="Permalink to this headline">#</a></h2>
-<p>Wallet objects on Terra contain information about the LCDClient, so they inherit the <code class="docutils literal notranslate"><span class="pre">legacy</span></code> parameter automatically. However, key objects, such as <code class="docutils literal notranslate"><span class="pre">MnemonicKey</span></code>, <code class="docutils literal notranslate"><span class="pre">RawKey</span></code> or <code class="docutils literal notranslate"><span class="pre">CLIKey</span></code> do not. For example, <code class="docutils literal notranslate"><span class="pre">createSignatureAmino</span></code> is a method where you can specifiy if you’d like to use Terra Classic.</p>
+<p>Wallet objects on Terra contain information about the LCDClient, so they inherit the <code class="docutils literal notranslate"><span class="pre">isClassic</span></code> parameter automatically. However, key objects, such as <code class="docutils literal notranslate"><span class="pre">MnemonicKey</span></code>, <code class="docutils literal notranslate"><span class="pre">RawKey</span></code> or <code class="docutils literal notranslate"><span class="pre">CLIKey</span></code> do not. For example, <code class="docutils literal notranslate"><span class="pre">createSignatureAmino</span></code> is a method where you can specifiy if you’d like to use Terra Classic.</p>
 <div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="nx">createSignatureAmino</span><span class="p">(</span><span class="w"></span>
 <span class="w">      </span><span class="nx">tx</span><span class="o">:</span><span class="w"> </span><span class="kt">SignDoc</span><span class="p">,</span><span class="w"></span>
-<span class="w">      </span><span class="nx">legacy?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="w"></span>
+<span class="w">      </span><span class="nx">isClassic?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="w"></span>
 <span class="w">    </span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">SignatureV2</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
