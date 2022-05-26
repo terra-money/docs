@@ -47,7 +47,7 @@ All validators that want to be included in the Terra 2.0 chain must follow the s
 
 This section covers how to take the pre- and post-attack snapshots. The following steps need to be run on your existing validator's machine. 
 
-1\. Stop your node:
+1\. Stop your `columbus-5` node:
 
 ```sh
 sudo systemctl stop terrad
