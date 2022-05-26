@@ -17,7 +17,7 @@ const lcd = new LCDClient({
   gasPrices: gasPricesCoins,
   gasAdjustment: "1.5",
   gas: 10000000,
-  isClassic: true, // false by default
+  isClassic: true, // optional parameter, false by default
 });
 ```
 
