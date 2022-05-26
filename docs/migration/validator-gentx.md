@@ -175,7 +175,7 @@ build tags: netgo ledger
 wget [placeholder]
 
 # move genesis to config location
-mv ./penultimate-genesis.json ~/.terra/genesis.json
+mv ./penultimate-genesis.json ~/.terra/config/genesis.json
 ```
 
 4\. Execute GenTx:
