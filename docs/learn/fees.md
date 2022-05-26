@@ -13,6 +13,6 @@ Gas on Terra works differently than it works on other blockchains:
 
 For an in-depth explanation of how gas fees are calculated, visit the [terrad reference](../develop/terrad/using-terrad.md#fees) page.
 
-To view current gas rates in your browser, visit the [gas rates](https://fcd.terra.dev/v1/txs/gas_prices) FCD page.
+To view current gas rates in your browser, visit the [gas rates](https://api.terra.dev/gas-prices) page.
 
 Every block, gas fees are sent to the reward pool and dispersed to validators who distribute them to delegators in the form of staking rewards.
