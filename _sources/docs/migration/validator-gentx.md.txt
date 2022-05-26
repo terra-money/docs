@@ -182,7 +182,7 @@ mv ./penultimate-genesis.json ~/.terra/genesis.json
 
 ```sh
 terrad gentx [key-name] [amount-to-stake] \
-    --chain-id pheonix-1 \
+    --chain-id phoenix-1 \
     --min-self-delegation=[] \
     --security-contact=[] \
     --moniker=[] \
