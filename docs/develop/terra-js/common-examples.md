@@ -26,7 +26,7 @@ const lcd = new LCDClient({
   gasPrices: gasPricesCoins,
   gasAdjustment: "1.5",
   gas: 10000000,
-  legacy: false, // false by default, change to true if you want to interact with Terra Classic
+  isClassic: false, // optional parameter, false by default
 });
 ```
 
