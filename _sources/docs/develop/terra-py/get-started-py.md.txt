@@ -105,7 +105,7 @@ wallet = terra.wallet(mk)
 
 All transactions on the blockchain will require some effort from computational resources in order to be processed and accepted. The computational work expended due to processing a transaction is quantified in units of `gas`.
 
-Because the amount of gas needed may not be predetermined, the signer of the transaction must send the amount of gas that they would like to use along with the transaction. Fees are calculated by multiplying the gas amount specified in the transaction by either a user-specified price or by utilizing preset prices for each unit of gas. Current rates per unit of gas may be viewed on the [gas rates FCD page](https://fcd.terra.dev/v1/txs/gas_prices).
+Because the amount of gas needed may not be predetermined, the signer of the transaction must send the amount of gas that they would like to use along with the transaction. Fees are calculated by multiplying the gas amount specified in the transaction by either a user-specified price or by utilizing preset prices for each unit of gas. Current rates per unit of gas may be viewed on the [gas rates page](https://api.terra.dev/gas-prices).
 
 Each request you will make to the blockchain will contain a message detailing your transaction along with parameters that will help estimate the gas fee. The estimated fee must be above the minimum fee required to process the request for the transaction to be accepted. If the fee is too small to fully complete the request, you may still be responsible for charges on the processing that was carried out before the transaction failed. Gas that is left unused after the transaction will not be refunded and larger estimated fee values will not translate to any benefits for the signer.
 
@@ -114,13 +114,13 @@ import requests
 import json
 
 # Request current gas rates for future fee estimation.
-gas_price_dict = requests.get("https://fcd.terra.dev/v1/txs/gas_prices").json()
+gas_price_dict = requests.get("https://api.terra.dev/gas-prices").json()
 gas_price_dict
 ```
 
 > ```
 > {
->   "uluna": "0.01133"
+>   "uluna": "0.15"
 > }
 > ```
 

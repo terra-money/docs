@@ -1406,19 +1406,19 @@ poetry install
 <div class="section" id="quick-note-on-gas-fees">
 <h2>Quick Note on Gas &amp; Fees<a class="headerlink" href="#quick-note-on-gas-fees" title="Permalink to this headline">#</a></h2>
 <p>All transactions on the blockchain will require some effort from computational resources in order to be processed and accepted. The computational work expended due to processing a transaction is quantified in units of <code class="docutils literal notranslate"><span class="pre">gas</span></code>.</p>
-<p>Because the amount of gas needed may not be predetermined, the signer of the transaction must send the amount of gas that they would like to use along with the transaction. Fees are calculated by multiplying the gas amount specified in the transaction by either a user-specified price or by utilizing preset prices for each unit of gas. Current rates per unit of gas may be viewed on the <a class="reference external" href="https://fcd.terra.dev/v1/txs/gas_prices">gas rates FCD page</a>.</p>
+<p>Because the amount of gas needed may not be predetermined, the signer of the transaction must send the amount of gas that they would like to use along with the transaction. Fees are calculated by multiplying the gas amount specified in the transaction by either a user-specified price or by utilizing preset prices for each unit of gas. Current rates per unit of gas may be viewed on the <a class="reference external" href="https://api.terra.dev/gas-prices">gas rates page</a>.</p>
 <p>Each request you will make to the blockchain will contain a message detailing your transaction along with parameters that will help estimate the gas fee. The estimated fee must be above the minimum fee required to process the request for the transaction to be accepted. If the fee is too small to fully complete the request, you may still be responsible for charges on the processing that was carried out before the transaction failed. Gas that is left unused after the transaction will not be refunded and larger estimated fee values will not translate to any benefits for the signer.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">json</span>
 
 <span class="c1"># Request current gas rates for future fee estimation.</span>
-<span class="n">gas_price_dict</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://fcd.terra.dev/v1/txs/gas_prices&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="n">gas_price_dict</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://api.terra.dev/gas-prices&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 <span class="n">gas_price_dict</span>
 </pre></div>
 </div>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-  <span class="s2">&quot;uluna&quot;</span><span class="p">:</span> <span class="s2">&quot;0.01133&quot;</span>
+  <span class="s2">&quot;uluna&quot;</span><span class="p">:</span> <span class="s2">&quot;0.15&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </div>

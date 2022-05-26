@@ -1260,14 +1260,16 @@
 <div class="section" id="lcdclient">
 <h2>LCDClient<a class="headerlink" href="#lcdclient" title="Permalink to this headline">#</a></h2>
 <div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">gasPrices</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="p">(</span><span class="w"></span>
-<span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="s2">&quot;https://bombay-fcd.terra.dev/v1/txs/gas_prices&quot;</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="s2">&quot;https://columbus-api.terra.dev/gas-prices&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">redirect</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;follow&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="p">})</span><span class="w"></span>
 <span class="p">).</span><span class="nx">json</span><span class="p">();</span><span class="w"></span>
 
 <span class="kd">const</span><span class="w"> </span><span class="nx">gasPricesCoins</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Coins</span><span class="p">(</span><span class="nx">gasPrices</span><span class="p">);</span><span class="w"></span>
 
 <span class="kd">const</span><span class="w"> </span><span class="nx">lcd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">LCDClient</span><span class="p">({</span><span class="w"></span>
-<span class="w">  </span><span class="nx">URL</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;https://bombay-lcd.terra.dev/&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="nx">chainID</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;bombay-12&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">URL</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;https://columbus-lcd.terra.dev/&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">chainID</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;columbus-5&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="nx">gasPrices</span><span class="o">:</span><span class="w"> </span><span class="kt">gasPricesCoins</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="nx">gasAdjustment</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;1.5&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="nx">gas</span><span class="o">:</span><span class="w"> </span><span class="kt">10000000</span><span class="p">,</span><span class="w"></span>

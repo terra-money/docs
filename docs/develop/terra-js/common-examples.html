@@ -1359,7 +1359,7 @@
 
 <span class="c1">// Fetch gas prices and convert to `Coin` format.</span><span class="w"></span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">gasPrices</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
-<span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="s2">&quot;https://pisco-fcd.terra.dev/v1/txs/gas_prices&quot;</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="s2">&quot;https://pisco-api.terra.dev/gas-prices&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">redirect</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;follow&#39;</span><span class="w"> </span><span class="p">})</span><span class="w"></span>
 <span class="p">).</span><span class="nx">json</span><span class="p">();</span><span class="w"></span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">gasPricesCoins</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Coins</span><span class="p">(</span><span class="nx">gasPrices</span><span class="p">);</span><span class="w"></span>
 
