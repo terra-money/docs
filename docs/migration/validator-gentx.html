@@ -1392,10 +1392,13 @@ make install
 </pre></div>
 </div>
 <p>Which will return the following:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>core: &lt;current-version&gt;
-git commit: &lt;current-version&gt;
-go.sum hash: &lt;current-version&gt;
-build tags: netgo ledger
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrad version --long
+name: terra
+server_name: terrad
+version: <span class="s2">&quot;&quot;</span>
+commit: 2565577ccf47d1b11a82d77500a0cb880080a70c
+build_tags: netgo,ledger
+go: go version go1.18 darwin/arm64
 </pre></div>
 </div>
 <p>4. Take the pre-attack snapshot:</p>
@@ -1409,11 +1412,11 @@ build tags: netgo ledger
 <p>6. Verify the SHA256 hash of the (sorted) pre-attack &amp; post-attack export snapshots:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># pre-attack</span>
 jq -S -c -M <span class="s1">&#39;&#39;</span> pre-attack-snapshot.json <span class="p">|</span> shasum -a <span class="m">256</span>
-&lt;<span class="nb">hash</span> output&gt;
+0ac0d5b8f7ea49e500d9033687a6720a99818e99280aba8f12f00b39832a0d5c
 
 <span class="c1"># post-attack</span>
 jq -S -c -M <span class="s1">&#39;&#39;</span> post-attack-snapshot.json <span class="p">|</span> shasum -a <span class="m">256</span>
-&lt;<span class="nb">hash</span> output&gt;
+9d294b300eb3d936d9567eb128bc66651d196b07c37583e2e051b3bced965766
 </pre></div>
 </div>
 </div>
@@ -1445,7 +1448,7 @@ python3 ./src/genesis_builder.py <span class="se">\</span>
 </div>
 <p>4. Verify the SHA256 of the (sorted) penultimate-genesis.json:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>jq -S -c -M <span class="s1">&#39;&#39;</span> penultimate-genesis.json <span class="p">|</span> shasum -a <span class="m">256</span>
-<span class="o">[</span>placeholder<span class="o">]</span>
+def346f3ef21e5f484c4e8634918d527382115b871786bd794fac5dacdf46c63
 </pre></div>
 </div>
 </div>
@@ -1475,7 +1478,7 @@ build tags: netgo ledger
 </div>
 <p>3. Prepare your environment:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># install or move penultimate-genesis.json to server</span>
-wget <span class="o">[</span>placeholder<span class="o">]</span>
+wget https://phoenix-genesis.s3.us-west-1.amazonaws.com/penultimate-genesis.json
 
 <span class="c1"># move genesis to config location</span>
 mv ./penultimate-genesis.json ~/.terra/config/genesis.json
@@ -1492,7 +1495,8 @@ mv ./penultimate-genesis.json ~/.terra/config/genesis.json
     --identity<span class="o">=</span><span class="s2">&quot;AAAAAAAAAAAA&quot;</span> <span class="se">\</span>
     --commission-rate<span class="o">=</span><span class="s2">&quot;0.1&quot;</span> <span class="se">\</span>
     --commission-max-rate<span class="o">=</span><span class="s2">&quot;0.2&quot;</span> <span class="se">\</span>
-    --commission-max-change-rate<span class="o">=</span><span class="s2">&quot;0.01&quot;</span>
+    --commission-max-change-rate<span class="o">=</span><span class="s2">&quot;0.01&quot;</span> <span class="se">\ </span>
+    --note<span class="o">=</span><span class="s2">&quot;gentx&quot;</span>
 </pre></div>
 </div>
 <p>5. Upload the generated GenTx file to this repository’s gentx folder via PR:</p>
