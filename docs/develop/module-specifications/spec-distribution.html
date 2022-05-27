@@ -45,7 +45,7 @@
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Evidence" href="spec-evidence.html" />
-    <link rel="prev" title="Capability" href="spec-capability.html" />
+    <link rel="prev" title="Crisis" href="spec-crisis.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -784,6 +784,11 @@
        Capability
       </a>
      </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spec-crisis.html">
+       Crisis
+      </a>
+     </li>
      <li class="toctree-l3 current active">
       <a class="current reference internal" href="#">
        Distribution
@@ -807,6 +812,11 @@
      <li class="toctree-l3">
       <a class="reference internal" href="spec-mint.html">
        Mint
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spec-params.html">
+       Params
       </a>
      </li>
      <li class="toctree-l3">
@@ -1195,112 +1205,124 @@
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#concepts">
-   Concepts
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Distribution
   </a>
   <ul class="visible nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#validator-and-delegator-rewards">
-     Validator and delegator rewards
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#concepts">
+     Concepts
+    </a>
+    <ul class="visible nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#validator-and-delegator-rewards">
+       Validator and delegator rewards
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#state">
+     State
+    </a>
+    <ul class="visible nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#feepool">
+       FeePool
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#validator-distribution">
+       Validator distribution
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#delegation-distribution">
+       Delegation distribution
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#message-types">
+     Message types
+    </a>
+    <ul class="visible nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#msgsetwithdrawaddress">
+       MsgSetWithdrawAddress
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#msgwithdrawdelegatorreward">
+       MsgWithdrawDelegatorReward
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#msgwithdrawvalidatorcommission">
+       MsgWithdrawValidatorCommission
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#msgfundcommunitypool">
+       MsgFundCommunityPool
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#proposals">
+     Proposals
+    </a>
+    <ul class="visible nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#communitypoolspendproposal">
+       CommunityPoolSpendProposal
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#transitions">
+     Transitions
+    </a>
+    <ul class="visible nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#begin-block">
+       Begin-Block
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#parameters">
+     Parameters
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#state">
-   State
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#genesis-parameters">
+   Genesis parameters
   </a>
   <ul class="visible nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#feepool">
-     FeePool
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#validator-distribution">
-     Validator distribution
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#delegation-distribution">
-     Delegation distribution
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#message-types">
-   Message types
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#msgsetwithdrawaddress">
-     MsgSetWithdrawAddress
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#msgwithdrawdelegatorreward">
-     MsgWithdrawDelegatorReward
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#msgwithdrawvalidatorcommission">
-     MsgWithdrawValidatorCommission
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#msgfundcommunitypool">
-     MsgFundCommunityPool
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#proposals">
-   Proposals
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#communitypoolspendproposal">
-     CommunityPoolSpendProposal
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#transitions">
-   Transitions
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#begin-block">
-     Begin-Block
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#parameters">
-   Parameters
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#communitytax">
      CommunityTax
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#baseproposerreward">
      BaseProposerReward
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#bonusproposerreward">
      BonusProposerReward
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#withdrawaddrenabled">
      WithdrawAddrEnabled
     </a>
@@ -1327,112 +1349,124 @@
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#concepts">
-   Concepts
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Distribution
   </a>
   <ul class="visible nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#validator-and-delegator-rewards">
-     Validator and delegator rewards
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#concepts">
+     Concepts
+    </a>
+    <ul class="visible nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#validator-and-delegator-rewards">
+       Validator and delegator rewards
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#state">
+     State
+    </a>
+    <ul class="visible nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#feepool">
+       FeePool
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#validator-distribution">
+       Validator distribution
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#delegation-distribution">
+       Delegation distribution
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#message-types">
+     Message types
+    </a>
+    <ul class="visible nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#msgsetwithdrawaddress">
+       MsgSetWithdrawAddress
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#msgwithdrawdelegatorreward">
+       MsgWithdrawDelegatorReward
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#msgwithdrawvalidatorcommission">
+       MsgWithdrawValidatorCommission
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#msgfundcommunitypool">
+       MsgFundCommunityPool
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#proposals">
+     Proposals
+    </a>
+    <ul class="visible nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#communitypoolspendproposal">
+       CommunityPoolSpendProposal
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#transitions">
+     Transitions
+    </a>
+    <ul class="visible nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#begin-block">
+       Begin-Block
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#parameters">
+     Parameters
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#state">
-   State
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#genesis-parameters">
+   Genesis parameters
   </a>
   <ul class="visible nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#feepool">
-     FeePool
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#validator-distribution">
-     Validator distribution
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#delegation-distribution">
-     Delegation distribution
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#message-types">
-   Message types
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#msgsetwithdrawaddress">
-     MsgSetWithdrawAddress
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#msgwithdrawdelegatorreward">
-     MsgWithdrawDelegatorReward
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#msgwithdrawvalidatorcommission">
-     MsgWithdrawValidatorCommission
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#msgfundcommunitypool">
-     MsgFundCommunityPool
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#proposals">
-   Proposals
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#communitypoolspendproposal">
-     CommunityPoolSpendProposal
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#transitions">
-   Transitions
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#begin-block">
-     Begin-Block
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#parameters">
-   Parameters
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#communitytax">
      CommunityTax
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#baseproposerreward">
      BaseProposerReward
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#bonusproposerreward">
      BonusProposerReward
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#withdrawaddrenabled">
      WithdrawAddrEnabled
     </a>
@@ -1454,7 +1488,7 @@
 <p class="admonition-title">Important</p>
 <p>Terra’s distribution module inherits from Cosmos SDK’s <a class="reference external" href="https://docs.cosmos.network/master/modules/distribution/"><code class="docutils literal notranslate"><span class="pre">distribution</span></code></a> module. This document is a stub and covers mainly important Terra-specific notes about how it is used.</p>
 </div>
-<p>The distribution module describes a mechanism that tracks collected fees and passively distributes them to validators and delegators. Additionally, the distribution module defines the <span class="xref myst">community pool</span>, which is a pool of funds under the control of on-chain governance.</p>
+<p>The distribution module describes a mechanism that tracks collected fees and passively distributes them to validators and delegators. Additionally, the distribution module defines the community pool, which is a pool of funds under the control of on-chain governance.</p>
 <div class="section" id="concepts">
 <h2>Concepts<a class="headerlink" href="#concepts" title="Permalink to this headline">#</a></h2>
 <div class="section" id="validator-and-delegator-rewards">
@@ -1605,30 +1639,59 @@ only the height of the last withdrawal and its current properties.</p>
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="genesis-parameters">
+<h1>Genesis parameters<a class="headerlink" href="#genesis-parameters" title="Permalink to this headline">#</a></h1>
+<p>The genesis parameters for the crisis module outlined in the <a class="reference external" href="https://github.com/terra-money/genesis-tools/blob/main/src/genesis_builder.py#L277">Genesis Builder Script</a> are as follows:</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span>    <span class="n">community_pool_allocation</span> <span class="o">=</span> <span class="n">TOTAL_ALLOCATION</span> <span class="o">-</span> <span class="n">pre_attack_allocation</span> <span class="o">-</span> \
+        <span class="n">post_attack_allocation</span> <span class="o">-</span> <span class="n">validator_allocation</span> <span class="o">-</span> <span class="n">emergency_allocation</span>
+
+   <span class="c1"># Distribution: community pool</span>
+    <span class="n">genesis</span><span class="p">[</span><span class="s1">&#39;app_state&#39;</span><span class="p">][</span><span class="s1">&#39;distribution&#39;</span><span class="p">][</span><span class="s1">&#39;fee_pool&#39;</span><span class="p">][</span><span class="s1">&#39;community_pool&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[{</span>
+        <span class="s1">&#39;denom&#39;</span><span class="p">:</span> <span class="n">DENOM_LUNA</span><span class="p">,</span>
+        <span class="s1">&#39;amount&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">community_pool_allocation</span><span class="p">)</span>
+    <span class="p">}]</span>
+
+    <span class="c1"># Distribution: set community tax to 0</span>
+    <span class="n">genesis</span><span class="p">[</span><span class="s1">&#39;app_state&#39;</span><span class="p">][</span><span class="s1">&#39;distribution&#39;</span><span class="p">][</span><span class="s1">&#39;params&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;community_tax&#39;</span><span class="p">:</span> <span class="s1">&#39;0.000000000000000000&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;base_proposer_reward&#39;</span><span class="p">:</span> <span class="s1">&#39;0.010000000000000000&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;bonus_proposer_reward&#39;</span><span class="p">:</span> <span class="s1">&#39;0.040000000000000000&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;withdraw_addr_enabled&#39;</span><span class="p">:</span> <span class="kc">True</span>
+    <span class="p">}</span>
+
+    <span class="c1"># Distribution: module account registration</span>
+    <span class="n">add_module_account</span><span class="p">(</span>
+        <span class="n">genesis</span><span class="p">,</span> <span class="s1">&#39;distribution&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;terra1jv65s3grqf6v6jl3dp4t6c9t9rk99cd8pm7utl&#39;</span><span class="p">,</span>
+        <span class="nb">str</span><span class="p">(</span><span class="n">community_pool_allocation</span><span class="p">),</span> <span class="p">[])</span>
+
+</pre></div>
+</div>
 <div class="section" id="communitytax">
-<h3>CommunityTax<a class="headerlink" href="#communitytax" title="Permalink to this headline">#</a></h3>
+<h2>CommunityTax<a class="headerlink" href="#communitytax" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">Dec</span></code></p></li>
 </ul>
 </div>
 <div class="section" id="baseproposerreward">
-<h3>BaseProposerReward<a class="headerlink" href="#baseproposerreward" title="Permalink to this headline">#</a></h3>
+<h2>BaseProposerReward<a class="headerlink" href="#baseproposerreward" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">Dec</span></code></p></li>
 </ul>
 </div>
 <div class="section" id="bonusproposerreward">
-<h3>BonusProposerReward<a class="headerlink" href="#bonusproposerreward" title="Permalink to this headline">#</a></h3>
+<h2>BonusProposerReward<a class="headerlink" href="#bonusproposerreward" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">Dec</span></code></p></li>
 </ul>
 </div>
 <div class="section" id="withdrawaddrenabled">
-<h3>WithdrawAddrEnabled<a class="headerlink" href="#withdrawaddrenabled" title="Permalink to this headline">#</a></h3>
+<h2>WithdrawAddrEnabled<a class="headerlink" href="#withdrawaddrenabled" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">bool</span></code></p></li>
 </ul>
-</div>
 </div>
 </div>
 
@@ -1638,11 +1701,11 @@ only the height of the last withdrawal and its current properties.</p>
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="spec-capability.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="spec-crisis.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Capability</p>
+            <p class="prev-next-title">Crisis</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="spec-evidence.html" title="next page">

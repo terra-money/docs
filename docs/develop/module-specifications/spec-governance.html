@@ -787,6 +787,11 @@
       </a>
      </li>
      <li class="toctree-l3">
+      <a class="reference internal" href="spec-crisis.html">
+       Crisis
+      </a>
+     </li>
+     <li class="toctree-l3">
       <a class="reference internal" href="spec-distribution.html">
        Distribution
       </a>
@@ -809,6 +814,11 @@
      <li class="toctree-l3">
       <a class="reference internal" href="spec-mint.html">
        Mint
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spec-params.html">
+       Params
       </a>
      </li>
      <li class="toctree-l3">
@@ -1296,6 +1306,11 @@
   <a class="reference internal nav-link" href="#parameters">
    Parameters
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#genesis-parameters">
+   Genesis parameters
+  </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#mindeposit">
@@ -1448,6 +1463,11 @@
   <a class="reference internal nav-link" href="#parameters">
    Parameters
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#genesis-parameters">
+   Genesis parameters
+  </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#mindeposit">
@@ -1504,19 +1524,19 @@
 <p>The following is the governance proposal procedure:</p>
 <div class="section" id="deposit-period">
 <h3>Deposit Period<a class="headerlink" href="#deposit-period" title="Permalink to this headline">#</a></h3>
-<p>After a proposal is submitted, it enters the deposit period, where it must reach a total minimum deposit of 50 Luna within 2 weeks from the time of its submission. The deposit threshold is reached when the sum of the initial deposit (from the proposer) and the deposits from all other interested network participants meet or exceed 50 Luna.</p>
+<p>After a proposal is submitted, it enters the deposit period, where it must reach a total minimum deposit of 512 Luna within 7 days from the time of its submission. The deposit threshold is reached when the sum of the initial deposit (from the proposer) and the deposits from all other interested network participants meet or exceed 512 Luna.</p>
 <p>Deposits protect against unnecessary proposals and spam.</p>
 <p>Deposits get refunded if all of the following conditions are met:</p>
 <ul class="simple">
-<li><p>The minimum deposit of 50 Luna is reached within the two-week deposit period.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Quorum</span></code> is met: the number of total votes is greater than 40% of all staked Luna</p></li>
+<li><p>The minimum deposit of 512 Luna is reached within the 7-day deposit period.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Quorum</span></code> is met: the number of total votes is greater than 10% of all staked Luna</p></li>
 <li><p>The total number of <code class="docutils literal notranslate"><span class="pre">NoWithVeto</span></code> votes is less than 33.4% of the total vote.</p></li>
 <li><p>A vote returns a majority of <code class="docutils literal notranslate"><span class="pre">Yes</span></code> or <code class="docutils literal notranslate"><span class="pre">No</span></code> votes.</p></li>
 </ul>
 <p>Deposits are burned under any of the following conditions:</p>
 <ul class="simple">
-<li><p>The minimum deposit of 50 Luna is not reached within the two-week deposit period.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Quorum</span></code> is not met: the number of total votes after the one-week voting period is less than 40% of all staked Luna.</p></li>
+<li><p>The minimum deposit of 512 Luna is not reached within the one-week deposit period.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Quorum</span></code> is not met: the number of total votes after the one-week voting period is less than 10% of all staked Luna.</p></li>
 <li><p>the number of <code class="docutils literal notranslate"><span class="pre">NoWithVeto</span></code> votes is above 33.4% of the total vote.</p></li>
 </ul>
 </div>
@@ -1743,28 +1763,54 @@
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
+</div>
+<div class="section" id="genesis-parameters">
+<h2>Genesis parameters<a class="headerlink" href="#genesis-parameters" title="Permalink to this headline">#</a></h2>
+<p>The genesis parameters for the governance module outlined in the <a class="reference external" href="https://github.com/terra-money/genesis-tools/blob/main/src/genesis_builder.py#L147">Genesis Builder Script</a> are as follows:</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span>    <span class="c1"># Gov: change min deposit to 512 LUNA and deposit period to 7 days</span>
+    <span class="n">genesis</span><span class="p">[</span><span class="s1">&#39;app_state&#39;</span><span class="p">][</span><span class="s1">&#39;gov&#39;</span><span class="p">][</span><span class="s1">&#39;deposit_params&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;max_deposit_period&#39;</span><span class="p">:</span> <span class="s1">&#39;604800s&#39;</span><span class="p">,</span>  <span class="c1"># 7days</span>
+        <span class="s1">&#39;min_deposit&#39;</span><span class="p">:</span> <span class="p">[{</span>
+            <span class="s1">&#39;denom&#39;</span><span class="p">:</span> <span class="n">DENOM_LUNA</span><span class="p">,</span>
+            <span class="s1">&#39;amount&#39;</span><span class="p">:</span> <span class="s1">&#39;512000000&#39;</span>
+        <span class="p">}],</span>
+    <span class="p">}</span>
+
+    <span class="c1"># Gov: set tally params quorum to 10%</span>
+    <span class="n">genesis</span><span class="p">[</span><span class="s1">&#39;app_state&#39;</span><span class="p">][</span><span class="s1">&#39;gov&#39;</span><span class="p">][</span><span class="s1">&#39;tally_params&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;quorum&#39;</span><span class="p">:</span> <span class="s1">&#39;0.100000000000000000&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;threshold&#39;</span><span class="p">:</span> <span class="s1">&#39;0.500000000000000000&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;veto_threshold&#39;</span><span class="p">:</span> <span class="s1">&#39;0.334000000000000000&#39;</span>
+    <span class="p">}</span>
+
+    <span class="c1"># Gov: set voting period to 7 days</span>
+    <span class="n">genesis</span><span class="p">[</span><span class="s1">&#39;app_state&#39;</span><span class="p">][</span><span class="s1">&#39;gov&#39;</span><span class="p">][</span><span class="s1">&#39;voting_params&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;voting_period&#39;</span><span class="p">:</span> <span class="s1">&#39;604800s&#39;</span>
+    <span class="p">}</span>
+</pre></div>
+</div>
 <div class="section" id="mindeposit">
 <h3>MinDeposit<a class="headerlink" href="#mindeposit" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">Coins</span></code></p></li>
 <li><p>denom: <code class="docutils literal notranslate"><span class="pre">uluna</span></code></p></li>
-<li><p>amount: <code class="docutils literal notranslate"><span class="pre">50000000</span></code></p></li>
+<li><p>amount: <code class="docutils literal notranslate"><span class="pre">512000000</span></code></p></li>
 </ul>
-<p>The minimum deposit amount for a proposal to enter a voting period. Currently 50 Luna.</p>
+<p>The minimum deposit amount for a proposal to enter a voting period. Currently 512 Luna.</p>
 </div>
 <div class="section" id="maxdepositperiod">
 <h3>MaxDepositPeriod<a class="headerlink" href="#maxdepositperiod" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">time.Duration</span></code> (seconds)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&quot;max_deposit_period&quot;:</span> <span class="pre">&quot;1209600s&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;max_deposit_period&quot;:</span> <span class="pre">&quot;604800s&quot;</span></code></p></li>
 </ul>
-<p>Maximum period for Luna holders to deposit on a proposal. Currently 2 weeks.</p>
+<p>Maximum period for Luna holders to deposit on a proposal. Currently 1 week.</p>
 </div>
 <div class="section" id="quorum">
 <h3>Quorum<a class="headerlink" href="#quorum" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">Dec</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&quot;quorum&quot;:</span> <span class="pre">&quot;0.400000000000000000&quot;,</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;quorum&quot;:</span> <span class="pre">&quot;0.100000000000000000&quot;,</span></code></p></li>
 </ul>
 <p>Minimum percentage of total stake needed to vote for a result to be considered valid.</p>
 </div>

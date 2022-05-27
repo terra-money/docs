@@ -45,7 +45,7 @@
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Staking" href="spec-staking.html" />
-    <link rel="prev" title="Mint" href="spec-mint.html" />
+    <link rel="prev" title="Params" href="spec-params.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -785,6 +785,11 @@
       </a>
      </li>
      <li class="toctree-l3">
+      <a class="reference internal" href="spec-crisis.html">
+       Crisis
+      </a>
+     </li>
+     <li class="toctree-l3">
       <a class="reference internal" href="spec-distribution.html">
        Distribution
       </a>
@@ -807,6 +812,11 @@
      <li class="toctree-l3">
       <a class="reference internal" href="spec-mint.html">
        Mint
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spec-params.html">
+       Params
       </a>
      </li>
      <li class="toctree-l3 current active">
@@ -1235,12 +1245,12 @@
   <a class="reference internal nav-link" href="#parameters">
    Parameters
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#genesis-parameters">
+   Genesis parameters
+  </a>
   <ul class="visible nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#maxevidenceage">
-     MaxEvidenceAge
-    </a>
-   </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#signedblockswindow">
      SignedBlocksWindow
@@ -1328,12 +1338,12 @@
   <a class="reference internal nav-link" href="#parameters">
    Parameters
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#genesis-parameters">
+   Genesis parameters
+  </a>
   <ul class="visible nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#maxevidenceage">
-     MaxEvidenceAge
-    </a>
-   </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#signedblockswindow">
      SignedBlocksWindow
@@ -1571,12 +1581,27 @@ for <code class="docutils literal notranslate"><span class="pre">DowntimeJailDur
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<div class="section" id="maxevidenceage">
-<h3>MaxEvidenceAge<a class="headerlink" href="#maxevidenceage" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
-<li><p>type: <code class="docutils literal notranslate"><span class="pre">time.Duration</span></code> (seconds)</p></li>
-<li><p>default: 2 minutes</p></li>
-</ul>
+</div>
+<div class="section" id="genesis-parameters">
+<h2>Genesis parameters<a class="headerlink" href="#genesis-parameters" title="Permalink to this headline">#</a></h2>
+<p>The genesis parameters for the crisis module outlined in the <a class="reference external" href="https://github.com/terra-money/genesis-tools/blob/main/src/genesis_builder.py#L168">Genesis Builder Script</a> are as follows:</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span>    <span class="c1"># Slashing: slash window setup</span>
+    <span class="n">genesis</span><span class="p">[</span><span class="s1">&#39;app_state&#39;</span><span class="p">][</span><span class="s1">&#39;slashing&#39;</span><span class="p">][</span><span class="s1">&#39;params&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;downtime_jail_duration&#39;</span><span class="p">:</span> <span class="s1">&#39;600s&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;min_signed_per_window&#39;</span><span class="p">:</span> <span class="s1">&#39;0.05&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;signed_blocks_window&#39;</span><span class="p">:</span> <span class="s1">&#39;10000&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;slash_fraction_double_sign&#39;</span><span class="p">:</span> <span class="s1">&#39;0.05&#39;</span><span class="p">,</span>  <span class="c1"># 5%</span>
+        <span class="s1">&#39;slash_fraction_downtime&#39;</span><span class="p">:</span> <span class="s1">&#39;0.0001&#39;</span>    <span class="c1"># 0.01%</span>
+</pre></div>
+</div>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span>    <span class="c1"># Consensus Params: Evidence</span>
+    <span class="n">genesis</span><span class="p">[</span><span class="s1">&#39;consensus_params&#39;</span><span class="p">][</span><span class="s1">&#39;evidence&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;max_age_num_blocks&#39;</span><span class="p">:</span> <span class="s1">&#39;100000&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;max_age_duration&#39;</span><span class="p">:</span> <span class="s1">&#39;172800000000000&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;max_bytes&#39;</span><span class="p">:</span> <span class="s1">&#39;1000000&#39;</span>
+    <span class="p">}</span>
+
+</pre></div>
 </div>
 <div class="section" id="signedblockswindow">
 <h3>SignedBlocksWindow<a class="headerlink" href="#signedblockswindow" title="Permalink to this headline">#</a></h3>
@@ -1589,28 +1614,28 @@ for <code class="docutils literal notranslate"><span class="pre">DowntimeJailDur
 <h3>MinSignedPerWindow<a class="headerlink" href="#minsignedperwindow" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">Dec</span></code></p></li>
-<li><p>default: <code class="docutils literal notranslate"><span class="pre">5</span></code></p></li>
+<li><p>default: <code class="docutils literal notranslate"><span class="pre">.05</span></code></p></li>
 </ul>
 </div>
 <div class="section" id="downtimejailduration">
 <h3>DowntimeJailDuration<a class="headerlink" href="#downtimejailduration" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">time.Duration</span></code> (seconds)</p></li>
-<li><p>default: 10 minutes</p></li>
+<li><p>default:  600s</p></li>
 </ul>
 </div>
 <div class="section" id="slashfractiondoublesign">
 <h3>SlashFractionDoubleSign<a class="headerlink" href="#slashfractiondoublesign" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">Dec</span></code></p></li>
-<li><p>default: 1/20</p></li>
+<li><p>default: 5%</p></li>
 </ul>
 </div>
 <div class="section" id="slashfractiondowntime">
 <h3>SlashFractionDowntime<a class="headerlink" href="#slashfractiondowntime" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">Dec</span></code></p></li>
-<li><p>default: 1/10000</p></li>
+<li><p>default: .01%</p></li>
 </ul>
 </div>
 </div>
@@ -1622,11 +1647,11 @@ for <code class="docutils literal notranslate"><span class="pre">DowntimeJailDur
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="spec-mint.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="spec-params.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Mint</p>
+            <p class="prev-next-title">Params</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="spec-staking.html" title="next page">
