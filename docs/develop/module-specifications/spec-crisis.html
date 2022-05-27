@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Slashing &#8212; Terra Docs  documentation</title>
+    <title>Crisis &#8212; Terra Docs  documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -44,8 +44,6 @@
     <link rel="shortcut icon" href="../../../_static/docs_favicon.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Staking" href="spec-staking.html" />
-    <link rel="prev" title="Mint" href="spec-mint.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -242,17 +240,17 @@
   </ul>
  </li>
 </ul>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active has-children">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../README.html">
    Develop
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
   <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../get-started.html">
      Get started
@@ -754,16 +752,16 @@
      </li>
     </ul>
    </li>
-   <li class="toctree-l2 current active has-children">
+   <li class="toctree-l2 has-children">
     <a class="reference internal" href="README.html">
      Terra Core modules
     </a>
-    <input checked="" class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+    <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
     <label for="toctree-checkbox-16">
      <i class="fas fa-chevron-down">
      </i>
     </label>
-    <ul class="current">
+    <ul>
      <li class="toctree-l3">
       <a class="reference internal" href="spec-auth.html">
        Auth
@@ -809,8 +807,8 @@
        Mint
       </a>
      </li>
-     <li class="toctree-l3 current active">
-      <a class="current reference internal" href="#">
+     <li class="toctree-l3">
+      <a class="reference internal" href="spec-slashing.html">
        Slashing
       </a>
      </li>
@@ -1149,7 +1147,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../../_sources/docs/develop/module-specifications/spec-slashing.md.txt"><button type="button"
+        <a class="dropdown-buttons" href="../../../_sources/docs/develop/module-specifications/spec-crisis.md.txt"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -1169,7 +1167,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/terra-money/docs/issues/new?title=Issue%20on%20page%20%2Fdocs/develop/module-specifications/spec-slashing.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/terra-money/docs/issues/new?title=Issue%20on%20page%20%2Fdocs/develop/module-specifications/spec-crisis.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -1196,77 +1194,14 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#message-types">
-   Message Types
+  <a class="reference internal nav-link" href="#constantfee">
+   ConstantFee
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#msgunjail">
-     MsgUnjail
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#transitions">
-   Transitions
+  <a class="reference internal nav-link" href="#genesis-parameters">
+   Genesis parameters
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#begin-block">
-     Begin-Block
-    </a>
-    <ul class="visible nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#evidence-handling">
-       Evidence handling
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#liveness-tracking">
-       Liveness tracking
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#parameters">
-   Parameters
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#maxevidenceage">
-     MaxEvidenceAge
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#signedblockswindow">
-     SignedBlocksWindow
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#minsignedperwindow">
-     MinSignedPerWindow
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#downtimejailduration">
-     DowntimeJailDuration
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#slashfractiondoublesign">
-     SlashFractionDoubleSign
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#slashfractiondowntime">
-     SlashFractionDowntime
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -1278,7 +1213,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Slashing</h1>
+                <h1>Crisis</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -1289,77 +1224,14 @@
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#message-types">
-   Message Types
+  <a class="reference internal nav-link" href="#constantfee">
+   ConstantFee
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#msgunjail">
-     MsgUnjail
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#transitions">
-   Transitions
+  <a class="reference internal nav-link" href="#genesis-parameters">
+   Genesis parameters
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#begin-block">
-     Begin-Block
-    </a>
-    <ul class="visible nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#evidence-handling">
-       Evidence handling
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#liveness-tracking">
-       Liveness tracking
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#parameters">
-   Parameters
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#maxevidenceage">
-     MaxEvidenceAge
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#signedblockswindow">
-     SignedBlocksWindow
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#minsignedperwindow">
-     MinSignedPerWindow
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#downtimejailduration">
-     DowntimeJailDuration
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#slashfractiondoublesign">
-     SlashFractionDoubleSign
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#slashfractiondowntime">
-     SlashFractionDowntime
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -1370,248 +1242,26 @@
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="slashing">
-<h1>Slashing<a class="headerlink" href="#slashing" title="Permalink to this headline">#</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="crisis">
+<h1>Crisis<a class="headerlink" href="#crisis" title="Permalink to this headline">#</a></h1>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>Terra’s slashing module inherits from the Cosmos SDK’s <a class="reference external" href="https://docs.cosmos.network/master/modules/slashing/"><code class="docutils literal notranslate"><span class="pre">slashing</span></code></a> module. This document is a stub and covers mainly important Terra-specific notes about how it is used.</p>
+<p>Terra’s crisis module inherits from the Cosmos SDK’s <a class="reference external" href="https://docs.cosmos.network/master/modules/crisis/"><code class="docutils literal notranslate"><span class="pre">crisis</span></code></a> module. This document is a stub and covers mainly important Terra-specific notes about how it is used.</p>
 </div>
-<p>The slashing module enables Terra to disincentivize any attributable action by a protocol-recognized actor with value at stake by penalizing them. The penalty is called <a class="reference internal" href="../../learn/glossary.html#slashing"><span class="std std-doc">slashing</span></a>. Terra mainly uses the <a class="reference internal" href="spec-staking.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">Staking</span></code></span></a> module to slash when violating validator responsibilities. This module manages lower-level penalties at the Tendermint consensus level, such as double-signing.</p>
-<div class="section" id="message-types">
-<h2>Message Types<a class="headerlink" href="#message-types" title="Permalink to this headline">#</a></h2>
-<div class="section" id="msgunjail">
-<h3>MsgUnjail<a class="headerlink" href="#msgunjail" title="Permalink to this headline">#</a></h3>
-<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">type</span><span class="w"> </span><span class="nx">MsgUnjail</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">ValidatorAddr</span><span class="w"> </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">ValAddress</span><span class="w"> </span><span class="s">`json:&quot;address&quot; yaml:&quot;address&quot;`</span><span class="w"> </span><span class="c1">// address of the validator operator</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<p>The crisis module stops block production by halting the blockchain when an invariant is broken. Invariants are set during the initialization process.</p>
+<div class="section" id="constantfee">
+<h2>ConstantFee<a class="headerlink" href="#constantfee" title="Permalink to this headline">#</a></h2>
+<p>Because the gas cost of verifying an invariant is high, the crisis module utilizes a constant fee instead of the typical gas calculation method.</p>
+</div>
+<div class="section" id="genesis-parameters">
+<h2>Genesis parameters<a class="headerlink" href="#genesis-parameters" title="Permalink to this headline">#</a></h2>
+<p>The genesis parameters for the crisis module outlined in the <a class="reference external" href="https://github.com/terra-money/genesis-tools/blob/main/src/genesis_builder.py#L141">Genesis Builder Script</a> are as follows:</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span>    <span class="c1"># Crisis: change constant fee to 512 LUNA</span>
+    <span class="n">genesis</span><span class="p">[</span><span class="s1">&#39;app_state&#39;</span><span class="p">][</span><span class="s1">&#39;crisis&#39;</span><span class="p">][</span><span class="s1">&#39;constant_fee&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;denom&#39;</span><span class="p">:</span> <span class="n">DENOM_LUNA</span><span class="p">,</span>
+        <span class="s1">&#39;amount&#39;</span><span class="p">:</span> <span class="s1">&#39;512000000&#39;</span><span class="p">,</span>
+    <span class="p">}</span>
 </pre></div>
-</div>
-</div>
-</div>
-<div class="section" id="transitions">
-<h2>Transitions<a class="headerlink" href="#transitions" title="Permalink to this headline">#</a></h2>
-<div class="section" id="begin-block">
-<h3>Begin-Block<a class="headerlink" href="#begin-block" title="Permalink to this headline">#</a></h3>
-<blockquote>
-<div><p>This section was taken from the official Cosmos SDK docs, and placed here for your convenience to understand the slashing module’s parameters.</p>
-</div></blockquote>
-<p>At the beginning of each block, the slashing module checks for evidence of infractions or downtime of validators, double-signing, and other low-level consensus penalties.</p>
-<div class="section" id="evidence-handling">
-<h4>Evidence handling<a class="headerlink" href="#evidence-handling" title="Permalink to this headline">#</a></h4>
-<p>Tendermint blocks can include evidence, which indicates that a validator committed malicious
-behavior. The relevant information is forwarded to the application as ABCI Evidence
-in <code class="docutils literal notranslate"><span class="pre">abci.RequestBeginBlock</span></code> so that the validator an be punished.</p>
-<p>For some <code class="docutils literal notranslate"><span class="pre">Evidence</span></code> submitted in <code class="docutils literal notranslate"><span class="pre">block</span></code> to be valid, it must satisfy:</p>
-<p><code class="docutils literal notranslate"><span class="pre">Evidence.Timestamp</span> <span class="pre">&gt;=</span> <span class="pre">block.Timestamp</span> <span class="pre">-</span> <span class="pre">MaxEvidenceAge</span></code></p>
-<p>where <code class="docutils literal notranslate"><span class="pre">Evidence.Timestamp</span></code> is the timestamp in the block at height
-<code class="docutils literal notranslate"><span class="pre">Evidence.Height</span></code>, and <code class="docutils literal notranslate"><span class="pre">block.Timestamp</span></code> is the current block timestamp.</p>
-<p>If valid evidence is included in a block, the validator’s stake is reduced by
-some penalty (<code class="docutils literal notranslate"><span class="pre">SlashFractionDoubleSign</span></code> for equivocation) of what their stake was
-when the infraction occurred instead of when the evidence was discovered. We
-want to follow the stake, i.e. the stake which contributed to the infraction
-should be slashed, even if it has since been redelegated or has started unbonding.</p>
-<p>The unbondings and redelegations from the slashed validator are looped through, and the amount of stake that has moved is tracked:</p>
-<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="nx">slashAmountUnbondings</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
-<span class="nx">slashAmountRedelegations</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
-
-<span class="nx">unbondings</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">getUnbondings</span><span class="p">(</span><span class="nx">validator</span><span class="p">.</span><span class="nx">Address</span><span class="p">)</span><span class="w"></span>
-<span class="k">for</span><span class="w"> </span><span class="nx">unbond</span><span class="w"> </span><span class="nx">in</span><span class="w"> </span><span class="nx">unbondings</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">was</span><span class="w"> </span><span class="nx">not</span><span class="w"> </span><span class="nx">bonded</span><span class="w"> </span><span class="nx">before</span><span class="w"> </span><span class="nx">evidence</span><span class="p">.</span><span class="nx">Height</span><span class="w"> </span><span class="nx">or</span><span class="w"> </span><span class="nx">started</span><span class="w"> </span><span class="nx">unbonding</span><span class="w"> </span><span class="nx">before</span><span class="w"> </span><span class="nx">unbonding</span><span class="w"> </span><span class="nx">period</span><span class="w"> </span><span class="nx">ago</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">continue</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-
-<span class="w">    </span><span class="nx">burn</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">unbond</span><span class="p">.</span><span class="nx">InitialTokens</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">SLASH_PROPORTION</span><span class="w"></span>
-<span class="w">    </span><span class="nx">slashAmountUnbondings</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">burn</span><span class="w"></span>
-
-<span class="w">    </span><span class="nx">unbond</span><span class="p">.</span><span class="nx">Tokens</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nx">unbond</span><span class="p">.</span><span class="nx">Tokens</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">burn</span><span class="p">)</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-
-<span class="c1">// only care if source gets slashed because we&#39;re already bonded to destination</span><span class="w"></span>
-<span class="c1">// so if destination validator gets slashed the delegation just has same shares</span><span class="w"></span>
-<span class="c1">// of smaller pool.</span><span class="w"></span>
-<span class="nx">redels</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">getRedelegationsBySource</span><span class="p">(</span><span class="nx">validator</span><span class="p">.</span><span class="nx">Address</span><span class="p">)</span><span class="w"></span>
-<span class="k">for</span><span class="w"> </span><span class="nx">redel</span><span class="w"> </span><span class="nx">in</span><span class="w"> </span><span class="nx">redels</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">was</span><span class="w"> </span><span class="nx">not</span><span class="w"> </span><span class="nx">bonded</span><span class="w"> </span><span class="nx">before</span><span class="w"> </span><span class="nx">evidence</span><span class="p">.</span><span class="nx">Height</span><span class="w"> </span><span class="nx">or</span><span class="w"> </span><span class="nx">started</span><span class="w"> </span><span class="nx">redelegating</span><span class="w"> </span><span class="nx">before</span><span class="w"> </span><span class="nx">unbonding</span><span class="w"> </span><span class="nx">period</span><span class="w"> </span><span class="nx">ago</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">continue</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-
-<span class="w">    </span><span class="nx">burn</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">redel</span><span class="p">.</span><span class="nx">InitialTokens</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">SLASH_PROPORTION</span><span class="w"></span>
-<span class="w">    </span><span class="nx">slashAmountRedelegations</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">burn</span><span class="w"></span>
-
-<span class="w">    </span><span class="nx">amount</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">unbondFromValidator</span><span class="p">(</span><span class="nx">redel</span><span class="p">.</span><span class="nx">Destination</span><span class="p">,</span><span class="w"> </span><span class="nx">burn</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="nx">destroy</span><span class="p">(</span><span class="nx">amount</span><span class="p">)</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</pre></div>
-</div>
-<p>The validator is slashed and <a class="reference internal" href="../../learn/glossary.html#tombstone"><span class="std std-doc">tombstoned</span></a>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curVal</span> <span class="o">:=</span> <span class="n">validator</span>
-<span class="n">oldVal</span> <span class="o">:=</span> <span class="n">loadValidator</span><span class="p">(</span><span class="n">evidence</span><span class="o">.</span><span class="n">Height</span><span class="p">,</span> <span class="n">evidence</span><span class="o">.</span><span class="n">Address</span><span class="p">)</span>
-
-<span class="n">slashAmount</span> <span class="o">:=</span> <span class="n">SLASH_PROPORTION</span> <span class="o">*</span> <span class="n">oldVal</span><span class="o">.</span><span class="n">Shares</span>
-<span class="n">slashAmount</span> <span class="o">-=</span> <span class="n">slashAmountUnbondings</span>
-<span class="n">slashAmount</span> <span class="o">-=</span> <span class="n">slashAmountRedelegations</span>
-
-<span class="n">curVal</span><span class="o">.</span><span class="n">Shares</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">curVal</span><span class="o">.</span><span class="n">Shares</span> <span class="o">-</span> <span class="n">slashAmount</span><span class="p">)</span>
-
-<span class="n">signInfo</span> <span class="o">=</span> <span class="n">SigningInfo</span><span class="o">.</span><span class="n">Get</span><span class="p">(</span><span class="n">val</span><span class="o">.</span><span class="n">Address</span><span class="p">)</span>
-<span class="n">signInfo</span><span class="o">.</span><span class="n">JailedUntil</span> <span class="o">=</span> <span class="n">MAX_TIME</span>
-<span class="n">signInfo</span><span class="o">.</span><span class="n">Tombstoned</span> <span class="o">=</span> <span class="n">true</span>
-<span class="n">SigningInfo</span><span class="o">.</span><span class="n">Set</span><span class="p">(</span><span class="n">val</span><span class="o">.</span><span class="n">Address</span><span class="p">,</span> <span class="n">signInfo</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>This process ensures that offending validators are punished with the same amount whether they act as a single validator with X stake or as N validators with a collective X stake. The amount slashed for all double-signature infractions committed within a single slashing period is capped. For more information, see <a class="reference external" href="https://docs.cosmos.network/master/modules/slashing/01_concepts.html#tombstone-caps">tombstone caps</a>.</p>
-</div>
-<div class="section" id="liveness-tracking">
-<h4>Liveness tracking<a class="headerlink" href="#liveness-tracking" title="Permalink to this headline">#</a></h4>
-<p>At the beginning of each block, the <code class="docutils literal notranslate"><span class="pre">ValidatorSigningInfo</span></code> for each
-validator is updated and whether they’ve crossed below the liveness threshold over a
-sliding window is checked. This sliding window is defined by <code class="docutils literal notranslate"><span class="pre">SignedBlocksWindow</span></code>, and the
-index in this window is determined by <code class="docutils literal notranslate"><span class="pre">IndexOffset</span></code> found in the validator’s
-<code class="docutils literal notranslate"><span class="pre">ValidatorSigningInfo</span></code>. For each block processed, the <code class="docutils literal notranslate"><span class="pre">IndexOffset</span></code> is incremented
-regardless of whether the validator signed. After the index is determined, the
-<code class="docutils literal notranslate"><span class="pre">MissedBlocksBitArray</span></code> and <code class="docutils literal notranslate"><span class="pre">MissedBlocksCounter</span></code> are updated accordingly.</p>
-<p>Finally, to determine whether a validator crosses below the liveness threshold,
-the maximum number of blocks missed, <code class="docutils literal notranslate"><span class="pre">maxMissed</span></code>, which is
-<code class="docutils literal notranslate"><span class="pre">SignedBlocksWindow</span> <span class="pre">-</span> <span class="pre">(MinSignedPerWindow</span> <span class="pre">*</span> <span class="pre">SignedBlocksWindow)</span></code>, and the minimum
-height at which liveness can be determined, <code class="docutils literal notranslate"><span class="pre">minHeight</span></code>, are fetched. If the current block is
-greater than <code class="docutils literal notranslate"><span class="pre">minHeight</span></code> and the validator’s <code class="docutils literal notranslate"><span class="pre">MissedBlocksCounter</span></code> is greater than
-<code class="docutils literal notranslate"><span class="pre">maxMissed</span></code>, they are slashed by <code class="docutils literal notranslate"><span class="pre">SlashFractionDowntime</span></code>, jailed
-for <code class="docutils literal notranslate"><span class="pre">DowntimeJailDuration</span></code>, and have the following values reset:
-<code class="docutils literal notranslate"><span class="pre">MissedBlocksBitArray</span></code>, <code class="docutils literal notranslate"><span class="pre">MissedBlocksCounter</span></code>, and <code class="docutils literal notranslate"><span class="pre">IndexOffset</span></code>.</p>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>Liveness slashes do not lead to tombstombing.</p>
-</div>
-<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="nx">height</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">block</span><span class="p">.</span><span class="nx">Height</span><span class="w"></span>
-
-<span class="k">for</span><span class="w"> </span><span class="nx">vote</span><span class="w"> </span><span class="nx">in</span><span class="w"> </span><span class="nx">block</span><span class="p">.</span><span class="nx">LastCommitInfo</span><span class="p">.</span><span class="nx">Votes</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="nx">signInfo</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">GetValidatorSigningInfo</span><span class="p">(</span><span class="nx">vote</span><span class="p">.</span><span class="nx">Validator</span><span class="p">.</span><span class="nx">Address</span><span class="p">)</span><span class="w"></span>
-
-<span class="w">  </span><span class="c1">// This is a relative index, so it counts blocks the validator SHOULD have</span><span class="w"></span>
-<span class="w">  </span><span class="c1">// signed. The 0-value default signing info is used if no signed block is present, except for</span><span class="w"></span>
-<span class="w">  </span><span class="c1">// start height.</span><span class="w"></span>
-<span class="w">  </span><span class="nx">index</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">signInfo</span><span class="p">.</span><span class="nx">IndexOffset</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="nx">SignedBlocksWindow</span><span class="p">()</span><span class="w"></span>
-<span class="w">  </span><span class="nx">signInfo</span><span class="p">.</span><span class="nx">IndexOffset</span><span class="o">++</span><span class="w"></span>
-
-<span class="w">  </span><span class="c1">// Update MissedBlocksBitArray and MissedBlocksCounter. The MissedBlocksCounter</span><span class="w"></span>
-<span class="w">  </span><span class="c1">// just tracks the sum of MissedBlocksBitArray to avoid needing to</span><span class="w"></span>
-<span class="w">  </span><span class="c1">// read/write the whole array each time.</span><span class="w"></span>
-<span class="w">  </span><span class="nx">missedPrevious</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">GetValidatorMissedBlockBitArray</span><span class="p">(</span><span class="nx">vote</span><span class="p">.</span><span class="nx">Validator</span><span class="p">.</span><span class="nx">Address</span><span class="p">,</span><span class="w"> </span><span class="nx">index</span><span class="p">)</span><span class="w"></span>
-<span class="w">  </span><span class="nx">missed</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="p">!</span><span class="nx">signed</span><span class="w"></span>
-
-<span class="w">  </span><span class="k">switch</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="p">!</span><span class="nx">missedPrevious</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">missed</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// array index has changed from not missed to missed, increment counter</span><span class="w"></span>
-<span class="w">    </span><span class="nx">SetValidatorMissedBlockBitArray</span><span class="p">(</span><span class="nx">vote</span><span class="p">.</span><span class="nx">Validator</span><span class="p">.</span><span class="nx">Address</span><span class="p">,</span><span class="w"> </span><span class="nx">index</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="nx">signInfo</span><span class="p">.</span><span class="nx">MissedBlocksCounter</span><span class="o">++</span><span class="w"></span>
-
-<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="nx">missedPrevious</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">!</span><span class="nx">missed</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// array index has changed from missed to not missed, decrement counter</span><span class="w"></span>
-<span class="w">    </span><span class="nx">SetValidatorMissedBlockBitArray</span><span class="p">(</span><span class="nx">vote</span><span class="p">.</span><span class="nx">Validator</span><span class="p">.</span><span class="nx">Address</span><span class="p">,</span><span class="w"> </span><span class="nx">index</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="nx">signInfo</span><span class="p">.</span><span class="nx">MissedBlocksCounter</span><span class="o">--</span><span class="w"></span>
-
-<span class="w">  </span><span class="k">default</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// array index at this index has not changed; no need to update counter</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-
-<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="nx">missed</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// emit events...</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-
-<span class="w">  </span><span class="nx">minHeight</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">signInfo</span><span class="p">.</span><span class="nx">StartHeight</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">SignedBlocksWindow</span><span class="p">()</span><span class="w"></span>
-<span class="w">  </span><span class="nx">maxMissed</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">SignedBlocksWindow</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">MinSignedPerWindow</span><span class="p">()</span><span class="w"></span>
-
-<span class="w">  </span><span class="c1">// If the minimum height has been reached and the validator has missed too many</span><span class="w"></span>
-<span class="w">  </span><span class="c1">// jail and slash them.</span><span class="w"></span>
-<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="nx">height</span><span class="w"> </span><span class="p">&gt;</span><span class="w"> </span><span class="nx">minHeight</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">signInfo</span><span class="p">.</span><span class="nx">MissedBlocksCounter</span><span class="w"> </span><span class="p">&gt;</span><span class="w"> </span><span class="nx">maxMissed</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">validator</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">ValidatorByConsAddr</span><span class="p">(</span><span class="nx">vote</span><span class="p">.</span><span class="nx">Validator</span><span class="p">.</span><span class="nx">Address</span><span class="p">)</span><span class="w"></span>
-
-<span class="w">    </span><span class="c1">// emit events...</span><span class="w"></span>
-
-<span class="w">    </span><span class="c1">// To retrieve the stake distribution which signed the block,</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// subtract ValidatorUpdateDelay from the block height, and subtract an</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// additional 1 since this is the LastCommit.</span><span class="w"></span>
-<span class="w">    </span><span class="c1">//</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// Note, that this CAN result in a negative &quot;distributionHeight&quot; up to</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// -ValidatorUpdateDelay-1, i.e. at the end of the pre-genesis block (none) = at the beginning of the genesis block.</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// That&#39;s fine since this is just used to filter unbonding delegations &amp; redelegations.</span><span class="w"></span>
-<span class="w">    </span><span class="nx">distributionHeight</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">height</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">ValidatorUpdateDelay</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
-
-<span class="w">    </span><span class="nx">Slash</span><span class="p">(</span><span class="nx">vote</span><span class="p">.</span><span class="nx">Validator</span><span class="p">.</span><span class="nx">Address</span><span class="p">,</span><span class="w"> </span><span class="nx">distributionHeight</span><span class="p">,</span><span class="w"> </span><span class="nx">vote</span><span class="p">.</span><span class="nx">Validator</span><span class="p">.</span><span class="nx">Power</span><span class="p">,</span><span class="w"> </span><span class="nx">SlashFractionDowntime</span><span class="p">())</span><span class="w"></span>
-<span class="w">    </span><span class="nx">Jail</span><span class="p">(</span><span class="nx">vote</span><span class="p">.</span><span class="nx">Validator</span><span class="p">.</span><span class="nx">Address</span><span class="p">)</span><span class="w"></span>
-
-<span class="w">    </span><span class="nx">signInfo</span><span class="p">.</span><span class="nx">JailedUntil</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">block</span><span class="p">.</span><span class="nx">Time</span><span class="p">.</span><span class="nx">Add</span><span class="p">(</span><span class="nx">DowntimeJailDuration</span><span class="p">())</span><span class="w"></span>
-
-<span class="w">    </span><span class="c1">// Reset the counter &amp; array so that the validator won&#39;t be</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// immediately slashed for downtime upon rebonding.</span><span class="w"></span>
-<span class="w">    </span><span class="nx">signInfo</span><span class="p">.</span><span class="nx">MissedBlocksCounter</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
-<span class="w">    </span><span class="nx">signInfo</span><span class="p">.</span><span class="nx">IndexOffset</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
-<span class="w">    </span><span class="nx">ClearValidatorMissedBlockBitArray</span><span class="p">(</span><span class="nx">vote</span><span class="p">.</span><span class="nx">Validator</span><span class="p">.</span><span class="nx">Address</span><span class="p">)</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-
-<span class="w">  </span><span class="nx">SetValidatorSigningInfo</span><span class="p">(</span><span class="nx">vote</span><span class="p">.</span><span class="nx">Validator</span><span class="p">.</span><span class="nx">Address</span><span class="p">,</span><span class="w"> </span><span class="nx">signInfo</span><span class="p">)</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="parameters">
-<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">#</a></h2>
-<p>The subspace for the slashing module is <code class="docutils literal notranslate"><span class="pre">slashing</span></code>.</p>
-<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">type</span><span class="w"> </span><span class="nx">Params</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">	</span><span class="nx">MaxEvidenceAge</span><span class="w">          </span><span class="nx">time</span><span class="p">.</span><span class="nx">Duration</span><span class="w"> </span><span class="s">`json:&quot;max_evidence_age&quot; yaml:&quot;max_evidence_age&quot;`</span><span class="w"></span>
-<span class="w">	</span><span class="nx">SignedBlocksWindow</span><span class="w">      </span><span class="kt">int64</span><span class="w">         </span><span class="s">`json:&quot;signed_blocks_window&quot; yaml:&quot;signed_blocks_window&quot;`</span><span class="w"></span>
-<span class="w">	</span><span class="nx">MinSignedPerWindow</span><span class="w">      </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">Dec</span><span class="w">       </span><span class="s">`json:&quot;min_signed_per_window&quot; yaml:&quot;min_signed_per_window&quot;`</span><span class="w"></span>
-<span class="w">	</span><span class="nx">DowntimeJailDuration</span><span class="w">    </span><span class="nx">time</span><span class="p">.</span><span class="nx">Duration</span><span class="w"> </span><span class="s">`json:&quot;downtime_jail_duration&quot; yaml:&quot;downtime_jail_duration&quot;`</span><span class="w"></span>
-<span class="w">	</span><span class="nx">SlashFractionDoubleSign</span><span class="w"> </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">Dec</span><span class="w">       </span><span class="s">`json:&quot;slash_fraction_double_sign&quot; yaml:&quot;slash_fraction_double_sign&quot;`</span><span class="w"></span>
-<span class="w">	</span><span class="nx">SlashFractionDowntime</span><span class="w">   </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">Dec</span><span class="w">       </span><span class="s">`json:&quot;slash_fraction_downtime&quot; yaml:&quot;slash_fraction_downtime&quot;`</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</pre></div>
-</div>
-<div class="section" id="maxevidenceage">
-<h3>MaxEvidenceAge<a class="headerlink" href="#maxevidenceage" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
-<li><p>type: <code class="docutils literal notranslate"><span class="pre">time.Duration</span></code> (seconds)</p></li>
-<li><p>default: 2 minutes</p></li>
-</ul>
-</div>
-<div class="section" id="signedblockswindow">
-<h3>SignedBlocksWindow<a class="headerlink" href="#signedblockswindow" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
-<li><p>type: <code class="docutils literal notranslate"><span class="pre">int64</span></code></p></li>
-<li><p>default: <code class="docutils literal notranslate"><span class="pre">100</span></code></p></li>
-</ul>
-</div>
-<div class="section" id="minsignedperwindow">
-<h3>MinSignedPerWindow<a class="headerlink" href="#minsignedperwindow" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
-<li><p>type: <code class="docutils literal notranslate"><span class="pre">Dec</span></code></p></li>
-<li><p>default: <code class="docutils literal notranslate"><span class="pre">5</span></code></p></li>
-</ul>
-</div>
-<div class="section" id="downtimejailduration">
-<h3>DowntimeJailDuration<a class="headerlink" href="#downtimejailduration" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
-<li><p>type: <code class="docutils literal notranslate"><span class="pre">time.Duration</span></code> (seconds)</p></li>
-<li><p>default: 10 minutes</p></li>
-</ul>
-</div>
-<div class="section" id="slashfractiondoublesign">
-<h3>SlashFractionDoubleSign<a class="headerlink" href="#slashfractiondoublesign" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
-<li><p>type: <code class="docutils literal notranslate"><span class="pre">Dec</span></code></p></li>
-<li><p>default: 1/20</p></li>
-</ul>
-</div>
-<div class="section" id="slashfractiondowntime">
-<h3>SlashFractionDowntime<a class="headerlink" href="#slashfractiondowntime" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
-<li><p>type: <code class="docutils literal notranslate"><span class="pre">Dec</span></code></p></li>
-<li><p>default: 1/10000</p></li>
-</ul>
 </div>
 </div>
 </div>
@@ -1622,20 +1272,6 @@ for <code class="docutils literal notranslate"><span class="pre">DowntimeJailDur
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="spec-mint.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Mint</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="spec-staking.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Staking</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
 </div>
             
         </div>

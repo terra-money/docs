@@ -1,5 +1,9 @@
 # Slashing
 
+:::{Important}
+Terra's slashing module inherits from the Cosmos SDK's [`slashing`](https://docs.cosmos.network/master/modules/slashing/) module. This document is a stub and covers mainly important Terra-specific notes about how it is used.
+:::
+
 The slashing module enables Terra to disincentivize any attributable action by a protocol-recognized actor with value at stake by penalizing them. The penalty is called [slashing](../../learn/glossary.md#slashing). Terra mainly uses the [`Staking`](spec-staking.md) module to slash when violating validator responsibilities. This module manages lower-level penalties at the Tendermint consensus level, such as double-signing.
 
 ## Message Types

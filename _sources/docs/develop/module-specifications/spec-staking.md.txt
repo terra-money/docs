@@ -145,28 +145,40 @@ type Params struct {
 }
 ```
 
-### UnbondingTime
+The genesis parameters for the staking module outlined in the [Genesis Builder Script](https://github.com/terra-money/genesis-tools/blob/main/src/genesis_builder.py#L132) are as follows:
+
+```py
+    # Staking: change bond_denom to uluna and max validators to 130
+    genesis['app_state']['staking']['params'] = {
+        'unbonding_time': '1814400s',  # 21 days
+        'max_validators': 130,
+        'max_entries': 7,
+        'historical_entries': 10000,
+        'bond_denom': DENOM_LUNA
+```
+
+### `unbonding_time`
 
 - type: `time.Duration`
 - default: 3 weeks
 
-Time duration of unbonding in nanoseconds.
+Time duration of unbonding in seconds.
 
-### MaxValidators
+### `max_validators`
 
 - type: `uint16`
 - default: `130`
 
 Maximum number of active validators.
 
-### MaxEntries
+### `max_entries`
 
 - type: `uint16`
 - default: `7`
 
 Maximum entries for either unbonding delegation or redelegation per pair or trio. Be aware of potential overflow because this is user-determined.
 
-### BondDenom
+### `bond_denom`
 
 - type: `string`
 - default: `uluna`

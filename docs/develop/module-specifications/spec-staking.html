@@ -1274,23 +1274,39 @@
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#unbondingtime">
-     UnbondingTime
+    <a class="reference internal nav-link" href="#unbonding-time">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       unbonding_time
+      </span>
+     </code>
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#maxvalidators">
-     MaxValidators
+    <a class="reference internal nav-link" href="#max-validators">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       max_validators
+      </span>
+     </code>
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#maxentries">
-     MaxEntries
+    <a class="reference internal nav-link" href="#max-entries">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       max_entries
+      </span>
+     </code>
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#bonddenom">
-     BondDenom
+    <a class="reference internal nav-link" href="#bond-denom">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       bond_denom
+      </span>
+     </code>
     </a>
    </li>
   </ul>
@@ -1394,23 +1410,39 @@
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#unbondingtime">
-     UnbondingTime
+    <a class="reference internal nav-link" href="#unbonding-time">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       unbonding_time
+      </span>
+     </code>
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#maxvalidators">
-     MaxValidators
+    <a class="reference internal nav-link" href="#max-validators">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       max_validators
+      </span>
+     </code>
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#maxentries">
-     MaxEntries
+    <a class="reference internal nav-link" href="#max-entries">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       max_entries
+      </span>
+     </code>
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#bonddenom">
-     BondDenom
+    <a class="reference internal nav-link" href="#bond-denom">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       bond_denom
+      </span>
+     </code>
     </a>
    </li>
   </ul>
@@ -1572,32 +1604,42 @@ remaining entries.</p></li>
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<div class="section" id="unbondingtime">
-<h3>UnbondingTime<a class="headerlink" href="#unbondingtime" title="Permalink to this headline">#</a></h3>
+<p>The genesis parameters for the staking module outlined in the <a class="reference external" href="https://github.com/terra-money/genesis-tools/blob/main/src/genesis_builder.py#L132">Genesis Builder Script</a> are as follows:</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span>    <span class="c1"># Staking: change bond_denom to uluna and max validators to 130</span>
+    <span class="n">genesis</span><span class="p">[</span><span class="s1">&#39;app_state&#39;</span><span class="p">][</span><span class="s1">&#39;staking&#39;</span><span class="p">][</span><span class="s1">&#39;params&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;unbonding_time&#39;</span><span class="p">:</span> <span class="s1">&#39;1814400s&#39;</span><span class="p">,</span>  <span class="c1"># 21 days</span>
+        <span class="s1">&#39;max_validators&#39;</span><span class="p">:</span> <span class="mi">130</span><span class="p">,</span>
+        <span class="s1">&#39;max_entries&#39;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
+        <span class="s1">&#39;historical_entries&#39;</span><span class="p">:</span> <span class="mi">10000</span><span class="p">,</span>
+        <span class="s1">&#39;bond_denom&#39;</span><span class="p">:</span> <span class="n">DENOM_LUNA</span>
+</pre></div>
+</div>
+<div class="section" id="unbonding-time">
+<h3><code class="docutils literal notranslate"><span class="pre">unbonding_time</span></code><a class="headerlink" href="#unbonding-time" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">time.Duration</span></code></p></li>
 <li><p>default: 3 weeks</p></li>
 </ul>
-<p>Time duration of unbonding in nanoseconds.</p>
+<p>Time duration of unbonding in seconds.</p>
 </div>
-<div class="section" id="maxvalidators">
-<h3>MaxValidators<a class="headerlink" href="#maxvalidators" title="Permalink to this headline">#</a></h3>
+<div class="section" id="max-validators">
+<h3><code class="docutils literal notranslate"><span class="pre">max_validators</span></code><a class="headerlink" href="#max-validators" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">uint16</span></code></p></li>
 <li><p>default: <code class="docutils literal notranslate"><span class="pre">130</span></code></p></li>
 </ul>
 <p>Maximum number of active validators.</p>
 </div>
-<div class="section" id="maxentries">
-<h3>MaxEntries<a class="headerlink" href="#maxentries" title="Permalink to this headline">#</a></h3>
+<div class="section" id="max-entries">
+<h3><code class="docutils literal notranslate"><span class="pre">max_entries</span></code><a class="headerlink" href="#max-entries" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">uint16</span></code></p></li>
 <li><p>default: <code class="docutils literal notranslate"><span class="pre">7</span></code></p></li>
 </ul>
 <p>Maximum entries for either unbonding delegation or redelegation per pair or trio. Be aware of potential overflow because this is user-determined.</p>
 </div>
-<div class="section" id="bonddenom">
-<h3>BondDenom<a class="headerlink" href="#bonddenom" title="Permalink to this headline">#</a></h3>
+<div class="section" id="bond-denom">
+<h3><code class="docutils literal notranslate"><span class="pre">bond_denom</span></code><a class="headerlink" href="#bond-denom" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">string</span></code></p></li>
 <li><p>default: <code class="docutils literal notranslate"><span class="pre">uluna</span></code></p></li>
