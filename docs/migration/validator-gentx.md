@@ -200,7 +200,8 @@ terrad gentx validator 1000000uluna \
     --commission-rate="0.1" \
     --commission-max-rate="0.2" \
     --commission-max-change-rate="0.01" \ 
-    --note="gentx"
+    --node-id="validator-moniker" \
+    --ip="0.0.0.0"
 ```
 
 5\. Upload the generated GenTx file to this repository's gentx folder via PR:
