@@ -1429,7 +1429,11 @@ jq -S -c -M <span class="s1">&#39;&#39;</span> post-attack-snapshot.json <span c
 </pre></div>
 </div>
 <p>3. Run genesis builder script:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python3 ./genesis-builder.py <span class="se">\</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># install dependency</span>
+pip3 install bech32
+pip3 install python-dateutil
+
+python3 ./src/genesis_builder.py <span class="se">\</span>
     ./genesis-template.json <span class="se">\</span>
     ./pre-attack-snapshot.json <span class="se">\</span>
     ./post-attack-snapshot.json <span class="se">\</span>
@@ -1478,14 +1482,17 @@ mv ./penultimate-genesis.json ~/.terra/config/genesis.json
 </pre></div>
 </div>
 <p>4. Execute GenTx:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrad gentx <span class="o">[</span>key-name<span class="o">]</span> <span class="o">[</span>amount-to-stake<span class="o">]</span> <span class="se">\</span>
-    --chain-id phoenix-1 <span class="se">\</span>
-    --min-self-delegation<span class="o">=[]</span> <span class="se">\</span>
-    --security-contact<span class="o">=[]</span> <span class="se">\</span>
-    --moniker<span class="o">=[]</span> <span class="se">\</span>
-    --details<span class="o">=[]</span> <span class="se">\</span>
-    --commission-rate<span class="o">=[]</span> <span class="se">\</span>
-    ...
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrad gentx validator 1000000uluna <span class="se">\</span>
+    --chain-id<span class="o">=</span><span class="s2">&quot;phoenix-1&quot;</span> <span class="se">\</span>
+    --pubkey<span class="o">=</span><span class="k">$(</span>terrad tendermint show-validator<span class="k">)</span> <span class="se">\</span>
+    --min-self-delegation<span class="o">=</span><span class="s2">&quot;1&quot;</span><span class="se">\</span>
+    --security-contact<span class="o">=</span><span class="s2">&quot;contact@aaa.services&quot;</span> <span class="se">\</span>
+    --moniker<span class="o">=</span>AAA <span class="se">\</span>
+    --details<span class="o">=</span><span class="s2">&quot;Trusted security provider for Terra Network and projects building on Terra.&quot;</span> <span class="se">\</span>
+    --identity<span class="o">=</span><span class="s2">&quot;AAAAAAAAAAAA&quot;</span> <span class="se">\</span>
+    --commission-rate<span class="o">=</span><span class="s2">&quot;0.1&quot;</span> <span class="se">\</span>
+    --commission-max-rate<span class="o">=</span><span class="s2">&quot;0.2&quot;</span> <span class="se">\</span>
+    --commission-max-change-rate<span class="o">=</span><span class="s2">&quot;0.01&quot;</span>
 </pre></div>
 </div>
 <p>5. Upload the generated GenTx file to this repository’s gentx folder via PR:</p>
