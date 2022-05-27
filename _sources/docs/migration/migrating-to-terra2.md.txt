@@ -79,3 +79,8 @@ Once a snapshot is created, you can airdrop the correct balances to users as def
 ## Terra.js changes
 
 Outside of the deprecation of the treasury, market, and oracle modules, Terra.js functionality remains relatively unchanged. There are a few additions to allow for legacy commands which are explained in [Using Terra Classic](../develop/terra-js/terra-classic.md). 
+
+:::{admonition} Update Terra.js and WalletConnect
+:class: warning
+All dApps must update [Terra.js](https://github.com/terra-money/terra.js/tags) and WalletConnect to the latest versions. 
+:::
