@@ -287,7 +287,7 @@ Dexes:
 
 **Terra Classic**:
 
-To continue supporting Luna Classic (LUNC), the Terra Classic LCD address needs to be altered to `https://classic.lcd.terra.dev`. The FCD address will be `https://classic.fcd.terra.dev`.
+To continue supporting Luna Classic (LUNC), the Terra Classic LCD address needs to be altered to `https://classic.lcd.terra.dev`. The FCD address will be `[https://columbus-fcd.terra.dev](https://columbus-fcd.terra.dev/)`.
 
 **Terra**:
 
