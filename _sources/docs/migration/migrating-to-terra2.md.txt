@@ -30,6 +30,17 @@ Terra 2.0 has removed the oracle module. Any queries to fetch ExchangeRates from
 
 [Band protocol](https://docs.bandchain.org/introduction/overview.html) is one such solution. Band works over IBC. See the [oracle module documentation](https://docs.bandchain.org/client-library/protocol-buffers/oracle-module.html) for more details
 
+### 5. Terra.js changes
+
+Outside of the deprecation of the treasury, market, and oracle modules, Terra.js functionality remains relatively unchanged. There are a few additions to allow for legacy commands which are explained in [Using Terra Classic](../develop/terra-js/terra-classic.md). 
+
+:::{admonition} Update Terra.js and WalletConnect
+:class: danger
+
+All dApps on either Terra Classic or the new Terra chain must update [Terra.js](https://github.com/terra-money/terra.js/tags) and WalletConnect to the latest versions. 
+
+:::
+
 ## Examples of Deprecated Functionality
 
 The following are code snippets with functionality that will no longer be supported.
@@ -76,11 +87,4 @@ A tool was created that will generate a snapshot of CW20 or CW721 holders and ba
 
 Once a snapshot is created, you can airdrop the correct balances to users as defined by the snapshot.
 
-## Terra.js changes
 
-Outside of the deprecation of the treasury, market, and oracle modules, Terra.js functionality remains relatively unchanged. There are a few additions to allow for legacy commands which are explained in [Using Terra Classic](../develop/terra-js/terra-classic.md). 
-
-:::{admonition} Update Terra.js and WalletConnect
-:class: warning
-All dApps must update [Terra.js](https://github.com/terra-money/terra.js/tags) and WalletConnect to the latest versions. 
-:::

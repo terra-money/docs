@@ -1220,6 +1220,11 @@
      4. No oracle module.
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#terra-js-changes">
+     5. Terra.js changes
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1230,11 +1235,6 @@
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#migrating-cw20-cw721-balances">
    Migrating CW20/CW721 balances
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#terra-js-changes">
-   Terra.js changes
   </a>
  </li>
 </ul>
@@ -1282,6 +1282,11 @@
      4. No oracle module.
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#terra-js-changes">
+     5. Terra.js changes
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1292,11 +1297,6 @@
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#migrating-cw20-cw721-balances">
    Migrating CW20/CW721 balances
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#terra-js-changes">
-   Terra.js changes
   </a>
  </li>
 </ul>
@@ -1333,6 +1333,14 @@
 <h3>4. No oracle module.<a class="headerlink" href="#no-oracle-module" title="Permalink to this headline">#</a></h3>
 <p>Terra 2.0 has removed the oracle module. Any queries to fetch ExchangeRates from the oracle module will fail. However, there are other oracle solutions that can be employed.</p>
 <p><a class="reference external" href="https://docs.bandchain.org/introduction/overview.html">Band protocol</a> is one such solution. Band works over IBC. See the <a class="reference external" href="https://docs.bandchain.org/client-library/protocol-buffers/oracle-module.html">oracle module documentation</a> for more details</p>
+</div>
+<div class="section" id="terra-js-changes">
+<h3>5. Terra.js changes<a class="headerlink" href="#terra-js-changes" title="Permalink to this headline">#</a></h3>
+<p>Outside of the deprecation of the treasury, market, and oracle modules, Terra.js functionality remains relatively unchanged. There are a few additions to allow for legacy commands which are explained in <a class="reference internal" href="../develop/terra-js/terra-classic.html"><span class="doc std std-doc">Using Terra Classic</span></a>.</p>
+<div class="danger admonition">
+<p class="admonition-title">Update Terra.js and WalletConnect</p>
+<p>All dApps on either Terra Classic or the new Terra chain must update <a class="reference external" href="https://github.com/terra-money/terra.js/tags">Terra.js</a> and WalletConnect to the latest versions.</p>
+</div>
 </div>
 </div>
 <div class="section" id="examples-of-deprecated-functionality">
@@ -1377,14 +1385,6 @@
 <p>A tool was created that will generate a snapshot of CW20 or CW721 holders and balances at a specific block height:</p>
 <p><a class="reference external" href="https://github.com/emidev98/token-snapshot">token-snapshot</a></p>
 <p>Once a snapshot is created, you can airdrop the correct balances to users as defined by the snapshot.</p>
-</div>
-<div class="section" id="terra-js-changes">
-<h2>Terra.js changes<a class="headerlink" href="#terra-js-changes" title="Permalink to this headline">#</a></h2>
-<p>Outside of the deprecation of the treasury, market, and oracle modules, Terra.js functionality remains relatively unchanged. There are a few additions to allow for legacy commands which are explained in <a class="reference internal" href="../develop/terra-js/terra-classic.html"><span class="doc std std-doc">Using Terra Classic</span></a>.</p>
-<div class="warning admonition">
-<p class="admonition-title">Update Terra.js and WalletConnect</p>
-<p>All dApps must update <a class="reference external" href="https://github.com/terra-money/terra.js/tags">Terra.js</a> and WalletConnect to the latest versions.</p>
-</div>
 </div>
 </div>
 
