@@ -16,19 +16,19 @@ The following is the governance proposal procedure:
 
 ### Deposit Period
 
-After a proposal is submitted, it enters the deposit period, where it must reach a total minimum deposit of 50 Luna within 2 weeks from the time of its submission. The deposit threshold is reached when the sum of the initial deposit (from the proposer) and the deposits from all other interested network participants meet or exceed 50 Luna.
+After a proposal is submitted, it enters the deposit period, where it must reach a total minimum deposit of 512 Luna within 7 days from the time of its submission. The deposit threshold is reached when the sum of the initial deposit (from the proposer) and the deposits from all other interested network participants meet or exceed 512 Luna.
 
 Deposits protect against unnecessary proposals and spam.
 
 Deposits get refunded if all of the following conditions are met:
-- The minimum deposit of 50 Luna is reached within the two-week deposit period.
-- `Quorum` is met: the number of total votes is greater than 40% of all staked Luna
+- The minimum deposit of 512 Luna is reached within the 7-day deposit period.
+- `Quorum` is met: the number of total votes is greater than 10% of all staked Luna
 - The total number of `NoWithVeto` votes is less than 33.4% of the total vote.
 - A vote returns a majority of `Yes` or `No` votes.
 
 Deposits are burned under any of the following conditions:
-- The minimum deposit of 50 Luna is not reached within the two-week deposit period.
-- `Quorum` is not met: the number of total votes after the one-week voting period is less than 40% of all staked Luna.
+- The minimum deposit of 512 Luna is not reached within the one-week deposit period.
+- `Quorum` is not met: the number of total votes after the one-week voting period is less than 10% of all staked Luna.
 - the number of `NoWithVeto` votes is above 33.4% of the total vote.
 
 ### Voting Period
@@ -255,26 +255,55 @@ type VotingParams struct {
 }
 ```
 
+## Genesis parameters
+
+The genesis parameters for the governance module outlined in the [Genesis Builder Script](https://github.com/terra-money/genesis-tools/blob/main/src/genesis_builder.py#L147) are as follows:
+
+
+```py
+    # Gov: change min deposit to 512 LUNA and deposit period to 7 days
+    genesis['app_state']['gov']['deposit_params'] = {
+        'max_deposit_period': '604800s',  # 7days
+        'min_deposit': [{
+            'denom': DENOM_LUNA,
+            'amount': '512000000'
+        }],
+    }
+
+    # Gov: set tally params quorum to 10%
+    genesis['app_state']['gov']['tally_params'] = {
+        'quorum': '0.100000000000000000',
+        'threshold': '0.500000000000000000',
+        'veto_threshold': '0.334000000000000000'
+    }
+
+    # Gov: set voting period to 7 days
+    genesis['app_state']['gov']['voting_params'] = {
+        'voting_period': '604800s'
+    }
+```
+
+
 ### MinDeposit
 
 - type: `Coins`
 - denom: `uluna`
-- amount: `50000000`
+- amount: `512000000`
 
 
-The minimum deposit amount for a proposal to enter a voting period. Currently 50 Luna.
+The minimum deposit amount for a proposal to enter a voting period. Currently 512 Luna.
 
 ### MaxDepositPeriod
 
 - type: `time.Duration` (seconds)
-- `"max_deposit_period": "1209600s"`
+- `"max_deposit_period": "604800s"`
 
-Maximum period for Luna holders to deposit on a proposal. Currently 2 weeks.
+Maximum period for Luna holders to deposit on a proposal. Currently 1 week.
 
 ### Quorum
 
 - type: `Dec`
-- `"quorum": "0.400000000000000000",`
+- `"quorum": "0.100000000000000000",`
 
 Minimum percentage of total stake needed to vote for a result to be considered valid.
 
