@@ -1258,6 +1258,11 @@
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#parameters">
+   Parameters
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -1340,6 +1345,11 @@
     </ul>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#parameters">
+   Parameters
+  </a>
  </li>
 </ul>
 
@@ -1649,6 +1659,19 @@ The stake that contributed to the infraction is slashed, even if it has been red
 </div>
 </details><p>The slashing, jailing, and tombstoning calls are delegated through the slashing module, which emits informative events and finally delegates calls to the staking module. For more information about slashing and jailing, see <a class="reference internal" href="spec-staking.html#transitions"><span class="std std-doc">transitions</span></a>.</p>
 </div>
+</div>
+</div>
+<div class="section" id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">#</a></h2>
+<p>The genesis parameters outlined in the <a class="reference external" href="https://github.com/terra-money/genesis-tools/blob/6ec96530820f7055cce6dd767a1d8c321d702fab/src/genesis_builder.py#L75">Genesis Builder Script</a> are as follows:</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span>    # Consensus Params: Evidence
+    genesis[&#39;consensus_params&#39;][&#39;evidence&#39;] = {
+        &#39;max_age_num_blocks&#39;: &#39;100000&#39;,
+        &#39;max_age_duration&#39;: &#39;172800000000000&#39;,
+        &#39;max_bytes&#39;: &#39;1000000&#39;
+    }
+	```
+</pre></div>
 </div>
 </div>
 </div>

@@ -1196,16 +1196,9 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#concepts">
-   Concepts
+  <a class="reference internal nav-link" href="#variable-rate">
+   Variable rate
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-minting-mechanism">
-     The minting mechanism
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#parameters">
@@ -1213,33 +1206,8 @@
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mintdenom">
-     MintDenom
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#inflationratechange">
-     InflationRateChange
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#inflationmax">
-     InflationMax
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#inflationmin">
-     InflationMin
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#goalbonded">
-     GoalBonded
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#blocksperyear">
-     BlocksPerYear
+    <a class="reference internal nav-link" href="#genesis-parameters">
+     Genesis parameters
     </a>
    </li>
   </ul>
@@ -1265,16 +1233,9 @@
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#concepts">
-   Concepts
+  <a class="reference internal nav-link" href="#variable-rate">
+   Variable rate
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-minting-mechanism">
-     The minting mechanism
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#parameters">
@@ -1282,33 +1243,8 @@
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mintdenom">
-     MintDenom
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#inflationratechange">
-     InflationRateChange
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#inflationmax">
-     InflationMax
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#inflationmin">
-     InflationMin
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#goalbonded">
-     GoalBonded
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#blocksperyear">
-     BlocksPerYear
+    <a class="reference internal nav-link" href="#genesis-parameters">
+     Genesis parameters
     </a>
    </li>
   </ul>
@@ -1324,23 +1260,25 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="mint">
 <h1>Mint<a class="headerlink" href="#mint" title="Permalink to this headline">#</a></h1>
-<div class="section" id="concepts">
-<h2>Concepts<a class="headerlink" href="#concepts" title="Permalink to this headline">#</a></h2>
-<div class="section" id="the-minting-mechanism">
-<h3>The minting mechanism<a class="headerlink" href="#the-minting-mechanism" title="Permalink to this headline">#</a></h3>
-<p>The minting mechanism was designed to:</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Terra’s mint module inherits from the Cosmos SDK’s <a class="reference external" href="https://docs.cosmos.network/master/modules/mint/"><code class="docutils literal notranslate"><span class="pre">mint</span></code></a> module. This document is a stub and covers mainly important Terra-specific notes about how it is used.</p>
+</div>
+<p>The mint module is in charge of the creation of new Luna through minting. At the beginning of every block, new Luna is released by the mint module and sent to the fee collector account to be distributed to stakers as rewards.</p>
+<p>The current inflation rate is set to a fixed 7% annual inflation.</p>
+<div class="section" id="variable-rate">
+<h2>Variable rate<a class="headerlink" href="#variable-rate" title="Permalink to this headline">#</a></h2>
+<p>The mint module also allows for a variable inflation rate to be used. While the current rate is fixed, these parameters can be changed through a governance vote. The following outlines the variable inflation logic.</p>
+<p>Variable inflation logic is designed to:</p>
 <ul class="simple">
 <li><p>Allow for a flexible inflation rate determined by market demand targeting a particular bonded-stake ratio.</p></li>
 <li><p>Affect a balance between market liquidity and staked supply.</p></li>
 </ul>
 <p>To best determine the appropriate market rate for inflation rewards, a moving change rate is used. The moving change rate mechanism ensures that if the percentage bonded is either over or under the goal percentage-bonded, the inflation rate will adjust to further incentivize or disincentivize being bonded, respectively. Setting the goal percentage-bonded at less than 100% encourages the network to maintain some non-staked tokens, which helps to provide some liquidity.</p>
 <p>It works in the following ways:</p>
-<ul class="simple">
-<li><p>If the inflation rate is below the goal percentage-bonded, the inflation rate increases until a maximum value is reached.</p></li>
-<li><p>If the goal percentage-bonded (67% in Cosmos-Hub) is maintained, the inflation rate stays constant.</p></li>
-<li><p>If the inflation rate is above the goal percentage-bonded, the inflation rate decreases until a minimum value is reached.</p></li>
-</ul>
-</div>
+<p>If the inflation rate is below the goal percentage-bonded, the inflation rate increases until a maximum value is reached.</p>
+<p>If the goal percentage-bonded (67% in Cosmos-Hub) is maintained, the inflation rate stays constant.</p>
+<p>If the inflation rate is above the goal percentage-bonded, the inflation rate decreases until a minimum value is reached.</p>
 </div>
 <div class="section" id="parameters">
 <h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">#</a></h2>
@@ -1361,41 +1299,26 @@
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<div class="section" id="mintdenom">
-<h3>MintDenom<a class="headerlink" href="#mintdenom" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
-<li><p>type: <code class="docutils literal notranslate"><span class="pre">string</span></code></p></li>
-</ul>
+<div class="section" id="genesis-parameters">
+<h3>Genesis parameters<a class="headerlink" href="#genesis-parameters" title="Permalink to this headline">#</a></h3>
+<p>The genesis parameters for the mint module outlined in the <a class="reference external" href="https://github.com/terra-money/genesis-tools/blob/main/src/genesis_builder.py#L112">Genesis Builder Script</a> are as follows:</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span>    <span class="c1"># Mint: set mint params</span>
+    <span class="n">genesis</span><span class="p">[</span><span class="s1">&#39;app_state&#39;</span><span class="p">][</span><span class="s1">&#39;mint&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;minter&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;inflation&#39;</span><span class="p">:</span> <span class="s1">&#39;0.070000000000000000&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;annual_provisions&#39;</span><span class="p">:</span> <span class="s1">&#39;0.000000000000000000&#39;</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;params&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;mint_denom&#39;</span><span class="p">:</span> <span class="n">DENOM_LUNA</span><span class="p">,</span>
+            <span class="s1">&#39;inflation_rate_change&#39;</span><span class="p">:</span> <span class="s1">&#39;0.000000000000000000&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;inflation_max&#39;</span><span class="p">:</span> <span class="s1">&#39;0.070000000000000000&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;inflation_min&#39;</span><span class="p">:</span> <span class="s1">&#39;0.070000000000000000&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;goal_bonded&#39;</span><span class="p">:</span> <span class="s1">&#39;0.670000000000000000&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;blocks_per_year&#39;</span><span class="p">:</span> <span class="s1">&#39;4360000&#39;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+</pre></div>
 </div>
-<div class="section" id="inflationratechange">
-<h3>InflationRateChange<a class="headerlink" href="#inflationratechange" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
-<li><p>type: <code class="docutils literal notranslate"><span class="pre">sdk.Dec</span></code></p></li>
-</ul>
-</div>
-<div class="section" id="inflationmax">
-<h3>InflationMax<a class="headerlink" href="#inflationmax" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
-<li><p>type: <code class="docutils literal notranslate"><span class="pre">sdk.Dec</span></code></p></li>
-</ul>
-</div>
-<div class="section" id="inflationmin">
-<h3>InflationMin<a class="headerlink" href="#inflationmin" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
-<li><p>type: <code class="docutils literal notranslate"><span class="pre">sdk.Dec</span></code></p></li>
-</ul>
-</div>
-<div class="section" id="goalbonded">
-<h3>GoalBonded<a class="headerlink" href="#goalbonded" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
-<li><p>type: <code class="docutils literal notranslate"><span class="pre">sdk.Dec</span></code></p></li>
-</ul>
-</div>
-<div class="section" id="blocksperyear">
-<h3>BlocksPerYear<a class="headerlink" href="#blocksperyear" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
-<li><p>type: <code class="docutils literal notranslate"><span class="pre">uint64</span></code></p></li>
-</ul>
 </div>
 </div>
 </div>

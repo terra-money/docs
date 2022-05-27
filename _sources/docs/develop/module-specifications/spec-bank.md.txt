@@ -10,6 +10,8 @@ The bank module is the base transactional layer of the Terra blockchain. This mo
 
 ### MsgSend
 
+`MsgSend` transfers funds from a source account to a destination account. 
+
 ```go
 // MsgSend - high level transaction of the coin module
 type MsgSend struct {
@@ -25,10 +27,48 @@ The Bank module is used to send coins from one Terra account to another. `MsgSen
 
 ```go
 // MsgMultiSend - high level transaction of the coin module
+type Input struct {
+  Address sdk.AccAddress `json:"address" yaml:"address"`
+  Coins   sdk.Coins      `json:"coins" yaml:"coins"`
+}
+
+type Output struct {
+  Address sdk.AccAddress `json:"address" yaml:"address"`
+  Coins   sdk.Coins      `json:"coins" yaml:"coins"`
+}
+
 type MsgMultiSend struct {
-    Inputs  []Input  `json:"inputs"`
-    Outputs []Output `json:"outputs"`
+  Inputs  []Input  `json:"inputs" yaml:"inputs"`
+  Outputs []Output `json:"outputs" yaml:"outputs"`
 }
 ```
 
-To send multiple transactions at once, use `MsgMultiSend`. For each transaction, `Inputs` contains the incoming transactions, and `Outputs` contains the outgoing transactions. The `Inputs` coin balance must exactly match the `Outputs` coin balance. Batching transactions via `MsgMultiSend` conserves network bandwidth and gas fees. Taxes and fees already paid through failed transactions are not refunded.
+To send multiple transactions at once, use `MsgMultiSend`. For each transaction, `Inputs` contains the incoming transactions, and `Outputs` contains the outgoing transactions. The `Inputs` coin balance must exactly match the `Outputs` coin balance. Batching transactions via `MsgMultiSend` conserves gas fees and network bandwidth. Fees already paid through failed transactions are not refunded.
+
+## Parameters
+
+The genesis parameters outlined in the [Genesis Builder Script](https://github.com/terra-money/genesis-tools/blob/main/src/genesis_builder.py#L92) are as follows:
+
+```py
+
+    # Bank: setup supply
+    genesis['app_state']['bank']['supply'] = [{
+        'denom': DENOM_LUNA,
+        'amount': str(TOTAL_ALLOCATION),
+    }]
+
+    # Bank: set denom meta
+    genesis['app_state']['bank']['denom_metadata'] = [{
+        'description': 'The native staking token of Terra 2.0',
+        'denom_units': [
+            {'denom': 'uluna', 'exponent': 0, 'aliases': ['microluna']},
+            {'denom': 'mluna', 'exponent': 3, 'aliases': ['milliluna']},
+            {'denom': 'luna', 'exponent': 6, 'aliases': []},
+        ],
+        'base':    'uluna',
+        'display': 'luna',
+        'name':    'LUNA',
+        'symbol':  'LUNA',
+    }]
+
+    ```

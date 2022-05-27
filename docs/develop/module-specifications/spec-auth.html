@@ -1206,6 +1206,11 @@
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#genesis-parameters">
+     Genesis parameters
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#maxmemocharacters">
      MaxMemoCharacters
     </a>
@@ -1263,6 +1268,11 @@
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#genesis-parameters">
+     Genesis parameters
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#maxmemocharacters">
      MaxMemoCharacters
     </a>
@@ -1313,28 +1323,36 @@
 <h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">#</a></h2>
 <p>The subspace for the Auth module is <code class="docutils literal notranslate"><span class="pre">auth</span></code>.</p>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">type</span><span class="w"> </span><span class="nx">Params</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">	</span><span class="nx">MaxMemoCharacters</span><span class="w">      </span><span class="kt">uint64</span><span class="w"> </span><span class="s">`json:&quot;max_memo_characters&quot; yaml:&quot;max_memo_characters&quot;`</span><span class="w"></span>
-<span class="w">	</span><span class="nx">TxSigLimit</span><span class="w">             </span><span class="kt">uint64</span><span class="w"> </span><span class="s">`json:&quot;tx_sig_limit&quot; yaml:&quot;tx_sig_limit&quot;`</span><span class="w"></span>
-<span class="w">	</span><span class="nx">TxSizeCostPerByte</span><span class="w">      </span><span class="kt">uint64</span><span class="w"> </span><span class="s">`json:&quot;tx_size_cost_per_byte&quot; yaml:&quot;tx_size_cost_per_byte&quot;`</span><span class="w"></span>
-<span class="w">	</span><span class="nx">SigVerifyCostED25519</span><span class="w">   </span><span class="kt">uint64</span><span class="w"> </span><span class="s">`json:&quot;sig_verify_cost_ed25519&quot; yaml:&quot;sig_verify_cost_ed25519&quot;`</span><span class="w"></span>
-<span class="w">	</span><span class="nx">SigVerifyCostSecp256k1</span><span class="w"> </span><span class="kt">uint64</span><span class="w"> </span><span class="s">`json:&quot;sig_verify_cost_secp256k1&quot; yaml:&quot;sig_verify_cost_secp256k1&quot;`</span><span class="w"></span>
+<span class="w">  </span><span class="nx">MaxMemoCharacters</span><span class="w">      </span><span class="kt">uint64</span><span class="w"> </span><span class="s">`json:&quot;max_memo_characters&quot; yaml:&quot;max_memo_characters&quot;`</span><span class="w"></span>
+<span class="w">  </span><span class="nx">TxSigLimit</span><span class="w">             </span><span class="kt">uint64</span><span class="w"> </span><span class="s">`json:&quot;tx_sig_limit&quot; yaml:&quot;tx_sig_limit&quot;`</span><span class="w"></span>
+<span class="w">  </span><span class="nx">TxSizeCostPerByte</span><span class="w">      </span><span class="kt">uint64</span><span class="w"> </span><span class="s">`json:&quot;tx_size_cost_per_byte&quot; yaml:&quot;tx_size_cost_per_byte&quot;`</span><span class="w"></span>
+<span class="w">  </span><span class="nx">SigVerifyCostED25519</span><span class="w">   </span><span class="kt">uint64</span><span class="w"> </span><span class="s">`json:&quot;sig_verify_cost_ed25519&quot; yaml:&quot;sig_verify_cost_ed25519&quot;`</span><span class="w"></span>
+<span class="w">  </span><span class="nx">SigVerifyCostSecp256k1</span><span class="w"> </span><span class="kt">uint64</span><span class="w"> </span><span class="s">`json:&quot;sig_verify_cost_secp256k1&quot; yaml:&quot;sig_verify_cost_secp256k1&quot;`</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </pre></div>
+</div>
+<div class="section" id="genesis-parameters">
+<h3>Genesis parameters<a class="headerlink" href="#genesis-parameters" title="Permalink to this headline">#</a></h3>
+<p>The genesis parameters outlined in the <a class="reference external" href="https://github.com/terra-money/genesis-tools/blob/6ec96530820f7055cce6dd767a1d8c321d702fab/src/genesis_builder.py#L75">Genesis Builder Script</a> are as follows:</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span>    <span class="c1"># Auth: set max memo characters to 512</span>
+    <span class="n">genesis</span><span class="p">[</span><span class="s1">&#39;app_state&#39;</span><span class="p">][</span><span class="s1">&#39;auth&#39;</span><span class="p">][</span><span class="s1">&#39;params&#39;</span><span class="p">][</span><span class="s1">&#39;max_memo_characters&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;512&#39;</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="maxmemocharacters">
 <h3>MaxMemoCharacters<a class="headerlink" href="#maxmemocharacters" title="Permalink to this headline">#</a></h3>
 <p>The maximum permitted number of characters in the memo of a transaction.</p>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">uint64</span></code></p></li>
-<li><p>default: <code class="docutils literal notranslate"><span class="pre">256</span></code></p></li>
+<li><p>genesis: <code class="docutils literal notranslate"><span class="pre">512</span></code></p></li>
 </ul>
 </div>
 <div class="section" id="txsiglimit">
 <h3>TxSigLimit<a class="headerlink" href="#txsiglimit" title="Permalink to this headline">#</a></h3>
-<p>The maximum number of signers in a transaction. A single transaction can have multiple messages and multiple signers. Because the sig verification cost is generally higher than other operations, the number of signers is limited to 100.</p>
+<p>The maximum number of signers in a transaction. A single transaction can have multiple messages and multiple signers.</p>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">uint64</span></code></p></li>
-<li><p>default: <code class="docutils literal notranslate"><span class="pre">100</span></code></p></li>
+<li><p>default: <code class="docutils literal notranslate"><span class="pre">7</span></code></p></li>
 </ul>
 </div>
 <div class="section" id="txsizecostperbyte">

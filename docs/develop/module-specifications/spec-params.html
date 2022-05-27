@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bank &#8212; Terra Docs  documentation</title>
+    <title>Params &#8212; Terra Docs  documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -44,8 +44,6 @@
     <link rel="shortcut icon" href="../../../_static/docs_favicon.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Capability" href="spec-capability.html" />
-    <link rel="prev" title="AuthZ" href="spec-authz.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -242,17 +240,17 @@
   </ul>
  </li>
 </ul>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active has-children">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../README.html">
    Develop
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
   <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../get-started.html">
      Get started
@@ -754,16 +752,16 @@
      </li>
     </ul>
    </li>
-   <li class="toctree-l2 current active has-children">
+   <li class="toctree-l2 has-children">
     <a class="reference internal" href="README.html">
      Terra Core modules
     </a>
-    <input checked="" class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+    <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
     <label for="toctree-checkbox-16">
      <i class="fas fa-chevron-down">
      </i>
     </label>
-    <ul class="current">
+    <ul>
      <li class="toctree-l3">
       <a class="reference internal" href="spec-auth.html">
        Auth
@@ -774,8 +772,8 @@
        AuthZ
       </a>
      </li>
-     <li class="toctree-l3 current active">
-      <a class="current reference internal" href="#">
+     <li class="toctree-l3">
+      <a class="reference internal" href="spec-bank.html">
        Bank
       </a>
      </li>
@@ -1149,7 +1147,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../../_sources/docs/develop/module-specifications/spec-bank.md.txt"><button type="button"
+        <a class="dropdown-buttons" href="../../../_sources/docs/develop/module-specifications/spec-params.md.txt"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -1169,7 +1167,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/terra-money/docs/issues/new?title=Issue%20on%20page%20%2Fdocs/develop/module-specifications/spec-bank.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/terra-money/docs/issues/new?title=Issue%20on%20page%20%2Fdocs/develop/module-specifications/spec-params.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -1196,18 +1194,18 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#message-types">
-   Message types
+  <a class="reference internal nav-link" href="#params-types">
+   Params Types
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#msgsend">
-     MsgSend
+    <a class="reference internal nav-link" href="#keeper">
+     Keeper
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#msgmultisend">
-     MsgMultiSend
+    <a class="reference internal nav-link" href="#subspaces">
+     Subspaces
     </a>
    </li>
   </ul>
@@ -1227,7 +1225,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Bank</h1>
+                <h1>Params</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -1238,18 +1236,18 @@
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#message-types">
-   Message types
+  <a class="reference internal nav-link" href="#params-types">
+   Params Types
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#msgsend">
-     MsgSend
+    <a class="reference internal nav-link" href="#keeper">
+     Keeper
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#msgmultisend">
-     MsgMultiSend
+    <a class="reference internal nav-link" href="#subspaces">
+     Subspaces
     </a>
    </li>
   </ul>
@@ -1268,77 +1266,27 @@
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="bank">
-<h1>Bank<a class="headerlink" href="#bank" title="Permalink to this headline">#</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="params">
+<h1>Params<a class="headerlink" href="#params" title="Permalink to this headline">#</a></h1>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>Terra’s bank module inherits from the Cosmos SDK’s <a class="reference external" href="https://docs.cosmos.network/master/modules/bank/"><code class="docutils literal notranslate"><span class="pre">bank</span></code></a> module. This document is a stub and covers mainly important Terra-specific notes about how it is used.</p>
+<p>Terra’s params module inherits from the Cosmos SDK’s <a class="reference external" href="https://docs.cosmos.network/master/modules/params/"><code class="docutils literal notranslate"><span class="pre">params</span></code></a> module. This document is a stub and covers mainly important Terra-specific notes about how it is used.</p>
 </div>
-<p>The bank module is the base transactional layer of the Terra blockchain. This module allows assets to be sent from one <code class="docutils literal notranslate"><span class="pre">Account</span></code> to another. The bank module defines the following types of send transactions: <code class="docutils literal notranslate"><span class="pre">MsgSend</span></code> and <code class="docutils literal notranslate"><span class="pre">MsgMultiSend</span></code>.</p>
-<div class="section" id="message-types">
-<h2>Message types<a class="headerlink" href="#message-types" title="Permalink to this headline">#</a></h2>
-<div class="section" id="msgsend">
-<h3>MsgSend<a class="headerlink" href="#msgsend" title="Permalink to this headline">#</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">MsgSend</span></code> transfers funds from a source account to a destination account.</p>
-<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="c1">// MsgSend - high level transaction of the coin module</span><span class="w"></span>
-<span class="kd">type</span><span class="w"> </span><span class="nx">MsgSend</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">FromAddress</span><span class="w"> </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">AccAddress</span><span class="w"> </span><span class="s">`json:&quot;from_address&quot;`</span><span class="w"></span>
-<span class="w">    </span><span class="nx">ToAddress</span><span class="w">   </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">AccAddress</span><span class="w"> </span><span class="s">`json:&quot;to_address&quot;`</span><span class="w"></span>
-<span class="w">    </span><span class="nx">Amount</span><span class="w">      </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">Coins</span><span class="w">      </span><span class="s">`json:&quot;amount&quot;`</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</pre></div>
+<p>The params module provides a base parameter store for all other Terra modules. Structures made with the <code class="docutils literal notranslate"><span class="pre">params</span></code> module are globally available and use subspaces to register specific params to particular modules. The params module defines two types of access: <code class="docutils literal notranslate"><span class="pre">Keeper</span></code> and <code class="docutils literal notranslate"><span class="pre">Subspace</span></code>.</p>
+<div class="section" id="params-types">
+<h2>Params Types<a class="headerlink" href="#params-types" title="Permalink to this headline">#</a></h2>
+<div class="section" id="keeper">
+<h3>Keeper<a class="headerlink" href="#keeper" title="Permalink to this headline">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">Keeper</span></code> has a permission to access all existing subspaces which are mentioned later on in this document. For example, if a proposal passes through the <a class="reference internal" href="spec-governance.html"><span class="doc std std-doc">governance</span></a> the <code class="docutils literal notranslate"><span class="pre">Keeper</span></code> can be routed to modified params automatically and according to the proposal.</p>
 </div>
-<p>The Bank module is used to send coins from one Terra account to another. <code class="docutils literal notranslate"><span class="pre">MsgSend</span></code> is constructed to facilitate the transfer. If the balance of coins in the sender <code class="docutils literal notranslate"><span class="pre">Account</span></code> is insufficient or the recipient <code class="docutils literal notranslate"><span class="pre">Account</span></code> is unable to receive the funds via the bank module, the transaction fails. Fees already paid through failed transactions are not refunded.</p>
-</div>
-<div class="section" id="msgmultisend">
-<h3>MsgMultiSend<a class="headerlink" href="#msgmultisend" title="Permalink to this headline">#</a></h3>
-<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="c1">// MsgMultiSend - high level transaction of the coin module</span><span class="w"></span>
-<span class="kd">type</span><span class="w"> </span><span class="nx">Input</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="nx">Address</span><span class="w"> </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">AccAddress</span><span class="w"> </span><span class="s">`json:&quot;address&quot; yaml:&quot;address&quot;`</span><span class="w"></span>
-<span class="w">  </span><span class="nx">Coins</span><span class="w">   </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">Coins</span><span class="w">      </span><span class="s">`json:&quot;coins&quot; yaml:&quot;coins&quot;`</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-
-<span class="kd">type</span><span class="w"> </span><span class="nx">Output</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="nx">Address</span><span class="w"> </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">AccAddress</span><span class="w"> </span><span class="s">`json:&quot;address&quot; yaml:&quot;address&quot;`</span><span class="w"></span>
-<span class="w">  </span><span class="nx">Coins</span><span class="w">   </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">Coins</span><span class="w">      </span><span class="s">`json:&quot;coins&quot; yaml:&quot;coins&quot;`</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-
-<span class="kd">type</span><span class="w"> </span><span class="nx">MsgMultiSend</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="nx">Inputs</span><span class="w">  </span><span class="p">[]</span><span class="nx">Input</span><span class="w">  </span><span class="s">`json:&quot;inputs&quot; yaml:&quot;inputs&quot;`</span><span class="w"></span>
-<span class="w">  </span><span class="nx">Outputs</span><span class="w"> </span><span class="p">[]</span><span class="nx">Output</span><span class="w"> </span><span class="s">`json:&quot;outputs&quot; yaml:&quot;outputs&quot;`</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</pre></div>
-</div>
-<p>To send multiple transactions at once, use <code class="docutils literal notranslate"><span class="pre">MsgMultiSend</span></code>. For each transaction, <code class="docutils literal notranslate"><span class="pre">Inputs</span></code> contains the incoming transactions, and <code class="docutils literal notranslate"><span class="pre">Outputs</span></code> contains the outgoing transactions. The <code class="docutils literal notranslate"><span class="pre">Inputs</span></code> coin balance must exactly match the <code class="docutils literal notranslate"><span class="pre">Outputs</span></code> coin balance. Batching transactions via <code class="docutils literal notranslate"><span class="pre">MsgMultiSend</span></code> conserves gas fees and network bandwidth. Fees already paid through failed transactions are not refunded.</p>
+<div class="section" id="subspaces">
+<h3>Subspaces<a class="headerlink" href="#subspaces" title="Permalink to this headline">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">Subspace</span></code> is an unique namespace for a paramstore, where keys are configured with a certain prefix. <code class="docutils literal notranslate"><span class="pre">Subspace</span></code> are used by individual keepers, which require an unmodifiable private parameter store.</p>
 </div>
 </div>
 <div class="section" id="parameters">
 <h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">#</a></h2>
-<p>The genesis parameters outlined in the <a class="reference external" href="https://github.com/terra-money/genesis-tools/blob/main/src/genesis_builder.py#L92">Genesis Builder Script</a> are as follows:</p>
-<div class="highlight-py notranslate"><div class="highlight"><pre><span></span>
-    # Bank: setup supply
-    genesis[&#39;app_state&#39;][&#39;bank&#39;][&#39;supply&#39;] = [{
-        &#39;denom&#39;: DENOM_LUNA,
-        &#39;amount&#39;: str(TOTAL_ALLOCATION),
-    }]
-
-    # Bank: set denom meta
-    genesis[&#39;app_state&#39;][&#39;bank&#39;][&#39;denom_metadata&#39;] = [{
-        &#39;description&#39;: &#39;The native staking token of Terra 2.0&#39;,
-        &#39;denom_units&#39;: [
-            {&#39;denom&#39;: &#39;uluna&#39;, &#39;exponent&#39;: 0, &#39;aliases&#39;: [&#39;microluna&#39;]},
-            {&#39;denom&#39;: &#39;mluna&#39;, &#39;exponent&#39;: 3, &#39;aliases&#39;: [&#39;milliluna&#39;]},
-            {&#39;denom&#39;: &#39;luna&#39;, &#39;exponent&#39;: 6, &#39;aliases&#39;: []},
-        ],
-        &#39;base&#39;:    &#39;uluna&#39;,
-        &#39;display&#39;: &#39;luna&#39;,
-        &#39;name&#39;:    &#39;LUNA&#39;,
-        &#39;symbol&#39;:  &#39;LUNA&#39;,
-    }]
-
-    ```
-</pre></div>
-</div>
+<p>The genesis parameters for the mint module outlined in the <a class="reference external" href="https://github.com/terra-money/genesis-tools/blob/main/src/genesis_builder.py#L112">Genesis Builder Script</a> are as follows:</p>
 </div>
 </div>
 
@@ -1348,20 +1296,6 @@
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="spec-authz.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">AuthZ</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="spec-capability.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Capability</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
 </div>
             
         </div>

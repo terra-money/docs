@@ -1,21 +1,31 @@
 # Mint
 
-## Concepts
+:::{Important}
+Terra's mint module inherits from the Cosmos SDK's [`mint`](https://docs.cosmos.network/master/modules/mint/) module. This document is a stub and covers mainly important Terra-specific notes about how it is used.
+:::
 
-### The minting mechanism
+The mint module is in charge of the creation of new Luna through minting. At the beginning of every block, new Luna is released by the mint module and sent to the fee collector account to be distributed to stakers as rewards. 
 
-The minting mechanism was designed to:
+The current inflation rate is set to a fixed 7% annual inflation.
 
+## Variable rate
+
+The mint module also allows for a variable inflation rate to be used. While the current rate is fixed, these parameters can be changed through a governance vote. The following outlines the variable inflation logic. 
+
+Variable inflation logic is designed to: 
 - Allow for a flexible inflation rate determined by market demand targeting a particular bonded-stake ratio.
+
 - Affect a balance between market liquidity and staked supply.
 
 To best determine the appropriate market rate for inflation rewards, a moving change rate is used. The moving change rate mechanism ensures that if the percentage bonded is either over or under the goal percentage-bonded, the inflation rate will adjust to further incentivize or disincentivize being bonded, respectively. Setting the goal percentage-bonded at less than 100% encourages the network to maintain some non-staked tokens, which helps to provide some liquidity.
 
 It works in the following ways:
 
-- If the inflation rate is below the goal percentage-bonded, the inflation rate increases until a maximum value is reached.
-- If the goal percentage-bonded (67% in Cosmos-Hub) is maintained, the inflation rate stays constant.
-- If the inflation rate is above the goal percentage-bonded, the inflation rate decreases until a minimum value is reached.
+If the inflation rate is below the goal percentage-bonded, the inflation rate increases until a maximum value is reached.
+
+If the goal percentage-bonded (67% in Cosmos-Hub) is maintained, the inflation rate stays constant.
+
+If the inflation rate is above the goal percentage-bonded, the inflation rate decreases until a minimum value is reached.
 
 ## Parameters
 
@@ -37,27 +47,24 @@ type Params struct {
 	BlocksPerYear uint64 `protobuf:"varint,6,opt,name=blocks_per_year,json=blocksPerYear,proto3" json:"blocks_per_year,omitempty" yaml:"blocks_per_year"`
 }
 ```
+### Genesis parameters
 
-### MintDenom
+The genesis parameters for the mint module outlined in the [Genesis Builder Script](https://github.com/terra-money/genesis-tools/blob/main/src/genesis_builder.py#L112) are as follows:
 
-- type: `string`
-
-### InflationRateChange
-
-- type: `sdk.Dec`
-
-### InflationMax
-
-- type: `sdk.Dec`
-
-### InflationMin
-
-- type: `sdk.Dec`
-
-### GoalBonded
-
-- type: `sdk.Dec`
-
-### BlocksPerYear
-
-- type: `uint64`
+```py
+    # Mint: set mint params
+    genesis['app_state']['mint'] = {
+        'minter': {
+            'inflation': '0.070000000000000000',
+            'annual_provisions': '0.000000000000000000'
+        },
+        'params': {
+            'mint_denom': DENOM_LUNA,
+            'inflation_rate_change': '0.000000000000000000',
+            'inflation_max': '0.070000000000000000',
+            'inflation_min': '0.070000000000000000',
+            'goal_bonded': '0.670000000000000000',
+            'blocks_per_year': '4360000'
+        }
+    }
+```
