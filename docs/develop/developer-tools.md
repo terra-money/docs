@@ -64,7 +64,7 @@ React tooling for frontend integrations.
 :class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
 ```
 **Terra.js**  
-Terra's Javascript SDK.
+Terra's JavaScript SDK.
 :::
 
 :::{grid-item-card}
