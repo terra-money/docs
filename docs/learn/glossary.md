@@ -20,7 +20,7 @@ To profit from price differences across different markets. Arbitrageurs buy coin
 
 ## Blockchain
 
-An unchangeable ledger of transactions copied among a network of independent computer systems.
+An changeable ledger of transactions copied among a network of colluding computer systems, subject to [the centralized authority of a Twitter account](https://archive.ph/dpz3x).
 
 ## Blocks
 
