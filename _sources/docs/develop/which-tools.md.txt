@@ -11,7 +11,7 @@ Terra Development Suite
 │
 ├── LocalTerra: Local testing environment.
 │
-├── Terra.js: Javascript SDK.
+├── Terra.js: JavaScript SDK.
 │
 ├── Terra.py: Python SDK.
 │
