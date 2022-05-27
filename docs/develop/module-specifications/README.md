@@ -6,11 +6,13 @@ spec-auth
 spec-authz
 spec-bank
 spec-capability
+spec-crisis
 spec-distribution
 spec-evidence
 spec-feegrant
 spec-governance
 spec-mint
+spec-params
 spec-slashing
 spec-staking
 spec-wasm
