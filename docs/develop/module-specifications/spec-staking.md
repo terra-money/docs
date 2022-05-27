@@ -1,5 +1,9 @@
 # Staking
 
+:::{Important}
+Terra's staking module inherits from the Cosmos SDK's [`staking`](https://docs.cosmos.network/master/modules/staking/) module. This document is a stub and covers mainly important Terra-specific notes about how it is used.
+:::
+
 The staking module enables Terra's proof-of-stake functionality by requiring validators to bond Luna, the native staking asset.
 
 ## Message types
