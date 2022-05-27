@@ -72,10 +72,13 @@ terrad version --long
 Which will return the following: 
 
 ```sh
-core: <current-version>
-git commit: <current-version>
-go.sum hash: <current-version>
-build tags: netgo ledger
+terrad version --long
+name: terra
+server_name: terrad
+version: ""
+commit: 2565577ccf47d1b11a82d77500a0cb880080a70c
+build_tags: netgo,ledger
+go: go version go1.18 darwin/arm64
 ```
 
 4\. Take the pre-attack snapshot:
@@ -95,11 +98,11 @@ terrad export --height 7790000 > post-attack-snapshot.json
 ```sh
 # pre-attack
 jq -S -c -M '' pre-attack-snapshot.json | shasum -a 256
-<hash output>
+0ac0d5b8f7ea49e500d9033687a6720a99818e99280aba8f12f00b39832a0d5c
 
 # post-attack
 jq -S -c -M '' post-attack-snapshot.json | shasum -a 256
-<hash output>
+9d294b300eb3d936d9567eb128bc66651d196b07c37583e2e051b3bced965766
 ```
 
 ## Penultimate Genesis
@@ -121,13 +124,18 @@ mv ./pre-attack-snapshot.json ./post-attack-snapshot.json ./genesis-tools
 3\. Run genesis builder script:
 
 ```sh
-python3 ./genesis-builder.py \
+
+# install dependency
+pip3 install bech32
+pip3 install python-dateutil
+
+python3 ./src/genesis_builder.py \
     ./genesis-template.json \
     ./pre-attack-snapshot.json \
     ./post-attack-snapshot.json \
     ./genesis-validators.json \
     --genesis-time=2022-05-28T06:00:00.000000Z \
-    --pretty=false --chain-id=phoenix-1 \
+    --chain-id=phoenix-1 \
     > penultimate-genesis.json
 ```
 
@@ -135,7 +143,7 @@ python3 ./genesis-builder.py \
 
 ```sh
 jq -S -c -M '' penultimate-genesis.json | shasum -a 256
-[placeholder]
+def346f3ef21e5f484c4e8634918d527382115b871786bd794fac5dacdf46c63
 ```
 
 ## Set up a new validator
@@ -172,7 +180,7 @@ build tags: netgo ledger
 
 ```sh
 # install or move penultimate-genesis.json to server
-wget [placeholder]
+wget https://phoenix-genesis.s3.us-west-1.amazonaws.com/penultimate-genesis.json
 
 # move genesis to config location
 mv ./penultimate-genesis.json ~/.terra/config/genesis.json
@@ -181,14 +189,18 @@ mv ./penultimate-genesis.json ~/.terra/config/genesis.json
 4\. Execute GenTx:
 
 ```sh
-terrad gentx [key-name] [amount-to-stake] \
-    --chain-id phoenix-1 \
-    --min-self-delegation=[] \
-    --security-contact=[] \
-    --moniker=[] \
-    --details=[] \
-    --commission-rate=[] \
-    ...
+terrad gentx validator 1000000uluna \
+    --chain-id="phoenix-1" \
+    --pubkey=$(terrad tendermint show-validator) \
+    --min-self-delegation="1"\
+    --security-contact="contact@aaa.services" \
+    --moniker=AAA \
+    --details="Trusted security provider for Terra Network and projects building on Terra." \
+    --identity="AAAAAAAAAAAA" \
+    --commission-rate="0.1" \
+    --commission-max-rate="0.2" \
+    --commission-max-change-rate="0.01" \ 
+    --note="gentx"
 ```
 
 5\. Upload the generated GenTx file to this repository's gentx folder via PR:
