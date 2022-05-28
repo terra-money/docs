@@ -1216,8 +1216,13 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#luna-distribution">
-   Luna distribution
+  <a class="reference internal nav-link" href="#luna-airdrop-distribution">
+   Luna airdrop distribution
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vesting">
+   Vesting
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1230,11 +1235,13 @@
      Consensus
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#staking">
-     Staking
-    </a>
-   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#staking">
+   Staking
+  </a>
+  <ul class="visible nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#delegators">
      Delegators
@@ -1260,11 +1267,13 @@
      Redelegation
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#rewards">
-     Rewards
-    </a>
-   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rewards">
+   Rewards
+  </a>
+  <ul class="visible nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#slashing">
      Slashing
@@ -1325,8 +1334,13 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#luna-distribution">
-   Luna distribution
+  <a class="reference internal nav-link" href="#luna-airdrop-distribution">
+   Luna airdrop distribution
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vesting">
+   Vesting
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1339,11 +1353,13 @@
      Consensus
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#staking">
-     Staking
-    </a>
-   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#staking">
+   Staking
+  </a>
+  <ul class="visible nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#delegators">
      Delegators
@@ -1369,11 +1385,13 @@
      Redelegation
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#rewards">
-     Rewards
-    </a>
-   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rewards">
+   Rewards
+  </a>
+  <ul class="visible nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#slashing">
      Slashing
@@ -1420,34 +1438,60 @@
 </div>
 <div class="section" id="what-is-luna">
 <h2>What is Luna?<a class="headerlink" href="#what-is-luna" title="Permalink to this headline">#</a></h2>
-<p><strong>Luna</strong> is the Terra protocol’s native <a class="reference internal" href="glossary.html#staking"><span class="std std-doc">staking</span></a> token. Luna is used for <a class="reference internal" href="#governance"><span class="std std-doc">governance</span></a> and in mining. Users stake Luna to validators who record and verify transactions on the <a class="reference internal" href="glossary.html#blockchain"><span class="std std-doc">blockchain</span></a> in exchange for rewards from transaction fees.</p>
+<p>Luna is the Terra protocol’s native <a class="reference internal" href="glossary.html#staking"><span class="std std-doc">staking</span></a> token. Luna is used for <a class="reference internal" href="#governance"><span class="std std-doc">governance</span></a> and in mining. Users stake Luna to validators who record and verify transactions on the <a class="reference internal" href="glossary.html#blockchain"><span class="std std-doc">blockchain</span></a> in exchange for rewards from transaction fees.</p>
 </div>
-<div class="section" id="luna-distribution">
-<h2>Luna distribution<a class="headerlink" href="#luna-distribution" title="Permalink to this headline">#</a></h2>
+<div class="section" id="luna-airdrop-distribution">
+<h2>Luna airdrop distribution<a class="headerlink" href="#luna-airdrop-distribution" title="Permalink to this headline">#</a></h2>
 <p>At genesis, Luna will have a supply of 1 billion tokens allocated according to the following distribution:</p>
 <p><strong>Community pool</strong>: 30%</p>
 <ul class="simple">
 <li><p>Controlled by staked governance.</p></li>
-<li><p>10% earmarked for developers.
-<strong>Pre-depeg LUNA holders</strong>: 35%</p></li>
+<li><p>10% earmarked for developers.</p></li>
+</ul>
+<p><strong>Pre-depeg LUNA holders airdrop</strong>: 35%</p>
+<ul class="simple">
 <li><p>All bonded / unbonding Luna, minus TFL at “Pre-attack” snapshot; staking derivatives included.</p></li>
 <li><p>For wallets with &lt; 10k Luna: 30% unlocked at genesis; 70% vested over 2 years with 6mnth cliff.</p></li>
-<li><p>For wallets with &lt; 1M Luna: 1 year cliff, 2 year vesting thereafter.</p></li>
-<li><p>For wallets with &gt; 1M Luna: 1 year cliff, 4 year vesting thereafter.
-<strong>Pre-depeg aUST holders</strong>: 10%</p></li>
+<li><p>For wallets with &lt; 1M Luna: 1-year cliff, 2-year vesting thereafter.</p></li>
+<li><p>For wallets with &gt; 1M Luna: 1-year cliff, 4-year vesting thereafter.</p></li>
+</ul>
+<p><strong>Pre-depeg aUST holders airdrop</strong>: 10%</p>
+<ul class="simple">
 <li><p>500K whale cap - covers up to 99.7% of all holders but only 26.72% of aUST.</p></li>
-<li><p>30% unlocked at genesis; 70% vested over 2 years thereafter with a 6 month cliff.
-<strong>Post-attack LUNA holders</strong>: 10%</p></li>
+<li><p>30% unlocked at genesis; 70% vested over 2 years thereafter with a 6-month cliff.</p></li>
+</ul>
+<p><strong>Post-attack LUNA holders airdrop</strong>: 10%</p>
+<ul class="simple">
 <li><p>Staking derivatives are included.</p></li>
-<li><p>30% unlocked at genesis; 70% vested over 2 years thereafter with 6 month cliff
-<strong>Post-attack UST holders</strong>: 15%</p></li>
-<li><p>30% unlocked at genesis; 70% vested over 2 years thereafter with 6 month cliff</p></li>
+<li><p>30% unlocked at genesis; 70% vested over 2 years thereafter with 6-month cliff.</p></li>
+</ul>
+<p><strong>Post-attack UST holders airdrop</strong>: 15%</p>
+<ul class="simple">
+<li><p>30% unlocked at genesis; 70% vested over 2 years thereafter with 6-month cliff.</p></li>
 </ul>
 <p>Definitions:</p>
 <ul class="simple">
-<li><p>“Pre-depeg snapshot to be taken at at Terra Classic block 7544910 (2022.05.07 22:59:37+08:00)</p></li>
+<li><p>“Pre-depeg snapshot to be taken at Terra Classic block 7544910 (2022.05.07 22:59:37+08:00)</p></li>
 <li><p>“Post-depeg snapshot to be taken at Terra Classic block 7790000 (2022.05.27 00:38:08+08:00)
-All tokens locked or vesting are staked at genesis, and must be unbonded to become liquid.</p></li>
+All tokens locked or vesting are staked at genesis and must be unbonded to become liquid.</p></li>
+</ul>
+</div>
+<div class="section" id="vesting">
+<h2>Vesting<a class="headerlink" href="#vesting" title="Permalink to this headline">#</a></h2>
+<p>Many users of the Terra Classic blockchain have Luna vesting in their accounts from the <span class="xref myst">Terra genesis airdrop</span>. Vesting is the term used for Luna that cannot be traded and remains locked in an account until a certain date. The vesting schedule describes the amount of time Luna will remain locked, when it will be unlocked, and how much will be released once the unlock happens.</p>
+<p>A cliff is the period of time that must pass before Luna can begin to be unlocked.
+After the cliff period has passed, a small amount of the vesting Luna will be released every block according to the vesting period.</p>
+<p>For example, according to the genesis Luna distribution, Terra Classic wallets that contained less than 10,000 Luna during the pre-depeg snapshot will be airdropped Luna with the following vesting schedule:</p>
+<blockquote>
+<div><p>30% unlocked at genesis; 70% vested over 2 years with a six-month cliff.</p>
+</div></blockquote>
+<p>This means that 30% of a user’s airdropped Luna will be unlocked and can be freely traded at the start of the new Terra blockchain. 70% of the airdropped Luna will be locked for six months without being released (the “cliff”).</p>
+<p>After six months, a small portion of the remaining 70% of Luna will be released every block for 2 years. After 2 years, all the airdropped Luna will have been released, and the vesting will be complete.</p>
+<p><strong>Example</strong>: A user had less than 10k Luna in their Terra Classic wallet during the pre-depeg snapshot. 1000 Luna total is airdropped to their wallet.</p>
+<ul class="simple">
+<li><p>300 Luna will be unlocked and able to be freely traded at the start of the new Terra chain.</p></li>
+<li><p>No more Luna will be unlocked until six months have passed (the cliff).</p></li>
+<li><p>After six months, the remaining 700 Luna will begin to unlock every block over a 2-year period at a rate of .96 Luna per day (700 Luna ÷ 730 days).</p></li>
 </ul>
 </div>
 <div class="section" id="validators">
@@ -1466,12 +1510,12 @@ All tokens locked or vesting are staked at genesis, and must be unbonded to beco
 </ol>
 <p>This process repeats, adding new blocks of transactions to the chain. Each validator has a copy of all transactions made on the network, which they compare against the proposed block of transactions before voting. Because multiple independent validators take place in consensus voting, it is infeasible for any false block to be accepted. In this way, validators protect the integrity of the Terra blockchain and ensure the validity of each transaction.</p>
 </div>
+</div>
 <div class="section" id="staking">
-<h3>Staking<a class="headerlink" href="#staking" title="Permalink to this headline">#</a></h3>
+<h2>Staking<a class="headerlink" href="#staking" title="Permalink to this headline">#</a></h2>
 <p>Staking is the process of bonding Luna to a validator in exchange for staking rewards.</p>
 <p>The Terra protocol only allows the top 130 validators to participate in consensus. A validator’s rank is determined by their stake or the total amount of Luna bonded to them. Although validators can bond Luna to themselves, they mainly amass larger stakes from delegators. Validators with larger stakes get chosen more often to propose new blocks and earn proportionally more rewards.</p>
 <p>To learn how to stake your Luna and earn staking rewards, visit the <a class="reference internal" href="terra-station/staking.html"><span class="doc std std-doc">Terra Station staking guide</span></a></p>
-</div>
 <div class="section" id="delegators">
 <h3>Delegators<a class="headerlink" href="#delegators" title="Permalink to this headline">#</a></h3>
 <p>Delegators are users who want to receive rewards from consensus without running a full node. Any user that stakes Luna is a delegator. Delegators stake their Luna to a validator, adding to a validator’s weight, or total stake. In return, delegators receive a portion of transaction fees as staking rewards.</p>
@@ -1513,15 +1557,16 @@ Undelegating takes 21 days to complete. The only way to undo a delegating or und
 <p>When a user redelegates staked Luna from one validator to another, the validator receiving the staked Luna is barred from making further redelegation transactions for 21 days. This requirement only applies to the wallet that made the redelegation transaction.</p>
 </div>
 </div>
+</div>
 <div class="section" id="rewards">
-<h3>Rewards<a class="headerlink" href="#rewards" title="Permalink to this headline">#</a></h3>
-<p>The Terra protocol incentivizes validators and delegators with staking rewards from gas fees.</p>
+<h2>Rewards<a class="headerlink" href="#rewards" title="Permalink to this headline">#</a></h2>
+<p>The Terra protocol incentivizes validators and delegators with staking rewards from gas fees and inflation rewards:</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="fees.html#gas"><span class="std std-doc">Gas</span></a>: Compute fees added on to each transaction to avoid spamming. Validators set minimum gas prices and reject transactions that have implied gas prices below this threshold.</p></li>
+<li><p><a class="reference internal" href="../develop/module-specifications/spec-mint.html"><span class="doc std std-doc">Inflation rewards</span></a>: Every block, new Luna is minted and released to validators and delegators as staking rewards. The rate for the minting of this new Luna is fixed at 7% per year.</p></li>
 </ul>
 <p>For more information on fees, visit the <a class="reference internal" href="fees.html"><span class="doc std std-doc">fee page</span></a>.</p>
-<p>At the end of every block, transaction fees are distributed to each validator and their delegators proportional to their staked amount. Validators can keep a portion of rewards to pay for their services. This portion is called commission. The rest of the rewards are distributed to delegators according to their staked amounts.</p>
-</div>
+<p>At the end of every block, transaction fees and inflation rewards are distributed to each validator and their delegators proportional to their staked amount. Validators can keep a portion of rewards to pay for their services. This portion is called commission. The rest of the rewards are distributed to delegators according to their staked amounts.</p>
 <div class="section" id="slashing">
 <h3>Slashing<a class="headerlink" href="#slashing" title="Permalink to this headline">#</a></h3>
 <p>Running a validator is a big responsibility. Validators must meet strict standards and constantly monitor and participate in the consensus process. Slashing is the penalty for misbehaving validators. When a validator gets slashed, they lose a small portion of their stake as well as a small portion of their delegator’s stake. Slashed validators also get jailed, or excluded, from consensus for a period of time.</p>
@@ -1533,7 +1578,7 @@ Undelegating takes 21 days to complete. The only way to undo a delegating or und
 <ul class="simple">
 <li><p><strong>Double signing</strong>: When a validator signs two different blocks with the same chain ID at the same height.</p></li>
 <li><p><strong>Downtime</strong>: When a validator is unresponsive or can’t be reached for a period of time.</p></li>
-<li><p><strong>Missed votes</strong>: When a validator misses votes in consensus or fails to vote correctly in the Oracle process.</p></li>
+<li><p><strong>Missed votes</strong>: When a validator misses votes in consensus.</p></li>
 </ul>
 <p>Validators monitor each other closely and can submit evidence of misbehavior. Once discovered, the misbehaving validator will have a small portion of their funds slashed. Offending validators will also be jailed or excluded from consensus for a period of time. Even simple issues such as malfunctions or downtimes from upgrading can lead to slashing.</p>
 <p>For more information on slashing, visit the <a class="reference internal" href="../develop/module-specifications/spec-slashing.html"><span class="doc std std-doc">slashing module</span></a>.</p>
