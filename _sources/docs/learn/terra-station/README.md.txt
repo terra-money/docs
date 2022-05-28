@@ -7,15 +7,17 @@ Terra station is the official wallet of the Terra blockchain. If this is your fi
 :caption: Terra Station
 download/README
 wallet
+networks.md
 send
 staking
-swap
+vesting.md
 governance
 wormhole
 multisig
 contracts
 testnet
 keplr
+swap
 ```
 
 :::::::{grid} 2 2 2 3
@@ -41,12 +43,12 @@ keplr
 :::
 
 :::{grid-item-card}
-:link: swap.html
+:link: networks.html
 :class-card: sd-text-center sd-shadow-md sd-rounded-3
 ```{image} /img/Swap_ver1.svg
 :class: sd-width-auto sd-pb-2 sd-animate-grow50-rot20
 ```
-**Swap coins**  
+**Switch networks**  
 :::
 
 :::{grid-item-card}
