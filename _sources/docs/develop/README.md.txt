@@ -18,6 +18,7 @@ resources.md
 
 :::::::{grid} 2 2 2 3
 :gutter: 3
+:class-row: sd-align-major-center
 
 :::{grid-item-card}
 :link: get-started.html
