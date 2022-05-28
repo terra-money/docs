@@ -1300,7 +1300,7 @@
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tokens_vested_per_block</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">original_vesting</span> <span class="o">*</span> <span class="p">(</span><span class="n">block_time</span> <span class="o">/</span> <span class="p">(</span><span class="n">end_time</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">)))</span>
 </pre></div>
 </div>
-<p>In the following example, 1,000,000 uLUNA (1 LUNA) will be vested within the 24 hour time period from 1654041600 Unix time (June 1, 2022 12:00:00 AM) to 1654128000 Unix time (June 2, 2022 12:00:00 AM).</p>
+<p>In the following example, 5,000,000 uLUNA (5 LUNA) will be vested within the 24 hour time period from 1654041600 Unix time (June 1, 2022 12:00:00 AM) to 1654128000 Unix time (June 2, 2022 12:00:00 AM).</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;account&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="nt">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/cosmos.vesting.v1beta1.ContinuousVestingAccount&quot;</span><span class="p">,</span><span class="w"></span>
@@ -1314,7 +1314,7 @@
 <span class="w">      </span><span class="nt">&quot;original_vesting&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
 <span class="w">        </span><span class="p">{</span><span class="w"></span>
 <span class="w">          </span><span class="nt">&quot;denom&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uluna&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">          </span><span class="nt">&quot;amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1000000&quot;</span><span class="w"></span>
+<span class="w">          </span><span class="nt">&quot;amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5000000&quot;</span><span class="w"></span>
 <span class="w">        </span><span class="p">}</span><span class="w"></span>
 <span class="w">      </span><span class="p">],</span><span class="w"></span>
 <span class="w">      </span><span class="nt">&quot;delegated_free&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w"></span>
@@ -1326,12 +1326,12 @@
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<p>Given a block time, or the average amount of time it takes for a block to be added to the blockchain, of 5 seconds, we may calculate the number of tokens vested per block by substituting relevant variables in the <code class="docutils literal notranslate"><span class="pre">tokens_vested_per_block</span></code> equation with the specified values:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tokens_vested_per_block</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mi">1000000</span> <span class="o">*</span> <span class="p">(</span><span class="mi">5</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1654128000</span> <span class="o">-</span> <span class="mi">1654041600</span><span class="p">)))</span>
+<p>Given a block time, or the average amount of time it takes for a block to be added to the blockchain, of 6 seconds, we may calculate the number of tokens vested per block by substituting relevant variables in the <code class="docutils literal notranslate"><span class="pre">tokens_vested_per_block</span></code> equation with the specified values:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tokens_vested_per_block</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mi">5000000</span> <span class="o">*</span> <span class="p">(</span><span class="mi">6</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1654128000</span> <span class="o">-</span> <span class="mi">1654041600</span><span class="p">)))</span>
 </pre></div>
 </div>
-<p>According to the above equation, ~58 uLUNA would be vested per block. Given the block time of 5 seconds and a difference between start and end time of 24 hours (86400 seconds), we may realize the total vesting amount of 1,000,000 uLUNA utilizing the following equation:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">total_vesting_tokens</span> <span class="o">=</span> <span class="n">tokens_vested_per_block</span> <span class="o">*</span> <span class="p">(</span><span class="mi">86400</span> <span class="o">/</span> <span class="mi">5</span><span class="p">)</span>
+<p>According to the above equation, ~347 uLUNA would be vested per block. Given the block time of 6 seconds and a difference between start and end time of 24 hours (86400 seconds), we may realize the total original vesting amount of 5,000,000 uLUNA utilizing the following equation:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">total_vesting_tokens</span> <span class="o">=</span> <span class="n">tokens_vested_per_block</span> <span class="o">*</span> <span class="p">(</span><span class="mi">86400</span> <span class="o">/</span> <span class="mi">6</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1393,17 +1393,17 @@
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<p>Utilizing the equations given in the continuous vesting account documentation, we may evaluate the number of tokens which will be vested per block for each of the 3 periods given in our periodic vesting account example. We again utilize a block time of 5 seconds.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tokens_vested_per_block_period1</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mi">1000000</span> <span class="o">*</span> <span class="p">(</span><span class="mi">5</span> <span class="o">/</span> <span class="mi">14400</span><span class="p">))</span>
-<span class="n">tokens_vested_per_block_period2</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mi">2000000</span> <span class="o">*</span> <span class="p">(</span><span class="mi">5</span> <span class="o">/</span> <span class="mi">21600</span><span class="p">))</span>
-<span class="n">tokens_vested_per_block_period3</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mi">2000000</span> <span class="o">*</span> <span class="p">(</span><span class="mi">5</span> <span class="o">/</span> <span class="mi">50400</span><span class="p">))</span>
+<p>Utilizing the equations given in the continuous vesting account example, we may evaluate the number of tokens which will be vested per block for each of the 3 periods given in our periodic vesting account example. We again utilize a block time of 6 seconds.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tokens_vested_per_block_period1</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mi">1000000</span> <span class="o">*</span> <span class="p">(</span><span class="mi">6</span> <span class="o">/</span> <span class="mi">14400</span><span class="p">))</span>
+<span class="n">tokens_vested_per_block_period2</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mi">2000000</span> <span class="o">*</span> <span class="p">(</span><span class="mi">6</span> <span class="o">/</span> <span class="mi">21600</span><span class="p">))</span>
+<span class="n">tokens_vested_per_block_period3</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mi">2000000</span> <span class="o">*</span> <span class="p">(</span><span class="mi">6</span> <span class="o">/</span> <span class="mi">50400</span><span class="p">))</span>
 </pre></div>
 </div>
 <p>Following the conclusion of the vesting time period given by <code class="docutils literal notranslate"><span class="pre">end_time</span></code>, 5,000,000 uLUNA will have been vested and will be available for trading and transfers.</p>
 </div>
 <div class="section" id="delayed-vesting-account">
 <h2>Delayed Vesting Account<a class="headerlink" href="#delayed-vesting-account" title="Permalink to this headline">#</a></h2>
-<p>In a delayed vesting account, vesting tokens will be fully vested when the end time is reached. In the below example, 1,000,000 uLUNA begin vesting at the genesis block. These funds remain locked until 1654041600 Unix time (June 1, 2022 12:00:00 AM), when the full amount of 1,000,000 uLUNA is then vested.</p>
+<p>In a delayed vesting account, vesting tokens will be fully vested when the end time is reached. In the below example, 5,000,000 uLUNA begin vesting at the genesis block. These funds remain locked until 1654041600 Unix time (June 1, 2022 12:00:00 AM), when the full amount of 5,000,000 uLUNA is then vested.</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;account&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="nt">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/cosmos.vesting.v1beta1.DelayedVestingAccount&quot;</span><span class="p">,</span><span class="w"></span>
@@ -1417,7 +1417,7 @@
 <span class="w">      </span><span class="nt">&quot;original_vesting&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
 <span class="w">        </span><span class="p">{</span><span class="w"></span>
 <span class="w">          </span><span class="nt">&quot;denom&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uluna&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">          </span><span class="nt">&quot;amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1000000&quot;</span><span class="w"></span>
+<span class="w">          </span><span class="nt">&quot;amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5000000&quot;</span><span class="w"></span>
 <span class="w">        </span><span class="p">}</span><span class="w"></span>
 <span class="w">      </span><span class="p">],</span><span class="w"></span>
 <span class="w">      </span><span class="nt">&quot;delegated_free&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w"></span>
@@ -1431,7 +1431,7 @@
 </div>
 <div class="section" id="delegation">
 <h2>Delegation<a class="headerlink" href="#delegation" title="Permalink to this headline">#</a></h2>
-<p>A user may choose to delegate their tokens to validators. This may be done with tokens that are vested or are still vesting. As such, the tokens which are vesting and are delegated will be listed under <code class="docutils literal notranslate"><span class="pre">delegated_vesting</span></code>. Tokens which are vested, but are being delegated will be listed under <code class="docutils literal notranslate"><span class="pre">delegated_free</span></code>. Both are variable values which will change based on the amount being delegated and may be updated as more and more tokens become vested. If one chooses to undelegate, the undelegated tokens will be locked for 21 days. After the 21 day period has concluded, the proportion of the funds which are vested will be free to trade and transfer as desired. Funds which are undelegated, but are still vesting will become vested based on the vesting schedule provided by it’s respective vesting account.</p>
+<p>A user may choose to delegate their tokens to validators. This may be done with tokens that are vested or are still vesting. As such, vesting tokens which are delegated will be listed under <code class="docutils literal notranslate"><span class="pre">delegated_vesting</span></code>. Vested tokens which are delegated will be listed under <code class="docutils literal notranslate"><span class="pre">delegated_free</span></code>. Both are variable values which will change based on the amount being delegated and may be updated as more and more tokens become vested. If one chooses to undelegate, the undelegated tokens will be locked for 21 days. After the 21 day period has concluded, the proportion of the funds which are vested will be free to trade and transfer as desired. Funds which are undelegated, but are still vesting will become vested based on the vesting schedule provided by it’s respective vesting account.</p>
 </div>
 </div>
 
