@@ -10,13 +10,13 @@ Luna is the Terra protocol’s native [staking](glossary.md#staking) token. Luna
 
 ## A new Terra
 
-On May 25th, 2022, Terra Classic users passed [governance proposal 1623](https://station.terra.money/proposal/1623), which outlined the genesis of a new Terra chain. This proposal also described a genesis distribution of Luna which would be airdropped to users of the Terra Classic chain based on pre-depeg and post-depeg snapshots. Users can find their airdropped Luna by viewing the same wallet address that was present during either snapshot and switching their Terra Station network to the `phoenix-1` mainnet. 
+On May 25th, 2022, Terra Classic users passed [governance proposal 1623](https://station.terra.money/proposal/1623), which outlined the genesis of a new Terra chain. This proposal also described a genesis distribution of Luna which would be airdropped to users of the Terra Classic chain based on pre-depeg and post-depeg snapshots. Users can find their airdropped Luna by viewing the same wallet address that was present during either snapshot and [switching their Terra Station network](./terra-station/networks.md) to the `phoenix-1` mainnet. 
 
+On May 27th, 2022 the `phoenix-1` Terra mainnet launched, ushering in a new era of development by the Terra community. 
 
 ## Luna airdrop distribution
 
 At genesis, Luna will have a supply of 1 billion tokens allocated according to the following distribution:
-
 
 **Community pool**: 30%
 - Controlled by staked governance.  
