@@ -1206,6 +1206,21 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-terra">
+   What is Terra?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-luna">
+   What is Luna?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#luna-distribution">
+   Luna distribution
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#validators">
    Validators
   </a>
@@ -1300,6 +1315,21 @@
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-terra">
+   What is Terra?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-luna">
+   What is Luna?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#luna-distribution">
+   Luna distribution
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#validators">
    Validators
   </a>
@@ -1384,8 +1414,42 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="about-terra">
 <h1>About Terra<a class="headerlink" href="#about-terra" title="Permalink to this headline">#</a></h1>
-<p>The Terra protocol is the leading decentralized and open-source public blockchain protocol. Luna provides its holders with staking rewards and governance power. The Terra ecosystem is a quickly expanding network of decentralized applications.</p>
+<div class="section" id="what-is-terra">
+<h2>What is Terra?<a class="headerlink" href="#what-is-terra" title="Permalink to this headline">#</a></h2>
+<p>Terra is a decentralized, open-source blockchain protocol that hosts a vibrant community of decentralized applications (dApps). Using proof-of-stake consensus and ground-breaking technologies like Mantlemint and Terra Station, the Terra blockchain is one of the fastest chains in existence, giving users an unparalleled defi experience.</p>
+</div>
+<div class="section" id="what-is-luna">
+<h2>What is Luna?<a class="headerlink" href="#what-is-luna" title="Permalink to this headline">#</a></h2>
 <p><strong>Luna</strong> is the Terra protocol’s native <a class="reference internal" href="glossary.html#staking"><span class="std std-doc">staking</span></a> token. Luna is used for <a class="reference internal" href="#governance"><span class="std std-doc">governance</span></a> and in mining. Users stake Luna to validators who record and verify transactions on the <a class="reference internal" href="glossary.html#blockchain"><span class="std std-doc">blockchain</span></a> in exchange for rewards from transaction fees.</p>
+</div>
+<div class="section" id="luna-distribution">
+<h2>Luna distribution<a class="headerlink" href="#luna-distribution" title="Permalink to this headline">#</a></h2>
+<p>At genesis, Luna will have a supply of 1 billion tokens allocated according to the following distribution:</p>
+<p><strong>Community pool</strong>: 30%</p>
+<ul class="simple">
+<li><p>Controlled by staked governance.</p></li>
+<li><p>10% earmarked for developers.
+<strong>Pre-depeg LUNA holders</strong>: 35%</p></li>
+<li><p>All bonded / unbonding Luna, minus TFL at “Pre-attack” snapshot; staking derivatives included.</p></li>
+<li><p>For wallets with &lt; 10k Luna: 30% unlocked at genesis; 70% vested over 2 years with 6mnth cliff.</p></li>
+<li><p>For wallets with &lt; 1M Luna: 1 year cliff, 2 year vesting thereafter.</p></li>
+<li><p>For wallets with &gt; 1M Luna: 1 year cliff, 4 year vesting thereafter.
+<strong>Pre-depeg aUST holders</strong>: 10%</p></li>
+<li><p>500K whale cap - covers up to 99.7% of all holders but only 26.72% of aUST.</p></li>
+<li><p>30% unlocked at genesis; 70% vested over 2 years thereafter with a 6 month cliff.
+<strong>Post-attack LUNA holders</strong>: 10%</p></li>
+<li><p>Staking derivatives are included.</p></li>
+<li><p>30% unlocked at genesis; 70% vested over 2 years thereafter with 6 month cliff
+<strong>Post-attack UST holders</strong>: 15%</p></li>
+<li><p>30% unlocked at genesis; 70% vested over 2 years thereafter with 6 month cliff</p></li>
+</ul>
+<p>Definitions:</p>
+<ul class="simple">
+<li><p>“Pre-depeg snapshot to be taken at at Terra Classic block 7544910 (2022.05.07 22:59:37+08:00)</p></li>
+<li><p>“Post-depeg snapshot to be taken at Terra Classic block 7790000 (2022.05.27 00:38:08+08:00)
+All tokens locked or vesting are staked at genesis, and must be unbonded to become liquid.</p></li>
+</ul>
+</div>
 <div class="section" id="validators">
 <h2>Validators<a class="headerlink" href="#validators" title="Permalink to this headline">#</a></h2>
 <p>Validators are the miners of the Terra <a class="reference internal" href="glossary.html#blockchain"><span class="std std-doc">blockchain</span></a>. They are responsible for securing the Terra blockchain and ensuring its accuracy. Validators run programs called full nodes which allow them to verify each transaction made on the Terra network. Validators propose blocks, vote on their validity, and add each new block to the chain in exchange for staking rewards from transaction fees. Users can stake their Luna to validators in exchange for staking rewards. Validators also play an important role in the governance of the Terra protocol.</p>

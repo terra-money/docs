@@ -1,8 +1,41 @@
 # About Terra
 
-The Terra protocol is the leading decentralized and open-source public blockchain protocol. Luna provides its holders with staking rewards and governance power. The Terra ecosystem is a quickly expanding network of decentralized applications.
+## What is Terra?
+
+Terra is a decentralized, open-source blockchain protocol that hosts a vibrant community of decentralized applications (dApps). Using proof-of-stake consensus and ground-breaking technologies like Mantlemint and Terra Station, the Terra blockchain is one of the fastest chains in existence, giving users an unparalleled defi experience. 
+
+## What is Luna? 
 
 **Luna** is the Terra protocol’s native [staking](glossary.md#staking) token. Luna is used for [governance](#governance) and in mining. Users stake Luna to validators who record and verify transactions on the [blockchain](glossary.md#blockchain) in exchange for rewards from transaction fees.
+
+## Luna distribution
+
+At genesis, Luna will have a supply of 1 billion tokens allocated according to the following distribution:
+
+
+**Community pool**: 30%
+- Controlled by staked governance. 
+- 10% earmarked for developers. 
+**Pre-depeg LUNA holders**: 35%
+- All bonded / unbonding Luna, minus TFL at “Pre-attack” snapshot; staking derivatives included. 
+- For wallets with < 10k Luna: 30% unlocked at genesis; 70% vested over 2 years with 6mnth cliff. 
+- For wallets with < 1M Luna: 1 year cliff, 2 year vesting thereafter. 
+- For wallets with > 1M Luna: 1 year cliff, 4 year vesting thereafter. 
+**Pre-depeg aUST holders**: 10%
+- 500K whale cap - covers up to 99.7% of all holders but only 26.72% of aUST.
+- 30% unlocked at genesis; 70% vested over 2 years thereafter with a 6 month cliff.
+**Post-attack LUNA holders**: 10%
+- Staking derivatives are included.
+- 30% unlocked at genesis; 70% vested over 2 years thereafter with 6 month cliff
+**Post-attack UST holders**: 15%
+- 30% unlocked at genesis; 70% vested over 2 years thereafter with 6 month cliff
+
+Definitions:
+
+- “Pre-depeg snapshot to be taken at at Terra Classic block 7544910 (2022.05.07 22:59:37+08:00)
+- “Post-depeg snapshot to be taken at Terra Classic block 7790000 (2022.05.27 00:38:08+08:00)
+All tokens locked or vesting are staked at genesis, and must be unbonded to become liquid.
+
 
 ## Validators
 
