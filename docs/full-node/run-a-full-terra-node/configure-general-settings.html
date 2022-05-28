@@ -1361,7 +1361,7 @@ For information about the available Terra REST API endpoints, see the [Swagger d
 <div class="section" id="set-up-external-address-in-config-toml">
 <h2>Set up <code class="docutils literal notranslate"><span class="pre">external_address</span></code> in <code class="docutils literal notranslate"><span class="pre">config.toml</span></code><a class="headerlink" href="#set-up-external-address-in-config-toml" title="Permalink to this headline">#</a></h2>
 <p>In order to be added to the address book in seed nodes, you need to configure <code class="docutils literal notranslate"><span class="pre">external_address</span></code> in <code class="docutils literal notranslate"><span class="pre">config.toml</span></code>.  This addition will prevent continuous reconnections. The default P2P_PORT is 26656.</p>
-<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span>$ sed -i -e &#39;s/external_address = \&quot;\&quot;/external_address = \&quot;&#39;$(curl httpbin.org/ip | jq -r .origin)&#39;:26656\&quot;/g&#39; ~/.terra/config/config.toml
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sed -i -e <span class="s1">&#39;s/external_address = \&quot;\&quot;/external_address = \&quot;&#39;</span><span class="k">$(</span>curl httpbin.org/ip <span class="p">|</span> jq -r .origin<span class="k">)</span><span class="s1">&#39;:26656\&quot;/g&#39;</span> ~/.terra/config/config.toml
 </pre></div>
 </div>
 </div>
