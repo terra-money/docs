@@ -132,6 +132,10 @@ When a vote fails to be included in consensus.
 
 A section of the Terra core that represents a particular function of the Terra protocol. Visit the [Terra core module specifications](../develop/module-specifications/README.md) for more information.
 
+## Phoenix-1
+
+The latest version of the [Terra mainnet](#terra-mainnet)
+
 ## Pools
 
 Groups of tokens. Supply pools represent the total supply of tokens in a market.
