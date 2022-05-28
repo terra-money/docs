@@ -6,36 +6,60 @@ Terra is a decentralized, open-source blockchain protocol that hosts a vibrant c
 
 ## What is Luna? 
 
-**Luna** is the Terra protocol’s native [staking](glossary.md#staking) token. Luna is used for [governance](#governance) and in mining. Users stake Luna to validators who record and verify transactions on the [blockchain](glossary.md#blockchain) in exchange for rewards from transaction fees.
+Luna is the Terra protocol’s native [staking](glossary.md#staking) token. Luna is used for [governance](#governance) and in mining. Users stake Luna to validators who record and verify transactions on the [blockchain](glossary.md#blockchain) in exchange for rewards from transaction fees.
 
-## Luna distribution
+## Luna airdrop distribution
 
 At genesis, Luna will have a supply of 1 billion tokens allocated according to the following distribution:
 
 
 **Community pool**: 30%
-- Controlled by staked governance. 
-- 10% earmarked for developers. 
-**Pre-depeg LUNA holders**: 35%
-- All bonded / unbonding Luna, minus TFL at “Pre-attack” snapshot; staking derivatives included. 
-- For wallets with < 10k Luna: 30% unlocked at genesis; 70% vested over 2 years with 6mnth cliff. 
-- For wallets with < 1M Luna: 1 year cliff, 2 year vesting thereafter. 
-- For wallets with > 1M Luna: 1 year cliff, 4 year vesting thereafter. 
-**Pre-depeg aUST holders**: 10%
-- 500K whale cap - covers up to 99.7% of all holders but only 26.72% of aUST.
-- 30% unlocked at genesis; 70% vested over 2 years thereafter with a 6 month cliff.
-**Post-attack LUNA holders**: 10%
-- Staking derivatives are included.
-- 30% unlocked at genesis; 70% vested over 2 years thereafter with 6 month cliff
-**Post-attack UST holders**: 15%
-- 30% unlocked at genesis; 70% vested over 2 years thereafter with 6 month cliff
+- Controlled by staked governance.  
+- 10% earmarked for developers.   
+
+**Pre-depeg LUNA holders airdrop**: 35%    
+- All bonded / unbonding Luna, minus TFL at “Pre-attack” snapshot; staking derivatives included.   
+- For wallets with < 10k Luna: 30% unlocked at genesis; 70% vested over 2 years with 6mnth cliff.   
+- For wallets with < 1M Luna: 1-year cliff, 2-year vesting thereafter.   
+- For wallets with > 1M Luna: 1-year cliff, 4-year vesting thereafter.  
+
+**Pre-depeg aUST holders airdrop**: 10%    
+- 500K whale cap - covers up to 99.7% of all holders but only 26.72% of aUST.  
+- 30% unlocked at genesis; 70% vested over 2 years thereafter with a 6-month cliff.  
+
+**Post-attack LUNA holders airdrop**: 10%  
+- Staking derivatives are included.  
+- 30% unlocked at genesis; 70% vested over 2 years thereafter with 6-month cliff.  
+
+**Post-attack UST holders airdrop**: 15%  
+- 30% unlocked at genesis; 70% vested over 2 years thereafter with 6-month cliff.
 
 Definitions:
 
-- “Pre-depeg snapshot to be taken at at Terra Classic block 7544910 (2022.05.07 22:59:37+08:00)
+- “Pre-depeg snapshot to be taken at Terra Classic block 7544910 (2022.05.07 22:59:37+08:00)
 - “Post-depeg snapshot to be taken at Terra Classic block 7790000 (2022.05.27 00:38:08+08:00)
-All tokens locked or vesting are staked at genesis, and must be unbonded to become liquid.
+All tokens locked or vesting are staked at genesis and must be unbonded to become liquid.
 
+## Vesting
+
+Many users of the Terra Classic blockchain have Luna vesting in their accounts from the [Terra genesis airdrop](#luna-distribution). Vesting is the term used for Luna that cannot be traded and remains locked in an account until a certain date. The vesting schedule describes the amount of time Luna will remain locked, when it will be unlocked, and how much will be released once the unlock happens. 
+
+A cliff is the period of time that must pass before Luna can begin to be unlocked. 
+After the cliff period has passed, a small amount of the vesting Luna will be released every block according to the vesting period. 
+
+For example, according to the genesis Luna distribution, Terra Classic wallets that contained less than 10,000 Luna during the pre-depeg snapshot will be airdropped Luna with the following vesting schedule: 
+
+> 30% unlocked at genesis; 70% vested over 2 years with a six-month cliff. 
+
+This means that 30% of a user's airdropped Luna will be unlocked and can be freely traded at the start of the new Terra blockchain. 70% of the airdropped Luna will be locked for six months without being released (the "cliff"). 
+
+After six months, a small portion of the remaining 70% of Luna will be released every block for 2 years. After 2 years, all the airdropped Luna will have been released, and the vesting will be complete. 
+
+**Example**: A user had less than 10k Luna in their Terra Classic wallet during the pre-depeg snapshot. 1000 Luna total is airdropped to their wallet. 
+
+- 300 Luna will be unlocked and able to be freely traded at the start of the new Terra chain. 
+- No more Luna will be unlocked until six months have passed (the cliff). 
+- After six months, the remaining 700 Luna will begin to unlock every block over a 2-year period at a rate of .96 Luna per day (700 Luna ÷ 730 days).
 
 ## Validators
 
@@ -56,7 +80,7 @@ The following process explains how Tendermint consensus works. For more informat
 
 This process repeats, adding new blocks of transactions to the chain. Each validator has a copy of all transactions made on the network, which they compare against the proposed block of transactions before voting. Because multiple independent validators take place in consensus voting, it is infeasible for any false block to be accepted. In this way, validators protect the integrity of the Terra blockchain and ensure the validity of each transaction.
 
-### Staking
+## Staking
 
 Staking is the process of bonding Luna to a validator in exchange for staking rewards.
 
@@ -108,15 +132,17 @@ Redelegating instantly sends staked Luna from one validator to another. Instead 
 When a user redelegates staked Luna from one validator to another, the validator receiving the staked Luna is barred from making further redelegation transactions for 21 days. This requirement only applies to the wallet that made the redelegation transaction.
 :::
 
-### Rewards
+## Rewards
 
-The Terra protocol incentivizes validators and delegators with staking rewards from gas fees. 
+The Terra protocol incentivizes validators and delegators with staking rewards from gas fees and inflation rewards:
 
 - [Gas](./fees.md#gas): Compute fees added on to each transaction to avoid spamming. Validators set minimum gas prices and reject transactions that have implied gas prices below this threshold.
 
+- [Inflation rewards](../develop/module-specifications/spec-mint.md): Every block, new Luna is minted and released to validators and delegators as staking rewards. The rate for the minting of this new Luna is fixed at 7% per year. 
+
 For more information on fees, visit the [fee page](fees.md).
 
-At the end of every block, transaction fees are distributed to each validator and their delegators proportional to their staked amount. Validators can keep a portion of rewards to pay for their services. This portion is called commission. The rest of the rewards are distributed to delegators according to their staked amounts.
+At the end of every block, transaction fees and inflation rewards are distributed to each validator and their delegators proportional to their staked amount. Validators can keep a portion of rewards to pay for their services. This portion is called commission. The rest of the rewards are distributed to delegators according to their staked amounts.
 
 ### Slashing
 
@@ -131,7 +157,7 @@ Slashing occurs under the following conditions:
 
 - **Double signing**: When a validator signs two different blocks with the same chain ID at the same height.
 - **Downtime**: When a validator is unresponsive or can't be reached for a period of time.
-- **Missed votes**: When a validator misses votes in consensus or fails to vote correctly in the Oracle process.
+- **Missed votes**: When a validator misses votes in consensus.
 
 Validators monitor each other closely and can submit evidence of misbehavior. Once discovered, the misbehaving validator will have a small portion of their funds slashed. Offending validators will also be jailed or excluded from consensus for a period of time. Even simple issues such as malfunctions or downtimes from upgrading can lead to slashing.
 
