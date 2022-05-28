@@ -32,7 +32,7 @@ In a continous vesting account, a number of tokens will be vested per block base
 tokens_vested_per_block = int(original_vesting * (block_time / (end_time - start_time)))
 ```
 
-In the following example, 1,000,000 uLUNA (1 LUNA) will be vested within the 24 hour time period from 1654041600 Unix time (June 1, 2022 12:00:00 AM) to 1654128000 Unix time (June 2, 2022 12:00:00 AM).
+In the following example, 5,000,000 uLUNA (5 LUNA) will be vested within the 24 hour time period from 1654041600 Unix time (June 1, 2022 12:00:00 AM) to 1654128000 Unix time (June 2, 2022 12:00:00 AM).
 
 ```json
 {
@@ -48,7 +48,7 @@ In the following example, 1,000,000 uLUNA (1 LUNA) will be vested within the 24 
       "original_vesting": [
         {
           "denom": "uluna",
-          "amount": "1000000"
+          "amount": "5000000"
         }
       ],
       "delegated_free": [],
@@ -60,16 +60,16 @@ In the following example, 1,000,000 uLUNA (1 LUNA) will be vested within the 24 
 }
 ```
 
-Given a block time, or the average amount of time it takes for a block to be added to the blockchain, of 5 seconds, we may calculate the number of tokens vested per block by substituting relevant variables in the `tokens_vested_per_block` equation with the specified values:
+Given a block time, or the average amount of time it takes for a block to be added to the blockchain, of 6 seconds, we may calculate the number of tokens vested per block by substituting relevant variables in the `tokens_vested_per_block` equation with the specified values:
 
 ```python
-tokens_vested_per_block = int(1000000 * (5 / (1654128000 - 1654041600)))
+tokens_vested_per_block = int(5000000 * (6 / (1654128000 - 1654041600)))
 ```
 
-According to the above equation, ~58 uLUNA would be vested per block. Given the block time of 5 seconds and a difference between start and end time of 24 hours (86400 seconds), we may realize the total vesting amount of 1,000,000 uLUNA utilizing the following equation:
+According to the above equation, ~347 uLUNA would be vested per block. Given the block time of 6 seconds and a difference between start and end time of 24 hours (86400 seconds), we may realize the total original vesting amount of 5,000,000 uLUNA utilizing the following equation:
 
 ```python
-total_vesting_tokens = tokens_vested_per_block * (86400 / 5)
+total_vesting_tokens = tokens_vested_per_block * (86400 / 6)
 ```
 
 ## Periodic Vesting Account
@@ -133,19 +133,19 @@ Below, we see an example of a periodic vesting account where 5,000,000 uLUNA wil
 }
 ```
 
-Utilizing the equations given in the continuous vesting account documentation, we may evaluate the number of tokens which will be vested per block for each of the 3 periods given in our periodic vesting account example. We again utilize a block time of 5 seconds.
+Utilizing the equations given in the continuous vesting account example, we may evaluate the number of tokens which will be vested per block for each of the 3 periods given in our periodic vesting account example. We again utilize a block time of 6 seconds.
 
 ```python
-tokens_vested_per_block_period1 = int(1000000 * (5 / 14400))
-tokens_vested_per_block_period2 = int(2000000 * (5 / 21600))
-tokens_vested_per_block_period3 = int(2000000 * (5 / 50400))
+tokens_vested_per_block_period1 = int(1000000 * (6 / 14400))
+tokens_vested_per_block_period2 = int(2000000 * (6 / 21600))
+tokens_vested_per_block_period3 = int(2000000 * (6 / 50400))
 ```
 
 Following the conclusion of the vesting time period given by `end_time`, 5,000,000 uLUNA will have been vested and will be available for trading and transfers.
 
 ## Delayed Vesting Account
 
-In a delayed vesting account, vesting tokens will be fully vested when the end time is reached. In the below example, 1,000,000 uLUNA begin vesting at the genesis block. These funds remain locked until 1654041600 Unix time (June 1, 2022 12:00:00 AM), when the full amount of 1,000,000 uLUNA is then vested.
+In a delayed vesting account, vesting tokens will be fully vested when the end time is reached. In the below example, 5,000,000 uLUNA begin vesting at the genesis block. These funds remain locked until 1654041600 Unix time (June 1, 2022 12:00:00 AM), when the full amount of 5,000,000 uLUNA is then vested.
 
 ```json
 {
@@ -161,7 +161,7 @@ In a delayed vesting account, vesting tokens will be fully vested when the end t
       "original_vesting": [
         {
           "denom": "uluna",
-          "amount": "1000000"
+          "amount": "5000000"
         }
       ],
       "delegated_free": [],
@@ -174,4 +174,4 @@ In a delayed vesting account, vesting tokens will be fully vested when the end t
 
 ## Delegation
 
-A user may choose to delegate their tokens to validators. This may be done with tokens that are vested or are still vesting. As such, the tokens which are vesting and are delegated will be listed under `delegated_vesting`. Tokens which are vested, but are being delegated will be listed under `delegated_free`. Both are variable values which will change based on the amount being delegated and may be updated as more and more tokens become vested. If one chooses to undelegate, the undelegated tokens will be locked for 21 days. After the 21 day period has concluded, the proportion of the funds which are vested will be free to trade and transfer as desired. Funds which are undelegated, but are still vesting will become vested based on the vesting schedule provided by it's respective vesting account.
+A user may choose to delegate their tokens to validators. This may be done with tokens that are vested or are still vesting. As such, vesting tokens which are delegated will be listed under `delegated_vesting`. Vested tokens which are delegated will be listed under `delegated_free`. Both are variable values which will change based on the amount being delegated and may be updated as more and more tokens become vested. If one chooses to undelegate, the undelegated tokens will be locked for 21 days. After the 21 day period has concluded, the proportion of the funds which are vested will be free to trade and transfer as desired. Funds which are undelegated, but are still vesting will become vested based on the vesting schedule provided by it's respective vesting account.
