@@ -11,6 +11,7 @@ guides/README.md
 module-specifications/README.md
 open-source
 endpoints
+vesting.md
 reference/README.md
 resources.md
 ```
