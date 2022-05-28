@@ -1253,12 +1253,11 @@
 <h1>Manage a validator <img alt="../../../_images/Build_a_validator.svg" height="40px" src="../../../_images/Build_a_validator.svg" /><a class="headerlink" href="#manage-a-validator" title="Permalink to this headline">#</a></h1>
 <p>The tasks in this section describe how to set up a Terra validator. While setting up a rudimentary validating node is easy, running a production-quality validator node with a robust architecture and security features requires an extensive setup.</p>
 <p>The Terra core is powered by the Tendermint consensus. Validators run full nodes, participate in consensus by broadcasting votes, commit new blocks to the blockchain, and participate in governance of the blockchain. Validators can cast votes on behalf of their delegators. A validator’s voting power is weighted according to their total stake. The top 130 validators make up the <strong>Active Validator Set</strong> and are the only validators that sign blocks and receive revenue.</p>
-<p>Validators and their delegators earn the following fees:</p>
+<p>Validators and their delegators earn the following rewards:</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="../../learn/fees.html#gas"><span class="std std-doc">Gas</span></a>: Fees added on to each transaction to avoid spamming and pay for computing power. Validators set minimum gas prices and reject transactions that have implied gas prices below this threshold.</p></li>
-<li><p><strong>Swap fees</strong>: The fee for swapping Terra stablecoin denominations is called a <span class="xref myst">Tobin tax</span>. Exchanges between Terra and Luna are subject to a <span class="xref myst">spread fee</span>.</p></li>
+<li><p><a class="reference internal" href="../../develop/module-specifications/spec-mint.html"><span class="doc std std-doc">Inflation rewards</span></a>: Every block, new Luna is minted and released to validators and delegators as staking rewards. The rate for the minting of this new Luna is fixed at 7% per year.</p></li>
 </ul>
-<p>For more information on fees, visit the <a class="reference internal" href="../../learn/fees.html"><span class="doc std std-doc">fee page</span></a>.</p>
 <p>Validators can set commissions on the fees they receive as an additional incentive.</p>
 <p>If validators double sign, are frequently offline, or do not participate in governance, their staked Luna (including Luna of users that delegated to them) can be slashed. Penalties can vary depending on the severity of the violation.</p>
 <p>For more general information on validators, visit the <a class="reference internal" href="../../learn/protocol.html#validators"><span class="std std-doc">validator section</span></a> of the concepts page.</p>
