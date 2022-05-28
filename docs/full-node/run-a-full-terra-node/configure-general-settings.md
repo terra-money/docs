@@ -74,6 +74,6 @@ For information about the available Terra REST API endpoints, see the [Swagger d
 
 In order to be added to the address book in seed nodes, you need to configure `external_address` in `config.toml`.  This addition will prevent continuous reconnections. The default P2P_PORT is 26656.
 
-   ```toml
-   $ sed -i -e 's/external_address = \"\"/external_address = \"'$(curl httpbin.org/ip | jq -r .origin)':26656\"/g' ~/.terra/config/config.toml
-```
+   ```sh
+   sed -i -e 's/external_address = \"\"/external_address = \"'$(curl httpbin.org/ip | jq -r .origin)':26656\"/g' ~/.terra/config/config.toml
+   ```
