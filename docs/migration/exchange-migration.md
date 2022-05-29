@@ -303,6 +303,6 @@ The current primary LCD ([https://lcd.terra.dev](https://lcd.terra.dev)) and FCD
 
 **Terra**:
 
-The previous LCD ([https://lcd.terra.dev](https://lcd.terra.dev)) and FCD ([https://fcd.terra.dev](https://fcd.terra.dev)) endpoints wilL not support the new chain
+The previous LCD ([https://lcd.terra.dev](https://lcd.terra.dev)) and FCD ([https://fcd.terra.dev](https://fcd.terra.dev)) endpoints will not support the new chain
 
 To support the new Terra chain (phoenix-1), LCD should be altered to `[https://phoenix-lcd.terra.dev](https://phoenix-lcd.terra.dev/)` and FCD should be altered to `[https://phoenix-fcd.terra.dev](https://phoenix-fcd.terra.dev/)`.
