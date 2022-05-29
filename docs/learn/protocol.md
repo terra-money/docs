@@ -66,6 +66,10 @@ After six months, a small portion of the remaining 70% of Luna will be released 
 - No more Luna will be unlocked until six months have passed (the cliff). 
 - After six months, the remaining 700 Luna will begin to unlock every block over a 2-year period at a rate of .96 Luna per day (700 Luna ÷ 730 days).
 
+Luna that is in the vesting state can still be [delegated, redeleagated, or undelegated](#bonding-staking-and-delegating) from validators. 
+
+To learn how to view vesting Luna in your wallet, visit the [Terra Station vesting guide](./terra-station/vesting.md).
+
 To learn more about vesting, visit the [How vesting works](../develop/vesting.md). 
 
 ## Validators
