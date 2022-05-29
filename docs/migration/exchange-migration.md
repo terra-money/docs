@@ -46,7 +46,7 @@ The new chain will assume the name Terra.
 
 It can be confusing to list the Luna coin as "Terra (LUNA)". To avoid unnecessary confusion, please stick to the following naming conventions for Luna:
 
-For Terra Classic, list as **Luna Classic (LUNC)**
+For Terra Classic chain, list as **Luna Classic (LUNC)**
 
 For the new Terra chain, list as **Luna (LUNA)**
 
