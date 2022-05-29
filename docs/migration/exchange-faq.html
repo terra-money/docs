@@ -1799,6 +1799,10 @@
 <div class="math notranslate nohighlight">
 \[ Unlocked\:at\:genesis + Original\:vesting\:at\:genesis = Total\:airdrop\:amount \]</div>
 <p>You can see your unlocked and vesting Luna amounts by searching your address in <a class="reference external" href="https://finder.terra.money">Terra Finder</a>.</p>
+<p>You can also view your vesting Luna buy querying the LCD using the following URL format:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">phoenix</span><span class="o">-</span><span class="n">lcd</span><span class="o">.</span><span class="n">terra</span><span class="o">.</span><span class="n">dev</span><span class="o">/</span><span class="n">cosmos</span><span class="o">/</span><span class="n">auth</span><span class="o">/</span><span class="n">v1beta1</span><span class="o">/</span><span class="n">accounts</span><span class="o">/&lt;</span><span class="n">insert</span><span class="o">-</span><span class="n">your</span><span class="o">-</span><span class="n">Terra</span><span class="o">-</span><span class="n">address</span><span class="o">-</span><span class="n">here</span><span class="o">&gt;</span>
+</pre></div>
+</div>
 <p>For example, for this address: <a class="reference external" href="https://phoenix-lcd.terra.dev/cosmos/auth/v1beta1/accounts/terra18mkcha20h5psry3nn9jlsdkz66cm0u9c7p5dmv">https://phoenix-lcd.terra.dev/cosmos/auth/v1beta1/accounts/terra18mkcha20h5psry3nn9jlsdkz66cm0u9c7p5dmv</a></p>
 <ul class="simple">
 <li><p>The delegated_vesting is <code class="docutils literal notranslate"><span class="pre">375063631513</span></code></p></li>
@@ -1812,13 +1816,17 @@
 <h3><a class="toc-backref" href="#id12">How can I calculate my original vesting?</a><a class="headerlink" href="#how-can-i-calculate-my-original-vesting" title="Permalink to this headline">#</a></h3>
 <p>You can query your account to calculate your original vesting:</p>
 <div class="math notranslate nohighlight">
-\[ Unlocked\:at\:genesis + Original\:vesting\:at\:genesis = Total\:airdrop\:amount -  \]</div>
+\[ Total\:airdrop\:amount - Unlocked\:at\:genesis = Original\:vesting\:at\:genesis\]</div>
 <p>You can see your unlocked and vesting Luna amounts by searching your address in <a class="reference external" href="https://finder.terra.money">Terra Finder</a>.</p>
 </div>
 <div class="section" id="how-can-i-view-my-spendable-unlocked-luna">
 <h3><a class="toc-backref" href="#id13">How can I view my spendable (unlocked) Luna?</a><a class="headerlink" href="#how-can-i-view-my-spendable-unlocked-luna" title="Permalink to this headline">#</a></h3>
 <p>Use the following LCD query structure to view your account’s spendable balance:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">phoenix</span><span class="o">-</span><span class="n">lcd</span><span class="o">.</span><span class="n">terra</span><span class="o">.</span><span class="n">dev</span><span class="o">/</span><span class="n">cosmos</span><span class="o">/</span><span class="n">bank</span><span class="o">/</span><span class="n">v1beta1</span><span class="o">/</span><span class="n">spendable_balances</span><span class="o">/&lt;</span><span class="n">insert</span><span class="o">-</span><span class="n">your</span><span class="o">-</span><span class="n">terra</span><span class="o">-</span><span class="n">account</span><span class="o">-</span><span class="n">address</span><span class="o">-</span><span class="n">here</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>You can also view your vesting Luna buy querying the LCD using the following URL format:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">phoenix</span><span class="o">-</span><span class="n">lcd</span><span class="o">.</span><span class="n">terra</span><span class="o">.</span><span class="n">dev</span><span class="o">/</span><span class="n">cosmos</span><span class="o">/</span><span class="n">auth</span><span class="o">/</span><span class="n">v1beta1</span><span class="o">/</span><span class="n">accounts</span><span class="o">/&lt;</span><span class="n">insert</span><span class="o">-</span><span class="n">your</span><span class="o">-</span><span class="n">Terra</span><span class="o">-</span><span class="n">address</span><span class="o">-</span><span class="n">here</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 </div>
