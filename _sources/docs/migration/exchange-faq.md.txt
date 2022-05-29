@@ -26,6 +26,60 @@ The post-attack snapshot will be taken at Terra Classic block 7790000. It is rec
 
  Yes, the airdrop will be at block height `1` of the new chain. 
 
+## Vesting
+
+### How does vesting work?
+
+For general information on vesting, visit the [vesting overview](../learn/protocol.md#vesting).
+
+For a more in-depth look at vesting, visit the [vesting page](../develop/vesting.md).
+
+## How can I see my Luna that is still locked in vesting?
+
+You can view your vesting Luna in Terra Station by using the [Vesting guide](../learn/terra-station/vesting.md).
+
+## Is my vesting Luna staked?
+
+All vesting Luna was [staked](../learn/glossary.md#staking) at genesis. 
+
+## Can I redelegate my vesting Luna?
+
+Even though Luna that is vesting is locked and can't be freely traded, it can still be staked to generate [staking rewards](../learn/protocol.md#rewards). Users are free to [delegate, redelegate, or undelegate](../learn/protocol.md#redelegation) their vesting Luna as they see fit. 
+
+### How can I see how much Luna I was airdropped in total, including vesting?
+
+You can query your account to calculate your total airdrop: 
+
+$$ Unlocked\:at\:genesis + Original\:vesting\:at\:genesis = Total\:airdrop\:amount $$
+
+You can see your unlocked and vesting Luna amounts by searching your address in [Terra Finder](https://finder.terra.money). 
+
+For example, for this address: https://phoenix-lcd.terra.dev/cosmos/auth/v1beta1/accounts/terra18mkcha20h5psry3nn9jlsdkz66cm0u9c7p5dmv
+
+- The delegated_vesting is `375063631513`
+
+- The unlocked bank balance is `160741556363`
+
+```
+375063631513 + 160741556363  = 535805187876 (The original total airdrop amount.)
+```
+
+### How can I calculate my original vesting?
+
+You can query your account to calculate your original vesting: 
+
+$$ Unlocked\:at\:genesis + Original\:vesting\:at\:genesis = Total\:airdrop\:amount -  $$
+
+You can see your unlocked and vesting Luna amounts by searching your address in [Terra Finder](https://finder.terra.money). 
+
+### How can I view my spendable (unlocked) Luna?
+
+Use the following LCD query structure to view your account's spendable balance: 
+
+```
+https://phoenix-lcd.terra.dev/cosmos/bank/v1beta1/spendable_balances/<insert-your-terra-account-address-here>
+```
+
 ## Txs
 
 ### Is there any change in the offline transaction construction function?

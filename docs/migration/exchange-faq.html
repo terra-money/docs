@@ -40,6 +40,8 @@
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/design-tabs.js"></script>
     <script src="../../_static/sphinx-book-theme.9d8b4a8b9bb19db25eeaddc40d639ba2.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../../_static/custom.js"></script>
     <link rel="shortcut icon" href="../../_static/docs_favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -1248,6 +1250,50 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vesting">
+   Vesting
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-does-vesting-work">
+     How does vesting work?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-can-i-see-my-luna-that-is-still-locked-in-vesting">
+   How can I see my Luna that is still locked in vesting?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#is-my-vesting-luna-staked">
+   Is my vesting Luna staked?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#can-i-redelegate-my-vesting-luna">
+   Can I redelegate my vesting Luna?
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-can-i-see-how-much-luna-i-was-airdropped-in-total-including-vesting">
+     How can I see how much Luna I was airdropped in total, including vesting?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-can-i-calculate-my-original-vesting">
+     How can I calculate my original vesting?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-can-i-view-my-spendable-unlocked-luna">
+     How can I view my spendable (unlocked) Luna?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#txs">
    Txs
   </a>
@@ -1442,6 +1488,50 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vesting">
+   Vesting
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-does-vesting-work">
+     How does vesting work?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-can-i-see-my-luna-that-is-still-locked-in-vesting">
+   How can I see my Luna that is still locked in vesting?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#is-my-vesting-luna-staked">
+   Is my vesting Luna staked?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#can-i-redelegate-my-vesting-luna">
+   Can I redelegate my vesting Luna?
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-can-i-see-how-much-luna-i-was-airdropped-in-total-including-vesting">
+     How can I see how much Luna I was airdropped in total, including vesting?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-can-i-calculate-my-original-vesting">
+     How can I calculate my original vesting?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-can-i-view-my-spendable-unlocked-luna">
+     How can I view my spendable (unlocked) Luna?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#txs">
    Txs
   </a>
@@ -1610,49 +1700,63 @@
 <li><p><a class="reference internal" href="#does-the-luna-amount-of-the-new-chain-drop-the-initialization-amount-at-height-1" id="id5">Does the Luna amount of the new chain drop the initialization amount at height 1?</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#txs" id="id6">Txs</a></p>
+<li><p><a class="reference internal" href="#vesting" id="id6">Vesting</a></p>
 <ul>
-<li><p><a class="reference internal" href="#is-there-any-change-in-the-offline-transaction-construction-function" id="id7">Is there any change in the offline transaction construction function?</a></p></li>
-<li><p><a class="reference internal" href="#is-there-any-change-to-the-broadcast-interface-for-terra-classic-or-terra-2-0" id="id8">Is there any change to the broadcast interface for Terra Classic or Terra 2.0?</a></p></li>
-<li><p><a class="reference internal" href="#has-the-transaction-structure-changed" id="id9">Has the transaction structure changed?</a></p></li>
-<li><p><a class="reference internal" href="#is-there-any-change-in-the-calculation-of-the-handling-fee" id="id10">Is there any change in the calculation of the handling fee?</a></p></li>
+<li><p><a class="reference internal" href="#how-does-vesting-work" id="id7">How does vesting work?</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#addresses-and-accounts" id="id11">Addresses and accounts</a></p>
+<li><p><a class="reference internal" href="#how-can-i-see-my-luna-that-is-still-locked-in-vesting" id="id8">How can I see my Luna that is still locked in vesting?</a></p></li>
+<li><p><a class="reference internal" href="#is-my-vesting-luna-staked" id="id9">Is my vesting Luna staked?</a></p></li>
+<li><p><a class="reference internal" href="#can-i-redelegate-my-vesting-luna" id="id10">Can I redelegate my vesting Luna?</a></p>
 <ul>
-<li><p><a class="reference internal" href="#are-the-chain-address-formats-the-same-for-both-chains" id="id12">Are the chain address formats the same for both chains?</a></p></li>
-<li><p><a class="reference internal" href="#are-there-any-changes-to-the-address-formats" id="id13">Are there any changes to the address formats?</a></p></li>
-<li><p><a class="reference internal" href="#do-account-numbers-need-to-be-reset" id="id14">Do account numbers need to be reset?</a></p></li>
-<li><p><a class="reference internal" href="#what-are-the-contract-addresses-for-luna-and-lunc" id="id15">What are the contract addresses for LUNA and LUNC?</a></p></li>
+<li><p><a class="reference internal" href="#how-can-i-see-how-much-luna-i-was-airdropped-in-total-including-vesting" id="id11">How can I see how much Luna I was airdropped in total, including vesting?</a></p></li>
+<li><p><a class="reference internal" href="#how-can-i-calculate-my-original-vesting" id="id12">How can I calculate my original vesting?</a></p></li>
+<li><p><a class="reference internal" href="#how-can-i-view-my-spendable-unlocked-luna" id="id13">How can I view my spendable (unlocked) Luna?</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#block-and-heights" id="id16">Block and heights</a></p>
+<li><p><a class="reference internal" href="#txs" id="id14">Txs</a></p>
 <ul>
-<li><p><a class="reference internal" href="#is-there-any-change-in-the-block-structure" id="id17">Is there any change in the block structure?</a></p></li>
-<li><p><a class="reference internal" href="#what-block-height-does-the-terra-classic-chain-start-at" id="id18">What block height does the terra classic chain start at?</a></p></li>
-<li><p><a class="reference internal" href="#what-height-does-the-new-chain-start-at" id="id19">What height does the new chain start at?</a></p></li>
-<li><p><a class="reference internal" href="#can-you-clarify-the-differences-between-the-block-and-transaction-parsing-logics-of-classic-vs-new-luna" id="id20">Can you clarify the differences between the block and transaction parsing logics of classic vs new Luna?</a></p></li>
+<li><p><a class="reference internal" href="#is-there-any-change-in-the-offline-transaction-construction-function" id="id15">Is there any change in the offline transaction construction function?</a></p></li>
+<li><p><a class="reference internal" href="#is-there-any-change-to-the-broadcast-interface-for-terra-classic-or-terra-2-0" id="id16">Is there any change to the broadcast interface for Terra Classic or Terra 2.0?</a></p></li>
+<li><p><a class="reference internal" href="#has-the-transaction-structure-changed" id="id17">Has the transaction structure changed?</a></p></li>
+<li><p><a class="reference internal" href="#is-there-any-change-in-the-calculation-of-the-handling-fee" id="id18">Is there any change in the calculation of the handling fee?</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#upgrades" id="id21">Upgrades</a></p>
+<li><p><a class="reference internal" href="#addresses-and-accounts" id="id19">Addresses and accounts</a></p>
 <ul>
-<li><p><a class="reference internal" href="#does-terra-js-need-to-be-upgraded" id="id22">Does Terra.js need to be upgraded?</a></p></li>
-<li><p><a class="reference internal" href="#are-there-any-changes-to-the-api-interface" id="id23">Are there any changes to the API interface?</a></p></li>
-<li><p><a class="reference internal" href="#will-there-be-an-lunc-node-upgrade-release-on-05-27" id="id24">Will there be an LUNC node upgrade release on 05/27?</a></p></li>
+<li><p><a class="reference internal" href="#are-the-chain-address-formats-the-same-for-both-chains" id="id20">Are the chain address formats the same for both chains?</a></p></li>
+<li><p><a class="reference internal" href="#are-there-any-changes-to-the-address-formats" id="id21">Are there any changes to the address formats?</a></p></li>
+<li><p><a class="reference internal" href="#do-account-numbers-need-to-be-reset" id="id22">Do account numbers need to be reset?</a></p></li>
+<li><p><a class="reference internal" href="#what-are-the-contract-addresses-for-luna-and-lunc" id="id23">What are the contract addresses for LUNA and LUNC?</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#luna-and-tokens" id="id25">Luna and tokens</a></p>
+<li><p><a class="reference internal" href="#block-and-heights" id="id24">Block and heights</a></p>
 <ul>
-<li><p><a class="reference internal" href="#can-the-initial-luna-balance-of-an-address-be-resolved-through-the-genesis-file" id="id26">Can the initial Luna balance of an address be resolved through the genesis file?</a></p></li>
-<li><p><a class="reference internal" href="#will-the-new-chain-use-micro-denominations" id="id27">Will The new chain use micro-denominations?</a></p></li>
-<li><p><a class="reference internal" href="#will-the-new-chain-still-support-other-tokens-such-as-anc" id="id28">Will the new chain still support other tokens, such as ANC?</a></p></li>
+<li><p><a class="reference internal" href="#is-there-any-change-in-the-block-structure" id="id25">Is there any change in the block structure?</a></p></li>
+<li><p><a class="reference internal" href="#what-block-height-does-the-terra-classic-chain-start-at" id="id26">What block height does the terra classic chain start at?</a></p></li>
+<li><p><a class="reference internal" href="#what-height-does-the-new-chain-start-at" id="id27">What height does the new chain start at?</a></p></li>
+<li><p><a class="reference internal" href="#can-you-clarify-the-differences-between-the-block-and-transaction-parsing-logics-of-classic-vs-new-luna" id="id28">Can you clarify the differences between the block and transaction parsing logics of classic vs new Luna?</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#multisig" id="id29">Multisig</a></p>
+<li><p><a class="reference internal" href="#upgrades" id="id29">Upgrades</a></p>
 <ul>
-<li><p><a class="reference internal" href="#i-want-to-ignore-multisig-txs-could-you-share-a-mainnet-example-of-this" id="id30">I want to ignore multisig txs, could you share a mainnet example of this?</a></p></li>
-<li><p><a class="reference internal" href="#how-do-i-get-the-threshold-number-of-signatures" id="id31">How do I get the “threshold number of signatures”?</a></p></li>
-<li><p><a class="reference internal" href="#is-the-type-of-multisig-tx-always-bank-msgsend" id="id32">Is the “&#64;type” of multisig tx always “bank/MsgSend”?</a></p></li>
+<li><p><a class="reference internal" href="#does-terra-js-need-to-be-upgraded" id="id30">Does Terra.js need to be upgraded?</a></p></li>
+<li><p><a class="reference internal" href="#are-there-any-changes-to-the-api-interface" id="id31">Are there any changes to the API interface?</a></p></li>
+<li><p><a class="reference internal" href="#will-there-be-an-lunc-node-upgrade-release-on-05-27" id="id32">Will there be an LUNC node upgrade release on 05/27?</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#luna-and-tokens" id="id33">Luna and tokens</a></p>
+<ul>
+<li><p><a class="reference internal" href="#can-the-initial-luna-balance-of-an-address-be-resolved-through-the-genesis-file" id="id34">Can the initial Luna balance of an address be resolved through the genesis file?</a></p></li>
+<li><p><a class="reference internal" href="#will-the-new-chain-use-micro-denominations" id="id35">Will The new chain use micro-denominations?</a></p></li>
+<li><p><a class="reference internal" href="#will-the-new-chain-still-support-other-tokens-such-as-anc" id="id36">Will the new chain still support other tokens, such as ANC?</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#multisig" id="id37">Multisig</a></p>
+<ul>
+<li><p><a class="reference internal" href="#i-want-to-ignore-multisig-txs-could-you-share-a-mainnet-example-of-this" id="id38">I want to ignore multisig txs, could you share a mainnet example of this?</a></p></li>
+<li><p><a class="reference internal" href="#how-do-i-get-the-threshold-number-of-signatures" id="id39">How do I get the “threshold number of signatures”?</a></p></li>
+<li><p><a class="reference internal" href="#is-the-type-of-multisig-tx-always-bank-msgsend" id="id40">Is the “&#64;type” of multisig tx always “bank/MsgSend”?</a></p></li>
 </ul>
 </li>
 </ul>
@@ -1677,84 +1781,133 @@
 <p>Yes, the airdrop will be at block height <code class="docutils literal notranslate"><span class="pre">1</span></code> of the new chain.</p>
 </div>
 </div>
+<div class="section" id="vesting">
+<h2><a class="toc-backref" href="#id6">Vesting</a><a class="headerlink" href="#vesting" title="Permalink to this headline">#</a></h2>
+<div class="section" id="how-does-vesting-work">
+<h3><a class="toc-backref" href="#id7">How does vesting work?</a><a class="headerlink" href="#how-does-vesting-work" title="Permalink to this headline">#</a></h3>
+<p>For general information on vesting, visit the <a class="reference internal" href="../learn/protocol.html#vesting"><span class="std std-doc">vesting overview</span></a>.</p>
+<p>For a more in-depth look at vesting, visit the <a class="reference internal" href="../develop/vesting.html"><span class="doc std std-doc">vesting page</span></a>.</p>
+</div>
+</div>
+<div class="section" id="how-can-i-see-my-luna-that-is-still-locked-in-vesting">
+<h2><a class="toc-backref" href="#id8">How can I see my Luna that is still locked in vesting?</a><a class="headerlink" href="#how-can-i-see-my-luna-that-is-still-locked-in-vesting" title="Permalink to this headline">#</a></h2>
+<p>You can view your vesting Luna in Terra Station by using the <a class="reference internal" href="../learn/terra-station/vesting.html"><span class="doc std std-doc">Vesting guide</span></a>.</p>
+</div>
+<div class="section" id="is-my-vesting-luna-staked">
+<h2><a class="toc-backref" href="#id9">Is my vesting Luna staked?</a><a class="headerlink" href="#is-my-vesting-luna-staked" title="Permalink to this headline">#</a></h2>
+<p>All vesting Luna was <a class="reference internal" href="../learn/glossary.html#staking"><span class="std std-doc">staked</span></a> at genesis.</p>
+</div>
+<div class="section" id="can-i-redelegate-my-vesting-luna">
+<h2><a class="toc-backref" href="#id10">Can I redelegate my vesting Luna?</a><a class="headerlink" href="#can-i-redelegate-my-vesting-luna" title="Permalink to this headline">#</a></h2>
+<p>Even though Luna that is vesting is locked and can’t be freely traded, it can still be staked to generate <a class="reference internal" href="../learn/protocol.html#rewards"><span class="std std-doc">staking rewards</span></a>. Users are free to <a class="reference internal" href="../learn/protocol.html#redelegation"><span class="std std-doc">delegate, redelegate, or undelegate</span></a> their vesting Luna as they see fit.</p>
+<div class="section" id="how-can-i-see-how-much-luna-i-was-airdropped-in-total-including-vesting">
+<h3><a class="toc-backref" href="#id11">How can I see how much Luna I was airdropped in total, including vesting?</a><a class="headerlink" href="#how-can-i-see-how-much-luna-i-was-airdropped-in-total-including-vesting" title="Permalink to this headline">#</a></h3>
+<p>You can query your account to calculate your total airdrop:</p>
+<div class="math notranslate nohighlight">
+\[ Unlocked\:at\:genesis + Original\:vesting\:at\:genesis = Total\:airdrop\:amount \]</div>
+<p>You can see your unlocked and vesting Luna amounts by searching your address in <a class="reference external" href="https://finder.terra.money">Terra Finder</a>.</p>
+<p>For example, for this address: <a class="reference external" href="https://phoenix-lcd.terra.dev/cosmos/auth/v1beta1/accounts/terra18mkcha20h5psry3nn9jlsdkz66cm0u9c7p5dmv">https://phoenix-lcd.terra.dev/cosmos/auth/v1beta1/accounts/terra18mkcha20h5psry3nn9jlsdkz66cm0u9c7p5dmv</a></p>
+<ul class="simple">
+<li><p>The delegated_vesting is <code class="docutils literal notranslate"><span class="pre">375063631513</span></code></p></li>
+<li><p>The unlocked bank balance is <code class="docutils literal notranslate"><span class="pre">160741556363</span></code></p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">375063631513</span> <span class="o">+</span> <span class="mi">160741556363</span>  <span class="o">=</span> <span class="mi">535805187876</span> <span class="p">(</span><span class="n">The</span> <span class="n">original</span> <span class="n">total</span> <span class="n">airdrop</span> <span class="n">amount</span><span class="o">.</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="how-can-i-calculate-my-original-vesting">
+<h3><a class="toc-backref" href="#id12">How can I calculate my original vesting?</a><a class="headerlink" href="#how-can-i-calculate-my-original-vesting" title="Permalink to this headline">#</a></h3>
+<p>You can query your account to calculate your original vesting:</p>
+<div class="math notranslate nohighlight">
+\[ Unlocked\:at\:genesis + Original\:vesting\:at\:genesis = Total\:airdrop\:amount -  \]</div>
+<p>You can see your unlocked and vesting Luna amounts by searching your address in <a class="reference external" href="https://finder.terra.money">Terra Finder</a>.</p>
+</div>
+<div class="section" id="how-can-i-view-my-spendable-unlocked-luna">
+<h3><a class="toc-backref" href="#id13">How can I view my spendable (unlocked) Luna?</a><a class="headerlink" href="#how-can-i-view-my-spendable-unlocked-luna" title="Permalink to this headline">#</a></h3>
+<p>Use the following LCD query structure to view your account’s spendable balance:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">phoenix</span><span class="o">-</span><span class="n">lcd</span><span class="o">.</span><span class="n">terra</span><span class="o">.</span><span class="n">dev</span><span class="o">/</span><span class="n">cosmos</span><span class="o">/</span><span class="n">bank</span><span class="o">/</span><span class="n">v1beta1</span><span class="o">/</span><span class="n">spendable_balances</span><span class="o">/&lt;</span><span class="n">insert</span><span class="o">-</span><span class="n">your</span><span class="o">-</span><span class="n">terra</span><span class="o">-</span><span class="n">account</span><span class="o">-</span><span class="n">address</span><span class="o">-</span><span class="n">here</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="section" id="txs">
-<h2><a class="toc-backref" href="#id6">Txs</a><a class="headerlink" href="#txs" title="Permalink to this headline">#</a></h2>
+<h2><a class="toc-backref" href="#id14">Txs</a><a class="headerlink" href="#txs" title="Permalink to this headline">#</a></h2>
 <div class="section" id="is-there-any-change-in-the-offline-transaction-construction-function">
-<h3><a class="toc-backref" href="#id7">Is there any change in the offline transaction construction function?</a><a class="headerlink" href="#is-there-any-change-in-the-offline-transaction-construction-function" title="Permalink to this headline">#</a></h3>
+<h3><a class="toc-backref" href="#id15">Is there any change in the offline transaction construction function?</a><a class="headerlink" href="#is-there-any-change-in-the-offline-transaction-construction-function" title="Permalink to this headline">#</a></h3>
 <p>No changes. if you are using the old tx format, the only thing you need to do is change the “bank/MsgSend” to “cosmos-sdk/MsgSend”.</p>
 </div>
 <div class="section" id="is-there-any-change-to-the-broadcast-interface-for-terra-classic-or-terra-2-0">
-<h3><a class="toc-backref" href="#id8">Is there any change to the broadcast interface for Terra Classic or Terra 2.0?</a><a class="headerlink" href="#is-there-any-change-to-the-broadcast-interface-for-terra-classic-or-terra-2-0" title="Permalink to this headline">#</a></h3>
+<h3><a class="toc-backref" href="#id16">Is there any change to the broadcast interface for Terra Classic or Terra 2.0?</a><a class="headerlink" href="#is-there-any-change-to-the-broadcast-interface-for-terra-classic-or-terra-2-0" title="Permalink to this headline">#</a></h3>
 <p>No, the broadcast interface is the same.</p>
 </div>
 <div class="section" id="has-the-transaction-structure-changed">
-<h3><a class="toc-backref" href="#id9">Has the transaction structure changed?</a><a class="headerlink" href="#has-the-transaction-structure-changed" title="Permalink to this headline">#</a></h3>
+<h3><a class="toc-backref" href="#id17">Has the transaction structure changed?</a><a class="headerlink" href="#has-the-transaction-structure-changed" title="Permalink to this headline">#</a></h3>
 <p>No, the transaction structure remains unchanged.</p>
 </div>
 <div class="section" id="is-there-any-change-in-the-calculation-of-the-handling-fee">
-<h3><a class="toc-backref" href="#id10">Is there any change in the calculation of the handling fee?</a><a class="headerlink" href="#is-there-any-change-in-the-calculation-of-the-handling-fee" title="Permalink to this headline">#</a></h3>
+<h3><a class="toc-backref" href="#id18">Is there any change in the calculation of the handling fee?</a><a class="headerlink" href="#is-there-any-change-in-the-calculation-of-the-handling-fee" title="Permalink to this headline">#</a></h3>
 <p>No, but you may need to check the new gas prices.</p>
 </div>
 </div>
 <div class="section" id="addresses-and-accounts">
-<h2><a class="toc-backref" href="#id11">Addresses and accounts</a><a class="headerlink" href="#addresses-and-accounts" title="Permalink to this headline">#</a></h2>
+<h2><a class="toc-backref" href="#id19">Addresses and accounts</a><a class="headerlink" href="#addresses-and-accounts" title="Permalink to this headline">#</a></h2>
 <div class="section" id="are-the-chain-address-formats-the-same-for-both-chains">
-<h3><a class="toc-backref" href="#id12">Are the chain address formats the same for both chains?</a><a class="headerlink" href="#are-the-chain-address-formats-the-same-for-both-chains" title="Permalink to this headline">#</a></h3>
+<h3><a class="toc-backref" href="#id20">Are the chain address formats the same for both chains?</a><a class="headerlink" href="#are-the-chain-address-formats-the-same-for-both-chains" title="Permalink to this headline">#</a></h3>
 <p>Yes, the address format is the same. The same address will be generated from the same seed on both chains.</p>
 </div>
 <div class="section" id="are-there-any-changes-to-the-address-formats">
-<h3><a class="toc-backref" href="#id13">Are there any changes to the address formats?</a><a class="headerlink" href="#are-there-any-changes-to-the-address-formats" title="Permalink to this headline">#</a></h3>
+<h3><a class="toc-backref" href="#id21">Are there any changes to the address formats?</a><a class="headerlink" href="#are-there-any-changes-to-the-address-formats" title="Permalink to this headline">#</a></h3>
 <p>Yes, Wasm tx types need to be <code class="docutils literal notranslate"><span class="pre">cosmwasm.wasm.v1.MsgExecuteContract</span></code>.</p>
 <p>Wasm contract address lengths have changed. For more info, please check here: <a class="reference external" href="https://github.com/terra-money/core/blob/main/WASM_MIGRATE.md#contract-address">https://github.com/terra-money/core/blob/main/WASM_MIGRATE.md#contract-address</a>.</p>
 </div>
 <div class="section" id="do-account-numbers-need-to-be-reset">
-<h3><a class="toc-backref" href="#id14">Do account numbers need to be reset?</a><a class="headerlink" href="#do-account-numbers-need-to-be-reset" title="Permalink to this headline">#</a></h3>
+<h3><a class="toc-backref" href="#id22">Do account numbers need to be reset?</a><a class="headerlink" href="#do-account-numbers-need-to-be-reset" title="Permalink to this headline">#</a></h3>
 <p>Yes, they do.</p>
 </div>
 <div class="section" id="what-are-the-contract-addresses-for-luna-and-lunc">
-<h3><a class="toc-backref" href="#id15">What are the contract addresses for LUNA and LUNC?</a><a class="headerlink" href="#what-are-the-contract-addresses-for-luna-and-lunc" title="Permalink to this headline">#</a></h3>
+<h3><a class="toc-backref" href="#id23">What are the contract addresses for LUNA and LUNC?</a><a class="headerlink" href="#what-are-the-contract-addresses-for-luna-and-lunc" title="Permalink to this headline">#</a></h3>
 <p>Neither LUNA nor LUNC will have contract addresses because they are both native.</p>
 </div>
 </div>
 <div class="section" id="block-and-heights">
-<h2><a class="toc-backref" href="#id16">Block and heights</a><a class="headerlink" href="#block-and-heights" title="Permalink to this headline">#</a></h2>
+<h2><a class="toc-backref" href="#id24">Block and heights</a><a class="headerlink" href="#block-and-heights" title="Permalink to this headline">#</a></h2>
 <div class="section" id="is-there-any-change-in-the-block-structure">
-<h3><a class="toc-backref" href="#id17">Is there any change in the block structure?</a><a class="headerlink" href="#is-there-any-change-in-the-block-structure" title="Permalink to this headline">#</a></h3>
+<h3><a class="toc-backref" href="#id25">Is there any change in the block structure?</a><a class="headerlink" href="#is-there-any-change-in-the-block-structure" title="Permalink to this headline">#</a></h3>
 <p>No, there are no changes to the block structure.</p>
 </div>
 <div class="section" id="what-block-height-does-the-terra-classic-chain-start-at">
-<h3><a class="toc-backref" href="#id18">What block height does the terra classic chain start at?</a><a class="headerlink" href="#what-block-height-does-the-terra-classic-chain-start-at" title="Permalink to this headline">#</a></h3>
+<h3><a class="toc-backref" href="#id26">What block height does the terra classic chain start at?</a><a class="headerlink" href="#what-block-height-does-the-terra-classic-chain-start-at" title="Permalink to this headline">#</a></h3>
 <p>Terra classic is the same currently active original chain. The block height will be left unaltered.</p>
 </div>
 <div class="section" id="what-height-does-the-new-chain-start-at">
-<h3><a class="toc-backref" href="#id19">What height does the new chain start at?</a><a class="headerlink" href="#what-height-does-the-new-chain-start-at" title="Permalink to this headline">#</a></h3>
+<h3><a class="toc-backref" href="#id27">What height does the new chain start at?</a><a class="headerlink" href="#what-height-does-the-new-chain-start-at" title="Permalink to this headline">#</a></h3>
 <p>The new Terra 2.0 chain will start from a height of <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
 </div>
 <div class="section" id="can-you-clarify-the-differences-between-the-block-and-transaction-parsing-logics-of-classic-vs-new-luna">
-<h3><a class="toc-backref" href="#id20">Can you clarify the differences between the block and transaction parsing logics of classic vs new Luna?</a><a class="headerlink" href="#can-you-clarify-the-differences-between-the-block-and-transaction-parsing-logics-of-classic-vs-new-luna" title="Permalink to this headline">#</a></h3>
+<h3><a class="toc-backref" href="#id28">Can you clarify the differences between the block and transaction parsing logics of classic vs new Luna?</a><a class="headerlink" href="#can-you-clarify-the-differences-between-the-block-and-transaction-parsing-logics-of-classic-vs-new-luna" title="Permalink to this headline">#</a></h3>
 <p>There will be no changes, except that <code class="docutils literal notranslate"><span class="pre">MsgTypes</span></code> will change from <code class="docutils literal notranslate"><span class="pre">terra.wasm.v1beta1.MsgExecuteContract</span></code> to <code class="docutils literal notranslate"><span class="pre">cosmwasm.wasm.v1.MsgExecuteContract</span></code> for the new chain.</p>
 </div>
 </div>
 <div class="section" id="upgrades">
-<h2><a class="toc-backref" href="#id21">Upgrades</a><a class="headerlink" href="#upgrades" title="Permalink to this headline">#</a></h2>
+<h2><a class="toc-backref" href="#id29">Upgrades</a><a class="headerlink" href="#upgrades" title="Permalink to this headline">#</a></h2>
 <div class="section" id="does-terra-js-need-to-be-upgraded">
-<h3><a class="toc-backref" href="#id22">Does Terra.js need to be upgraded?</a><a class="headerlink" href="#does-terra-js-need-to-be-upgraded" title="Permalink to this headline">#</a></h3>
+<h3><a class="toc-backref" href="#id30">Does Terra.js need to be upgraded?</a><a class="headerlink" href="#does-terra-js-need-to-be-upgraded" title="Permalink to this headline">#</a></h3>
 <p>Yes, there will be a new release of Terra.js. However, the interface will not change significantly.
 For more information, see <a class="reference internal" href="../develop/terra-js/terra-classic.html"><span class="doc std std-doc">Using Terra Classic</span></a>.</p>
 </div>
 <div class="section" id="are-there-any-changes-to-the-api-interface">
-<h3><a class="toc-backref" href="#id23">Are there any changes to the API interface?</a><a class="headerlink" href="#are-there-any-changes-to-the-api-interface" title="Permalink to this headline">#</a></h3>
+<h3><a class="toc-backref" href="#id31">Are there any changes to the API interface?</a><a class="headerlink" href="#are-there-any-changes-to-the-api-interface" title="Permalink to this headline">#</a></h3>
 <p>No, there will be no change to the API interface.</p>
 </div>
 <div class="section" id="will-there-be-an-lunc-node-upgrade-release-on-05-27">
-<h3><a class="toc-backref" href="#id24">Will there be an LUNC node upgrade release on 05/27?</a><a class="headerlink" href="#will-there-be-an-lunc-node-upgrade-release-on-05-27" title="Permalink to this headline">#</a></h3>
+<h3><a class="toc-backref" href="#id32">Will there be an LUNC node upgrade release on 05/27?</a><a class="headerlink" href="#will-there-be-an-lunc-node-upgrade-release-on-05-27" title="Permalink to this headline">#</a></h3>
 <p>There will be no upgrades released for the Luna Classic (LUNC) node. Only the new 2.0 chain will have a node release.</p>
 </div>
 </div>
 <div class="section" id="luna-and-tokens">
-<h2><a class="toc-backref" href="#id25">Luna and tokens</a><a class="headerlink" href="#luna-and-tokens" title="Permalink to this headline">#</a></h2>
+<h2><a class="toc-backref" href="#id33">Luna and tokens</a><a class="headerlink" href="#luna-and-tokens" title="Permalink to this headline">#</a></h2>
 <div class="section" id="can-the-initial-luna-balance-of-an-address-be-resolved-through-the-genesis-file">
-<h3><a class="toc-backref" href="#id26">Can the initial Luna balance of an address be resolved through the genesis file?</a><a class="headerlink" href="#can-the-initial-luna-balance-of-an-address-be-resolved-through-the-genesis-file" title="Permalink to this headline">#</a></h3>
+<h3><a class="toc-backref" href="#id34">Can the initial Luna balance of an address be resolved through the genesis file?</a><a class="headerlink" href="#can-the-initial-luna-balance-of-an-address-be-resolved-through-the-genesis-file" title="Permalink to this headline">#</a></h3>
 <p>Yes. Use the following lcd endpoint with your address:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>/cosmos/bank/v1beta1/balances/<span class="o">{</span>address<span class="o">}</span>
 </pre></div>
@@ -1762,18 +1915,18 @@ For more information, see <a class="reference internal" href="../develop/terra-j
 <p>You can also check the genesis file. See this example for more info: <a class="reference external" href="https://github.com/terra-money/testnet/tree/main/pisco-1">https://github.com/terra-money/testnet/tree/main/pisco-1</a></p>
 </div>
 <div class="section" id="will-the-new-chain-use-micro-denominations">
-<h3><a class="toc-backref" href="#id27">Will The new chain use micro-denominations?</a><a class="headerlink" href="#will-the-new-chain-use-micro-denominations" title="Permalink to this headline">#</a></h3>
+<h3><a class="toc-backref" href="#id35">Will The new chain use micro-denominations?</a><a class="headerlink" href="#will-the-new-chain-use-micro-denominations" title="Permalink to this headline">#</a></h3>
 <p>Yes, the new chain will use micro-denominations, such as <code class="docutils literal notranslate"><span class="pre">uluna</span></code>.</p>
 </div>
 <div class="section" id="will-the-new-chain-still-support-other-tokens-such-as-anc">
-<h3><a class="toc-backref" href="#id28">Will the new chain still support other tokens, such as ANC?</a><a class="headerlink" href="#will-the-new-chain-still-support-other-tokens-such-as-anc" title="Permalink to this headline">#</a></h3>
+<h3><a class="toc-backref" href="#id36">Will the new chain still support other tokens, such as ANC?</a><a class="headerlink" href="#will-the-new-chain-still-support-other-tokens-such-as-anc" title="Permalink to this headline">#</a></h3>
 <p>It is up to each team. Each token team will have to relaunch the token to the new chain with a snapshot.</p>
 </div>
 </div>
 <div class="section" id="multisig">
-<h2><a class="toc-backref" href="#id29">Multisig</a><a class="headerlink" href="#multisig" title="Permalink to this headline">#</a></h2>
+<h2><a class="toc-backref" href="#id37">Multisig</a><a class="headerlink" href="#multisig" title="Permalink to this headline">#</a></h2>
 <div class="section" id="i-want-to-ignore-multisig-txs-could-you-share-a-mainnet-example-of-this">
-<h3><a class="toc-backref" href="#id30">I want to ignore multisig txs, could you share a mainnet example of this?</a><a class="headerlink" href="#i-want-to-ignore-multisig-txs-could-you-share-a-mainnet-example-of-this" title="Permalink to this headline">#</a></h3>
+<h3><a class="toc-backref" href="#id38">I want to ignore multisig txs, could you share a mainnet example of this?</a><a class="headerlink" href="#i-want-to-ignore-multisig-txs-could-you-share-a-mainnet-example-of-this" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>New format:
 <a class="reference external" href="https://lcd.terra.dev/cosmos/tx/v1beta1/txs/8F0A6782D22855C168C5C153CB17815512EB6159C740D669D665150128DC9BF0">https://lcd.terra.dev/cosmos/tx/v1beta1/txs/8F0A6782D22855C168C5C153CB17815512EB6159C740D669D665150128DC9BF0</a></p></li>
@@ -1783,11 +1936,11 @@ For more information, see <a class="reference internal" href="../develop/terra-j
 <p>Please visit <a class="reference external" href="https://docs.terra.money/docs/develop/guides/sign-with-multisig.html">https://docs.terra.money/docs/develop/guides/sign-with-multisig.html</a> for more info.</p>
 </div>
 <div class="section" id="how-do-i-get-the-threshold-number-of-signatures">
-<h3><a class="toc-backref" href="#id31">How do I get the “threshold number of signatures”?</a><a class="headerlink" href="#how-do-i-get-the-threshold-number-of-signatures" title="Permalink to this headline">#</a></h3>
+<h3><a class="toc-backref" href="#id39">How do I get the “threshold number of signatures”?</a><a class="headerlink" href="#how-do-i-get-the-threshold-number-of-signatures" title="Permalink to this headline">#</a></h3>
 <p>Use the following: <a class="reference external" href="https://lcd.terra.dev/cosmos/auth/v1beta1/accounts/terra1dp0taj85ruc299rkdvzp4z5pfg6z6swaed74e6">https://lcd.terra.dev/cosmos/auth/v1beta1/accounts/terra1dp0taj85ruc299rkdvzp4z5pfg6z6swaed74e6</a></p>
 </div>
 <div class="section" id="is-the-type-of-multisig-tx-always-bank-msgsend">
-<h3><a class="toc-backref" href="#id32">Is the “&#64;type” of multisig tx always “bank/MsgSend”?</a><a class="headerlink" href="#is-the-type-of-multisig-tx-always-bank-msgsend" title="Permalink to this headline">#</a></h3>
+<h3><a class="toc-backref" href="#id40">Is the “&#64;type” of multisig tx always “bank/MsgSend”?</a><a class="headerlink" href="#is-the-type-of-multisig-tx-always-bank-msgsend" title="Permalink to this headline">#</a></h3>
 <p>Yes. The only difference is the signature format.</p>
 </div>
 </div>
