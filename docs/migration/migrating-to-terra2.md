@@ -34,11 +34,12 @@ Terra 2.0 has removed the oracle module. Any queries to fetch ExchangeRates from
 
 Outside of the deprecation of the treasury, market, and oracle modules, Terra.js functionality remains relatively unchanged. There are a few additions to allow for legacy commands which are explained in [Using Terra Classic](../develop/terra-js/terra-classic.md). 
 
-:::{admonition} Update Terra.js and WalletConnect
+:::{admonition} Update Terra.js and Wallet Provider
 :class: danger
 
-All dApps on either Terra Classic or the new Terra chain must update [Terra.js](https://github.com/terra-money/terra.js/tags) and WalletConnect to the latest versions. 
+All dApps on new Terra chain must update [@terra-money/terra.js](https://www.npmjs.com/package/@terra-money/terra.js) and [@terra-money/wallet-provider](https://www.npmjs.com/package/@terra-money/wallet-provider) to the latest versions. 
 
+Apps remaining on the Terra Classic chain should not upgrade. 
 :::
 
 ## Examples of Deprecated Functionality
