@@ -12,7 +12,6 @@ send
 staking
 vesting.md
 governance
-wormhole
 multisig
 contracts
 testnet
