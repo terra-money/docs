@@ -39,6 +39,7 @@ Outside of the deprecation of the treasury, market, and oracle modules, Terra.js
 
 All dApps on new Terra chain must update [@terra-money/terra.js](https://www.npmjs.com/package/@terra-money/terra.js) and [@terra-money/wallet-provider](https://www.npmjs.com/package/@terra-money/wallet-provider) to the latest versions. 
 
+Apps remaining on the Terra Classic chain should not upgrade. 
 :::
 
 ## Examples of Deprecated Functionality
