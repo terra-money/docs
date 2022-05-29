@@ -1,4 +1,4 @@
-# Exchange migration FAQ
+# Terra Migration FAQ
 
 This is a list of frequently asked questions. It will evolve as new questions arise. 
 
