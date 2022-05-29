@@ -41,6 +41,18 @@ The new chain will assume the name Terra.
 - Luna (LUNA) will be the main staking asset of the chain.
 - The new chain does not contain any Terra stablecoins (UST, KRT, etc.).
 
+:::{admonition} Luna listing convention
+:class: danger
+
+It can be confusing to list the Luna coin as "Terra (LUNA)". To avoid unnecessary confusion, please stick to the following naming conventions for Luna:
+
+For Terra Classic, list as **Luna Classic (LUNC)**
+
+For the new Terra chain, list as **Luna (LUNA)**
+
+:::
+
+
 ### Logos and assets
 
 Please update all logos and branding according to the following conventions:
