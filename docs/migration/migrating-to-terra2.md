@@ -37,7 +37,7 @@ Outside of the deprecation of the treasury, market, and oracle modules, Terra.js
 :::{admonition} Update Terra.js and WalletConnect
 :class: danger
 
-All dApps on either Terra Classic or the new Terra chain must update [Terra.js](https://github.com/terra-money/terra.js/tags) and WalletConnect to the latest versions. 
+All dApps on new Terra chain must update [Terra.js](https://github.com/terra-money/terra.js/tags) and WalletConnect to the latest versions. 
 
 :::
 
