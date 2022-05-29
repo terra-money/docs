@@ -54,6 +54,13 @@ $$ Unlocked\:at\:genesis + Original\:vesting\:at\:genesis = Total\:airdrop\:amou
 
 You can see your unlocked and vesting Luna amounts by searching your address in [Terra Finder](https://finder.terra.money). 
 
+You can also view your vesting Luna buy querying the LCD using the following URL format:
+
+```
+https://phoenix-lcd.terra.dev/cosmos/auth/v1beta1/accounts/<insert-your-Terra-address-here>
+```
+
+
 For example, for this address: https://phoenix-lcd.terra.dev/cosmos/auth/v1beta1/accounts/terra18mkcha20h5psry3nn9jlsdkz66cm0u9c7p5dmv
 
 - The delegated_vesting is `375063631513`
@@ -68,7 +75,7 @@ For example, for this address: https://phoenix-lcd.terra.dev/cosmos/auth/v1beta1
 
 You can query your account to calculate your original vesting: 
 
-$$ Unlocked\:at\:genesis + Original\:vesting\:at\:genesis = Total\:airdrop\:amount -  $$
+$$ Total\:airdrop\:amount - Unlocked\:at\:genesis = Original\:vesting\:at\:genesis$$
 
 You can see your unlocked and vesting Luna amounts by searching your address in [Terra Finder](https://finder.terra.money). 
 
@@ -78,6 +85,12 @@ Use the following LCD query structure to view your account's spendable balance:
 
 ```
 https://phoenix-lcd.terra.dev/cosmos/bank/v1beta1/spendable_balances/<insert-your-terra-account-address-here>
+```
+
+You can also view your vesting Luna buy querying the LCD using the following URL format:
+
+```
+https://phoenix-lcd.terra.dev/cosmos/auth/v1beta1/accounts/<insert-your-Terra-address-here>
 ```
 
 ## Txs
