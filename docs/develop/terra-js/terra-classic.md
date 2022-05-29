@@ -25,7 +25,7 @@ const lcd = new LCDClient({
 
 ## Conversion Functions
 
-The `isCLassic` boolean can also be specified for most unit conversion functions in Terra.js. If unspecified, these methods will simply use the Luna version specified in the LCD config. The following are two examples of methods that accept this boolean value.
+The `isClassic` boolean can also be specified for most unit conversion functions in Terra.js. If unspecified, these methods will simply use the Luna version specified in the LCD config. The following are two examples of methods that accept this boolean value.
 
 ```ts
 public toAmino(isClassic?: boolean)
