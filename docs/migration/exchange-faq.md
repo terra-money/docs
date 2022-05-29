@@ -22,7 +22,7 @@ The post-attack snapshot will be taken at Terra Classic block 7790000. It is rec
 
  Yes, the airdrop will be at block height `1` of the new chain. 
 
- ### WHere can I find out more about the airdrop?
+ ### Where can I find out more about the airdrop?
 
  Visit the [airdrop section of the About Terra page](../learn/protocol.md#luna-airdrop-distribution). 
 
