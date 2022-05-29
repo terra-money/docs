@@ -299,10 +299,8 @@ Dexes:
 
 **Terra Classic**:
 
-The current primary LCD ([https://lcd.terra.dev](https://lcd.terra.dev)) and FCD ([https://fcd.terra.dev](https://fcd.terra.dev)) will continue to support the Terra Classic chain. However to ensure long-term support, please use `[https://columbus-lcd.terra.dev](https://columbus-lcd.terra.dev/)` for LCD and `[https://columbus-fcd.terra.dev](https://columbus-fcd.terra.dev/)` for FCD.
+The current primary LCD ([https://lcd.terra.dev](https://lcd.terra.dev)) and FCD ([https://fcd.terra.dev](https://fcd.terra.dev)) will continue to support the Terra Classic chain. However to ensure long-term support, please use [`https://columbus-lcd.terra.dev`](https://columbus-lcd.terra.dev/) for LCD and [`https://columbus-fcd.terra.dev`](https://columbus-fcd.terra.dev/) for FCD.
 
 **Terra**:
 
-The previous LCD ([https://lcd.terra.dev](https://lcd.terra.dev)) and FCD ([https://fcd.terra.dev](https://fcd.terra.dev)) endpoints will not support the new chain
-
-To support the new Terra chain (phoenix-1), LCD should be altered to `[https://phoenix-lcd.terra.dev](https://phoenix-lcd.terra.dev/)` and FCD should be altered to `[https://phoenix-fcd.terra.dev](https://phoenix-fcd.terra.dev/)`.
+The previous LCD ([https://lcd.terra.dev](https://lcd.terra.dev)) and FCD ([https://fcd.terra.dev](https://fcd.terra.dev)) endpoints will not support the new chain. To support the new Terra chain (phoenix-1), LCD should be altered to [`https://phoenix-lcd.terra.dev`](https://phoenix-lcd.terra.dev/) and FCD should be altered to [`https://phoenix-fcd.terra.dev`](https://phoenix-fcd.terra.dev/).
