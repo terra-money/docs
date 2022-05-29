@@ -8,10 +8,6 @@ This is a list of frequently asked questions. It will evolve as new questions ar
 
 ## Airdrop
 
-### Are exchanges excluded from the whale cap?
-
-Exchanges cannot be excluded from the whale cap. The genesis of Terra 2.0 will be generated programmatically by each validator using on-chain, verifiable data, which means there's no way for them to verify individual user balances on an exchange. 
-
 ### Is bonded LUNA included in the post-attack LUNA snapshot?
 
 Yes, along with liquid staking derivatives.
@@ -25,6 +21,10 @@ The post-attack snapshot will be taken at Terra Classic block 7790000. It is rec
 ### Does the Luna amount of the new chain drop the initialization amount at height 1?
 
  Yes, the airdrop will be at block height `1` of the new chain. 
+
+ ### WHere can I find out more about the airdrop?
+
+ Visit the [airdrop section of the About Terra page](../learn/protocol.md#luna-airdrop-distribution). 
 
 ## Vesting
 
