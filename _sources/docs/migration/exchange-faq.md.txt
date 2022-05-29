@@ -34,15 +34,15 @@ For general information on vesting, visit the [vesting overview](../learn/protoc
 
 For a more in-depth look at vesting, visit the [vesting page](../develop/vesting.md).
 
-## How can I see my Luna that is still locked in vesting?
+### How can I see my Luna that is still locked in vesting?
 
 You can view your vesting Luna in Terra Station by using the [Vesting guide](../learn/terra-station/vesting.md).
 
-## Is my vesting Luna staked?
+### Is my vesting Luna staked?
 
 All vesting Luna was [staked](../learn/glossary.md#staking) at genesis. 
 
-## Can I redelegate my vesting Luna?
+### Can I redelegate my vesting Luna?
 
 Even though Luna that is vesting is locked and can't be freely traded, it can still be staked to generate [staking rewards](../learn/protocol.md#rewards). Users are free to [delegate, redelegate, or undelegate](../learn/protocol.md#redelegation) their vesting Luna as they see fit. 
 
