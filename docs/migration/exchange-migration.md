@@ -299,9 +299,10 @@ Dexes:
 
 **Terra Classic**:
 
-To continue supporting Luna Classic (LUNC), the Terra Classic LCD address needs to be altered to `https://classic.lcd.terra.dev`. The FCD address will be `[https://columbus-fcd.terra.dev](https://columbus-fcd.terra.dev/)`.
+The current primary LCD ([https://lcd.terra.dev](https://lcd.terra.dev)) and FCD ([https://fcd.terra.dev](https://fcd.terra.dev)) will continue to support the Terra Classic chain. However to ensure long-term support, please use `[https://columbus-lcd.terra.dev](https://columbus-lcd.terra.dev/)` for LCD and `[https://columbus-fcd.terra.dev](https://columbus-fcd.terra.dev/)` for FCD.
 
 **Terra**:
 
-The current primary LCD ([https://lcd.terra.dev](https://lcd.terra.dev)) and FCD ([https://fcd.terra.dev](https://fcd.terra.dev)) endpoints will support the new Terra chain upon launch on 05/27. This should make integration with the new Terra chain seamless.
+The previous LCD ([https://lcd.terra.dev](https://lcd.terra.dev)) and FCD ([https://fcd.terra.dev](https://fcd.terra.dev)) endpoints wilL not support the new chain
 
+To support the new Terra chain (phoenix-1), LCD should be altered to `[https://phoenix-lcd.terra.dev](https://phoenix-lcd.terra.dev/)` and FCD should be altered to `[https://phoenix-fcd.terra.dev](https://phoenix-fcd.terra.dev/)`.
