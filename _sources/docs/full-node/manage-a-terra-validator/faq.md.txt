@@ -158,8 +158,6 @@ A validator must:
 
 - **Run the correct software versions:** Validators need to make sure that their servers are always online, and that their private keys are not compromised.
 
-- **Actively participate in price discovery and stabilization:** Validators are highly incentivized to submit honest and correct votes of the real market prices of Luna. 
-
 - **Provide oversight and feedback on the correct deployment of community pool funds:** The Terra protocol includes a governance system for proposals to facilitate the adoption of its currencies. Validators are expected to hold budget executors to provide transparency and to use funds efficiently.
 
 - **Be active members of the community:** Validators should always be up-to-date with the current state of the ecosystem so that they can easily adapt to any change.
