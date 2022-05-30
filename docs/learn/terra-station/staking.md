@@ -1,4 +1,4 @@
-# Manage Staking <img src="/img/Staking.svg" height="40px">
+# Manage staking <img src="/img/Staking.svg" height="40px">
 
 Use this guide to manage your staking delegations in Terra Station. To learn how to stake or withdraw rewards, visit the Terra Station [desktop](download/terra-station-desktop.md) or [mobile](download/terra-station-mobile.md) tutorials.  
 
