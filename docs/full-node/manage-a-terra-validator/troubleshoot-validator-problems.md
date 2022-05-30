@@ -79,40 +79,10 @@ contract-memory-cache-size = 100
 write-vm-memory-cache-size = 100
 ```
 
-## Oracle voting errors
-
-You might receive the following error message by the [Terra Oracle feeder](https://github.com/terra-money/oracle-feeder):
-
-    `broadcast error: code: 3, raw_log: validator does not exist: terravaloperxxx`
-
-This message occurs for the following reasons:
-
-### The validator is not active
+## The validator is not active
 
 - The validator is jailed. To solve this problem, `unjail` the validator by running:
 
     `terrad tx slashing unjail <terra> --chain-id=<chain_id> --from=<from>`
 
 - The validator is not in the [active validator set](../../learn/glossary.md#active-set). Only the top 130 validators are in this set. To fix this problem, increase your total stake to be larger than the 130th validator.
-
-### The network is wrong
-
-The oracle feeder might be submitting to the wrong network. To fix this problem, run the feeder with the lite client daemon (LCD) specified:
-
-```bash
-nom start vote --\
-  --source http://localhost:8532/latest \
-  --lcd ${LCD} \
-  --chain-id "${CHAIN_ID}" \
-  --validator "${VALIDATOR_KEY}" \
-  --password "${PASSWORD}" \
-```
-
-The LCD the voter is connecting to might be running on a different network than your node. The remote LCD for different networks are:
-
-- [Columbus mainnet](https://lcd.terra.dev)
-- [Bombay testnet](https://bombay-lcd.terra.dev)
-
-Ensure you specify the LCD for the same network to which your node is connecting.
-
-If you run a [local LCD](../../develop/guides/start-lcd.md) (for example, localhost:1317), ensure your LCD is connecting to the same node.

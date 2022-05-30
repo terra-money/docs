@@ -61,13 +61,7 @@ Only the top 130 validators in voting power are included in the active validator
 
 ## 4. Secure your keys and have a backup plan
 
-In general a validator needs to do three things well
-
-- Sign and commit blocks (using the Tendermint Consensus key)
-- Provide Oracle FX rates via a feeder (using an Application Oracle Feeder key)
-- Conduct on-chain operations such as voting on Governance proposals (using an Application Operator Key)
-
-Protecting and having a contingency backup plan for all your [keys](faq.md#what-are-the-different-types-of-keys) will help mitigate catastrophic hardware or software failures of the node.
+Protecting and having a contingency backup plan for your [keys](faq.md#what-type-of-key-do-i-need-to-use) will help mitigate catastrophic hardware or software failures of the node.
 It is a good practice to test your backup plan on a testnet node in case of node failure.
 
 :::{include} restore.md

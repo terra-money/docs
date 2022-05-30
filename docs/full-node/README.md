@@ -14,6 +14,7 @@ resources
 
 :::::::{grid} 2 2 2 3
 :gutter: 3
+:class-row: sd-align-major-center
 
 :::{grid-item-card}
 :link: run-a-full-terra-node/README.html
@@ -77,15 +78,6 @@ resources
 :class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
 ```
 **Validator FAQ**  
-:::
-
-:::{grid-item-card}
-:link: manage-a-terra-validator/set-up-oracle-feeder.html
-:class-card: sd-text-center sd-shadow-md sd-rounded-3
-```{image} /img/Oracle.svg
-:class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
-```
-**Set up an Oracle feeder**  
 :::
 
 :::{grid-item-card}
