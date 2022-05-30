@@ -122,35 +122,6 @@ Congratulations! You have just created a Terra Station wallet.
 
 Now you have tokens on Terra!
 
-## Swap coins
-
-1. Open Terra Station and connect your wallet. Click **Swap** in the sidebar.
-
-   ```{image} /img/screens/desktop/swap.png
-   :class: sd-p-3
-   :width: 200 px
-   ```
-
-2.  On the swap page, first select the coin you want to offer in the upper box and input the amount you want to swap.
-
-3. In the lower box, select the coin you want to receive.
-
-   ```{image} /img/screens/desktop/swap-luna.png
-   :class: sd-p-3
-   ```
-
-4. Select the coin you want to pay fees in. 
-
-4. Confirm your transaction amounts and enter your password.
-
-5. Click **Submit** to complete your transaction.
-
-   ```{image} /img/screens/desktop/swap-confirm.png
-   :class: sd-p-3
-   ```
-
-Congratulations, you've just swapped coins!
-
 ## Stake Luna
 
 Stake your Luna to a validator to start earning rewards. Before you stake, make sure you have Luna in your wallet. You can transfer Luna from an [exchange](#receive-tokens-from-an-exchange) or [swap coins](#swap-coins) you have for Luna.

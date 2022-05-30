@@ -113,42 +113,6 @@ Congratulations, you have just created a wallet!
 
 Now you have tokens on Terra!
 
-## Swap coins
-
-1. Open the Terra Station app extension and connect to your wallet. Tap **Swap**.
-
-   ```{image} /img/screens/mobile/swap-blank.PNG
-   :class: sd-p-3
-   :width: 300 px
-   ```
-
-2. In the first dropdown, select a coin and enter the value you want to swap.
-
-3. In the second dropdown, select a coin to receive.
-
-   ```{image} /img/screens/mobile/swap-fill.PNG
-   :class: sd-p-3
-   :width: 300 px
-   ```
-
-4. Tap **Next**.
-
-5. Select the coin you want to pay fees in.
-
-   ```{image} /img/screens/mobile/swap-confirm.PNG
-   :class: sd-p-3
-   :width: 300 px
-   ```
-
-5. Confirm your transaction amounts and tap **Confirm**.
-
-   ```{image} /img/screens/mobile/swap-success.PNG
-   :class: sd-p-3
-   :width: 300 px
-   ```
-
-Congratulations, you've just swapped coins!
-
 ## Send tokens
 
 1. Open the Terra Station app extension and connect to your wallet.
