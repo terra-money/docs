@@ -6,7 +6,6 @@ Terra Station Mobile allows users to:
 
 - Create wallets and send tokens
 - Get involved with staking by browsing through validator information and delegating Luna tokens.
-- Atomically swap currencies on the Terra network at the effective on-chain exchange rate
 - Use QRCodes for easy interactions when sending assets and recovering wallets
 
 ## URL Scheme

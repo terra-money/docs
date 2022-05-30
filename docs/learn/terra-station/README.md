@@ -16,7 +16,6 @@ multisig
 contracts
 testnet
 keplr
-swap
 ```
 
 :::::::{grid} 2 2 2 3

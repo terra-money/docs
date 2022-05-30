@@ -26,12 +26,3 @@ The following table maps commonly-used Ethereum developer tools to their Terra c
 | Local Testnet     | [LocalTerra](https://github.com/terra-money/LocalTerra)                                                   | Ganache         |
 | Contract Language | [Rust](https://www.rust-lang.org/)                                                                        | Solidity, Vyper |
 
-## Why build on Terra?
-
-### Robust consensus and fast block finality
-
-Terra is powered by Tendermint BFT consensus, using a dPoS-like scheme driven by a set of 130 top validators. This efficient consensus model enables batches of transactions to occur in only 6 seconds (only a fraction of the time it takes for Bitcoin and Ethereum).
-
-### Ready for DeFi applications
-
-With fundamental infrastructure such as , on-chain swaps, community governance and automated monetary and fiscal policy, the Terra blockchain acts as its own autonomous sovereign economy driven by its users, and provides all the necessary incentive mechanics and modular plumbing to power modern DeFi smart contracts.
