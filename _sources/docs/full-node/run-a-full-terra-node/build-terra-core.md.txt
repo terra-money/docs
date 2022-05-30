@@ -11,7 +11,7 @@ You can find out the latest tag on the [tags page](https://github.com/terra-mone
     ```bash
     git clone https://github.com/terra-money/core
     cd core
-    git checkout [latest version] # ex., git checkout v2.0.0-rc.0
+    git checkout [latest version]
     ```
 
 
@@ -32,9 +32,8 @@ You can find out the latest tag on the [tags page](https://github.com/terra-mone
    ```bash
    name: terra
    server_name: terrad
-   client_name: terrad
-   version: 0.3.0-24-g3684f77
-   commit: 3684f77faadf6cf200d18e15763316d5d9c5a496
+   version: v2.0.0
+   commit: ea682c41e7e71ba0b182c9e7f989855fb9595885
    build_tags: netgo,ledger
    go: go version go1.18.2 darwin/amd64
    # ...followed by a lot of dependenecies
