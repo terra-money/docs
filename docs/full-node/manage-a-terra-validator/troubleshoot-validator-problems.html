@@ -1052,11 +1052,6 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="set-up-oracle-feeder.html">
-       Set up an oracle feeder
-      </a>
-     </li>
-     <li class="toctree-l3">
       <a class="reference internal" href="set-up-validator.html">
        Register a validator
       </a>
@@ -1236,21 +1231,9 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#oracle-voting-errors">
-   Oracle voting errors
+  <a class="reference internal nav-link" href="#the-validator-is-not-active">
+   The validator is not active
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-validator-is-not-active">
-     The validator is not active
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-network-is-wrong">
-     The network is wrong
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -1298,21 +1281,9 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#oracle-voting-errors">
-   Oracle voting errors
+  <a class="reference internal nav-link" href="#the-validator-is-not-active">
+   The validator is not active
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-validator-is-not-active">
-     The validator is not active
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-network-is-wrong">
-     The network is wrong
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -1396,41 +1367,14 @@ WantedBy=multi-user.target
 </pre></div>
 </div>
 </div>
-<div class="section" id="oracle-voting-errors">
-<h2>Oracle voting errors<a class="headerlink" href="#oracle-voting-errors" title="Permalink to this headline">#</a></h2>
-<p>You might receive the following error message by the <a class="reference external" href="https://github.com/terra-money/oracle-feeder">Terra Oracle feeder</a>:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>`broadcast error: code: 3, raw_log: validator does not exist: terravaloperxxx`
-</pre></div>
-</div>
-<p>This message occurs for the following reasons:</p>
 <div class="section" id="the-validator-is-not-active">
-<h3>The validator is not active<a class="headerlink" href="#the-validator-is-not-active" title="Permalink to this headline">#</a></h3>
+<h2>The validator is not active<a class="headerlink" href="#the-validator-is-not-active" title="Permalink to this headline">#</a></h2>
 <ul>
 <li><p>The validator is jailed. To solve this problem, <code class="docutils literal notranslate"><span class="pre">unjail</span></code> the validator by running:</p>
 <p><code class="docutils literal notranslate"><span class="pre">terrad</span> <span class="pre">tx</span> <span class="pre">slashing</span> <span class="pre">unjail</span> <span class="pre">&lt;terra&gt;</span> <span class="pre">--chain-id=&lt;chain_id&gt;</span> <span class="pre">--from=&lt;from&gt;</span></code></p>
 </li>
 <li><p>The validator is not in the <a class="reference internal" href="../../learn/glossary.html#active-set"><span class="std std-doc">active validator set</span></a>. Only the top 130 validators are in this set. To fix this problem, increase your total stake to be larger than the 130th validator.</p></li>
 </ul>
-</div>
-<div class="section" id="the-network-is-wrong">
-<h3>The network is wrong<a class="headerlink" href="#the-network-is-wrong" title="Permalink to this headline">#</a></h3>
-<p>The oracle feeder might be submitting to the wrong network. To fix this problem, run the feeder with the lite client daemon (LCD) specified:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nom start vote --<span class="se">\</span>
-  --source http://localhost:8532/latest <span class="se">\</span>
-  --lcd <span class="si">${</span><span class="nv">LCD</span><span class="si">}</span> <span class="se">\</span>
-  --chain-id <span class="s2">&quot;</span><span class="si">${</span><span class="nv">CHAIN_ID</span><span class="si">}</span><span class="s2">&quot;</span> <span class="se">\</span>
-  --validator <span class="s2">&quot;</span><span class="si">${</span><span class="nv">VALIDATOR_KEY</span><span class="si">}</span><span class="s2">&quot;</span> <span class="se">\</span>
-  --password <span class="s2">&quot;</span><span class="si">${</span><span class="nv">PASSWORD</span><span class="si">}</span><span class="s2">&quot;</span> <span class="se">\</span>
-</pre></div>
-</div>
-<p>The LCD the voter is connecting to might be running on a different network than your node. The remote LCD for different networks are:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://lcd.terra.dev">Columbus mainnet</a></p></li>
-<li><p><a class="reference external" href="https://bombay-lcd.terra.dev">Bombay testnet</a></p></li>
-</ul>
-<p>Ensure you specify the LCD for the same network to which your node is connecting.</p>
-<p>If you run a <a class="reference internal" href="../../develop/guides/start-lcd.html"><span class="doc std std-doc">local LCD</span></a> (for example, localhost:1317), ensure your LCD is connecting to the same node.</p>
-</div>
 </div>
 </div>
 

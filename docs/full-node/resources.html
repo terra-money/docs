@@ -1051,11 +1051,6 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="manage-a-terra-validator/set-up-oracle-feeder.html">
-       Set up an oracle feeder
-      </a>
-     </li>
-     <li class="toctree-l3">
       <a class="reference internal" href="manage-a-terra-validator/set-up-validator.html">
        Register a validator
       </a>
@@ -1219,23 +1214,6 @@
    Full node text tutorial
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#fcd-genesis-snapshot">
-   FCD genesis snapshot
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#fcd-import-instructions">
-     FCD Import instructions
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#fcd-repos">
-     FCD repos
-    </a>
-   </li>
-  </ul>
- </li>
 </ul>
 
             </nav>
@@ -1266,23 +1244,6 @@
    Full node text tutorial
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#fcd-genesis-snapshot">
-   FCD genesis snapshot
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#fcd-import-instructions">
-     FCD Import instructions
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#fcd-repos">
-     FCD repos
-    </a>
-   </li>
-  </ul>
- </li>
 </ul>
 
                         </nav>
@@ -1307,25 +1268,6 @@
 <li><p><a class="reference internal" href="run-a-full-terra-node/system-config.html"><span class="doc std std-doc">System configuration</span></a>
 <a class="reference external" href="https://docs.terra.money/docs/full-node/run-a-full-terra-node/system-config.html">https://docs.terra.money/docs/full-node/run-a-full-terra-node/system-config.html</a></p></li>
 </ul>
-</div>
-<div class="section" id="fcd-genesis-snapshot">
-<h2>FCD genesis snapshot<a class="headerlink" href="#fcd-genesis-snapshot" title="Permalink to this headline">#</a></h2>
-<p>The following is a full FCD snapshot since Columbus-1:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">columbus</span><span class="o">-</span><span class="n">genesis</span><span class="o">.</span><span class="n">s3</span><span class="o">.</span><span class="n">ap</span><span class="o">-</span><span class="n">northeast</span><span class="o">-</span><span class="mf">1.</span><span class="n">amazonaws</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">fcd</span><span class="o">-</span><span class="mi">2021</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mf">24.</span><span class="n">dump</span><span class="o">.</span><span class="n">gz</span> <span class="p">(</span><span class="mf">155.6</span><span class="n">GB</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="section" id="fcd-import-instructions">
-<h3>FCD Import instructions<a class="headerlink" href="#fcd-import-instructions" title="Permalink to this headline">#</a></h3>
-<p>Run the following command to import the FCD genesis snapshot</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>wget -O - <span class="s1">&#39;https://columbus-genesis.s3.ap-northeast-1.amazonaws.com/fcd-2021-11-24.dump.gz&#39;</span> <span class="p">|</span> zcat <span class="p">|</span> sudo -u postgres psql DB_NAME
-</pre></div>
-</div>
-</div>
-<div class="section" id="fcd-repos">
-<h3>FCD repos<a class="headerlink" href="#fcd-repos" title="Permalink to this headline">#</a></h3>
-<p>FCD repo: <a class="reference external" href="https://github.com/terra-money/fcd">https://github.com/terra-money/fcd</a></p>
-<p>Hive repo: <a class="reference external" href="https://github.com/terra-money/hive-graph">https://github.com/terra-money/hive-graph</a></p>
-</div>
 </div>
 </div>
 

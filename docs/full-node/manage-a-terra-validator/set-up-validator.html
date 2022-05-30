@@ -45,7 +45,7 @@
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Troubleshoot validator problems" href="troubleshoot-validator-problems.html" />
-    <link rel="prev" title="Set up an oracle feeder" href="set-up-oracle-feeder.html" />
+    <link rel="prev" title="Implement security practices" href="implement-security.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -1051,11 +1051,6 @@
        Implement security practices
       </a>
      </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="set-up-oracle-feeder.html">
-       Set up an oracle feeder
-      </a>
-     </li>
      <li class="toctree-l3 current active">
       <a class="current reference internal" href="#">
        Register a validator
@@ -1323,7 +1318,7 @@
 <li><p>You have completed <a class="reference internal" href="../run-a-full-terra-node/README.html"><span class="doc std std-doc">how to run a full Terra node</span></a>, which outlines how to install, connect, and configure a node.</p></li>
 <li><p>You are familiar with <a class="reference internal" href="../../develop/terrad/README.html"><span class="doc std std-doc">terrad</span></a>.</p></li>
 <li><p>You have read through <a class="reference internal" href="faq.html"><span class="doc std std-doc">the validator FAQ</span></a></p></li>
-<li><p>You understand the <a class="reference internal" href="faq.html#what-are-the-different-types-of-keys"><span class="std std-doc">different keys</span></a> of a validator in the FAQ</p></li>
+<li><p>You understand the <span class="xref myst">different keys</span> of a validator in the FAQ</p></li>
 </ul>
 </div>
 <div class="section" id="retrieve-your-pubkey">
@@ -1371,13 +1366,7 @@
 </div>
 <div class="section" id="secure-your-keys-and-have-a-backup-plan">
 <h2>4. Secure your keys and have a backup plan<a class="headerlink" href="#secure-your-keys-and-have-a-backup-plan" title="Permalink to this headline">#</a></h2>
-<p>In general a validator needs to do three things well</p>
-<ul class="simple">
-<li><p>Sign and commit blocks (using the Tendermint Consensus key)</p></li>
-<li><p>Provide Oracle FX rates via a feeder (using an Application Oracle Feeder key)</p></li>
-<li><p>Conduct on-chain operations such as voting on Governance proposals (using an Application Operator Key)</p></li>
-</ul>
-<p>Protecting and having a contingency backup plan for all your <a class="reference internal" href="faq.html#what-are-the-different-types-of-keys"><span class="std std-doc">keys</span></a> will help mitigate catastrophic hardware or software failures of the node.
+<p>Protecting and having a contingency backup plan for your <a class="reference internal" href="faq.html#what-type-of-key-do-i-need-to-use"><span class="std std-doc">keys</span></a> will help mitigate catastrophic hardware or software failures of the node.
 It is a good practice to test your backup plan on a testnet node in case of node failure.</p>
 </div>
 </div>
@@ -1387,7 +1376,6 @@ It is a good practice to test your backup plan on a testnet node in case of node
 <ul class="simple">
 <li><p>The Consensus key, stored in <code class="docutils literal notranslate"><span class="pre">~/.terra/config/priv_validator.json</span></code></p></li>
 <li><p>The mnemonic to the validator wallet</p></li>
-<li><p>The mnemonic to the oracle feeder wallet</p></li>
 </ul>
 <div class="admonition danger">
 <p class="admonition-title">Danger</p>
@@ -1397,7 +1385,6 @@ It is a good practice to test your backup plan on a testnet node in case of node
 <ol class="arabic simple">
 <li><p>Setup a full Terra node synced up to the latest block.</p></li>
 <li><p>Replace the <code class="docutils literal notranslate"><span class="pre">~/.terra/config/priv_validator.json</span></code> file of the new node with the associated file from the old node, then restart your node.</p></li>
-<li><p>Set up the <a class="reference internal" href="set-up-oracle-feeder.html"><span class="doc std std-doc">price and oracle feeders</span></a>.</p></li>
 </ol>
 </div>
 
@@ -1407,11 +1394,11 @@ It is a good practice to test your backup plan on a testnet node in case of node
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="set-up-oracle-feeder.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="implement-security.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Set up an oracle feeder</p>
+            <p class="prev-next-title">Implement security practices</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="troubleshoot-validator-problems.html" title="next page">
