@@ -1,5 +1,9 @@
 # Upgrade Smart Contracts to Cosmwasm 1.0.0
 
+CosmWasm 1.0 allows Terra to adopt IBC-Wasm integration, enabling contract execution between IBC-enabled chains.<br/>
+
+This upgrade also supports the ICS-20 protocol, which allows fungible tokens to be moved across other IBC-enabled Cosmos chains. Users will be able to send custom CW20 tokens using ICS20 and use them as native tokens on other chains.<br/>
+
 Upgrading to Cosmwasm 1.0.0 requires upgrades to various dependencies in the smart contract. Within the `Cargo.toml` file, update the following dependencies to these versions:
 
 ### Under [dependencies]
