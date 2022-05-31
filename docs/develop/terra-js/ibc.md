@@ -35,7 +35,7 @@ import { bech32 } from 'bech32';
 
 const terraAddress = 'terra1cvw8sundusurqajhurpcfk7yvuzlh92cvkpy28';
 const decodedAddress = bech32.decode(terraAddress);
-const osmosisAddress = bech32.encode('osmo', decodedAddress.words));
+const osmosisAddress = bech32.encode('osmo', decodedAddress.words);
 ```
 
 ## Complete example
