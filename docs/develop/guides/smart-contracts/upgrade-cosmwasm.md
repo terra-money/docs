@@ -1,8 +1,10 @@
 # Upgrade Smart Contracts to Cosmwasm 1.0.0
 
-Upgrading to Cosmwasm 1.0.0 requires upgrades to various dependencies in the smart contract. Within the `Cargo.toml` file, update the following dependencies to these versions:
+Upgrading to Cosmwasm 1.0.0 requires upgrades to various dependencies in the smart contract. 
 
-### Under [dependencies]
+1\. Open your smart contract's `Cargo.toml` file, and update the following dependencies to these versions:
+
+**Under [dependencies]**:
 
 - cosmwasm-std = "1.0.0"
 - cosmwasm-storage = "1.0.0"
@@ -14,10 +16,19 @@ Upgrading to Cosmwasm 1.0.0 requires upgrades to various dependencies in the sma
 - serde = { version = "1.0.137", default-features = false, features = ["derive"] }
 - thiserror = "1.0.31"
 
-### Under [dev-dependencies]
+**Under [dev-dependencies]**:
 
 - cosmwasm-schema = "1.0.0"
 
-Once all dependecies have been updated, run `cargo build`.
+2\. Once all dependecies have been updated, run the following:
 
-Finally, run `terrain test [contract-name]` to verify the upgrade didn't cause any breaking changes to the contract.
+```sh
+cargo build
+```
+
+
+3\. Finally, run the following to verify the upgrade didn't cause any breaking changes to the contract:
+
+```sh
+`terrain test [insert-contract-name]`
+```
