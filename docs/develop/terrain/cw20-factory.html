@@ -1216,20 +1216,14 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#instantiate-the-token-factory-and-cw20-factory-token-contracts">
-   Instantiate the
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     token-factory
-    </span>
-   </code>
-   and
+  <a class="reference internal nav-link" href="#generate-the-cw20-factory-token-contract">
+   Generate the
    <code class="docutils literal notranslate">
     <span class="pre">
      cw20-factory-token
     </span>
    </code>
-   contracts
+   contract
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1352,20 +1346,14 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#instantiate-the-token-factory-and-cw20-factory-token-contracts">
-   Instantiate the
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     token-factory
-    </span>
-   </code>
-   and
+  <a class="reference internal nav-link" href="#generate-the-cw20-factory-token-contract">
+   Generate the
    <code class="docutils literal notranslate">
     <span class="pre">
      cw20-factory-token
     </span>
    </code>
-   contracts
+   contract
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1508,56 +1496,38 @@
 </div>
 <div class="section" id="instantiate-a-new-app-using-terrain">
 <h2>Instantiate a new app using Terrain<a class="headerlink" href="#instantiate-a-new-app-using-terrain" title="Permalink to this headline">#</a></h2>
-<p>a. Instantiate a new app using Terrain:</p>
+<p>Instantiate a <a class="reference external" href="https://github.com/terra-money/terrain#terrain-new-name">new app using Terrain</a>:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrain new token-factory
 </pre></div>
 </div>
 <p>When the app is generated, the following displays:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>generating:
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>generating app token-factory:
+- workspace... <span class="k">done</span>
 - contract... <span class="k">done</span>
 - frontend... <span class="k">done</span>
 </pre></div>
 </div>
-<p>b. Navigate to the <code class="docutils literal notranslate"><span class="pre">contracts</span></code> folder.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">contracts</span><span class="o">/</span>
-</pre></div>
 </div>
-<p>c. Terrain automatically generates a sample <code class="docutils literal notranslate"><span class="pre">counter</span></code> contract in the <code class="docutils literal notranslate"><span class="pre">contracts</span></code> folder. Delete the <code class="docutils literal notranslate"><span class="pre">counter</span></code> smart contract folder to ensure a clean workspace:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rm</span> <span class="o">-</span><span class="n">r</span> <span class="n">counter</span><span class="o">/</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="instantiate-the-token-factory-and-cw20-factory-token-contracts">
-<h2>Instantiate the <code class="docutils literal notranslate"><span class="pre">token-factory</span></code> and <code class="docutils literal notranslate"><span class="pre">cw20-factory-token</span></code> contracts<a class="headerlink" href="#instantiate-the-token-factory-and-cw20-factory-token-contracts" title="Permalink to this headline">#</a></h2>
+<div class="section" id="generate-the-cw20-factory-token-contract">
+<h2>Generate the <code class="docutils literal notranslate"><span class="pre">cw20-factory-token</span></code> contract<a class="headerlink" href="#generate-the-cw20-factory-token-contract" title="Permalink to this headline">#</a></h2>
 <p>a. Navigate to the <code class="docutils literal notranslate"><span class="pre">token-factory</span></code> directory:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> token-factory
 </pre></div>
 </div>
-<p>b. Instantiate the <code class="docutils literal notranslate"><span class="pre">token-factory</span></code> contract:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrain code:new token-factory
+<p>b. Instantiate the <code class="docutils literal notranslate"><span class="pre">cw20-factory-token</span></code> contract:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">terrain</span> <span class="n">contract</span><span class="p">:</span><span class="n">new</span> <span class="n">cw20</span><span class="o">-</span><span class="n">factory</span><span class="o">-</span><span class="n">token</span>
 </pre></div>
 </div>
 <p>When the contract is generated, the following displays:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>generating contract... <span class="k">done</span>
-</pre></div>
-</div>
-<p>c. Instantiate the <code class="docutils literal notranslate"><span class="pre">cw20-factory-token</span></code> contract:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">terrain</span> <span class="n">code</span><span class="p">:</span><span class="n">new</span> <span class="n">cw20</span><span class="o">-</span><span class="n">factory</span><span class="o">-</span><span class="n">token</span>
-</pre></div>
-</div>
-<p>When the contract is generated, the following displays:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>generating contract... <span class="k">done</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>generating contract cw20-factory-token:
+- contract... <span class="k">done</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="modify-the-mnemonics-passphrase">
 <h2>Modify the mnemonics passphrase<a class="headerlink" href="#modify-the-mnemonics-passphrase" title="Permalink to this headline">#</a></h2>
 <p>Before editing the smart contracts you instantiated in step 2, modify the mnemonic you’ll use to do deploy the contract to LocalTerra:</p>
-<p>a. Navigate to <code class="docutils literal notranslate"> <span class="pre">/token-factory</span></code></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">/</span><span class="n">token</span><span class="o">-</span><span class="n">factory</span>
-</pre></div>
-</div>
-<p>b. Open <code class="docutils literal notranslate"><span class="pre">/keys.terrain.js</span></code> and set the <code class="docutils literal notranslate"><span class="pre">mnemonic</span></code>s to the following:</p>
+<p>a. Open <code class="docutils literal notranslate"><span class="pre">/keys.terrain.js</span></code> and set the <code class="docutils literal notranslate"><span class="pre">mnemonic</span></code>s to the following:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">notice</span> <span class="n">oak</span> <span class="n">worry</span> <span class="n">limit</span> <span class="n">wrap</span> <span class="n">speak</span> <span class="n">medal</span> <span class="n">online</span> <span class="n">prefer</span> <span class="n">cluster</span> <span class="n">roof</span> <span class="n">addict</span> <span class="n">wrist</span> <span class="n">behave</span> <span class="n">treat</span> <span class="n">actual</span> <span class="n">wasp</span> <span class="n">year</span> <span class="n">salad</span> <span class="n">speed</span> <span class="n">social</span> <span class="n">layer</span> <span class="n">crew</span> <span class="n">genius</span>
 </pre></div>
 </div>
@@ -1593,7 +1563,7 @@
 </div>
 <div class="section" id="modify-the-cw20-factory-token-smart-contract">
 <h2>Modify the CW20 Factory Token smart contract<a class="headerlink" href="#modify-the-cw20-factory-token-smart-contract" title="Permalink to this headline">#</a></h2>
-<p>In this section, you will modify the <code class="docutils literal notranslate"><span class="pre">cw20-factory-token</span></code> contract that you instantiated. This contract implements the <a class="reference external" href="https://github.com/CosmWasm/cw-plus/tree/0.9.x/contracts/cw20-base">CW20 Base</a>, along with several custom files.</p>
+<p>In this section, you will modify the <code class="docutils literal notranslate"><span class="pre">cw20-factory-token</span></code> contract that you instantiated. This contract implements the <a class="reference external" href="https://github.com/CosmWasm/cw-plus/tree/main/contracts/cw20-base">CW20 Base</a>, along with several custom files.</p>
 <p>To modify the <code class="docutils literal notranslate"><span class="pre">cw20-factory-token</span></code> contract, follow the procedure below.</p>
 <div class="section" id="add-the-the-cw20-base">
 <h3>1. Add the the CW20 base<a class="headerlink" href="#add-the-the-cw20-base" title="Permalink to this headline">#</a></h3>
@@ -1611,7 +1581,7 @@
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span>#<span class="w"> </span><span class="o">..</span><span class="p">.</span><span class="w"></span>
 
 <span class="p">[</span><span class="n">dependencies</span><span class="p">]</span><span class="w"></span>
-<span class="n">cw20</span><span class="o">-</span><span class="n">base</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;0.8.1&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">features</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;library&quot;</span><span class="p">]</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="n">cw20</span><span class="o">-</span><span class="n">base</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;0.13.2&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">features</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;library&quot;</span><span class="p">]</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
 
 #<span class="w"> </span><span class="o">..</span><span class="p">.</span><span class="w"></span>
 </pre></div>
@@ -1837,10 +1807,10 @@
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>If your code is not working as expected, you can <a class="reference external" href="https://github.com/emidev98/token-factory/commit/fdba3c89c464860fe8cd9aa17f1344d82d613522">clone the repo with all the changes described above</a> so that you can continue with the tutorial. To clone the repo, do the following:</p>
+<p>If your code is not working as expected, you can <a class="reference external" href="https://github.com/emidev98/token-factory/commit/8da7892486704c54e33442b156d63178f5137527">clone the repo with all the changes described above</a> so that you can continue with the tutorial. To clone the repo, do the following:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="o">-</span><span class="n">n</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">emidev98</span><span class="o">/</span><span class="n">token</span><span class="o">-</span><span class="n">factory</span>
 <span class="n">cd</span> <span class="n">token</span><span class="o">-</span><span class="n">factory</span>
-<span class="n">git</span> <span class="n">checkout</span> <span class="n">fdba3c89c464860fe8cd9aa17f1344d82d613522</span>
+<span class="n">git</span> <span class="n">checkout</span> <span class="mi">8</span><span class="n">da7892486704c54e33442b156d63178f5137527</span>
 </pre></div>
 </div>
 </div>
@@ -1868,11 +1838,10 @@
 <p>b. Open <code class="docutils literal notranslate"><span class="pre">cargo.toml</span></code> and add the dependencies inside the header:</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span>#<span class="w"> </span><span class="o">..</span><span class="p">.</span><span class="w"></span>
 <span class="p">[</span><span class="n">dependencies</span><span class="p">]</span><span class="w"></span>
-<span class="n">cw2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;0.8.1&quot;</span><span class="w"></span>
-<span class="n">cw20</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;0.8.1&quot;</span><span class="w"></span>
-<span class="n">cw20</span><span class="o">-</span><span class="n">base</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;0.8.1&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">features</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;library&quot;</span><span class="p">]</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
-<span class="n">cw20</span><span class="o">-</span><span class="n">factory</span><span class="o">-</span><span class="n">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;0.5.0&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">features</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;library&quot;</span><span class="p">]</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
-
+<span class="n">cw2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;0.13.2&quot;</span><span class="w"></span>
+<span class="n">cw20</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;0.13.2&quot;</span><span class="w"></span>
+<span class="n">cw20</span><span class="o">-</span><span class="n">base</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;0.13.2&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">features</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;library&quot;</span><span class="p">]</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="n">cw20</span><span class="o">-</span><span class="n">factory</span><span class="o">-</span><span class="n">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;0.6.0&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">features</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;library&quot;</span><span class="p">]</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
 #<span class="w"> </span><span class="o">..</span><span class="p">.</span><span class="w"></span>
 </pre></div>
 </div>
@@ -1951,11 +1920,11 @@
 <span class="cp">#[serde(rename_all = </span><span class="s">&quot;snake_case&quot;</span><span class="cp">)]</span><span class="w"></span>
 <span class="k">pub</span><span class="w"> </span><span class="k">enum</span> <span class="nc">ExecuteMsg</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="cm">/* Handle the deposits of native tokens into the smart contract to mint</span>
-<span class="cm">    the new pegged token 1:1 with UST or to increase circulation supply. */</span><span class="w"></span>
+<span class="cm">    the new pegged token 1:1 with LUNA or to increase circulation supply. */</span><span class="w"></span>
 <span class="w">    </span><span class="n">Deposit</span><span class="p">(</span><span class="n">DepositType</span><span class="p">),</span><span class="w"></span>
 
-<span class="w">    </span><span class="cm">/* Handle burn of pegged tokens 1:1 with UST which are added to</span>
-<span class="cm">    MINTED_TOKENS list and return the UST stored into the contract. */</span><span class="w"></span>
+<span class="w">    </span><span class="cm">/* Handle burn of pegged tokens 1:1 with LUNA which are added to</span>
+<span class="cm">    MINTED_TOKENS list and return the LUNA stored into the contract. */</span><span class="w"></span>
 <span class="w">    </span><span class="n">Burn</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">        </span><span class="n">amount</span>: <span class="nc">Uint128</span><span class="p">,</span><span class="w"></span>
 <span class="w">        </span><span class="n">token_address</span>: <span class="nb">String</span><span class="p">,</span><span class="w"></span>
@@ -1968,7 +1937,7 @@
 <span class="w">    </span><span class="cm">/* Instantiate a CW20_base token */</span><span class="w"></span>
 <span class="w">    </span><span class="n">Instantiate</span><span class="p">(</span><span class="n">cw20_base</span>::<span class="n">msg</span>::<span class="n">InstantiateMsg</span><span class="p">),</span><span class="w"></span>
 
-<span class="w">    </span><span class="cm">/* Create new tokens based on token_address, amount of UST send to</span>
+<span class="w">    </span><span class="cm">/* Create new tokens based on token_address, amount of LUNA send to</span>
 <span class="cm">    this contract and recipient address */</span><span class="w"></span>
 <span class="w">    </span><span class="n">Mint</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">        </span><span class="n">token_address</span>: <span class="nb">String</span><span class="p">,</span><span class="w"></span>
@@ -2058,7 +2027,6 @@
 <span class="cm">    the code id of the contract deployed */</span><span class="w"></span>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Config</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">        </span><span class="n">stable_denom</span>: <span class="nc">msg</span><span class="p">.</span><span class="n">stable_denom</span><span class="p">.</span><span class="n">to_string</span><span class="p">(),</span><span class="w"></span>
-
 <span class="w">        </span><span class="n">token_contract_code_id</span>: <span class="nc">msg</span><span class="p">.</span><span class="n">token_contract_code_id</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="p">};</span><span class="w"></span>
 
@@ -2152,7 +2120,6 @@
 <span class="cm">    allowed thru this smart contract. */</span><span class="w"></span>
 <span class="w">    </span><span class="n">token_data</span><span class="p">.</span><span class="n">mint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">match</span><span class="w"> </span><span class="n">token_data</span><span class="p">.</span><span class="n">mint</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">        </span><span class="nb">None</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="nb">None</span><span class="p">,</span><span class="w"></span>
-
 <span class="w">        </span><span class="nb">Some</span><span class="p">(</span><span class="k">mut</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">            </span><span class="n">e</span><span class="p">.</span><span class="n">minter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">env</span><span class="p">.</span><span class="n">contract</span><span class="p">.</span><span class="n">address</span><span class="p">.</span><span class="n">to_string</span><span class="p">();</span><span class="w"></span>
 
@@ -2164,13 +2131,9 @@
 <span class="cm">    https://github.com/CosmWasm/cw-plus/tree/0.9.x/contracts/cw20-base */</span><span class="w"></span>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">instantiate_message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">WasmMsg</span>::<span class="n">Instantiate</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">        </span><span class="n">admin</span>: <span class="nb">Some</span><span class="p">(</span><span class="n">env</span><span class="p">.</span><span class="n">contract</span><span class="p">.</span><span class="n">address</span><span class="p">.</span><span class="n">to_string</span><span class="p">()),</span><span class="w"></span>
-
 <span class="w">        </span><span class="n">code_id</span>: <span class="nc">config</span><span class="p">.</span><span class="n">token_contract_code_id</span><span class="p">,</span><span class="w"></span>
-
 <span class="w">        </span><span class="n">msg</span>: <span class="nc">to_binary</span><span class="p">(</span><span class="o">&amp;</span><span class="n">token_data</span><span class="p">)</span><span class="o">?</span><span class="p">,</span><span class="w"></span>
-
 <span class="w">        </span><span class="n">funds</span>: <span class="nc">vec</span><span class="o">!</span><span class="p">[],</span><span class="w"></span>
-
 <span class="w">        </span><span class="n">label</span>: <span class="nc">token_data</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="p">};</span><span class="w"></span>
 
@@ -2328,19 +2291,19 @@
 <span class="k">fn</span> <span class="nf">handle_instantiate_reply</span><span class="p">(</span><span class="n">deps</span>: <span class="nc">DepsMut</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span>: <span class="nc">Reply</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">StdResult</span><span class="o">&lt;</span><span class="n">Response</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">msg</span><span class="p">.</span><span class="n">result</span><span class="p">.</span><span class="n">into_result</span><span class="p">().</span><span class="n">map_err</span><span class="p">(</span><span class="n">StdError</span>::<span class="n">generic_err</span><span class="p">)</span><span class="o">?</span><span class="p">;</span><span class="w"></span>
 
-<span class="w">    </span><span class="cm">/* Find the event type instantiate_contract which contains the contract_address*/</span><span class="w"></span>
+<span class="w">    </span><span class="cm">/* Find the event type instantiate which contains the contract_address*/</span><span class="w"></span>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">event</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">result</span><span class="w"></span>
 <span class="w">        </span><span class="p">.</span><span class="n">events</span><span class="w"></span>
 <span class="w">        </span><span class="p">.</span><span class="n">iter</span><span class="p">()</span><span class="w"></span>
-<span class="w">        </span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="o">|</span><span class="n">event</span><span class="o">|</span><span class="w"> </span><span class="n">event</span><span class="p">.</span><span class="n">ty</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;instantiate_contract&quot;</span><span class="p">)</span><span class="w"></span>
-<span class="w">        </span><span class="p">.</span><span class="n">ok_or_else</span><span class="p">(</span><span class="o">||</span><span class="w"> </span><span class="n">StdError</span>::<span class="n">generic_err</span><span class="p">(</span><span class="s">&quot;cannot find `instantiate_contract` event&quot;</span><span class="p">))</span><span class="o">?</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="o">|</span><span class="n">event</span><span class="o">|</span><span class="w"> </span><span class="n">event</span><span class="p">.</span><span class="n">ty</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;instantiate&quot;</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="p">.</span><span class="n">ok_or_else</span><span class="p">(</span><span class="o">||</span><span class="w"> </span><span class="n">StdError</span>::<span class="n">generic_err</span><span class="p">(</span><span class="s">&quot;cannot find `instantiate` event&quot;</span><span class="p">))</span><span class="o">?</span><span class="p">;</span><span class="w"></span>
 
-<span class="w">    </span><span class="cm">/* Find the contract_address from instantiate_contract event*/</span><span class="w"></span>
+<span class="w">    </span><span class="cm">/* Find the _contract_address from instantiate event*/</span><span class="w"></span>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">contract_address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">event</span><span class="w"></span>
 <span class="w">        </span><span class="p">.</span><span class="n">attributes</span><span class="w"></span>
 <span class="w">        </span><span class="p">.</span><span class="n">iter</span><span class="p">()</span><span class="w"></span>
-<span class="w">        </span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="o">|</span><span class="n">attr</span><span class="o">|</span><span class="w"> </span><span class="n">attr</span><span class="p">.</span><span class="n">key</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;contract_address&quot;</span><span class="p">)</span><span class="w"></span>
-<span class="w">        </span><span class="p">.</span><span class="n">ok_or_else</span><span class="p">(</span><span class="o">||</span><span class="w"> </span><span class="n">StdError</span>::<span class="n">generic_err</span><span class="p">(</span><span class="s">&quot;cannot find `contract_address` attribute&quot;</span><span class="p">))</span><span class="o">?</span><span class="w"></span>
+<span class="w">        </span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="o">|</span><span class="n">attr</span><span class="o">|</span><span class="w"> </span><span class="n">attr</span><span class="p">.</span><span class="n">key</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;_contract_address&quot;</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="p">.</span><span class="n">ok_or_else</span><span class="p">(</span><span class="o">||</span><span class="w"> </span><span class="n">StdError</span>::<span class="n">generic_err</span><span class="p">(</span><span class="s">&quot;cannot find `_contract_address` attribute&quot;</span><span class="p">))</span><span class="o">?</span><span class="w"></span>
 <span class="w">        </span><span class="p">.</span><span class="n">value</span><span class="p">;</span><span class="w"></span>
 
 <span class="w">    </span><span class="cm">/* Update the state of the contract adding the new generated MINTED_TOKEN */</span><span class="w"></span>
@@ -2381,44 +2344,37 @@
 <p>i. Close and save <code class="docutils literal notranslate"><span class="pre">lib.rs</span></code>.</p>
 <p>j. Open <code class="docutils literal notranslate"><span class="pre">test.rs</span></code> and add the following:</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[cfg(test)]</span><span class="w"></span>
-
 <span class="k">mod</span> <span class="nn">tests</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-
 <span class="w">    </span><span class="k">use</span><span class="w"> </span><span class="k">crate</span>::<span class="p">{</span><span class="w"></span>
 <span class="w">        </span><span class="n">contract</span>::<span class="p">{</span><span class="n">execute</span><span class="p">,</span><span class="w"> </span><span class="n">instantiate</span><span class="p">,</span><span class="w"> </span><span class="n">query</span><span class="p">,</span><span class="w"> </span><span class="n">reply</span><span class="p">},</span><span class="w"></span>
 <span class="w">        </span><span class="n">msg</span>::<span class="p">{</span><span class="n">DepositType</span><span class="p">,</span><span class="w"> </span><span class="n">ExecuteMsg</span><span class="p">,</span><span class="w"> </span><span class="n">InstantiateMsg</span><span class="p">,</span><span class="w"> </span><span class="n">MintedTokens</span><span class="p">,</span><span class="w"> </span><span class="n">QueryMsg</span><span class="p">},</span><span class="w"></span>
 <span class="w">    </span><span class="p">};</span><span class="w"></span>
-
 <span class="w">    </span><span class="k">use</span><span class="w"> </span><span class="n">cosmwasm_std</span>::<span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">from_binary</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="n">coins</span><span class="p">,</span><span class="w"> </span><span class="n">from_binary</span><span class="p">,</span><span class="w"></span>
 <span class="w">        </span><span class="n">testing</span>::<span class="p">{</span><span class="n">mock_dependencies</span><span class="p">,</span><span class="w"> </span><span class="n">mock_env</span><span class="p">,</span><span class="w"> </span><span class="n">mock_info</span><span class="p">},</span><span class="w"></span>
-<span class="w">        </span><span class="n">to_binary</span><span class="p">,</span><span class="w"> </span><span class="n">Attribute</span><span class="p">,</span><span class="w"> </span><span class="n">Coin</span><span class="p">,</span><span class="w"> </span><span class="n">CosmosMsg</span><span class="p">,</span><span class="w"> </span><span class="n">DepsMut</span><span class="p">,</span><span class="w"> </span><span class="n">Event</span><span class="p">,</span><span class="w"> </span><span class="n">Reply</span><span class="p">,</span><span class="w"> </span><span class="n">Response</span><span class="p">,</span><span class="w"> </span><span class="n">SubMsg</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="n">SubMsgExecutionResponse</span><span class="p">,</span><span class="w"> </span><span class="n">Uint128</span><span class="p">,</span><span class="w"> </span><span class="n">WasmMsg</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="n">to_binary</span><span class="p">,</span><span class="w"> </span><span class="n">Attribute</span><span class="p">,</span><span class="w"> </span><span class="n">BankMsg</span><span class="p">,</span><span class="w"> </span><span class="n">Coin</span><span class="p">,</span><span class="w"> </span><span class="n">CosmosMsg</span><span class="p">,</span><span class="w"> </span><span class="n">DepsMut</span><span class="p">,</span><span class="w"> </span><span class="n">Event</span><span class="p">,</span><span class="w"> </span><span class="n">Reply</span><span class="p">,</span><span class="w"> </span><span class="n">Response</span><span class="p">,</span><span class="w"> </span><span class="n">SubMsg</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="n">SubMsgResponse</span><span class="p">,</span><span class="w"> </span><span class="n">Uint128</span><span class="p">,</span><span class="w"> </span><span class="n">WasmMsg</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="p">};</span><span class="w"></span>
-
 <span class="w">    </span><span class="k">use</span><span class="w"> </span><span class="n">cw20</span>::<span class="p">{</span><span class="n">Cw20Coin</span><span class="p">,</span><span class="w"> </span><span class="n">MinterResponse</span><span class="p">};</span><span class="w"></span>
 
 <span class="w">    </span><span class="cp">#[test]</span><span class="w"></span>
 <span class="w">    </span><span class="k">fn</span> <span class="nf">test_instantiate</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">        </span><span class="c1">// GIVEN</span>
-<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">deps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mock_dependencies</span><span class="p">(</span><span class="o">&amp;</span><span class="p">[]);</span><span class="w"></span>
+<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">deps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mock_dependencies</span><span class="p">();</span><span class="w"></span>
 
 <span class="w">        </span><span class="c1">// WHEN</span>
 <span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">do_instantiate</span><span class="p">(</span><span class="n">deps</span><span class="p">.</span><span class="n">as_mut</span><span class="p">());</span><span class="w"></span>
 
 <span class="w">        </span><span class="c1">// THEN</span>
 <span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">attrs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">res</span><span class="p">.</span><span class="n">attributes</span><span class="p">;</span><span class="w"></span>
-
 <span class="w">        </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="w"></span>
 <span class="w">            </span><span class="fm">vec!</span><span class="p">[</span><span class="w"></span>
 <span class="w">                </span><span class="n">Attribute</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">                    </span><span class="n">key</span>: <span class="s">&quot;method&quot;</span><span class="p">.</span><span class="n">to_string</span><span class="p">(),</span><span class="w"></span>
-
 <span class="w">                    </span><span class="n">value</span>: <span class="s">&quot;instantiate&quot;</span><span class="p">.</span><span class="n">to_string</span><span class="p">()</span><span class="w"></span>
 <span class="w">                </span><span class="p">},</span><span class="w"></span>
 <span class="w">                </span><span class="n">Attribute</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">                    </span><span class="n">key</span>: <span class="s">&quot;token_contract_code_id&quot;</span><span class="p">.</span><span class="n">to_string</span><span class="p">(),</span><span class="w"></span>
-
 <span class="w">                    </span><span class="n">value</span>: <span class="s">&quot;1&quot;</span><span class="p">.</span><span class="n">to_string</span><span class="p">()</span><span class="w"></span>
 <span class="w">                </span><span class="p">}</span><span class="w"></span>
 <span class="w">            </span><span class="p">],</span><span class="w"></span>
@@ -2427,10 +2383,9 @@
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 
 <span class="w">    </span><span class="cp">#[test]</span><span class="w"></span>
-
 <span class="w">    </span><span class="k">fn</span> <span class="nf">test_mint_token</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">        </span><span class="c1">// GIVEN</span>
-<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">deps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mock_dependencies</span><span class="p">(</span><span class="o">&amp;</span><span class="p">[]);</span><span class="w"></span>
+<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">deps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mock_dependencies</span><span class="p">();</span><span class="w"></span>
 
 <span class="w">        </span><span class="c1">// WHEN</span>
 <span class="w">        </span><span class="n">do_instantiate</span><span class="p">(</span><span class="n">deps</span><span class="p">.</span><span class="n">as_mut</span><span class="p">());</span><span class="w"></span>
@@ -2440,52 +2395,40 @@
 <span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">res_attr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">res</span><span class="p">.</span><span class="n">attributes</span><span class="p">;</span><span class="w"></span>
 <span class="w">        </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">res_attr</span><span class="p">.</span><span class="n">len</span><span class="p">());</span><span class="w"></span>
 <span class="w">        </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="s">&quot;instantiate_token&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">res_attr</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="n">unwrap</span><span class="p">().</span><span class="n">value</span><span class="p">);</span><span class="w"></span>
+
 <span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">res_message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">res</span><span class="p">.</span><span class="n">messages</span><span class="p">;</span><span class="w"></span>
 <span class="w">        </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">res_message</span><span class="p">.</span><span class="n">len</span><span class="p">());</span><span class="w"></span>
 <span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">success_reply</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SubMsg</span>::<span class="n">reply_on_success</span><span class="p">(</span><span class="w"></span>
 <span class="w">            </span><span class="n">CosmosMsg</span>::<span class="n">Wasm</span><span class="p">(</span><span class="n">WasmMsg</span>::<span class="n">Instantiate</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">                </span><span class="n">admin</span>: <span class="nb">Some</span><span class="p">(</span><span class="s">&quot;cosmos2contract&quot;</span><span class="p">.</span><span class="n">to_string</span><span class="p">()),</span><span class="w"></span>
-
 <span class="w">                </span><span class="n">code_id</span>: <span class="mi">1</span><span class="p">,</span><span class="w"></span>
-
 <span class="w">                </span><span class="n">funds</span>: <span class="nc">vec</span><span class="o">!</span><span class="p">[],</span><span class="w"></span>
-
 <span class="w">                </span><span class="n">msg</span>: <span class="nc">to_binary</span><span class="p">(</span><span class="o">&amp;</span><span class="n">cw20_base</span>::<span class="n">msg</span>::<span class="n">InstantiateMsg</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">                    </span><span class="n">name</span>: <span class="s">&quot;Bit Money&quot;</span><span class="p">.</span><span class="n">to_string</span><span class="p">(),</span><span class="w"></span>
-
 <span class="w">                    </span><span class="n">symbol</span>: <span class="s">&quot;BTM&quot;</span><span class="p">.</span><span class="n">to_string</span><span class="p">(),</span><span class="w"></span>
-
 <span class="w">                    </span><span class="n">decimals</span>: <span class="mi">2</span><span class="p">,</span><span class="w"></span>
-
 <span class="w">                    </span><span class="n">mint</span>: <span class="nb">Some</span><span class="p">(</span><span class="n">MinterResponse</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">                        </span><span class="n">minter</span>: <span class="s">&quot;cosmos2contract&quot;</span><span class="p">.</span><span class="n">to_string</span><span class="p">(),</span><span class="w"></span>
-
 <span class="w">                        </span><span class="n">cap</span>: <span class="nb">Some</span><span class="p">(</span><span class="n">Uint128</span>::<span class="n">new</span><span class="p">(</span><span class="mi">1234</span><span class="p">)),</span><span class="w"></span>
 <span class="w">                    </span><span class="p">}),</span><span class="w"></span>
-
 <span class="w">                    </span><span class="n">initial_balances</span>: <span class="nc">vec</span><span class="o">!</span><span class="p">[</span><span class="n">Cw20Coin</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">                        </span><span class="n">amount</span>: <span class="nc">Uint128</span>::<span class="n">new</span><span class="p">(</span><span class="mi">123</span><span class="p">),</span><span class="w"></span>
-
 <span class="w">                        </span><span class="n">address</span>: <span class="s">&quot;creator&quot;</span><span class="p">.</span><span class="n">to_string</span><span class="p">(),</span><span class="w"></span>
 <span class="w">                    </span><span class="p">}],</span><span class="w"></span>
-
 <span class="w">                    </span><span class="n">marketing</span>: <span class="nb">None</span><span class="p">,</span><span class="w"></span>
 <span class="w">                </span><span class="p">})</span><span class="w"></span>
 <span class="w">                </span><span class="p">.</span><span class="n">unwrap</span><span class="p">(),</span><span class="w"></span>
-
 <span class="w">                </span><span class="n">label</span>: <span class="s">&quot;Bit Money&quot;</span><span class="p">.</span><span class="n">to_string</span><span class="p">(),</span><span class="w"></span>
 <span class="w">            </span><span class="p">}),</span><span class="w"></span>
 <span class="w">            </span><span class="mi">1</span><span class="p">,</span><span class="w"></span>
 <span class="w">        </span><span class="p">);</span><span class="w"></span>
-
 <span class="w">        </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="o">&amp;</span><span class="n">success_reply</span><span class="p">,</span><span class="w"> </span><span class="n">res_message</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="n">unwrap</span><span class="p">());</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 
 <span class="w">    </span><span class="cp">#[test]</span><span class="w"></span>
-
 <span class="w">    </span><span class="k">fn</span> <span class="nf">test_reply_instantiate_event</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">        </span><span class="c1">// GIVEN</span>
-<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">deps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mock_dependencies</span><span class="p">(</span><span class="o">&amp;</span><span class="p">[]);</span><span class="w"></span>
+<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">deps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mock_dependencies</span><span class="p">();</span><span class="w"></span>
 <span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">env</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mock_env</span><span class="p">();</span><span class="w"></span>
 <span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">query_minted_tokens</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">QueryMsg</span>::<span class="n">GetMintedTokens</span><span class="w"> </span><span class="p">{};</span><span class="w"></span>
 
@@ -2503,7 +2446,6 @@
 <span class="w">                </span><span class="p">.</span><span class="n">add_attribute</span><span class="p">(</span><span class="s">&quot;contract_address&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;bit_money_contract_address&quot;</span><span class="p">),</span><span class="w"></span>
 <span class="w">            </span><span class="n">do_instantiate_res</span><span class="w"></span>
 <span class="w">        </span><span class="p">);</span><span class="w"></span>
-
 <span class="w">        </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="w"></span>
 <span class="w">            </span><span class="n">MintedTokens</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">                </span><span class="n">minted_tokens</span>: <span class="nc">vec</span><span class="o">!</span><span class="p">[</span><span class="s">&quot;bit_money_contract_address&quot;</span><span class="p">.</span><span class="n">to_string</span><span class="p">()]</span><span class="w"></span>
@@ -2513,22 +2455,19 @@
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 
 <span class="w">    </span><span class="cp">#[test]</span><span class="w"></span>
-
 <span class="w">    </span><span class="k">fn</span> <span class="nf">test_mint_existent_token</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">        </span><span class="c1">// GIVEN</span>
-<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">deps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mock_dependencies</span><span class="p">(</span><span class="o">&amp;</span><span class="p">[]);</span><span class="w"></span>
+<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">deps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mock_dependencies</span><span class="p">();</span><span class="w"></span>
 <span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">env</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mock_env</span><span class="p">();</span><span class="w"></span>
 <span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">info</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mock_info</span><span class="p">(</span><span class="w"></span>
 <span class="w">            </span><span class="s">&quot;creator&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">            </span><span class="o">&amp;</span><span class="fm">vec!</span><span class="p">[</span><span class="n">Coin</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                </span><span class="n">denom</span>: <span class="s">&quot;uusd&quot;</span><span class="p">.</span><span class="n">to_string</span><span class="p">(),</span><span class="w"></span>
-
+<span class="w">                </span><span class="n">denom</span>: <span class="s">&quot;uluna&quot;</span><span class="p">.</span><span class="n">to_string</span><span class="p">(),</span><span class="w"></span>
 <span class="w">                </span><span class="n">amount</span>: <span class="nc">Uint128</span>::<span class="n">new</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"></span>
 <span class="w">            </span><span class="p">}],</span><span class="w"></span>
 <span class="w">        </span><span class="p">);</span><span class="w"></span>
 <span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">msg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ExecuteMsg</span>::<span class="n">Deposit</span><span class="p">(</span><span class="n">DepositType</span>::<span class="n">Mint</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">            </span><span class="n">token_address</span>: <span class="s">&quot;bit_money_contract_address&quot;</span><span class="p">.</span><span class="n">to_string</span><span class="p">(),</span><span class="w"></span>
-
 <span class="w">            </span><span class="n">recipient</span>: <span class="s">&quot;creator&quot;</span><span class="p">.</span><span class="n">to_string</span><span class="p">(),</span><span class="w"></span>
 <span class="w">        </span><span class="p">});</span><span class="w"></span>
 
@@ -2544,14 +2483,11 @@
 <span class="w">                </span><span class="p">.</span><span class="n">add_attribute</span><span class="p">(</span><span class="s">&quot;method&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;mint&quot;</span><span class="p">)</span><span class="w"></span>
 <span class="w">                </span><span class="p">.</span><span class="n">add_messages</span><span class="p">(</span><span class="fm">vec!</span><span class="p">[</span><span class="n">CosmosMsg</span>::<span class="n">Wasm</span><span class="p">(</span><span class="n">WasmMsg</span>::<span class="n">Execute</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">                    </span><span class="n">contract_addr</span>: <span class="s">&quot;bit_money_contract_address&quot;</span><span class="p">.</span><span class="n">to_string</span><span class="p">(),</span><span class="w"></span>
-
 <span class="w">                    </span><span class="n">msg</span>: <span class="nc">to_binary</span><span class="p">(</span><span class="o">&amp;</span><span class="n">cw20_base</span>::<span class="n">msg</span>::<span class="n">ExecuteMsg</span>::<span class="n">Mint</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">                        </span><span class="n">amount</span>: <span class="nc">Uint128</span>::<span class="n">new</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"></span>
-
 <span class="w">                        </span><span class="n">recipient</span>: <span class="s">&quot;creator&quot;</span><span class="p">.</span><span class="n">to_string</span><span class="p">()</span><span class="w"></span>
 <span class="w">                    </span><span class="p">})</span><span class="w"></span>
 <span class="w">                    </span><span class="p">.</span><span class="n">unwrap</span><span class="p">(),</span><span class="w"></span>
-
 <span class="w">                    </span><span class="n">funds</span>: <span class="nc">vec</span><span class="o">!</span><span class="p">[],</span><span class="w"></span>
 <span class="w">                </span><span class="p">})]),</span><span class="w"></span>
 <span class="w">            </span><span class="n">execute_res</span><span class="w"></span>
@@ -2559,15 +2495,13 @@
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 
 <span class="w">    </span><span class="cp">#[test]</span><span class="w"></span>
-
 <span class="w">    </span><span class="k">fn</span> <span class="nf">test_burn_tokens</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">        </span><span class="c1">// GIVEN</span>
-<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">deps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mock_dependencies</span><span class="p">(</span><span class="o">&amp;</span><span class="p">[]);</span><span class="w"></span>
+<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">deps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mock_dependencies</span><span class="p">();</span><span class="w"></span>
 <span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">env</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mock_env</span><span class="p">();</span><span class="w"></span>
 <span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">info</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mock_info</span><span class="p">(</span><span class="s">&quot;creator&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="p">[]);</span><span class="w"></span>
 <span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">exec_burn_tokens</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ExecuteMsg</span>::<span class="n">Burn</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">            </span><span class="n">amount</span>: <span class="nc">Uint128</span>::<span class="n">new</span><span class="p">(</span><span class="mi">123</span><span class="p">),</span><span class="w"></span>
-
 <span class="w">            </span><span class="n">token_address</span>: <span class="s">&quot;bit_money_contract_address&quot;</span><span class="p">.</span><span class="n">to_string</span><span class="p">(),</span><span class="w"></span>
 <span class="w">        </span><span class="p">};</span><span class="w"></span>
 
@@ -2575,42 +2509,45 @@
 <span class="w">        </span><span class="n">do_instantiate</span><span class="p">(</span><span class="n">deps</span><span class="p">.</span><span class="n">as_mut</span><span class="p">());</span><span class="w"></span>
 <span class="w">        </span><span class="n">do_reply_instantiate_event</span><span class="p">(</span><span class="n">deps</span><span class="p">.</span><span class="n">as_mut</span><span class="p">());</span><span class="w"></span>
 <span class="w">        </span><span class="n">do_mint_new_token</span><span class="p">(</span><span class="n">deps</span><span class="p">.</span><span class="n">as_mut</span><span class="p">());</span><span class="w"></span>
+
 <span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">execute</span><span class="p">(</span><span class="n">deps</span><span class="p">.</span><span class="n">as_mut</span><span class="p">(),</span><span class="w"> </span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">info</span><span class="p">,</span><span class="w"> </span><span class="n">exec_burn_tokens</span><span class="p">).</span><span class="n">unwrap</span><span class="p">();</span><span class="w"></span>
 
 <span class="w">        </span><span class="c1">// THEN</span>
-<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">res_attr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">res</span><span class="p">.</span><span class="n">attributes</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">res_attr</span><span class="p">.</span><span class="n">len</span><span class="p">());</span><span class="w"></span>
-<span class="w">        </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="s">&quot;burn&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">res_attr</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="n">unwrap</span><span class="p">().</span><span class="n">value</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">res_message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">res</span><span class="p">.</span><span class="n">messages</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">res_message</span><span class="p">.</span><span class="n">len</span><span class="p">());</span><span class="w"></span>
-<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">message_reply</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SubMsg</span>::<span class="n">new</span><span class="p">(</span><span class="n">CosmosMsg</span>::<span class="n">Wasm</span><span class="p">(</span><span class="n">WasmMsg</span>::<span class="n">Execute</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="n">contract_addr</span>: <span class="s">&quot;bit_money_contract_address&quot;</span><span class="p">.</span><span class="n">to_string</span><span class="p">(),</span><span class="w"></span>
-
-<span class="w">            </span><span class="n">msg</span>: <span class="nc">to_binary</span><span class="p">(</span><span class="o">&amp;</span><span class="n">cw20_base</span>::<span class="n">msg</span>::<span class="n">ExecuteMsg</span>::<span class="n">BurnFrom</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                </span><span class="n">owner</span>: <span class="s">&quot;creator&quot;</span><span class="p">.</span><span class="n">to_string</span><span class="p">(),</span><span class="w"></span>
-
-<span class="w">                </span><span class="n">amount</span>: <span class="nc">Uint128</span>::<span class="n">new</span><span class="p">(</span><span class="mi">123</span><span class="p">),</span><span class="w"></span>
-<span class="w">            </span><span class="p">})</span><span class="w"></span>
-<span class="w">            </span><span class="p">.</span><span class="n">unwrap</span><span class="p">(),</span><span class="w"></span>
-
-<span class="w">            </span><span class="n">funds</span>: <span class="nc">vec</span><span class="o">!</span><span class="p">[],</span><span class="w"></span>
-<span class="w">        </span><span class="p">}));</span><span class="w"></span>
-<span class="w">        </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="fm">vec!</span><span class="p">[</span><span class="n">message_reply</span><span class="p">],</span><span class="w"> </span><span class="n">res_message</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">res</span><span class="p">.</span><span class="n">attributes</span><span class="p">.</span><span class="n">len</span><span class="p">());</span><span class="w"></span>
+<span class="w">        </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="s">&quot;burn&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">res</span><span class="p">.</span><span class="n">attributes</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="n">unwrap</span><span class="p">().</span><span class="n">value</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">res</span><span class="p">.</span><span class="n">messages</span><span class="p">.</span><span class="n">len</span><span class="p">());</span><span class="w"></span>
+<span class="w">        </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="w"></span>
+<span class="w">            </span><span class="fm">vec!</span><span class="p">[</span><span class="w"></span>
+<span class="w">                </span><span class="n">SubMsg</span>::<span class="n">new</span><span class="p">(</span><span class="n">CosmosMsg</span>::<span class="n">Wasm</span><span class="p">(</span><span class="n">WasmMsg</span>::<span class="n">Execute</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                    </span><span class="n">contract_addr</span>: <span class="s">&quot;bit_money_contract_address&quot;</span><span class="p">.</span><span class="n">to_string</span><span class="p">(),</span><span class="w"></span>
+<span class="w">                    </span><span class="n">msg</span>: <span class="nc">to_binary</span><span class="p">(</span><span class="o">&amp;</span><span class="n">cw20_base</span>::<span class="n">msg</span>::<span class="n">ExecuteMsg</span>::<span class="n">BurnFrom</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                        </span><span class="n">owner</span>: <span class="s">&quot;creator&quot;</span><span class="p">.</span><span class="n">to_string</span><span class="p">(),</span><span class="w"></span>
+<span class="w">                        </span><span class="n">amount</span>: <span class="nc">Uint128</span>::<span class="n">new</span><span class="p">(</span><span class="mi">123</span><span class="p">),</span><span class="w"></span>
+<span class="w">                    </span><span class="p">})</span><span class="w"></span>
+<span class="w">                    </span><span class="p">.</span><span class="n">unwrap</span><span class="p">(),</span><span class="w"></span>
+<span class="w">                    </span><span class="n">funds</span>: <span class="nc">vec</span><span class="o">!</span><span class="p">[],</span><span class="w"></span>
+<span class="w">                </span><span class="p">})),</span><span class="w"></span>
+<span class="w">                </span><span class="n">SubMsg</span>::<span class="n">new</span><span class="p">(</span><span class="n">CosmosMsg</span>::<span class="n">Bank</span><span class="p">(</span><span class="n">BankMsg</span>::<span class="nb">Send</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                    </span><span class="n">to_address</span>: <span class="s">&quot;creator&quot;</span><span class="p">.</span><span class="n">to_string</span><span class="p">(),</span><span class="w"></span>
+<span class="w">                    </span><span class="n">amount</span>: <span class="nc">coins</span><span class="p">(</span><span class="mi">123</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="kt">u128</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;uluna&quot;</span><span class="p">)</span><span class="w"></span>
+<span class="w">                </span><span class="p">}))</span><span class="w"></span>
+<span class="w">            </span><span class="p">],</span><span class="w"></span>
+<span class="w">            </span><span class="n">res</span><span class="p">.</span><span class="n">messages</span><span class="w"></span>
+<span class="w">        </span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 
 <span class="w">    </span><span class="cm">/*</span>
-
-<span class="cm">    * HELPER METHODS TO DO NOT REPEAT CODE MANY TIMES</span>
-
-<span class="cm">    */</span><span class="w"></span>
+<span class="cm">     * HELPER METHODS TO DO NOT REPEAT CODE MANY TIMES</span>
+<span class="cm">     */</span><span class="w"></span>
 
 <span class="w">    </span><span class="k">fn</span> <span class="nf">do_instantiate</span><span class="p">(</span><span class="n">deps</span>: <span class="nc">DepsMut</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">Response</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">instantiate_msg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">InstantiateMsg</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="n">stable_denom</span>: <span class="s">&quot;uusd&quot;</span><span class="p">.</span><span class="n">to_string</span><span class="p">(),</span><span class="w"></span>
+<span class="w">            </span><span class="n">stable_denom</span>: <span class="s">&quot;uluna&quot;</span><span class="p">.</span><span class="n">to_string</span><span class="p">(),</span><span class="w"></span>
 <span class="w">            </span><span class="n">token_contract_code_id</span>: <span class="mi">1</span><span class="p">,</span><span class="w"></span>
 <span class="w">        </span><span class="p">};</span><span class="w"></span>
 <span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">info</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mock_info</span><span class="p">(</span><span class="s">&quot;creator&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="p">[]);</span><span class="w"></span>
 <span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">env</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mock_env</span><span class="p">();</span><span class="w"></span>
+
 <span class="w">        </span><span class="n">instantiate</span><span class="p">(</span><span class="n">deps</span><span class="p">,</span><span class="w"> </span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">info</span><span class="p">,</span><span class="w"> </span><span class="n">instantiate_msg</span><span class="p">).</span><span class="n">unwrap</span><span class="p">()</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 
@@ -2619,29 +2556,26 @@
 <span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">info</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mock_info</span><span class="p">(</span><span class="w"></span>
 <span class="w">            </span><span class="s">&quot;i_am_the_sender&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">            </span><span class="o">&amp;</span><span class="fm">vec!</span><span class="p">[</span><span class="n">Coin</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                </span><span class="n">denom</span>: <span class="s">&quot;uusd&quot;</span><span class="p">.</span><span class="n">to_string</span><span class="p">(),</span><span class="w"></span>
-
+<span class="w">                </span><span class="n">denom</span>: <span class="s">&quot;uluna&quot;</span><span class="p">.</span><span class="n">to_string</span><span class="p">(),</span><span class="w"></span>
 <span class="w">                </span><span class="n">amount</span>: <span class="nc">Uint128</span>::<span class="n">new</span><span class="p">(</span><span class="mi">123</span><span class="p">),</span><span class="w"></span>
 <span class="w">            </span><span class="p">}],</span><span class="w"></span>
 <span class="w">        </span><span class="p">);</span><span class="w"></span>
-
 <span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">token_msg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cw20_base</span>::<span class="n">msg</span>::<span class="n">InstantiateMsg</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">            </span><span class="n">name</span>: <span class="s">&quot;Bit Money&quot;</span><span class="p">.</span><span class="n">to_string</span><span class="p">(),</span><span class="w"></span>
 <span class="w">            </span><span class="n">symbol</span>: <span class="s">&quot;BTM&quot;</span><span class="p">.</span><span class="n">to_string</span><span class="p">(),</span><span class="w"></span>
 <span class="w">            </span><span class="n">decimals</span>: <span class="mi">2</span><span class="p">,</span><span class="w"></span>
 <span class="w">            </span><span class="n">mint</span>: <span class="nb">Some</span><span class="p">(</span><span class="n">MinterResponse</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">                </span><span class="n">minter</span>: <span class="s">&quot;creator&quot;</span><span class="p">.</span><span class="n">to_string</span><span class="p">(),</span><span class="w"></span>
-
 <span class="w">                </span><span class="n">cap</span>: <span class="nb">Some</span><span class="p">(</span><span class="n">Uint128</span>::<span class="n">new</span><span class="p">(</span><span class="mi">1234</span><span class="p">)),</span><span class="w"></span>
 <span class="w">            </span><span class="p">}),</span><span class="w"></span>
 <span class="w">            </span><span class="n">initial_balances</span>: <span class="nc">vec</span><span class="o">!</span><span class="p">[</span><span class="n">Cw20Coin</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">                </span><span class="n">amount</span>: <span class="nc">Uint128</span>::<span class="n">new</span><span class="p">(</span><span class="mi">123</span><span class="p">),</span><span class="w"></span>
-
 <span class="w">                </span><span class="n">address</span>: <span class="s">&quot;creator&quot;</span><span class="p">.</span><span class="n">to_string</span><span class="p">(),</span><span class="w"></span>
 <span class="w">            </span><span class="p">}],</span><span class="w"></span>
 <span class="w">            </span><span class="n">marketing</span>: <span class="nb">None</span><span class="p">,</span><span class="w"></span>
 <span class="w">        </span><span class="p">};</span><span class="w"></span>
 <span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">msg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ExecuteMsg</span>::<span class="n">Deposit</span><span class="p">(</span><span class="n">DepositType</span>::<span class="n">Instantiate</span><span class="p">(</span><span class="n">token_msg</span><span class="p">.</span><span class="n">clone</span><span class="p">()));</span><span class="w"></span>
+
 <span class="w">        </span><span class="n">execute</span><span class="p">(</span><span class="n">deps</span><span class="p">,</span><span class="w"> </span><span class="n">env</span><span class="p">.</span><span class="n">clone</span><span class="p">(),</span><span class="w"> </span><span class="n">info</span><span class="p">.</span><span class="n">clone</span><span class="p">(),</span><span class="w"> </span><span class="n">msg</span><span class="p">).</span><span class="n">unwrap</span><span class="p">()</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 
@@ -2649,6 +2583,7 @@
 <span class="cm">    the minted_tokens addresses can be whitelisted in factory.*/</span><span class="w"></span>
 <span class="w">    </span><span class="k">fn</span> <span class="nf">do_reply_instantiate_event</span><span class="p">(</span><span class="n">deps</span>: <span class="nc">DepsMut</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">Response</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">env</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mock_env</span><span class="p">();</span><span class="w"></span>
+
 <span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">event</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Event</span>::<span class="n">new</span><span class="p">(</span><span class="s">&quot;instantiate_contract&quot;</span><span class="p">)</span><span class="w"></span>
 <span class="w">            </span><span class="p">.</span><span class="n">add_attribute</span><span class="p">(</span><span class="s">&quot;creator&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;token_factory_addr&quot;</span><span class="p">)</span><span class="w"></span>
 <span class="w">            </span><span class="p">.</span><span class="n">add_attribute</span><span class="p">(</span><span class="s">&quot;admin&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;i_am_the_sender&quot;</span><span class="p">)</span><span class="w"></span>
@@ -2660,10 +2595,8 @@
 <span class="w">            </span><span class="n">env</span><span class="p">,</span><span class="w"></span>
 <span class="w">            </span><span class="n">Reply</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">                </span><span class="n">id</span>: <span class="mi">1</span><span class="p">,</span><span class="w"></span>
-
-<span class="w">                </span><span class="n">result</span>: <span class="nc">cosmwasm_std</span>::<span class="n">ContractResult</span>::<span class="nb">Ok</span><span class="p">(</span><span class="n">SubMsgExecutionResponse</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="n">result</span>: <span class="nc">cosmwasm_std</span>::<span class="n">SubMsgResult</span>::<span class="nb">Ok</span><span class="p">(</span><span class="n">SubMsgResponse</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">                    </span><span class="n">events</span>: <span class="nc">vec</span><span class="o">!</span><span class="p">[</span><span class="n">event</span><span class="p">],</span><span class="w"></span>
-
 <span class="w">                    </span><span class="n">data</span>: <span class="nb">None</span><span class="p">,</span><span class="w"></span>
 <span class="w">                </span><span class="p">}),</span><span class="w"></span>
 <span class="w">            </span><span class="p">},</span><span class="w"></span>
@@ -2747,7 +2680,7 @@ running <span class="m">5</span> tests
     &quot;_base&quot;: {
       &quot;instantiation&quot;: {
         &quot;instantiateMsg&quot;: {
-          &quot;stable_denom&quot;: &quot;uusd&quot;,
+          &quot;stable_denom&quot;: &quot;uluna&quot;,
           &quot;token_contract_code_id&quot;: &lt;token_contract_id&gt;
         }
       }
@@ -2766,7 +2699,8 @@ running <span class="m">5</span> tests
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>If your code is not working as expected, you can <a class="reference external" href="https://github.com/emidev98/token-factory/commit/181192559b9d1b6356dd15812e75bddb5f270162">clone the repo with all changes done until now</a>.</p>
+<p>If your code is not working as expected, you can <a class="reference external" href="https://github.com/emidev98/token-factory/commit/8da7892486704c54e33442b156d63178f5137527">clone the repo with all changes done until now</a>.</p>
+<p>A hosted website for the token factory can be <a class="reference external" href="http://tokens-factory.decentryfi.xyz">found here</a>.</p>
 </div>
 </div>
 </div>
