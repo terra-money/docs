@@ -33,7 +33,7 @@ First, set up your environment:
 
 ## Instantiate a new app using Terrain
 
-a. Instantiate a new app using Terrain:
+Instantiate a [new app using Terrain](https://github.com/terra-money/terrain#terrain-new-name):
 
 ```sh
 terrain new token-factory
@@ -42,24 +42,13 @@ terrain new token-factory
 When the app is generated, the following displays:
 
 ```sh
-generating:
+generating app token-factory:
+- workspace... done
 - contract... done
 - frontend... done
 ```
 
-b. Navigate to the `contracts` folder.
-
-```
-cd contracts/
-```
-
-c. Terrain automatically generates a sample `counter` contract in the `contracts` folder. Delete the `counter` smart contract folder to ensure a clean workspace:
-
-```
-rm -r counter/
-```
-
-## Instantiate the `token-factory` and `cw20-factory-token` contracts
+## Generate the `cw20-factory-token` contract
 
 a. Navigate to the `token-factory` directory:
 
@@ -67,41 +56,24 @@ a. Navigate to the `token-factory` directory:
 cd token-factory
 ```
 
-b. Instantiate the `token-factory` contract:
+b. Instantiate the `cw20-factory-token` contract:
 
-```sh
-terrain code:new token-factory
+```
+terrain contract:new cw20-factory-token
 ```
 
 When the contract is generated, the following displays:
 
 ```sh
-generating contract... done
-```
-
-c. Instantiate the `cw20-factory-token` contract:
-
-```
-terrain code:new cw20-factory-token
-```
-
-When the contract is generated, the following displays:
-
-```sh
-generating contract... done
+generating contract cw20-factory-token:
+- contract... done
 ```
 
 ## Modify the mnemonics passphrase
 
 Before editing the smart contracts you instantiated in step 2, modify the mnemonic you'll use to do deploy the contract to LocalTerra:
 
-a. Navigate to ` /token-factory`
-
-```
-cd /token-factory
-```
-
-b. Open `/keys.terrain.js` and set the `mnemonic`s to the following:
+a. Open `/keys.terrain.js` and set the `mnemonic`s to the following:
 
 ```
 notice oak worry limit wrap speak medal online prefer cluster roof addict wrist behave treat actual wasp year salad speed social layer crew genius
@@ -147,7 +119,7 @@ terrain deploy cw20-factory-token --signer test
 
 ## Modify the CW20 Factory Token smart contract
 
-In this section, you will modify the `cw20-factory-token` contract that you instantiated. This contract implements the [CW20 Base](https://github.com/CosmWasm/cw-plus/tree/0.9.x/contracts/cw20-base), along with several custom files.
+In this section, you will modify the `cw20-factory-token` contract that you instantiated. This contract implements the [CW20 Base](https://github.com/CosmWasm/cw-plus/tree/main/contracts/cw20-base), along with several custom files.
 
 To modify the `cw20-factory-token` contract, follow the procedure below.
 
@@ -172,7 +144,7 @@ b. Open `cargo.toml` and add this to the dependencies:
 # ...
 
 [dependencies]
-cw20-base = {  version = "0.8.1", features = ["library"] }
+cw20-base = {  version = "0.13.2", features = ["library"] }
 
 # ...
 ```
@@ -419,12 +391,12 @@ terrain deploy cw20-factory-token --signer test
 ```
 
 :::{tip}
-If your code is not working as expected, you can [clone the repo with all the changes described above](https://github.com/emidev98/token-factory/commit/fdba3c89c464860fe8cd9aa17f1344d82d613522) so that you can continue with the tutorial. To clone the repo, do the following:
+If your code is not working as expected, you can [clone the repo with all the changes described above](https://github.com/emidev98/token-factory/commit/8da7892486704c54e33442b156d63178f5137527) so that you can continue with the tutorial. To clone the repo, do the following:
 
 ```
 git clone -n https://github.com/emidev98/token-factory
 cd token-factory
-git checkout fdba3c89c464860fe8cd9aa17f1344d82d613522
+git checkout 8da7892486704c54e33442b156d63178f5137527
 ```
 
 :::
@@ -457,13 +429,11 @@ b. Open `cargo.toml` and add the dependencies inside the header:
 ```rust
 # ...
 [dependencies]
-cw2 = "0.8.1"
-cw20 = "0.8.1"
-cw20-base = { version = "0.8.1", features = ["library"] }
-cw20-factory-token = { version = "0.5.0", features = ["library"] }
-
+cw2 = "0.13.2"
+cw20 = "0.13.2"
+cw20-base = {  version = "0.13.2", features = ["library"] }
+cw20-factory-token = {  version = "0.6.0", features = ["library"] }
 # ...
-
 ```
 
 ### 2. Modify the contract files
@@ -547,11 +517,11 @@ pub struct InstantiateMsg {
 #[serde(rename_all = "snake_case")]
 pub enum ExecuteMsg {
     /* Handle the deposits of native tokens into the smart contract to mint
-    the new pegged token 1:1 with UST or to increase circulation supply. */
+    the new pegged token 1:1 with LUNA or to increase circulation supply. */
     Deposit(DepositType),
 
-    /* Handle burn of pegged tokens 1:1 with UST which are added to
-    MINTED_TOKENS list and return the UST stored into the contract. */
+    /* Handle burn of pegged tokens 1:1 with LUNA which are added to
+    MINTED_TOKENS list and return the LUNA stored into the contract. */
     Burn {
         amount: Uint128,
         token_address: String,
@@ -564,7 +534,7 @@ pub enum DepositType {
     /* Instantiate a CW20_base token */
     Instantiate(cw20_base::msg::InstantiateMsg),
 
-    /* Create new tokens based on token_address, amount of UST send to
+    /* Create new tokens based on token_address, amount of LUNA send to
     this contract and recipient address */
     Mint {
         token_address: String,
@@ -662,7 +632,6 @@ pub fn instantiate(
     the code id of the contract deployed */
     let state = Config {
         stable_denom: msg.stable_denom.to_string(),
-
         token_contract_code_id: msg.token_contract_code_id,
     };
 
@@ -756,7 +725,6 @@ pub fn execute_instantiate_token(
     allowed thru this smart contract. */
     token_data.mint = match token_data.mint {
         None => None,
-
         Some(mut e) => {
             e.minter = env.contract.address.to_string();
 
@@ -768,13 +736,9 @@ pub fn execute_instantiate_token(
     https://github.com/CosmWasm/cw-plus/tree/0.9.x/contracts/cw20-base */
     let instantiate_message = WasmMsg::Instantiate {
         admin: Some(env.contract.address.to_string()),
-
         code_id: config.token_contract_code_id,
-
         msg: to_binary(&token_data)?,
-
         funds: vec![],
-
         label: token_data.name,
     };
 
@@ -932,19 +896,19 @@ pub fn reply(deps: DepsMut, _env: Env, msg: Reply) -> StdResult<Response> {
 fn handle_instantiate_reply(deps: DepsMut, msg: Reply) -> StdResult<Response> {
     let result = msg.result.into_result().map_err(StdError::generic_err)?;
 
-    /* Find the event type instantiate_contract which contains the contract_address*/
+    /* Find the event type instantiate which contains the contract_address*/
     let event = result
         .events
         .iter()
-        .find(|event| event.ty == "instantiate_contract")
-        .ok_or_else(|| StdError::generic_err("cannot find `instantiate_contract` event"))?;
+        .find(|event| event.ty == "instantiate")
+        .ok_or_else(|| StdError::generic_err("cannot find `instantiate` event"))?;
 
-    /* Find the contract_address from instantiate_contract event*/
+    /* Find the _contract_address from instantiate event*/
     let contract_address = &event
         .attributes
         .iter()
-        .find(|attr| attr.key == "contract_address")
-        .ok_or_else(|| StdError::generic_err("cannot find `contract_address` attribute"))?
+        .find(|attr| attr.key == "_contract_address")
+        .ok_or_else(|| StdError::generic_err("cannot find `_contract_address` attribute"))?
         .value;
 
     /* Update the state of the contract adding the new generated MINTED_TOKEN */
@@ -988,44 +952,37 @@ j. Open `test.rs` and add the following:
 
 ```rust
 #[cfg(test)]
-
 mod tests {
-
     use crate::{
         contract::{execute, instantiate, query, reply},
         msg::{DepositType, ExecuteMsg, InstantiateMsg, MintedTokens, QueryMsg},
     };
-
     use cosmwasm_std::{
-        from_binary,
+        coins, from_binary,
         testing::{mock_dependencies, mock_env, mock_info},
-        to_binary, Attribute, Coin, CosmosMsg, DepsMut, Event, Reply, Response, SubMsg,
-        SubMsgExecutionResponse, Uint128, WasmMsg,
+        to_binary, Attribute, BankMsg, Coin, CosmosMsg, DepsMut, Event, Reply, Response, SubMsg,
+        SubMsgResponse, Uint128, WasmMsg,
     };
-
     use cw20::{Cw20Coin, MinterResponse};
 
     #[test]
     fn test_instantiate() {
         // GIVEN
-        let mut deps = mock_dependencies(&[]);
+        let mut deps = mock_dependencies();
 
         // WHEN
         let res = do_instantiate(deps.as_mut());
 
         // THEN
         let attrs = res.attributes;
-
         assert_eq!(
             vec![
                 Attribute {
                     key: "method".to_string(),
-
                     value: "instantiate".to_string()
                 },
                 Attribute {
                     key: "token_contract_code_id".to_string(),
-
                     value: "1".to_string()
                 }
             ],
@@ -1034,10 +991,9 @@ mod tests {
     }
 
     #[test]
-
     fn test_mint_token() {
         // GIVEN
-        let mut deps = mock_dependencies(&[]);
+        let mut deps = mock_dependencies();
 
         // WHEN
         do_instantiate(deps.as_mut());
@@ -1047,52 +1003,40 @@ mod tests {
         let res_attr = res.attributes;
         assert_eq!(1, res_attr.len());
         assert_eq!("instantiate_token", res_attr.get(0).unwrap().value);
+
         let res_message = res.messages;
         assert_eq!(1, res_message.len());
         let success_reply = SubMsg::reply_on_success(
             CosmosMsg::Wasm(WasmMsg::Instantiate {
                 admin: Some("cosmos2contract".to_string()),
-
                 code_id: 1,
-
                 funds: vec![],
-
                 msg: to_binary(&cw20_base::msg::InstantiateMsg {
                     name: "Bit Money".to_string(),
-
                     symbol: "BTM".to_string(),
-
                     decimals: 2,
-
                     mint: Some(MinterResponse {
                         minter: "cosmos2contract".to_string(),
-
                         cap: Some(Uint128::new(1234)),
                     }),
-
                     initial_balances: vec![Cw20Coin {
                         amount: Uint128::new(123),
-
                         address: "creator".to_string(),
                     }],
-
                     marketing: None,
                 })
                 .unwrap(),
-
                 label: "Bit Money".to_string(),
             }),
             1,
         );
-
         assert_eq!(&success_reply, res_message.get(0).unwrap());
     }
 
     #[test]
-
     fn test_reply_instantiate_event() {
         // GIVEN
-        let mut deps = mock_dependencies(&[]);
+        let mut deps = mock_dependencies();
         let env = mock_env();
         let query_minted_tokens = QueryMsg::GetMintedTokens {};
 
@@ -1110,7 +1054,6 @@ mod tests {
                 .add_attribute("contract_address", "bit_money_contract_address"),
             do_instantiate_res
         );
-
         assert_eq!(
             MintedTokens {
                 minted_tokens: vec!["bit_money_contract_address".to_string()]
@@ -1120,22 +1063,19 @@ mod tests {
     }
 
     #[test]
-
     fn test_mint_existent_token() {
         // GIVEN
-        let mut deps = mock_dependencies(&[]);
+        let mut deps = mock_dependencies();
         let env = mock_env();
         let info = mock_info(
             "creator",
             &vec![Coin {
-                denom: "uusd".to_string(),
-
+                denom: "uluna".to_string(),
                 amount: Uint128::new(1),
             }],
         );
         let msg = ExecuteMsg::Deposit(DepositType::Mint {
             token_address: "bit_money_contract_address".to_string(),
-
             recipient: "creator".to_string(),
         });
 
@@ -1151,14 +1091,11 @@ mod tests {
                 .add_attribute("method", "mint")
                 .add_messages(vec![CosmosMsg::Wasm(WasmMsg::Execute {
                     contract_addr: "bit_money_contract_address".to_string(),
-
                     msg: to_binary(&cw20_base::msg::ExecuteMsg::Mint {
                         amount: Uint128::new(1),
-
                         recipient: "creator".to_string()
                     })
                     .unwrap(),
-
                     funds: vec![],
                 })]),
             execute_res
@@ -1166,15 +1103,13 @@ mod tests {
     }
 
     #[test]
-
     fn test_burn_tokens() {
         // GIVEN
-        let mut deps = mock_dependencies(&[]);
+        let mut deps = mock_dependencies();
         let env = mock_env();
         let info = mock_info("creator", &[]);
         let exec_burn_tokens = ExecuteMsg::Burn {
             amount: Uint128::new(123),
-
             token_address: "bit_money_contract_address".to_string(),
         };
 
@@ -1182,42 +1117,45 @@ mod tests {
         do_instantiate(deps.as_mut());
         do_reply_instantiate_event(deps.as_mut());
         do_mint_new_token(deps.as_mut());
+
         let res = execute(deps.as_mut(), env, info, exec_burn_tokens).unwrap();
 
         // THEN
-        let res_attr = res.attributes;
-        assert_eq!(1, res_attr.len());
-        assert_eq!("burn", res_attr.get(0).unwrap().value);
-        let res_message = res.messages;
-        assert_eq!(2, res_message.len());
-        let message_reply = SubMsg::new(CosmosMsg::Wasm(WasmMsg::Execute {
-            contract_addr: "bit_money_contract_address".to_string(),
-
-            msg: to_binary(&cw20_base::msg::ExecuteMsg::BurnFrom {
-                owner: "creator".to_string(),
-
-                amount: Uint128::new(123),
-            })
-            .unwrap(),
-
-            funds: vec![],
-        }));
-        assert_eq!(vec![message_reply], res_message);
+        assert_eq!(1, res.attributes.len());
+        assert_eq!("burn", res.attributes.get(0).unwrap().value);
+        assert_eq!(2, res.messages.len());
+        assert_eq!(
+            vec![
+                SubMsg::new(CosmosMsg::Wasm(WasmMsg::Execute {
+                    contract_addr: "bit_money_contract_address".to_string(),
+                    msg: to_binary(&cw20_base::msg::ExecuteMsg::BurnFrom {
+                        owner: "creator".to_string(),
+                        amount: Uint128::new(123),
+                    })
+                    .unwrap(),
+                    funds: vec![],
+                })),
+                SubMsg::new(CosmosMsg::Bank(BankMsg::Send {
+                    to_address: "creator".to_string(),
+                    amount: coins(123 as u128, "uluna")
+                }))
+            ],
+            res.messages
+        );
     }
 
     /*
-
-    * HELPER METHODS TO DO NOT REPEAT CODE MANY TIMES
-
-    */
+     * HELPER METHODS TO DO NOT REPEAT CODE MANY TIMES
+     */
 
     fn do_instantiate(deps: DepsMut) -> Response {
         let instantiate_msg = InstantiateMsg {
-            stable_denom: "uusd".to_string(),
+            stable_denom: "uluna".to_string(),
             token_contract_code_id: 1,
         };
         let info = mock_info("creator", &[]);
         let env = mock_env();
+
         instantiate(deps, env, info, instantiate_msg).unwrap()
     }
 
@@ -1226,29 +1164,26 @@ mod tests {
         let info = mock_info(
             "i_am_the_sender",
             &vec![Coin {
-                denom: "uusd".to_string(),
-
+                denom: "uluna".to_string(),
                 amount: Uint128::new(123),
             }],
         );
-
         let token_msg = cw20_base::msg::InstantiateMsg {
             name: "Bit Money".to_string(),
             symbol: "BTM".to_string(),
             decimals: 2,
             mint: Some(MinterResponse {
                 minter: "creator".to_string(),
-
                 cap: Some(Uint128::new(1234)),
             }),
             initial_balances: vec![Cw20Coin {
                 amount: Uint128::new(123),
-
                 address: "creator".to_string(),
             }],
             marketing: None,
         };
         let msg = ExecuteMsg::Deposit(DepositType::Instantiate(token_msg.clone()));
+
         execute(deps, env.clone(), info.clone(), msg).unwrap()
     }
 
@@ -1256,6 +1191,7 @@ mod tests {
     the minted_tokens addresses can be whitelisted in factory.*/
     fn do_reply_instantiate_event(deps: DepsMut) -> Response {
         let env = mock_env();
+
         let event = Event::new("instantiate_contract")
             .add_attribute("creator", "token_factory_addr")
             .add_attribute("admin", "i_am_the_sender")
@@ -1267,10 +1203,8 @@ mod tests {
             env,
             Reply {
                 id: 1,
-
-                result: cosmwasm_std::ContractResult::Ok(SubMsgExecutionResponse {
+                result: cosmwasm_std::SubMsgResult::Ok(SubMsgResponse {
                     events: vec![event],
-
                     data: None,
                 }),
             },
@@ -1279,7 +1213,6 @@ mod tests {
     }
 }
 ```
-
 h. Navigate to `token-factory/contracts/token-factory/examples`.
 
 i. Open `schema.rs`.
@@ -1368,7 +1301,7 @@ To determine which `<token_contract_code_id>`, check the file `refs.terrain.json
     "_base": {
       "instantiation": {
         "instantiateMsg": {
-          "stable_denom": "uusd",
+          "stable_denom": "uluna",
           "token_contract_code_id": <token_contract_id>
         }
       }
@@ -1386,7 +1319,7 @@ terrain deploy token-factory --signer test
 ```
 
 :::{tip}
+If your code is not working as expected, you can [clone the repo with all changes done until now](https://github.com/emidev98/token-factory/commit/8da7892486704c54e33442b156d63178f5137527).
 
-If your code is not working as expected, you can [clone the repo with all changes done until now](https://github.com/emidev98/token-factory/commit/181192559b9d1b6356dd15812e75bddb5f270162).
-
+A hosted website for the token factory can be [found here](http://tokens-factory.decentryfi.xyz).
 :::
