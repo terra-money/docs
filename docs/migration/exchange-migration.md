@@ -86,9 +86,9 @@ The new chain will be branded with the following assets:
 
 ## Snapshots and Airdrop
 
-**_Pre-attack_** snapshot to be taken at Terra Classic block [7544910](https://finder.terra.money/mainnet/blocks/7544910) (2022.05.07 23:00:04 UTC+08:00). 
+**_Pre-attack_** snapshot to be taken at Terra Classic block [7544910](https://finder.terra.money/classic/blocks/7544910) (2022.05.07 23:00:04 UTC+08:00). 
 
-**_Post-attack_** snapshot to be taken at Terra Classic block [7790000](https://finder.terra.money/mainnet/blocks/7790000). 
+**_Post-attack_** snapshot to be taken at Terra Classic block [7790000](https://finder.terra.money/classic/blocks/7790000). 
 
 **Note:** The post-attack block is estimated to occur on May 27th (2022.05.27 ~03:59:51 UTC+08:00). This block time is an estimate and may be subject to change. Please use the block height rather than the estimated time. Calculations described below should be carried out and resulting values should be utilized to properly calculate airdrop quantities. 
 
