@@ -7,6 +7,7 @@ set-up-local-environment
 write-smart-contract
 interact-with-smart-contract
 manage-cw20-tokens
+upgrade-cosmwasm.md
 ```
 
 ## Overview
