@@ -86,15 +86,15 @@ The new chain will be branded with the following assets:
 
 ## Snapshots and Airdrop
 
-**_Pre-attack_** snapshot to be taken at Terra Classic block [7544910](https://finder.terra.money/classic/blocks/7544910) (2022.05.07 23:00:04 UTC+08:00). 
+- **_Pre-attack_** snapshot was taken at Terra Classic block [7544910](https://finder.terra.money/classic/blocks/7544910) (7 May 2022 22:59:37 UTC+08:00). 
 
-**_Post-attack_** snapshot to be taken at Terra Classic block [7790000](https://finder.terra.money/classic/blocks/7790000). 
 
-**Note:** The post-attack block is estimated to occur on May 27th (2022.05.27 ~03:59:51 UTC+08:00). This block time is an estimate and may be subject to change. Please use the block height rather than the estimated time. Calculations described below should be carried out and resulting values should be utilized to properly calculate airdrop quantities. 
+- **_Post-attack_** snapshot was taken at Terra Classic block [7790000](https://finder.terra.money/classic/blocks/7790000) (27 May 2022 00:38:08 UTC+8:00). 
+
 
 ### Airdrop allocations
 
-All airdrop allocations to UST and LUNA holders will be based on the snapshots listed above. You may review the exchange-relevant allocations below. Note that these allocations _exclude_ the Community pool allocation of 30% as it is irrelevant to exchanges. You may review the original token distribution text proposal [on the Agora forum](https://agora.terra.money/t/terra-ecosystem-revival-plan-2-updated-and-final/18498).
+All airdrop allocations to UST and LUNA holders are based on the snapshots listed above. You may review the exchange-relevant allocations below. Note that these allocations _exclude_ the Community pool allocation of 30% as it is irrelevant to exchanges. You may review the original token distribution text proposal [on the Agora forum](https://agora.terra.money/t/terra-ecosystem-revival-plan-2-updated-and-final/18498).
 
 **Note:** Wallets owned by Terraform Labs are excluded from any airdrop allocations. Wallets owned by Terraform Labs will not recieve any token allocation at genesis.
 
