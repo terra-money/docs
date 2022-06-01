@@ -23,8 +23,8 @@
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
@@ -44,7 +44,7 @@
     <link rel="shortcut icon" href="../../_static/docs_favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Validator migration guide" href="validator-gentx.html" />
+    <link rel="next" title="Upgrade Smart Contracts to Cosmwasm 1.0.0" href="../develop/guides/smart-contracts/upgrade-cosmwasm.html" />
     <link rel="prev" title="Terra Migration FAQ" href="exchange-faq.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -109,6 +109,11 @@
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      dApp migration guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../develop/guides/smart-contracts/upgrade-cosmwasm.html">
+     Upgrade Smart Contracts to Cosmwasm 1.0.0
     </a>
    </li>
    <li class="toctree-l2">
@@ -693,6 +698,11 @@
          CW20 Tokens
         </a>
        </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../develop/guides/smart-contracts/upgrade-cosmwasm.html">
+         Upgrade Smart Contracts to Cosmwasm 1.0.0
+        </a>
+       </li>
       </ul>
      </li>
      <li class="toctree-l3 has-children">
@@ -1238,6 +1248,11 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#upgrade-cosmwasm">
+   Upgrade Cosmwasm
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#examples-of-deprecated-functionality">
    Examples of Deprecated Functionality
   </a>
@@ -1300,6 +1315,11 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#upgrade-cosmwasm">
+   Upgrade Cosmwasm
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#examples-of-deprecated-functionality">
    Examples of Deprecated Functionality
   </a>
@@ -1324,8 +1344,11 @@
 <div class="section" id="changes">
 <h2>Changes<a class="headerlink" href="#changes" title="Permalink to this headline">#</a></h2>
 <p>Terra 2.0 will be starting from a blank state when it comes to CosmWasm. This means no existing code IDs or smart contracts will be migrated.</p>
-<p>CosmWasm smart contracts will need to be uploaded to the new chain and instantiated.</p>
-<p>In addition to needing to re-deploy smart contracts, there are some breaking changes that developers should be aware of.</p>
+<ul class="simple">
+<li><p>CosmWasm smart contracts will need to be uploaded to the new chain and instantiated.</p></li>
+<li><p>Cosmwasm <a class="reference internal" href="#upgrade-cosmwasm"><span class="std std-doc">versions need to be upgraded to 1.0</span></a>.</p></li>
+<li><p>In addition to needing to re-deploy smart contracts, there are some breaking changes that developers should be aware of.</p></li>
+</ul>
 <div class="section" id="no-ust-or-other-native-stablecoins-krt-sdt-etc">
 <h3>1. No UST or other native stablecoins (KRT, SDT, etc).<a class="headerlink" href="#no-ust-or-other-native-stablecoins-krt-sdt-etc" title="Permalink to this headline">#</a></h3>
 <p>Terra 2.0 has removed all native stablecoins. Any logic that accepts, queries, or sends Terra stablecoins will need to be removed or updated.</p>
@@ -1353,6 +1376,10 @@
 <p>Apps remaining on the Terra Classic chain should not upgrade.</p>
 </div>
 </div>
+</div>
+<div class="section" id="upgrade-cosmwasm">
+<h2>Upgrade Cosmwasm<a class="headerlink" href="#upgrade-cosmwasm" title="Permalink to this headline">#</a></h2>
+<p>Update your Cosmwasm version to 1.0 using the <a class="reference internal" href="../develop/guides/smart-contracts/upgrade-cosmwasm.html"><span class="doc std std-doc">Cosmwasm upgrade guide</span></a>.</p>
 </div>
 <div class="section" id="examples-of-deprecated-functionality">
 <h2>Examples of Deprecated Functionality<a class="headerlink" href="#examples-of-deprecated-functionality" title="Permalink to this headline">#</a></h2>
@@ -1412,10 +1439,10 @@
             <p class="prev-next-title">Terra Migration FAQ</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="validator-gentx.html" title="next page">
+    <a class='right-next' id="next-link" href="../develop/guides/smart-contracts/upgrade-cosmwasm.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Validator migration guide</p>
+        <p class="prev-next-title">Upgrade Smart Contracts to Cosmwasm 1.0.0</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
