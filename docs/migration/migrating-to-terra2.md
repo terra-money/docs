@@ -6,9 +6,11 @@ Use this guide to Migrate from Terra Classic to the new Terra chain.
 
 Terra 2.0 will be starting from a blank state when it comes to CosmWasm. This means no existing code IDs or smart contracts will be migrated.
 
-CosmWasm smart contracts will need to be uploaded to the new chain and instantiated.
+- CosmWasm smart contracts will need to be uploaded to the new chain and instantiated.
 
-In addition to needing to re-deploy smart contracts, there are some breaking changes that developers should be aware of.
+- Cosmwasm [versions need to be upgraded to 1.0](#upgrade-cosmwasm).
+
+- In addition to needing to re-deploy smart contracts, there are some breaking changes that developers should be aware of.
 
 ### 1. No UST or other native stablecoins (KRT, SDT, etc).
 
@@ -41,6 +43,10 @@ All dApps on new Terra chain must update [@terra-money/terra.js](https://www.npm
 
 Apps remaining on the Terra Classic chain should not upgrade. 
 :::
+
+## Upgrade Cosmwasm
+
+Update your Cosmwasm version to 1.0 using the [Cosmwasm upgrade guide](../develop/guides/smart-contracts/upgrade-cosmwasm.md).
 
 ## Examples of Deprecated Functionality
 
