@@ -43,5 +43,6 @@ Learn how to migrate your dApp.
 exchange-migration.md
 exchange-faq.md
 migrating-to-terra2.md
+../develop/guides/smart-contracts/upgrade-cosmwasm.md
 validator-gentx.md
 ```
