@@ -41,7 +41,7 @@ nvm alias default <INSERT NODE VERSION HERE>
 1. To download LocalTerra, run the following commands:
 
    ```sh
-   git clone --branch v0.5.2 --depth 1 https://github.com/terra-money/localterra
+   git clone --depth 1 https://github.com/terra-money/localterra
    ```
 2. Start LocalTerra by running the following:
 
