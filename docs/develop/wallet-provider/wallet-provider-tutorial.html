@@ -23,8 +23,8 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/custom.css" />
@@ -1334,7 +1334,7 @@
 <p>This guide will cover how to set up a React app, integrate Wallet Provider, check the balance of the connected account, and call a token swap. If you want to integrate Terra Station into an existing react app you can skip past the <code class="docutils literal notranslate"><span class="pre">Project</span> <span class="pre">Setup</span></code> section.</p>
 <div class="tip admonition">
 <p class="admonition-title">Just want to dive in?</p>
-<p>Check out the getting started section for the premade templates <a class="reference external" href="https://github.com/terra-money/wallet-provider/">in Github</a>.</p>
+<p>Check out the getting started section for the premade templates <a class="reference external" href="https://github.com/terra-money/wallet-provider/">in GitHub</a>.</p>
 </div>
 <p>If you’re using a frontend framework other than React you’ll need to use <a class="reference external" href="https://www.npmjs.com/package/&#64;terra-money/wallet-controller">Wallet Controller</a> instead. Controller provides the sub-structure of Provider. You can see an example of how Wallet Controller works in the <a class="reference external" href="https://githubbox.com/terra-money/wallet-provider/tree/main/templates/vue">Vue.js template example</a>.</p>
 <div class="section" id="prerequisites">
@@ -1566,7 +1566,7 @@ export default App;
 <p>A LUNA transfer transaction needs a fee and a message containing the sender address, recipient address, and send amount (in this case 1 LUNA). Once the message is constructed, the <code class="docutils literal notranslate"><span class="pre">post</span></code> method on <code class="docutils literal notranslate"><span class="pre">connectedWallet</span></code> broadcasts it to the network.</p>
 <div class="note admonition">
 <p class="admonition-title">What happens if something goes wrong?</p>
-<p>Wallet provider also supplies useful error types. This example will handle the <code class="docutils literal notranslate"><span class="pre">UserDenied</span></code> error case. You can find other cases to handle <a class="reference external" href="https://github.com/terra-money/wallet-provider/blob/4e601c2dece7bec92c9ce95991d2314220a2c954/packages/src/%40terra-money/wallet-controller/exception/mapExtensionTxError.ts#L23">on Github</a>.</p>
+<p>Wallet provider also supplies useful error types. This example will handle the <code class="docutils literal notranslate"><span class="pre">UserDenied</span></code> error case. You can find other cases to handle <a class="reference external" href="https://github.com/terra-money/wallet-provider/blob/4e601c2dece7bec92c9ce95991d2314220a2c954/packages/src/%40terra-money/wallet-controller/exception/mapExtensionTxError.ts#L23">on GitHub</a>.</p>
 </div>
 <ol class="arabic">
 <li><p>Create a file in your <code class="docutils literal notranslate"><span class="pre">Components</span></code> folder named <code class="docutils literal notranslate"><span class="pre">Tx.js</span></code>.</p></li>
