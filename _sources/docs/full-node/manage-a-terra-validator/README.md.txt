@@ -27,7 +27,6 @@ For more general information on validators, visit the [validator section](../../
 court-delegations
 faq
 implement-security
-set-up-oracle-feeder
 set-up-validator
 troubleshoot-validator-problems
 restore
