@@ -63,8 +63,8 @@ Specify the network you want to join by choosing the corresponding **genesis fil
 
 | Network      | Type                    | Genesis                                                                                             | Addressbook                                                                                                |
 | :----------- | :---------------------- | :-------------------------------------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------- |
-| `phoenix-1`  | Mainnet                 | [Genesis Link]()                                                                                    | [Addressbook Link]()                                                                                       |
-| `pisco-1`    | Testnet                 | [Genesis Link]()                                                                                    | [Addressbook Link]()                                                                                       |
+| `phoenix-1`  | Mainnet                 | [Genesis Link](https://phoenix-genesis.s3.us-west-1.amazonaws.com/genesis.json )                                                                                    | [Addressbook Link]()                                                                                       |
+| `pisco-1`    | Testnet                 | [Genesis Link](https://raw.githubusercontent.com/terra-money/testnet/master/pisco-1/genesis.json)                                                                                    | [Addressbook Link]()                                                                                       |
 | `columbus-5` | Mainnet (Terra Classic) | [Genesis Link](https://columbus-genesis.s3.ap-northeast-1.amazonaws.com/columbus-5-genesis.json)    | [Addressbook Link](https://network.terra.dev/addrbook.json)                                                |
 | `bombay-12`  | Testnet (Terra Classic) | [Genesis Link](https://raw.githubusercontent.com/terra-money/testnet/master/bombay-12/genesis.json) | [ Addressbook Link ](https://raw.githubusercontent.com/terra-money/testnet/master/bombay-12/addrbook.json) |
 
@@ -80,7 +80,7 @@ Note that the versions of the network listed above are the [ latest versions ](h
 
 **Addressbook** lists a selection of peers for your node to dial to in order to discover other nodes in the network. Public address books of peers are made available by the Terra community.
 
-Choose a `testnet` or `mainnet` address type and download the appropriate genesis-transaction and addressbook. Links to these are posted in [Select-a-network](#select-a-network).
+Choose a `testnet` or `mainnet` address type and download the appropriate genesis-transaction and addressbook. Links to these are posted in [Select-a-network](#1-select-a-network).
 
 - For default `terrad` configurations, the `genesis` and `addressbook` files should be placed under `~/.terra/config/genesis.json` and `~/.terra/config/addrbook.json` respectively.
 
