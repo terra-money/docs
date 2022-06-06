@@ -6,7 +6,7 @@ This guide will cover how to set up a React app, integrate Wallet Provider, chec
 
 ::: {admonition} Just want to dive in?
 :class: tip
-Check out the getting started section for the premade templates [in Github](https://github.com/terra-money/wallet-provider/).
+Check out the getting started section for the premade templates [in GitHub](https://github.com/terra-money/wallet-provider/).
 :::
 
 If you're using a frontend framework other than React you'll need to use [Wallet Controller](https://www.npmjs.com/package/@terra-money/wallet-controller) instead. Controller provides the sub-structure of Provider. You can see an example of how Wallet Controller works in the [Vue.js template example](https://githubbox.com/terra-money/wallet-provider/tree/main/templates/vue).
@@ -249,7 +249,7 @@ A LUNA transfer transaction needs a fee and a message containing the sender addr
 
 :::{admonition} What happens if something goes wrong?
 :class: note
-Wallet provider also supplies useful error types. This example will handle the `UserDenied` error case. You can find other cases to handle [on Github](https://github.com/terra-money/wallet-provider/blob/4e601c2dece7bec92c9ce95991d2314220a2c954/packages/src/%40terra-money/wallet-controller/exception/mapExtensionTxError.ts#L23).
+Wallet provider also supplies useful error types. This example will handle the `UserDenied` error case. You can find other cases to handle [on GitHub](https://github.com/terra-money/wallet-provider/blob/4e601c2dece7bec92c9ce95991d2314220a2c954/packages/src/%40terra-money/wallet-controller/exception/mapExtensionTxError.ts#L23).
 :::
 
 1. Create a file in your `Components` folder named `Tx.js`.

@@ -80,7 +80,7 @@ notice oak worry limit wrap speak medal online prefer cluster roof addict wrist 
 ```
 
 :::{tip}
-Because the wallet contains funds, it is recommended that you also import the passphrase listed below into the Terra Station Extension. You can view other example mnemonics [on Github] (https://github.com/terra-money/LocalTerra/blob/main/terracore/mnemonics.json#L9):
+Because the wallet contains funds, it is recommended that you also import the passphrase listed below into the Terra Station Extension. You can view other example mnemonics [on Github](https://github.com/terra-money/LocalTerra/blob/main/terracore/mnemonics.json#L9):
 
 ```
 notice oak worry limit wrap speak medal online prefer cluster roof addict wrist behave treat actual wasp year salad speed social layer crew genius

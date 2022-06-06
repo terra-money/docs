@@ -5,14 +5,14 @@
 [Website](http://www.terra.money/): the official Terraform Labs website<br>
 [Docs](https://docs.terra.money): the official documentation for the Terra blockchain<br>
 [White Paper](https://www.terra.money/Terra_White_paper.pdf): the official Terra White Paper<br>
-[Github](https://github.com/terra-money): the official Terraform Labs GitHub hosting all Terra public repos<br>
+[GitHub](https://github.com/terra-money): the official Terraform Labs GitHub hosting all Terra public repos<br>
 [Discord](https://discord.gg/e29HWwC2Mz): the official Terra Discord for developers and enthusiasts to engage in focused discussions<br>
 [Telegram](https://t.me/TerraLunaChat): the official Terra Telegram for enthusiasts to engage in discussions<br>
 [Telegram Announcements](https://t.me/terra_announcements): the official Telegram announcement channel for all major Terra & Mirror updates<br>
 [Twitter](https://twitter.com/terra_money): the official Terra Twitter for all major news and updates regarding Terra and its ecosystem<br>
 [Forum](https://agora.terra.money/): the official Terra Forum for technical discussions related to Terra and its community<br>
 [Medium](https://medium.com/terra-money): the official Terra Medium for all major partnership announcements and monthly ecosystem updates<br>
-[Youtube](https://www.youtube.com/c/Terra_Money): the official Terra Youtube for Terra panel discussions and monthly AMAs<br>
+[YouTube](https://www.youtube.com/c/Terra_Money): the official Terra YouTube for Terra panel discussions and monthly AMAs<br>
 [Blockfolio Signals](https://blockfolio.com/coin/LUNA_2): Terra announcement channel on Blockfolio<br>
 [Reddit](https://www.reddit.com/r/terraluna/): the community-run Terra Reddit<br>
 [LunaLoot](https://lunaloot.com/): the official Terra merch shop<br>
@@ -23,7 +23,7 @@
 [Web App](https://app.anchorprotocol.com/earn): the official Anchor Protocol web application<br>
 [Docs](https://docs.anchorprotocol.com/): the official documentation for Anchor Protocol<br>
 [White Paper](https://anchorprotocol.com/docs/anchor-v1.1.pdf): the official Anchor Protocol White Paper<br>
-[Github](https://github.com/Anchor-Protocol): the official Anchor Protocol GitHub hosting all Anchor public repos<br>
+[GitHub](https://github.com/Anchor-Protocol): the official Anchor Protocol GitHub hosting all Anchor public repos<br>
 [Discord](https://discord.com/invite/9aUYgpKZ9c): the official Anchor Discord for developers and enthusiasts to engage in focused discussions<br>
 [Telegram](https://t.me/anchor_official): the official Anchor Telegram for enthusiasts to engage in discussions<br>
 [Twitter](https://twitter.com/anchor_protocol): the official Anchor Twitter for all major news and updates regarding Anchor and its ecosystem<br>
