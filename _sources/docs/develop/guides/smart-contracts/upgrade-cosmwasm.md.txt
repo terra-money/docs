@@ -22,6 +22,19 @@ Upgrading to Cosmwasm 1.0.0 requires upgrades to various dependencies in the sma
 - serde = { version = "1.0.137", default-features = false, features = ["derive"] }
 - thiserror = "1.0.31"
 
+
+:::{admonition} Deprecated and outdated dependencies
+:class: danger
+
+The [Terra-Cosmwasm package](https://github.com/terra-money/terra-cosmwasm/tree/main/packages/terra-cosmwasm) is no longer supported. This package was for queries to the oracle, market, and treasury modules, which do not exist on Terra 2.0.
+
+The following dependencies may be upgraded in the future, but are currently not functional with Cosmwasm 1.0.0:
+- [cw-asset](https://github.com/mars-protocol/cw-asset)
+- [astroport-package](https://github.com/astroport-fi/astroport-core/tree/main/packages/astroport)
+
+You may want to rebuild your application without these dependencies to function in the meantime. 
+:::
+
 **Under [dev-dependencies]**:
 
 - cosmwasm-schema = "1.0.0"

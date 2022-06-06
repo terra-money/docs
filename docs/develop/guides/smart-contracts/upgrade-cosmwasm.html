@@ -1274,6 +1274,16 @@
 <li><p>serde = { version = “1.0.137”, default-features = false, features = [“derive”] }</p></li>
 <li><p>thiserror = “1.0.31”</p></li>
 </ul>
+<div class="danger admonition">
+<p class="admonition-title">Deprecated and outdated dependencies</p>
+<p>The <a class="reference external" href="https://github.com/terra-money/terra-cosmwasm/tree/main/packages/terra-cosmwasm">Terra-Cosmwasm package</a> is no longer supported. This package was for queries to the oracle, market, and treasury modules, which do not exist on Terra 2.0.</p>
+<p>The following dependencies may be upgraded in the future, but are currently not functional with Cosmwasm 1.0.0:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/mars-protocol/cw-asset">cw-asset</a></p></li>
+<li><p><a class="reference external" href="https://github.com/astroport-fi/astroport-core/tree/main/packages/astroport">astroport-package</a></p></li>
+</ul>
+<p>You may want to rebuild your application without these dependencies to function in the meantime.</p>
+</div>
 <p><strong>Under [dev-dependencies]</strong>:</p>
 <ul class="simple">
 <li><p>cosmwasm-schema = “1.0.0”</p></li>
