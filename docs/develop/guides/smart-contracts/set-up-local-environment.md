@@ -43,12 +43,6 @@ rustup default stable
 rustup target add wasm32-unknown-unknown
 ```
 
-Then, install `cargo-generate`, which you will need for bootstrapping new CosmWasm smart contracts via a template.
-
-```sh
-cargo install cargo-generate --features vendored-openssl
-```
-
 Next, install `cargo-run-script`, which is required to optimize smart contracts.
 
 ```sh
