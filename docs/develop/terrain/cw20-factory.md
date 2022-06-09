@@ -9,6 +9,9 @@ Use the following guides to set up your environment:
 - [Set up Terrain](./initial-setup.md)
 - [Set up LocalTerra](./using-terrain-localterra.md#install-and-run-localterra)
 - [Set up a Terra Station wallet extension](../../learn/terra-station/download/terra-station-extension.md)
+
+You'll also need: 
+
 - An IDE or text editor of your choice. This tutorial will use Visual Studio Code. 
 - A command line interface
 
