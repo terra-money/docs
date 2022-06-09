@@ -34,9 +34,8 @@ rustup default stable
 
 rustup target add wasm32-unknown-unknown
 
-# 3. Install the following packages to generate the contract:
+# 3. Install the following package to run custom cargo scripts:
 
-cargo install cargo-generate --features vendored-openssl
 cargo install cargo-run-script
 ```
 

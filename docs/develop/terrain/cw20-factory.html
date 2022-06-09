@@ -1466,41 +1466,18 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="build-a-cw20-token-factory">
 <h1>Build a CW20 token factory <img alt="../../../_images/Staking.svg" height="40px" src="../../../_images/Staking.svg" /><a class="headerlink" href="#build-a-cw20-token-factory" title="Permalink to this headline">#</a></h1>
-<p>In this tutorial, you’ll build a CW20 token factory. A token factory allows any ​CosmosSDK address — including a contract — to mint new fungible tokens based. To accomplish this you’ll do the following:</p>
-<ul class="simple">
-<li><p><a class="reference internal" href="#prerequisites"><span class="std std-doc">0. Complete the prerequisites</span></a></p></li>
-<li><p><span class="xref myst">1. Instantiate a new app using Terrain</span></p></li>
-<li><p><span class="xref myst">2. Instantiate the <code class="docutils literal notranslate"><span class="pre">token-factory</span></code> and <code class="docutils literal notranslate"><span class="pre">cw20-factory-token</span></code> contracts</span></p></li>
-<li><p><span class="xref myst">3. Modify the mnemonics passphrase</span></p></li>
-<li><p><span class="xref myst">4. Deploy the smart contracts</span></p></li>
-<li><p><span class="xref myst">5. Modify the CW20 Factory Token smart contract</span></p>
-<ul>
-<li><p><a class="reference internal" href="#add-the-the-cw20-base"><span class="std std-doc">1. Add the the CW20 base</span></a></p></li>
-<li><p><a class="reference internal" href="#modify-the-contract-files"><span class="std std-doc">2. Modify the contract files</span></a></p></li>
-<li><p><a class="reference internal" href="#generate-and-test-the-schema"><span class="std std-doc">3. Generate and test the schema</span></a></p></li>
-<li><p><span class="xref myst">4. Modify <code class="docutils literal notranslate"><span class="pre">terrain.config.json</span></code></span></p></li>
-<li><p><span class="xref myst">5. Test the smart contract deployment</span></p></li>
-<li><p><span class="xref myst">6. Use crate.io to implement the CW20 Token Factory as a dependency</span></p></li>
-</ul>
-</li>
-<li><p><span class="xref myst">6. Modify the Token Factory smart contract</span></p>
-<ul>
-<li><p><a class="reference internal" href="#add-the-dependencies"><span class="std std-doc">1. Add the dependencies</span></a></p></li>
-<li><p><a class="reference internal" href="#id1"><span class="std std-doc">2. Modify the contract files</span></a></p></li>
-<li><p><a class="reference internal" href="#id2"><span class="std std-doc">3. Generate and test the schema</span></a></p></li>
-<li><p><a class="reference internal" href="#modify-terrain-config-json"><span class="std std-doc">4. Modify terrain.config.json</span></a></p></li>
-</ul>
-</li>
-<li><p><span class="xref myst">7. Deploy the smart contract to LocalTerra</span></p></li>
-</ul>
+<p>In this tutorial, you’ll build a CW20 token factory. A token factory allows any ​CosmosSDK address (including a contract) to mint new fungible token.</p>
 <div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
-<p>First, set up your environment:</p>
+<p>Use the following guides to set up your environment:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://docs.terra.money/docs/develop/dapp/quick-start/initial-setup.html#initial-setup">A Terrain development environment</a></p></li>
-<li><p><a class="reference external" href="https://docs.terra.money/docs/develop/dapp/quick-start/using-terrain-localterra.html#install-and-run-localterra">A LocalTerra node</a></p></li>
-<li><p><a class="reference external" href="https://docs.terra.money/docs/learn/terra-station/download/terra-station-extension.html">The Terra Station Extension wallet to interact with the smart contract</a></p></li>
-<li><p>An IDE or text editor of your choice. For the purpose of this tutorial, Visual Studio Code will be used.</p></li>
+<li><p><a class="reference internal" href="initial-setup.html"><span class="doc std std-doc">Set up Terrain</span></a></p></li>
+<li><p><a class="reference internal" href="using-terrain-localterra.html#install-and-run-localterra"><span class="std std-doc">Set up LocalTerra</span></a></p></li>
+<li><p><a class="reference internal" href="../../learn/terra-station/download/terra-station-extension.html"><span class="doc std std-doc">Set up a Terra Station wallet extension</span></a></p></li>
+</ul>
+<p>You’ll also need:</p>
+<ul class="simple">
+<li><p>An IDE or text editor of your choice. This tutorial will use Visual Studio Code.</p></li>
 <li><p>A command line interface</p></li>
 </ul>
 </div>
