@@ -19,7 +19,7 @@ Vesting tokens will be stored in a type of vesting account available in one's wa
 One may view their respective vesting account information by adding their personal wallet address to the end of the below URL. For example, if one's personal wallet address were `terra111111111111111111111111111111111111111`, they would utilize the following URL to view their vesting account:
 
 ```
-https://lcd.terra.dev/cosmos/auth/v1beta1/accounts/terra111111111111111111111111111111111111111
+https://phoenix-lcd.terra.dev/cosmos/auth/v1beta1/accounts/terra111111111111111111111111111111111111111
 ```
 
 **Note:** Token amounts in the examples below will be given in microunits. To convert microunits to basic units, you can divide the specified quantities by 1,000,000. Time values utilized will be in Unix time. You may use [this converter](https://www.epochconverter.com/) to translate from Unix time to a human-readable datetime.

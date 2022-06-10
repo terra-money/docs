@@ -71,7 +71,7 @@ Terra’s LCD or Light Client Daemon allows users to connect to the blockchain, 
    const gasPricesJson = await gasPrices.json();
    const gasPricesCoins = new Coins(gasPricesJson);
    const lcd = new LCDClient({
-     URL: "https://pisco-lcd.terra.dev", // Use "https://lcd.terra.dev" for prod "http://localhost:1317" for localterra.
+     URL: "https://pisco-lcd.terra.dev", // Use "https://phoenix-lcd.terra.dev" for prod "http://localhost:1317" for localterra.
      chainID: "pisco-1", // Use "phoenix-1" for production or "localterra".
      gasPrices: gasPricesCoins,
      gasAdjustment: "1.5", // Increase gas price slightly so transactions go through smoothly.
@@ -82,7 +82,7 @@ Terra’s LCD or Light Client Daemon allows users to connect to the blockchain, 
    ::: {admonition} Switching to LocalTerra or the mainnet
    :class: note
 
-   The previous code block shows how to connect to the pisco testnet. To connect to LocalTerra, change the `URL` to `”http://localhost:1317”`. To connect to the phoenix-1 mainnet for production, use “`https://lcd.terra.dev`”.
+   The previous code block shows how to connect to the pisco testnet. To connect to LocalTerra, change the `URL` to `”http://localhost:1317”`. To connect to the phoenix-1 mainnet for production, use “`https://phoenix-lcd.terra.dev`”.
 
    You will also need to change the `chainID` from `"pisco-1"` to `”localterra”` or `"phoenix-1"`.
    :::
