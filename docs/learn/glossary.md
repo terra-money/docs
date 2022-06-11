@@ -6,18 +6,6 @@ Use this glossary to learn about terms specific to the Terra Protocol.
 
 The top 130 [validators](#validator) that participate in consensus and receive rewards.
 
-## Airdrops
-
-Additional rewards given to [delegators](#delegator) through certain [validators](#validator), separate from [staking rewards](#rewards). Airdrops come from protocols in the Terra ecosystem to increase visibility. To claim an airdrop, visit the webpage of the protocol giving out the airdrop.
-
-## Algorithmic stablecoin
-
-A cryptocurrency that tracks the price of any asset, usually currency. Algorithmic stablecoins maintain their price peg through a set of rules or software instead of an underlying asset.
-
-## Arbitrage
-
-To profit from price differences across different markets. Arbitrageurs buy coins in one market and sell them on another market for a higher price.
-
 ## Blockchain
 
 An unchangeable ledger of transactions copied among a network of independent computer systems.
@@ -26,10 +14,6 @@ An unchangeable ledger of transactions copied among a network of independent com
 
 Groups of information stored on a [blockchain](#blockchain). Each block contains transactions that are grouped, verified, and signed by validators.
 
-## bLuna
-
-A token representing bonded Luna that can be traded freely or used as collateral on other protocols in the Terra network, such as [Anchor](https://anchorprotocol.com/). Bonded Luna takes 21 days to become unbonded.
-
 ## Bonded validator
 
 A [validator](#validator) in the [active set](#active-set) participating in consensus. Bonded validators earn [rewards](#rewards).
@@ -37,18 +21,6 @@ A [validator](#validator) in the [active set](#active-set) participating in cons
 ## Bonding
 
 When a user [delegates](#delegate) or bonds Luna to a [validator](#validator) to receive [staking rewards](#rewards). Validators never have ownership of a delegator's [Luna](#luna), even when bonded. Delegating, bonding, and staking generally refer to the same process.
-
-## Burn
-
-The destruction of coins. The Terra protocol burns [Luna](#luna) to mint [Terra stablecoins](#terra-stablecoins) and vice versa. Burned coins are destroyed.
-
-## CHAI
-
-A mobile payments app powered by Terra's blockchain network.
-
-## Columbus-5
-
-The current version of the [Terra Classic mainnet](#terra-mainnet).
 
 ## Commission
 
@@ -92,10 +64,6 @@ A user who [delegates](#delegate), bonds, or stakes [Luna](#luna) to a [validato
 
 For more information on fees, visit [Fees on Terra](fees.md).
 
-## Fiat currency
-
-Currency issued by a government that is not backed by an underlying asset. USD is the fiat currency of the United States.
-
 ## Full node
 
 A computer connected to the [Terra mainnet](#terra-mainnet) that is able to validate transactions and interact with the Terra blockchain. All active [validators](#validator) run full nodes.
@@ -110,7 +78,7 @@ Governance is the democratic process that allows users and [validators](#validat
 
 ## Governance proposal
 
-A written submission for a change or addition to the [Terra protocol](#the-terra-protocol). Topics of proposals can vary from community pool spending, software changes, parameter changes, or any change pertaining to the Terra protocol.
+A written submission for a change or addition to the Terra blockchain. Topics of proposals can vary from community pool spending, software changes, or parameter changes.
 
 ## IBC
 
