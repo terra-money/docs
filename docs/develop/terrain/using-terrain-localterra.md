@@ -7,7 +7,7 @@ LocalTerra is a complete Terra testnet and ecosystem containerized with Docker. 
 - [Docker](https://www.docker.com/)
 - [`docker-compose`](https://github.com/docker/compose)
 - At least 16 GB of RAM
-- [Terra Station Chrome extension](../../../learn/terra-station/download/terra-station-extension.md)
+- [Terra Station Chrome extension](../../learn/terra-station/download/terra-station-extension.md)
 - Node.js version 16
 
 :::{admonition} Node version error
@@ -54,8 +54,8 @@ nvm alias default <INSERT NODE VERSION HERE>
 
 :::{admonition} LocalTerra Accounts
 :class: note
-To view the LocalTerra wallet information, visit the [LocalTerra accounts page](../../how-to/localterra/accounts.md). 
-For more configuration options, visit the [LocalTerra configuration page](../../how-to/localterra/configure.md). 
+To view the LocalTerra wallet information, visit the [LocalTerra accounts page](../localterra/accounts.md). 
+For more configuration options, visit the [LocalTerra configuration page](../localterra/configure.md). 
 :::
 
 # Counter tutorial 
