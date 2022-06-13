@@ -13,7 +13,7 @@ To perform these actions, connect to the blockchain by using an `LCDClient` obje
 import { LCDClient } from "@terra-money/terra.js";
 
 const terra = new LCDClient({
-  URL: "https://lcd.terra.dev",
+  URL: "https://phoenix-lcd.terra.dev",
   chainID: "phoenix-1",
 });
 ```

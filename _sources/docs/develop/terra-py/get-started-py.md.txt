@@ -92,7 +92,7 @@ from terra_sdk.client.lcd import LCDClient
 
 # Create client to communicate with mainnet.
 terra = LCDClient(
-    url="https://lcd.terra.dev",
+    url="https://phoenix-lcd.terra.dev",
     chain_id="phoenix-1"
 )
 

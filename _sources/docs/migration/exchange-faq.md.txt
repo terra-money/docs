@@ -189,16 +189,16 @@ It is up to each team. Each token team will have to relaunch the token to the ne
 ### I want to ignore multisig txs, could you share a mainnet example of this?
 
 - New format:
-https://lcd.terra.dev/cosmos/tx/v1beta1/txs/8F0A6782D22855C168C5C153CB17815512EB6159C740D669D665150128DC9BF0
+https://phoenix-lcd.terra.dev/cosmos/tx/v1beta1/txs/136825A738053AC6B7E8D03FB1C43696BA560AD9A8D5DB8AE49C55642CE64310
 
 - Old format:
-https://lcd.terra.dev/txs/8F0A6782D22855C168C5C153CB17815512EB6159C740D669D665150128DC9BF0
+https://phoenix-lcd.terra.dev/txs/136825A738053AC6B7E8D03FB1C43696BA560AD9A8D5DB8AE49C55642CE64310
 
 Please visit https://docs.terra.money/docs/develop/guides/sign-with-multisig.html for more info. 
 
 ### How do I get the "threshold number of signatures"?
 
-Use the following: https://lcd.terra.dev/cosmos/auth/v1beta1/accounts/terra1dp0taj85ruc299rkdvzp4z5pfg6z6swaed74e6
+Use the following: https://phoenix-lcd.terra.dev/cosmos/auth/v1beta1/accounts/terra14g48gms0zr29wufgyvz5smh8enaes9dh3rxxjh
 
 ### Is the "@type" of multisig tx always "bank/MsgSend"?
 
