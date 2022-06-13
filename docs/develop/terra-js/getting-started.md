@@ -89,7 +89,7 @@ Terra’s LCD or Light Client Daemon allows users to connect to the blockchain, 
 
 ## 3. Create a pisco testnet wallet
 
-1. You'll need a wallet to sign and submit transactions. [Create a new wallet](../../../learn/terra-station/download/terra-station-extension.md#create-a-wallet) using the Terra Station extension. Be sure to save your mnemonic key!
+1. You'll need a wallet to sign and submit transactions. [Create a new wallet](../../learn/terra-station/download/terra-station-extension.md) using the Terra Station extension. Be sure to save your mnemonic key!
 
 2. After creating your wallet, you’ll need to set it to use the testnet. Click the gear icon in the extension and change the network from `mainnet` to `testnet`.
 
