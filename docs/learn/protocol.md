@@ -47,7 +47,7 @@ All tokens locked or vesting are staked at genesis and must be unbonded to becom
 
 ## Vesting
 
-Many users of the Terra Classic blockchain have Luna vesting in their accounts from the [Terra genesis airdrop](#luna-distribution). Vesting is the term used for Luna that cannot be traded and remains locked in an account until a certain date. The vesting schedule describes the amount of time Luna will remain locked, when it will be unlocked, and how much will be released once the unlock happens. 
+Many users of the Terra Classic blockchain have Luna vesting in their accounts from the [Terra genesis airdrop](#luna-airdrop-distribution). Vesting is the term used for Luna that cannot be traded and remains locked in an account until a certain date. The vesting schedule describes the amount of time Luna will remain locked, when it will be unlocked, and how much will be released once the unlock happens. 
 
 A cliff is the period of time that must pass before Luna can begin to be unlocked. 
 After the cliff period has passed, a small amount of the vesting Luna will be released every block according to the vesting period. 
