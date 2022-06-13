@@ -7,9 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Set up a production environment &#8212; Terra Docs  documentation</title>
     
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -19,6 +18,10 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
+    
+      
+
+    
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
@@ -29,8 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/custom.css" />
     
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
@@ -53,7 +55,7 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -1351,15 +1353,15 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="set-up-a-production-environment">
-<h1>Set up a production environment<a class="headerlink" href="#set-up-a-production-environment" title="Permalink to this headline">#</a></h1>
+<h1>Set up a production environment<a class="headerlink" href="#set-up-a-production-environment" title="Permalink to this headline">¶</a></h1>
 <p>Use the following information to set up and manage your production-level full Terra node.</p>
 <p>For information about running a validator node, visit the <a class="reference internal" href="../manage-a-terra-validator/README.html"><span class="doc std std-doc">validator guide</span></a>.</p>
 <div class="section" id="create-a-dedicated-user">
-<h2>Create a dedicated user<a class="headerlink" href="#create-a-dedicated-user" title="Permalink to this headline">#</a></h2>
+<h2>Create a dedicated user<a class="headerlink" href="#create-a-dedicated-user" title="Permalink to this headline">¶</a></h2>
 <p>Although <code class="docutils literal notranslate"><span class="pre">terrad</span></code> does not require a super user account, during the setup process you’ll need super user permission to create and modify some files. It is strongly recommended to use a normal user when running <code class="docutils literal notranslate"><span class="pre">terrad</span></code>.</p>
 </div>
 <div class="section" id="increase-the-maximum-files-terrad-can-open">
-<h2>Increase the maximum files <code class="docutils literal notranslate"><span class="pre">terrad</span></code> can open<a class="headerlink" href="#increase-the-maximum-files-terrad-can-open" title="Permalink to this headline">#</a></h2>
+<h2>Increase the maximum files <code class="docutils literal notranslate"><span class="pre">terrad</span></code> can open<a class="headerlink" href="#increase-the-maximum-files-terrad-can-open" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">terrad</span></code> is set to open 1024 files by default. It is recommended that you increase this amount.</p>
 <p>Modify <code class="docutils literal notranslate"><span class="pre">/etc/security/limits.conf</span></code><a class="reference external" href="https://linux.die.net/man/5/limits.conf">*</a> to increase the amount, where <code class="docutils literal notranslate"><span class="pre">nofile</span></code> is the number of files <code class="docutils literal notranslate"><span class="pre">terrad</span></code> can open.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># If you have never changed this system config or your system is fresh, most of this file will be commented</span>
@@ -1372,10 +1374,10 @@
 </div>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="run-the-server-as-a-daemon">
-<h1>Run the server as a daemon<a class="headerlink" href="#run-the-server-as-a-daemon" title="Permalink to this headline">#</a></h1>
+<h1>Run the server as a daemon<a class="headerlink" href="#run-the-server-as-a-daemon" title="Permalink to this headline">¶</a></h1>
 <p><code class="docutils literal notranslate"><span class="pre">terrad</span></code> must be running at all times. It is recommended that you register <code class="docutils literal notranslate"><span class="pre">terrad</span></code> as a <code class="docutils literal notranslate"><span class="pre">systemd</span></code> service so that it will be started automatically when the system reboots.</p>
 <div class="section" id="register-terrad-as-a-service">
-<h2>Register <code class="docutils literal notranslate"><span class="pre">terrad</span></code> as a service<a class="headerlink" href="#register-terrad-as-a-service" title="Permalink to this headline">#</a></h2>
+<h2>Register <code class="docutils literal notranslate"><span class="pre">terrad</span></code> as a service<a class="headerlink" href="#register-terrad-as-a-service" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
 <li><p>Create a service definition file in <code class="docutils literal notranslate"><span class="pre">/etc/systemd/system/terrad.service</span></code>.</p>
 <p><strong>Example</strong>:</p>
@@ -1408,7 +1410,7 @@
 <li><p>Now start the serivce with <code class="docutils literal notranslate"><span class="pre">systemctl</span> <span class="pre">start</span> <span class="pre">terrad</span></code>.</p></li>
 </ol>
 <div class="section" id="controlling-the-service">
-<h3>Controlling the service<a class="headerlink" href="#controlling-the-service" title="Permalink to this headline">#</a></h3>
+<h3>Controlling the service<a class="headerlink" href="#controlling-the-service" title="Permalink to this headline">¶</a></h3>
 <p>Use <code class="docutils literal notranslate"><span class="pre">systemctl</span></code> to start, stop, and restart the service:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check health</span>
 systemctl status terrad
@@ -1422,7 +1424,7 @@ systemctl restart terrad
 </div>
 </div>
 <div class="section" id="access-logs">
-<h3>Access logs<a class="headerlink" href="#access-logs" title="Permalink to this headline">#</a></h3>
+<h3>Access logs<a class="headerlink" href="#access-logs" title="Permalink to this headline">¶</a></h3>
 <p>Use <code class="docutils literal notranslate"><span class="pre">journalctl</span> <span class="pre">-t</span></code> to access entire logs, entire logs in reverse, and the latest and continuous log.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Entire log reversed</span>
 journalctl -t terrad -r
@@ -1441,7 +1443,7 @@ journalctl -t terrad -f
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="build-terra-core.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1564,8 +1566,7 @@ journalctl -t terrad -f
       </div>
     </div>
   
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>

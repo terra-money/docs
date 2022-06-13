@@ -7,9 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Commands &#8212; Terra Docs  documentation</title>
     
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -19,6 +18,10 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
+    
+      
+
+    
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
@@ -29,8 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/custom.css" />
     
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
@@ -53,7 +55,7 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -1605,10 +1607,10 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="commands">
-<h1>Commands<a class="headerlink" href="#commands" title="Permalink to this headline">#</a></h1>
+<h1>Commands<a class="headerlink" href="#commands" title="Permalink to this headline">¶</a></h1>
 <p>This section describes the commands available from <code class="docutils literal notranslate"><span class="pre">terrad</span></code>, the command line interface that connects a running <code class="docutils literal notranslate"><span class="pre">terrad</span></code> process.</p>
 <div class="section" id="add-genesis-account">
-<h2><code class="docutils literal notranslate"><span class="pre">add-genesis-account</span></code><a class="headerlink" href="#add-genesis-account" title="Permalink to this headline">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">add-genesis-account</span></code><a class="headerlink" href="#add-genesis-account" title="Permalink to this headline">¶</a></h2>
 <p>Adds a genesis account to <code class="docutils literal notranslate"><span class="pre">genesis.json</span></code>.</p>
 <p><strong>Syntax</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad add-genesis-account &lt;address-or-key-name&gt; <span class="s1">&#39;&lt;amount&gt;&lt;coin-denominator&gt;,&lt;amount&gt;&lt;coin-denominator&gt;&#39;</span>
@@ -1620,7 +1622,7 @@
 </div>
 </div>
 <div class="section" id="collect-gentxs">
-<h2><code class="docutils literal notranslate"><span class="pre">collect-gentxs</span></code><a class="headerlink" href="#collect-gentxs" title="Permalink to this headline">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">collect-gentxs</span></code><a class="headerlink" href="#collect-gentxs" title="Permalink to this headline">¶</a></h2>
 <p>Collects genesis transactions and outputs them to <code class="docutils literal notranslate"><span class="pre">genesis.json</span></code>.</p>
 <p><strong>Syntax</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad collect-gentxs
@@ -1628,11 +1630,11 @@
 </div>
 </div>
 <div class="section" id="debug">
-<h2><code class="docutils literal notranslate"><span class="pre">debug</span></code><a class="headerlink" href="#debug" title="Permalink to this headline">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">debug</span></code><a class="headerlink" href="#debug" title="Permalink to this headline">¶</a></h2>
 <p>Helps debug the application. For a list of syntax and subcommands, see the <a class="reference internal" href="subcommands.html#debug-addr"><span class="std std-doc">debug subcommands</span></a>.</p>
 </div>
 <div class="section" id="export">
-<h2><code class="docutils literal notranslate"><span class="pre">export</span></code><a class="headerlink" href="#export" title="Permalink to this headline">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">export</span></code><a class="headerlink" href="#export" title="Permalink to this headline">¶</a></h2>
 <p>Exports the state to JSON.</p>
 <p><strong>Syntax</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad <span class="nb">export</span>
@@ -1640,7 +1642,7 @@
 </div>
 </div>
 <div class="section" id="gentx">
-<h2><code class="docutils literal notranslate"><span class="pre">gentx</span></code><a class="headerlink" href="#gentx" title="Permalink to this headline">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">gentx</span></code><a class="headerlink" href="#gentx" title="Permalink to this headline">¶</a></h2>
 <p>Adds a genesis transaction to <code class="docutils literal notranslate"><span class="pre">genesis.json</span></code>.</p>
 <p><strong>Syntax</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad gentx &lt;key-name&gt; &lt;amount&gt;&lt;coin-denominator&gt;
@@ -1659,7 +1661,7 @@
 </div>
 </div>
 <div class="section" id="help">
-<h2><code class="docutils literal notranslate"><span class="pre">help</span></code><a class="headerlink" href="#help" title="Permalink to this headline">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">help</span></code><a class="headerlink" href="#help" title="Permalink to this headline">¶</a></h2>
 <p>Shows help information.</p>
 <p><strong>Syntax</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad <span class="nb">help</span>
@@ -1667,7 +1669,7 @@
 </div>
 </div>
 <div class="section" id="init">
-<h2><code class="docutils literal notranslate"><span class="pre">init</span></code><a class="headerlink" href="#init" title="Permalink to this headline">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">init</span></code><a class="headerlink" href="#init" title="Permalink to this headline">¶</a></h2>
 <p>Initializes the configuration files for a validator and a node.</p>
 <p><strong>Syntax</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad init &lt;moniker&gt;
@@ -1679,11 +1681,11 @@
 </div>
 </div>
 <div class="section" id="keys">
-<h2><code class="docutils literal notranslate"><span class="pre">keys</span></code><a class="headerlink" href="#keys" title="Permalink to this headline">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">keys</span></code><a class="headerlink" href="#keys" title="Permalink to this headline">¶</a></h2>
 <p>Manages Keyring commands. For a list of syntax and subcommands, see the <a class="reference internal" href="subcommands.html#keys-add"><span class="std std-doc">keys subcommands</span></a>.</p>
 </div>
 <div class="section" id="migrate">
-<h2><code class="docutils literal notranslate"><span class="pre">migrate</span></code><a class="headerlink" href="#migrate" title="Permalink to this headline">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">migrate</span></code><a class="headerlink" href="#migrate" title="Permalink to this headline">¶</a></h2>
 <p>Migrates the source genesis into the target version and prints to STDOUT.</p>
 <p><strong>Syntax</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad migrate &lt;path-to-genesis-file&gt;
@@ -1695,11 +1697,11 @@
 </div>
 </div>
 <div class="section" id="query">
-<h2><code class="docutils literal notranslate"><span class="pre">query</span></code><a class="headerlink" href="#query" title="Permalink to this headline">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">query</span></code><a class="headerlink" href="#query" title="Permalink to this headline">¶</a></h2>
 <p>Manages queries. For a list of syntax and subcommands, see the <a class="reference internal" href="subcommands.html#query-authz-grants"><span class="std std-doc">query subcommands</span></a>.</p>
 </div>
 <div class="section" id="rosetta">
-<h2><code class="docutils literal notranslate"><span class="pre">rosetta</span></code><a class="headerlink" href="#rosetta" title="Permalink to this headline">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">rosetta</span></code><a class="headerlink" href="#rosetta" title="Permalink to this headline">¶</a></h2>
 <p>Creates a Rosetta server.</p>
 <p><strong>Syntax</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad rosetta
@@ -1707,7 +1709,7 @@
 </div>
 </div>
 <div class="section" id="start">
-<h2><code class="docutils literal notranslate"><span class="pre">start</span></code><a class="headerlink" href="#start" title="Permalink to this headline">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">start</span></code><a class="headerlink" href="#start" title="Permalink to this headline">¶</a></h2>
 <p>Runs the full node application with Tendermint in or out of process. By default, the application runs with Tendermint in process.</p>
 <p><strong>Syntax</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad start
@@ -1715,7 +1717,7 @@
 </div>
 </div>
 <div class="section" id="status">
-<h2><code class="docutils literal notranslate"><span class="pre">status</span></code><a class="headerlink" href="#status" title="Permalink to this headline">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">status</span></code><a class="headerlink" href="#status" title="Permalink to this headline">¶</a></h2>
 <p>Displays the status of a remote node.</p>
 <p><strong>Syntax</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad status
@@ -1723,11 +1725,11 @@
 </div>
 </div>
 <div class="section" id="tendermint">
-<h2><code class="docutils literal notranslate"><span class="pre">tendermint</span></code><a class="headerlink" href="#tendermint" title="Permalink to this headline">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">tendermint</span></code><a class="headerlink" href="#tendermint" title="Permalink to this headline">¶</a></h2>
 <p>Manages the Tendermint protocol.</p>
 </div>
 <div class="section" id="testnet">
-<h2><code class="docutils literal notranslate"><span class="pre">testnet</span></code><a class="headerlink" href="#testnet" title="Permalink to this headline">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">testnet</span></code><a class="headerlink" href="#testnet" title="Permalink to this headline">¶</a></h2>
 <p>Creates a testnet with the specified number of directories and populates each directory with the necessary files.</p>
 <p><strong>Syntax</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad testnet
@@ -1739,7 +1741,7 @@
 </div>
 </div>
 <div class="section" id="tx">
-<h2><code class="docutils literal notranslate"><span class="pre">tx</span></code><a class="headerlink" href="#tx" title="Permalink to this headline">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">tx</span></code><a class="headerlink" href="#tx" title="Permalink to this headline">¶</a></h2>
 <p>Retrieves a transaction by its hash, account sequence, or signature. For a list of full syntax and subcommands, see the <a class="reference internal" href="subcommands.html#tx-authz-exec"><span class="std std-doc">tx subcommands</span></a>.</p>
 <p><strong>Syntax to query by hash</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad query tx &lt;hash&gt;
@@ -1755,7 +1757,7 @@
 </div>
 </div>
 <div class="section" id="txs">
-<h2><code class="docutils literal notranslate"><span class="pre">txs</span></code><a class="headerlink" href="#txs" title="Permalink to this headline">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">txs</span></code><a class="headerlink" href="#txs" title="Permalink to this headline">¶</a></h2>
 <p>Retrieves transactions that match the specified events where results are paginated.</p>
 <p><strong>Syntax</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad query txs --events <span class="s1">&#39;&lt;event&gt;&#39;</span> --page &lt;page-number&gt; --limit &lt;number-of-results&gt;
@@ -1767,7 +1769,7 @@
 </div>
 </div>
 <div class="section" id="unsafe-reset-all">
-<h2><code class="docutils literal notranslate"><span class="pre">unsafe-reset-all</span></code><a class="headerlink" href="#unsafe-reset-all" title="Permalink to this headline">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">unsafe-reset-all</span></code><a class="headerlink" href="#unsafe-reset-all" title="Permalink to this headline">¶</a></h2>
 <p>Resets the blockchain database, removes address book files, and resets <code class="docutils literal notranslate"><span class="pre">data/priv_validator_state.json</span></code> to the genesis state.</p>
 <p><strong>Syntax</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad unsafe-reset-all
@@ -1775,7 +1777,7 @@
 </div>
 </div>
 <div class="section" id="validate-genesis">
-<h2><code class="docutils literal notranslate"><span class="pre">validate-genesis</span></code><a class="headerlink" href="#validate-genesis" title="Permalink to this headline">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">validate-genesis</span></code><a class="headerlink" href="#validate-genesis" title="Permalink to this headline">¶</a></h2>
 <p>Validates the genesis file at the default location or at the location specified.</p>
 <p><strong>Syntax</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad validate-genesis &lt;/path-to-file&gt;
@@ -1787,7 +1789,7 @@
 </div>
 </div>
 <div class="section" id="version">
-<h2><code class="docutils literal notranslate"><span class="pre">version</span></code><a class="headerlink" href="#version" title="Permalink to this headline">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">version</span></code><a class="headerlink" href="#version" title="Permalink to this headline">¶</a></h2>
 <p>Returns the version of Terra you’re running.</p>
 <p><strong>Syntax</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad version
@@ -1801,7 +1803,7 @@
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="using-terrad.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1924,8 +1926,7 @@
       </div>
     </div>
   
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>

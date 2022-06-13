@@ -7,9 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Staking &#8212; Terra Docs  documentation</title>
     
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -19,6 +18,10 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
+    
+      
+
+    
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
@@ -29,8 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/custom.css" />
     
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
@@ -53,7 +55,7 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -1477,16 +1479,16 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="staking">
-<h1>Staking<a class="headerlink" href="#staking" title="Permalink to this headline">#</a></h1>
+<h1>Staking<a class="headerlink" href="#staking" title="Permalink to this headline">¶</a></h1>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>Terra’s staking module inherits from the Cosmos SDK’s <a class="reference external" href="https://docs.cosmos.network/master/modules/staking/"><code class="docutils literal notranslate"><span class="pre">staking</span></code></a> module. This document is a stub and covers mainly important Terra-specific notes about how it is used.</p>
 </div>
 <p>The staking module enables Terra’s proof-of-stake functionality by requiring validators to bond Luna, the native staking asset.</p>
 <div class="section" id="message-types">
-<h2>Message types<a class="headerlink" href="#message-types" title="Permalink to this headline">#</a></h2>
+<h2>Message types<a class="headerlink" href="#message-types" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="msgdelegate">
-<h3>MsgDelegate<a class="headerlink" href="#msgdelegate" title="Permalink to this headline">#</a></h3>
+<h3>MsgDelegate<a class="headerlink" href="#msgdelegate" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">type</span><span class="w"> </span><span class="nx">MsgDelegate</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">	</span><span class="nx">DelegatorAddress</span><span class="w"> </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">AccAddress</span><span class="w"> </span><span class="s">`json:&quot;delegator_address&quot; yaml:&quot;delegator_address&quot;`</span><span class="w"></span>
 <span class="w">	</span><span class="nx">ValidatorAddress</span><span class="w"> </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">ValAddress</span><span class="w"> </span><span class="s">`json:&quot;validator_address&quot; yaml:&quot;validator_address&quot;`</span><span class="w"></span>
@@ -1496,7 +1498,7 @@
 </div>
 </div>
 <div class="section" id="msgundelegate">
-<h3>MsgUndelegate<a class="headerlink" href="#msgundelegate" title="Permalink to this headline">#</a></h3>
+<h3>MsgUndelegate<a class="headerlink" href="#msgundelegate" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">type</span><span class="w"> </span><span class="nx">MsgUndelegate</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">	</span><span class="nx">DelegatorAddress</span><span class="w"> </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">AccAddress</span><span class="w"> </span><span class="s">`json:&quot;delegator_address&quot; yaml:&quot;delegator_address&quot;`</span><span class="w"></span>
 <span class="w">	</span><span class="nx">ValidatorAddress</span><span class="w"> </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">ValAddress</span><span class="w"> </span><span class="s">`json:&quot;validator_address&quot; yaml:&quot;validator_address&quot;`</span><span class="w"></span>
@@ -1506,7 +1508,7 @@
 </div>
 </div>
 <div class="section" id="msgbeginredelegate">
-<h3>MsgBeginRedelegate<a class="headerlink" href="#msgbeginredelegate" title="Permalink to this headline">#</a></h3>
+<h3>MsgBeginRedelegate<a class="headerlink" href="#msgbeginredelegate" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">type</span><span class="w"> </span><span class="nx">MsgBeginRedelegate</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">	</span><span class="nx">DelegatorAddress</span><span class="w">    </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">AccAddress</span><span class="w"> </span><span class="s">`json:&quot;delegator_address&quot; yaml:&quot;delegator_address&quot;`</span><span class="w"></span>
 <span class="w">	</span><span class="nx">ValidatorSrcAddress</span><span class="w"> </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">ValAddress</span><span class="w"> </span><span class="s">`json:&quot;validator_src_address&quot; yaml:&quot;validator_src_address&quot;`</span><span class="w"></span>
@@ -1517,7 +1519,7 @@
 </div>
 </div>
 <div class="section" id="msgeditvalidator">
-<h3>MsgEditValidator<a class="headerlink" href="#msgeditvalidator" title="Permalink to this headline">#</a></h3>
+<h3>MsgEditValidator<a class="headerlink" href="#msgeditvalidator" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">type</span><span class="w"> </span><span class="nx">MsgEditValidator</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">	</span><span class="nx">Description</span><span class="w">      </span><span class="nx">Description</span><span class="w">    </span><span class="s">`json:&quot;description&quot; yaml:&quot;description&quot;`</span><span class="w"></span>
 <span class="w">	</span><span class="nx">ValidatorAddress</span><span class="w"> </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">ValAddress</span><span class="w"> </span><span class="s">`json:&quot;address&quot; yaml:&quot;address&quot;`</span><span class="w"></span>
@@ -1528,7 +1530,7 @@
 </div>
 </div>
 <div class="section" id="msgcreatevalidator">
-<h3>MsgCreateValidator<a class="headerlink" href="#msgcreatevalidator" title="Permalink to this headline">#</a></h3>
+<h3>MsgCreateValidator<a class="headerlink" href="#msgcreatevalidator" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">type</span><span class="w"> </span><span class="nx">MsgCreateValidator</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">	</span><span class="nx">Description</span><span class="w">       </span><span class="nx">Description</span><span class="w">     </span><span class="s">`json:&quot;description&quot; yaml:&quot;description&quot;`</span><span class="w"></span>
 <span class="w">	</span><span class="nx">Commission</span><span class="w">        </span><span class="nx">CommissionRates</span><span class="w"> </span><span class="s">`json:&quot;commission&quot; yaml:&quot;commission&quot;`</span><span class="w"></span>
@@ -1543,16 +1545,16 @@
 </div>
 </div>
 <div class="section" id="transitions">
-<h2>Transitions<a class="headerlink" href="#transitions" title="Permalink to this headline">#</a></h2>
+<h2>Transitions<a class="headerlink" href="#transitions" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="end-block">
-<h3>End-Block<a class="headerlink" href="#end-block" title="Permalink to this headline">#</a></h3>
+<h3>End-Block<a class="headerlink" href="#end-block" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p>This section was taken from the official Cosmos SDK docs, and placed here for your convenience to understand the Staking module’s parameters.</p>
 </div></blockquote>
 <p>Each abci end block call, the operations to update queues and validator set
 changes are specified to execute.</p>
 <div class="section" id="validator-set-changes">
-<h4>Validator set changes<a class="headerlink" href="#validator-set-changes" title="Permalink to this headline">#</a></h4>
+<h4>Validator set changes<a class="headerlink" href="#validator-set-changes" title="Permalink to this headline">¶</a></h4>
 <p>The staking validator set is updated during this process by state transitions
 that run at the end of every block. As a part of this process, any updated
 validators are also returned back to Tendermint for inclusion in the Tendermint
@@ -1575,14 +1577,14 @@ changing balances and staying within the bonded validator set incur an update
 message that is passed back to Tendermint.</p>
 </div>
 <div class="section" id="queues">
-<h4>Queues<a class="headerlink" href="#queues" title="Permalink to this headline">#</a></h4>
+<h4>Queues<a class="headerlink" href="#queues" title="Permalink to this headline">¶</a></h4>
 <p>Within staking, certain state transitions are not instantaneous but happen
 over a duration of time, typically the unbonding period. When these
 transitions are mature, certain operations must take place to complete
 the state operation. It is achieved through the use of queues that are
 checked and processed at the end of each block.</p>
 <div class="section" id="unbonding-validators">
-<h5>Unbonding validators<a class="headerlink" href="#unbonding-validators" title="Permalink to this headline">#</a></h5>
+<h5>Unbonding validators<a class="headerlink" href="#unbonding-validators" title="Permalink to this headline">¶</a></h5>
 <p>When a validator is kicked out of the bonded validator set, because either they are
 jailed or they don’t have sufficient bonded tokens, it begins the unbonding
 process along with all its delegations begin unbonding, while still being
@@ -1594,7 +1596,7 @@ delegations, the <code class="docutils literal notranslate"><span class="pre">va
 <code class="docutils literal notranslate"><span class="pre">sdk.Unbonded</span></code>.</p>
 </div>
 <div class="section" id="unbonding-delegations">
-<h5>Unbonding delegations<a class="headerlink" href="#unbonding-delegations" title="Permalink to this headline">#</a></h5>
+<h5>Unbonding delegations<a class="headerlink" href="#unbonding-delegations" title="Permalink to this headline">¶</a></h5>
 <p>Complete the unbonding of all mature <code class="docutils literal notranslate"><span class="pre">UnbondingDelegations.Entries</span></code> within the
 <code class="docutils literal notranslate"><span class="pre">UnbondingDelegations</span></code> queue with the following procedure:</p>
 <ul class="simple">
@@ -1605,7 +1607,7 @@ remaining entries.</p></li>
 </ul>
 </div>
 <div class="section" id="redelegations">
-<h5>Redelegations<a class="headerlink" href="#redelegations" title="Permalink to this headline">#</a></h5>
+<h5>Redelegations<a class="headerlink" href="#redelegations" title="Permalink to this headline">¶</a></h5>
 <p>Complete the unbonding of all mature <code class="docutils literal notranslate"><span class="pre">Redelegation.Entries</span></code> within the
 <code class="docutils literal notranslate"><span class="pre">Redelegations</span></code> queue with the following procedure:</p>
 <ul class="simple">
@@ -1618,7 +1620,7 @@ remaining entries.</p></li>
 </div>
 </div>
 <div class="section" id="parameters">
-<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">#</a></h2>
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
 <p>The subspace for the Staking module is <code class="docutils literal notranslate"><span class="pre">staking</span></code>.</p>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">type</span><span class="w"> </span><span class="nx">Params</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">	</span><span class="nx">UnbondingTime</span><span class="w"> </span><span class="nx">time</span><span class="p">.</span><span class="nx">Duration</span><span class="w"> </span><span class="s">`json:&quot;unbonding_time&quot; yaml:&quot;unbonding_time&quot;`</span><span class="w"></span>
@@ -1639,7 +1641,7 @@ remaining entries.</p></li>
 </pre></div>
 </div>
 <div class="section" id="unbonding-time">
-<h3><code class="docutils literal notranslate"><span class="pre">unbonding_time</span></code><a class="headerlink" href="#unbonding-time" title="Permalink to this headline">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">unbonding_time</span></code><a class="headerlink" href="#unbonding-time" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">time.Duration</span></code></p></li>
 <li><p>default: 3 weeks</p></li>
@@ -1647,7 +1649,7 @@ remaining entries.</p></li>
 <p>Time duration of unbonding in seconds.</p>
 </div>
 <div class="section" id="max-validators">
-<h3><code class="docutils literal notranslate"><span class="pre">max_validators</span></code><a class="headerlink" href="#max-validators" title="Permalink to this headline">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">max_validators</span></code><a class="headerlink" href="#max-validators" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">uint16</span></code></p></li>
 <li><p>default: <code class="docutils literal notranslate"><span class="pre">130</span></code></p></li>
@@ -1655,7 +1657,7 @@ remaining entries.</p></li>
 <p>Maximum number of active validators.</p>
 </div>
 <div class="section" id="max-entries">
-<h3><code class="docutils literal notranslate"><span class="pre">max_entries</span></code><a class="headerlink" href="#max-entries" title="Permalink to this headline">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">max_entries</span></code><a class="headerlink" href="#max-entries" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">uint16</span></code></p></li>
 <li><p>default: <code class="docutils literal notranslate"><span class="pre">7</span></code></p></li>
@@ -1663,7 +1665,7 @@ remaining entries.</p></li>
 <p>Maximum entries for either unbonding delegation or redelegation per pair or trio. Be aware of potential overflow because this is user-determined.</p>
 </div>
 <div class="section" id="bond-denom">
-<h3><code class="docutils literal notranslate"><span class="pre">bond_denom</span></code><a class="headerlink" href="#bond-denom" title="Permalink to this headline">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">bond_denom</span></code><a class="headerlink" href="#bond-denom" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">string</span></code></p></li>
 <li><p>default: <code class="docutils literal notranslate"><span class="pre">uluna</span></code></p></li>
@@ -1678,7 +1680,7 @@ remaining entries.</p></li>
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="spec-slashing.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1801,8 +1803,7 @@ remaining entries.</p></li>
       </div>
     </div>
   
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>

@@ -7,9 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WASM &#8212; Terra Docs  documentation</title>
     
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -19,6 +18,10 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
+    
+      
+
+    
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
@@ -29,8 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/custom.css" />
     
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
@@ -53,7 +55,7 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -1607,12 +1609,12 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="wasm">
-<h1>WASM<a class="headerlink" href="#wasm" title="Permalink to this headline">#</a></h1>
+<h1>WASM<a class="headerlink" href="#wasm" title="Permalink to this headline">¶</a></h1>
 <p>The WASM module implements the execution environment for WebAssembly smart contracts, powered by <a class="reference external" href="https://cosmwasm.com">CosmWasm</a>.</p>
 <div class="section" id="concepts">
-<h2>Concepts<a class="headerlink" href="#concepts" title="Permalink to this headline">#</a></h2>
+<h2>Concepts<a class="headerlink" href="#concepts" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="smart-contracts">
-<h3>Smart contracts<a class="headerlink" href="#smart-contracts" title="Permalink to this headline">#</a></h3>
+<h3>Smart contracts<a class="headerlink" href="#smart-contracts" title="Permalink to this headline">¶</a></h3>
 <p>Smart contracts are autonomous agents that can interact with other entities on the Terra blockchain, such as human-owned accounts, validators, and other smart contracts. Each smart contract has:</p>
 <ul class="simple">
 <li><p>A unique <strong>contract address</strong> with an account that holds funds.</p></li>
@@ -1620,23 +1622,23 @@
 <li><p>Its own <strong>key-value store</strong>, where it can persist and retrieve data.</p></li>
 </ul>
 <div class="section" id="contract-address">
-<h4>Contract address<a class="headerlink" href="#contract-address" title="Permalink to this headline">#</a></h4>
+<h4>Contract address<a class="headerlink" href="#contract-address" title="Permalink to this headline">¶</a></h4>
 <p>Upon instantiation, each contract is automatically assigned a Terra account address, called the contract address. The address is procedurally generated on-chain without an accompanying private and public key pair, and it can be completely determined by the contract’s number order of existence. For instance, on two separate Terra networks, the first contract will always be assigned the address <code class="docutils literal notranslate"><span class="pre">terra18vd8fpwxzck93qlwghaj6arh4p7c5n896xzem5</span></code>, and similarly for the second, third, and so on.</p>
 </div>
 <div class="section" id="code-id">
-<h4>Code ID<a class="headerlink" href="#code-id" title="Permalink to this headline">#</a></h4>
+<h4>Code ID<a class="headerlink" href="#code-id" title="Permalink to this headline">¶</a></h4>
 <p>On Terra, code upload and contract creation are separate events. A smart contract writer first uploads WASM bytecode onto the blockchain to obtain a code ID, which they then can use to initialize an instance of that contract. This scheme promotes efficient storage because most contracts share the same underlying logic and vary only in their initial configuration. Vetted, high-quality contracts for common use cases like fungible tokens and multisig wallets can be easily reused without the need to upload new code.</p>
 </div>
 <div class="section" id="key-value-store">
-<h4>Key-value store<a class="headerlink" href="#key-value-store" title="Permalink to this headline">#</a></h4>
+<h4>Key-value store<a class="headerlink" href="#key-value-store" title="Permalink to this headline">¶</a></h4>
 <p>Each smart contract is given its own dedicated keyspace in LevelDB, prefixed by the contract address. Contract code is safely sandboxed and can only set and delete new keys and values within its assigned keyspace.</p>
 </div>
 </div>
 <div class="section" id="interaction">
-<h3>Interaction<a class="headerlink" href="#interaction" title="Permalink to this headline">#</a></h3>
+<h3>Interaction<a class="headerlink" href="#interaction" title="Permalink to this headline">¶</a></h3>
 <p>You can interact with smart contracts in several ways.</p>
 <div class="section" id="instantiation">
-<h4>Instantiation<a class="headerlink" href="#instantiation" title="Permalink to this headline">#</a></h4>
+<h4>Instantiation<a class="headerlink" href="#instantiation" title="Permalink to this headline">¶</a></h4>
 <p>You can instantiate a new smart contract by sending a <code class="docutils literal notranslate"><span class="pre">MsgInstantiateContract</span></code>. In it, you can:</p>
 <ul class="simple">
 <li><p>Assign an owner to the contract.</p></li>
@@ -1648,7 +1650,7 @@
 <p>The <code class="docutils literal notranslate"><span class="pre">InitMsg</span></code> is a JSON message whose expected format is defined in the contract’s code. Every contract contains a section that defines how to set up the initial state depending on the provided <code class="docutils literal notranslate"><span class="pre">InitMsg</span></code>.</p>
 </div>
 <div class="section" id="execution">
-<h4>Execution<a class="headerlink" href="#execution" title="Permalink to this headline">#</a></h4>
+<h4>Execution<a class="headerlink" href="#execution" title="Permalink to this headline">¶</a></h4>
 <p>You can execute a smart contract to invoke one of its defined functions by sending a <code class="docutils literal notranslate"><span class="pre">MsgExecuteContract</span></code>. In it, you can:</p>
 <ul class="simple">
 <li><p>Specify which function to call with a <code class="docutils literal notranslate"><span class="pre">HandleMsg</span></code>.</p></li>
@@ -1657,36 +1659,36 @@
 <p>The <code class="docutils literal notranslate"><span class="pre">HandleMsg</span></code> is a JSON message that contains function call arguments and gets routed to the appropriate handling logic. From there, the contract executes the function’s instructions during which the contract’s own state can be modified. The contract can only modify outside state, such as state in other contracts or modules, after its own execution has ended, by returning a list of blockchain messages, such as <code class="docutils literal notranslate"><span class="pre">MsgSend</span></code> and <code class="docutils literal notranslate"><span class="pre">MsgExecuteContract</span></code>. These messages are appended to the same transaction as the <code class="docutils literal notranslate"><span class="pre">MsgExecuteContract</span></code>, and, if any of the messages are invalid, the whole transaction is invalidated.</p>
 </div>
 <div class="section" id="migration">
-<h4>Migration<a class="headerlink" href="#migration" title="Permalink to this headline">#</a></h4>
+<h4>Migration<a class="headerlink" href="#migration" title="Permalink to this headline">¶</a></h4>
 <p>If a user is the contract’s owner, and a contract is instantiated as migratable, they can issue a <code class="docutils literal notranslate"><span class="pre">MsgMigrateContract</span></code> to reset its code ID to a new one. The migration can be parameterized with a <code class="docutils literal notranslate"><span class="pre">MigrateMsg</span></code>, a JSON message.</p>
 </div>
 <div class="section" id="transfer-of-ownership">
-<h4>Transfer of ownership<a class="headerlink" href="#transfer-of-ownership" title="Permalink to this headline">#</a></h4>
+<h4>Transfer of ownership<a class="headerlink" href="#transfer-of-ownership" title="Permalink to this headline">¶</a></h4>
 <p>The current owner of the smart contract can reassign a new owner to the contract with <code class="docutils literal notranslate"><span class="pre">MsgUpdateContractOwner</span></code>.</p>
 </div>
 <div class="section" id="query">
-<h4>Query<a class="headerlink" href="#query" title="Permalink to this headline">#</a></h4>
+<h4>Query<a class="headerlink" href="#query" title="Permalink to this headline">¶</a></h4>
 <p>Contracts can define query functions, or read-only operations meant for data-retrieval. Doing so allows contracts to expose rich, custom data endpoints with JSON responses instead of raw bytes from the low-level key-value store. Because the blockchain state cannot be changed, the node can directly run the query without a transaction.</p>
 <p>Users can specify which query function alongside any arguments with a JSON <code class="docutils literal notranslate"><span class="pre">QueryMsg</span></code>. Even though there is no gas fee, the query function’s execution is capped by gas determined by metered execution, which is not charged, as a form of spam protection.</p>
 </div>
 </div>
 <div class="section" id="wasmer-vm">
-<h3>Wasmer VM<a class="headerlink" href="#wasmer-vm" title="Permalink to this headline">#</a></h3>
+<h3>Wasmer VM<a class="headerlink" href="#wasmer-vm" title="Permalink to this headline">¶</a></h3>
 <p>The actual execution of WASM bytecode is performed by <a class="reference external" href="https://github.com/wasmerio/wasmer">wasmer</a>, which provides a lightweight, sandboxed runtime with metered execution to account for the resource cost of computation.</p>
 <div class="section" id="gas-meter">
-<h4>Gas meter<a class="headerlink" href="#gas-meter" title="Permalink to this headline">#</a></h4>
+<h4>Gas meter<a class="headerlink" href="#gas-meter" title="Permalink to this headline">¶</a></h4>
 <p>In addition to the regular gas fees incurred from creating the transaction, Terra also calculates a separate gas when executing smart contract code. This is tracked by the <strong>gas meter</strong>, which is during the execution of every opcode and gets translated back to native Terra gas via a constant multiplier (currently set to 100).</p>
 </div>
 </div>
 <div class="section" id="gas-fees">
-<h3>Gas fees<a class="headerlink" href="#gas-fees" title="Permalink to this headline">#</a></h3>
+<h3>Gas fees<a class="headerlink" href="#gas-fees" title="Permalink to this headline">¶</a></h3>
 <p>WASM data and event spend gas up to <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">*</span> <span class="pre">bytes</span></code>. Passing the event and data to another contract also spends gas in reply.</p>
 </div>
 </div>
 <div class="section" id="data">
-<h2>Data<a class="headerlink" href="#data" title="Permalink to this headline">#</a></h2>
+<h2>Data<a class="headerlink" href="#data" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="codeinfo">
-<h3>CodeInfo<a class="headerlink" href="#codeinfo" title="Permalink to this headline">#</a></h3>
+<h3>CodeInfo<a class="headerlink" href="#codeinfo" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">type</span><span class="w"> </span><span class="nx">CodeInfo</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">	</span><span class="nx">CodeID</span><span class="w">   </span><span class="kt">uint64</span><span class="w">           </span><span class="s">`json:&quot;code_id&quot;`</span><span class="w"></span>
 <span class="w">	</span><span class="nx">CodeHash</span><span class="w"> </span><span class="nx">core</span><span class="p">.</span><span class="nx">Base64Bytes</span><span class="w"> </span><span class="s">`json:&quot;code_hash&quot;`</span><span class="w"></span>
@@ -1696,7 +1698,7 @@
 </div>
 </div>
 <div class="section" id="contractinfo">
-<h3>ContractInfo<a class="headerlink" href="#contractinfo" title="Permalink to this headline">#</a></h3>
+<h3>ContractInfo<a class="headerlink" href="#contractinfo" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">type</span><span class="w"> </span><span class="nx">ContractInfo</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">	</span><span class="nx">Address</span><span class="w">    </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">AccAddress</span><span class="w">   </span><span class="s">`json:&quot;address&quot;`</span><span class="w"></span>
 <span class="w">	</span><span class="nx">Owner</span><span class="w">      </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">AccAddress</span><span class="w">   </span><span class="s">`json:&quot;owner&quot;`</span><span class="w"></span>
@@ -1709,37 +1711,37 @@
 </div>
 </div>
 <div class="section" id="state">
-<h2>State<a class="headerlink" href="#state" title="Permalink to this headline">#</a></h2>
+<h2>State<a class="headerlink" href="#state" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="last-code-id">
-<h3>Last Code ID<a class="headerlink" href="#last-code-id" title="Permalink to this headline">#</a></h3>
+<h3>Last Code ID<a class="headerlink" href="#last-code-id" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">uint64</span></code></p></li>
 </ul>
 <p>A counter for the last uploaded code ID.</p>
 </div>
 <div class="section" id="last-instance-id">
-<h3>Last Instance ID<a class="headerlink" href="#last-instance-id" title="Permalink to this headline">#</a></h3>
+<h3>Last Instance ID<a class="headerlink" href="#last-instance-id" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">uint64</span></code></p></li>
 </ul>
 <p>A counter for the last instantiated contract number.</p>
 </div>
 <div class="section" id="code">
-<h3>Code<a class="headerlink" href="#code" title="Permalink to this headline">#</a></h3>
+<h3>Code<a class="headerlink" href="#code" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">map[uint64]CodeInfo</span></code></p></li>
 </ul>
 <p>Maps a code ID to <code class="docutils literal notranslate"><span class="pre">CodeInfo</span></code> entry.</p>
 </div>
 <div class="section" id="contract-info">
-<h3>Contract Info<a class="headerlink" href="#contract-info" title="Permalink to this headline">#</a></h3>
+<h3>Contract Info<a class="headerlink" href="#contract-info" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">map[bytes]ContractInfo</span></code></p></li>
 </ul>
 <p>Maps contract address to its corresponding <code class="docutils literal notranslate"><span class="pre">ContractInfo</span></code>.</p>
 </div>
 <div class="section" id="contract-store">
-<h3>Contract Store<a class="headerlink" href="#contract-store" title="Permalink to this headline">#</a></h3>
+<h3>Contract Store<a class="headerlink" href="#contract-store" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">map[bytes]KVStore</span></code></p></li>
 </ul>
@@ -1747,9 +1749,9 @@
 </div>
 </div>
 <div class="section" id="message-types">
-<h2>Message types<a class="headerlink" href="#message-types" title="Permalink to this headline">#</a></h2>
+<h2>Message types<a class="headerlink" href="#message-types" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="msgstorecode">
-<h3>MsgStoreCode<a class="headerlink" href="#msgstorecode" title="Permalink to this headline">#</a></h3>
+<h3>MsgStoreCode<a class="headerlink" href="#msgstorecode" title="Permalink to this headline">¶</a></h3>
 <p>Uploads new code to the blockchain and results in a new code ID, if successful. <code class="docutils literal notranslate"><span class="pre">WASMByteCode</span></code> is accepted as either uncompressed or gzipped binary data encoded as Base64.</p>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">type</span><span class="w"> </span><span class="nx">MsgStoreCode</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">	</span><span class="nx">Sender</span><span class="w"> </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">AccAddress</span><span class="w"> </span><span class="s">`json:&quot;sender&quot; yaml:&quot;sender&quot;`</span><span class="w"></span>
@@ -1760,7 +1762,7 @@
 </div>
 </div>
 <div class="section" id="msginstantiatecontract">
-<h3>MsgInstantiateContract<a class="headerlink" href="#msginstantiatecontract" title="Permalink to this headline">#</a></h3>
+<h3>MsgInstantiateContract<a class="headerlink" href="#msginstantiatecontract" title="Permalink to this headline">¶</a></h3>
 <p>Creates a new instance of a smart contract. Initial configuration is provided in the <code class="docutils literal notranslate"><span class="pre">InitMsg</span></code>, which is a JSON message encoded in Base64. If <code class="docutils literal notranslate"><span class="pre">Migratable</span></code> is set to <code class="docutils literal notranslate"><span class="pre">true</span></code>, the owner of the contract is permitted to reset the contract’s code ID to a new one.</p>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">type</span><span class="w"> </span><span class="nx">MsgInstantiateContract</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">	</span><span class="c1">// Sender is an sender address</span><span class="w"></span>
@@ -1778,7 +1780,7 @@
 </div>
 </div>
 <div class="section" id="msgexecutecontract">
-<h3>MsgExecuteContract<a class="headerlink" href="#msgexecutecontract" title="Permalink to this headline">#</a></h3>
+<h3>MsgExecuteContract<a class="headerlink" href="#msgexecutecontract" title="Permalink to this headline">¶</a></h3>
 <p>Invokes a function defined within the smart contract. Function and parameters are encoded in <code class="docutils literal notranslate"><span class="pre">ExecuteMsg</span></code>, which is a JSON message encoded in Base64.</p>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">type</span><span class="w"> </span><span class="nx">MsgExecuteContract</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">	</span><span class="nx">Sender</span><span class="w">     </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">AccAddress</span><span class="w">   </span><span class="s">`json:&quot;sender&quot; yaml:&quot;sender&quot;`</span><span class="w"></span>
@@ -1790,7 +1792,7 @@
 </div>
 </div>
 <div class="section" id="msgmigratecontract">
-<h3>MsgMigrateContract<a class="headerlink" href="#msgmigratecontract" title="Permalink to this headline">#</a></h3>
+<h3>MsgMigrateContract<a class="headerlink" href="#msgmigratecontract" title="Permalink to this headline">¶</a></h3>
 <p>Can be issued by the owner of a migratable smart contract to reset its code ID to another one. <code class="docutils literal notranslate"><span class="pre">MigrateMsg</span></code> is a JSON message encoded in Base64.</p>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">type</span><span class="w"> </span><span class="nx">MsgMigrateContract</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">	</span><span class="nx">Owner</span><span class="w">      </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">AccAddress</span><span class="w">   </span><span class="s">`json:&quot;owner&quot; yaml:&quot;owner&quot;`</span><span class="w"></span>
@@ -1802,7 +1804,7 @@
 </div>
 </div>
 <div class="section" id="msgupdatecontractowner">
-<h3>MsgUpdateContractOwner<a class="headerlink" href="#msgupdatecontractowner" title="Permalink to this headline">#</a></h3>
+<h3>MsgUpdateContractOwner<a class="headerlink" href="#msgupdatecontractowner" title="Permalink to this headline">¶</a></h3>
 <p>Can be issued by the smart contract’s owner to transfer ownership.</p>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">type</span><span class="w"> </span><span class="nx">MsgUpdateContractOwner</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">	</span><span class="nx">Owner</span><span class="w">    </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">AccAddress</span><span class="w"> </span><span class="s">`json:&quot;owner&quot; yaml:&quot;owner&quot;`</span><span class="w"></span>
@@ -1814,7 +1816,7 @@
 </div>
 </div>
 <div class="section" id="parameters">
-<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">#</a></h2>
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
 <p>The subspace for the WASM module is <code class="docutils literal notranslate"><span class="pre">wasm</span></code>.</p>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">type</span><span class="w"> </span><span class="nx">Params</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">	</span><span class="nx">MaxContractSize</span><span class="w">    </span><span class="kt">uint64</span><span class="w"> </span><span class="s">`json:&quot;max_contract_size&quot; yaml:&quot;max_contract_size&quot;`</span><span class="w"></span>
@@ -1824,21 +1826,21 @@
 </pre></div>
 </div>
 <div class="section" id="maxcontractsize">
-<h3>MaxContractSize<a class="headerlink" href="#maxcontractsize" title="Permalink to this headline">#</a></h3>
+<h3>MaxContractSize<a class="headerlink" href="#maxcontractsize" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">uint64</span></code></p></li>
 </ul>
 <p>Maximum contract bytecode size in bytes.</p>
 </div>
 <div class="section" id="maxcontractgas">
-<h3>MaxContractGas<a class="headerlink" href="#maxcontractgas" title="Permalink to this headline">#</a></h3>
+<h3>MaxContractGas<a class="headerlink" href="#maxcontractgas" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">uint64</span></code></p></li>
 </ul>
 <p>Maximum contract gas consumption during any execution.</p>
 </div>
 <div class="section" id="maxcontractmsgsize">
-<h3>MaxContractMsgSize<a class="headerlink" href="#maxcontractmsgsize" title="Permalink to this headline">#</a></h3>
+<h3>MaxContractMsgSize<a class="headerlink" href="#maxcontractmsgsize" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">uint64</span></code></p></li>
 </ul>
@@ -1852,7 +1854,7 @@
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="spec-staking.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1975,8 +1977,7 @@
       </div>
     </div>
   
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>

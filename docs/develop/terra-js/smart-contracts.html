@@ -7,9 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Smart contracts &#8212; Terra Docs  documentation</title>
     
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -19,6 +18,10 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
+    
+      
+
+    
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
@@ -29,8 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/custom.css" />
     
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
@@ -53,7 +55,7 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -1285,10 +1287,10 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="smart-contracts">
-<h1>Smart contracts<a class="headerlink" href="#smart-contracts" title="Permalink to this headline">#</a></h1>
+<h1>Smart contracts<a class="headerlink" href="#smart-contracts" title="Permalink to this headline">¶</a></h1>
 <p>This document explains how to perform tasks related to working with smart contracts with Terra.js.</p>
 <div class="section" id="upload-code">
-<h2>Upload code<a class="headerlink" href="#upload-code" title="Permalink to this headline">#</a></h2>
+<h2>Upload code<a class="headerlink" href="#upload-code" title="Permalink to this headline">¶</a></h2>
 <p>You will first need a compiled WASM smart contract’s binary to upload.</p>
 <div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">LCDClient</span><span class="p">,</span><span class="w"> </span><span class="nx">MsgStoreCode</span><span class="p">,</span><span class="w"> </span><span class="nx">MnemonicKey</span><span class="p">,</span><span class="w"> </span><span class="nx">isTxError</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@terra-money/terra.js&#39;</span><span class="p">;</span><span class="w"></span>
 <span class="k">import</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">fs</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;fs&#39;</span><span class="p">;</span><span class="w"></span>
@@ -1330,7 +1332,7 @@
 </div>
 </div>
 <div class="section" id="create-a-contract">
-<h2>Create a contract<a class="headerlink" href="#create-a-contract" title="Permalink to this headline">#</a></h2>
+<h2>Create a contract<a class="headerlink" href="#create-a-contract" title="Permalink to this headline">¶</a></h2>
 <p>For Terra smart contracts, there is a distinction between uploading contract code and creating a contract. This allows multiple contracts to share the same code if there are only minor variations in their logic which can be configured at contract creation. This configuration is passed in an <strong>InitMsg</strong>, and provides the initial state for the contract.</p>
 <p>To create (instantiate) a smart contract, you must first know the code ID of an uploaded code. You will reference it in a <code class="docutils literal notranslate"><span class="pre">MsgInstantiateContract</span></code> alongside the InitMsg to create the contract. Upon successful creation, your contract will be located at an address that you specify.</p>
 <div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">MsgInstantiateContract</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@terra-money/terra.js&#39;</span><span class="p">;</span><span class="w"></span>
@@ -1366,7 +1368,7 @@
 </div>
 </div>
 <div class="section" id="execute-a-contract">
-<h2>Execute a contract<a class="headerlink" href="#execute-a-contract" title="Permalink to this headline">#</a></h2>
+<h2>Execute a contract<a class="headerlink" href="#execute-a-contract" title="Permalink to this headline">¶</a></h2>
 <p>Smart contracts respond to JSON messages called <strong>HandleMsg</strong> which can exist as different types. The smart contract writer should provide any end-users of the smart contract with the expected format of all the varieties of HandleMsg the contract is supposed to understand, in the form of a JSON schema. The schema thus provides an analog to Ethereum contracts’ ABI.</p>
 <div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">MsgExecuteContract</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@terra-money/terra.js&#39;</span><span class="p">;</span><span class="w"></span>
 
@@ -1386,7 +1388,7 @@
 </div>
 </div>
 <div class="section" id="query-data-from-a-contract">
-<h2>Query data from a contract<a class="headerlink" href="#query-data-from-a-contract" title="Permalink to this headline">#</a></h2>
+<h2>Query data from a contract<a class="headerlink" href="#query-data-from-a-contract" title="Permalink to this headline">¶</a></h2>
 <p>A contract can define a query handler, which understands requests for data specified in a JSON message called a QueryMsg. Unlike the message handler, the query handler cannot modify the contract’s or blockchain’s state – it is a readonly operation. Therefore, a querying data from a contract does not use a message and transaction, but works directly through the <code class="docutils literal notranslate"><span class="pre">LCDClient</span></code> API.</p>
 <div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">terra</span><span class="p">.</span><span class="nx">wasm</span><span class="p">.</span><span class="nx">contractQuery</span><span class="p">(</span><span class="w"></span>
 <span class="w">  </span><span class="nx">contract_address</span><span class="p">[</span><span class="mf">0</span><span class="p">],</span><span class="w"></span>
@@ -1402,7 +1404,7 @@
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="query-data.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1525,8 +1527,7 @@
       </div>
     </div>
   
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>

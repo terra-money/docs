@@ -7,9 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Implement security practices &#8212; Terra Docs  documentation</title>
     
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -19,6 +18,10 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
+    
+      
+
+    
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
@@ -29,8 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/custom.css" />
     
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
@@ -53,7 +55,7 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -1275,15 +1277,15 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="implement-security-practices">
-<h1>Implement security practices<a class="headerlink" href="#implement-security-practices" title="Permalink to this headline">#</a></h1>
+<h1>Implement security practices<a class="headerlink" href="#implement-security-practices" title="Permalink to this headline">¶</a></h1>
 <p>Each validator candidate is encouraged to run its operations independently. Diverse individual setups increase the resilience of the network.</p>
 <div class="section" id="manage-digital-keys-with-hsm">
-<h2>Manage digital keys with HSM<a class="headerlink" href="#manage-digital-keys-with-hsm" title="Permalink to this headline">#</a></h2>
+<h2>Manage digital keys with HSM<a class="headerlink" href="#manage-digital-keys-with-hsm" title="Permalink to this headline">¶</a></h2>
 <p>Key management is mission critical for validators. If an attacker gains access to a validator’s private key, it puts the validator’s entire delegated stake at risk. Hardware security modules are an important strategy for mitigating this risk.</p>
 <p>Consider implementing this <a class="reference external" href="https://github.com/iqlusioninc/tmkms">key-management method</a> by Iqulusion.</p>
 </div>
 <div class="section" id="defend-against-ddos-attacks">
-<h2>Defend against DDoS attacks<a class="headerlink" href="#defend-against-ddos-attacks" title="Permalink to this headline">#</a></h2>
+<h2>Defend against DDoS attacks<a class="headerlink" href="#defend-against-ddos-attacks" title="Permalink to this headline">¶</a></h2>
 <p>Validators are responsible for ensuring that the network can defend against denial of service attacks.</p>
 <p>Validators can mitigate these attacks by carefully structuring their network topology in a sentry node architecture.</p>
 <p>Validator nodes should only connect to full nodes they trust. They can be run by the same validator or other validators they know. A validator node will typically run in a data center. Most data centers provide direct links to major cloud providers. A validator can use these links to connect to sentry nodes in the cloud. This shifts the burden of denial-of-service from the validator’s node directly to its sentry nodes. This may require new sentry nodes to be spun up or activated to mitigate attacks on existing ones.</p>
@@ -1317,7 +1319,7 @@
 </div>
 </div>
 <div class="section" id="environment-variables">
-<h2>Environment Variables<a class="headerlink" href="#environment-variables" title="Permalink to this headline">#</a></h2>
+<h2>Environment Variables<a class="headerlink" href="#environment-variables" title="Permalink to this headline">¶</a></h2>
 <p>By default, uppercase environment variables with the following prefixes will replace lowercase command-line flags:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">TE</span></code> (for Terra flags)</p></li>
@@ -1333,7 +1335,7 @@
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="faq.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1456,8 +1458,7 @@
       </div>
     </div>
   
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>

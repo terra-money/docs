@@ -7,9 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>How vesting accounts work &#8212; Terra Docs  documentation</title>
     
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -19,6 +18,10 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
+    
+      
+
+    
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
@@ -29,8 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
     
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
@@ -53,7 +55,7 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -1285,7 +1287,7 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="how-vesting-accounts-work">
-<h1>How vesting accounts work<a class="headerlink" href="#how-vesting-accounts-work" title="Permalink to this headline">#</a></h1>
+<h1>How vesting accounts work<a class="headerlink" href="#how-vesting-accounts-work" title="Permalink to this headline">¶</a></h1>
 <p>Individuals who previously held LUNA Classic (LUNA on the original Terra blockchain) will be entitled to a specified number of LUNA tokens on the new Terra 2.0 blockchain based on the quantity of their holdings at specified snapshots of time. To learn more about the Terra Ecosystem Revival Plan, please click <a class="reference external" href="https://agora.terra.money/t/terra-ecosystem-revival-plan-2-passed-gov/18498">here</a>.</p>
 <p>30% of LUNA tokens received will be <code class="docutils literal notranslate"><span class="pre">liquid</span></code> and may be traded and transferred immediately upon receipt. 70% of these tokens will be <code class="docutils literal notranslate"><span class="pre">vesting</span></code>, meaning that these funds will be available in one’s personal wallet, but may not be traded or transfered until a specified period of time. However, these funds may be delegated to validators at any time if the user chooses to do so.</p>
 <p>Vesting tokens will be stored in a type of vesting account available in one’s wallet. Vesting tokens will become <code class="docutils literal notranslate"><span class="pre">vested</span></code>, or available for trade and transfer, based on a predetermined schedule. We will go over 3 different types of vesting accounts, each with it’s own unique vesting schedule.</p>
@@ -1300,7 +1302,7 @@
 </div>
 <p><strong>Note:</strong> Token amounts in the examples below will be given in microunits. To convert microunits to basic units, you can divide the specified quantities by 1,000,000. Time values utilized will be in Unix time. You may use <a class="reference external" href="https://www.epochconverter.com/">this converter</a> to translate from Unix time to a human-readable datetime.</p>
 <div class="section" id="continuous-vesting-account">
-<h2>Continuous Vesting Account<a class="headerlink" href="#continuous-vesting-account" title="Permalink to this headline">#</a></h2>
+<h2>Continuous Vesting Account<a class="headerlink" href="#continuous-vesting-account" title="Permalink to this headline">¶</a></h2>
 <p>In a continous vesting account, a number of tokens will be vested per block based on a predetermined start and end time. One would have to wait until the specified start time for their tokens to start to become vested. At this point, tokens become vested per block until the end time is reached based on the following equation:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tokens_vested_per_block</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">original_vesting</span> <span class="o">*</span> <span class="p">(</span><span class="n">block_time</span> <span class="o">/</span> <span class="p">(</span><span class="n">end_time</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">)))</span>
 </pre></div>
@@ -1341,7 +1343,7 @@
 </div>
 </div>
 <div class="section" id="periodic-vesting-account">
-<h2>Periodic Vesting Account<a class="headerlink" href="#periodic-vesting-account" title="Permalink to this headline">#</a></h2>
+<h2>Periodic Vesting Account<a class="headerlink" href="#periodic-vesting-account" title="Permalink to this headline">¶</a></h2>
 <p>Periodic vesting accounts work similarly to continuous vesting accounts except that vesting occurs over predefined vesting periods. Each period has a specified length corresponding to the number of seconds the period will last.</p>
 <p>Below, we see an example of a periodic vesting account where 5,000,000 uLUNA will be vested over the 24 hour period referenced in the continuous vesting account example. During period 1, within the first 4 hours (14,400 seconds) after the start time, 1,000,000 uLUNA will be vested. During period 2, in the 6 hours (21,600 seconds) after period 1, 2,000,000 uLUNA will be vested. Finally, during period 3, in the 14 hours (50,400 seconds) after period 2, 2,000,000 more uLUNA will be vested.</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
@@ -1407,7 +1409,7 @@
 <p>Following the conclusion of the vesting time period given by <code class="docutils literal notranslate"><span class="pre">end_time</span></code>, 5,000,000 uLUNA will have been vested and will be available for trading and transfers.</p>
 </div>
 <div class="section" id="delayed-vesting-account">
-<h2>Delayed Vesting Account<a class="headerlink" href="#delayed-vesting-account" title="Permalink to this headline">#</a></h2>
+<h2>Delayed Vesting Account<a class="headerlink" href="#delayed-vesting-account" title="Permalink to this headline">¶</a></h2>
 <p>In a delayed vesting account, vesting tokens will be fully vested when the end time is reached. In the below example, 5,000,000 uLUNA begin vesting at the genesis block. These funds remain locked until 1654041600 Unix time (June 1, 2022 12:00:00 AM), when the full amount of 5,000,000 uLUNA is then vested.</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;account&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -1435,7 +1437,7 @@
 </div>
 </div>
 <div class="section" id="delegation">
-<h2>Delegation<a class="headerlink" href="#delegation" title="Permalink to this headline">#</a></h2>
+<h2>Delegation<a class="headerlink" href="#delegation" title="Permalink to this headline">¶</a></h2>
 <p>A user may choose to delegate their tokens to validators. This may be done with tokens that are vested or are still vesting. As such, vesting tokens which are delegated will be listed under <code class="docutils literal notranslate"><span class="pre">delegated_vesting</span></code>. Vested tokens which are delegated will be listed under <code class="docutils literal notranslate"><span class="pre">delegated_free</span></code>. Both are variable values which will change based on the amount being delegated and may be updated as more and more tokens become vested. If one chooses to undelegate, the undelegated tokens will be locked for 21 days. After the 21 day period has concluded, the proportion of the funds which are vested will be free to trade and transfer as desired. Funds which are undelegated, but are still vesting will become vested based on the vesting schedule provided by it’s respective vesting account.</p>
 </div>
 </div>
@@ -1445,7 +1447,7 @@
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="endpoints.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1568,8 +1570,7 @@
       </div>
     </div>
   
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>

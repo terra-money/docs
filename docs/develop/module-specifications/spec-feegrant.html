@@ -7,9 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fee grant &#8212; Terra Docs  documentation</title>
     
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -19,6 +18,10 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
+    
+      
+
+    
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
@@ -29,8 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/custom.css" />
     
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
@@ -53,7 +55,7 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -1407,16 +1409,16 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="fee-grant">
-<h1>Fee grant<a class="headerlink" href="#fee-grant" title="Permalink to this headline">#</a></h1>
+<h1>Fee grant<a class="headerlink" href="#fee-grant" title="Permalink to this headline">¶</a></h1>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>Terra’s fee grant module inherits from the Cosmos SDK’s <a class="reference external" href="https://docs.cosmos.network/master/modules/feegrant/"><code class="docutils literal notranslate"><span class="pre">feegrant</span></code></a> module. This document is a stub and explains mainly important Terra-specific notes about how it is used.</p>
 </div>
 <p>This module allows an account, the granter, to permit another account, the grantee, to pay for fees from the granter’s account balance. Grantees will not need to maintain their own balance for paying fees.</p>
 <div class="section" id="concepts">
-<h2>Concepts<a class="headerlink" href="#concepts" title="Permalink to this headline">#</a></h2>
+<h2>Concepts<a class="headerlink" href="#concepts" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="grant">
-<h3>Grant<a class="headerlink" href="#grant" title="Permalink to this headline">#</a></h3>
+<h3>Grant<a class="headerlink" href="#grant" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">Grant</span></code> is stored in the KVStore to record a grant with full context.</p>
 <p>Every <code class="docutils literal notranslate"><span class="pre">grant</span></code> contains the following information:</p>
 <ul>
@@ -1453,10 +1455,10 @@
 <p>Only one fee grant is allowed between a granter and a grantee. Self-grants are prohibited.</p>
 </div>
 <div class="section" id="fee-allowance-types">
-<h3>Fee allowance types<a class="headerlink" href="#fee-allowance-types" title="Permalink to this headline">#</a></h3>
+<h3>Fee allowance types<a class="headerlink" href="#fee-allowance-types" title="Permalink to this headline">¶</a></h3>
 <p>The following types of fee allowances can be granted.</p>
 <div class="section" id="basicallowance">
-<h4><code class="docutils literal notranslate"><span class="pre">BasicAllowance</span></code><a class="headerlink" href="#basicallowance" title="Permalink to this headline">#</a></h4>
+<h4><code class="docutils literal notranslate"><span class="pre">BasicAllowance</span></code><a class="headerlink" href="#basicallowance" title="Permalink to this headline">¶</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">BasicAllowance</span></code> permits the grantee to pay fees by using funds from the granter’s account. If the threshold for either <code class="docutils literal notranslate"><span class="pre">spend_limit</span></code> or <code class="docutils literal notranslate"><span class="pre">expiration</span></code> is met, the grant is removed from the state.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">BasicAllowance</span> <span class="n">implements</span> <span class="n">Allowance</span> <span class="k">with</span> <span class="n">a</span> <span class="n">one</span><span class="o">-</span><span class="n">time</span> <span class="n">grant</span> <span class="n">of</span> <span class="n">tokens</span>
 <span class="o">//</span> <span class="n">that</span> <span class="n">optionally</span> <span class="n">expires</span><span class="o">.</span> <span class="n">The</span> <span class="n">grantee</span> <span class="n">can</span> <span class="n">use</span> <span class="n">up</span> <span class="n">to</span> <span class="n">SpendLimit</span> <span class="n">to</span> <span class="n">cover</span> <span class="n">fees</span><span class="o">.</span>
@@ -1481,7 +1483,7 @@
 <p>To restrict the grantee when values for <code class="docutils literal notranslate"><span class="pre">spend_limit</span></code> and <code class="docutils literal notranslate"><span class="pre">expiration</span></code> are blank, revoke the grant.</p>
 </div>
 <div class="section" id="periodicallowance">
-<h4><code class="docutils literal notranslate"><span class="pre">PeriodicAllowance</span></code><a class="headerlink" href="#periodicallowance" title="Permalink to this headline">#</a></h4>
+<h4><code class="docutils literal notranslate"><span class="pre">PeriodicAllowance</span></code><a class="headerlink" href="#periodicallowance" title="Permalink to this headline">¶</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">PeriodicAllowance</span></code> is a repeating fee allowance for a specified period and for a specified maximum number of tokens that can spent within that period.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -1549,7 +1551,7 @@ message Grant {
 </div>
 </div>
 <div class="section" id="fee-account-flag">
-<h3>Fee account flag<a class="headerlink" href="#fee-account-flag" title="Permalink to this headline">#</a></h3>
+<h3>Fee account flag<a class="headerlink" href="#fee-account-flag" title="Permalink to this headline">¶</a></h3>
 <p>To run transactions that use fee grant from the CLI, specify the <code class="docutils literal notranslate"><span class="pre">FeeAccount</span></code> flag followed by the granter’s account address. When this flag is set, <code class="docutils literal notranslate"><span class="pre">clientCtx</span></code> appends the granter’s account address.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -2093,11 +2095,11 @@ func (gr GasEstimateResponse) String() string {
 </div>
 </div>
 <div class="section" id="granted-fee-deductions">
-<h3>Granted fee deductions<a class="headerlink" href="#granted-fee-deductions" title="Permalink to this headline">#</a></h3>
+<h3>Granted fee deductions<a class="headerlink" href="#granted-fee-deductions" title="Permalink to this headline">¶</a></h3>
 <p>Fees are deducted from grants in the <code class="docutils literal notranslate"><span class="pre">auth</span></code> ante handler.</p>
 </div>
 <div class="section" id="gas">
-<h3>Gas<a class="headerlink" href="#gas" title="Permalink to this headline">#</a></h3>
+<h3>Gas<a class="headerlink" href="#gas" title="Permalink to this headline">¶</a></h3>
 <p>To prevent DoS attacks, using a filtered <code class="docutils literal notranslate"><span class="pre">feegrant</span></code> incurs gas. To ensure that all the grantee’s transactions conform to the filter set by the granter, the SDK iterates over the allowed messages in the filter and charges 10 gas per filtered message. Then, the SDK iterates over the messages sent by the grantee to ensure the messages adhere to the filter, which also charges 10 gas per message. If the SDK finds a message that does not conform to the filter, the SDK stops iterating, and the transaction fails.</p>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
@@ -2106,9 +2108,9 @@ func (gr GasEstimateResponse) String() string {
 </div>
 </div>
 <div class="section" id="state">
-<h2>State<a class="headerlink" href="#state" title="Permalink to this headline">#</a></h2>
+<h2>State<a class="headerlink" href="#state" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="feeallowance">
-<h3>FeeAllowance<a class="headerlink" href="#feeallowance" title="Permalink to this headline">#</a></h3>
+<h3>FeeAllowance<a class="headerlink" href="#feeallowance" title="Permalink to this headline">¶</a></h3>
 <p>Fee allowances are identified by combining <code class="docutils literal notranslate"><span class="pre">Granter</span></code> (the account address that grants permission to another account to spend its available tokens on fees) with <code class="docutils literal notranslate"><span class="pre">Grantee</span></code> (the account address that receives permission to spend the granter’s tokens on fees).</p>
 <p>The following example shows how a fee allowance is stored in the state:</p>
 <p>Grant: <code class="docutils literal notranslate"><span class="pre">0x00</span> <span class="pre">|</span> <span class="pre">grantee_addr_len</span> <span class="pre">(1</span> <span class="pre">byte)</span> <span class="pre">|</span> <span class="pre">grantee_addr_bytes</span> <span class="pre">|</span> <span class="pre">granter_addr_len</span> <span class="pre">(1</span> <span class="pre">byte)</span> <span class="pre">|</span> <span class="pre">granter_addr_bytes</span> <span class="pre">-&gt;</span> <span class="pre">ProtocolBuffer(Grant)</span></code></p>
@@ -2126,9 +2128,9 @@ type Grant struct {
 </div>
 </div>
 <div class="section" id="message-types">
-<h2>Message Types<a class="headerlink" href="#message-types" title="Permalink to this headline">#</a></h2>
+<h2>Message Types<a class="headerlink" href="#message-types" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="msggrantallowance">
-<h3>MsgGrantAllowance<a class="headerlink" href="#msggrantallowance" title="Permalink to this headline">#</a></h3>
+<h3>MsgGrantAllowance<a class="headerlink" href="#msggrantallowance" title="Permalink to this headline">¶</a></h3>
 <p>A fee allowance grant will be created with the MsgGrantAllowance message.</p>
 <div class="highlight-proto notranslate"><div class="highlight"><pre><span></span><span class="c1">// MsgGrantAllowance adds permission for Grantee to spend up to Allowance</span>
 <span class="c1">// of fees from the account of Granter.</span>
@@ -2146,7 +2148,7 @@ type Grant struct {
 </div>
 </div>
 <div class="section" id="msgrevokeallowance">
-<h3>MsgRevokeAllowance<a class="headerlink" href="#msgrevokeallowance" title="Permalink to this headline">#</a></h3>
+<h3>MsgRevokeAllowance<a class="headerlink" href="#msgrevokeallowance" title="Permalink to this headline">¶</a></h3>
 <p>A fee allowance grant will be revokeed with the MsgRevokeAllowance message.</p>
 <div class="highlight-proto notranslate"><div class="highlight"><pre><span></span><span class="c1">// MsgRevokeAllowance removes any existing Allowance from Granter to Grantee.</span>
 <span class="kd">message</span><span class="w"> </span><span class="nc">MsgRevokeAllowance</span><span class="w"> </span><span class="p">{</span>
@@ -2167,7 +2169,7 @@ type Grant struct {
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="spec-evidence.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -2290,8 +2292,7 @@ type Grant struct {
       </div>
     </div>
   
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>

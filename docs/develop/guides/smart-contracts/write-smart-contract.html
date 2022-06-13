@@ -7,9 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Writing the Contract &#8212; Terra Docs  documentation</title>
     
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -19,6 +18,10 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
+    
+      
+
+    
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
@@ -29,8 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css" />
     
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
     <script src="../../../../_static/jquery.js"></script>
@@ -53,7 +55,7 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -1469,7 +1471,7 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="writing-the-contract">
-<h1>Writing the Contract<a class="headerlink" href="#writing-the-contract" title="Permalink to this headline">#</a></h1>
+<h1>Writing the Contract<a class="headerlink" href="#writing-the-contract" title="Permalink to this headline">¶</a></h1>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <p>To better understand the building blocks of the smart contract you will build in this tutorial, view the <a class="reference external" href="https://github.com/CosmWasm/cw-template">complete contract</a>.</p>
@@ -1483,7 +1485,7 @@
 </ul>
 <p>In this section, you will define your expected messages alongside their implementation.</p>
 <div class="section" id="start-with-a-template">
-<h2>Start with a template<a class="headerlink" href="#start-with-a-template" title="Permalink to this headline">#</a></h2>
+<h2>Start with a template<a class="headerlink" href="#start-with-a-template" title="Permalink to this headline">¶</a></h2>
 <p>In your working directory, quickly launch your smart contract with the recommended folder structure and build options by running the following commands:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>cargo generate --git https://github.com/CosmWasm/cw-template.git --branch <span class="m">0</span>.16 --name my-first-contract
 <span class="nb">cd</span> my-first-contract
@@ -1492,7 +1494,7 @@
 <p>This helps get you started by providing the basic boilerplate and structure for a smart contract. You’ll find in the <code class="docutils literal notranslate"><span class="pre">src/lib.rs</span></code> file that the standard CosmWasm entrypoints <code class="docutils literal notranslate"><span class="pre">instantiate()</span></code>, <code class="docutils literal notranslate"><span class="pre">execute()</span></code>, and <code class="docutils literal notranslate"><span class="pre">query()</span></code> are properly exposed and hooked up.</p>
 </div>
 <div class="section" id="contract-state">
-<h2>Contract State<a class="headerlink" href="#contract-state" title="Permalink to this headline">#</a></h2>
+<h2>Contract State<a class="headerlink" href="#contract-state" title="Permalink to this headline">¶</a></h2>
 <p>The starting template has the basic following state:</p>
 <ul class="simple">
 <li><p>a singleton struct <code class="docutils literal notranslate"><span class="pre">State</span></code> containing:</p>
@@ -1533,11 +1535,11 @@
 <p><code class="docutils literal notranslate"><span class="pre">Addr</span></code>, refers to a human-readable Terra address prefixed with <code class="docutils literal notranslate"><span class="pre">terra...</span></code>. Its counterpart is the <code class="docutils literal notranslate"><span class="pre">CanonicalAddr</span></code>, which refers to a Terra address’s native decoded Bech32 form in bytes.</p>
 </div>
 <div class="section" id="instantiatemsg">
-<h2>InstantiateMsg<a class="headerlink" href="#instantiatemsg" title="Permalink to this headline">#</a></h2>
+<h2>InstantiateMsg<a class="headerlink" href="#instantiatemsg" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">InstantiateMsg</span></code> is provided when a user creates a contract on the blockchain through a <code class="docutils literal notranslate"><span class="pre">MsgInstantiateContract</span></code>. This provides the contract with its configuration as well as its initial state.</p>
 <p>On the Terra blockchain, the uploading of a contract’s code and the instantiation of a contract are regarded as separate events, unlike on Ethereum. This is to allow a small set of vetted contract archetypes to exist as multiple instances sharing the same base code but configured with different parameters (imagine one canonical ERC20, and multiple tokens that use its code).</p>
 <div class="section" id="example">
-<h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">#</a></h3>
+<h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
 <p>For your contract, you will expect a contract creator to supply the initial state in a JSON message:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w"></span>
@@ -1546,7 +1548,7 @@
 </div>
 </div>
 <div class="section" id="message-definition">
-<h3>Message Definition<a class="headerlink" href="#message-definition" title="Permalink to this headline">#</a></h3>
+<h3>Message Definition<a class="headerlink" href="#message-definition" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="c1">// src/msg.rs</span>
 
 <span class="k">use</span><span class="w"> </span><span class="n">schemars</span>::<span class="n">JsonSchema</span><span class="p">;</span><span class="w"></span>
@@ -1560,7 +1562,7 @@
 </div>
 </div>
 <div class="section" id="logic">
-<h3>Logic<a class="headerlink" href="#logic" title="Permalink to this headline">#</a></h3>
+<h3>Logic<a class="headerlink" href="#logic" title="Permalink to this headline">¶</a></h3>
 <p>Here you will define your first entry-point, the <code class="docutils literal notranslate"><span class="pre">instantiate()</span></code>, or where the contract is instantiated and passed its <code class="docutils literal notranslate"><span class="pre">InstantiateMsg</span></code>. Extract the count from the message and set up your initial state, where:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">count</span></code> is assigned the count from the message</p></li>
@@ -1591,12 +1593,12 @@
 </div>
 </div>
 <div class="section" id="executemsg">
-<h2>ExecuteMsg<a class="headerlink" href="#executemsg" title="Permalink to this headline">#</a></h2>
+<h2>ExecuteMsg<a class="headerlink" href="#executemsg" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">ExecuteMsg</span></code> is a JSON message passed to the <code class="docutils literal notranslate"><span class="pre">execute()</span></code> function through a <code class="docutils literal notranslate"><span class="pre">MsgExecuteContract</span></code>. Unlike the <code class="docutils literal notranslate"><span class="pre">InstantiateMsg</span></code>, the <code class="docutils literal notranslate"><span class="pre">ExecuteMsg</span></code> can exist as several different types of messages, to account for the different types of functions that a smart contract can expose to a user. The <code class="docutils literal notranslate"><span class="pre">execute()</span></code> function demultiplexes these different types of messages to its appropriate message handler logic.</p>
 <div class="section" id="id1">
-<h3>Example<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<h3>Example<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="increment">
-<h4>Increment<a class="headerlink" href="#increment" title="Permalink to this headline">#</a></h4>
+<h4>Increment<a class="headerlink" href="#increment" title="Permalink to this headline">¶</a></h4>
 <p>Any user can increment the current count by 1.</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;increment&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
@@ -1605,7 +1607,7 @@
 </div>
 </div>
 <div class="section" id="reset">
-<h4>Reset<a class="headerlink" href="#reset" title="Permalink to this headline">#</a></h4>
+<h4>Reset<a class="headerlink" href="#reset" title="Permalink to this headline">¶</a></h4>
 <p>Only the owner can reset the count to a specific number.</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;reset&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -1617,7 +1619,7 @@
 </div>
 </div>
 <div class="section" id="id2">
-<h3>Message Definition<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<h3>Message Definition<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <p>As for your <code class="docutils literal notranslate"><span class="pre">ExecuteMsg</span></code>, you will use an <code class="docutils literal notranslate"><span class="pre">enum</span></code> to multiplex over the different types of messages that your contract can understand. The <code class="docutils literal notranslate"><span class="pre">serde</span></code> attribute rewrites your attribute keys in snake case and lower case, so you’ll have <code class="docutils literal notranslate"><span class="pre">increment</span></code> and <code class="docutils literal notranslate"><span class="pre">reset</span></code> instead of <code class="docutils literal notranslate"><span class="pre">Increment</span></code> and <code class="docutils literal notranslate"><span class="pre">Reset</span></code> when serializing and deserializing across JSON.</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="c1">// src/msg.rs</span>
 
@@ -1631,7 +1633,7 @@
 </div>
 </div>
 <div class="section" id="id3">
-<h3>Logic<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<h3>Logic<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="c1">// src/contract.rs</span>
 
 <span class="cp">#[cfg_attr(not(feature = </span><span class="s">&quot;library&quot;</span><span class="cp">), entry_point)]</span><span class="w"></span>
@@ -1678,12 +1680,12 @@
 </div>
 </div>
 <div class="section" id="querymsg">
-<h2>QueryMsg<a class="headerlink" href="#querymsg" title="Permalink to this headline">#</a></h2>
+<h2>QueryMsg<a class="headerlink" href="#querymsg" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id4">
-<h3>Example<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
+<h3>Example<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <p>The template contract only supports one type of <code class="docutils literal notranslate"><span class="pre">QueryMsg</span></code>:</p>
 <div class="section" id="balance">
-<h4>Balance<a class="headerlink" href="#balance" title="Permalink to this headline">#</a></h4>
+<h4>Balance<a class="headerlink" href="#balance" title="Permalink to this headline">¶</a></h4>
 <p>The request:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;get_count&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
@@ -1699,7 +1701,7 @@
 </div>
 </div>
 <div class="section" id="id5">
-<h3>Message Definition<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
+<h3>Message Definition<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <p>To support queries against the contract for data, you’ll have to define both a <code class="docutils literal notranslate"><span class="pre">QueryMsg</span></code> format (which represents requests), as well as provide the structure of the query’s output – <code class="docutils literal notranslate"><span class="pre">CountResponse</span></code> in this case. You must do this because <code class="docutils literal notranslate"><span class="pre">query()</span></code> will send back information to the user through JSON in a structure and you must make the shape of your response known.</p>
 <p>Add the following to your <code class="docutils literal notranslate"><span class="pre">src/msg.rs</span></code>:</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="c1">// src/msg.rs</span>
@@ -1719,7 +1721,7 @@
 </div>
 </div>
 <div class="section" id="id6">
-<h3>Logic<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
+<h3>Logic<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <p>The logic for <code class="docutils literal notranslate"><span class="pre">query()</span></code> should be similar to that of <code class="docutils literal notranslate"><span class="pre">execute()</span></code>, except that, since <code class="docutils literal notranslate"><span class="pre">query()</span></code> is called without the end-user making a transaction, the <code class="docutils literal notranslate"><span class="pre">env</span></code> argument is ommitted as there is no information.</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="c1">// src/contract.rs</span>
 
@@ -1739,13 +1741,13 @@
 </div>
 </div>
 <div class="section" id="building-the-contract">
-<h2>Building the Contract<a class="headerlink" href="#building-the-contract" title="Permalink to this headline">#</a></h2>
+<h2>Building the Contract<a class="headerlink" href="#building-the-contract" title="Permalink to this headline">¶</a></h2>
 <p>To build your contract, run the following command. This will check for any preliminary errors before optimizing.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>cargo wasm
 </pre></div>
 </div>
 <div class="section" id="optimizing-your-build">
-<h3>Optimizing your build<a class="headerlink" href="#optimizing-your-build" title="Permalink to this headline">#</a></h3>
+<h3>Optimizing your build<a class="headerlink" href="#optimizing-your-build" title="Permalink to this headline">¶</a></h3>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>You will need <a class="reference external" href="https://www.docker.com">Docker</a> installed to run this command.</p>
@@ -1776,7 +1778,7 @@
 </div>
 </div>
 <div class="section" id="schemas">
-<h2>Schemas<a class="headerlink" href="#schemas" title="Permalink to this headline">#</a></h2>
+<h2>Schemas<a class="headerlink" href="#schemas" title="Permalink to this headline">¶</a></h2>
 <p>In order to make use of JSON-schema auto-generation, you should register each of the data structures that you need schemas for.</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="c1">// examples/schema.rs</span>
 
@@ -1833,7 +1835,7 @@
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="set-up-local-environment.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1956,8 +1958,7 @@
       </div>
     </div>
   
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>

@@ -7,9 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Reset and troubleshooting &#8212; Terra Docs  documentation</title>
     
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -19,6 +18,10 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
+    
+      
+
+    
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
@@ -29,8 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/custom.css" />
     
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
@@ -53,7 +55,7 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -1299,9 +1301,9 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="reset-and-troubleshooting">
-<h1>Reset and troubleshooting<a class="headerlink" href="#reset-and-troubleshooting" title="Permalink to this headline">#</a></h1>
+<h1>Reset and troubleshooting<a class="headerlink" href="#reset-and-troubleshooting" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="complete-reset">
-<h2>Complete reset<a class="headerlink" href="#complete-reset" title="Permalink to this headline">#</a></h2>
+<h2>Complete reset<a class="headerlink" href="#complete-reset" title="Permalink to this headline">¶</a></h2>
 <p>Occasionally you may need to perform a comlpete reset of your node due to data corruption or misconfiguration. Resetting will remove all data in <code class="docutils literal notranslate"><span class="pre">~/.terra/data</span></code> and the addressbook in <code class="docutils literal notranslate"><span class="pre">~/.terra/config/addrbook.json</span></code> and reset the node to genesis state.</p>
 <p>To perform a complete reset of your <code class="docutils literal notranslate"><span class="pre">terrad</span></code> state, use:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">terrad</span> <span class="n">unsafe</span><span class="o">-</span><span class="n">reset</span><span class="o">-</span><span class="nb">all</span>
@@ -1318,7 +1320,7 @@
 <p>After resetting, make sure the addressbook contains peer addresses and is in the correct spot. If not, <a class="reference internal" href="join-a-network.html#select-a-network"><span class="std std-doc">download an adressbook</span></a> and place it in <code class="docutils literal notranslate"><span class="pre">~/.terra/config/</span></code>.</p>
 </div>
 <div class="section" id="change-genesis">
-<h3>Change Genesis<a class="headerlink" href="#change-genesis" title="Permalink to this headline">#</a></h3>
+<h3>Change Genesis<a class="headerlink" href="#change-genesis" title="Permalink to this headline">¶</a></h3>
 <p>To change the genesis version, delete <code class="docutils literal notranslate"><span class="pre">~/.terra/config/genesis.json</span></code>.</p>
 <p>You can recreate a genesis version via the following steps:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span> terrad add-genesis-account <span class="k">$(</span>terrad keys show &lt;account-name&gt; -a<span class="k">)</span> 100000000uluna,1000usd
@@ -1328,7 +1330,7 @@
 </div>
 </div>
 <div class="section" id="reset-personal-data">
-<h3>Reset personal data<a class="headerlink" href="#reset-personal-data" title="Permalink to this headline">#</a></h3>
+<h3>Reset personal data<a class="headerlink" href="#reset-personal-data" title="Permalink to this headline">¶</a></h3>
 <div class="admonition danger">
 <p class="admonition-title">Danger</p>
 <p>You may be unable to use your node and its associated accounts after changing your personal data. Do not perform this action unless your node is disposable.</p>
@@ -1336,7 +1338,7 @@
 <p>To change your personal data to a completely pristine state, delete both <code class="docutils literal notranslate"><span class="pre">~/.terra/config/priv_validator_state.json</span></code> and <code class="docutils literal notranslate"><span class="pre">~/.terra/config/node_key.json</span></code>.</p>
 </div>
 <div class="section" id="node-health">
-<h3>Node health<a class="headerlink" href="#node-health" title="Permalink to this headline">#</a></h3>
+<h3>Node health<a class="headerlink" href="#node-health" title="Permalink to this headline">¶</a></h3>
 <p>A healthy node will have the following files in place and populated:</p>
 <ul class="simple">
 <li><p>Addressbook <code class="docutils literal notranslate"><span class="pre">~/.terra/config/addrbook.json</span></code></p></li>
@@ -1346,7 +1348,7 @@
 </ul>
 </div>
 <div class="section" id="resync">
-<h3>Resync<a class="headerlink" href="#resync" title="Permalink to this headline">#</a></h3>
+<h3>Resync<a class="headerlink" href="#resync" title="Permalink to this headline">¶</a></h3>
 <p>You can proceed to <a class="reference internal" href="sync.html"><span class="doc std std-doc">resync manually</span></a> or <a class="reference internal" href="sync.html#quicksync"><span class="std std-doc">via quicksync</span></a>.</p>
 </div>
 </div>
@@ -1357,7 +1359,7 @@
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="updates-and-additional.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1480,8 +1482,7 @@
       </div>
     </div>
   
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>

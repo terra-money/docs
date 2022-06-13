@@ -7,9 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Join a network &#8212; Terra Docs  documentation</title>
     
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -19,6 +18,10 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
+    
+      
+
+    
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
@@ -29,8 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/custom.css" />
     
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
@@ -53,7 +55,7 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -1349,17 +1351,17 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="join-a-network">
-<h1>Join a network<a class="headerlink" href="#join-a-network" title="Permalink to this headline">#</a></h1>
+<h1>Join a network<a class="headerlink" href="#join-a-network" title="Permalink to this headline">¶</a></h1>
 <p>It is highly recommended that you set up a local private network before joining a public network. This will help get familiar with the setup process, and provide an environment for testing. The following sections outline this process. If you want to join a public network without setting up a private network, you can skip to <a class="reference internal" href="#join-a-public-network"><span class="std std-doc">join a public network </span></a>.</p>
 <div class="section" id="set-up-a-local-private-network">
-<h2>Set up a local private network<a class="headerlink" href="#set-up-a-local-private-network" title="Permalink to this headline">#</a></h2>
+<h2>Set up a local private network<a class="headerlink" href="#set-up-a-local-private-network" title="Permalink to this headline">¶</a></h2>
 <p>Validators can set up a private Terra network to become familiar with running a full Terra node before joining a public network.</p>
 <div class="tip admonition">
 <p class="admonition-title">LocalTerra</p>
 <p>If you are a developer and want to set up a local, WASM-enabled, private testnet for smart contracts, visit <a class="reference internal" href="../../develop/localterra/README.html"><span class="doc std std-doc">install LocalTerra</span></a>.</p>
 </div>
 <div class="section" id="create-a-single-node">
-<h3>Create a single node<a class="headerlink" href="#create-a-single-node" title="Permalink to this headline">#</a></h3>
+<h3>Create a single node<a class="headerlink" href="#create-a-single-node" title="Permalink to this headline">¶</a></h3>
 <p>The simplest Terra network you can set up is a local testnet with just a single node. In a single-node environment, you have one account and are the only validator signing blocks for your private network.</p>
 <ol class="arabic">
 <li><p>Initialize your genesis file that will bootstrap the network. Replace the following variables with your own information:</p>
@@ -1379,7 +1381,7 @@
 </div>
 </div>
 <div class="section" id="add-your-account-to-the-genesis">
-<h3>Add your account to the genesis<a class="headerlink" href="#add-your-account-to-the-genesis" title="Permalink to this headline">#</a></h3>
+<h3>Add your account to the genesis<a class="headerlink" href="#add-your-account-to-the-genesis" title="Permalink to this headline">¶</a></h3>
 <p>Run the following commands to add your account and set the initial balance:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad add-genesis-account <span class="k">$(</span>terrad keys show &lt;account-name&gt; -a<span class="k">)</span> 100000000uluna
 terrad gentx &lt;my-account&gt; 10000000uluna --chain-id<span class="o">=</span>&lt;testnet-name&gt;
@@ -1388,7 +1390,7 @@ terrad collect-gentxs
 </div>
 </div>
 <div class="section" id="start-your-private-terra-network">
-<h3>Start your private Terra network<a class="headerlink" href="#start-your-private-terra-network" title="Permalink to this headline">#</a></h3>
+<h3>Start your private Terra network<a class="headerlink" href="#start-your-private-terra-network" title="Permalink to this headline">¶</a></h3>
 <p>Run the following command to start your private network:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad start
 </pre></div>
@@ -1397,10 +1399,10 @@ terrad collect-gentxs
 </div>
 </div>
 <div class="section" id="join-a-public-network">
-<h2>Join a public network<a class="headerlink" href="#join-a-public-network" title="Permalink to this headline">#</a></h2>
+<h2>Join a public network<a class="headerlink" href="#join-a-public-network" title="Permalink to this headline">¶</a></h2>
 <p>These instructions are for setting up a brand new full node from scratch. You can join a public Terra network, such as the mainnet or testnet, by completing the following steps:</p>
 <div class="section" id="select-a-network">
-<h3>1. Select a network<a class="headerlink" href="#select-a-network" title="Permalink to this headline">#</a></h3>
+<h3>1. Select a network<a class="headerlink" href="#select-a-network" title="Permalink to this headline">¶</a></h3>
 <p>Specify the network you want to join by choosing the corresponding <strong>genesis file</strong> and <strong>seeds</strong>:</p>
 <table class="colwidths-auto table">
 <thead>
@@ -1439,7 +1441,7 @@ terrad collect-gentxs
 </div>
 </div>
 <div class="section" id="download-genesis-file-and-address-book">
-<h3>2. Download genesis file and address book<a class="headerlink" href="#download-genesis-file-and-address-book" title="Permalink to this headline">#</a></h3>
+<h3>2. Download genesis file and address book<a class="headerlink" href="#download-genesis-file-and-address-book" title="Permalink to this headline">¶</a></h3>
 <p><strong>Genesis-transaction</strong> specifies the account balances and parameters at the start of the network to use when replaying transactions and syncing.</p>
 <p><strong>Addressbook</strong> lists a selection of peers for your node to dial to in order to discover other nodes in the network. Public address books of peers are made available by the Terra community.</p>
 <p>Choose a <code class="docutils literal notranslate"><span class="pre">testnet</span></code> or <code class="docutils literal notranslate"><span class="pre">mainnet</span></code> address type and download the appropriate genesis-transaction and addressbook. Links to these are posted in <a class="reference internal" href="#select-a-network"><span class="std std-doc">Select-a-network</span></a>.</p>
@@ -1456,7 +1458,7 @@ wget https://raw.githubusercontent.com/terra-money/testnet/master/bombay-12/addr
 </div>
 </div>
 <div class="section" id="terrad-start">
-<h3>3. <code class="docutils literal notranslate"><span class="pre">terrad</span> <span class="pre">start</span></code><a class="headerlink" href="#terrad-start" title="Permalink to this headline">#</a></h3>
+<h3>3. <code class="docutils literal notranslate"><span class="pre">terrad</span> <span class="pre">start</span></code><a class="headerlink" href="#terrad-start" title="Permalink to this headline">¶</a></h3>
 <p>Start the network and check that everything is running smoothly:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad start
 terrad status
@@ -1526,7 +1528,7 @@ Healthy Node Status Example<div class="sd-summary-down docutils">
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="configure-general-settings.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1649,8 +1651,7 @@ Healthy Node Status Example<div class="sd-summary-down docutils">
       </div>
     </div>
   
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>

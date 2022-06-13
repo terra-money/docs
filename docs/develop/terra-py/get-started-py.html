@@ -7,9 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Terra.py &#8212; Terra Docs  documentation</title>
     
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -19,6 +18,10 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
+    
+      
+
+    
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
@@ -29,8 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/custom.css" />
     
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
@@ -53,7 +55,7 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -1335,15 +1337,15 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="terra-span-py">
-<h1>Terra<span/>.py<a class="headerlink" href="#terra-span-py" title="Permalink to this headline">#</a></h1>
+<h1>Terra<span/>.py<a class="headerlink" href="#terra-span-py" title="Permalink to this headline">¶</a></h1>
 <p>The Terra Python Software Development Kit (SDK) is a library toolkit used for developing software for interacting with the Terra blockchain. In this tutorial, you will learn how you can install the Terra Python SDK, as well as any necessary dependencies, and how you can carry out various transactions utilizing this technology.</p>
 <p>For more information on Terra<span/>.py, visit the <a class="reference external" href="https://terra-money.github.io/terra.py/">Terra<span/>.py docs</a>.</p>
 <div class="section" id="requirements">
-<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">#</a></h2>
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
 <p>The Terra Python SDK requires <a href="https://www.python.org/downloads/">Python v3.7+</a>.</p>
 </div>
 <div class="section" id="installation">
-<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">#</a></h2>
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li><p>The Terra Python SDK may be installed, preferably in a <a class="reference external" href="https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/">virtual environment</a>, by running the following command in your terminal:</p></li>
 </ol>
@@ -1362,7 +1364,7 @@ poetry install
 <br/>
 </div>
 <div class="section" id="usage-examples">
-<h2>Usage Examples<a class="headerlink" href="#usage-examples" title="Permalink to this headline">#</a></h2>
+<h2>Usage Examples<a class="headerlink" href="#usage-examples" title="Permalink to this headline">¶</a></h2>
 <p>The Terra Python SDK can be used to carry out a variety of transactions on the Terra blockchain. This tutorial covers the following examples:</p>
 <div align="center">
 <p><a class="reference internal" href="#signing-and-sending-transactions"><span class="std std-doc"><em>Signing and Sending Transactions</em></span></a></p>
@@ -1371,11 +1373,11 @@ poetry install
 </div>
 </div>
 <div class="section" id="localterra-for-development-testing">
-<h2>LocalTerra for Development &amp; Testing<a class="headerlink" href="#localterra-for-development-testing" title="Permalink to this headline">#</a></h2>
+<h2>LocalTerra for Development &amp; Testing<a class="headerlink" href="#localterra-for-development-testing" title="Permalink to this headline">¶</a></h2>
 <p>For testing your transactions, it is recommended that you install and run LocalTerra on your personal computer. Instructions on how to get LocalTerra up and running may be found in the <a class="reference external" href="https://github.com/terra-money/LocalTerra">LocalTerra GitHub repository</a>. If you would rather test on a network similar to <code class="docutils literal notranslate"><span class="pre">mainnet</span></code>, the live Terra blockchain, then you may utilize <code class="docutils literal notranslate"><span class="pre">testnet</span></code>. However, you will be limited on the number of transactions that you may make per day. This is to protect computing resources from scripts that may spam the network. Once you are comfortable enough to make transactions on the live Terra blockchain, you may utilize <code class="docutils literal notranslate"><span class="pre">mainnet</span></code> to carry out transactions with your own assets.</p>
 </div>
 <div class="section" id="connecting-to-your-wallet">
-<h2>Connecting to Your Wallet<a class="headerlink" href="#connecting-to-your-wallet" title="Permalink to this headline">#</a></h2>
+<h2>Connecting to Your Wallet<a class="headerlink" href="#connecting-to-your-wallet" title="Permalink to this headline">¶</a></h2>
 <p>In order to conduct transactions on Terra, you will need to be able to send requests to the underlying blockchain. This may be done via instantiating an LCDClient which can be used to communicate to the corresponding Terra Lite Client Daemon (LCD) node.</p>
 <p>After you have instantiated your client to communicate with the appropriate network, you may initialize the wallet with which you would like to carry out transactions. On LocalTerra, you may pass in a name of a preconfigured testing wallet (test1-10), each of which contains more than adequate funds for testing purposes. On testnet or mainnet, you will need to pass in the mnemonic key associated with your wallet.</p>
 <div class="admonition danger">
@@ -1424,7 +1426,7 @@ poetry install
 </div>
 </div>
 <div class="section" id="quick-note-on-gas-fees">
-<h2>Quick Note on Gas &amp; Fees<a class="headerlink" href="#quick-note-on-gas-fees" title="Permalink to this headline">#</a></h2>
+<h2>Quick Note on Gas &amp; Fees<a class="headerlink" href="#quick-note-on-gas-fees" title="Permalink to this headline">¶</a></h2>
 <p>All transactions on the blockchain will require some effort from computational resources in order to be processed and accepted. The computational work expended due to processing a transaction is quantified in units of <code class="docutils literal notranslate"><span class="pre">gas</span></code>.</p>
 <p>Because the amount of gas needed may not be predetermined, the signer of the transaction must send the amount of gas that they would like to use along with the transaction. Fees are calculated by multiplying the gas amount specified in the transaction by either a user-specified price or by utilizing preset prices for each unit of gas. Current rates per unit of gas may be viewed on the <a class="reference external" href="https://api.terra.dev/gas-prices">gas rates page</a>.</p>
 <p>Each request you will make to the blockchain will contain a message detailing your transaction along with parameters that will help estimate the gas fee. The estimated fee must be above the minimum fee required to process the request for the transaction to be accepted. If the fee is too small to fully complete the request, you may still be responsible for charges on the processing that was carried out before the transaction failed. Gas that is left unused after the transaction will not be refunded and larger estimated fee values will not translate to any benefits for the signer.</p>
@@ -1449,7 +1451,7 @@ poetry install
 </div>
 </div>
 <div class="section" id="signing-and-sending-transactions">
-<h2>Signing and Sending Transactions<a class="headerlink" href="#signing-and-sending-transactions" title="Permalink to this headline">#</a></h2>
+<h2>Signing and Sending Transactions<a class="headerlink" href="#signing-and-sending-transactions" title="Permalink to this headline">¶</a></h2>
 <p>After initializing your LCDClient and wallet, you may try to carry out a simple transfer of funds. This involves initializing the addresses of your sender and receiver wallets, setting the relevant parameters to carry out the transaction, and creating, signing, and finally sending the request to the node for execution. In this example, you will be sending 1 Luna from your previously initialized wallet to another testing wallet, test2. For this example, fees will be paid in Luna (LUNA), as specified in the <code class="docutils literal notranslate"><span class="pre">fee_denoms</span></code> parameter.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">terra_sdk.client.lcd.api.tx</span> <span class="kn">import</span> <span class="n">CreateTxOptions</span>
 <span class="kn">from</span> <span class="nn">terra_sdk.core.bank</span> <span class="kn">import</span> <span class="n">MsgSend</span>
@@ -1488,11 +1490,11 @@ poetry install
 </div>
 </div>
 <div class="section" id="interacting-with-smart-contracts">
-<h2>Interacting with Smart Contracts<a class="headerlink" href="#interacting-with-smart-contracts" title="Permalink to this headline">#</a></h2>
+<h2>Interacting with Smart Contracts<a class="headerlink" href="#interacting-with-smart-contracts" title="Permalink to this headline">¶</a></h2>
 <p>In order to interact with a smart contract on Terra, you will have to either deploy your own smart contract on LocalTerra or utilize one of the many exceptional contracts available on the testnet or mainnet.</p>
 </div>
 <div class="section" id="next-steps">
-<h2>Next steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">#</a></h2>
+<h2>Next steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
 <p>For more information on your next steps with Terra<span/>.py, visit the <a class="reference external" href="https://terra-money.github.io/terra.py/">Terra<span/>.py docs</a>.</p>
 </div>
 </div>
@@ -1502,7 +1504,7 @@ poetry install
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="../terra-js/Websockets.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1625,8 +1627,7 @@ poetry install
       </div>
     </div>
   
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>

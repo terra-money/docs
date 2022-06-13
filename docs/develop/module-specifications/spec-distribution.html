@@ -7,9 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Distribution &#8212; Terra Docs  documentation</title>
     
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -19,6 +18,10 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
+    
+      
+
+    
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
@@ -29,8 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/custom.css" />
     
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
@@ -53,7 +55,7 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -1493,16 +1495,16 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="distribution">
-<h1>Distribution<a class="headerlink" href="#distribution" title="Permalink to this headline">#</a></h1>
+<h1>Distribution<a class="headerlink" href="#distribution" title="Permalink to this headline">¶</a></h1>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>Terra’s distribution module inherits from Cosmos SDK’s <a class="reference external" href="https://docs.cosmos.network/master/modules/distribution/"><code class="docutils literal notranslate"><span class="pre">distribution</span></code></a> module. This document is a stub and covers mainly important Terra-specific notes about how it is used.</p>
 </div>
 <p>The distribution module describes a mechanism that tracks collected fees and passively distributes them to validators and delegators. Additionally, the distribution module defines the community pool, which is a pool of funds under the control of on-chain governance.</p>
 <div class="section" id="concepts">
-<h2>Concepts<a class="headerlink" href="#concepts" title="Permalink to this headline">#</a></h2>
+<h2>Concepts<a class="headerlink" href="#concepts" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="validator-and-delegator-rewards">
-<h3>Validator and delegator rewards<a class="headerlink" href="#validator-and-delegator-rewards" title="Permalink to this headline">#</a></h3>
+<h3>Validator and delegator rewards<a class="headerlink" href="#validator-and-delegator-rewards" title="Permalink to this headline">¶</a></h3>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>Passive distribution means that validators and delegators need to manually collect their fee rewards by <a class="reference internal" href="../terrad/subcommands.html#tx-distribution-withdraw-rewards"><span class="std std-doc">submitting withdrawal transactions</span></a>.</p>
@@ -1511,12 +1513,12 @@
 </div>
 </div>
 <div class="section" id="state">
-<h2>State<a class="headerlink" href="#state" title="Permalink to this headline">#</a></h2>
+<h2>State<a class="headerlink" href="#state" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>This section was taken from the official Cosmos SDK docs, and placed here for your convenience to understand the distribution module’s parameters and genesis variables.</p>
 </div></blockquote>
 <div class="section" id="feepool">
-<h3>FeePool<a class="headerlink" href="#feepool" title="Permalink to this headline">#</a></h3>
+<h3>FeePool<a class="headerlink" href="#feepool" title="Permalink to this headline">¶</a></h3>
 <p>All globally tracked parameters for distribution are stored within
 <code class="docutils literal notranslate"><span class="pre">FeePool</span></code>. Rewards are collected and added to the reward pool and
 distributed to validators/delegators from here.</p>
@@ -1526,7 +1528,7 @@ When coins are distributed from the pool they are truncated back to
 <code class="docutils literal notranslate"><span class="pre">sdk.Coins</span></code> which are non-decimal.</p>
 </div>
 <div class="section" id="validator-distribution">
-<h3>Validator distribution<a class="headerlink" href="#validator-distribution" title="Permalink to this headline">#</a></h3>
+<h3>Validator distribution<a class="headerlink" href="#validator-distribution" title="Permalink to this headline">¶</a></h3>
 <p>The following validator distribution information for the relevant validator is updated each time:</p>
 <ul class="simple">
 <li><p>Delegation amount to a validator is updated,</p></li>
@@ -1535,7 +1537,7 @@ When coins are distributed from the pool they are truncated back to
 </ul>
 </div>
 <div class="section" id="delegation-distribution">
-<h3>Delegation distribution<a class="headerlink" href="#delegation-distribution" title="Permalink to this headline">#</a></h3>
+<h3>Delegation distribution<a class="headerlink" href="#delegation-distribution" title="Permalink to this headline">¶</a></h3>
 <p>Each delegation distribution only needs to record the height at which it last
 withdrew fees. Because a delegation must withdraw fees each time its
 properties change (aka bonded tokens etc.), its properties will remain constant
@@ -1544,9 +1546,9 @@ only the height of the last withdrawal and its current properties.</p>
 </div>
 </div>
 <div class="section" id="message-types">
-<h2>Message types<a class="headerlink" href="#message-types" title="Permalink to this headline">#</a></h2>
+<h2>Message types<a class="headerlink" href="#message-types" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="msgsetwithdrawaddress">
-<h3>MsgSetWithdrawAddress<a class="headerlink" href="#msgsetwithdrawaddress" title="Permalink to this headline">#</a></h3>
+<h3>MsgSetWithdrawAddress<a class="headerlink" href="#msgsetwithdrawaddress" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">type</span><span class="w"> </span><span class="nx">MsgSetWithdrawAddress</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">	</span><span class="nx">DelegatorAddress</span><span class="w"> </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">AccAddress</span><span class="w"> </span><span class="s">`json:&quot;delegator_address&quot; yaml:&quot;delegator_address&quot;`</span><span class="w"></span>
 <span class="w">	</span><span class="nx">WithdrawAddress</span><span class="w">  </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">AccAddress</span><span class="w"> </span><span class="s">`json:&quot;withdraw_address&quot; yaml:&quot;withdraw_address&quot;`</span><span class="w"></span>
@@ -1555,7 +1557,7 @@ only the height of the last withdrawal and its current properties.</p>
 </div>
 </div>
 <div class="section" id="msgwithdrawdelegatorreward">
-<h3>MsgWithdrawDelegatorReward<a class="headerlink" href="#msgwithdrawdelegatorreward" title="Permalink to this headline">#</a></h3>
+<h3>MsgWithdrawDelegatorReward<a class="headerlink" href="#msgwithdrawdelegatorreward" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="c1">// msg struct for delegation withdraw from a single validator</span><span class="w"></span>
 <span class="kd">type</span><span class="w"> </span><span class="nx">MsgWithdrawDelegatorReward</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">	</span><span class="nx">DelegatorAddress</span><span class="w"> </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">AccAddress</span><span class="w"> </span><span class="s">`json:&quot;delegator_address&quot; yaml:&quot;delegator_address&quot;`</span><span class="w"></span>
@@ -1565,7 +1567,7 @@ only the height of the last withdrawal and its current properties.</p>
 </div>
 </div>
 <div class="section" id="msgwithdrawvalidatorcommission">
-<h3>MsgWithdrawValidatorCommission<a class="headerlink" href="#msgwithdrawvalidatorcommission" title="Permalink to this headline">#</a></h3>
+<h3>MsgWithdrawValidatorCommission<a class="headerlink" href="#msgwithdrawvalidatorcommission" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">type</span><span class="w"> </span><span class="nx">MsgWithdrawValidatorCommission</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">	</span><span class="nx">ValidatorAddress</span><span class="w"> </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">ValAddress</span><span class="w"> </span><span class="s">`json:&quot;validator_address&quot; yaml:&quot;validator_address&quot;`</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
@@ -1573,7 +1575,7 @@ only the height of the last withdrawal and its current properties.</p>
 </div>
 </div>
 <div class="section" id="msgfundcommunitypool">
-<h3>MsgFundCommunityPool<a class="headerlink" href="#msgfundcommunitypool" title="Permalink to this headline">#</a></h3>
+<h3>MsgFundCommunityPool<a class="headerlink" href="#msgfundcommunitypool" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">type</span><span class="w"> </span><span class="nx">MsgFundCommunityPool</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">	</span><span class="nx">Amount</span><span class="w">    </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">Coins</span><span class="w">      </span><span class="s">`json:&quot;amount&quot; yaml:&quot;amount&quot;`</span><span class="w"></span>
 <span class="w">	</span><span class="nx">Depositor</span><span class="w"> </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">AccAddress</span><span class="w"> </span><span class="s">`json:&quot;depositor&quot; yaml:&quot;depositor&quot;`</span><span class="w"></span>
@@ -1583,9 +1585,9 @@ only the height of the last withdrawal and its current properties.</p>
 </div>
 </div>
 <div class="section" id="proposals">
-<h2>Proposals<a class="headerlink" href="#proposals" title="Permalink to this headline">#</a></h2>
+<h2>Proposals<a class="headerlink" href="#proposals" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="communitypoolspendproposal">
-<h3>CommunityPoolSpendProposal<a class="headerlink" href="#communitypoolspendproposal" title="Permalink to this headline">#</a></h3>
+<h3>CommunityPoolSpendProposal<a class="headerlink" href="#communitypoolspendproposal" title="Permalink to this headline">¶</a></h3>
 <p>The distribution module defines a special proposal that, upon being passed, disburses the coins specified in <code class="docutils literal notranslate"><span class="pre">Amount</span></code> to the <code class="docutils literal notranslate"><span class="pre">Recipient</span></code> account using funds from the community pool.</p>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">type</span><span class="w"> </span><span class="nx">CommunityPoolSpendProposal</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">	</span><span class="nx">Title</span><span class="w">       </span><span class="kt">string</span><span class="w">         </span><span class="s">`json:&quot;title&quot; yaml:&quot;title&quot;`</span><span class="w"></span>
@@ -1598,9 +1600,9 @@ only the height of the last withdrawal and its current properties.</p>
 </div>
 </div>
 <div class="section" id="transitions">
-<h2>Transitions<a class="headerlink" href="#transitions" title="Permalink to this headline">#</a></h2>
+<h2>Transitions<a class="headerlink" href="#transitions" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="begin-block">
-<h3>Begin-Block<a class="headerlink" href="#begin-block" title="Permalink to this headline">#</a></h3>
+<h3>Begin-Block<a class="headerlink" href="#begin-block" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p>This section derives from the official Cosmos SDK docs, and is placed here for your convenience to understand the distribution module’s parameters.</p>
 </div></blockquote>
@@ -1637,7 +1639,7 @@ only the height of the last withdrawal and its current properties.</p>
 </div>
 </div>
 <div class="section" id="parameters">
-<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">#</a></h2>
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
 <p>The subspace for the distribution module is <code class="docutils literal notranslate"><span class="pre">distribution</span></code>.</p>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">type</span><span class="w"> </span><span class="nx">GenesisState</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">	</span><span class="o">...</span><span class="w"></span>
@@ -1652,7 +1654,7 @@ only the height of the last withdrawal and its current properties.</p>
 </div>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="genesis-parameters">
-<h1>Genesis parameters<a class="headerlink" href="#genesis-parameters" title="Permalink to this headline">#</a></h1>
+<h1>Genesis parameters<a class="headerlink" href="#genesis-parameters" title="Permalink to this headline">¶</a></h1>
 <p>The genesis parameters for the crisis module outlined in the <a class="reference external" href="https://github.com/terra-money/genesis-tools/blob/main/src/genesis_builder.py#L277">Genesis Builder Script</a> are as follows:</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span>    <span class="n">community_pool_allocation</span> <span class="o">=</span> <span class="n">TOTAL_ALLOCATION</span> <span class="o">-</span> <span class="n">pre_attack_allocation</span> <span class="o">-</span> \
         <span class="n">post_attack_allocation</span> <span class="o">-</span> <span class="n">validator_allocation</span> <span class="o">-</span> <span class="n">emergency_allocation</span>
@@ -1680,25 +1682,25 @@ only the height of the last withdrawal and its current properties.</p>
 </pre></div>
 </div>
 <div class="section" id="communitytax">
-<h2>CommunityTax<a class="headerlink" href="#communitytax" title="Permalink to this headline">#</a></h2>
+<h2>CommunityTax<a class="headerlink" href="#communitytax" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">Dec</span></code></p></li>
 </ul>
 </div>
 <div class="section" id="baseproposerreward">
-<h2>BaseProposerReward<a class="headerlink" href="#baseproposerreward" title="Permalink to this headline">#</a></h2>
+<h2>BaseProposerReward<a class="headerlink" href="#baseproposerreward" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">Dec</span></code></p></li>
 </ul>
 </div>
 <div class="section" id="bonusproposerreward">
-<h2>BonusProposerReward<a class="headerlink" href="#bonusproposerreward" title="Permalink to this headline">#</a></h2>
+<h2>BonusProposerReward<a class="headerlink" href="#bonusproposerreward" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">Dec</span></code></p></li>
 </ul>
 </div>
 <div class="section" id="withdrawaddrenabled">
-<h2>WithdrawAddrEnabled<a class="headerlink" href="#withdrawaddrenabled" title="Permalink to this headline">#</a></h2>
+<h2>WithdrawAddrEnabled<a class="headerlink" href="#withdrawaddrenabled" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">bool</span></code></p></li>
 </ul>
@@ -1710,7 +1712,7 @@ only the height of the last withdrawal and its current properties.</p>
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="spec-crisis.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1833,8 +1835,7 @@ only the height of the last withdrawal and its current properties.</p>
       </div>
     </div>
   
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>

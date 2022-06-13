@@ -7,9 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Using terrad &#8212; Terra Docs  documentation</title>
     
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -19,6 +18,10 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
+    
+      
+
+    
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
@@ -29,8 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/custom.css" />
     
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
@@ -55,7 +57,7 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -1379,28 +1381,28 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="using-terrad">
-<h1>Using <code class="docutils literal notranslate"><span class="pre">terrad</span></code><a class="headerlink" href="#using-terrad" title="Permalink to this headline">#</a></h1>
+<h1>Using <code class="docutils literal notranslate"><span class="pre">terrad</span></code><a class="headerlink" href="#using-terrad" title="Permalink to this headline">¶</a></h1>
 <p>The following information explains the functions you can use from terrad, the command-line interface that connects to Terra and enables you to interact with the Terra blockchain. Every active validator and full node runs terrad and communicates with their node via terrad. In this relationship, terrad operates as both the client and the server. You can use terrad to interact with the Terra blockchain by uploading contracts, querying data, managing staking activities, working with governance proposals, and more. For more general information at the command line, run <code class="docutils literal notranslate"><span class="pre">terrad</span> <span class="pre">--help</span></code>. For more information about a specific <code class="docutils literal notranslate"><span class="pre">terrad</span></code> command, append the <code class="docutils literal notranslate"><span class="pre">-h</span></code> or <code class="docutils literal notranslate"><span class="pre">--help</span></code> flag after the command, such as <code class="docutils literal notranslate"><span class="pre">terrad</span> <span class="pre">query</span> <span class="pre">--help</span></code>.</p>
 <div class="section" id="accessing-a-node">
-<h2>Accessing a Node<a class="headerlink" href="#accessing-a-node" title="Permalink to this headline">#</a></h2>
+<h2>Accessing a Node<a class="headerlink" href="#accessing-a-node" title="Permalink to this headline">¶</a></h2>
 <p>To query the state and send transactions, you must connect to a node, which is the access point to the entire network of peer connections. You can either run your own full node or connect to someone else’s.</p>
 <div class="section" id="running-your-own-full-node">
-<h3>Running your own full node<a class="headerlink" href="#running-your-own-full-node" title="Permalink to this headline">#</a></h3>
+<h3>Running your own full node<a class="headerlink" href="#running-your-own-full-node" title="Permalink to this headline">¶</a></h3>
 <p>Running your own full node is the most secure option, but it comes with relatively high resource requirements. For more information about the requirements to run your own full node and a tutorial for installing <code class="docutils literal notranslate"><span class="pre">terrad</span></code>, see <a class="reference internal" href="../../full-node/run-a-full-terra-node/build-terra-core.html"><span class="doc std std-doc">installation</span></a>. For a tutorial that explains how to connect to an existing Terra network, see <a class="reference internal" href="../../full-node/run-a-full-terra-node/join-a-network.html"><span class="doc std std-doc">joining a network</span></a>.</p>
 </div>
 <div class="section" id="connecting-to-a-remote-full-node">
-<h3>Connecting to a remote full node<a class="headerlink" href="#connecting-to-a-remote-full-node" title="Permalink to this headline">#</a></h3>
+<h3>Connecting to a remote full node<a class="headerlink" href="#connecting-to-a-remote-full-node" title="Permalink to this headline">¶</a></h3>
 <p>If you don’t want to run your own full node, you can connect to someone else’s full node. As you consider your options for operators, prioritize operators you trust because malicious operators might intentionally return incorrect query results or censor your transactions. However, they will never be able to steal your funds because your private keys are stored locally on your computer or on your Ledger hardware device. Possible options of full-node operators include validators, wallet providers or exchanges.</p>
 <p>To connect to the full-node, you need an address in the <code class="docutils literal notranslate"><span class="pre">https://&lt;host&gt;:&lt;port&gt;</span></code> format, for example <code class="docutils literal notranslate"><span class="pre">https://77.87.106.33:26657</span></code>. This address has to be communicated by the full-node operator you choose to trust. You will use this address in the following section.</p>
 <p>If you are not running a node yet would like to communicate through terrad, lists of public nodes can be found <a class="reference internal" href="../endpoints.html"><span class="doc std std-doc">here</span></a>.</p>
 </div>
 </div>
 <div class="section" id="configuring-terrad">
-<h2>Configuring terrad<a class="headerlink" href="#configuring-terrad" title="Permalink to this headline">#</a></h2>
+<h2>Configuring terrad<a class="headerlink" href="#configuring-terrad" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">terrad</span></code> enables you to interact with the node that runs on the Terra network, whether you run it yourself or not. To configure <code class="docutils literal notranslate"><span class="pre">terrad</span></code>, edit the the <code class="docutils literal notranslate"><span class="pre">config.toml</span></code> file in the <code class="docutils literal notranslate"><span class="pre">~/.terra/config/</span></code> directory.</p>
 </div>
 <div class="section" id="querying-blockchain-state">
-<h2>Querying Blockchain State<a class="headerlink" href="#querying-blockchain-state" title="Permalink to this headline">#</a></h2>
+<h2>Querying Blockchain State<a class="headerlink" href="#querying-blockchain-state" title="Permalink to this headline">¶</a></h2>
 <p>To query all relevant information from the blockchain, such as like account balances, amount of bonded tokens, outstanding rewards, and so on, use <code class="docutils literal notranslate"><span class="pre">terrad</span> <span class="pre">query</span></code>. The following list shows some of the most useful commands for delegators:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># query account balances and other account-related information</span>
 terrad query account &lt;ACCOUNT_ADDRESS&gt;
@@ -1426,14 +1428,14 @@ terrad query distr rewards &lt;delegatorAddress&gt;
 </div>
 </div>
 <div class="section" id="sending-transactions">
-<h2>Sending Transactions<a class="headerlink" href="#sending-transactions" title="Permalink to this headline">#</a></h2>
+<h2>Sending Transactions<a class="headerlink" href="#sending-transactions" title="Permalink to this headline">¶</a></h2>
 <p>To interact with the blockchain by sending transactions containing module messages with state-changing directives that get processed and included in blocks, use <code class="docutils literal notranslate"><span class="pre">terrad</span> <span class="pre">tx</span></code>. All of transaction-sending operations follow the form:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad tx ...
 </pre></div>
 </div>
 <p>To learn more about the different types of interactions you can issue, see the section for each module.</p>
 <div class="section" id="simulating-a-transaction">
-<h3>Simulating a transaction<a class="headerlink" href="#simulating-a-transaction" title="Permalink to this headline">#</a></h3>
+<h3>Simulating a transaction<a class="headerlink" href="#simulating-a-transaction" title="Permalink to this headline">¶</a></h3>
 <p>To simulate a transaction without actually broadcasting it, append the <code class="docutils literal notranslate"><span class="pre">--dry-run</span></code> flag to the command statement:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad tx bank send <span class="se">\</span>
     &lt;sender_address&gt; <span class="se">\</span>
@@ -1461,7 +1463,7 @@ Example: simulate a Luna transfer:<div class="sd-summary-down docutils">
 </div>
 </details></div>
 <div class="section" id="generating-a-transaction-without-sending">
-<h3>Generating a transaction without sending<a class="headerlink" href="#generating-a-transaction-without-sending" title="Permalink to this headline">#</a></h3>
+<h3>Generating a transaction without sending<a class="headerlink" href="#generating-a-transaction-without-sending" title="Permalink to this headline">¶</a></h3>
 <p>To build a transaction and print its JSON format to STDOUT, append <code class="docutils literal notranslate"><span class="pre">--generate-only</span></code> to the list of the command line arguments. This allows you to separate the creation and signing of a transaction with the broadcasting.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad tx bank send <span class="se">\</span>
     &lt;sender_address&gt; <span class="se">\</span>
@@ -1550,7 +1552,7 @@ Example: Sign an unsigned transaction<div class="sd-summary-down docutils">
 </div>
 </div>
 <div class="section" id="fees">
-<h2>Fees<a class="headerlink" href="#fees" title="Permalink to this headline">#</a></h2>
+<h2>Fees<a class="headerlink" href="#fees" title="Permalink to this headline">¶</a></h2>
 <p>Transactions on the Terra Protocol network need to include a transaction fee in order to be processed. This fee pays for the gas required to run the transaction. The formula is the following:</p>
 <div class="math notranslate nohighlight">
 \[fees = gas * gasPrices\]</div>
@@ -1558,7 +1560,7 @@ Example: Sign an unsigned transaction<div class="sd-summary-down docutils">
 <p>The <code class="docutils literal notranslate"><span class="pre">gasPrice</span></code> is the price of each unit of <code class="docutils literal notranslate"><span class="pre">gas</span></code>. Each validator sets a <code class="docutils literal notranslate"><span class="pre">min-gas-price</span></code> value, and will only include transactions that have a <code class="docutils literal notranslate"><span class="pre">gasPrice</span></code> greater than their <code class="docutils literal notranslate"><span class="pre">min-gas-price</span></code>.</p>
 <p>The transaction <code class="docutils literal notranslate"><span class="pre">fees</span></code> are the product of <code class="docutils literal notranslate"><span class="pre">gas</span></code> and <code class="docutils literal notranslate"><span class="pre">gasPrice</span></code>. As a user, you have to input 2 out of 3. The higher the <code class="docutils literal notranslate"><span class="pre">gasPrice</span></code>/<code class="docutils literal notranslate"><span class="pre">fees</span></code>, the higher the chance that your transaction will get included in a block.</p>
 <div class="section" id="setting-fees">
-<h3>Setting Fees<a class="headerlink" href="#setting-fees" title="Permalink to this headline">#</a></h3>
+<h3>Setting Fees<a class="headerlink" href="#setting-fees" title="Permalink to this headline">¶</a></h3>
 <p>Each transaction may either supply fees or gas prices, but not both. Most users will typically provide fees as this is the final cost you will end up incurring for the transaction being included in the ledger, where as gas prices will be dynamically calculated depending on the validator.</p>
 <p>Validators specify a minimum gas price that they use to determine whether to include a transaction, which they calculate during <code class="docutils literal notranslate"><span class="pre">CheckTx</span></code>, where <code class="docutils literal notranslate"><span class="pre">gasPrices</span> <span class="pre">&gt;=</span> <span class="pre">minGasPrices</span></code>. Note, your transaction must supply fees that are greater than or equal to <strong>any</strong> of the denominations the validator requires.</p>
 <p>Validators may start to prioritize transactions by <code class="docutils literal notranslate"><span class="pre">gasPrice</span></code> in the mempool, so providing higher fees or gas prices will likely yield higher priority of inclusion in a block.</p>
@@ -1573,7 +1575,7 @@ Example: Sign an unsigned transaction<div class="sd-summary-down docutils">
 </div>
 </div>
 <div class="section" id="automatic-fee-estimation">
-<h3>Automatic Fee Estimation<a class="headerlink" href="#automatic-fee-estimation" title="Permalink to this headline">#</a></h3>
+<h3>Automatic Fee Estimation<a class="headerlink" href="#automatic-fee-estimation" title="Permalink to this headline">¶</a></h3>
 <p>You may want to cap the maximum gas that can be consumed by the transaction via the <code class="docutils literal notranslate"><span class="pre">--gas</span></code> flag. If you pass <code class="docutils literal notranslate"><span class="pre">--gas=auto</span></code>, the gas will be automatically estimated before executing the transaction.</p>
 <p>Gas estimate might be inaccurate as state changes could occur in between the end of the simulation and the actual execution of a transaction, thus an adjustment is applied on top of the original estimate in order to ensure the transaction is broadcasted successfully.</p>
 <p>The adjustment can be controlled via the <code class="docutils literal notranslate"><span class="pre">--gas-adjustment</span></code> flag, whose default value is 1.0.</p>
@@ -1593,7 +1595,7 @@ Example: Sign an unsigned transaction<div class="sd-summary-down docutils">
 </div>
 </div>
 <div class="section" id="shell-autocompletion">
-<h2>Shell Autocompletion<a class="headerlink" href="#shell-autocompletion" title="Permalink to this headline">#</a></h2>
+<h2>Shell Autocompletion<a class="headerlink" href="#shell-autocompletion" title="Permalink to this headline">¶</a></h2>
 <p>Auto-completion scripts for popular UNIX shell interpreters such as <code class="docutils literal notranslate"><span class="pre">bash</span></code> and <code class="docutils literal notranslate"><span class="pre">zsh</span></code> can be generated through the <code class="docutils literal notranslate"><span class="pre">completion</span></code> command, which is available for both <code class="docutils literal notranslate"><span class="pre">terrad</span></code> and <code class="docutils literal notranslate"><span class="pre">terrad</span></code>. This allows for a more convenient way to interact with the Terra Core endpoints when using the command-line.</p>
 <p>If you want to generate <code class="docutils literal notranslate"><span class="pre">bash</span></code> completion scripts run the following command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad completion &gt; terrad_completion
@@ -1619,7 +1621,7 @@ terrad completion --zsh &gt; terrad_completion
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="terrad-mac.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1742,8 +1744,7 @@ terrad completion --zsh &gt; terrad_completion
       </div>
     </div>
   
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>

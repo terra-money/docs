@@ -7,9 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Use Terrain with LocalTerra &#8212; Terra Docs  documentation</title>
     
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -19,6 +18,10 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
+    
+      
+
+    
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
@@ -29,8 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/custom.css" />
     
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
@@ -53,7 +55,7 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -1367,10 +1369,10 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="use-terrain-with-localterra">
-<h1>Use Terrain with LocalTerra<a class="headerlink" href="#use-terrain-with-localterra" title="Permalink to this headline">#</a></h1>
+<h1>Use Terrain with LocalTerra<a class="headerlink" href="#use-terrain-with-localterra" title="Permalink to this headline">¶</a></h1>
 <p>LocalTerra is a complete Terra testnet and ecosystem containerized with Docker. Use LocalTerra to simulate transactions in a test environment.</p>
 <div class="section" id="prerequisites">
-<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.docker.com/">Docker</a></p></li>
 <li><p><a class="reference external" href="https://github.com/docker/compose"><code class="docutils literal notranslate"><span class="pre">docker-compose</span></code></a></p></li>
@@ -1404,7 +1406,7 @@ nvm use --lts
 </div>
 </details></div>
 <div class="section" id="install-and-run-localterra">
-<h2>Install and run LocalTerra<a class="headerlink" href="#install-and-run-localterra" title="Permalink to this headline">#</a></h2>
+<h2>Install and run LocalTerra<a class="headerlink" href="#install-and-run-localterra" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
 <li><p>To download LocalTerra, run the following commands:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git clone --depth <span class="m">1</span> https://github.com/terra-money/localterra
@@ -1427,10 +1429,10 @@ For more configuration options, visit the <span class="xref myst">LocalTerra con
 </div>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="counter-tutorial">
-<h1>Counter tutorial<a class="headerlink" href="#counter-tutorial" title="Permalink to this headline">#</a></h1>
+<h1>Counter tutorial<a class="headerlink" href="#counter-tutorial" title="Permalink to this headline">¶</a></h1>
 <p>After installing LocalTerra, you are ready to use Terrain. This short tutorial walks you through setting up your project and creating a simple counter.</p>
 <div class="section" id="scaffold-your-dapp">
-<h2>1. Scaffold your dApp<a class="headerlink" href="#scaffold-your-dapp" title="Permalink to this headline">#</a></h2>
+<h2>1. Scaffold your dApp<a class="headerlink" href="#scaffold-your-dapp" title="Permalink to this headline">¶</a></h2>
 <p>With Terrain installed you can now scaffold your new application in a new terminal window:</p>
 <ol class="arabic">
 <li><p>Create a new folder for your dApp:</p>
@@ -1450,7 +1452,7 @@ npm install
 </li>
 </ol>
 <div class="section" id="project-structure">
-<h3>Project structure<a class="headerlink" href="#project-structure" title="Permalink to this headline">#</a></h3>
+<h3>Project structure<a class="headerlink" href="#project-structure" title="Permalink to this headline">¶</a></h3>
 <p>The following structure shows your scaffolded project:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>.
 ├── contracts              # The contracts&#39; source code.
@@ -1467,7 +1469,7 @@ npm install
 </div>
 </div>
 <div class="section" id="deploy">
-<h2>2. Deploy<a class="headerlink" href="#deploy" title="Permalink to this headline">#</a></h2>
+<h2>2. Deploy<a class="headerlink" href="#deploy" title="Permalink to this headline">¶</a></h2>
 <p>To deploy the application, run the following command:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrain deploy counter --signer test1
 </pre></div>
@@ -1485,7 +1487,7 @@ npm install
 </div>
 </div>
 <div class="section" id="interact-with-the-deployed-contract">
-<h2>3. Interact with the deployed contract<a class="headerlink" href="#interact-with-the-deployed-contract" title="Permalink to this headline">#</a></h2>
+<h2>3. Interact with the deployed contract<a class="headerlink" href="#interact-with-the-deployed-contract" title="Permalink to this headline">¶</a></h2>
 <p>The template comes with several predefined helpers in <code class="docutils literal notranslate"><span class="pre">lib/index.js</span></code>. Use them to start interacting with your smart contract:</p>
 <ol class="arabic">
 <li><p>Run the following:</p>
@@ -1515,7 +1517,7 @@ npm install
 </div>
 </div>
 <div class="section" id="front-end-scaffolding">
-<h2>4. Front-end scaffolding<a class="headerlink" href="#front-end-scaffolding" title="Permalink to this headline">#</a></h2>
+<h2>4. Front-end scaffolding<a class="headerlink" href="#front-end-scaffolding" title="Permalink to this headline">¶</a></h2>
 <p>Terrain also scaffolds a very simple front-end:</p>
 <ol class="arabic">
 <li><p>Open the <a class="reference external" href="https://chrome.google.com/webstore/detail/terra-station-wallet/aiifbnbfobpmeekipheeijimdpnlpgpp">Terra Station Chrome extension</a>, click the gear icon, and switch the network to Localterra.</p></li>
@@ -1536,11 +1538,11 @@ npm install
 </ol>
 </div>
 <div class="section" id="demo">
-<h2>Demo<a class="headerlink" href="#demo" title="Permalink to this headline">#</a></h2>
+<h2>Demo<a class="headerlink" href="#demo" title="Permalink to this headline">¶</a></h2>
 <p><img alt="" src="../../../_images/tut_counter.gif" /></p>
 </div>
 <div class="section" id="advanced-usage">
-<h2>Advanced usage<a class="headerlink" href="#advanced-usage" title="Permalink to this headline">#</a></h2>
+<h2>Advanced usage<a class="headerlink" href="#advanced-usage" title="Permalink to this headline">¶</a></h2>
 <p>For more advanced use cases, like deploying to the testnet or mainnet, see <a class="reference external" href="https://github.com/terra-money/terrain#readme">Terrain’s readme</a>.</p>
 </div>
 </div>
@@ -1550,7 +1552,7 @@ npm install
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="using-terrain-testnet.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1673,8 +1675,7 @@ npm install
       </div>
     </div>
   
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>

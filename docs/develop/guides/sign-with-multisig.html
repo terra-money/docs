@@ -7,9 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign with a multisig account &#8212; Terra Docs  documentation</title>
     
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -19,6 +18,10 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
+    
+      
+
+    
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
@@ -29,8 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/custom.css" />
     
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
@@ -53,7 +55,7 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -1319,7 +1321,7 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="sign-with-a-multisig-account">
-<h1>Sign with a multisig account<a class="headerlink" href="#sign-with-a-multisig-account" title="Permalink to this headline">#</a></h1>
+<h1>Sign with a multisig account<a class="headerlink" href="#sign-with-a-multisig-account" title="Permalink to this headline">¶</a></h1>
 <p>A <strong>multisig account</strong> is a Terra account with a special key that can require more than one signatures to sign transactions. This can be useful for increasing the security of the account or for requiring the consent of multiple parties to make transactions. Multisig accounts can be created by specifying:</p>
 <ul class="simple">
 <li><p>threshold number of signatures required</p></li>
@@ -1327,7 +1329,7 @@
 </ul>
 <p>To sign with a multisig account, the transaction must be signed individually by the different keys specified for the account. Then, the signatures will be combined into a multisignature which can be used to sign the transaction. If fewer than the threshold number of signatures needed are present, the resultant multisignature is considered invalid.</p>
 <div class="section" id="generate-a-multisig-key">
-<h2>Generate a Multisig key<a class="headerlink" href="#generate-a-multisig-key" title="Permalink to this headline">#</a></h2>
+<h2>Generate a Multisig key<a class="headerlink" href="#generate-a-multisig-key" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad keys add --multisig<span class="o">=</span>name1,name2,name3<span class="o">[</span>...<span class="o">]</span> --multisig-threshold<span class="o">=</span>K new_key_name
 </pre></div>
 </div>
@@ -1344,13 +1346,13 @@ terrad keys add --multisig<span class="o">=</span>p2,p3,p1 --multisig-threshold<
 </div>
 </div>
 <div class="section" id="signing-a-transaction">
-<h2>Signing a transaction<a class="headerlink" href="#signing-a-transaction" title="Permalink to this headline">#</a></h2>
+<h2>Signing a transaction<a class="headerlink" href="#signing-a-transaction" title="Permalink to this headline">¶</a></h2>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>This example uses <code class="docutils literal notranslate"><span class="pre">test1</span></code>, <code class="docutils literal notranslate"><span class="pre">test2</span></code>, <code class="docutils literal notranslate"><span class="pre">test3</span></code> keys from <a class="reference external" href="https://github.com/terra-money/LocalTerra">LocalTerra</a>. Import them into your <code class="docutils literal notranslate"><span class="pre">terrad</span></code> keystore to follow along.</p>
 </div>
 <div class="section" id="step-1-create-the-multisig-key">
-<h3>Step 1: Create the multisig key<a class="headerlink" href="#step-1-create-the-multisig-key" title="Permalink to this headline">#</a></h3>
+<h3>Step 1: Create the multisig key<a class="headerlink" href="#step-1-create-the-multisig-key" title="Permalink to this headline">¶</a></h3>
 <p>As an example, assume that you have <code class="docutils literal notranslate"><span class="pre">test1</span></code> and <code class="docutils literal notranslate"><span class="pre">test2</span></code> want to make a multisig account with <code class="docutils literal notranslate"><span class="pre">test3</span></code>.</p>
 <p>First, import the public keys of <code class="docutils literal notranslate"><span class="pre">test3</span></code> into your keyring:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrad keys add <span class="se">\</span>
@@ -1390,7 +1392,7 @@ terrad keys add --multisig<span class="o">=</span>p2,p3,p1 --multisig-threshold<
 </div>
 </div>
 <div class="section" id="step-2-create-the-multisig-transaction">
-<h3>Step 2: Create the multisig transaction<a class="headerlink" href="#step-2-create-the-multisig-transaction" title="Permalink to this headline">#</a></h3>
+<h3>Step 2: Create the multisig transaction<a class="headerlink" href="#step-2-create-the-multisig-transaction" title="Permalink to this headline">¶</a></h3>
 <p>Send 5 LUNA from your multisig account to <code class="docutils literal notranslate"><span class="pre">terra1fmcjjt6yc9wqup2r06urnrd928jhrde6gcld6n</span></code>.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad tx bank send <span class="se">\</span>
     terra1e0fx0q9meawrcq7fmma9x60gk35lpr4xk3884m <span class="se">\</span>
@@ -1428,7 +1430,7 @@ terrad keys add --multisig<span class="o">=</span>p2,p3,p1 --multisig-threshold<
 </div>
 </div>
 <div class="section" id="step-3-sign-individually">
-<h3>Step 3: Sign individually<a class="headerlink" href="#step-3-sign-individually" title="Permalink to this headline">#</a></h3>
+<h3>Step 3: Sign individually<a class="headerlink" href="#step-3-sign-individually" title="Permalink to this headline">¶</a></h3>
 <p>Sign with <code class="docutils literal notranslate"><span class="pre">test1</span></code> and <code class="docutils literal notranslate"><span class="pre">test2</span></code> and create individual signatures.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrad tx sign <span class="se">\</span>
     unsignedTx.json <span class="se">\</span>
@@ -1448,7 +1450,7 @@ terrad keys add --multisig<span class="o">=</span>p2,p3,p1 --multisig-threshold<
 </div>
 </div>
 <div class="section" id="step-4-create-multisignature">
-<h3>Step 4: Create multisignature<a class="headerlink" href="#step-4-create-multisignature" title="Permalink to this headline">#</a></h3>
+<h3>Step 4: Create multisignature<a class="headerlink" href="#step-4-create-multisignature" title="Permalink to this headline">¶</a></h3>
 <p>Combine signatures to sign transaction.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrad tx multisign <span class="se">\</span>
     unsignedTx.json <span class="se">\</span>
@@ -1507,7 +1509,7 @@ terrad keys add --multisig<span class="o">=</span>p2,p3,p1 --multisig-threshold<
 </div>
 </div>
 <div class="section" id="step-5-broadcast-transaction">
-<h3>Step 5: Broadcast transaction<a class="headerlink" href="#step-5-broadcast-transaction" title="Permalink to this headline">#</a></h3>
+<h3>Step 5: Broadcast transaction<a class="headerlink" href="#step-5-broadcast-transaction" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrad tx broadcast signedTx.json <span class="se">\</span>
     --chain-id<span class="o">=</span>localterra <span class="se">\</span>
     --broadcast-mode<span class="o">=</span>block
@@ -1522,7 +1524,7 @@ terrad keys add --multisig<span class="o">=</span>p2,p3,p1 --multisig-threshold<
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="README.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1645,8 +1647,7 @@ terrad keys add --multisig<span class="o">=</span>p2,p3,p1 --multisig-threshold<
       </div>
     </div>
   
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>

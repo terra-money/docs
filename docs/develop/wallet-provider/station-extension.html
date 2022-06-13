@@ -7,9 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Terra Station extension &#8212; Terra Docs  documentation</title>
     
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -19,6 +18,10 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
+    
+      
+
+    
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
@@ -29,8 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/custom.css" />
     
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
@@ -53,7 +55,7 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -1309,18 +1311,18 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="terra-station-extension">
-<h1>Terra Station extension<a class="headerlink" href="#terra-station-extension" title="Permalink to this headline">#</a></h1>
+<h1>Terra Station extension<a class="headerlink" href="#terra-station-extension" title="Permalink to this headline">¶</a></h1>
 <p>The API for the Terra Station extension gets updated periodically. If you are developing a dApp, please check regularly for updates as breaking changes may be introduced frequently.</p>
 <div class="section" id="what-is-the-terra-station-extension">
-<h2>What is the Terra Station extension?<a class="headerlink" href="#what-is-the-terra-station-extension" title="Permalink to this headline">#</a></h2>
+<h2>What is the Terra Station extension?<a class="headerlink" href="#what-is-the-terra-station-extension" title="Permalink to this headline">¶</a></h2>
 <p>The Terra Station extension is a web-wallet extension for Chrome that enables webpages to create requests for signing and broadcasting transactions. The webpage can detect the presence of Station Extension and generate a prompt whereby the user can confirm the transaction to be signed.</p>
 </div>
 <div class="section" id="wallet-provider">
-<h2>Wallet Provider<a class="headerlink" href="#wallet-provider" title="Permalink to this headline">#</a></h2>
+<h2>Wallet Provider<a class="headerlink" href="#wallet-provider" title="Permalink to this headline">¶</a></h2>
 <p>Wallet Provider is a library that simplifies the development of React dApps that use Terra Station extension or Terra Station mobile.</p>
 <p>Use one of the following templates to get quickly get started using Wallet Provider:</p>
 <div class="section" id="create-react-app">
-<h3>Create React App<a class="headerlink" href="#create-react-app" title="Permalink to this headline">#</a></h3>
+<h3>Create React App<a class="headerlink" href="#create-react-app" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>npx copy-github-directory https://github.com/terra-money/wallet-provider/tree/main/templates/create-react-app your-app-name
 <span class="nb">cd</span> your-app-name
 yarn install
@@ -1330,7 +1332,7 @@ yarn start
 <p><a class="reference external" href="https://github.com/terra-money/wallet-provider/tree/main/templates/create-react-app">Learn more</a></p>
 </div>
 <div class="section" id="next-js">
-<h3>Next.js<a class="headerlink" href="#next-js" title="Permalink to this headline">#</a></h3>
+<h3>Next.js<a class="headerlink" href="#next-js" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>npx copy-github-directory https://github.com/terra-money/wallet-provider/tree/main/templates/next your-app-name
 <span class="nb">cd</span> your-app-name
 yarn install
@@ -1340,7 +1342,7 @@ yarn run dev
 <p><a class="reference external" href="https://github.com/terra-money/wallet-provider/tree/main/templates/next">Learn more</a></p>
 </div>
 <div class="section" id="experimental-templates">
-<h3>Experimental templates<a class="headerlink" href="#experimental-templates" title="Permalink to this headline">#</a></h3>
+<h3>Experimental templates<a class="headerlink" href="#experimental-templates" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/terra-money/wallet-provider/tree/main/templates/vite">Wallet Provider + Vite.js</a></p></li>
 <li><p><a class="reference external" href="https://github.com/terra-money/wallet-provider/tree/main/templates/wallet-controller">Wallet Controller</a></p></li>
@@ -1352,7 +1354,7 @@ yarn run dev
 </div>
 </div>
 <div class="section" id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">#</a></h2>
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
 <p>Visit the Wallet Provider GitHub for more details on using the APIs provided:</p>
 <p><a class="reference external" href="https://github.com/terra-money/wallet-provider#basic-usage">https://github.com/terra-money/wallet-provider</a></p>
 </div>
@@ -1363,7 +1365,7 @@ yarn run dev
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="wallet-provider-tutorial.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1486,8 +1488,7 @@ yarn run dev
       </div>
     </div>
   
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>

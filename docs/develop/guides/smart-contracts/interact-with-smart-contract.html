@@ -7,9 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Interacting with the Contract &#8212; Terra Docs  documentation</title>
     
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -19,6 +18,10 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
+    
+      
+
+    
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
@@ -29,8 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css" />
     
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
     <script src="../../../../_static/jquery.js"></script>
@@ -53,7 +55,7 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -1329,13 +1331,13 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="interacting-with-the-contract">
-<h1>Interacting with the Contract<a class="headerlink" href="#interacting-with-the-contract" title="Permalink to this headline">#</a></h1>
+<h1>Interacting with the Contract<a class="headerlink" href="#interacting-with-the-contract" title="Permalink to this headline">¶</a></h1>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>You can also follow these steps in the official desktop wallet for Terra, <a class="reference external" href="https://station.terra.money">Terra Station</a>.</p>
 </div>
 <div class="section" id="requirements">
-<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">#</a></h2>
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
 <p>Make sure you have set up <strong>LocalTerra</strong> and that it is up and running:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> localterra
 docker-compose up
@@ -1352,7 +1354,7 @@ docker-compose up
 </div>
 </div>
 <div class="section" id="uploading-code">
-<h2>Uploading Code<a class="headerlink" href="#uploading-code" title="Permalink to this headline">#</a></h2>
+<h2>Uploading Code<a class="headerlink" href="#uploading-code" title="Permalink to this headline">¶</a></h2>
 <p>Make sure that the <strong>optimized build</strong> of <code class="docutils literal notranslate"><span class="pre">my_first_contract.wasm</span></code> that you created in the last section is in your current working directory.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrad tx wasm store artifacts/my_first_contract.wasm --from test1 --chain-id<span class="o">=</span>localterra --gas<span class="o">=</span>auto --fees<span class="o">=</span>100000uluna --broadcast-mode<span class="o">=</span>block
 </pre></div>
@@ -1402,7 +1404,7 @@ creator: terra1dcegyrekltswvyy0xy69ydgxn9x8x32zdtapd8
 </div>
 </div>
 <div class="section" id="creating-the-contract">
-<h2>Creating the Contract<a class="headerlink" href="#creating-the-contract" title="Permalink to this headline">#</a></h2>
+<h2>Creating the Contract<a class="headerlink" href="#creating-the-contract" title="Permalink to this headline">¶</a></h2>
 <p>You have now uploaded the code for your contract, but still don’t have a contract. Create it with the following InitMsg:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
@@ -1465,7 +1467,7 @@ migratable: <span class="nb">false</span>
 </div>
 </div>
 <div class="section" id="executing-the-contract">
-<h2>Executing the Contract<a class="headerlink" href="#executing-the-contract" title="Permalink to this headline">#</a></h2>
+<h2>Executing the Contract<a class="headerlink" href="#executing-the-contract" title="Permalink to this headline">¶</a></h2>
 <p>Let’s do the following:</p>
 <ol class="arabic simple">
 <li><p>Reset count to 5</p></li>
@@ -1473,7 +1475,7 @@ migratable: <span class="nb">false</span>
 </ol>
 <p>If done properly, you should get a count of 7.</p>
 <div class="section" id="reset">
-<h3>Reset<a class="headerlink" href="#reset" title="Permalink to this headline">#</a></h3>
+<h3>Reset<a class="headerlink" href="#reset" title="Permalink to this headline">¶</a></h3>
 <p>First, to burn:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;reset&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -1487,7 +1489,7 @@ migratable: <span class="nb">false</span>
 </div>
 </div>
 <div class="section" id="incrementing">
-<h3>Incrementing<a class="headerlink" href="#incrementing" title="Permalink to this headline">#</a></h3>
+<h3>Incrementing<a class="headerlink" href="#incrementing" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;increment&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
@@ -1498,7 +1500,7 @@ migratable: <span class="nb">false</span>
 </div>
 </div>
 <div class="section" id="querying-count">
-<h3>Querying count<a class="headerlink" href="#querying-count" title="Permalink to this headline">#</a></h3>
+<h3>Querying count<a class="headerlink" href="#querying-count" title="Permalink to this headline">¶</a></h3>
 <p>Check the result of your executions!</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;get_count&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
@@ -1517,7 +1519,7 @@ migratable: <span class="nb">false</span>
 </div>
 </div>
 <div class="section" id="whats-next">
-<h2>What’s Next?<a class="headerlink" href="#whats-next" title="Permalink to this headline">#</a></h2>
+<h2>What’s Next?<a class="headerlink" href="#whats-next" title="Permalink to this headline">¶</a></h2>
 <p>We’ve only walked through a simple example of a smart contract, that modifies a simple balance within its internal state. Although this is enough to make a simple dApp, you can power more interesting applications by <strong>emitting messages</strong>, which will enable you to interact with other contracts as well as the rest of the blockchain’s module.</p>
 <p>Check out a couple more examples of smart contracts using Terra’s smart contract <a class="reference external" href="https://github.com/terra-money/cosmwasm-contracts">repo</a>.</p>
 </div>
@@ -1528,7 +1530,7 @@ migratable: <span class="nb">false</span>
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="write-smart-contract.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1651,8 +1653,7 @@ migratable: <span class="nb">false</span>
       </div>
     </div>
   
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>

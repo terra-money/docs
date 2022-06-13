@@ -7,9 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Build a CW20 token factory &#8212; Terra Docs  documentation</title>
     
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -19,6 +18,10 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
+    
+      
+
+    
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
@@ -29,8 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/custom.css" />
     
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
@@ -53,7 +55,7 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -1465,10 +1467,10 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="build-a-cw20-token-factory">
-<h1>Build a CW20 token factory <img alt="../../../_images/Staking.svg" height="40px" src="../../../_images/Staking.svg" /><a class="headerlink" href="#build-a-cw20-token-factory" title="Permalink to this headline">#</a></h1>
+<h1>Build a CW20 token factory <img alt="../../../_images/Staking.svg" height="40px" src="../../../_images/Staking.svg" /><a class="headerlink" href="#build-a-cw20-token-factory" title="Permalink to this headline">¶</a></h1>
 <p>In this tutorial, you’ll build a CW20 token factory. A token factory allows any ​CosmosSDK address (including a contract) to mint new fungible token.</p>
 <div class="section" id="prerequisites">
-<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
 <p>Use the following guides to set up your environment:</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="initial-setup.html"><span class="doc std std-doc">Set up Terrain</span></a></p></li>
@@ -1482,7 +1484,7 @@
 </ul>
 </div>
 <div class="section" id="instantiate-a-new-app-using-terrain">
-<h2>Instantiate a new app using Terrain<a class="headerlink" href="#instantiate-a-new-app-using-terrain" title="Permalink to this headline">#</a></h2>
+<h2>Instantiate a new app using Terrain<a class="headerlink" href="#instantiate-a-new-app-using-terrain" title="Permalink to this headline">¶</a></h2>
 <p>Instantiate a <a class="reference external" href="https://github.com/terra-money/terrain#terrain-new-name">new app using Terrain</a>:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrain new token-factory
 </pre></div>
@@ -1496,7 +1498,7 @@
 </div>
 </div>
 <div class="section" id="generate-the-cw20-factory-token-contract">
-<h2>Generate the <code class="docutils literal notranslate"><span class="pre">cw20-factory-token</span></code> contract<a class="headerlink" href="#generate-the-cw20-factory-token-contract" title="Permalink to this headline">#</a></h2>
+<h2>Generate the <code class="docutils literal notranslate"><span class="pre">cw20-factory-token</span></code> contract<a class="headerlink" href="#generate-the-cw20-factory-token-contract" title="Permalink to this headline">¶</a></h2>
 <p>a. Navigate to the <code class="docutils literal notranslate"><span class="pre">token-factory</span></code> directory:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> token-factory
 </pre></div>
@@ -1512,7 +1514,7 @@
 </div>
 </div>
 <div class="section" id="modify-the-mnemonics-passphrase">
-<h2>Modify the mnemonics passphrase<a class="headerlink" href="#modify-the-mnemonics-passphrase" title="Permalink to this headline">#</a></h2>
+<h2>Modify the mnemonics passphrase<a class="headerlink" href="#modify-the-mnemonics-passphrase" title="Permalink to this headline">¶</a></h2>
 <p>Before editing the smart contracts you instantiated in step 2, modify the mnemonic you’ll use to do deploy the contract to LocalTerra:</p>
 <p>a. Open <code class="docutils literal notranslate"><span class="pre">/keys.terrain.js</span></code> and set the <code class="docutils literal notranslate"><span class="pre">mnemonic</span></code>s to the following:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">notice</span> <span class="n">oak</span> <span class="n">worry</span> <span class="n">limit</span> <span class="n">wrap</span> <span class="n">speak</span> <span class="n">medal</span> <span class="n">online</span> <span class="n">prefer</span> <span class="n">cluster</span> <span class="n">roof</span> <span class="n">addict</span> <span class="n">wrist</span> <span class="n">behave</span> <span class="n">treat</span> <span class="n">actual</span> <span class="n">wasp</span> <span class="n">year</span> <span class="n">salad</span> <span class="n">speed</span> <span class="n">social</span> <span class="n">layer</span> <span class="n">crew</span> <span class="n">genius</span>
@@ -1536,7 +1538,7 @@
 </div>
 </div>
 <div class="section" id="deploy-the-smart-contracts">
-<h2>Deploy the smart contracts<a class="headerlink" href="#deploy-the-smart-contracts" title="Permalink to this headline">#</a></h2>
+<h2>Deploy the smart contracts<a class="headerlink" href="#deploy-the-smart-contracts" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">token-factory</span></code> contract mints new <code class="docutils literal notranslate"><span class="pre">cw20-factory-token</span></code> tokens, increases the supply of minted tokens, burns tokens to return UST and tracks all tokens created.</p>
 <p>Deploy each smart contract to validate that the development environment is configured correctly:</p>
 <p>a. Deploy the <code class="docutils literal notranslate"><span class="pre">token-factory</span></code> contract:</p>
@@ -1549,11 +1551,11 @@
 </div>
 </div>
 <div class="section" id="modify-the-cw20-factory-token-smart-contract">
-<h2>Modify the CW20 Factory Token smart contract<a class="headerlink" href="#modify-the-cw20-factory-token-smart-contract" title="Permalink to this headline">#</a></h2>
+<h2>Modify the CW20 Factory Token smart contract<a class="headerlink" href="#modify-the-cw20-factory-token-smart-contract" title="Permalink to this headline">¶</a></h2>
 <p>In this section, you will modify the <code class="docutils literal notranslate"><span class="pre">cw20-factory-token</span></code> contract that you instantiated. This contract implements the <a class="reference external" href="https://github.com/CosmWasm/cw-plus/tree/main/contracts/cw20-base">CW20 Base</a>, along with several custom files.</p>
 <p>To modify the <code class="docutils literal notranslate"><span class="pre">cw20-factory-token</span></code> contract, follow the procedure below.</p>
 <div class="section" id="add-the-the-cw20-base">
-<h3>1. Add the the CW20 base<a class="headerlink" href="#add-the-the-cw20-base" title="Permalink to this headline">#</a></h3>
+<h3>1. Add the the CW20 base<a class="headerlink" href="#add-the-the-cw20-base" title="Permalink to this headline">¶</a></h3>
 <p>First, add the <a class="reference external" href="https://github.com/CosmWasm/cw-plus/tree/main/contracts/cw20-base">CW20 Base</a>, which implements the base CW20 token functionalities. This allows:</p>
 <ul class="simple">
 <li><p>the smart contract to be easily deployed to LocalTerra</p></li>
@@ -1575,7 +1577,7 @@
 </div>
 </div>
 <div class="section" id="modify-the-contract-files">
-<h3>2. Modify the contract files<a class="headerlink" href="#modify-the-contract-files" title="Permalink to this headline">#</a></h3>
+<h3>2. Modify the contract files<a class="headerlink" href="#modify-the-contract-files" title="Permalink to this headline">¶</a></h3>
 <p>Now that you’ve added the <code class="docutils literal notranslate"><span class="pre">CW20</span> <span class="pre">Base</span></code> to implement the base CW20 token logic, modify the following files:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">msg.rs</span></code></p></li>
@@ -1746,7 +1748,7 @@
 <p>i. Close and save <code class="docutils literal notranslate"><span class="pre">schemas.rs</span></code>:</p>
 </div>
 <div class="section" id="generate-and-test-the-schema">
-<h3>3. Generate and test the schema<a class="headerlink" href="#generate-and-test-the-schema" title="Permalink to this headline">#</a></h3>
+<h3>3. Generate and test the schema<a class="headerlink" href="#generate-and-test-the-schema" title="Permalink to this headline">¶</a></h3>
 <p>a. Navigate to <code class="docutils literal notranslate"><span class="pre">/token-factory/contracts/cw20-factory-token</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">/</span><span class="n">token</span><span class="o">-</span><span class="n">factory</span><span class="o">/</span><span class="n">contracts</span><span class="o">/</span><span class="n">cw20</span><span class="o">-</span><span class="n">factory</span><span class="o">-</span><span class="n">token</span>
 </pre></div>
@@ -1761,7 +1763,7 @@
 </div>
 </div>
 <div class="section" id="modify-terrain-config-json">
-<h3>4. Modify <code class="docutils literal notranslate"><span class="pre">terrain.config.json</span></code><a class="headerlink" href="#modify-terrain-config-json" title="Permalink to this headline">#</a></h3>
+<h3>4. Modify <code class="docutils literal notranslate"><span class="pre">terrain.config.json</span></code><a class="headerlink" href="#modify-terrain-config-json" title="Permalink to this headline">¶</a></h3>
 <p>a. Open <code class="docutils literal notranslate"><span class="pre">terrain.config.json</span></code>.</p>
 <p>b. Modify the <code class="docutils literal notranslate"><span class="pre">InstantiateMsg</span></code> property in the <code class="docutils literal notranslate"><span class="pre">terrain.config.json</span></code> so that it contains the <code class="docutils literal notranslate"><span class="pre">name</span></code>, <code class="docutils literal notranslate"><span class="pre">symbol</span></code>, <code class="docutils literal notranslate"><span class="pre">decimals</span></code> and <code class="docutils literal notranslate"><span class="pre">initial_balances</span></code> shown below. This allows you to send the correct data to the smart contract upon instantiation:</p>
 <div class="highlight-Json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
@@ -1787,7 +1789,7 @@
 </div>
 </div>
 <div class="section" id="test-the-smart-contract-deployment">
-<h3>5. Test the smart contract deployment<a class="headerlink" href="#test-the-smart-contract-deployment" title="Permalink to this headline">#</a></h3>
+<h3>5. Test the smart contract deployment<a class="headerlink" href="#test-the-smart-contract-deployment" title="Permalink to this headline">¶</a></h3>
 <p>Deploy the contract again to confirm that the workplace still compiles.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrain deploy cw20-factory-token --signer <span class="nb">test</span>
 </pre></div>
@@ -1803,16 +1805,16 @@
 </div>
 </div>
 <div class="section" id="use-crate-io-to-implement-the-cw20-token-factory-as-a-dependency">
-<h3>6. Use <a class="reference external" href="http://crate.io">crate.io</a> to implement the CW20 Token Factory as a dependency<a class="headerlink" href="#use-crate-io-to-implement-the-cw20-token-factory-as-a-dependency" title="Permalink to this headline">#</a></h3>
+<h3>6. Use <a class="reference external" href="http://crate.io">crate.io</a> to implement the CW20 Token Factory as a dependency<a class="headerlink" href="#use-crate-io-to-implement-the-cw20-token-factory-as-a-dependency" title="Permalink to this headline">¶</a></h3>
 <p>For the purpose of this tutorial, <a class="reference external" href="https:%5Ccrates.io">crates.io</a> is used to implement the CW20 Token Factory as a dependency. This ensures that CW20 Token Factory is platform agnostic, so you can use Linux, Windows or Mac.</p>
 <p>As the deployment to <a class="reference external" href="http://crates.io">crates.io</a> is out of scope for this tutorial, you can find <a class="reference external" href="https://crates.io/crates/cw20-factory-token">the CW20 Token Factory package deployed to crates.io</a>. You can use this deployment when you add the CW20 Token Factory contract as a dependency of the Token Factory contract in the the next section.</p>
 </div>
 </div>
 <div class="section" id="create-the-token-factory-smart-contract">
-<h2>Create the Token Factory smart contract<a class="headerlink" href="#create-the-token-factory-smart-contract" title="Permalink to this headline">#</a></h2>
+<h2>Create the Token Factory smart contract<a class="headerlink" href="#create-the-token-factory-smart-contract" title="Permalink to this headline">¶</a></h2>
 <p>To set up the contract, follow the procedure below:</p>
 <div class="section" id="add-the-dependencies">
-<h3>1. Add the dependencies<a class="headerlink" href="#add-the-dependencies" title="Permalink to this headline">#</a></h3>
+<h3>1. Add the dependencies<a class="headerlink" href="#add-the-dependencies" title="Permalink to this headline">¶</a></h3>
 <p>In this section, you will add the following dependencies to <code class="docutils literal notranslate"><span class="pre">cargo.toml</span></code>:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">cw2</span></code></p></li>
@@ -1834,7 +1836,7 @@
 </div>
 </div>
 <div class="section" id="id1">
-<h3>2. Modify the contract files<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<h3>2. Modify the contract files<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>Now that you’ve added the dependencies, modify the following files:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">error.rs</span></code></p></li>
@@ -2615,7 +2617,7 @@
 </div>
 </div>
 <div class="section" id="id2">
-<h3>3. Generate and test the schema<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<h3>3. Generate and test the schema<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <p>Now you have modified the <code class="docutils literal notranslate"><span class="pre">token-factory</span></code> contract, generate the schema and run the tests to validate that the code works as expected:</p>
 <p>a. Navigate to <code class="docutils literal notranslate"><span class="pre">/tokens-factory/contracts/token-factory</span></code>.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> /tokens-factory/contracts/token-factory
@@ -2655,7 +2657,7 @@ running <span class="m">5</span> tests
 </div>
 </div>
 <div class="section" id="id3">
-<h3>4. Modify <code class="docutils literal notranslate"><span class="pre">terrain.config.json</span></code><a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<h3>4. Modify <code class="docutils literal notranslate"><span class="pre">terrain.config.json</span></code><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <p>a. Open <code class="docutils literal notranslate"><span class="pre">terrain.config.json</span></code>.</p>
 <p>b. Modify the property <code class="docutils literal notranslate"><span class="pre">InstantiateMsg</span></code>, using your <code class="docutils literal notranslate"><span class="pre">&lt;token_contract_code_id&gt;</span></code>. <strong>The <code class="docutils literal notranslate"><span class="pre">&lt;token_contract_code_id&gt;</span></code> should not be surrounded by quotes</strong>:</p>
 <div class="admonition tip">
@@ -2679,7 +2681,7 @@ running <span class="m">5</span> tests
 </div>
 </div>
 <div class="section" id="deploy-the-smart-contract-to-localterra">
-<h2>Deploy the smart contract to LocalTerra<a class="headerlink" href="#deploy-the-smart-contract-to-localterra" title="Permalink to this headline">#</a></h2>
+<h2>Deploy the smart contract to LocalTerra<a class="headerlink" href="#deploy-the-smart-contract-to-localterra" title="Permalink to this headline">¶</a></h2>
 <p>Now that you’ve created, modified and tested each smart contract, deploy the <code class="docutils literal notranslate"><span class="pre">token-factory</span></code> to your LocalTerra instance using Terrain:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrain deploy token-factory --signer <span class="nb">test</span>
 </pre></div>
@@ -2697,7 +2699,7 @@ running <span class="m">5</span> tests
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="contract-migration.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -2820,8 +2822,7 @@ running <span class="m">5</span> tests
       </div>
     </div>
   
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>

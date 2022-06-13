@@ -7,9 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Use Terrain with the testnet &#8212; Terra Docs  documentation</title>
     
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -19,6 +18,10 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
+    
+      
+
+    
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
@@ -29,8 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/custom.css" />
     
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
@@ -53,7 +55,7 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -1391,16 +1393,16 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="use-terrain-with-the-testnet">
-<h1>Use Terrain with the testnet<a class="headerlink" href="#use-terrain-with-the-testnet" title="Permalink to this headline">#</a></h1>
+<h1>Use Terrain with the testnet<a class="headerlink" href="#use-terrain-with-the-testnet" title="Permalink to this headline">¶</a></h1>
 <p>The Pisco testnet is used for testing transactions on the Terra network.</p>
 <div class="section" id="prerequisites">
-<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><span class="xref myst">Install the Terra Station browser extension</span></p></li>
 </ul>
 </div>
 <div class="section" id="create-a-pisco-wallet">
-<h2>Create a Pisco wallet<a class="headerlink" href="#create-a-pisco-wallet" title="Permalink to this headline">#</a></h2>
+<h2>Create a Pisco wallet<a class="headerlink" href="#create-a-pisco-wallet" title="Permalink to this headline">¶</a></h2>
 <p><span class="xref myst">Create a new wallet</span> using the Terra Station extension. It’s recommended that you name this wallet “Pisco” or “testnet” so it’s easy to remember.</p>
 <p>After creating a Pisco wallet and storing the seed phrase, request funds from the testnet faucet:</p>
 <p><a class="reference external" href="https://faucet.terra.money">https://faucet.terra.money</a></p>
@@ -1411,10 +1413,10 @@
 </div>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="counter-tutorial">
-<h1>Counter tutorial<a class="headerlink" href="#counter-tutorial" title="Permalink to this headline">#</a></h1>
+<h1>Counter tutorial<a class="headerlink" href="#counter-tutorial" title="Permalink to this headline">¶</a></h1>
 <p>After creating a testnet wallet, you are ready to use Terrain. This short tutorial walks you through setting up your project and creating a simple counter.</p>
 <div class="section" id="scaffold-your-dapp">
-<h2>1. Scaffold your dApp<a class="headerlink" href="#scaffold-your-dapp" title="Permalink to this headline">#</a></h2>
+<h2>1. Scaffold your dApp<a class="headerlink" href="#scaffold-your-dapp" title="Permalink to this headline">¶</a></h2>
 <p>Scaffold your new application:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrain new my-terra-dapp
 <span class="nb">cd</span> my-terra-dapp
@@ -1422,7 +1424,7 @@ npm install
 </pre></div>
 </div>
 <div class="section" id="project-structure">
-<h3>Project structure<a class="headerlink" href="#project-structure" title="Permalink to this headline">#</a></h3>
+<h3>Project structure<a class="headerlink" href="#project-structure" title="Permalink to this headline">¶</a></h3>
 <p>The following structure shows your scaffolded project:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>.
 ├── contracts              # The contracts&#39; source code.
@@ -1439,7 +1441,7 @@ npm install
 </div>
 </div>
 <div class="section" id="configure-the-testnet">
-<h2>2. Configure the testnet<a class="headerlink" href="#configure-the-testnet" title="Permalink to this headline">#</a></h2>
+<h2>2. Configure the testnet<a class="headerlink" href="#configure-the-testnet" title="Permalink to this headline">¶</a></h2>
 <p>Before deploying, Terrain needs to learn how to access your Pisco wallet. To do this you’ll need to modify <code class="docutils literal notranslate"><span class="pre">keys.terrain.js</span></code> in the generated project.</p>
 <p>Modify the configuration and input your seed phrase to look like this:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">module</span><span class="o">.</span><span class="n">exports</span> <span class="o">=</span> <span class="p">{</span>
@@ -1452,7 +1454,7 @@ npm install
 </div>
 </div>
 <div class="section" id="deploy">
-<h2>3. Deploy<a class="headerlink" href="#deploy" title="Permalink to this headline">#</a></h2>
+<h2>3. Deploy<a class="headerlink" href="#deploy" title="Permalink to this headline">¶</a></h2>
 <p>To deploy the application, run the following command:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrain deploy counter --signer pisco --network testnet
 </pre></div>
@@ -1473,7 +1475,7 @@ npm install
 <p>Wait a few seconds then try the deploy command again.</p>
 </div>
 <div class="section" id="deploying-with-terra-station">
-<h3>Deploying with Terra Station<a class="headerlink" href="#deploying-with-terra-station" title="Permalink to this headline">#</a></h3>
+<h3>Deploying with Terra Station<a class="headerlink" href="#deploying-with-terra-station" title="Permalink to this headline">¶</a></h3>
 <p>Besides the CLI approach above, there is also the option of deploying and interacting with your contracts on testnet through the <a class="reference external" href="https://station.terra.money/">Terra Station UI</a>.</p>
 <ol class="arabic">
 <li><p>Compile your project with <code class="docutils literal notranslate"><span class="pre">terrain</span></code>. If you have localterra running, this can be done with <code class="docutils literal notranslate"><span class="pre">terrain</span> <span class="pre">deploy</span> <span class="pre">&lt;project&gt;</span> <span class="pre">--signer</span> <span class="pre">test1</span></code>. This will build the wasm bytecode and output a <strong>.wasm</strong> file such as <strong>artifacts/counter.wasm</strong></p></li>
@@ -1496,7 +1498,7 @@ npm install
 </div>
 </div>
 <div class="section" id="interact-with-the-deployed-contract">
-<h2>4. Interact with the deployed contract<a class="headerlink" href="#interact-with-the-deployed-contract" title="Permalink to this headline">#</a></h2>
+<h2>4. Interact with the deployed contract<a class="headerlink" href="#interact-with-the-deployed-contract" title="Permalink to this headline">¶</a></h2>
 <p>The Terrain template comes with several predefined helpers in <code class="docutils literal notranslate"><span class="pre">lib/index.js</span></code>. Use them to start interacting with your smart contract:</p>
 <ol class="arabic">
 <li><p>Run <code class="docutils literal notranslate"><span class="pre">terrain</span> <span class="pre">console</span> <span class="pre">--network</span> <span class="pre">testnet</span></code>.</p></li>
@@ -1518,7 +1520,7 @@ npm install
 </ol>
 </div>
 <div class="section" id="front-end-scaffolding">
-<h2>5. Front-end scaffolding<a class="headerlink" href="#front-end-scaffolding" title="Permalink to this headline">#</a></h2>
+<h2>5. Front-end scaffolding<a class="headerlink" href="#front-end-scaffolding" title="Permalink to this headline">¶</a></h2>
 <p>Terrain also scaffolds a very simple front-end.</p>
 <ol class="arabic">
 <li><p>In the Terra Station Chrome extension, <span class="xref myst">switch the network to <code class="docutils literal notranslate"><span class="pre">testnet</span></code></span>.</p></li>
@@ -1533,11 +1535,11 @@ npm install
 </ol>
 </div>
 <div class="section" id="demo">
-<h2>Demo<a class="headerlink" href="#demo" title="Permalink to this headline">#</a></h2>
+<h2>Demo<a class="headerlink" href="#demo" title="Permalink to this headline">¶</a></h2>
 <p><img alt="" src="../../../_images/tut_counter.gif" /></p>
 </div>
 <div class="section" id="advanced-usage">
-<h2>Advanced usage<a class="headerlink" href="#advanced-usage" title="Permalink to this headline">#</a></h2>
+<h2>Advanced usage<a class="headerlink" href="#advanced-usage" title="Permalink to this headline">¶</a></h2>
 <p>For more advanced use cases such as deploying to the testnet or mainnet, see <a class="reference external" href="https://github.com/terra-money/terrain#readme">Terrain’s readme</a>.</p>
 </div>
 </div>
@@ -1547,7 +1549,7 @@ npm install
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="initial-setup.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1670,8 +1672,7 @@ npm install
       </div>
     </div>
   
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>

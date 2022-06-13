@@ -7,9 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>dApp migration guide &#8212; Terra Docs  documentation</title>
     
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -19,6 +18,10 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
+    
+      
+
+    
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
@@ -29,8 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
     
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
@@ -53,7 +55,7 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -1339,10 +1341,10 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="dapp-migration-guide">
-<h1>dApp migration guide<a class="headerlink" href="#dapp-migration-guide" title="Permalink to this headline">#</a></h1>
+<h1>dApp migration guide<a class="headerlink" href="#dapp-migration-guide" title="Permalink to this headline">¶</a></h1>
 <p>Use this guide to Migrate from Terra Classic to the new Terra chain.</p>
 <div class="section" id="changes">
-<h2>Changes<a class="headerlink" href="#changes" title="Permalink to this headline">#</a></h2>
+<h2>Changes<a class="headerlink" href="#changes" title="Permalink to this headline">¶</a></h2>
 <p>Terra 2.0 will be starting from a blank state when it comes to CosmWasm. This means no existing code IDs or smart contracts will be migrated.</p>
 <ul class="simple">
 <li><p>CosmWasm smart contracts will need to be uploaded to the new chain and instantiated.</p></li>
@@ -1350,25 +1352,25 @@
 <li><p>In addition to needing to re-deploy smart contracts, there are some breaking changes that developers should be aware of.</p></li>
 </ul>
 <div class="section" id="no-ust-or-other-native-stablecoins-krt-sdt-etc">
-<h3>1. No UST or other native stablecoins (KRT, SDT, etc).<a class="headerlink" href="#no-ust-or-other-native-stablecoins-krt-sdt-etc" title="Permalink to this headline">#</a></h3>
+<h3>1. No UST or other native stablecoins (KRT, SDT, etc).<a class="headerlink" href="#no-ust-or-other-native-stablecoins-krt-sdt-etc" title="Permalink to this headline">¶</a></h3>
 <p>Terra 2.0 has removed all native stablecoins. Any logic that accepts, queries, or sends Terra stablecoins will need to be removed or updated.</p>
 <p>Terra developers are working on getting alternative stablecoins on chain as soon as possible.</p>
 </div>
 <div class="section" id="no-stablecoin-tax-queries-to-the-treasury-module">
-<h3>2. No stablecoin tax queries to the treasury module.<a class="headerlink" href="#no-stablecoin-tax-queries-to-the-treasury-module" title="Permalink to this headline">#</a></h3>
+<h3>2. No stablecoin tax queries to the treasury module.<a class="headerlink" href="#no-stablecoin-tax-queries-to-the-treasury-module" title="Permalink to this headline">¶</a></h3>
 <p>Terra 2.0 has removed the treasury module. Any queries to the treasury module to query the TaxRate or TaxCap will now fail. Without the native stablecoins this logic isn’t necessary, so it can be removed.</p>
 </div>
 <div class="section" id="no-market-module">
-<h3>3. No market module.<a class="headerlink" href="#no-market-module" title="Permalink to this headline">#</a></h3>
+<h3>3. No market module.<a class="headerlink" href="#no-market-module" title="Permalink to this headline">¶</a></h3>
 <p>Any attempts to swap Luna for UST or other stablecoins through the market module will fail. Specifically the <code class="docutils literal notranslate"><span class="pre">market/MsgSwap</span></code> message has been removed. However, LUNA can still be swapped onchain for other assets using a DEX. This includes any liquid stablecoins on Terra.</p>
 </div>
 <div class="section" id="no-oracle-module">
-<h3>4. No oracle module.<a class="headerlink" href="#no-oracle-module" title="Permalink to this headline">#</a></h3>
+<h3>4. No oracle module.<a class="headerlink" href="#no-oracle-module" title="Permalink to this headline">¶</a></h3>
 <p>Terra 2.0 has removed the oracle module. Any queries to fetch ExchangeRates from the oracle module will fail. However, there are other oracle solutions that can be employed.</p>
 <p><a class="reference external" href="https://docs.bandchain.org/introduction/overview.html">Band protocol</a> is one such solution. Band works over IBC. See the <a class="reference external" href="https://docs.bandchain.org/client-library/protocol-buffers/oracle-module.html">oracle module documentation</a> for more details</p>
 </div>
 <div class="section" id="terra-js-changes">
-<h3>5. Terra.js changes<a class="headerlink" href="#terra-js-changes" title="Permalink to this headline">#</a></h3>
+<h3>5. Terra.js changes<a class="headerlink" href="#terra-js-changes" title="Permalink to this headline">¶</a></h3>
 <p>Outside of the deprecation of the treasury, market, and oracle modules, Terra.js functionality remains relatively unchanged. There are a few additions to allow for legacy commands which are explained in <a class="reference internal" href="../develop/terra-js/terra-classic.html"><span class="doc std std-doc">Using Terra Classic</span></a>.</p>
 <div class="danger admonition">
 <p class="admonition-title">Update Terra.js and Wallet Provider</p>
@@ -1378,11 +1380,11 @@
 </div>
 </div>
 <div class="section" id="upgrade-cosmwasm">
-<h2>Upgrade Cosmwasm<a class="headerlink" href="#upgrade-cosmwasm" title="Permalink to this headline">#</a></h2>
+<h2>Upgrade Cosmwasm<a class="headerlink" href="#upgrade-cosmwasm" title="Permalink to this headline">¶</a></h2>
 <p>Update your Cosmwasm version to 1.0 using the <a class="reference internal" href="../develop/guides/smart-contracts/upgrade-cosmwasm.html"><span class="doc std std-doc">Cosmwasm upgrade guide</span></a>.</p>
 </div>
 <div class="section" id="examples-of-deprecated-functionality">
-<h2>Examples of Deprecated Functionality<a class="headerlink" href="#examples-of-deprecated-functionality" title="Permalink to this headline">#</a></h2>
+<h2>Examples of Deprecated Functionality<a class="headerlink" href="#examples-of-deprecated-functionality" title="Permalink to this headline">¶</a></h2>
 <p>The following are code snippets with functionality that will no longer be supported.</p>
 <ol class="arabic simple">
 <li><p>All <code class="docutils literal notranslate"><span class="pre">oracle</span></code> and <code class="docutils literal notranslate"><span class="pre">market</span></code> related methods are now deprecated.</p></li>
@@ -1419,7 +1421,7 @@
 </div>
 </div>
 <div class="section" id="migrating-cw20-cw721-balances">
-<h2>Migrating CW20/CW721 balances<a class="headerlink" href="#migrating-cw20-cw721-balances" title="Permalink to this headline">#</a></h2>
+<h2>Migrating CW20/CW721 balances<a class="headerlink" href="#migrating-cw20-cw721-balances" title="Permalink to this headline">¶</a></h2>
 <p>A tool was created that will generate a snapshot of CW20 or CW721 holders and balances at a specific block height:</p>
 <p><a class="reference external" href="https://github.com/emidev98/token-snapshot">token-snapshot</a></p>
 <p>Once a snapshot is created, you can airdrop the correct balances to users as defined by the snapshot.</p>
@@ -1431,7 +1433,7 @@
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="exchange-faq.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1554,8 +1556,7 @@
       </div>
     </div>
   
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>

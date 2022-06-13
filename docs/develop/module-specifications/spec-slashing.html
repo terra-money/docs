@@ -7,9 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Slashing &#8212; Terra Docs  documentation</title>
     
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -19,6 +18,10 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
+    
+      
+
+    
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
@@ -29,8 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/custom.css" />
     
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
@@ -53,7 +55,7 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -1391,16 +1393,16 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="slashing">
-<h1>Slashing<a class="headerlink" href="#slashing" title="Permalink to this headline">#</a></h1>
+<h1>Slashing<a class="headerlink" href="#slashing" title="Permalink to this headline">¶</a></h1>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>Terra’s slashing module inherits from the Cosmos SDK’s <a class="reference external" href="https://docs.cosmos.network/master/modules/slashing/"><code class="docutils literal notranslate"><span class="pre">slashing</span></code></a> module. This document is a stub and covers mainly important Terra-specific notes about how it is used.</p>
 </div>
 <p>The slashing module enables Terra to disincentivize any attributable action by a protocol-recognized actor with value at stake by penalizing them. The penalty is called <a class="reference internal" href="../../learn/glossary.html#slashing"><span class="std std-doc">slashing</span></a>. Terra mainly uses the <a class="reference internal" href="spec-staking.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">Staking</span></code></span></a> module to slash when violating validator responsibilities. This module manages lower-level penalties at the Tendermint consensus level, such as double-signing.</p>
 <div class="section" id="message-types">
-<h2>Message Types<a class="headerlink" href="#message-types" title="Permalink to this headline">#</a></h2>
+<h2>Message Types<a class="headerlink" href="#message-types" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="msgunjail">
-<h3>MsgUnjail<a class="headerlink" href="#msgunjail" title="Permalink to this headline">#</a></h3>
+<h3>MsgUnjail<a class="headerlink" href="#msgunjail" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">type</span><span class="w"> </span><span class="nx">MsgUnjail</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="nx">ValidatorAddr</span><span class="w"> </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">ValAddress</span><span class="w"> </span><span class="s">`json:&quot;address&quot; yaml:&quot;address&quot;`</span><span class="w"> </span><span class="c1">// address of the validator operator</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
@@ -1409,15 +1411,15 @@
 </div>
 </div>
 <div class="section" id="transitions">
-<h2>Transitions<a class="headerlink" href="#transitions" title="Permalink to this headline">#</a></h2>
+<h2>Transitions<a class="headerlink" href="#transitions" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="begin-block">
-<h3>Begin-Block<a class="headerlink" href="#begin-block" title="Permalink to this headline">#</a></h3>
+<h3>Begin-Block<a class="headerlink" href="#begin-block" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p>This section was taken from the official Cosmos SDK docs, and placed here for your convenience to understand the slashing module’s parameters.</p>
 </div></blockquote>
 <p>At the beginning of each block, the slashing module checks for evidence of infractions or downtime of validators, double-signing, and other low-level consensus penalties.</p>
 <div class="section" id="evidence-handling">
-<h4>Evidence handling<a class="headerlink" href="#evidence-handling" title="Permalink to this headline">#</a></h4>
+<h4>Evidence handling<a class="headerlink" href="#evidence-handling" title="Permalink to this headline">¶</a></h4>
 <p>Tendermint blocks can include evidence, which indicates that a validator committed malicious
 behavior. The relevant information is forwarded to the application as ABCI Evidence
 in <code class="docutils literal notranslate"><span class="pre">abci.RequestBeginBlock</span></code> so that the validator an be punished.</p>
@@ -1484,7 +1486,7 @@ should be slashed, even if it has since been redelegated or has started unbondin
 <p>This process ensures that offending validators are punished with the same amount whether they act as a single validator with X stake or as N validators with a collective X stake. The amount slashed for all double-signature infractions committed within a single slashing period is capped. For more information, see <a class="reference external" href="https://docs.cosmos.network/master/modules/slashing/01_concepts.html#tombstone-caps">tombstone caps</a>.</p>
 </div>
 <div class="section" id="liveness-tracking">
-<h4>Liveness tracking<a class="headerlink" href="#liveness-tracking" title="Permalink to this headline">#</a></h4>
+<h4>Liveness tracking<a class="headerlink" href="#liveness-tracking" title="Permalink to this headline">¶</a></h4>
 <p>At the beginning of each block, the <code class="docutils literal notranslate"><span class="pre">ValidatorSigningInfo</span></code> for each
 validator is updated and whether they’ve crossed below the liveness threshold over a
 sliding window is checked. This sliding window is defined by <code class="docutils literal notranslate"><span class="pre">SignedBlocksWindow</span></code>, and the
@@ -1579,7 +1581,7 @@ for <code class="docutils literal notranslate"><span class="pre">DowntimeJailDur
 </div>
 </div>
 <div class="section" id="parameters">
-<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">#</a></h2>
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
 <p>The subspace for the slashing module is <code class="docutils literal notranslate"><span class="pre">slashing</span></code>.</p>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">type</span><span class="w"> </span><span class="nx">Params</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">	</span><span class="nx">MaxEvidenceAge</span><span class="w">          </span><span class="nx">time</span><span class="p">.</span><span class="nx">Duration</span><span class="w"> </span><span class="s">`json:&quot;max_evidence_age&quot; yaml:&quot;max_evidence_age&quot;`</span><span class="w"></span>
@@ -1593,7 +1595,7 @@ for <code class="docutils literal notranslate"><span class="pre">DowntimeJailDur
 </div>
 </div>
 <div class="section" id="genesis-parameters">
-<h2>Genesis parameters<a class="headerlink" href="#genesis-parameters" title="Permalink to this headline">#</a></h2>
+<h2>Genesis parameters<a class="headerlink" href="#genesis-parameters" title="Permalink to this headline">¶</a></h2>
 <p>The genesis parameters for the crisis module outlined in the <a class="reference external" href="https://github.com/terra-money/genesis-tools/blob/main/src/genesis_builder.py#L168">Genesis Builder Script</a> are as follows:</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span>    <span class="c1"># Slashing: slash window setup</span>
     <span class="n">genesis</span><span class="p">[</span><span class="s1">&#39;app_state&#39;</span><span class="p">][</span><span class="s1">&#39;slashing&#39;</span><span class="p">][</span><span class="s1">&#39;params&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
@@ -1614,35 +1616,35 @@ for <code class="docutils literal notranslate"><span class="pre">DowntimeJailDur
 </pre></div>
 </div>
 <div class="section" id="signedblockswindow">
-<h3>SignedBlocksWindow<a class="headerlink" href="#signedblockswindow" title="Permalink to this headline">#</a></h3>
+<h3>SignedBlocksWindow<a class="headerlink" href="#signedblockswindow" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">int64</span></code></p></li>
 <li><p>default: <code class="docutils literal notranslate"><span class="pre">100</span></code></p></li>
 </ul>
 </div>
 <div class="section" id="minsignedperwindow">
-<h3>MinSignedPerWindow<a class="headerlink" href="#minsignedperwindow" title="Permalink to this headline">#</a></h3>
+<h3>MinSignedPerWindow<a class="headerlink" href="#minsignedperwindow" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">Dec</span></code></p></li>
 <li><p>default: <code class="docutils literal notranslate"><span class="pre">.05</span></code></p></li>
 </ul>
 </div>
 <div class="section" id="downtimejailduration">
-<h3>DowntimeJailDuration<a class="headerlink" href="#downtimejailduration" title="Permalink to this headline">#</a></h3>
+<h3>DowntimeJailDuration<a class="headerlink" href="#downtimejailduration" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">time.Duration</span></code> (seconds)</p></li>
 <li><p>default:  600s</p></li>
 </ul>
 </div>
 <div class="section" id="slashfractiondoublesign">
-<h3>SlashFractionDoubleSign<a class="headerlink" href="#slashfractiondoublesign" title="Permalink to this headline">#</a></h3>
+<h3>SlashFractionDoubleSign<a class="headerlink" href="#slashfractiondoublesign" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">Dec</span></code></p></li>
 <li><p>default: 5%</p></li>
 </ul>
 </div>
 <div class="section" id="slashfractiondowntime">
-<h3>SlashFractionDowntime<a class="headerlink" href="#slashfractiondowntime" title="Permalink to this headline">#</a></h3>
+<h3>SlashFractionDowntime<a class="headerlink" href="#slashfractiondowntime" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">Dec</span></code></p></li>
 <li><p>default: .01%</p></li>
@@ -1656,7 +1658,7 @@ for <code class="docutils literal notranslate"><span class="pre">DowntimeJailDur
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="spec-params.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1779,8 +1781,7 @@ for <code class="docutils literal notranslate"><span class="pre">DowntimeJailDur
       </div>
     </div>
   
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>

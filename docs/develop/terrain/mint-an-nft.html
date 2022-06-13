@@ -7,9 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mint an NFT using Terrain &#8212; Terra Docs  documentation</title>
     
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -19,6 +18,10 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
+    
+      
+
+    
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
@@ -29,8 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/custom.css" />
     
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
@@ -53,7 +55,7 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -1345,11 +1347,11 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="mint-an-nft-using-terrain">
-<h1>Mint an NFT using Terrain <img alt="../../../_images/bullet_terra.svg" height="40px" src="../../../_images/bullet_terra.svg" /><a class="headerlink" href="#mint-an-nft-using-terrain" title="Permalink to this headline">#</a></h1>
+<h1>Mint an NFT using Terrain <img alt="../../../_images/bullet_terra.svg" height="40px" src="../../../_images/bullet_terra.svg" /><a class="headerlink" href="#mint-an-nft-using-terrain" title="Permalink to this headline">¶</a></h1>
 <p>NFTs, or non-fungible tokens, are unique digital assets that can be showcased, bought, and sold on the blockchain. Purchasing an NFT gives you ownership over the unique digital creation, similar to buying a distinct painting or art piece.</p>
 <p>In this tutorial, you will learn how to mint your own NFT using the <a class="reference external" href="https://github.com/terran6/nft-on-terra.git">NFT Terrain application</a> and LocalTerra.</p>
 <div class="section" id="prerequisites">
-<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.google.com/chrome/downloads/">Download Google Chrome</a></p></li>
 <li><p><span class="xref myst">Download the Terra Station extension</span></p></li>
@@ -1366,7 +1368,7 @@
 </div>
 </div>
 <div class="section" id="create-your-project">
-<h2>1. Create your project<a class="headerlink" href="#create-your-project" title="Permalink to this headline">#</a></h2>
+<h2>1. Create your project<a class="headerlink" href="#create-your-project" title="Permalink to this headline">¶</a></h2>
 <p>After installing all the <a class="reference internal" href="#prerequisites"><span class="std std-doc">prerequisites</span></a> listed above, use the following steps to set up your environment and clone the <a class="reference external" href="https://github.com/terran6/nft-on-terra.git">NFT minting repository</a>, which contains the NFT minting smart contract as well as the corresponding front-end application.</p>
 <ol class="arabic">
 <li><p>Create and enter a new directory for your project:</p>
@@ -1390,7 +1392,7 @@ npm install
 <p>After all the dependencies have been installed, you can close this terminal window.</p>
 </div>
 <div class="section" id="start-localterra">
-<h2>2. Start LocalTerra<a class="headerlink" href="#start-localterra" title="Permalink to this headline">#</a></h2>
+<h2>2. Start LocalTerra<a class="headerlink" href="#start-localterra" title="Permalink to this headline">¶</a></h2>
 <p>LocalTerra is a complete Terra testnet and ecosystem containerized with Docker. In this tutorial, you will use LocalTerra to simulate transactions in a local testing environment.</p>
 <p>After <a class="reference external" href="https://docs.terra.money/docs/develop/dapp/quick-start/using-terrain-localterra.html#install-and-run-localterra">downloading LocalTerra</a> and all its dependencies, open a new terminal window and run the following commands:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> localterra
@@ -1400,7 +1402,7 @@ docker-compose up
 <p>After running LocalTerra successfully, you will start seeing simulated blockchain transactions.</p>
 </div>
 <div class="section" id="set-up-your-wallet">
-<h2>3. Set up your wallet<a class="headerlink" href="#set-up-your-wallet" title="Permalink to this headline">#</a></h2>
+<h2>3. Set up your wallet<a class="headerlink" href="#set-up-your-wallet" title="Permalink to this headline">¶</a></h2>
 <p>In order to use your Terra Station wallet with LocalTerra, you will need to configure your wallet to run on your LocalTerra network.</p>
 <ol class="arabic simple">
 <li><p>Open the Terra Station extension in your Google Chrome web browser. Click the gear icon in the upper right corner and change the network from <strong>mainnet</strong> to  <strong>localterra</strong>.</p></li>
@@ -1423,7 +1425,7 @@ docker-compose up
 <p>Now that you have successfully switched to the testing wallet on LocalTerra, you will be able to deploy your smart contract.</p>
 </div>
 <div class="section" id="update-the-instantiate-message">
-<h2>4. Update the instantiate message<a class="headerlink" href="#update-the-instantiate-message" title="Permalink to this headline">#</a></h2>
+<h2>4. Update the instantiate message<a class="headerlink" href="#update-the-instantiate-message" title="Permalink to this headline">¶</a></h2>
 <p>Before you can deploy your contract and begin minting your NFT, you’ll need to change the <code class="docutils literal notranslate"><span class="pre">config.terrain.json</span></code> file in your cloned repository.</p>
 <ol class="arabic simple">
 <li><p>In your Terra Station extension, open your <code class="docutils literal notranslate"><span class="pre">test1</span></code> wallet and copy the wallet address:</p></li>
@@ -1454,7 +1456,7 @@ docker-compose up
 <p>Be sure to save the changes to your <code class="docutils literal notranslate"><span class="pre">config.terrain.json</span></code> file.</p>
 </div>
 <div class="section" id="deploy-your-contract-to-localterra">
-<h2>5. Deploy your contract to LocalTerra<a class="headerlink" href="#deploy-your-contract-to-localterra" title="Permalink to this headline">#</a></h2>
+<h2>5. Deploy your contract to LocalTerra<a class="headerlink" href="#deploy-your-contract-to-localterra" title="Permalink to this headline">¶</a></h2>
 <p>You are finally ready to deploy your contract and run the NFT minting application. Make sure you have installed Terrain before proceeding.</p>
 <ol class="arabic">
 <li><p>Ensure you are still <a class="reference internal" href="#start-localterra"><span class="std std-doc">running LocalTerra</span></a> in a terminal window.</p></li>
@@ -1467,7 +1469,7 @@ docker-compose up
 </ol>
 </div>
 <div class="section" id="launch-the-nft-frontend-app">
-<h2>5. Launch the NFT frontend app<a class="headerlink" href="#launch-the-nft-frontend-app" title="Permalink to this headline">#</a></h2>
+<h2>5. Launch the NFT frontend app<a class="headerlink" href="#launch-the-nft-frontend-app" title="Permalink to this headline">¶</a></h2>
 <p>Once the contract deployment is successfully completed, you can run the frontend application to mint your NFT.</p>
 <ol class="arabic">
 <li><p>Change into the <code class="docutils literal notranslate"><span class="pre">frontend</span></code> directory and install the node dependencies:</p>
@@ -1505,7 +1507,7 @@ npm install
 </div>
 </div>
 <div class="section" id="mint-your-nft">
-<h2>6. Mint your NFT<a class="headerlink" href="#mint-your-nft" title="Permalink to this headline">#</a></h2>
+<h2>6. Mint your NFT<a class="headerlink" href="#mint-your-nft" title="Permalink to this headline">¶</a></h2>
 <p>Your NFT is ready to mint!</p>
 <ol class="arabic simple">
 <li><p>Click <strong>Mint NFT</strong>. Your Terra Station extension will pop up to request confirmation of the transaction.</p></li>
@@ -1518,7 +1520,7 @@ npm install
 <p>Congratulations, You just minted your first NFT!</p>
 </div>
 <div class="section" id="view-your-new-nft">
-<h2>View Your New NFT<a class="headerlink" href="#view-your-new-nft" title="Permalink to this headline">#</a></h2>
+<h2>View Your New NFT<a class="headerlink" href="#view-your-new-nft" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
 <li><p>Before you can view your NFT, you’ll need to locate your contract address. Open the <code class="docutils literal notranslate"><span class="pre">refs.terrain.json</span></code> file located in your cloned repository and copy the contract address listed after <code class="docutils literal notranslate"><span class="pre">&quot;default&quot;</span></code>:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
@@ -1554,7 +1556,7 @@ npm install
 <p>From here, you can <strong>View</strong> relevant information about your NFT or <strong>Send</strong> your NFT to any specified wallet address.</p>
 </div>
 <div class="section" id="congratulations">
-<h2>Congratulations!<a class="headerlink" href="#congratulations" title="Permalink to this headline">#</a></h2>
+<h2>Congratulations!<a class="headerlink" href="#congratulations" title="Permalink to this headline">¶</a></h2>
 <p>You’ve just minted your first NFT on the Terra blockchain! If you have your own unique digital creation that you would like to share with the world, you can follow these instructions using the mainnet network and your personal Terra Station wallet.</p>
 <div class="admonition-mint-nfts-on-the-mainnet admonition">
 <p class="admonition-title">Mint NFTs on the mainnet</p>
@@ -1568,7 +1570,7 @@ npm install
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="using-terrain-localterra.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1691,8 +1693,7 @@ npm install
       </div>
     </div>
   
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>

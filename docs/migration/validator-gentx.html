@@ -7,9 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Validator migration guide &#8212; Terra Docs  documentation</title>
     
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -19,6 +18,10 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
+    
+      
+
+    
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
@@ -29,8 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
     
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
@@ -53,7 +55,7 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -1345,7 +1347,7 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="validator-migration-guide">
-<h1>Validator migration guide<a class="headerlink" href="#validator-migration-guide" title="Permalink to this headline">#</a></h1>
+<h1>Validator migration guide<a class="headerlink" href="#validator-migration-guide" title="Permalink to this headline">¶</a></h1>
 <p>Follow this guide to become a validator on the Terra 2.0 chain. This guide walks you through making a <code class="docutils literal notranslate"><span class="pre">gentx</span></code> file that will be added to the validator chain. A <code class="docutils literal notranslate"><span class="pre">gentx</span></code> is a special transaction included in the genesis file that accomplishes three things:</p>
 <ol class="arabic simple">
 <li><p>Registers your validator account as a validator operator account.</p></li>
@@ -1354,14 +1356,14 @@
 </ol>
 <p>All validators that want to be included in the Terra 2.0 chain must follow the steps below.</p>
 <div class="section" id="networks">
-<h2>Networks<a class="headerlink" href="#networks" title="Permalink to this headline">#</a></h2>
+<h2>Networks<a class="headerlink" href="#networks" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Terra 2.0 testnet: <code class="docutils literal notranslate"><span class="pre">pisco-1</span></code></p></li>
 <li><p>Terra 2.0 mainnet: <code class="docutils literal notranslate"><span class="pre">phoenix-1</span></code></p></li>
 </ul>
 </div>
 <div class="section" id="prerequisites">
-<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><span class="xref myst">Terra Core</span></p></li>
 <li><p><a class="reference external" href="https://go.dev/dl/">Go 1.18+</a></p></li>
@@ -1369,7 +1371,7 @@
 </ul>
 </div>
 <div class="section" id="supplemental-resources">
-<h2>Supplemental Resources<a class="headerlink" href="#supplemental-resources" title="Permalink to this headline">#</a></h2>
+<h2>Supplemental Resources<a class="headerlink" href="#supplemental-resources" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/terra-money/genesis-tools/blob/main/LAUNCH.md">Official Terra V2 Validator Genesis Guide</a></p></li>
 <li><p><a class="reference external" href="https://docs.cosmos.network/master/run-node/run-node.html">Cosmos SDK: How to run a node</a></p></li>
@@ -1378,7 +1380,7 @@
 </ul>
 </div>
 <div class="section" id="timeline-expected">
-<h2>Timeline (Expected)<a class="headerlink" href="#timeline-expected" title="Permalink to this headline">#</a></h2>
+<h2>Timeline (Expected)<a class="headerlink" href="#timeline-expected" title="Permalink to this headline">¶</a></h2>
 <ul>
 <li><p>Fri May 27 2022 18:00:00 GMT+0900 (KST)</p></li>
 <li><p>Thu May 27 2022 09:00:00 GMT+0000 (UTC)</p>
@@ -1395,7 +1397,7 @@
 </ul>
 </div>
 <div class="section" id="snapshot">
-<h2>Snapshot<a class="headerlink" href="#snapshot" title="Permalink to this headline">#</a></h2>
+<h2>Snapshot<a class="headerlink" href="#snapshot" title="Permalink to this headline">¶</a></h2>
 <p>This section covers how to take the pre- and post-attack snapshots. The following steps need to be run on your existing validator’s machine.</p>
 <p>1. Stop your <code class="docutils literal notranslate"><span class="pre">columbus-5</span></code> node:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo systemctl stop terrad
@@ -1441,7 +1443,7 @@ jq -S -c -M <span class="s1">&#39;&#39;</span> post-attack-snapshot.json <span c
 </div>
 </div>
 <div class="section" id="penultimate-genesis">
-<h2>Penultimate Genesis<a class="headerlink" href="#penultimate-genesis" title="Permalink to this headline">#</a></h2>
+<h2>Penultimate Genesis<a class="headerlink" href="#penultimate-genesis" title="Permalink to this headline">¶</a></h2>
 <p>The following steps need to be run on the same machine as your <span class="xref myst">snapshot</span>.</p>
 <p>1. Clone and checkout genesis builder:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/terra-money/genesis-tools
@@ -1473,12 +1475,12 @@ def346f3ef21e5f484c4e8634918d527382115b871786bd794fac5dacdf46c63
 </div>
 </div>
 <div class="section" id="set-up-a-new-validator">
-<h2>Set up a new validator<a class="headerlink" href="#set-up-a-new-validator" title="Permalink to this headline">#</a></h2>
+<h2>Set up a new validator<a class="headerlink" href="#set-up-a-new-validator" title="Permalink to this headline">¶</a></h2>
 <p>Set up a new validator on a new machine by following the steps outlined in the <a class="reference external" href="https://docs.terra.money/docs/full-node/run-a-full-terra-node/README.html">full node tutorial</a>.</p>
 <p>After <a class="reference external" href="https://docs.terra.money/docs/full-node/run-a-full-terra-node/configure-general-settings.html">configuring your general settings</a>, continue to the next section.</p>
 </div>
 <div class="section" id="gentx">
-<h2>GenTx<a class="headerlink" href="#gentx" title="Permalink to this headline">#</a></h2>
+<h2>GenTx<a class="headerlink" href="#gentx" title="Permalink to this headline">¶</a></h2>
 <p>Complete the following steps on your new validator’s machine.</p>
 <p>1. Checkout and install the Terra 2.0 core:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># checkout and install</span>
@@ -1526,7 +1528,7 @@ mv ./penultimate-genesis.json ~/.terra/config/genesis.json
 </div>
 </div>
 <div class="section" id="collect-gentxs">
-<h2>Collect GenTxs<a class="headerlink" href="#collect-gentxs" title="Permalink to this headline">#</a></h2>
+<h2>Collect GenTxs<a class="headerlink" href="#collect-gentxs" title="Permalink to this headline">¶</a></h2>
 <p>The following steps need to be run on the same machine as your <span class="xref myst">GenTx</span>.</p>
 <p>1. Download gentx files and change into the terra home config:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/terra-money/genesis-tools
@@ -1545,7 +1547,7 @@ mv ./gentx/* ~/.terra/config/gentx/
 </div>
 </div>
 <div class="section" id="launch-network">
-<h2>Launch Network<a class="headerlink" href="#launch-network" title="Permalink to this headline">#</a></h2>
+<h2>Launch Network<a class="headerlink" href="#launch-network" title="Permalink to this headline">¶</a></h2>
 <p>Execute the <code class="docutils literal notranslate"><span class="pre">terrad</span></code> binary on your new validator’s machine and wait until network launch:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo systemctl start terrad
 </pre></div>
@@ -1558,7 +1560,7 @@ mv ./gentx/* ~/.terra/config/gentx/
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="../develop/guides/smart-contracts/upgrade-cosmwasm.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1681,8 +1683,7 @@ mv ./gentx/* ~/.terra/config/gentx/
       </div>
     </div>
   
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>

@@ -7,9 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Terra Station Mobile App &#8212; Terra Docs  documentation</title>
     
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -19,6 +18,10 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
+    
+      
+
+    
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
@@ -29,8 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/custom.css" />
     
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
@@ -53,7 +55,7 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -1303,7 +1305,7 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="terra-station-mobile-app">
-<h1>Terra Station Mobile App<a class="headerlink" href="#terra-station-mobile-app" title="Permalink to this headline">#</a></h1>
+<h1>Terra Station Mobile App<a class="headerlink" href="#terra-station-mobile-app" title="Permalink to this headline">¶</a></h1>
 <p>Terra Station Mobile is an application that enables users to interact with Terra Core.</p>
 <p>Terra Station Mobile allows users to:</p>
 <ul class="simple">
@@ -1312,20 +1314,20 @@
 <li><p>Use QRCodes for easy interactions when sending assets and recovering wallets</p></li>
 </ul>
 <div class="section" id="url-scheme">
-<h2>URL Scheme<a class="headerlink" href="#url-scheme" title="Permalink to this headline">#</a></h2>
+<h2>URL Scheme<a class="headerlink" href="#url-scheme" title="Permalink to this headline">¶</a></h2>
 <p>Terra Station Mobile includes a custom <a class="reference external" href="https://developer.apple.com/documentation/xcode/defining-a-custom-url-scheme-for-your-app">URL Scheme</a> that lets developers trigger different actions in the app.</p>
 <p>These URL handlers can be opened by scanning a QR code or opening the link directly.</p>
 <div class="section" id="send">
-<h3>Send<a class="headerlink" href="#send" title="Permalink to this headline">#</a></h3>
+<h3>Send<a class="headerlink" href="#send" title="Permalink to this headline">¶</a></h3>
 <p>The send function allows a user to send a specified amount of funds to a recipient. This function can be used to accept payment for goods and other point-of-sale configurations.</p>
 <div class="section" id="url">
-<h4>URL<a class="headerlink" href="#url" title="Permalink to this headline">#</a></h4>
+<h4>URL<a class="headerlink" href="#url" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>terrastation://send/?payload=${base64 json}
 </pre></div>
 </div>
 </div>
 <div class="section" id="payload-format">
-<h4>Payload format<a class="headerlink" href="#payload-format" title="Permalink to this headline">#</a></h4>
+<h4>Payload format<a class="headerlink" href="#payload-format" title="Permalink to this headline">¶</a></h4>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Key</p></th>
@@ -1354,7 +1356,7 @@
 </table>
 </div>
 <div class="section" id="example">
-<h4>Example<a class="headerlink" href="#example" title="Permalink to this headline">#</a></h4>
+<h4>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h4>
 <p><strong>Payload:</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
   <span class="s2">&quot;address&quot;</span><span class="p">:</span> <span class="s2">&quot;terra1dcegyrekltswvyy0xy69ydgxn9x8x32zdtapd8&quot;</span><span class="p">,</span>
@@ -1385,7 +1387,7 @@
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="station-extension.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1508,8 +1510,7 @@
       </div>
     </div>
   
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>

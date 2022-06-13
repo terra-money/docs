@@ -7,9 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Governance &#8212; Terra Docs  documentation</title>
     
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -19,6 +18,10 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
+    
+      
+
+    
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
@@ -29,8 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/custom.css" />
     
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
@@ -55,7 +57,7 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -1521,7 +1523,7 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="governance">
-<h1>Governance <img alt="../../../_images/Governance.svg" height="40px" src="../../../_images/Governance.svg" /><a class="headerlink" href="#governance" title="Permalink to this headline">#</a></h1>
+<h1>Governance <img alt="../../../_images/Governance.svg" height="40px" src="../../../_images/Governance.svg" /><a class="headerlink" href="#governance" title="Permalink to this headline">¶</a></h1>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>Terra’s Governance module inherits from Cosmos SDK’s <a class="reference external" href="https://docs.cosmos.network/master/modules/gov/"><code class="docutils literal notranslate"><span class="pre">gov</span></code></a> module. This document is a stub, and covers mainly important Terra-specific notes about how it is used.</p>
@@ -1530,10 +1532,10 @@
 <p>Check the <a class="reference internal" href="../terrad/subcommands.html#tx-gov-submit-proposal"><span class="std std-doc">Governance section of the <code class="docutils literal notranslate"><span class="pre">terrad</span></code> Reference</span></a> to see examples of how to participate in the Governance process.</p>
 <p>To learn how to vote with your staked Luna or submit proposals, visit the <a class="reference internal" href="../../learn/terra-station/governance.html"><span class="doc std std-doc">Terra Station governance guide</span></a>.</p>
 <div class="section" id="concepts">
-<h2>Concepts<a class="headerlink" href="#concepts" title="Permalink to this headline">#</a></h2>
+<h2>Concepts<a class="headerlink" href="#concepts" title="Permalink to this headline">¶</a></h2>
 <p>The following is the governance proposal procedure:</p>
 <div class="section" id="deposit-period">
-<h3>Deposit Period<a class="headerlink" href="#deposit-period" title="Permalink to this headline">#</a></h3>
+<h3>Deposit Period<a class="headerlink" href="#deposit-period" title="Permalink to this headline">¶</a></h3>
 <p>After a proposal is submitted, it enters the deposit period, where it must reach a total minimum deposit of 512 Luna within 7 days from the time of its submission. The deposit threshold is reached when the sum of the initial deposit (from the proposer) and the deposits from all other interested network participants meet or exceed 512 Luna.</p>
 <p>Deposits protect against unnecessary proposals and spam.</p>
 <p>Deposits get refunded if all of the following conditions are met:</p>
@@ -1551,7 +1553,7 @@
 </ul>
 </div>
 <div class="section" id="voting-period">
-<h3>Voting Period<a class="headerlink" href="#voting-period" title="Permalink to this headline">#</a></h3>
+<h3>Voting Period<a class="headerlink" href="#voting-period" title="Permalink to this headline">¶</a></h3>
 <p>If the minimum deposit has been reached before the end of the deposit period, then the proposal goes into a one-week voting period. While the proposal is in voting, holders of staked Luna can cast votes for the proposal. The 4 voting options available are:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Yes</span></code> - in favor</p></li>
@@ -1562,7 +1564,7 @@
 <p>Voting is done by holders of bonded LUNA on a 1 bonded LUNA = 1 vote basis. As such, validators hold the most influence over the outcome of voting, and delegators by default inherit the vote of their validator if they don’t vote.</p>
 </div>
 <div class="section" id="tallying">
-<h3>Tallying<a class="headerlink" href="#tallying" title="Permalink to this headline">#</a></h3>
+<h3>Tallying<a class="headerlink" href="#tallying" title="Permalink to this headline">¶</a></h3>
 <p>For a proposal to pass, the following conditions must be met:</p>
 <ol class="arabic simple">
 <li><p>Voter participation must be at least <code class="docutils literal notranslate"><span class="pre">quorum</span></code> <span class="math notranslate nohighlight">\(Q\)</span>:</p></li>
@@ -1586,15 +1588,15 @@
 </div>
 </div>
 <div class="section" id="proposal-implementation">
-<h3>Proposal Implementation<a class="headerlink" href="#proposal-implementation" title="Permalink to this headline">#</a></h3>
+<h3>Proposal Implementation<a class="headerlink" href="#proposal-implementation" title="Permalink to this headline">¶</a></h3>
 <p>Once a governance proposal passes, the changes described are put into effect by the proposal handler. Generic proposals such as a <code class="docutils literal notranslate"><span class="pre">TextProposal</span></code> must be reviewed by Terra protocol developers and the community for decisions on how to manually implement.</p>
 <p>Although parameter changes get updated immediately, they generally are not put into effect until the next epoch operation. Epochs occur every 100800 blocks or roughly every 7.7 days, given a 6.6-second block time.</p>
 </div>
 </div>
 <div class="section" id="data">
-<h2>Data<a class="headerlink" href="#data" title="Permalink to this headline">#</a></h2>
+<h2>Data<a class="headerlink" href="#data" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="proposal">
-<h3>Proposal<a class="headerlink" href="#proposal" title="Permalink to this headline">#</a></h3>
+<h3>Proposal<a class="headerlink" href="#proposal" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">type</span><span class="w"> </span><span class="nx">Proposal</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">	</span><span class="nx">Content</span><span class="w"> </span><span class="s">`json:&quot;content&quot; yaml:&quot;content&quot;`</span><span class="w"> </span><span class="c1">// Proposal content interface</span><span class="w"></span>
 
@@ -1616,9 +1618,9 @@
 </div>
 </div>
 <div class="section" id="message-types">
-<h2>Message Types<a class="headerlink" href="#message-types" title="Permalink to this headline">#</a></h2>
+<h2>Message Types<a class="headerlink" href="#message-types" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="msgsubmitproposal">
-<h3>MsgSubmitProposal<a class="headerlink" href="#msgsubmitproposal" title="Permalink to this headline">#</a></h3>
+<h3>MsgSubmitProposal<a class="headerlink" href="#msgsubmitproposal" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">type</span><span class="w"> </span><span class="nx">MsgSubmitProposal</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">	</span><span class="nx">Content</span><span class="w">        </span><span class="nx">Content</span><span class="w">        </span><span class="s">`json:&quot;content&quot; yaml:&quot;content&quot;`</span><span class="w"></span>
 <span class="w">	</span><span class="nx">InitialDeposit</span><span class="w"> </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">Coins</span><span class="w">      </span><span class="s">`json:&quot;initial_deposit&quot; yaml:&quot;initial_deposit&quot;`</span><span class="w"> </span><span class="c1">//  Initial deposit paid by sender. Must be strictly positive</span><span class="w"></span>
@@ -1628,7 +1630,7 @@
 </div>
 </div>
 <div class="section" id="msgdeposit">
-<h3>MsgDeposit<a class="headerlink" href="#msgdeposit" title="Permalink to this headline">#</a></h3>
+<h3>MsgDeposit<a class="headerlink" href="#msgdeposit" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">type</span><span class="w"> </span><span class="nx">MsgDeposit</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">	</span><span class="nx">ProposalID</span><span class="w"> </span><span class="kt">uint64</span><span class="w">         </span><span class="s">`json:&quot;proposal_id&quot; yaml:&quot;proposal_id&quot;`</span><span class="w"> </span><span class="c1">// ID of the proposal</span><span class="w"></span>
 <span class="w">	</span><span class="nx">Depositor</span><span class="w">  </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">AccAddress</span><span class="w"> </span><span class="s">`json:&quot;depositor&quot; yaml:&quot;depositor&quot;`</span><span class="w">     </span><span class="c1">// Address of the depositor</span><span class="w"></span>
@@ -1638,7 +1640,7 @@
 </div>
 </div>
 <div class="section" id="msgvote">
-<h3>MsgVote<a class="headerlink" href="#msgvote" title="Permalink to this headline">#</a></h3>
+<h3>MsgVote<a class="headerlink" href="#msgvote" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">type</span><span class="w"> </span><span class="nx">MsgVote</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">	</span><span class="nx">ProposalID</span><span class="w"> </span><span class="kt">uint64</span><span class="w">         </span><span class="s">`json:&quot;proposal_id&quot; yaml:&quot;proposal_id&quot;`</span><span class="w"> </span><span class="c1">// ID of the proposal</span><span class="w"></span>
 <span class="w">	</span><span class="nx">Voter</span><span class="w">      </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">AccAddress</span><span class="w"> </span><span class="s">`json:&quot;voter&quot; yaml:&quot;voter&quot;`</span><span class="w">             </span><span class="c1">//  address of the voter</span><span class="w"></span>
@@ -1649,9 +1651,9 @@
 </div>
 </div>
 <div class="section" id="proposals">
-<h2>Proposals<a class="headerlink" href="#proposals" title="Permalink to this headline">#</a></h2>
+<h2>Proposals<a class="headerlink" href="#proposals" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="text-proposal">
-<h3>Text Proposal<a class="headerlink" href="#text-proposal" title="Permalink to this headline">#</a></h3>
+<h3>Text Proposal<a class="headerlink" href="#text-proposal" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">type</span><span class="w"> </span><span class="nx">TextProposal</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">	</span><span class="nx">Title</span><span class="w">       </span><span class="kt">string</span><span class="w"> </span><span class="s">`json:&quot;title&quot; yaml:&quot;title&quot;`</span><span class="w"></span>
 <span class="w">	</span><span class="nx">Description</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="s">`json:&quot;description&quot; yaml:&quot;description&quot;`</span><span class="w"></span>
@@ -1661,7 +1663,7 @@
 <p>Text Proposals are used to create general-purpose petitions, such as asking core developers or community members to implement a specific feature. The community can reference a passed Text Proposal to the core developers or community members to indicate that a feature that potentially requires a soft or hard fork is in significant demand.</p>
 </div>
 <div class="section" id="parameter-change-proposals">
-<h3>Parameter Change Proposals<a class="headerlink" href="#parameter-change-proposals" title="Permalink to this headline">#</a></h3>
+<h3>Parameter Change Proposals<a class="headerlink" href="#parameter-change-proposals" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">type</span><span class="w"> </span><span class="nx">ParameterChangeProposal</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">	</span><span class="nx">Title</span><span class="w">       </span><span class="kt">string</span><span class="w">        </span><span class="s">`json:&quot;title&quot; yaml:&quot;title&quot;`</span><span class="w"></span>
 <span class="w">	</span><span class="nx">Description</span><span class="w"> </span><span class="kt">string</span><span class="w">        </span><span class="s">`json:&quot;description&quot; yaml:&quot;description&quot;`</span><span class="w"></span>
@@ -1683,7 +1685,7 @@
 <p>Parameter Change Proposals are a special type of proposal which, once passed, will automatically go into effect by directly altering the network’s specified parameter.</p>
 </div>
 <div class="section" id="software-upgrade-proposals">
-<h3>Software Upgrade Proposals<a class="headerlink" href="#software-upgrade-proposals" title="Permalink to this headline">#</a></h3>
+<h3>Software Upgrade Proposals<a class="headerlink" href="#software-upgrade-proposals" title="Permalink to this headline">¶</a></h3>
 <div class="admonition danger">
 <p class="admonition-title">Danger</p>
 <p>Software upgrade proposals exist because they are inherited from the Cosmos SDK, but they are temporarily unavailable because they have not been implemented yet. Therefore, they share the same semantics as a simple text proposal. If you submit this type of proposal, you might lose your Luna deposit.</p>
@@ -1691,9 +1693,9 @@
 </div>
 </div>
 <div class="section" id="transitions">
-<h2>Transitions<a class="headerlink" href="#transitions" title="Permalink to this headline">#</a></h2>
+<h2>Transitions<a class="headerlink" href="#transitions" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="end-block">
-<h3>End-Block<a class="headerlink" href="#end-block" title="Permalink to this headline">#</a></h3>
+<h3>End-Block<a class="headerlink" href="#end-block" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p>This section was taken from the official Cosmos SDK docs and placed here for your convenience to understand the Governance process.</p>
 </div></blockquote>
@@ -1755,7 +1757,7 @@
 </div>
 </div>
 <div class="section" id="parameters">
-<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">#</a></h2>
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
 <p>The subspace for the Governance module is <code class="docutils literal notranslate"><span class="pre">gov</span></code>.</p>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">type</span><span class="w"> </span><span class="nx">DepositParams</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">	</span><span class="nx">MinDeposit</span><span class="w">       </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">Coins</span><span class="w">     </span><span class="s">`json:&quot;min_deposit,omitempty&quot; yaml:&quot;min_deposit,omitempty&quot;`</span><span class="w"></span>
@@ -1775,7 +1777,7 @@
 </div>
 </div>
 <div class="section" id="genesis-parameters">
-<h2>Genesis parameters<a class="headerlink" href="#genesis-parameters" title="Permalink to this headline">#</a></h2>
+<h2>Genesis parameters<a class="headerlink" href="#genesis-parameters" title="Permalink to this headline">¶</a></h2>
 <p>The genesis parameters for the governance module outlined in the <a class="reference external" href="https://github.com/terra-money/genesis-tools/blob/main/src/genesis_builder.py#L147">Genesis Builder Script</a> are as follows:</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span>    <span class="c1"># Gov: change min deposit to 512 LUNA and deposit period to 7 days</span>
     <span class="n">genesis</span><span class="p">[</span><span class="s1">&#39;app_state&#39;</span><span class="p">][</span><span class="s1">&#39;gov&#39;</span><span class="p">][</span><span class="s1">&#39;deposit_params&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
@@ -1800,7 +1802,7 @@
 </pre></div>
 </div>
 <div class="section" id="mindeposit">
-<h3>MinDeposit<a class="headerlink" href="#mindeposit" title="Permalink to this headline">#</a></h3>
+<h3>MinDeposit<a class="headerlink" href="#mindeposit" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">Coins</span></code></p></li>
 <li><p>denom: <code class="docutils literal notranslate"><span class="pre">uluna</span></code></p></li>
@@ -1809,7 +1811,7 @@
 <p>The minimum deposit amount for a proposal to enter a voting period. Currently 512 Luna.</p>
 </div>
 <div class="section" id="maxdepositperiod">
-<h3>MaxDepositPeriod<a class="headerlink" href="#maxdepositperiod" title="Permalink to this headline">#</a></h3>
+<h3>MaxDepositPeriod<a class="headerlink" href="#maxdepositperiod" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">time.Duration</span></code> (seconds)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">&quot;max_deposit_period&quot;:</span> <span class="pre">&quot;604800s&quot;</span></code></p></li>
@@ -1817,7 +1819,7 @@
 <p>Maximum period for Luna holders to deposit on a proposal. Currently 1 week.</p>
 </div>
 <div class="section" id="quorum">
-<h3>Quorum<a class="headerlink" href="#quorum" title="Permalink to this headline">#</a></h3>
+<h3>Quorum<a class="headerlink" href="#quorum" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">Dec</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">&quot;quorum&quot;:</span> <span class="pre">&quot;0.100000000000000000&quot;,</span></code></p></li>
@@ -1825,7 +1827,7 @@
 <p>Minimum percentage of total stake needed to vote for a result to be considered valid.</p>
 </div>
 <div class="section" id="threshold">
-<h3>Threshold<a class="headerlink" href="#threshold" title="Permalink to this headline">#</a></h3>
+<h3>Threshold<a class="headerlink" href="#threshold" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">Dec</span></code></p></li>
 <li><p>default value: 50%</p></li>
@@ -1833,7 +1835,7 @@
 <p>Minimum proportion of Yes votes for a proposal to pass.</p>
 </div>
 <div class="section" id="veto">
-<h3>Veto<a class="headerlink" href="#veto" title="Permalink to this headline">#</a></h3>
+<h3>Veto<a class="headerlink" href="#veto" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">Dec</span></code></p></li>
 <li><p>default value: <code class="docutils literal notranslate"><span class="pre">0.33</span></code></p></li>
@@ -1841,7 +1843,7 @@
 <p>Minimum value of Veto votes to Total votes ratio for proposal to be vetoed.</p>
 </div>
 <div class="section" id="votingperiod">
-<h3>VotingPeriod<a class="headerlink" href="#votingperiod" title="Permalink to this headline">#</a></h3>
+<h3>VotingPeriod<a class="headerlink" href="#votingperiod" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">time.Duration</span></code> (seconds)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">&quot;voting_period&quot;:</span> <span class="pre">&quot;604800s&quot;</span></code></p></li>
@@ -1856,7 +1858,7 @@
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="spec-feegrant.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1979,8 +1981,7 @@
       </div>
     </div>
   
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>

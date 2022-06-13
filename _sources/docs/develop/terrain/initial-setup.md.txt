@@ -47,6 +47,25 @@ Use npm to install the terrain command-line tool globally:
 npm install -g @terra-money/terrain
 ```
 
+:::{admonition} Check your Terrain version
+:class: warning
+
+Make sure you are using the latest version of Terrain. Previous versions may cause errors. 
+
+```sh
+terrain --version
+```
+
+If you installed Terrain from a previous, make sure to update it: 
+
+```sh
+npm uninstall -g @iboss/terrain
+npm install -g @terra-money/terrain
+```
+
+:::
+
+
 ## Next steps: LocalTerra or Testnet
 
 Depending on your setup, you can either install LocalTerra or use the Pisco testnet to power Terrain.

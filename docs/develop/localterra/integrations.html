@@ -7,9 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Integrations &#8212; Terra Docs  documentation</title>
     
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -19,6 +18,10 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
+    
+      
+
+    
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
@@ -29,8 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/custom.css" />
     
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
@@ -53,7 +55,7 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -1285,14 +1287,14 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="integrations">
-<h1>Integrations<a class="headerlink" href="#integrations" title="Permalink to this headline">#</a></h1>
+<h1>Integrations<a class="headerlink" href="#integrations" title="Permalink to this headline">¶</a></h1>
 <p>You can integrate LocalTerra in Terra Station, <code class="docutils literal notranslate"><span class="pre">terrad</span></code>, and JavaScript and Python SDKs.</p>
 <div class="section" id="terra-station">
-<h2>Terra Station<a class="headerlink" href="#terra-station" title="Permalink to this headline">#</a></h2>
+<h2>Terra Station<a class="headerlink" href="#terra-station" title="Permalink to this headline">¶</a></h2>
 <p>Terra Station has built-in support for LocalTerra for quick and easy interaction. <a class="reference external" href="https://station.terra.money/">Open Station</a> and switch to the <code class="docutils literal notranslate"><span class="pre">Localterra</span></code> network.</p>
 </div>
 <div class="section" id="terrad">
-<h2>terrad<a class="headerlink" href="#terrad" title="Permalink to this headline">#</a></h2>
+<h2>terrad<a class="headerlink" href="#terrad" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
 <li><p>Ensure the same version of <code class="docutils literal notranslate"><span class="pre">terrad</span></code> and LocalTerra are installed.</p></li>
 <li><p>Use <code class="docutils literal notranslate"><span class="pre">terrad</span></code> to talk to your LocalTerra <code class="docutils literal notranslate"><span class="pre">terrad</span></code> node:</p>
@@ -1313,7 +1315,7 @@
 </ol>
 </div>
 <div class="section" id="terra-python-sdk">
-<h2>Terra Python SDK<a class="headerlink" href="#terra-python-sdk" title="Permalink to this headline">#</a></h2>
+<h2>Terra Python SDK<a class="headerlink" href="#terra-python-sdk" title="Permalink to this headline">¶</a></h2>
 <p>Connect to the chain through LocalTerra’s LCD server:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">terra_sdk.client.lcd</span> <span class="kn">import</span> <span class="n">LCDClient</span>
 <span class="n">terra</span> <span class="o">=</span> <span class="n">LCDClient</span><span class="p">(</span><span class="s2">&quot;localterra&quot;</span><span class="p">,</span> <span class="s2">&quot;http://localhost:1317&quot;</span><span class="p">)</span>
@@ -1321,7 +1323,7 @@
 </div>
 </div>
 <div class="section" id="terra-javascript-sdk">
-<h2>Terra JavaScript SDK<a class="headerlink" href="#terra-javascript-sdk" title="Permalink to this headline">#</a></h2>
+<h2>Terra JavaScript SDK<a class="headerlink" href="#terra-javascript-sdk" title="Permalink to this headline">¶</a></h2>
 <p>Connect to the chain through LocalTerra’s LCD server:</p>
 <div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">LCDClient</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@terra-money/terra.js&quot;</span><span class="p">;</span><span class="w"></span>
 
@@ -1339,7 +1341,7 @@
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="configure.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1462,8 +1464,7 @@
       </div>
     </div>
   
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>

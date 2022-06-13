@@ -7,9 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Auth &#8212; Terra Docs  documentation</title>
     
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -19,6 +18,10 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
+    
+      
+
+    
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
@@ -29,8 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/custom.css" />
     
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
@@ -53,7 +55,7 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -1329,18 +1331,18 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="auth">
-<h1>Auth<a class="headerlink" href="#auth" title="Permalink to this headline">#</a></h1>
+<h1>Auth<a class="headerlink" href="#auth" title="Permalink to this headline">¶</a></h1>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>Terra’s auth module inherits from Cosmos SDK’s <a class="reference external" href="https://docs.cosmos.network/master/modules/auth/"><code class="docutils literal notranslate"><span class="pre">auth</span></code></a> module. This document is a stub and covers mainly important Terra-specific notes about how it is used.</p>
 </div>
 <p>Terra’s Auth module extends the functionality from Cosmos SDK’s <code class="docutils literal notranslate"><span class="pre">auth</span></code> module with a modified ante handler, which applies basic transaction validity checks, such as signatures, nonces, and auxiliary fields. This module also defines a special vesting account type that handles the logic for token vesting from the Luna presale.</p>
 <div class="section" id="gas-fee">
-<h2>Gas Fee<a class="headerlink" href="#gas-fee" title="Permalink to this headline">#</a></h2>
+<h2>Gas Fee<a class="headerlink" href="#gas-fee" title="Permalink to this headline">¶</a></h2>
 <p>Like all transactions on the Terra blockchain, <a class="reference internal" href="spec-bank.html#msgsend"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">MsgSend</span></code></span></a> and <a class="reference internal" href="spec-bank.html#msgmultisend"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">MsgMultiSend</span></code></span></a> incur gas fees. These fees are determined by a validator’s minimum gas price and the complexity of the transaction. More complex transactions incur higher fees. Gas fees are specified by the sender when a transaction is outbound. For more information on how gas is calculated, see <a class="reference internal" href="../terrad/using-terrad.html#fees"><span class="std std-doc">fees</span></a>.</p>
 </div>
 <div class="section" id="parameters">
-<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">#</a></h2>
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
 <p>The subspace for the Auth module is <code class="docutils literal notranslate"><span class="pre">auth</span></code>.</p>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">type</span><span class="w"> </span><span class="nx">Params</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="nx">MaxMemoCharacters</span><span class="w">      </span><span class="kt">uint64</span><span class="w"> </span><span class="s">`json:&quot;max_memo_characters&quot; yaml:&quot;max_memo_characters&quot;`</span><span class="w"></span>
@@ -1352,7 +1354,7 @@
 </pre></div>
 </div>
 <div class="section" id="genesis-parameters">
-<h3>Genesis parameters<a class="headerlink" href="#genesis-parameters" title="Permalink to this headline">#</a></h3>
+<h3>Genesis parameters<a class="headerlink" href="#genesis-parameters" title="Permalink to this headline">¶</a></h3>
 <p>The genesis parameters outlined in the <a class="reference external" href="https://github.com/terra-money/genesis-tools/blob/6ec96530820f7055cce6dd767a1d8c321d702fab/src/genesis_builder.py#L75">Genesis Builder Script</a> are as follows:</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span>    <span class="c1"># Auth: set max memo characters to 512</span>
     <span class="n">genesis</span><span class="p">[</span><span class="s1">&#39;app_state&#39;</span><span class="p">][</span><span class="s1">&#39;auth&#39;</span><span class="p">][</span><span class="s1">&#39;params&#39;</span><span class="p">][</span><span class="s1">&#39;max_memo_characters&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;512&#39;</span>
@@ -1360,7 +1362,7 @@
 </div>
 </div>
 <div class="section" id="maxmemocharacters">
-<h3>MaxMemoCharacters<a class="headerlink" href="#maxmemocharacters" title="Permalink to this headline">#</a></h3>
+<h3>MaxMemoCharacters<a class="headerlink" href="#maxmemocharacters" title="Permalink to this headline">¶</a></h3>
 <p>The maximum permitted number of characters in the memo of a transaction.</p>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">uint64</span></code></p></li>
@@ -1368,7 +1370,7 @@
 </ul>
 </div>
 <div class="section" id="txsiglimit">
-<h3>TxSigLimit<a class="headerlink" href="#txsiglimit" title="Permalink to this headline">#</a></h3>
+<h3>TxSigLimit<a class="headerlink" href="#txsiglimit" title="Permalink to this headline">¶</a></h3>
 <p>The maximum number of signers in a transaction. A single transaction can have multiple messages and multiple signers.</p>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">uint64</span></code></p></li>
@@ -1376,7 +1378,7 @@
 </ul>
 </div>
 <div class="section" id="txsizecostperbyte">
-<h3>TxSizeCostPerByte<a class="headerlink" href="#txsizecostperbyte" title="Permalink to this headline">#</a></h3>
+<h3>TxSizeCostPerByte<a class="headerlink" href="#txsizecostperbyte" title="Permalink to this headline">¶</a></h3>
 <p>The cost per byte used to compute the gas consumption of a transaction. <code class="docutils literal notranslate"><span class="pre">TxSizeCostPerByte</span> <span class="pre">*</span> <span class="pre">txsize</span></code>.</p>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">uint64</span></code></p></li>
@@ -1384,7 +1386,7 @@
 </ul>
 </div>
 <div class="section" id="sigverifycosted25519">
-<h3>SigVerifyCostED25519<a class="headerlink" href="#sigverifycosted25519" title="Permalink to this headline">#</a></h3>
+<h3>SigVerifyCostED25519<a class="headerlink" href="#sigverifycosted25519" title="Permalink to this headline">¶</a></h3>
 <p>The gas cost for verifying ED25519 signatures.</p>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">uint64</span></code></p></li>
@@ -1392,7 +1394,7 @@
 </ul>
 </div>
 <div class="section" id="sigverifycostsecp256k1">
-<h3>SigVerifyCostSecp256k1<a class="headerlink" href="#sigverifycostsecp256k1" title="Permalink to this headline">#</a></h3>
+<h3>SigVerifyCostSecp256k1<a class="headerlink" href="#sigverifycostsecp256k1" title="Permalink to this headline">¶</a></h3>
 <p>The gas cost for verifying Secp256k1 signatures.</p>
 <ul class="simple">
 <li><p>type: <code class="docutils literal notranslate"><span class="pre">uint64</span></code></p></li>
@@ -1407,7 +1409,7 @@
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="README.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1530,8 +1532,7 @@
       </div>
     </div>
   
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>

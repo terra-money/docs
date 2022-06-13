@@ -7,9 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Get started with Terra.js &#8212; Terra Docs  documentation</title>
     
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -19,6 +18,10 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
+    
+      
+
+    
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
@@ -29,8 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/custom.css" />
     
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
@@ -53,7 +55,7 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -1325,7 +1327,7 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="get-started-with-terra-js">
-<h1>Get started with Terra.js<a class="headerlink" href="#get-started-with-terra-js" title="Permalink to this headline">#</a></h1>
+<h1>Get started with Terra.js<a class="headerlink" href="#get-started-with-terra-js" title="Permalink to this headline">¶</a></h1>
 <p>This is an in-depth guide on how to use the <code class="docutils literal notranslate"><span class="pre">terra.js</span></code> SDK.</p>
 <p>In this tutorial, you’ll learn how to:</p>
 <ol class="arabic simple">
@@ -1337,14 +1339,14 @@
 </ol>
 <p>By the end of this guide, you’ll be able to execute a token swap from your application using Terra.js.</p>
 <div class="section" id="prerequisites">
-<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://docs.npmjs.com/downloading-and-installing-node-js-and-npm">npm and node.js</a></p></li>
 <li><p>Terra Station browser extension</p></li>
 </ul>
 </div>
 <div class="section" id="set-up-your-project">
-<h2>1. Set up your project<a class="headerlink" href="#set-up-your-project" title="Permalink to this headline">#</a></h2>
+<h2>1. Set up your project<a class="headerlink" href="#set-up-your-project" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
 <li><p>Create a new directory for your project:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>mkdir my-terra-js-project
@@ -1375,7 +1377,7 @@ touch index.js
 </ol>
 </div>
 <div class="section" id="initialize-the-lcd">
-<h2>2. Initialize the LCD<a class="headerlink" href="#initialize-the-lcd" title="Permalink to this headline">#</a></h2>
+<h2>2. Initialize the LCD<a class="headerlink" href="#initialize-the-lcd" title="Permalink to this headline">¶</a></h2>
 <p>Terra’s LCD or Light Client Daemon allows users to connect to the blockchain, make queries, create wallets, and submit transactions. It’s the main workhorse behind <code class="docutils literal notranslate"><span class="pre">terra.js</span></code>.</p>
 <ol class="arabic">
 <li><p>Install a fetch library to make HTTP requests and dynamically pull recommended gas prices. You can use the one referenced below or choose your favorite.</p>
@@ -1409,7 +1411,7 @@ touch index.js
 </ol>
 </div>
 <div class="section" id="create-a-pisco-testnet-wallet">
-<h2>3. Create a pisco testnet wallet<a class="headerlink" href="#create-a-pisco-testnet-wallet" title="Permalink to this headline">#</a></h2>
+<h2>3. Create a pisco testnet wallet<a class="headerlink" href="#create-a-pisco-testnet-wallet" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
 <li><p>You’ll need a wallet to sign and submit transactions. <span class="xref myst">Create a new wallet</span> using the Terra Station extension. Be sure to save your mnemonic key!</p></li>
 <li><p>After creating your wallet, you’ll need to set it to use the testnet. Click the gear icon in the extension and change the network from <code class="docutils literal notranslate"><span class="pre">mainnet</span></code> to <code class="docutils literal notranslate"><span class="pre">testnet</span></code>.</p></li>
@@ -1431,11 +1433,11 @@ For security reasons, it’s better to store your mnemonic key data in your envi
 </ol>
 </div>
 <div class="section" id="find-a-contract-address">
-<h2>4. Find a contract address<a class="headerlink" href="#find-a-contract-address" title="Permalink to this headline">#</a></h2>
+<h2>4. Find a contract address<a class="headerlink" href="#find-a-contract-address" title="Permalink to this headline">¶</a></h2>
 <p>To find the contract address for a specific Terraswap pair, visit <a class="reference external" href="https://app.terraswap.io/">https://app.terraswap.io/</a></p>
 </div>
 <div class="section" id="query-a-terraswap-contract-and-set-up-the-transaction">
-<h2>5. Query a Terraswap contract and set up the transaction<a class="headerlink" href="#query-a-terraswap-contract-and-set-up-the-transaction" title="Permalink to this headline">#</a></h2>
+<h2>5. Query a Terraswap contract and set up the transaction<a class="headerlink" href="#query-a-terraswap-contract-and-set-up-the-transaction" title="Permalink to this headline">¶</a></h2>
 <p>Before you can perform a swap, you’ll need a belief price. You can calculate the belief price of one token by querying the proportion of the two pooled tokens. The belief price +/- the <code class="docutils literal notranslate"><span class="pre">max_spread</span></code> is the range of possible acceptable prices for this swap.</p>
 <ol class="arabic">
 <li><p>Add the following code to your <code class="docutils literal notranslate"><span class="pre">index.js</span></code> file. Make sure the contract address is correct.</p>
@@ -1472,7 +1474,7 @@ For security reasons, it’s better to store your mnemonic key data in your envi
 </ol>
 </div>
 <div class="section" id="broadcast-the-transaction">
-<h2>6. Broadcast the transaction<a class="headerlink" href="#broadcast-the-transaction" title="Permalink to this headline">#</a></h2>
+<h2>6. Broadcast the transaction<a class="headerlink" href="#broadcast-the-transaction" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
 <li><p>Add the following code to <code class="docutils literal notranslate"><span class="pre">index.js</span></code> to create, sign, and broadcast the transaction. It’s important to specify <code class="docutils literal notranslate"><span class="pre">uluna</span></code> as the fee denomination becuase Luna is the only denomination the faucet sends.</p>
 <div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">tx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">createAndSignTx</span><span class="p">({</span><span class="w"></span>
@@ -1494,7 +1496,7 @@ For security reasons, it’s better to store your mnemonic key data in your envi
 <p>And that’s it! You can find other pool addresses <a class="reference external" href="https://app.terraswap.io/">here</a> to call other swaps. Be sure to use the correct testnet or mainnet contract address.</p>
 </div>
 <div class="section" id="more-examples">
-<h2>More examples<a class="headerlink" href="#more-examples" title="Permalink to this headline">#</a></h2>
+<h2>More examples<a class="headerlink" href="#more-examples" title="Permalink to this headline">¶</a></h2>
 <p>View the <a class="reference internal" href="common-examples.html"><span class="doc std std-doc">Common examples</span></a> section for more information on using Terra.js.</p>
 </div>
 </div>
@@ -1504,7 +1506,7 @@ For security reasons, it’s better to store your mnemonic key data in your envi
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="README.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1627,8 +1629,7 @@ For security reasons, it’s better to store your mnemonic key data in your envi
       </div>
     </div>
   
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>

@@ -7,9 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Keys &#8212; Terra Docs  documentation</title>
     
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -19,6 +18,10 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
+    
+      
+
+    
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
@@ -29,8 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/custom.css" />
     
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
@@ -53,7 +55,7 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -1305,14 +1307,14 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="keys">
-<h1>Keys<a class="headerlink" href="#keys" title="Permalink to this headline">#</a></h1>
+<h1>Keys<a class="headerlink" href="#keys" title="Permalink to this headline">¶</a></h1>
 <p>To perform actions using an account and private-public key pairs with Terra.js, you need an implementation of the <a class="reference external" href="https://github.com/terra-money/terra.js/blob/main/src/key/Key.ts"> <em>Key</em> </a> class, which provides an abstraction around the signing functions of an account. There are multiple implementations available:</p>
 <p><a class="reference external" href="https://github.com/terra-money/terra.js/blob/main/src/key/RawKey.ts"> <em>RawKey</em> </a>
 <a class="reference external" href="https://github.com/terra-money/terra.js/blob/main/src/key/MnemonicKey.ts"> <em>MnemonicKey</em> </a>
 <a class="reference external" href="https://github.com/terra-money/terra.js/blob/main/src/key/CLIKey.ts"> <em>CLIKey</em> </a></p>
 <p>You can also create a custom signing solution by extending the base <a class="reference external" href="https://github.com/terra-money/terra.js/blob/main/src/key/Key.ts"> <em>Key</em> </a> class.</p>
 <div class="section" id="rawkey">
-<h2><code class="docutils literal notranslate"><span class="pre">RawKey</span></code><a class="headerlink" href="#rawkey" title="Permalink to this headline">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">RawKey</span></code><a class="headerlink" href="#rawkey" title="Permalink to this headline">¶</a></h2>
 <p>The most basic implementation of a <code class="docutils literal notranslate"><span class="pre">Key</span></code> is a <code class="docutils literal notranslate"><span class="pre">RawKey</span></code>, which is created using a plain private key. <code class="docutils literal notranslate"><span class="pre">RawKey</span></code>  wraps the 32 bytes of a private key and supplies a corresponding public key:</p>
 <div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">RawKey</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@terra-money/terra.js&#39;</span><span class="p">;</span><span class="w"></span>
 <span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="nx">randomBytes</span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;crypto&#39;</span><span class="w"></span>
@@ -1327,7 +1329,7 @@
 </div>
 </div>
 <div class="section" id="mnemonickey">
-<h2><code class="docutils literal notranslate"><span class="pre">MnemonicKey</span></code><a class="headerlink" href="#mnemonickey" title="Permalink to this headline">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">MnemonicKey</span></code><a class="headerlink" href="#mnemonickey" title="Permalink to this headline">¶</a></h2>
 <p>A <code class="docutils literal notranslate"><span class="pre">MnemonicKey</span></code> derives itself from a 24-word  <a class="reference external" href="https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki"> BIP-39 </a> mnemonic as opposed to the bytes of a  private key.
 A <code class="docutils literal notranslate"><span class="pre">MnemonicKey</span></code> has various levels of definition:</p>
 <ul class="simple">
@@ -1366,7 +1368,7 @@ A <code class="docutils literal notranslate"><span class="pre">MnemonicKey</span
 </pre></div>
 </div>
 <div class="section" id="specifying-an-hd-path">
-<h3>Specifying an HD path<a class="headerlink" href="#specifying-an-hd-path" title="Permalink to this headline">#</a></h3>
+<h3>Specifying an HD path<a class="headerlink" href="#specifying-an-hd-path" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">MnemonicKey</span></code> can used to recover a wallet with a particular BIP44 HD path: <code class="docutils literal notranslate"><span class="pre">m/44'/${coinType}'/${account}'/0/${index}</span></code>.</p>
 <div class="tip admonition">
 <p class="admonition-title">HD keys</p>
@@ -1387,7 +1389,7 @@ A <code class="docutils literal notranslate"><span class="pre">MnemonicKey</span
 </div>
 </div>
 <div class="section" id="custom-key-implementation">
-<h2>Custom key implementation<a class="headerlink" href="#custom-key-implementation" title="Permalink to this headline">#</a></h2>
+<h2>Custom key implementation<a class="headerlink" href="#custom-key-implementation" title="Permalink to this headline">¶</a></h2>
 <p>If you need to write your own key management solution, you will need to subclass the abstract <code class="docutils literal notranslate"><span class="pre">Key</span></code> class and provide your own signing function. Instead of exposing details pertaining to your private key, you can specify a <code class="docutils literal notranslate"><span class="pre">sign()</span></code> function that forwards the signing request to a server or to a hardware wallet. The remaining functions related to signing (<code class="docutils literal notranslate"><span class="pre">createSignature()</span></code> and <code class="docutils literal notranslate"><span class="pre">signTx()</span></code>) are automatically provided and use <code class="docutils literal notranslate"><span class="pre">sign()</span></code> underneath.</p>
 <p>The following code listing is close to the implementation of <code class="docutils literal notranslate"><span class="pre">RawKey</span></code>, which illustrates how to write a custom <code class="docutils literal notranslate"><span class="pre">Key</span></code>:</p>
 <div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="nx">SHA256</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;crypto-js/sha256&#39;</span><span class="p">;</span><span class="w"></span>
@@ -1433,7 +1435,7 @@ A <code class="docutils literal notranslate"><span class="pre">MnemonicKey</span
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="ibc.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1556,8 +1558,7 @@ A <code class="docutils literal notranslate"><span class="pre">MnemonicKey</span
       </div>
     </div>
   
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>

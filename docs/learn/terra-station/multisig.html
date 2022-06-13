@@ -7,9 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Multisig wallets &#8212; Terra Docs  documentation</title>
     
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -19,6 +18,10 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
+    
+      
+
+    
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
@@ -29,8 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/custom.css" />
     
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
@@ -53,7 +55,7 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -1295,17 +1297,17 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="multisig-wallets">
-<h1>Multisig wallets<a class="headerlink" href="#multisig-wallets" title="Permalink to this headline">#</a></h1>
+<h1>Multisig wallets<a class="headerlink" href="#multisig-wallets" title="Permalink to this headline">¶</a></h1>
 <p>Multisig wallets are an advanced feature of Terra Station. If you’re using Terra Station for the first time, follow the <a class="reference internal" href="download/terra-station-desktop.html"><span class="doc std std-doc">Terra Station tutorial</span></a>.</p>
 <p>Multisig wallets enable a wallet to be controlled by multiple parties. A wallet manager creates a transaction and sends an encoded transaction message to the wallet signers. The signers sign the transaction and send back their signatures. The wallet manager then inputs the encoded transaction message along with the received signatures to complete the transaction.</p>
 <div class="section" id="prerequisites">
-<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Download the <a class="reference internal" href="download/terra-station-extension.html"><span class="doc std std-doc">Terra Station browser extension</span></a></p></li>
 </ul>
 </div>
 <div class="section" id="create-a-multisig-wallet">
-<h2>Create a multisig wallet<a class="headerlink" href="#create-a-multisig-wallet" title="Permalink to this headline">#</a></h2>
+<h2>Create a multisig wallet<a class="headerlink" href="#create-a-multisig-wallet" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
 <li><p>Open the Terra Station browser extension and click <strong>New multisig wallet</strong>.</p></li>
 <li><p>Enter the wallet addresses of each multisig user in the correct order.</p>
@@ -1320,7 +1322,7 @@
 </ol>
 </div>
 <div class="section" id="create-a-multisig-transaction">
-<h2>Create a multisig transaction<a class="headerlink" href="#create-a-multisig-transaction" title="Permalink to this headline">#</a></h2>
+<h2>Create a multisig transaction<a class="headerlink" href="#create-a-multisig-transaction" title="Permalink to this headline">¶</a></h2>
 <p>Multisig wallet managers initiate transactions and send coded strings for multisig participants to sign.</p>
 <ol class="arabic">
 <li><p>Open the Terra Station browser extension and connect to your multisig wallet.</p></li>
@@ -1340,7 +1342,7 @@
 </ol>
 </div>
 <div class="section" id="sign-a-multisig-transaction">
-<h2>Sign a multisig transaction<a class="headerlink" href="#sign-a-multisig-transaction" title="Permalink to this headline">#</a></h2>
+<h2>Sign a multisig transaction<a class="headerlink" href="#sign-a-multisig-transaction" title="Permalink to this headline">¶</a></h2>
 <p>Upon receiving an encoded transaction string, multisig signers can use the following steps to sign:</p>
 <ol class="arabic simple">
 <li><p>Open the Terra Station browser extension and connect to the wallet you provided to create the multisig wallet.</p></li>
@@ -1352,7 +1354,7 @@
 </ol>
 </div>
 <div class="section" id="post-a-multisig-tx">
-<h2>Post a multisig tx<a class="headerlink" href="#post-a-multisig-tx" title="Permalink to this headline">#</a></h2>
+<h2>Post a multisig tx<a class="headerlink" href="#post-a-multisig-tx" title="Permalink to this headline">¶</a></h2>
 <p>The final step in a multisig transaction is for the wallet manager to input the signatures:</p>
 <ol class="arabic simple">
 <li><p>Open the Terra Station browser extension and connect to the multisig wallet you created.</p></li>
@@ -1371,7 +1373,7 @@
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="governance.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1494,8 +1496,7 @@
       </div>
     </div>
   
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>

@@ -7,9 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Evidence &#8212; Terra Docs  documentation</title>
     
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -19,6 +18,10 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
+    
+      
+
+    
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
@@ -29,8 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/custom.css" />
     
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
@@ -53,7 +55,7 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -1381,7 +1383,7 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="evidence">
-<h1>Evidence<a class="headerlink" href="#evidence" title="Permalink to this headline">#</a></h1>
+<h1>Evidence<a class="headerlink" href="#evidence" title="Permalink to this headline">¶</a></h1>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>Terra’s evidence module inherits from Cosmos SDK’s <a class="reference external" href="https://docs.cosmos.network/master/modules/evidence/"><code class="docutils literal notranslate"><span class="pre">evidence</span></code></a> module. This document is a stub and covers mainly important Terra-specific notes about how it is used.</p>
@@ -1391,9 +1393,9 @@
 <p>All concrete evidence types must implement the <code class="docutils literal notranslate"><span class="pre">Evidence</span></code> interface contract. First, submitted <code class="docutils literal notranslate"><span class="pre">Evidence</span></code> is routed through the evidence module’s <code class="docutils literal notranslate"><span class="pre">Router</span></code>, where it attempts to find a corresponding registered <code class="docutils literal notranslate"><span class="pre">Handler</span></code> for that specific <code class="docutils literal notranslate"><span class="pre">Evidence</span></code> type. Each <code class="docutils literal notranslate"><span class="pre">Evidence</span></code> type must have a <code class="docutils literal notranslate"><span class="pre">Handler</span></code> registered with the evidence module’s keeper for it to be successfully routed and executed.</p>
 <p>Each corresponding handler must also fulfill the <code class="docutils literal notranslate"><span class="pre">Handler</span></code> interface contract. The <code class="docutils literal notranslate"><span class="pre">Handler</span></code> for a given <code class="docutils literal notranslate"><span class="pre">Evidence</span></code> type can perform any arbitrary state transitions, such as slashing, jailing, and <a class="reference internal" href="../../learn/glossary.html#tombstone"><span class="std std-doc">tombstoning</span></a>.</p>
 <div class="section" id="concepts">
-<h2>Concepts<a class="headerlink" href="#concepts" title="Permalink to this headline">#</a></h2>
+<h2>Concepts<a class="headerlink" href="#concepts" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id1">
-<h3>Evidence<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<h3>Evidence<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>Any concrete type of evidence submitted to the  module must fulfill the following <code class="docutils literal notranslate"><span class="pre">Evidence</span></code> contract. Not all concrete types of evidence will fulfill this contract in the same way, and some data might be entirely irrelevant to certain types of evidence. An additional <code class="docutils literal notranslate"><span class="pre">ValidatorEvidence</span></code>, which extends <code class="docutils literal notranslate"><span class="pre">Evidence</span></code>, has also been created to define a contract for evidence against malicious validators.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">Evidence</span> <span class="n">defines</span> <span class="n">the</span> <span class="n">contract</span> <span class="n">which</span> <span class="n">concrete</span> <span class="n">evidence</span> <span class="n">types</span> <span class="n">of</span> <span class="n">misbehavior</span>
 <span class="o">//</span> <span class="n">must</span> <span class="n">implement</span><span class="o">.</span>
@@ -1428,7 +1430,7 @@
 </div>
 </div>
 <div class="section" id="registration-and-handling">
-<h3>Registration and handling<a class="headerlink" href="#registration-and-handling" title="Permalink to this headline">#</a></h3>
+<h3>Registration and handling<a class="headerlink" href="#registration-and-handling" title="Permalink to this headline">¶</a></h3>
 <p>First, the evidence module must know about all the types of evidence it is expected to handle. Register the <code class="docutils literal notranslate"><span class="pre">Route</span></code> method in the <code class="docutils literal notranslate"><span class="pre">Evidence</span></code> contract with a <code class="docutils literal notranslate"><span class="pre">Router</span></code> as defined below. The <code class="docutils literal notranslate"><span class="pre">Router</span></code> accepts <code class="docutils literal notranslate"><span class="pre">Evidence</span></code> and attempts to find the corresponding <code class="docutils literal notranslate"><span class="pre">Handler</span></code> for the <code class="docutils literal notranslate"><span class="pre">Evidence</span></code> via the <code class="docutils literal notranslate"><span class="pre">Route</span></code> method.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span> <span class="n">Router</span> <span class="n">interface</span> <span class="p">{</span>
   <span class="n">AddRoute</span><span class="p">(</span><span class="n">r</span> <span class="n">string</span><span class="p">,</span> <span class="n">h</span> <span class="n">Handler</span><span class="p">)</span> <span class="n">Router</span>
@@ -1449,7 +1451,7 @@
 </div>
 </div>
 <div class="section" id="state">
-<h3>State<a class="headerlink" href="#state" title="Permalink to this headline">#</a></h3>
+<h3>State<a class="headerlink" href="#state" title="Permalink to this headline">¶</a></h3>
 <p>The evidence module only stores valid submitted <code class="docutils literal notranslate"><span class="pre">Evidence</span></code> in state. The evidence state is also stored and exported in the evidence module’s <code class="docutils literal notranslate"><span class="pre">GenesisState</span></code>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">GenesisState</span> <span class="n">defines</span> <span class="n">the</span> <span class="n">evidence</span> <span class="n">module</span><span class="s1">&#39;s genesis state.</span>
 <span class="n">message</span> <span class="n">GenesisState</span> <span class="p">{</span>
@@ -1461,9 +1463,9 @@
 </div>
 </div>
 <div class="section" id="messages">
-<h2>Messages<a class="headerlink" href="#messages" title="Permalink to this headline">#</a></h2>
+<h2>Messages<a class="headerlink" href="#messages" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="msgsubmitevidence">
-<h3>MsgSubmitEvidence<a class="headerlink" href="#msgsubmitevidence" title="Permalink to this headline">#</a></h3>
+<h3>MsgSubmitEvidence<a class="headerlink" href="#msgsubmitevidence" title="Permalink to this headline">¶</a></h3>
 <p>Evidence is submitted through a <code class="docutils literal notranslate"><span class="pre">MsgSubmitEvidence</span></code> message:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">MsgSubmitEvidence</span> <span class="n">represents</span> <span class="n">a</span> <span class="n">message</span> <span class="n">that</span> <span class="n">supports</span> <span class="n">submitting</span> <span class="n">arbitrary</span>
 <span class="o">//</span> <span class="n">Evidence</span> <span class="n">of</span> <span class="n">misbehavior</span> <span class="n">such</span> <span class="k">as</span> <span class="n">equivocation</span> <span class="ow">or</span> <span class="n">counterfactual</span> <span class="n">signing</span><span class="o">.</span>
@@ -1503,10 +1505,10 @@
 <p>Valid submitted <code class="docutils literal notranslate"><span class="pre">Evidence</span></code> of the same type must not already exist. The <code class="docutils literal notranslate"><span class="pre">Evidence</span></code> is routed to the <code class="docutils literal notranslate"><span class="pre">Handler</span></code> and executed. If no error in handling the Evidence occurs, an event is emitted, and it is persisted to state.</p>
 </div>
 <div class="section" id="events">
-<h3>Events<a class="headerlink" href="#events" title="Permalink to this headline">#</a></h3>
+<h3>Events<a class="headerlink" href="#events" title="Permalink to this headline">¶</a></h3>
 <p>The evidence module emits the following handler events:</p>
 <div class="section" id="id2">
-<h4>MsgSubmitEvidence<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h4>
+<h4>MsgSubmitEvidence<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Type</p></th>
@@ -1536,14 +1538,14 @@
 </div>
 </div>
 <div class="section" id="beginblock">
-<h3>BeginBlock<a class="headerlink" href="#beginblock" title="Permalink to this headline">#</a></h3>
+<h3>BeginBlock<a class="headerlink" href="#beginblock" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="evidence-handling">
-<h4>Evidence handling<a class="headerlink" href="#evidence-handling" title="Permalink to this headline">#</a></h4>
+<h4>Evidence handling<a class="headerlink" href="#evidence-handling" title="Permalink to this headline">¶</a></h4>
 <p>Tendermint blocks can include
 <a class="reference external" href="https://github.com/tendermint/tendermint/blob/master/docs/spec/blockchain/blockchain.md#evidence">Evidence</a> that indicates whether a validator acted maliciously. The relevant information is forwarded to the application as ABCI Evidence in <code class="docutils literal notranslate"><span class="pre">abci.RequestBeginBlock</span></code> so that the validator can be punished accordingly.</p>
 </div>
 <div class="section" id="equivocation">
-<h4>Equivocation<a class="headerlink" href="#equivocation" title="Permalink to this headline">#</a></h4>
+<h4>Equivocation<a class="headerlink" href="#equivocation" title="Permalink to this headline">¶</a></h4>
 <p>Currently, the SDK handles two types of evidence inside the ABCI <code class="docutils literal notranslate"><span class="pre">BeginBlock</span></code>:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">DuplicateVoteEvidence</span></code>,</p></li>
@@ -1682,7 +1684,7 @@ The stake that contributed to the infraction is slashed, even if it has been red
 </div>
 </div>
 <div class="section" id="parameters">
-<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">#</a></h2>
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
 <p>The genesis parameters outlined in the <a class="reference external" href="https://github.com/terra-money/genesis-tools/blob/6ec96530820f7055cce6dd767a1d8c321d702fab/src/genesis_builder.py#L75">Genesis Builder Script</a> are as follows:</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span>    # Consensus Params: Evidence
     genesis[&#39;consensus_params&#39;][&#39;evidence&#39;] = {
@@ -1701,7 +1703,7 @@ The stake that contributed to the infraction is slashed, even if it has been red
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="spec-distribution.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1824,8 +1826,7 @@ The stake that contributed to the infraction is slashed, even if it has been red
       </div>
     </div>
   
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>

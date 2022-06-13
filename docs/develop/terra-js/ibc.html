@@ -7,9 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>IBC Transfers &#8212; Terra Docs  documentation</title>
     
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -19,6 +18,10 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
+    
+      
+
+    
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
@@ -29,8 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/custom.css" />
     
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
@@ -53,7 +55,7 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -1285,10 +1287,10 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="ibc-transfers">
-<h1>IBC Transfers<a class="headerlink" href="#ibc-transfers" title="Permalink to this headline">#</a></h1>
+<h1>IBC Transfers<a class="headerlink" href="#ibc-transfers" title="Permalink to this headline">¶</a></h1>
 <p>Terra has full IBC transfer capabilities through both Terra.js and Terra Station. Although IBC functionality is not readily exposed through Terra Station’s front-end, it can be fully incorporated into any dApp. It is up to a dApp’s front end to initiate IBC transfers.</p>
 <div class="section" id="msgtransfer">
-<h2>MsgTransfer<a class="headerlink" href="#msgtransfer" title="Permalink to this headline">#</a></h2>
+<h2>MsgTransfer<a class="headerlink" href="#msgtransfer" title="Permalink to this headline">¶</a></h2>
 <p>Terra.js exports a <code class="docutils literal notranslate"><span class="pre">MsgTransfer</span></code> class that can be used to construct IBC transfers.</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="ow">new</span><span class="w"> </span><span class="nx">MsgTransfer</span><span class="p">(</span><span class="w"></span>
 <span class="w">  </span><span class="s2">&quot;transfer&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// IBC port</span><span class="w"></span>
@@ -1303,12 +1305,12 @@
 </div>
 </div>
 <div class="section" id="supported-channels">
-<h2>Supported Channels<a class="headerlink" href="#supported-channels" title="Permalink to this headline">#</a></h2>
+<h2>Supported Channels<a class="headerlink" href="#supported-channels" title="Permalink to this headline">¶</a></h2>
 <p>Channels are defined when a relayer is set up between Terra and an external chain. For each new connected chain the channel ID is incremented.</p>
 <p>You can use <a class="reference external" href="https://mapofzones.com/zone?period=24&amp;source=phoenix-1&amp;tableOrderBy=success&amp;tableOrderSort=desc&amp;testnet=false">Map of Zones</a> to find the available channels and their IDs.</p>
 </div>
 <div class="section" id="derive-cosmos-chain-addresses-from-a-terra-address">
-<h2>Derive Cosmos chain addresses from a Terra address<a class="headerlink" href="#derive-cosmos-chain-addresses-from-a-terra-address" title="Permalink to this headline">#</a></h2>
+<h2>Derive Cosmos chain addresses from a Terra address<a class="headerlink" href="#derive-cosmos-chain-addresses-from-a-terra-address" title="Permalink to this headline">¶</a></h2>
 <p>Cosmos SDK based blockchains use bech32 to encode the public key for display. Assuming the same private key is used on multiple Cosmos SDK chains it is possible to decode a Terra address and generate the corresponding public key on another chain.</p>
 <p>Here’s a quick example using the <a class="reference external" href="https://github.com/bitcoinjs/bech32">bech32</a> JavaScript library:</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">bech32</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;bech32&#39;</span><span class="p">;</span><span class="w"></span>
@@ -1320,7 +1322,7 @@
 </div>
 </div>
 <div class="section" id="complete-example">
-<h2>Complete example<a class="headerlink" href="#complete-example" title="Permalink to this headline">#</a></h2>
+<h2>Complete example<a class="headerlink" href="#complete-example" title="Permalink to this headline">¶</a></h2>
 <p>The following example demonstrates how to send 1 LUNA from Terra to the Osmosis blockchain.</p>
 <div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="nx">LCDClient</span><span class="p">,</span><span class="w"></span>
@@ -1363,7 +1365,7 @@
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="fees.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1486,8 +1488,7 @@
       </div>
     </div>
   
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>
