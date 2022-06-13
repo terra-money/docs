@@ -52,7 +52,7 @@ The all-in-one tool for dApp development.
 :::
 
 :::{grid-item-card}
-:link: "./terrain/mint-an-nft.html
+:link: ./terrain/mint-an-nft.html
 :class-card: sd-text-center sd-shadow-md sd-rounded-3
 ```{image} /img/bullet_terra.svg
 :class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2

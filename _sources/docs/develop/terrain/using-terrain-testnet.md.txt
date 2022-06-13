@@ -4,11 +4,11 @@ The Pisco testnet is used for testing transactions on the Terra network.
 
 ## Prerequisites
 
-- [Install the Terra Station browser extension](../../../learn/terra-station/download/terra-station-extension.md)
+- [Install the Terra Station browser extension](../../learn/terra-station/download/terra-station-extension.md)
 
 ## Create a Pisco wallet
 
-[Create a new wallet](../../../learn/terra-station/download/terra-station-extension.md#create-a-wallet) using the Terra Station extension. It's recommended that you name this wallet "Pisco" or "testnet" so it's easy to remember.
+[Create a new wallet](../../learn/terra-station/download/terra-station-extension.md#create-a-wallet) using the Terra Station extension. It's recommended that you name this wallet "Pisco" or "testnet" so it's easy to remember.
 
 After creating a Pisco wallet and storing the seed phrase, request funds from the testnet faucet:
 
@@ -146,7 +146,7 @@ The Terrain template comes with several predefined helpers in `lib/index.js`. Us
 
 Terrain also scaffolds a very simple front-end.
 
-1. In the Terra Station Chrome extension, [switch the network to `testnet`](../../../learn/terra-station/testnet.md).
+1. In the Terra Station Chrome extension, [switch the network to `testnet`](../../learn/terra-station/testnet.md).
 
 2. To use the front end, run the following commands in order. The terrain sync-refs command copies your deployed contract addresses to the front-end part of the codebase.
 

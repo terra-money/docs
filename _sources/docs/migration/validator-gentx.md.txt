@@ -15,9 +15,9 @@ All validators that want to be included in the Terra 2.0 chain must follow the s
 
 ## Prerequisites
 
-- [Terra Core]([https://github.com/terra-money/core](https://github.com/terra-money/core))
+- [Terra Core https://github.com/terra-money/core](https://github.com/terra-money/core)
 - [Go 1.18+](https://go.dev/dl/)
-- [Full node tutorial]([https://docs.terra.money/docs/full-node/run-a-full-terra-node/README.html](https://docs.terra.money/docs/full-node/run-a-full-terra-node/README.html))
+- [Full node tutorial](../full-node/run-a-full-terra-node/README.md)
 
 ## Supplemental Resources
 
@@ -107,7 +107,7 @@ jq -S -c -M '' post-attack-snapshot.json | shasum -a 256
 
 ## Penultimate Genesis
 
-The following steps need to be run on the same machine as your [snapshot](#Snapshot).
+The following steps need to be run on the same machine as your [snapshot](#snapshot).
 
 1\. Clone and checkout genesis builder:
 
@@ -212,7 +212,7 @@ ls ~/.terra/config/gentx/*
 
 ## Collect GenTxs
 
-The following steps need to be run on the same machine as your [GenTx](#GenTx).
+The following steps need to be run on the same machine as your [GenTx](#gentx).
 
 1\. Download gentx files and change into the terra home config:
 

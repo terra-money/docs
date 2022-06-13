@@ -1,4 +1,4 @@
-## Accounts
+# Accounts
 
 LocalTerra is pre-configured with one validator and 10 accounts with LUNA balances.
 

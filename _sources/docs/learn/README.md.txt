@@ -1,6 +1,6 @@
 # Learn
 
-Discover [how Terra works](protocol.md) and learn about [validators](protocol.md#validators), [staking](protocol.md#staking), and [governance](protocol.md#governance). Use [Terra Station](terra-station/README.md) to [create a wallet](terra-station/download/README.md), [stake Luna](terra-station/staking.md), [send tokens](terra-station/wallet.md#send-tokens), and [participate in governance](terra-station/governance.md). Browse the [glossary](glossary.md) to look up helpful terms.
+Discover [how Terra works](protocol.md) and learn about [validators](protocol.md#validators), [staking](protocol.md#staking), and [governance](protocol.md#governance). Use [Terra Station](terra-station/README.md) to [create a wallet](terra-station/download/README.md), [stake Luna](terra-station/staking.md), [send tokens](terra-station/send.md), and [participate in governance](terra-station/governance.md). Browse the [glossary](glossary.md) to look up helpful terms.
 
 ```{toctree}
 :hidden:
@@ -8,7 +8,6 @@ terra-station/README
 protocol
 fees
 glossary
-community-trust
 assets
 ```
 

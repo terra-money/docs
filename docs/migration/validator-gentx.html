@@ -1105,9 +1105,71 @@
        Block explorers
       </a>
      </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../develop/terrad/README.html">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         terrad
+        </span>
+       </code>
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
+      <label for="toctree-checkbox-23">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../develop/terrad/install-terrad.html">
+         Install
+         <code class="docutils literal notranslate">
+          <span class="pre">
+           terrad
+          </span>
+         </code>
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../develop/terrad/terrad-mac.html">
+         Install
+         <code class="docutils literal notranslate">
+          <span class="pre">
+           terrad
+          </span>
+         </code>
+         for Mac (Intel or M1)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../develop/terrad/using-terrad.html">
+         Using
+         <code class="docutils literal notranslate">
+          <span class="pre">
+           terrad
+          </span>
+         </code>
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../develop/terrad/commands.html">
+         Commands
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../develop/terrad/subcommands.html">
+         Subcommands
+        </a>
+       </li>
+      </ul>
+     </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../develop/endpoints.html">
        RPC and LCD endpoints
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../develop/guides/start-lcd.html">
+       Start the light client daemon (LCD)
       </a>
      </li>
      <li class="toctree-l3">
@@ -1365,9 +1427,9 @@
 <div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><span class="xref myst">Terra Core</span></p></li>
+<li><p><a class="reference external" href="https://github.com/terra-money/core">Terra Core https://github.com/terra-money/core</a></p></li>
 <li><p><a class="reference external" href="https://go.dev/dl/">Go 1.18+</a></p></li>
-<li><p><span class="xref myst">Full node tutorial</span></p></li>
+<li><p><a class="reference internal" href="../full-node/run-a-full-terra-node/README.html"><span class="doc std std-doc">Full node tutorial</span></a></p></li>
 </ul>
 </div>
 <div class="section" id="supplemental-resources">
@@ -1444,7 +1506,7 @@ jq -S -c -M <span class="s1">&#39;&#39;</span> post-attack-snapshot.json <span c
 </div>
 <div class="section" id="penultimate-genesis">
 <h2>Penultimate Genesis<a class="headerlink" href="#penultimate-genesis" title="Permalink to this headline">¶</a></h2>
-<p>The following steps need to be run on the same machine as your <span class="xref myst">snapshot</span>.</p>
+<p>The following steps need to be run on the same machine as your <a class="reference internal" href="#snapshot"><span class="std std-doc">snapshot</span></a>.</p>
 <p>1. Clone and checkout genesis builder:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/terra-money/genesis-tools
 </pre></div>
@@ -1529,7 +1591,7 @@ mv ./penultimate-genesis.json ~/.terra/config/genesis.json
 </div>
 <div class="section" id="collect-gentxs">
 <h2>Collect GenTxs<a class="headerlink" href="#collect-gentxs" title="Permalink to this headline">¶</a></h2>
-<p>The following steps need to be run on the same machine as your <span class="xref myst">GenTx</span>.</p>
+<p>The following steps need to be run on the same machine as your <a class="reference internal" href="#gentx"><span class="std std-doc">GenTx</span></a>.</p>
 <p>1. Download gentx files and change into the terra home config:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/terra-money/genesis-tools
 <span class="nb">cd</span> genesis-tools

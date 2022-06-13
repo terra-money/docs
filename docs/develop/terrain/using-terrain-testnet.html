@@ -1105,9 +1105,71 @@
        Block explorers
       </a>
      </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../terrad/README.html">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         terrad
+        </span>
+       </code>
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
+      <label for="toctree-checkbox-23">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../terrad/install-terrad.html">
+         Install
+         <code class="docutils literal notranslate">
+          <span class="pre">
+           terrad
+          </span>
+         </code>
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../terrad/terrad-mac.html">
+         Install
+         <code class="docutils literal notranslate">
+          <span class="pre">
+           terrad
+          </span>
+         </code>
+         for Mac (Intel or M1)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../terrad/using-terrad.html">
+         Using
+         <code class="docutils literal notranslate">
+          <span class="pre">
+           terrad
+          </span>
+         </code>
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../terrad/commands.html">
+         Commands
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../terrad/subcommands.html">
+         Subcommands
+        </a>
+       </li>
+      </ul>
+     </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../endpoints.html">
        RPC and LCD endpoints
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../guides/start-lcd.html">
+       Start the light client daemon (LCD)
       </a>
      </li>
      <li class="toctree-l3">
@@ -1398,12 +1460,12 @@
 <div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><span class="xref myst">Install the Terra Station browser extension</span></p></li>
+<li><p><a class="reference internal" href="../../learn/terra-station/download/terra-station-extension.html"><span class="doc std std-doc">Install the Terra Station browser extension</span></a></p></li>
 </ul>
 </div>
 <div class="section" id="create-a-pisco-wallet">
 <h2>Create a Pisco wallet<a class="headerlink" href="#create-a-pisco-wallet" title="Permalink to this headline">¶</a></h2>
-<p><span class="xref myst">Create a new wallet</span> using the Terra Station extension. It’s recommended that you name this wallet “Pisco” or “testnet” so it’s easy to remember.</p>
+<p><a class="reference internal" href="../../learn/terra-station/download/terra-station-extension.html#create-a-wallet"><span class="std std-doc">Create a new wallet</span></a> using the Terra Station extension. It’s recommended that you name this wallet “Pisco” or “testnet” so it’s easy to remember.</p>
 <p>After creating a Pisco wallet and storing the seed phrase, request funds from the testnet faucet:</p>
 <p><a class="reference external" href="https://faucet.terra.money">https://faucet.terra.money</a></p>
 <div class="admonition danger">
@@ -1523,7 +1585,7 @@ npm install
 <h2>5. Front-end scaffolding<a class="headerlink" href="#front-end-scaffolding" title="Permalink to this headline">¶</a></h2>
 <p>Terrain also scaffolds a very simple front-end.</p>
 <ol class="arabic">
-<li><p>In the Terra Station Chrome extension, <span class="xref myst">switch the network to <code class="docutils literal notranslate"><span class="pre">testnet</span></code></span>.</p></li>
+<li><p>In the Terra Station Chrome extension, <a class="reference internal" href="../../learn/terra-station/testnet.html"><span class="doc std std-doc">switch the network to <code class="docutils literal notranslate"><span class="pre">testnet</span></code></span></a>.</p></li>
 <li><p>To use the front end, run the following commands in order. The terrain sync-refs command copies your deployed contract addresses to the front-end part of the codebase.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">frontend</span>
 <span class="n">npm</span> <span class="n">install</span>

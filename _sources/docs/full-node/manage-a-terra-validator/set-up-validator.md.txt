@@ -9,7 +9,7 @@ For more information on setting up a validator, see [additional resources](READM
 - You have completed [how to run a full Terra node](../run-a-full-terra-node/README.md), which outlines how to install, connect, and configure a node.
 - You are familiar with [terrad](../../develop/terrad/README.md).
 - You have read through [the validator FAQ](faq.md)
-- You understand the [different keys](faq.md#what-are-the-different-types-of-keys) of a validator in the FAQ
+- You understand the [different keys](faq.md#validator-keys-and-states) of a validator in the FAQ
 
 ## 1. Retrieve your PubKey
 

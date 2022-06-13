@@ -1,6 +1,6 @@
 # Migrating CosmWasm contracts on Terra
 
-Contracts on Terra can be initialized as [migratable](../../module-specifications/spec-wasm.mdl#migration), which allows the administrator to upload a new version of the contract and then send a migrate message to move to the new code.
+Contracts on Terra can be initialized as [migratable](../module-specifications/spec-wasm.md#migration), which allows the administrator to upload a new version of the contract and then send a migrate message to move to the new code.
 
 This tutorial uses [Terrain](README.md), a Terra development suite designed to simplify the scaffolding, deployment, and migration of your contracts. 
 
