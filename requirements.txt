@@ -16,7 +16,7 @@ mdit-py-plugins
 #myst-nb for python docs
 myst-parser ~=0.17.2
 packaging
-pydata-sphinx-theme ~=0.8.1
+pydata-sphinx-theme ~=0.7.2
 Pygments >= 2.11.2
 pyparsing
 pytz
