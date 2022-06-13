@@ -8,7 +8,7 @@ Use `LCDClient.wallet()` to create a `Wallet` from a `Key`.
 import { LCDClient, MnemonicKey } from "@terra-money/terra.js";
 
 const terra = new LCDClient({
-  URL: "https://lcd.terra.dev",
+  URL: "https://phoenix-lcd.terra.dev",
   chainId: "phoenix-1",
 });
 
