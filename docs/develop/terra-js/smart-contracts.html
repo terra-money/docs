@@ -1396,7 +1396,7 @@
 <div class="section" id="create-a-contract">
 <h2>Create a contract<a class="headerlink" href="#create-a-contract" title="Permalink to this headline">¶</a></h2>
 <p>For Terra smart contracts, there is a distinction between uploading contract code and creating a contract. This allows multiple contracts to share the same code if there are only minor variations in their logic which can be configured at contract creation. This configuration is passed in an <strong>InitMsg</strong>, and provides the initial state for the contract.</p>
-<p>To create (instantiate) a smart contract, you must first know the code ID of an uploaded code. You will reference it in a <code class="docutils literal notranslate"><span class="pre">MsgInstantiateContract</span></code> alongside the InitMsg to create the contract. Upon successful creation, your contract will be located at an address that you specify.</p>
+<p>To create or instantiate a smart contract, you must first know the code ID of an uploaded code. You will reference it in a <code class="docutils literal notranslate"><span class="pre">MsgInstantiateContract</span></code> alongside the InitMsg to create the contract. Upon successful creation, your contract will be located at an address that you specify.</p>
 <div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">MsgInstantiateContract</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@terra-money/terra.js&#39;</span><span class="p">;</span><span class="w"></span>
 
 
