@@ -1,6 +1,6 @@
 # Terra<span/>.py
 
-The Terra Python Software Development Kit (SDK) is a library toolkit used for developing software for interacting with the Terra blockchain. In this tutorial, you will learn how you can install the Terra Python SDK, as well as any necessary dependencies, and how you can carry out various transactions utilizing this technology.
+Terra's Python SDK is a library toolkit used for developing software that interacts with the Terra blockchain. In this tutorial, you will learn how you can install the Terra Python SDK, as well as any necessary dependencies, and how you can carry out various transactions utilizing this technology.
 
 For more information on Terra<span/>.py, visit the [Terra<span/>.py docs](https://terra-money.github.io/terra.py/).
 
