@@ -1,6 +1,6 @@
 # MsgAuthorization
 
-The following code snippet requires LocalTerra.
+The following code snippet requires [LocalTerra](../localterra/README.md).
 
 1. `test1` creates MsgGrantAuthorization message to grant MsgSend authorization to grantee `test2`.
 2. `test2` creates MsgExecAuthorized message to send `2000000000000ukrw` from the `test1` account to the `test3` account.
