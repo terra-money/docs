@@ -4,7 +4,7 @@ Use this glossary to learn about terms specific to the Terra Protocol.
 
 ## Active set
 
-The top 130 [validators](#validator) that participate in consensus and receive rewards.
+The top 130 [validators](#validator) that participate in consensus, receive rewards, and secure the blockchain.
 
 ## Blockchain
 
