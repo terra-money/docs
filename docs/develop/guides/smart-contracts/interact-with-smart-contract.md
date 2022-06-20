@@ -222,6 +222,8 @@ Excellent! Congratulations, you've created your first smart contract, and now kn
 
 ## What's Next?
 
-We've only walked through a simple example of a smart contract, that modifies a simple balance within its internal state. Although this is enough to make a simple dApp, you can power more interesting applications by **emitting messages**, which will enable you to interact with other contracts as well as the rest of the blockchain's module.
+So far you've walked through a simple example of a smart contract, that modifies a simple balance within its internal state. Although this is enough to make a simple dApp, you can power more interesting applications by **emitting messages**, which will enable you to interact with other contracts as well as the rest of the blockchain's module.
 
 Check out a couple more examples of smart contracts using Terra's smart contract [repo](https://github.com/terra-money/cosmwasm-contracts).
+
+To learn how to build a dApp, visit the [Terrain tutorial](../../terrain/initial-setup.md).
