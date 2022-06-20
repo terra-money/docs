@@ -1,6 +1,6 @@
 # Using Terra Classic
 
-Terra.js can be configured to work with Terra Classic by passing a boolean `isClassic` value to the LCD.
+Terra.js can be configured to work with Terra Classic by passing the boolean `isClassic` value to the LCD.
 
 ## LCDClient
 
