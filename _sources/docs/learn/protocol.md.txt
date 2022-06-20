@@ -6,7 +6,7 @@ Terra is an [open-source blockchain](https://github.com/terra-money/core) hostin
 
 ## What is Luna? 
 
-Luna is the Terra protocol’s native [staking](glossary.md#staking) token. Luna is used for [governance](#governance) and in mining. Users stake Luna to validators who record and verify transactions on the [blockchain](glossary.md#blockchain) in exchange for rewards from transaction fees.
+Luna is the Terra protocol’s native [staking](glossary.md#staking) token. Luna is used for [governance](#governance) and in mining. Users [stake Luna](#staking) to validators who record and verify transactions on the [blockchain](glossary.md#blockchain) in exchange for rewards from transaction fees.
 
 ## A new Terra
 
