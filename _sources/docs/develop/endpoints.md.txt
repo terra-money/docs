@@ -18,12 +18,12 @@ Public RPC endpoints should only be used in development. For live dApps, use a p
 
 | Endpoint                    | Network           |
 | --------------------------- | ----------------- |
-| https://phoenix-lcd.terra.dev       | phoenix-1 mainnet |
-| https://pisco-lcd.terra.dev | pisco-1 testnet   |
+| https://phoenix-lcd.terra.dev       | `phoenix-1` mainnet |
+| https://pisco-lcd.terra.dev | `pisco-1` testnet   |
 
 ### Public RPC
 
 | endpoint | Network            |
 | -------- | ------------------ |
-| TBD      | phonenix-1 mainnet |
-| TBD      | pisco-1 testnet    |
+| TBD      | `phonenix-1` mainnet |
+| TBD      | `pisco-1` testnet    |
