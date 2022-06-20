@@ -1,6 +1,6 @@
 # Add modules
 
-When a new module is added to Terra core, you must add it to several places in Terra.js too. To add it, complete the following steps:
+When a new module is added to Terra core, you must add it to several places in Terra.js too. To add a module, complete the following steps:
 
 ## Create a new folder
 
