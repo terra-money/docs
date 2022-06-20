@@ -1,6 +1,6 @@
 # Subcommands
 
-This section describes the subcommands available from `terrad`.
+This section describes the subcommands available for `terrad`.
 
 ## `debug addr`
 
