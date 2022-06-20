@@ -2,7 +2,7 @@
 
 ## `WebSocketClient`
 
-Terra.js comes with `WebSocketClient`, which abstracts a subscription to Tendermint RPC's WebSocket endpoint. This requires access to a Terra node's RPC server, which may required privileged access as it exposes functions that can kill the node's operation. With LocalTerra, the WebSocket endpoint can be accessed at `ws://localhost:26657/websocket`.
+Terra.js comes with `WebSocketClient`, which abstracts a subscription to Tendermint RPC's WebSocket endpoint. This requires access to a Terra node's RPC server, which may require privileged access as it exposes functions that can kill a node's operation. With LocalTerra, the WebSocket endpoint can be accessed at `ws://localhost:26657/websocket`.
 
 ```ts
 import { LocalTerra, WebSocketClient } from '@terra-money/terra.js';
@@ -53,7 +53,7 @@ You can subscribe to the following recognized Tendermint events:
 
 ### Query
 
-In order to specify the Tendermint query, the following syntax is used:
+Use the following syntax to specify the Tendermint query:
 
 ```ts
 type TendermintQueryOperand = string | number | Date;

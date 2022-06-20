@@ -1372,7 +1372,7 @@
 <h1>Websockets<a class="headerlink" href="#websockets" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="websocketclient">
 <h2><code class="docutils literal notranslate"><span class="pre">WebSocketClient</span></code><a class="headerlink" href="#websocketclient" title="Permalink to this headline">¶</a></h2>
-<p>Terra.js comes with <code class="docutils literal notranslate"><span class="pre">WebSocketClient</span></code>, which abstracts a subscription to Tendermint RPC’s WebSocket endpoint. This requires access to a Terra node’s RPC server, which may required privileged access as it exposes functions that can kill the node’s operation. With LocalTerra, the WebSocket endpoint can be accessed at <code class="docutils literal notranslate"><span class="pre">ws://localhost:26657/websocket</span></code>.</p>
+<p>Terra.js comes with <code class="docutils literal notranslate"><span class="pre">WebSocketClient</span></code>, which abstracts a subscription to Tendermint RPC’s WebSocket endpoint. This requires access to a Terra node’s RPC server, which may require privileged access as it exposes functions that can kill a node’s operation. With LocalTerra, the WebSocket endpoint can be accessed at <code class="docutils literal notranslate"><span class="pre">ws://localhost:26657/websocket</span></code>.</p>
 <div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">LocalTerra</span><span class="p">,</span><span class="w"> </span><span class="nx">WebSocketClient</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@terra-money/terra.js&#39;</span><span class="p">;</span><span class="w"></span>
 
 <span class="kd">const</span><span class="w"> </span><span class="nx">wsclient</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">WebSocketClient</span><span class="p">(</span><span class="s1">&#39;ws://localhost:26657/websocket&#39;</span><span class="p">);</span><span class="w"></span>
@@ -1422,7 +1422,7 @@
 </div>
 <div class="section" id="query">
 <h3>Query<a class="headerlink" href="#query" title="Permalink to this headline">¶</a></h3>
-<p>In order to specify the Tendermint query, the following syntax is used:</p>
+<p>Use the following syntax to specify the Tendermint query:</p>
 <div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kr">type</span><span class="w"> </span><span class="nx">TendermintQueryOperand</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nb">Date</span><span class="p">;</span><span class="w"></span>
 
 <span class="kd">interface</span><span class="w"> </span><span class="nx">TendermintQuery</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
