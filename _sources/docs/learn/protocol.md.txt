@@ -2,7 +2,7 @@
 
 ## What is Terra?
 
-Terra is a decentralized, open-source blockchain protocol that hosts a vibrant community of decentralized applications (dApps). Using proof-of-stake consensus and ground-breaking technologies like Mantlemint and Terra Station, the Terra blockchain is one of the fastest chains in existence, giving users an unparalleled defi experience. 
+Terra is an open-source blockchain hosting a vibrant ecosystem of decentralized applications (dApps) and top-tier developer tools. Using proof-of-stake consensus and ground-breaking technologies like Mantlemint, Terrain, and Terra Station, the Terra blockchain is one of the fastest chains in existence, giving users an unparalleled DeFi experience. As a permissionless, borderless economy, Terra enables next-generation financial products accessible to anyone with an Internet connection.
 
 ## What is Luna? 
 
