@@ -1,6 +1,6 @@
 # Contracts
 
-There are [10 contracts](https://github.com/CosmWasm/cw-plus/tree/main/contracts) already deployed on genesis:
+There are [10 contracts](https://github.com/CosmWasm/cw-plus/tree/main/contracts) deployed to LocalTerra upon genesis:
 
 | Code Id   | Name                             | Example of already instantiated contract                           |
 | --------- | ---------------------------------|--------------------------------------------------------------------|
