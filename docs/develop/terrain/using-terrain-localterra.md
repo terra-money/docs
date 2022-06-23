@@ -69,7 +69,7 @@ With Terrain installed you can now scaffold your new application in a new termin
 1. Create a new folder for your dApp:
 
    ```sh
-   terrain new my-terra-dapp
+   terrain new my_terra_dapp
    ```
    ::: {tip}
    If you are using an M1 Mac, see [Running NPM on M1 Macs](header_target) before proceeding.
@@ -78,7 +78,7 @@ With Terrain installed you can now scaffold your new application in a new termin
 2. Scaffold your dApp:
 
    ```sh
-   cd my-terra-dapp
+   cd my_terra_dapp
    npm install
    ```
 
@@ -89,7 +89,7 @@ The following structure shows your scaffolded project:
 ```
 .
 ├── contracts              # The contracts' source code.
-│   ├── counter
+│   ├── my_terra_dapp
 │   └── ...                # Add more contracts here.
 ├── frontend               # The front-end application.
 ├── lib                    # Predefined functions for task and console.
@@ -104,7 +104,7 @@ The following structure shows your scaffolded project:
 To deploy the application, run the following command:
 
 ```sh
-terrain deploy counter --signer test1
+terrain deploy my_terra_dapp --signer test1
 ```
 
 The deploy command performs the following steps automatically:
@@ -122,7 +122,7 @@ If you are running LocalTerra and the previous `deploy` command is not working, 
 
 ## 3. Interact with the deployed contract
 
-The template comes with several predefined helpers in `lib/index.js`. Use them to start interacting with your smart contract:
+The template comes with several predefined helpers in `lib/index.ts`. Use them to start interacting with your smart contract:
 
 1. Run the following:
 

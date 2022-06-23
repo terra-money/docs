@@ -20,36 +20,36 @@ You'll also need:
 Instantiate a [new app using Terrain](https://github.com/terra-money/terrain#terrain-new-name):
 
 ```sh
-terrain new token-factory
+terrain new token_factory
 ```
 
 When the app is generated, the following displays:
 
 ```sh
-generating app token-factory:
+generating app token_factory:
 - workspace... done
 - contract... done
 - frontend... done
 ```
 
-## Generate the `cw20-factory-token` contract
+## Generate the `cw20_factory_token` contract
 
-a. Navigate to the `token-factory` directory:
+a. Navigate to the `token_factory` directory:
 
 ```sh
-cd token-factory
+cd token_factory
 ```
 
-b. Instantiate the `cw20-factory-token` contract:
+b. Instantiate the `cw20_factory_token` contract:
 
 ```
-terrain contract:new cw20-factory-token
+terrain contract:new cw20_factory_token
 ```
 
 When the contract is generated, the following displays:
 
 ```sh
-generating contract cw20-factory-token:
+generating contract cw20_factory_token:
 - contract... done
 ```
 
@@ -85,27 +85,27 @@ module.exports = {
 
 ## Deploy the smart contracts
 
-The `token-factory` contract mints new `cw20-factory-token` tokens, increases the supply of minted tokens, burns tokens to return UST and tracks all tokens created.
+The `token_factory` contract mints new `cw20_factory_token` tokens, increases the supply of minted tokens, burns tokens to return UST and tracks all tokens created.
 
 Deploy each smart contract to validate that the development environment is configured correctly:
 
-a. Deploy the `token-factory` contract:
+a. Deploy the `token_factory` contract:
 
 ```
-terrain deploy token-factory --signer test
+terrain deploy token_factory --signer test
 ```
 
-b. Deploy the `cw20-factory-token` contract:
+b. Deploy the `cw20_factory_token` contract:
 
 ```
-terrain deploy cw20-factory-token --signer test
+terrain deploy cw20_factory_token --signer test
 ```
 
 ## Modify the CW20 Factory Token smart contract
 
-In this section, you will modify the `cw20-factory-token` contract that you instantiated. This contract implements the [CW20 Base](https://github.com/CosmWasm/cw-plus/tree/main/contracts/cw20-base), along with several custom files.
+In this section, you will modify the `cw20_factory_token` contract that you instantiated. This contract implements the [CW20 Base](https://github.com/CosmWasm/cw-plus/tree/main/contracts/cw20-base), along with several custom files.
 
-To modify the `cw20-factory-token` contract, follow the procedure below.
+To modify the `cw20_factory_token` contract, follow the procedure below.
 
 ### 1. Add the the CW20 base
 
@@ -114,12 +114,12 @@ First, add the [CW20 Base](https://github.com/CosmWasm/cw-plus/tree/main/contrac
 - the smart contract to be easily deployed to LocalTerra
 - extended functionality using the [migration implementation](https://docs.terra.money/docs/develop/dapp/quick-start/contract-migration.html).
 
-To add the CW20 Base to the `cw20-factory-token` contract, do the following:
+To add the CW20 Base to the `cw20_factory_token` contract, do the following:
 
-a. Navigate to `/token-factory/contracts/cw20-factory-token/`.
+a. Navigate to `/token_factory/contracts/cw20_factory_token/`.
 
 ```
-cd /token-factory/contracts/cw20-factory-token/
+cd /token_factory/contracts/cw20_factory_token/
 ```
 
 b. Open `cargo.toml` and add this to the dependencies:
@@ -144,10 +144,10 @@ Now that you've added the `CW20 Base` to implement the base CW20 token logic, mo
 
 To modify the contract files, follow the procedure below.
 
-a. Navigate to `/token-factory/contracts/cw20-factory-token/src`.
+a. Navigate to `/token_factory/contracts/cw20_factory_token/src`.
 
 ```
-cd /token-factory/contracts/cw20-factory-token/src
+cd /token_factory/contracts/cw20_factory_token/src
 ```
 
 b. Open `msg.rs` and paste the following:
@@ -195,7 +195,7 @@ use cw20_base::contract::{
 };
 
 // version info for migration info
-const CONTRACT_NAME: &str = "crates.io:cw20-factory-token";
+const CONTRACT_NAME: &str = "crates.io:cw20_factory_token";
 const CONTRACT_VERSION: &str = env!("CARGO_PKG_VERSION");
 
 #[cfg_attr(not(feature = "library"), entry_point)]
@@ -320,10 +320,10 @@ i. Close and save `schemas.rs`:
 
 ### 3. Generate and test the schema
 
-a. Navigate to `/token-factory/contracts/cw20-factory-token`:
+a. Navigate to `/token_factory/contracts/cw20_factory_token`:
 
 ```
-cd /token-factory/contracts/cw20-factory-token
+cd /token_factory/contracts/cw20_factory_token
 ```
 
 b. Generate the new schema:
@@ -371,7 +371,7 @@ b. Modify the `InstantiateMsg` property in the `terrain.config.json` so that it 
 Deploy the contract again to confirm that the workplace still compiles.
 
 ```sh
-terrain deploy cw20-factory-token --signer test
+terrain deploy cw20_factory_token --signer test
 ```
 
 :::{tip}
@@ -389,7 +389,7 @@ git checkout 8da7892486704c54e33442b156d63178f5137527
 
 For the purpose of this tutorial, [crates.io](https:\crates.io) is used to implement the CW20 Token Factory as a dependency. This ensures that CW20 Token Factory is platform agnostic, so you can use Linux, Windows or Mac.
 
-As the deployment to crates.io is out of scope for this tutorial, you can find [the CW20 Token Factory package deployed to crates.io](https://crates.io/crates/cw20-factory-token). You can use this deployment when you add the CW20 Token Factory contract as a dependency of the Token Factory contract in the the next section.
+As the deployment to crates.io is out of scope for this tutorial, you can find [the CW20 Token Factory package deployed to crates.io](https://crates.io/crates/cw20_factory_token). You can use this deployment when you add the CW20 Token Factory contract as a dependency of the Token Factory contract in the the next section.
 
 ## Create the Token Factory smart contract
 
@@ -402,11 +402,11 @@ In this section, you will add the following dependencies to `cargo.toml`:
 - `cw2`
 - `cw20`
 - `cw20-base`
-- `cw20-factory-token`
+- `cw20_factory_token`
 
 To add the dependencies, do the following:
 
-a. Navigate to `/token-factory/contracts/token-factory`.
+a. Navigate to `/token_factory/contracts/token_factory`.
 
 b. Open `cargo.toml` and add the dependencies inside the header:
 
@@ -416,7 +416,7 @@ b. Open `cargo.toml` and add the dependencies inside the header:
 cw2 = "0.13.2"
 cw20 = "0.13.2"
 cw20-base = {  version = "0.13.2", features = ["library"] }
-cw20-factory-token = {  version = "0.6.0", features = ["library"] }
+cw20_factory_token = {  version = "0.6.0", features = ["library"] }
 # ...
 ```
 
@@ -433,7 +433,7 @@ Now that you've added the dependencies, modify the following files:
 
 To modify the contract files, follow the procedure below:
 
-a. Navigate to `/token-factory/contracts/token-factory/src`.
+a. Navigate to `/token_factory/contracts/token_factory/src`.
 
 b. Open `error.rs` and add the following:
 
@@ -599,7 +599,7 @@ use cw2::set_contract_version;
 
 /* Define contract name and version */
 
-const CONTRACT_NAME: &str = "crates.io:token-factory";
+const CONTRACT_NAME: &str = "crates.io:token_factory";
 const CONTRACT_VERSION: &str = env!("CARGO_PKG_VERSION");
 const INSTANTIATE_REPLY_ID: u64 = 1;
 
@@ -611,7 +611,7 @@ pub fn instantiate(
     msg: InstantiateMsg,
 ) -> Result<Response, ContractError> {
     /* Define the initial configuration for this contract that way you can
-    limit the type of coin you want to accept each time a token-factory is
+    limit the type of coin you want to accept each time a token_factory is
     created and also which kind of token would you like to mint based on
     the code id of the contract deployed */
     let state = Config {
@@ -705,7 +705,7 @@ pub fn execute_instantiate_token(
     }
 
     /* If a minter exists replace the minter address with
-    the token-factory address that way the minting is only
+    the token_factory address that way the minting is only
     allowed thru this smart contract. */
     token_data.mint = match token_data.mint {
         None => None,
@@ -1197,7 +1197,7 @@ mod tests {
     }
 }
 ```
-h. Navigate to `token-factory/contracts/token-factory/examples`.
+h. Navigate to `token_factory/contracts/token_factory/examples`.
 
 i. Open `schema.rs`.
 
@@ -1221,12 +1221,12 @@ fn main() {
 ```
 ### 3. Generate and test the schema
 
-Now you have modified the `token-factory` contract, generate the schema and run the tests to validate that the code works as expected:
+Now you have modified the `token_factory` contract, generate the schema and run the tests to validate that the code works as expected:
 
-a. Navigate to `/tokens-factory/contracts/token-factory`.
+a. Navigate to `/token_factory/contracts/token_factory`.
 
 ```bash
-cd /tokens-factory/contracts/token-factory
+cd /token_factory/contracts/token_factory
 ```
 
 b. Generate the schema:
@@ -1240,12 +1240,12 @@ You should see output similar to:
 ```sh
 Finished dev [unoptimized + debuginfo] target(s) in 0.02s
 Running `target/debug/examples/schema`
-Removing "~/Documents/github/tokens-factory/contracts/token-factory/schema/execute_msg.json" …
-Removing "~/Documents/github/tokens-factory/contracts/token-factory/schema/instantiate_msg.json" …
-Removing "~/Documents/github/tokens-factory/contracts/token-factory/schema/query_msg.json" …
-Created ~/Documents/github/tokens-factory/contracts/token-factory/schema/instantiate_msg.json
-Created ~/Documents/github/tokens-factory/contracts/token-factory/schema/execute_msg.json
-Created ~/Documents/github/tokens-factory/contracts/token-factory/schema/query_msg.json
+Removing "~/Documents/github/token_factory/contracts/token_factory/schema/execute_msg.json" …
+Removing "~/Documents/github/token_factory/contracts/token_factory/schema/instantiate_msg.json" …
+Removing "~/Documents/github/token_factory/contracts/token_factory/schema/query_msg.json" …
+Created ~/Documents/github/token_factory/contracts/token_factory/schema/instantiate_msg.json
+Created ~/Documents/github/token_factory/contracts/token_factory/schema/execute_msg.json
+Created ~/Documents/github/token_factory/contracts/token_factory/schema/query_msg.json
 ```
 
 c. Run the tests:
@@ -1276,7 +1276,7 @@ a. Open `terrain.config.json`.
 b. Modify the property `InstantiateMsg`, using your `<token_contract_code_id>`. **The `<token_contract_code_id>` should not be surrounded by quotes**:
 
 :::{tip}
-To determine which `<token_contract_code_id>`, check the file `refs.terrain.json` from the workspace's root under the `cw20-token-factory` object.
+To determine which `<token_contract_code_id>`, check the file `refs.terrain.json` from the workspace's root under the `cw20-token_factory` object.
 :::
 
 ```Json
@@ -1296,14 +1296,14 @@ To determine which `<token_contract_code_id>`, check the file `refs.terrain.json
 
 ## Deploy the smart contract to LocalTerra
 
-Now that you've created, modified and tested each smart contract, deploy the `token-factory` to your LocalTerra instance using Terrain:
+Now that you've created, modified and tested each smart contract, deploy the `token_factory` to your LocalTerra instance using Terrain:
 
 ```sh
-terrain deploy token-factory --signer test
+terrain deploy token_factory --signer test
 ```
 
 :::{tip}
 If your code is not working as expected, you can [clone the repo with all changes done until now](https://github.com/emidev98/token-factory/commit/8da7892486704c54e33442b156d63178f5137527).
 
-A hosted website for the token factory can be [found here](http://tokens-factory.decentryfi.xyz).
+A hosted website for the token factory can be [found here](http://token_factory.decentryfi.xyz).
 :::
