@@ -19,7 +19,7 @@ In this section, you will define your expected messages alongside their implemen
 In your working directory, quickly launch your smart contract with the recommended folder structure and build options by running the following commands:
 
 ```sh
-cargo generate --git https://github.com/CosmWasm/cw-template.git --branch 0.16 --name my-first-contract
+cargo generate --git https://github.com/CosmWasm/cw-template.git --branch 1.0 --name my-first-contract
 cd my-first-contract
 ```
 
