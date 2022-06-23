@@ -23,5 +23,6 @@ If you are using LocalTerra with Terrain, use the [Terrain and LocalTerra instal
 install-localterra
 configure
 integrations
+contracts
 accounts
 ```
