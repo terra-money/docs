@@ -1480,8 +1480,8 @@
 <div class="section" id="scaffold-your-dapp">
 <h2>1. Scaffold your dApp<a class="headerlink" href="#scaffold-your-dapp" title="Permalink to this headline">¶</a></h2>
 <p>Scaffold your new application:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrain new my-terra-dapp
-<span class="nb">cd</span> my-terra-dapp
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrain new my_terra_dapp
+<span class="nb">cd</span> my_terra_dapp
 npm install
 </pre></div>
 </div>
@@ -1490,7 +1490,7 @@ npm install
 <p>The following structure shows your scaffolded project:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>.
 ├── contracts              # The contracts&#39; source code.
-│   ├── counter
+│   ├── my_terra_dapp
 │   └── ...                # Add more contracts here.
 ├── frontend               # The front-end application.
 ├── lib                    # Predefined functions for task and console.
@@ -1518,7 +1518,7 @@ npm install
 <div class="section" id="deploy">
 <h2>3. Deploy<a class="headerlink" href="#deploy" title="Permalink to this headline">¶</a></h2>
 <p>To deploy the application, run the following command:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrain deploy counter --signer pisco --network testnet
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrain deploy my_terra_dapp --signer pisco --network testnet
 </pre></div>
 </div>
 <p>The deploy command performs the following steps automatically:</p>

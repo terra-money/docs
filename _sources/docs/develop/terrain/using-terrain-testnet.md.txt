@@ -27,8 +27,8 @@ After creating a testnet wallet, you are ready to use Terrain. This short tutori
 Scaffold your new application:
 
 ```sh
-terrain new my-terra-dapp
-cd my-terra-dapp
+terrain new my_terra_dapp
+cd my_terra_dapp
 npm install
 ```
 
@@ -39,7 +39,7 @@ The following structure shows your scaffolded project:
 ```
 .
 ├── contracts              # The contracts' source code.
-│   ├── counter
+│   ├── my_terra_dapp
 │   └── ...                # Add more contracts here.
 ├── frontend               # The front-end application.
 ├── lib                    # Predefined functions for task and console.
@@ -69,7 +69,7 @@ module.exports = {
 To deploy the application, run the following command:
 
 ```sh
-terrain deploy counter --signer pisco --network testnet
+terrain deploy my_terra_dapp --signer pisco --network testnet
 ```
 
 The deploy command performs the following steps automatically:
