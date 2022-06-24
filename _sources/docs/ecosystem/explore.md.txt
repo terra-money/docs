@@ -6,7 +6,7 @@
 [Docs](https://docs.terra.money): the official documentation for the Terra blockchain<br>
 [White Paper](https://www.terra.money/Terra_White_paper.pdf): the official Terra White Paper<br>
 [GitHub](https://github.com/terra-money): the official Terraform Labs GitHub hosting all Terra public repos<br>
-[Discord](https://discord.gg/e29HWwC2Mz): the official Terra Discord for developers and enthusiasts to engage in focused discussions<br>
+[Discord](https://discord.com/invite/sTmERSFnYW): the official Terra Discord for developers and enthusiasts to engage in focused discussions<br>
 [Telegram](https://t.me/TerraLunaChat): the official Terra Telegram for enthusiasts to engage in discussions<br>
 [Telegram Announcements](https://t.me/terra_announcements): the official Telegram announcement channel for all major Terra & Mirror updates<br>
 [Twitter](https://twitter.com/terra_money): the official Terra Twitter for all major news and updates regarding Terra and its ecosystem<br>

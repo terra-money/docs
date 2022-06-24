@@ -8,7 +8,7 @@ Set up a website so that your delegators can find you. It is recommended that yo
 
 ## Announce yourself on Discord
 
-Join the [Terra Validators Discord](https://discord.gg/ZHBuKda) channel, and introduce yourself.
+Join the [Terra Validators Discord](https://discord.com/invite/ERczeGeMEa) channel, and introduce yourself.
 
 ## Submit a validator profile
 
