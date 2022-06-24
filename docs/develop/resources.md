@@ -13,19 +13,17 @@
 
 ## Developer support
     
-Find developer support on [Discord](https://discord.com/invite/EuKCeGFb93) or [Telegram](https://t.me/+gCxCPohmVBkyNDRl).
+Find developer support on [Discord](https://discord.com/invite/sTmERSFnYW) or [Telegram](https://t.me/+gCxCPohmVBkyNDRl).
+
     
 ### Discord instructions
     
-1. Join the [Terra Discord server](https://discord.com/invite/EuKCeGFb93).
+1. Join the [Terra Discord server](https://discord.com/invite/sTmERSFnYW).
     
-2. Pick up the `Developer Role` by clicking on the Green Bug icon (🪲) under the **#🪲 dev-roles** channel
+2. Pick up the `Developer Role` by clicking on the Green Bug icon (🪲) under the **#role-station** channel
     
-![Untitled](/img/screens/discord-dev/discors-dev-page.png)
     
-3. A new section of channels will appear where you can ask questions and receive support:
-    
-![Untitled](/img/screens/discord-dev/discord-dev-page-channel.png)
+3. A new section of channels will appear where you can ask questions and receive support.
 
 ### Developer Forum
     
