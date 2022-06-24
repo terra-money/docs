@@ -18,7 +18,7 @@ For more general information on validators, visit the [validator section](../../
 
 ## Additional resources
 
-- [The Terra validator Discord](https://discord.com/invite/xfZK6RMFFx).
+- [The Terra validator Discord](https://discord.com/invite/ERczeGeMEa).
 - [How to Spin Up a Node on Terra - Terra Bites video](https://www.youtube.com/watch?v=2lKAvltKX6w&ab_channel=TerraBites).
 - [The validator FAQ](faq.md)
 
