@@ -7,8 +7,8 @@ Contributions come in the form of writing documentation, raising issues, and any
 Please don't submit a pull request to ask a question. Instead, join us in the following communities, and ask all your questions.
 
 - [Terra Telegram community](https://t.me/TerraLunaChat)
-- [Terra Discord community](https://discord.gg/bYfyhUT)
-- [Terra Validator Discord community](https://discord.gg/Bf4Ug2Zf)
+- [Terra Discord community](https://discord.com/invite/sTmERSFnYW)
+- [Terra Validator Discord community](https://discord.com/invite/ERczeGeMEa)
 
 ## First steps
 
