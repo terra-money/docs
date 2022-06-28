@@ -1,6 +1,6 @@
 # Fees on Terra
 
-On terra, there is only one fee that applies to all transactions: the gas fee. 
+On Terra, there is only one fee that applies to all transactions: the gas fee. 
 
 ## Gas
 [Gas](glossary.md#fees) is a small computational fee that covers the cost of processing a transaction. Gas is estimated and added to every transaction in Terra Station. Any transaction that does not contain enough gas will not process.
