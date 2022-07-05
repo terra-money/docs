@@ -159,16 +159,14 @@ type ParamChange struct {
 }
 ```
 
-::: {important}
-Parameter Change Proposals are actually located in the Params module, an internal module. It is shown here for your convenience.
-:::
-
 Parameter Change Proposals are a special type of proposal which, once passed, will automatically go into effect by directly altering the network's specified parameter.
 
 ### Software Upgrade Proposals
 
-::: {danger}
-Software upgrade proposals exist because they are inherited from the Cosmos SDK, but they are temporarily unavailable because they have not been implemented yet. Therefore, they share the same semantics as a simple text proposal. If you submit this type of proposal, you might lose your Luna deposit.
+This type of proposal requires validators to update their node software to a new version at a specified block height.
+
+:::{danger}
+Software upgrade proposals can be difficult to execute. Exercise caution when using this proposal type, as you may lose your deposit due to an incorrect proposal. 
 :::
 
 ## Transitions
