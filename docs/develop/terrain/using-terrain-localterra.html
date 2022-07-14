@@ -26,8 +26,8 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/custom.css" />
@@ -1329,13 +1329,18 @@
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#generate-typescript-client">
+     3. Generate TypeScript client
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#interact-with-the-deployed-contract">
-     3. Interact with the deployed contract
+     4. Interact with the deployed contract
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#front-end-scaffolding">
-     4. Front-end scaffolding
+     5. Front-end scaffolding
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
@@ -1410,13 +1415,18 @@
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#generate-typescript-client">
+     3. Generate TypeScript client
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#interact-with-the-deployed-contract">
-     3. Interact with the deployed contract
+     4. Interact with the deployed contract
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#front-end-scaffolding">
-     4. Front-end scaffolding
+     5. Front-end scaffolding
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
@@ -1543,7 +1553,7 @@ npm install
 <div class="section" id="deploy">
 <h2>2. Deploy<a class="headerlink" href="#deploy" title="Permalink to this headline">¶</a></h2>
 <p>To deploy the application, run the following command:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrain deploy my_terra_dapp --signer test1
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrain deploy my_terra_dapp
 </pre></div>
 </div>
 <p>The deploy command performs the following steps automatically:</p>
@@ -1558,8 +1568,17 @@ npm install
 <p>If you are running LocalTerra and the previous <code class="docutils literal notranslate"><span class="pre">deploy</span></code> command is not working, try increasing Docker’s memory allowance by clicking on the Docker icon. Click <strong>Preferences</strong> and then <strong>Resources</strong>. Increase the memory to at least 4 gigs. Click <strong>Apply &amp; Restart</strong>. Run the deploy command again. You can increase again to 6 gigs if you are still having trouble.</p>
 </div>
 </div>
+<div class="section" id="generate-typescript-client">
+<h2>3. Generate TypeScript client<a class="headerlink" href="#generate-typescript-client" title="Permalink to this headline">¶</a></h2>
+<p>Terrain 0.5.x and above includes the ability to automatically generate a TypeScript client based on your smart contract schema.</p>
+<p>Generating a client is easy, just run the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">terrain</span> <span class="n">contract</span><span class="p">:</span><span class="n">generateClient</span> <span class="n">my_terra_dapp</span> <span class="o">--</span><span class="n">build</span><span class="o">-</span><span class="n">schema</span>
+</pre></div>
+</div>
+<p>The generated client will be put in <code class="docutils literal notranslate"><span class="pre">./lib/clients</span></code> and copied to the frontend.</p>
+</div>
 <div class="section" id="interact-with-the-deployed-contract">
-<h2>3. Interact with the deployed contract<a class="headerlink" href="#interact-with-the-deployed-contract" title="Permalink to this headline">¶</a></h2>
+<h2>4. Interact with the deployed contract<a class="headerlink" href="#interact-with-the-deployed-contract" title="Permalink to this headline">¶</a></h2>
 <p>The template comes with several predefined helpers in <code class="docutils literal notranslate"><span class="pre">lib/index.ts</span></code>. Use them to start interacting with your smart contract:</p>
 <ol class="arabic">
 <li><p>Run the following:</p>
@@ -1589,13 +1608,12 @@ npm install
 </div>
 </div>
 <div class="section" id="front-end-scaffolding">
-<h2>4. Front-end scaffolding<a class="headerlink" href="#front-end-scaffolding" title="Permalink to this headline">¶</a></h2>
+<h2>5. Front-end scaffolding<a class="headerlink" href="#front-end-scaffolding" title="Permalink to this headline">¶</a></h2>
 <p>Terrain also scaffolds a very simple front-end:</p>
 <ol class="arabic">
 <li><p>Open the <a class="reference external" href="https://chrome.google.com/webstore/detail/terra-station-wallet/aiifbnbfobpmeekipheeijimdpnlpgpp">Terra Station Chrome extension</a>, click the gear icon, and switch the network to Localterra.</p></li>
 <li><p>To use the front end, run the following commands in order. The <code class="docutils literal notranslate"><span class="pre">terrain</span> <span class="pre">sync-refs</span></code> command copies your deployed contract addresses to the front-end part of the codebase.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">terrain</span> <span class="n">sync</span><span class="o">-</span><span class="n">refs</span>
-<span class="n">cd</span> <span class="n">frontend</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">frontend</span>
 <span class="n">npm</span> <span class="n">install</span>
 <span class="n">npm</span> <span class="n">start</span>
 </pre></div>

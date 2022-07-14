@@ -26,8 +26,8 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/custom.css" />
@@ -1332,13 +1332,11 @@
     <a class="reference internal nav-link" href="#deploy">
      3. Deploy
     </a>
-    <ul class="visible nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#deploying-with-terra-station">
-       Deploying with Terra Station
-      </a>
-     </li>
-    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#generate-typescript-client">
+     3. Generate TypeScript client
+    </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#interact-with-the-deployed-contract">
@@ -1425,13 +1423,11 @@
     <a class="reference internal nav-link" href="#deploy">
      3. Deploy
     </a>
-    <ul class="visible nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#deploying-with-terra-station">
-       Deploying with Terra Station
-      </a>
-     </li>
-    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#generate-typescript-client">
+     3. Generate TypeScript client
+    </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#interact-with-the-deployed-contract">
@@ -1546,39 +1542,25 @@ npm install
 </div>
 <p>Wait a few seconds then try the deploy command again.</p>
 </div>
-<div class="section" id="deploying-with-terra-station">
-<h3>Deploying with Terra Station<a class="headerlink" href="#deploying-with-terra-station" title="Permalink to this headline">¶</a></h3>
-<p>Besides the CLI approach above, there is also the option of deploying and interacting with your contracts on testnet through the <a class="reference external" href="https://station.terra.money/">Terra Station UI</a>.</p>
-<ol class="arabic">
-<li><p>Compile your project with <code class="docutils literal notranslate"><span class="pre">terrain</span></code>. If you have localterra running, this can be done with <code class="docutils literal notranslate"><span class="pre">terrain</span> <span class="pre">deploy</span> <span class="pre">&lt;project&gt;</span> <span class="pre">--signer</span> <span class="pre">test1</span></code>. This will build the wasm bytecode and output a <strong>.wasm</strong> file such as <strong>artifacts/counter.wasm</strong></p></li>
-<li><p>You can now upload this contract to the testnet via Station. Go to <a class="reference external" href="https://station.terra.money/contract">https://station.terra.money/contract</a> and click on “Upload”</p></li>
-<li><p>Upload the .wasm bytecode. This step will generate a <code class="docutils literal notranslate"><span class="pre">codeId</span></code> which will be used for initializing the contract.</p></li>
-<li><p>Go back to the Contract page on <a class="reference external" href="https://station.terra.money/contract">Station</a> and instantiate your contract by passing in the <code class="docutils literal notranslate"><span class="pre">codeId</span></code> and parameter (<code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">&quot;count&quot;:</span> <span class="pre">0</span> <span class="pre">}</span></code>) for “Init msg”.</p></li>
-<li><p>Now, the contract is deployed as a <strong>MsgInstantiateContract</strong> transaction type. You will be able to see the address of the newly initialized contract in the logs at the bottom of the transaction details. (<a class="reference external" href="https://finder.terra.money/testnet/tx/FF669A3E0CECDC6278A0E390FAF93E9531F43599B77A45BD18ECC6023E15ACB3">example</a>)</p></li>
-<li><p>Search for your contract address on the <strong>Contract</strong> page of Terra Station. You can now execute a query or command against your contract. The payloads must be in JSON format. A command execution (with Execute) might look like:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
-  <span class="s2">&quot;increment&quot;</span>: <span class="o">{}</span>
-<span class="o">}</span>
+</div>
+<div class="section" id="generate-typescript-client">
+<h2>3. Generate TypeScript client<a class="headerlink" href="#generate-typescript-client" title="Permalink to this headline">¶</a></h2>
+<p>Terrain 0.5.x and above includes the ability to automatically generate a TypeScript client based on your smart contract schema.</p>
+<p>Generating a client is easy, just run the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">terrain</span> <span class="n">contract</span><span class="p">:</span><span class="n">generateClient</span> <span class="n">my_terra_dapp</span> <span class="o">--</span><span class="n">build</span><span class="o">-</span><span class="n">schema</span>
 </pre></div>
 </div>
-<div class="note admonition">
-<p class="admonition-title">Optional</p>
-<p>If you have a frontend, update your client-side <code class="docutils literal notranslate"><span class="pre">refs.terrain.json</span></code> to reflect the latest codeId and deployed contract address.</p>
-</div>
-</li>
-</ol>
-</div>
+<p>The generated client will be put in <code class="docutils literal notranslate"><span class="pre">./lib/clients</span></code> and copied to the frontend.</p>
 </div>
 <div class="section" id="interact-with-the-deployed-contract">
 <h2>4. Interact with the deployed contract<a class="headerlink" href="#interact-with-the-deployed-contract" title="Permalink to this headline">¶</a></h2>
 <p>The Terrain template comes with several predefined helpers in <code class="docutils literal notranslate"><span class="pre">lib/index.js</span></code>. Use them to start interacting with your smart contract:</p>
 <ol class="arabic">
-<li><p>Run <code class="docutils literal notranslate"><span class="pre">terrain</span> <span class="pre">console</span> <span class="pre">--network</span> <span class="pre">testnet</span></code>.</p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">terrain</span> <span class="pre">console</span> <span class="pre">--network</span> <span class="pre">testnet</span> <span class="pre">--signer</span> <span class="pre">pisco</span></code>.</p></li>
 <li><p>With the console open, increment the counter by running the following:</p>
-<div class="highlight-JavaScript notranslate"><div class="highlight"><pre><span></span><span class="k">await</span><span class="w"> </span><span class="nx">lib</span><span class="p">.</span><span class="nx">increment</span><span class="p">(</span><span class="nx">wallets</span><span class="p">.</span><span class="nx">pisco</span><span class="p">);</span><span class="w"></span>
+<div class="highlight-JavaScript notranslate"><div class="highlight"><pre><span></span><span class="k">await</span><span class="w"> </span><span class="nx">lib</span><span class="p">.</span><span class="nx">increment</span><span class="p">();</span><span class="w"></span>
 </pre></div>
 </div>
-<p>Make sure to pass your Pisco wallet to the increment command. <code class="docutils literal notranslate"><span class="pre">terrain</span> <span class="pre">console</span></code> makes wallets specified in <code class="docutils literal notranslate"><span class="pre">keys.terrain.js</span></code> available in the <code class="docutils literal notranslate"><span class="pre">wallets</span></code> object.</p>
 <p>You can get the current count by using:</p>
 <div class="highlight-JavaScript notranslate"><div class="highlight"><pre><span></span><span class="k">await</span><span class="w"> </span><span class="nx">lib</span><span class="p">.</span><span class="nx">getCount</span><span class="p">()</span><span class="w"></span>
 </pre></div>

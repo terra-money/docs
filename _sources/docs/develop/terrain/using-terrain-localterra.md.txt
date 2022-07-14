@@ -104,7 +104,7 @@ The following structure shows your scaffolded project:
 To deploy the application, run the following command:
 
 ```sh
-terrain deploy my_terra_dapp --signer test1
+terrain deploy my_terra_dapp
 ```
 
 The deploy command performs the following steps automatically:
@@ -120,7 +120,19 @@ The deploy command performs the following steps automatically:
 If you are running LocalTerra and the previous `deploy` command is not working, try increasing Docker's memory allowance by clicking on the Docker icon. Click **Preferences** and then **Resources**. Increase the memory to at least 4 gigs. Click **Apply & Restart**. Run the deploy command again. You can increase again to 6 gigs if you are still having trouble. 
 :::
 
-## 3. Interact with the deployed contract
+## 3. Generate TypeScript client
+
+Terrain 0.5.x and above includes the ability to automatically generate a TypeScript client based on your smart contract schema. 
+
+Generating a client is easy, just run the following command: 
+
+```
+terrain contract:generateClient my_terra_dapp --build-schema
+```
+
+The generated client will be put in `./lib/clients` and copied to the frontend.
+
+## 4. Interact with the deployed contract
 
 The template comes with several predefined helpers in `lib/index.ts`. Use them to start interacting with your smart contract:
 
@@ -152,7 +164,7 @@ The template comes with several predefined helpers in `lib/index.ts`. Use them t
 Before proceeding to the next section, kill the running command in your terminal by entering "Ctrl + C" . 
 :::
 
-## 4. Front-end scaffolding
+## 5. Front-end scaffolding
 
 Terrain also scaffolds a very simple front-end:
 
@@ -161,7 +173,6 @@ Terrain also scaffolds a very simple front-end:
 2. To use the front end, run the following commands in order. The `terrain sync-refs` command copies your deployed contract addresses to the front-end part of the codebase.
 
    ```
-   terrain sync-refs
    cd frontend
    npm install
    npm start
