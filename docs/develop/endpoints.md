@@ -1,4 +1,4 @@
-# RPC and LCD endpoints
+# Public and private endpoints
 
 ## Private endpoints
 
