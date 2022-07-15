@@ -1,14 +1,14 @@
 # Terrain initial setup
 
-This tutorial uses a Terra-specific development suite called Terrain.
+This tutorial uses a Terra-specific development tool called Terrain.
 
 Terrain will help you:
 
-- Scaffold your dApp project
-- Develop and deploy smart contracts
-- Create custom tasks for blockchain and contract interaction
-- Access a console (or REPL) for interacting with the Terra blockchain
-- Create predefined functions used in tasks and in the console
+- Scaffold your dApp project.
+- Develop and deploy smart contracts.
+- Create custom tasks for blockchain and contract interaction.
+- Access a console (or REPL) for interacting with the Terra blockchain.
+- Create predefined functions used in tasks and in the console.
 
 ## Prerequisites
 
