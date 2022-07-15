@@ -182,7 +182,7 @@ A validator's public address beginning with `terravaloper` followed by a string 
 
 ## Testnet
 
-A version of the mainnet just for testing. The testnet does not use real coins. You can use the testnet to get familiar with transactions.
+A version of the mainnet just for testing. The testnet does not use real coins. You can use the testnet to get familiar with transactions. The current testnet for Terra is [`pisco-1`](../develop/endpoints.md)
 
 ## The Terra ecosystem
 
