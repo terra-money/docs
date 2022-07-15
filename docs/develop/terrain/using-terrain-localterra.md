@@ -60,7 +60,7 @@ For more configuration options, visit the [LocalTerra configuration page](../loc
 
 # Counter tutorial 
 
-After installing LocalTerra, you are ready to use Terrain. This short tutorial walks you through setting up your project and creating a simple counter. 
+After installing LocalTerra, you are ready to use Terrain. This short tutorial walks you through setting up your project and creating a simple counter that increments upon request. 
 
 ## 1. Scaffold your dApp
 
