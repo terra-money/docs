@@ -68,7 +68,7 @@ Written by devs, for devs, [terrawiki.org](http://terrawiki.org) is the communit
 
 ### Agora Developers' Forum
 
-Join the [Developers' Forum](https://agora.terra.money/c/developer/20) and talk to other devs about code, projects, and troubleshooting.
+Join the [Developers' Forum](https://agora.terra.money/c/developer/20) and talk to other Terra devs about code, projects, and troubleshooting.
 
 ### Terra Academy
 
