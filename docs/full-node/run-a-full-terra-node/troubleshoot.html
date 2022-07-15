@@ -1378,7 +1378,7 @@
 <h2>Complete reset<a class="headerlink" href="#complete-reset" title="Permalink to this headline">¶</a></h2>
 <p>Occasionally you may need to perform a comlpete reset of your node due to data corruption or misconfiguration. Resetting will remove all data in <code class="docutils literal notranslate"><span class="pre">~/.terra/data</span></code> and the addressbook in <code class="docutils literal notranslate"><span class="pre">~/.terra/config/addrbook.json</span></code> and reset the node to genesis state.</p>
 <p>To perform a complete reset of your <code class="docutils literal notranslate"><span class="pre">terrad</span></code> state, use:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">terrad</span> <span class="n">unsafe</span><span class="o">-</span><span class="n">reset</span><span class="o">-</span><span class="nb">all</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">terrad</span> <span class="n">tendermint</span> <span class="n">unsafe</span><span class="o">-</span><span class="n">reset</span><span class="o">-</span><span class="nb">all</span>
 </pre></div>
 </div>
 <p>Running this command successfully will produce the following log:</p>
