@@ -1,6 +1,6 @@
 # Terrain
 
-Terrain is a Terra development environment that creates a better smart contract development experience.
+Terrain is Terra’s all-in-one development environment, providing front-end and smart contract scaffolding for your dApp.
 
 This guide will walk you through setting up your environment, installing Terrain, and using the testnet or LocalTerra to interact with a network.
 
