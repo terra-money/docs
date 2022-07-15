@@ -1,6 +1,6 @@
 # Use Terrain with the testnet
 
-The Pisco testnet is used for testing transactions on the Terra network.
+The [Pisco testnet](../../learn/glossary.md#testnet) is used for testing transactions on the Terra network.
 
 ## Prerequisites
 
@@ -20,7 +20,7 @@ Make sure you have your seed phrase stored somewhere since you will need it to c
 
 # Counter tutorial
 
-After creating a testnet wallet, you are ready to use Terrain. This short tutorial walks you through setting up your project and creating a simple counter.
+After creating a testnet wallet, you are ready to use Terrain. This short tutorial walks you through setting up your project and creating a simple counter that iuncrements upon request. 
 
 ## 1. Scaffold your dApp
 
