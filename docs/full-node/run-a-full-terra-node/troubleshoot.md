@@ -7,7 +7,7 @@ Occasionally you may need to perform a comlpete reset of your node due to data c
 To perform a complete reset of your `terrad` state, use:
 
 ```
-terrad unsafe-reset-all
+terrad tendermint unsafe-reset-all
 ```
 
 Running this command successfully will produce the following log: 
