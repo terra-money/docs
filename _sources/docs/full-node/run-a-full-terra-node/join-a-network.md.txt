@@ -65,8 +65,6 @@ Specify the network you want to join by choosing the corresponding **genesis fil
 | :----------- | :---------------------- | :-------------------------------------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------- |
 | `phoenix-1`  | Mainnet                 | [Genesis Link](https://phoenix-genesis.s3.us-west-1.amazonaws.com/genesis.json )                                                                                    | Addressbook not yet available()                                                                                       |
 | `pisco-1`    | Testnet                 | [Genesis Link](https://raw.githubusercontent.com/terra-money/testnet/master/pisco-1/genesis.json)                                                                                    | Addressbook not yet available()                                                                                       |
-| `columbus-5` | Mainnet (Terra Classic) | [Genesis Link](https://columbus-genesis.s3.ap-northeast-1.amazonaws.com/columbus-5-genesis.json)    | [Addressbook Link](https://network.terra.dev/addrbook.json)                                                |
-| `bombay-12`  | Testnet (Terra Classic) | [Genesis Link](https://raw.githubusercontent.com/terra-money/testnet/master/bombay-12/genesis.json) | [ Addressbook Link ](https://raw.githubusercontent.com/terra-money/testnet/master/bombay-12/addrbook.json) |
 
 :::{admonition} Selecting a network
 :class: tip
