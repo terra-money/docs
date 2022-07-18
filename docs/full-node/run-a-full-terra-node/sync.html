@@ -1305,26 +1305,14 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#quicksync">
-   Quicksync
+  <a class="reference internal nav-link" href="#state-sync">
+   State Sync
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#sync-complete">
    Sync Complete
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#verify-the-snapshot">
-   Verify the snapshot
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#compare-checksum-with-its-on-chain-version">
-     Compare checksum with its on-chain version.
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#sync-faster-during-testing">
@@ -1372,26 +1360,14 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#quicksync">
-   Quicksync
+  <a class="reference internal nav-link" href="#state-sync">
+   State Sync
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#sync-complete">
    Sync Complete
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#verify-the-snapshot">
-   Verify the snapshot
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#compare-checksum-with-its-on-chain-version">
-     Compare checksum with its on-chain version.
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#sync-faster-during-testing">
@@ -1452,51 +1428,15 @@
   }
 </pre></div>
 </div>
-<p>Compare this height to the <strong>Latest Blocks</strong> on <a class="reference external" href="https://terra.stake.id/#/">stake.id</a> to see your progress.</p>
+<p>Compare this height to the <strong>Latest Blocks</strong> by checking the API for latest block heights on <a class="reference external" href="https://phoenix-lcd.terra.dev/blocks/latest">Phoenix</a>, or <a class="reference external" href="https://pisco-lcd.terra.dev/blocks/latest">Pisco</a> to see your progress.</p>
 </div>
-<div class="section" id="quicksync">
-<h2>Quicksync<a class="headerlink" href="#quicksync" title="Permalink to this headline">¶</a></h2>
-<p>You can significantly accelerate the synchronization process by providing <code class="docutils literal notranslate"><span class="pre">terrad</span></code> with a recent snapshot of the network state. Snapshots are made publicly available by the Terra community and can be downloaded at <a class="reference external" href="https://quicksync.io/networks/terra.html">https://quicksync.io/networks/terra.html</a>. Choose the snapshot corresponding to your network type (<code class="docutils literal notranslate"><span class="pre">testnet</span></code>/<code class="docutils literal notranslate"><span class="pre">mainnet</span></code>) and a mirror close to the location of your node server.</p>
-<p>Before downloading a snapshot, make sure that you have the streaming and unpacking utilities installed:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>apt-get install wget liblz4-tool aria2 -y
-</pre></div>
-</div>
-<div class="tip admonition">
-<p class="admonition-title">Copy the download URL</p>
-<p>Don’t click the download link if you are using a separately hosted node, as this will not download to the correct machine. Instead, copy the link by right-clicking the  <code class="docutils literal notranslate"><span class="pre">Download</span></code> button. Downloading locally is not recommended unless you are hosting your node on the same computer from which you are browsing.</p>
-<p>The link in your clipboard should resemble the following:</p>
-<p><em><strong><a class="reference external" href="https://dl2.quicksync.io/bombay-12-default.20220107.0510.tar.lz4">https://dl2.quicksync.io/bombay-12-default.20220107.0510.tar.lz4</a></strong></em></p>
-</div>
-<p>The archived snapshot contains the state and transactions of the network, which are stored in the <code class="docutils literal notranslate"><span class="pre">~/.terra/data/</span></code> folder by default. You should navigate exactly to the <code class="docutils literal notranslate"><span class="pre">~/.terra/</span></code> folder before proceeding to unpack it, or make sure that the contents of the archive are placed into <code class="docutils literal notranslate"><span class="pre">~/.terra/</span></code>.</p>
-<ol class="arabic">
-<li><p>Download the snapshot.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># aria2c is a multi-source command-line download utility</span>
-<span class="c1"># specify N cores(up to 16) to speed up the process via -xN (5 cores used below)</span>
-aria2c -x5 https://dl2.quicksync.io/bombay-12-default.20220107.0510.tar.lz4
-</pre></div>
-</div>
-</li>
-<li><p>Unpack the <code class="docutils literal notranslate"><span class="pre">.lz4</span></code> archive:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>lz4 -d bombay-12-default.20220107.0510.tar.lz4
-</pre></div>
-</div>
-</li>
-<li><p>Unpack the <code class="docutils literal notranslate"><span class="pre">.tar</span></code> archive into <code class="docutils literal notranslate"><span class="pre">~/.terra</span></code>. Its contents must replace <code class="docutils literal notranslate"><span class="pre">~/.terra/data/</span></code>:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tar -xvf bombay-12-default.20220107.0510.tar
-</pre></div>
-</div>
-<p>Due to the size of the network, this may take some time.</p>
-</li>
-<li><p>After the snapshot is completely unpacked, start <code class="docutils literal notranslate"><span class="pre">terrad</span></code>:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad start
-</pre></div>
-</div>
-</li>
-</ol>
+<div class="section" id="state-sync">
+<h2>State Sync<a class="headerlink" href="#state-sync" title="Permalink to this headline">¶</a></h2>
+<p>You can significantly accelerate the synchronization process by providing <code class="docutils literal notranslate"><span class="pre">terrad</span></code> with a recent snapshot of the network state. Snapshots are made publicly available by members of the Terra community one example can be downloaded from <a class="reference external" href="https://polkachu.com/state_sync/terra">Polkachu</a>). Instructions are provided by Polkachu, and not maintained as part of this documentation.</p>
 </div>
 <div class="section" id="sync-complete">
 <h2>Sync Complete<a class="headerlink" href="#sync-complete" title="Permalink to this headline">¶</a></h2>
-<p>You can tell that your node is in sync with the network when <code class="docutils literal notranslate"><span class="pre">SyncInfo.catching_up</span></code> in the <code class="docutils literal notranslate"><span class="pre">terrad</span> <span class="pre">status</span></code> response returns <code class="docutils literal notranslate"><span class="pre">false</span></code> and the <code class="docutils literal notranslate"><span class="pre">latest_block_height</span></code> corresponds to the public network blockheight found on <a class="reference external" href="https://terra.stake.id/#/"> stake.id </a>:</p>
+<p>You can tell that your node is in sync with the network when <code class="docutils literal notranslate"><span class="pre">SyncInfo.catching_up</span></code> in the <code class="docutils literal notranslate"><span class="pre">terrad</span> <span class="pre">status</span></code> response returns <code class="docutils literal notranslate"><span class="pre">false</span></code> and the <code class="docutils literal notranslate"><span class="pre">latest_block_height</span></code> corresponds to the public network blockheight found on the API for either <a class="reference external" href="https://phoenix-lcd.terra.dev/blocks/latest">Phoenix</a>, or <a class="reference external" href="https://pisco-lcd.terra.dev/blocks/latest">Pisco</a>.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad status  
 </pre></div>
 </div>
@@ -1511,47 +1451,6 @@ aria2c -x5 https://dl2.quicksync.io/bombay-12-default.20220107.0510.tar.lz4
 </pre></div>
 </div>
 <p>Validators can view the status of the network using <a class="reference external" href="https://finder.terra.money">Terra Finder</a>.</p>
-</div>
-<div class="section" id="verify-the-snapshot">
-<h2>Verify the snapshot<a class="headerlink" href="#verify-the-snapshot" title="Permalink to this headline">¶</a></h2>
-<p>To verify the validity of the snapshot, use a <code class="docutils literal notranslate"><span class="pre">sha512sum</span></code> to check it against a cosmos validator’s registry of transactions.</p>
-<div class="section" id="compare-checksum-with-its-on-chain-version">
-<h3>Compare checksum with its on-chain version.<a class="headerlink" href="#compare-checksum-with-its-on-chain-version" title="Permalink to this headline">¶</a></h3>
-<p>For this example, use the following snapshot URL:</p>
-<p><code class="docutils literal notranslate"><span class="pre">https://dl2.quicksync.io/bombay-12-default.20220107.0510.tar.lz4</span></code></p>
-<ol class="arabic">
-<li><p>To make things easier for checking, assign the URL to a variable:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">URL</span><span class="o">=</span>https://dl2.quicksync.io/bombay-12-default.20220107.0510.tar.lz4
-</pre></div>
-</div>
-</li>
-<li><p>Obtain the checksum for the snapshot:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget <span class="nv">$URL</span>.checksum
-<span class="c1"># bombay-12-default.20220 100%[==============================&gt;]  59.55K   215KB/   s    in 0.3s    </span>
-<span class="c1"># 2022-01-08 07:30:06 (215 KB/s) - &#39;bombay-12-   default.20220107.0510.tar.lz4.checksum.1&#39; saved [60984/60984]</span>
-</pre></div>
-</div>
-</li>
-<li><p>Obtain the tx hash and assign it to a variable for brevity:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">HASH</span><span class="o">=</span><span class="k">$(</span>curl -s <span class="nv">$URL</span>.hash<span class="k">)</span>   
-<span class="c1"># 80E12115FEA1B3A161A2FDE7367FC34B8714EF398DAE5B1396F9748BC6218DB1</span>
-</pre></div>
-</div>
-</li>
-<li><p>Obtain the transaction profile and verify it:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -s https://lcd-cosmos.cosmostation.io/txs/<span class="k">$(</span>curl -s <span class="nv">$URL</span>.hash<span class="k">)</span> <span class="p">|</span> jq -r    <span class="s1">&#39;.tx.value.memo&#39;</span><span class="p">|</span>sha512sum -c
-<span class="c1"># bombay-12-default.20220107.0510.tar.lz4.checksum: OK</span>
-</pre></div>
-</div>
-</li>
-<li><p>Obtain the checksum script and verify the provided snapshot:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget https://raw.githubusercontent.com/chainlayer/quicksync-playbooks/master/   roles/quicksync/files/checksum.sh
-./checksum.sh <span class="k">$(</span>basename <span class="nv">$URL</span><span class="k">)</span>
-</pre></div>
-</div>
-</li>
-</ol>
-</div>
 </div>
 <div class="section" id="sync-faster-during-testing">
 <h2>Sync faster during testing<a class="headerlink" href="#sync-faster-during-testing" title="Permalink to this headline">¶</a></h2>
