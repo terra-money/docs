@@ -85,7 +85,7 @@ module.exports = {
 
 ## Deploy the smart contracts
 
-The `token_factory` contract mints new `cw20_factory_token` tokens, increases the supply of minted tokens, burns tokens to return UST and tracks all tokens created.
+The `token_factory` contract mints new `cw20_factory_token` tokens, increases the supply of minted tokens, burns tokens to return LUNA and tracks all tokens created.
 
 Deploy each smart contract to validate that the development environment is configured correctly:
 
@@ -645,7 +645,7 @@ pub fn execute(
         ExecuteMsg::Deposit(deposit_type) => match_deposit(deps.as_ref(), env, info, deposit_type),
 
         /* Method used to burn an existent token created thru this contract
-        and send the UST back to the address that burn these tokens.*/
+        and send the LUNA back to the address that burn these tokens.*/
         ExecuteMsg::Burn {
             amount,
             token_address,
@@ -669,7 +669,7 @@ pub fn match_deposit(
 
         /* If a token_address and recipient is received along with a
         deposit this method will increase the supply of an already
-        existent token by the defined units of UST received */
+        existent token by the defined units of LUNA received */
         DepositType::Mint {
             token_address,
 
