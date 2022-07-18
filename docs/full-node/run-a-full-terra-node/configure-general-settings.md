@@ -37,7 +37,8 @@ You can update your node's moniker by editing the `moniker` field in  `~/.terra/
 
 2. Modify `minimum-gas-prices` and set the minimum price of gas a validator will accept to validate a transaction and to prevent spam.
 
-- You can [query API](https://api.terra.dev/gas-prices) to view the current gas prices.
+Recomended setting is:
+```minimum-gas-prices = "0.15uluna"```
 
 **Example**:
 
