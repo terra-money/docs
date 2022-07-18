@@ -1,6 +1,6 @@
 # Join a network
 
-It is highly recommended that you set up a local private network before joining a public network. This will help get familiar with the setup process, and provide an environment for testing. The following sections outline this process. If you want to join a public network without setting up a private network, you can skip to [join a public network ](#join-a-public-network).
+It is highly recommended that you set up a private local network before joining a public network. This will help you get familiar with the setup process, and provide an environment for testing. The following sections outline this process. If you want to join a public network without setting up a private network, you can skip to [join a public network ](#join-a-public-network).
 
 ## Set up a local private network
 
@@ -61,10 +61,10 @@ These instructions are for setting up a brand new full node from scratch. You ca
 
 Specify the network you want to join by choosing the corresponding **genesis file** and **seeds**:
 
-| Network      | Type                    | Genesis                                                                                             | Addressbook                                                                                                |
-| :----------- | :---------------------- | :-------------------------------------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------- |
-| `phoenix-1`  | Mainnet                 | [Genesis Link](https://phoenix-genesis.s3.us-west-1.amazonaws.com/genesis.json )                                                                                    | Addressbook not yet available()                                                                                       |
-| `pisco-1`    | Testnet                 | [Genesis Link](https://raw.githubusercontent.com/terra-money/testnet/master/pisco-1/genesis.json)                                                                                    | Addressbook not yet available()                                                                                       |
+| Network     | Type    | Genesis                                                                                           | Addressbook                     |
+| :---------- | :------ | :------------------------------------------------------------------------------------------------ | :------------------------------ |
+| `phoenix-1` | Mainnet | [Genesis Link](https://phoenix-genesis.s3.us-west-1.amazonaws.com/genesis.json)                   | Addressbook not yet available() |
+| `pisco-1`   | Testnet | [Genesis Link](https://raw.githubusercontent.com/terra-money/testnet/master/pisco-1/genesis.json) | Addressbook not yet available() |
 
 :::{admonition} Selecting a network
 :class: tip
@@ -147,12 +147,12 @@ terrad status
 
 :::
 
-Your node is now syncing. This process will take a long time. Make sure you've set it up on a stable connection so you can leave while it syncs.
+Your node is now syncing. This process will take a long time. Make sure you've set it up on a stable connection so this process is not interrupted.
 
 ::: {admonition} Sync start times
 :class: caution
 
-Nodes take at least an hour to start syncing. This wait is normal. Before troubleshooting a sync, please wait an hour for the sync to start.
+Nodes take at least an hour to start syncing. This wait time is normal. Before troubleshooting a sync, please wait an hour for the sync to start.
 :::
 
 Continue to the [Sync](sync.md) page to find out more about syncing your node.

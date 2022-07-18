@@ -1,4 +1,4 @@
-# System configuration
+# System Configuration
 
 :::{admonition} Recommended operating systems
 :class: caution  
@@ -7,19 +7,18 @@ This guide has been tested against Linux distributions only. To ensure a success
 
 Running a full Terra node is a resource-intensive process that requires a persistent server. If you want to use Terra without downloading the entire blockchain, use [Terra Station](https://station.terra.money/).
 
-## Hardware requirements
+## Hardware Requirements
 
-These are the the minimum requirements for running a full Terra node:
+The the minimum requirements for running a Terra full node are:
 
-- Four or more CPU cores
+- 4+ CPU cores
 - At least 32 GB of memory
-- At least 300 mbps of network bandwidth
-- At least 2 TB NVME SSD
+- At least 300 mbps in network bandwidth
+- At least 2 TB NVME SSD in storage
 
 :::{admonition} Storage requirements
 :class: warning
 As the network grows, the minimum storage requirements will also grow. It is recommended that you use more than the minimum storage requirements to run a robust full node.
-
 :::
 
 ## Prerequisites
@@ -64,11 +63,11 @@ As the network grows, the minimum storage requirements will also grow. It is rec
 
 ## Commonly used ports
 
-`terrad` uses the following TCP ports. Toggle their settings to fit your environment.
+`terrad` uses the following TCP ports. Toggle their settings to match your environment.
 
 Most validators will only need to open the following port:
 
-- `26656`: The default port for the P2P protocol. This port is used to communicate with other nodes and must be open to join a network. However, it does not have to be open to the public. For validator nodes, [configuring `persistent_peers`](updates-and-additional.md#additional-settings) and closing this port to the public is recommended.
+- `26656`: The default port for the P2P protocol. This port is used to communicate with other nodes and must be open to join a network. However, it does not have to be open to the public. For validator nodes, [configuring `persistent_peers`](updates-and-additional.md#additional-settings) and closing this port to the public are recommended.
 
 Additional ports:
 

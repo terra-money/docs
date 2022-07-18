@@ -14,8 +14,8 @@ The following information describes the most important node configuration settin
 │-- node_key.json                       # private key used for node authentication in the p2p protocol (its corresponding public key is the nodeid)
 └-- priv_validator_key.json             # key used by the validator on the node to sign blocks
 ```
-:::
 
+:::
 
 ## Initialize and configure moniker
 
@@ -24,12 +24,13 @@ Initialize the node with a human-readable name:
 ```bash
 terrad init <your_custom_moniker> # ex., terrad init validator-joes-node
 ```
+
 ::: {admonition} Moniker characters
 :class: caution
 Monikers can only contain ASCII characters; using Unicode characters will render your node unreachable by other peers in the network.
 :::
 
-You can update your node's moniker by editing the `moniker` field in  `~/.terra/config/config.toml`
+You can update your node's moniker by editing the `moniker` field in `~/.terra/config/config.toml`
 
 ## Update minimum gas prices
 
@@ -38,11 +39,11 @@ You can update your node's moniker by editing the `moniker` field in  `~/.terra/
 2. Modify `minimum-gas-prices` and set the minimum price of gas a validator will accept to validate a transaction and to prevent spam.
 
 Recomended setting is:
-```minimum-gas-prices = "0.15uluna"```
+`minimum-gas-prices = "0.15uluna"`
 
 **Example**:
 
-```toml
+````toml
 # The minimum gas prices a validator is willing to accept for processing a
 # transaction. A transaction's fees must meet the minimum of any denomination
 # specified in this config (e.g. 0.25token1;0.0001token2).
@@ -61,9 +62,9 @@ For information about the available Terra REST API endpoints, see the [Swagger d
    ```toml
    # Enable defines if the API server should be enabled.
    enable = true
-   ```
+````
 
-4. Optional: Swagger defines if swagger documentation should automatically be registered. To enable Swagger, change `swagger = false to `swagger = true`.
+4. Optional: Swagger defines if swagger documentation should automatically be registered. To enable Swagger, change `swagger = false` to `swagger = true`.
 
    ```toml
    swagger = true
@@ -73,8 +74,8 @@ For information about the available Terra REST API endpoints, see the [Swagger d
 
 ## Set up `external_address` in `config.toml`
 
-In order to be added to the address book in seed nodes, you need to configure `external_address` in `config.toml`.  This addition will prevent continuous reconnections. The default P2P_PORT is 26656.
+In order to be added to the address book in seed nodes, you need to configure `external_address` in `config.toml`. This addition will prevent continuous reconnections. The default P2P_PORT is `26656`.
 
-   ```sh
-   sed -i -e 's/external_address = \"\"/external_address = \"'$(curl httpbin.org/ip | jq -r .origin)':26656\"/g' ~/.terra/config/config.toml
-   ```
+```sh
+sed -i -e 's/external_address = \"\"/external_address = \"'$(curl httpbin.org/ip | jq -r .origin)':26656\"/g' ~/.terra/config/config.toml
+```
