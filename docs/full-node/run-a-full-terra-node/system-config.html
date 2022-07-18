@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>System configuration &#8212; Terra Docs  documentation</title>
+    <title>System Configuration &#8212; Terra Docs  documentation</title>
     
   <link href="../../../_static/css/theme.css" rel="stylesheet">
   <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -1008,7 +1008,7 @@
     <ul class="current">
      <li class="toctree-l3 current active">
       <a class="current reference internal" href="#">
-       System configuration
+       System Configuration
       </a>
      </li>
      <li class="toctree-l3">
@@ -1101,7 +1101,7 @@
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference external" href="https://lcd.terra.dev/swagger/">
+      <a class="reference external" href="https://phoenix-lcd.terra.dev/swagger/">
        Terra REST API
       </a>
      </li>
@@ -1180,16 +1180,6 @@
      <li class="toctree-l3">
       <a class="reference internal" href="../../develop/guides/start-lcd.html">
        Start the light client daemon (LCD)
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../develop/reference/history-and-changes.html">
-       History and changes
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../develop/reference/migration-guide.html">
-       Columbus-5 upgrade
       </a>
      </li>
     </ul>
@@ -1291,7 +1281,7 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#hardware-requirements">
-   Hardware requirements
+   Hardware Requirements
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1314,7 +1304,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>System configuration</h1>
+                <h1>System Configuration</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -1326,7 +1316,7 @@
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#hardware-requirements">
-   Hardware requirements
+   Hardware Requirements
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1349,20 +1339,20 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="system-configuration">
-<h1>System configuration<a class="headerlink" href="#system-configuration" title="Permalink to this headline">¶</a></h1>
+<h1>System Configuration<a class="headerlink" href="#system-configuration" title="Permalink to this headline">¶</a></h1>
 <div class="caution admonition">
 <p class="admonition-title">Recommended operating systems</p>
 <p>This guide has been tested against Linux distributions only. To ensure a successful production environment setup, consider using a Linux system.</p>
 </div>
 <p>Running a full Terra node is a resource-intensive process that requires a persistent server. If you want to use Terra without downloading the entire blockchain, use <a class="reference external" href="https://station.terra.money/">Terra Station</a>.</p>
 <div class="section" id="hardware-requirements">
-<h2>Hardware requirements<a class="headerlink" href="#hardware-requirements" title="Permalink to this headline">¶</a></h2>
-<p>These are the the minimum requirements for running a full Terra node:</p>
+<h2>Hardware Requirements<a class="headerlink" href="#hardware-requirements" title="Permalink to this headline">¶</a></h2>
+<p>The the minimum requirements for running a Terra full node are:</p>
 <ul class="simple">
-<li><p>Four or more CPU cores</p></li>
+<li><p>4+ CPU cores</p></li>
 <li><p>At least 32 GB of memory</p></li>
-<li><p>At least 300 mbps of network bandwidth</p></li>
-<li><p>At least 2 TB NVME SSD</p></li>
+<li><p>At least 300 mbps in network bandwidth</p></li>
+<li><p>At least 2 TB NVME SSD in storage</p></li>
 </ul>
 <div class="warning admonition">
 <p class="admonition-title">Storage requirements</p>
@@ -1413,10 +1403,10 @@ go version
 </div>
 <div class="section" id="commonly-used-ports">
 <h2>Commonly used ports<a class="headerlink" href="#commonly-used-ports" title="Permalink to this headline">¶</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">terrad</span></code> uses the following TCP ports. Toggle their settings to fit your environment.</p>
+<p><code class="docutils literal notranslate"><span class="pre">terrad</span></code> uses the following TCP ports. Toggle their settings to match your environment.</p>
 <p>Most validators will only need to open the following port:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">26656</span></code>: The default port for the P2P protocol. This port is used to communicate with other nodes and must be open to join a network. However, it does not have to be open to the public. For validator nodes, <a class="reference internal" href="updates-and-additional.html#additional-settings"><span class="std std-doc">configuring <code class="docutils literal notranslate"><span class="pre">persistent_peers</span></code></span></a> and closing this port to the public is recommended.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">26656</span></code>: The default port for the P2P protocol. This port is used to communicate with other nodes and must be open to join a network. However, it does not have to be open to the public. For validator nodes, <a class="reference internal" href="updates-and-additional.html#additional-settings"><span class="std std-doc">configuring <code class="docutils literal notranslate"><span class="pre">persistent_peers</span></code></span></a> and closing this port to the public are recommended.</p></li>
 </ul>
 <p>Additional ports:</p>
 <ul class="simple">

@@ -1008,7 +1008,7 @@
     <ul class="current">
      <li class="toctree-l3">
       <a class="reference internal" href="system-config.html">
-       System configuration
+       System Configuration
       </a>
      </li>
      <li class="toctree-l3">
@@ -1101,7 +1101,7 @@
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference external" href="https://lcd.terra.dev/swagger/">
+      <a class="reference external" href="https://phoenix-lcd.terra.dev/swagger/">
        Terra REST API
       </a>
      </li>
@@ -1180,16 +1180,6 @@
      <li class="toctree-l3">
       <a class="reference internal" href="../../develop/guides/start-lcd.html">
        Start the light client daemon (LCD)
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../develop/reference/history-and-changes.html">
-       History and changes
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../develop/reference/migration-guide.html">
-       Columbus-5 upgrade
       </a>
      </li>
     </ul>
@@ -1396,7 +1386,7 @@
 <p>To change the genesis version, delete <code class="docutils literal notranslate"><span class="pre">~/.terra/config/genesis.json</span></code>.</p>
 <p>You can recreate a genesis version via the following steps:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span> terrad add-genesis-account <span class="k">$(</span>terrad keys show &lt;account-name&gt; -a<span class="k">)</span> 100000000uluna,1000usd
- terrad gentx &lt;account-name&gt; 10000000uluna --chain-id<span class="o">=</span>&lt;network-name&gt; 
+ terrad gentx &lt;account-name&gt; 10000000uluna --chain-id<span class="o">=</span>&lt;network-name&gt;
  terrad collect-gentxs
 </pre></div>
 </div>
@@ -1407,7 +1397,7 @@
 <p class="admonition-title">Danger</p>
 <p>You may be unable to use your node and its associated accounts after changing your personal data. Do not perform this action unless your node is disposable.</p>
 </div>
-<p>To change your personal data to a completely pristine state, delete both <code class="docutils literal notranslate"><span class="pre">~/.terra/config/priv_validator_state.json</span></code> and <code class="docutils literal notranslate"><span class="pre">~/.terra/config/node_key.json</span></code>.</p>
+<p>To change your personal data to a pristine state, delete both <code class="docutils literal notranslate"><span class="pre">~/.terra/config/priv_validator_state.json</span></code> and <code class="docutils literal notranslate"><span class="pre">~/.terra/config/node_key.json</span></code>.</p>
 </div>
 <div class="section" id="node-health">
 <h3>Node health<a class="headerlink" href="#node-health" title="Permalink to this headline">¶</a></h3>
@@ -1415,7 +1405,7 @@
 <ul class="simple">
 <li><p>Addressbook <code class="docutils literal notranslate"><span class="pre">~/.terra/config/addrbook.json</span></code></p></li>
 <li><p>Genesis file <code class="docutils literal notranslate"><span class="pre">~/.terra/config/genesis.json</span></code></p></li>
-<li><p>Validator state  <code class="docutils literal notranslate"><span class="pre">~/.terra/config/priv_validator_state.json</span></code></p></li>
+<li><p>Validator state <code class="docutils literal notranslate"><span class="pre">~/.terra/config/priv_validator_state.json</span></code></p></li>
 <li><p>Node key <code class="docutils literal notranslate"><span class="pre">~/.terra/config/node_key.json</span></code></p></li>
 </ul>
 </div>

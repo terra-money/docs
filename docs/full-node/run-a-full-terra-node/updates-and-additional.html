@@ -1008,7 +1008,7 @@
     <ul class="current">
      <li class="toctree-l3">
       <a class="reference internal" href="system-config.html">
-       System configuration
+       System Configuration
       </a>
      </li>
      <li class="toctree-l3">
@@ -1101,7 +1101,7 @@
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference external" href="https://lcd.terra.dev/swagger/">
+      <a class="reference external" href="https://phoenix-lcd.terra.dev/swagger/">
        Terra REST API
       </a>
      </li>
@@ -1180,16 +1180,6 @@
      <li class="toctree-l3">
       <a class="reference internal" href="../../develop/guides/start-lcd.html">
        Start the light client daemon (LCD)
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../develop/reference/history-and-changes.html">
-       History and changes
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../develop/reference/migration-guide.html">
-       Columbus-5 upgrade
       </a>
      </li>
     </ul>
@@ -1444,10 +1434,10 @@
 <h1>Updates and additional settings<a class="headerlink" href="#updates-and-additional-settings" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="upgrade-the-testnet">
 <h2>Upgrade the testnet<a class="headerlink" href="#upgrade-the-testnet" title="Permalink to this headline">¶</a></h2>
-<p>These instructions are for full nodes running previous testnets that would like to upgrade to the latest testnet.</p>
+<p>These instructions are for full nodes running older testnets that would like to upgrade to the latest testnet.</p>
 <div class="section" id="reset-data">
 <h3>1. Reset data<a class="headerlink" href="#reset-data" title="Permalink to this headline">¶</a></h3>
-<p>Remove the outdated files and reset data:</p>
+<p>Remove the outdated files and reset the data:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rm ~/.terra/config/genesis.json
 rm ~/.terra/config/addrbook.json
 terrad unsafe-reset-all
@@ -1498,7 +1488,7 @@ make
 <h2>Additional Settings<a class="headerlink" href="#additional-settings" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="seed-mode">
 <h3><code class="docutils literal notranslate"><span class="pre">seed_mode</span></code><a class="headerlink" href="#seed-mode" title="Permalink to this headline">¶</a></h3>
-<p>In seed mode, your node constantly crawls the network and looks for peers. If another node asks it for addresses, it responds and disconnects. Seed mode will not work if the peer-exchange reactor is disabled.</p>
+<p>In seed mode, your node constantly crawls the network and looks for peers. If another node requests addresses, it responds and disconnects. Seed mode will not work if the peer-exchange reactor is disabled.</p>
 <div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="n">seed_mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
 </pre></div>
 </div>
@@ -1513,7 +1503,7 @@ make
 </div>
 <div class="section" id="persistent-peers">
 <h3><code class="docutils literal notranslate"><span class="pre">persistent_peers</span></code><a class="headerlink" href="#persistent-peers" title="Permalink to this headline">¶</a></h3>
-<p>The nodes you specify are the trusted persistent peers that can help anchor your node in the p2p network. If the connection fails, they are dialed and automatically redialed for 24 hours. The automatic redial function uses exponential backoff and stops after 24 hours of trying to connect.</p>
+<p>The nodes you specify are the trusted persistent peers that can help anchor your node in the p2p network. If the connection fails, they are dialed and automatically redialed for 24 hours. The automatic redial functionality uses exponential backoff and stops after 24 hours of trying to connect.</p>
 <p>If the value of <code class="docutils literal notranslate"><span class="pre">persistent_peers_max_dial_period</span></code> is more than zero, the pause between each call to each persistent peer will not exceed <code class="docutils literal notranslate"><span class="pre">persistent_peers_max_dial_period</span></code> during exponential backoff, and the automatic redial process continues.</p>
 <div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="c1"># Comma separated list of nodes to keep persistent connections to</span><span class="w"></span>
 <span class="n">persistent_peers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;id100000000000000000000000000000000@1.2.3.4:26656,id200000000000000000000000000000000@2.3.4.5:26656&quot;</span><span class="w"></span>

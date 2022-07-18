@@ -1008,7 +1008,7 @@
     <ul class="current">
      <li class="toctree-l3">
       <a class="reference internal" href="system-config.html">
-       System configuration
+       System Configuration
       </a>
      </li>
      <li class="toctree-l3">
@@ -1101,7 +1101,7 @@
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference external" href="https://lcd.terra.dev/swagger/">
+      <a class="reference external" href="https://phoenix-lcd.terra.dev/swagger/">
        Terra REST API
       </a>
      </li>
@@ -1180,16 +1180,6 @@
      <li class="toctree-l3">
       <a class="reference internal" href="../../develop/guides/start-lcd.html">
        Start the light client daemon (LCD)
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../develop/reference/history-and-changes.html">
-       History and changes
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../develop/reference/migration-guide.html">
-       Columbus-5 upgrade
       </a>
      </li>
     </ul>
@@ -1401,7 +1391,7 @@ Structure of .terra/config<div class="sd-summary-down docutils">
 <p class="admonition-title">Moniker characters</p>
 <p>Monikers can only contain ASCII characters; using Unicode characters will render your node unreachable by other peers in the network.</p>
 </div>
-<p>You can update your node’s moniker by editing the <code class="docutils literal notranslate"><span class="pre">moniker</span></code> field in  <code class="docutils literal notranslate"><span class="pre">~/.terra/config/config.toml</span></code></p>
+<p>You can update your node’s moniker by editing the <code class="docutils literal notranslate"><span class="pre">moniker</span></code> field in <code class="docutils literal notranslate"><span class="pre">~/.terra/config/config.toml</span></code></p>
 </div>
 <div class="section" id="update-minimum-gas-prices">
 <h2>Update minimum gas prices<a class="headerlink" href="#update-minimum-gas-prices" title="Permalink to this headline">¶</a></h2>
@@ -1433,7 +1423,7 @@ For information about the available Terra REST API endpoints, see the [Swagger d
 </pre></div>
 </div>
 <ol class="arabic" start="4">
-<li><p>Optional: Swagger defines if swagger documentation should automatically be registered. To enable Swagger, change <code class="docutils literal notranslate"><span class="pre">swagger</span> <span class="pre">=</span> <span class="pre">false</span> <span class="pre">to</span> </code>swagger = true`.</p>
+<li><p>Optional: Swagger defines if swagger documentation should automatically be registered. To enable Swagger, change <code class="docutils literal notranslate"><span class="pre">swagger</span> <span class="pre">=</span> <span class="pre">false</span></code> to <code class="docutils literal notranslate"><span class="pre">swagger</span> <span class="pre">=</span> <span class="pre">true</span></code>.</p>
 <div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="n">swagger</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
 </pre></div>
 </div>
@@ -1443,7 +1433,7 @@ For information about the available Terra REST API endpoints, see the [Swagger d
 </div>
 <div class="section" id="set-up-external-address-in-config-toml">
 <h2>Set up <code class="docutils literal notranslate"><span class="pre">external_address</span></code> in <code class="docutils literal notranslate"><span class="pre">config.toml</span></code><a class="headerlink" href="#set-up-external-address-in-config-toml" title="Permalink to this headline">¶</a></h2>
-<p>In order to be added to the address book in seed nodes, you need to configure <code class="docutils literal notranslate"><span class="pre">external_address</span></code> in <code class="docutils literal notranslate"><span class="pre">config.toml</span></code>.  This addition will prevent continuous reconnections. The default P2P_PORT is 26656.</p>
+<p>In order to be added to the address book in seed nodes, you need to configure <code class="docutils literal notranslate"><span class="pre">external_address</span></code> in <code class="docutils literal notranslate"><span class="pre">config.toml</span></code>. This addition will prevent continuous reconnections. The default P2P_PORT is <code class="docutils literal notranslate"><span class="pre">26656</span></code>.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sed -i -e <span class="s1">&#39;s/external_address = \&quot;\&quot;/external_address = \&quot;&#39;</span><span class="k">$(</span>curl httpbin.org/ip <span class="p">|</span> jq -r .origin<span class="k">)</span><span class="s1">&#39;:26656\&quot;/g&#39;</span> ~/.terra/config/config.toml
 </pre></div>
 </div>

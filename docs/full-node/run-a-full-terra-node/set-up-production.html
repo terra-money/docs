@@ -1008,7 +1008,7 @@
     <ul class="current">
      <li class="toctree-l3">
       <a class="reference internal" href="system-config.html">
-       System configuration
+       System Configuration
       </a>
      </li>
      <li class="toctree-l3">
@@ -1101,7 +1101,7 @@
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference external" href="https://lcd.terra.dev/swagger/">
+      <a class="reference external" href="https://phoenix-lcd.terra.dev/swagger/">
        Terra REST API
       </a>
      </li>
@@ -1180,16 +1180,6 @@
      <li class="toctree-l3">
       <a class="reference internal" href="../../develop/guides/start-lcd.html">
        Start the light client daemon (LCD)
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../develop/reference/history-and-changes.html">
-       History and changes
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../develop/reference/migration-guide.html">
-       Columbus-5 upgrade
       </a>
      </li>
     </ul>
@@ -1426,7 +1416,7 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="set-up-a-production-environment">
 <h1>Set up a production environment<a class="headerlink" href="#set-up-a-production-environment" title="Permalink to this headline">¶</a></h1>
-<p>Use the following information to set up and manage your production-level full Terra node.</p>
+<p>Use the following information to set up and manage your production-level Terra full node.</p>
 <p>For information about running a validator node, visit the <a class="reference internal" href="../manage-a-terra-validator/README.html"><span class="doc std std-doc">validator guide</span></a>.</p>
 <div class="section" id="create-a-dedicated-user">
 <h2>Create a dedicated user<a class="headerlink" href="#create-a-dedicated-user" title="Permalink to this headline">¶</a></h2>
@@ -1460,14 +1450,14 @@
 <span class="o">[</span>Service<span class="o">]</span>
 <span class="nv">Type</span><span class="o">=</span>simple
 <span class="nv">User</span><span class="o">=</span>&lt;TERRA_USER&gt;
-<span class="nv">ExecStart</span><span class="o">=</span>&lt;PATH_TO_TERRAD&gt;/terrad start  
+<span class="nv">ExecStart</span><span class="o">=</span>&lt;PATH_TO_TERRAD&gt;/terrad start
 <span class="nv">Restart</span><span class="o">=</span>on-abort
 
 <span class="o">[</span>Install<span class="o">]</span>
 <span class="nv">WantedBy</span><span class="o">=</span>multi-user.target
 
 <span class="o">[</span>Service<span class="o">]</span>
-<span class="nv">LimitNOFILE</span><span class="o">=</span><span class="m">65535</span>  
+<span class="nv">LimitNOFILE</span><span class="o">=</span><span class="m">65535</span>
 </pre></div>
 </div>
 </li>
