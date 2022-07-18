@@ -1611,7 +1611,7 @@
 </div>
 <div class="section" id="deploy-the-smart-contracts">
 <h2>Deploy the smart contracts<a class="headerlink" href="#deploy-the-smart-contracts" title="Permalink to this headline">¶</a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">token_factory</span></code> contract mints new <code class="docutils literal notranslate"><span class="pre">cw20_factory_token</span></code> tokens, increases the supply of minted tokens, burns tokens to return UST and tracks all tokens created.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">token_factory</span></code> contract mints new <code class="docutils literal notranslate"><span class="pre">cw20_factory_token</span></code> tokens, increases the supply of minted tokens, burns tokens to return LUNA and tracks all tokens created.</p>
 <p>Deploy each smart contract to validate that the development environment is configured correctly:</p>
 <p>a. Deploy the <code class="docutils literal notranslate"><span class="pre">token_factory</span></code> contract:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">terrain</span> <span class="n">deploy</span> <span class="n">token_factory</span> <span class="o">--</span><span class="n">signer</span> <span class="n">test</span>
@@ -2117,7 +2117,7 @@
 <span class="w">        </span><span class="n">ExecuteMsg</span>::<span class="n">Deposit</span><span class="p">(</span><span class="n">deposit_type</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">match_deposit</span><span class="p">(</span><span class="n">deps</span><span class="p">.</span><span class="n">as_ref</span><span class="p">(),</span><span class="w"> </span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">info</span><span class="p">,</span><span class="w"> </span><span class="n">deposit_type</span><span class="p">),</span><span class="w"></span>
 
 <span class="w">        </span><span class="cm">/* Method used to burn an existent token created thru this contract</span>
-<span class="cm">        and send the UST back to the address that burn these tokens.*/</span><span class="w"></span>
+<span class="cm">        and send the LUNA back to the address that burn these tokens.*/</span><span class="w"></span>
 <span class="w">        </span><span class="n">ExecuteMsg</span>::<span class="n">Burn</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">            </span><span class="n">amount</span><span class="p">,</span><span class="w"></span>
 <span class="w">            </span><span class="n">token_address</span><span class="p">,</span><span class="w"></span>
@@ -2141,7 +2141,7 @@
 
 <span class="w">        </span><span class="cm">/* If a token_address and recipient is received along with a</span>
 <span class="cm">        deposit this method will increase the supply of an already</span>
-<span class="cm">        existent token by the defined units of UST received */</span><span class="w"></span>
+<span class="cm">        existent token by the defined units of LUNA received */</span><span class="w"></span>
 <span class="w">        </span><span class="n">DepositType</span>::<span class="n">Mint</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">            </span><span class="n">token_address</span><span class="p">,</span><span class="w"></span>
 
