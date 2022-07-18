@@ -1409,9 +1409,8 @@ Structure of .terra/config<div class="sd-summary-down docutils">
 <li><p>Open <code class="docutils literal notranslate"><span class="pre">~/.terra/config/app.toml</span></code>.</p></li>
 <li><p>Modify <code class="docutils literal notranslate"><span class="pre">minimum-gas-prices</span></code> and set the minimum price of gas a validator will accept to validate a transaction and to prevent spam.</p></li>
 </ol>
-<ul class="simple">
-<li><p>You can <a class="reference external" href="https://api.terra.dev/gas-prices">query API</a> to view the current gas prices.</p></li>
-</ul>
+<p>Recomended setting is:
+<code class="docutils literal notranslate"><span class="pre">minimum-gas-prices</span> <span class="pre">=</span> <span class="pre">&quot;0.15uluna&quot;</span></code></p>
 <p><strong>Example</strong>:</p>
 <div class="highlight-toml notranslate"><div class="highlight"><pre><span></span># The minimum gas prices a validator is willing to accept for processing a
 # transaction. A transaction&#39;s fees must meet the minimum of any denomination
