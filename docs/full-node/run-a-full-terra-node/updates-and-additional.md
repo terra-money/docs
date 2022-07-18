@@ -2,11 +2,11 @@
 
 ## Upgrade the testnet
 
-These instructions are for full nodes running previous testnets that would like to upgrade to the latest testnet.
+These instructions are for full nodes running older testnets that would like to upgrade to the latest testnet.
 
 ### 1. Reset data
 
-Remove the outdated files and reset data:
+Remove the outdated files and reset the data:
 
 ```bash
 rm ~/.terra/config/genesis.json
@@ -59,19 +59,17 @@ If you plan to start a new network from the exported state, export with the `--f
 terrad export --height [height] --for-zero-height > [filename].json
 ```
 
-
 ::: {tip}
 
 For more information on seeds and peers, visit the [Tendermint documentation](https://github.com/tendermint/tendermint/blob/master/docs/tendermint-core/using-tendermint.md#peers).
 
 :::
 
-
 ## Additional Settings
 
 ### `seed_mode`
 
-In seed mode, your node constantly crawls the network and looks for peers. If another node asks it for addresses, it responds and disconnects. Seed mode will not work if the peer-exchange reactor is disabled.
+In seed mode, your node constantly crawls the network and looks for peers. If another node requests addresses, it responds and disconnects. Seed mode will not work if the peer-exchange reactor is disabled.
 
 ```toml
 seed_mode = true
@@ -88,7 +86,7 @@ seeds = "id100000000000000000000000000000000@1.2.3.4:26656,id2000000000000000000
 
 ### `persistent_peers`
 
-The nodes you specify are the trusted persistent peers that can help anchor your node in the p2p network. If the connection fails, they are dialed and automatically redialed for 24 hours. The automatic redial function uses exponential backoff and stops after 24 hours of trying to connect.
+The nodes you specify are the trusted persistent peers that can help anchor your node in the p2p network. If the connection fails, they are dialed and automatically redialed for 24 hours. The automatic redial functionality uses exponential backoff and stops after 24 hours of trying to connect.
 
 If the value of `persistent_peers_max_dial_period` is more than zero, the pause between each call to each persistent peer will not exceed `persistent_peers_max_dial_period` during exponential backoff, and the automatic redial process continues.
 
@@ -96,6 +94,7 @@ If the value of `persistent_peers_max_dial_period` is more than zero, the pause 
 # Comma separated list of nodes to keep persistent connections to
 persistent_peers = "id100000000000000000000000000000000@1.2.3.4:26656,id200000000000000000000000000000000@2.3.4.5:26656"
 ```
+
 ### Rosetta
 
 Integrate Terra with Coinbase via the Rosetta API. Rosetta is an open-source API that organizes blockchain data into a standardized format, making it easy for developers to build cross-chain applications. Instead of creating specific code for each chain, Rosetta allows different blockchains to integrate into any exchange that uses Rosetta API.

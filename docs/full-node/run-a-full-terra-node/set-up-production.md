@@ -1,19 +1,18 @@
 # Set up a production environment
 
-Use the following information to set up and manage your production-level full Terra node.  
+Use the following information to set up and manage your production-level Terra full node.
 
 For information about running a validator node, visit the [validator guide](../manage-a-terra-validator/README.md).
 
-
 ## Create a dedicated user
 
-Although `terrad` does not require a super user account, during the setup process you'll need super user permission to create and modify some files. It is strongly recommended to use a normal user when running `terrad`.  
+Although `terrad` does not require a super user account, during the setup process you'll need super user permission to create and modify some files. It is strongly recommended to use a normal user when running `terrad`.
 
 ## Increase the maximum files `terrad` can open
 
 `terrad` is set to open 1024 files by default. It is recommended that you increase this amount.
 
-Modify `/etc/security/limits.conf`[*](https://linux.die.net/man/5/limits.conf) to increase the amount, where `nofile` is the number of files `terrad` can open.
+Modify `/etc/security/limits.conf`[\*](https://linux.die.net/man/5/limits.conf) to increase the amount, where `nofile` is the number of files `terrad` can open.
 
 ```bash
 # If you have never changed this system config or your system is fresh, most of this file will be commented
@@ -31,32 +30,31 @@ Modify `/etc/security/limits.conf`[*](https://linux.die.net/man/5/limits.conf) t
 
 1. Create a service definition file in `/etc/systemd/system/terrad.service`.
 
-     **Example**:
+   **Example**:
 
-     ```bash
-     [Unit]
-     Description=Terra Daemon
-     After=network.target
+   ```bash
+   [Unit]
+   Description=Terra Daemon
+   After=network.target
 
-     [Service]
-     Type=simple
-     User=<TERRA_USER>
-     ExecStart=<PATH_TO_TERRAD>/terrad start  
-     Restart=on-abort
+   [Service]
+   Type=simple
+   User=<TERRA_USER>
+   ExecStart=<PATH_TO_TERRAD>/terrad start
+   Restart=on-abort
 
-     [Install]
-     WantedBy=multi-user.target
+   [Install]
+   WantedBy=multi-user.target
 
-     [Service]
-     LimitNOFILE=65535  
-     ```
+   [Service]
+   LimitNOFILE=65535
+   ```
 
 2. Modify the `Service` section according to your environment:
 
    - Enter the user (likely your username, unless you created a user specifically for `terrad`)
    - Enter the path to the `terrad` executable. `<PATH_TO_TERRAD>` is likely `/home/<YOUR_USER>/go/bin/terrad` or `/usr/go/bin`. Confirm this with `whereis terrad`
    - Make sure you made the correct edits to /etc/security/limits.conf
-
 
 3. Run `systemctl daemon-reload` followed by `systemctl enable terrad`. This will register `terrad` as a system service and turn it on upon startup.
 
