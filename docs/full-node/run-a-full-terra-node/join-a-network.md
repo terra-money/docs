@@ -63,7 +63,7 @@ Specify the network you want to join by choosing the corresponding **genesis fil
 
 | Network     | Type    | Genesis                                                                                           | Addressbook                     |
 | :---------- | :------ | :------------------------------------------------------------------------------------------------ | :------------------------------ |
-| `phoenix-1` | Mainnet | [Genesis Link](https://phoenix-genesis.s3.us-west-1.amazonaws.com/genesis.json)                   | Addressbook not yet available() |
+| `phoenix-1` | Mainnet | [Genesis Link](https://phoenix-genesis.s3.us-west-1.amazonaws.com/genesis.json)                   | Community maintained From [Polkachu](https://polkachu.com/addrbooks/terra) |
 | `pisco-1`   | Testnet | [Genesis Link](https://raw.githubusercontent.com/terra-money/testnet/master/pisco-1/genesis.json) | Addressbook not yet available() |
 
 :::{admonition} Selecting a network
