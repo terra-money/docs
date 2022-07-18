@@ -53,7 +53,7 @@ Compare this height to the **Latest Blocks** by checking the API for latest bloc
 
 ## State Sync
 
-You can significantly accelerate the synchronization process by providing `terrad` with a recent snapshot of the network state. Snapshots are made publicly available by members of the Terra community one example can be downloaded from [Polkachu](https://polkachu.com/state_sync/terra)). Instructions are provided by Polkachu, and not maintained as part of this documentation.
+You can significantly accelerate the synchronization process by providing `terrad` with a recent snapshot of the network state. Snapshots are made publicly available by members of the Terra community one example can be downloaded from [Polkachu](https://polkachu.com/state_sync/terra). Instructions are provided by Polkachu, and not maintained as part of this documentation.
 
 ## Sync Complete
 
