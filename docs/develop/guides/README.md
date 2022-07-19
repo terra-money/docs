@@ -15,6 +15,7 @@ Not sure which tool to use? Check out the [tool page](../which-tools.md).
 ../terrain/using-terrain-localterra.md
 ../terrain/mint-an-nft
 ../terrain/cw20-factory
+./tictactoe.md
 ../terrain/contract-migration.md
 ../terra-js/getting-started.md
 ../terra-py/get-started-py.md
