@@ -25,7 +25,7 @@ The easiest way to install `terrad` and Terra core is by downloading a pre-built
 
 Use `git` to retrieve [Terra core](https://github.com/terra-money/core/), and check out the `main` branch, which contains the latest stable release.
 
-```bash
+```
 git clone https://github.com/terra-money/core
 cd core
 git checkout [latest version]

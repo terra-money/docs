@@ -11,14 +11,16 @@ Running a full Terra node is a resource-intensive process that requires a persis
 
 The the minimum requirements for running a Terra full node are:
 
-- 4+ CPU cores
-- At least 32 GB of memory
-- At least 300 mbps in network bandwidth
-- At least 2 TB NVME SSD in storage
+| Network                                                                 | CPU cores     | RAM     | Disk                       | BANDWIDTH |
+|-------------------------------------------------------------------------|---------------|---------|----------------------------|-----------|
+| [`phoenix-1`](join-a-network.md#join-a-public-network)                  | 4 (+4 threads)| 32 GB   | 2 TB (SSD 2000 MB/s R/W)   | 300 Mbps  |
+| [`pisco-1`](join-a-network.md#join-a-public-network)                    | 2 (+2 threads)| 16 GB   | 500 GB (SSD 1000 MB/s R/W) | 150 Mbps  |
+| [`localterra`](https://github.com/terra-money/LocalTerra)               | 2             | 4 GB    | 20 GB (SSD 500 MB/s R/W)   |  N/A      |
+| [`private-network`](join-a-network.html#set-up-a-local-private-network) | 1             | 2 GB    | 20 GB (SSD 500 MB/s R/W)   |  N/A      |
 
 :::{admonition} Storage requirements
 :class: warning
-As the network grows, the minimum storage requirements will also grow. It is recommended that you use more than the minimum storage requirements to run a robust full node.
+As the network grows, the minimum hardware requirements will also grow. It is recommended that you monitor the system so you can prevent it from running out of resources.
 :::
 
 ## Prerequisites
