@@ -1391,7 +1391,7 @@
 </div>
 <div class="section" id="smart-contract-architecture">
 <h2>Smart contract architecture<a class="headerlink" href="#smart-contract-architecture" title="Permalink to this headline">¶</a></h2>
-<p>This smart contract is build with 1 query and 4 different executes. To enable a permissionless and trustless game, this contract contains a state machine with the following status:</p>
+<p>This smart contract is built with 1 query and 4 different executes. To enable a permissionless and trustless game, this contract contains a state machine with the following states:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">INVITED</span></code>: only one game can be in this status at a time per host and opponent pair. This status is achieved by creating a new game. The following possible statuses are PLAYING or REJECTED.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">PLAYING</span></code>: only one game can be in this status at a time per host and opponent pair. This status must mutate from <code class="docutils literal notranslate"><span class="pre">INVITED</span></code>.</p></li>
@@ -1408,7 +1408,7 @@
 <div class="tex2jax_ignore mathjax_ignore section" id="executemsg">
 <h1>ExecuteMsg<a class="headerlink" href="#executemsg" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li><p>‘Invite’: create a new game if there is no game in status ‘PLAYING’ or ‘INVITED’.</p></li>
+<li><p>‘Invite’: create a new game if there is no game in the status ‘PLAYING’ or ‘INVITED’.</p></li>
 <li><p>‘Reject’: reject a game in the status ‘INVITED’ and return the funds to the player who requested to play.</p></li>
 <li><p>‘AcceptGame’: accept a game in status ‘INVITED’ only when the sent funds match the game prize. The game will change the status to ‘PLAYING’.</p></li>
 <li><p>‘Play’: continues the match of an existing game in the <code class="docutils literal notranslate"><span class="pre">PLAYING</span></code> status, following the rules of <a class="reference external" href="https://en.wikipedia.org/wiki/Tic-tac-toe">Tic Tac Toe</a>. This method also checks the status of the game to validate if a game is finished or not. After a game is finished, the funds will be transferred to the winner or split between the players in the case of a tie.</p></li>
