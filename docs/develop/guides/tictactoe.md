@@ -15,7 +15,7 @@ Two players take turns placing **X**s and **O**s on a 3x3 grid.  The first to al
 
 ## Smart contract architecture
 
-This smart contract is build with 1 query and 4 different executes. To enable a permissionless and trustless game, this contract contains a state machine with the following status:
+This smart contract is built with 1 query and 4 different executes. To enable a permissionless and trustless game, this contract contains a state machine with the following states:
 
 - `INVITED`: only one game can be in this status at a time per host and opponent pair. This status is achieved by creating a new game. The following possible statuses are PLAYING or REJECTED.
 - `PLAYING`: only one game can be in this status at a time per host and opponent pair. This status must mutate from `INVITED`.
@@ -31,7 +31,7 @@ The Games query contains the optional `key` and `status` parameters, which will 
 
 # ExecuteMsg
 
-- 'Invite': create a new game if there is no game in status 'PLAYING' or 'INVITED'. 
+- 'Invite': create a new game if there is no game in the status 'PLAYING' or 'INVITED'. 
 - 'Reject': reject a game in the status 'INVITED' and return the funds to the player who requested to play.
 - 'AcceptGame': accept a game in status 'INVITED' only when the sent funds match the game prize. The game will change the status to 'PLAYING'.
 - 'Play': continues the match of an existing game in the `PLAYING` status, following the rules of [Tic Tac Toe](https://en.wikipedia.org/wiki/Tic-tac-toe). This method also checks the status of the game to validate if a game is finished or not. After a game is finished, the funds will be transferred to the winner or split between the players in the case of a tie.
