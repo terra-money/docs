@@ -38,11 +38,13 @@ const config = {
         docs: {
           beforeDefaultRemarkPlugins: [[remarkCodeHike, { theme }]],
           sidebarPath: require.resolve('./sidebars.js'),
+          routeBasePath: '/',  // Serve the docs at the site's root (slug added to overview.mdx)
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
+        blog: false,
         theme: {
           customCss: [
             require.resolve("@code-hike/mdx/styles.css"),
@@ -70,6 +72,11 @@ const config = {
             docId: 'overview',
             position: 'left',
             label: 'Docs',
+          },
+          {
+            href: 'https://github.com/', //front-end URL
+            label: 'App',
+            position: 'left',
           },
           {
             href: 'https://github.com/facebook/docusaurus',
