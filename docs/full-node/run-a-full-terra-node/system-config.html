@@ -1348,15 +1348,45 @@
 <div class="section" id="hardware-requirements">
 <h2>Hardware Requirements<a class="headerlink" href="#hardware-requirements" title="Permalink to this headline">¶</a></h2>
 <p>The the minimum requirements for running a Terra full node are:</p>
-<ul class="simple">
-<li><p>4+ CPU cores</p></li>
-<li><p>At least 32 GB of memory</p></li>
-<li><p>At least 300 mbps in network bandwidth</p></li>
-<li><p>At least 2 TB NVME SSD in storage</p></li>
-</ul>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Network</p></th>
+<th class="head"><p>CPU cores</p></th>
+<th class="head"><p>RAM</p></th>
+<th class="head"><p>Disk</p></th>
+<th class="head"><p>BANDWIDTH</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="join-a-network.html#join-a-public-network"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">phoenix-1</span></code></span></a></p></td>
+<td><p>4 (+4 threads)</p></td>
+<td><p>32 GB</p></td>
+<td><p>2 TB (SSD 2000 MB/s R/W)</p></td>
+<td><p>300 Mbps</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="join-a-network.html#join-a-public-network"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">pisco-1</span></code></span></a></p></td>
+<td><p>2 (+2 threads)</p></td>
+<td><p>16 GB</p></td>
+<td><p>500 GB (SSD 1000 MB/s R/W)</p></td>
+<td><p>150 Mbps</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/terra-money/LocalTerra"><code class="docutils literal notranslate"><span class="pre">localterra</span></code></a></p></td>
+<td><p>2</p></td>
+<td><p>4 GB</p></td>
+<td><p>20 GB (SSD 500 MB/s R/W)</p></td>
+<td><p>N/A</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="xref myst"><code class="docutils literal notranslate"><span class="pre">private-network</span></code></span></p></td>
+<td><p>1</p></td>
+<td><p>2 GB</p></td>
+<td><p>20 GB (SSD 500 MB/s R/W)</p></td>
+<td><p>N/A</p></td>
+</tr>
+</tbody>
+</table>
 <div class="warning admonition">
 <p class="admonition-title">Storage requirements</p>
-<p>As the network grows, the minimum storage requirements will also grow. It is recommended that you use more than the minimum storage requirements to run a robust full node.</p>
+<p>As the network grows, the minimum hardware requirements will also grow. It is recommended that you monitor the system so you can prevent it from running out of resources.</p>
 </div>
 </div>
 <div class="section" id="prerequisites">

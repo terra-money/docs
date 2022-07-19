@@ -61,14 +61,14 @@ These instructions are for setting up a brand new full node from scratch. You ca
 
 Specify the network you want to join by choosing the corresponding **genesis file** and **seeds**:
 
-| Network     | Type    | Genesis                                                                                           | Addressbook                     |
-| :---------- | :------ | :------------------------------------------------------------------------------------------------ | :------------------------------ |
-| `phoenix-1` | Mainnet | [Genesis Link](https://phoenix-genesis.s3.us-west-1.amazonaws.com/genesis.json)                   | Community maintained From [Polkachu](https://polkachu.com/addrbooks/terra) |
-| `pisco-1`   | Testnet | [Genesis Link](https://raw.githubusercontent.com/terra-money/testnet/master/pisco-1/genesis.json) | Addressbook not yet available() |
+| Network     | Type    | Genesis                                                                                           | Addressbook                     | Seeds                     |
+| :---------- | :------ | :------------------------------------------------------------------------------------------------ | :------------------------------ | :------------------------------ |
+| `phoenix-1` | Mainnet | [Genesis Link](https://phoenix-genesis.s3.us-west-1.amazonaws.com/genesis.json)                   | Community maintained [Polkachu](https://polkachu.com/addrbooks/terra) | [not available yet] |
+| `pisco-1`   | Testnet | [Genesis Link](https://raw.githubusercontent.com/terra-money/testnet/master/pisco-1/genesis.json) |  [not available yet]            | Community maintained from [Polkachu](https://polkachu.com/testnets/terra/peers) |
 
 :::{admonition} Selecting a network
 :class: tip
-Note that the versions of the network listed above are the [ latest versions ](https://github.com/terra-money/testnet/tree/master#latest-networks). To find earlier versions, please consult the [networks repo](https://github.com/terra-money/testnet).
+Note that the versions of the network listed above are the [latest versions ](https://github.com/terra-money/testnet/tree/master#latest-networks). To find earlier versions, please consult the [networks repo](https://github.com/terra-money/testnet).
 
 :::
 
@@ -85,11 +85,11 @@ Choose a `testnet` or `mainnet` address type and download the appropriate genesi
 **Example**:
 
 ```bash
-# Obtain the genesis for the bombay-12 testnet:
-wget https://raw.githubusercontent.com/terra-money/testnet/master/bombay-12/genesis.json -I ~/.terra/config/genesis.json
+# Obtain the genesis for phoenix-1:
+wget hhttps://phoenix-genesis.s3.us-west-1.amazonaws.com/genesis.json -I ~/.terra/config/genesis.json
 
-# Obtain the addressbook for the bombay-12 testnet:
-wget https://raw.githubusercontent.com/terra-money/testnet/master/bombay-12/addrbook.json -O ~/.terra/config/addrbook.json
+# Obtain the addressbook for the phoenix-1 from Polkachu:
+wget https://snapshots1.polkachu.com/addrbook/terra/addrbook.json -O ~/.terra/config/addrbook.json
 ```
 
 ### 3. `terrad start`
@@ -112,10 +112,10 @@ terrad status
       "block": "11",
       "app": "0"
     },
-    "id": "terradocs-id",
-    "listen_addr": "tcp://0.0.0.0:26656",
-    "network": "bombay-12",
-    "version": "0.34.14",
+    "id": "821dc1401fd0270487b3e615c652181b4d4566dd",
+    "listen_addr": "18.157.84.154:26656",
+    "network": "pisco-1",
+    "version": "v0.34.19-terra.2",
     "channels": "40202122233038606100",
     "moniker": "terradocs",
     "other": {
@@ -124,21 +124,21 @@ terrad status
     }
   },
   "SyncInfo": {
-    "latest_block_hash": "19ABCBA90BF3E76A0635E6C961AB2CECC7DB2B1F1338057DB334568128E0776E",
-    "latest_app_hash": "8DFE69CF66FBE7ADCDB5B430A0C679C45B6AEBDDAE23835ABDC4ACBC704F7525",
-    "latest_block_height": "7333450",
-    "latest_block_time": "2022-01-08T05:24:57.383258076Z",
-    "earliest_block_hash": "E88E3641A488EBA3D402FC072879C6399AA2CDC7B6CC5A3061E5A64D9FFD3BDE",
+    "latest_block_hash": "ED9F6D0855FD92A5BA2F91082CD49ADB18A07DCE3F747529D357071E5B7C0D4C",
+    "latest_app_hash": "D621068882E7FC5045CDD957ADEABE9BF8E90F2092C9526E22BE4767940D128B",
+    "latest_block_height": "260770",
+    "latest_block_time": "2022-06-09T15:22:48.792283245Z",
+    "earliest_block_hash": "F948EF10AA663D182309790C51E5A7A9125D7CF4D60D9E735994059DB7CAD4D4",
     "earliest_app_hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
-    "earliest_block_height": "5900001",
-    "earliest_block_time": "2021-09-28T09:00:00Z",
+    "earliest_block_height": "1",
+    "earliest_block_time": "2022-05-23T06:00:00Z",
     "catching_up": false
   },
   "ValidatorInfo": {
-    "Address": "29E58C21B6612227C9C9BD9E6D4D99897E032572",
+    "Address": "04024A7F76485B0D2B99570EC7DA3E9A3B3735CC",
     "PubKey": {
       "type": "tendermint/PubKeyEd25519",
-      "value": "7cZq+Fp9xU8mZ9xR7q4NpDOX0UicmPC68P/4krCn8Hs="
+      "value": "KUqIsRD9yzPt7k9et+ClFp6h8wXwEIcb/TVZPrC57+I="
     },
     "VotingPower": "0"
   }
