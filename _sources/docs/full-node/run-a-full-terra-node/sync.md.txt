@@ -1,6 +1,6 @@
 # Sync
 
-## Before Sync
+## Before sync
 
 Certain files will need to be absent or deleted prior to download. A quicksync replaces blockchain data with a custom snapshot. For most use cases a "pruned" version is adequate. Pruned versions will have certain transactions removed from the archive to improve node performance. If you are running a node for archival purposes, you will want an `archive` or `default` download.
 
@@ -25,7 +25,7 @@ Example of a removed private key:
 
 If you have an address book downloaded, you may keep it. Otherwise, you will need to download the [appropriate addressbook](join-a-network.md#join-a-public-network) prior to running `terrad start`.
 
-## During Sync
+## During sync
 
 After [Joining a public network](join-a-network.md#join-a-public-network), your node will begin to sync.
 
@@ -51,11 +51,11 @@ Your node is catching up with the network by replaying all the transactions from
 
 Compare this height to the **Latest Blocks** by checking the API for latest block heights on [Phoenix](https://phoenix-lcd.terra.dev/blocks/latest), or [Pisco](https://pisco-lcd.terra.dev/blocks/latest) to see your progress.
 
-## State Sync
+## State sync
 
 You can significantly accelerate the synchronization process by providing `terrad` with a recent snapshot of the network state. Snapshots are made publicly available by members of the Terra community one example can be downloaded from [Polkachu - Phoenix Mainnet](https://polkachu.com/state_sync/terra). [Polkachu - Pisco Testnet](https://polkachu.com/testnets/terraInstructions) are provided by Polkachu, and not maintained as part of this documentation.
 
-## Sync Complete
+## Sync complete
 
 You can tell that your node is in sync with the network when `SyncInfo.catching_up` in the `terrad status` response returns `false` and the `latest_block_height` corresponds to the public network blockheight found on the API for either [Phoenix](https://phoenix-lcd.terra.dev/blocks/latest), or [Pisco](https://pisco-lcd.terra.dev/blocks/latest).
 

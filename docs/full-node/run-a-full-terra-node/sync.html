@@ -1281,12 +1281,12 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#before-sync">
-   Before Sync
+   Before sync
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#during-sync">
-   During Sync
+   During sync
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1296,12 +1296,12 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#state-sync">
-   State Sync
+   State sync
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#sync-complete">
-   Sync Complete
+   Sync complete
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1336,12 +1336,12 @@
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#before-sync">
-   Before Sync
+   Before sync
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#during-sync">
-   During Sync
+   During sync
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1351,12 +1351,12 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#state-sync">
-   State Sync
+   State sync
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#sync-complete">
-   Sync Complete
+   Sync complete
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1381,7 +1381,7 @@
   <div class="tex2jax_ignore mathjax_ignore section" id="sync">
 <h1>Sync<a class="headerlink" href="#sync" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="before-sync">
-<h2>Before Sync<a class="headerlink" href="#before-sync" title="Permalink to this headline">¶</a></h2>
+<h2>Before sync<a class="headerlink" href="#before-sync" title="Permalink to this headline">¶</a></h2>
 <p>Certain files will need to be absent or deleted prior to download. A quicksync replaces blockchain data with a custom snapshot. For most use cases a “pruned” version is adequate. Pruned versions will have certain transactions removed from the archive to improve node performance. If you are running a node for archival purposes, you will want an <code class="docutils literal notranslate"><span class="pre">archive</span></code> or <code class="docutils literal notranslate"><span class="pre">default</span></code> download.</p>
 <p>After choosing the appropriate download type, examine your node and ensure that <code class="docutils literal notranslate"><span class="pre">.terra/data</span></code> is empty.</p>
 <p><strong>Example</strong>:</p>
@@ -1399,7 +1399,7 @@
 <p>If you have an address book downloaded, you may keep it. Otherwise, you will need to download the <a class="reference internal" href="join-a-network.html#join-a-public-network"><span class="std std-doc">appropriate addressbook</span></a> prior to running <code class="docutils literal notranslate"><span class="pre">terrad</span> <span class="pre">start</span></code>.</p>
 </div>
 <div class="section" id="during-sync">
-<h2>During Sync<a class="headerlink" href="#during-sync" title="Permalink to this headline">¶</a></h2>
+<h2>During sync<a class="headerlink" href="#during-sync" title="Permalink to this headline">¶</a></h2>
 <p>After <a class="reference internal" href="join-a-network.html#join-a-public-network"><span class="std std-doc">Joining a public network</span></a>, your node will begin to sync.</p>
 <div class="caution admonition">
 <p class="admonition-title">Sync start times</p>
@@ -1421,11 +1421,11 @@
 <p>Compare this height to the <strong>Latest Blocks</strong> by checking the API for latest block heights on <a class="reference external" href="https://phoenix-lcd.terra.dev/blocks/latest">Phoenix</a>, or <a class="reference external" href="https://pisco-lcd.terra.dev/blocks/latest">Pisco</a> to see your progress.</p>
 </div>
 <div class="section" id="state-sync">
-<h2>State Sync<a class="headerlink" href="#state-sync" title="Permalink to this headline">¶</a></h2>
+<h2>State sync<a class="headerlink" href="#state-sync" title="Permalink to this headline">¶</a></h2>
 <p>You can significantly accelerate the synchronization process by providing <code class="docutils literal notranslate"><span class="pre">terrad</span></code> with a recent snapshot of the network state. Snapshots are made publicly available by members of the Terra community one example can be downloaded from <a class="reference external" href="https://polkachu.com/state_sync/terra">Polkachu - Phoenix Mainnet</a>. <a class="reference external" href="https://polkachu.com/testnets/terraInstructions">Polkachu - Pisco Testnet</a> are provided by Polkachu, and not maintained as part of this documentation.</p>
 </div>
 <div class="section" id="sync-complete">
-<h2>Sync Complete<a class="headerlink" href="#sync-complete" title="Permalink to this headline">¶</a></h2>
+<h2>Sync complete<a class="headerlink" href="#sync-complete" title="Permalink to this headline">¶</a></h2>
 <p>You can tell that your node is in sync with the network when <code class="docutils literal notranslate"><span class="pre">SyncInfo.catching_up</span></code> in the <code class="docutils literal notranslate"><span class="pre">terrad</span> <span class="pre">status</span></code> response returns <code class="docutils literal notranslate"><span class="pre">false</span></code> and the <code class="docutils literal notranslate"><span class="pre">latest_block_height</span></code> corresponds to the public network blockheight found on the API for either <a class="reference external" href="https://phoenix-lcd.terra.dev/blocks/latest">Phoenix</a>, or <a class="reference external" href="https://pisco-lcd.terra.dev/blocks/latest">Pisco</a>.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad status
 </pre></div>
