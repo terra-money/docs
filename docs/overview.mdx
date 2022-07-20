@@ -7,11 +7,13 @@ slug: /
 
 ## Streams
 
-Streams are payment contracts exist on the blockchain to fascilitate an easier method of payments. When 
+Streams are payment contracts that exist on the blockchain to facilitate an easier method of payment. You can program streams by specifying a total payment amount, a recipient, and a timeframe. Once a payment stream is created, the funds for the payment are locked in the stream's smart contract. Over the course of the payment timeframe, the payment stream unlocks an equal amount of funds every block, and the recipient of the stream can claim their unlocked income. 
+
+Streams are a form of NFT Payment Contracts (NFTPC), which can be thought of as a tokenized smart contract. NFTPCs enable payment streams to be transferred or sent to other addresses or used like an NFT. NFTPCs are minted anytime a payment stream is created. 
 
 ### Create
 
-When a stream is created, a user specifies a recipient, an amount, and a start and end date for payments.
+When a stream is created, a user specifies a recipient, an amount, a start and end date for payments, and whether the contract can be [modified](#modify). 
 
 ### Claim
 
@@ -26,9 +28,8 @@ Streams that cannot be modified are immutable and cannot be changed after being 
 
 ### Fund
 
-Users can fund a stream to increase the total amount of tokens paid out per block. Funding does not increase the time period of a stream, it only increases the release of based on the funding amount. Only modifiable stream can be funded. 
+Users can fund a stream to increase the total amount of tokens paid out per block. Funding does not increase the time period of a stream, it only increases the release volume per block based on the funding amount. Only a modifiable stream can be funded. 
 
 ### Cancel
 
-The creator of a stream can cancel a modifiable stream. Once cancelled, all funds released up to the time of cancellation are held for the recipient to claim. The remaining unreleased amount is sent to a specified account. 
-
+The creator of a stream can cancel a modifiable stream. Once canceled, all funds released up to the time of cancellation are held for the recipient to claim. The remaining unreleased amount is sent to a specified account.
