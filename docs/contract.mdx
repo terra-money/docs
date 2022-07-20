@@ -6,15 +6,26 @@ sidebar_position: 3
 
 ## Functions
 
+- [create_stream()](#create-stream)
+- [fund_stream()](#fund_stream)
+- [claim_funds()](#claim_funds)
+- [claim_all_funds()](#claim_all_funds)
+- [change_stream_info()](#change_stream_info)
+- [cancel_stream()](#cancel_stream)
+- [query_config()](#query_config)
+- [nft_to_stream_id()](#nft_to_stream_id)
+- [stream_to_nft_id()](#stream_to_nft_id)
+
+
 <CH.Scrollycoding>
 
 ### create_stream()
 
-Create a new stream with the given parameters in the [`CreateStreamMsg`] struct.
+Create a new stream with the parameters specified in the [`CreateStreamMsg`] struct.
 
 The stream's ID is a unique incrementing number and is returned in the `token_id` attribute.
 
-When creating a stream, you can choose whether it will be `immutable`. Immutable streams cannot be altered once created. 
+When creating a stream, you can choose whether it will be `immutable`. Immutable streams cannot be altered, funded, or cancelled once created. 
 
 ``` rust contract.rs 
 pub fn create_stream(
@@ -135,9 +146,8 @@ pub fn create_stream(
 ### fund_stream()
 
 Fund a stream with the given amount of tokens. Parameters are in the [`FundStreamMsg`] struct.
-Note that the stream is unchanged EXCEPT for the total amount of tokens that will be transferred.
-This means that the stream will simply increase the rate at which funds are transferredl, since
-The time over which the funds are transferred is kept constant.
+
+Funding a stream only changes the total amount of tokens that will be transferred and does not change the end date of a stream. Funding a stream increases the number of funds paid per block. 
 
 ``` rust contract.rs 
 pub fn fund_stream(
@@ -222,7 +232,7 @@ pub fn fund_stream(
 ### claim_funds()
 
 Claim funds from a stream. Parameters are in the [`ClaimFundsMsg`] struct.
-You may specify multiple streams to claim from, but the sender must be the owner of any stream that is claimed.
+You may specify multiple streams to claim from. The sender of this message must be the owner of any stream that is claimed.
 
 ``` rust contract.rs
 pub fn claim_funds(
@@ -304,93 +314,6 @@ pub fn claim_funds(
 ```
 ---
 
-### claim_funds()
-
-Claim funds from a stream. Parameters are in the [`ClaimFundsMsg`] struct.
-You may specify multiple streams to claim from, but the sender must be the owner of any stream that is claimed.
-
-```rust contract.rs
-
-pub fn claim_funds(
-    deps: DepsMut,
-    env: Env,
-    info: MessageInfo,
-    data: ClaimFundsMsg,
-) -> Result<Response, ContractError> {
-    let cw721_contract = cw721_base::Cw721Contract::<Extension, Empty>::default();
-    let mut claim_messages = vec![];
-
-    let mut token_ids = vec![];
-    let mut claimed_amounts = vec![];
-    let mut remaining_balances = vec![];
-
-    let streams = STREAMS();
-    for id in data.stream_ids {
-        let mut stream = streams.load(deps.storage, id.u64())?;
-        let stream_owner = cw721_contract
-            .owner_of(
-                deps.as_ref(),
-                env.clone(),
-                stream.nft_token_id.clone(),
-                true,
-            )?
-            .owner;
-        if stream_owner != info.sender {
-            return Err(ContractError::Unauthorized {});
-        }
-
-        let claimable_amount = get_claimable_amount(env.clone(), &stream)?;
-
-        if claimable_amount.is_zero() {
-            continue;
-        }
-
-        stream.funds_remaining -= claimable_amount;
-        stream.last_claimed_timestamp = Uint64::from(env.block.time.seconds());
-
-        streams.save(deps.storage, id.u64(), &stream)?;
-
-        claim_messages.push(match stream.asset_info.clone() {
-            AssetInfoBase::Cw20(address) => {
-                CosmosMsg::Wasm(WasmMsg::Execute {
-                    contract_addr: String::from(address),
-                    msg: to_binary(&Cw20ExecuteMsg::Transfer {
-                        recipient: stream_owner,
-                        amount: claimable_amount, //todo: discuss and check for amount edge cases
-                    })?,
-                    funds: vec![],
-                })
-            }
-            AssetInfoBase::Native(denom) => {
-                CosmosMsg::Bank(cosmwasm_std::BankMsg::Send {
-                    to_address: stream_owner,
-                    amount: vec![Coin {
-                        denom,
-                        amount: claimable_amount, //todo: discuss and check for amount edge cases
-                    }],
-                })
-            }
-        });
-
-        token_ids.push(id.to_string());
-        claimed_amounts.push(claimable_amount.to_string());
-        remaining_balances.push(stream.funds_remaining.to_string());
-    }
-
-    Ok(Response::new()
-        .add_messages(claim_messages)
-        .add_attribute("action", "claim_funds")
-        .add_attribute("payee_addr", info.sender.to_string())
-        .add_attributes(vec![
-            attr("token_ids", token_ids.join(",")),
-            attr("claimed_amounts", claimed_amounts.join(",")),
-            attr("remaining_balances", remaining_balances.join(",")),
-        ]))
-}
-```
-
----
-
 ### claim_all_funds()
 
 Claims all the streams that the sender receives from. No parameters.
@@ -455,8 +378,10 @@ pub fn change_stream_info(
 ### cancel_stream()
 
 Cancel a stream. Parameters are in the [`CancelStreamMsg`] struct.
-Can only be cancelled by the creator of the stream.
-If the stream is immutable, it cannot be cancelled.
+Streams can only be canceled by their creator.
+
+If the stream is immutable, it cannot be canceled.
+
 Upon cancellation, the claimable funds are held for the recipient to claim, and the remaining funds are returned to the address specified in the message.
 
 ```rust contract.rs
@@ -566,3 +491,4 @@ pub fn stream_to_nft_id(stream_id: &Uint64) -> String {
 ```
 
 </CH.Scrollycoding>
+
