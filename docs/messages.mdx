@@ -536,7 +536,7 @@ pub struct ClaimFundsMsg {
 
 ### ClaimAllFundsMsg
 
-Claims all the streams that the sender receives from.
+Claims all the streams that the sender of this message receives from.
 
 ```rust minter.rs focus=3
 #[derive(Serialize, Deserialize, Clone, Debug, PartialEq, JsonSchema)]
@@ -632,7 +632,7 @@ pub struct ApproveMsg {
 
 ### RevokeMsg
 
-Revokes previosuly given permission of the `spender` to send or transfer a stream's cw721. For more info, check out [the cw721 docs](https://github.com/CosmWasm/cw-nfts/blob/main/packages/cw721/README.md#messages). 
+Revokes previously given permission of the `spender` to send or transfer a stream's cw721. For more info, check out [the cw721 docs](https://github.com/CosmWasm/cw-nfts/blob/main/packages/cw721/README.md#messages). 
 
 ```rust minter.rs focus=3:6
 #[derive(Serialize, Deserialize, Clone, Debug, PartialEq, JsonSchema)]
@@ -674,3 +674,4 @@ pub struct RevokeAllMsg {
 
 
 </CH.Scrollycoding>
+
