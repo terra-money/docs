@@ -105,14 +105,14 @@ Congratulations! You have just created a Terra Station wallet.
 
 1. Connect to your wallet and click **Buy** next to any token. Purchase your tokens using any exchange that supports Terra.
 
-   ```{image} /img/screens/ext-wallet-menu.png
+   ```{image} /img/screens/ext-wallet.png
    :class: sd-p-3
    :width: 500px
    ```
 
 2. Purchase tokens using your preffered exchange.
 
-   ```{image} /img/screens/ext-buy.png
+   ```{image} /img/screens/ext-wallet-buy.png
    :class: sd-p-3
    :width: 500px
    ```
@@ -138,7 +138,7 @@ Now you have tokens on Terra!
 
 2. Click **Send** next to the token you want to send.
 
-   ```{image} /img/screens/ext-wallet-send.png
+   ```{image} /img/screens/ext-wallet-menu.png
    :class: sd-p-3
    :width: 500px
    ```
@@ -147,17 +147,7 @@ Now you have tokens on Terra!
 
 4. Enter the amount you want to send. You can also add a memo for the transaction.
 
-   ```{image} /img/screens/ext-send-amount.png
-   :class: sd-p-3
-   :width: 500px
-   ```
-
-6. Verify the transaction amounts and specify which token you want to pay fees in. Remember to always leave enough tokens in your account for other transactions.
-
-   ```{image} /img/screens/ext-send-submit.png
-   :class: sd-p-3
-   :width: 500px
-   ```
+6. Verify the transaction amounts and address. Remember to always leave enough tokens in your account for other transactions.
 
 7.  Enter your password and click **Submit**.
 
@@ -167,20 +157,11 @@ After a few moments, the tokens will appear in the receiver's wallet.
 
 1. Open the Terra Station browser extension and connect to your wallet.
 
-2. Navigate to the dApp of your choice. This tutorial will use the [Anchor protocol WebApp](https://app.anchorprotocol.com/). Most dApps use a similar process, though others may vary.
+2. Navigate to the dApp of your choice. Most dApps use a similar process.
 
 3. To connect your wallet, click **Connect Wallet** at the top of the page.
 
-   ```{image} /img/screens/ext-anchor.png
-   :class: sd-p-3
-   ```
-
-4. Select **Terra Station Wallet** to connect your wallet.  
-
-   ```{image} /img/screens/ext-connect-wallet.png
-   :class: sd-p-3
-   :width: 300 px
-   ```
+4. **Allow** the connection in the Station extension. 
 
 You can now make transactions on different dApps in the Terra ecosystem.
 
