@@ -139,6 +139,7 @@ Stake your Luna to a validator to start earning rewards. Before you stake, make 
 
    ```{image} /img/screens/desktop/stake-validator.png
    :class: sd-p-3
+   :width: 150 px
    ```
 
 4. In the **Amount** field, specify the amount of Luna you want to delegate and specify which coin you want to pay fees with. 
@@ -160,34 +161,20 @@ Congratulations, you've just delegated Luna!
 
 Rewards start accruing the moment you stake Luna. Monitor your rewards in the staking section of Terra Station. Once you have sufficient rewards, follow these steps to withdraw them:
 
-1. Open Terra Station and click **Stake**.
 
-   ```{image} /img/screens/desktop/stake.png
+   ```{image} /img/screens/desktop/stake-page.png
    :class: sd-p-3
-   :width: 150 px
    ```
+
+1. Open Terra Station and click **Stake**.
 
 2. To claim all rewards, click **Withdraw all rewards** in the upper right corner of the staking page. To withdraw rewards only from a single validator, click on their name in the list and click **withdraw** on their page.
 
-   ```{image} /img/screens/desktop/stake-withdraw.png
-   :class: sd-p-3
-   ```
-
-3. Review the amounts and specify which coin you want to pay fees in.
-
-   ```{image} /img/screens/desktop/stake-rewards.png
-   :class: sd-p-3
-   ```
-
-4. Enter your password and click **withdraw**.
+3. Review the amounts, enter your password, and click **withdraw**.
 
 Congratulations, you've just withdrawn your staking rewards!
 
 ## Send tokens
-
-send-wallet.png
-send-luna.png
-send-submit.png
 
 1. Open the Terra Station desktop app and connect to your wallet.
 
@@ -199,20 +186,13 @@ send-submit.png
    :class: sd-p-3
    ```
 
-4. Enter the address of the wallet you want to send tokens to.
-
-   ```{image} /img/screens/desktop/send-luna.png
-   :class: sd-p-3
-   ```
-
-
-5. Enter the amount you want to send. You can also add a memo for the transaction.
+4. Enter the address of the wallet you want to send tokens and the amount you want to send. You can also add a memo for the transaction.
 
    ```{image} /img/screens/desktop/send-submit.png
    :class: sd-p-3
    ```
 
-7. Verify the transaction amounts and specify which token you want to pay fees in. Remember to always leave enough tokens in your account for other transactions.
+7. Verify the transaction amounts and address. Remember to always leave enough tokens in your account for other transactions.
 
 8.  Enter your password and click **Submit**.
 
