@@ -94,7 +94,7 @@ For more guides on how to use Station's advanced features, visit the [Station gu
    :class: sd-p-3
    ```
 
-7. Click **Submit**.
+7. Click **Submit**, then clock **Connect**. 
 
    ```{image} /img/screens/desktop/wallet.png
    :class: sd-p-3
@@ -105,7 +105,7 @@ Congratulations! You have just created a Terra Station wallet.
 
 ## Receive tokens from an exchange
 
-1. Purchase your tokens using any exchange that supports Terra. To view a list of current exchanges, visit the [Integrations page](../../../ecosystem/integrations.md)
+1. Purchase your tokens using any exchange that supports Luna.
 
 2. Withdraw any token supported by the Terra network from your exchange. Every exchange is different. Please visit your exchange's web page for guides on how to withdraw tokens. Use the following steps as a generic guide.
 
@@ -127,11 +127,6 @@ Now you have tokens on Terra!
 Stake your Luna to a validator to start earning rewards. Before you stake, make sure you have Luna in your wallet. You can transfer Luna from an [exchange](#receive-tokens-from-an-exchange) or [another wallet](../send.md).
 
 1. Open Terra Station and click **Stake**.
-
-   ```{image} /img/screens/desktop/stake.png
-   :class: sd-p-3
-   :width: 150 px
-   ```
 
 2. Select a Validator and click on their name in the **Moniker** column of the validator list.
 
@@ -158,10 +153,6 @@ Stake your Luna to a validator to start earning rewards. Before you stake, make 
    :::
 
 5. Double-check the amounts and fees. Enter your password and click **Submit**.
-
-   ```{image} /img/screens/desktop/stake-success.png
-   :class: sd-p-3
-   ```
 
 Congratulations, you've just delegated Luna!
 
