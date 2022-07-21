@@ -110,8 +110,6 @@ Congratulations! You have just created a Terra Station wallet.
    :width: 500px
    ```
 
-   To view more exchanges, visit the [Integrations page](../../../ecosystem/integrations.md#exchanges).
-
 2. Purchase tokens using your preffered exchange.
 
    ```{image} /img/screens/ext-buy.png
