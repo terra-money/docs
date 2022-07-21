@@ -19,7 +19,7 @@ Use LTS Node.js 16 if you encounter the following error code:
 (header_target)=
 :::{dropdown} Running NPM on M1 Macs
 
-Some M1 macs may need to use the latest LTS version of Node to complete this tutorial. Consider using a node version manager such as [NVM](https://github.com/nvm-sh/nvm/blob/master/README.md). 
+Some M1 macs may need to use the latest LTS version of Node to complete this tutorial. Consider using a node version manager such as [NVM](https://github.com/nvm-sh/nvm/blob/master/README.md).
 After installing NVM, run the following to install and use the latest LTS version of node:
 
 ```sh
@@ -27,13 +27,14 @@ nvm install --lts
 nvm use --lts
 ```
 
-The `nvm use --lts` command will need to be run every time you open a new terminal to use the LTS version of node. 
+The `nvm use --lts` command will need to be run every time you open a new terminal to use the LTS version of node.
 
 To default to the LTS version of node when restarting your terminal, run the following:
 
 ```sh
 nvm alias default <INSERT NODE VERSION HERE>
 ```
+
 :::
 
 ## Install and run LocalTerra
@@ -43,6 +44,7 @@ nvm alias default <INSERT NODE VERSION HERE>
    ```sh
    git clone --depth 1 https://github.com/terra-money/localterra
    ```
+
 2. Start LocalTerra by running the following:
 
    ```sh
@@ -54,13 +56,13 @@ nvm alias default <INSERT NODE VERSION HERE>
 
 :::{admonition} LocalTerra Accounts
 :class: note
-To view the LocalTerra wallet information, visit the [LocalTerra accounts page](../localterra/accounts.md). 
-For more configuration options, visit the [LocalTerra configuration page](../localterra/configure.md). 
+To view the LocalTerra wallet information, visit the [LocalTerra accounts page](../localterra/accounts.md).
+For more configuration options, visit the [LocalTerra configuration page](../localterra/configure.md).
 :::
 
-# Counter tutorial 
+# Counter tutorial
 
-After installing LocalTerra, you are ready to use Terrain. This short tutorial walks you through setting up your project and creating a simple counter that increments upon request. 
+After installing LocalTerra, you are ready to use Terrain. This short tutorial walks you through setting up your project and creating a simple counter that increments upon request.
 
 ## 1. Scaffold your dApp
 
@@ -71,6 +73,7 @@ With Terrain installed you can now scaffold your new application in a new termin
    ```sh
    terrain new my_terra_dapp
    ```
+
    ::: {tip}
    If you are using an M1 Mac, see [Running NPM on M1 Macs](header_target) before proceeding.
    :::
@@ -109,22 +112,22 @@ terrain deploy my_terra_dapp
 
 The deploy command performs the following steps automatically:
 
-* Builds the counter smart contract.
-* Optimizes the counter smart contract.
-* Uploads counter smart contract to LocalTerra.
-* Instantiates the deployed smart contract.
+- Builds the counter smart contract.
+- Optimizes the counter smart contract.
+- Uploads counter smart contract to LocalTerra.
+- Instantiates the deployed smart contract.
 
 :::{admonition} Increase Docker memory
 :class: note
 
-If you are running LocalTerra and the previous `deploy` command is not working, try increasing Docker's memory allowance by clicking on the Docker icon. Click **Preferences** and then **Resources**. Increase the memory to at least 4 gigs. Click **Apply & Restart**. Run the deploy command again. You can increase again to 6 gigs if you are still having trouble. 
+If you are running LocalTerra and the previous `deploy` command is not working, try increasing Docker's memory allowance by clicking on the Docker icon. Click **Preferences** and then **Resources**. Increase the memory to at least 4 gigs. Click **Apply & Restart**. Run the deploy command again. You can increase again to 6 gigs if you are still having trouble.
 :::
 
 ## 3. Generate TypeScript client
 
-Terrain 0.5.x and above includes the ability to automatically generate a TypeScript client based on your smart contract schema. 
+Terrain 0.5.x and above includes the ability to automatically generate a TypeScript client based on your smart contract schema.
 
-Generating a client is easy, just run the following command: 
+Generating a client is easy, just run the following command:
 
 ```
 terrain contract:generateClient my_terra_dapp --build-schema
@@ -157,11 +160,11 @@ The template comes with several predefined helpers in `lib/index.ts`. Use them t
 4. After incrementing once, `await lib.getCount()` will return:
 
    ```json
-   { count: 1 }
+   { "count": 1 }
    ```
 
 :::{tip}
-Before proceeding to the next section, kill the running command in your terminal by entering "Ctrl + C" . 
+Before proceeding to the next section, kill the running command in your terminal by entering "Ctrl + C" .
 :::
 
 ## 5. Front-end scaffolding
@@ -170,7 +173,7 @@ Terrain also scaffolds a very simple front-end:
 
 1. Open the [Terra Station Chrome extension](https://chrome.google.com/webstore/detail/terra-station-wallet/aiifbnbfobpmeekipheeijimdpnlpgpp), click the gear icon, and switch the network to Localterra.
 
-2. To use the front end, run the following commands in order. The `terrain sync-refs` command copies your deployed contract addresses to the front-end part of the codebase.
+2. To use the front end, run the following commands in order.
 
    ```
    cd frontend
@@ -193,4 +196,3 @@ Terrain also scaffolds a very simple front-end:
 ## Advanced usage
 
 For more advanced use cases, like deploying to the testnet or mainnet, see [Terrain's readme](https://github.com/terra-money/terrain#readme).
-
