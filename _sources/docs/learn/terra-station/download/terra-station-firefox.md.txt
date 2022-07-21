@@ -85,8 +85,6 @@ Congratulations! You have just created a Terra Station wallet.
 
 1. Connect to your wallet and click **Buy** next to any token. Purchase your tokens using any exchange that supports Terra.
 
-   To view more exchanges, visit the [Integrations page](../../../ecosystem/integrations.md#exchanges).
-
 2. Purchase tokens using your preffered exchange.
 
 1. Withdraw any token supported by the Terra network from your exchange. Every exchange is different. Please visit your exchange's web page for guides on how to withdraw tokens. Use the following steps as a generic guide.
@@ -114,7 +112,7 @@ Now you have tokens on Terra!
 
 4. Enter the amount you want to send. You can also add a memo for the transaction.
 
-6. Verify the transaction amounts and specify which token you want to pay fees in. Remember to always leave enough tokens in your account for other transactions.
+6. Verify the transaction amounts and address. Remember to always leave enough tokens in your account for other transactions.
 
 7.  Enter your password and click **Submit**.
 

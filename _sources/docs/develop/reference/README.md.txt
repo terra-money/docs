@@ -7,7 +7,6 @@
 ../resources
 Terra REST API <https://lcd.terra.dev/swagger/>
 Terra Core GoDoc <https://pkg.go.dev/github.com/terra-money/core>
-Block explorers <../../ecosystem/integrations>
 ../terrad/README.md
 ../endpoints
 ```
