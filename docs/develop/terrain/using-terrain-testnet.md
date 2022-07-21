@@ -20,7 +20,7 @@ Make sure you have your seed phrase stored somewhere since you will need it to c
 
 # Counter tutorial
 
-After creating a testnet wallet, you are ready to use Terrain. This short tutorial walks you through setting up your project and creating a simple counter that iuncrements upon request. 
+After creating a testnet wallet, you are ready to use Terrain. This short tutorial walks you through setting up your project and creating a simple counter that iuncrements upon request.
 
 ## 1. Scaffold your dApp
 
@@ -91,9 +91,9 @@ Wait a few seconds then try the deploy command again.
 
 ## 3. Generate TypeScript client
 
-Terrain 0.5.x and above includes the ability to automatically generate a TypeScript client based on your smart contract schema. 
+Terrain 0.5.x and above includes the ability to automatically generate a TypeScript client based on your smart contract schema.
 
-Generating a client is easy, just run the following command: 
+Generating a client is easy, just run the following command:
 
 ```
 terrain contract:generateClient my_terra_dapp --build-schema
@@ -131,7 +131,7 @@ Terrain also scaffolds a very simple front-end.
 
 1. In the Terra Station Chrome extension, [switch the network to `testnet`](../../learn/terra-station/testnet.md).
 
-2. To use the front end, run the following commands in order. The terrain sync-refs command copies your deployed contract addresses to the front-end part of the codebase.
+2. To use the front end, run the following commands in order.
 
    ```
    cd frontend
