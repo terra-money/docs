@@ -96,7 +96,7 @@ Congratulations, you have just created a wallet!
 
 ## Receive tokens from an exchange
 
-1. Purchase your tokens using any exchange that supports Terra. To view a list of current exchanges, visit the [Integrations page](../../../ecosystem/integrations.md#exchanges)
+1. Purchase your tokens using any exchange that supports Terra.
 
 1. Withdraw any token supported by the Terra network from your exchange. Every exchange is different. Please visit your exchange's web page for guides on how to withdraw tokens. Use the following steps as a generic guide.
 
@@ -117,22 +117,11 @@ Now you have tokens on Terra!
 
 1. Open the Terra Station app extension and connect to your wallet.
 
-   ```{image} /img/screens/mobile/wallet-full.PNG
-   :class: sd-p-3
-   :width: 300 px
-   ```
-
-
 2. Tap on the token in your available balance that you want to send.  
 
 3. Enter the address of the wallet you want to send tokens to.  
 
 4. Enter the amount you want to send. You can also add a memo to specify what the transaction is for.  
-
-   ```{image} /img/screens/mobile/send-ust.PNG
-   :class: sd-p-3
-   :width: 300 px
-   ```
 
 5. Tap **Next**.
 
@@ -142,11 +131,6 @@ Now you have tokens on Terra!
    :class: caution
    Always keep some coins to pay fees with. Never spend your entire wallet amount. Without money for fees, you can't make any transactions.
    :::
-
-   ```{image} /img/screens/mobile/confirm-send.PNG
-   :class: sd-p-3
-   :width: 300 px
-   ```
 
 7.  Enter your password and tap **Confirm**. Wait for the transaction to process. This generally takes a few seconds.
 
@@ -191,29 +175,13 @@ Congratulations, you've just withdrawn your staking rewards!
 
 1. Open the Terra Station app and connect to your wallet.
 
-2. In your browser, navigate to the dApp of your choice. This tutorial will use the [Anchor protocol WebApp](https://app.anchorprotocol.com/). Most dApps use a similar process, though others may vary.
-
-   ```{image} /img/screens/mobile/anchor.PNG
-   :class: sd-p-3
-   :width: 300 px
-   ```
+2. In your browser, navigate to the dApp of your choice. 
 
 3. Tap the wallet icon at the top of the page.
 
 4. Wallet connect will open your Terra Station app.
 
-   ```{image} /img/screens/mobile/connect.PNG
-   :class: sd-p-3
-   :width: 300 px
-   ```
-
 5. When prompted, tap **Allow**.
-
-
-   ```{image} /img/screens/mobile/connected.PNG
-   :class: sd-p-3
-   :width: 300 px
-   ```
 
 You can now make transactions on different dApps in the Terra ecosystem from your mobile device. 
 
