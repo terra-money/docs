@@ -54,4 +54,4 @@ A healthy node will have the following files in place and populated:
 
 ### Resync
 
-You can proceed to [resync manually](sync.md) or [via quicksync](sync.md#quicksync).
+You can proceed to [resync manually](sync.md#sync-from-genesis) or [using a snapshot](sync.md#quicksync).
