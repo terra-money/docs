@@ -1,4 +1,4 @@
-# Terra Brand Assets
+# Terra brand assets
 
 ## Logos
 

@@ -1,6 +1,4 @@
-# About Terra
-
-## What is Terra?
+# What is Terra?
 
 Terra is an [open-source blockchain](https://github.com/terra-money/core) hosting a vibrant ecosystem of decentralized applications (dApps) and top-tier developer tools. Using proof-of-stake consensus and ground-breaking technologies like Mantlemint, Terrain, and Terra Station, the Terra blockchain is one of the fastest chains in existence, giving users an unparalleled DeFi experience. As a permissionless, borderless economy, Terra enables next-generation financial products accessible to anyone with an Internet connection.
 
@@ -16,7 +14,7 @@ On May 27th, 2022 the `phoenix-1` Terra mainnet launched, ushering in a new era 
 
 ## Luna airdrop distribution
 
-At genesis, Luna will have a supply of 1 billion tokens allocated according to the following distribution:
+Luna's genesis supply of 1 billion tokens was allocated according to the following distribution:
 
 **Community pool**: 30%
 - Controlled by staked governance.  

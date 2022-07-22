@@ -69,16 +69,14 @@ Move from Terra Classic to the new Terra chain.
 
 :::::::
 
-
-
 ```{toctree}
 :hidden:
-docs/migration/README
+docs/learn/README
 ```
 
 ```{toctree}
 :hidden:
-docs/learn/README
+docs/learn/terra-station/README
 ```
 
 ```{toctree}
@@ -89,5 +87,10 @@ docs/develop/README
 ```{toctree}
 :hidden:
 docs/full-node/README
+```
+
+```{toctree}
+:hidden:
+docs/migration/README
 ```
 
