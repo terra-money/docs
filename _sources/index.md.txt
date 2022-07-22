@@ -71,10 +71,7 @@ Move from Terra Classic to the new Terra chain.
 
 
 
-```{toctree}
-:hidden:
-docs/migration/README
-```
+
 
 ```{toctree}
 :hidden:
@@ -91,3 +88,7 @@ docs/develop/README
 docs/full-node/README
 ```
 
+```{toctree}
+:hidden:
+docs/migration/README
+```
