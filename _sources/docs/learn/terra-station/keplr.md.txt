@@ -85,10 +85,6 @@ Use this guide to connect your Terra Station wallet to a Keplr wallet using a Ch
 
 Scroll down to select **Terra**.
 
-```{image} /img/screens/keplr/ust.png
-:class: sd-p-3
-```
-
 Your Keplr wallet will show your available Terra coins.
 
 Congratulations, you can now use Terra on a Keplr wallet!
