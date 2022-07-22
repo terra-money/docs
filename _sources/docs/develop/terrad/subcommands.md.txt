@@ -280,7 +280,7 @@ terrad query distribution params
 The parameters are returned in YAML, as shown in the following example:
 
 ```yaml
-community_tax: "0.020000000000000000"
+community_tax: "0.000000000000000000"
 base_proposer_reward: "0.010000000000000000"
 bonus_proposer_reward: "0.040000000000000000"
 withdraw_addr_enabled: true
@@ -430,16 +430,16 @@ The parameters are returned in the following format:
 
 ```yaml
 voting_params:
-  voting_period: 5m0s
+  voting_period: 0m0s
 tally_params:
-  quorum: "0.334000000000000000"
-  threshold: "0.500000000000000000"
-  veto: "0.334000000000000000"
+  quorum: "0.000000000000000000"
+  threshold: "0.000000000000000000"
+  veto: "0.000000000000000000"
 deposit_parmas:
   min_deposit:
     - denom: uluna
-      amount: "10000000"
-  max_deposit_period: 48h0m0s
+      amount: "00000000"
+  max_deposit_period: 0h0m0s
 ```
 
 ## `query mint annual-provisions`
@@ -476,8 +476,8 @@ Parameters are returned in the following format:
 
 ```yaml
 mint_denom: uluna
-inflation_rate_change: "0.130000000000000000"
-inflation_max: "0.200000000000000000"
+inflation_rate_change: "0.000000000000000000"
+inflation_max: "0.070000000000000000"
 inflation_min: "0.070000000000000000"
 goal_bonded: "0.670000000000000000"
 blocks_per_year: 6311520
@@ -523,10 +523,10 @@ The parameters are returned in the following format:
 
 ```yaml
 signed_blocks_window: 100
-min_signed_per_window: "0.500000000000000000"
+min_signed_per_window: "0.000000000000000000"
 downtime_jail_duration: 10m0s
-slash_fraction_double_sign: "0.050000000000000000"
-slash_fraction_downtime: "0.010000000000000000"
+slash_fraction_double_sign: "0.000000000000000000"
+slash_fraction_downtime: "0.000000000000000000"
 ```
 
 ## `query staking delegation`
@@ -927,7 +927,7 @@ where
 
 - `<from-key-or-address>` is either the key name or the address. If the `--generate-only` flag is used, only addresses are accepted.
 - `to-address` is an account address.
-- `<coins>` is a comma-separated list of coins specified as `<amount><coin-denominator>`. For example, `1000usdr` or `1000uluna,1000usdr`.
+- `<coins>` is a comma-separated list of coins specified as `<amount><coin-denominator>`. For example, `1000uluna` or `1000uluna,1000<other coin denom>`.
 
 **Example**
 
@@ -935,7 +935,7 @@ where
 terrad tx bank send \
     terra15h6vd5f0wqps26zjlwrc6chah08ryu4hzzdwhc \
     terra14h2od5f3vahd28uywwvt8sqbi52upnzagshtrm \
-    8600usdr \
+    8600uluna \
     --chain-id=testnet \
 ```
 
@@ -996,7 +996,7 @@ terrad tx distribution withdraw-rewards terra19t4gde4f8ndwx67qhbnur9yqdc31xznpks
 
 ## `tx gov deposit`
 
-For a proposal to be sent to the network, the amount deposited must be above a minimum amount specified by `minDeposit` (initial value is `50000000uluna`). If the proposal you previously created didn't meet this requirement, you can still increase the total amount deposited to activate it. After the minimum deposit is reached, the voting period for the proposal begins.
+For a proposal to be sent to the network, the amount deposited must be above a minimum amount specified by `minDeposit` (genesis value is `512000000uluna`). If the proposal you previously created didn't meet this requirement, you can still increase the total amount deposited to activate it. After the minimum deposit is reached, the voting period for the proposal begins.
 
 **Syntax**
 
