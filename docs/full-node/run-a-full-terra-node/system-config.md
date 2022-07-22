@@ -5,7 +5,7 @@
 This guide has been tested against Linux distributions only. To ensure a successful production environment setup, consider using a Linux system.
 :::
 
-Running a full Terra node is a resource-intensive process that requires a persistent server. If you want to use Terra without downloading the entire blockchain, use [Terra Station](https://station.terra.money/).
+Running a full Terra node is a resource-intensive process that requires a persistent server. If you want to use Terra without downloading the entire blockchain, use [Terra Station](https://station.terra.money/). If you want to set up a local, WASM-enabled, private testnet for smart contracts, visit [install LocalTerra](../../develop/localterra/README.md).
 
 ## Hardware Requirements
 
