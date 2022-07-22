@@ -20,7 +20,7 @@ The the minimum requirements for running a Terra full node are:
 
 :::{admonition} Storage requirements
 :class: warning
-As the network grows, the minimum hardware requirements will also grow. It is recommended that you monitor the system so you can prevent it from running out of resources.
+As the network grows, the minimum hardware requirements will also grow. It is recommended that you monitor the system so you can prevent it from running out of resources. 
 :::
 
 ## Prerequisites
