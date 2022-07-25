@@ -9,9 +9,9 @@ const { remarkCodeHike } = require("@code-hike/mdx");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Payment App Docs',
+  title: 'Terra Docs',
   tagline: 'The official docs',
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'https://docs.terra.money',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -20,7 +20,7 @@ const config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'Terra-money', // Usually your GitHub org/user name.
-  projectName: 'payments-docu', // Usually your repo name.
+  projectName: 'new-docs', // Usually your repo name.
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
@@ -42,7 +42,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/evanorti/new-docs',
         },
         blog: false,
         theme: {
@@ -61,25 +61,25 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'Payments docs',
+        title: 'Terra docs',
         logo: {
-          alt: 'Payments docs',
+          alt: 'Terra docs',
           src: 'img/logo.svg',
         },
         items: [
           {
             type: 'doc',
-            docId: 'overview',
+            docId: 'index',
             position: 'left',
             label: 'Docs',
           },
           {
-            href: 'https://github.com/', //front-end URL
-            label: 'App',
+            href: 'https://terra.money', //front-end URL
+            label: 'Terra.money',
             position: 'left',
           },
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://github.com/evanorti/new-docs',
             label: 'GitHub',
             position: 'right',
           },
@@ -93,7 +93,7 @@ const config = {
             items: [
               {
                 label: 'Docs',
-                to: '/docs/overview',
+                to: '/docs/index',
               },
             ],
           },

@@ -1,0 +1,121 @@
+# Tools
+
+If this is your first time building on Terra, check out the [Getting started guide](./get-started.md). 
+
+
+## Terra Development Suite
+
+The [Terra Development Suite](./which-tools.md) has everything you need to build on Terra. 
+
+Not sure which tool to use? Check out the [tool guide](./which-tools.md).
+
+
+```{toctree}
+:hidden:
+:maxdepth: 1
+terrain/README.md
+localterra/README.md
+wallet-provider/README.md
+terra-js/README.md
+terra-py/get-started-py.md
+terrad/README.md
+Block explorer <https://finder.terra.money>
+Faucet <https://faucet.terra.money>
+```
+
+:::::::{grid} 2 2 2 3
+:gutter: 3
+:class-row: sd-align-major-center
+
+:::{grid-item-card}
+:link: dapp/quick-start/README.html
+:class-card: sd-text-center sd-shadow-md sd-rounded-3
+```{image} /img/terrain.png
+:class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
+```
+**Terrain**  
+The all-in-one tool for dApp development.
+:::
+
+:::{grid-item-card}
+:link: localterra/README.html
+:class-card: sd-text-center sd-shadow-md sd-rounded-3
+```{image} /img/LocalTerra.svg
+:class: sd-width-auto sd-pb-2 sd-animate-grow50-rot20
+```
+**LocalTerra**  
+A Dockerized version of the Terra blockchain.
+:::
+
+:::{grid-item-card}
+:link: wallet-provider/README.html
+:class-card: sd-text-center sd-shadow-md sd-rounded-3
+```{image} /img/Walletconnect.svg
+:class: sd-width-auto sd-pb-2 sd-animate-grow50-rot20
+```
+**Wallet Provider**  
+React tooling for frontend integrations.
+:::
+
+:::{grid-item-card}
+:link: sdks/terra-js/README.html
+:class-card: sd-text-center sd-shadow-md sd-rounded-3
+```{image} /img/terra_js.svg
+:class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
+```
+**Terra.js**  
+Terra's JavaScript SDK.
+:::
+
+:::{grid-item-card}
+:link: terra-py/get-started-py.html
+:class-card: sd-text-center sd-shadow-md sd-rounded-3
+```{image} /img/terra_sdk.svg
+:class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
+```
+**Terra.py**  
+Terra's Python SDK.
+:::
+
+:::{grid-item-card}
+:link: terrad/README.html
+:class-card: sd-text-center sd-shadow-md sd-rounded-3
+
+```{image} /img/Terrad.svg
+:class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
+```
+
+**`terrad`**  
+
+Interact with a Terra node. 
+:::
+
+:::{grid-item-card}
+:link: https://finder.terra.money/
+:class-card: sd-text-center sd-shadow-md sd-rounded-3
+
+```{image} /img/expl_finder.png
+:class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
+```
+
+**Finder**  
+
+Explore the blockchain.
+:::
+
+:::{grid-item-card}
+:link: https://faucet.terra.money/
+:class-card: sd-text-center sd-shadow-md sd-rounded-3
+
+```{image} /img/Faucet.svg
+:class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
+```
+
+**Faucet**  
+
+Get testnet funds. 
+:::
+
+
+
+:::::::
