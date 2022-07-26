@@ -5,8 +5,7 @@
 ```{toctree}
 :maxdepth: 1
 ../resources
-Terra REST API <https://lcd.terra.dev/swagger/>
-Terra Core GoDoc <https://pkg.go.dev/github.com/terra-money/core>
+Terra REST API <https://phoenix-lcd.terra.dev/swagger/>
 ../terrad/README.md
 ../endpoints
 ```
