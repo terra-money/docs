@@ -28,6 +28,6 @@ To enable the REST API and Swagger, and to start the LCD, complete the following
 
 Once restarted, the LCD will be available.
 
-For more information about the Terra REST API endpoints, see the [Swagger documentation](https://lcd.terra.dev/swagger/).
+For more information about the Terra REST API endpoints, see the [Swagger documentation](https://phoenix-lcd.terra.dev/swagger/#/).
 
 For more information on configuring `App.toml`, see [Configure general settings](../../full-node/run-a-full-terra-node/configure-general-settings.md).

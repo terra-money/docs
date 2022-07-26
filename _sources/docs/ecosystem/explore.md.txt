@@ -142,8 +142,7 @@
 
 #### Support
 
-[Terra public FCD](https://fcd.terra.dev/swagger): the full client daemon for Terra<br>
-[Terra public LCD](https://lcd.terra.dev/swagger/): the light client daemon for Terra<br>
+[Terra public LCD](https://phoenix-lcd.terra.dev/swagger/): the light client daemon for Terra<br>
 [Easy2stake public LCD](https://terra-lcd.easy2stake.com/82F438G9UNMwD5bwmycR/): the easy2stake light client daemon for Terra<br>
 [RPC endpoints](../develop/endpoints.md): a list of recommended RPC endpoints<br>
 
