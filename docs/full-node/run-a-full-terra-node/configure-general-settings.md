@@ -51,7 +51,7 @@ minimum-gas-prices = "0.01133uluna"
 
 ## Start the light client daemon (LCD)
 
-For information about the available Terra REST API endpoints, see the [Swagger documentation](https://lcd.terra.dev/swagger/). To enable the REST API and Swagger, and to start the LCD, complete the following steps:
+For information about the available Terra REST API endpoints, see the [Swagger documentation](https://phoenix-lcd.terra.dev/swagger/). To enable the REST API and Swagger, and to start the LCD, complete the following steps:
 
 1. Open `~/.terra/config/app.toml`.
 
