@@ -1,5 +1,14 @@
 import React from 'react';
 import clsx from 'clsx';
+import { useTheme, ThemeProvider, withTheme } from '@emotion/react'
+import theme from '@rebass/preset';
+import {
+  Box,
+  Card,
+  Image,
+  Heading,
+  Text
+} from 'rebass';
 import styles from './styles.module.css';
 
 const FeatureList = [
@@ -37,9 +46,9 @@ const FeatureList = [
 
 function Feature({Svg, title, description}) {
   return (
-    <div className={clsx('col col--4')}>
+    <div className={clsx('col col-4')}>
       <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
+        <Svg width={200} className={styles.featureSvg} role="img" />
       </div>
       <div className="text--center padding-horiz--md">
         <h3>{title}</h3>
@@ -51,14 +60,28 @@ function Feature({Svg, title, description}) {
 
 export default function HomepageFeatures() {
   return (
-    <section className={styles.features}>
-      <div className="container">
-        <div className="row">
-          {FeatureList.map((props, idx) => (
-            <Feature key={idx} {...props} />
-          ))}
+    <ThemeProvider theme={theme}>
+      <section className={styles.features}>
+        <div className="container">
+          <div className="row">
+            {FeatureList.map((props, idx) => (
+              <Box width={256} key={idx}>
+                <Card
+                  sx={{
+                    borderRadius: 2,
+                    boxShadow: '0 0 16px rgba(0, 0, 0, .25)',
+                    height: 500,
+                    marginRight: 3,
+                  }}>
+                  <Text>
+                    <Feature {...props} />
+                  </Text>
+                </Card>
+              </Box>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </ThemeProvider>
   );
 }
