@@ -20,7 +20,7 @@ Make sure you have your seed phrase stored somewhere since you will need it to c
 
 # Counter tutorial
 
-After creating a testnet wallet, you are ready to use Terrain. This short tutorial walks you through setting up your project and creating a simple counter that iuncrements upon request.
+After creating a testnet wallet, you are ready to use Terrain. This short tutorial walks you through setting up your project and creating a simple counter that increments upon request.
 
 ## 1. Scaffold your dApp
 
