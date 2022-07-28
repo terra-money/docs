@@ -96,12 +96,12 @@ hidden content
 </details>
 ````
 
-### Notes
+### Comments
 
 ```
 
 {/*
-this is a note in mdx
+this is a comment in mdx
 */}
 
 ```
