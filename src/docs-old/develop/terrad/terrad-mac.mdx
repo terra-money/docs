@@ -1,0 +1,67 @@
+import Admonition from '@theme/Admonition';
+
+# Install `terrad` for Mac (Intel or M1)
+
+`terrad` is the command-line interface and daemon that connects to Terra and enables you to interact with the Terra blockchain. Terra core is the official Golang reference implementation of the Terra node software.
+
+This guide is for developers who want to install `terrad` and interact with Terra core without running a full node. If you want to run a full node or join a network, visit [](../../full-node/run-a-full-terra-node/README.md).
+
+1. Navigate to [https://github.com/terra-money/core/tags](https://github.com/terra-money/core/tags) and click on the latest release. 
+
+2. Download the `terra_<latest-version-here>_Darwin_x86_64.tar.gz` file.
+
+3. Unzip the file in the downloads folder by double clicking on it. 
+
+<Admonition type="danger" title="M1 Mac users">
+
+If you are using an Intel-based Mac, proceed to step 4. 
+
+M1 Mac users will need to create `/lib` and `/bin` directories in `/usr/local`:
+
+```sh
+sudo cd /usr/local
+sudo mkdir lib
+sudo mkdir bin
+```
+
+</Admonition>
+
+4. Navigate to the expanded file in downloads: 
+ 
+```bash
+cd Downloads/terra_<downloaded-version>_Darwin_x86_64/
+```
+ 
+5. Copy `libwasmvm.dylib` to `/lib`:
+
+```sh
+sudo cp libwasmvm.dylib /usr/local/lib
+```
+
+
+6. Add `terrad` to your path:
+
+```sh
+sudo cp terrad /usr/local/bin
+```
+
+
+7. Start `terrad`
+
+```sh
+terrad
+```
+
+<Admonition type="note" title="If a security warning occurs:">
+
+1. Open your System Preferences and click **Security & Privacy**. 
+
+2. Under the **General** tab, click **Allow anyway**.
+
+3. Run `terrad` again. 
+
+4. When prompted, click **Open**.
+
+5. Repeat for other security errors or warnings. 
+
+</Admonition>
