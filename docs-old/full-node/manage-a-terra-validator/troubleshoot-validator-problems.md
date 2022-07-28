@@ -85,4 +85,4 @@ write-vm-memory-cache-size = 100
 
     `terrad tx slashing unjail <terra> --chain-id=<chain_id> --from=<from>`
 
-- The validator is not in the [active validator set](../../learn/glossary.md#active-set). Only the top 130 validators are in this set. To fix this problem, increase your total stake to be larger than the 130th validator.
+- The validator is not in the [active validator set](../../learn/glossary.mdx#active-set). Only the top 130 validators are in this set. To fix this problem, increase your total stake to be larger than the 130th validator.
