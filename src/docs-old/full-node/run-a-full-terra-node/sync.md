@@ -1,0 +1,162 @@
+# Sync
+
+Use this guide to [sync the chain from from genesis](#sync-from-genesis) or use a [snapshot](#sync-from-snapshot) for a quicker sync. 
+
+## Sync from genesis
+
+After [choosing a network](./join-a-network.md#join-a-public-network), start the sync and check that everything is running smoothly:
+
+```bash
+terrad start
+terrad status
+# It will take a few seconds for terrad to start.
+```
+Your node is now syncing. This process will take a long time. Make sure you've set it up on a stable connection so this process is not interrupted.
+
+::: {admonition} Sync start times
+:class: caution
+
+Nodes take at least an hour to start syncing. This wait time is normal. Before troubleshooting a sync, please wait an hour for the sync to start.
+:::
+
+:::{dropdown} Healthy Node Status Example
+
+```json
+{
+  "NodeInfo": {
+    "protocol_version": {
+      "p2p": "8",
+      "block": "11",
+      "app": "0"
+    },
+    "id": "821dc1401fd0270487b3e615c652181b4d4566dd",
+    "listen_addr": "18.157.84.154:26656",
+    "network": "pisco-1",
+    "version": "v0.34.19-terra.2",
+    "channels": "40202122233038606100",
+    "moniker": "terradocs",
+    "other": {
+      "tx_index": "on",
+      "rpc_address": "tcp://127.0.0.1:26657"
+    }
+  },
+  "SyncInfo": {
+    "latest_block_hash": "ED9F6D0855FD92A5BA2F91082CD49ADB18A07DCE3F747529D357071E5B7C0D4C",
+    "latest_app_hash": "D621068882E7FC5045CDD957ADEABE9BF8E90F2092C9526E22BE4767940D128B",
+    "latest_block_height": "260770",
+    "latest_block_time": "2022-06-09T15:22:48.792283245Z",
+    "earliest_block_hash": "F948EF10AA663D182309790C51E5A7A9125D7CF4D60D9E735994059DB7CAD4D4",
+    "earliest_app_hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "earliest_block_height": "1",
+    "earliest_block_time": "2022-05-23T06:00:00Z",
+    "catching_up": false
+  },
+  "ValidatorInfo": {
+    "Address": "04024A7F76485B0D2B99570EC7DA3E9A3B3735CC",
+    "PubKey": {
+      "type": "tendermint/PubKeyEd25519",
+      "value": "KUqIsRD9yzPt7k9et+ClFp6h8wXwEIcb/TVZPrC57+I="
+    },
+    "VotingPower": "0"
+  }
+}
+```
+
+:::
+
+Proceed to the [](#monitor-the-sync) section.
+
+### Fast-sync for testing
+
+Sometimes you may want to sync faster by foregoing checks. 
+
+:::{warning}
+The following command should only be used by advanced users in non-production environments:
+
+   ```bash
+   terrad start --x-crisis-skip-assert-invariants
+   ```
+:::
+
+## Sync from snapshot
+
+You can significantly accelerate the synchronization process by providing `terrad` with a recent snapshot of the network state. Snapshots are made publicly available by members of the Terra community one example can be downloaded from [Polkachu - Phoenix Mainnet](https://polkachu.com/state_sync/terra). [Polkachu - Pisco Testnet](https://polkachu.com/testnets/terraInstructions) are provided by Polkachu, and not maintained as part of this documentation.
+
+### Before using snapshots
+
+Certain files will need to be absent or deleted before downloading a snapshot. A quicksync replaces blockchain data with a custom snapshot. For most use cases a "pruned" version is adequate. Pruned versions will have certain transactions removed from the archive to improve node performance. If you are running a node for archival purposes, you will want an `archive` or `default` download.
+
+After choosing the appropriate download type, examine your node and ensure that `.terra/data` is empty.
+
+**Example**:
+
+```bash
+6:22PM INF Removed all blockchain history dir=/home/ubuntu/.terra/data
+```
+
+::: {warning}
+If you are a validator, ensure that you do not remove your private key.
+
+Example of a removed private key:
+
+```bash
+6:22PM INF Reset private validator file to genesis state keyFile=/home/ubuntu/.terra/config/priv_validator_key.json stateFile=/home/ubuntu/.terra/data/priv_validator_state.json
+```
+
+:::
+
+If you have an address book downloaded, you may keep it. Otherwise, you will need to download the [appropriate addressbook](./join-a-network.md#join-a-public-network).  
+
+With an address book downloaded, run the following:
+
+```bash
+terrad start
+terrad status
+# It will take a few seconds for terrad to start.
+```
+
+## Monitor the sync
+
+Your node is catching up with the network by replaying all the transactions from genesis and recreating the blockchain state locally. You can verify this process by checking the `latest_block_height` in the `SyncInfo` of the `terrad status` response:
+
+```json
+  {
+    "SyncInfo": {
+        "latest_block_height": "42", <-----
+        "catching_up"        : true
+    },
+  ...
+  }
+```
+
+Compare this height to the **Latest Blocks** by checking the API for the latest block heights on [Phoenix](https://phoenix-lcd.terra.dev/blocks/latest), or [Pisco](https://pisco-lcd.terra.dev/blocks/latest) to see your progress.
+
+
+
+## Sync complete
+
+You can tell that your node is in sync with the network when `SyncInfo.catching_up` in the `terrad status` response returns `false` and the `latest_block_height` corresponds to the public network blockheight found on the API for either [Phoenix](https://phoenix-lcd.terra.dev/blocks/latest), or [Pisco](https://pisco-lcd.terra.dev/blocks/latest).
+
+```bash
+terrad status
+```
+
+**Example**:
+
+```json
+  {
+    "SyncInfo": {
+        "latest_block_height": "7356350",
+        "catching_up"        : false
+    },
+  ...
+  }
+```
+
+Validators can view the status of the network using [Terra Finder](https://finder.terra.money).
+
+
+## Congratulations!
+
+You've successfully joined a network as a full node operator. If you are a validator, continue to [manage a Terra validator](../manage-a-terra-validator/README.md) for the next steps.
+
