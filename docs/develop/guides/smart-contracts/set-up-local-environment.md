@@ -2,9 +2,9 @@
 
 As a smart contract developer, you will need to write, compile, upload, and test your contracts before deploying them on the Phoenix mainnet. The first step is to set up a specialized environment to streamline development.
 
-## Install Terra Core locally
+## Install Terrain
 
-Visit [build Terra core](../../../full-node/run-a-full-terra-node/build-terra-core.md) to install the latest version of Terra Core to obtain a working version of `terrad`. You will need this to connect to your local Terra test network to work with smart contracts.
+
 
 ## Download LocalTerra
 

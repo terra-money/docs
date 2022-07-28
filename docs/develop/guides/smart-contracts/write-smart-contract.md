@@ -19,11 +19,11 @@ In this section, you will define your expected messages alongside their implemen
 In your working directory, quickly launch your smart contract with the recommended folder structure and build options by running the following commands:
 
 ```sh
-cargo generate --git https://github.com/CosmWasm/cw-template.git --branch 1.0 --name my-first-contract
+terrain new my-first-contract
 cd my-first-contract
 ```
 
-This helps get you started by providing the basic boilerplate and structure for a smart contract. You'll find in the `src/lib.rs` file that the standard CosmWasm entrypoints `instantiate()`, `execute()`, and `query()` are properly exposed and hooked up.
+This helps get you started by providing the basic boilerplate and structure for a smart contract. You'll find in the `contracts/my-first-contract/src/msg.rs` file that the standard CosmWasm entrypoints `instantiate()`, `execute()`, and `query()` are properly exposed and hooked up.
 
 ## Contract State
 
@@ -34,7 +34,7 @@ The starting template has the basic following state:
   - a Terra address `owner`
 
 ```rust
-// src/state.rs
+// contracts/my-first-contract/src/msg.rs
 use schemars::JsonSchema;
 use serde::{Deserialize, Serialize};
 
@@ -86,7 +86,7 @@ For your contract, you will expect a contract creator to supply the initial stat
 ### Message Definition
 
 ```rust
-// src/msg.rs
+// contracts/my-first-contract/src/msg.rs
 
 use schemars::JsonSchema;
 use serde::{Deserialize, Serialize};
@@ -106,7 +106,7 @@ Here you will define your first entry-point, the `instantiate()`, or where the c
 - `owner` is assigned to the sender of the `MsgInstantiateContract`
 
 ```rust
-// src/contract.rs
+// contracts/my-first-contract/src/contract.rs
 #[cfg_attr(not(feature = "library"), entry_point)]
 pub fn instantiate(
     deps: DepsMut,
@@ -161,7 +161,7 @@ Only the owner can reset the count to a specific number.
 As for your `ExecuteMsg`, you will use an `enum` to multiplex over the different types of messages that your contract can understand. The `serde` attribute rewrites your attribute keys in snake case and lower case, so you'll have `increment` and `reset` instead of `Increment` and `Reset` when serializing and deserializing across JSON.
 
 ```rust
-// src/msg.rs
+// contracts/my-first-contract/src/msg.rs
 
 #[derive(Serialize, Deserialize, Clone, Debug, PartialEq, JsonSchema)]
 #[serde(rename_all = "snake_case")]
@@ -174,7 +174,7 @@ pub enum ExecuteMsg {
 ### Logic
 
 ```rust
-// src/contract.rs
+// contracts/my-first-contract/src/contract.rs
 
 #[cfg_attr(not(feature = "library"), entry_point)]
 pub fn execute(
@@ -206,7 +206,7 @@ pub fn try_increment(deps: DepsMut) -> Result<Response, ContractError> {
 It is quite straightforward to follow the logic of `try_increment()`. First, it acquires a mutable reference to the storage to update the singleton located at key `b"config"`, made accessible through the `config` convenience function defined in the `src/state.rs`. It then updates the present state's count by returning an `Ok` result with the new state. Finally, it terminates the contract's execution with an acknowledgement of success by returning an `Ok` result with the `Response`.
 
 ```rust
-// src/contract.rs
+// contracts/my-first-contract/src/contract.rs
 
 pub fn try_reset(deps: DepsMut, info: MessageInfo, count: i32) -> Result<Response, ContractError> {
     STATE.update(deps.storage, |mut state| -> Result<_, ContractError> {
@@ -250,10 +250,10 @@ Which should return:
 
 To support queries against the contract for data, you'll have to define both a `QueryMsg` format (which represents requests), as well as provide the structure of the query's output -- `CountResponse` in this case. You must do this because `query()` will send back information to the user through JSON in a structure and you must make the shape of your response known.
 
-Add the following to your `src/msg.rs`:
+Add the following to your `contracts/my-first-contract/src/msg.rs`:
 
 ```rust
-// src/msg.rs
+// contracts/my-first-contract/src/msg.rs
 #[derive(Serialize, Deserialize, Clone, Debug, PartialEq, JsonSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum QueryMsg {
@@ -273,7 +273,7 @@ pub struct CountResponse {
 The logic for `query()` should be similar to that of `execute()`, except that, since `query()` is called without the end-user making a transaction, the `env` argument is ommitted as there is no information.
 
 ```rust
-// src/contract.rs
+// contracts/my-first-contract/src/contract.rs
 
 #[cfg_attr(not(feature = "library"), entry_point)]
 pub fn query(deps: Deps, _env: Env, msg: QueryMsg) -> StdResult<Binary> {
@@ -290,10 +290,10 @@ fn query_count(deps: Deps) -> StdResult<CountResponse> {
 
 ## Building the Contract
 
-To build your contract, run the following command. This will check for any preliminary errors before optimizing.
+To build your contract, run the following command in the project root. This will check for any preliminary errors before optimizing.
 
 ```sh
-cargo wasm
+terrain contract:build my-first-contract
 ```
 
 ### Optimizing your build
@@ -305,25 +305,7 @@ You will need [Docker](https://www.docker.com) installed to run this command.
 You will need to make sure the output WASM binary is as small as possible in order to minimize fees and stay under the size limit for the blockchain. Run the following command in the root directory of your Rust smart contract's project folder.
 
 ```sh
-cargo run-script optimize
-```
-
-If you are on an arm64 machine:
-
-```sh
-docker run --rm -v "$(pwd)":/code \
-  --mount type=volume,source="$(basename "$(pwd)")_cache",target=/code/target \
-  --mount type=volume,source=registry_cache,target=/usr/local/cargo/registry \
-  cosmwasm/rust-optimizer-arm64:0.12.4
-```
-
-If you are developing with a Windows exposed Docker daemon connected to WSL 1:
-
-```sh
-docker run --rm -v "$(wslpath -w $(pwd))":/code \
-  --mount type=volume,source="$(basename "$(pwd)")_cache",target=/code/target \
-  --mount type=volume,source=registry_cache,target=/usr/local/cargo/registry \
-  cosmwasm/rust-optimizer:0.12.4
+terrain contract:optimize my-first-contract
 ```
 
 This will result in an optimized build of `artifacts/my_first_contract.wasm` or `artifacts/my_first_contract-aarch64.wasm` in your working directory.
@@ -337,7 +319,7 @@ Please note that rust-optimizer will produce different contracts on Intel and AR
 In order to make use of JSON-schema auto-generation, you should register each of the data structures that you need schemas for.
 
 ```rust
-// examples/schema.rs
+// contracts/my-first-contract/examples/schema.rs
 
 use std::env::current_dir;
 use std::fs::create_dir_all;
