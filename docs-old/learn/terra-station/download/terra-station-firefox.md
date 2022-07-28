@@ -132,4 +132,4 @@ You can now make transactions on different dApps in the Terra ecosystem.
 
 ## Next steps
 
-For on-the-go transactions, check out the [Terra Station mobile app](terra-station-mobile.md). To learn how to use other Station features, visit the [Station guides](../README.md).
+For on-the-go transactions, check out the [Terra Station mobile app](terra-station-mobile.mdx). To learn how to use other Station features, visit the [Station guides](../README.mdx).
