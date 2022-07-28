@@ -49,7 +49,7 @@ Complete this tutorial to install the Terra Station extension for the Firefox br
 
 ## Create a wallet
 
-Use this tutorial to create a new wallet. To connect to an existing wallet, visit [how to connect to a wallet](../wallet.md#connect-to-a-wallet-using-a-private-key).
+Use this tutorial to create a new wallet. To connect to an existing wallet, visit [how to connect to a wallet](../wallet.mdx#connect-to-a-wallet-using-a-private-key).
 
 1. Open the browser extension and click **New wallet**.
 
