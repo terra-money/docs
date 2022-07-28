@@ -38,7 +38,7 @@ const config = {
         docs: {
           beforeDefaultRemarkPlugins: [[remarkCodeHike, { theme }]],
           sidebarPath: require.resolve('./sidebars.js'),
-          routeBasePath: '/',  // Serve the docs at the site's root (slug added to overview.mdx)
+          routeBasePath: '/',  // Serve the docs at the site's root
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
@@ -64,22 +64,22 @@ const config = {
         title: 'Terra docs',
         logo: {
           alt: 'Terra docs',
-          src: 'img/logo.svg',
+          src: 'img/favicon.png',
         },
         items: [
           {
             type: 'doc',
             docId: 'index',
             position: 'left',
-            label: 'Docs',
+            label: 'Get started',
           },
           {
             href: 'https://terra.money', //front-end URL
             label: 'Terra.money',
-            position: 'left',
+            position: 'right',
           },
           {
-            href: 'https://github.com/evanorti/new-docs',
+            href: 'https://github.com/terra-money/new-docs',
             label: 'GitHub',
             position: 'right',
           },
