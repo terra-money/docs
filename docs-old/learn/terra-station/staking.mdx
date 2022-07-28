@@ -1,4 +1,6 @@
-# Manage staking <img src="/img/Staking.svg" height="40px">
+import Admonition from '@theme/Admonition';
+
+# Manage staking
 
 Use this guide to manage your staking delegations in Terra Station. To learn how to stake or withdraw rewards, visit the Terra Station [desktop](download/terra-station-desktop.md) or [mobile](download/terra-station-mobile.md) tutorials.  
 
@@ -16,10 +18,11 @@ Stake your Luna to a validator to start earning rewards. Before you stake, make 
 
 4. In the **Amount** field, specify the amount of Luna you want to delegate, and click **Next**.
 
-   :::{admonition} Keep coins for fees
-   :class: warning
-   Always keep some coins to pay fees with. Never stake your entire wallet amount. Without money for fees, you can't make any transactions.
-   :::
+<Admonition type="caution" title="Keep coins for fees">
+
+Always keep some coins to pay fees with. Never stake your entire wallet amount. Without money for fees, you can't make any transactions.
+
+</Admonition>
 
 5. Double check the amounts and fees. Enter your password and click **Delegate**.
 
@@ -43,9 +46,11 @@ Congratulations, you've just withdrawn your staking rewards!
 
 Redelegating lets you transfer staked Luna from one validator to another without waiting the 21-day unstaking period. Redelegating happens instantly.
 
-:::{warning}
+<Admonition type="caution">
+
 When a user redelegates staked Luna from one validator to another, the validator receiving the staked Luna is barred from making further redelegation transactions for 21 days. This requirement only applies to the wallet that made the redelegation transaction.
-:::
+
+</Admonition>
 
 1. Open Terra Station and connect your wallet. Click **Staking**.
 
@@ -65,10 +70,11 @@ Your staked Luna will be transferred to the new validator.
 
 Undelegate Luna to unstake it from a validator. The unstaking period takes 21 days to complete.
 
-:::{warning}
+<Admonition type="caution">
+
 Once started, the delegating or undelegating processes can't be stopped.
 Undelegating takes 21 days to complete. The only way to undo a delegating or undelegating transaction is to wait for the unbonding process to pass. Alternatively, you can redelegate staked Luna to a different validator without waiting 21 days.
-:::
+</Admonition>
 
 1. Open Terra Station and connect your wallet. Click **Staking**.
 

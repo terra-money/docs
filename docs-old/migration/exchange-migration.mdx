@@ -1,6 +1,8 @@
+import Admonition from '@theme/Admonition';
+
 # Exchange migration guide
 
-Use this guide to rebrand the original Terra chain as Terra Classic and integrate the new Terra chain. Please read this page entirely, as it contains important information. Check out the [Exchange FAQ](./exchange-faq.md) for answers to your frequently asked questions. 
+Use this guide to rebrand the original Terra chain as Terra Classic and integrate the new Terra chain. Please read this page entirely, as it contains important information. Check out the [Exchange FAQ](exchange-faq.mdx) for answers to your frequently asked questions. 
 
 ## General info
 
@@ -41,8 +43,7 @@ The new chain will assume the name Terra.
 - Luna (LUNA) will be the main staking asset of the chain.
 - The new chain does not contain any Terra stablecoins (UST, KRT, etc.).
 
-:::{admonition} Luna listing convention
-:class: danger
+<Admonition type="danger" title="Luna listing convention">
 
 It can be confusing to list the Luna coin as "Terra (LUNA)". To avoid unnecessary confusion, please stick to the following naming conventions for Luna:
 
@@ -50,8 +51,7 @@ For the Terra Classic chain, list as **Luna Classic (LUNC)**
 
 For the new Terra chain, list as **Luna (LUNA)**
 
-:::
-
+</Admonition>
 
 ### Logos and assets
 
@@ -100,12 +100,16 @@ All airdrop allocations to UST and LUNA holders are based on the snapshots liste
 
 ### Exchange Allocation Example
 
-:::{admonition} Airdrop example
-:class: warning
-The following is an example token allocation using made-up numbers. **None of the following balances are real**. This example considers both pre- and post-attack snapshots and excludes wallets owned by TFL and the community pool.
-:::
+<Admonition type="caution" title="Airdrop example">
 
-:::{dropdown} Click here to see an airdrop allocation example.
+The following is an example token allocation using made-up numbers. **None of the following balances are real**. This example considers both pre- and post-attack snapshots and excludes wallets owned by TFL and the community pool.
+
+
+</Admonition>
+
+<details> 
+<summary> Click here to see an airdrop allocation example. </summary>
+<p>
 
 **None of the following balances are real.** 
 
@@ -248,8 +252,8 @@ _Exchange User Assets_
  = 2545 LUNA
 ```
 
-:::
-
+</p>
+</details>
 
 ## Use different seeds
 
