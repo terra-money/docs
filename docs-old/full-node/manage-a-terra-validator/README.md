@@ -6,7 +6,7 @@ The Terra core is powered by the Tendermint consensus. Validators run full nodes
 
 Validators and their delegators earn the following rewards:
 
-- [Gas](../../learn/fees.md#gas): Fees added on to each transaction to avoid spamming and pay for computing power. Validators set minimum gas prices and reject transactions that have implied gas prices below this threshold.
+- [Gas](../../learn/fees.mdx#gas): Fees added on to each transaction to avoid spamming and pay for computing power. Validators set minimum gas prices and reject transactions that have implied gas prices below this threshold.
 
 - [Inflation rewards](../../develop/module-specifications/spec-mint.mdx): Every block, new Luna is minted and released to validators and delegators as staking rewards. The rate for the minting of this new Luna is fixed at 7% per year. 
 
@@ -14,7 +14,7 @@ Validators can set commissions on the fees they receive as an additional incenti
 
 If validators double sign, are frequently offline, or do not participate in governance, their staked Luna (including Luna of users that delegated to them) can be slashed. Penalties can vary depending on the severity of the violation.
 
-For more general information on validators, visit the [validator section](../../learn/protocol.md#validators) of the concepts page.
+For more general information on validators, visit the [validator section](../../learn/protocol.mdx#validators) of the concepts page.
 
 ## Additional resources
 
