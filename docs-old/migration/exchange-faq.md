@@ -24,13 +24,13 @@ The post-attack snapshot will be taken at Terra Classic block 7790000. It is rec
 
  ### Where can I find out more about the airdrop?
 
- Visit the [airdrop section of the About Terra page](../learn/protocol.md#luna-airdrop-distribution). 
+ Visit the [airdrop section of the About Terra page](../learn/protocol.mdx#luna-airdrop-distribution). 
 
 ## Vesting
 
 ### How does vesting work?
 
-For general information on vesting, visit the [vesting overview](../learn/protocol.md#vesting).
+For general information on vesting, visit the [vesting overview](../learn/protocol.mdx#vesting).
 
 For a more in-depth look at vesting, visit the [vesting page](../../docs/develop/vesting.mdx).
 
@@ -40,11 +40,11 @@ You can view your vesting Luna in Terra Station by using the [Vesting guide](../
 
 ### Is my vesting Luna staked?
 
-All vesting Luna was [staked](../learn/glossary.md#staking) at genesis. 
+All vesting Luna was [staked](../learn/glossary.mdx#staking) at genesis. 
 
 ### Can I redelegate my vesting Luna?
 
-Even though Luna that is vesting is locked and can't be freely traded, it can still be staked to generate [staking rewards](../learn/protocol.md#rewards). Users are free to [delegate, redelegate, or undelegate](../learn/protocol.md#redelegation) their vesting Luna as they see fit. 
+Even though Luna that is vesting is locked and can't be freely traded, it can still be staked to generate [staking rewards](../learn/protocol.mdx#rewards). Users are free to [delegate, redelegate, or undelegate](../learn/protocol.mdx#redelegation) their vesting Luna as they see fit. 
 
 ### How can I see how much Luna I was airdropped in total, including vesting?
 
