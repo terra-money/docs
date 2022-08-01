@@ -36,7 +36,12 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          beforeDefaultRemarkPlugins: [[remarkCodeHike, { theme }]],
+          beforeDefaultRemarkPlugins: [[remarkCodeHike, { 
+            theme,
+            lineNumbers: true,
+            showCopyButton: true,
+            autoImport: true
+           }]],
           sidebarPath: require.resolve('./sidebars.js'),
           routeBasePath: '/',  // Serve the docs at the site's root
           // Please change this to your repo.
