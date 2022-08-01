@@ -90,44 +90,26 @@ terrain contract:generateClient my-first-contract
 
 #### Reset
 
-First, to burn:
-
-```json
-{
-  "reset": {
-    "count": 5
-  }
-}
-```
+To reset run the following in the Terrain console:
 
 ```sh
-terrad tx wasm execute terra18vd8fpwxzck93qlwghaj6arh4p7c5n896xzem5 '{"reset":{"count":5}}' --from test1 --chain-id=localterra --fees=1000000uluna --gas=auto --broadcast-mode=block
+terrain > await lib.reset({ count: 5 });
 ```
 
 #### Incrementing
 
-```json
-{
-  "increment": {}
-}
+```sh
+terrain > await lib.incrment();
 ```
 
-```sh
-terrad tx wasm execute terra18vd8fpwxzck93qlwghaj6arh4p7c5n896xzem5 '{"increment":{}}' --from test1 --chain-id=localterra --gas=auto --fees=1000000uluna --broadcast-mode=block
-```
+(run twice)
 
 #### Querying count
 
 Check the result of your executions!
 
-```json
-{
-  "get_count": {}
-}
-```
-
 ```sh
-terrad query wasm contract-store terra18vd8fpwxzck93qlwghaj6arh4p7c5n896xzem5 '{"get_count":{}}'
+terrain > await lib.getCount();
 ```
 
 Expected output:

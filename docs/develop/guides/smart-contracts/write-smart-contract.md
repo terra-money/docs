@@ -250,8 +250,6 @@ Which should return:
 
 To support queries against the contract for data, you'll have to define both a `QueryMsg` format (which represents requests), as well as provide the structure of the query's output -- `CountResponse` in this case. You must do this because `query()` will send back information to the user through JSON in a structure and you must make the shape of your response known.
 
-Add the following to your `contracts/my-first-contract/src/msg.rs`:
-
 ```rust
 // contracts/my-first-contract/src/msg.rs
 #[derive(Serialize, Deserialize, Clone, Debug, PartialEq, JsonSchema)]
