@@ -19,48 +19,89 @@ Terrain will help you:
 - [Install NPM](https://www.npmjs.com/)
 - [Install Node JS v16](https://nodejs.org/download/release/latest-v16.x/)
 
-## 1. Set up Rust
+
+## Set up Rust
 
 Rust is the main programming language used for CosmWasm smart contracts. While WASM smart contracts can theoretically be written in any programming language, CosmWasm libraries and tooling work best with Rust.
 
-First, install the latest version of [Rust](https://www.rust-lang.org/tools/install).
+<CH.Spotlight>
 
-Then run the following commands:
-
-```sh
-# 1. Set 'stable' as the default release channel:
-
+```shellscript rust-set-up
 rustup default stable
-
-# 2. Add WASM as the compilation target:
-
 rustup target add wasm32-unknown-unknown
-
-# 3. Install the following package to run custom cargo scripts:
-
 cargo install cargo-run-script
 ```
+---
 
-## 2. Install Terrain
+1. Install the latest version of [Rust](https://www.rust-lang.org/tools/install).
 
-Use npm to install the terrain command-line tool globally:
+```bash install-rust
+Rust installation instructions:
 
-```sh
+  # link https://www.rust-lang.org/tools/install
+https://www.rust-lang.org/tools/install
+```
+
+---
+
+2. Set 'stable' as the default release channel.
+
+```shellscript rust-set-up focus=1
+
+```
+
+---
+
+3. Add WASM as the compilation target.
+
+```shellscript rust-set-up focus=2
+
+```
+
+---
+
+4. Install a package to run custom cargo scripts.
+
+
+```shellscript rust-set-up focus=3
+
+```
+
+
+
+</CH.Spotlight>
+
+## Install Terrain
+
+<CH.Spotlight>
+
+```shellscript install-terrain
+npm install -g @terra-money/terrain
+```
+---
+
+1. Use npm to install the terrain command-line tool globally:
+
+```shellscript install-terrain
 npm install -g @terra-money/terrain
 ```
 
+---
 
-<Admonition type="caution" title="Check your Terrain version">
+2. Make sure you are using the latest version of Terrain. Previous versions may cause errors. 
 
-Make sure you are using the latest version of Terrain. Previous versions may cause errors. 
-
-```sh
+```shellscript install-terrain focus=2
+npm install -g @terra-money/terrain
 terrain --version
 ```
 
-If you installed Terrain from a previous, make sure to update it: 
+</CH.Spotlight>
 
-```sh
+<Admonition type="info" title="Terrain versions">
+
+If you installed a previous Terrain, make sure to update it: 
+
+```shellscript
 npm uninstall -g @iboss/terrain
 npm install -g @terra-money/terrain
 ```
