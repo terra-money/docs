@@ -47,22 +47,52 @@ nvm alias default <INSERT NODE VERSION HERE>
 </details>
 
 </Admonition>
+
 ## Install and run LocalTerra
 
-1. To download LocalTerra, run the following commands:
+<CH.Spotlight>
 
-```sh
+```sh install-LocalTerra
 git clone --depth 1 https://github.com/terra-money/localterra
-```
-
-2. Start LocalTerra by running the following:
-
-```sh
 cd localterra
 docker-compose up
 ```
+---
+
+1. Download LocalTerra.
+
+```sh install-LocalTerra focus=1
+
+```
+---
+
+2. Start LocalTerra.
+
+```sh install-LocalTerra focus=2:3
+
+```
+---
 
 3. You will start seeing LocalTerra block activity in your terminal. Keep LocalTerra running while you perform the next steps in a new terminal window.
+
+```sh LocalTerra-example
+
+postgres_1       | server started
+terrad_1         | 12:09AM INF starting ABCI with Tendermint
+terrad_1         | 12:09AM INF Starting multiAppConn service impl=multiAppConn module=proxy
+terrad_1         | 12:09AM INF Starting localClient service connection=query impl=localClient module=abci-client
+terrad_1         | 12:09AM INF Starting localClient service connection=snapshot impl=localClient module=abci-client
+terrad_1         | 12:09AM INF Starting localClient service connection=mempool impl=localClient module=abci-client
+terrad_1         | 12:09AM INF Starting localClient service connection=consensus impl=localClient module=abci-client
+terrad_1         | 12:09AM INF Starting EventBus service impl=EventBus module=events
+terrad_1         | 12:09AM INF Starting PubSub service impl=PubSub module=pubsub
+terrad_1         | 12:09AM INF Starting IndexerService service impl=IndexerService module=txindex
+terrad_1         | 12:09AM INF ABCI Handshake App Info hash= height=0 module=consensus protocol-version=0 software-version=0.5.5-oracle
+terrad_1         | 12:09AM INF ABCI Replay Blocks appHeight=0 module=consensus stateHeight=0 storeHeight=0
+
+```
+
+</CH.Spotlight>
 
 <Admonition type="tip" title="LocalTerra Accounts">
 
