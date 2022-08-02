@@ -145,9 +145,9 @@ The evidence module emits the following handler events:
 
 | Type            | Attribute Key | Attribute Value |
 | --------------- | ------------- | --------------- |
-| submit_evidence | evidence_hash | {evidenceHash}  |
+| submit_evidence | evidence_hash | `{evidenceHash}`  |
 | message         | module        | evidence        |
-| message         | sender        | {senderAddress} |
+| message         | sender        | `{senderAddress}` |
 | message         | action        | submit_evidence |
 
 ### BeginBlock
@@ -190,7 +190,6 @@ reduced by `SlashFractionDoubleSign`, as defined by the [slashing module](spec-s
 The stake that contributed to the infraction is slashed, even if it has been redelegated or started unbonding.
 
 Additionally, the validator is permanently jailed and tombstoned so that the validator cannot re-enter the validator set again.
-
 
 <details> 
 <summary> `Equivocation` evidence handling code </summary>
