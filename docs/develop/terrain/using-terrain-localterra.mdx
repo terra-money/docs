@@ -75,20 +75,7 @@ docker-compose up
 
 3. You will start seeing LocalTerra block activity in your terminal. Keep LocalTerra running while you perform the next steps in a new terminal window.
 
-```sh LocalTerra-example
-
-postgres_1       | server started
-terrad_1         | 12:09AM INF starting ABCI with Tendermint
-terrad_1         | 12:09AM INF Starting multiAppConn service impl=multiAppConn module=proxy
-terrad_1         | 12:09AM INF Starting localClient service connection=query impl=localClient module=abci-client
-terrad_1         | 12:09AM INF Starting localClient service connection=snapshot impl=localClient module=abci-client
-terrad_1         | 12:09AM INF Starting localClient service connection=mempool impl=localClient module=abci-client
-terrad_1         | 12:09AM INF Starting localClient service connection=consensus impl=localClient module=abci-client
-terrad_1         | 12:09AM INF Starting EventBus service impl=EventBus module=events
-terrad_1         | 12:09AM INF Starting PubSub service impl=PubSub module=pubsub
-terrad_1         | 12:09AM INF Starting IndexerService service impl=IndexerService module=txindex
-terrad_1         | 12:09AM INF ABCI Handshake App Info hash= height=0 module=consensus protocol-version=0 software-version=0.5.5-oracle
-terrad_1         | 12:09AM INF ABCI Replay Blocks appHeight=0 module=consensus stateHeight=0 storeHeight=0
+```sh install-LocalTerra
 
 ```
 
@@ -155,9 +142,9 @@ The deploy command performs the following steps automatically:
 - Uploads counter smart contract to LocalTerra.
 - Instantiates the deployed smart contract.
 
-<Admonition type="note" title="Increase Docker memory">
+<Admonition type="tip" title="Increase Docker memory">
 
-If you are running LocalTerra and the previous `deploy` command is not working, try increasing Docker's memory allowance by clicking on the Docker icon. Click **Preferences** and then **Resources**. Increase the memory to at least 4 gigs. Click **Apply & Restart**. Run the deploy command again. You can increase again to 6 gigs if you are still having trouble.
+If you are running LocalTerra and the previous _`deploy`_ command is not working, try increasing Docker's memory allowance by clicking on the Docker icon. Click **Preferences** and then **Resources**. Increase the memory to at least 4 gigs. Click **Apply & Restart**. Run the deploy command again. You can increase again to 6 gigs if you are still having trouble.
 
 </Admonition>
 
