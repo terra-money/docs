@@ -104,7 +104,7 @@ const config = {
             items: [
               {
                 label: 'Docs',
-                to: '/docs/index',
+                to: '/',
               },
             ],
           },
@@ -128,10 +128,6 @@ const config = {
           {
             title: 'More',
             items: [
-              {
-                label: 'Blog',
-                to: '/blog',
-              },
               {
                 label: 'GitHub',
                 href: 'https://github.com/facebook/docusaurus',
