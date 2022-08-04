@@ -1,39 +1,27 @@
 # Terra Station Firefox extension
 
-::::{grid} auto
-
-:::{grid-item}
 ```{button-link} terra-station-desktop.html
 :color: primary
 :outline:
 Desktop
 ```
-:::
 
-:::{grid-item}
 ```{button-link} terra-station-extension.html
 :color: primary
 :outline:
 Chrome extension
 ```
-:::
 
-:::{grid-item}
 ```{button-link} terra-station-firefox.html
 :color: primary
 Firefox extension
 ```
-:::
 
-:::{grid-item}
 ```{button-link} terra-station-mobile.html
 :color: primary
 :outline:
 Mobile
 ```
-:::
-
-::::
 
 Complete this tutorial to install the Terra Station extension for the Firefox browser.
 
@@ -59,8 +47,7 @@ Use this tutorial to create a new wallet. To connect to an existing wallet, visi
 
 4. Using a pen and paper, write down your 24-word seed phrase exactly as it appears. Number each word to make verifying easier.
 
-   :::{admonition} Protect your seed phrase
-   :class: danger
+   :::warn
    Anyone with your seed phrase can access your money, and there is no recourse for someone stealing your seed phrase. To protect your seed phrase, consider the following tips:
    - Never save or store your seed phrase as a digital file on any device.
    - Always write down your seed phrase with a pen and paper.
@@ -95,8 +82,7 @@ Congratulations! You have just created a Terra Station wallet.
 
     1. Send the tokens from the exchange to your Terra Station wallet address.
 
-    :::{admonition} Waiting times for transfers
-    :class: warning
+    :::warn
     When you transfer tokens from an exchange to Terra, some time will pass before the tokens appear in your wallet. Don't panic. This waiting period is normal and varies depending on the exchange. If a transfer does not appear immediately, check back after some time.
     :::
 

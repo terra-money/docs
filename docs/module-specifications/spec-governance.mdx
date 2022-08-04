@@ -52,15 +52,12 @@ For a proposal to pass, the following conditions must be met:
 
 1. Voter participation must be at least `quorum` $Q$:
 
-$$\frac{Yes + No + NoWithVeto + Abstain}{Stake} \ge Q$$
 
 2. The ratio of `NoWithVeto` votes must be less than `veto` $V$:
 
-$$\frac{NoWithVeto}{Yes + No + NoWithVeto} \lt V$$
 
 3. The ratio of `Yes` votes must be greater than `threshold` $T$:
 
-$$\frac{Yes}{Yes + No + NoWithVeto} \gt T$$
 
 If any of the previous conditions are not met, the proposal is rejected. Proposals that get rejected with veto do not get their deposits refunded. The parameters `quorum`, `veto`, and `threshold` exist as blockchain parameters within the Governance module.
 
