@@ -1,80 +1,57 @@
+import { Box, Heading, Card, Image, Text} from 'rebass'
+import { Link } from "react-router-dom";
+
+
 # Learn
 
 Discover [how Terra works](./protocol.mdx) and learn about [validators](./protocol.mdx#validators), [staking](./protocol.mdx#staking), and [governance](./protocol.mdx#governance). Use [Terra Station](./terra-station/README.mdx) to [create a wallet](./terra-station/download/README.mdx), [stake Luna](./terra-station/staking.mdx), [send tokens](./terra-station/send.mdx), and [participate in governance](./terra-station/governance.mdx). Browse the [glossary](./glossary.mdx) to look up helpful terms.
 
-{/*
-```{toctree}
-:hidden:
-terra-station/README
-protocol
-fees
-glossary
-assets
-```
-
-:::::::{grid} 2 2 2 3
-:gutter: 3
-
-:::{grid-item-card}
-:link: protocol.html
-:class-card: sd-text-center sd-shadow-md sd-rounded-3
-```{image} /img/icon_terra.svg
-:class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
-```
-**What is Terra?**  
-Learn how Terra works.
-:::
-
-:::{grid-item-card}
-:link: terra-station/README.html
-:class-card: sd-text-center sd-shadow-md sd-rounded-3
-```{image} /img/wallets_station.png
-:class: sd-width-auto sd-pb-2 sd-animate-grow50-rot20
-```
-**Get started with Station**  
-Create a wallet and stake Luna for rewards.
-:::
-
-:::{grid-item-card}
-:link: protocol.html
-:class-card: sd-text-center sd-shadow-md sd-rounded-3
-```{image} /img/icon_luna.svg
-:class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
-```
-**What is Luna?**  
-Learn about Luna.
-:::
-
-:::{grid-item-card}
-:link: protocol.html#validators
-:class-card: sd-text-center sd-shadow-md sd-rounded-3
-```{image} /img/Staking.svg
-:class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
-```
-**Validators and Staking**  
-Find out about validators, consensus, staking, and rewards.
-:::
-
-:::{grid-item-card}
-:link: fees.html
-:class-card: sd-text-center sd-shadow-md sd-rounded-3
-```{image} /img/Fees.svg
-:class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
-```
-**How fees work**  
-Learn how fees become staking rewards.
-:::
-
-:::{grid-item-card}
-:link: glossary.html
-:class-card: sd-text-center sd-shadow-md sd-rounded-3
-```{image} /img/Glossary.svg
-:class: sd-width-auto sd-animate-grow50-rot20 sd-pb-2
-```
-**Glossary**  
-Look up terms specific to Terra.
-:::
-
-:::::::
-
-*/}
+<Box
+  sx={{
+    display: 'grid',
+    gridGap: 3,
+    gridTemplateColumns: 'repeat(auto-fit, minmax(256px, 1fr))',
+  }}>
+  <Link width={256} to='/learn/protocol#what-is-terra' style={{':hover': {textDecoration: 'none', color: 'inherit', border: '1px solid #5493f7'}, borderRadius: '0.5rem', border: '1px solid black', display: 'inline-block',px: 2,py: 1,color: 'inherit', textDecoration: 'none'}}>
+    <Card sx={{padding: 16, textAlign: 'center', }}>
+      <Image src='/img/icon_terra.svg' width='92px' sx={{marginTop: 20, marginBottom: 10}} />
+      <Heading fontSize='3'>What is Terra?</Heading>
+      <Text fontSize='1'>Learn how Terra works.</Text>
+    </Card>
+  </Link>
+  <Link width={256} to='/learn/protocol#what-is-luna' style={{':hover': {textDecoration: 'none', color: 'inherit', border: '1px solid #5493f7'}, borderRadius: '0.5rem', border: '1px solid black', display: 'inline-block',px: 2,py: 1,color: 'inherit', textDecoration: 'none'}}>
+    <Card sx={{padding: 16, textAlign: 'center' }}>
+      <Image src='/img/wallets_station.png' width='92px' sx={{marginTop: 20, marginBottom: 10}} />
+      <Heading fontSize='3'>Get started with Station</Heading>
+      <Text fontSize='1'>Create a wallet and stake Luna for rewards.</Text>
+    </Card>
+  </Link>
+  <Link width={256} to='/learn/protocol' style={{':hover': {textDecoration: 'none', color: 'inherit', border: '1px solid #5493f7'}, borderRadius: '0.5rem', border: '1px solid black', display: 'inline-block',px: 2,py: 1,color: 'inherit', textDecoration: 'none'}}>
+      <Card sx={{padding: 16, textAlign: 'center' }}>
+        <Image src='/img/icon_luna.svg' width='92px' sx={{marginTop: 20, marginBottom: 10}} />
+        <Heading fontSize='3'>What is Luna?</Heading>
+        <Text fontSize='1'>Learn about Luna.</Text>
+      </Card>
+    </Link>
+    <Link width={256} to='/learn/protocol#validators' style={{':hover': {textDecoration: 'none', color: 'inherit', border: '1px solid #5493f7'}, borderRadius: '0.5rem', border: '1px solid black', display: 'inline-block',px: 2,py: 1,color: 'inherit', textDecoration: 'none'}}>
+          <Card sx={{padding: 16, textAlign: 'center' }}>
+            <Image src='/img/Staking.svg' width='92px' sx={{marginTop: 20, marginBottom: 10}} />
+            <Heading fontSize='3'>Validators and Staking</Heading>
+            <Text fontSize='1'>Find out about validators, consensus, staking, and rewards.</Text>
+          </Card>
+        </Link>
+    <Link width={256} to='/learn/fees' style={{':hover': {textDecoration: 'none', color: 'inherit', border: '1px solid #5493f7'}, borderRadius: '0.5rem', border: '1px solid black', display: 'inline-block',px: 2,py: 1,color: 'inherit', textDecoration: 'none'}}>
+              <Card sx={{padding: 16, textAlign: 'center' }}>
+                <Image src='/img/Fees.svg' width='92px' sx={{marginTop: 20, marginBottom: 10}} />
+                <Heading fontSize='3'>How fees work</Heading>
+                <Text fontSize='1'>Learn how fees become staking rewards.</Text>
+              </Card>
+            </Link>
+    <Link width={256} to='/learn/glossary' style={{':hover': {textDecoration: 'none', color: 'inherit', border: '1px solid #5493f7'}, borderRadius: '0.5rem', border: '1px solid black', display: 'inline-block',px: 2,py: 1,color: 'inherit', textDecoration: 'none'}}>
+              <Card sx={{padding: 16, textAlign: 'center' }}>
+                <Image src='/img/Glossary.svg' width='92px' sx={{marginTop: 20, marginBottom: 10}} />
+                <Heading fontSize='3'>Glossary</Heading>
+                <Text fontSize='1'>Look up terms specific to Terra.</Text>
+              </Card>
+            </Link>
+</Box>
