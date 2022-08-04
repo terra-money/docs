@@ -1,5 +1,7 @@
-# Terra Station Firefox extension
+import Admonition from '@theme/Admonition';
 
+# Terra Station Firefox extension
+{/*
 ```{button-link} terra-station-desktop.html
 :color: primary
 :outline:
@@ -22,6 +24,7 @@ Firefox extension
 :outline:
 Mobile
 ```
+*/}
 
 Complete this tutorial to install the Terra Station extension for the Firefox browser.
 
@@ -47,24 +50,27 @@ Use this tutorial to create a new wallet. To connect to an existing wallet, visi
 
 4. Using a pen and paper, write down your 24-word seed phrase exactly as it appears. Number each word to make verifying easier.
 
-   :::warn
-   Anyone with your seed phrase can access your money, and there is no recourse for someone stealing your seed phrase. To protect your seed phrase, consider the following tips:
-   - Never save or store your seed phrase as a digital file on any device.
-   - Always write down your seed phrase with a pen and paper.
-   - Store the paper with your seed phrase on it somewhere safe.
-   - Never give your seed phrase to anyone, not even support staff.
-   :::
+<Admonition type="danger">
 
-5. Verify your writing to make sure every word is spelled correctly and in the right order. If you numbered your phrase, it can be helpful to verify it backward.
+Anyone with your seed phrase can access your money, and there is no recourse for someone stealing your seed phrase. To protect your seed phrase, consider the following tips:
+- Never save or store your seed phrase as a digital file on any device.
+- Always write down your seed phrase with a pen and paper.
+- Store the paper with your seed phrase on it somewhere safe.
+- Never give your seed phrase to anyone, not even support staff.
 
-6. Check the box ensuring you wrote down your seed phrase, and click **Submit**.
+</Admonition>
 
 
-7. Confirm your seed phrase by typing or selecting the correct words in each prompt.
+1. Verify your writing to make sure every word is spelled correctly and in the right order. If you numbered your phrase, it can be helpful to verify it backward.
 
-8. Click **Submit**.
+2. Check the box ensuring you wrote down your seed phrase, and click **Submit**.
 
-9. Click **Connect** to connect to your new wallet.
+
+3. Confirm your seed phrase by typing or selecting the correct words in each prompt.
+
+4. Click **Submit**.
+
+5. Click **Connect** to connect to your new wallet.
 
 Congratulations! You have just created a Terra Station wallet.
 
@@ -82,9 +88,11 @@ Congratulations! You have just created a Terra Station wallet.
 
     1. Send the tokens from the exchange to your Terra Station wallet address.
 
-    :::warn
-    When you transfer tokens from an exchange to Terra, some time will pass before the tokens appear in your wallet. Don't panic. This waiting period is normal and varies depending on the exchange. If a transfer does not appear immediately, check back after some time.
-    :::
+<Admonition type="tip">
+
+ When you transfer tokens from an exchange to Terra, some time will pass before the tokens appear in your wallet. Don't panic. This waiting period is normal and varies depending on the exchange. If a transfer does not appear immediately, check back after some time.
+
+</Admonition>
 
 Now you have tokens on Terra!
 
