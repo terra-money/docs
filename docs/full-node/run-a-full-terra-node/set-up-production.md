@@ -1,6 +1,6 @@
 # Set up a production environment
 
-Use the following information to set up and manage your production-level Terra full node.
+Use this guide to set up and manage a production-level full Terra node.
 
 For information about running a validator node, visit the [validator guide](../manage-a-terra-validator/README.md).
 

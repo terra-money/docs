@@ -257,13 +257,7 @@ In order for delegators to have some guarantee about how much `skin-in-the-game`
 
 ### What are the hardware requirements?
 
-The following requirements are recommended for running Terra Core:
-
-At least 300 mbps of network bandwidth
-- 4 core or higher CPU
-- 32GB RAM
-- 2TB NVME storage
-- At least 300mbps network bandwidth
+Visit the [requirements section](../run-a-full-terra-node/system-config.md#hardware-requirements) of the full node guide to learn the current minimum operating requirements. 
 
 ### What are the software requirements?
 
