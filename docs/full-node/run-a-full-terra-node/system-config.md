@@ -1,14 +1,11 @@
-import Admonition from '@theme/Admonition';
-
 # System Configuration
 
-<Admonition type="caution" title="Recommended operating systems">
-
+:::{admonition} Recommended operating systems
+:class: caution  
 This guide has been tested against Linux distributions only. To ensure a successful production environment setup, consider using a Linux system.
+:::
 
-</Admonition>
-
-Running a full Terra node is a resource-intensive process that requires a persistent server. If you want to use Terra without downloading the entire blockchain, use [Terra Station](https://station.terra.money/). If you want to set up a local, WASM-enabled, private testnet for smart contracts, visit [install LocalTerra](../../develop/localterra/README.mdx).
+Running a full Terra node is a resource-intensive process that requires a persistent server. If you want to use Terra without downloading the entire blockchain, use [Terra Station](https://station.terra.money/). If you want to set up a local, WASM-enabled, private testnet for smart contracts, visit [install LocalTerra](../../develop/localterra/README.md).
 
 ## Hardware Requirements
 
@@ -16,24 +13,21 @@ The the minimum requirements for running a Terra full node are:
 
 | Network                                                                 | CPU cores     | RAM     | Disk                       | BANDWIDTH |
 |-------------------------------------------------------------------------|---------------|---------|----------------------------|-----------|
-| [`phoenix-1`](./join-a-network.mdx#join-a-public-network)                  | 4 (+4 threads)| 32 GB   | 2 TB (SSD 2000 MB/s R/W)   | 300 Mbps  |
-| [`pisco-1`](./join-a-network.mdx#join-a-public-network)                    | 2 (+2 threads)| 16 GB   | 500 GB (SSD 1000 MB/s R/W) | 150 Mbps  |
+| [`phoenix-1`](join-a-network.md#join-a-public-network)                  | 4 (+4 threads)| 32 GB   | 2 TB (SSD 2000 MB/s R/W)   | 300 Mbps  |
+| [`pisco-1`](join-a-network.md#join-a-public-network)                    | 2 (+2 threads)| 16 GB   | 500 GB (SSD 1000 MB/s R/W) | 150 Mbps  |
 | [`localterra`](https://github.com/terra-money/LocalTerra)               | 2             | 4 GB    | 20 GB (SSD 500 MB/s R/W)   |  N/A      |
-| [`private-network`](join-a-network.mdx#set-up-a-local-private-network) | 1             | 2 GB    | 20 GB (SSD 500 MB/s R/W)   |  N/A      |
+| [`private-network`](join-a-network.html#set-up-a-local-private-network) | 1             | 2 GB    | 20 GB (SSD 500 MB/s R/W)   |  N/A      |
 
-<Admonition type="caution" title="Storage requirements">
-
+:::{admonition} Storage requirements
+:class: warning
 As the network grows, the minimum hardware requirements will also grow. It is recommended that you monitor the system so you can prevent it from running out of resources. 
-
-</Admonition>
+:::
 
 ## Prerequisites
 
 - [Golang v1.18+ linux/amd64](https://go.dev/dl/)
 
-<details> 
-<summary> Installing Go for MacOS & Linux </summary>
-<p>
+  ::: {dropdown} Installing Go for MacOS & Linux
 
   Go releases can be found here: [ https://go.dev/dl/ ](https://go.dev/dl/)
 
@@ -65,8 +59,7 @@ As the network grows, the minimum hardware requirements will also grow. It is re
 
   ```
 
-</p>
-</details>
+  :::
 
 - Linux users: `sudo apt-get install -y build-essential`
 
@@ -76,18 +69,16 @@ As the network grows, the minimum hardware requirements will also grow. It is re
 
 Most validators will only need to open the following port:
 
-- `26656`: The default port for the P2P protocol. This port is used to communicate with other nodes and must be open to join a network. However, it does not have to be open to the public. For validator nodes, [configuring `persistent_peers`](updates-and-additional.mdx#additional-settings) and closing this port to the public are recommended.
+- `26656`: The default port for the P2P protocol. This port is used to communicate with other nodes and must be open to join a network. However, it does not have to be open to the public. For validator nodes, [configuring `persistent_peers`](updates-and-additional.md#additional-settings) and closing this port to the public are recommended.
 
 Additional ports:
 
-- `1317`: The default port for the [Lite Client Daemon](../../develop/guides/start-lcd.mdx) (LCD), which can be executed by `terrad rest-server`. The LCD provides an HTTP RESTful API layer to allow applications and services to interact with your `terrad` instance through RPC. For usage examples, see [Terra REST API](https://phoenix-lcd.terra.dev/swagger/). You don't need to open this port unless you have use for it.
+- `1317`: The default port for the [Lite Client Daemon](../../develop/guides/start-lcd.md) (LCD), which can be executed by `terrad rest-server`. The LCD provides an HTTP RESTful API layer to allow applications and services to interact with your `terrad` instance through RPC. For usage examples, see [Terra REST API](https://phoenix-lcd.terra.dev/swagger/). You don't need to open this port unless you have use for it.
 
 - `26660`: The default port for interacting with the [Prometheus](https://prometheus.io) database, which can be used to monitor the environment. In the default configuration, this port is not open.
 
 - `26657`: The default port for the RPC protocol. Because this port is used for querying and sending transactions, it must be open for serving queries from `terrad`.
 
-<Admonition type="caution">
-
+::: {warning}
 Do not open port `26657` to the public unless you plan to run a public node.
-
-</Admonition>
+:::

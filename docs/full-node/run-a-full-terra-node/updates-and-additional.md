@@ -1,5 +1,3 @@
-import Admonition from '@theme/Admonition';
-
 # Updates and additional settings
 
 ## Upgrade the testnet
@@ -18,11 +16,9 @@ terrad unsafe-reset-all
 
 Your node is now in a pristine state, keeping the original `priv_validator.json` and `config.toml`. If you had any sentry nodes or full nodes set up before, your node will still try to connect to them but may fail if they haven't also been upgraded.
 
-<Admonition type="danger">
-
+::: {danger}
 Make sure that every node has a unique `priv_validator.json`. Do not copy the `priv_validator.json` from an old node to multiple new nodes. Running two nodes with the same `priv_validator.json` will cause you to double sign.  
-
-</Admonition>
+:::
 
 ### 2. Software upgrade
 
@@ -33,11 +29,9 @@ git checkout master && git pull
 make
 ```
 
-<Admonition type="tip">
-
+::: {tip}
 If you have issues at this step, please check that you have a compatible version of GO installed (v1.18+).
-
-</Admonition>
+:::
 
 The previous command uses `master` as it contains the latest stable release. See the [testnet repo](https://github.com/terra-money/testnet) for details on which version is needed for which testnet, and the [Terra Core release page](https://github.com/terra-money/core/releases) for details on each release.
 
@@ -65,11 +59,11 @@ If you plan to start a new network from the exported state, export with the `--f
 terrad export --height [height] --for-zero-height > [filename].json
 ```
 
-<Admonition type="tip">
+::: {tip}
 
 For more information on seeds and peers, visit the [Tendermint documentation](https://github.com/tendermint/tendermint/blob/master/docs/tendermint-core/using-tendermint.md#peers).
 
-</Admonition>
+:::
 
 ## Additional Settings
 

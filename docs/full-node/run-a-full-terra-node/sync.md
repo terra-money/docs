@@ -1,12 +1,10 @@
-import Admonition from '@theme/Admonition';
-
 # Sync
 
 Use this guide to [sync the chain from from genesis](#sync-from-genesis) or use a [snapshot](#sync-from-snapshot) for a quicker sync. 
 
 ## Sync from genesis
 
-After [choosing a network](./join-a-network.mdx#join-a-public-network), start the sync and check that everything is running smoothly:
+After [choosing a network](./join-a-network.md#join-a-public-network), start the sync and check that everything is running smoothly:
 
 ```bash
 terrad start
@@ -15,16 +13,13 @@ terrad status
 ```
 Your node is now syncing. This process will take a long time. Make sure you've set it up on a stable connection so this process is not interrupted.
 
-<Admonition type="caution" title="Sync start times">
+::: {admonition} Sync start times
+:class: caution
 
 Nodes take at least an hour to start syncing. This wait time is normal. Before troubleshooting a sync, please wait an hour for the sync to start.
+:::
 
-</Admonition>
-
-
-<details> 
-<summary> Healthy Node Status Example </summary>
-<p>
+:::{dropdown} Healthy Node Status Example
 
 ```json
 {
@@ -67,9 +62,7 @@ Nodes take at least an hour to start syncing. This wait time is normal. Before t
 }
 ```
 
-</p>
-</details>
-
+:::
 
 Proceed to the [](#monitor-the-sync) section.
 
@@ -77,15 +70,13 @@ Proceed to the [](#monitor-the-sync) section.
 
 Sometimes you may want to sync faster by foregoing checks. 
 
-<Admonition type="caution">
-
+:::{warning}
 The following command should only be used by advanced users in non-production environments:
 
-```bash
-terrad start --x-crisis-skip-assert-invariants
-```
-
-</Admonition>
+   ```bash
+   terrad start --x-crisis-skip-assert-invariants
+   ```
+:::
 
 ## Sync from snapshot
 
@@ -103,8 +94,7 @@ After choosing the appropriate download type, examine your node and ensure that 
 6:22PM INF Removed all blockchain history dir=/home/ubuntu/.terra/data
 ```
 
-<Admonition type="caution">
-
+::: {warning}
 If you are a validator, ensure that you do not remove your private key.
 
 Example of a removed private key:
@@ -113,9 +103,9 @@ Example of a removed private key:
 6:22PM INF Reset private validator file to genesis state keyFile=/home/ubuntu/.terra/config/priv_validator_key.json stateFile=/home/ubuntu/.terra/data/priv_validator_state.json
 ```
 
-</Admonition>
+:::
 
-If you have an address book downloaded, you may keep it. Otherwise, you will need to download the [appropriate addressbook](./join-a-network.mdx#join-a-public-network).  
+If you have an address book downloaded, you may keep it. Otherwise, you will need to download the [appropriate addressbook](./join-a-network.md#join-a-public-network).  
 
 With an address book downloaded, run the following:
 
@@ -168,5 +158,5 @@ Validators can view the status of the network using [Terra Finder](https://finde
 
 ## Congratulations!
 
-You've successfully joined a network as a full node operator. If you are a validator, continue to [manage a Terra validator](../manage-a-terra-validator/README.mdx) for the next steps.
+You've successfully joined a network as a full node operator. If you are a validator, continue to [manage a Terra validator](../manage-a-terra-validator/README.md) for the next steps.
 

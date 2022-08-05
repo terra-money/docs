@@ -1,5 +1,3 @@
-import Admonition from '@theme/Admonition';
-
 # Reset and troubleshooting
 
 ## Complete reset
@@ -20,11 +18,10 @@ Running this command successfully will produce the following log:
 [ INF ] Reset private validator file to genesis state keyFile=/home/user/.terra/config/priv_validator_key.json stateFile=/home/user/.terra/data/priv_validator_state.json
 ```
 
-<Admonition type="tip" title="Check the adressbook">
-
-After resetting, make sure the addressbook contains peer addresses and is in the correct spot. If not, [download an adressbook](../run-a-full-terra-node/join-a-network.mdx#1-select-a-network) and place it in `~/.terra/config/`.
-
-</Admonition>
+:::{admonition} Check the adressbook
+:class: tip
+After resetting, make sure the addressbook contains peer addresses and is in the correct spot. If not, [download an adressbook](../run-a-full-terra-node/join-a-network.md#1-select-a-network) and place it in `~/.terra/config/`.
+:::
 
 ### Change Genesis
 
@@ -40,13 +37,9 @@ You can recreate a genesis version via the following steps:
 
 ### Reset personal data
 
-<Admonition type="danger">
-
+:::{danger}
 You may be unable to use your node and its associated accounts after changing your personal data. Do not perform this action unless your node is disposable.
-
-
-</Admonition>
-
+:::
 
 To change your personal data to a pristine state, delete both `~/.terra/config/priv_validator_state.json` and `~/.terra/config/node_key.json`.
 
@@ -61,4 +54,4 @@ A healthy node will have the following files in place and populated:
 
 ### Resync
 
-You can proceed to [resync manually](./sync.mdx#sync-from-genesis) or [using a snapshot](./sync.mdx#quicksync).
+You can proceed to [resync manually](sync.md#sync-from-genesis) or [using a snapshot](sync.md#quicksync).
