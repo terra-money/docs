@@ -157,7 +157,7 @@ cd /token_factory/contracts/cw20_factory_token/src
 
 b. Open `msg.rs` and paste the following:
 
-```Rust
+```rust
 use schemars::JsonSchema;
 use serde::{Deserialize, Serialize};
 
@@ -169,7 +169,7 @@ c. Save and close `msg.rs`.
 
 d. Open `lib.rs` and paste the following:
 
-```Rust
+```rust
 pub mod contract;
 pub mod msg;
 ```
@@ -178,7 +178,7 @@ e. Save and close `lib.rs`.
 
 f. Open `contract.rs` and paste the following:
 
-```Rust
+```rust
 #[cfg(not(feature = "library"))]
 use cosmwasm_std::entry_point;
 use cosmwasm_std::{
@@ -301,7 +301,7 @@ g. Save and close `contract.rs`.
 
 h. Open `schemas.rs` and paste the following:
 
-```Rust
+```rust
 use std::env::current_dir;
 use std::fs::create_dir_all;
 
@@ -349,7 +349,7 @@ a. Open `terrain.config.json`.
 
 b. Modify the `InstantiateMsg` property in the `terrain.config.json` so that it contains the `name`, `symbol`, `decimals` and `initial_balances` shown below. This allows you to send the correct data to the smart contract upon instantiation:
 
-```Json
+```json
 {
   "_global": {
     "_base": {
@@ -1284,7 +1284,7 @@ b. Modify the property `InstantiateMsg`, using your `<token_contract_code_id>`. 
 To determine which `<token_contract_code_id>`, check the file `refs.terrain.json` from the workspace's root under the `cw20-token_factory` object.
 </Admonition>
 
-```Json
+```json
 {
   "_global": {
     "_base": {
