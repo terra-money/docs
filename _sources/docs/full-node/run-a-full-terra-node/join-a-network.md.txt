@@ -30,7 +30,7 @@ The simplest Terra network you can set up is a local testnet with just a single 
 
 :::{admonition} Get tokens
 :class: tip
-In order for Terrad to recognize a wallet address, it must contain tokens. For the testnet, use [the faucet](https://faucet.terra.money/) to send Luna to your wallet. If you are on mainnet, send funds from an existing wallet. 1-3 Luna are sufficient for most setup processes.
+In order for `terrad` to recognize a wallet address, it must contain tokens. For the testnet, use [the faucet](https://faucet.terra.money/) to send Luna to your wallet. If you are on mainnet, send funds from an existing wallet. 1-3 Luna are sufficient for most setup processes.
 :::
 
 ### Add your account to the genesis
@@ -92,67 +92,5 @@ wget hhttps://phoenix-genesis.s3.us-west-1.amazonaws.com/genesis.json -I ~/.terr
 wget https://snapshots1.polkachu.com/addrbook/terra/addrbook.json -O ~/.terra/config/addrbook.json
 ```
 
-### 3. `terrad start`
-
-Start the network and check that everything is running smoothly:
-
-```bash
-terrad start
-terrad status
-# It will take a few seconds for terrad to start.
-```
-
-:::{dropdown} Healthy Node Status Example
-
-```json
-{
-  "NodeInfo": {
-    "protocol_version": {
-      "p2p": "8",
-      "block": "11",
-      "app": "0"
-    },
-    "id": "821dc1401fd0270487b3e615c652181b4d4566dd",
-    "listen_addr": "18.157.84.154:26656",
-    "network": "pisco-1",
-    "version": "v0.34.19-terra.2",
-    "channels": "40202122233038606100",
-    "moniker": "terradocs",
-    "other": {
-      "tx_index": "on",
-      "rpc_address": "tcp://127.0.0.1:26657"
-    }
-  },
-  "SyncInfo": {
-    "latest_block_hash": "ED9F6D0855FD92A5BA2F91082CD49ADB18A07DCE3F747529D357071E5B7C0D4C",
-    "latest_app_hash": "D621068882E7FC5045CDD957ADEABE9BF8E90F2092C9526E22BE4767940D128B",
-    "latest_block_height": "260770",
-    "latest_block_time": "2022-06-09T15:22:48.792283245Z",
-    "earliest_block_hash": "F948EF10AA663D182309790C51E5A7A9125D7CF4D60D9E735994059DB7CAD4D4",
-    "earliest_app_hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
-    "earliest_block_height": "1",
-    "earliest_block_time": "2022-05-23T06:00:00Z",
-    "catching_up": false
-  },
-  "ValidatorInfo": {
-    "Address": "04024A7F76485B0D2B99570EC7DA3E9A3B3735CC",
-    "PubKey": {
-      "type": "tendermint/PubKeyEd25519",
-      "value": "KUqIsRD9yzPt7k9et+ClFp6h8wXwEIcb/TVZPrC57+I="
-    },
-    "VotingPower": "0"
-  }
-}
-```
-
-:::
-
-Your node is now syncing. This process will take a long time. Make sure you've set it up on a stable connection so this process is not interrupted.
-
-::: {admonition} Sync start times
-:class: caution
-
-Nodes take at least an hour to start syncing. This wait time is normal. Before troubleshooting a sync, please wait an hour for the sync to start.
-:::
-
 Continue to the [Sync](sync.md) page to find out more about syncing your node.
+
