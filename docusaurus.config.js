@@ -68,6 +68,7 @@ const config = {
       docs: {
         sidebar: {
           hideable: true,
+          autoCollapseCategories: false,
         },
       },
       navbar: {
@@ -129,7 +130,7 @@ const config = {
             items: [
               {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: 'https://github.com/terra-money/docs',
               },
             ],
           },
