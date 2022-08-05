@@ -119,8 +119,7 @@ terrain > await lib.getCount();
 Expected output:
 
 ```
-query_result:
-  count: 7
+{ count: 7 }
 ```
 
 Excellent! Congratulations, you've created your first smart contract, and now know how to get developing with the Terra dApp Platform.
