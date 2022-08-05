@@ -21,6 +21,8 @@ Make sure that the **optimized build** of `my_first_contract.wasm` that you crea
 terrain deploy my-first-contract --no-rebuild
 ```
 
+Note: We're using `--no-rebuild` here since we've already built and optimized the contract. In the future leave off this flag to have Terrain build and optimize on deploy.
+
 You should see output similar to the following:
 
 ```sh
@@ -87,6 +89,8 @@ Terrain includes an interactive REPL for executing and querying your smart contr
 ```
 terrain contract:generateClient my-first-contract
 ```
+
+Once completed run `terrain console` to open the console.
 
 #### Reset
 

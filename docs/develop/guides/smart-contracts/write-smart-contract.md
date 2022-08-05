@@ -344,6 +344,7 @@ fn main() {
 You can then build the schemas with:
 
 ```sh
+cd contracts/my-first-contract
 cargo schema
 ```
 
@@ -368,3 +369,9 @@ Your newly generated schemas should be visible in your `schema/` directory. The 
 ```
 
 You can use an online tool such as [JSON Schema Validator](https://www.jsonschemavalidator.net/) to test your input against the generated JSON schema.
+
+Make sure to change back to the root of the project before running any other Terrain commands: 
+
+```sh
+cd ../..
+```
