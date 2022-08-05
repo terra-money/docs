@@ -99,7 +99,7 @@ terrain > await lib.reset({ count: 5 });
 #### Incrementing
 
 ```sh
-terrain > await lib.incrment();
+terrain > await lib.increment();
 ```
 
 (run twice)
