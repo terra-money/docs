@@ -26,7 +26,7 @@ Upgrading to Cosmwasm 1.0.0 requires upgrades to various dependencies in the sma
 :::{admonition} Deprecated and outdated dependencies
 :class: danger
 
-The [Terra-Cosmwasm package](https://github.com/terra-money/terra-cosmwasm/tree/main/packages/terra-cosmwasm) is no longer supported. This package was for queries to the oracle, market, and treasury modules, which do not exist on Terra 2.0.
+The [Terra-Cosmwasm package](https://github.com/terra-money/terra-cosmwasm/tree/main/packages/terra-cosmwasm) is no longer supported. This package was for queries to the oracle, market, and treasury modules, which do not exist on the current chain.
 
 The following dependencies may be upgraded in the future, but are currently not functional with Cosmwasm 1.0.0:
 - [cw-asset](https://github.com/mars-protocol/cw-asset)
