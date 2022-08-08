@@ -6,11 +6,11 @@ Use this guide to solve the most common validator problems.
 
 ## Validator has 0 voting power
 
-If your validator has 0 voting power, your validator has become auto-unbonded. On the mainnet, validators unbond when they do not vote on `9500` of the last `10000` blocks (`50` of the last `100` blocks on the testnet). Because blocks are proposed every ~5 seconds, a validator that is unresponsive for ~13 hours (~4 minutes on testnet) become unbonded. This problem usually happens when your `terrad` process crashes.
+If your validator has 0 voting power, your validator has become auto-unbonded. On the mainnet, validators unbond when they do not vote on `9500` of the last `10000` blocks (`50` of the last `100` blocks on the testnet). Because blocks are proposed every ~5 seconds, a validator that is unresponsive for ~13 hours (~4 minutes on testnet) become unbonded. This problem usually happens when your Terrad process crashes.
 
 To return the voting power back to your validator:
 
-1. If `terrad` is not running, restart it:
+1. If Terrad is not running, restart it:
 
    ```bash
    terrad start
@@ -27,7 +27,7 @@ To return the voting power back to your validator:
 
 <Admonition type="caution">
 
-If you don't wait for `terrad` to sync before running `unjail`, an error message will inform you that your validator is still jailed.
+If you don't wait for Terrad to sync before running `unjail`, an error message will inform you that your validator is still jailed.
 
 </Admonition>
 
@@ -40,15 +40,15 @@ If you don't wait for `terrad` to sync before running `unjail`, an error message
 
    If your voting power is less than it was previously, you may have been slashed for downtime.
 
-## `terrad` crashes because of too many open files
+## Terrad crashes because of too many open files
 
-The default number of files Linux can open per process is `1024`. `terrad` is known to open more than this amount, causing the process to crash.
+The default number of files Linux can open per process is `1024`. Terrad is known to open more than this amount, causing the process to crash.
 
 1. Increase the number of open files allowed by running `ulimit -n 4096`.  
 
 2. Restart the process with `terrad start`.
 
-   If you are using `systemd` or another process manager to launch `terrad`, you might need to configure them. The following  sample `systemd` file fixes the problem:
+   If you are using `systemd` or another process manager to launch Terrad, you might need to configure them. The following  sample `systemd` file fixes the problem:
 
    ```
    # /etc/systemd/system/terrad.service
@@ -68,7 +68,7 @@ The default number of files Linux can open per process is `1024`. `terrad` is kn
    [Install]
    WantedBy=multi-user.target
    ```
-## `terrad` crashes because of memory fragmentation
+## Terrad crashes because of memory fragmentation
 
 As described in [this issue](https://github.com/terra-money/core/issues/592), huge memory allocation can cause memory fragmentation issue. Temporal solution is just using small wasm cache size like 50~100MB.
 
