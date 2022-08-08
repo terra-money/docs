@@ -58,6 +58,7 @@ const config = {
         },
       }),
     ],
+    ['docusaurus-plugin-matomo', {}]
   ],
 
   themes: ["mdx-v2"],
@@ -141,7 +142,13 @@ const config = {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
-    }),
+      matomo: {
+        matomoUrl: 'https://terradocs.matomo.cloud/',
+        siteId: '2',
+        phpLoader: 'matomo.php',
+        jsLoader: 'matomo.js',
+      },
+    })
 };
 
 module.exports = config;
