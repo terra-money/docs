@@ -1,6 +1,6 @@
-# Using `terrad`
+# Using Terrad
 
-The following information explains the functions you can use from terrad, the command-line interface that connects to Terra and enables you to interact with the Terra blockchain. Every active validator and full node runs terrad and communicates with their node via terrad. In this relationship, terrad operates as both the client and the server. You can use terrad to interact with the Terra blockchain by uploading contracts, querying data, managing staking activities, working with governance proposals, and more. For more general information at the command line, run `terrad --help`. For more information about a specific `terrad` command, append the `-h` or `--help` flag after the command, such as `terrad query --help`.
+The following information explains the functions you can use from terrad, the command-line interface that connects to Terra and enables you to interact with the Terra blockchain. Every active validator and full node runs terrad and communicates with their node via terrad. In this relationship, terrad operates as both the client and the server. You can use terrad to interact with the Terra blockchain by uploading contracts, querying data, managing staking activities, working with governance proposals, and more. For more general information at the command line, run `terrad --help`. For more information about a specific Terrad command, append the `-h` or `--help` flag after the command, such as `terrad query --help`.
 
 ## Accessing a Node
 
@@ -8,7 +8,7 @@ To query the state and send transactions, you must connect to a node, which is t
 
 ### Running your own full node
 
-Running your own full node is the most secure option, but it comes with relatively high resource requirements. For more information about the requirements to run your own full node and a tutorial for installing `terrad`, see [installation](../../full-node/run-a-full-terra-node/build-terra-core.mdx). For a tutorial that explains how to connect to an existing Terra network, see [joining a network](../../full-node/run-a-full-terra-node/join-a-network.mdx).
+Running your own full node is the most secure option, but it comes with relatively high resource requirements. For more information about the requirements to run your own full node and a tutorial for installing Terrad, see [installation](../../full-node/run-a-full-terra-node/build-terra-core.mdx). For a tutorial that explains how to connect to an existing Terra network, see [joining a network](../../full-node/run-a-full-terra-node/join-a-network.mdx).
 
 ### Connecting to a remote full node
 
@@ -20,7 +20,7 @@ If you are not running a node yet would like to communicate through terrad, list
 
 ## Configuring terrad
 
-`terrad` enables you to interact with the node that runs on the Terra network, whether you run it yourself or not. To configure `terrad`, edit the the `config.toml` file in the `~/.terra/config/` directory.
+Terrad enables you to interact with the node that runs on the Terra network, whether you run it yourself or not. To configure Terrad, edit the the `config.toml` file in the `~/.terra/config/` directory.
 
 ## Querying Blockchain State
 
@@ -224,7 +224,7 @@ Gas estimate might be inaccurate as state changes could occur in between the end
 
 The adjustment can be controlled via the `--gas-adjustment` flag, whose default value is 1.0.
 
-To get a direct fee estimation from `terrad`:
+To get a direct fee estimation from Terrad:
 
 ```bash
 terrad tx estimate-fee ...\
@@ -243,7 +243,7 @@ terrad tx send ... \
 
 ## Shell Autocompletion
 
-Auto-completion scripts for popular UNIX shell interpreters such as `bash` and `zsh` can be generated through the `completion` command, which is available for both `terrad` and `terrad`. This allows for a more convenient way to interact with the Terra Core endpoints when using the command-line.
+Auto-completion scripts for popular UNIX shell interpreters such as `bash` and `zsh` can be generated through the `completion` command, which is available for both Terrad and Terrad. This allows for a more convenient way to interact with the Terra Core endpoints when using the command-line.
 
 If you want to generate `bash` completion scripts run the following command:
 
