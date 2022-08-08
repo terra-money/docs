@@ -1,17 +1,17 @@
 # Validator migration guide
 
-Follow this guide to become a validator on the Terra 2.0 chain. This guide walks you through making a `gentx` file that will be added to the validator chain. A `gentx` is a special transaction included in the genesis file that accomplishes three things:
+Follow this guide to become a validator on the Terra chain. This guide walks you through making a `gentx` file that will be added to the validator chain. A `gentx` is a special transaction included in the genesis file that accomplishes three things:
 
 1. Registers your validator account as a validator operator account.
 2. Self-delegates the specified amount of LUNA tokens for staking.
 3. Links the validator operator account with a Tendermint node pubkey used to sign blocks.
 
-All validators that want to be included in the Terra 2.0 chain must follow the steps below.
+All validators that want to be included in the Terra chain must follow the steps below.
 
 ## Networks
 
-- Terra 2.0 testnet: `pisco-1`
-- Terra 2.0 mainnet: `phoenix-1`
+- Terra testnet: `pisco-1`
+- Terra mainnet: `phoenix-1`
 
 ## Prerequisites
 
@@ -156,7 +156,7 @@ After [configuring your general settings](https://docs.terra.money/docs/full-nod
 
 Complete the following steps on your new validator's machine. 
 
-1\. Checkout and install the Terra 2.0 core:
+1\. Checkout and install the Terra core:
 
 ```sh
 # checkout and install
