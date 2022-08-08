@@ -8,6 +8,7 @@ const theme = require("shiki/themes/material-default.json");
 const { remarkCodeHike } = require("@code-hike/mdx");
 
 /** @type {import('@docusaurus/types').Config} */
+
 module.exports = async function config() {
   const math = (await import('remark-math')).default;
   const katex = (await import('rehype-katex')).default;
