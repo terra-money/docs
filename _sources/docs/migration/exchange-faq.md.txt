@@ -99,7 +99,7 @@ https://phoenix-lcd.terra.dev/cosmos/auth/v1beta1/accounts/<insert-your-Terra-ad
 
 No changes. if you are using the old tx format, the only thing you need to do is change the “bank/MsgSend” to “cosmos-sdk/MsgSend”.
 
-### Is there any change to the broadcast interface for Terra Classic or Terra 2.0?
+### Is there any change to the broadcast interface for Terra Classic or Terra?
 
 No, the broadcast interface is the same.  
 
@@ -143,7 +143,7 @@ Terra classic is the same currently active original chain. The block height will
 
 ### What height does the new chain start at?
 
-The new Terra 2.0 chain will start from a height of `1`.
+The new Terra chain will start from a height of `1`.
 
 ### Can you clarify the differences between the block and transaction parsing logics of classic vs new Luna?
 

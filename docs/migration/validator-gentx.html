@@ -1384,18 +1384,18 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="validator-migration-guide">
 <h1>Validator migration guide<a class="headerlink" href="#validator-migration-guide" title="Permalink to this headline">¶</a></h1>
-<p>Follow this guide to become a validator on the Terra 2.0 chain. This guide walks you through making a <code class="docutils literal notranslate"><span class="pre">gentx</span></code> file that will be added to the validator chain. A <code class="docutils literal notranslate"><span class="pre">gentx</span></code> is a special transaction included in the genesis file that accomplishes three things:</p>
+<p>Follow this guide to become a validator on the Terra chain. This guide walks you through making a <code class="docutils literal notranslate"><span class="pre">gentx</span></code> file that will be added to the validator chain. A <code class="docutils literal notranslate"><span class="pre">gentx</span></code> is a special transaction included in the genesis file that accomplishes three things:</p>
 <ol class="arabic simple">
 <li><p>Registers your validator account as a validator operator account.</p></li>
 <li><p>Self-delegates the specified amount of LUNA tokens for staking.</p></li>
 <li><p>Links the validator operator account with a Tendermint node pubkey used to sign blocks.</p></li>
 </ol>
-<p>All validators that want to be included in the Terra 2.0 chain must follow the steps below.</p>
+<p>All validators that want to be included in the Terra chain must follow the steps below.</p>
 <div class="section" id="networks">
 <h2>Networks<a class="headerlink" href="#networks" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>Terra 2.0 testnet: <code class="docutils literal notranslate"><span class="pre">pisco-1</span></code></p></li>
-<li><p>Terra 2.0 mainnet: <code class="docutils literal notranslate"><span class="pre">phoenix-1</span></code></p></li>
+<li><p>Terra testnet: <code class="docutils literal notranslate"><span class="pre">pisco-1</span></code></p></li>
+<li><p>Terra mainnet: <code class="docutils literal notranslate"><span class="pre">phoenix-1</span></code></p></li>
 </ul>
 </div>
 <div class="section" id="prerequisites">
@@ -1518,7 +1518,7 @@ def346f3ef21e5f484c4e8634918d527382115b871786bd794fac5dacdf46c63
 <div class="section" id="gentx">
 <h2>GenTx<a class="headerlink" href="#gentx" title="Permalink to this headline">¶</a></h2>
 <p>Complete the following steps on your new validator’s machine.</p>
-<p>1. Checkout and install the Terra 2.0 core:</p>
+<p>1. Checkout and install the Terra core:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># checkout and install</span>
 git clone https://github.com/terra-money/core
 <span class="nb">cd</span> core

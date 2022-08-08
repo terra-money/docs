@@ -1382,7 +1382,7 @@
 <p>Use this guide to Migrate from Terra Classic to the new Terra chain.</p>
 <div class="section" id="changes">
 <h2>Changes<a class="headerlink" href="#changes" title="Permalink to this headline">¶</a></h2>
-<p>Terra 2.0 will be starting from a blank state when it comes to CosmWasm. This means no existing code IDs or smart contracts will be migrated.</p>
+<p>The Terra chain will be starting from a blank state when it comes to CosmWasm. This means no existing code IDs or smart contracts will be migrated.</p>
 <ul class="simple">
 <li><p>CosmWasm smart contracts will need to be uploaded to the new chain and instantiated.</p></li>
 <li><p>Cosmwasm <a class="reference internal" href="#upgrade-cosmwasm"><span class="std std-doc">versions need to be upgraded to 1.0</span></a>.</p></li>
@@ -1390,12 +1390,12 @@
 </ul>
 <div class="section" id="no-ust-or-other-native-stablecoins-krt-sdt-etc">
 <h3>1. No UST or other native stablecoins (KRT, SDT, etc).<a class="headerlink" href="#no-ust-or-other-native-stablecoins-krt-sdt-etc" title="Permalink to this headline">¶</a></h3>
-<p>Terra 2.0 has removed all native stablecoins. Any logic that accepts, queries, or sends Terra stablecoins will need to be removed or updated.</p>
+<p>Terra has removed all native stablecoins. Any logic that accepts, queries, or sends Terra stablecoins will need to be removed or updated.</p>
 <p>Terra developers are working on getting alternative stablecoins on chain as soon as possible.</p>
 </div>
 <div class="section" id="no-stablecoin-tax-queries-to-the-treasury-module">
 <h3>2. No stablecoin tax queries to the treasury module.<a class="headerlink" href="#no-stablecoin-tax-queries-to-the-treasury-module" title="Permalink to this headline">¶</a></h3>
-<p>Terra 2.0 has removed the treasury module. Any queries to the treasury module to query the TaxRate or TaxCap will now fail. Without the native stablecoins this logic isn’t necessary, so it can be removed.</p>
+<p>Terra has removed the treasury module. Any queries to the treasury module to query the TaxRate or TaxCap will now fail. Without the native stablecoins this logic isn’t necessary, so it can be removed.</p>
 </div>
 <div class="section" id="no-market-module">
 <h3>3. No market module.<a class="headerlink" href="#no-market-module" title="Permalink to this headline">¶</a></h3>
@@ -1403,7 +1403,7 @@
 </div>
 <div class="section" id="no-oracle-module">
 <h3>4. No oracle module.<a class="headerlink" href="#no-oracle-module" title="Permalink to this headline">¶</a></h3>
-<p>Terra 2.0 has removed the oracle module. Any queries to fetch ExchangeRates from the oracle module will fail. However, there are other oracle solutions that can be employed.</p>
+<p>Terra has removed the oracle module. Any queries to fetch ExchangeRates from the oracle module will fail. However, there are other oracle solutions that can be employed.</p>
 <p><a class="reference external" href="https://docs.bandchain.org/introduction/overview.html">Band protocol</a> is one such solution. Band works over IBC. See the <a class="reference external" href="https://docs.bandchain.org/client-library/protocol-buffers/oracle-module.html">oracle module documentation</a> for more details</p>
 </div>
 <div class="section" id="terra-js-changes">

@@ -4,7 +4,7 @@ Use this guide to Migrate from Terra Classic to the new Terra chain.
 
 ## Changes
 
-Terra 2.0 will be starting from a blank state when it comes to CosmWasm. This means no existing code IDs or smart contracts will be migrated.
+The Terra chain will be starting from a blank state when it comes to CosmWasm. This means no existing code IDs or smart contracts will be migrated.
 
 - CosmWasm smart contracts will need to be uploaded to the new chain and instantiated.
 
@@ -14,13 +14,13 @@ Terra 2.0 will be starting from a blank state when it comes to CosmWasm. This me
 
 ### 1. No UST or other native stablecoins (KRT, SDT, etc).
 
-Terra 2.0 has removed all native stablecoins. Any logic that accepts, queries, or sends Terra stablecoins will need to be removed or updated.
+Terra has removed all native stablecoins. Any logic that accepts, queries, or sends Terra stablecoins will need to be removed or updated.
 
 Terra developers are working on getting alternative stablecoins on chain as soon as possible.
 
 ### 2. No stablecoin tax queries to the treasury module.
 
-Terra 2.0 has removed the treasury module. Any queries to the treasury module to query the TaxRate or TaxCap will now fail. Without the native stablecoins this logic isn't necessary, so it can be removed.
+Terra has removed the treasury module. Any queries to the treasury module to query the TaxRate or TaxCap will now fail. Without the native stablecoins this logic isn't necessary, so it can be removed.
 
 ### 3. No market module.
 
@@ -28,7 +28,7 @@ Any attempts to swap Luna for UST or other stablecoins through the market module
 
 ### 4. No oracle module.
 
-Terra 2.0 has removed the oracle module. Any queries to fetch ExchangeRates from the oracle module will fail. However, there are other oracle solutions that can be employed.
+Terra has removed the oracle module. Any queries to fetch ExchangeRates from the oracle module will fail. However, there are other oracle solutions that can be employed.
 
 [Band protocol](https://docs.bandchain.org/introduction/overview.html) is one such solution. Band works over IBC. See the [oracle module documentation](https://docs.bandchain.org/client-library/protocol-buffers/oracle-module.html) for more details
 

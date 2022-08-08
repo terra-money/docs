@@ -59,7 +59,7 @@ The genesis parameters outlined in the [Genesis Builder Script](https://github.c
 
     # Bank: set denom meta
     genesis['app_state']['bank']['denom_metadata'] = [{
-        'description': 'The native staking token of Terra 2.0',
+        'description': 'The native staking token of Terra',
         'denom_units': [
             {'denom': 'uluna', 'exponent': 0, 'aliases': ['microluna']},
             {'denom': 'mluna', 'exponent': 3, 'aliases': ['milliluna']},
