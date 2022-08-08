@@ -8,7 +8,10 @@ const theme = require("shiki/themes/material-default.json");
 const { remarkCodeHike } = require("@code-hike/mdx");
 
 /** @type {import('@docusaurus/types').Config} */
-const config = {
+module.exports = async function config() {
+  const math = (await import('remark-math')).default;
+  const katex = (await import('rehype-katex')).default;
+  return {
   title: 'Terra Docs',
   tagline: 'The official docs',
   url: 'https://docs.terra.money',
@@ -41,7 +44,8 @@ const config = {
             lineNumbers: true,
             showCopyButton: true,
             autoImport: true
-           }]],
+            }], math],
+          rehypePlugins: [katex],
           sidebarPath: require.resolve('./sidebars.js'),
           routeBasePath: '/',  // Serve the docs at the site's root
           // Please change this to your repo.
@@ -54,6 +58,7 @@ const config = {
           customCss: [
             require.resolve("@code-hike/mdx/styles.css"),
             require.resolve("./src/css/custom.css"),
+            require.resolve('katex/dist/katex.min.css'),
           ],
         },
       }),
@@ -150,5 +155,4 @@ const config = {
       },
     })
 };
-
-module.exports = config;
+};
