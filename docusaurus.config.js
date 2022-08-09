@@ -64,7 +64,22 @@ module.exports = async function config() {
         },
       }),
     ],
-    ['docusaurus-plugin-matomo', {}]
+    ['docusaurus-plugin-matomo', {}],
+    [
+      'redocusaurus',
+      {
+        specs: [
+          {
+            id: 'complete',
+            spec: 'https://lcd.terra.dev/swagger/swagger.yaml',
+            route: '/api/',
+          },
+        ],
+        theme: {
+          primaryColor: '#1890ff',
+        },
+      },
+    ],
   ],
 
   themes: ["mdx-v2"],
