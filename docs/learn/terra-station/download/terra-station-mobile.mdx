@@ -1,6 +1,7 @@
 import Admonition from '@theme/Admonition';
+import { Box, Flex} from 'rebass'
 
-# Terra Station mobile
+# Terra Station Mobile
 
 {/*
 ::::{grid} auto
@@ -53,11 +54,40 @@ Complete this tutorial to get started with the Terra Station mobile app.
 
 ## Create a new wallet
 
-1. Launch the Terra Station app and select **New wallet**
-<img style={{padding: '1rem', width: 300}} src='/img/screens/mobile/new-wallet.png' />
+<Flex flexWrap='wrap'>
+  <Box
+    p={3}
+    width={[ 1, 1/2, 1/2, 1/2,]}
+    bg='primary'>
+    1. Launch the Terra Station app and select **New wallet**
+  </Box>
+  <Box
+    p={3}
+    width={[ 1, 1/2, 1/2, 1/2,]}
 
-2. Enter a name for your wallet and a secure password. Confirm your password and tap **Next**
-<img style={{padding: '1rem', width: 300}} src='/img/screens/mobile/new-input.png' />
+    color='white'
+    bg='secondary'>
+    <img style={{padding: '1rem', width: 300}} src='/img/screens/mobile/new-wallet.png' />
+  </Box>
+</Flex>
+
+
+<Flex flexWrap='wrap'>
+  <Box
+    p={3}
+    width={[ 1, 1/2, 1/2, 1/2,]}
+    bg='primary'>
+    2. Enter a name for your wallet and a secure password. Confirm your password and tap **Next**
+  </Box>
+  <Box
+    p={3}
+    width={[ 1, 1/2, 1/2, 1/2,]}
+
+    color='white'
+    bg='secondary'>
+    <img style={{padding: '1rem', width: 300}} src='/img/screens/mobile/new-input.png' />
+  </Box>
+</Flex>
 
 3. Using a pen and paper, write down your 24-word seed phrase exactly as it appears. Number each word to make verifying easier.
 
@@ -71,13 +101,41 @@ Anyone with your seed phrase can access your money, and there is no recourse for
 - Never give your seed phrase to anyone, not even support staff.
 </Admonition>
 
-4. Verify your writing to make sure every word is spelled correctly and in the right order. If you numbered your phrase, it can be helpful to verify it backward.
-<img style={{padding: '1rem', width: 300}} src='/img/screens/mobile/seed.png' />
+<Flex flexWrap='wrap'>
+  <Box
+    p={3}
+    width={[ 1, 1/2, 1/2, 1/2,]}
+    bg='primary'>
+    4. Verify your writing to make sure every word is spelled correctly and in the right order. If you numbered your phrase, it can be helpful to verify it backward.
+  </Box>
+  <Box
+    p={3}
+    width={[ 1, 1/2, 1/2, 1/2,]}
 
-5. Tap **I have written down my seed**.
+    color='white'
+    bg='secondary'>
+    <img style={{padding: '1rem', width: 300}} src='/img/screens/mobile/seed.png' />
+  </Box>
+</Flex>
 
-6. Confirm your seed phrase by typing or selecting the correct words in each prompt.
-<img style={{padding: '1rem', width: 300}} src='/img/screens/mobile/confirm.png' />
+<Flex flexWrap='wrap'>
+  <Box
+    p={3}
+    width={[ 1, 1/2, 1/2, 1/2,]}
+    bg='primary'>
+    5. Tap **I have written down my seed**.
+
+    6. Confirm your seed phrase by typing or selecting the correct words in each prompt.
+  </Box>
+  <Box
+    p={3}
+    width={[ 1, 1/2, 1/2, 1/2,]}
+
+    color='white'
+    bg='secondary'>
+    <img style={{padding: '1rem', width: 300}} src='/img/screens/mobile/confirm.png' />
+  </Box>
+</Flex>
 
 7. Tap **Confirm and finish**.
 
