@@ -56,7 +56,7 @@ Encodes an empty vote option.
 
 #### option
 
-@option.validator
+```
 def _check_option(self, attribute, value):
     possible_options = [
         self.EMPTY,
@@ -67,6 +67,7 @@ def _check_option(self, attribute, value):
     ]
     if value not in possible_options:
         raise TypeError(
-            f&quot;incorrect value for option: {value}, must be one of: {possible_options}&quot;
+            f"incorrect value for option: {value}, must be one of: {possible_options}";
         )
+```
 
