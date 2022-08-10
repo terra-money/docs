@@ -7,7 +7,7 @@ LocalTerra is a complete Terra testnet and ecosystem containerized with Docker. 
 - [Docker](https://www.docker.com/)
 - [`docker-compose`](https://github.com/docker/compose)
 - At least 16 GB of RAM
-- [Terra Station Chrome extension](../../learn/terra-station/download/terra-station-extension.md)
+- [Terra Station Chrome extension](../../learn/terra-station/download/terra-station-chrome.md)
 - Node.js version 16
 
 :::{admonition} Node version error

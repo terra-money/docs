@@ -6,7 +6,7 @@ Use this tutorial to bridge your assets between Terra and other chains using Wor
 
 ## Prerequisites
 
-- [The Terra Station browser extension](../terra-station/download/terra-station-extension.md) for tokens on the Terra blockchain.
+- [The Terra Station browser extension](../terra-station/download/terra-station-chrome.md) for tokens on the Terra blockchain.
 - A wallet on the chain you want to bridge. 
 
    :::{admonition} Paying for fees

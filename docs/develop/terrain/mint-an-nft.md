@@ -7,8 +7,8 @@ In this tutorial, you will learn how to mint your own NFT using the [NFT Terrain
 ## Prerequisites
  
 - [Download Google Chrome](https://www.google.com/chrome/downloads/)
-- [Download the Terra Station extension](../../learn/terra-station/download/terra-station-extension.md)
-- [Create a Terra Station wallet](../../learn/terra-station/download/terra-station-extension.md)
+- [Download the Terra Station extension](../../learn/terra-station/download/terra-station-chrome.md)
+- [Create a Terra Station wallet](../../learn/terra-station/download/terra-station-chrome.md)
 - [Install npm](https://kinsta.com/blog/how-to-install-node-js/)
 - [Install git](https://git-scm.com/downloads)
 - [Install Terrain](initial-setup.md)
