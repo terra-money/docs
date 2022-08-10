@@ -6,7 +6,7 @@ Multisig wallets enable a wallet to be controlled by multiple parties. A wallet 
 
 ## Prerequisites
 
-- Download the [Terra Station browser extension](download/terra-station-extension.md)
+- Download the [Terra Station browser extension](download/terra-station-chrome.md)
 
 ## Create a multisig wallet
 
