@@ -13,7 +13,7 @@ If you're using a frontend framework other than React you'll need to use [Wallet
 
 ## Prerequisites
 
-- [Terra Station Chrome extension](../../learn/terra-station/download/terra-station-extension.md)
+- [Terra Station Chrome extension](../../learn/terra-station/download/terra-station-chrome.md)
 - Node.js version 16+
 - [NPM](https://www.npmjs.com/)
 

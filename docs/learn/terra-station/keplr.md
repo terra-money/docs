@@ -5,9 +5,9 @@ Use this guide to connect your Terra Station wallet to a Keplr wallet using a Ch
 ## Prerequisites
 
 - Download [Google Chrome](https://www.google.com/chrome/).
-- Download the [Terra Station Chrome extension](download/terra-station-extension.md) and [create a wallet](download/terra-station-extension.md#create-a-wallet).
+- Download the [Terra Station Chrome extension](download/terra-station-chrome.md) and [create a wallet](download/terra-station-chrome.md#create-a-wallet).
 - Make sure you have a copy of your seed phrase written down.
-- [Purchase LUNA](download/terra-station-extension.md#buy-tokens-from-an-exchange) or other tokens to fill your wallet.
+- [Purchase LUNA](download/terra-station-chrome.md#buy-tokens-from-an-exchange) or other tokens to fill your wallet.
 
 ## Download Keplr
 

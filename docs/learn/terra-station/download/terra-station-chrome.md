@@ -11,7 +11,7 @@ Desktop
 :::
 
 :::{grid-item}
-```{button-link} terra-station-extension.html
+```{button-link} terra-station-chrome.html
 :color: primary
 Chrome extension
 ```

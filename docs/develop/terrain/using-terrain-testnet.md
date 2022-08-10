@@ -4,11 +4,11 @@ The [Pisco testnet](../../learn/glossary.md#testnet) is used for testing transac
 
 ## Prerequisites
 
-- [Install the Terra Station browser extension](../../learn/terra-station/download/terra-station-extension.md)
+- [Install the Terra Station browser extension](../../learn/terra-station/download/terra-station-chrome.md)
 
 ## Create a Pisco wallet
 
-[Create a new wallet](../../learn/terra-station/download/terra-station-extension.md#create-a-wallet) using the Terra Station extension. It's recommended that you name this wallet "Pisco" or "testnet" so it's easy to remember.
+[Create a new wallet](../../learn/terra-station/download/terra-station-chrome.md#create-a-wallet) using the Terra Station extension. It's recommended that you name this wallet "Pisco" or "testnet" so it's easy to remember.
 
 After creating a Pisco wallet and storing the seed phrase, request funds from the testnet faucet:
 

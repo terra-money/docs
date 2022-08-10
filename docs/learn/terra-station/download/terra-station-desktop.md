@@ -10,7 +10,7 @@ Desktop
 :::
 
 :::{grid-item}
-```{button-link} terra-station-extension.html
+```{button-link} terra-station-chrome.html
 :color: primary
 :outline:
 Chrome extension
@@ -200,6 +200,6 @@ After a few moments, the tokens will appear in the receiver's wallet.
 
 ## Next steps
 
-To start using any of the many dApps the Terra ecosystem has to offer, check out the [Terra Station Chrome browser extension](terra-station-extension.md). For on-the-go transactions, check out the [Terra Station mobile app](terra-station-mobile.md).
+To start using any of the many dApps the Terra ecosystem has to offer, check out the [Terra Station Chrome browser extension](terra-station-chrome.md). For on-the-go transactions, check out the [Terra Station mobile app](terra-station-mobile.md).
 
 For more guides on how to use other Station features, visit the [Station guides](../README.md).
