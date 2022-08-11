@@ -30,7 +30,7 @@
   background-color: #F9FAFF;
 }
 
-.menu-link {
+.menu__link {
   font-family: 'Gotham';
   font-size: 13px;
   color: #8B9CDA;
@@ -92,9 +92,6 @@ a.navbar__item.navbar__link.header-terra-link:before {
   display: inline-block;
 }
 
-
-
-
 .header-terra-link .iconExternalLink_node_modules-\@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module {
   display: none;
 }
@@ -105,7 +102,7 @@ a.navbar__item.navbar__link.header-terra-link:before {
 
 
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
+  --ifm-color-primary: #459CF4 !important;
   --ifm-color-primary-dark: #21af90;
   --ifm-color-primary-darker: #1fa588;
   --ifm-color-primary-darkest: #1a8870;
@@ -113,4 +110,37 @@ a.navbar__item.navbar__link.header-terra-link:before {
   --ifm-color-primary-lighter: #32d8b4;
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+
+  --ifm-menu-color-background-active: #212121 !important;
+  --ifm-menu-color-background-hover: #212121 !important;
+  --ifm-menu-link-sublist-icon: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24"><path fill="rgba(32, 67, 181, 1)" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path></svg>');
+  --ifm-background-surface-color: #F9FAFF;
+  --ifm-background-color: #1E1E1E !important;
+  --ifm-link-color: #459CF4 !important;
+  --ifm-color-content-secondary: #8D8D8D !important;
+  --ifm-pagination-nav-color-hover: #459CF4 !important;
+  --ifm-heading-color: #E9E9E9 !important;
+  --ifm-h1-font-size: 48px;
+  --ifm-breadcrumb-color-active: #8B9CDA;
+  --ifm-footer-background-color: #1E1E1E !important;
+  --ifm-footer-color: #8D8D8D !important;
+  --ifm-footer-link-color: #8D8D8D !important;
+}
+
+[data-theme='dark'] .menu {
+  background-color: #1C1C1C;
+}
+
+[data-theme='dark'] .menu__link {
+  font-family: 'Gotham';
+  font-size: 13px;
+  color: #8D8D8D;
+  line-height: 19px;
+}
+
+[data-theme='dark'] .menu__link--active {
+  font-weight: bold;
+  font-size: 16px;
+  color: #DBDBDB;
+  line-height: 24px;
 }

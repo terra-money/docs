@@ -90,6 +90,7 @@ module.exports = async function config() {
         logo: {
           alt: 'Terra docs',
           src: 'img/logo_light.svg',
+          srcDark: 'img/logo_dark.svg'
         },
         items: [
           {
