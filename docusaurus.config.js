@@ -1,8 +1,7 @@
 // @ts-check
-// Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const lightCodeTheme = require('./light.theme.js');
+const darkCodeTheme = require('./dark.theme.js');
 
 const theme = require("shiki/themes/material-default.json");
 const { remarkCodeHike } = require("@code-hike/mdx");
@@ -20,15 +19,8 @@ module.exports = async function config() {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
   organizationName: 'Terra-money', // Usually your GitHub org/user name.
   projectName: 'new-docs', // Usually your repo name.
-
-  // Even if you don't use internalization, you can use this field to set useful
-  // metadata like html lang. For example, if your site is Chinese, you may want
-  // to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -94,35 +86,30 @@ module.exports = async function config() {
         },
       },
       navbar: {
-        title: 'Terra docs',
+        title: '',
         logo: {
           alt: 'Terra docs',
-          src: 'img/favicon.png',
+          src: 'img/logo_light.svg',
         },
         items: [
           {
-            type: 'doc',
-            docId: 'index',
-            position: 'left',
-            label: 'Get started',
-          },
-          {
             href: 'https://terra.money', //front-end URL
-            label: 'Terra.money',
             position: 'right',
+            label: 'terra.money',
+            className: "header-terra-link",
+            "aria-label": "Terra Money",
           },
           {
             href: 'https://github.com/terra-money/new-docs',
-            label: 'GitHub',
             position: 'right',
+            className: "header-github-link",
+            "aria-label": "GitHub repository",
           },
         ],
       },
       footer: {
-        style: 'dark',
         links: [
           {
-            title: 'Docs',
             items: [
               {
                 label: 'Docs',
@@ -131,7 +118,6 @@ module.exports = async function config() {
             ],
           },
           {
-            title: 'Community',
             items: [
               {
                 label: 'Stack Overflow',
@@ -148,7 +134,6 @@ module.exports = async function config() {
             ],
           },
           {
-            title: 'More',
             items: [
               {
                 label: 'GitHub',
@@ -157,7 +142,7 @@ module.exports = async function config() {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} TerraForm Labs`,
       },
       prism: {
         theme: lightCodeTheme,

@@ -1,12 +1,7 @@
-/**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
- */
-
-/* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
+  --ifm-menu-color: #627BCB;
+  --ifm-menu-color-active: #0759E7;
+  --ifm-color-primary: #0759E7;
   --ifm-color-primary-dark: #29784c;
   --ifm-color-primary-darker: #277148;
   --ifm-color-primary-darkest: #205d3b;
@@ -15,9 +10,100 @@
   --ifm-color-primary-lightest: #3cad6e;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+
+  --ifm-menu-color-background-active: #F3F5FD;
+  --ifm-menu-color-background-hover: #F3F5FD;
+  --ifm-menu-link-sublist-icon: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24"><path fill="rgba(32, 67, 181, 1)" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path></svg>');
+  --ifm-background-surface-color: #F9FAFF;
+  --ifm-link-color: #0759E7;
+  --ifm-color-content-secondary: #8B9CDA;
+  --ifm-pagination-nav-color-hover: #0759E7;
+  --ifm-heading-color: #1C1E21;
+  --ifm-h1-font-size: 48px;
+  --ifm-breadcrumb-color-active: #8B9CDA;
+  --ifm-footer-background-color: #FFFFFF;
+  --ifm-footer-color: #8B9CDA;
+  --ifm-footer-link-color: #8B9CDA;
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
+.menu {
+  background-color: #F9FAFF;
+}
+
+.menu-link {
+  font-family: 'Gotham';
+  font-size: 13px;
+  color: #8B9CDA;
+  line-height: 19px;
+}
+
+.menu__link--active {
+  font-weight: bold;
+  font-size: 16px;
+  color: #2043B5;
+  line-height: 24px;
+}
+
+.footer__copyright {
+  text-align: left;
+}
+
+.toggleButton_node_modules-\@docusaurus-theme-classic-lib-theme-ColorModeToggle-styles-module {
+  color: #2043B5;
+}
+
+.header-github-link:hover {
+  opacity: 0.6;
+}
+
+.header-github-link:before {
+  background: url("data:image/svg+xml,%3Csvg width='13' height='13' viewBox='0 0 13 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M6.29163 0.166667C2.90829 0.166667 0.166626 2.90833 0.166626 6.29167C0.166626 8.975 1.91663 11.25 4.36663 12.0667C4.65829 12.125 4.77496 11.95 4.77496 11.775V10.6667C3.08329 11.0167 2.73329 9.96667 2.73329 9.96667C2.44163 9.26667 2.03329 9.09167 2.03329 9.09167C1.50829 8.74167 2.09163 8.74167 2.09163 8.74167C2.73329 8.8 3.02496 9.38333 3.02496 9.38333C3.54996 10.3167 4.42496 10.025 4.77496 9.90833C4.83329 9.5 5.00829 9.26667 5.18329 9.09167C3.84163 8.91667 2.38329 8.39167 2.38329 6.05833C2.38329 5.41667 2.61663 4.83333 3.02496 4.425C2.96663 4.13333 2.73329 3.55 3.08329 2.675C3.08329 2.675 3.60829 2.5 4.77496 3.31667C5.24163 3.2 5.76663 3.14167 6.29163 3.08333C6.81663 3.08333 7.34163 3.14167 7.80829 3.31667C8.97496 2.5 9.49996 2.675 9.49996 2.675C9.84996 3.49167 9.61663 4.13333 9.55829 4.30833C9.96663 4.71667 10.2 5.3 10.2 5.94167C10.2 8.275 8.79996 8.8 7.39996 8.975C7.63329 9.15 7.80829 9.55833 7.80829 10.0833V11.775C7.80829 11.95 7.92496 12.125 8.21663 12.0667C10.6666 11.25 12.3583 8.975 12.3583 6.29167C12.3583 2.90833 9.61663 0.166667 6.29163 0.166667Z' fill='%232043B5'/%3E%3C/svg%3E%0A") no-repeat;
+  background-size: 24px 24px;
+  content: "";
+  display: flex;
+  height: 24px;
+  width: 24px;
+}
+
+.header-terra-link {
+  width: 133px;
+  background-color: #0759E7;
+  color: #F3F3F3;
+  text-align: center;
+  border-radius: 60px;
+  font-size: 12px;
+}
+
+a.navbar__item.navbar__link.header-terra-link:after {
+  background: url("data:image/svg+xml,%3Csvg width='8' height='8' viewBox='0 0 8 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 0L3.295 0.705L6.085 3.5H0V4.5H6.085L3.295 7.295L4 8L8 4L4 0Z' fill='%23F3F3F3'/%3E%3C/svg%3E%0A") no-repeat;
+  content : "";
+  width: 8px;
+  height: 8px;
+  margin-left: 10px;
+  display: inline-block;
+}
+
+a.navbar__item.navbar__link.header-terra-link:before {
+  background: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 10 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 5C0 2.24 2.235 0 4.995 0C7.76 0 10 2.24 10 5C10 7.76 7.76 10 4.995 10C2.235 10 0 7.76 0 5ZM6.985 3H8.46C7.98 2.175 7.215 1.535 6.295 1.22C6.595 1.775 6.825 2.375 6.985 3ZM5 1.02C5.415 1.62 5.74 2.285 5.955 3H4.045C4.26 2.285 4.585 1.62 5 1.02ZM1 5C1 5.345 1.05 5.68 1.13 6H2.82C2.78 5.67 2.75 5.34 2.75 5C2.75 4.66 2.78 4.33 2.82 4H1.13C1.05 4.32 1 4.655 1 5ZM1.54 7H3.015C3.175 7.625 3.405 8.225 3.705 8.78C2.785 8.465 2.02 7.83 1.54 7ZM1.54 3H3.015C3.175 2.375 3.405 1.775 3.705 1.22C2.785 1.535 2.02 2.17 1.54 3ZM5 8.98C4.585 8.38 4.26 7.715 4.045 7H5.955C5.74 7.715 5.415 8.38 5 8.98ZM3.75 5C3.75 5.34 3.785 5.67 3.83 6H6.17C6.215 5.67 6.25 5.34 6.25 5C6.25 4.66 6.215 4.325 6.17 4H3.83C3.785 4.325 3.75 4.66 3.75 5ZM6.295 8.78C6.595 8.225 6.825 7.625 6.985 7H8.46C7.98 7.825 7.215 8.465 6.295 8.78ZM7.25005 5C7.25005 5.34 7.22005 5.67 7.18005 6H8.87005C8.95005 5.68 9.00005 5.345 9.00005 5C9.00005 4.655 8.95005 4.32 8.87005 4H7.18005C7.22005 4.33 7.25005 4.66 7.25005 5Z' fill='%23F3F3F3'/%3E%3C/svg%3E%0A") no-repeat;
+  content : "";
+  width: 10px;
+  height: 10px;
+  margin-right: 5px;
+  display: inline-block;
+}
+
+
+
+
+.header-terra-link .iconExternalLink_node_modules-\@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module {
+  display: none;
+}
+
+.navbar__link:hover {
+  color: white;
+}
+
+
 [data-theme='dark'] {
   --ifm-color-primary: #25c2a0;
   --ifm-color-primary-dark: #21af90;
