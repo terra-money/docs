@@ -63,7 +63,7 @@ module.exports = async function config() {
         specs: [
           {
             id: 'complete',
-            spec: 'https://lcd.terra.dev/swagger/swagger.yaml',
+            spec: 'https://phoenix-lcd.terra.dev/swagger/swagger.yaml',
             route: '/api/',
           },
         ],

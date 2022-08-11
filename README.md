@@ -1,7 +1,5 @@
 # Terra Docs
 
-This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
-
 ## Setup
 
 ### Installation
@@ -72,7 +70,7 @@ danger
 
 ### Details
 
-For dropdown details, use standard HTML syntax:
+For dropdown details, use the following syntax:
 
 <details> 
 <summary> example </summary>
