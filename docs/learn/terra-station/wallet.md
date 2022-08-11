@@ -66,7 +66,7 @@ You can now access your private key. Do not share your private key with anyone. 
 
 1. Open Terra Station and click **Connect**.
 
-2. Click **Import private key**.
+2. Click **Import wallet**.
 
 3. Enter your private key and password.
 
