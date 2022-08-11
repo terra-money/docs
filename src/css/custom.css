@@ -93,7 +93,7 @@ a.navbar__item.navbar__link.header-terra-link:before {
 }
 
 .header-terra-link .iconExternalLink_node_modules-\@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module {
-  display: none;
+  display: none !important;
 }
 
 .navbar__link:hover {
