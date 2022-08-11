@@ -168,7 +168,7 @@ Built using [Sphinx Book Theme](https://sphinx-book-theme.readthedocs.io/en/stab
 
 ## License
 
-This software is licensed under the Apache License 2.0. See [LICENSE](./LICENSE) for full disclosure.
+This software is licensed under the Apache License 2.0. See [LICENSE](./LICENSE.txt) for full disclosure.
 
 <hr/>
 
