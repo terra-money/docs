@@ -1,8 +1,8 @@
 # Wallet <img src="/img/StationWallet.svg" height="40px">
 
-This guide is for advanced features of the Terra Station wallet. If this is your first time using Terra Station, follow the [Terra Station tutorial](download/terra-station-desktop.md).
+This tutorial will guide you through using the advanced features of the Terra Station wallet. If this is your first time using Terra Station, follow the [Terra Station tutorial](download/terra-station-desktop.md).
 
-For information on using multisig wallets in Terra Station, see [](multisig.md)
+For information on using multisig wallets in Terra Station, see the [multisig wallet tutorial](multisig.md).
 
 ## Create a wallet
 
@@ -16,23 +16,20 @@ For information on using multisig wallets in Terra Station, see [](multisig.md)
 
    :::{admonition} Protect your seed phrase
    :class: danger
-   Anyone with your seed phrase can access your money, and there is no recourse for someone stealing your seed phrase. To protect your seed phrase, consider the following tips:
-
+   Anyone who gains access to your seed phrase can access the contents of the corresponding wallet. Be cognizant of the fact that there is no recourse for theft of a seed phrase. To protect your seed phrase, consider the following tips:
    - Never save or store your seed phrase as a digital file on any device.
    - Always write down your seed phrase with a pen and paper.
    - Store the paper with your seed phrase on it somewhere safe.
    - Never give your seed phrase to anyone, not even support staff.
    :::
 
-5. Verify your writing to make sure every word is spelled correctly and in the right order. If you numbered your phrase, it can be helpful to verify it backward.
+5. Verify the written seed phrase to ensure every word is spelled correctly and that each word is in the correct order.
 
-5. Check the box ensuring you wrote down your seed phrase, and click **Next**.
+6. Check the box to confirm that your seed phrase has been written down and click **Submit**.
 
-6. Confirm your seed phrase by typing or selecting the correct words in each prompt.
+7. Confirm your seed phrase by selecting the correct words in each prompt and click **Submit**.
 
-7. Click **Create a wallet**.
-
-Congratulations! You have just created a Terra Station wallet.
+8. Finally, click **Connect**.  You have just created a Terra Station wallet! 
 
 ## Select a wallet
 
