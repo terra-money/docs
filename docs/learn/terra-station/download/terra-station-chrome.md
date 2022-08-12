@@ -35,7 +35,7 @@ Mobile
 
 ::::
 
-Complete this tutorial to install the Terra Station extension for the Google Chrome browser.
+This tutorial walks you through how to install and use the Terra Station extension for the Google Chrome browser.
 
 ## Prerequisites
 
@@ -43,19 +43,20 @@ Complete this tutorial to install the Terra Station extension for the Google Chr
 
 ## Install the Terra Station extension
 
-1. Open your Chrome browser and visit the [the Terra Station web extension](https://chrome.google.com/webstore/detail/terra-station/aiifbnbfobpmeekipheeijimdpnlpgpp).
+1. Open your Chrome browser and visit [the Terra Station Chrome extension](https://chrome.google.com/webstore/detail/terra-station/aiifbnbfobpmeekipheeijimdpnlpgpp).
 
 2. Install the extension and add it to your browser.
 
 ## Create a wallet
 
-Use this tutorial to create a new wallet. To connect to an existing wallet, visit [how to connect to a wallet](../wallet.md#connect-to-a-wallet-using-a-private-key).
+In this tutorial, you will learn how to create a new wallet on the Terra Station Chrome extension. To connect to an existing wallet, you may view the instructions on how to [recover a wallet](../wallet.md#connect-to-a-wallet-using-a-private-key).
 
 1. Open the browser extension and click **New wallet**.
 
    ```{image} /img/screens/ext-new-wallet.png
    :class: sd-p-3
    :width: 500px
+   :align: center
    ```
 
 2. Type in a secure wallet name and password.
@@ -66,105 +67,112 @@ Use this tutorial to create a new wallet. To connect to an existing wallet, visi
 
    :::{admonition} Protect your seed phrase
    :class: danger
-   Anyone with your seed phrase can access your money, and there is no recourse for someone stealing your seed phrase. To protect your seed phrase, consider the following tips:
+   Anyone who gains access to your seed phrase can access the contents of the corresponding wallet. Be cognizant of the fact that there is no recourse for theft of a seed phrase. To protect your seed phrase, consider the following tips:
    - Never save or store your seed phrase as a digital file on any device.
    - Always write down your seed phrase with a pen and paper.
    - Store the paper with your seed phrase on it somewhere safe.
    - Never give your seed phrase to anyone, not even support staff.
    :::
 
-5. Verify your writing to make sure every word is spelled correctly and in the right order. If you numbered your phrase, it can be helpful to verify it backward.
+5. Verify the written seed phrase to ensure every word is spelled correctly and that each word is in the correct order.
 
-6. Check the box ensuring you wrote down your seed phrase, and click **Submit**.
+6. Check the box to confirm that your seed phrase has been written down and click **Submit**.
 
 
    ```{image} /img/screens/ext-wallet-input.png
    :class: sd-p-3
    :width: 500px
+   :align: center
    ```
 
-7. Confirm your seed phrase by typing or selecting the correct words in each prompt.
+7. Confirm your seed phrase by selecting the correct words in each prompt and click **Submit**.
 
    ```{image} /img/screens/ext-confirm.png
    :class: sd-p-3
    :width: 500px
+   :align: center
    ```
 
-8. Click **Submit**.
-
-9. Click **Connect** to connect to your new wallet.
+8. Click **Connect** to connect to your new wallet.
 
    ```{image} /img/screens/ext-wallet-complete.png
    :class: sd-p-3
    :width: 500px
+   :align: center
    ```
 
 Congratulations! You have just created a Terra Station wallet.
 
 ## Buy tokens from an exchange
 
-1. Connect to your wallet and click **Buy** next to any token. Purchase your tokens using any exchange that supports Terra.
+1. Once a wallet is connected, one can click **Buy** next to any token listed to purchase tokens utilizing an exchange that supports Terra.
 
    ```{image} /img/screens/ext-wallet.png
    :class: sd-p-3
    :width: 500px
+   :align: center
    ```
 
-2. Purchase tokens using your preffered exchange.
+2. Select your preferred exchange to be forwarded to the trading page for the previously selected token.
 
    ```{image} /img/screens/ext-wallet-buy.png
    :class: sd-p-3
    :width: 500px
+   :align: center
    ```
 
-1. Withdraw any token supported by the Terra network from your exchange. Every exchange is different. Please visit your exchange's web page for guides on how to withdraw tokens. Use the following steps as a generic guide.
+3. Withdraw any token supported by the Terra network from your exchange. Every exchange will be different and one should visit the web page of their preferred exchange for details on how to withdraw tokens. Use the following steps as a generic guide.
 
-    1. To receive tokens to your wallet, use your wallet address. Your wallet address will appear at the top of the Terra station app near your wallet name. Your wallet address will look like this: `terra<random-numbers-and-letters>`
+    1. To receive tokens to your wallet, use your wallet address. Your wallet address will appear at the top of the Terra Station Chrome extension just below your wallet name. Your wallet address will take the following form: `terra<random-numbers-and-letters>`
 
-    1. Double-check your wallet address is correct before sending.
+    2. Double-check that your submitted address matches the address of the wallet where you would like to receive funds.
 
-    1. Send the tokens from the exchange to your Terra Station wallet address.
+    3. Send the tokens from the exchange to your Terra Station wallet address.
 
     :::{admonition} Waiting times for transfers
     :class: warning
-    When you transfer tokens from an exchange to Terra, some time will pass before the tokens appear in your wallet. Don't panic. This waiting period is normal and varies depending on the exchange. If a transfer does not appear immediately, check back after some time.
+    When you transfer tokens from an exchange to Terra, it will take some time for the tokens to appear in your wallet. Don't panic. This waiting period is normal and varies depending on the exchange used. If a transfer does not appear immediately, check back after some time.
     :::
-
-Now you have tokens on Terra!
 
 ## Send tokens
 
-1. Open the Terra Station browser extension and connect to your wallet.
+1. Open the Terra Station Chrome extension and connect to your wallet.
 
 2. Click **Send** next to the token you want to send.
 
-   ```{image} /img/screens/ext-wallet-menu.png
+   ```{image} /img/screens/ext-wallet.png
    :class: sd-p-3
    :width: 500px
+   :align: center
    ```
 
 3. Enter the address of the wallet you want to send tokens to.
 
-4. Enter the amount you want to send. You can also add a memo for the transaction.
+4. Enter the amount you want to send. You can also add a memo to specify what the transaction is for.
 
-6. Verify the transaction amounts and address. Remember to always leave enough tokens in your account for other transactions.
+5. Verify the recipient address and transaction amount. Remember to always maintain some funds in your wallet in order to be able to carry out further transactions.
 
-7.  Enter your password and click **Submit**.
+6.  Enter your password and click **Submit**.
 
-After a few moments, the tokens will appear in the receiver's wallet.
+After a few moments, the tokens will appear in the recipient's wallet.
+
+   :::{admonition} Maintain funds for fees
+   :class: warning
+   It is recommended to maintain some funds in your wallet to pay for fees. Without available capital for fee payment, you will not be able to carry out further transactions until more tokens are transfered to your wallet.
+   :::
 
 ## Connect to a dApp
 
-1. Open the Terra Station browser extension and connect to your wallet.
+1. Open the Terra Station Chrome extension and connect to your wallet.
 
-2. Navigate to the dApp of your choice. Most dApps use a similar process.
+2. Navigate to the dApp of your choice.
 
 3. To connect your wallet, click **Connect Wallet** at the top of the page.
 
-4. **Allow** the connection in the Station extension. 
+4. Select **Terra Station Wallet** to connect your wallet.
 
-You can now make transactions on different dApps in the Terra ecosystem.
+After connecting your wallet, you will be able to carry out transactions on the dApp.
 
 ## Next steps
 
-For on-the-go transactions, check out the [Terra Station mobile app](terra-station-mobile.md). To learn how to use other Station features, visit the [Station guides](../README.md).
+For on-the-go transactions, check out the [Terra Station mobile app](terra-station-mobile.md). To learn how to use other Station features, visit the [Terra Station guides](../README.md).
