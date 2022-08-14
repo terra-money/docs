@@ -18,7 +18,7 @@ git clone https://github.com/<your-username>/docs.git
 
 ## Local Development with Docker
 
-You can utilize make commands in order to execute Docker and Sphinx commands that will build and generate the documentation site.
+You can utilize `make` commands in order to execute Docker and Sphinx commands that will build and generate the documentation site.
 
 First, build the local Docker container:
 ```
@@ -43,7 +43,7 @@ make docker-watch
  
 Documentation pages can be written in Markdown (`.md`) or reStructuredText (`.rst`).
  
-New pages can be added to the `docs/` folder and linked to the navigation by inputting their relative filepath in the toctree located in `index.md`. Second level pages can be created by adding a toctree to a parent file.
+New pages can be added inside of the `docs/` directory and linked to the navigation by inputting their relative filepath in the toctree located in `index.md`. Second level pages can be created by adding a toctree to a parent file.
  
 To link a top level page, insert a toctree and filepath into `index.md`:
  
@@ -59,7 +59,7 @@ This will list `top-level-page` in the navigation.
  
 To link a second level page, add the corresponding filename's relative path to the toctree in the parent file.
  
-In `top-level-page.md`, insert the following toctree:
+Inside of the parent file `top-level-page.md`, insert the following toctree to link `second-level-page`:
  
 ````
 ```{toctree}

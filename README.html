@@ -1446,7 +1446,7 @@
 </div>
 <div class="section" id="local-development-with-docker">
 <h2>Local Development with Docker<a class="headerlink" href="#local-development-with-docker" title="Permalink to this headline">¶</a></h2>
-<p>You can utilize make commands in order to execute Docker and Sphinx commands that will build and generate the documentation site.</p>
+<p>You can utilize <code class="docutils literal notranslate"><span class="pre">make</span></code> commands in order to execute Docker and Sphinx commands that will build and generate the documentation site.</p>
 <p>First, build the local Docker container:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">docker</span><span class="o">-</span><span class="n">make</span>
 </pre></div>
@@ -1465,7 +1465,7 @@
 <div class="section" id="creating-pages">
 <h2>Creating Pages<a class="headerlink" href="#creating-pages" title="Permalink to this headline">¶</a></h2>
 <p>Documentation pages can be written in Markdown (<code class="docutils literal notranslate"><span class="pre">.md</span></code>) or reStructuredText (<code class="docutils literal notranslate"><span class="pre">.rst</span></code>).</p>
-<p>New pages can be added to the <code class="docutils literal notranslate"><span class="pre">docs/</span></code> folder and linked to the navigation by inputting their relative filepath in the toctree located in <code class="docutils literal notranslate"><span class="pre">index.md</span></code>. Second level pages can be created by adding a toctree to a parent file.</p>
+<p>New pages can be added inside of the <code class="docutils literal notranslate"><span class="pre">docs/</span></code> directory and linked to the navigation by inputting their relative filepath in the toctree located in <code class="docutils literal notranslate"><span class="pre">index.md</span></code>. Second level pages can be created by adding a toctree to a parent file.</p>
 <p>To link a top level page, insert a toctree and filepath into <code class="docutils literal notranslate"><span class="pre">index.md</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```{toctree}
 :hidden:
@@ -1476,7 +1476,7 @@
 </div>
 <p>This will list <code class="docutils literal notranslate"><span class="pre">top-level-page</span></code> in the navigation.</p>
 <p>To link a second level page, add the corresponding filename’s relative path to the toctree in the parent file.</p>
-<p>In <code class="docutils literal notranslate"><span class="pre">top-level-page.md</span></code>, insert the following toctree:</p>
+<p>Inside of the parent file <code class="docutils literal notranslate"><span class="pre">top-level-page.md</span></code>, insert the following toctree to link <code class="docutils literal notranslate"><span class="pre">second-level-page</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```{toctree}
 :hidden:
 /docs/second-level-page
