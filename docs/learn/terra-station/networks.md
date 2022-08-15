@@ -4,9 +4,9 @@ This guide will walk you through the process of changing networks on Terra.  You
 
 1. Open Terra Station and connect your wallet.
 
-2. Click the network icon in the upper right-hand corner.  In Terra Station desktop the network icon is a globe, in the browser extensions the icon is a gear.
+2. Click the settings icon in the upper right-hand corner.  In Terra Station desktop the settings icon is a globe, in the browser extensions the icon is a gear.
 
-3. Select the network you would like to connect to.
+3. Navigate to the **Network** tab and select the network you would like to connect to.
 
 ::: {admonition} LocalTerra for development
 :class: tip
