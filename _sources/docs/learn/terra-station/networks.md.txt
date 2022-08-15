@@ -8,7 +8,7 @@ This guide will walk you through the process of changing networks on Terra.  You
 
 3. Navigate to the **Network** tab and select the network you would like to connect to.
 
-::: {admonition} LocalTerra for development
+::: {admonition} LocalTerra for local development
 :class: tip
 If you are interested in local development on Terra, it is recommended to utilize the LocalTerra network.  Please view the [LocalTerra documentation](../../develop/localterra/README.md) for more information.
 :::
