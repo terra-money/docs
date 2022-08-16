@@ -149,9 +149,9 @@ Stake your Luna to a validator to start earning rewards. Before you stake, make 
    :align: center
    ```
 
-   :::{admonition} Maintain funds for fees
+   :::{admonition} Maintain funds for transaction fees
    :class: warning
-   It is recommended to maintain some funds in your wallet to pay for fees. Without available capital for fee payment, you will not be able to carry out further transactions until more tokens are transfered to your wallet.
+   It is recommended to maintain some funds in your wallet in order to be able to pay for transaction fees. Without available capital for fee payment, you will not be able to carry out further transactions until more tokens are transferred to your wallet.
    :::
 
 5. Double-check the amounts and fees, enter your password and click **Submit**.
@@ -201,9 +201,9 @@ Congratulations, you've just withdrawn your staking rewards!
 
 After a few moments, the tokens will appear in the recipient's wallet.
 
-   :::{admonition} Maintain funds for fees
+   :::{admonition} Maintain funds for transaction fees
    :class: warning
-   It is recommended to maintain some funds in your wallet to pay for fees. Without available capital for fee payment, you will not be able to carry out further transactions until more tokens are transfered to your wallet.
+   It is recommended to maintain some funds in your wallet in order to be able to pay for transaction fees. Without available capital for fee payment, you will not be able to carry out further transactions until more tokens are transferred to your wallet.
    :::
 
 ## Next steps
