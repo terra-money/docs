@@ -20,7 +20,7 @@ Tutorials are action-oriented. Try not to include information that is not necess
 
 Simplicity is at the heart of the Terra style. Writers and readers will understand each other better with a minimalist writing approach. Writing in this style does not mean that you should be less descriptive or vague. It means that clarity is emphasized over complexity. 
 
-Writing in shorter sentences can give your writing more clarity. Try to limit the number of clauses in a sentence, and simplify your language. Avoid jargon and overly-technical language. 
+Writing in shorter sentences can give your writing more clarity. Try to limit the number of clauses in a sentence. Simplify your language. Avoid jargon. 
 
 Blocks of text are daunting and are usually left unread in action-based tutorials. Instead, limit paragraphs to three sentences. 
 
@@ -123,7 +123,7 @@ Limiting your styling will make your writing clearer and more succinct.
 
 ### Filenames
 
-When naming your files or folders, use all lower case. Do not use spaces or underscores. Keep filenames succinct.
+Name all your files using lower case. Use dashes if necessary. Do not use spaces or underscores. Keep filenames succinct.
 
 ### Code
 
@@ -139,7 +139,7 @@ Use notes in code blocks sparingly, if at all. Most notes should be written abov
 
 Code blocks in tutorials should be written so that a user can copy and paste them directly into their terminal using the copy button on each code block. 
 
-Avoid using multiple commands in a code block. Commands should be separated and listed in substeps. 
+Avoid using multiple commands in a code block. Commands should be separated and listed as substeps. 
 
 ### Inline code
 
@@ -165,7 +165,7 @@ This is an example.
 
 ### Headings
 
-Headings denote sections in a document. Each page should contain only one first-level heading as its title. Headings below the title can be nested. Do not skip heading levels. Avoid using more than three heading levels in a document.
+Headings denote sections in a document. Each page should contain only one first-level heading as its title. Headings below the title can be nested. Do not skip heading levels. 
 
 Headings that denote chronological steps are numbered. Headings used to denote non-chronological sections, such as explanations or stand-alone information, are not numbered.
 
@@ -174,6 +174,7 @@ All headings follow sentence-style capitalization. Avoid starting a heading with
 Level 1 headings should only be used for titles. 
 
 Try to use only three heading levels. Do not use more than 4 levels. 
+
 **Example**:
 ``` md
 # Title heading only
@@ -217,7 +218,7 @@ Use descriptive text for links. Avoid using "here" as a placeholder.  All links 
 
 Incorrect: For more examples, click [here](example.com).
 
-Correct: For mor examples, visit the [example page](example.com). 
+Correct: For more examples, visit the [example page](example.com). 
 
 Descriptive links help the user understand where they are going.
 

@@ -1675,8 +1675,8 @@ Undelegating takes 21 days to complete. The only way to undo a delegating or und
 <p>Community members vote with their staked Luna. One staked Luna equals one vote. If a user fails to specify a vote, their vote defaults to the validator they are staked to. Validators vote with their entire stake unless specified by delegators. For this reason, it is very important that each delegator votes according to their preferences.</p>
 <p>The following is a basic outline of the governance process. Visit the <a class="reference internal" href="../develop/module-specifications/spec-governance.html"><span class="doc std std-doc">governance module</span></a> for more details.</p>
 <ol class="arabic simple">
-<li><p>A user submits a proposal and a two-week deposit period begins.</p></li>
-<li><p>Users deposit Luna as collateral to back the proposal. This period ends once a minimum threshold of 50 Luna is deposited. Deposits are to protect against spam.</p></li>
+<li><p>A user submits a proposal and a one-week deposit period begins.</p></li>
+<li><p>Users deposit Luna as collateral to back the proposal. This period ends once a minimum threshold of 512 Luna is deposited. Deposits are to protect against spam.</p></li>
 <li><p>The one-week vote period begins.
 The voting options are:</p>
 <ul class="simple">
@@ -1705,14 +1705,14 @@ If the previous conditions are not met, the proposal is rejected.</p></li>
 <p>Deposits protect against unnecessary proposals and spam. Users can veto any proposal they deem to be spam by voting <code class="docutils literal notranslate"><span class="pre">NoWithVeto</span></code>.</p>
 <p>Deposits get refunded if all of the following conditions are met:</p>
 <ul class="simple">
-<li><p>The minimum deposit of 50 Luna is reached within the two-week deposit period.</p></li>
+<li><p>The minimum deposit of 512 Luna is reached within the one-week deposit period.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Quorum</span></code> is met: the number of total votes is greater than 10% of all staked Luna</p></li>
 <li><p>The total number of <code class="docutils literal notranslate"><span class="pre">NoWithVeto</span></code> votes is less than 33.4% of the total vote.</p></li>
 <li><p>A vote returns a majority of <code class="docutils literal notranslate"><span class="pre">Yes</span></code> or <code class="docutils literal notranslate"><span class="pre">No</span></code> votes.</p></li>
 </ul>
 <p>Deposits are burned under any of the following conditions:</p>
 <ul class="simple">
-<li><p>The minimum deposit of 50 Luna is not reached within the two-week deposit period.</p></li>
+<li><p>The minimum deposit of 512 Luna is not reached within the one-week deposit period.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Quorum</span></code> is not met: the number of total votes after the one-week voting period is less than 10% of all staked Luna.</p></li>
 <li><p>the number of <code class="docutils literal notranslate"><span class="pre">NoWithVeto</span></code> votes is above 33.4% of the total vote.</p></li>
 </ul>
