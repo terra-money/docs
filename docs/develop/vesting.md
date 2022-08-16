@@ -2,7 +2,7 @@
 
 Individuals who previously held LUNA Classic (LUNA on the original Terra blockchain) will be entitled to a specified number of LUNA tokens on the Terra blockchain based on the quantity of their holdings at specified snapshots of time. To learn more about the Terra Ecosystem Revival Plan, please click [here](https://agora.terra.money/t/terra-ecosystem-revival-plan-2-passed-gov/18498).
 
-30% of LUNA tokens received will be `liquid` and may be traded and transferred immediately upon receipt. 70% of these tokens will be `vesting`, meaning that these funds will be available in one's personal wallet, but may not be traded or transfered until a specified period of time. However, these funds may be delegated to validators at any time if the user chooses to do so.
+30% of LUNA tokens received will be `liquid` and may be traded and transferred immediately upon receipt. 70% of these tokens will be `vesting`, meaning that these funds will be available in one's personal wallet, but may not be traded or transferred until a specified period of time. However, these funds may be delegated to validators at any time if the user chooses to do so.
 
 Vesting tokens will be stored in a type of vesting account available in one's wallet. Vesting tokens will become `vested`, or available for trade and transfer, based on a predetermined schedule. We will go over 3 different types of vesting accounts, each with it's own unique vesting schedule.
 

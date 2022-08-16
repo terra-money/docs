@@ -120,9 +120,9 @@ Congratulations, you have just created a wallet!
 
 6.  Enter your password and tap **Submit**. Wait for the transaction to process. This generally takes a few seconds.
 
-   :::{admonition} Maintain funds for fees
+   :::{admonition} Maintain funds for transaction fees
    :class: warning
-   It is recommended to maintain some funds in your wallet to pay for fees. Without available capital for fee payment, you will not be able to carry out further transactions until more tokens are transfered to your wallet.
+   It is recommended to maintain some funds in your wallet in order to be able to pay for transaction fees. Without available capital for fee payment, you will not be able to carry out further transactions until more tokens are transferred to your wallet.
    :::
 
 ## Stake Luna
@@ -141,9 +141,9 @@ Congratulations, you have just created a wallet!
 
 Your Luna is now staked to a validator.
 
-   :::{admonition} Maintain funds for fees
+   :::{admonition} Maintain funds for transaction fees
    :class: warning
-   It is recommended to maintain some funds in your wallet to pay for fees. Without available capital for fee payment, you will not be able to carry out further transactions until more tokens are transfered to your wallet.
+   It is recommended to maintain some funds in your wallet in order to be able to pay for transaction fees. Without available capital for fee payment, you will not be able to carry out further transactions until more tokens are transferred to your wallet.
    :::
 
 ## Withdraw staking rewards
