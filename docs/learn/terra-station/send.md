@@ -1,6 +1,6 @@
 # Send
 
-You can send tokens to other Terra wallets using the **Send** feature of Terra Station. If this is your first time using Terra Station, follow the [Terra Station tutorial](download/terra-station-desktop.md).
+You can send tokens from your wallet to another Terra wallet utilizing the **Send** feature in Terra Station. If this is your first time using Terra Station, follow the [Terra Station tutorial](download/terra-station-desktop.md) to learn more.
 
 1. Open Terra Station and connect to your wallet.
 
@@ -10,10 +10,15 @@ You can send tokens to other Terra wallets using the **Send** feature of Terra S
 
 4. Enter the address of the wallet you want to send tokens to.
 
-5. Enter the amount you want to send. You can also add a memo for the transaction.
+5. Enter the amount you want to send. You can also add a memo to specify what the transaction is for.
 
-7. Verify the transaction amounts and specify which token you want to pay fees in. Remember to always leave enough tokens in your account for other transactions.
+7. Verify the recipient address and transaction amount. Remember to always maintain some funds in your wallet in order to be able to carry out further transactions.
 
 8.  Enter your password and click **Submit**.
 
-After a few moments, the tokens will appear in the receiver's wallet.
+After a few moments, the tokens will appear in the recipient's wallet.
+
+   :::{admonition} Maintain funds for transaction fees
+   :class: warning
+   It is recommended to maintain some funds in your wallet in order to be able to pay for transaction fees. Without available capital for fee payment, you will not be able to carry out further transactions until more tokens are transferred to your wallet.
+   :::
