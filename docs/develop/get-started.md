@@ -1,6 +1,6 @@
 # Get started <img src="/img/icon_innovation.svg" height="40px">
 
-Use this beginner-friendly guide to start building on Terra. 
+This beginner-friendly guide walks you through how to get started building on Terra. 
 
 :::{admonition} Learn about Terra
 :class: note
@@ -21,13 +21,13 @@ Follow the [Terrain setup tutorial](terrain/initial-setup.md) to get started usi
 
 LocalTerra is a scaled-down Terra blockchain that allows you to test your dApp locally. LocalTerra provides a single validator node and [10 preconfigured wallet accounts](localterra/accounts.md). 
 
-Follow the [Terrain with LocalTerra tutorial](terrain/using-terrain-localterra.md) to start using Terrain and create a simple counter app. 
+Follow the [Terrain with LocalTerra tutorial](terrain/using-terrain-localterra.md) to start using Terrain to create, deploy, and interact with a simple counter app. 
 
 ### 3. Mint an NFT <img src="/img/bullet_terra.svg" height="30px">
 
 Now that you are familiar with Terrain and LocalTerra, you can try minting an NFT with Terrain. 
 
-The [NFT minting](terrain/mint-an-nft.md) tutorial walks you through the creation of an NFT minting application using the dApp scaffolding and front end provided by Terrain. 
+The [NFT minting](terrain/mint-an-nft.md) tutorial walks you through minting your own NFT utilizing the dApp scaffolding and front end provided by Terrain. 
 
 :::{admonition} Terra Academy
 :class: tip
@@ -38,7 +38,7 @@ For interactive courses on developing smart contracts using Rust and CosmWasm li
 
 Congrats! You have the basics down! 
 
-Now you can dive into the other tools in the Terra Development Suite. Visit the [tool guide](which-tools.md) for more info. 
+Now you can dive into the other tools in the Terra Development Suite. Visit the [tool guide](which-tools.md) for more information. 
 
 ### Terra<span/>.js <img src="/img/terra_js.svg" height="30px">
 
