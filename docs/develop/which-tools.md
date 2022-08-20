@@ -1,13 +1,13 @@
 # Which tools to use
 
-There are a variety of tools in the Terra Development Suite. Use this guide to find the right tool for your project.
+There are a variety of tools in the Terra Development Suite. This guide will help you to find the right tool to use for your project.
 
 If you are new to Terra, start with the [beginner's guide](./get-started.md).
 
 ```python
 Terra Development Suite
 │
-├── Terrain: The all-in-one tool for dApp development. Start here.
+├── Terrain: The all-in-one tool for dApp development.
 │
 ├── LocalTerra: Local testing environment.
 │
@@ -48,7 +48,7 @@ Wallet Provider makes it easy to connect a React-based web app to Terra Station.
 
 ### Other Tools
 
-Use these tools to interact with the Terra blockchain.
+The following tools allow you to interact with the Terra blockchain.
 
 #### Terrad <img src="/img/Terrad.svg" height="30px">
 
