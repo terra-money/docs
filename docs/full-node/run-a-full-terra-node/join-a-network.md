@@ -63,8 +63,8 @@ Specify the network you want to join by choosing the corresponding **genesis fil
 
 | Network     | Type    | Genesis                                                                                           | Addressbook                     | Seeds                     |
 | :---------- | :------ | :------------------------------------------------------------------------------------------------ | :------------------------------ | :------------------------------ |
-| `phoenix-1` | Mainnet | [Genesis Link](https://phoenix-genesis.s3.us-west-1.amazonaws.com/genesis.json)                   | Community maintained [Polkachu](https://polkachu.com/addrbooks/terra) | [not available yet] |
-| `pisco-1`   | Testnet | [Genesis Link](https://raw.githubusercontent.com/terra-money/testnet/master/pisco-1/genesis.json) |  [not available yet]            | Community maintained from [Polkachu](https://polkachu.com/testnets/terra/peers) |
+| `phoenix-1` | Mainnet | [Genesis Link](https://phoenix-genesis.s3.us-west-1.amazonaws.com/genesis.json)                   | Community maintained [Polkachu](https://polkachu.com/addrbooks/terra) | [Seeds List](https://github.com/terra-money/mainnet#seed-nodes) |
+| `pisco-1`   | Testnet | [Genesis Link](https://raw.githubusercontent.com/terra-money/testnet/master/pisco-1/genesis.json) |  Peer List Community maintained from [Polkachu](https://polkachu.com/testnets/terra/peers) | [Seeds List](https://github.com/terra-money/testnet/tree/main/pisco-1#seed-nodes) |
 
 :::{admonition} Selecting a network
 :class: tip
