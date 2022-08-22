@@ -24,12 +24,12 @@ At genesis, Luna will have a supply of 1 billion tokens allocated according to t
 
 **Pre-depeg LUNA holders airdrop**: 35%    
 - All bonded / unbonding Luna, minus TFL at “Pre-attack” snapshot; staking derivatives included.   
-- For wallets with < 10k Luna: 30% unlocked at genesis; 70% vested over 2 years with 6mnth cliff.   
+- For wallets with < 10k Luna: 30% unlocked at genesis; 70% vested over 2 years with 6-month cliff.   
 - For wallets with < 1M Luna: 1-year cliff, 2-year vesting thereafter.   
 - For wallets with > 1M Luna: 1-year cliff, 4-year vesting thereafter.  
 
 **Pre-depeg aUST holders airdrop**: 10%    
-- 500K whale cap - covers up to 99.7% of all holders but only 26.72% of aUST.  
+- 500K whale cap - covers up to 99.7% of all holders, but only 26.72% of aUST.  
 - 30% unlocked at genesis; 70% vested over 2 years thereafter with a 6-month cliff.  
 
 **Post-attack LUNA holders airdrop**: 10%  
@@ -133,7 +133,7 @@ Once started, the delegating or undelegating processes can't be stopped.
 Undelegating takes 21 days to complete. The only way to undo a delegating or undelegating transaction is to wait for the unbonding process to pass. Alternatively, you can redelegate staked Luna to a different validator without waiting 21 days.
 :::
 
-The 21-day unbonding process helps the long-term stability of the Terra protocol. The unbonding period discourages volatility by locking staked Luna in the system for at least 21 days. In exchange, delegators receive staking rewards, further incentivizing network stability.
+The 21-day unbonding process assists in the long-term stability of the Terra protocol. The unbonding period discourages volatility by locking staked Luna in the system for at least 21 days. In exchange, delegators receive staking rewards, further incentivizing network stability.
 
 ### Redelegation
 
