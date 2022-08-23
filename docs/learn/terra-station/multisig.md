@@ -1,33 +1,32 @@
 # Multisig wallets
 
-Multisig wallets are an advanced feature of Terra Station. If you’re using Terra Station for the first time, follow the [Terra Station tutorial](download/terra-station-desktop.md).
+Multisig wallets are an advanced feature of Terra Station. If you’re using Terra Station for the first time, follow the [Terra Station tutorial](download/terra-station-desktop.md) to learn more.
 
 Multisig wallets enable a wallet to be controlled by multiple parties. A wallet manager creates a transaction and sends an encoded transaction message to the wallet signers. The signers sign the transaction and send back their signatures. The wallet manager then inputs the encoded transaction message along with the received signatures to complete the transaction.
 
 ## Prerequisites
 
-- Download the [Terra Station browser extension](download/terra-station-chrome.md)
+- Download the [Terra Station browser extension](download/terra-station-chrome.md).
 
 ## Create a multisig wallet
 
-1. Open the Terra Station browser extension and click **New multisig wallet**.
+1. Open the Terra Station browser extension, click on **Add a wallet**, and then click **New multisig wallet**.
 
-2. Enter the wallet addresses of each multisig user in the correct order.
+2. Enter the wallet addresses of each user of the multisig wallet.
+
+3. In the **Threshold** field, enter the number of signatures needed to post a transaction .
 
    :::{caution}
-   Each wallet added must have a transaction history of at least one transaction before it can be added to a multisig wallet.
+   You will need to record the order of the wallet addresses provided as well as the threshold value for initial transaction confirmation.  Each wallet address provided must have a transaction history of at least one transaction before it can be added as a signer of a multisig wallet.
    :::
 
-3. Enter the number of signatures needed to post a transaction in the **Threshold** field.
-
-4. Click **Submit**.
+4. Confirm the multisig wallet details and click **Submit**.
 
 5. Enter a wallet name and click **Submit**.
 
-
 ## Create a multisig transaction
 
-Multisig wallet managers initiate transactions and send coded strings for multisig participants to sign.
+Multisig wallet managers initiate transactions and send encoded transaction messages to multisig wallet participants to sign.
 
 1. Open the Terra Station browser extension and connect to your multisig wallet.
 
@@ -35,47 +34,47 @@ Multisig wallet managers initiate transactions and send coded strings for multis
 
    :::{admonition} Making your first transaction
    :class: tip
-   Brand new multisig wallets have no transaction histories. After your first transaction, you will be prompted to provide the wallet addresses again for the multisig wallet. Provide the wallet addresses used to create the wallet to proceed with your transaction.
+   Brand new multisig wallets have no transaction history. After your first transaction, you will be prompted to provide the wallet addresses and the threshold value specified when first creating the multisig wallet. After you provide this information, you may proceed with your transaction.
    :::
 
 3. After submitting your transaction, you will be taken to the **Post a multisig tx** page.
 
-4. Copy the multisig wallet address and the encoded string in the **Tx** box and send both to each of the multisig wallet signers.
+4. Copy and send the multisig wallet address as well as the encoded message in the **Tx** box to each of the multisig wallet signers.
 
-   :::{admonition} Sending multisig strings
+   :::{admonition} Sending multisig transaction messages
    
-   Encoded multisig transaction strings can be sent using a regular messenger, as they are not sensitive information. They contain a simple description of the transaction.
+   Encoded multisig transaction messages simply consist of a description of the transaction and do not contain any sensitive information. Therefore, these messages may be sent utilizing your preferred messenger application.
    :::
 
 ## Sign a multisig transaction
 
-Upon receiving an encoded transaction string, multisig signers can use the following steps to sign:
+Upon receiving an encoded transaction message, multisig signers can sign the transaction utilizing the following steps:
 
-1. Open the Terra Station browser extension and connect to the wallet you provided to create the multisig wallet.
+1. Open the Terra Station browser extension and connect to the wallet, the address of which was provided when creating the multisig wallet.
 
 2. Click the three vertical dots located to the right of your wallet name.
 
 3. Click **Sign a multisig tx**.
 
-4. Enter the multisig wallet address and the encoded multisig transaction string you received from the multisig wallet manager.
+4. Enter the multisig wallet address and the encoded multisig transaction message you received from the multisig wallet manager.
 
 5. Enter your password and click **Submit**.
 
-6. Copy the signature string provided and send it to the multisig wallet manager.
+6. Copy the signature message provided and send it to the multisig wallet manager.
 
 ## Post a multisig tx
 
 The final step in a multisig transaction is for the wallet manager to input the signatures:
 
-1. Open the Terra Station browser extension and connect to the multisig wallet you created.
+1. Open the Terra Station browser extension and connect to your multisig wallet.
 
 2. Click the three vertical dots located to the right of your wallet name.
 
 3. Click **Post a multisig tx**.
 
-4. If this is your first transaction for the wallet, enter the wallet addresses used to create the multisig wallet. Otherwise, proceed to step 5.
+4. If this is the first transaction being executed by the wallet, enter the wallet addresses in the correct order and the threshold value specified when first creating the multisig wallet. Otherwise, proceed to step 5.
 
-5. Enter the multisig wallet address, the initial encoded transaction string, and the signatures sent to you by the multisig signers.
+5. Enter the multisig wallet address, the initial encoded transaction message, and the signatures sent to you by the multisig signers.
 
 6. Click **Submit**. Your transaction should begin processing.
 
