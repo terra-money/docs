@@ -4,23 +4,23 @@ LocalTerra is a complete Terra testnet and ecosystem containerized with Docker. 
 
 ## Prerequisites
 
-- [Docker](https://www.docker.com/)
-- [`docker-compose`](https://github.com/docker/compose)
+- [Docker](https://docs.docker.com/get-docker/)
+- [`docker-compose`](https://docs.docker.com/compose/install/)
 - At least 16 GB of RAM
 - [Terra Station Chrome extension](../../learn/terra-station/download/terra-station-chrome.md)
-- Node.js version 16
+- [Node.js version 16](https://nodejs.org/en/blog/release/v16.16.0/)
 
 :::{admonition} Node version error
 :class: warning
-Use LTS Node.js 16 if you encounter the following error code:  
+Use LTS Node.js 16 if you encounter the following error code.  
 `error:0308010C:digital envelope routines::unsupported`
 :::
 
 (header_target)=
 :::{dropdown} Running NPM on M1 Macs
 
-Some M1 macs may need to use the latest LTS version of Node to complete this tutorial. Consider using a node version manager such as [NVM](https://github.com/nvm-sh/nvm/blob/master/README.md).
-After installing NVM, run the following to install and use the latest LTS version of node:
+Some M1 macs may need to use the latest LTS version of Node to complete this tutorial. Consider using a node version manager such as [nvm](https://github.com/nvm-sh/nvm/blob/master/README.md).
+After installing nvm, run the following commands to install and then switch to the latest LTS version of node.
 
 ```sh
 nvm install --lts
@@ -32,31 +32,31 @@ The `nvm use --lts` command will need to be run every time you open a new termin
 To default to the LTS version of node when restarting your terminal, run the following:
 
 ```sh
-nvm alias default <INSERT NODE VERSION HERE>
+nvm alias default <desired-node-version>
 ```
 
 :::
 
 ## Install and run LocalTerra
 
-1. To download LocalTerra, run the following commands:
+1. To download LocalTerra, start by cloning the LocalTerra Github repository.
 
    ```sh
    git clone --depth 1 https://github.com/terra-money/localterra
    ```
 
-2. Start LocalTerra by running the following:
+2. Then change into the LocalTerra directory and start LocalTerra with the following commands.
 
    ```sh
    cd localterra
    docker-compose up
    ```
 
-3. You will start seeing LocalTerra block activity in your terminal. Keep LocalTerra running while you perform the next steps in a new terminal window.
+If LocalTerra is working correctly, you will start to see block activity in your terminal. To execute transactions on LocalTerra, you will need to keep LocalTerra running and execute commands in a separate terminal window.
 
 :::{admonition} LocalTerra Accounts
 :class: note
-To view the LocalTerra wallet information, visit the [LocalTerra accounts page](../localterra/accounts.md).
+To view LocalTerra wallet information, visit the [LocalTerra accounts page](../localterra/accounts.md).
 For more configuration options, visit the [LocalTerra configuration page](../localterra/configure.md).
 :::
 
@@ -66,9 +66,9 @@ After installing LocalTerra, you are ready to use Terrain. This short tutorial w
 
 ## 1. Scaffold your dApp
 
-With Terrain installed you can now scaffold your new application in a new terminal window:
+With Terrain installed, you can now scaffold a template application in a new terminal window.
 
-1. Create a new folder for your dApp:
+1. Create a new dApp project.
 
    ```sh
    terrain new my_terra_dapp
@@ -78,16 +78,15 @@ With Terrain installed you can now scaffold your new application in a new termin
    If you are using an M1 Mac, see [Running NPM on M1 Macs](header_target) before proceeding.
    :::
 
-2. Scaffold your dApp:
+2. Change directory into your newly scaffolded dApp.
 
    ```sh
    cd my_terra_dapp
-   npm install
    ```
 
 ### Project structure
 
-The following structure shows your scaffolded project:
+Your scaffolded project will have the following structure.
 
 ```
 .
@@ -104,80 +103,78 @@ The following structure shows your scaffolded project:
 
 ## 2. Deploy
 
-To deploy the application, run the following command:
+To deploy the application, run the following command in your terminal.
 
 ```sh
 terrain deploy my_terra_dapp
 ```
 
-The deploy command performs the following steps automatically:
+The deploy command performs the following steps automatically.
 
-- Builds the counter smart contract.
-- Optimizes the counter smart contract.
-- Uploads counter smart contract to LocalTerra.
+- Builds the smart contract.
+- Optimizes the smart contract.
+- Uploads the smart contract to LocalTerra.
 - Instantiates the deployed smart contract.
 
 :::{admonition} Increase Docker memory
 :class: note
 
-If you are running LocalTerra and the previous `deploy` command is not working, try increasing Docker's memory allowance by clicking on the Docker icon. Click **Preferences** and then **Resources**. Increase the memory to at least 4 gigs. Click **Apply & Restart**. Run the deploy command again. You can increase again to 6 gigs if you are still having trouble.
+If you are running LocalTerra and the previous `deploy` command is not working, try increasing Docker's memory allowance.  You can do this by clicking on the Docker icon, clicking on **Preferences** and then navigating to **Resources**. Increase the memory to at least 4 GB and then click **Apply & Restart**. You can then try running the deploy command again. If you are still having trouble with deploying your dApp, you can try increasing the memory to 6 GB.
 :::
 
 ## 3. Generate TypeScript client
 
 Terrain 0.5.x and above includes the ability to automatically generate a TypeScript client based on your smart contract schema.
 
-Generating a client is easy, just run the following command:
-
+You can generate a client by running the following command in your terminal.
 ```
 terrain contract:generateClient my_terra_dapp --build-schema
 ```
 
-The generated client will be put in `./lib/clients` and copied to the frontend.
+The client will be generated in `./lib/clients` and copied into the frontend directory.
 
 ## 4. Interact with the deployed contract
 
-The template comes with several predefined helpers in `lib/index.ts`. Use them to start interacting with your smart contract:
+The template dApp comes with several predefined helpers in `lib/index.js`. You may use these to start interacting with your smart contract.
 
-1. Run the following:
+1. Start the Terrain console.
 
    ```sh
    terrain console
    ```
 
-2. With the console open, increment the counter by running the following:
+2. In the Terrain console, you can increment the counter by running the following command.
 
    ```JavaScript
    await lib.increment()
    ```
 
-3. You can get the current count by using:
+3. You can also get the current count.
 
    ```JavaScript
    await lib.getCount()
    ```
 
-4. After incrementing once, `await lib.getCount()` will return:
+4. After incrementing once, `await lib.getCount()` should return a count of 1.
 
    ```json
    { "count": 1 }
    ```
 
 :::{tip}
-Before proceeding to the next section, kill the running command in your terminal by entering "Ctrl + C" .
+Before proceeding to the next section, exit the terrain console by using "Ctrl + C".
 :::
 
-## 5. Front-end scaffolding
+## 5. Front end scaffolding
 
-Terrain also scaffolds a very simple front-end:
+When you scaffold a template app with Terrain, it will contain a simple front end.
 
-1. Open the [Terra Station Chrome extension](https://chrome.google.com/webstore/detail/terra-station-wallet/aiifbnbfobpmeekipheeijimdpnlpgpp), click the gear icon, and switch the network to Localterra.
+1. Open the [Terra Station Chrome extension](https://chrome.google.com/webstore/detail/terra-station-wallet/aiifbnbfobpmeekipheeijimdpnlpgpp), click the gear icon in the upper right-hand corner, and switch the network to LocalTerra.
 
-2. To use the front end, run the following commands in order.
+2. To use the front end, run the following commands.
 
    ```
    cd frontend
-   npm install
    npm start
    ```
 
@@ -195,4 +192,4 @@ Terrain also scaffolds a very simple front-end:
 
 ## Advanced usage
 
-For more advanced use cases, like deploying to the testnet or mainnet, see [Terrain's readme](https://github.com/terra-money/terrain#readme).
+For more advanced use cases, like deploying to testnet or mainnet, see [Terrain's readme](https://github.com/terra-money/terrain#readme).
