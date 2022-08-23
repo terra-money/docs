@@ -50,17 +50,23 @@ npm install -g @terra-money/terrain
 :::{admonition} Check your Terrain version
 :class: warning
 
-Make sure you are using the latest version of Terrain. Previous versions may cause errors. 
+Before you start using Terrain, you should check that there is not another similarly named package installed globally that may interfere with the package.
 
 ```sh
-terrain --version
+npm list -g
 ```
 
-If you installed Terrain from a previous, make sure to update it: 
+If you have another package with the same name installed, uninstall the package before installing Terrain.
 
 ```sh
-npm uninstall -g @iboss/terrain
+npm uninstall -g @<outdated-terrain-package>
 npm install -g @terra-money/terrain
+```
+
+Finally, you should update your Terrain package to the latest version as previous versions may cause errors.
+
+```sh
+npm update -g @terra-money/terrain
 ```
 
 :::
