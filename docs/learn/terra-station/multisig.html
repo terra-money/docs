@@ -29,7 +29,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/custom.css" />
     
   <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
@@ -1340,70 +1340,70 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="multisig-wallets">
 <h1>Multisig wallets<a class="headerlink" href="#multisig-wallets" title="Permalink to this headline">¶</a></h1>
-<p>Multisig wallets are an advanced feature of Terra Station. If you’re using Terra Station for the first time, follow the <a class="reference internal" href="download/terra-station-desktop.html"><span class="doc std std-doc">Terra Station tutorial</span></a>.</p>
+<p>Multisig wallets are an advanced feature of Terra Station. If you’re using Terra Station for the first time, follow the <a class="reference internal" href="download/terra-station-desktop.html"><span class="doc std std-doc">Terra Station tutorial</span></a> to learn more.</p>
 <p>Multisig wallets enable a wallet to be controlled by multiple parties. A wallet manager creates a transaction and sends an encoded transaction message to the wallet signers. The signers sign the transaction and send back their signatures. The wallet manager then inputs the encoded transaction message along with the received signatures to complete the transaction.</p>
 <div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>Download the <a class="reference internal" href="download/terra-station-chrome.html"><span class="doc std std-doc">Terra Station browser extension</span></a></p></li>
+<li><p>Download the <a class="reference internal" href="download/terra-station-chrome.html"><span class="doc std std-doc">Terra Station browser extension</span></a>.</p></li>
 </ul>
 </div>
 <div class="section" id="create-a-multisig-wallet">
 <h2>Create a multisig wallet<a class="headerlink" href="#create-a-multisig-wallet" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
-<li><p>Open the Terra Station browser extension and click <strong>New multisig wallet</strong>.</p></li>
-<li><p>Enter the wallet addresses of each multisig user in the correct order.</p>
+<li><p>Open the Terra Station browser extension, click on <strong>Add a wallet</strong>, and then click <strong>New multisig wallet</strong>.</p></li>
+<li><p>Enter the wallet addresses of each user of the multisig wallet.</p></li>
+<li><p>In the <strong>Threshold</strong> field, enter the number of signatures needed to post a transaction .</p>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
-<p>Each wallet added must have a transaction history of at least one transaction before it can be added to a multisig wallet.</p>
+<p>You will need to record the order of the wallet addresses provided as well as the threshold value for initial transaction confirmation.  Each wallet address provided must have a transaction history of at least one transaction before it can be added as a signer of a multisig wallet.</p>
 </div>
 </li>
-<li><p>Enter the number of signatures needed to post a transaction in the <strong>Threshold</strong> field.</p></li>
-<li><p>Click <strong>Submit</strong>.</p></li>
+<li><p>Confirm the multisig wallet details and click <strong>Submit</strong>.</p></li>
 <li><p>Enter a wallet name and click <strong>Submit</strong>.</p></li>
 </ol>
 </div>
 <div class="section" id="create-a-multisig-transaction">
 <h2>Create a multisig transaction<a class="headerlink" href="#create-a-multisig-transaction" title="Permalink to this headline">¶</a></h2>
-<p>Multisig wallet managers initiate transactions and send coded strings for multisig participants to sign.</p>
+<p>Multisig wallet managers initiate transactions and send encoded transaction messages to multisig wallet participants to sign.</p>
 <ol class="arabic">
 <li><p>Open the Terra Station browser extension and connect to your multisig wallet.</p></li>
 <li><p>Make a transaction using your multisig wallet.</p>
 <div class="tip admonition">
 <p class="admonition-title">Making your first transaction</p>
-<p>Brand new multisig wallets have no transaction histories. After your first transaction, you will be prompted to provide the wallet addresses again for the multisig wallet. Provide the wallet addresses used to create the wallet to proceed with your transaction.</p>
+<p>Brand new multisig wallets have no transaction history. After your first transaction, you will be prompted to provide the wallet addresses and the threshold value specified when first creating the multisig wallet. After you provide this information, you may proceed with your transaction.</p>
 </div>
 </li>
 <li><p>After submitting your transaction, you will be taken to the <strong>Post a multisig tx</strong> page.</p></li>
-<li><p>Copy the multisig wallet address and the encoded string in the <strong>Tx</strong> box and send both to each of the multisig wallet signers.</p>
-<div class="admonition-sending-multisig-strings admonition">
-<p class="admonition-title">Sending multisig strings</p>
-<p>Encoded multisig transaction strings can be sent using a regular messenger, as they are not sensitive information. They contain a simple description of the transaction.</p>
+<li><p>Copy and send the multisig wallet address as well as the encoded message in the <strong>Tx</strong> box to each of the multisig wallet signers.</p>
+<div class="admonition-sending-multisig-transaction-messages admonition">
+<p class="admonition-title">Sending multisig transaction messages</p>
+<p>Encoded multisig transaction messages simply consist of a description of the transaction and do not contain any sensitive information. Therefore, these messages may be sent utilizing your preferred messenger application.</p>
 </div>
 </li>
 </ol>
 </div>
 <div class="section" id="sign-a-multisig-transaction">
 <h2>Sign a multisig transaction<a class="headerlink" href="#sign-a-multisig-transaction" title="Permalink to this headline">¶</a></h2>
-<p>Upon receiving an encoded transaction string, multisig signers can use the following steps to sign:</p>
+<p>Upon receiving an encoded transaction message, multisig signers can sign the transaction utilizing the following steps:</p>
 <ol class="arabic simple">
-<li><p>Open the Terra Station browser extension and connect to the wallet you provided to create the multisig wallet.</p></li>
+<li><p>Open the Terra Station browser extension and connect to the wallet, the address of which was provided when creating the multisig wallet.</p></li>
 <li><p>Click the three vertical dots located to the right of your wallet name.</p></li>
 <li><p>Click <strong>Sign a multisig tx</strong>.</p></li>
-<li><p>Enter the multisig wallet address and the encoded multisig transaction string you received from the multisig wallet manager.</p></li>
+<li><p>Enter the multisig wallet address and the encoded multisig transaction message you received from the multisig wallet manager.</p></li>
 <li><p>Enter your password and click <strong>Submit</strong>.</p></li>
-<li><p>Copy the signature string provided and send it to the multisig wallet manager.</p></li>
+<li><p>Copy the signature message provided and send it to the multisig wallet manager.</p></li>
 </ol>
 </div>
 <div class="section" id="post-a-multisig-tx">
 <h2>Post a multisig tx<a class="headerlink" href="#post-a-multisig-tx" title="Permalink to this headline">¶</a></h2>
 <p>The final step in a multisig transaction is for the wallet manager to input the signatures:</p>
 <ol class="arabic simple">
-<li><p>Open the Terra Station browser extension and connect to the multisig wallet you created.</p></li>
+<li><p>Open the Terra Station browser extension and connect to your multisig wallet.</p></li>
 <li><p>Click the three vertical dots located to the right of your wallet name.</p></li>
 <li><p>Click <strong>Post a multisig tx</strong>.</p></li>
-<li><p>If this is your first transaction for the wallet, enter the wallet addresses used to create the multisig wallet. Otherwise, proceed to step 5.</p></li>
-<li><p>Enter the multisig wallet address, the initial encoded transaction string, and the signatures sent to you by the multisig signers.</p></li>
+<li><p>If this is the first transaction being executed by the wallet, enter the wallet addresses in the correct order and the threshold value specified when first creating the multisig wallet. Otherwise, proceed to step 5.</p></li>
+<li><p>Enter the multisig wallet address, the initial encoded transaction message, and the signatures sent to you by the multisig signers.</p></li>
 <li><p>Click <strong>Submit</strong>. Your transaction should begin processing.</p></li>
 </ol>
 <p>Congratulations, you just completed a multisig transaction!</p>
