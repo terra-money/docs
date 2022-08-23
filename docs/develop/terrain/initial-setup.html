@@ -1375,13 +1375,17 @@ cargo install cargo-run-script
 </div>
 <div class="warning admonition">
 <p class="admonition-title">Check your Terrain version</p>
-<p>Make sure you are using the latest version of Terrain. Previous versions may cause errors.</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrain --version
+<p>Before you start using Terrain, you should check that there is not another similarly named package installed globally that may interfere with the package.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>npm list -g
 </pre></div>
 </div>
-<p>If you installed Terrain from a previous, make sure to update it:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>npm uninstall -g @iboss/terrain
+<p>If you have another package with the same name installed, uninstall the package before installing Terrain.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>npm uninstall -g @&lt;outdated-terrain-package&gt;
 npm install -g @terra-money/terrain
+</pre></div>
+</div>
+<p>Finally, you should update your Terrain package to the latest version as previous versions may cause errors.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>npm update -g @terra-money/terrain
 </pre></div>
 </div>
 </div>
