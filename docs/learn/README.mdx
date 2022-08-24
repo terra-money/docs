@@ -1,57 +1,69 @@
-import { Box, Heading, Card, Image, Text} from 'rebass'
-import { Link } from "react-router-dom";
-
+import ThemedImage from '@theme/ThemedImage';
+import '../../src/css/custom.css';
 
 # Learn
 
 Discover [how Terra works](./protocol.mdx) and learn about [validators](./protocol.mdx#validators), [staking](./protocol.mdx#staking), and [governance](./protocol.mdx#governance). Use [Terra Station](./terra-station/README.mdx) to [create a wallet](./terra-station/download/README.mdx), [stake Luna](./terra-station/staking.mdx), [send tokens](./terra-station/send.mdx), and [participate in governance](./terra-station/governance.mdx). Browse the [glossary](./glossary.mdx) to look up helpful terms.
 
-<Box
-  sx={{
-    display: 'grid',
-    gridGap: 3,
-    gridTemplateColumns: 'repeat(auto-fit, minmax(256px, 1fr))',
-  }}>
-  <Link width={256} to='/learn/protocol#what-is-terra' style={{':hover': {textDecoration: 'none', color: 'inherit', border: '1px solid #5493f7'}, borderRadius: '0.5rem', border: '1px solid black', display: 'inline-block',px: 2,py: 1,color: 'inherit', textDecoration: 'none'}}>
-    <Card sx={{padding: 16, textAlign: 'center', }}>
-      <Image src='/img/icon_terra.svg' width='92px' sx={{marginTop: 20, marginBottom: 10}} />
-      <Heading fontSize='3'>What is Terra?</Heading>
-      <Text fontSize='1'>Learn how Terra works.</Text>
-    </Card>
-  </Link>
-  <Link width={256} to='/learn/protocol#what-is-luna' style={{':hover': {textDecoration: 'none', color: 'inherit', border: '1px solid #5493f7'}, borderRadius: '0.5rem', border: '1px solid black', display: 'inline-block',px: 2,py: 1,color: 'inherit', textDecoration: 'none'}}>
-    <Card sx={{padding: 16, textAlign: 'center' }}>
-      <Image src='/img/wallets_station.png' width='92px' sx={{marginTop: 20, marginBottom: 10}} />
-      <Heading fontSize='3'>Get started with Station</Heading>
-      <Text fontSize='1'>Create a wallet and stake Luna for rewards.</Text>
-    </Card>
-  </Link>
-  <Link width={256} to='/learn/protocol' style={{':hover': {textDecoration: 'none', color: 'inherit', border: '1px solid #5493f7'}, borderRadius: '0.5rem', border: '1px solid black', display: 'inline-block',px: 2,py: 1,color: 'inherit', textDecoration: 'none'}}>
-      <Card sx={{padding: 16, textAlign: 'center' }}>
-        <Image src='/img/icon_luna.svg' width='92px' sx={{marginTop: 20, marginBottom: 10}} />
-        <Heading fontSize='3'>What is Luna?</Heading>
-        <Text fontSize='1'>Learn about Luna.</Text>
-      </Card>
-    </Link>
-    <Link width={256} to='/learn/protocol#validators' style={{':hover': {textDecoration: 'none', color: 'inherit', border: '1px solid #5493f7'}, borderRadius: '0.5rem', border: '1px solid black', display: 'inline-block',px: 2,py: 1,color: 'inherit', textDecoration: 'none'}}>
-          <Card sx={{padding: 16, textAlign: 'center' }}>
-            <Image src='/img/Staking.svg' width='92px' sx={{marginTop: 20, marginBottom: 10}} />
-            <Heading fontSize='3'>Validators and Staking</Heading>
-            <Text fontSize='1'>Find out about validators, consensus, staking, and rewards.</Text>
-          </Card>
-        </Link>
-    <Link width={256} to='/learn/fees' style={{':hover': {textDecoration: 'none', color: 'inherit', border: '1px solid #5493f7'}, borderRadius: '0.5rem', border: '1px solid black', display: 'inline-block',px: 2,py: 1,color: 'inherit', textDecoration: 'none'}}>
-              <Card sx={{padding: 16, textAlign: 'center' }}>
-                <Image src='/img/Fees.svg' width='92px' sx={{marginTop: 20, marginBottom: 10}} />
-                <Heading fontSize='3'>How fees work</Heading>
-                <Text fontSize='1'>Learn how fees become staking rewards.</Text>
-              </Card>
-            </Link>
-    <Link width={256} to='/learn/glossary' style={{':hover': {textDecoration: 'none', color: 'inherit', border: '1px solid #5493f7'}, borderRadius: '0.5rem', border: '1px solid black', display: 'inline-block',px: 2,py: 1,color: 'inherit', textDecoration: 'none'}}>
-              <Card sx={{padding: 16, textAlign: 'center' }}>
-                <Image src='/img/Glossary.svg' width='92px' sx={{marginTop: 20, marginBottom: 10}} />
-                <Heading fontSize='3'>Glossary</Heading>
-                <Text fontSize='1'>Look up terms specific to Terra.</Text>
-              </Card>
-            </Link>
-</Box>
+<div className="cards">
+  <a href='/learn/protocol#what-is-terra'>
+    <ThemedImage sources={{
+      light: '/img/icons/terra.svg',
+      dark: '/img/icons/dark/terra.svg'
+    }} />
+    <div>
+      <h2>What is Terra?</h2>
+      <p>Learn how Terra works.</p>
+    </div>
+  </a>
+  <a href='/learn/protocol#what-is-terra'>
+    <ThemedImage sources={{
+      light: '/img/icons/station/station.svg',
+      dark: '/img/icons/dark/station.svg'
+    }} />
+    <div>
+      <h2>Get started with Station</h2>
+      <p>Create a wallet and stake Luna for rewards.</p>
+    </div>
+  </a>
+  <a href='/learn/protocol#what-is-terra'>
+    <ThemedImage sources={{
+      light: '/img/icons/luna.svg',
+      dark: '/img/icons/dark/luna.svg'
+    }} />
+    <div>
+      <h2>What is Luna?</h2>
+      <p>Learn about Luna.</p>
+    </div>
+  </a>
+  <a href='/learn/protocol#what-is-terra'>
+    <ThemedImage sources={{
+      light: '/img/icons/core/staking.svg',
+      dark: '/img/icons/dark/staking.svg'
+    }} />
+    <div>
+      <h2>Validators and Staking</h2>
+      <p>Find out about validators, consensus, staking, and rewards.</p>
+    </div>
+  </a>
+  <a href='/learn/protocol#what-is-terra' >
+    <ThemedImage sources={{
+      light: '/img/icons/core/feegrant.svg',
+      dark: '/img/icons/dark/feegrant.svg'
+    }} />
+    <div>
+      <h2>How fees work</h2>
+      <p>Learn how fees become staking rewards.</p>
+    </div>
+  </a>
+  <a href='/learn/protocol#what-is-terra'>
+    <ThemedImage sources={{
+      light: '/img/icons/glossary.svg',
+      dark: '/img/icons/dark/glossary.svg'
+    }} />
+    <div>
+      <h2>Glossary</h2>
+      <p>Look up terms specific to Terra.</p>
+    </div>
+  </a>
+</div>
