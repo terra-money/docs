@@ -1,40 +1,41 @@
-# Use Terrain with the testnet
+# Use Terrain with testnet
 
 The [Pisco testnet](../../learn/glossary.md#testnet) is used for testing transactions on the Terra network.
 
 ## Prerequisites
 
-- [Install the Terra Station browser extension](../../learn/terra-station/download/terra-station-chrome.md)
+- Install the [Terra Station Chrome extension](../../learn/terra-station/download/terra-station-chrome.md).
 
-## Create a Pisco wallet
+## Create a test wallet
 
-[Create a new wallet](../../learn/terra-station/download/terra-station-chrome.md#create-a-wallet) using the Terra Station extension. It's recommended that you name this wallet "Pisco" or "testnet" so it's easy to remember.
+Open the Terra Station browser extension and [create a new wallet](../../learn/terra-station/download/terra-station-chrome.md#create-a-wallet) for testing purposes.
 
-After creating a Pisco wallet and storing the seed phrase, request funds from the testnet faucet:
+:::{tip}
+Name your test wallet something that's easy to remember such as "testnet" or "pisco".
+:::
 
-https://faucet.terra.money
+After creating a testing wallet and storing the seed phrase, you may request funds from [the testnet faucet](https://faucet.terra.money) in order to have tokens to carry out transactions on testnet.
 
-:::{danger}
-Make sure you have your seed phrase stored somewhere since you will need it to complete this tutorial.
+:::{Warning}
+Make sure you have your seed phrase available as you will need it to complete this tutorial.
 :::
 
 # Counter tutorial
 
-After creating a testnet wallet, you are ready to use Terrain. This short tutorial walks you through setting up your project and creating a simple counter that increments upon request.
+After creating a test wallet, you are ready to use Terrain. This short tutorial walks you through setting up your project and creating a simple counter that increments upon request.
 
 ## 1. Scaffold your dApp
 
-Scaffold your new application:
+Scaffold your new application.
 
 ```sh
 terrain new my_terra_dapp
 cd my_terra_dapp
-npm install
 ```
 
 ### Project structure
 
-The following structure shows your scaffolded project:
+Your scaffolded project will have the following structure.
 
 ```
 .
@@ -51,9 +52,9 @@ The following structure shows your scaffolded project:
 
 ## 2. Configure the testnet
 
-Before deploying, Terrain needs to learn how to access your Pisco wallet. To do this you'll need to modify `keys.terrain.js` in the generated project.
+Before deploying, you will need to supply your testing wallet's mnemonic to Terrain so that it may use the wallet to carry out transactions. To do this, you'll need to modify `keys.terrain.js` in the generated project.
 
-Modify the configuration and input your seed phrase to look like this:
+Modify the configuration and provide your seed phrase.
 
 ```
 module.exports = {
@@ -66,76 +67,76 @@ module.exports = {
 
 ## 3. Deploy
 
-To deploy the application, run the following command:
+To deploy the application, you can run the following command in your terminal.
 
 ```sh
-terrain deploy my_terra_dapp --signer pisco --network testnet
+terrain deploy my_terra_dapp --signer <your-test-wallet-name> --network testnet
 ```
 
-The deploy command performs the following steps automatically:
+The deploy command performs the following steps automatically.
 
-- Builds the counter smart contract.
-- Optimizes the counter smart contract.
-- Uploads counter smart contract to testnet.
+- Builds the smart contract.
+- Optimizes the smart contract.
+- Uploads the smart contract to testnet.
 - Instantiates the deployed smart contract.
 
 :::{warning}
-If you get the following error:
+If you get the following error, wait a few seconds and then try running the deploy command again.
 
 ```
 CLIError: account sequence mismatch, expected 1, got 0: incorrect account sequence
 ```
-
-Wait a few seconds then try the deploy command again.
 :::
 
 ## 3. Generate TypeScript client
 
 Terrain 0.5.x and above includes the ability to automatically generate a TypeScript client based on your smart contract schema.
 
-Generating a client is easy, just run the following command:
+You can generate a client by running the following command in your terminal.
 
 ```
 terrain contract:generateClient my_terra_dapp --build-schema
 ```
 
-The generated client will be put in `./lib/clients` and copied to the frontend.
+The client will be generated in `./lib/clients` and copied into the frontend directory.
 
 ## 4. Interact with the deployed contract
 
-The Terrain template comes with several predefined helpers in `lib/index.js`. Use them to start interacting with your smart contract:
+The template dApp comes with several predefined helpers in `lib/index.js`. You may use these to start interacting with your smart contract.
 
-1. Run `terrain console --network testnet --signer pisco`.
+1. Start the Terrain console. 
+   ```
+   terrain console --network testnet --signer <your-test-wallet-name>
+   ```
 
-2. With the console open, increment the counter by running the following:
+2. In the Terrain console, you can increment the counter by running the following command.
 
    ```JavaScript
    await lib.increment();
    ```
 
-   You can get the current count by using:
+   You can also get the current count.
 
    ```JavaScript
    await lib.getCount()
    ```
 
-3. After incrementing once, `await lib.getCount()` will return:
+3. After incrementing once, `await lib.getCount()` should return a count of 1.
 
    ```JSON
    { count: 1 }
    ```
 
-## 5. Front-end scaffolding
+## 5. Front end scaffolding
 
-Terrain also scaffolds a very simple front-end.
+When you scaffold a template app with Terrain, it will contain a simple front end.
 
-1. In the Terra Station Chrome extension, [switch the network to `testnet`](../../learn/terra-station/testnet.md).
+1. In the Terra Station Chrome extension, [switch the network to `testnet`](../../learn/terra-station/networks.md).
 
-2. To use the front end, run the following commands in order.
+2. To use the front end, run the following commands.
 
    ```
    cd frontend
-   npm install
    npm start
    ```
 
@@ -147,4 +148,4 @@ Terrain also scaffolds a very simple front-end.
 
 ## Advanced usage
 
-For more advanced use cases such as deploying to the testnet or mainnet, see [Terrain's readme](https://github.com/terra-money/terrain#readme).
+For more advanced use cases such as deploying to testnet or mainnet, please read [Terrain's readme](https://github.com/terra-money/terrain#readme).
