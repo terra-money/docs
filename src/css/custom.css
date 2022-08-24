@@ -1,4 +1,4 @@
-@import url('http://fonts.cdnfonts.com/css/gotham');
+@import './fonts.css';
 
 :root {
   --ifm-menu-color: #627BCB;
@@ -35,8 +35,8 @@
 .menu__link {
   font-family: 'Gotham';
   font-size: 16px;
-  color: #8B9CDA;
-  line-height: 24px;
+  color: #2043B5;
+  line-height: 150%;
 }
 
 /* Level 2 menu item */
@@ -190,7 +190,7 @@ a.navbar__item.navbar__link.header-terra-link:before {
 
 /* Card text styling. */
 .cards div {
-  padding-top: 24px;
+  padding-top: 18px;
 }
 
 .cards h2 {
