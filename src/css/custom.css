@@ -1,3 +1,5 @@
+@import url('http://fonts.cdnfonts.com/css/gotham');
+
 :root {
   --ifm-menu-color: #627BCB;
   --ifm-menu-color-active: #0759E7;
@@ -32,16 +34,45 @@
 
 .menu__link {
   font-family: 'Gotham';
-  font-size: 13px;
+  font-size: 16px;
   color: #8B9CDA;
-  line-height: 19px;
+  line-height: 24px;
+}
+
+/* Level 2 menu item */
+li[class*=' theme-doc-sidebar-item-'][class*="-level-2 "] a.menu__link {
+  font-size: 13px;
+}
+
+li[class*=' theme-doc-sidebar-item-'][class*="-level-2 "] [class$='caret'] {
+  padding-right: 20px;
+}
+
+/* Level 2 menu caret */
+/* li[class*=' theme-doc-sidebar-item-'][class*="-level-2 "] [class$='caret']::after,
+li[class*=' theme-doc-sidebar-item-'][class*="-level-2 "] [class$='caret']::before {
+  
+} */
+
+/* Level 3 menu item */
+li[class*=' theme-doc-sidebar-item-'][class*="-level-3 "] a.menu__link {
+  font-size: 12px;
+}
+
+/* Level 3 menu caret */
+/* li[class*=' theme-doc-sidebar-item-'][class*="-level-3 "] [class$='caret']::after, 
+li[class*=' theme-doc-sidebar-item-'][class*="-level-3 "] [class$='caret']::before {
+  
+} */
+
+li[class*=' theme-doc-sidebar-item-'][class*="-level-3 "] [class$='caret'] {
+  padding-right: 40px;
 }
 
 .menu__link--active {
-  font-weight: bold;
+  font-weight: 500;
   font-size: 16px;
   color: #2043B5;
-  line-height: 24px;
 }
 
 .footer__copyright {
@@ -133,14 +164,81 @@ a.navbar__item.navbar__link.header-terra-link:before {
 
 [data-theme='dark'] .menu__link {
   font-family: 'Gotham';
-  font-size: 13px;
+  font-size: 16px;
   color: #8D8D8D;
-  line-height: 19px;
+  line-height: 24px;
 }
 
 [data-theme='dark'] .menu__link--active {
-  font-weight: bold;
+  font-weight: 500;
   font-size: 16px;
   color: #DBDBDB;
+}
+
+/* Grid styling for Box element containing cards. */
+.cards {
+  display: grid;
+  grid-gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-auto-rows: 1fr;
+}
+
+/* Card text styling. */
+.cards h2 {
+  font-size: 16px;
+  font-weight: 500;
+  font-family: 'Gotham';
+  color: #2043B5;
+  padding: 7px 0px 1px 0px;
   line-height: 24px;
+}
+
+.card-description {
+  font-size: 14px;
+  font-weight: 400;
+  font-family: 'Gotham';
+  color: #8B9CDA;
+  line-height: 21px;
+}
+
+/* Individual card sytling */
+.cards a {
+  border: 1px solid #EBEFF8;
+  background-color: #F9FAFF;
+  text-decoration: none;
+  padding: 25px;
+  display: grid;
+  grid-gap: 1px;
+  grid-template-columns: 70px 300px;
+  border-radius: 0.5em;
+  align-items: center;
+}
+
+.cards a:hover {
+  box-shadow: 3px 3px 6px rgba(33,33,33,.2);
+  /* border: 1.5px solid #EBEFF8;  */
+  transform: scale(1.015);
+}
+
+[data-theme='dark'] .cards a {
+  border: 1px solid #343536;
+  background-color: #1C1C1C;
+}
+
+[data-theme='dark'] .cards h2 {
+  color: #DBDBDB;
+}
+
+[data-theme='dark'] .cards div {
+  color: #8D8D8D;
+}
+
+[dark-theme='dark'] .cards a:hover {
+  box-shadow: 13px 13px rgba(255, 255, 255);
+  /* border: 1.5px solid #EBEFF8;  */
+  transform: scale(1.015);
+}
+
+[dark-theme='dark'] .cards img {
+  filter: brightness(200%);
 }
