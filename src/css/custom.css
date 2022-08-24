@@ -1,4 +1,5 @@
-@import url('http://fonts.cdnfonts.com/css/gotham');
+/* @import url('http://fonts.cdnfonts.com/css/gotham'); */
+@import './fonts.css';
 
 :root {
   --ifm-menu-color: #627BCB;
@@ -35,12 +36,13 @@
 .menu__link {
   font-family: 'Gotham';
   font-size: 16px;
-  color: #8B9CDA;
-  line-height: 24px;
+  color: #2043B5;
+  line-height: 150%;
 }
 
 /* Level 2 menu item */
 li[class*=' theme-doc-sidebar-item-'][class*="-level-2 "] a.menu__link {
+  color: #8B9CDA;
   font-size: 13px;
 }
 
@@ -51,29 +53,30 @@ li[class*=' theme-doc-sidebar-item-'][class*="-level-2 "] [class$='caret'] {
 /* Level 2 menu caret */
 /* li[class*=' theme-doc-sidebar-item-'][class*="-level-2 "] [class$='caret']::after,
 li[class*=' theme-doc-sidebar-item-'][class*="-level-2 "] [class$='caret']::before {
-  
+
 } */
 
 /* Level 3 menu item */
 li[class*=' theme-doc-sidebar-item-'][class*="-level-3 "] a.menu__link {
+  color: #8B9CDA;
   font-size: 12px;
 }
 
 /* Level 3 menu caret */
-/* li[class*=' theme-doc-sidebar-item-'][class*="-level-3 "] [class$='caret']::after, 
+/* li[class*=' theme-doc-sidebar-item-'][class*="-level-3 "] [class$='caret']::after,
 li[class*=' theme-doc-sidebar-item-'][class*="-level-3 "] [class$='caret']::before {
-  
+
 } */
 
 li[class*=' theme-doc-sidebar-item-'][class*="-level-3 "] [class$='caret'] {
   padding-right: 40px;
 }
 
-.menu__link--active {
+/* .menu__link--active {
   font-weight: 500;
   font-size: 16px;
   color: #2043B5;
-}
+} */
 
 .footer__copyright {
   text-align: left;
