@@ -182,7 +182,7 @@ To learn how to vote with your staked Luna or submit proposals, visit the [Terra
 
 ### Proposals
 
-Proposals start as ideas within the community. A community member drafts and submits a proposal alongside an initial deposit.
+Proposals start as ideas within the community on Terra's [Agora forum](https://agora.terra.money/). After gaining support and feedback from the community, a proposer [drafts and submits](./terra-station/governance.md#create-a-new-proposal) a proposal alongside an [initial deposit](./terra-station/governance.md#deposit-luna-to-a-proposal).
 
 The most common proposal types include:
 
