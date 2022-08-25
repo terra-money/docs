@@ -66,7 +66,7 @@
 .menu__link {
   font-family: 'Gotham';
   font-size: 16px;
-  color: #2043B5;
+  color: #8B9CDA;
   line-height: 150%;
 }
 
@@ -233,16 +233,16 @@ a.navbar__item.navbar__link.header-terra-link:before {
   margin-bottom: 5px;
 }
 
+[data-theme='dark'] .cards h2 {
+  color: #DBDBDB;
+}
+
 .cards p {
   font-size: 14px;
   font-weight: 400;
   font-family: 'Gotham';
   color: #8B9CDA;
   line-height: 21px;
-}
-
-[data-theme='dark'] .cards h2 {
-  color: #DBDBDB;
 }
 
 [data-theme='dark'] .cards p {
@@ -262,15 +262,15 @@ a.navbar__item.navbar__link.header-terra-link:before {
   align-items: center;
 }
 
+[data-theme='dark'] .cards a {
+  border: 1px solid #343536;
+  background-color: #1C1C1C;
+}
+
 .cards a:hover {
   box-shadow: 3px 3px 6px rgb(55, 55, 55, 0.25);
   transform: scale(1.015);
   border-color: #275BDE;
-}
-
-[data-theme='dark'] .cards a {
-  border: 1px solid #343536;
-  background-color: #1C1C1C;
 }
 
 [data-theme='dark'] .cards a:hover {
