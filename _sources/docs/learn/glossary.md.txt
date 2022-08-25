@@ -102,7 +102,7 @@ A section of the Terra core that represents a particular function of the Terra p
 
 ## Phoenix-1
 
-The latest version of the [Terra mainnet](#terra-mainnet)
+The latest version of the [Terra mainnet](#terra-mainnet). 
 
 ## Pools
 
