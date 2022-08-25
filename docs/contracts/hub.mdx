@@ -1,0 +1,287 @@
+# Improv hub
+
+The hub contract is responsible for the creation of new stories and maintaining the state of all ongoing stories. 
+
+
+## Messages
+
+<CH.Scrollycoding>
+
+## InstantiateMsg
+
+Instantiate the Improv hub contract.
+
+
+<CH.Code>
+
+```json JSON
+
+{
+  "owner": "<Terra-address>",
+  "wormhole_core_bridge_addr": "<Terra-address>",
+  "wormhole_token_bridge_addr": "<Terra-address>",
+  "improv_relayer_addr": "<Terra-address>",
+  "bid_token": "<Terra-address>",
+  "writing_extension_period": 1661296904,
+  "auction_report_submission_period": 1661296904,
+  "voting_period": 1661296904,
+  "veto_threshold": "0.5"
+}
+```
+
+
+```rust struct
+
+pub struct InstantiateMsg {
+    pub owner: String,
+    pub wormhole_core_bridge_addr: String,
+    pub wormhole_token_bridge_addr: String,
+    pub improv_relayer_addr: String,
+    pub bid_token: String,
+    pub writing_extension_period: u64,
+    pub auction_report_submission_period: u64,
+    pub voting_period: u64,
+    pub veto_threshold: Decimal,
+}
+
+```
+
+</CH.Code>
+
+</CH.Scrollycoding>
+
+## ExecuteMsgs
+
+<CH.Scrollycoding>
+### create_proposal
+
+Create a proposal to be submitted to the community for casting. Writers post a pitch with a synopsis, open cast positions (character bios), minimum funding target, deadline, self-introduction, etc.
+
+
+<CH.Code>
+
+```json JSON
+
+{
+  "create_proposal": {
+    "synopsis": "string",
+    "min_funding_target": "u128",
+    "writing_deadline": u64,
+    "bidding_deadline": u64,
+    "author_self_intro": "string",
+    "cast": [
+      {
+        "chain_id": 2,
+        "reserve_price": "100000000",
+        "increment": "10000000",
+        "collections": [
+          [
+            0, 211, 109, 140, 122, 144, 121, 30, 247, 18, 45, 161, 65, 254, 149,
+            244, 91, 45, 133, 49, 27, 173, 12, 221, 185, 156, 34, 61, 158, 128,
+            95, 211
+          ]
+        ]
+      }
+    ]
+  }
+}
+```
+
+```rust struct
+
+    CreateProposal {
+        /// A short description for story proposal
+        synopsis: String,
+        /// List of cast positions open
+        cast: Vec<CastPositionRequest>,
+        /// Min funding required to write story
+        min_funding_target: u128,
+        /// Deadline for author to submit completed story
+        writing_deadline: u64,
+        /// Deadline to place bids during open casting
+        bidding_deadline: u64,
+        /// Author's intro
+        author_self_intro: String,
+    },
+
+```
+
+```json Example 
+{
+  "create_proposal": {
+    "synopsis": "A blade runner must pursue and terminate four replicants who stole a ship in space, and have returned to Earth to find their creator.",
+    "min_funding_target": "300000000",
+    "writing_deadline": 1661296904,
+    "bidding_deadline": 1661296904,
+    "author_self_intro": "Reginald Rose (regie.eth) is a playwright who tweets things about penguins... latest piece was “In the Darkness",
+    "cast": [
+      {
+        "chain_id": 2,
+        "reserve_price": "100000000",
+        "increment": "10000000",
+        "collections": [
+          [
+            0, 211, 109, 140, 122, 144, 121, 30, 247, 18, 45, 161, 65, 254, 149,
+            244, 91, 45, 133, 49, 27, 173, 12, 221, 185, 156, 34, 61, 158, 128,
+            95, 211
+          ]
+        ]
+      }
+    ]
+  }
+}
+```
+
+</CH.Code>
+
+---
+
+### submit_story
+
+When the writer is finished, they can post the finished manuscript (in plaintext or pdf).
+
+```json JSON
+{
+  "submit_story": {
+    "proposal_id": 1,
+    "is_final": false,
+    "story_uri": "https://mag.wcoomd.org/uploads/2018/05/blank.pdf"
+  }
+}
+```
+
+---
+
+### whitelist_collection (internal)
+
+Contract owner can whitelist new NFT collections.
+
+```json JSON
+{
+  "whitelist_collection": {
+    "chain_id": 2,
+    "address": [
+      0, 211, 109, 140, 122, 144, 121, 30, 247, 18, 45, 161, 65, 254, 149, 244,
+      91, 45, 133, 49, 27, 173, 12, 221, 185, 156, 34, 61, 158, 128, 95, 211
+    ],
+    "name": null
+  }
+}
+```
+</CH.Scrollycoding>
+
+## QueryMsgs
+
+<CH.Scrollycoding>
+
+### Config
+
+Gets the configuration for Improv Hub.
+
+<CH.Code>
+```json Request
+{
+  "config": {}
+}
+```
+---
+```json Response
+{
+  "owner": "terra...",
+  "wormhole_core_bridge_addr": "terra...",
+  "wormhole_token_bridge_addr": "terra...",
+  "improv_relayer_addr": "terra...",
+  "bid_token": "terra...",
+  "writing_extension_period": 1661296904,
+  "auction_report_submission_period": 1661296904,
+  "voting_period": 1661296904,
+  "veto_threshold": "0.5"
+}
+```
+</CH.Code>
+
+---
+
+### State
+
+Gets state information of Improv Hub.
+
+<CH.Code>
+
+```json Request focus=2
+{
+  "state": {}
+}
+```
+---
+```json Response focus=2:3
+{
+  "total_proposals": 1,
+  "total_collections": 1
+}
+```
+</CH.Code>
+
+
+---
+
+### view_proposal
+
+View a submitted proposal.
+
+<CH.Code rows={2}>
+
+```json Request focus=2
+{
+  "proposal": { "proposal_id": 1 }
+}
+```
+---
+
+```json Response
+{
+  "id": 1,
+  "status": "InAuction",
+  "synopsis": "A blade runner must pursue and terminate four replicants who stole a ship in space, and have returned to Earth to find their creator.",
+  "min_funding_target": "300000000",
+  "writing_deadline": 1661296904,
+  "bidding_deadline": 1661296904,
+  "author_self_intro": "Reginald Rose (regie.eth) is a playwright who tweets things about penguins... latest piece was “In the Darkness",
+  "author": "terra...",
+  "author_self_intro": "Reginald Rose (regie.eth) is a playwright who tweets things about penguins... latest piece was “In the Darkness",
+  "is_story_final": false,
+  "story_uri": "https://mag.wcoomd.org/uploads/2018/05/blank.pdf",
+  "story_submission_time": 1661296904,
+  "cast": [
+    {
+      "character_id": 1,
+      "chain_id": 2,
+      "reserve_price": "100000000",
+      "increment": "10000000",
+      "collections": [
+        [
+          0, 211, 109, 140, 122, 144, 121, 30, 247, 18, 45, 161, 65, 254, 149,
+          244, 91, 45, 133, 49, 27, 173, 12, 221, 185, 156, 34, 61, 158, 128,
+          95, 211
+        ]
+      ],
+      "vote": null,
+      "bid_amount": "100000000",
+      "nft_address": [
+        0, 211, 109, 140, 122, 144, 121, 30, 247, 18, 45, 161, 65, 254, 149,
+        244, 91, 45, 133, 49, 27, 173, 12, 221, 185, 156, 34, 61, 158, 128, 95,
+        211
+      ],
+      "nft_token_id": 1
+    }
+  ],
+  "veto_id": 0,
+  "total_vetoes": 0,
+  "veto_reports": [],
+  "auction_reports": [],
+  "bridged_funds": []
+}
+```
+</CH.Code>
+
+</CH.Scrollycoding>
