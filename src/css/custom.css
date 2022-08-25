@@ -35,7 +35,7 @@
 .menu__link {
   font-family: 'Gotham';
   font-size: 16px;
-  color: #2043B5;
+  color: #8B9CDA;
   line-height: 150%;
 }
 
@@ -66,7 +66,23 @@ li[class*=' theme-doc-sidebar-item-'][class*="-level-3 "] [class$='caret']::befo
 } */
 
 li[class*=' theme-doc-sidebar-item-'][class*="-level-3 "] [class$='caret'] {
+  padding-right: 30px;
+}
+
+li[class*=' theme-doc-sidebar-item-'][class*="-level-4 "] [class$='caret'] {
   padding-right: 40px;
+}
+
+li[class*=' theme-doc-sidebar-item-'][class*="-level-5 "] [class$='caret'] {
+  padding-right: 50px;
+}
+
+li[class*=' theme-doc-sidebar-item-'][class*="-level-6 "] [class$='caret'] {
+  padding-right: 60px;
+}
+
+li[class*=' theme-doc-sidebar-item-'][class*="-level-7 "] [class$='caret'] {
+  padding-right: 70px;
 }
 
 .menu__link--active {
@@ -158,6 +174,8 @@ a.navbar__item.navbar__link.header-terra-link:before {
   --ifm-footer-link-color: #8D8D8D !important;
 }
 
+
+/* Sidebar styling. */
 [data-theme='dark'] .menu {
   background-color: #1C1C1C;
 }
@@ -202,16 +220,16 @@ a.navbar__item.navbar__link.header-terra-link:before {
   margin-bottom: 5px;
 }
 
+[data-theme='dark'] .cards h2 {
+  color: #DBDBDB;
+}
+
 .cards p {
   font-size: 14px;
   font-weight: 400;
   font-family: 'Gotham';
   color: #8B9CDA;
   line-height: 21px;
-}
-
-[data-theme='dark'] .cards h2 {
-  color: #DBDBDB;
 }
 
 [data-theme='dark'] .cards p {
@@ -231,19 +249,81 @@ a.navbar__item.navbar__link.header-terra-link:before {
   align-items: center;
 }
 
+[data-theme='dark'] .cards a {
+  border: 1px solid #343536;
+  background-color: #1C1C1C;
+}
+
 .cards a:hover {
   box-shadow: 3px 3px 6px rgb(55, 55, 55, 0.25);
   transform: scale(1.015);
   border-color: #275BDE;
 }
 
-[data-theme='dark'] .cards a {
-  border: 1px solid #343536;
-  background-color: #1C1C1C;
-}
-
 [data-theme='dark'] .cards a:hover {
   box-shadow: 3px 3px 6px rgba(150, 150, 150, 0.25);
   transform: scale(1.015);
   border-color: #459CF4;
+}
+
+/* Pagination border styling */
+.pagination-nav__link {
+  border: 0px
+}
+
+
+/* Pagination text styling */
+.pagination-nav__sublabel {
+  font-family: 'Gotham';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: #8B9CDA;
+}
+
+[data-theme='dark'] .pagination-nav__sublabel {
+  color: #8D8D8D;
+}
+
+.pagination-nav__label {
+  font-family: 'Gotham';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: #0759E7;
+  padding-top: 2px;
+}
+
+[data-theme='dark'] .pagination-nav__label {
+  color: #459CF4;
+}
+
+.pagination-nav__link:hover {
+  border: 1px solid #275BDE;
+}
+
+/* Pagination hover styling */
+[data-theme='dark'] .pagination-nav__link:hover {
+  border: 1px solid #459CF4;
+}
+
+/* Pagination arrow styling */
+a[class$='pagination-nav__link--prev'] .pagination-nav__label::before {
+  padding-right: 10px;
+  content: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 0L9.41 1.41L3.83 7H16V9H3.83L9.41 14.59L8 16L0 8L8 0Z' fill='%230759E7'/%3E%3C/svg%3E");
+}
+
+[data-theme='dark'] a[class$='pagination-nav__link--prev'] .pagination-nav__label::before {
+  content: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 0L9.41 1.41L3.83 7H16V9H3.83L9.41 14.59L8 16L0 8L8 0Z' fill='%23459CF4'/%3E%3C/svg%3E%0A");
+}
+
+a[class$='pagination-nav__link--next'] .pagination-nav__label::after {
+  padding-left: 10px;
+  content: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 0L6.59 1.41L12.17 7H0V9H12.17L6.59 14.59L8 16L16 8L8 0Z' fill='%230759E7'/%3E%3C/svg%3E ");
+}
+
+[data-theme='dark'] a[class$='pagination-nav__link--next'] .pagination-nav__label::after {
+  content: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 0L6.59 1.41L12.17 7H0V9H12.17L6.59 14.59L8 16L16 8L8 0Z' fill='%23459CF4'/%3E%3C/svg%3E ");
 }
