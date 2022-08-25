@@ -1,0 +1,41 @@
+## Starting a story
+
+- Writer submits a proposal to `improv-hub`; each character in the proposal is associated with a `chain-id` and a list of addresses indicating NFT collections that character can be from
+    - *Implementation details*
+        - `improv-hub` submits a message to Wormhole that contains information about the proposal:
+            - Proposal ID
+            - Character IDs, whitelisted NFT collections
+            - Auction end time
+            - Auction reserve price (minimum bid price)
+            - Auction minimum increment (next bidder must be X higher than current bid)
+- Bidders on various chains submit a bid to the `improv-auction` contract on their respective chain
+    - *Implementation details*
+        - If there is no information about the specific proposal in the `improv-auction` contract, the bidder includes the message `improv-hub` submitted to wormhole with the bid submission
+            - The client will query the proposal VAA from wormhole and send along with bid info
+            - `improv-auction` will keep track of relevant proposal info: characters, auction end time, etc
+        - Otherwise `improv-auction` implements an English auction as normal
+            - Accept bids until the auction end time
+            - Each bid is denominated in USDC, and specifies an NFT contract and its token ID
+            - Ensure the submitter of the bid is also the owner of the NFT
+            - Bids must be greater than the reserve price, and each successive bid must be greater by at least the minimum increment
+            - When there is a new highest bid, return the funds from the original highest bid to the bidder
+- When the auction is over, there is a timer of 30 minutes for relayers to report the state of  `improv-auction` on each chain to `improv-hub` ; after which anybody can call `improv-hub` to finalize / fail the proposal
+    - *Here's how the reporting process works*
+        - A relayer calls `improv-auction` on some chain with a proposal ID. `improv-auction` calls wormhole with information containing the winning bids (or their lack thereof)
+        - The relayer picks up the message from wormhole once finalized, and then submits the VAA to `improv-hub`, which records the auction state
+    - *Here's how finalization would work*
+        - Ensure at least 30 minutes have passed since the auction end
+        - If there are bids for each character and the total is above the minimum funding target, kick off the story; and call wormhole indicating success for the proposal (no auction report == no bids)
+        - Otherwise, call wormhole indicating failure for the proposal
+- At this point `improv-hub` has either failed or passed the proposal; the final thing to do is relay this to the various `improv-auction` contracts. This will either move the bids to escrow and mint an arbitration NFT (linked to the character ID), or send them back to the bidder
+
+## Finishing a story
+
+- At any point, the writer can submit a link to Arweave or IPFS to `improv-hub`; along with a flag indicating if it is finished
+- If finished, this kicks off a timer of a week to be vetoed
+- Owners of the arbitration NFT can submit a veto to `improv-auction` , which will call wormhole; a relayer can pick up this message and submit it to `improv-hub`
+- If less than half of the cast has vetoed after a week, funds are released from `improv-hub` to the author
+
+## Bridging funds
+
+- `improv-auction`exposes a function that allows anybody to bridge escrowed funds from it to `improv-hub`
