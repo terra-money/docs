@@ -1,4 +1,4 @@
-# Terra Docs
+# Improv Docs
 
 ## Setup
 
