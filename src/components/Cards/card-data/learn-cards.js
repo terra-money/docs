@@ -43,4 +43,4 @@ const learnCards = [
   },
 ]
 
-export { learnCards };
+export default learnCards;
