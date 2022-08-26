@@ -1,0 +1,33 @@
+# Auction
+
+<CH.Section>
+
+```rust State_Machine
+┌─────────┐
+│InAuction│ ─┬──►  Failed { NoEnoughBidders }
+└─────────┘  │
+             │
+             │    ┌─────────┐
+             └──► │InWriting│ ──┬──►  Failed { WritingDeadlinePassed }
+                  └─────────┘   │
+                      ▲         │
+                      │         │    ┌────────┐
+                      │         └──► │InReview│
+                      │              └───┬────┘
+                      │                  │
+                      │                  ▼
+                      │                                    ┌──────┐
+                      └──── yes ────  [Vetoed]  ─── no ──► │Passed│
+                                                           └──────┘
+
+```
+
+1. A proposal enters the [_`InAuction`_](focus://1[1:11],2[1:11],3[1:11]) state upon creation.
+2. If an auction does not have enough bidders, its status becomes [_`Failed { NoEnoughBidders }`_](focus://2[20:46]).
+3. If enough bidders are found, the status becomes [_`InWriting`_](focus://5[18:29],6[18:29],7[18:29]).
+4. If a writer submits a story after the end of the writing deadline, its status becomes [_`Failed { WritingDeadlinePassed }`_](focus://6[39:71]).
+5. If a writer submits a final version of a story within writing deadline, its status becomes [_`InReview`_](focus://9[38:48],10[38:48],11[38:48]).
+6. If more than half of arbitration owners [_`veto`_](focus://15[39:47]) the story, the proposal moves back to the [_`InWriting`_](focus://5[18:29],6[18:29],7[18:29]) state and repeats steps 4-6.
+7. If a proposal is reviewed without veto before the end of the writing deadline, the status becomes [_`Passed`_](focus://14[60:68],15[60:68],16[60:68]).
+
+</CH.Section>
