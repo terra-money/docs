@@ -1,0 +1,95 @@
+# Improv Auction (Terra)
+
+Facilitates casting auctions and arbitration on Terra.
+
+## InstantiateMsg
+
+```json
+{
+  "owner": "terra...",
+  "improv_hub": "terra...",
+  "bid_token": "terra...",
+  "arbitration_nft": "terra...",
+  "improv_relayer_addr": "terra...",
+  "wormhole_core_bridge_addr": "terra...",
+  "wormhole_token_bridge_addr": "terra..."
+}
+```
+
+## ExecuteMsgs
+
+### Receive
+
+Can be called during a CW20 token transfer when Improv Auction is the recipient. Allows the token transfer to execute a Receive Hook as a subsequent action within the same transaction.
+
+```json
+{
+  "receive": {
+    "amount": "10000000",
+    "sender": "terra...",
+    "msg": "eyAiZXhlY3V0ZV9tc2ciOiAiYmluYXJ5IiB9"
+  }
+}
+```
+
+### Submit Veto
+
+When a story is submitted for review, cast members are issued arbitration NFTS. They can use these NFTs to veto a story. If enough members decide to veto, writer must re-submit the story.
+
+```json
+{
+  "submit_veto": {
+    "proposal_id": 1,
+    "character_id": 1,
+    "start_veto_vaa": "eyAiZXhlY3V0ZV9tc2ciOiAiYmluYXJ5IiB9"
+  }
+}
+```
+
+## Receive Hooks
+
+Messages recieved as part of a CW20 token transfer.
+
+### Submit bid
+
+Any NFT holder can bid on a cast position with their NFT. At the end of the bidding process, the highest bidding NFT fills the cast position.
+
+```json
+{
+  "submit_bid": {
+    "proposal_id": 1,
+    "character_id": 1,
+    "nft_address": "0xefb86a7b9517ff99304ac432cc9d8a06c6693eca",
+    "nft_token_id": "1",
+    "proposal_vaa": "eyAiZXhlY3V0ZV9tc2ciOiAiYmluYXJ5IiB9"
+  }
+}
+```
+
+## QueryMsgs
+
+### Config
+
+Gets the configuration for Improv Hub.
+
+#### Request
+
+```json
+{
+  "config": {}
+}
+```
+
+#### Response
+
+```json
+{
+  "owner": "terra...",
+  "improv_hub": "terra...",
+  "bid_token": "terra...",
+  "arbitration_nft": "terra...",
+  "improv_relayer_addr": "terra...",
+  "wormhole_core_bridge_addr": "terra...",
+  "wormhole_token_bridge_addr": "terra..."
+}
+```
