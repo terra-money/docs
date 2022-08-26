@@ -4,7 +4,7 @@
 
 ```rust State_Machine
 ┌─────────┐
-│InAuction│ ─┬──►  Failed { NoEnoughBidders }
+│InAuction│ ─┬──►  Failed { NotEnoughBidders }
 └─────────┘  │
              │
              │    ┌─────────┐
@@ -23,7 +23,7 @@
 ```
 
 1. A proposal enters the [_`InAuction`_](focus://1[1:11],2[1:11],3[1:11]) state upon creation.
-2. If an auction does not have enough bidders, its status becomes [_`Failed { NoEnoughBidders }`_](focus://2[20:46]).
+2. If an auction does not have enough bidders, its status becomes [_`Failed { NotEnoughBidders }`_](focus://2[20:47]).
 3. If enough bidders are found, the status becomes [_`InWriting`_](focus://5[18:29],6[18:29],7[18:29]).
 4. If a writer submits a story after the end of the writing deadline, its status becomes [_`Failed { WritingDeadlinePassed }`_](focus://6[39:71]).
 5. If a writer submits a final version of a story within writing deadline, its status becomes [_`InReview`_](focus://9[38:48],10[38:48],11[38:48]).
