@@ -3,7 +3,7 @@
 const lightCodeTheme = require('./light.theme.js');
 const darkCodeTheme = require('./dark.theme.js');
 
-const theme = require("shiki/themes/material-default.json");
+const theme = require("shiki/themes/monokai.json");
 const { remarkCodeHike } = require("@code-hike/mdx");
 
 /** @type {import('@docusaurus/types').Config} */
