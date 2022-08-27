@@ -1353,38 +1353,34 @@
   <div class="tex2jax_ignore mathjax_ignore section" id="migrating-cosmwasm-contracts-on-terra">
 <h1>Migrating CosmWasm contracts on Terra<a class="headerlink" href="#migrating-cosmwasm-contracts-on-terra" title="Permalink to this headline">¶</a></h1>
 <p>Contracts on Terra can be initialized as <a class="reference internal" href="../module-specifications/spec-wasm.html#migration"><span class="std std-doc">migratable</span></a>, which allows the administrator to upload a new version of the contract and then send a migrate message to move to the new code.</p>
-<p>This tutorial uses <a class="reference internal" href="README.html"><span class="doc std std-doc">Terrain</span></a>, a Terra development suite designed to simplify the scaffolding, deployment, and migration of your contracts.</p>
-<p>If this is your first time using Terrain, visit the <a class="reference internal" href="initial-setup.html"><span class="doc std std-doc">Initial setup guide</span></a>.</p>
+<p>In this tutorial, you will utilize <a class="reference internal" href="README.html"><span class="doc std std-doc">Terrain</span></a>, a Terra development suite designed to simplify the scaffolding, deployment, and migration of smart contracts.</p>
+<p>If this is your first time using Terrain, visit the <a class="reference internal" href="initial-setup.html"><span class="doc std std-doc">Terrain initial setup</span></a> guide.</p>
 <div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
-<p>There are two key components to a migratable contract:</p>
+<p>There are two key components to a migratable contract.</p>
 <ul class="simple">
-<li><p>A <code class="docutils literal notranslate"><span class="pre">MigrateMsg</span></code> transaction.</p></li>
-<li><p>An admin set, which is the address that’s allowed to perform migrations.</p></li>
+<li><p>The availability of a <code class="docutils literal notranslate"><span class="pre">MigrateMsg</span></code> transaction.</p></li>
+<li><p>A designated administrator whose address will be allowed to perform migrations.</p></li>
 </ul>
 </div>
 <div class="section" id="add-migratemsg-to-contract">
 <h2>1. Add <code class="docutils literal notranslate"><span class="pre">MigrateMsg</span></code> to contract<a class="headerlink" href="#add-migratemsg-to-contract" title="Permalink to this headline">¶</a></h2>
-<p>To implement support for <code class="docutils literal notranslate"><span class="pre">MigrateMsg</span></code>, add the following to <code class="docutils literal notranslate"><span class="pre">msg.rs</span></code>:</p>
+<p>To implement support for <code class="docutils literal notranslate"><span class="pre">MigrateMsg</span></code>, you will need to add the message to <code class="docutils literal notranslate"><span class="pre">msg.rs</span></code>.  To do so, navigate to the <code class="docutils literal notranslate"><span class="pre">msg.rs</span></code> file and place the following code just above the <code class="docutils literal notranslate"><span class="pre">InstantiateMsg</span></code> struct.</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[derive(Serialize, Deserialize, Clone, Debug, PartialEq, JsonSchema)]</span><span class="w"></span>
 <span class="k">pub</span><span class="w"> </span><span class="k">struct</span> <span class="nc">MigrateMsg</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
 </pre></div>
 </div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>You can place this message anywhere, however; it is usually placed above the <code class="docutils literal notranslate"><span class="pre">InstantiateMsg</span></code> struct.</p>
-</div>
 </div>
 <div class="section" id="update-contract-rs">
 <h2>2. Update <code class="docutils literal notranslate"><span class="pre">contract.rs</span></code><a class="headerlink" href="#update-contract-rs" title="Permalink to this headline">¶</a></h2>
-<p>Now that <code class="docutils literal notranslate"><span class="pre">MigrateMsg</span></code> is defined, you will need to update <code class="docutils literal notranslate"><span class="pre">contract.rs</span></code>:</p>
+<p>Now that <code class="docutils literal notranslate"><span class="pre">MigrateMsg</span></code> is defined, you will need to update the <code class="docutils literal notranslate"><span class="pre">contract.rs</span></code> file.</p>
 <ol class="arabic">
-<li><p>Update the import from <code class="docutils literal notranslate"><span class="pre">crate::msg</span></code> to include <code class="docutils literal notranslate"><span class="pre">MigrateMsg</span></code>:</p>
+<li><p>Update the import from <code class="docutils literal notranslate"><span class="pre">crate::msg</span></code> to include <code class="docutils literal notranslate"><span class="pre">MigrateMsg</span></code>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">use</span> <span class="n">crate</span><span class="p">::</span><span class="n">msg</span><span class="p">::{</span><span class="n">CountResponse</span><span class="p">,</span> <span class="n">ExecuteMsg</span><span class="p">,</span> <span class="n">InstantiateMsg</span><span class="p">,</span> <span class="n">QueryMsg</span><span class="p">,</span> <span class="n">MigrateMsg</span><span class="p">};</span>
 </pre></div>
 </div>
 </li>
-<li><p>Add the following method above <code class="docutils literal notranslate"><span class="pre">instantiate</span></code>:</p>
+<li><p>Add the following method above <code class="docutils literal notranslate"><span class="pre">instantiate</span></code>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#[cfg_attr(not(feature = &quot;library&quot;), entry_point)]</span>
 <span class="n">pub</span> <span class="n">fn</span> <span class="n">migrate</span><span class="p">(</span><span class="n">_deps</span><span class="p">:</span> <span class="n">DepsMut</span><span class="p">,</span> <span class="n">_env</span><span class="p">:</span> <span class="n">Env</span><span class="p">,</span> <span class="n">_msg</span><span class="p">:</span> <span class="n">MigrateMsg</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">StdResult</span><span class="o">&lt;</span><span class="n">Response</span><span class="o">&gt;</span> <span class="p">{</span>
     <span class="n">Ok</span><span class="p">(</span><span class="n">Response</span><span class="p">::</span><span class="n">default</span><span class="p">())</span>
@@ -1396,14 +1392,16 @@
 </div>
 <div class="section" id="call-migrate">
 <h2>3. Call migrate<a class="headerlink" href="#call-migrate" title="Permalink to this headline">¶</a></h2>
-<p>In previous <a class="reference internal" href="README.html"><span class="doc std std-doc">Terrain tutorials</span></a>, you learned how to deploy the contract. Now you will be able to initialize it as migratable.</p>
-<p>After adding MigrateMsg to the smart contract, redeploy and add the <code class="docutils literal notranslate"><span class="pre">--set-signer-as-admin</span></code> flag.
-This flag tells Terra that the transaction signer is allowed to migrate the contract in the future:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">terrain</span> <span class="n">deploy</span> <span class="n">counter</span> <span class="o">--</span><span class="n">signer</span> <span class="n">test1</span> <span class="o">--</span><span class="nb">set</span><span class="o">-</span><span class="n">signer</span><span class="o">-</span><span class="k">as</span><span class="o">-</span><span class="n">admin</span>
+<p>Adding the MigrateMsg to the smart contract allows the contract’s administrator to migrate the contract in the future. When we deploy our contract, the wallet address of the signer will be automatically designated as the contract administrator. In the following command, the contract is deployed with the preconfigured <a class="reference internal" href="../localterra/install-localterra.html"><span class="doc std std-doc">LocalTerra</span></a> <code class="docutils literal notranslate"><span class="pre">test1</span></code> wallet as the signer and administrator of our counter contract.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">terrain</span> <span class="n">deploy</span> <span class="n">counter</span> <span class="o">--</span><span class="n">signer</span> <span class="n">test1</span>
 </pre></div>
 </div>
-<p>With the new contract deployed you can make some changes then migrate to the new code with the following command:</p>
+<p>If you decide to make changes to the deployed contract, you can migrate to the updated code by executing the following command.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">terrain</span> <span class="n">contract</span><span class="p">:</span><span class="n">migrate</span> <span class="n">counter</span> <span class="o">--</span><span class="n">signer</span> <span class="n">test1</span>
+</pre></div>
+</div>
+<p>If you would like to specify the address of the desired administrator for your smart contract, you may utilize the <code class="docutils literal notranslate"><span class="pre">--admin-address</span></code> flag in the deploy command followed by the wallet address of the desired administrator.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">terrain</span> <span class="n">deploy</span> <span class="n">counter</span> <span class="o">--</span><span class="n">signer</span> <span class="n">test1</span> <span class="o">--</span><span class="n">admin</span><span class="o">-</span><span class="n">address</span> <span class="o">&lt;</span><span class="n">insert</span><span class="o">-</span><span class="n">admin</span><span class="o">-</span><span class="n">wallet</span><span class="o">-</span><span class="n">address</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 </div>
