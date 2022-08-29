@@ -2,7 +2,14 @@
 
 Facilitates casting auctions and arbitration on Terra.
 
-## InstantiateMsg
+
+## Messages
+
+<CH.Scrollycoding>
+
+### InstantiateMsg
+
+Instatiate the auction contract.
 
 ```json
 {
@@ -15,8 +22,13 @@ Facilitates casting auctions and arbitration on Terra.
   "wormhole_token_bridge_addr": "terra..."
 }
 ```
+---
+
+</CH.Scrollycoding>
 
 ## ExecuteMsgs
+
+<CH.Scrollycoding>
 
 ### Receive
 
@@ -31,6 +43,7 @@ Can be called during a CW20 token transfer when Improv Auction is the recipient.
   }
 }
 ```
+---
 
 ### Submit Veto
 
@@ -45,10 +58,14 @@ When a story is submitted for review, cast members are issued arbitration NFTS. 
   }
 }
 ```
+</CH.Scrollycoding>
 
 ## Receive Hooks
 
 Messages recieved as part of a CW20 token transfer.
+
+
+<CH.Scrollycoding>
 
 ### Submit bid
 
@@ -65,24 +82,25 @@ Any NFT holder can bid on a cast position with their NFT. At the end of the bidd
   }
 }
 ```
+</CH.Scrollycoding>
 
 ## QueryMsgs
+
+<CH.Scrollycoding>
 
 ### Config
 
 Gets the configuration for Improv Hub.
+<CH.Code>
 
-#### Request
-
-```json
+```json Request
 {
   "config": {}
 }
 ```
+---
 
-#### Response
-
-```json
+```json Response
 {
   "owner": "terra...",
   "improv_hub": "terra...",
@@ -93,3 +111,6 @@ Gets the configuration for Improv Hub.
   "wormhole_token_bridge_addr": "terra..."
 }
 ```
+</CH.Code>
+</CH.Scrollycoding>
+
