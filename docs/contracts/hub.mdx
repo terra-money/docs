@@ -238,7 +238,7 @@ View a submitted proposal.
 ```
 ---
 
-```json Response focus=2:5
+```json Response
 {
   "id": 1,
   "status": "InAuction",
@@ -280,6 +280,52 @@ View a submitted proposal.
   "veto_reports": [],
   "auction_reports": [],
   "bridged_funds": []
+}
+```
+</CH.Code>
+
+---
+
+### Query Whitelisted collections
+
+Query Params
+
+- `order_by`: asc/desc
+- `start_at`: pagination
+- `limit`: (max `50`)
+
+<CH.Code>
+
+
+```json Request
+
+{
+  "whitelisted_collections": {
+    "start_at": null,
+    "limit": 1,
+    "order_by": "asc"
+  }
+}
+```
+---
+
+```json Response
+
+{
+  "collections": [
+    {
+      "id": 1,
+      "chain_id": 18,
+      "address": [
+        0, 211, 109, 140, 122, 144, 121, 30, 247, 18, 45, 161, 65, 254, 149,
+        244, 91, 45, 133, 49, 27, 173, 12, 221, 185, 156, 34, 61, 158, 128, 95,
+        211
+      ],
+      "name": "Bored Apes",
+      "image_uri": "http://a-bored-ape.jpeg"
+    }
+  ],
+  "next_collection": 2
 }
 ```
 </CH.Code>
