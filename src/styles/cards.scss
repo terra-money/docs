@@ -1,0 +1,70 @@
+$font-family_1: 'Gotham';
+
+.cards {
+	display: grid;
+	grid-gap: 16px;
+	grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+	grid-auto-rows: 1fr;
+
+	img {
+		width: 39.1px;
+	}
+
+	h2 {
+		font-size: 16px;
+		font-weight: 500;
+		font-family: $font-family_1;
+		color: #2043B5;
+		line-height: 24px;
+		margin-bottom: 5px;
+	}
+
+	p {
+		font-size: 14px;
+		font-family: $font-family_1;
+		color: #8B9CDA;
+		line-height: 21px;
+    margin-bottom: 0px;
+	}
+
+	a {
+		border: 1px solid #EBEFF8;
+		background-color: #F9FAFF;
+		text-decoration: none;
+		padding: 22px 40px;
+		display: grid;
+		grid-gap: 1px;
+		grid-template-columns: 70px 300px;
+		border-radius: 0.5em;
+		align-items: center;
+
+		&:hover {
+			box-shadow: 3px 3px 6px rgb(55, 55, 55, 0.25);
+			transform: scale(1.015);
+			border-color: #275BDE;
+		}
+	}
+}
+
+[data-theme='dark'] {
+	.cards {
+		h2 {
+			color: #DBDBDB;
+		}
+
+		p {
+			color: #8D8D8D;
+		}
+
+		a {
+			border: 1px solid #343536;
+			background-color: #1C1C1C;
+
+			&:hover {
+				box-shadow: 3px 3px 6px rgba(150, 150, 150, 0.25);
+				transform: scale(1.015);
+				border-color: #459CF4;
+			}
+		}
+	}
+}
