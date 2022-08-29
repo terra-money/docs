@@ -107,6 +107,7 @@ module.exports = async function config() {
         searchPagePath: 'search',
   
         //... other Algolia params
+        position: 'left',
       },
       navbar: {
         title: '',
@@ -131,43 +132,7 @@ module.exports = async function config() {
           },
         ],
       },
-      footer: {
-        links: [
-          {
-            items: [
-              {
-                label: 'Docs',
-                to: '/',
-              },
-            ],
-          },
-          {
-            items: [
-              {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
-              },
-            ],
-          },
-          {
-            items: [
-              {
-                label: 'GitHub',
-                href: 'https://github.com/terra-money/docs',
-              },
-            ],
-          },
-        ],
-        copyright: `Copyright © ${new Date().getFullYear()} TerraForm Labs`,
-      },
+      footer: {},
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
