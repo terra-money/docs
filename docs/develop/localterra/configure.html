@@ -1320,10 +1320,10 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="configure-localterra">
 <h1>Configure LocalTerra<a class="headerlink" href="#configure-localterra" title="Permalink to this headline">¶</a></h1>
-<p>The majority of LocalTerra is implemented through a <code class="docutils literal notranslate"><span class="pre">docker-compose.yml</span></code> file, making it easily customizable. You can use LocalTerra as a starting point for setting up your own local Terra testnet with Docker containers.</p>
+<p>The majority of LocalTerra is implemented inside of the <code class="docutils literal notranslate"><span class="pre">docker-compose.yml</span></code> file, making it easily customizable. You can use LocalTerra as a starting point for setting up your own local Terra testnet with Docker containers.</p>
 <p>Out of the box, LocalTerra comes with several preconfigured settings such as:</p>
 <ul class="simple">
-<li><p>Ports defined for RPC (26657), LCD (1317) and FCD (3060).</p></li>
+<li><p>Ports defined for RPC (26657), LCD (1317), and FCD (3060).</p></li>
 <li><p>Standard <a class="reference internal" href="accounts.html"><span class="doc std std-doc">accounts</span></a>.</p></li>
 </ul>
 <div class="section" id="modify-node-configuration">
@@ -1332,9 +1332,9 @@
 </div>
 <div class="section" id="speed-up-block-time">
 <h2>Speed up block time<a class="headerlink" href="#speed-up-block-time" title="Permalink to this headline">¶</a></h2>
-<p>LocalTerra is often used alongside a script written with the Terra.js or <a class="reference external" href="http://Terra.py">Terra.py</a> as a convenient way to do integration tests. You can greatly improve the experience by speeding up the block time.</p>
-<p>To increase block time, edit the <code class="docutils literal notranslate"><span class="pre">[consensus]</span></code> parameters in the <code class="docutils literal notranslate"><span class="pre">config/config.toml</span></code> file, and specify your own values.</p>
-<p>The following example configures all timeouts to <code class="docutils literal notranslate"><span class="pre">200ms</span></code>:</p>
+<p>LocalTerra is often used alongside <a class="reference internal" href="../terra-js/README.html"><span class="doc std std-doc">Terra.js</span></a> or <a class="reference internal" href="../terra-py/get-started-py.html"><span class="doc std std-doc">Terra.py</span></a> scripting as it is a convenient environment in which to run integration tests. LocalTerra also allows developers to speed up the block time to improve the development experience.</p>
+<p>To increase block time, edit the <code class="docutils literal notranslate"><span class="pre">[consensus]</span></code> parameters in the <code class="docutils literal notranslate"><span class="pre">config/config.toml</span></code> file.</p>
+<p>The following example configures all timeouts to <code class="docutils literal notranslate"><span class="pre">200ms</span></code>.</p>
 <div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="w">##### consensus configuration options #####</span>
 <span class="w">[consensus]</span>
 
@@ -1353,14 +1353,14 @@
 <span class="gi">+ timeout_commit = &quot;200ms&quot;</span><span class="w"></span>
 </pre></div>
 </div>
-<p>Additionally, you can use the following single line to configure timeouts:</p>
+<p>Additionally, you can utilize the following command to achieve the same result.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sed -E -i <span class="s1">&#39;/timeout_(propose|prevote|precommit|commit)/s/[0-9]+m?s/200ms/&#39;</span> config/config.toml
 </pre></div>
 </div>
 </div>
 <div class="section" id="modifying-genesis">
 <h2>Modifying genesis<a class="headerlink" href="#modifying-genesis" title="Permalink to this headline">¶</a></h2>
-<p>You can change the <code class="docutils literal notranslate"><span class="pre">genesis.json</span></code> file by altering <code class="docutils literal notranslate"><span class="pre">config/genesis.json</span></code>. To load your changes, restart your LocalTerra.</p>
+<p>You can modify the <code class="docutils literal notranslate"><span class="pre">genesis.json</span></code> file by altering <code class="docutils literal notranslate"><span class="pre">config/genesis.json</span></code>. Make sure to restart LocalTerra for your changes to be implemented.</p>
 </div>
 </div>
 
