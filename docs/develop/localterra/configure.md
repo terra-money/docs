@@ -1,10 +1,10 @@
 # Configure LocalTerra
 
-The majority of LocalTerra is implemented through a `docker-compose.yml` file, making it easily customizable. You can use LocalTerra as a starting point for setting up your own local Terra testnet with Docker containers.
+The majority of LocalTerra is implemented inside of the `docker-compose.yml` file, making it easily customizable. You can use LocalTerra as a starting point for setting up your own local Terra testnet with Docker containers.
 
 Out of the box, LocalTerra comes with several preconfigured settings such as:
 
-- Ports defined for RPC (26657), LCD (1317) and FCD (3060).
+- Ports defined for RPC (26657), LCD (1317), and FCD (3060).
 - Standard [accounts](accounts.md).
 
 ## Modify node configuration
@@ -13,11 +13,11 @@ You can modify the node configuration of your validator in the `config/config.to
 
 ## Speed up block time
 
-LocalTerra is often used alongside a script written with the Terra.js or Terra.py as a convenient way to do integration tests. You can greatly improve the experience by speeding up the block time.
+LocalTerra is often used alongside [Terra.js](../terra-js/README.md) or [Terra.py](../terra-py/get-started-py.md) scripting as it is a convenient environment in which to run integration tests. LocalTerra also allows developers to speed up the block time to improve the development experience.
 
-To increase block time, edit the `[consensus]` parameters in the `config/config.toml` file, and specify your own values.
+To increase block time, edit the `[consensus]` parameters in the `config/config.toml` file.
 
-The following example configures all timeouts to `200ms`:
+The following example configures all timeouts to `200ms`.
 
 ```diff
 ##### consensus configuration options #####
@@ -38,7 +38,7 @@ wal_file = "data/cs.wal/wal"
 + timeout_commit = "200ms"
 ```
 
-Additionally, you can use the following single line to configure timeouts:
+Additionally, you can utilize the following command to achieve the same result.
 
 ```sh
 sed -E -i '/timeout_(propose|prevote|precommit|commit)/s/[0-9]+m?s/200ms/' config/config.toml
@@ -46,4 +46,4 @@ sed -E -i '/timeout_(propose|prevote|precommit|commit)/s/[0-9]+m?s/200ms/' confi
 
 ## Modifying genesis
 
-You can change the `genesis.json` file by altering `config/genesis.json`. To load your changes, restart your LocalTerra.
+You can modify the `genesis.json` file by altering `config/genesis.json`. Make sure to restart LocalTerra for your changes to be implemented.
