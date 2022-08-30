@@ -1,31 +1,17 @@
 const terraStationCards = [
   {
-    href: './download/',
+    href: '/learn/terra-station/download/',
     lightSvg: '/img/icons/station/station.svg',
     darkSvg: '/img/icons/dark/station.svg',
     header: 'Download Station',
     summary: 'Download Terra Station, the official wallet for Terra.'
   },
   {
-    href: './wallet.html',
+    href: '/learn/terra-station/wallet.html',
     lightSvg: '/img/icons/station/wallet.svg',
     darkSvg: '/img/icons/dark/wallet.svg',
     header: 'Create a wallet',
     summary: 'Create and manage a wallet.'
-  },
-  {
-    href: './networks.html',
-    lightSvg: '/img/icons/swap-1.svg',
-    darkSvg: '/img/icons/dark/swap-1.svg',
-    header: 'Switch networks',
-    summary: 'Switch between networks on Terra.'
-  },
-  {
-    href: './staking.html',
-    lightSvg: '/img/icons/core/staking.svg',
-    darkSvg: '/img/icons/dark/staking.svg',
-    header: 'Stake Luna',
-    summary: 'Stake Luna and start earning rewards.'
   },
   {
     href: 'https://station.terra.money/',
@@ -35,32 +21,39 @@ const terraStationCards = [
     summary: 'Utilize the Terra Station web application for a more complete experience.'
   },
   {
-    href: './governance.html',
-    lightSvg: '/img/icons/core/governance_2.svg',
-    darkSvg: '/img/icons/dark/governance_2.svg',
-    header: 'Governance',
-    summary: 'Learn about governance on Terra.'
+    href: '/learn/terra-station/networks.html',
+    lightSvg: '/img/icons/swap-1.svg',
+    darkSvg: '/img/icons/dark/swap-1.svg',
+    header: 'Switch networks',
+    summary: 'Switch between networks on Terra.'
   },
   {
-    href: './contracts.html',
+    href: '/learn/terra-station/testnet.html',
+    lightSvg: '/img/icons/testnet.svg',
+    darkSvg: '/img/icons/dark/testnet.svg',
+    header: 'Testnet',
+    summary: 'Receive test Luna to carry out transactions on Testnet.'
+  },
+  {
+    href: '/learn/terra-station/staking.html',
+    lightSvg: '/img/icons/core/staking.svg',
+    darkSvg: '/img/icons/dark/staking.svg',
+    header: 'Stake Luna',
+    summary: 'Stake Luna and start earning rewards.'
+  },
+  {
+    href: '/learn/terra-station/contracts.html',
     lightSvg: '/img/icons/smart-contract.svg',
     darkSvg: '/img/icons/dark/smart-contract.svg',
     header: 'Smart Contracts',
     summary: 'Start working with Smart Contracts.'
   },
   {
-    href: './testnet.html',
-    lightSvg: '/img/icons/node.svg',
-    darkSvg: '/img/icons/dark/node.svg',
-    header: 'Testnet',
-    summary: 'Get test Luna and complete transactions in a test environment.'
-  },
-  {
-    href: 'https://faucet.terra.money/',
-    lightSvg: '/img/icons/Faucet.svg',
-    darkSvg: '/img/icons/dark/Faucet.svg',
-    header: 'Faucet',
-    summary: 'Look up terms specific to Terra.'
+    href: '/learn/terra-station/governance.html',
+    lightSvg: '/img/icons/core/governance_2.svg',
+    darkSvg: '/img/icons/dark/governance_2.svg',
+    header: 'Governance',
+    summary: 'Learn about governance on Terra.'
   },
 ]
 
