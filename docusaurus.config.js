@@ -1,16 +1,12 @@
 // @ts-check
-
-const lightCodeTheme = require('./light.theme.js');
-const darkCodeTheme = require('./dark.theme.js');
-
+const lightCodeTheme = require("./light.theme.js");
+const darkCodeTheme = require("./dark.theme.js");
 const theme = require("shiki/themes/material-default.json");
 const { remarkCodeHike } = require("@code-hike/mdx");
-
 /** @type {import('@docusaurus/types').Config} */
-
 module.exports = async function config() {
-  const math = (await import('remark-math')).default;
-  const katex = (await import('rehype-katex')).default;
+  const math = (await import("remark-math")).default;
+  const katex = (await import("rehype-katex")).default;
   return {
     title: "Terra Docs",
     tagline: "The official docs",
@@ -26,7 +22,6 @@ module.exports = async function config() {
       locales: ["en"],
     },
     plugins: ["docusaurus-plugin-sass"],
-
     presets: [
       [
         "classic",
@@ -79,9 +74,7 @@ module.exports = async function config() {
         },
       ],
     ],
-
     themes: ["mdx-v2"],
-
     themeConfig:
       /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
       ({
@@ -113,6 +106,7 @@ module.exports = async function config() {
           searchPagePath: "search",
 
           //... other Algolia params
+          position: "left",
         },
         navbar: {
           title: "",
@@ -137,43 +131,7 @@ module.exports = async function config() {
             },
           ],
         },
-        footer: {
-          links: [
-            {
-              items: [
-                {
-                  label: "Docs",
-                  to: "/",
-                },
-              ],
-            },
-            {
-              items: [
-                {
-                  label: "Stack Overflow",
-                  href: "https://stackoverflow.com/questions/tagged/docusaurus",
-                },
-                {
-                  label: "Discord",
-                  href: "https://discordapp.com/invite/docusaurus",
-                },
-                {
-                  label: "Twitter",
-                  href: "https://twitter.com/docusaurus",
-                },
-              ],
-            },
-            {
-              items: [
-                {
-                  label: "GitHub",
-                  href: "https://github.com/terra-money/docs",
-                },
-              ],
-            },
-          ],
-          copyright: `Copyright © ${new Date().getFullYear()} TerraForm Labs`,
-        },
+        footer: {},
         prism: {
           theme: lightCodeTheme,
           darkTheme: darkCodeTheme,

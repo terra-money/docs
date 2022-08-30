@@ -1,7 +1,6 @@
 import React from 'react';
 import Translate, {translate} from '@docusaurus/Translate';
 import PaginatorNavLink from '@theme/PaginatorNavLink';
-import '../../styles/custom.css';
 
 export default function DocPaginator(props) {
   const {previous, next} = props;
