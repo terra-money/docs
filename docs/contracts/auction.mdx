@@ -1,6 +1,6 @@
-# Improv Auction (Terra)
+# Improv auction (Terra)
 
-Facilitates casting auctions and arbitration on Terra.
+The Improv auction contract facilitates casting auctions and arbitration.
 
 
 ## Messages
@@ -9,7 +9,7 @@ Facilitates casting auctions and arbitration on Terra.
 
 ### InstantiateMsg
 
-Instatiate the auction contract.
+Instatiates the auction contract.
 
 ```json
 {
@@ -32,7 +32,9 @@ Instatiate the auction contract.
 
 ### Receive
 
-Can be called during a CW20 token transfer when Improv Auction is the recipient. Allows the token transfer to execute a Receive Hook as a subsequent action within the same transaction.
+Allows the token transfer to execute a [receive hook](#recieve_hooks) as a subsequent action within the same transaction.
+
+_`recieve`_ can be called during a CW20 token transfer when the Improv auction is the recipient. 
 
 ```json
 {
@@ -47,7 +49,7 @@ Can be called during a CW20 token transfer when Improv Auction is the recipient.
 
 ### Submit Veto
 
-When a story is submitted for review, cast members are issued arbitration NFTS. They can use these NFTs to veto a story. If enough members decide to veto, writer must re-submit the story.
+When a story is submitted for review, all cast members are issued arbitration NFTs. They can use these NFTs to veto a story. If enough members decide to veto, the writer must re-submit the story.
 
 ```json
 {
@@ -60,10 +62,9 @@ When a story is submitted for review, cast members are issued arbitration NFTS. 
 ```
 </CH.Scrollycoding>
 
-## Receive Hooks
+## Receive hooks
 
-Messages recieved as part of a CW20 token transfer.
-
+Messages recieved during a CW20 token transfer.
 
 <CH.Scrollycoding>
 
@@ -90,7 +91,8 @@ Any NFT holder can bid on a cast position with their NFT. At the end of the bidd
 
 ### Config
 
-Gets the configuration for Improv Hub.
+Gets the configuration of the Improv Hub.
+
 <CH.Code>
 
 ```json Request
