@@ -4,14 +4,14 @@ const fullNodeCards = [
     lightSvg: '/img/icons/node.svg',
     darkSvg: '/img/icons/dark/node.svg',
     header: 'Run a full node',
-    summary: 'Walk through the configuration and management of a full node on Terra.'
+    summary: 'Configure and manage a full Terra node.'
   },
   {
     href: '/full-node/run-a-full-terra-node/join-a-network.html',
     lightSvg: '/img/icons/ecosystem02.svg',
     darkSvg: '/img/icons/dark/ecosystem02.svg',
     header: 'Join a network',
-    summary: 'Set up a full node on various Terra networks.'
+    summary: 'Join the mainnet, testnet, or make a local private network.'
   },
   {
     href: '/module-specifications',

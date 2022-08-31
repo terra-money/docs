@@ -39,7 +39,7 @@ const developCards = [
     lightSvg: '/img/icons/Faucet.svg',
     darkSvg: '/img/icons/dark/Faucet.svg',
     header: 'Terra Testnet Faucet',
-    summary: 'Receive test Luna to carry out transactions on Testnet.'
+    summary: 'Receive test Luna to carry out transactions on the testnet.'
   },
 ]
 

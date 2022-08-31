@@ -18,7 +18,7 @@ const terrainCards = [
     lightSvg: '/img/icons/testnet.svg',
     darkSvg: '/img/icons/dark/testnet.svg',
     header: 'Testnet development with Terrain',
-    summary: 'Learn how to interact with Testnet using Terrain.'
+    summary: 'Learn how to interact with the testnet using Terrain.'
   },
   {
     href: '/develop/terrain/using-terrain-localterra.html',

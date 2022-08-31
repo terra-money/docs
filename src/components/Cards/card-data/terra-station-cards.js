@@ -4,7 +4,7 @@ const terraStationCards = [
     lightSvg: '/img/icons/station/station.svg',
     darkSvg: '/img/icons/dark/station.svg',
     header: 'Download Station',
-    summary: 'Download Terra Station, the official wallet for Terra.'
+    summary: 'Download Terra Station, Terra\'s official wallet.'
   },
   {
     href: '/learn/terra-station/wallet.html',
@@ -25,14 +25,14 @@ const terraStationCards = [
     lightSvg: '/img/icons/swap-1.svg',
     darkSvg: '/img/icons/dark/swap-1.svg',
     header: 'Switch networks',
-    summary: 'Switch between networks on Terra.'
+    summary: 'Switch between the mainnet, testnet, or LocalTerra.'
   },
   {
     href: '/learn/terra-station/testnet.html',
     lightSvg: '/img/icons/testnet.svg',
     darkSvg: '/img/icons/dark/testnet.svg',
     header: 'Testnet',
-    summary: 'Receive test Luna to carry out transactions on Testnet.'
+    summary: 'Receive test Luna to carry out transactions on the testnet.'
   },
   {
     href: '/learn/terra-station/staking.html',
