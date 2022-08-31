@@ -1,6 +1,6 @@
 # Improv hub
 
-The hub contract is responsible for the creation of new stories and maintaining the state of all ongoing stories. 
+The hub contract is responsible for creating new stories and maintaining the state of all ongoing stories. 
 
 
 ## Messages
@@ -9,8 +9,7 @@ The hub contract is responsible for the creation of new stories and maintaining 
 
 ## InstantiateMsg
 
-Instantiate the Improv hub contract.
-
+Instantiates the Improv hub contract.
 
 <CH.Code>
 
@@ -55,8 +54,7 @@ pub struct InstantiateMsg {
 <CH.Scrollycoding>
 ### create_proposal
 
-Create a proposal to be submitted to the community for casting. Writers post a pitch with a synopsis, open cast positions (character bios), minimum funding target, deadline, self-introduction, etc.
-
+Creates a new proposal and submit it to the community for casting. Writers post a pitch with a synopsis, open cast positions (character bios), a minimum funding target, deadline, and a self-introduction. 
 
 <CH.Code>
 
@@ -138,14 +136,14 @@ Create a proposal to be submitted to the community for casting. Writers post a p
 
 ### submit_story
 
-When the writer is finished, they can post the finished manuscript (in plaintext or pdf).
+When the writer is finished, they can post the finished manuscript (in plaintext or pdf). Final versions are appended with  _`"is_final": true,`_.
 
 ```json JSON
 {
   "submit_story": {
     "proposal_id": 1,
     "is_final": false,
-    "story_uri": "https://mag.wcoomd.org/uploads/2018/05/blank.pdf"
+    "story_uri": "https://example.improv/blank.pdf"
   }
 }
 ```
@@ -154,7 +152,7 @@ When the writer is finished, they can post the finished manuscript (in plaintext
 
 ### whitelist_collection (internal)
 
-Contract owner can whitelist new NFT collections.
+Allows the contract owner to whitelist new NFT collections. 
 
 ```json JSON
 {
@@ -176,7 +174,7 @@ Contract owner can whitelist new NFT collections.
 
 ### Config
 
-Gets the configuration for Improv Hub.
+Returns the configuration for the Improv hub.
 
 <CH.Code>
 ```json Request
@@ -204,7 +202,7 @@ Gets the configuration for Improv Hub.
 
 ### State
 
-Gets state information of Improv Hub.
+Returns the state information of the Improv Hub.
 
 <CH.Code>
 
@@ -227,7 +225,7 @@ Gets state information of Improv Hub.
 
 ### view_proposal
 
-View a submitted proposal.
+View the details of a submitted proposal.
 
 <CH.Code>
 
@@ -286,9 +284,11 @@ View a submitted proposal.
 
 ---
 
-### Query Whitelisted collections
+### whitelisted_collections
 
-Query Params
+Query the whitelisted collections using the following parameters.
+
+Query Params:
 
 - _`order_by`_: asc/desc
 - _`start_at`_: pagination
