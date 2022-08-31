@@ -1,0 +1,26 @@
+# Improv smart contracts
+
+The improv protocol uses three contracts to operate. 
+
+[**Improv hub**](./hub.mdx) is in charge of creating new stories and maintaining the state of all ongoing stories. 
+
+[**Improv auction**]("./auction.mdx") facilitates the auction and arbitration processes.
+
+[**Improv relayer**]() is in charge of 
+
+
+## Contract Interactions
+
+1. Writers call `CreateProposal` to create a proposal. `CreateProposal` submits the proposal information to wormhole.
+
+2. Owners of NFT collections in the proposal can submit their bids to `improv-auction`. The first bidder to call `SubmitBid` also submits the proposal VAA emitted by `improv-hub`.
+
+3. After the auction is finished, `improv-relayer` calls `CreateAuctionReport`, and submits its emitted VAA to the `improv-hub` contract by calling `SubmitAuctionReport`. Winning bids are locked in the `improv-auction` contract temporarily. These funds are bridged to the `improv-hub` contract after the auction is finished. Auction winners also get an arbitration NFT.
+
+4. The `improv-relayer` contract calls `FinalizeProposal` to finalize the proposal. If the proposal passes, the writer can start working on their story.
+
+5. The writer calls `SubmitStory` and submits their story.
+
+6.  After the final version of the story is submitted, arbitration NFT owners can call `SubmitVeto` to submit veto during a period.
+- When the veto period is finished, `improv-relayer` calls `CreateVetoReport`, and submits VAA emitted by it to `improv-hub` by calling `SubmitVetoReport`.
+- `improv-relayer` calls `FinalizeStory` to finalize the story.
