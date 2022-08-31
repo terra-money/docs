@@ -51,3 +51,24 @@
   --ifm-footer-color: #8D8D8D !important;
   --ifm-footer-link-color: #8D8D8D !important;
 }
+
+.readme-img-sm {
+  margin: auto;
+  display: block;
+  width: 300px;
+  padding: 10px 10px 20px 10px;
+}
+
+.readme-img-md {
+  margin: auto;
+  display: block;
+  width: 500px;
+  padding: 10px 10px 20px 10px;
+}
+
+.readme-img-lg {
+  margin: auto;
+  display: block;
+  width: 800px;
+  padding: 10px 10px 20px 10px;
+}
