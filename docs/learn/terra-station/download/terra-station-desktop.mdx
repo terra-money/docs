@@ -42,9 +42,9 @@ Mobile
 
 */}
 
-This tutorial walks you through the process of using Terra Station, the official desktop wallet for Terra.
+This tutorial walks you through how to install and use Terra Station, the official desktop wallet for Terra.
 
-For more guides on how to use Station's advanced features, visit the [Station guides](../README.mdx).
+For more guides on how to use the advanced features of Terra Station, visit the [Terra Station guides](../README.mdx).
 
 ## Install Terra Station
 
@@ -56,8 +56,8 @@ For more guides on how to use Station's advanced features, visit the [Station gu
 
    - [Windows](https://github.com/terra-money/station-desktop/releases/download/v1.2.0/Terra.Station.Setup.1.2.0.exe)
 
-   - [Linux(.deb)](https://github.com/terra-money/station-desktop/releases/download/v1.2.0/Terra.Station_1.2.0_amd64.deb)
-   - [Linux(.rpm)](https://github.com/terra-money/station-desktop/releases/download/v1.2.0/Terra.Station-1.2.0.x86_64.rpm)
+   - [Linux (DEB)](https://github.com/terra-money/station-desktop/releases/download/v1.2.0/Terra.Station_1.2.0_amd64.deb)
+   - [Linux (RPM)](https://github.com/terra-money/station-desktop/releases/download/v1.2.0/Terra.Station-1.2.0.x86_64.rpm)
 
 2. Open the downloaded file and follow the instructions.
 
@@ -66,58 +66,56 @@ For more guides on how to use Station's advanced features, visit the [Station gu
 
 2. Click **New Wallet**.
 
+<img className="readme-img-lg" src='/img/screens/desktop/connect.png' />
+
 3. Type in a secure wallet name and password.
 
 4. Confirm your password.
 
 5. Using pen and paper, write down your 24-word seed phrase exactly as it appears. Number each word to make verifying easier.
 
-<img className="readme-img-lg" style={{padding: '1rem'}} src='/img/screens/desktop/connect.png' />
-
 <Admonition type="danger" title="Protect your seed phrase">
+Anyone who gains access to your seed phrase can access the contents of the corresponding wallet. Be cognizant of the fact that there is no recourse for theft of a seed phrase. To protect your seed phrase, consider the following tips.
 
-Anyone with your seed phrase can access your money, and there is no recourse for someone stealing your seed phrase. To protect your seed phrase, consider the following tips:
-
-   - Never save or store your seed phrase as a digital file on any device.
-   - Always write down your seed phrase with a pen and paper.
-   - Store the paper with your seed phrase on it somewhere safe.
-   - Never give your seed phrase to anyone, not even support staff.
+- Never save or store your seed phrase as a digital file on any device.
+- Always write down your seed phrase with a pen and paper.
+- Store the paper with your seed phrase on it somewhere safe.
+- Never give your seed phrase to anyone, not even support staff.
 </Admonition>
 
 
-6. Verify your writing to make sure every word is spelled correctly and in the right order. If you numbered your phrase, it can be helpful to verify it backward.
+6. Verify the written seed phrase to ensure every word is spelled correctly and that each word is in the correct order.
 
-7. Check the box ensuring you wrote down your seed phrase, and click **Submit**.
-<img className="readme-img-lg" style={{padding: '1rem'}} src='/img/screens/desktop/new-wallet.png' />
+7. Check the box to confirm that your seed phrase has been written down and click **Submit**.
+<img className="readme-img-lg" src='/img/screens/desktop/new-wallet.png' />
 
-8. Confirm your seed phrase by typing or selecting the correct words in each prompt.
+8. Confirm your seed phrase by selecting the correct words in each prompt and click **Submit**.
 
-9. Click **Submit**, then click **Connect**.
-<img className="readme-img-lg" style={{padding: '1rem'}} src='/img/screens/desktop/seed.png' />
+<img className="readme-img-lg" src='/img/screens/desktop/seed.png' />
 
-<img className="readme-img-lg" style={{padding: '1rem'}} src='/img/screens/desktop/wallet.png' />
+9. Finally, click **Connect**.
+
+<img className="readme-img-lg" src='/img/screens/desktop/wallet.png' />
 
 Congratulations! You have just created a Terra Station wallet.
 
 ## Receive tokens from an exchange
 
-1. Purchase your tokens using any exchange that supports Luna.
+1. Purchase your tokens using [an exchange that supports Luna](https://coinmarketcap.com/currencies/terra-luna-v2/markets/).
 
-2. Withdraw any token supported by the Terra network from your exchange. Every exchange is different. Please visit your exchange's web page for guides on how to withdraw tokens. Use the following steps as a generic guide.
+2. Withdraw any token supported by the Terra network from your exchange. Every exchange will be different and one should visit the web page of their preferred exchange for details on how to withdraw tokens. Use the following steps as a generic guide.
 
-    1. To receive tokens to your wallet, use your wallet address. Your wallet address will appear at the top of the Terra station Desktop app near your wallet name. Your wallet address will look like this: `terra<random-numbers-and-letters>`
+    1. To receive tokens to your wallet, use your wallet address. To copy your wallet address, just click on the name of your wallet in the upper right-hand corner of the app and click on **COPY** just below the address.  Your wallet address will take the following form: `terra<random-numbers-and-letters>`
 
-    2. Double-check your wallet address is correct before sending.
+    2. Double-check that your submitted address matches the address of the wallet where you would like to receive funds.
 
     3. Send the tokens from the exchange to your Terra Station wallet address.
 
 <Admonition type="caution" title="Transfer wait times">
 
-When you transfer tokens from an exchange to Terra, some time will pass before the tokens appear in your wallet. Don't panic. This waiting period is normal and varies depending on the exchange. If a transfer does not appear immediately, check back after some time.
+When you transfer tokens from an exchange to Terra, it will take some time for the tokens to appear in your wallet. Don't panic. This waiting period is normal and varies depending on the exchange used. If a transfer does not appear immediately, check back after some time.
 
 </Admonition>
-
-Now you have tokens on Terra!
 
 ## Stake Luna
 
@@ -127,37 +125,38 @@ Stake your Luna to a validator to start earning rewards. Before you stake, make 
 
 2. Select a Validator and click on their name in the **Moniker** column of the validator list.
 
-<img className="readme-img-lg" style={{padding: '1rem'}} src='/img/screens/desktop/stake-page.png' />
+<img className="readme-img-lg" src='/img/screens/desktop/stake-page.png' />
+
 
 3. In the **My delegations** section, click **Delegate**. A new window will appear.
 
-<img className="readme-img-sm" style={{padding: '1rem'}} src='/img/screens/desktop/stake-validator.png' />
+<img className="readme-img-sm" src='/img/screens/desktop/stake-validator.png' />
 
-4. In the **Amount** field, specify the amount of Luna you want to delegate and specify which coin you want to pay fees with. 
+4. In the **Amount** field, specify the amount of Luna you want to delegate. 
 
-<img className="readme-img-lg" style={{padding: '1rem'}} src='/img/screens/desktop/stake-delegate.png' />
+<img className="readme-img-lg" src='/img/screens/desktop/stake-delegate.png' />
 
 <Admonition type="caution" title="Keep coins for fees">
 
-Always keep some coins to pay fees with. Never stake your entire wallet amount. Without money for fees, you can't make any transactions.
+It is recommended to maintain some funds in your wallet in order to be able to pay for transaction fees. Without available capital for fee payment, you will not be able to carry out further transactions until more tokens are transferred to your wallet.
 
 </Admonition>
 
-5. Double-check the amounts and fees. Enter your password and click **Submit**.
+5. Double-check the amounts and fees, enter your password and click **Submit**.
 
 Congratulations, you've just delegated Luna!
 
 ## Withdraw staking rewards
 
-Rewards start accruing the moment you stake Luna. Monitor your rewards in the staking section of Terra Station. Once you have sufficient rewards, follow these steps to withdraw them:
-
-<img className="readme-img-lg" style={{padding: '1rem'}} src='/img/screens/desktop/stake-page.png' />
+Rewards start accruing the moment you stake your Luna. Monitor your rewards in the staking section of Terra Station. Once you have sufficient rewards, follow the below steps to withdraw them.
 
 1. Open Terra Station and click **Stake**.
 
-2. To claim all rewards, click **Withdraw all rewards** in the upper right corner of the staking page. To withdraw rewards only from a single validator, click on their name in the list and click **withdraw** on their page.
+2. To claim all rewards, click **Withdraw all rewards** in the upper right corner of the staking page. To withdraw rewards from a single validator, click on their name in the Validators list and then click on **Withdraw rewards** in the Validator details page.
 
-3. Review the amounts, enter your password, and click **withdraw**.
+<img className="readme-img-lg" src='/img/screens/desktop/stake-page.png' />
+
+3. Review the amounts, enter your password, and click **Submit**.
 
 Congratulations, you've just withdrawn your staking rewards!
 
@@ -169,20 +168,20 @@ Congratulations, you've just withdrawn your staking rewards!
 
 3. Click **Send** next to the token you want to send.
 
-<img className="readme-img-lg" style={{padding: '1rem'}} src='/img/screens/desktop/send-wallet.png' />
+<img className="readme-img-lg" src='/img/screens/desktop/send-wallet.png' />
 
-4. Enter the address of the wallet you want to send tokens and the amount you want to send. You can also add a memo for the transaction.
+4. Enter the address of the wallet where you would like to send the tokens and the amount you would like to send. You can also add a memo to specify what the transaction is for.
 
-<img className="readme-img-lg" style={{padding: '1rem'}} src='/img/screens/desktop/send-submit.png' />
+<img className="readme-img-lg" src='/img/screens/desktop/send-submit.png' />
 
-7. Verify the transaction amounts and address. Remember to always leave enough tokens in your account for other transactions.
+7. Verify the recipient address and the amount before submitting the transaction. Remember to always maintain some funds in your wallet in order to be able to carry out further transactions.
 
 8.  Enter your password and click **Submit**.
 
-After a few moments, the tokens will appear in the receiver's wallet.
+After a few moments, the tokens will appear in the recipient's wallet.
 
 ## Next steps
 
-To start using any of the many dApps the Terra ecosystem has to offer, check out the [Terra Station Chrome browser extension](./terra-station-extension.mdx). For on-the-go transactions, check out the [Terra Station mobile app](./terra-station-mobile.mdx).
+To begin using any of the various dApps the Terra ecosystem has to offer, check out the [Terra Station Chrome extension](./terra-station-extension.mdx) or the [Terra Station Firefox extenstion](./terra-station-firefox.mdx). For on-the-go transactions, check out the [Terra Station mobile app](./terra-station-mobile.mdx).
 
-For more guides on how to use other Station features, visit the [Station guides](../README.mdx).
+For more guides on how to use other Station features, visit the [Terra Station guides](../README.mdx).
