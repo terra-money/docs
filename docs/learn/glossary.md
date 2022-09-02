@@ -98,7 +98,7 @@ When a vote fails to be included in consensus.
 
 ## Module
 
-A section of the Terra core that represents a particular function of the Terra protocol. Visit the [Terra core module specifications](../develop/module-specifications/README.md) for more information.
+A section of the Terra Core that represents a particular function of the Terra protocol. Visit the [Terra Core module specifications](../develop/module-specifications/README.md) for more information.
 
 ## Phoenix-1
 
@@ -152,11 +152,11 @@ For more information on staking, visit the [concepts page](protocol.md#staking).
 
 The proof-of-stake consensus procedure utilized by the Terra protocol. When a validator proposes a new block, the remaining validators then vote on the block in two voting rounds. If a block receives a two-thirds or greater majority of yes votes in both rounds, it gets added to the blockchain.  All validators get rewarded with the block's transaction fees, however, the initial proposer of the block will receive a slightly higher reward. For each new block, a validator is selected to propose based on their [weight](#weight). Check out the [Tendermint official documentation](https://docs.tendermint.com/) for more information.
 
-## Terra core
+## Terra Core
 
 The official source code for the Terra protocol.
 
-For more information on the Terra core, see [Terra core modules](../develop/module-specifications/README.md).
+For more information on the Terra Core, see [Terra Core modules](../develop/module-specifications/README.md).
 
 ## Terra mainnet
 
