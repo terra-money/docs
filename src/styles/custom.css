@@ -72,3 +72,12 @@
   width: 800px;
   padding: 10px 10px 20px 10px;
 }
+
+.theme-admonition {
+  opacity: 50%;
+}
+
+.theme-admonition:hover {
+  opacity: 100%;
+  transform: scale(1.005);
+}
