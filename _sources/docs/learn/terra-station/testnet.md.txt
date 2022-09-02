@@ -1,6 +1,6 @@
 # Testnet <img src="/img/icon_node.svg" height="40px">
 
-The testnet network is the testing environment for the Terra blockchain. This tutorial will walk you through receiving testnet Luna in order to be able to execute transactions on testnet.
+The testnet network is the testing environment for the Terra blockchain. This tutorial will walk you through receiving testnet Luna which you may use to execute transactions on the testnet.
 
 If this is your first time using Terra Station, follow the [Terra Station tutorial](download/terra-station-desktop.md) to learn more.
 

@@ -18,7 +18,7 @@ Staking Luna to validators is a great way to earn rewards. Before you stake, mak
 
    :::{admonition} Maintain funds for transaction fees
    :class: warning
-   It is recommended to maintain some funds in your wallet in order to be able to pay for transaction fees. Without available capital for fee payment, you will not be able to carry out further transactions until more tokens are transferred to your wallet.
+   It is recommended to maintain some funds in your wallet for future transactions. Without available capital for fee payment, you will not be able to carry out further transactions until more tokens are transferred to your wallet.
    :::
 
 5. Confirm the transaction details, enter your password and click **Submit**.
