@@ -39,7 +39,7 @@ This tutorial walks you through how to install and use the Terra Station mobile 
 
 ## Download the Terra Station app
 
-1. Tap the download link corresponding to your operating system. This will open a link to your device’s app store for download.
+1. Tap the download link corresponding to your mobile operating system. This will open a link to your device’s app store for download.
 
    - [Terra Station for iOS](https://apps.apple.com/app/id1548434735)
    - [Terra Station for Android](https://play.google.com/store/apps/details?id=money.terra.station)
@@ -93,7 +93,7 @@ Congratulations, you have just created a wallet!
 
 1. Purchase your tokens using an exchange that supports Terra.
 
-2. Withdraw any token supported by the Terra network from your exchange. Every exchange will be different and one should visit the web page of their preferred exchange for details on how to withdraw tokens. Use the following steps as a generic guide.
+2. Withdraw any token supported by the Terra network from your exchange. Every exchange will be different and you should visit the web page of their preferred exchange for details on how to withdraw tokens. Use the following steps as a generic guide.
 
     1. To receive tokens to your wallet, use your wallet address. To copy your wallet address, just click on the name of your wallet in the upper right-hand corner of the app and click on **COPY** just below the address.  Your wallet address will take the following form: `terra<random-numbers-and-letters>`
 
@@ -116,13 +116,13 @@ Congratulations, you have just created a wallet!
 
 4. Enter the amount you want to send. You can also add a memo to specify what the transaction is for.  
 
-5. Verify the recipient address and transaction amount. Remember to always maintain some funds in your wallet in order to be able to carry out further transactions.
+5. Verify the recipient address and transaction amount. Remember to always maintain some funds in your wallet for future transactions.
 
 6.  Enter your password and tap **Submit**. Wait for the transaction to process. This generally takes a few seconds.
 
    :::{admonition} Maintain funds for transaction fees
    :class: warning
-   It is recommended to maintain some funds in your wallet in order to be able to pay for transaction fees. Without available capital for fee payment, you will not be able to carry out further transactions until more tokens are transferred to your wallet.
+   It is recommended to maintain some funds in your wallet for future transactions. Without available capital for fee payment, you will not be able to carry out further transactions until more tokens are transferred to your wallet.
    :::
 
 ## Stake Luna
@@ -143,7 +143,7 @@ Your Luna is now staked to a validator.
 
    :::{admonition} Maintain funds for transaction fees
    :class: warning
-   It is recommended to maintain some funds in your wallet in order to be able to pay for transaction fees. Without available capital for fee payment, you will not be able to carry out further transactions until more tokens are transferred to your wallet.
+   It is recommended to maintain some funds in your wallet for future transactions. Without available capital for fee payment, you will not be able to carry out further transactions until more tokens are transferred to your wallet.
    :::
 
 ## Withdraw staking rewards

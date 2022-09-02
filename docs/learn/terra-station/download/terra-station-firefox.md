@@ -84,7 +84,7 @@ Congratulations! You have just created a Terra Station wallet.
 
 2. Select your preferred exchange to be forwarded to the trading page for the previously selected token.
 
-3. Withdraw any token supported by the Terra network from your exchange. Every exchange will be different and one should visit the web page of their preferred exchange for details on how to withdraw tokens. Use the following steps as a generic guide.
+3. Withdraw any token supported by the Terra network from your exchange. Every exchange will be different and you should visit the web page of their preferred exchange for details on how to withdraw tokens. Use the following steps as a generic guide.
 
     1. To receive tokens to your wallet, use your wallet address. Your wallet address will appear at the top of the Terra Station Firefox extension just below your wallet name. Your wallet address will take the following form: `terra<random-numbers-and-letters>`
 
@@ -107,7 +107,7 @@ Congratulations! You have just created a Terra Station wallet.
 
 4. Enter the amount you want to send. You can also add a memo to specify what the transaction is for.
 
-5. Verify the recipient address and transaction amount. Remember to always maintain some funds in your wallet in order to be able to carry out further transactions.
+5. Verify the recipient address and transaction amount. Remember to always maintain some funds in your wallet for future transactions.
 
 6.  Enter your password and click **Submit**.
 
@@ -115,7 +115,7 @@ After a few moments, the tokens will appear in the recipient's wallet.
 
    :::{admonition} Maintain funds for transaction fees
    :class: warning
-   It is recommended to maintain some funds in your wallet in order to be able to pay for transaction fees. Without available capital for fee payment, you will not be able to carry out further transactions until more tokens are transferred to your wallet.
+   It is recommended to maintain some funds in your wallet for future transactions. Without available capital for fee payment, you will not be able to carry out further transactions until more tokens are transferred to your wallet.
    :::
 
 ## Connect to a dApp

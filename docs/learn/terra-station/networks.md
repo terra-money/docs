@@ -1,6 +1,6 @@
 # Switch networks
 
-This guide will walk you through the process of changing networks on Terra.  You may interact with the Terra Mainnet, Classic, Testnet and LocalTerra networks.
+This guide will walk you through the process of changing networks on Terra.  You may interact with the Terra mainnet, classic, testnet and LocalTerra networks.
 
 1. Open Terra Station and connect your wallet.
 

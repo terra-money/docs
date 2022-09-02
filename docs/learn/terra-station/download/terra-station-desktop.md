@@ -105,9 +105,9 @@ For more guides on how to use the advanced features of Terra Station, visit the 
 
 ## Receive tokens from an exchange
 
-1. Purchase your tokens using an exchange that supports Luna.
+1. Purchase your tokens using [an exchange that supports Luna](https://coinmarketcap.com/currencies/terra-luna-v2/markets/).
 
-2. Withdraw any token supported by the Terra network from your exchange. Every exchange will be different and one should visit the web page of their preferred exchange for details on how to withdraw tokens. Use the following steps as a generic guide.
+2. Withdraw any token supported by the Terra network from your exchange. Every exchange will be different and you should visit the web page of their preferred exchange for details on how to withdraw tokens. Use the following steps as a generic guide.
 
     1. To receive tokens to your wallet, use your wallet address. To copy your wallet address, just click on the name of your wallet in the upper right-hand corner of the app and click on **COPY** just below the address.  Your wallet address will take the following form: `terra<random-numbers-and-letters>`
 
@@ -151,10 +151,10 @@ Stake your Luna to a validator to start earning rewards. Before you stake, make 
 
    :::{admonition} Maintain funds for transaction fees
    :class: warning
-   It is recommended to maintain some funds in your wallet in order to be able to pay for transaction fees. Without available capital for fee payment, you will not be able to carry out further transactions until more tokens are transferred to your wallet.
+   It is recommended to maintain some funds in your wallet for future transactions. Without available capital for fee payment, you will not be able to carry out further transactions until more tokens are transferred to your wallet.
    :::
 
-5. Double-check the amounts and fees, enter your password and click **Submit**.
+5. Double-check the amounts and fees, enter your password, and click **Submit**.
 
 Congratulations, you've just delegated Luna!
 
@@ -195,7 +195,7 @@ Congratulations, you've just withdrawn your staking rewards!
    :align: center
    ```
 
-7. Verify the recipient address and the amount before submitting the transaction. Remember to always maintain some funds in your wallet in order to be able to carry out further transactions.
+7. Verify the recipient address and the amount before submitting the transaction. Remember to always maintain some funds in your wallet for future transactions.
 
 8.  Enter your password and click **Submit**.
 
@@ -203,7 +203,7 @@ After a few moments, the tokens will appear in the recipient's wallet.
 
    :::{admonition} Maintain funds for transaction fees
    :class: warning
-   It is recommended to maintain some funds in your wallet in order to be able to pay for transaction fees. Without available capital for fee payment, you will not be able to carry out further transactions until more tokens are transferred to your wallet.
+   It is recommended to maintain some funds in your wallet for future transactions. Without available capital for fee payment, you will not be able to carry out further transactions until more tokens are transferred to your wallet.
    :::
 
 ## Next steps
