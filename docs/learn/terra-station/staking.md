@@ -6,7 +6,7 @@ If this is your first time using Terra Station, follow the [Terra Station tutori
 
 ## Stake Luna
 
-Staking Luna to validators is a great way to earn rewards. Before you stake, make sure you have Luna in your wallet. You can transfer Luna from an [exchange](wallet.md) or from [another wallet](./send.md).
+Staking Luna to validators is a great way to earn rewards. Before you stake, make sure you have Luna in your wallet. You can transfer Luna from an [exchange](./wallet.md) or from [another wallet](./send.md).
 
 1. Open Terra Station and click **Stake**.
 
@@ -27,7 +27,7 @@ Congratulations, you've just delegated Luna!
 
 ## Withdraw staking rewards
 
-Rewards start accruing the moment you stake your Luna. Monitor your rewards in the staking section of Terra Station. Once you have sufficient rewards, follow these steps to withdraw them:
+Rewards start accruing the moment you stake your Luna. Monitor your rewards in the staking section of Terra Station. Once you have sufficient rewards, follow the steps below to withdraw them.
 
 1. Open Terra Station and click **Stake**.
 
@@ -44,7 +44,7 @@ Congratulations, you've just withdrawn your staking rewards!
 Redelegating lets you transfer staked Luna from one validator to another instantly, without having to wait for the 21-day unstaking period.
 
    :::{warning}
-   When a user redelegates staked Luna from one validator to another, the validator receiving the staked Luna is barred from making further redelegation transactions for 21 days. This requirement only applies to the wallet that made the redelegation transaction.
+   When a user redelegates staked Luna from one validator to another, the validator receiving the staked Luna is barred from making further redelegation transactions for 21 days. This restriction only applies to the wallet that made the redelegation transaction.
    :::
 
 1. Open Terra Station, connect your wallet, and click on **Stake**.

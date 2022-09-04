@@ -28,7 +28,7 @@ Terra Development Suite
 
 ## Terrain <img src="/img/terrain.png" height="30px">
 
-Terra’s all-in-one development environment, Terrain provides front-end and smart contract scaffolding for your dApp. Get started in 5 minutes with the [quickstart guide](./get-started.md).
+Terra’s all-in-one development environment, Terrain provides front end and smart contract scaffolding for your dApp. Get started in 5 minutes with the [quickstart guide](./get-started.md).
 
 ## LocalTerra <img src="/img/LocalTerra.svg" height="30px">
 
@@ -36,7 +36,7 @@ Set up your own blockchain testnet in less than a minute. LocalTerra is a contai
 
 ## Terra<span/>.js <img src="/img/terra_js.svg" height="30px">
 
-Use Terra<span/>.js to create bots, mint NFTs, and build out backend services. Follow the [Terra.js tutorial](terra-js/getting-started.md) to get started.
+Use Terra<span/>.js to create bots, mint NFTs, and build out back-end services. Follow the [Terra.js tutorial](terra-js/getting-started.md) to get started.
 
 ## Terra<span/>.py <img src="/img/terra_sdk.svg" height="30px">
 
@@ -44,7 +44,7 @@ Use Terra<span/>.py for on-chain analysis, Jupyter Notebooks, data processing, a
 
 ## Wallet Provider and Templates: <img src="/img/Walletconnect.svg" height="30px">
 
-Wallet Provider makes it easy to connect a React-based web app to Terra Station. There are multiple [templates](https://templates.terra.money/) available for frontend frameworks like Vue, React, and Vite. Follow the [Wallet Provider tutorial](wallet-provider/wallet-provider-tutorial.md) to get started.
+Wallet Provider makes it easy to connect a React-based web app to Terra Station. There are multiple [templates](https://templates.terra.money/) available for front-end frameworks like Vue, React, and Vite. Follow the [Wallet Provider tutorial](wallet-provider/wallet-provider-tutorial.md) to get started.
 
 ### Other Tools
 
@@ -60,5 +60,5 @@ Terra’s multi-purpose [block explorer](https://finder.terra.money/).
 
 #### Faucet <img src="/img/Faucet.svg" height="30px">
 
-Get tokens sent to your testnet address using the [Faucet](https://faucet.terra.money).
+Get tokens sent to your testnet address using the [Terra Testnet Faucet](https://faucet.terra.money).
 

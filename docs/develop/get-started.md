@@ -5,7 +5,7 @@ This beginner-friendly guide walks you through how to get started building on Te
 :::{admonition} Learn about Terra
 :class: note
 
-To learn more about about Terra concepts like Luna, validators, and governance, visit the [Terra protocol overview](../learn/protocol.md). 
+To learn more about Terra concepts such as Luna, validators, and governance, visit the [Terra protocol overview](../learn/protocol.md). 
 :::
 
 
@@ -31,7 +31,7 @@ The [NFT minting](terrain/mint-an-nft.md) tutorial walks you through minting you
 
 :::{admonition} Terra Academy
 :class: tip
-For interactive courses on developing smart contracts using Rust and CosmWasm libraries, visit [Terra Academy](https://academy.terra.money).
+For interactive courses on developing smart contracts using Rust and CosmWasm libraries, visit the[Terra Academy](https://academy.terra.money).
 :::
 
 ## Development Suite
@@ -64,7 +64,7 @@ Terra also provides other tools for building:
 
 ### TerraWiki<span/>.org
 
-Written by devs, for devs, [terrawiki.org](http://terrawiki.org) is the community documentation platform for all things Terra, including community-generated tutorials, reference material, and troubleshooting guides. Start browsing, or log in and create your own article.
+Written by devs, for devs, [terrawiki.org](http://terrawiki.org) is the community documentation platform for all things Terra, including community-generated tutorials, reference material, and troubleshooting guides. Start browsing or log in and create your own article.
 
 ### Agora Developers' Forum
 

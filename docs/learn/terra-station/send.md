@@ -12,9 +12,9 @@ You can send tokens from your wallet to another Terra wallet utilizing the **Sen
 
 5. Enter the amount you want to send. You can also add a memo to specify what the transaction is for.
 
-7. Verify the recipient address and transaction amount. Remember to always maintain some funds in your wallet for future transactions.
+6. Verify the recipient address and transaction amount. Remember to always maintain some funds in your wallet for future transactions.
 
-8.  Enter your password and click **Submit**.
+7.  Enter your password and click **Submit**.
 
 After a few moments, the tokens will appear in the recipient's wallet.
 

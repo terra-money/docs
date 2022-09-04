@@ -2,14 +2,14 @@
 
 ## Developer links
 
-- [Terra Docs](http://docs.terra.money) - Official documentation for Terra
-- [Terra Wiki](https://terrawiki.org/) - Maintained by the community, for the community
-- [Terra Academy](https://academy.terra.money/) - Learn CosmWasm Smart Contracts!
-- [Terra.js](https://docs.terra.money/docs/develop/sdks/terra-js/README.html) - Terra.js seeks to provide a compatible way to work with the Terra blockchain within JavaScript runtimes, such as Node.js and the browser.
-- [Terra.py](https://terra-money.github.io/terra.py/) - Official documentation for the Terra Python SDK
-- Community Resource: [terra.engineer](https://terra.engineer/) - Learn about the different Terra Ecosystem components
-- Community Resource: [learnterra.io](https://learnterra.io/developers/) - Hub of links to useful resources
-- [Agora developer forum](https://agora.terra.money/c/developer/20)
+- [Terra Docs](http://docs.terra.money) - The official documentation for Terra.
+- [Terra Wiki](https://terrawiki.org/) - Maintained by the community, for the community.
+- [Terra Academy](https://academy.terra.money/) - Learn CosmWasm Smart Contract development!
+- [Terra.js](https://docs.terra.money/docs/develop/sdks/terra-js/README.html) - Interact with the Terra blockchain within JavaScript runtimes such as Node.js and the browser.
+- [Terra.py](https://terra-money.github.io/terra.py/) - The official documentation for the Terra Python SDK.
+- Community Resource: [terra.engineer](https://terra.engineer/) - Learn about the various components of the Terra Ecosystem.
+- Community Resource: [learnterra.io](https://learnterra.io/developers/) - Hub of links to useful resources.
+- [Agora developer forum](https://agora.terra.money/c/developer/20) - A community-managed forum to address commonly asked questions by developers.
 
 ## Developer support
     
