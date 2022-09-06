@@ -8,7 +8,7 @@ Terra's slashing module inherits from the Cosmos SDK's [`slashing`](https://docs
 
 </Admonition>
 
-The slashing module enables Terra to disincentivize any attributable action by a protocol-recognized actor with value at stake by penalizing them. The penalty is called [slashing](../learn/glossary.mdx#slashing). Terra mainly uses the [`Staking`](spec-staking.mdx) module to slash when violating validator responsibilities. This module manages lower-level penalties at the Tendermint consensus level, such as double-signing.
+The slashing module enables Terra to disincentivize any attributable action by a protocol-recognized actor with value at stake by penalizing them. The penalty is called [slashing](../../learn/glossary.mdx#slashing). Terra mainly uses the [`Staking`](spec-staking.mdx) module to slash when violating validator responsibilities. This module manages lower-level penalties at the Tendermint consensus level, such as double-signing.
 
 ## Message Types
 
@@ -84,7 +84,7 @@ for redel in redels {
 }
 ```
 
-The validator is slashed and [tombstoned](../learn/glossary.mdx#tombstone):
+The validator is slashed and [tombstoned](../../learn/glossary.mdx#tombstone):
 
 ```
 curVal := validator
