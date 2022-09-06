@@ -39,7 +39,7 @@ const sidebars = {
                     {
                         type: 'category',
                         label: 'Terra Station',
-                        link: {type: 'doc', id: 'learn/terra-station/README'},
+                        link: {type: 'doc', id: 'landing-pages/terra-station'},
                         items:
                             [
                                 {
@@ -63,8 +63,8 @@ const sidebars = {
 
                     {
                         type: 'category',
-                        label: 'Developer Tools',
-                        collapsed: false,
+                        label: 'Developer tools',
+                        collapsed: true,
                         items: [
                             {
                                 type: 'category',
@@ -160,54 +160,66 @@ const sidebars = {
 
                     {
                         type: 'category',
-                        label: 'Guides',
+                        label: 'Developer guides',
                         collapsed: true,
                         items: [
+                            {type: 'ref', id: 'develop/terrain/initial-setup'},
                             'develop/guides/sign-with-multisig',
                             'develop/guides/start-lcd',
-                            'develop/examples/tictactoe',
+                            'develop/vesting',
+                            'develop/open-source',
                         ],
                     },
-                    'develop/swagger',
                     {
                         type: 'category',
-                        label: 'Architecture',
+                        label: 'dApp examples',
                         collapsed: true,
                         items: [
+                            'develop/examples/tictactoe',
+                            {type: 'ref', id: 'develop/terrain/mint-an-nft'},
+                            {type: 'ref', id: 'develop/terrain/cw20-factory'},
                             {
-                                type: 'category',
-                                label: 'Terra Core modules',
-                                collapsed: true,
-                                items: [
-                                    'module-specifications/README',
-                                    'module-specifications/spec-auth',
-                                    'module-specifications/spec-authz',
-                                    'module-specifications/spec-bank',
-                                    'module-specifications/spec-capability',
-                                    'module-specifications/spec-crisis',
-                                    'module-specifications/spec-distribution',
-                                    'module-specifications/spec-evidence',
-                                    'module-specifications/spec-feegrant',
-                                    'module-specifications/spec-governance',
-                                    'module-specifications/spec-mint',
-                                    'module-specifications/spec-params',
-                                    'module-specifications/spec-slashing',
-                                    'module-specifications/spec-staking',
-                                    'module-specifications/spec-upgrade',
-                                    'module-specifications/spec-wasm',
-                                ],
-                            },
-                            'develop/vesting',
-
+                                type: 'link',
+                                label: 'Frontend templates', // The link label
+                                href: 'https://github.com/terra-money/wallet-provider/', // The external URL
+                              },
                         ],
                     },
+                    {
+                        type: 'category',
+                        label: 'Terra Core modules',
+                        collapsed: true,
+                        link: {type: 'doc', id: 'develop/module-specifications/README'},
+                        items: [
+                            'develop/module-specifications/spec-auth',
+                            'develop/module-specifications/spec-authz',
+                            'develop/module-specifications/spec-bank',
+                            'develop/module-specifications/spec-capability',
+                            'develop/module-specifications/spec-crisis',
+                            'develop/module-specifications/spec-distribution',
+                            'develop/module-specifications/spec-evidence',
+                            'develop/module-specifications/spec-feegrant',
+                            'develop/module-specifications/spec-governance',
+                            'develop/module-specifications/spec-mint',
+                            'develop/module-specifications/spec-params',
+                            'develop/module-specifications/spec-slashing',
+                            'develop/module-specifications/spec-staking',
+                            'develop/module-specifications/spec-upgrade',
+                            'develop/module-specifications/spec-wasm',
+                        ],
+                    },
+                    'develop/resources',
+                    'develop/swagger',
+                    'develop/endpoints',
+
+
                 ],
         },
 
         {
             type: 'category',
             label: 'Full node',
-            link: {type: 'doc', id: 'full-node/README'},
+            link: {type: 'doc', id: 'landing-pages/full-node'},
             items:
                 [
                     {
@@ -216,11 +228,11 @@ const sidebars = {
                     },
                 ],
         },
-
+        
         {
             type: 'category',
             label: 'Terra migration guides',
-            link: {type: 'doc', id: 'migration/README'},
+            link: {type: 'doc', id: 'landing-pages/migration'},
             items:
                 [
                     {
