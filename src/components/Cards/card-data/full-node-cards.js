@@ -14,7 +14,7 @@ const fullNodeCards = [
     summary: 'Join the mainnet, testnet, or make a local private network.'
   },
   {
-    href: '/module-specifications',
+    href: '/develop/module-specifications',
     lightSvg: '/img/icons/core/terracore.svg',
     darkSvg: '/img/icons/dark/terracore.svg',
     header: 'Core modules',
