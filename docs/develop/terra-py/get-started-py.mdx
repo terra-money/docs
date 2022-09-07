@@ -47,7 +47,7 @@ In order to conduct transactions on Terra, you will need to be able to send requ
 
 After you have instantiated your client to communicate with the appropriate network, you may initialize the wallet with which you would like to carry out transactions. On LocalTerra, you may pass in a name of a preconfigured testing wallet (test1-10), each of which contains more than adequate funds for testing purposes. On testnet or mainnet, you will need to pass in the mnemonic key associated with your wallet.
 
-<Admonition type="danger">
+<Admonition type="danger" icon="🔥">
 
 Carrying out transactions on testnet or mainnet require the use of your personal seed phrase or mnemonic key. This is an unencrypted private key that is generated and presented to you upon the creation of your personal wallet. Saving or utilizing this phrase on your personal computer may expose this private key to malicious actors who could gain access to your personal wallet if they are able to obtain it. You may create a wallet solely for testing purposes to eliminate risk. Use your mnemonic key at your own disgretion.
 
@@ -134,7 +134,7 @@ gas_price_dict
 > }
 > ```
 
-<Admonition type="note">
+<Admonition type="note" icon="📝">
 
 The "u" preceding the name of each currency is the unit symbol for micro. This means that each price is given in millionths of the corresponding cryptocurrency asset. Each currency name refers to its corresponding Terra token. For example, the "uluna": "0.15" entry corresponds to a 0.00000015 LUNA cost for each unit of gas expended per transaction.
 
@@ -178,7 +178,7 @@ result = terra.tx.broadcast(tx)
 After broadcasting the transaction to the Terra node, the `result` variable will hold all relevant information about your request, including if it was successfully completed or not. In the Jupyter Notebook files in this repository, you may utilize a helper function which will neatly present this information for you.
 
 
-<Admonition type="note" title="Note on Gas Estimation">
+<Admonition type="note" icon="📝" title="Note on Gas Estimation">
 
 In `CreateTxOptions`, the setting of the `gas` parameter to `auto` estimates the amount of gas that may be needed for processing the transaction. The `gas_adjustment` parameter allows for this value to be increased in order to meet the minimum gas requirement for processing if the estimated value is determined to be too small. In order to ensure acceptance of your transaction, this example sets this parameter to a value of 1.5. You may experiment with different parameter values to evaluate which configuration is best for you.
 

@@ -2,7 +2,7 @@ import Admonition from '@theme/Admonition';
 
 # Governance
 
-<Admonition type="info">
+<Admonition type="info" icon="ℹ️">
 
 Terra's Governance module inherits from Cosmos SDK's [`gov`](https://docs.cosmos.network/master/modules/gov/) module. This document is a stub, and covers mainly important Terra-specific notes about how it is used.
 
@@ -61,7 +61,7 @@ For a proposal to pass, the following conditions must be met:
 
 If any of the previous conditions are not met, the proposal is rejected. Proposals that get rejected with veto do not get their deposits refunded. The parameters `quorum`, `veto`, and `threshold` exist as blockchain parameters within the Governance module.
 
-<Admonition type="warning">
+<Admonition type="caution" icon="☢️">
 
 Deposits will not be refunded for proposals that are rejected with veto, do not meet quorum, or fail to reach the minimum deposit during the deposit period. Non-refunded deposits are burned.
 
@@ -168,7 +168,7 @@ Parameter Change Proposals are a special type of proposal which, once passed, wi
 
 This type of proposal requires validators to update their node software to a new version at a specified block height.
 
-<Admonition type="danger">
+<Admonition type="danger" icon="🔥">
 
 Software upgrade proposals can be difficult to execute. Exercise caution when using this proposal type, as you may lose your deposit due to an incorrect proposal. 
 

@@ -7,7 +7,7 @@ import Admonition from '@theme/Admonition';
 This guide will cover how to set up a React app, integrate Wallet Provider, check the balance of the connected account, and call a token swap. If you want to integrate Terra Station into an existing react app you can skip past the `Project Setup` section.
 
 
-<Admonition type="tip" title="Just want to dive in?">
+<Admonition type="tip" icon="💡" title="Just want to dive in?">
 
 Check out the getting started section for the premade templates [in GitHub](https://github.com/terra-money/wallet-provider/).
 
@@ -257,7 +257,7 @@ You can request tesnet funds from the [faucet](https://faucet.terra.money/).
 A LUNA transfer transaction needs a fee and a message containing the sender address, recipient address, and send amount (in this case 1 LUNA). Once the message is constructed, the `post` method on `connectedWallet` broadcasts it to the network.
 
 
-<Admonition type="note" title="What happens if something goes wrong?">
+<Admonition type="note" icon="📝" title="What happens if something goes wrong?">
 
 Wallet provider also supplies useful error types. This example will handle the `UserDenied` error case. You can find other cases to handle [on GitHub](https://github.com/terra-money/wallet-provider/blob/4e601c2dece7bec92c9ce95991d2314220a2c954/packages/src/%40terra-money/wallet-controller/exception/mapExtensionTxError.ts#L23).
 
@@ -333,7 +333,7 @@ Wallet provider also supplies useful error types. This example will handle the `
    }
    ```
 
-   <Admonition type="note">
+   <Admonition type="note" icon="📝">
    Because all coins are denominated in micro-units, you will need to multiply any coins by $10^6$ . For example, 1000000 uluna = 1 LUNA.
    </Admonition>
 
