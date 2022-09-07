@@ -8,7 +8,7 @@ function Card(props) {
         light: props.lightSvg,
         dark: props.darkSvg
       }} />
-      <div>
+      <div className="text-container">
         <h2>{props.header}</h2>
         <p>{props.summary}</p>
       </div>

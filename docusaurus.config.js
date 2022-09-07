@@ -80,7 +80,7 @@ module.exports = async function config() {
       ({
         docs: {
           sidebar: {
-            hideable: true,
+            hideable: false,
             autoCollapseCategories: false,
           },
         },
