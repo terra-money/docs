@@ -36,8 +36,8 @@ const learnCards = [
   },
   {
     href: '/learn/glossary',
-    lightSvg: '/img/icons/glossary.svg',
-    darkSvg: '/img/icons/dark/glossary.svg',
+    lightSvg: '/img/icons/Glossary.svg',
+    darkSvg: '/img/icons/dark/Glossary.svg',
     header: 'Glossary',
     summary: 'Look up terms specific to Terra.'
   },
