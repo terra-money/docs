@@ -75,6 +75,8 @@ button.toggleButton_node_modules-\@docusaurus-theme-classic-lib-theme-ColorModeT
 }
 
 .header-terra-link {
+	display: flex;
+  align-items: center;
 	width: 133px;
 	background-color: #0759E7;
 	color: #F3F3F3;
@@ -116,5 +118,72 @@ a.navbar__item.navbar__link.header-terra-link {
 .navbar__link {
 	&:hover {
 		color: white;
+	}
+}
+
+.DocSearch-Button {
+	@media (min-width: 769px) {
+		background: #FFFFFF !important;
+		border: 1px solid #CFD8EA !important;
+		border-radius: 8px !important;
+		width: 200px !important;
+
+		.DocSearch-Button-Placeholder {
+			font-size: 14px;
+		}
+		.DocSearch-Search-Icon {
+			color: #2043B5 !important;
+			height: 15px;
+		}
+
+		width: unset;
+	}
+}
+
+[data-theme='dark'] {
+	@media (min-width: 769px) {
+		.DocSearch-Button {
+			background: #252526 !important;
+			border: 1px solid #4D4D4D !important;
+
+			.DocSearch-Button-Placeholder {
+				color: #4D4D4D;
+			}
+			.DocSearch-Search-Icon {
+				color: #DBDBDB !important;
+			}
+		}
+	}
+}
+
+@media (max-width: 996px) {
+	.navbar {
+		.searchBox_node_modules-\@docusaurus-theme-classic-lib-theme-Navbar-Search-styles-module {
+			position: relative;
+			right: 0;
+		}
+		.colorModeToggle_node_modules-\@docusaurus-theme-classic-lib-theme-Navbar-Content-styles-module {
+				display: unset;
+		}
+	}
+}
+
+@media (max-width: 550px) {
+	.header-terra-link {
+		width: 94px;
+		margin-right: 5px;
+		&::after, &::before {
+			display: none !important;
+		}
+	}
+
+	.header-github-link {
+		margin-right: 5px;
+	}
+}
+
+@media (max-width: 440px) {
+	.header-terra-link {
+		display: none;
 	}
 }

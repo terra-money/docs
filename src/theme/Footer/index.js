@@ -8,11 +8,19 @@ import Copyright from '../Link/Copyright';
 
 function Footer() {
   return (
-    <footer>
-      <div className="links">
-        <SocialLinks socialLinks={socialLinks} />
-        <Copyright />
-        <Hyperlinks hyperlinks={hyperlinks} />
+    <footer className="footer">
+      <div className="container">
+        <div className="row">
+          <div className="links col">
+            <SocialLinks socialLinks={socialLinks} />
+            <Hyperlinks hyperlinks={hyperlinks} />
+          </div>
+          <div className="col col--3"></div>
+        </div>
+        <div className="row">
+          <Copyright />
+          <div className="col col--3"></div>
+        </div>
       </div>
     </footer>
   );
