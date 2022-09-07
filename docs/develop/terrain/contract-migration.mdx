@@ -45,7 +45,7 @@ Now that `MigrateMsg` is defined, you will need to update the `contract.rs` file
 
 ## 3. Call migrate
 
-Adding the MigrateMsg to the smart contract allows the contract's administrator to migrate the contract in the future. When we deploy our contract, the wallet address of the signer will be automatically designated as the contract administrator. In the following command, the contract is deployed with the preconfigured [LocalTerra](../localterra/install-localterra.md) `test1` wallet as the signer and administrator of our counter contract.
+Adding the MigrateMsg to the smart contract allows the contract's administrator to migrate the contract in the future. When we deploy our contract, the wallet address of the signer will be automatically designated as the contract administrator. In the following command, the contract is deployed with the preconfigured [LocalTerra](../localterra/install-localterra.mdx) `test1` wallet as the signer and administrator of our counter contract.
 
    ```
    terrain deploy counter --signer test1
