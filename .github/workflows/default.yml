@@ -1,4 +1,4 @@
-name: coludlfare-docs
+name: cloudlfare-docs
 
 on:
   workflow_dispatch:
