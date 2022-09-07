@@ -26,12 +26,12 @@ At genesis, Luna will have a supply of 1 billion tokens allocated according to t
 
 **Pre-depeg LUNA holders airdrop**: 35%    
 - All bonded / unbonding Luna, minus TFL at “Pre-attack” snapshot; staking derivatives included.   
-- For wallets with < 10k Luna: 30% unlocked at genesis; 70% vested over 2 years with 6mnth cliff.   
+- For wallets with < 10k Luna: 30% unlocked at genesis; 70% vested over 2 years with 6-month cliff.   
 - For wallets with < 1M Luna: 1-year cliff, 2-year vesting thereafter.   
 - For wallets with > 1M Luna: 1-year cliff, 4-year vesting thereafter.  
 
 **Pre-depeg aUST holders airdrop**: 10%    
-- 500K whale cap - covers up to 99.7% of all holders but only 26.72% of aUST.  
+- 500K whale cap - covers up to 99.7% of all holders, but only 26.72% of aUST.  
 - 30% unlocked at genesis; 70% vested over 2 years thereafter with a 6-month cliff.  
 
 **Post-attack LUNA holders airdrop**: 10%  
@@ -192,7 +192,7 @@ To learn how to vote with your staked Luna or submit proposals, visit the [Terra
 
 ### Proposals
 
-Proposals start as ideas within the community. A community member drafts and submits a proposal alongside an initial deposit.
+Proposals start as ideas within the community on Terra's [Agora forum](https://agora.terra.money/). After gaining support and feedback from the community, a proposer [drafts and submits a proposal](./terra-station/governance.mdx#create-a-new-proposal) alongside an [initial deposit](./terra-station/governance.mdx#deposit-luna-to-a-proposal).
 
 The most common proposal types include:
 
@@ -206,8 +206,8 @@ Community members vote with their staked Luna. One staked Luna equals one vote. 
 
 The following is a basic outline of the governance process. Visit the [governance module](../develop/module-specifications/spec-governance.mdx) for more details.
 
-1. A user submits a proposal and a two-week deposit period begins.
-2. Users deposit Luna as collateral to back the proposal. This period ends once a minimum threshold of 50 Luna is deposited. Deposits are to protect against spam.
+1. A user submits a proposal and a one-week deposit period begins.
+2. Users deposit Luna as collateral to back the proposal. This period ends once a minimum threshold of 512 Luna is deposited. Deposits are to protect against spam.
 3. The one-week vote period begins.
     The voting options are:
     - `Yes`: In favor.
@@ -230,12 +230,12 @@ Once accepted, the changes described in a governance proposal are automatically 
 Deposits protect against unnecessary proposals and spam. Users can veto any proposal they deem to be spam by voting `NoWithVeto`.
 
 Deposits get refunded if all of the following conditions are met:
-- The minimum deposit of 50 Luna is reached within the two-week deposit period.
+- The minimum deposit of 512 Luna is reached within the one-week deposit period.
 - `Quorum` is met: the number of total votes is greater than 10% of all staked Luna
 - The total number of `NoWithVeto` votes is less than 33.4% of the total vote.
 - A vote returns a majority of `Yes` or `No` votes.
 
 Deposits are burned under any of the following conditions:
-- The minimum deposit of 50 Luna is not reached within the two-week deposit period.
+- The minimum deposit of 512 Luna is not reached within the one-week deposit period.
 - `Quorum` is not met: the number of total votes after the one-week voting period is less than 10% of all staked Luna.
 - the number of `NoWithVeto` votes is above 33.4% of the total vote.
