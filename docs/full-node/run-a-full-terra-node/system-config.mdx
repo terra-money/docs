@@ -7,7 +7,7 @@ import Admonition from '@theme/Admonition';
 # System Configuration
 
 
-<Admonition type="caution" title="Recommended operating systems">
+<Admonition type="caution" icon="☢️" title="Recommended operating systems">
 
 This guide has been tested against Linux distributions only. To ensure a successful production environment setup, consider using a Linux system.
 
@@ -27,7 +27,7 @@ The the minimum requirements for running a Terra full node are:
 | [`private-network`](join-a-network.mdx#set-up-a-local-private-network) | 1             | 2 GB    | 20 GB (SSD 500 MB/s R/W)   |  N/A      |
 
 
-<Admonition type="caution" title="Storage requirements">
+<Admonition type="caution" icon="☢️" title="Storage requirements">
 
 As the network grows, the minimum hardware requirements will also grow. It is recommended that you monitor the system so you can prevent it from running out of resources. 
 
@@ -94,7 +94,7 @@ Additional ports:
 
 - `26657`: The default port for the RPC protocol. Because this port is used for querying and sending transactions, it must be open for serving queries from Terrad.
 
-<Admonition type="caution">
+<Admonition type="caution" icon="☢️">
 
 Do not open port `26657` to the public unless you plan to run a public node.
 

@@ -50,7 +50,7 @@ You can use admonitions by importing them and using the following syntax:
 ```
 import Admonition from '@theme/Admonition';
 
-<Admonition type="note" icon="💡" title="Your Title">
+<Admonition type="note" icon="📝" title="Your Title">
 
 Some **content** with _markdown_ `syntax`.
 

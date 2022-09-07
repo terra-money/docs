@@ -82,7 +82,7 @@ const lcd = new LCDClient({
 ```
 
 
-<Admonition type="note" title="Switching to LocalTerra or the mainnet">
+<Admonition type="note" icon="📝" title="Switching to LocalTerra or the mainnet">
 
 The previous code block shows how to connect to the pisco testnet. To connect to LocalTerra, change the `URL` to `”http://localhost:1317”`. To connect to the phoenix-1 mainnet for production, use “`https://phoenix-lcd.terra.dev`”.
 
@@ -106,7 +106,7 @@ const mk = new MnemonicKey({
 const wallet = lcd.wallet(mk);
 ```
 
-<Admonition type="warning" title="Mnemonic security">
+<Admonition type="caution" icon="☢️" title="Mnemonic security">
 
 Although this tutorial has you input your mnemonic directly, this practice should be avoided in production.
 For security reasons, it's better to store your mnemonic key data in your environment by using `process.env.SECRET_MNEMONIC` or `process.env.SECRET_PRIV_KEY`. This practice is more secure than a hard-coded string.

@@ -2,7 +2,7 @@ import Admonition from '@theme/Admonition';
 
 # Fee grant
 
-<Admonition type="info">
+<Admonition type="info" icon="ℹ️">
 
 Terra's fee grant module inherits from the Cosmos SDK's [`feegrant`](https://docs.cosmos.network/master/modules/feegrant/) module. This document is a stub and explains mainly important Terra-specific notes about how it is used.
 
@@ -711,7 +711,7 @@ Fees are deducted from grants in the `auth` ante handler.
 
 To prevent DoS attacks, using a filtered `feegrant` incurs gas. To ensure that all the grantee's transactions conform to the filter set by the granter, the SDK iterates over the allowed messages in the filter and charges 10 gas per filtered message. Then, the SDK iterates over the messages sent by the grantee to ensure the messages adhere to the filter, which also charges 10 gas per message. If the SDK finds a message that does not conform to the filter, the SDK stops iterating, and the transaction fails.
 
-<Admonition type="caution">
+<Admonition type="caution" icon="☢️">
 
 Gas is charged against the granted allowance. Ensure all your existing messages conform to the filter before you send transactions using your allowance.
 

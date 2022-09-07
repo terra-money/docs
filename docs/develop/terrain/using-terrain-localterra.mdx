@@ -13,14 +13,14 @@ LocalTerra is a complete Terra testnet and ecosystem containerized with Docker. 
 - [Terra Station Chrome extension](../../learn/terra-station/download/terra-station-extension.mdx)
 - [Node.js version 16](https://nodejs.org/en/blog/release/v16.16.0/)
 
-<Admonition type="caution" title="Node version error">
+<Admonition type="caution" icon="☢️" title="Node version error">
 
 Use LTS Node.js 16 if you encounter the following error code.  
 `error:0308010C:digital envelope routines::unsupported`
 
 </Admonition>
 
-<Admonition type="info" title="Running NPM on M1 Macs">
+<Admonition type="info" icon="ℹ️" title="Running NPM on M1 Macs">
 
 <details>
 
@@ -81,7 +81,7 @@ docker-compose up
 
 </CH.Spotlight>
 
-<Admonition type="tip" title="LocalTerra Accounts">
+<Admonition type="tip" icon="💡" title="LocalTerra Accounts">
 
 To view LocalTerra wallet information, visit the [LocalTerra accounts page](../localterra/accounts.mdx).
 For more configuration options, visit the [LocalTerra configuration page](../localterra/configure.mdx).
@@ -141,7 +141,7 @@ The deploy command performs the following steps automatically.
 - Uploads the smart contract to LocalTerra.
 - Instantiates the deployed smart contract.
 
-<Admonition type="tip" title="Increase Docker memory">
+<Admonition type="tip" icon="💡" title="Increase Docker memory">
 
 If you are running LocalTerra and the previous `deploy` command is not working, try increasing Docker's memory allowance.  You can do this by clicking on the Docker icon, clicking on **Preferences** and then navigating to **Resources**. Increase the memory to at least 4 GB and then click **Apply & Restart**. You can then try running the deploy command again. If you are still having trouble with deploying your dApp, you can try increasing the memory to 6 GB.
 
@@ -188,7 +188,7 @@ await lib.getCount()
 { "count": 1 }
 ```
 
-<Admonition type="tip">
+<Admonition type="tip" icon="💡">
 
 Before proceeding to the next section, exit the terrain console by using "Ctrl + C".
 
