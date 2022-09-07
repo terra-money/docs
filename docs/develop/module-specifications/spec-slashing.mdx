@@ -2,7 +2,7 @@ import Admonition from '@theme/Admonition';
 
 # Slashing
 
-<Admonition type="info">
+<Admonition type="info" icon="ℹ️">
 
 Terra's slashing module inherits from the Cosmos SDK's [`slashing`](https://docs.cosmos.network/master/modules/slashing/) module. This document is a stub and covers mainly important Terra-specific notes about how it is used.
 
@@ -123,7 +123,7 @@ greater than `minHeight` and the validator's `MissedBlocksCounter` is greater th
 for `DowntimeJailDuration`, and have the following values reset:
 `MissedBlocksBitArray`, `MissedBlocksCounter`, and `IndexOffset`.
 
-<Admonition type="note">
+<Admonition type="note" icon="📝">
 
 Liveness slashes do not lead to tombstombing.
 
