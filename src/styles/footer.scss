@@ -1,6 +1,7 @@
 .footer {
   border-top: 1px solid #EBEFF8;
   padding: 32px 0 0 0;
+  margin-top: 100px;
   @media (min-width: 997px) {
     margin-left: 300px;
   }
@@ -52,7 +53,7 @@
     align-items: center;
     text-align: center;
     opacity: 70%;
-    padding-top: 120px;
+    margin-top: 80px;
     padding-bottom: 20px;
 
     &:hover {

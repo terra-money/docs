@@ -1,26 +1,34 @@
-button.toggleButton_node_modules-\@docusaurus-theme-classic-lib-theme-ColorModeToggle-styles-module {
-	width: 28px;
-	height: 28px;
-	background: #FFFFFF;
-	border: 1px solid #EBEFF8;
-	margin-top: 2px;
+.navbar__items--right {
+	[class*="colorModeToggle"] {
+		button {
+			width: 28px;
+			height: 28px;
+			background: #FFFFFF;
+			border: 1px solid #EBEFF8;
+			margin-top: 2px;
 
-	svg {
-		width: 20px;
-	}
+			svg {
+				width: 20px;
+			}
 
-	&:hover {
-		background: #e6e6e6;
+			&:hover {
+				background: #e6e6e6;
+			}
+		}
 	}
 }
 
 [data-theme='dark'] {
-	button.toggleButton_node_modules-\@docusaurus-theme-classic-lib-theme-ColorModeToggle-styles-module {
-		background: #252526;
-		border: 1px solid #343536;
+	.navbar__items--right {
+		[class*="colorModeToggle"] {
+			button {
+				background: #252526;
+				border: 1px solid #343536;
 
-		&:hover {
-			background: #000000;
+				&:hover {
+					background: #000000;
+				}
+			}
 		}
 	}
 
@@ -47,8 +55,12 @@ button.toggleButton_node_modules-\@docusaurus-theme-classic-lib-theme-ColorModeT
 }
 
 [data-theme='light'] {
-	.toggleButton_node_modules-\@docusaurus-theme-classic-lib-theme-ColorModeToggle-styles-module {
-		color: #2043B5;
+	.navbar__items--right {
+		[class*="colorModeToggle"] {
+			button {
+				color: #2043B5;
+			}
+		}
 	}
 }
 
@@ -158,12 +170,20 @@ a.navbar__item.navbar__link.header-terra-link {
 
 @media (max-width: 996px) {
 	.navbar {
-		.searchBox_node_modules-\@docusaurus-theme-classic-lib-theme-Navbar-Search-styles-module {
+		[class^="searchBox"] {
 			position: relative;
 			right: 0;
 		}
-		.colorModeToggle_node_modules-\@docusaurus-theme-classic-lib-theme-Navbar-Content-styles-module {
+		[class*="colorModeToggle"] {
 				display: unset;
+		}
+	}
+
+	.navbar-sidebar__brand {
+		.margin-right--md {
+			[class*="toggleButton"] {
+				display: none;
+			}
 		}
 	}
 }
