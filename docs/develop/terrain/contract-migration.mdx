@@ -4,44 +4,37 @@ import Admonition from '@theme/Admonition';
 
 Contracts on Terra can be initialized as [migratable](../module-specifications/spec-wasm.mdx#migration), which allows the administrator to upload a new version of the contract and then send a migrate message to move to the new code.
 
-This tutorial uses [Terrain](./README.mdx), a Terra development suite designed to simplify the scaffolding, deployment, and migration of your contracts. 
+In this tutorial, you will utilize [Terrain](./README.mdx), a Terra development suite designed to simplify the scaffolding, deployment, and migration of smart contracts. 
 
-If this is your first time using Terrain, visit the [Initial setup guide](./initial-setup.mdx). 
+If this is your first time using Terrain, visit the [Terrain initial setup](./initial-setup.mdx) guide. 
 
 ## Overview
 
-There are two key components to a migratable contract: 
+There are two key components to a migratable contract.
 
-- A `MigrateMsg` transaction. 
-- An admin set, which is the address that's allowed to perform migrations. 
+- The availability of a `MigrateMsg` transaction. 
+- A designated administrator whose address will be allowed to perform migrations. 
 
 ## 1. Add `MigrateMsg` to contract
 
-To implement support for `MigrateMsg`, add the following to `msg.rs`: 
+To implement support for `MigrateMsg`, you will need to add the message to `msg.rs`. To do so, navigate to the `msg.rs` file and place the following code just above the `InstantiateMsg` struct.
 
-   ```rust
-   #[derive(Serialize, Deserialize, Clone, Debug, PartialEq, JsonSchema)]
-   pub struct MigrateMsg {}
-   ```
-
-<Admonition type="tip">
-
-You can place this message anywhere, however; it is usually placed above the `InstantiateMsg` struct.
-
-</Admonition>
-
+```rust
+#[derive(Serialize, Deserialize, Clone, Debug, PartialEq, JsonSchema)]
+pub struct MigrateMsg {}
+```
 
 ## 2. Update `contract.rs`
 
-Now that `MigrateMsg` is defined, you will need to update `contract.rs`:
+Now that `MigrateMsg` is defined, you will need to update the `contract.rs` file.
 
-1. Update the import from `crate::msg` to include `MigrateMsg`:
+1. Update the import from `crate::msg` to include `MigrateMsg`.
 
    ```
    use crate::msg::{CountResponse, ExecuteMsg, InstantiateMsg, QueryMsg, MigrateMsg};
    ```
 
-2. Add the following method above `instantiate`: 
+2. Add the following method above `instantiate`.  
 
    ```
    #[cfg_attr(not(feature = "library"), entry_point)]
@@ -52,18 +45,20 @@ Now that `MigrateMsg` is defined, you will need to update `contract.rs`:
 
 ## 3. Call migrate
 
-In previous [Terrain tutorials](./README.mdx), you learned how to deploy the contract. Now you will be able to initialize it as migratable. 
-
-After adding MigrateMsg to the smart contract, redeploy and add the `--set-signer-as-admin` flag. 
-This flag tells Terra that the transaction signer is allowed to migrate the contract in the future:
-
+Adding the MigrateMsg to the smart contract allows the contract's administrator to migrate the contract in the future. When we deploy our contract, the wallet address of the signer will be automatically designated as the contract administrator. In the following command, the contract is deployed with the preconfigured [LocalTerra](../localterra/install-localterra.md) `test1` wallet as the signer and administrator of our counter contract.
 
    ```
-   terrain deploy counter --signer test1 --set-signer-as-admin
+   terrain deploy counter --signer test1
    ```
 
-With the new contract deployed you can make some changes then migrate to the new code with the following command: 
+If you decide to make changes to the deployed contract, you can migrate to the updated code by executing the following command.
 
    ```
    terrain contract:migrate counter --signer test1
    ```
+
+If you would like to specify the address of the desired administrator for your smart contract, you may utilize the `--admin-address` flag in the deploy command followed by the wallet address of the desired administrator.
+
+  ```
+  terrain deploy counter --signer test1 --admin-address <insert-admin-wallet-address>
+  ```
