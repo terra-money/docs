@@ -27,11 +27,11 @@ cargo generate --git https://github.com/CosmWasm/cw-template.git --branch 1.0 --
 cd my-first-contract
 ```
 
-This helps get you started by providing the basic boilerplate and structure for a smart contract. You'll find in the `src/lib.rs` file that the standard CosmWasm entrypoints `instantiate()`, `execute()`, and `query()` are properly exposed and hooked up.
+This helps get you started by providing the basic boilerplate and structure for a smart contract. In the `src/lib.rs` file you will find that the standard CosmWasm entrypoints `instantiate()`, `execute()`, and `query()` are properly exposed and hooked up.
 
 ## Contract State
 
-The starting template has the basic following state:
+The starting template has the following basic state:
 
 - a singleton struct `State` containing:
   - a 32-bit integer `count`
@@ -54,11 +54,11 @@ pub struct State {
 pub const STATE: Item<State> = Item::new("state");
 ```
 
-Terra smart contracts have the ability to keep persistent state through Terra's native LevelDB, a bytes-based key-value store. As such, any data you wish to persist should be assigned a unique key at which the data can be indexed and later retrieved. The singleton in the example above is assigned the key `config` (in bytes).
+Terra smart contracts have the ability to keep persistent state through Terra's native LevelDB, a bytes-based key-value store. As such, any data you wish to persist should be assigned a unique key, which may be used to index and retrieve the data. The singleton in the example above is assigned the key `config` (in bytes).
 
 Data can only be persisted as raw bytes, so any notion of structure or data type must be expressed as a pair of serializing and deserializing functions. For instance, objects must be stored as bytes, so you must supply both the function that encodes the object into bytes to save it on the blockchain, as well as the function that decodes the bytes back into data types that your contract logic can understand. The choice of byte representation is up to you, so long as it provides a clean, bi-directional mapping.
 
-Fortunately, the CosmWasm team have provided utility crates such as [cosmwasm_storage](https://github.com/CosmWasm/cosmwasm/tree/master/packages/storage), which provides convenient high-level abstractions for data containers such as a "singleton" and "bucket", which automatically provide serialization and deserialization for commonly-used types such as structs and Rust numbers.
+Fortunately, the CosmWasm team has provided utility crates such as [cosmwasm_storage](https://github.com/CosmWasm/cosmwasm/tree/master/packages/storage), which provides convenient high-level abstractions for data containers such as a "singleton" and "bucket", which automatically provide serialization and deserialization for commonly-used types such as structs and Rust numbers.
 
 Notice how the `State` struct holds both `count` and `owner`. In addition, the `derive` attribute is applied to auto-implement some useful traits:
 
@@ -69,13 +69,13 @@ Notice how the `State` struct holds both `count` and `owner`. In addition, the `
 - `PartialEq`: provides equality comparison
 - `JsonSchema`: auto-generates a JSON schema
 
-`Addr`, refers to a human-readable Terra address prefixed with `terra...`. Its counterpart is the `CanonicalAddr`, which refers to a Terra address's native decoded Bech32 form in bytes.
+`Addr` refers to a human-readable Terra address prefixed with `terra...`. Its counterpart is the `CanonicalAddr`, which refers to a Terra address's native decoded Bech32 form in bytes.
 
 ## InstantiateMsg
 
 The `InstantiateMsg` is provided when a user creates a contract on the blockchain through a `MsgInstantiateContract`. This provides the contract with its configuration as well as its initial state.
 
-On the Terra blockchain, the uploading of a contract's code and the instantiation of a contract are regarded as separate events, unlike on Ethereum. This is to allow a small set of vetted contract archetypes to exist as multiple instances sharing the same base code but configured with different parameters (imagine one canonical ERC20, and multiple tokens that use its code).
+On the Terra blockchain, the uploading of a contract's code and the instantiation of a contract are regarded as separate events, unlike on Ethereum. This is to allow a small set of vetted contract archetypes to exist as multiple instances sharing the same base code, but be configured with different parameters (imagine one canonical ERC20, and multiple tokens that use its code).
 
 ### Example
 
@@ -104,7 +104,7 @@ pub struct InstantiateMsg {
 
 ### Logic
 
-Here you will define your first entry-point, the `instantiate()`, or where the contract is instantiated and passed its `InstantiateMsg`. Extract the count from the message and set up your initial state, where:
+Here you will define your first entry-point, the `instantiate()`, or where the contract is instantiated and passed its `InstantiateMsg`. Extract the count from the message and set up your initial state where:
 
 - `count` is assigned the count from the message
 - `owner` is assigned to the sender of the `MsgInstantiateContract`
@@ -274,7 +274,7 @@ pub struct CountResponse {
 
 ### Logic
 
-The logic for `query()` should be similar to that of `execute()`, except that, since `query()` is called without the end-user making a transaction, the `env` argument is ommitted as there is no information.
+The logic for `query()` should be similar to that of `execute()`, however, since `query()` is called without the end-user making a transaction, the `env` argument is ommitted as there is no information.
 
 ```rust
 // src/contract.rs

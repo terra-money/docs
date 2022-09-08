@@ -3,7 +3,7 @@
 The following code snippet requires [LocalTerra](../localterra/README.mdx).
 
 1. `test1` creates MsgGrantAuthorization message to grant MsgSend authorization to grantee `test2`.
-2. `test2` creates MsgExecAuthorized message to send `2000000000000ukrw` from the `test1` account to the `test3` account.
+2. `test2` creates MsgExecAuthorized message to send `2000000000000uluna` from the `test1` account to the `test3` account.
 
 ```ts
 import {
@@ -59,7 +59,7 @@ async function main() {
   const client = new LCDClient({
     URL: "http://localhost:1317/",
     chainID: "localterra",
-    gasPrices: "169.77ukrw",
+    gasPrices: "0.2uluna",
   });
 
   // Granter (terra1x46rqay4d3cssq8gxxvqz8xt6nwlz4td20k38v)
@@ -83,8 +83,8 @@ async function main() {
     granter,
     grantee.key.accAddress,
     // Set enough spend limit since it will be decreased upon every MsgSend transactions
-    "1000000000000000ukrw,1000000000000uluna",
-    // expire after 100 year
+    "1000000000000uluna",
+    // expire after 100 years
     new Int(86400 * 365 * 100 * 1000000000)
   )
     .then((tx) => client.tx.broadcast(tx))
@@ -103,7 +103,7 @@ async function main() {
     grantee,
     // Test3
     "terra1757tkx08n0cqrw7p86ny9lnxsqeth0wgp0em95",
-    "2000000000000ukrw"
+    "2000000000000uluna"
   )
     .then((tx) => client.tx.broadcast(tx))
     .then(console.info)
