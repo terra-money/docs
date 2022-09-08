@@ -15,7 +15,7 @@ module.exports = async function config() {
     onBrokenLinks: "throw",
     onBrokenMarkdownLinks: "warn",
     favicon: "img/favicon.ico",
-    organizationName: "Terra-money", // Usually your GitHub org/user name.
+    organizationName: "terra-money", // Usually your GitHub org/user name.
     projectName: "new-docs", // Usually your repo name.
     i18n: {
       defaultLocale: "en",
@@ -45,7 +45,7 @@ module.exports = async function config() {
             routeBasePath: "/", // Serve the docs at the site's root
             // Please change this to your repo.
             // Remove this to remove the "edit this page" links.
-            editUrl: "https://github.com/evanorti/new-docs",
+            editUrl: "https://github.com/terra-money/new-docs/blob/main/",
           },
           blog: false,
           theme: {
