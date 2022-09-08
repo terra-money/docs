@@ -13,28 +13,28 @@ You can also create a custom signing solution by extending the base [ *Key* ](ht
 
 ## `RawKey`
 
-The most basic implementation of a `Key` is a `RawKey`, which is created using a plain private key. `RawKey`  wraps the 32 bytes of a private key and supplies a corresponding public key:
+The most basic implementation of a `Key` is a `RawKey`, which is created using a plain private key. `RawKey` wraps the 32 bytes of a private key and supplies a corresponding public key:
 
 ```ts
 import { RawKey } from '@terra-money/terra.js';
-import {randomBytes} from 'crypto'
+import {randomBytes} from 'crypto';
 let see = console.log;
 
 const raw_key = new RawKey(randomBytes(32));
 
-see(raw_key.publicKey)//SimplePublicKey { key: 'AlNdglClnFJMwdeFGlfFTAwbx7rxKxWbgN/lwj5mQ3vw' }
-see(raw_key.privateKey)//<Buffer 53 e2 53 0b 29 c4 9d 54 b3 66 a4 61 7b d3 e2 6e 4c e5 41 cd 12 a6 e9 27 8a 97 61 1c 55 6e cd 4c>
-see(raw_key.accAddress)//terra1ptj88nsljjr9agx07hahu6etv43acksy2q44sd
+see(raw_key.publicKey) // SimplePublicKey { key: 'AlNdglClnFJMwdeFGlfFTAwbx7rxKxWbgN/lwj5mQ3vw' }
+see(raw_key.privateKey) // <Buffer 53 e2 53 0b 29 c4 9d 54 b3 66 a4 61 7b d3 e2 6e 4c e5 41 cd 12 a6 e9 27 8a 97 61 1c 55 6e cd 4c>
+see(raw_key.accAddress) // terra1ptj88nsljjr9agx07hahu6etv43acksy2q44sd
 ```
 
 ## `MnemonicKey`
 
 
-A `MnemonicKey` derives itself from a 24-word  [ BIP-39 ](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki) mnemonic as opposed to the bytes of a  private key.
+A `MnemonicKey` derives itself from a 24-word [BIP-39](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki) mnemonic as opposed to the bytes of a  private key.
 A `MnemonicKey` has various levels of definition: 
-- Supply no arguments for the mnemonic to be randomly generated ( effectively generating a random key ).
+- Supply no arguments for the mnemonic to be randomly generated (effectively generating a random key).
 - Supply only a 24-word BIP-39 mnemonic to generate a corresponding key.
-- Supply a full HD path (using either a  random or particular mnenomic).
+- Supply a full HD path (using either a random or specified mnenomic).
 
 ```ts
 import { MnemonicKey } from '@terra-money/terra.js';
@@ -71,11 +71,11 @@ const MNE_KEY_FULLY_RESOLVED = new MnemonicKey({
 
 ### Specifying an HD path
 
-`MnemonicKey` can used to recover a wallet with a particular BIP44 HD path: `m/44'/${coinType}'/${account}'/0/${index}`.
+The `MnemonicKey` can be used to recover a wallet with a particular BIP44 HD path: `m/44'/${coinType}'/${account}'/0/${index}`.
 
 <Admonition type="tip" icon="💡" title="HD keys">
 
-As per [ *Cosmos HD Key Derivation* ](https://github.com/confio/cosmos-hd-key-derivation-spec):
+As per [*Cosmos HD Key Derivation*](https://github.com/confio/cosmos-hd-key-derivation-spec):
 
 Cosmos blockchains support hierarchical deterministic key generation (HD keys) for deriving multiple cryptographic keypairs from a single secret value. This allows the user to use different keypairs for different accounts on one blockchain and create accounts on multiple blockchains without having to manage multiple secrets.
 
@@ -90,9 +90,9 @@ const mne_key = new MnemonicKey({
 });
 ```
 
-- [ BIP-39 Mnemonics ](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki)
+- [BIP-39 Mnemonics](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki)
 
-- Coin Types Numbers `330` and `118` above refer to "coin-types" for `Cosmos` and `Terra` blockchains accordingly. These numbers are defined according to the [ BIP044 ](https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki) standard. You can find more information [ here ](https://github.com/satoshilabs/slips/blob/master/slip-0044.md).
+- Coin Type Numbers `330` and `118` above refer to "coin-types" for `Cosmos` and `Terra` blockchains accordingly. These numbers are defined according to the [BIP044](https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki) standard. You can find more information [here](https://github.com/satoshilabs/slips/blob/master/slip-0044.md).
 
 ## Custom key implementation
 
