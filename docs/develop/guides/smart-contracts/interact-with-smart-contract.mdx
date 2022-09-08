@@ -13,7 +13,8 @@ You can also follow these steps in the official desktop wallet for Terra, [Terra
 Make sure you have set up **LocalTerra** and that it is up and running:
 
 ```sh
-cd localterra
+git clone --depth 1 https://www.github.com/terra-money/LocalTerra
+cd LocalTerra
 docker-compose up
 ```
 
@@ -38,13 +39,14 @@ Make sure that the **optimized build** of `my_first_contract.wasm` that you crea
 ```sh
 terrad tx wasm store artifacts/my_first_contract.wasm --from test1 --chain-id=localterra --gas=auto --fees=100000uluna --broadcast-mode=block
 ```
+
 Or, if you are on an arm64 machine:
 
 ```sh
 terrad tx wasm store artifacts/my_first_contract-aarch64.wasm --from test1 --chain-id=localterra --gas=auto --fees=100000uluna --broadcast-mode=block
 ```
 
-This will ask for a confirmation before broadcasting to LocalTerra, type `y` and press enter.
+This will ask you for a confirmation before broadcasting to LocalTerra, type `y` and press enter.
 
 You should see output similar to the following:
 
@@ -222,12 +224,12 @@ query_result:
   count: 7
 ```
 
-Excellent! Congratulations, you've created your first smart contract, and now know how to get developing with the Terra dApp Platform.
+Congratulations, you've created your first smart contract, and now know how to get started with development on the Terra dApp Platform.
 
 ## What's Next?
 
-So far you've walked through a simple example of a smart contract, that modifies a simple balance within its internal state. Although this is enough to make a simple dApp, you can power more interesting applications by **emitting messages**, which will enable you to interact with other contracts as well as the rest of the blockchain's module.
+So far, you've walked through a simple example of a smart contract that modifies a simple balance within its internal state. Although this is enough to make a simple dApp, you can power more interesting applications by **emitting messages**, which will enable you to interact with other contracts as well as the rest of the blockchain's module.
 
-Check out a couple more examples of smart contracts using Terra's smart contract [repo](https://github.com/terra-money/cosmwasm-contracts).
+Check out a couple more examples of smart contracts using [Terra's smart contract repo](https://github.com/terra-money/cosmwasm-contracts).
 
 To learn how to build a dApp, visit the [Terrain tutorial](../../terrain/initial-setup.mdx).

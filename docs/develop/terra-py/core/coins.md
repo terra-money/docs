@@ -36,8 +36,8 @@ def from_str(cls, s: str) -> Coins
 
 Converts a comma-separated list of Coin-format strings to :class:`Coins`.
 
-&gt;&gt;&gt; Coins.from_str(&#x27;1000uluna,1234ukrw&#x27;)
-Coins(&quot;1000uluna,1234ukrw&quot;)
+&gt;&gt;&gt; Coins.from_str(&#x27;1000uluna,1234uluna&#x27;)
+Coins(&quot;1000uluna,1234uluna&quot;)
 
 **Arguments**:
 
