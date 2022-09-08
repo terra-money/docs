@@ -1,6 +1,6 @@
 const learnCards = [
   {
-    href: '/learn/protocol.html#what-is-terra',
+    href: '/learn/protocol/#what-is-terra',
     lightSvg: '/img/icons/terra.svg',
     darkSvg: '/img/icons/dark/terra.svg',
     header: 'What is Terra?',
@@ -14,14 +14,14 @@ const learnCards = [
     summary: 'Create a wallet and stake Luna for rewards.'
   },
   {
-    href: '/learn/protocol.html#what-is-luna',
+    href: '/learn/protocol/#what-is-luna',
     lightSvg: '/img/icons/luna.svg',
     darkSvg: '/img/icons/dark/luna.svg',
     header: 'What is Luna?',
     summary: 'Learn about Luna.'
   },
   {
-    href: '/learn/protocol.html#validators',
+    href: '/learn/protocol/#validators',
     lightSvg: '/img/icons/core/staking.svg',
     darkSvg: '/img/icons/dark/staking.svg',
     header: 'Validators and Staking',
