@@ -4,7 +4,7 @@ import Admonition from '@theme/Admonition';
 
 <Admonition type="info" icon="ℹ️">
 
-Terra's distribution module inherits from Cosmos SDK's [`distribution`](https://docs.cosmos.network/master/modules/distribution/) module. This document is a stub and covers mainly important Terra-specific notes about how it is used.
+Terra's distribution module inherits from Cosmos SDK's [`distribution`](https://docs.cosmos.network/master/modules/distribution/) module. This document is a stub and mainly covers important Terra-specific notes on how it is used.
 
 </Admonition>
 
@@ -20,7 +20,7 @@ Passive distribution means that validators and delegators need to manually colle
 
 </Admonition>
 
-Collected rewards are pooled globally and distrubuted to validators and delegators. Each validator has the opportunity to charge delegators commission on the rewards collected on behalf of the delegators. Fees are collected directly into a global reward pool and a validator proposer-reward pool. Due to the nature of passive accounting, whenever changes to parameters which affect the rate of reward distribution occur, withdrawal of rewards must also occur.
+Collected rewards are pooled globally and distrubuted to validators and delegators. Each validator has the opportunity to charge delegators commission on the rewards collected on behalf of the delegators. Fees are collected directly into a global reward pool and a validator proposer reward pool. Due to the nature of passive accounting, whenever changes to parameters which affect the rate of reward distribution occur, withdrawal of rewards must also occur.
 
 ## State
 
@@ -30,7 +30,7 @@ Collected rewards are pooled globally and distrubuted to validators and delegato
 
 All globally tracked parameters for distribution are stored within
 `FeePool`. Rewards are collected and added to the reward pool and
-distributed to validators/delegators from here.
+distributed to validators/delegators from there.
 
 Note that the reward pool holds decimal coins (`DecCoins`) to allow
 for fractions of coins to be received from operations like inflation.
@@ -41,7 +41,7 @@ When coins are distributed from the pool they are truncated back to
 
 The following validator distribution information for the relevant validator is updated each time:
 
-- Delegation amount to a validator is updated,
+- Delegation amount to a validator is updated.
 - A validator successfully proposes a block and receives a reward.
 - Any delegator withdraws from a validator or the validator withdraws its commission.
 

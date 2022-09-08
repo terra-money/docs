@@ -4,7 +4,7 @@ import Admonition from '@theme/Admonition';
 
 <Admonition type="info" icon="ℹ️">
 
-Terra's evidence module inherits from Cosmos SDK's [`evidence`](https://docs.cosmos.network/master/modules/evidence/) module. This document is a stub and covers mainly important Terra-specific notes about how it is used.
+Terra's evidence module inherits from Cosmos SDK's [`evidence`](https://docs.cosmos.network/master/modules/evidence/) module. This document is a stub and mainly covers important Terra-specific notes on how it is used.
 
 </Admonition>
 
@@ -20,7 +20,7 @@ Each corresponding handler must also fulfill the `Handler` interface contract. T
 
 ### Evidence
 
-Any concrete type of evidence submitted to the  module must fulfill the following `Evidence` contract. Not all concrete types of evidence will fulfill this contract in the same way, and some data might be entirely irrelevant to certain types of evidence. An additional `ValidatorEvidence`, which extends `Evidence`, has also been created to define a contract for evidence against malicious validators.
+Any concrete type of evidence submitted to the module must fulfill the following `Evidence` contract. Not all concrete types of evidence will fulfill this contract in the same way and some data might be entirely irrelevant to certain types of evidence. An additional `ValidatorEvidence`, which extends `Evidence`, has also been created to define a contract for evidence against malicious validators.
 
 ```go
 // Evidence defines the contract which concrete evidence types of misbehavior
@@ -135,7 +135,7 @@ func SubmitEvidence(ctx Context, evidence Evidence) error {
 }
 ```
 
-Valid submitted `Evidence` of the same type must not already exist. The `Evidence` is routed to the `Handler` and executed. If no error in handling the Evidence occurs, an event is emitted, and it is persisted to state.
+Valid submitted `Evidence` of the same type must not already exist. The `Evidence` is routed to the `Handler` and executed. If no error occurs when handling the Evidence, an event is emitted and it is persisted to state.
 
 ### Events
 
@@ -185,8 +185,7 @@ where:
 - `Evidence.Timestamp` is the timestamp in the block at height `Evidence.Height`.
 - `block.Timestamp` is the current block timestamp.
 
-If valid `Equivocation` evidence is included in a block, the validator's stake is
-reduced by `SlashFractionDoubleSign`, as defined by the [slashing module](spec-slashing.mdx). The reduction is implemented at the point when the infraction occurred instead of when the evidence was discovered.
+If valid `Equivocation` evidence is included in a block, the validator's stake is reduced by `SlashFractionDoubleSign`, as defined by the [slashing module](spec-slashing.mdx). The reduction is implemented at the point when the infraction occurred instead of when the evidence was discovered.
 The stake that contributed to the infraction is slashed, even if it has been redelegated or started unbonding.
 
 Additionally, the validator is permanently jailed and tombstoned so that the validator cannot re-enter the validator set again.
@@ -207,7 +206,7 @@ func (k Keeper) HandleEquivocationEvidence(ctx sdk.Context, evidence *types.Equi
 		// `panic(fmt.Sprintf("Validator consensus-address %v not found", consAddr))`,
 		// but this couples the expectations of the app to both Tendermint and
 		// the simulator.  Both are expected to provide the full range of
-		// allowable but none of the disallowed evidence types.  Instead of
+		// allowable, but none of the disallowed evidence types.  Instead of
 		// getting this coordination right, it is easier to relax the
 		// constraints and ignore evidence that cannot be handled.
 		return
@@ -275,7 +274,7 @@ func (k Keeper) HandleEquivocationEvidence(ctx sdk.Context, evidence *types.Equi
 
 	// Slash validator. The `power` is the int64 power of the validator as provided
 	// to/by Tendermint. This value is validator.Tokens as sent to Tendermint via
-	// ABCI, and now received as evidence. The fraction is passed in to separately
+	// ABCI and now received as evidence. The fraction is passed in separately
 	// to slash unbonding and rebonding delegations.
 	k.slashingKeeper.Slash(
 		ctx,
