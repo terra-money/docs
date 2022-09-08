@@ -4,7 +4,7 @@ import Admonition from '@theme/Admonition';
 
 <Admonition type="info" icon="ℹ️">
 
-Terra's Governance module inherits from Cosmos SDK's [`gov`](https://docs.cosmos.network/master/modules/gov/) module. This document is a stub, and covers mainly important Terra-specific notes about how it is used.
+Terra's Governance module inherits from Cosmos SDK's [`gov`](https://docs.cosmos.network/master/modules/gov/) module. This document is a stub, and mainly covers important Terra-specific notes on how it is used.
 
 </Admonition>
 
@@ -33,7 +33,7 @@ Deposits get refunded if all of the following conditions are met:
 Deposits are burned under any of the following conditions:
 - The minimum deposit of 512 Luna is not reached within the one-week deposit period.
 - `Quorum` is not met: the number of total votes after the one-week voting period is less than 10% of all staked Luna.
-- the number of `NoWithVeto` votes is above 33.4% of the total vote.
+- The number of `NoWithVeto` votes is above 33.4% of the total vote.
 
 ### Voting Period
 
@@ -82,9 +82,9 @@ Although parameter changes get updated immediately, they generally are not put i
 type Proposal struct {
 	Content `json:"content" yaml:"content"` // Proposal content interface
 
-	ProposalID       uint64         `json:"id" yaml:"id"`                                 //  ID of the proposal
+	ProposalID       uint64         `json:"id" yaml:"id"`                                 // ID of the proposal
 	Status           ProposalStatus `json:"proposal_status" yaml:"proposal_status"`       // Status of the Proposal {Pending, Active, Passed, Rejected}
-	FinalTallyResult TallyResult    `json:"final_tally_result" yaml:"final_tally_result"` // Result of Tallys
+	FinalTallyResult TallyResult    `json:"final_tally_result" yaml:"final_tally_result"` // Result of Tallies
 
 	SubmitTime     time.Time `json:"submit_time" yaml:"submit_time"`           // Time of the block where TxGovSubmitProposal was included
 	DepositEndTime time.Time `json:"deposit_end_time" yaml:"deposit_end_time"` // Time that the Proposal would expire if deposit amount isn't met
@@ -98,7 +98,7 @@ type Proposal struct {
 
 A `Proposal` is a data structure representing a petition for a change that is submitted to the blockchain alongside a deposit. Once its deposit reaches a certain [`MinDeposit`](#mindeposit), the proposal is confirmed and voting opens. Bonded Luna holders can then send `TxGovVote` transactions to vote on the proposal. Terra currently follows a simple voting scheme of 1 Bonded Luna = 1 Vote.
 
-The `Content` of a proposal is the interface that contains the information about the `Proposal`, such as the `title`, `description`, and any notable changes. A `Content` type can be implemented by any module. The `ProposalRoute` of the `Content` returns a string which must be used to route the handler of the `Content` in the Governance keeper. This process allows the governance keeper to execute proposal logic implemented by any module. If a proposal passes, the handler is executed. Only if the handler is successful does the state get persisted and the proposal finally passes. Otherwise, the proposal is rejected.
+The `Content` of a proposal is the interface that contains the information about the `Proposal`, such as the `title`, `description`, and any notable changes. A `Content` type can be implemented by any module. The `ProposalRoute` of the `Content` returns a string which must be used to route the handler of the `Content` in the Governance keeper. This process allows the governance keeper to execute proposal logic implemented by any module. If a proposal passes, the handler is executed. Only if the handler is successful does the state get persisted and the proposal finally pass. Otherwise, the proposal is rejected.
 
 ## Message Types
 
@@ -107,8 +107,8 @@ The `Content` of a proposal is the interface that contains the information about
 ```go
 type MsgSubmitProposal struct {
 	Content        Content        `json:"content" yaml:"content"`
-	InitialDeposit sdk.Coins      `json:"initial_deposit" yaml:"initial_deposit"` //  Initial deposit paid by sender. Must be strictly positive
-	Proposer       sdk.AccAddress `json:"proposer" yaml:"proposer"`               //  Address of the proposer
+	InitialDeposit sdk.Coins      `json:"initial_deposit" yaml:"initial_deposit"` // Initial deposit paid by sender. Must be strictly positive
+	Proposer       sdk.AccAddress `json:"proposer" yaml:"proposer"`               // Address of the proposer
 }
 ```
 
@@ -127,8 +127,8 @@ type MsgDeposit struct {
 ```go
 type MsgVote struct {
 	ProposalID uint64         `json:"proposal_id" yaml:"proposal_id"` // ID of the proposal
-	Voter      sdk.AccAddress `json:"voter" yaml:"voter"`             //  address of the voter
-	Option     VoteOption     `json:"option" yaml:"option"`           //  option from OptionSet chosen by the voter
+	Voter      sdk.AccAddress `json:"voter" yaml:"voter"`             // Address of the voter
+	Option     VoteOption     `json:"option" yaml:"option"`           // Option from OptionSet chosen by the voter
 }
 ```
 

@@ -4,7 +4,7 @@ import Admonition from '@theme/Admonition';
 
 <Admonition type="info" icon="ℹ️">
 
-Terra's Authz module inherits from the Cosmos SDK's [`authz`](https://docs.cosmos.network/master/modules/authz/) module. This document is a stub and explains mainly important Terra-specific notes about how it is used.
+Terra's Authz module inherits from the Cosmos SDK's [`authz`](https://docs.cosmos.network/master/modules/authz/) module. This document is a stub and mainly explains important Terra-specific notes on how it is used.
 
 </Admonition>
 
@@ -16,7 +16,7 @@ The authz (message authorization) module allows users to authorize another accou
 
 ```go
 // MsgGrantAuthorization grants the provided authorization to the grantee on the granter's
-// account during the provided period time
+// account during the provided time period
 type MsgGrantAuthorization struct {
 	Granter       sdk.AccAddress `json:"granter"`
 	Grantee       sdk.AccAddress `json:"grantee"`
@@ -29,7 +29,7 @@ type MsgGrantAuthorization struct {
 
 ```go
 // MsgRevokeAuthorization revokes any authorization with the provided sdk.Msg type on the
-// granter's account with that has been granted to the grantee
+// granter's account that has been granted to the grantee
 type MsgRevokeAuthorization struct {
 	Granter sdk.AccAddress `json:"granter"`
 	Grantee sdk.AccAddress `json:"grantee"`
@@ -43,7 +43,7 @@ type MsgRevokeAuthorization struct {
 
 ```go
 // MsgExecAuthorized attempts to execute the provided messages using
-// authorizations granted to the grantee. Each message should have only
+// authorizations granted to the grantee. Each message should only have
 // one signer corresponding to the granter of the authorization.
 type MsgExecAuthorized struct {
 	Grantee sdk.AccAddress `json:"grantee"`
