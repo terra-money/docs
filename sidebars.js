@@ -163,7 +163,7 @@ const sidebars = {
                         label: 'Developer guides',
                         collapsed: true,
                         items: [
-                            {type: 'ref', id: 'develop/terrain/initial-setup'},
+                            'develop/guides/initial',
                             'develop/guides/sign-with-multisig',
                             'develop/guides/start-lcd',
                             'develop/vesting',
@@ -176,8 +176,8 @@ const sidebars = {
                         collapsed: true,
                         items: [
                             'develop/examples/tictactoe',
-                            {type: 'ref', id: 'develop/terrain/mint-an-nft'},
-                            {type: 'ref', id: 'develop/terrain/cw20-factory'},
+                            'develop/examples/nft',
+                            'develop/examples/token-factory',
                             {
                                 type: 'link',
                                 label: 'Frontend templates', // The link label
