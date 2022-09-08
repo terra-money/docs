@@ -2,9 +2,9 @@ import Admonition from '@theme/Admonition';
 
 # Upgrade Smart Contracts to Cosmwasm 1.0.0
 
-CosmWasm 1.0 allows Terra to adopt IBC-Wasm integration, enabling contract execution between IBC-enabled chains.<br/>
+CosmWasm 1.0 allows Terra to adopt IBC-Wasm integration, enabling contract execution between IBC-enabled chains.
 
-This upgrade also supports the ICS-20 protocol, which allows fungible tokens to be moved across other IBC-enabled Cosmos chains. Users will be able to send custom CW20 tokens using ICS20 and use them as native tokens on other chains.<br/>
+This upgrade also supports the ICS-20 protocol, which allows fungible tokens to be moved across other IBC-enabled Cosmos chains. Users will be able to send custom CW20 tokens using ICS20 and use them as native tokens on other chains.
 
 ### How To Upgrade Your Smart Contract
 
@@ -28,13 +28,13 @@ Upgrading to Cosmwasm 1.0.0 requires upgrades to various dependencies in the sma
 
 <Admonition type="danger" icon="🔥" title="Outdated dependencies">
 
-The [Terra-Cosmwasm package](https://github.com/terra-money/terra-cosmwasm/tree/main/packages/terra-cosmwasm) is no longer supported. This package was for queries to the oracle, market, and treasury modules, which do not exist on Terra 2.0.
+The [Terra-Cosmwasm package](https://github.com/terra-money/terra-cosmwasm/tree/main/packages/terra-cosmwasm) is no longer supported. This package was for queries to the oracle, market, and treasury modules which are only available on Terra Classic.
 
 The following dependencies may be upgraded in the future, but are currently not functional with Cosmwasm 1.0.0:
 - [cw-asset](https://github.com/mars-protocol/cw-asset)
 - [astroport-package](https://github.com/astroport-fi/astroport-core/tree/main/packages/astroport)
 
-You may want to rebuild your application without these dependencies to function in the meantime. 
+You may want to rebuild your application without these dependencies for now. 
 
 </Admonition>
 
@@ -48,7 +48,7 @@ You may want to rebuild your application without these dependencies to function 
 cargo build
 ```
 
-3. Finally, run the following to verify the upgrade didn't cause any breaking changes to the contract:
+3. Finally, run the following to verify that the upgrade didn't cause any breaking changes to the contract:
 
 ```sh
 `terrain test [insert-contract-name]`

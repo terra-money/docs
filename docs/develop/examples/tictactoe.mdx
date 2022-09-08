@@ -20,7 +20,7 @@ This smart contract is built with 1 query and 4 different executes. To enable a 
 - `INVITED`: only one game can be in this status at a time per host and opponent pair. This status is achieved by creating a new game. The following possible statuses are PLAYING or REJECTED.
 - `PLAYING`: only one game can be in this status at a time per host and opponent pair. This status must mutate from `INVITED`.
 - `COMPLETED`: multiple games can be in this status. This status must mutate from `PLAYING`.
-- `REJECTED`: multiple games can be in this status. This status must mutate from `INVITE`. 
+- `REJECTED`: multiple games can be in this status. This status must mutate from `INVITED`. 
 
 A host creates the game and invites an opponent to play. This game can only be played by 1 host and 1 opponent at a time. After a match is completed or rejected, a new game can be started.
 
