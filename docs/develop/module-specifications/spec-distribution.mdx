@@ -28,9 +28,7 @@ Collected rewards are pooled globally and distrubuted to validators and delegato
 
 ### FeePool
 
-All globally tracked parameters for distribution are stored within
-`FeePool`. Rewards are collected and added to the reward pool and
-distributed to validators/delegators from there.
+Fees are collected and stored in the `FeePool` until they can be distributed to validators and their delegators.
 
 Note that the reward pool holds decimal coins (`DecCoins`) to allow
 for fractions of coins to be received from operations like inflation.
