@@ -11,7 +11,7 @@ const tx = await wallet.createAndSignTx({ msgs, fee });
 
 ## Automatic fee estimation
 
-If you don't specify a fee when you create your transaction, it will automatically be estimated by simulating it within the node.
+If you don't specify a fee when you create your transaction, it will be automatically estimated by simulating it within the node.
 
 ```ts
 const tx = await wallet.createAndSignTx({ msgs });

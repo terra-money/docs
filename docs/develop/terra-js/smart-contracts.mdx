@@ -47,7 +47,7 @@ const {
 
 ## Create a contract
 
-For Terra smart contracts, there is a distinction between uploading contract code and creating a contract. This allows multiple contracts to share the same code if there are only minor variations in their logic which can be configured at contract creation. This configuration is passed in an **InitMsg**, and provides the initial state for the contract.
+For Terra smart contracts, there is a distinction between uploading contract code and creating a contract. This allows multiple contracts to share the same code if there are only minor variations in their logic which can be configured at contract creation. This configuration is passed in an **InitMsg** and provides the initial state for the contract.
 
 To create or instantiate a smart contract, you must first know the code ID of an uploaded code. You will reference it in a `MsgInstantiateContract` alongside the InitMsg to create the contract. Upon successful creation, your contract will be located at an address that you specify.
 
@@ -57,7 +57,7 @@ import { MsgInstantiateContract } from '@terra-money/terra.js';
 
 const instantiate = new MsgInstantiateContract(
   wallet.key.accAddress,
-  +code_id[0], // code ID
+  code_id[0], // code ID
   {
     count: 0,
   }, // InitMsg
@@ -106,7 +106,7 @@ const executeTxResult = await terra.tx.broadcast(executeTx);
 
 ## Query data from a contract
 
-A contract can define a query handler, which understands requests for data specified in a JSON message called a QueryMsg. Unlike the message handler, the query handler cannot modify the contract's or blockchain's state -- it is a readonly operation. Therefore, a querying data from a contract does not use a message and transaction, but works directly through the `LCDClient` API.
+A contract can define a query handler, which understands requests for data specified in a JSON message called a QueryMsg. Unlike the message handler, the query handler cannot modify the contract's or blockchain's state -- it is a read-only operation. Therefore, querying data from a contract does not use a message and transaction, but works directly through the `LCDClient` API.
 
 ```ts
 const result = await terra.wasm.contractQuery(

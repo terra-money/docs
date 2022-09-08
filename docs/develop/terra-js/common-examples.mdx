@@ -13,7 +13,7 @@ If you are new to Terra and don't know where to start, visit the [getting starte
 
 ## Configuring LCDClient
 
-The following code example shows how to initialize the LCDClient. The rest of the examples assume you initialized it by using this example or similar code. The LCDCClient configuration accepts a boolean `legacy` value that is false by default. When set to `true` the LCD will connect to Terra Classic.
+The following code example shows how to initialize the LCDClient. The rest of the examples assume you initialized it by using this example or similar code. The LCDClient configuration accepts a boolean `legacy` value that is false by default. When set to `true`, the LCD will connect to Terra Classic.
 
 ```ts
 import fetch from "isomorphic-fetch";
@@ -53,8 +53,8 @@ Example response:
 ## Get wallet balance (CW20 tokens)
 
 ```js
-// ANC on pisco-1
-const tokenAddress = "terra1747mad58h0w4y589y3sk84r5efqdev9q4r02pc";
+// Check balance of token on pisco-1 using tokenAddress.
+const tokenAddress = "<INSERT_TOKEN_ADDRESS>";
 const walletAddress = "terra1f44ddca9awepv2rnudztguq5rmrran2m20zzd6";
 const response = await lcd.wasm.contractQuery(tokenAddress, {
   balance: { address: walletAddress },
@@ -184,10 +184,10 @@ const mk = new MnemonicKey({
 
 const wallet = lcd.wallet(mk);
 
-// ANC on pisco-1
-const tokenAddress = "terra1747mad58h0w4y589y3sk84r5efqdev9q4r02pc";
+// Specify token address of desired token to send.
+const tokenAddress = "<INSERT_TOKEN_ADDRESS>";
 
-// Transfer 1 ANC.
+// Transfer 1 token.
 const cw20Send = new MsgExecuteContract(wallet.key.accAddress, tokenAddress, {
   transfer: {
     amount: "1000000",
@@ -233,7 +233,7 @@ const { assets } = await lcd.wasm.contractQuery(pool, { pool: {} });
 // Calculate belief price using pool balances.
 const beliefPrice = (assets[0].amount / assets[1].amount).toFixed(18);
 
-// Swap 1 LUNA to SCRT with 1% slippage tolerance.
+// Swap 1 LUNA with 1% slippage tolerance.
 const terraSwap = new MsgExecuteContract(
   wallet.key.accAddress,
   pool,
@@ -311,7 +311,7 @@ This is a more advanced verification that requires the bech32 library which is u
 ```ts
 import { bech32 } from "bech32";
 
-// advanced address validation, it verify also the bech32 checksum
+// advanced address validation, it also verifies the bech32 checksum
 function isValid(address) {
   try {
     const { prefix: decodedPrefix } = bech32.decode(address); // throw error if checksum is invalid
@@ -331,11 +331,9 @@ console.log(isValid("random string")); // false
 
 ## Avoid Status 500: timed out waiting for tx to be included in a block
 
-Occasionally the broadcast function of terra.js and terra.py throws the error `Status 500: timed out waiting for tx to be included in a block`, even if transaction will confirmed onchain after a few seconds.
+Occasionally the broadcast function of terra.js and terra.py will throw the error `Status 500: timed out waiting for tx to be included in a block`. This occurs because the libraries use `broadcast-mode = block` by default, which causes the LCD, to which you are broadcasting the transaction, to send an http response to your request only when the transaction has been included in a block. If the chain is overloaded, the confirmation may take too long and trigger a timeout in the LCD.
 
-This happens because the libraries use by default the `broadcast-mode = block`, with this mode the LCD to which you are broadcasting the transaction sends an http response to your request only when the transaction has been included in a block, but if the chain is overloaded the confirmation may take too long and trigger a timeout in the LCD.
-
-To solve this problem it is recommended to use the `broadcast-mode = sync` and then iterate a request to the LCD with the txhash to understand when it has been included in a block.
+To solve this problem it is recommended to use `broadcast-mode = sync` and then iterate a request to the LCD with the txhash to ensure that it has been included in a block.
 
 This is an example to do it in JavaScript:
 

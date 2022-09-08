@@ -59,7 +59,8 @@ async function main() {
   const client = new LCDClient({
     URL: "http://localhost:1317/",
     chainID: "localterra",
-    gasPrices: "0.2uluna",
+    gasPrices: "0.15uluna",
+    gasAdjustment: 1.4,
   });
 
   // Granter (terra1x46rqay4d3cssq8gxxvqz8xt6nwlz4td20k38v)
@@ -110,10 +111,10 @@ async function main() {
     .catch((err) => {
       if (err.response) {
         // unauthorized: authorization not found: failed to execute message; message index: 0: failed to simulate tx
-        // happenes when there's not enough amount of granted amount of token
+        // happens when the granted amount of tokens is exceeded.
 
         // insufficient funds: insufficient account funds; ...
-        // happenes when granter does not have enough amount of token
+        // happens when granter does not have enough tokens
         console.error(err.response.data);
       } else {
         console.error(err.message);

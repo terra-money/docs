@@ -25,7 +25,6 @@ By the end of this guide, you'll be able to execute a token swap from your appli
 
 ```sh
 mkdir my-terra-js-project
-
 ```
 
 2. Enter your new project directory:
@@ -81,10 +80,9 @@ const lcd = new LCDClient({
 });
 ```
 
-
 <Admonition type="note" icon="📝" title="Switching to LocalTerra or the mainnet">
 
-The previous code block shows how to connect to the pisco testnet. To connect to LocalTerra, change the `URL` to `”http://localhost:1317”`. To connect to the phoenix-1 mainnet for production, use “`https://phoenix-lcd.terra.dev`”.
+The previous code block shows how to connect to the pisco testnet. To connect to LocalTerra, change the `URL` to `”http://localhost:1317"`. To connect to the phoenix-1 mainnet for production, use `“https://phoenix-lcd.terra.dev”`.
 
 You will also need to change the `chainID` from `"pisco-1"` to `”localterra”` or `"phoenix-1"`.
 
@@ -94,14 +92,14 @@ You will also need to change the `chainID` from `"pisco-1"` to `”localterra”
 
 1. You'll need a wallet to sign and submit transactions. [Create a new wallet](../../learn/terra-station/Download/terra-station-extension.mdx) using the Terra Station extension. Be sure to save your mnemonic key!
 
-2. After creating your wallet, you’ll need to set it to use the testnet. Click the gear icon in the extension and change the network from `mainnet` to `testnet`.
+2. After creating your wallet, you will need to set it to use the testnet. Click the gear icon in the extension and change the network from `mainnet` to `testnet`.
 
 3. Add the following code to your `index.js` file and input your mnemonic key:
 
 ```ts
 import { MnemonicKey } from "@terra-money/terra.js";
 const mk = new MnemonicKey({
-  mnemonic: " //Input your 24-word mnemonic key here//",
+  mnemonic: "//Input your 24-word mnemonic key here//",
 });
 const wallet = lcd.wallet(mk);
 ```
@@ -111,18 +109,17 @@ const wallet = lcd.wallet(mk);
 Although this tutorial has you input your mnemonic directly, this practice should be avoided in production.
 For security reasons, it's better to store your mnemonic key data in your environment by using `process.env.SECRET_MNEMONIC` or `process.env.SECRET_PRIV_KEY`. This practice is more secure than a hard-coded string.
 
-
 </Admonition>
 
 4. Request testnet funds for your wallet by navigating to the [Terra faucet](https://faucet.terra.money) and inputting your wallet address. You'll need these funds to perform swaps and pay for gas fees. Once the funds are in your wallet, you’re ready to move on to the next step.
 
 ## 4. Find a contract address
 
-To find the contract address for a specific Terraswap pair, visit https://app.terraswap.io/
+To find the contract address for a specific Terraswap pair, visit https://app.terraswap.io/.
 
 ## 5. Query a Terraswap contract and set up the transaction
 
-Before you can perform a swap, you’ll need a belief price. You can calculate the belief price of one token by querying the proportion of the two pooled tokens. The belief price +/- the `max_spread` is the range of possible acceptable prices for this swap.
+Before you can perform a swap, you will need a belief price. You can calculate the belief price of one token by querying the proportion of the two pooled tokens. The belief price +/- the `max_spread` is the range of possible acceptable prices for this swap.
 
 1. Add the following code to your `index.js` file. Make sure the contract address is correct.
 

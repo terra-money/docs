@@ -34,7 +34,7 @@ public fromData(isClassic?: boolean)
 
 ## Signing Messages with Keys
 
-Wallet objects on Terra contain information about the LCDClient, so they inherit the `isClassic` parameter automatically. However, key objects, such as `MnemonicKey`, `RawKey` or `CLIKey` do not. For example, `createSignatureAmino` is a method where you can specify if you'd like to use Terra Classic.
+Wallet objects on Terra contain information about the LCDClient, so they inherit the `isClassic` parameter automatically. However, key objects, such as `MnemonicKey`, `RawKey` or `CLIKey` do not. For example, `createSignatureAmino` is a method where you can specify whether or not you would like to use Terra Classic.
 
 ```ts
  public async createSignatureAmino(
