@@ -20,51 +20,74 @@ You'll also need:
 
 ## Instantiate a new app using Terrain
 
-Instantiate a [new app using Terrain](https://github.com/terra-money/terrain#terrain-new-name):
+<CH.Scrollycoding>
 
-```sh
+1. Instantiate a [new app using Terrain](https://github.com/terra-money/terrain#terrain-new-name).
+
+
+```sh Terminal focus=1
 terrain new token_factory
+
 ```
 
-When the app is generated, the following displays:
 
-```sh
+---
+
+2. When the app is generated, the following displays.
+
+```sh Output focus=3:6
+terrain new token_factory
+
 generating app token_factory:
 - workspace... done
 - contract... done
 - frontend... done
 ```
 
+</CH.Scrollycoding>
+
 ## Generate the `cw20_factory_token` contract
 
-a. Navigate to the `token_factory` directory:
+<CH.Scrollycoding>
 
-```sh
+1. Navigate to the _`token_factory`_ directory.
+
+
+```sh Terminal focus=1
 cd token_factory
-```
-
-b. Instantiate the `cw20_factory_token` contract:
 
 ```
+
+---
+
+2. Instantiate the _`cw20_factory_token`_ contract.
+
+```sh Terminal focus=2
+cd token_factory
 terrain contract:new cw20_factory_token
+
 ```
+---
 
-When the contract is generated, the following displays:
+3. When the contract is generated, the following displays:
 
-```sh
+```sh Output focus=2:3
+terrain contract:new cw20_factory_token
 generating contract cw20_factory_token:
 - contract... done
 ```
+</CH.Scrollycoding>
 
 ## Modify the mnemonics passphrase
 
 Before editing the smart contracts you instantiated in step 2, modify the mnemonic you'll use to do deploy the contract to LocalTerra:
 
-a. Open `/keys.terrain.js` and set the `mnemonic`s to the following:
+1. Open _`/keys.terrain.js`_ and set the _`mnemonic`_ to the following.
 
 ```
 notice oak worry limit wrap speak medal online prefer cluster roof addict wrist behave treat actual wasp year salad speed social layer crew genius
 ```
+
 
 
 <Admonition type="tip" icon="💡">
@@ -77,7 +100,7 @@ notice oak worry limit wrap speak medal online prefer cluster roof addict wrist 
 
 </Admonition>
 
-The `module.exports` section of your `keys.terrain.js` file should now look similar to the following:
+The `module.exports` section of your `keys.terrain.js` file should now look similar to the following.
 
 ```js
 module.exports = {
@@ -94,23 +117,31 @@ The `token_factory` contract mints new `cw20_factory_token` tokens, increases th
 
 Deploy each smart contract to validate that the development environment is configured correctly:
 
-a. Deploy the `token_factory` contract:
+<CH.Scrollycoding>
 
-```
+1. Deploy the `token_factory` contract:
+
+```sh Terminal
 terrain deploy token_factory --signer test
 ```
 
-b. Deploy the `cw20_factory_token` contract:
+---
 
-```
+2. Deploy the `cw20_factory_token` contract:
+
+```sh Terminal focus=3
+terrain deploy token_factory --signer test
+
 terrain deploy cw20_factory_token --signer test
 ```
 
+</CH.Scrollycoding>
+
 ## Modify the CW20 Factory Token smart contract
 
-In this section, you will modify the `cw20_factory_token` contract that you instantiated. This contract implements the [CW20 Base](https://github.com/CosmWasm/cw-plus/tree/main/contracts/cw20-base), along with several custom files.
+In this section, you will modify the _`cw20_factory_token`_ contract that you instantiated. This contract implements the [CW20 Base](https://github.com/CosmWasm/cw-plus/tree/main/contracts/cw20-base), along with several custom files.
 
-To modify the `cw20_factory_token` contract, follow the procedure below.
+To modify the _`cw20_factory_token`_ contract, follow the procedure below.
 
 ### 1. Add the the CW20 base
 
@@ -119,17 +150,21 @@ First, add the [CW20 Base](https://github.com/CosmWasm/cw-plus/tree/main/contrac
 - the smart contract to be easily deployed to LocalTerra
 - extended functionality using the [migration implementation](https://docs.terra.money/docs/develop/dapp/quick-start/contract-migration.html).
 
-To add the CW20 Base to the `cw20_factory_token` contract, do the following:
+To add the CW20 Base to the _`cw20_factory_token`_ contract, do the following.
 
-a. Navigate to `/token_factory/contracts/cw20_factory_token/`.
+<CH.Scrollycoding>
 
-```
+1. Navigate to _`/token_factory/contracts/cw20_factory_token/`_.
+
+```sh Terminal
 cd /token_factory/contracts/cw20_factory_token/
 ```
 
-b. Open `cargo.toml` and add this to the dependencies:
+---
 
-```rust
+2. Open _`cargo.toml`_ and add this to the dependencies:
+
+```rust cargo.toml focus=3:4
 # ...
 
 [dependencies]
@@ -138,47 +173,70 @@ cw20-base = {  version = "0.13.2", features = ["library"] }
 # ...
 ```
 
+</CH.Scrollycoding>
+
+
 ### 2. Modify the contract files
 
-Now that you've added the `CW20 Base` to implement the base CW20 token logic, modify the following files:
+Now that you've added the _`CW20 Base`_ to implement the base CW20 token logic, modify the following files:
 
-- `msg.rs`
-- `lib.rs`
-- `contract.rs`
-- `schemas.rs`
+- _`msg.rs`_
+- _`lib.rs`_
+- _`contract.rs`_
+- _`schemas.rs`_
 
 To modify the contract files, follow the procedure below.
 
-a. Navigate to `/token_factory/contracts/cw20_factory_token/src`.
+<h3> msg.rs </h3>
 
-```
+<CH.Scrollycoding>
+
+1. Navigate to _`/token_factory/contracts/cw20_factory_token/src`_.
+
+```sh Terminal
+
 cd /token_factory/contracts/cw20_factory_token/src
+
 ```
 
-b. Open `msg.rs` and paste the following:
+---
 
-```rust
+2. Open _`msg.rs`_ in your code editor and paste the following.
+
+```rust msg.rs
 use schemars::JsonSchema;
 use serde::{Deserialize, Serialize};
 
 #[derive(Serialize, Deserialize, Clone, Debug, PartialEq, JsonSchema)]
 pub struct MigrateMsg {}
 ```
+---
+3. Save and close _`msg.rs`_.
 
-c. Save and close `msg.rs`.
+</CH.Scrollycoding>
 
-d. Open `lib.rs` and paste the following:
+<h3>lib.rs</h3>
 
-```rust
+<CH.Scrollycoding>
+
+1. Open _`lib.rs`_ and paste the following.
+
+```rust lib.rs
 pub mod contract;
 pub mod msg;
 ```
+---
+2. Save and close _`lib.rs`_.
 
-e. Save and close `lib.rs`.
+</CH.Scrollycoding>
 
-f. Open `contract.rs` and paste the following:
+<h3>contract.rs</h3>
 
-```rust
+<CH.Scrollycoding>
+
+1. Open _`contract.rs`_ and paste the following.
+
+```rust contract.rs
 #[cfg(not(feature = "library"))]
 use cosmwasm_std::entry_point;
 use cosmwasm_std::{
@@ -296,12 +354,18 @@ pub fn migrate(_deps: DepsMut, _env: Env, _msg: MigrateMsg) -> StdResult<Respons
     Ok(Response::default())
 }
 ```
+---
+2. Save and close _`contract.rs`_.
 
-g. Save and close `contract.rs`.
+</CH.Scrollycoding>
 
-h. Open `schemas.rs` and paste the following:
+<h3>schema.rs</h3>
 
-```rust
+<CH.Scrollycoding>
+
+1. Open _`schemas.rs`_ and paste the following.
+
+```rust schemas.rs
 use std::env::current_dir;
 use std::fs::create_dir_all;
 
@@ -320,36 +384,48 @@ fn main() {
     export_schema(&schema_for!(QueryMsg), &out_dir);
 }
 ```
+---
 
-i. Close and save `schemas.rs`:
+2. Save and close _`schemas.rs`_.
+
+</CH.Scrollycoding>
+
 
 ### 3. Generate and test the schema
 
-a. Navigate to `/token_factory/contracts/cw20_factory_token`:
+<CH.Scrollycoding>
 
-```
+1. Navigate to _`/token_factory/contracts/cw20_factory_token`_.
+```sh Terminal
 cd /token_factory/contracts/cw20_factory_token
 ```
+---
+2. Generate the new schema.
 
-b. Generate the new schema:
-
-```
+```sh Terminal focus=2
+cd /token_factory/contracts/cw20_factory_token
 cargo schema
 ```
+---
+3. Test the schema.
 
-c. Test the schema:
-
-```
+```sh Terminal focus=3
+cd /token_factory/contracts/cw20_factory_token
+cargo schema
 cargo test
 ```
 
+</CH.Scrollycoding>
+
 ### 4. Modify `terrain.config.json`
 
-a. Open `terrain.config.json`.
+<CH.Scrollycoding>
 
-b. Modify the `InstantiateMsg` property in the `terrain.config.json` so that it contains the `name`, `symbol`, `decimals` and `initial_balances` shown below. This allows you to send the correct data to the smart contract upon instantiation:
+1. Open _`terrain.config.json`_.
 
-```json
+2. Modify the _`InstantiateMsg`_ property in the _`terrain.config.json`_ so that it contains the _`name`_, _`symbol`_, _`decimals`_ and _`initial_balances`_ shown in the example. This allows you to send the correct data to the smart contract upon instantiation.
+
+```json terrain.config.json
 {
   "_global": {
     "_base": {
@@ -371,7 +447,11 @@ b. Modify the `InstantiateMsg` property in the `terrain.config.json` so that it 
 }
 ```
 
+</CH.Scrollycoding>
+
 ### 5. Test the smart contract deployment
+
+<CH.Scrollycoding>
 
 Deploy the contract again to confirm that the workplace still compiles.
 
@@ -379,8 +459,10 @@ Deploy the contract again to confirm that the workplace still compiles.
 terrain deploy cw20_factory_token --signer test
 ```
 
+</CH.Scrollycoding>
+
 <Admonition type="tip" icon="💡">
-If your code is not working as expected, you can [clone the repo with all the changes described above](https://github.com/emidev98/token-factory/commit/8da7892486704c54e33442b156d63178f5137527) so that you can continue with the tutorial. To clone the repo, do the following:
+If your code is not working as expected, you can [clone the repo with all the changes described above](https://github.com/emidev98/token-factory/commit/8da7892486704c54e33442b156d63178f5137527) so that you can continue with the tutorial. To clone the repo, do the following.
 
 ```
 git clone -n https://github.com/emidev98/token-factory
@@ -404,18 +486,20 @@ To set up the contract, follow the procedure below:
 
 In this section, you will add the following dependencies to `cargo.toml`:
 
-- `cw2`
-- `cw20`
-- `cw20-base`
-- `cw20_factory_token`
+- _`cw2`_
+- _`cw20`_
+- _`cw20-base`_
+- _`cw20_factory_token`_
 
-To add the dependencies, do the following:
+To add the dependencies, do the following.
 
-a. Navigate to `/token_factory/contracts/token_factory`.
+<CH.Scrollycoding>
 
-b. Open `cargo.toml` and add the dependencies inside the header:
+1. Navigate to _`/token_factory/contracts/token_factory`_.
 
-```rust
+2. Open _`cargo.toml`_ and add the dependencies inside the header.
+
+```rust cargo.toml
 # ...
 [dependencies]
 cw2 = "0.13.2"
@@ -425,9 +509,11 @@ cw20_factory_token = {  version = "0.6.0", features = ["library"] }
 # ...
 ```
 
+</CH.Scrollycoding>
+
 ### 2. Modify the contract files
 
-Now that you've added the dependencies, modify the following files:
+Now that you've added the dependencies, you will need to modify the following files:
 
 - `error.rs`
 - `msg.rs`
@@ -438,11 +524,15 @@ Now that you've added the dependencies, modify the following files:
 
 To modify the contract files, follow the procedure below:
 
-a. Navigate to `/token_factory/contracts/token_factory/src`.
+<CH.Scrollycoding>
 
-b. Open `error.rs` and add the following:
+1. Navigate to _`/token_factory/contracts/token_factory/src`_.
 
-```rust
+
+2. Open _`error.rs`_ and add the following.
+
+
+```rust error.rs
 use cosmwasm_std::{StdError, Uint128};
 use thiserror::Error;
 
@@ -482,11 +572,13 @@ pub enum ContractError {
 }
 ```
 
-c. Close and save `error.rs`.
+---
+3. Save and close _`error.rs`_.
+---
 
-d. Open `msg.rs` and add the following:
+4. Open _`msg.rs`_ and add the following.
 
-```rust
+```rust msg.rs
 use cosmwasm_std::Uint128;
 use schemars::JsonSchema;
 use serde::{Deserialize, Serialize};
@@ -547,12 +639,13 @@ pub struct MintedTokens {
 #[derive(Serialize, Deserialize, Clone, Debug, PartialEq, JsonSchema)]
 pub struct MigrateMsg {}
 ```
+---
+5. Save and close _`msg.rs`_.
+---
 
-e. Close and save `msg.rs`.
+6. Open _`state.rs`_ and add the following.
 
-f. Open `state.rs` and add the following:
-
-```rust
+```rust state.rs
 use schemars::JsonSchema;
 use serde::{Deserialize, Serialize};
 use cw_storage_plus::Item;
@@ -572,12 +665,13 @@ pub struct Config {
 pub const CONFIG: Item<Config> = Item::new("config");
 pub const MINTED_TOKENS: Item<Vec<String>> = Item::new("minted_tokens");
 ```
+---
+7. Save and close _`state.rs`_.
+---
 
-g. Close and save `state.rs`.
+8. Open _`lib.rs`_ and add the following.
 
-h. Open `lib.rs` and add the following:
-
-```rust
+```rust lib.rs
 pub mod contract;
 pub mod msg;
 pub mod state;
@@ -585,10 +679,13 @@ pub mod error;
 mod test;
 pub use crate::error::ContractError;
 ```
+---
+9. Save and close _`lib.rs`_
+---
 
-f. Open `contract.rs` and add the following:
+10. Open _`contract.rs`_ and add the following.
 
-```rust
+```rust contract.rs
 use crate::error::ContractError;
 use crate::msg::{DepositType, ExecuteMsg, InstantiateMsg, MigrateMsg, MintedTokens, QueryMsg};
 use std::vec;
@@ -935,11 +1032,11 @@ pub fn migrate(_deps: DepsMut, _env: Env, _msg: MigrateMsg) -> StdResult<Respons
 }
 ```
 
-i. Close and save `lib.rs`.
+---
 
-j. Open `test.rs` and add the following:
+11. Open _`test.rs`_ and add the following.
 
-```rust
+```rust test.rs
 #[cfg(test)]
 mod tests {
     use crate::{
@@ -1202,11 +1299,14 @@ mod tests {
     }
 }
 ```
-h. Navigate to `token_factory/contracts/token_factory/examples`.
+---
+12. Save and Close _`test.rs`_
+---
+13. Navigate to _`token_factory/contracts/token_factory/examples`_.
+---
+14. Open _`schema.rs`_ and paste the following. 
 
-i. Open `schema.rs`.
-
-```rust
+```rust schema.rs
 use std::env::current_dir;
 use std::fs::create_dir_all;
 use cosmwasm_schema::{export_schema, remove_schemas, schema_for};
@@ -1224,25 +1324,34 @@ fn main() {
     export_schema(&schema_for!(QueryMsg), &out_dir);
 }
 ```
+---
+15. Save and close  _`schema.rs`_.
+
+</CH.Scrollycoding>
+
 ### 3. Generate and test the schema
 
-Now you have modified the `token_factory` contract, generate the schema and run the tests to validate that the code works as expected:
+Now you have modified the _`token_factory`_ contract, generate the schema and run the tests to validate that the code works as expected:
 
-a. Navigate to `/token_factory/contracts/token_factory`.
+<CH.Scrollycoding>
 
-```bash
+1. Navigate to _`/token_factory/contracts/token_factory`_.
+
+```sh Terminal
 cd /token_factory/contracts/token_factory
 ```
+---
 
-b. Generate the schema:
+2. Generate the schema:
 
-```bash
- cargo schema
+```sh Terminal focus=2
+cd /token_factory/contracts/token_factory
+cargo schema
 ```
+---
+3. You should see output similar to the following. 
 
-You should see output similar to:
-
-```sh
+```sh Output
 Finished dev [unoptimized + debuginfo] target(s) in 0.02s
 Running `target/debug/examples/schema`
 Removing "~/Documents/github/token_factory/contracts/token_factory/schema/execute_msg.json" …
@@ -1252,16 +1361,18 @@ Created ~/Documents/github/token_factory/contracts/token_factory/schema/instanti
 Created ~/Documents/github/token_factory/contracts/token_factory/schema/execute_msg.json
 Created ~/Documents/github/token_factory/contracts/token_factory/schema/query_msg.json
 ```
+---
+4. Run the tests:
 
-c. Run the tests:
-
-```sh
+```sh Terminal focus=3
+cd /token_factory/contracts/token_factory
+cargo schema
 cargo test
 ```
+---
+5. You will see output similar to the following.
 
-You will see output similar to the following:
-
-```sh
+```sh Output
 Finished test [unoptimized + debuginfo] target(s) in 0.02s
 Running unittests (target/debug/deps/token_factory-03f77bf897cd72b7)
 
@@ -1274,14 +1385,16 @@ test test::tests::test_reply_instantiate_event ... ok
 test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 ```
 
+</CH.Scrollycoding>
+
 ### 4. Modify `terrain.config.json`
 
-a. Open `terrain.config.json`.
+1. Open _`terrain.config.json`_.
 
-b. Modify the property `InstantiateMsg`, using your `<token_contract_code_id>`. **The `<token_contract_code_id>` should not be surrounded by quotes**:
+2. Modify the property _`InstantiateMsg`_, using your _`<token_contract_code_id>`_. **The _`<token_contract_code_id>`_ should not be surrounded by quotes**:
 
 <Admonition type="tip" icon="💡">
-To determine which `<token_contract_code_id>`, check the file `refs.terrain.json` from the workspace's root under the `cw20-token_factory` object.
+To determine which _`<token_contract_code_id>`_, check the file _`refs.terrain.json`_ from the workspace's root under the _`cw20-token_factory`_ object.
 </Admonition>
 
 ```json
@@ -1301,7 +1414,7 @@ To determine which `<token_contract_code_id>`, check the file `refs.terrain.json
 
 ## Deploy the smart contract to LocalTerra
 
-Now that you've created, modified and tested each smart contract, deploy the `token_factory` to your LocalTerra instance using Terrain:
+Now that you've created, modified and tested each smart contract, deploy the _`token_factory`_ to your LocalTerra instance using Terrain:
 
 ```sh
 terrain deploy token_factory --signer test
