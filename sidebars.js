@@ -133,7 +133,6 @@ const sidebars = {
                                 type: 'category',
                                 label: 'Wallet Provider',
                                 collapsed: true,
-                                link: {type: 'doc', id: 'develop/wallet-provider/README'},
                                 items: [
                                     'develop/wallet-provider/wallet-provider-tutorial',
                                     'develop/wallet-provider/station-extension',
@@ -145,7 +144,6 @@ const sidebars = {
                                 type: 'category',
                                 label: 'Terrad',
                                 collapsed: true,
-                                link: {type: 'doc', id: 'develop/terrad/README'},
                                 items: [
                                     'develop/terrad/install-terrad',
                                     'develop/terrad/terrad-mac',
