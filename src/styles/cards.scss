@@ -68,6 +68,7 @@ $font-family_1: 'Gotham';
 		grid-template-columns: 70px 300px;
 		border-radius: 0.5em;
 		align-items: center;
+		transition: border .5s, box-shadow .7s;
 
 		&:hover {
 			box-shadow: 3px 3px 6px rgb(55, 55, 55, 0.25);

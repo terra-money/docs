@@ -6,6 +6,7 @@
 			background: #FFFFFF;
 			border: 1px solid #EBEFF8;
 			margin-top: 2px;
+			transition: background .3s;
 
 			svg {
 				width: 20px;
@@ -74,6 +75,7 @@
 	width: 28px;
 	height: 28px;
 	margin-right: 10px;
+	transition: background .3s;
 
 	&:hover {
 		background: #e6e6e6;
@@ -96,6 +98,7 @@
 	border-radius: 60px;
 	font-size: 12px;
 	margin-right: 10px;
+	transition: transform .1s, box-shadow .5s;
 
 	&:hover {
 		box-shadow: 3px 3px 6px rgb(55, 55, 55, 0.25);
