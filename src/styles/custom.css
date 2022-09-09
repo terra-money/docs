@@ -86,3 +86,7 @@
   border: 1px solid var(--ifm-tabs-color-active-border);
   border-left-width: var(--ifm-alert-border-left-width);
 }
+
+[data-theme='dark'] .theme-admonition:hover {
+  box-shadow: 3px 3px 6px rgb(150 150 150 / 25%);
+}
