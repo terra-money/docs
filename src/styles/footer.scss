@@ -52,12 +52,15 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    opacity: 70%;
     margin-top: 80px;
     padding-bottom: 20px;
 
-    &:hover {
-      opacity: 100%;
+    img {
+      opacity: 70%;
+
+      &:hover {
+        opacity: 100%;
+      }
     }
 
     p {

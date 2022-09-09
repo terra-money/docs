@@ -12,6 +12,11 @@
       font-weight: 500;
       font-size: 16px;
       color: #2043B5 !important;
+      font-weight: 600;
+
+      &:not(.menu__link--sublist) {
+        background: none;
+      }
     }
   }
 
@@ -36,7 +41,7 @@ li[class*=' theme-doc-sidebar-item-'] {
   &[class*="-level-2"] {
     a.menu__link {
       font-size: 13px;
-      color: #8B9CDA;
+      color: #7788C6;
     }
 
     [class*='caret'] {
@@ -119,4 +124,8 @@ li[class*=' theme-doc-sidebar-item-'] {
     font-size: 12px;
     color: #F3F3F3;
   }
+}
+
+.menu__list-item-collapsible--active {
+  background: none;
 }
