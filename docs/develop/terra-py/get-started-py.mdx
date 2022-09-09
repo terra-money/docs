@@ -22,7 +22,7 @@ The Terra Python SDK requires <a href="https://www.python.org/downloads/">Python
 pip install -U terra_sdk
 ```
 
-2. Run the following commands to clone the `terra.py` repository, enter the new directory and install all necessary dependencies:
+2. Run the following commands to clone the `terra.py` repository, enter the new directory, and install all necessary dependencies:
 
 ```sh
 git clone --depth 1 https://github.com/terra-money/terra.py.git
@@ -112,6 +112,7 @@ Each request you will make to the blockchain will contain a message detailing yo
 ```python
 import requests
 import json
+
 # Request current gas rates on testnet for future fee estimation.
 gas_price_dict = requests.get("https://pisco-fcd.terra.dev/v1/txs/gas_prices").json()
 gas_price_dict
@@ -136,7 +137,7 @@ gas_price_dict
 
 <Admonition type="note" icon="📝">
 
-The "u" preceding the name of each currency is the unit symbol for micro. This means that each price is given in millionths of the corresponding cryptocurrency asset. Each currency name refers to its corresponding Terra token. For example, the "uluna": "0.15" entry corresponds to a 0.00000015 LUNA cost for each unit of gas expended per transaction.
+The "u" preceding the name of each currency is the unit symbol for micro. This means that each price is given in millionths of the corresponding cryptocurrency asset. For example, the "uluna": "0.15" entry corresponds to a 0.00000015 LUNA cost for each unit of gas expended per transaction.
 
 </Admonition>
 
@@ -175,7 +176,7 @@ tx = wallet.create_and_sign_tx(options=tx_options)
 result = terra.tx.broadcast(tx)
 ```
 
-After broadcasting the transaction to the Terra node, the `result` variable will hold all relevant information about your request, including if it was successfully completed or not. In the Jupyter Notebook files in this repository, you may utilize a helper function which will neatly present this information for you.
+After broadcasting the transaction to the Terra node, the `result` variable will hold all relevant information about your request, including if it was successfully completed or not.
 
 
 <Admonition type="note" icon="📝" title="Note on Gas Estimation">
