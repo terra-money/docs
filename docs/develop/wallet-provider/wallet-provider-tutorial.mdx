@@ -9,7 +9,7 @@ This guide will cover how to set up a React app, integrate Wallet Provider, chec
 
 <Admonition type="tip" icon="💡" title="Just want to dive in?">
 
-Check out the getting started section for the premade templates [in GitHub](https://github.com/terra-money/wallet-provider/).
+Check out the getting started section for the premade templates [on GitHub](https://github.com/terra-money/wallet-provider/).
 
 </Admonition>
 
@@ -73,7 +73,7 @@ Next, you'll wrap your `App` with `<WalletProvider>` to give all your components
    npm start
    ```
 
-Your browser should open to `http://localhost:3000/`, and you should see the react logo with a black background and some text.
+Your browser should open to `http://localhost:3000/` and you should see the react logo with a black background and some text.
 
 
 <details>
@@ -172,17 +172,17 @@ Now that `App.js` has inherited the context of `WalletProvider`, you can start p
 
 4. Refresh your browser. There should be some new text and buttons in your browser.
 
-5. Make sure your Terra Station extension is connected to a wallet. Click **Connect EXTENSION**, and the app will connect to your wallet.
+5. Make sure your Terra Station extension is connected to a wallet. Click **Connect EXTENSION** and the app will connect to your wallet.
 
-The `status`, `network`, and `wallets` properties in your browser provide useful information about the state of the Terra wallet. Before connecting, the `status` variable is `WALLET_NOT_CONNECTED`, and upon connection the status becomes `WALLET_CONNECTED`. In addition, the `wallets` array now has one entry with the `connectType` and `terraAddress` you used to connect.
+The `status`, `network`, and `wallets` properties in your browser provide useful information about the state of the Terra wallet. Before connecting, the `status` variable will be `WALLET_NOT_CONNECTED` and upon connection the status becomes `WALLET_CONNECTED`. In addition, the `wallets` array now has one entry with the `connectType` and `terraAddress` you used to connect.
 
 You should be able to see these changes in real-time.
 
 ## 4. Querying a wallet balance
 
-It's common for an app to show the connected user's LUNA balance. To achieve this you'll need two hooks. The first is `useLCDClient`. An `LCDClient` is essentially a REST-based adapter for the Terra blockchain. You can use it to query an account balance. The second is `useConnectedWallet`, which tells you if a wallet is connected, and if so, basic information about that wallet such as its address.
+It's common for an app to show the connected user's LUNA balance. To achieve this you'll need two hooks. The first is `useLCDClient`. An `LCDClient` is essentially a REST-based adapter for the Terra blockchain. You can use it to query an account balance. The second is `useConnectedWallet`, which tells you if a wallet is connected and, if so, basic information about that wallet such as its address.
 
-Note that if your wallet is empty you won't see any tokens.
+Be aware that you will not see any tokens if your wallet is empty.
 
 1. Create a file in your `Components` folder named `Query.js`.
 
@@ -219,7 +219,7 @@ Note that if your wallet is empty you won't see any tokens.
    }
    ```
 
-3. Open `App.js` in your code editor and add `import Query from './components/Query'` to line 3, and ` <Query />` to line 11. The whole file should look like the following:
+3. Open `App.js` in your code editor and add `import Query from './components/Query'` to line 3, and ` <Query />` to line 10. The whole file should look like the following:
 
    ```js
    import "./App.css";
@@ -244,22 +244,22 @@ Note that if your wallet is empty you won't see any tokens.
 
 ## 5. Sending a transaction
 
-WalletProvider also helps create and send transactions to the Terra network. You'll also need `Terra.js` to help generate the sample transaction:
+You can also create and send transactions to the Terra network while utilizing Wallet Provider. You can use `Terra.js` to generate a sample transaction:
 
 ```sh
 npm install @terra-money/terra.js
 ```
 
-Before broadcasting this example transaction, ensure you're on the Terra testnet. To change networks click the gear icon in your Terra station and select `testnet`.
+Before broadcasting this example transaction, ensure you're on the Terra testnet. To change networks click the gear icon in Terra Station and select `testnet`.
 
-You can request tesnet funds from the [faucet](https://faucet.terra.money/).
+You can request tesnet funds from the [Terra Testnet Faucet](https://faucet.terra.money/).
 
-A LUNA transfer transaction needs a fee and a message containing the sender address, recipient address, and send amount (in this case 1 LUNA). Once the message is constructed, the `post` method on `connectedWallet` broadcasts it to the network.
+To transfer LUNA, you will need to supply a message containing the sender address, recipient address, and send amount (in this case 1 LUNA), as well as fee parameters. Once the message is constructed, the `post` method on `connectedWallet` broadcasts it to the network.
 
 
 <Admonition type="note" icon="📝" title="What happens if something goes wrong?">
 
-Wallet provider also supplies useful error types. This example will handle the `UserDenied` error case. You can find other cases to handle [on GitHub](https://github.com/terra-money/wallet-provider/blob/4e601c2dece7bec92c9ce95991d2314220a2c954/packages/src/%40terra-money/wallet-controller/exception/mapExtensionTxError.ts#L23).
+Wallet Provider supplies useful error types. This example will handle the `UserDenied` error case, but you can find other cases for error handling [on GitHub](https://github.com/terra-money/wallet-provider/blob/4e601c2dece7bec92c9ce95991d2314220a2c954/packages/src/%40terra-money/wallet-controller/exception/mapExtensionTxError.ts#L23).
 
 </Admonition>
 
