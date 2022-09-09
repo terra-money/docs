@@ -106,12 +106,3 @@ this is a comment in mdx
 */}
 
 ```
-
-## Rebass
-
-A bootstrap-style UI components library. 
-
-Usage:
-
-https://rebassjs.org/
-
