@@ -90,3 +90,43 @@
 [data-theme='dark'] .theme-admonition:hover {
   box-shadow: 3px 3px 6px rgb(150 150 150 / 25%);
 }
+
+
+.ch-scrollycoding-step-content {
+  border-radius: 5px;
+  margin: .25rem -0.5rem;
+  padding: 1rem 0.5rem;
+  border: 1.5px solid transparent;
+  min-height: 100px;
+}
+
+[data-theme='dark'] .ch-scrollycoding-step-content {
+  border-radius: 5px;
+  margin: .25rem -0.5rem;
+  padding: 1rem 0.5rem;
+  border: 1.5px solid transparent;
+  min-height: 100px;
+}
+
+
+.ch-scrollycoding-step-content:hover {
+  background: rgba(249, 250, 255, 1);
+}
+
+[data-theme='dark'] .ch-scrollycoding-step-content:hover {
+  background: rgb(33 48 120 / 20%);
+
+}
+
+.ch-scrollycoding-step-content[data-selected] {
+  background: rgba(235, 239, 248, .8);
+  border: 1.5px solid transparent;
+
+}
+
+[data-theme='dark'] .ch-scrollycoding-step-content[data-selected] {
+  background: rgb(33 48 120 / 40%);
+  border: 1.5px solid transparent;
+
+}
+
