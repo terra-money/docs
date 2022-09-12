@@ -1,3 +1,4 @@
+
 import Admonition from '@theme/Admonition';
 
 
@@ -113,13 +114,13 @@ module.exports = {
 
 ## Deploy the smart contracts
 
-The `token_factory` contract mints new `cw20_factory_token` tokens, increases the supply of minted tokens, burns tokens to return LUNA and tracks all tokens created.
+The _`token_factory`_ contract mints new _`cw20_factory_token`_ tokens, increases the supply of minted tokens, burns tokens to return LUNA and tracks all tokens created.
 
 Deploy each smart contract to validate that the development environment is configured correctly:
 
 <CH.Scrollycoding>
 
-1. Deploy the `token_factory` contract:
+1. Deploy the _`token_factory`_ contract:
 
 ```sh Terminal
 terrain deploy token_factory --signer test
@@ -127,7 +128,7 @@ terrain deploy token_factory --signer test
 
 ---
 
-2. Deploy the `cw20_factory_token` contract:
+2. Deploy the _`cw20_factory_token`_ contract:
 
 ```sh Terminal focus=3
 terrain deploy token_factory --signer test
@@ -154,7 +155,7 @@ To add the CW20 Base to the _`cw20_factory_token`_ contract, do the following.
 
 <CH.Scrollycoding>
 
-1. Navigate to _`/token_factory/contracts/cw20_factory_token/`_.
+1. Navigate to the _`/cw20_factory_token/`_ directory.
 
 ```sh Terminal
 cd /token_factory/contracts/cw20_factory_token/
@@ -191,7 +192,7 @@ To modify the contract files, follow the procedure below.
 
 <CH.Scrollycoding>
 
-1. Navigate to _`/token_factory/contracts/cw20_factory_token/src`_.
+1. Navigate to the _`/cw20_factory_token/src`_ directory.
 
 ```sh Terminal
 
@@ -455,7 +456,7 @@ cargo test
 
 Deploy the contract again to confirm that the workplace still compiles.
 
-```sh
+```sh Terminal
 terrain deploy cw20_factory_token --signer test
 ```
 
