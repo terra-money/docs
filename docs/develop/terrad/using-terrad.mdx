@@ -200,8 +200,6 @@ Each transaction may either supply fees or gas prices, but not both. Most users 
 
 Validators specify a minimum gas price that they use to determine whether or not to include a transaction. The stipulation `gasPrices >= minGasPrices` is checked during the `CheckTx` process. Note, your transaction must supply fees that are greater than or equal to **any** of the denominations the validator requires.
 
-Validators may start to prioritize transactions by `gasPrice` in the mempool, so providing higher fees or gas prices will likely yield higher priority of inclusion in a block.
-
 To directly use fees:
 
 ```bash
