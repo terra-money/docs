@@ -35,7 +35,7 @@ module.exports = async function config() {
                   theme,
                   lineNumbers: true,
                   showCopyButton: true,
-                  autoImport: true,
+                  staticMediaQuery: "not screen, (max-width: 768px)",
                 },
               ],
               math,

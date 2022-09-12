@@ -22,33 +22,48 @@ In this tutorial, you will learn how to mint your own NFT using the [NFT minting
 This tutorial utilizes LocalTerra which requires at least 16GB of RAM to run optimally.
 
 </Admonition>
- 
+
 ## 1. Create your project
- 
+
 After installing all of the [prerequisites](#prerequisites) listed above, use the following steps to set up your environment and clone the [NFT minting repository](https://github.com/terran6/nft-on-terra.git), which contains the NFT minting smart contract and corresponding front end.
- 
- 
+
+<CH.Scrollycoding>
+
 1. Create and enter a new directory for your project.
- 
-   ```sh
-   mkdir my-nft-project
-   cd my-nft-project
-   ```
- 
+
+```sh terminal focus=1:2
+mkdir my-nft-project
+cd my-nft-project
+
+
+git clone --depth 1 https://github.com/terran6/nft-on-terra.git
+
+
+cd nft-on-terra
+npm install
+
+```
+
+---
+
 2. Clone the `NFT on Terra` repository to your project directory.
- 
-   ```sh
-   git clone --depth 1 https://github.com/terran6/nft-on-terra.git
-   ```
- 
+
+```sh terminal focus=5
+
+```
+
+---
+
 3. Enter the cloned repository and run `npm install` to install all relevant Node dependencies.
- 
-   ```sh
-   cd nft-on-terra
-   npm install
-   ```
- 
+
+```sh terminal focus=8:9
+
+```
+
+</CH.Scrollycoding>
+
 After all the dependencies have been installed, you can close the terminal window.
+
  
 ## 2. Start LocalTerra
 LocalTerra is a complete Terra testnet and ecosystem containerized with Docker. In this tutorial, you will use LocalTerra to simulate transactions in a local testing environment.
@@ -88,28 +103,86 @@ Before you can deploy your contract and begin minting your NFT, you will need to
  
     <img className="readme-img-md" src="/img/nft/copy_address.png" alt="Switch Wallet" />
  
- 
-2. Open the `config.terrain.json` file in a code editor and locate the instantiate message section.
- 
-   ```json
-    "instantiateMsg": {
-      "name":"NFT Collection Name",
-      "symbol":"NFTSYMBOL",
-      "minter":"terraxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+ <CH.Scrollycoding>
+
+2. Open the _`config.terrain.json`_ file in a code editor and locate the instantiate message section.
+
+```json config.terrain.json focus=9:13
+      "instantiation": {
+        "fee": {
+          "gasLimit": 2000000,
+          "amount": {
+            "uluna": 1000000
+          }
+        },
+
+        "instantiateMsg": {
+          "name":"NFT Collection Name",
+          "symbol":"NFTSYMBOL",
+          "minter":"terraxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+        }
+
+      }
     }
-    ```
+  },
+  "mainnet": {
+    "_connection": {
+      "chainID": "phoenix-1",
+      "URL": "https://lcd.terra.dev"
+    }
+  },
+  "testnet": {
+    "_connection": {
+      "chainID": "pisco-1",
+      "URL": "https://pisco-lcd.terra.dev"
+    }
+
+```
+
+ ---
+
+3. Update the _`"name"`_ and _`"symbol"`_ fields with the desired name and symbol which will correspond to your NFT collection. 
+
+The _`"minter"`_ field should be updated with the wallet address of the collection owner, in this case it will be your _`test1`_ wallet address. 
+
+Make sure to save the file once you have finished.
  
-3. Update the `"name"` and `"symbol"` fields with the desired name and symbol which will correspond to your NFT collection. The `"minter"` field should be updated with the wallet address of the collection owner, in this case it will be your `test1` wallet address. Make sure to save the file once you have finished.
+```json config.terrain.json focus=9:13
+      "instantiation": {
+        "fee": {
+          "gasLimit": 2000000,
+          "amount": {
+            "uluna": 1000000
+          }
+        },
+
+        "instantiateMsg": {
+          "name":"Cryptocurrency Token NFTs",
+          "symbol":"TOKENS",
+          "minter":"Paste your test1 wallet address here"
+        }
+
+      }
+    }
+  },
+  "mainnet": {
+    "_connection": {
+      "chainID": "phoenix-1",
+      "URL": "https://lcd.terra.dev"
+    }
+  },
+  "testnet": {
+    "_connection": {
+      "chainID": "pisco-1",
+      "URL": "https://pisco-lcd.terra.dev"
+    }
+    
+
+```
  
-   ```json
-   "instantiateMsg": {
-     "name":"Cryptocurrency Token NFTs",
-     "symbol":"TOKENS",
-     "minter":"Paste your test1 wallet address here"
-   }
-   ```
- 
-Be sure to save the changes to your `config.terrain.json` file.
+</CH.Scrollycoding>
+
+Be sure to save the changes to your _`config.terrain.json`_ file.
  
 ## 5. Deploy your contract to LocalTerra
  
@@ -124,7 +197,7 @@ You are finally ready to deploy your contract and run the NFT minting applicatio
    terrain deploy cw721-metadata-onchain --signer test1
    ```
  
-## 5. Launch the app front end
+## 6. Launch the app front end
  
 Once the contract deployment has successfully completed, you can run the front end application to start minting your NFT.
  
@@ -167,7 +240,7 @@ Most NFT creators host their NFTs using IPFS (Interplanetary File System). There
 </Admonition>
 
  
-## 6. Mint your NFT
+## 7. Mint your NFT
  
 Your NFT is ready to mint!
  
