@@ -1,6 +1,6 @@
 {
-  "name": "payment",
-  "version": "0.0.0",
+  "name": "terra-docs",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
