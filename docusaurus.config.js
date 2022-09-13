@@ -80,19 +80,19 @@ module.exports = async function config() {
       ({
         docs: {
           sidebar: {
-            hideable: true,
+            hideable: false,
             autoCollapseCategories: false,
           },
         },
         algolia: {
           // The application ID provided by Algolia
-          appId: "YOUR_APP_ID",
+          appId: "Z6EOSIPZCY",
 
           // Public API key: it is safe to commit it
-          apiKey: "YOUR_SEARCH_API_KEY",
+          apiKey: "390dc4ccf2e6a189ab7644808d5232a1",
 
-          indexName: "YOUR_INDEX_NAME",
-
+          indexName: "terra-project",
+/*
           // Optional: see doc section below
           contextualSearch: true,
 
@@ -105,13 +105,14 @@ module.exports = async function config() {
           // Optional: path for search page that enabled by default (`false` to disable it)
           searchPagePath: "search",
 
-          //... other Algolia params
+          //... other Algolia params */
+          
           position: "left",
         },
         navbar: {
           title: "",
           logo: {
-            alt: "Terra docs",
+            alt: "Terra Docs",
             src: "img/logo_light.svg",
             srcDark: "img/logo_dark.svg",
           },
