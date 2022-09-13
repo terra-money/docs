@@ -130,3 +130,10 @@
 
 }
 
+.ch-inline-code>code {
+  word-break: break-word;
+}
+
+.ch-scrollycoding-sticker {
+  flex: 1.5;
+}
