@@ -20,7 +20,7 @@
     }
   }
 
-  .menu__list {
+  .theme-doc-sidebar-menu {
     margin-bottom: 50px;
   }
 
@@ -131,4 +131,8 @@ li[class*=' theme-doc-sidebar-item-'] {
 
 .menu__list-item-collapsible--active {
   background: none;
+}
+
+.navbar-sidebar {
+  max-width: 400px;
 }
