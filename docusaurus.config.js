@@ -91,7 +91,7 @@ module.exports = async function config() {
           // Public API key: it is safe to commit it
           apiKey: "390dc4ccf2e6a189ab7644808d5232a1",
 
-          indexName: "Docs Site",
+          indexName: "terra-project",
 /*
           // Optional: see doc section below
           contextualSearch: true,
