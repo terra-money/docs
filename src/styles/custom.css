@@ -1,0 +1,139 @@
+:root {
+  --ifm-menu-color: #627BCB;
+  --ifm-menu-color-active: #0759E7;
+  --ifm-color-primary: #0759E7;
+  --ifm-color-primary-dark: #29784c;
+  --ifm-color-primary-darker: #277148;
+  --ifm-color-primary-darkest: #205d3b;
+  --ifm-color-primary-light: #33925d;
+  --ifm-color-primary-lighter: #359962;
+  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+
+  --ifm-menu-color-background-active: #F3F5FD;
+  --ifm-menu-color-background-hover: #F3F5FD;
+  --ifm-menu-link-sublist-icon: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24"><path fill="rgba(32, 67, 181, 1)" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path></svg>');
+  --ifm-background-surface-color: #F9FAFF;
+  --ifm-link-color: #0759E7;
+  --ifm-color-content-secondary: #8B9CDA;
+  --ifm-pagination-nav-color-hover: #0759E7;
+  --ifm-heading-color: #1C1E21;
+  --ifm-h1-font-size: 48px;
+  --ifm-breadcrumb-color-active: #8B9CDA;
+  --ifm-footer-background-color: #FFFFFF;
+  --ifm-footer-color: #8B9CDA;
+  --ifm-footer-link-color: #8B9CDA;
+}
+
+[data-theme='dark'] {
+  --ifm-color-primary: #459CF4 !important;
+  --ifm-color-primary-dark: #21af90;
+  --ifm-color-primary-darker: #1fa588;
+  --ifm-color-primary-darkest: #1a8870;
+  --ifm-color-primary-light: #29d5b0;
+  --ifm-color-primary-lighter: #32d8b4;
+  --ifm-color-primary-lightest: #4fddbf;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+
+  --ifm-menu-color-background-active: #212121 !important;
+  --ifm-menu-color-background-hover: #212121 !important;
+  --ifm-menu-link-sublist-icon: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24"><path fill="rgba(32, 67, 181, 1)" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path></svg>');
+  --ifm-background-surface-color: #F9FAFF;
+  --ifm-background-color: #1E1E1E !important;
+  --ifm-link-color: #459CF4 !important;
+  --ifm-color-content-secondary: #8D8D8D !important;
+  --ifm-pagination-nav-color-hover: #459CF4 !important;
+  --ifm-heading-color: #E9E9E9 !important;
+  --ifm-h1-font-size: 48px;
+  --ifm-breadcrumb-color-active: #8B9CDA;
+  --ifm-footer-background-color: #1E1E1E!important;
+  --ifm-footer-color: #8D8D8D !important;
+  --ifm-footer-link-color: #8D8D8D !important;
+}
+
+.readme-img-sm {
+  margin: auto;
+  display: block;
+  width: 300px;
+  padding: 10px 10px 20px 10px;
+}
+
+.readme-img-md {
+  margin: auto;
+  display: block;
+  width: 500px;
+  padding: 10px 10px 20px 10px;
+}
+
+.readme-img-lg {
+  margin: auto;
+  display: block;
+  width: 800px;
+  padding: 10px 10px 20px 10px;
+}
+
+.theme-admonition {
+  transition: border .5s, box-shadow .7s, transform .1s;
+  border: 1px solid transparent;
+  border-left-width: var(--ifm-alert-border-left-width);
+  border-left-color: var(--ifm-tabs-color-active-border);
+}
+
+.theme-admonition:hover {
+  transform: scale(1.015);
+  box-shadow: 3px 3px 6px rgb(55 55 55 / 25%);
+  border: 1px solid var(--ifm-tabs-color-active-border);
+  border-left-width: var(--ifm-alert-border-left-width);
+}
+
+[data-theme='dark'] .theme-admonition:hover {
+  box-shadow: 3px 3px 6px rgb(150 150 150 / 25%);
+}
+
+
+.ch-scrollycoding-step-content {
+  border-radius: 5px;
+  margin: .25rem -0.5rem;
+  padding: 1rem 0.5rem;
+  border: 1.5px solid transparent;
+  min-height: 100px;
+}
+
+[data-theme='dark'] .ch-scrollycoding-step-content {
+  border-radius: 5px;
+  margin: .25rem -0.5rem;
+  padding: 1rem 0.5rem;
+  border: 1.5px solid transparent;
+  min-height: 100px;
+}
+
+
+.ch-scrollycoding-step-content:hover {
+  background: rgba(249, 250, 255, 1);
+}
+
+[data-theme='dark'] .ch-scrollycoding-step-content:hover {
+  background: rgb(33 48 120 / 20%);
+
+}
+
+.ch-scrollycoding-step-content[data-selected] {
+  background: rgba(235, 239, 248, .8);
+  border: 1.5px solid transparent;
+
+}
+
+[data-theme='dark'] .ch-scrollycoding-step-content[data-selected] {
+  background: rgb(33 48 120 / 40%);
+  border: 1.5px solid transparent;
+
+}
+
+.ch-inline-code>code {
+  word-break: break-word;
+}
+
+.ch-scrollycoding-sticker {
+  flex: 1.5;
+}
