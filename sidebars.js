@@ -116,6 +116,7 @@ const sidebars = {
                                     'develop/terra-js/smart-contracts',
                                     'develop/terra-js/transactions',
                                     'develop/terra-js/wallets',
+                                    'develop/terra-js/Websockets',
                                 ],
                             },
                             {
