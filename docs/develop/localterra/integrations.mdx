@@ -1,0 +1,52 @@
+# Integrations
+
+You can integrate LocalTerra in Terra Station, Terrad, and JavaScript and Python SDKs.
+
+## Terra Station
+
+Terra Station has built-in support for LocalTerra for quick and easy interaction. [Open Terra Station](https://station.terra.money/) and switch to the `Localterra` network.
+
+## Terrad
+
+1. Ensure the latest versions of Terrad and LocalTerra are installed.
+
+2. Use Terrad to talk to your LocalTerra Terrad node:
+
+    ```sh
+    $ terrad status
+    ```
+
+    Terrad will connect to `localhost:26657` by default when running this command.
+
+    The following command is the explicit form:
+    ```sh
+    $ terrad status --node=tcp://localhost:26657
+    ```
+
+3. Run any Terrad commands against your LocalTerra network:
+
+   ```sh
+   $ terrad query account terra1dcegyrekltswvyy0xy69ydgxn9x8x32zdtapd8
+   ```
+
+## Terra Python SDK
+
+Connect to the chain through LocalTerra's LCD server using terra.py:
+
+```python
+from terra_sdk.client.lcd import LCDClient
+terra = LCDClient("localterra", "http://localhost:1317")
+```
+
+## Terra JavaScript SDK
+
+Connect to the chain through LocalTerra's LCD server using terra.js:
+
+```ts
+import { LCDClient } from "@terra-money/terra.js";
+
+const terra = new LCDClient({
+  URL: "http://localhost:1317",
+  chainID: "localterra",
+});
+```

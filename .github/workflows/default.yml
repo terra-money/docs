@@ -1,29 +1,40 @@
-name: Deploy
+name: cloudlfare-docs
 
 on:
+  workflow_dispatch:
   push:
+  pull_request:
     branches:
       - main
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+    name: Publish to Cloudflare Pages
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          persist-credentials: false
+        uses: actions/checkout@v3
 
-      - name: Build
-        uses: ammaraskar/sphinx-action@master
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
         with:
-          docs-folder: "."
+          node-version: '16'
+          cache: 'yarn'
 
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@releases/v3
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Build source code.
+        run: yarn build
+
+      - name: Publish to Cloudflare Pages
+        uses: cloudflare/pages-action@1
         with:
-          ACCESS_TOKEN: ${{ secrets.GH_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: _build/html
-          GIT_CONFIG_NAME: Github Actions
-          GIT_CONFIG_EMAIL: noreply@github.com
+          apiToken: ${{ secrets.CLOUDFLARE_PAGES_TOKEN }}
+          accountId: 620ff29bbd515d2848f5306578bd1d1d
+          projectName: docs-terra
+          directory: build
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
