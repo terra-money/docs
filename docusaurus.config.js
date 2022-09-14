@@ -87,7 +87,7 @@ module.exports = async function config() {
         algolia:{
           appId: 'Z6EOSIPZCY',
           apiKey: '532be63cd62ff0e733ccd844e799e8bb',
-          indexName: 'terra-project',
+          indexName: 'terra-project.tmp',
           contextualSearch: true,
         },
         navbar: {
