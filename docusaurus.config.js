@@ -9,14 +9,14 @@ module.exports = async function config() {
   const katex = (await import("rehype-katex")).default;
   return {
     title: "Terra Docs",
-    tagline: "The official docs",
+    tagline: "The official docs for the Terra blockchain",
     url: "https://docs.terra.money",
     baseUrl: "/",
     onBrokenLinks: "throw",
     onBrokenMarkdownLinks: "warn",
     favicon: "img/favicon.ico",
     organizationName: "terra-money", // Usually your GitHub org/user name.
-    projectName: "new-docs", // Usually your repo name.
+    projectName: "docs", // Usually your repo name.
     i18n: {
       defaultLocale: "en",
       locales: ["en"],
@@ -45,7 +45,7 @@ module.exports = async function config() {
             routeBasePath: "/", // Serve the docs at the site's root
             // Please change this to your repo.
             // Remove this to remove the "edit this page" links.
-            editUrl: "https://github.com/terra-money/new-docs/blob/main/",
+            editUrl: "https://github.com/terra-money/docs/blob/main/",
           },
           blog: false,
           theme: {
@@ -106,7 +106,7 @@ module.exports = async function config() {
               "aria-label": "Terra Money",
             },
             {
-              href: "https://github.com/terra-money/new-docs",
+              href: "https://github.com/terra-money/docs",
               position: "right",
               className: "header-github-link",
               "aria-label": "GitHub repository",
