@@ -14,8 +14,6 @@ In this tutorial, you will learn how to mint your own NFT using the [NFT minting
 - [Install git](https://git-scm.com/downloads)
 - [Install Terrain](./initial-setup.mdx)
 - [Install LocalTerra](./using-terrain-localterra.mdx)
-- 16+ gb of RAM
- 
 
 <Admonition type="note" icon="📝" title="LocalTerra RAM requirements">
 
@@ -141,11 +139,7 @@ Before you can deploy your contract and begin minting your NFT, you will need to
 
  ---
 
-3. Update the _`"name"`_ and _`"symbol"`_ fields with the desired name and symbol which will correspond to your NFT collection. 
-
-The _`"minter"`_ field should be updated with the wallet address of the collection owner, in this case it will be your _`test1`_ wallet address. 
-
-Make sure to save the file once you have finished.
+3. Update the _`"name"`_ and _`"symbol"`_ fields with the desired name and symbol which will correspond to your NFT collection. The _`"minter"`_ field should be updated with the wallet address of the collection owner, in this case it will be your _`test1`_ wallet address.
  
 ```json config.terrain.json focus=9:13
       "instantiation": {
@@ -182,13 +176,17 @@ Make sure to save the file once you have finished.
  
 </CH.Scrollycoding>
 
-Be sure to save the changes to your _`config.terrain.json`_ file.
+<Admonition type="tip" icon="💡">
+
+Be sure to double-check the parameter values in your instantiate message and save the changes to your _`config.terrain.json`_ file before exiting.
+
+</Admonition>
  
 ## 5. Deploy your contract to LocalTerra
  
 You are finally ready to deploy your contract and run the NFT minting application. Make sure you have installed Terrain before proceeding.
  
-1. Ensure you are still [running LocalTerra](#2-start-localterra) in a terminal window.
+1. Ensure you are still [running LocalTerra](#2-start-localterra) in a separate terminal window.
  
 2. Open a new terminal window and run the following commands to navigate to your cloned repo and deploy your contract using Terrain.
  
@@ -252,7 +250,7 @@ After a few seconds, the front end webpage will display your NFT.
  
     <img className="readme-img-md" src="/img/nft/nft_minted.png" alt="Minted NFT" />
  
-Congratulations, You just minted your first NFT!
+Congratulations, you have just minted your first NFT!
  
 ## View Your New NFT
  
@@ -272,7 +270,7 @@ Congratulations, You just minted your first NFT!
    ```
  
  
-2. You can view your NFT utilizing the [Terra Station NFT page](https://station.terra.money/nft). Connect your wallet using the **Connect** button located in the upper right corner of the screen.
+2. You can view your NFT utilizing the [Terra Station NFT page](https://station.terra.money/nft). Connect your wallet using the **Connect** button located in the upper right-hand corner of the screen.
  
  
     <img className="readme-img-md" src="/img/nft/connect_wallet.png" alt="Connect Wallet" />
