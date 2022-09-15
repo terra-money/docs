@@ -1,6 +1,6 @@
 const terraStationCards = [
   {
-    href: '/learn/terra-station/Download/',
+    href: '/learn/terra-station/Download/terra-station-desktop.html',
     lightSvg: '/img/icons/station/station.svg',
     darkSvg: '/img/icons/dark/station.svg',
     header: 'Download Station',
