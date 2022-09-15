@@ -135,4 +135,8 @@ li[class*=' theme-doc-sidebar-item-'] {
 
 .navbar-sidebar {
   max-width: 400px;
+
+  .theme-doc-sidebar-menu {
+    max-width: 380px;
+  }
 }
