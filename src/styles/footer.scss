@@ -1,5 +1,4 @@
 .footer {
-  border-top: 1px solid #EBEFF8;
   padding: 32px 0 0 0;
   margin-top: 100px;
   @media (min-width: 997px) {
@@ -9,6 +8,8 @@
   .links {
     display: flex;
     justify-content: space-between;
+    border-top: 1px solid rgb(202, 202, 202);
+    padding-top: 20px;
 
     .social-links {
       .social-link {
@@ -76,8 +77,11 @@
 }
 
 [data-theme='dark'] .footer {
-  border-color: #212121;
   .links .hyperlinks .hyperlink {
     color: #8d8d8d;
+  }
+
+  .links {
+    border-color: rgb(73, 73, 73);
   }
 }
