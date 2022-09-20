@@ -4,10 +4,6 @@ const hyperlinks = [
     innerHTML: 'Terra Station',
   },
   {
-    href: 'https://jobs.lever.co/terra',
-    innerHTML: 'Terra Careers',
-  },
-  {
     href: 'https://status.terra.money/',
     innerHTML: 'Terra Status',
   },
@@ -18,10 +14,6 @@ const hyperlinks = [
   {
     href: 'https://agora.terra.money/',
     innerHTML: 'Terra Agora',
-  },
-  {
-    href: 'https://faucet.terra.money/',
-    innerHTML: 'Terra Faucet',
   },
 ]
 

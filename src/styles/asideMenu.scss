@@ -39,7 +39,7 @@
 }
 
 .theme-doc-sidebar-container {
-  height: calc(100% + 400px);
+  height: calc(100% + 420px);
 }
 
 li[class*=' theme-doc-sidebar-item-'] {
@@ -107,7 +107,7 @@ li[class*=' theme-doc-sidebar-item-'] {
 
 [data-theme='dark'] .menu {
   background-color: #1C1C1C;
-  border-color: #494949;
+  border-color: #343536;
 
   .navbar-sidebar__back {
     color: #8D8D8D !important;

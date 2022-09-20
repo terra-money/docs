@@ -28,13 +28,13 @@
     .hyperlinks {
       display: grid;
       grid-gap: 10px;
-      grid-template-columns: 100px 100px 100px;
+      grid-template-columns: 100px 100px;
       grid-template-rows: 17px 17px;
       grid-auto-rows: 1fr;
 
       @media (max-width: 787px) {
         grid-template-columns: 100px 100px;
-        grid-template-rows: 17px 17px 17px;
+        grid-template-rows: 17px 17px;
         grid-auto-rows: 1fr;
       }
 
@@ -82,6 +82,6 @@
   }
 
   .links {
-    border-color: #494949;
+    border-color: #343536;
   }
 }
