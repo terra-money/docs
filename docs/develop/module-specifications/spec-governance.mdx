@@ -10,15 +10,22 @@ Terra's Governance module inherits from Cosmos SDK's [`gov`](https://docs.cosmos
 
 Governance is the process through which members of the Terra community can effect change on the protocol by submitting petitions known as "proposals" and arriving at a popular consensus when a threshold amount of support has been reached. The proposal structure is versatile and allows for holders of staked Luna (those who have an interest in the long-term viability of the network) to voice their opinion on both blockchain parameter updates as well as the future development of the Terra protocol.
 
-Check the [Governance section of the Terrad Reference](../terrad/subcommands.mdx#tx-gov-submit-proposal) to see examples of how to participate in the Governance process.
-
 To learn how to vote with your staked Luna or submit proposals, visit the [Terra Station governance guide](../../learn/terra-station/governance.mdx).
+
+If you are an advanced user and want to learn about submitting or voting on proposals using Terrad, visit the [Governance section of the Terrad Reference](../terrad/subcommands.mdx#tx-gov-submit-proposal). 
 
 ## Concepts
 
-The following is the governance proposal procedure:
+The following consepts describe the governance proposal procedure.
 
-### Deposit Period
+### Drafting and submission
+
+Proposals start as ideas within the community on Terra's [Agora forum](https://agora.terra.money/). After gaining support and feedback from the community, a proposer [drafts and submits a proposal](../../learn/terra-station/governance.mdx#create-a-new-proposal) alongside an [initial deposit](../../learn/terra-station/governance.mdx#deposit-luna-to-a-proposal). 
+
+To learn more about the different types of proposals, see the [Proposal types](#proposal-types) section below. 
+
+
+### Deposit period
 
 After a proposal is submitted, it enters the deposit period, where it must reach a total minimum deposit of 512 Luna within 7 days from the time of its submission. The deposit threshold is reached when the sum of the initial deposit (from the proposer) and the deposits from all other interested network participants meet or exceed 512 Luna.
 
@@ -35,14 +42,18 @@ Deposits are burned under any of the following conditions:
 - `Quorum` is not met: the number of total votes after the one-week voting period is less than 10% of all staked Luna.
 - The number of `NoWithVeto` votes is above 33.4% of the total vote.
 
-### Voting Period
+### Voting period
 
 If the minimum deposit has been reached before the end of the deposit period, then the proposal goes into a one-week voting period. While the proposal is in voting, holders of staked Luna can cast votes for the proposal. The 4 voting options available are:
 
-- `Yes` - in favor
-- `No` - not in favor
-- `NoWithVeto` - veto
-- `Abstain` - does not influence vote
+### Voting options 
+
+#### 1. `Yes` 
+
+In favor.
+- `No`: not in favor.
+- `NoWithVeto`: veto
+- `Abstain`: does not influence vote, but counts toward [quorum](#quorum)
 
 Voting is done by holders of bonded LUNA on a 1 bonded LUNA = 1 vote basis. As such, validators hold the most influence over the outcome of voting, and delegators by default inherit the vote of their validator if they don't vote.
 
@@ -50,13 +61,21 @@ Voting is done by holders of bonded LUNA on a 1 bonded LUNA = 1 vote basis. As s
 
 For a proposal to pass, the following conditions must be met:
 
-1. Voter participation must be at least `quorum` $Q$:
+1. Voter participation must be at least [`quorum` ($Q$)](#quorum):
+
+$$\frac{Yes + No + NoWithVeto + Abstain}{Total Staked Tokens} \ge Q$$
 
 
-2. The ratio of `NoWithVeto` votes must be less than `veto` $V$:
+2. The ratio of `NoWithVeto` votes must be less than [`veto` ($V$)](#veto):
+
+$$\frac{NoWithVeto}{Yes + No + NoWithVeto} \le V$$
 
 
-3. The ratio of `Yes` votes must be greater than `threshold` $T$:
+3. The ratio of `Yes` votes must be greater than [`threshold` ($T$)](#threshold):
+
+$$\frac{Yes}{Yes + No + NoWithVeto} \gt T$$
+
+The current `threshold` value is 50%. Abstain votes are not included in the `threshold` tally. 
 
 
 If any of the previous conditions are not met, the proposal is rejected. Proposals that get rejected with veto do not get their deposits refunded. The parameters `quorum`, `veto`, and `threshold` exist as blockchain parameters within the Governance module.
@@ -132,7 +151,7 @@ type MsgVote struct {
 }
 ```
 
-## Proposals
+## Proposal types
 
 ### Text Proposal
 
