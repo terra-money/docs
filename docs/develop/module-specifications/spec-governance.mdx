@@ -8,9 +8,11 @@ Terra's Governance module inherits from Cosmos SDK's [`gov`](https://docs.cosmos
 
 </Admonition>
 
-Governance is the process through which members of the Terra community can effect change on the protocol by submitting petitions known as "proposals" and arriving at a popular consensus when a threshold amount of support has been reached. The proposal structure is versatile and allows for holders of staked Luna (those who have an interest in the long-term viability of the network) to voice their opinion on both blockchain parameter updates as well as the future development of the Terra protocol.
+The Terra protocol is a decentralized public [blockchain](../../learn/glossary.mdx#blockchain) governed by community members. Governance is the democratic process that allows users and validators to make changes to the Terra protocol. Community members submit, vote, and implement proposals.
 
-To learn how to vote with your staked Luna or submit proposals, visit the [Terra Station governance guide](../../learn/terra-station/governance.mdx).
+The governance module maintains the logic for all governance activity. 
+
+To learn how to vote with your staked Luna or submit proposals, visit the [Terra Station governance guide](../../learn/terra-station/governance.mdx). 
 
 If you are an advanced user and want to learn about submitting or voting on proposals using Terrad, visit the [Governance section of the Terrad Reference](../terrad/subcommands.mdx#tx-gov-submit-proposal). 
 
@@ -33,7 +35,7 @@ Deposits protect against unnecessary proposals and spam.
 
 Deposits get refunded if all of the following conditions are met:
 - The minimum deposit of 512 Luna is reached within the 7-day deposit period.
-- `Quorum` is met: the number of total votes is greater than 10% of all staked Luna
+- `Quorum` is met: the number of total votes is greater than 10% of all staked Luna.
 - The total number of `NoWithVeto` votes is less than 33.4% of the total vote.
 - A vote returns a majority of `Yes` or `No` votes.
 
@@ -44,16 +46,20 @@ Deposits are burned under any of the following conditions:
 
 ### Voting period
 
-If the minimum deposit has been reached before the end of the deposit period, then the proposal goes into a one-week voting period. While the proposal is in voting, holders of staked Luna can cast votes for the proposal. The 4 voting options available are:
+If the minimum deposit has been reached before the end of the deposit period, then the proposal goes into a one-week voting period. While the proposal is in voting, holders of staked Luna can cast votes for the proposal. 
 
 ### Voting options 
 
-`Yes`: in favor.
-- `No`: not in favor.
-- `NoWithVeto`: . 
--`Abstain`: 
+The 4 voting options available are:
 
-Voting is done by holders of bonded LUNA on a 1 bonded LUNA = 1 vote basis. As such, validators hold the most influence over the outcome of a vote. delegators by default inherit the vote of their validator if they don't vote.
+- `Yes`: in favor.
+- `No`: not in favor.
+- `NoWithVeto`: not in favor, and the creator should lose their deposit. 
+- `Abstain`: neither for or against. An abstain vote counts toward meeting quorum but does not count toward the `threshold`. 
+
+[Delegators](../../learn/protocol.mdx#delegators) vote using their [staked Luna](../../learn/protocol.mdx#staking). One staked Luna equals one vote.
+
+If a delegator does not specify a vote with their staked Luna, their vote defaults to the vote cast by the validator their Luna is staked to. Delegators can override a validator's vote at any time during the [voting period](#voting-period) by [voting with their staked Luna](../../learn/terra-station/governance.mdx#vote-on-a-proposal). 
 
 ### Tallying
 
@@ -70,7 +76,7 @@ $$
 2. The ratio of `NoWithVeto` votes must be less than [`veto` ($V$)](#veto). The current `veto` value is 33%.
 
 $$
-\frac{NoWithVeto}{Yes + No + NoWithVeto} \le V
+\frac{NoWithVeto}{Yes + No + NoWithVeto + Abstain} \le V
 $$
 
 
