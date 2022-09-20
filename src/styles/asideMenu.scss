@@ -1,6 +1,7 @@
 .menu {
   background-color: #F9FAFF;
   color: black;
+  border-right: 1px solid #EBEFF8;
 
   .menu__link {
     font-family: 'Gotham';
@@ -106,6 +107,7 @@ li[class*=' theme-doc-sidebar-item-'] {
 
 [data-theme='dark'] .menu {
   background-color: #1C1C1C;
+  border-color: #494949;
 
   .navbar-sidebar__back {
     color: #8D8D8D !important;
