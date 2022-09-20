@@ -6,25 +6,133 @@ import Admonition from '@theme/Admonition';
 
 # Sync
 
-Use this guide to [sync the chain from from genesis](#sync-from-genesis) or use a [snapshot](#sync-from-snapshot) for a quicker sync. 
+This guide will walk you through how to [sync the chain from genesis](#sync-from-genesis) or use a [snapshot](#sync-from-snapshot) for a quicker sync. 
 
 ## Sync from genesis
 
-After [choosing a network](./join-a-network.mdx#join-a-public-network), start the sync and check that everything is running smoothly:
+The process for syncing your full node from genesis will differ between the Pisco testnet and Phoenix-1 mainnet networks. You may proceed with the instructions corresponding with your [chosen network](./join-a-network.mdx#join-a-public-network) below.
 
-```bash
-terrad start
-terrad status
-# It will take a few seconds for Terrad to start.
+### Pisco testnet
+
+If you would like to sync your node using the Pisco testnet, you will need to utilize version `v2.0.0-rc.0` of Terrad up until the block height of 890,000.  To switch to this version of Terrad, change into your `core` directory and execute the following commands in your terminal:
+
 ```
-Your node is now syncing. This process will take a long time. Make sure you've set it up on a stable connection so this process is not interrupted.
+git checkout v2.0.0-rc.0
+make install
+```
 
+After running these commands, make sure that you have switched to the correct version of Terrad by running the command:
+
+```
+terrad version
+```
+
+The result of this command should be `v2.0.0-rc.0`.
+
+After you have the correct Terrad version, you will need to download the genesis file for Pisco in the Terrad config directory:
+
+```
+cd ~/.terra/config/
+wget https://raw.githubusercontent.com/terra-money/testnet/master/pisco-1/genesis.json
+```
+
+Finally, you can start the syncing process:
+
+```
+terrad start
+```
 
 <Admonition type="caution" icon="☢️" title="Sync start times">
 
 Nodes take at least an hour to start syncing. This wait time is normal. Before troubleshooting a sync, please wait an hour for the sync to start.
 
 </Admonition>
+
+Syncing will halt at block 890,000, at which point you will need to change the version of Terrad and then resume the syncing process. 
+
+To sync your Pisco testnet node from block 890,000 to the most recent block, you will need to navigate to the `core` directory and change your Terrad version to `v2.1.0-beta.1`.
+
+```
+git checkout v2.1.0-beta.1
+make install
+```
+
+Again, make sure that you have switched to the correct version of Terrad by running the following command:
+
+```
+terrad version
+```
+
+The result of this command should be `v2.1.0`.
+
+Now, you can resume the syncing process:
+
+```
+terrad start
+```
+
+From here, you can [monitor the sync](#monitor-the-sync) and make sure to check on your node periodically to ensure optimal performance.
+
+### Phoenix-1 mainnet
+
+If you would like to sync your node using the Phoenix-1 mainnet, you will need to utilize version `v2.0.0` of Terrad up until the block height of 838,500.  To switch to this version of Terrad, change into your `core` directory and execute the following commands in your terminal:
+
+```
+git checkout v2.0.0
+make install
+```
+
+After running these commands, make sure that you have switched to the correct version of Terrad by running the command:
+
+```
+terrad version
+```
+
+The result of this command should be `v2.0.0`.
+
+After you have the correct Terrad version, you will need to download the genesis file for Phoenix-1 in the Terrad config directory:
+
+```
+cd ~/.terra/config/
+wget https://phoenix-genesis.s3.us-west-1.amazonaws.com/genesis.json
+```
+
+Finally, you can start the syncing process:
+
+```
+terrad start
+```
+
+<Admonition type="caution" icon="☢️" title="Sync start times">
+
+Nodes take at least an hour to start syncing. This wait time is normal. Before troubleshooting a sync, please wait an hour for the sync to start.
+
+</Admonition>
+
+Syncing will halt at block 838,500, at which point you will need to change the version of Terrad and then resume the syncing process. 
+
+To sync your Phoenix-1 mainnet node from block 838,500 to the most recent block, you will need to navigate to the `core` directory and change your Terrad version to `v2.1.1`.
+
+```
+git checkout v2.1.1
+make install
+```
+
+Again, make sure that you have switched to the correct version of Terrad by running the following command:
+
+```
+terrad version
+```
+
+The result of this command should be `v2.1.1`.
+
+Now, you can resume the syncing process:
+
+```
+terrad start
+```
+
+From here, you can [monitor the sync](#monitor-the-sync) and make sure to check on your node periodically to ensure optimal performance.
 
 <details> 
 <summary> Healthy Node Status Example </summary>
@@ -74,8 +182,6 @@ Nodes take at least an hour to start syncing. This wait time is normal. Before t
 
 </p>
 </details>
-
-Proceed to the [Monitor the sync](#monitor-the-sync) section.
 
 ### Fast-sync for testing
 
