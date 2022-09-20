@@ -206,18 +206,25 @@ Community members vote with their staked Luna. One staked Luna equals one vote. 
 The following is a basic outline of the governance process. Visit the [governance module](../develop/module-specifications/spec-governance.mdx) for more details.
 
 1. A user submits a proposal and a one-week deposit period begins.
+
 2. Users deposit Luna as collateral to back the proposal. This period ends once a minimum threshold of 512 Luna is deposited. Deposits are to protect against spam.
+
 3. The one-week vote period begins.
     The voting options are:
     - `Yes`: In favor.
     - `No`: Not in favor.
     - `NoWithVeto`: Not in favor, the deposit should be burned.
-    - `Abstain`: Voter abstains.
+    - `Abstain`: Voter abstains. Abstain votes count toward meeting `Quorum`.
+
 4. The votes are tallied.
+
     Proposals pass if they meet three conditions:
+
     - `Quorum` is met: at least 10% of all staked Luna must vote.
     - The total number of `NoWithVeto` votes is less than 33.4% of the total vote.
-    - The number of `Yes` votes reaches a 50% majority.
+    - `Threshold` is met: the number of `Yes` votes is greater than the number of `no` and `NoWithVeto` votes. `Abstain` votes are excluded from the `Threshold` tally. 
+
+
     If the previous conditions are not met, the proposal is rejected.
 5. Accepted proposals get put into effect.
 6. Deposits get refunded or burned.
