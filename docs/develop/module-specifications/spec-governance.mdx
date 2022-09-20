@@ -16,7 +16,7 @@ If you are an advanced user and want to learn about submitting or voting on prop
 
 ## Concepts
 
-The following consepts describe the governance proposal procedure.
+The following concepts describe the governance proposal procedure.
 
 ### Drafting and submission
 
@@ -48,37 +48,41 @@ If the minimum deposit has been reached before the end of the deposit period, th
 
 ### Voting options 
 
-#### 1. `Yes` 
-
-In favor.
+`Yes`: in favor.
 - `No`: not in favor.
-- `NoWithVeto`: veto
-- `Abstain`: does not influence vote, but counts toward [quorum](#quorum)
+- `NoWithVeto`: . 
+-`Abstain`: 
 
-Voting is done by holders of bonded LUNA on a 1 bonded LUNA = 1 vote basis. As such, validators hold the most influence over the outcome of voting, and delegators by default inherit the vote of their validator if they don't vote.
+Voting is done by holders of bonded LUNA on a 1 bonded LUNA = 1 vote basis. As such, validators hold the most influence over the outcome of a vote. delegators by default inherit the vote of their validator if they don't vote.
 
 ### Tallying
 
-For a proposal to pass, the following conditions must be met:
+The logic for tallying votes can be found in the [`tally.go` file](https://github.com/cosmos/cosmos-sdk/blob/main/x/gov/keeper/tally.go#L92-L126) of the Cosmos SDK. 
 
-1. Voter participation must be at least [`quorum` ($Q$)](#quorum):
+For a proposal to pass, the following conditions must be met. 
 
-$$\frac{Yes + No + NoWithVeto + Abstain}{Total Staked Tokens} \ge Q$$
+1. Voter participation must be at least [`quorum` ($Q$)](#quorum). The current `quorum` value is 10% of all staked Luna. 
 
+$$
+\frac{Yes + No + NoWithVeto + Abstain}{Total Staked Tokens} \ge Q
+$$
 
-2. The ratio of `NoWithVeto` votes must be less than [`veto` ($V$)](#veto):
+2. The ratio of `NoWithVeto` votes must be less than [`veto` ($V$)](#veto). The current `veto` value is 33%.
 
-$$\frac{NoWithVeto}{Yes + No + NoWithVeto} \le V$$
-
-
-3. The ratio of `Yes` votes must be greater than [`threshold` ($T$)](#threshold):
-
-$$\frac{Yes}{Yes + No + NoWithVeto} \gt T$$
-
-The current `threshold` value is 50%. Abstain votes are not included in the `threshold` tally. 
+$$
+\frac{NoWithVeto}{Yes + No + NoWithVeto} \le V
+$$
 
 
-If any of the previous conditions are not met, the proposal is rejected. Proposals that get rejected with veto do not get their deposits refunded. The parameters `quorum`, `veto`, and `threshold` exist as blockchain parameters within the Governance module.
+3. The ratio of `Yes` votes must be greater than [`threshold` ($T$)](#threshold). The current `threshold` value is 50%. Abstain votes are not included in the `threshold` tally. 
+
+
+$$
+\frac{Yes}{Yes + No + NoWithVeto} \gt T
+$$
+
+
+If a proposal meets all of the previous conditions, it passes. If a proposal fails to meet any of the previous conditions, it fails. Proposals that get rejected with veto do not get their deposits refunded. The parameters [`quorum`](#quorum), [`veto`](#veto), and [`threshold`](#threshold) exist as blockchain parameters in the Governance module.
 
 <Admonition type="caution" icon="☢️">
 
@@ -88,7 +92,7 @@ Deposits will not be refunded for proposals that are rejected with veto, do not 
 
 ### Proposal Implementation
 
-Once a governance proposal passes, the changes described are put into effect by the proposal handler. Generic proposals such as a `TextProposal` must be reviewed by Terra protocol developers and the community for decisions on how to manually implement.
+Once a governance proposal passes, the changes described are put into effect by the proposal handler. Generic proposals such as a `TextProposal` must be reviewed by Terra protocol developers and the community for decisions on how to manually implement them.
 
 Although parameter changes get updated immediately, they generally are not put into effect until the next epoch operation. Epochs occur every 100800 blocks or roughly every 7.7 days, given a 6.6-second block time.
 
@@ -117,7 +121,7 @@ type Proposal struct {
 
 A `Proposal` is a data structure representing a petition for a change that is submitted to the blockchain alongside a deposit. Once its deposit reaches a certain [`MinDeposit`](#mindeposit), the proposal is confirmed and voting opens. Bonded Luna holders can then send `TxGovVote` transactions to vote on the proposal. Terra currently follows a simple voting scheme of 1 Bonded Luna = 1 Vote.
 
-The `Content` of a proposal is the interface that contains the information about the `Proposal`, such as the `title`, `description`, and any notable changes. A `Content` type can be implemented by any module. The `ProposalRoute` of the `Content` returns a string which must be used to route the handler of the `Content` in the Governance keeper. This process allows the governance keeper to execute proposal logic implemented by any module. If a proposal passes, the handler is executed. Only if the handler is successful does the state get persisted and the proposal finally pass. Otherwise, the proposal is rejected.
+The `Content` of a proposal is the interface that contains the information about the `Proposal`, such as the `title`, `description`, and any notable changes. A `Content` type can be implemented by any module. The `ProposalRoute` of the `Content` returns a string that must be used to route the handler of the `Content` in the Governance keeper. This process allows the governance keeper to execute proposal logic implemented by any module. If a proposal passes, the handler is executed. Only if the handler is successful does the state get persisted and the proposal finally pass. Otherwise, the proposal is rejected.
 
 ## Message Types
 
@@ -320,28 +324,28 @@ The minimum deposit amount for a proposal to enter a voting period. Currently 51
 - type: `time.Duration` (seconds)
 - `"max_deposit_period": "604800s"`
 
-Maximum period for Luna holders to deposit on a proposal. Currently 1 week.
+The maximum period of time for a proposal to meet the minimum deposit. Currently 1 week.
 
 ### Quorum
 
 - type: `Dec`
 - `"quorum": "0.100000000000000000",`
 
-Minimum percentage of total stake needed to vote for a result to be considered valid.
+The minimum number of votes needed for a proposal to be valid. Currently, 10% of all staked Luna must vote to reach `Quorum`. 
 
 ### Threshold
 
 - type: `Dec`
 - default value: 50%
 
-Minimum proportion of Yes votes for a proposal to pass.
+The minimum number of `Yes` votes needed for a proposal to pass. Currently, 50% of all votes must be `Yes`. `Abstain` votes are excluded from this tally. 
 
 ### Veto
 
 - type: `Dec`
-- default value: `0.33`
+- default value: `0.334`
 
-Minimum value of Veto votes to Total votes ratio for proposal to be vetoed.
+The minimum value of `NoWithVeto` votes needed for a proposal to be vetoed. If 33.4% or more of the total votes cast are `NoWithVeto`, the proposal fails, and the creator's deposit is not returned. 
 
 ### VotingPeriod
 
@@ -349,3 +353,4 @@ Minimum value of Veto votes to Total votes ratio for proposal to be vetoed.
 -  `"voting_period": "604800s"`
 
 Length of the voting period. Currently 1 week.
+
