@@ -305,7 +305,8 @@ $light-blue-arrow: '/img/ArrowLightBlue.svg';
 }
 
 @media (max-width: 996px) {
-	.navbar__item { // This is a fix for Prod only
+	// This is a fix for Prod only
+	.navbar__item {
 		display: flex;
 	}
 
