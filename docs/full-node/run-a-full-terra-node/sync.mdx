@@ -37,7 +37,9 @@ The result of this command should be `v2.0.0-rc.0`.
 wget https://raw.githubusercontent.com/terra-money/testnet/master/pisco-1/genesis.json -O ~/.terra/config/genesis.json
 ```
 
-3. Finally, you can start the syncing process:
+3. Next, [update the `persistent_peers` setting](https://polkachu.com/testnets/terra/peers) with a list of stable persistent peers in your `config.toml` file.
+
+4. Finally, you can start the syncing process:
 
 ```
 terrad start
@@ -51,7 +53,7 @@ Nodes take at least an hour to start syncing. This wait time is normal. Before t
 
 Syncing will halt at block 890,000, at which point you will need to change the version of terrad and then resume the syncing process. 
 
-4. To sync your Pisco testnet node from block 890,000 to the most recent block, you will need to navigate to the `core` directory and change your terrad version to `v2.1.0-beta.1`.
+5. To sync your Pisco testnet node from block 890,000 to the most recent block, you will need to navigate to the `core` directory and change your terrad version to `v2.1.0-beta.1`.
 
 ```
 git checkout v2.1.0-beta.1
@@ -66,7 +68,7 @@ terrad version
 
 The result of this command should be `v2.1.0`.
 
-5. Now, you can resume the syncing process:
+6. Now, you can resume the syncing process:
 
 ```
 terrad start
@@ -99,7 +101,13 @@ The result of this command should be `v2.0.0`.
 wget https://phoenix-genesis.s3.us-west-1.amazonaws.com/genesis.json -O ~/.terra/config/genesis.json
 ```
 
-3. Finally, you can start the syncing process:
+3. Next, download the `addrbook.json` file containing a list of stable persistent peers into the `~/.terra/config/` directory:
+
+```
+wget https://snapshots1.polkachu.com/addrbook/terra/addrbook.json -O ~/.terra/config/addrbook.json
+```
+
+4. Finally, you can start the syncing process:
 
 ```
 terrad start
@@ -113,7 +121,7 @@ Nodes take at least an hour to start syncing. This wait time is normal. Before t
 
 Syncing will halt at block 838,500, at which point you will need to change the version of terrad and then resume the syncing process. 
 
-4. To sync your Phoenix mainnet node from block 838,500 to the most recent block, you will need to navigate to the `core` directory and change your terrad version to `v2.1.1`.
+5. To sync your Phoenix mainnet node from block 838,500 to the most recent block, you will need to navigate to the `core` directory and change your terrad version to `v2.1.1`.
 
 ```
 git checkout v2.1.1
@@ -128,7 +136,7 @@ terrad version
 
 The result of this command should be `v2.1.1`.
 
-5. Now, you can resume the syncing process:
+6. Now, you can resume the syncing process:
 
 ```
 terrad start
