@@ -305,6 +305,10 @@ $light-blue-arrow: '/img/ArrowLightBlue.svg';
 }
 
 @media (max-width: 996px) {
+	.navbar__item { // This is a fix for Prod only
+		display: flex;
+	}
+
 	.navbar {
 		[class^="searchBox"] {
 			position: relative;
