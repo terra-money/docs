@@ -3,6 +3,9 @@ $white-github: '/img/icons/links/whitegithub.svg';
 $white-terra: '/img/Terra-logo-grayscale.svg';
 $colorful-terra: '/img/BlueGreenTerra.svg';
 $small-colorful-terra: '/img/BlueGreenTerraSmall.svg';
+$white-luna: '/img/Luna-logo-white.svg';
+$colorful-luna: '/img/Luna-color.svg';
+$small-colorful-luna: '/img/Luna-color-small.svg';
 $white-arrow: '/img/ArrowWhite.svg';
 $blue-arrow: '/img/ArrowDarkBlue.svg';
 $light-blue-arrow: '/img/ArrowLightBlue.svg';
@@ -254,12 +257,12 @@ $light-blue-arrow: '/img/ArrowLightBlue.svg';
 		background-color: #459CF4;
 
 		&::before {
-			background-image: url($white-terra);
+			background-image: url($white-luna);
 			background-repeat: no-repeat no-repeat;
 		}
 
 		&:hover::before {
-			background-image: url($colorful-terra);
+			background-image: url($colorful-luna);
 		}
 
 		&:hover::after {
@@ -268,7 +271,7 @@ $light-blue-arrow: '/img/ArrowLightBlue.svg';
 
 		&:hover {
 			box-shadow: 3px 3px 6px rgba(150, 150, 150, 0.25);
-			background-color: transparent;
+			background-color: #000000;
 			box-shadow: inset 0 0 0 1.75px #459CF4;
 			color: #459CF4 !important;
 		}
@@ -289,11 +292,11 @@ $light-blue-arrow: '/img/ArrowLightBlue.svg';
 			border: 1px solid #343536;
 
 			&::before {
-				background-image: url($small-colorful-terra);
+				background-image: url($small-colorful-luna);
 			}
 
 			&:hover::before {
-				background-image: url($small-colorful-terra);
+				background-image: url($small-colorful-luna);
 			}
 
 			&:hover {
@@ -332,7 +335,7 @@ $light-blue-arrow: '/img/ArrowLightBlue.svg';
 @media (max-width: 374px) {
 	.navbar__logo {
 		&::before {
-			content: url('../../static/img/logo_dark_small.svg');
+			content: url('/img/logo_dark_small.svg');
 		}
 		img {
 			display: none !important;
