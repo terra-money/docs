@@ -20,7 +20,7 @@ rm ~/.terra/config/addrbook.json
 terrad unsafe-reset-all
 ```
 
-Your node is now in a pristine state, keeping the original `priv_validator.json` and `config.toml`. If you had any sentry nodes or full nodes set up before, your node will still try to connect to them but may fail if they haven't also been upgraded.
+Your node is now in a pristine state, keeping the original `priv_validator.json` and `config.toml`. If you had any sentry nodes or full nodes set up before, your node will still try to connect to them, but may fail if they haven't also been upgraded.
 
 
 <Admonition type="danger" icon="🔥">
@@ -101,12 +101,12 @@ The nodes you specify are the trusted persistent peers that can help anchor your
 If the value of `persistent_peers_max_dial_period` is more than zero, the pause between each call to each persistent peer will not exceed `persistent_peers_max_dial_period` during exponential backoff, and the automatic redial process continues.
 
 ```toml
-# Comma separated list of nodes to keep persistent connections to
+# Comma separated list of nodes to keep persistent connections to.
 persistent_peers = "id100000000000000000000000000000000@1.2.3.4:26656,id200000000000000000000000000000000@2.3.4.5:26656"
 ```
 
 ### Rosetta
 
-Integrate Terra with Coinbase via the Rosetta API. Rosetta is an open-source API that organizes blockchain data into a standardized format, making it easy for developers to build cross-chain applications. Instead of creating specific code for each chain, Rosetta allows different blockchains to integrate into any exchange that uses Rosetta API.
+Integrate Terra with Coinbase via the Rosetta API. Rosetta is an open-source API that organizes blockchain data into a standardized format, making it easy for developers to build cross-chain applications. Instead of creating specific code for each chain, Rosetta allows different blockchains to integrate into any exchange that uses the Rosetta API.
 
 For more information, visit the [Rosetta docs site](https://www.rosetta-api.org/docs/welcome.html).
