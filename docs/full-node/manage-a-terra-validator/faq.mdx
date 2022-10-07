@@ -26,11 +26,11 @@ It is possible and encouraged for any user to run full nodes even if they do not
 
 ### What is staking?
 
-When Luna holders delegate their Luna to a validator, they are ***staking.*** Staking increases a validator's weight, which helps them, and in return delegators get rewarded.
+***Staking*** occurs when Luna holders delegate their Luna to a validator. Staking increases a validator's weight, which improves the likelihood of being selected to validate blocks, and in return, delegators get rewarded.
 
-The Columbus-5 Mainnet is a public Proof of Stake (PoS) blockchain. This means a validator's weight (total stake) is determined by the amount of staking tokens (Luna) they delegate to themselves plus the Luna bonded to them by external delegators. The weight of a validator determines whether or not they are an active validator and how frequently they can propose a block. Validators with a higher weight will propose more blocks, and in turn make more revenue.
+The Phoenix-1 Mainnet is a public Proof of Stake (PoS) blockchain. This means a validator's weight (total stake) is determined by the amount of staking tokens (Luna) they delegate to themselves plus the Luna bonded to them by external delegators. The weight of a validator determines whether or not they are an active validator and how frequently they can propose a block. Validators with a higher weight will propose blocks more frequently, and in turn generate more revenue.
 
-The active validator set is made up of 130 validators, who hold the most Luna. The bottom validator’s stake always forms the barrier for entry into the network. Creating a validator with more stake than the bottom validator is the only way to enter the active set. If validators double-sign, or are frequently offline, they risk their staked Luna, including Luna delegated by users, being slashed by the protocol to penalize negligence and misbehavior.
+The active validator set is made up of the top 130 validators who hold the most Luna. The barrier for entry into the network is dictated by the value of the lowest stake held in the validator set. For instance, if a validator is created with a higher stake than the bottom validator, then this newly created validator may join the active set. If validators double-sign, or are frequently offline, they risk their staked Luna, including Luna delegated by users, by being slashed by the protocol to penalize negligence and misbehaviour.
 
 ### What is a delegator?
 
@@ -38,7 +38,7 @@ Delegators are Luna holders who want to receive staking rewards without the resp
 
 Delegators share the benefits and rewards of staking with their Validator. If a Validator is successful, its delegators will consistently share in the rewards structure. If a Validator is slashed, the delegator’s stake will also be slashed. This is why delegators should perform due-diligence on validators before delegating. Delegators can also diversify by spreading their stake over multiple validators.
 
-Delegators play a critical role in the system, as they are responsible for choosing validators. Being a delegator is not a passive role. Delegators should remain vigilant, actively monitor the actions of their validators, and re-delegate whenever they feel their current validator does not meet their needs.
+Delegators play a critical role in the system, as they are responsible for selecting the validators to which they stake. Being a delegator is not a passive role. Delegators should remain vigilant, actively monitor the actions of their validators, and re-delegate whenever they feel their current validator does not meet their needs.
 
 ## Becoming a Validator
 
@@ -46,9 +46,9 @@ Delegators play a critical role in the system, as they are responsible for choos
 
 Any participant in the network can signal their intent to become a validator by creating a validator and registering its validator profile. The candidate then broadcasts a `create-validator` transaction, which contains the following data:
 
-- **PubKey:** Validator operators can have different accounts for validating and holding liquid funds. The PubKey submitted must be associated with the private key the validator will use to sign _prevotes_ and _precommits_.
+- **PubKey:** Validator operators can have different accounts for validating and holding liquid funds. The submitted PubKey must be associated with the private key the validator will use to sign _prevotes_ and _precommits_.
 
-- **Address:** A `terravaloper-` address. This is the address used to identify your validator publicly. The private key associated with this address is used to bond, unbond, and claim rewards.
+- **Address:** A `terravaloper-` address which is used to publicly identify your validator. The private key associated with this address is used to bond, unbond, and claim rewards.
 
 - **Name** (also known as the **moniker**)
 
@@ -56,7 +56,7 @@ Any participant in the network can signal their intent to become a validator by 
 
 - **Description** _(optional but recommended)_
 
-- **Initial commission rate:** The commission rate on block provisions, block rewards and fees charged to delegators.
+- **Initial commission rate:** The commission rate on block provisions, block rewards, and fees charged to delegators.
 
 - **Maximum commission:** The maximum commission rate which the validator will be allowed to charge. (This cannot be changed)
 
@@ -94,14 +94,14 @@ Once a validator is created and registered, Luna holders can delegate Luna to th
 - **Tendermint Consensus Keypair:** This Consensus Keypair is on the [tendermint](https://docs.tendermint.com/master/nodes/validators.html#validator-keys) layer and consists of a unique Private Key used to sign block hashes associated with a Public Key `terravalconspub`.
 
   - This Keypair is generated when a node is created with `terrad init`.
-  - The Private Key can be found in the `priv_validator_key.json` file in the `config` directory after runing `terrad init`.
+  - The Private Key can be found in the `priv_validator_key.json` file in the `config` directory after running `terrad init`.
   - The Public Key is derived from the Private Key and can be found and seen by running the command `terrad tendermint show-validator`
 
     **Example:** `terravalconspub1zcjduc3qcyj09qc03elte23zwshdx92jm6ce88fgc90rtqhjx8v0608qh5ssp0w94c`
 
 <Admonition type="caution" icon="☢️">
 
-A validator requires the above key in order to identify itself on the network, sign blocks, and sign staking/operational transactions such as voting on Governance proposals. It is the validator's sole responsibility to secure these keys and have a contingency backup plan in the event of contingencies.
+A validator requires the above key in order to identify itself on the network, sign blocks, and sign staking/operational transactions, such as voting on Governance proposals. It is the validator's sole responsibility to secure these keys and have a contingency backup plan in the event of contingencies.
 
 </Admonition>
 
@@ -109,11 +109,11 @@ A validator requires the above key in order to identify itself on the network, s
 
 After a validator is created with the `create-validator` transaction, it can be in three states:
 
-- `bonded`: A validator that is in the active set and participates in consensus. This validator is earning rewards and can be slashed for misbehavior.
+- `bonded`: A validator that is in the active set and participates in consensus. This validator is earning rewards and can be slashed for misbehaviour.
 
-- `unbonding`: A validator that is not in the active set and can't not participate in consensus. This validator is not earning rewards but can still be slashed for misbehaviour. This is a transition state from `bonded` to `unbonded`. If a validator does not send a `rebond` transaction while in `unbonding` mode, it will take three weeks for the state transition to complete.
+- `unbonding`: A validator that is not in the active set and cannot participate in consensus. This validator is not earning rewards but can still be slashed for misbehaviour. This is a transition state from `bonded` to `unbonded`. If a validator does not send a `rebond` transaction while in `unbonding` mode, it will take three weeks for the state transition to complete.
 
-- `unbonded`: A validator that is not in the active set and not signing blocks. Unbonded validators can't be slashed and can't earn any rewards from their operation. It is still possible to delegate Luna to unbonded validators. Un-delegating from an `unbonded` validator is immediate.
+- `unbonded`: A validator that is not in the active set and not signing blocks. Unbonded validators can't be slashed and can't earn any rewards from their operation. It is still possible to delegate Luna to unbonded validators. Undelegating from an `unbonded` validator is processed immediately.
 
 All Delegators have the same state as their validator.
 
@@ -130,7 +130,7 @@ You can still delegate to a validator even if they do not appear on Terra Statio
 
 `https://station.terra.money/validator/<terravaloper-address>`
 
-Ask your validator for their terravaloper address.
+You can ask your validator for their terravaloper address.
 
 Be careful when delegating to validators outside of the active set. Some inactive validators may be jailed or are no longer supported. Station only displays active or recently active validators who are able to participate in consensus.
 
@@ -140,7 +140,7 @@ Use the [Terra faucet](https://faucet.terra.money/) to obtain coins for the test
 
 ### Is there a minimum amount of Luna that must be staked to be an active (bonded) validator?
 
-There is no set minimum. The top 130 validators with the highest total stake (where total stake = self-bonded stake + delegated stake) make up the active validator set. The bottom 130th validator sets the barrier to entry for the active set.
+There is no set minimum. The top 130 validators with the highest total stake (where total stake = self-bonded stake + delegated stake) make up the active validator set. The validator with the lowest stake among the top 130 sets the barrier to entry for the active set.
 
 ### How will delegators choose their validators?
 
@@ -154,7 +154,7 @@ Delegators are free to choose validators according to their own criteria. This m
 
 - **Track record:** Delegators can look at the track record of a validator they plan to delegate to. This includes seniority, past votes on proposals, historical average uptime, and how often the node was compromised.
 
-Validators can also provide a website address to complete their resume. Validators need to build a good reputation to attract delegators. It's good practice for validators to have their setup audited by third parties. Please note that the Terra team will not approve or conduct any audits.
+Validators can also provide a website address for advertisement and to increase transparency. However, building a good reputation in the community will always be most important when attempting to attract delegators. It's also good practice for validators to have their setup audited by a third party. Please note that the Terra team will not approve or conduct any audits.
 
 ## Responsibilities
 
@@ -174,13 +174,13 @@ A validator must:
 
 ### What does staking imply?
 
-Think of staked Luna as a safety deposit on a validator's activities. When a validator or a delegator wants to retrieve part or all of their deposit, they send an unbonding transaction. The staked Luna then undergoes a _three weeks unbonding period,_ during which it is vulnerable to slashing risks for potential misbehavior committed by the validator before the start of the unbonding process.
+Think of staked Luna as a safety deposit on a validator's activities. When a validator or a delegator wants to retrieve part or all of their deposit, they send an unbonding transaction. The staked Luna then undergoes a _three-week unbonding period_, during which it is vulnerable to slashing risks for potential misbehaviour committed by the validator before the start of the unbonding process.
 
-Validators receive block provisions, block rewards, and fee rewards and share these with their delegators. If a validator misbehaves, a certain portion of their total stake is slashed (the severity of the penalty depends on the type of misbehavior). This means that every user that bonds Luna to a slashed validator gets penalized in proportion to their stake. Delegators are incentivized to delegate to validators that function safely.
+Validators receive block provisions, block rewards, and fee rewards and share these with their delegators. If a validator misbehaves, a certain portion of their total stake is slashed (the severity of the penalty depends on the type of misbehaviour). This means that every user that bonds Luna to a slashed validator gets penalized in proportion to their stake. Delegators are incentivized to delegate to validators that function safely.
 
 ### Can a validator run away with a delegators' Luna?
 
-**No.** By delegating to a validator, users delegate staking power. The more staking power a validator has, the more weight it has in the consensus and processes. This does not mean that the validator has custody of its delegators' Luna.
+**No.** By delegating to a validator, users delegate staking power. The more staking power a validator has, the more weight it has in the consensus and general processes. This does not mean that the validator has custody of its delegators' Luna.
 
 <Admonition type="info" icon="ℹ️" title="Delegate safely">
 
@@ -192,9 +192,9 @@ Although delegated funds cannot be stolen by validators, delegators are still li
 
 ### How often will a validator be chosen to propose the next block? Does it go up with the quantity of Luna staked?
 
-The validator that is selected to mine the next block is called the **proposer**, or the "leader" in the consensus for the round. Each proposer is selected deterministically, and the frequency of being chosen is equal to the relative total stake of the validator (Total stake = self-bonded stake + delegators stake). For example, if the total bonded stake across all validators is 100 Luna, and a validator's total stake is 10 Luna, then this validator will be chosen 10% of the time as the proposer.
+The validator that is selected to mine the next block is called the **proposer**, or the "leader" in the consensus for the round. Each proposer is selected deterministically, and the frequency of being selected is equal to the relative total stake of the validator (Total stake = self-bonded stake + delegators stake). For example, if the total bonded stake across all validators is 100 Luna, and a validator's total stake is 10 Luna, then this validator will be chosen 10% of the time as the proposer.
 
-To understand more about the proposer selection process in Tendermint BFT consensus, read more [in their official docs](https://docs.tendermint.com/master/spec/consensus/proposer-selection.html).
+For more information about the proposer selection process in Tendermint BFT consensus, you may navigate to [the Tendermint docs site](https://docs.tendermint.com/master/spec/consensus/proposer-selection.html).
 
 ## Incentives
 
@@ -220,33 +220,33 @@ Block provisions are distributed proportionally to each validator relative to th
 
 ### How are fees distributed?
 
-Fees are distributed to validators in the same way as commission: proportionally to each validator relative to their total stake. A Block proposer can also get a bonus if the proposer includes more than the minimum of required precommits.
+Fees are distributed to validators in the same way as commission: proportionally to each validator's stake relative to the total stake among all validators. A Block proposer can also get a bonus if it includes more than the minimum number of required precommits.
 
 #### Rewards
 
-When a validator is selected to propose the next block, they must include at least two thirds of the precommits for the previous block in the form of validator signatures. Proposers who include more than two thirds receive a bonus proportional to the amount of additional precomits. This reward ranges from 1% if the proposer includes two thirds of the precommits to 5% if the proposer includes 100% of the precommits. If a proposer waits too long however, other validators may timeout and move on to the next proposer. This is why validators have to find a balance between wait time to get the most signatures and the risk of losing out on proposing the next block. This feature aims to incentivize non-empty block proposals, better networking between validators, and to mitigate censorship.
+When a validator is selected to propose the next block, they must include at least two thirds of the precommits for the previous block in the form of validator signatures. Proposers who include more than two thirds receive a bonus proportional to the amount of additional precommits. This reward ranges from 1%, if the proposer includes two thirds of the precommits, to 5%, if the proposer includes 100% of the precommits. However, if a proposer waits too long, other validators may timeout and move on to the next proposer. This is why validators must find a balance between the amount of time spent waiting in order to receive a high proportion of signatures and the possible risk of losing out on proposing the next block. This feature aims to incentivize non-empty block proposals, improve networking between validators, and mitigate censorship.
 
-**Example:** There are 10 validators with equal stake. Each has a 1% commission and 20% self-bonded Luna. If a successful block collects 1005 SDT in fees, and the proposer includes 100% of the signatures in their block, they will receive the full 5% bonus.
+**Example:** Consider 10 validators with equal stake. Each has a 1% commission and 20% self-bonded Luna. If a successful block collects 1005 LUNA in fees, and the proposer includes 100% of the signatures in their block, they will receive the full 5% bonus.
 
 Use this simple equation to find the reward $R$ for each validator:
 
-$$9R ~ + ~ R ~ + ~ 5\%(R) ~ = ~ 1005 ~ \Leftrightarrow ~ R ~ = ~ 1005 ~/ ~10.05 ~ = ~ 100$$
+$$9R ~ + ~ R ~ + ~ 5\%(R) ~ = ~ 1005 ~ \Leftrightarrow ~ R ~ = ~ 1005 ~ / ~ 10.05 ~ = ~ 100$$
 
 - For the validator that proposes a block:
-  - The pool obtains $R ~ + ~ 5\%(R)$: 105 SDT
-  - Commission: 105 SDT ~ * ~ 80\% ~ * ~ 1\%$ = 0.84 SDT
-  - Validator's reward: 105 SDT ~ * ~ 20\% ~ + ~ Commission$ = 21.84 SDT
-  - Delegators' rewards: 105 SDT ~ * ~ 80\% ~ - ~ Commission$ = 83.16 SDT \(each delegator will be able to claim its portion of these rewards in proportion to their stake\)
+  - The pool obtains: $R ~ + ~ 5\%(R) = 105 ~ LUNA$
+  - Commission: $105 ~ LUNA ~ * ~ 80\% ~ * ~ 1\% = 0.84 ~ LUNA$
+  - Validator's reward: $105 ~ LUNA ~ * ~ 20\% ~ + ~ Commission = 21.84 ~ LUNA$
+  - Delegators' rewards: $105 ~ LUNA ~ * ~ 80\% ~ - ~ Commission = 83.16 ~ LUNA$ \(each delegator will be able to claim its portion of these rewards in proportion to their stake\)
 
 - For all other validators:
-  - The pool obtains $R$: 100 SDT
-  - Commission: 100 SDT ~ * ~ 80\% ~ * ~ 1\%$ = 0.8 SDT
-  - Validator's reward: 100 SDT ~ * ~ 20\% ~ + ~ Commission$ = 20.8 SDT
-  - Delegators' rewards: 100 SDT ~ * ~ 80\% ~ - ~ Commission$ = 79.2 SDT \(each delegator will be able to claim its portion of these rewards in proportion to their stake\)
+  - The pool obtains: $R = 100 ~ LUNA$
+  - Commission: $100 ~ LUNA ~ * ~ 80\% ~ * ~ 1\% = 0.8 ~ LUNA$
+  - Validator's reward: $100 ~ LUNA ~ * ~ 20\% ~ + ~ Commission = 20.8 ~ LUNA$
+  - Delegators' rewards: $100 ~ LUNA ~ * ~ 80\% ~ - ~ Commission = 79.2 ~ LUNA$ \(each delegator will be able to claim its portion of these rewards in proportion to their stake\)
 
 ### What are the slashing conditions?
 
-If a validator misbehaves, their bonded stake along with their delegators' stake will be slashed. The severity of the punishment depends on the type of fault. There are main faults that can result in slashing of funds:
+If a validator misbehaves, their bonded stake, along with their delegators' stake, will be slashed. The severity of punishment depends on the type of violation. The following are the main types of violations that can result in a slashing of funds:
 
 - **Double-signing:** If someone reports on chain A that a validator signed two blocks at the same height on chain A and chain B, and if chain A and chain B share a common ancestor, then this validator will get slashed on chain A.
 
@@ -276,13 +276,13 @@ Visit the [requirements section](../run-a-full-terra-node/system-config.mdx#hard
 
 ### What are the software requirements?
 
-In addition to running a Terra Core node, validators should develop monitoring, alerting and management solutions.
+In addition to running a Terra Core node, validators should develop monitoring, alerting, and management solutions.
 
 Validators should expect to perform regular software updates to accommodate upgrades and bug fixes. There will inevitably be issues with the network, and this requires vigilance.
 
 ### What are the personnel requirements?
 
-A successful validator operation will require the efforts of multiple highly skilled individuals and continuous operational attention. Running a validator is considerably more involved than mining bitcoin.
+A successful validator will require the efforts of multiple highly skilled individuals and continuous attention to validator operations. In comparison, running a validator is considerably more involved than mining bitcoin.
 
 Running an effective operation is critical to avoiding unexpected unbonding or being slashed. This includes being able to respond to attacks, outages, as well as to maintain security and isolation in your data center.
 
@@ -290,12 +290,12 @@ Running an effective operation is critical to avoiding unexpected unbonding or b
 
 Denial-of-service attacks occur when an attacker sends a flood of internet traffic to a validator's IP address. This can prevent a validator's server from connecting to the internet.
 
-To do this, an attacker scans the network, tries to learn the IP address of various validator nodes, and disconnects them by flooding them with traffic.
+To do this, an attacker scans the network, attempts to retrieve the IP address of various validator nodes, and disconnects them by flooding them with traffic.
 
 One way to mitigate these risks is to carefully structure a validator network with a sentry node architecture.
 
-Validator nodes should only connect to full-nodes they trust. They can be run by the same validator or other validators they know. A validator node will typically run in a data center. Most data centers provide direct links to major cloud providers. A validator can use these links to connect to sentry nodes in the cloud. This shifts the burden of denial-of-service from the validator's node directly to its sentry nodes. This may require new sentry nodes to be spun up or activated to mitigate attacks on existing ones.
+Validator nodes should only connect to full nodes that they trust. These nodes can be run by the same validator or other validators that they know. A validator node will typically run in a data center and most data centers provide direct links to major cloud providers. A validator can use these links to connect to sentry nodes in the cloud. This shifts the burden of denial-of-service from the validator's node directly to its sentry nodes. This may require new sentry nodes to be spun up or activated to mitigate attacks on existing ones.
 
-Sentry nodes can be quickly spun up or used to change IP addresses. Because links to the sentry nodes are in private IP space, an internet based attack can't disturb them directly. This will ensure a validator's block proposals and votes always make it to the rest of the network.
+Sentry nodes can be quickly spun up or used to change IP addresses. Because links to the sentry nodes are in private IP space, an internet based attack cannot directly disturb them. This will ensure a validator's block proposals and votes always make it to the rest of the network.
 
 For more on sentry node architecture, visit [the Cosmos forum](https://forum.cosmos.network/t/sentry-node-architecture-overview/454).

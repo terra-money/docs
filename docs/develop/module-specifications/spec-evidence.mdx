@@ -8,7 +8,7 @@ Terra's evidence module inherits from Cosmos SDK's [`evidence`](https://docs.cos
 
 </Admonition>
 
-The evidence module allows arbitrary evidence of misbehavior, such as equivocation and counterfactual signing, to be submitted and handled.
+The evidence module allows arbitrary evidence of misbehaviour, such as equivocation and counterfactual signing, to be submitted and handled.
 
 Typically, standard evidence handling expects the underlying consensus engine, Tendermint, to automatically submit evidence when it is discovered by allowing clients and foreign chains to submit more complex evidence directly. The evidence module operates differently.
 
@@ -23,7 +23,7 @@ Each corresponding handler must also fulfill the `Handler` interface contract. T
 Any concrete type of evidence submitted to the module must fulfill the following `Evidence` contract. Not all concrete types of evidence will fulfill this contract in the same way and some data might be entirely irrelevant to certain types of evidence. An additional `ValidatorEvidence`, which extends `Evidence`, has also been created to define a contract for evidence against malicious validators.
 
 ```go
-// Evidence defines the contract which concrete evidence types of misbehavior
+// Evidence defines the contract which concrete evidence types of misbehaviour
 // must implement.
 type Evidence interface {
 	proto.Message
@@ -98,7 +98,7 @@ Evidence is submitted through a `MsgSubmitEvidence` message:
 
 ```go
 // MsgSubmitEvidence represents a message that supports submitting arbitrary
-// Evidence of misbehavior such as equivocation or counterfactual signing.
+// Evidence of misbehaviour such as equivocation or counterfactual signing.
 message MsgSubmitEvidence {
   string              submitter = 1;
   google.protobuf.Any evidence  = 2;

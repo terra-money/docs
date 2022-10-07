@@ -31,7 +31,7 @@ At the beginning of each block, the slashing module checks for evidence of infra
 #### Evidence handling
 
 Tendermint blocks can include evidence, which indicates that a validator committed malicious
-behavior. The relevant information is forwarded to the application as ABCI Evidence
+behaviour. The relevant information is forwarded to the application as ABCI Evidence
 in `abci.RequestBeginBlock` so that the validator an be punished.
 
 For some `Evidence` submitted in `block` to be valid, it must satisfy:
