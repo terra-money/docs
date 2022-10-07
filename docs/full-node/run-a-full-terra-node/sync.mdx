@@ -201,7 +201,7 @@ From here, you can [monitor the sync](#monitor-the-sync). Make sure to check on 
 
 ### Fast-sync for testing
 
-Sometimes you may want to sync faster by foregoing checks. 
+Sometimes you may want to sync faster by foregoing checks. You may do so by adding the following flag to the `terrad start` command.
 
 <Admonition type="caution" icon="☢️">
 
@@ -215,11 +215,11 @@ terrad start --x-crisis-skip-assert-invariants
 
 ## Sync from snapshot
 
-You can significantly accelerate the synchronization process by providing terrad with a recent snapshot of the network state. Snapshots are made publicly available by members of the Terra community one example can be downloaded from [Polkachu - Phoenix Mainnet](https://polkachu.com/state_sync/terra). [Polkachu - Pisco Testnet](https://polkachu.com/testnets/terraInstructions) are provided by Polkachu, and not maintained as part of this documentation.
+You can significantly accelerate the synchronization process by providing terrad with a recent snapshot of the network state. Snapshots are made publicly available by members of the Terra community one example can be downloaded from [Polkachu - Phoenix Mainnet](https://polkachu.com/state_sync/terra). [Polkachu - Pisco Testnet](https://polkachu.com/testnets/terraInstructions) is provided by Polkachu, and not maintained as part of this documentation.
 
 ### Before using snapshots
 
-Certain files will need to be absent or deleted before downloading a snapshot. A quicksync replaces blockchain data with a custom snapshot. For most use cases a "pruned" version is adequate. Pruned versions will have certain transactions removed from the archive to improve node performance. If you are running a node for archival purposes, you will want an `archive` or `default` download.
+Certain files will need to be absent or deleted before downloading a snapshot. A quicksync replaces blockchain data with a custom snapshot. For most use cases, a "pruned" version is adequate. Pruned versions will have certain transactions removed from the archive to improve node performance. If you are running a node for archival purposes, you will want an `archive` or `default` download.
 
 After choosing the appropriate download type, examine your node and ensure that `.terra/data` is empty.
 
@@ -294,5 +294,5 @@ Validators can view the status of the network using [Terra Finder](https://finde
 
 ## Congratulations!
 
-You've successfully joined a network as a full node operator. If you are a validator, continue to [manage a Terra validator](../manage-a-terra-validator/README.mdx) for the next steps.
+You've successfully joined a network as a full node operator. If you are a validator, continue to [manage a Terra validator](../manage-a-terra-validator/README.mdx) for next steps.
 

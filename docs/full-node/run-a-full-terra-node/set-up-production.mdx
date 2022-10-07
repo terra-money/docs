@@ -10,13 +10,13 @@ For information about running a validator node, visit the [validator guide](../m
 
 ## Create a dedicated user
 
-Although Terrad does not require a super user account, during the setup process you'll need super user permission to create and modify some files. It is strongly recommended to use a normal user when running Terrad.
+Although Terrad does not require a super user account, during the setup process you'll need super user permissions to create and modify some files. It is strongly recommended to use a normal user when running Terrad.
 
 ## Increase the maximum files Terrad can open
 
-Terrad is set to open 1024 files by default. It is recommended that you increase this amount.
+Terrad can open 1024 files at a time by default. It is recommended that you increase this amount.
 
-Modify `/etc/security/limits.conf`[\*](https://linux.die.net/man/5/limits.conf) to increase the amount, where `nofile` is the number of files Terrad can open.
+Modify `/etc/security/limits.conf`[\*](https://linux.die.net/man/5/limits.conf) to increase the amount, where `nofile` is the number of files Terrad can open at a time.
 
 ```bash
 # If you have never changed this system config or your system is fresh, most of this file will be commented
@@ -56,11 +56,11 @@ Terrad must be running at all times. It is recommended that you register Terrad 
 
 2. Modify the `Service` section according to your environment:
 
-   - Enter the user (likely your username, unless you created a user specifically for Terrad)
-   - Enter the path to the Terrad executable. `<PATH_TO_TERRAD>` is likely `/home/<YOUR_USER>/go/bin/terrad` or `/usr/go/bin`. Confirm this with `whereis terrad`
-   - Make sure you made the correct edits to /etc/security/limits.conf
+   - Enter the user (likely your username, unless you created a user specifically for Terrad).
+   - Enter the path to the Terrad executable. `<PATH_TO_TERRAD>` is likely `/home/<YOUR_USER>/go/bin/terrad` or `/usr/go/bin`. Confirm this with `whereis terrad`.
+   - Make sure you made the correct edits to `/etc/security/limits.conf`.
 
-3. Run `systemctl daemon-reload` followed by `systemctl enable terrad`. This will register Terrad as a system service and turn it on upon startup.
+3. Run `systemctl daemon-reload` followed by `systemctl enable terrad`. This will register Terrad as a system service and run the program upon startup.
 
 4. Now start the serivce with `systemctl start terrad`.
 
