@@ -21,7 +21,7 @@ All validators that want to be included in the new Terra chain must follow the s
 
 ## Supplemental Resources
 
-- [Official Terra V2 Validator Genesis Guide](https://github.com/terra-money/genesis-tools/blob/main/LAUNCH.md)
+- [Official Terra Validator Genesis Guide](https://github.com/terra-money/genesis-tools/blob/main/LAUNCH.md)
 - [Cosmos SDK: How to run a node](https://docs.cosmos.network/master/run-node/run-node.html)
 - [What is GenTX](https://docs.cosmos.network/master/run-node/run-node.html#adding-genesis-accounts)
 - [Validator tutorial](../full-node/manage-a-terra-validator/README.mdx)
@@ -36,12 +36,12 @@ All validators that want to be included in the new Terra chain must follow the s
 - Sat May 28 2022 12:00:00 GMT+0900 (KST)
 - Sat May 28 2022 03:00:00 GMT+0000 (UTC)
 
-    Finish collecting gen_txs and build & share `genesis.json`
+    Finish collecting gen_txs and build & share `genesis.json`.
 
 - Sat May 28 2022 15:00:00 GMT+0900 (KST)
 - Sat May 28 2022 06:00:00 GMT+0000 (UTC)
 
-    Launch network
+    Launch network.
 
 
 
@@ -69,17 +69,17 @@ make install
 terrad version --long
 ```
 
-Which will return the following: 
+> The above command should result in the following:
 
-```sh
-terrad version --long
-name: terra
-server_name: terrad
-version: ""
-commit: 2565577ccf47d1b11a82d77500a0cb880080a70c
-build_tags: netgo,ledger
-go: go version go1.18 darwin/arm64
-```
+>```sh
+>terrad version --long
+>name: terra
+>server_name: terrad
+>version: ""
+>commit: 2565577ccf47d1b11a82d77500a0cb880080a70c
+>build_tags: netgo,ledger
+>go: go version go1.18 darwin/arm64
+>```
 
 4. Take the pre-attack snapshot:
 
@@ -93,7 +93,7 @@ terrad export --height 7544910 > pre-attack-snapshot.json
 terrad export --height 7790000 > post-attack-snapshot.json
 ```
 
-6. Verify the SHA256 hash of the (sorted) pre-attack & post-attack export snapshots:
+6. Verify the SHA256 hash of the sorted pre-attack & post-attack export snapshots:
 
 ```sh
 # pre-attack
@@ -139,7 +139,7 @@ python3 ./src/genesis_builder.py \
     > penultimate-genesis.json
 ```
 
-4. Verify the SHA256 of the (sorted) penultimate-genesis.json:
+4. Verify the SHA256 of the sorted penultimate-genesis.json:
 
 ```sh
 jq -S -c -M '' penultimate-genesis.json | shasum -a 256
@@ -228,7 +228,7 @@ mv ./gentx/* ~/.terra/config/gentx/
 terrad collect-gentxs
 ```
 
-3. Verify the SHA256 hash of the (sorted) final genesis:
+3. Verify the SHA256 hash of the sorted final genesis:
 
 ```sh
 jq -S -c -M '' ~/.terra/config/genesis.json | shasum -a 256
