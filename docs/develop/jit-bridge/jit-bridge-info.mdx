@@ -1,0 +1,24 @@
+# Get Started with Jit Bridge
+
+The [JIT Bridge](https://github.com/terra-money/JIT-Bridge-SDK/tree/main/contracts/proxy-wallet) establishes proxy wallet for users from other chains (i.e. Ethereum, Solana) who wish to interact with Terra Dapps. The proxy wallet enables you to use your original assets within the Terra blockchain and ecosystem.
+
+## How does it work?
+First a user connects their Web3 wallet of choice. This could be a Metamask wallet, a Phantom wallet, etc. Once connected, the JIT Bridge will create a new proxy wallet. This is achieved by bridging the initial mount of funds through a CosmWasm smart contract which deploys a new wallet using relayers and Wormhole. After the proxy wallet is created, the user will receive the bridged funds and a new Terra wallet address.
+
+### A user can:
+- **Transfer funds:** move Terra assets into proxy wallet.
+- **Bridge funds:** move Ethereum/Solana to user’s proxy wallet.
+- **Stake:** stake LUNA on chain.
+- **Swap:** exchange Luna for Ethereum/Solana or vice versa.
+
+
+## FAQ
+### What is a proxy wallet?
+A proxy wallet is a CosmWasm smart contract that has the ability to verify and forward operations from Ethereum to the Terra blockchain. It can also be used to sign transactions on Terra.
+
+### What is bridging?
+Bridging is a mechanism by which one can export assets on one blockchain to another. In the case of the JIT SDK Bridge, Ethereum assets/tokens can be transferred to the Terra blockchain and used throughout the Terra ecosystem as needed.
+
+### Why would we need to use a bridge?
+Porting assets over from another blockchain to Terra can have a plethora of benefits. In this case, one can use their ETH assets to engage with Terra Dapps or wallets. Users with a proxy wallet will also be able to take advantage of staking rewards and lower gas fees on Terra.
+

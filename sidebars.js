@@ -32,14 +32,14 @@ const sidebars = {
         {
             type: 'category',
             label: 'Learn',
-            link: {type: 'doc', id: 'learn/README'},
+            link: { type: 'doc', id: 'learn/README' },
             items:
                 [
                     'learn/protocol',
                     {
                         type: 'category',
                         label: 'Terra Station',
-                        link: {type: 'doc', id: 'landing-pages/terra-station'},
+                        link: { type: 'doc', id: 'landing-pages/terra-station' },
                         items:
                             [
                                 {
@@ -55,7 +55,7 @@ const sidebars = {
         {
             type: 'category',
             label: 'Develop',
-            link: {type: 'doc', id: 'develop/README'},
+            link: { type: 'doc', id: 'develop/README' },
             items:
                 [
                     'develop/get-started',
@@ -70,7 +70,7 @@ const sidebars = {
                                 type: 'category',
                                 label: 'Terrain',
                                 collapsed: true,
-                                link: {type: 'doc', id: 'develop/terrain/README'},
+                                link: { type: 'doc', id: 'develop/terrain/README' },
                                 items: [
                                     'develop/terrain/initial-setup',
                                     'develop/terrain/using-terrain-localterra',
@@ -85,7 +85,7 @@ const sidebars = {
                                 type: 'category',
                                 label: 'LocalTerra',
                                 collapsed: true,
-                                link: {type: 'doc', id: 'develop/localterra/README'},
+                                link: { type: 'doc', id: 'develop/localterra/README' },
                                 items: [
                                     'develop/localterra/install-localterra',
                                     'develop/localterra/configure',
@@ -98,7 +98,7 @@ const sidebars = {
                                 type: 'category',
                                 label: 'Terra.js',
                                 collapsed: true,
-                                link: {type: 'doc', id: 'develop/terra-js/README'},
+                                link: { type: 'doc', id: 'develop/terra-js/README' },
                                 items: [
                                     'develop/terra-js/getting-started',
                                     'develop/terra-js/terra-classic',
@@ -153,6 +153,14 @@ const sidebars = {
                                     'develop/terrad/subcommands',
                                 ],
                             },
+                            /* {
+                                type: 'category',
+                                label: 'Jit Bridge',
+                                collapsed: true,
+                                items: [
+                                    'develop/jit-bridge/jit-bridge-info',
+                                ],
+                            }, */
                         ],
                     },
 
@@ -181,14 +189,14 @@ const sidebars = {
                                 type: 'link',
                                 label: 'Frontend templates', // The link label
                                 href: 'https://github.com/terra-money/wallet-provider/', // The external URL
-                              },
+                            },
                         ],
                     },
                     {
                         type: 'category',
                         label: 'Terra Core modules',
                         collapsed: true,
-                        link: {type: 'doc', id: 'develop/module-specifications/README'},
+                        link: { type: 'doc', id: 'develop/module-specifications/README' },
                         items: [
                             'develop/module-specifications/spec-auth',
                             'develop/module-specifications/spec-authz',
@@ -218,7 +226,7 @@ const sidebars = {
         {
             type: 'category',
             label: 'Full node',
-            link: {type: 'doc', id: 'landing-pages/full-node'},
+            link: { type: 'doc', id: 'landing-pages/full-node' },
             items:
                 [
                     {
@@ -227,11 +235,11 @@ const sidebars = {
                     },
                 ],
         },
-        
+
         {
             type: 'category',
             label: 'Terra migration guides',
-            link: {type: 'doc', id: 'landing-pages/migration'},
+            link: { type: 'doc', id: 'landing-pages/migration' },
             items:
                 [
                     {
