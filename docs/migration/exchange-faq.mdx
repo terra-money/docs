@@ -1,6 +1,6 @@
 # Terra Migration FAQ
 
-This is a list of frequently asked questions. It will evolve as new questions arise. 
+The Terra Migration FAQ is a list of questions which are frequently asked about migration. This list may evolve as a further need for clarity arises. 
 
 ## Airdrop
 
@@ -14,7 +14,7 @@ The pre-attack snapshot is taken at block 7544910 of the Terra Classic chain.
 
 The post-attack snapshot will be taken at Terra Classic block 7790000. It is recommended that you take your internal exchange snapshot at that height. 
 
-### Does the Luna amount of the new chain drop the initialization amount at height 1?
+### Does the amount of Luna on the new chain drop the initialization amount at height 1?
 
  Yes, the airdrop will be at block height `1` of the new chain. 
 
@@ -30,7 +30,7 @@ For general information on vesting, visit the [vesting overview](../learn/protoc
 
 For a more in-depth look at vesting, visit the [vesting page](../../docs/develop/vesting.mdx).
 
-### How can I see my Luna that is still locked in vesting?
+### How can I view my Luna that is still locked in vesting?
 
 You can view your vesting Luna in Terra Station by using the [Vesting guide](../learn/terra-station/vesting.mdx).
 
@@ -48,16 +48,16 @@ You can query your account to calculate your total airdrop:
 
 $$ Unlocked\:at\:genesis + Original\:vesting\:at\:genesis = Total\:airdrop\:amount $$
 
-You can see your unlocked and vesting Luna amounts by searching your address in [Terra Finder](https://finder.terra.money). 
+You can view your unlocked and vesting Luna amounts by searching for your Terra address on [Terra Finder](https://finder.terra.money). 
 
-You can also view your vesting Luna buy querying the LCD using the following URL format:
+You can also view your vesting Luna by querying the LCD using the following URL format:
 
 ```
 https://phoenix-lcd.terra.dev/cosmos/auth/v1beta1/accounts/<insert-your-Terra-address-here>
 ```
 
 
-For example, for this address: https://phoenix-lcd.terra.dev/cosmos/auth/v1beta1/accounts/terra18mkcha20h5psry3nn9jlsdkz66cm0u9c7p5dmv
+For example, for the following address: https://phoenix-lcd.terra.dev/cosmos/auth/v1beta1/accounts/terra18mkcha20h5psry3nn9jlsdkz66cm0u9c7p5dmv
 
 - The delegated_vesting is `375063631513`
 
@@ -73,7 +73,7 @@ You can query your account to calculate your original vesting:
 
 $$ Total\:airdrop\:amount - Unlocked\:at\:genesis = Original\:vesting\:at\:genesis$$
 
-You can see your unlocked and vesting Luna amounts by searching your address in [Terra Finder](https://finder.terra.money). 
+You can see your unlocked and vesting Luna amounts by searching for your Terra address on [Terra Finder](https://finder.terra.money). 
 
 ### How can I view my spendable (unlocked) Luna?
 
@@ -133,15 +133,15 @@ Neither LUNA nor LUNC will have contract addresses because they are both native.
 
 No, there are no changes to the block structure. 
 
-###  What block height does the terra classic chain start at?
+###  At what block height does the Terra Classic chain start?
 
-Terra classic is the same currently active original chain. The block height will be left unaltered. 
+Terra Classic is the same, currently-active original chain. The block height will be left unaltered. 
 
-### What height does the new chain start at?
+### At what height does the new chain start?
 
 The new Terra chain will start from a height of `1`.
 
-### Can you clarify the differences between the block and transaction parsing logics of classic vs new Luna?
+### Can you clarify the differences between the block and transaction parsing logic of Luna Classic vs Luna?
 
 There will be no changes, except that `MsgTypes` will change from `terra.wasm.v1beta1.MsgExecuteContract` to `cosmwasm.wasm.v1.MsgExecuteContract` for the new chain. 
 
@@ -150,27 +150,27 @@ There will be no changes, except that `MsgTypes` will change from `terra.wasm.v1
 ### Does Terra.js need to be upgraded?
 
 Yes, there will be a new release of Terra.js. However, the interface will not change significantly.
-For more information, see how to [use Terra Classic with terra.js](../develop/terra-js/terra-classic.mdx). 
+For more information, see how to [use Terra.js with Terra Classic](../develop/terra-js/terra-classic.mdx). 
 
 ### Are there any changes to the API interface?
 
-No, there will be no change to the API interface. 
+No, there were no changes made to the API interface. 
 
-### Will there be an LUNC node upgrade release on 05/27?
+### Will there be a LUNC node upgrade release on 05/27?
 
-There will be no upgrades released for the Luna Classic (LUNC) node. Only the new 2.0 chain will have a node release. 
+There will be no upgrades released for the Luna Classic (LUNC) node. Only the new Terra chain will have a node release. 
 
 ## Luna and tokens
 
 ### Can the initial Luna balance of an address be resolved through the genesis file?
 
-Yes. Use the following lcd endpoint with your address:   
+Yes. Use the following LCD endpoint with your address:   
 
 ```sh
 /cosmos/bank/v1beta1/balances/{address}
 ```
 
-You can also check the genesis file. See this example for more info: https://github.com/terra-money/testnet/tree/main/pisco-1
+You can also check the genesis file. Proceed to the following example for more information: https://github.com/terra-money/testnet/tree/main/pisco-1
 
 ### Will The new chain use micro-denominations? 
 
@@ -178,7 +178,7 @@ Yes, the new chain will use micro-denominations, such as `uluna`.
 
 ### Will the new chain still support other tokens, such as ANC?
 
-It is up to each team. Each token team will have to relaunch the token to the new chain with a snapshot.
+It will be up to each team to decide whether their tokens will be supported on the new chain. Each token team will have to relaunch the token to the new chain with a snapshot.
 
 ## Multisig 
 
@@ -190,13 +190,13 @@ https://phoenix-lcd.terra.dev/cosmos/tx/v1beta1/txs/136825A738053AC6B7E8D03FB1C4
 - Old format:
 https://phoenix-lcd.terra.dev/txs/136825A738053AC6B7E8D03FB1C43696BA560AD9A8D5DB8AE49C55642CE64310
 
-Please visit https://docs.terra.money/docs/develop/guides/sign-with-multisig.html for more info. 
+Please visit the following link for more information: https://docs.terra.money/docs/develop/guides/sign-with-multisig.html
 
 ### How do I get the "threshold number of signatures"?
 
 Use the following: https://phoenix-lcd.terra.dev/cosmos/auth/v1beta1/accounts/terra14g48gms0zr29wufgyvz5smh8enaes9dh3rxxjh
 
-### Is the "@type" of multisig tx always "bank/MsgSend"?
+### Is the "@type" of a multisig tx always "bank/MsgSend"?
 
 Yes. The only difference is the signature format. 
 
