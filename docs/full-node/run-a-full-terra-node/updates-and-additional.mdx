@@ -75,6 +75,62 @@ For more information on seeds and peers, visit the [Tendermint documentation](ht
 
 </Admonition>
 
+## Optimizing Memory Management
+
+Some users of the Terra node software may experience abnormal memory usage. This behaviour is endemic in the Cosmos SDK.
+
+You can install `jemalloc` to assist in managing this issue.
+
+Jemalloc provides better memory management than linux out of the box. You can learn more at
+
+[https://jemalloc.net/](https://jemalloc.net/) .
+
+To install jemalloc, run the following command:
+
+```
+sudo apt-get install -y libjemalloc-dev
+```
+
+After installation, edit your `terrad.service` to match the following configuration.
+
+```
+
+sudo vim /etc/systemd/system/terrad.service
+
+```
+
+```
+
+[Unit]
+
+Description=Terrad
+
+[Service]
+
+Type=simple
+
+User=ubuntu
+
+ExecStart=/home/ubuntu/go/bin/terrad start --home /home/ubuntu/.terra --log_level error
+
+WorkingDirectory=/home/ubuntu/.terra
+
+Restart=always
+
+RestartSec=1s
+
+SyslogIdentifier=terrad
+
+LimitNOFILE=65535
+
+Environment=LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libjemalloc.so
+
+[Install]
+
+WantedBy=multi-user.target
+
+```
+
 ## Additional Settings
 
 ### `seed_mode`
