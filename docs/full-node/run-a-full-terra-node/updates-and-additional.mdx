@@ -10,7 +10,13 @@ import Admonition from '@theme/Admonition';
 
 These instructions are for full nodes running older testnets that would like to upgrade to the latest testnet.
 
-### 1. Reset data
+### 1. Create Backups
+
+Before you may upgrade your node to the latest version of testnet, you will first need to reset your data. However, resetting your data will affect your original `priv_validator.json` and `cargo.toml` files.
+
+Make sure to create a backup of both of these files and then proceed to the next step.
+
+### 2. Reset data
 
 Remove the outdated files and reset the data:
 
@@ -20,15 +26,16 @@ rm ~/.terra/config/addrbook.json
 terrad unsafe-reset-all
 ```
 
-Your node is now in a pristine state, keeping the original `priv_validator.json` and `config.toml`. If you had any sentry nodes or full nodes set up before, your node will still try to connect to them but may fail if they haven't also been upgraded.
+Your node is now in a pristine state. Be aware that the original `priv_validator.json` and `config.toml` files will be affected by this command. If you had any sentry nodes or full nodes set up before, your node will still try to connect to them, but may fail if they haven't also been upgraded.
 
 
 <Admonition type="danger" icon="🔥">
 
 Make sure that every node has a unique `priv_validator.json`. Do not copy the `priv_validator.json` from an old node to multiple new nodes. Running two nodes with the same `priv_validator.json` will cause you to double sign.  
+
 </Admonition>
 
-### 2. Software upgrade
+### 3. Software upgrade
 
 Now it is time to upgrade the software. Go to the project directory and run:
 
@@ -157,12 +164,12 @@ The nodes you specify are the trusted persistent peers that can help anchor your
 If the value of `persistent_peers_max_dial_period` is more than zero, the pause between each call to each persistent peer will not exceed `persistent_peers_max_dial_period` during exponential backoff, and the automatic redial process continues.
 
 ```toml
-# Comma separated list of nodes to keep persistent connections to
+# Comma separated list of nodes to keep persistent connections to.
 persistent_peers = "id100000000000000000000000000000000@1.2.3.4:26656,id200000000000000000000000000000000@2.3.4.5:26656"
 ```
 
 ### Rosetta
 
-Integrate Terra with Coinbase via the Rosetta API. Rosetta is an open-source API that organizes blockchain data into a standardized format, making it easy for developers to build cross-chain applications. Instead of creating specific code for each chain, Rosetta allows different blockchains to integrate into any exchange that uses Rosetta API.
+Integrate Terra with Coinbase via the Rosetta API. Rosetta is an open-source API that organizes blockchain data into a standardized format, making it easy for developers to build cross-chain applications. Instead of creating specific code for each chain, Rosetta allows different blockchains to integrate into any exchange that uses the Rosetta API.
 
 For more information, visit the [Rosetta docs site](https://www.rosetta-api.org/docs/welcome.html).
