@@ -33,8 +33,8 @@ jobs:
       - name: Publish to Cloudflare Pages
         uses: cloudflare/pages-action@1
         with:
-          apiToken: ${{ secrets.CLOUDFLARE_PAGES_TOKEN }}
           accountId: 620ff29bbd515d2848f5306578bd1d1d
+          apiToken: ${{ secrets.CLOUDFLARE_PAGES_TOKEN }}
           projectName: docs-terra
           directory: build
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
