@@ -985,14 +985,14 @@ pub fn reply(deps: DepsMut, _env: Env, msg: Reply) -> StdResult<Response> {
 fn handle_instantiate_reply(deps: DepsMut, msg: Reply) -> StdResult<Response> {
     let result = msg.result.into_result().map_err(StdError::generic_err)?;
 
-    /* Find the event type instantiate which contains the contract_address*/
+    /* Find the event type instantiate_contract which contains the contract_address*/
     let event = result
         .events
         .iter()
         .find(|event| event.ty == "instantiate_contract")
         .ok_or_else(|| StdError::generic_err("cannot find `instantiate_contract` event"))?;
 
-    /* Find the _contract_address from instantiate event*/
+    /* Find the contract_address from instantiate_contract event*/
     let contract_address = &event
         .attributes
         .iter()
@@ -1276,7 +1276,7 @@ mod tests {
         execute(deps, env.clone(), info.clone(), msg).unwrap()
     }
 
-    /* Confirm reply event form instantiate method. That way
+    /* Confirm reply event from instantiate method. That way
     the minted_tokens addresses can be whitelisted in factory.*/
     fn do_reply_instantiate_event(deps: DepsMut) -> Response {
         let env = mock_env();
