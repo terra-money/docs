@@ -101,7 +101,7 @@ $light-blue-arrow: '/img/ArrowLightBlue.svg';
 		background-repeat: no-repeat no-repeat;
 		width: 12px;
 		height: 12px;
-		margin-left: 10px;
+		margin-left: 4px;
 	}
 
 	&:hover {
@@ -116,7 +116,14 @@ $light-blue-arrow: '/img/ArrowLightBlue.svg';
 
 	&:hover::after {
 		background-image: url($blue-arrow);
+    animation: bounce 0.75s infinite;
 	}
+
+  @keyframes bounce {
+    50% {
+      transform: translateX(1px);
+    }
+  }
 
 	svg {
 		display: none !important;
