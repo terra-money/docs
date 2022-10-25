@@ -1,7 +1,7 @@
 import React from 'react';
 import ThemedImage from '@theme/ThemedImage';
 
-function Copyright() {
+const Copyright: React.FC = () => {
   return (
     <div className="copyright col">
       <a href='https://www.terra.money/'>

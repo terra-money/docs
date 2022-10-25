@@ -1,9 +1,13 @@
 import React from 'react';
 import Translate, {translate} from '@docusaurus/Translate';
-import PaginatorNavLink from '@theme/PaginatorNavLink';
+import PaginatorNavLink, { Props } from '@theme/PaginatorNavLink';
 
-export default function DocPaginator(props) {
-  const {previous, next} = props;
+interface DocPaginatorProps {
+  previous: Props,
+  next: Props
+}
+
+const DocPaginator: React.FC<DocPaginatorProps> = ({ previous, next }) => {
   return (
     <nav
       className="pagination-nav docusaurus-mt-lg"
@@ -40,3 +44,5 @@ export default function DocPaginator(props) {
     </nav>
   );
 }
+
+export default DocPaginator;
