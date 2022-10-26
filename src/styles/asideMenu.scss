@@ -6,7 +6,7 @@
   .menu__link {
     font-family: 'Gotham';
     font-size: 16px;
-    line-height: 150%;
+    line-height: 21px;
     color: #2043B5;
 
     &--active {
@@ -117,7 +117,6 @@ li[class*=' theme-doc-sidebar-item-'] {
     font-family: 'Gotham';
     font-size: 16px;
     color: #8D8D8D !important;
-    line-height: 24px;
 
     &--active {
       font-size: 16px;
