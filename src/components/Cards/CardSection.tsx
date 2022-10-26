@@ -1,16 +1,20 @@
 import React from 'react';
-import Card from './Card';
+import { Card, CardProps } from './Card';
 
-function CardSection(props) {
+interface CardSectionProps {
+  cards: CardProps[]
+}
+
+const CardSection: React.FC<CardSectionProps> = ({ cards }) => {
   return (
     <div className="cards">
-      {props.cards.map((card, index) => {
+      {cards.map((card, index) => {
         return (
           <Card
             key={index}
             href={card.href}
-            lightSvg={card.lightSvg}
-            darkSvg={card.darkSvg}
+            lightSVG={card.lightSVG}
+            darkSVG={card.darkSVG}
             header={card.header}
             summary={card.summary}
           />  

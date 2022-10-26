@@ -1,4 +1,6 @@
-const hyperlinks = [
+import { HyperlinkProps } from '../Hyperlink';
+
+const hyperlinks: HyperlinkProps[] = [
   {
     href: 'https://station.terra.money/',
     innerHTML: 'Terra Station',
