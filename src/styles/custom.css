@@ -1,55 +1,39 @@
 :root {
-  --ifm-menu-color: #627BCB;
-  --ifm-menu-color-active: #0759E7;
+  /* Right side menu colors */
   --ifm-color-primary: #0759E7;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-
-  --ifm-menu-color-background-active: #F3F5FD;
-  --ifm-menu-color-background-hover: #F3F5FD;
-  --ifm-menu-link-sublist-icon: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24"><path fill="rgba(32, 67, 181, 1)" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path></svg>');
-  --ifm-background-surface-color: #F9FAFF;
-  --ifm-link-color: #0759E7;
   --ifm-color-content-secondary: #8B9CDA;
-  --ifm-pagination-nav-color-hover: #0759E7;
+  /* Navbar background color */
+  --ifm-background-surface-color: #F9FAFF;
+  /* Hyperlink color */
+  --ifm-link-color: #0759E7;
+  /* Heading color */
   --ifm-heading-color: #1C1E21;
-  --ifm-h1-font-size: 48px;
+  /* Color for active page name on track above heading */
   --ifm-breadcrumb-color-active: #8B9CDA;
+  /* Footer background color */
   --ifm-footer-background-color: #FFFFFF;
+  /* Footer text color */
   --ifm-footer-color: #8B9CDA;
-  --ifm-footer-link-color: #8B9CDA;
+  /* Side menu caret style */
+  --ifm-menu-link-sublist-icon: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24"><path fill="rgba(32, 67, 181, 1)" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path></svg>');
 }
 
 [data-theme='dark'] {
+  /* Right side menu colors */
   --ifm-color-primary: #459CF4 !important;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
-
-  --ifm-menu-color-background-active: #212121 !important;
-  --ifm-menu-color-background-hover: #212121 !important;
-  --ifm-menu-link-sublist-icon: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24"><path fill="rgba(32, 67, 181, 1)" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path></svg>');
-  --ifm-background-surface-color: #F9FAFF;
-  --ifm-background-color: #1E1E1E !important;
-  --ifm-link-color: #459CF4 !important;
   --ifm-color-content-secondary: #8D8D8D !important;
-  --ifm-pagination-nav-color-hover: #459CF4 !important;
+  /* Main container background color */
+  --ifm-background-color: #1E1E1E !important;
+  /* Hyperlink color */
+  --ifm-link-color: #459CF4 !important;
+  /* Heading color */
   --ifm-heading-color: #E9E9E9 !important;
-  --ifm-h1-font-size: 48px;
-  --ifm-breadcrumb-color-active: #8B9CDA;
+  /* Color for active page name on track above heading */
+  --ifm-breadcrumb-color-active: #8D8D8D;
+  /* Footer background color */
   --ifm-footer-background-color: #1E1E1E!important;
+  /* Footer text color */
   --ifm-footer-color: #8D8D8D !important;
-  --ifm-footer-link-color: #8D8D8D !important;
 }
 
 .readme-img-sm {
