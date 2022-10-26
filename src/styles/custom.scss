@@ -1,3 +1,5 @@
+/* ===========DOCUSAURUS LIGHT MODE STYLING=========== */
+
 :root {
   /* Right side menu colors */
   --ifm-color-primary: #0759E7;
@@ -18,6 +20,8 @@
   --ifm-menu-link-sublist-icon: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24"><path fill="rgba(32, 67, 181, 1)" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path></svg>');
 }
 
+/* ===========DOCUSAURUS DARK MODE STYLING=========== */
+
 [data-theme='dark'] {
   /* Right side menu colors */
   --ifm-color-primary: #459CF4 !important;
@@ -36,82 +40,58 @@
   --ifm-footer-color: #8D8D8D !important;
 }
 
-.readme-img-sm {
+/* ================LIGHT MODE STYLING================ */
+
+// MDX image styling
+[class^=readme-img] {
   margin: auto;
   display: block;
-  width: 300px;
   padding: 10px 10px 20px 10px;
+
+  &[class$=-sm] {
+    width: 300px;
+  }
+
+  &[class$=-md] {
+    width: 500px;
+  }
+
+  &[class$=-lg] {
+    width: 800px;
+  }
 }
 
-.readme-img-md {
-  margin: auto;
-  display: block;
-  width: 500px;
-  padding: 10px 10px 20px 10px;
-}
-
-.readme-img-lg {
-  margin: auto;
-  display: block;
-  width: 800px;
-  padding: 10px 10px 20px 10px;
-}
-
+// Admonition styling
 .theme-admonition {
   transition: border .5s, box-shadow .7s, transform .1s;
   border: 1px solid transparent;
   border-left-width: var(--ifm-alert-border-left-width);
   border-left-color: var(--ifm-tabs-color-active-border);
+
+  &:hover {
+    transform: scale(1.015);
+    box-shadow: 3px 3px 6px rgb(55 55 55 / 25%);
+    border: 1px solid var(--ifm-tabs-color-active-border);
+    border-left-width: var(--ifm-alert-border-left-width);
+  }
 }
 
-.theme-admonition:hover {
-  transform: scale(1.015);
-  box-shadow: 3px 3px 6px rgb(55 55 55 / 25%);
-  border: 1px solid var(--ifm-tabs-color-active-border);
-  border-left-width: var(--ifm-alert-border-left-width);
-}
-
-[data-theme='dark'] .theme-admonition:hover {
-  box-shadow: 3px 3px 6px rgb(150 150 150 / 25%);
-}
-
-
+// CodeHike styling
 .ch-scrollycoding-step-content {
   border-radius: 5px;
   margin: .25rem -0.5rem;
   padding: 1rem 0.5rem;
   border: 1.5px solid transparent;
   min-height: 100px;
-}
 
-[data-theme='dark'] .ch-scrollycoding-step-content {
-  border-radius: 5px;
-  margin: .25rem -0.5rem;
-  padding: 1rem 0.5rem;
-  border: 1.5px solid transparent;
-  min-height: 100px;
-}
+  &:hover {
+    background-color: #8B9CDA14;
+  }
 
-
-.ch-scrollycoding-step-content:hover {
-  background: rgba(249, 250, 255, 1);
-}
-
-[data-theme='dark'] .ch-scrollycoding-step-content:hover {
-  background: rgb(33 48 120 / 20%);
-
-}
-
-.ch-scrollycoding-step-content[data-selected] {
-  background: rgba(235, 239, 248, .8);
-  border: 1.5px solid transparent;
-
-}
-
-[data-theme='dark'] .ch-scrollycoding-step-content[data-selected] {
-  background: rgb(33 48 120 / 40%);
-  border: 1.5px solid transparent;
-
+  &[data-selected] {
+    background-color: #8B9CDA28;
+    border: 1.5px solid transparent;
+  }
 }
 
 .ch-inline-code>code {
@@ -120,4 +100,33 @@
 
 .ch-scrollycoding-sticker {
   flex: 1.5;
+}
+
+/* ================DARK MODE STYLING================ */
+
+[data-theme='dark'] {
+  // Admonition styling
+  .theme-admonition {
+    &:hover {
+      box-shadow: 3px 3px 6px rgb(150 150 150 / 25%);
+    }
+  }
+
+  // CodeHike styling
+  .ch-scrollycoding-step-content {
+    border-radius: 5px;
+    margin: .25rem -0.5rem;
+    padding: 1rem 0.5rem;
+    border: 1.5px solid transparent;
+    min-height: 100px;
+
+    &:hover {
+      background-color: #8D8D8D14;
+    }
+
+    &[data-selected] {
+      background-color: #8D8D8D28;
+      border: 1.5px solid transparent;
+    }
+  }
 }
