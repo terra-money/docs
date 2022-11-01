@@ -37,7 +37,8 @@
     "sass": "^1.54.5"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "2.0.0-rc.1"
+    "@docusaurus/module-type-aliases": "2.0.0-rc.1",
+    "prettier": "^2.7.1"
   },
   "browserslist": {
     "production": [

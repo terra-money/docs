@@ -11,113 +11,116 @@ $blue-arrow: '/img/ArrowDarkBlue.svg';
 $light-blue-arrow: '/img/ArrowLightBlue.svg';
 
 .navbar__link {
-	&:hover {
-		color: white;
-	}
+  &:hover {
+    color: white;
+  }
 }
 
 .navbar__items--right {
-	[class*="colorModeToggle"] {
-		button {
-			width: 30px;
-			height: 30px;
-			background: #FFFFFF;
-			border: 1px solid #EBEFF8;
-			margin-top: 1px;
-			transition: all var(--ifm-transition-fast) var(--ifm-transition-timing-default);
+  [class*='colorModeToggle'] {
+    button {
+      width: 30px;
+      height: 30px;
+      background: #ffffff;
+      border: 1px solid #ebeff8;
+      margin-top: 1px;
+      transition: all var(--ifm-transition-fast)
+        var(--ifm-transition-timing-default);
 
-			svg {
-				width: 20px;
-			}
+      svg {
+        width: 20px;
+      }
 
-			&:hover {
-				background: #f3f3f3;
-				box-shadow: inset 0 0 0 1.75px #2043B5;
-			}
-		}
-	}
+      &:hover {
+        background: #f3f3f3;
+        box-shadow: inset 0 0 0 1.75px #2043b5;
+      }
+    }
+  }
 }
 
 [data-theme='light'] {
-	.navbar__items--right {
-		[class*="colorModeToggle"] {
-			button {
-				color: #2043B5;
-			}
-		}
-	}
+  .navbar__items--right {
+    [class*='colorModeToggle'] {
+      button {
+        color: #2043b5;
+      }
+    }
+  }
 }
 
 .header-github-link {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background: #FFFFFF;
-	border: 1px solid #EBEFF8;
-	border-radius: 50%;
-	width: 30px;
-	height: 30px;
-	margin-right: 4px;
-	transition: all var(--ifm-transition-fast) var(--ifm-transition-timing-default);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #ebeff8;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  margin-right: 4px;
+  transition: all var(--ifm-transition-fast)
+    var(--ifm-transition-timing-default);
 
-	&:hover {
-		box-shadow: inset 0 0 0 1.75px #2043B5;
-		background: #f3f3f3;
-	}
+  &:hover {
+    box-shadow: inset 0 0 0 1.75px #2043b5;
+    background: #f3f3f3;
+  }
 
-	&::before {
-		padding-top: 9px;
-		padding-left: 4px;
-		content: url($blue-github);
-	}
+  &::before {
+    padding-top: 9px;
+    padding-left: 4px;
+    content: url($blue-github);
+  }
 }
 
 .header-terra-link {
   font-family: 'Gotham';
-	display: flex;
+  display: flex;
   align-items: center;
-	background-color: #0759E7;
-	color: #F3F3F3;
-	border-radius: 60px;
-	font-size: 12px;
-	margin-right: 4px;
-	padding: 5px 12px;
-	transition: all var(--ifm-transition-fast) var(--ifm-transition-timing-default);
+  background-color: #0759e7;
+  color: #f3f3f3;
+  border-radius: 60px;
+  font-size: 12px;
+  margin-right: 4px;
+  padding: 5px 12px;
+  transition: all var(--ifm-transition-fast)
+    var(--ifm-transition-timing-default);
 
-	&::before {
-		content: "";
-		background-image: url($white-terra);
-		background-position: center center;
-		background-size: cover;
-		height: 18px;
+  &::before {
+    content: '';
+    background-image: url($white-terra);
+    background-position: center center;
+    background-size: cover;
+    height: 18px;
     width: 21px;
     margin-top: -2px;
-		margin-right: 5px;
-	}
+    margin-right: 5px;
+  }
 
-	&::after {
-		content: "";
-		background-image: url($white-arrow);
-		background-repeat: no-repeat no-repeat;
-		width: 12px;
-		height: 12px;
-		margin-left: 4px;
-	}
+  &::after {
+    content: '';
+    background-image: url($white-arrow);
+    background-repeat: no-repeat no-repeat;
+    width: 12px;
+    height: 12px;
+    margin-left: 4px;
+  }
 
-	&:hover {
-		background: #FFFFFF;
-		color: #2043B5;
-		box-shadow: inset 0 0 0 1.75px #2043B5;
-	}
+  &:hover {
+    background: #ffffff;
+    color: #2043b5;
+    box-shadow: inset 0 0 0 1.75px #2043b5;
+  }
 
-	&:hover::before {
-		background-image: url($colorful-terra);
-	}
+  &:hover::before {
+    background-image: url($colorful-terra);
+  }
 
-	&:hover::after {
-		background-image: url($blue-arrow);
+  &:hover::after {
+    background-image: url($blue-arrow);
     animation: bounce 0.75s infinite;
-	}
+  }
 
   @keyframes bounce {
     50% {
@@ -125,227 +128,228 @@ $light-blue-arrow: '/img/ArrowLightBlue.svg';
     }
   }
 
-	svg {
-		display: none !important;
-	}
+  svg {
+    display: none !important;
+  }
 
-	@media (max-width: 997px) {
-		padding: 0px;
-		font-size: 0px;
-		display: flex;
-		background: #FFFFFF;
-		border: 1px solid #EBEFF8;
-		width: 30px;
-		height: 30px;
-		transition: all var(--ifm-transition-fast) var(--ifm-transition-timing-default);
+  @media (max-width: 997px) {
+    padding: 0px;
+    font-size: 0px;
+    display: flex;
+    background: #ffffff;
+    border: 1px solid #ebeff8;
+    width: 30px;
+    height: 30px;
+    transition: all var(--ifm-transition-fast)
+      var(--ifm-transition-timing-default);
 
-		&::before {
-			content: "";
-			background: url($small-colorful-terra);
-			background-repeat: no-repeat no-repeat;
-    	background-position: center center;
-			background-size: unset;
-			width: 25px;
-			height: 25px;
-			margin: 0 auto;
-		}
+    &::before {
+      content: '';
+      background: url($small-colorful-terra);
+      background-repeat: no-repeat no-repeat;
+      background-position: center center;
+      background-size: unset;
+      width: 25px;
+      height: 25px;
+      margin: 0 auto;
+    }
 
-		&:hover::before {
-			background-image: url($small-colorful-terra);
-		}
+    &:hover::before {
+      background-image: url($small-colorful-terra);
+    }
 
-		&::after {
-			display: none;
-		}
+    &::after {
+      display: none;
+    }
 
-		&:hover {
-			box-shadow: inset 0 0 0 1.75px #2043B5;
-			background: #f3f3f3;
-		}
-	}
+    &:hover {
+      box-shadow: inset 0 0 0 1.75px #2043b5;
+      background: #f3f3f3;
+    }
+  }
 }
 
 .DocSearch {
-	&.DocSearch-Button {
-		background: #FFFFFF;
-		border: 1px solid #EBEFF8;
-		height: 40px;
-		width: 40px;
-		padding: 0 9px;
-		margin-left: 8px;
+  &.DocSearch-Button {
+    background: #ffffff;
+    border: 1px solid #ebeff8;
+    height: 40px;
+    width: 40px;
+    padding: 0 9px;
+    margin-left: 8px;
 
-		&:hover {
-			box-shadow: inset 0 0 0 2px #2043B5;
-			color: var(--docsearch-muted-color);
-		}
+    &:hover {
+      box-shadow: inset 0 0 0 2px #2043b5;
+      color: var(--docsearch-muted-color);
+    }
 
-		.DocSearch-Search-Icon {
-			color: #2043B5;
-		}
+    .DocSearch-Search-Icon {
+      color: #2043b5;
+    }
 
-		@media (min-width: 769px) {
-			background: #FFFFFF !important;
-			border: 1px solid #CFD8EA !important;
-			border-radius: 8px !important;
-			width: 200px !important;
+    @media (min-width: 769px) {
+      background: #ffffff !important;
+      border: 1px solid #cfd8ea !important;
+      border-radius: 8px !important;
+      width: 200px !important;
 
-			.DocSearch-Button-Placeholder {
-				font-size: 14px;
-			}
-			.DocSearch-Search-Icon {
-				color: #2043B5 !important;
-				height: 15px;
-			}
+      .DocSearch-Button-Placeholder {
+        font-size: 14px;
+      }
+      .DocSearch-Search-Icon {
+        color: #2043b5 !important;
+        height: 15px;
+      }
 
-			width: unset;
-		}
-	}
+      width: unset;
+    }
+  }
 }
 
 [data-theme='dark'] {
-	.DocSearch {
-		&.DocSearch-Button {
-			background: #252526;
-    	border: 1px solid #343536;
+  .DocSearch {
+    &.DocSearch-Button {
+      background: #252526;
+      border: 1px solid #343536;
 
-			&:hover {
-				box-shadow: inset 0 0 0 2px #E3E3E3;
-			}
+      &:hover {
+        box-shadow: inset 0 0 0 2px #e3e3e3;
+      }
 
-			.DocSearch-Search-Icon {
-				color: #E3E3E3;
-			}
+      .DocSearch-Search-Icon {
+        color: #e3e3e3;
+      }
 
-			@media (min-width: 769px) {
-				background: #252526 !important;
-				border: 1px solid #4D4D4D !important;
+      @media (min-width: 769px) {
+        background: #252526 !important;
+        border: 1px solid #4d4d4d !important;
 
-				.DocSearch-Button-Placeholder {
-					color: #4D4D4D;
-				}
-				.DocSearch-Search-Icon {
-					color: #DBDBDB !important;
-				}
-			}
-		}
-	}
+        .DocSearch-Button-Placeholder {
+          color: #4d4d4d;
+        }
+        .DocSearch-Search-Icon {
+          color: #dbdbdb !important;
+        }
+      }
+    }
+  }
 }
 
 [data-theme='dark'] {
-	.navbar__items--right {
-		[class*="colorModeToggle"] {
-			button {
-				background: #252526;
-				border: 1px solid #343536;
+  .navbar__items--right {
+    [class*='colorModeToggle'] {
+      button {
+        background: #252526;
+        border: 1px solid #343536;
 
-				&:hover {
-					box-shadow: inset 0 0 0 1.75px #E3E3E3;
-					background: #000000;
-				}
-			}
-		}
-	}
+        &:hover {
+          box-shadow: inset 0 0 0 1.75px #e3e3e3;
+          background: #000000;
+        }
+      }
+    }
+  }
 
-	.header-github-link {
-		background: #252526;
-		border: 1px solid #343536;
+  .header-github-link {
+    background: #252526;
+    border: 1px solid #343536;
 
-		&:hover {
-			box-shadow: inset 0 0 0 1.75px #E3E3E3;
-			background: #000000;
-		}
+    &:hover {
+      box-shadow: inset 0 0 0 1.75px #e3e3e3;
+      background: #000000;
+    }
 
-		&::before {
-			content: url($white-github);
-		}
-	}
+    &::before {
+      content: url($white-github);
+    }
+  }
 
-	.header-terra-link {
-		background-color: #459CF4;
+  .header-terra-link {
+    background-color: #459cf4;
 
-		&::before {
-			background-image: url($white-luna);
-			background-repeat: no-repeat no-repeat;
-		}
+    &::before {
+      background-image: url($white-luna);
+      background-repeat: no-repeat no-repeat;
+    }
 
-		&:hover::before {
-			background-image: url($colorful-luna);
-		}
+    &:hover::before {
+      background-image: url($colorful-luna);
+    }
 
-		&:hover::after {
-			background-image: url($light-blue-arrow)!important;
-		}
+    &:hover::after {
+      background-image: url($light-blue-arrow) !important;
+    }
 
-		&:hover {
-			box-shadow: 3px 3px 6px rgba(150, 150, 150, 0.25);
-			background-color: #000000;
-			box-shadow: inset 0 0 0 1.75px #459CF4;
-			color: #459CF4 !important;
-		}
+    &:hover {
+      box-shadow: 3px 3px 6px rgba(150, 150, 150, 0.25);
+      background-color: #000000;
+      box-shadow: inset 0 0 0 1.75px #459cf4;
+      color: #459cf4 !important;
+    }
 
-		@media (max-width: 550px) {
-			background: #252526;
-			border: 1px solid #343536;
+    @media (max-width: 550px) {
+      background: #252526;
+      border: 1px solid #343536;
 
-			&:hover {
-				box-shadow: inset 0 0 0 1.75px #E3E3E3;
-				background: #000000;
-				transform: none;
-			}
-		}
+      &:hover {
+        box-shadow: inset 0 0 0 1.75px #e3e3e3;
+        background: #000000;
+        transform: none;
+      }
+    }
 
-		@media (max-width: 997px) {
-			background: #252526;
-			border: 1px solid #343536;
+    @media (max-width: 997px) {
+      background: #252526;
+      border: 1px solid #343536;
 
-			&::before {
-				background-image: url($small-colorful-luna);
-			}
+      &::before {
+        background-image: url($small-colorful-luna);
+      }
 
-			&:hover::before {
-				background-image: url($small-colorful-luna);
-			}
+      &:hover::before {
+        background-image: url($small-colorful-luna);
+      }
 
-			&:hover {
-				box-shadow: inset 0 0 0 1.75px #e3e3e3;
-    		background: #000000;
-			}
-		}
-	}
+      &:hover {
+        box-shadow: inset 0 0 0 1.75px #e3e3e3;
+        background: #000000;
+      }
+    }
+  }
 }
 
 @media (max-width: 996px) {
-	// This is a fix for Prod only
-	.navbar__item {
-		display: flex;
-	}
+  // This is a fix for Prod only
+  .navbar__item {
+    display: flex;
+  }
 
-	.navbar {
-		[class^="searchBox"] {
-			position: relative;
-			right: 0;
-		}
-		[class*="colorModeToggle"] {
-			display: unset;
-		}
-	}
+  .navbar {
+    [class^='searchBox'] {
+      position: relative;
+      right: 0;
+    }
+    [class*='colorModeToggle'] {
+      display: unset;
+    }
+  }
 
-	.navbar-sidebar__brand {
-		.margin-right--md {
-			[class*="toggleButton"] {
-				display: none;
-			}
-		}
-	}
+  .navbar-sidebar__brand {
+    .margin-right--md {
+      [class*='toggleButton'] {
+        display: none;
+      }
+    }
+  }
 }
 
 @media (max-width: 374px) {
-	.navbar__logo {
-		&::before {
-			content: url('/img/logo_dark_small.svg');
-		}
-		img {
-			display: none !important;
-		}
-	}
+  .navbar__logo {
+    &::before {
+      content: url('/img/logo_dark_small.svg');
+    }
+    img {
+      display: none !important;
+    }
+  }
 }
