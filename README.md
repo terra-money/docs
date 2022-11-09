@@ -1,5 +1,13 @@
 # Terra Docs
 
+<center>
+  <a href="https://docs.terra.money/">
+    <img src="./static/img/docs_logo.svg" width=500>
+  </a>
+</center>
+
+---
+
 ## Setup
 
 ### Installation
@@ -40,7 +48,6 @@ $ GIT_USER=<Your GitHub username> yarn deploy
 
 If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
 
-
 ## Syntax
 
 ### Admonitions
@@ -55,11 +62,9 @@ import Admonition from '@theme/Admonition';
 Some **content** with _markdown_ `syntax`.
 
 </Admonition>
-
 ```
 
-The `icon` and `title` values are optional. 
-
+The `icon` and `title` values are optional.
 
 Admonition types:
 
@@ -79,14 +84,15 @@ For dropdown details, use the following syntax:
 <summary> example </summary>
 <p>
 
-````
+```
 hidden content
-````
+```
+
 </p>
 </details>
 
 ````
-<details> 
+<details>
 <summary> Title </summary>
 <p>
 
@@ -100,9 +106,7 @@ hidden content
 ### Comments
 
 ```
-
 {/*
 this is a comment in mdx
 */}
-
 ```
