@@ -1,10 +1,10 @@
 # Terra Docs
 
-<center>
+<div align="center">
   <a href="https://docs.terra.money/">
     <img src="./static/img/docs_logo.svg" width=500>
   </a>
-</center>
+</div>
 
 ---
 
