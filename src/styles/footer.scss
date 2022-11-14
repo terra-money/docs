@@ -8,7 +8,7 @@
   .links {
     display: flex;
     justify-content: space-between;
-    border-top: 1px solid #ebeff8;
+    border-top: 1px solid $border;
     padding-top: 20px;
 
     .social-links {
@@ -40,7 +40,7 @@
 
       .hyperlink {
         font-family: 'Gotham';
-        color: #8b9cda;
+        color: $light-secondary;
         font-style: normal;
         font-weight: 400;
         font-size: 14px;
@@ -78,10 +78,10 @@
 
 [data-theme='dark'] .footer {
   .links .hyperlinks .hyperlink {
-    color: #8d8d8d;
+    color: $dark-secondary;
   }
 
   .links {
-    border-color: #343536;
+    border-color: $dark-border;
   }
 }

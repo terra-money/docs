@@ -18,7 +18,7 @@ $font-family_1: 'Gotham';
     font-size: 16px;
     font-weight: 500;
     font-family: $font-family_1;
-    color: #2043b5;
+    color: $light-primary;
     line-height: 24px;
     margin-bottom: 5px;
     max-width: 200px;
@@ -27,7 +27,7 @@ $font-family_1: 'Gotham';
   p {
     font-size: 14px;
     font-family: $font-family_1;
-    color: #8b9cda;
+    color: $light-secondary;
     line-height: 21px;
     margin-bottom: 0px;
     max-width: 200px;
@@ -67,8 +67,8 @@ $font-family_1: 'Gotham';
   }
 
   a {
-    border: 1px solid #ebeff8;
-    background-color: #f9faff;
+    border: 1px solid $border;
+    background-color: $light-bg;
     text-decoration: none;
     padding: 22px 40px;
     display: grid;
@@ -79,9 +79,9 @@ $font-family_1: 'Gotham';
     transition: border 0.5s, box-shadow 0.7s;
 
     &:hover {
-      box-shadow: 3px 3px 6px rgb(55, 55, 55, 0.25);
+      box-shadow: 3px 3px 6px $hover-shadow;
       transform: scale(1.015);
-      border-color: #275bde;
+      border-color: $dark-border-hover;
     }
   }
 }
@@ -89,21 +89,21 @@ $font-family_1: 'Gotham';
 [data-theme='dark'] {
   .cards {
     h2 {
-      color: #dbdbdb;
+      color: $dark-primary;
     }
 
     p {
-      color: #8d8d8d;
+      color: $dark-secondary;
     }
 
     a {
-      border: 1px solid #343536;
-      background-color: #1c1c1c;
+      border: 1px solid $dark-border;
+      background-color: $menu-cards-bg;
 
       &:hover {
-        box-shadow: 3px 3px 6px rgba(150, 150, 150, 0.25);
+        box-shadow: 3px 3px 6px $dark-hover-shadow;
         transform: scale(1.015);
-        border-color: #459cf4;
+        border-color: $dark-hyperlink-color;
       }
     }
   }

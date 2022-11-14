@@ -1,45 +1,3 @@
-/* ===========DOCUSAURUS LIGHT MODE STYLING=========== */
-
-:root {
-  /* Right side menu colors */
-  --ifm-color-primary: #0759e7;
-  --ifm-color-content-secondary: #8b9cda;
-  /* Navbar background color */
-  --ifm-background-surface-color: #f9faff;
-  /* Hyperlink color */
-  --ifm-link-color: #0759e7;
-  /* Heading color */
-  --ifm-heading-color: #1c1e21;
-  /* Color for active page name on track above heading */
-  --ifm-breadcrumb-color-active: #8b9cda;
-  /* Footer background color */
-  --ifm-footer-background-color: #ffffff;
-  /* Footer text color */
-  --ifm-footer-color: #8b9cda;
-  /* Side menu caret style */
-  --ifm-menu-link-sublist-icon: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24"><path fill="rgba(32, 67, 181, 1)" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path></svg>');
-}
-
-/* ===========DOCUSAURUS DARK MODE STYLING=========== */
-
-[data-theme='dark'] {
-  /* Right side menu colors */
-  --ifm-color-primary: #dbdbdb !important;
-  --ifm-color-content-secondary: #8d8d8d !important;
-  /* Main container background color */
-  --ifm-background-color: #1e1e1e !important;
-  /* Hyperlink color */
-  --ifm-link-color: #459cf4 !important;
-  /* Heading color */
-  --ifm-heading-color: #e9e9e9 !important;
-  /* Color for active page name on track above heading */
-  --ifm-breadcrumb-color-active: #8d8d8d;
-  /* Footer background color */
-  --ifm-footer-background-color: #1e1e1e !important;
-  /* Footer text color */
-  --ifm-footer-color: #8d8d8d !important;
-}
-
 /* ================LIGHT MODE STYLING================ */
 
 // Set main container min width to match min width of Cards component plus padding
@@ -75,7 +33,7 @@
 
   &:hover {
     transform: scale(1.015);
-    box-shadow: 3px 3px 6px rgb(55 55 55 / 25%);
+    box-shadow: 3px 3px 6px $hover-shadow;
     border: 1px solid var(--ifm-tabs-color-active-border);
     border-left-width: var(--ifm-alert-border-left-width);
   }
@@ -90,11 +48,11 @@
   min-height: 100px;
 
   &:hover {
-    background-color: #8b9cda14;
+    background-color: $code-hike-hover;
   }
 
   &[data-selected] {
-    background-color: #8b9cda28;
+    background-color: $code-hike-selected;
     border: 1.5px solid transparent;
   }
 }
@@ -113,7 +71,7 @@
   // Admonition styling
   .theme-admonition {
     &:hover {
-      box-shadow: 3px 3px 6px rgb(150 150 150 / 25%);
+      box-shadow: 3px 3px 6px $dark-hover-shadow;
     }
   }
 
@@ -126,11 +84,11 @@
     min-height: 100px;
 
     &:hover {
-      background-color: #8d8d8d14;
+      background-color: $dark-code-hike-hover;
     }
 
     &[data-selected] {
-      background-color: #8d8d8d28;
+      background-color: $dark-code-hike-selected;
       border: 1.5px solid transparent;
     }
   }
