@@ -1,30 +1,30 @@
 // @ts-check
-const lightCodeTheme = require("./light.theme.js");
-const darkCodeTheme = require("./dark.theme.js");
-const theme = require("shiki/themes/material-default.json");
-const { remarkCodeHike } = require("@code-hike/mdx");
+const lightCodeTheme = require('./light.theme.js');
+const darkCodeTheme = require('./dark.theme.js');
+const theme = require('shiki/themes/material-default.json');
+const { remarkCodeHike } = require('@code-hike/mdx');
 /** @type {import('@docusaurus/types').Config} */
 module.exports = async function config() {
-  const math = (await import("remark-math")).default;
-  const katex = (await import("rehype-katex")).default;
+  const math = (await import('remark-math')).default;
+  const katex = (await import('rehype-katex')).default;
   return {
-    title: "Terra Docs",
-    tagline: "The official docs for the Terra blockchain",
-    url: "https://docs.terra.money",
-    baseUrl: "/",
-    onBrokenLinks: "throw",
-    onBrokenMarkdownLinks: "warn",
-    favicon: "img/favicon.ico",
-    organizationName: "terra-money", // Usually your GitHub org/user name.
-    projectName: "docs", // Usually your repo name.
+    title: 'Terra Docs',
+    tagline: 'The official docs for the Terra blockchain',
+    url: 'https://docs.terra.money',
+    baseUrl: '/',
+    onBrokenLinks: 'throw',
+    onBrokenMarkdownLinks: 'warn',
+    favicon: 'img/favicon.ico',
+    organizationName: 'terra-money', // Usually your GitHub org/user name.
+    projectName: 'docs', // Usually your repo name.
     i18n: {
-      defaultLocale: "en",
-      locales: ["en"],
+      defaultLocale: 'en',
+      locales: ['en'],
     },
-    plugins: ["docusaurus-plugin-sass"],
+    plugins: ['docusaurus-plugin-sass'],
     presets: [
       [
-        "classic",
+        'classic',
         /** @type {import('@docusaurus/preset-classic').Options} */
         ({
           docs: {
@@ -35,46 +35,46 @@ module.exports = async function config() {
                   theme,
                   lineNumbers: true,
                   showCopyButton: true,
-                  staticMediaQuery: "not screen, (max-width: 768px)",
+                  staticMediaQuery: 'not screen, (max-width: 768px)',
                 },
               ],
               math,
             ],
             rehypePlugins: [katex],
-            sidebarPath: require.resolve("./sidebars.js"),
-            routeBasePath: "/", // Serve the docs at the site's root
+            sidebarPath: require.resolve('./sidebars.js'),
+            routeBasePath: '/', // Serve the docs at the site's root
             // Please change this to your repo.
             // Remove this to remove the "edit this page" links.
-            editUrl: "https://github.com/terra-money/docs/blob/main/",
+            editUrl: 'https://github.com/terra-money/docs/blob/main/',
           },
           blog: false,
           theme: {
             customCss: [
-              require.resolve("@code-hike/mdx/styles.css"),
-              require.resolve("./src/styles/main.scss"),
-              require.resolve("katex/dist/katex.min.css"),
+              require.resolve('@code-hike/mdx/styles.css'),
+              require.resolve('./src/styles/main.scss'),
+              require.resolve('katex/dist/katex.min.css'),
             ],
           },
         }),
       ],
-      ["docusaurus-plugin-matomo", {}],
+      ['docusaurus-plugin-matomo', {}],
       [
-        "redocusaurus",
+        'redocusaurus',
         {
           specs: [
             {
-              id: "complete",
-              spec: "https://phoenix-lcd.terra.dev/swagger/swagger.yaml",
-              route: "/api/",
+              id: 'complete',
+              spec: 'https://phoenix-lcd.terra.dev/swagger/swagger.yaml',
+              route: '/api/',
             },
           ],
           theme: {
-            primaryColor: "#1890ff",
+            primaryColor: '#1890ff',
           },
         },
       ],
     ],
-    themes: ["mdx-v2"],
+    themes: ['mdx-v2'],
     themeConfig:
       /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
       ({
@@ -84,32 +84,32 @@ module.exports = async function config() {
             autoCollapseCategories: false,
           },
         },
-        algolia:{
+        algolia: {
           appId: 'Z6EOSIPZCY',
           apiKey: '532be63cd62ff0e733ccd844e799e8bb',
           indexName: 'terra-project',
           contextualSearch: true,
         },
         navbar: {
-          title: "",
+          title: '',
           logo: {
-            alt: "Terra Docs",
-            src: "img/logo_light.svg",
-            srcDark: "img/logo_dark.svg",
+            alt: 'Terra Docs',
+            src: 'img/logo_light.svg',
+            srcDark: 'img/logo_dark.svg',
           },
           items: [
             {
-              href: "https://terra.money", //front-end URL
-              position: "right",
-              label: "terra.money",
-              className: "header-terra-link",
-              "aria-label": "Terra Money",
+              href: 'https://terra.money', //front-end URL
+              position: 'right',
+              label: 'terra.money',
+              className: 'header-terra-link',
+              'aria-label': 'Terra Money',
             },
             {
-              href: "https://github.com/terra-money/docs",
-              position: "right",
-              className: "header-github-link",
-              "aria-label": "GitHub repository",
+              href: 'https://github.com/terra-money/docs',
+              position: 'right',
+              className: 'header-github-link',
+              'aria-label': 'GitHub repository',
             },
           ],
         },
@@ -119,20 +119,20 @@ module.exports = async function config() {
           darkTheme: darkCodeTheme,
         },
         matomo: {
-          matomoUrl: "https://terradocs.matomo.cloud/",
-          siteId: "2",
-          phpLoader: "matomo.php",
-          jsLoader: "matomo.js",
+          matomoUrl: 'https://terradocs.matomo.cloud/',
+          siteId: '2',
+          phpLoader: 'matomo.php',
+          jsLoader: 'matomo.js',
         },
       }),
-      stylesheets: [
-        {
-          href: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css',
-          type: 'text/css',
-          integrity:
-            'sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM',
-          crossorigin: 'anonymous',
-        },
-      ],
+    stylesheets: [
+      {
+        href: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css',
+        type: 'text/css',
+        integrity:
+          'sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM',
+        crossorigin: 'anonymous',
+      },
+    ],
   };
 };
