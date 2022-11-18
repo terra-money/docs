@@ -1,20 +1,20 @@
 # IBC Transfers
 
-Terra has full IBC transfer capabilities through both Terra.js and Terra Station. Although IBC functionality is not readily exposed through Terra Station’s front end, it can be fully incorporated into any dApp. It is up to a dApp’s front end to initiate IBC transfers.
+Terra has full IBC transfer capabilities through both station.js and Terra Station. Although IBC functionality is not readily exposed through Terra Station’s front end, it can be fully incorporated into any dApp. It is up to a dApp’s front end to initiate IBC transfers.
 
 ## MsgTransfer
 
-Terra.js exports a `MsgTransfer` class that can be used to construct IBC transfers.
+station.js exports a `MsgTransfer` class that can be used to construct IBC transfers.
 
 ```js
 new MsgTransfer(
-  "transfer", // IBC port
-  "channel-1", // Outbound channel (Osmosis)
-  new Coin("uluna", "1000000"), // 1 LUNA
-  "terra1cvw8sundusurqajhurpcfk7yvuzlh92cvkpy28", // Source Address on Terra
-  "osmo1cl4qw7u35uf77l4scjtv0qej8ycevu4mrdpvmg", // Destination address on Osmosis
+  'transfer', // IBC port
+  'channel-1', // Outbound channel (Osmosis)
+  new Coin('uluna', '1000000'), // 1 LUNA
+  'terra1cvw8sundusurqajhurpcfk7yvuzlh92cvkpy28', // Source Address on Terra
+  'osmo1cl4qw7u35uf77l4scjtv0qej8ycevu4mrdpvmg', // Destination address on Osmosis
   undefined, // Timeout block height (optional)
-  (Date.now() + 60 * 1000) * 1e6 // Timeout timestamp (in nanoseconds) relative to the current block timestamp.
+  (Date.now() + 60 * 1000) * 1e6, // Timeout timestamp (in nanoseconds) relative to the current block timestamp.
 );
 ```
 
@@ -48,20 +48,21 @@ import {
   MnemonicKey,
   MsgTransfer,
   Coin,
-} from "@terra-money/terra.js";
+} from '@terra-money/station.js';
 
 // const lcd = new LCDClient(...);
 
 const mk = new MnemonicKey({
-  mnemonic: 'satisfy adjust timber high purchase tuition stool faith fine install that you unaware feed domain license impose boss human eager hat rent enjoy dawn',
+  mnemonic:
+    'satisfy adjust timber high purchase tuition stool faith fine install that you unaware feed domain license impose boss human eager hat rent enjoy dawn',
 });
 
 const wallet = lcd.wallet(mk);
 
 // Send 1 LUNA to the Osmosis blockchain.
 const transfer = new MsgTransfer(
- 'transfer',
- 'channel-1',
+  'transfer',
+  'channel-1',
   new Coin('uluna', '1000000'),
   'terra1cvw8sundusurqajhurpcfk7yvuzlh92cvkpy28',
   'osmo1cl4qw7u35uf77l4scjtv0qej8ycevu4mrdpvmg',
@@ -75,4 +76,4 @@ const result = await lcd.tx.broadcast(tx);
 console.log(result);
 ```
 
-Instructions for initializing LCDClient can be found [here](https://docs.terra.money/docs/develop/sdks/terra-js/common-examples.html#configuring-lcdclient).
+Instructions for initializing LCDClient can be found [here](https://docs.terra.money/docs/develop/sdks/station-js/common-examples.html#configuring-lcdclient).

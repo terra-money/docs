@@ -16,20 +16,20 @@ import {
   Int,
   MsgExecAuthorized,
   Coins,
-} from "@terra-money/terra.js";
+} from '@terra-money/station.js';
 
 function grant(
   granter: Wallet,
   grantee: string,
   spendLimit: Coins.Input,
-  duration: Int
+  duration: Int,
 ) {
   const msgs = [
     new MsgGrantAuthorization(
       granter.key.accAddress,
       grantee,
       new SendAuthorization(spendLimit),
-      duration
+      duration,
     ),
   ];
 
@@ -40,14 +40,14 @@ function sendAuthorized(
   granter: Wallet,
   grantee: Wallet,
   to: string,
-  amount: Coins.Input
+  amount: Coins.Input,
 ) {
   const msgs = [
     new MsgExecAuthorized(grantee.key.accAddress, [
       new MsgSend(
         granter.key.accAddress, // From test1
         to,
-        amount
+        amount,
       ),
     ]),
   ];
@@ -57,9 +57,9 @@ function sendAuthorized(
 
 async function main() {
   const client = new LCDClient({
-    URL: "http://localhost:1317/",
-    chainID: "localterra",
-    gasPrices: "0.15uluna",
+    URL: 'http://localhost:1317/',
+    chainID: 'localterra',
+    gasPrices: '0.15uluna',
     gasAdjustment: 1.4,
   });
 
@@ -67,16 +67,16 @@ async function main() {
   const granter = client.wallet(
     new MnemonicKey({
       mnemonic:
-        "notice oak worry limit wrap speak medal online prefer cluster roof addict wrist behave treat actual wasp year salad speed social layer crew genius",
-    })
+        'notice oak worry limit wrap speak medal online prefer cluster roof addict wrist behave treat actual wasp year salad speed social layer crew genius',
+    }),
   );
 
   // Grantee (terra17lmam6zguazs5q5u6z5mmx76uj63gldnse2pdp)
   const grantee = client.wallet(
     new MnemonicKey({
       mnemonic:
-        "quality vacuum heart guard buzz spike sight swarm shove special gym robust assume sudden deposit grid alcohol choice devote leader tilt noodle tide penalty",
-    })
+        'quality vacuum heart guard buzz spike sight swarm shove special gym robust assume sudden deposit grid alcohol choice devote leader tilt noodle tide penalty',
+    }),
   );
 
   // MsgGrantAuthorization
@@ -84,9 +84,9 @@ async function main() {
     granter,
     grantee.key.accAddress,
     // Set enough spend limit since it will be decreased upon every MsgSend transactions
-    "1000000000000uluna",
+    '1000000000000uluna',
     // expire after 100 years
-    new Int(86400 * 365 * 100 * 1000000000)
+    new Int(86400 * 365 * 100 * 1000000000),
   )
     .then((tx) => client.tx.broadcast(tx))
     .then(console.info)
@@ -103,8 +103,8 @@ async function main() {
     granter,
     grantee,
     // Test3
-    "terra1757tkx08n0cqrw7p86ny9lnxsqeth0wgp0em95",
-    "2000000000000uluna"
+    'terra1757tkx08n0cqrw7p86ny9lnxsqeth0wgp0em95',
+    '2000000000000uluna',
   )
     .then((tx) => client.tx.broadcast(tx))
     .then(console.info)
@@ -123,5 +123,4 @@ async function main() {
 }
 
 main().catch(console.error);
-
 ```

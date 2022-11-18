@@ -1,7 +1,7 @@
 # Fees
 
 ```ts
-import { Fee } from '@terra-money/terra.js';
+import { Fee } from '@terra-money/station.js';
 
 const msgs = [ new MsgSend( ... ), new MsgExecuteContract( ... ), ]; // messages
 const fee = new Fee(50000, { uluna: 4500000 });
@@ -21,8 +21,8 @@ You can define the fee estimation parameters when you create your `LCDClient` in
 
 ```ts
 const terra = new LCDClient({
-  URL: "https://phoenix-lcd.terra.dev",
-  chainID: "phoenix-1",
+  URL: 'https://phoenix-lcd.terra.dev',
+  chainID: 'phoenix-1',
   gasPrices: { uluna: 0.015 },
   gasAdjustment: 1.4,
 });

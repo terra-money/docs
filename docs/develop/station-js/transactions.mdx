@@ -18,12 +18,12 @@ The messages included in a transaction contain the information that will be rout
 You will first want to create a wallet which you can use to sign transactions.
 
 ```ts
-import { MnemonicKey, LCDClient } from "@terra-money/terra.js";
+import { MnemonicKey, LCDClient } from '@terra-money/station.js';
 
 const mk = new MnemonicKey();
 const terra = new LCDClient({
-  URL: "https://pisco-lcd.terra.dev",
-  chainID: "pisco-1",
+  URL: 'https://pisco-lcd.terra.dev',
+  chainID: 'pisco-1',
 });
 const wallet = terra.wallet(mk);
 ```
@@ -31,9 +31,9 @@ const wallet = terra.wallet(mk);
 ### Create messages
 
 ```ts
-import { MsgSend } from "@terra-money/terra.js";
+import { MsgSend } from '@terra-money/station.js';
 
-const send = new MsgSend(wallet.key.accAddress, "<random-terra-address>", {
+const send = new MsgSend(wallet.key.accAddress, '<random-terra-address>', {
   uluna: 1000,
 });
 ```
@@ -43,7 +43,7 @@ const send = new MsgSend(wallet.key.accAddress, "<random-terra-address>", {
 ```ts
 const tx = await wallet.createAndSignTx({
   msgs: [send],
-  memo: "Hello",
+  memo: 'Hello',
 });
 ```
 
@@ -67,13 +67,13 @@ You can also use `sync` or `async` broadcast modes.
 If you broadcasted the transaction with `block`, you can get the events emitted by your transaction.
 
 ```ts
-import { isTxError } from "@terra-money/terra.js";
+import { isTxError } from '@terra-money/station.js';
 
 const txResult = terra.tx.broadcast(tx);
 
 if (isTxError(txResult)) {
   throw new Error(
-    `encountered an error while running the transaction: ${txResult.code} ${txResult.codespace}`
+    `encountered an error while running the transaction: ${txResult.code} ${txResult.codespace}`,
   );
 }
 

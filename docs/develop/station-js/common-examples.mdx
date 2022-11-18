@@ -2,8 +2,7 @@ import Admonition from '@theme/Admonition';
 
 # Common examples guide
 
-Use the following common examples to learn how to use Terra.js. If this is your first time using Terra.js, use the [Terra.js installation guide](./getting-started.mdx).
-
+Use the following common examples to learn how to use station.js. If this is your first time using station.js, use the [station.js installation guide](./getting-started.mdx).
 
 <Admonition type="tip" icon="💡">
 
@@ -16,20 +15,25 @@ If you are new to Terra and don't know where to start, visit the [getting starte
 The following code example shows how to initialize the LCDClient. The rest of the examples assume you initialized it by using this example or similar code. The LCDClient configuration accepts a boolean `legacy` value that is false by default. When set to `true`, the LCD will connect to Terra Classic.
 
 ```ts
-import fetch from "isomorphic-fetch";
-import { MsgSend, MnemonicKey, Coins, LCDClient } from "@terra-money/terra.js";
+import fetch from 'isomorphic-fetch';
+import {
+  MsgSend,
+  MnemonicKey,
+  Coins,
+  LCDClient,
+} from '@terra-money/station.js';
 
 // Fetch gas prices and convert to `Coin` format.
 const gasPrices = await (
-  await fetch("https://pisco-api.terra.dev/gas-prices", { redirect: 'follow' })
+  await fetch('https://pisco-api.terra.dev/gas-prices', { redirect: 'follow' })
 ).json();
 const gasPricesCoins = new Coins(gasPrices);
 
 const lcd = new LCDClient({
-  URL: "https://pisco-lcd.terra.dev/",
-  chainID: "pisco-1",
+  URL: 'https://pisco-lcd.terra.dev/',
+  chainID: 'pisco-1',
   gasPrices: gasPricesCoins,
-  gasAdjustment: "1.5",
+  gasAdjustment: '1.5',
   gas: 10000000,
   isClassic: false, // optional parameter, false by default
 });
@@ -39,7 +43,7 @@ const lcd = new LCDClient({
 
 ```js
 // Replace with address to check.
-const address = "terra1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+const address = 'terra1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
 const [balance] = await lcd.bank.balance(address);
 console.log(balance.toData());
 ```
@@ -47,15 +51,15 @@ console.log(balance.toData());
 Example response:
 
 ```js
-[{ denom: "uluna", amount: "5030884" }];
+[{ denom: 'uluna', amount: '5030884' }];
 ```
 
 ## Get wallet balance (CW20 tokens)
 
 ```js
 // Check balance of token on pisco-1 using tokenAddress.
-const tokenAddress = "<INSERT_TOKEN_ADDRESS>";
-const walletAddress = "terra1f44ddca9awepv2rnudztguq5rmrran2m20zzd6";
+const tokenAddress = '<INSERT_TOKEN_ADDRESS>';
+const walletAddress = 'terra1f44ddca9awepv2rnudztguq5rmrran2m20zzd6';
 const response = await lcd.wasm.contractQuery(tokenAddress, {
   balance: { address: walletAddress },
 });
@@ -67,7 +71,7 @@ Example response:
 
 ```js
 {
-  balance: "70258667";
+  balance: '70258667';
 }
 ```
 
@@ -75,7 +79,7 @@ Example response:
 
 ```js
 // Replace with TX hash to lookup.
-const hash = "CAB264B3D92FF3DFE209DADE791A866876DE5DD2A320C1200F9C5EC5F0E7B14B";
+const hash = 'CAB264B3D92FF3DFE209DADE791A866876DE5DD2A320C1200F9C5EC5F0E7B14B';
 const txInfo = await lcd.tx.txInfo(hash);
 console.log(txInfo);
 ```
@@ -109,9 +113,9 @@ TxInfo {
 ```js
 const getTransactionLink = (hash, chainID) =>
   `https://finder.terra.money/${chainID}/tx/${hash}`;
-const hash = "CAB264B3D92FF3DFE209DADE791A866876DE5DD2A320C1200F9C5EC5F0E7B14B";
+const hash = 'CAB264B3D92FF3DFE209DADE791A866876DE5DD2A320C1200F9C5EC5F0E7B14B';
 
-console.log(getTransactionLink(hash, "pisco-1"));
+console.log(getTransactionLink(hash, 'pisco-1'));
 ```
 
 Example response:
@@ -125,8 +129,8 @@ https://finder.terra.money/pisco-1/tx/CAB264B3D92FF3DFE209DADE791A866876DE5DD2A3
 ```js
 const getWalletLink = (address, chainID) =>
   `https://finder.terra.money/${chainID}/address/${address}`;
-const address = "terra1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
-console.log(getWalletLink(address, "pisco-1"));
+const address = 'terra1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
+console.log(getWalletLink(address, 'pisco-1'));
 ```
 
 Example response:
@@ -140,13 +144,13 @@ https://finder.terra.money/pisco-1/address/terra1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 The following code example shows how to send native tokens:
 
 ```ts
-import { LCDClient, MnemonicKey, MsgSend } from "@terra-money/terra.js";
+import { LCDClient, MnemonicKey, MsgSend } from '@terra-money/station.js';
 
 // const lcd = new LCDClient(...);
 
 const mk = new MnemonicKey({
   mnemonic:
-    "satisfy adjust timber high purchase tuition stool faith fine install that you unaware feed domain license impose boss human eager hat rent enjoy dawn",
+    'satisfy adjust timber high purchase tuition stool faith fine install that you unaware feed domain license impose boss human eager hat rent enjoy dawn',
 });
 
 const wallet = lcd.wallet(mk);
@@ -154,8 +158,8 @@ const wallet = lcd.wallet(mk);
 // Transfer 1 Luna.
 const send = new MsgSend(
   wallet.key.accAddress,
-  "terra1dcegyrekltswvyy0xy69ydgxn9x8x32zdtapd8",
-  { uluna: "1000000" }
+  'terra1dcegyrekltswvyy0xy69ydgxn9x8x32zdtapd8',
+  { uluna: '1000000' },
 );
 
 const tx = await wallet.createAndSignTx({ msgs: [send] });
@@ -173,24 +177,24 @@ import {
   LCDClient,
   MnemonicKey,
   MsgExecuteContract,
-} from "@terra-money/terra.js";
+} from '@terra-money/station.js';
 
 // const lcd = new LCDClient(...);
 
 const mk = new MnemonicKey({
   mnemonic:
-    "satisfy adjust timber high purchase tuition stool faith fine install that you unaware feed domain license impose boss human eager hat rent enjoy dawn",
+    'satisfy adjust timber high purchase tuition stool faith fine install that you unaware feed domain license impose boss human eager hat rent enjoy dawn',
 });
 
 const wallet = lcd.wallet(mk);
 
 // Specify token address of desired token to send.
-const tokenAddress = "<INSERT_TOKEN_ADDRESS>";
+const tokenAddress = '<INSERT_TOKEN_ADDRESS>';
 
 // Transfer 1 token.
 const cw20Send = new MsgExecuteContract(wallet.key.accAddress, tokenAddress, {
   transfer: {
-    amount: "1000000",
+    amount: '1000000',
     recipient: wallet.key.accAddress,
   },
 });
@@ -213,19 +217,19 @@ import {
   MnemonicKey,
   Coins,
   LCDClient,
-} from "@terra-money/terra.js";
+} from '@terra-money/station.js';
 
 // const lcd = new LCDClient(...);
 
 const mk = new MnemonicKey({
   mnemonic:
-    "satisfy adjust timber high purchase tuition stool faith fine install that you unaware feed domain license impose boss human eager hat rent enjoy dawn",
+    'satisfy adjust timber high purchase tuition stool faith fine install that you unaware feed domain license impose boss human eager hat rent enjoy dawn',
 });
 
 const wallet = lcd.wallet(mk);
 
 // LUNA <> OTHER_TOKEN
-const pool = "<INSERT_TOKEN_POOL_ADDRESS>";
+const pool = '<INSERT_TOKEN_POOL_ADDRESS>';
 
 // Fetch the number of each asset in the pool.
 const { assets } = await lcd.wasm.contractQuery(pool, { pool: {} });
@@ -239,19 +243,19 @@ const terraSwap = new MsgExecuteContract(
   pool,
   {
     swap: {
-      max_spread: "0.01",
+      max_spread: '0.01',
       offer_asset: {
         info: {
           native_token: {
-            denom: "uluna",
+            denom: 'uluna',
           },
         },
-        amount: "1000000",
+        amount: '1000000',
       },
       belief_price: beliefPrice,
     },
   },
-  new Coins({ uluna: "1000000" })
+  new Coins({ uluna: '1000000' }),
 );
 
 const tx = await wallet.createAndSignTx({ msgs: [terraSwap] });
@@ -265,21 +269,21 @@ console.log(result);
 The following code example shows how to decode messages that have been encoded using Protobuf:
 
 ```ts
-import { LCDClient, Tx } from "@terra-money/terra.js";
+import { LCDClient, Tx } from '@terra-money/station.js';
 
 // const lcd = new LCDClient(...);
 
 const blockData = await lcd.tendermint.blockInfo(5923213);
 
 const txInfos = blockData.block.data.txs.map((tx) =>
-  Tx.unpackAny({ value: Buffer.from(tx, "base64") })
+  Tx.unpackAny({ value: Buffer.from(tx, 'base64') }),
 );
 
 // Find messages where a contract was initialized.
 const initMessages = txInfos
   .map((tx) => tx.body.messages)
   .flat()
-  .find((i) => i.constructor.name === "MsgInstantiateContract");
+  .find((i) => i.constructor.name === 'MsgInstantiateContract');
 
 console.log(initMessages);
 ```
@@ -300,38 +304,38 @@ function isValid(address) {
   return /(terra1[a-z0-9]{38})/g.test(address);
 }
 
-console.log(isValid("terra1dcegyrekltswvyy0xy69ydgxn9x8x32zdtapd8")); // true
-console.log(isValid("terra1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")); // true (even if this doesn't have a valid checksum)
-console.log(isValid("cosmos1zz22dfpvw3zqpeyhvhmx944a588fgcalw744ts")); // false
-console.log(isValid("random string")); // false
+console.log(isValid('terra1dcegyrekltswvyy0xy69ydgxn9x8x32zdtapd8')); // true
+console.log(isValid('terra1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')); // true (even if this doesn't have a valid checksum)
+console.log(isValid('cosmos1zz22dfpvw3zqpeyhvhmx944a588fgcalw744ts')); // false
+console.log(isValid('random string')); // false
 ```
 
 This is a more advanced verification that requires the bech32 library which is used to verify the checksum.
 
 ```ts
-import { bech32 } from "bech32";
+import { bech32 } from 'bech32';
 
 // advanced address validation, it also verifies the bech32 checksum
 function isValid(address) {
   try {
     const { prefix: decodedPrefix } = bech32.decode(address); // throw error if checksum is invalid
     // verify address prefix
-    return decodedPrefix === "terra";
+    return decodedPrefix === 'terra';
   } catch {
     // invalid checksum
     return false;
   }
 }
 
-console.log(isValid("terra1dcegyrekltswvyy0xy69ydgxn9x8x32zdtapd8")); // true
-console.log(isValid("terra1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")); // false
-console.log(isValid("cosmos1zz22dfpvw3zqpeyhvhmx944a588fgcalw744ts")); // false
-console.log(isValid("random string")); // false
+console.log(isValid('terra1dcegyrekltswvyy0xy69ydgxn9x8x32zdtapd8')); // true
+console.log(isValid('terra1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')); // false
+console.log(isValid('cosmos1zz22dfpvw3zqpeyhvhmx944a588fgcalw744ts')); // false
+console.log(isValid('random string')); // false
 ```
 
 ## Avoid Status 500: timed out waiting for tx to be included in a block
 
-Occasionally the broadcast function of terra.js and terra.py will throw the error `Status 500: timed out waiting for tx to be included in a block`. This occurs because the libraries use `broadcast-mode = block` by default, which causes the LCD, to which you are broadcasting the transaction, to send an http response to your request only when the transaction has been included in a block. If the chain is overloaded, the confirmation may take too long and trigger a timeout in the LCD.
+Occasionally the broadcast function of station.js and terra.py will throw the error `Status 500: timed out waiting for tx to be included in a block`. This occurs because the libraries use `broadcast-mode = block` by default, which causes the LCD, to which you are broadcasting the transaction, to send an http response to your request only when the transaction has been included in a block. If the chain is overloaded, the confirmation may take too long and trigger a timeout in the LCD.
 
 To solve this problem it is recommended to use `broadcast-mode = sync` and then iterate a request to the LCD with the txhash to ensure that it has been included in a block.
 

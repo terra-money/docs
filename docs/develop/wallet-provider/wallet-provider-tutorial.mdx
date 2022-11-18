@@ -6,7 +6,6 @@ import Admonition from '@theme/Admonition';
 
 This guide will cover how to set up a React app, integrate Wallet Provider, check the balance of the connected account, and call a token swap. If you want to integrate Terra Station into an existing react app you can skip past the `Project Setup` section.
 
-
 <Admonition type="tip" icon="💡" title="Just want to dive in?">
 
 Check out the getting started section for the premade templates [on GitHub](https://github.com/terra-money/wallet-provider/).
@@ -43,21 +42,21 @@ Next, you'll wrap your `App` with `<WalletProvider>` to give all your components
 1. Navigate to your `Index.js` in a code editor and replace the code with the following:
 
    ```js
-   import ReactDOM from "react-dom";
-   import "./index.css";
-   import App from "./App";
-   import reportWebVitals from "./reportWebVitals";
+   import ReactDOM from 'react-dom';
+   import './index.css';
+   import App from './App';
+   import reportWebVitals from './reportWebVitals';
    import {
      getChainOptions,
      WalletProvider,
-   } from "@terra-money/wallet-provider";
+   } from '@terra-money/wallet-provider';
 
    getChainOptions().then((chainOptions) => {
      ReactDOM.render(
        <WalletProvider {...chainOptions}>
          <App />
        </WalletProvider>,
-       document.getElementById("root")
+       document.getElementById('root'),
      );
    });
 
@@ -74,7 +73,6 @@ Next, you'll wrap your `App` with `<WalletProvider>` to give all your components
    ```
 
 Your browser should open to `http://localhost:3000/` and you should see the react logo with a black background and some text.
-
 
 <details>
 <summary> Getting `polyfill` errors? </summary>
@@ -105,7 +103,6 @@ Alternatively, you can configure your webpack to include the necessary fallbacks
 </p>
 </details>
 
-
 3.  Create a new directory called `components` in the `source` directory. This directory will house components to trigger different actions from our connected wallet.
 
 ## 3. Put `useWallet` to work
@@ -117,8 +114,8 @@ Now that `App.js` has inherited the context of `WalletProvider`, you can start p
 2. Populate the `Connect.js` file with the following:
 
    ```js
-   import { useWallet, WalletStatus } from "@terra-money/wallet-provider";
-   import React from "react";
+   import { useWallet, WalletStatus } from '@terra-money/wallet-provider';
+   import React from 'react';
    export default function Connect() {
      const {
        status,
@@ -135,7 +132,7 @@ Now that `App.js` has inherited the context of `WalletProvider`, you can start p
            <>
              {availableConnectTypes.map((connectType) => (
                <button
-                 key={"connect-" + connectType}
+                 key={'connect-' + connectType}
                  onClick={() => connect(connectType)}
                >
                  Connect {connectType}
@@ -154,8 +151,8 @@ Now that `App.js` has inherited the context of `WalletProvider`, you can start p
 3. Open `App.js` in your code editor and replace the code with the following:
 
    ```js
-   import "./App.css";
-   import Connect from "./components/Connect";
+   import './App.css';
+   import Connect from './components/Connect';
 
    function App() {
      return (
@@ -192,8 +189,8 @@ Be aware that you will not see any tokens if your wallet is empty.
    import {
      useConnectedWallet,
      useLCDClient,
-   } from "@terra-money/wallet-provider";
-   import React, { useEffect, useState } from "react";
+   } from '@terra-money/wallet-provider';
+   import React, { useEffect, useState } from 'react';
 
    export default function Query() {
      const lcd = useLCDClient(); // LCD stands for Light Client Daemon
@@ -222,9 +219,9 @@ Be aware that you will not see any tokens if your wallet is empty.
 3. Open `App.js` in your code editor and add `import Query from './components/Query'` to line 3, and ` <Query />` to line 10. The whole file should look like the following:
 
    ```js
-   import "./App.css";
-   import Connect from "./components/Connect";
-   import Query from "./components/Query";
+   import './App.css';
+   import Connect from './components/Connect';
+   import Query from './components/Query';
 
    function App() {
      return (
@@ -244,10 +241,10 @@ Be aware that you will not see any tokens if your wallet is empty.
 
 ## 5. Sending a transaction
 
-You can also create and send transactions to the Terra network while utilizing Wallet Provider. You can use `Terra.js` to generate a sample transaction:
+You can also create and send transactions to the Terra network while utilizing Wallet Provider. You can use `station.js` to generate a sample transaction:
 
 ```sh
-npm install @terra-money/terra.js
+npm install @terra-money/station.js
 ```
 
 Before broadcasting this example transaction, ensure you're on the Terra testnet. To change networks click the gear icon in Terra Station and select `testnet`.
@@ -255,7 +252,6 @@ Before broadcasting this example transaction, ensure you're on the Terra testnet
 You can request tesnet funds from the [Terra Testnet Faucet](https://faucet.terra.money/).
 
 To transfer LUNA, you will need to supply a message containing the sender address, recipient address, and send amount (in this case 1 LUNA), as well as fee parameters. Once the message is constructed, the `post` method on `connectedWallet` broadcasts it to the network.
-
 
 <Admonition type="note" icon="📝" title="What happens if something goes wrong?">
 
@@ -268,14 +264,14 @@ Wallet Provider supplies useful error types. This example will handle the `UserD
 2. Populate `Tx.js` with the following:
 
    ```js
-   import { Fee, MsgSend } from "@terra-money/terra.js";
+   import { Fee, MsgSend } from '@terra-money/station.js';
    import {
      useConnectedWallet,
      UserDenied,
-   } from "@terra-money/wallet-provider";
-   import React, { useCallback, useState } from "react";
+   } from '@terra-money/wallet-provider';
+   import React, { useCallback, useState } from 'react';
 
-   const TEST_TO_ADDRESS = "terra12hnhh5vtyg5juqnzm43970nh4fw42pt27nw9g9";
+   const TEST_TO_ADDRESS = 'terra12hnhh5vtyg5juqnzm43970nh4fw42pt27nw9g9';
 
    export default function Tx() {
      const [txResult, setTxResult] = useState(null);
@@ -287,14 +283,14 @@ Wallet Provider supplies useful error types. This example will handle the `UserD
        if (!connectedWallet) {
          return;
        }
-       if (connectedWallet.network.chainID.startsWith("phoenix")) {
+       if (connectedWallet.network.chainID.startsWith('phoenix')) {
          alert(`Please only execute this example on Testnet`);
          return;
        }
 
        try {
          const transactionMsg = {
-           fee: new Fee(1000000, "20000uluna"),
+           fee: new Fee(1000000, '20000uluna'),
            msgs: [
              new MsgSend(connectedWallet.walletAddress, TEST_TO_ADDRESS, {
                uluna: 1000000,
@@ -306,11 +302,11 @@ Wallet Provider supplies useful error types. This example will handle the `UserD
          setTxResult(tx);
        } catch (error) {
          if (error instanceof UserDenied) {
-           setTxError("User Denied");
+           setTxError('User Denied');
          } else {
            setTxError(
-             "Unknown Error: " +
-               (error instanceof Error ? error.message : String(error))
+             'Unknown Error: ' +
+               (error instanceof Error ? error.message : String(error)),
            );
          }
        }
@@ -334,16 +330,17 @@ Wallet Provider supplies useful error types. This example will handle the `UserD
    ```
 
    <Admonition type="note" icon="📝">
-   Because all coins are denominated in micro-units, you will need to multiply any coins by $10^6$ . For example, 1000000 uluna = 1 LUNA.
+     Because all coins are denominated in micro-units, you will need to multiply
+     any coins by $10^6$ . For example, 1000000 uluna = 1 LUNA.
    </Admonition>
 
 3. Open `App.js` in your code editor and add `import Tx from './components/Tx'` to line 4, and ` <Tx />` to line 12. The whole file should look like the following:
 
    ```js
-   import "./App.css";
-   import Connect from "./components/Connect";
-   import Query from "./components/Query";
-   import Tx from "./components/Tx";
+   import './App.css';
+   import Connect from './components/Connect';
+   import Query from './components/Query';
+   import Tx from './components/Tx';
 
    function App() {
      return (

@@ -12,16 +12,17 @@ Terra Station has built-in support for LocalTerra for quick and easy interaction
 
 2. Use Terrad to talk to your LocalTerra Terrad node:
 
-    ```sh
-    $ terrad status
-    ```
+   ```sh
+   $ terrad status
+   ```
 
-    Terrad will connect to `localhost:26657` by default when running this command.
+   Terrad will connect to `localhost:26657` by default when running this command.
 
-    The following command is the explicit form:
-    ```sh
-    $ terrad status --node=tcp://localhost:26657
-    ```
+   The following command is the explicit form:
+
+   ```sh
+   $ terrad status --node=tcp://localhost:26657
+   ```
 
 3. Run any Terrad commands against your LocalTerra network:
 
@@ -40,13 +41,13 @@ terra = LCDClient("localterra", "http://localhost:1317")
 
 ## Terra JavaScript SDK
 
-Connect to the chain through LocalTerra's LCD server using terra.js:
+Connect to the chain through LocalTerra's LCD server using station.js:
 
 ```ts
-import { LCDClient } from "@terra-money/terra.js";
+import { LCDClient } from '@terra-money/station.js';
 
 const terra = new LCDClient({
-  URL: "http://localhost:1317",
-  chainID: "localterra",
+  URL: 'http://localhost:1317',
+  chainID: 'localterra',
 });
 ```
