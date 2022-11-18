@@ -65,13 +65,13 @@ npm install --save isomorphic-fetch
 
 ```ts
 import fetch from 'isomorphic-fetch';
-import { Coins, LCDClient } from '@terra-money/station.js';
+import { Coins, InterchainLCDClient } from '@terra-money/station.js';
 const gasPrices = await fetch('https://pisco-api.terra.dev/gas-prices', {
   redirect: 'follow',
 });
 const gasPricesJson = await gasPrices.json();
 const gasPricesCoins = new Coins(gasPricesJson);
-const lcd = new LCDClient({
+const lcd = new InterchainLCDClient({
   URL: 'https://pisco-lcd.terra.dev', // Use "https://phoenix-lcd.terra.dev" for prod "http://localhost:1317" for localterra.
   chainID: 'pisco-1', // Use "phoenix-1" for production or "localterra".
   gasPrices: gasPricesCoins,
@@ -162,8 +162,9 @@ const terraSwap = new MsgExecuteContract(
 const tx = await wallet.createAndSignTx({
   msgs: [terraSwap],
   feeDenoms: ['uluna'],
+  chainID: 'pisco-1',
 });
-const result = await lcd.tx.broadcast(tx);
+const result = await lcd.tx.broadcast(tx, 'pisco-1');
 console.log(result);
 ```
 

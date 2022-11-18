@@ -14,13 +14,13 @@ const tx = await wallet.createAndSignTx({ msgs, fee });
 If you don't specify a fee when you create your transaction, it will be automatically estimated by simulating it within the node.
 
 ```ts
-const tx = await wallet.createAndSignTx({ msgs });
+const tx = await wallet.createAndSignTx({ msgs, chainID: 'pisco-1' });
 ```
 
-You can define the fee estimation parameters when you create your `LCDClient` instance. The defaults are:
+You can define the fee estimation parameters when you create your `InterchainLCDClient` instance. The defaults are:
 
 ```ts
-const terra = new LCDClient({
+const terra = new InterchainLCDClient({
   URL: 'https://phoenix-lcd.terra.dev',
   chainID: 'phoenix-1',
   gasPrices: { uluna: 0.015 },
@@ -35,5 +35,6 @@ const tx = await wallet.createAndSignTx({
   msgs,
   gasPrices: { uluna: 0.01 },
   gasAdjustment: 1.9,
+  chainID: 'pisco-1',
 });
 ```

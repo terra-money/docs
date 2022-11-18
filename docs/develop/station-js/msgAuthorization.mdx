@@ -7,7 +7,7 @@ The following code snippet requires [LocalTerra](../localterra/README.mdx).
 
 ```ts
 import {
-  LCDClient,
+  InterchainLCDClient,
   MnemonicKey,
   Wallet,
   MsgGrantAuthorization,
@@ -33,7 +33,7 @@ function grant(
     ),
   ];
 
-  return granter.createAndSignTx({ msgs });
+  return granter.createAndSignTx({ msgs, chainID });
 }
 
 function sendAuthorized(
@@ -52,11 +52,11 @@ function sendAuthorized(
     ]),
   ];
 
-  return grantee.createAndSignTx({ msgs });
+  return grantee.createAndSignTx({ msgs, chainID });
 }
 
 async function main() {
-  const client = new LCDClient({
+  const client = new InterchainLCDClient({
     URL: 'http://localhost:1317/',
     chainID: 'localterra',
     gasPrices: '0.15uluna',

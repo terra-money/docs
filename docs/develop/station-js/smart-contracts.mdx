@@ -8,7 +8,7 @@ You will first need a compiled WASM smart contract's binary to upload.
 
 ```ts
 import {
-  LCDClient,
+  InterchainLCDClient,
   MsgStoreCode,
   MnemonicKey,
   isTxError,
@@ -22,7 +22,7 @@ const mk = new MnemonicKey({
 });
 
 // connect to localterra
-const terra = new LCDClient({
+const terra = new InterchainLCDClient({
   URL: 'http://localhost:1317',
   chainID: 'localterra',
 });
@@ -35,8 +35,9 @@ const storeCode = new MsgStoreCode(
 );
 const storeCodeTx = await wallet.createAndSignTx({
   msgs: [storeCode],
+  chainID: 'pisco-1',
 });
-const storeCodeTxResult = await terra.tx.broadcast(storeCodeTx);
+const storeCodeTxResult = await terra.tx.broadcast(storeCodeTx, 'pisco-1');
 
 console.log(storeCodeTxResult);
 
@@ -72,8 +73,9 @@ const instantiate = new MsgInstantiateContract(
 
 const instantiateTx = await wallet.createAndSignTx({
   msgs: [instantiate],
+  chainID: 'pisco-1',
 });
-const instantiateTxResult = await terra.tx.broadcast(instantiateTx);
+const instantiateTxResult = await terra.tx.broadcast(instantiateTx, 'pisco-1');
 
 console.log(instantiateTxResult);
 
@@ -104,14 +106,15 @@ const execute = new MsgExecuteContract(
 
 const executeTx = await wallet.createAndSignTx({
   msgs: [execute],
+  chainID: 'pisco-1'.
 });
 
-const executeTxResult = await terra.tx.broadcast(executeTx);
+const executeTxResult = await terra.tx.broadcast(executeTx, 'pisco-1');
 ```
 
 ## Query data from a contract
 
-A contract can define a query handler, which understands requests for data specified in a JSON message called a QueryMsg. Unlike the message handler, the query handler cannot modify the contract's or blockchain's state -- it is a read-only operation. Therefore, querying data from a contract does not use a message and transaction, but works directly through the `LCDClient` API.
+A contract can define a query handler, which understands requests for data specified in a JSON message called a QueryMsg. Unlike the message handler, the query handler cannot modify the contract's or blockchain's state -- it is a read-only operation. Therefore, querying data from a contract does not use a message and transaction, but works directly through the `InterchainLCDClient` API.
 
 ```ts
 const result = await terra.wasm.contractQuery(

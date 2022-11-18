@@ -10,9 +10,9 @@ If you are new to Terra and don't know where to start, visit the [getting starte
 
 </Admonition>
 
-## Configuring LCDClient
+## Configuring InterchainLCDClient
 
-The following code example shows how to initialize the LCDClient. The rest of the examples assume you initialized it by using this example or similar code. The LCDClient configuration accepts a boolean `legacy` value that is false by default. When set to `true`, the LCD will connect to Terra Classic.
+The following code example shows how to initialize the InterchainLCDClient. The rest of the examples assume you initialized it by using this example or similar code. You must also specify the prefix of the chain you'd like to connect to.
 
 ```ts
 import fetch from 'isomorphic-fetch';
@@ -20,7 +20,7 @@ import {
   MsgSend,
   MnemonicKey,
   Coins,
-  LCDClient,
+  InterchainLCDClient,
 } from '@terra-money/station.js';
 
 // Fetch gas prices and convert to `Coin` format.
@@ -29,13 +29,13 @@ const gasPrices = await (
 ).json();
 const gasPricesCoins = new Coins(gasPrices);
 
-const lcd = new LCDClient({
+const lcd = new InterchainLCDClient({
   URL: 'https://pisco-lcd.terra.dev/',
   chainID: 'pisco-1',
   gasPrices: gasPricesCoins,
   gasAdjustment: '1.5',
   gas: 10000000,
-  isClassic: false, // optional parameter, false by default
+  prefix: 'terra',
 });
 ```
 
@@ -144,9 +144,13 @@ https://finder.terra.money/pisco-1/address/terra1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 The following code example shows how to send native tokens:
 
 ```ts
-import { LCDClient, MnemonicKey, MsgSend } from '@terra-money/station.js';
+import {
+  InterchainLCDClient,
+  MnemonicKey,
+  MsgSend,
+} from '@terra-money/station.js';
 
-// const lcd = new LCDClient(...);
+// const lcd = new InterchainLCDClient(...);
 
 const mk = new MnemonicKey({
   mnemonic:
@@ -162,8 +166,8 @@ const send = new MsgSend(
   { uluna: '1000000' },
 );
 
-const tx = await wallet.createAndSignTx({ msgs: [send] });
-const result = await lcd.tx.broadcast(tx);
+const tx = await wallet.createAndSignTx({ msgs: [send], chainID: 'pisco-1' });
+const result = await lcd.tx.broadcast(tx, 'pisco-1');
 
 console.log(result);
 ```
@@ -174,12 +178,12 @@ The following code example shows how to send CW20 tokens:
 
 ```ts
 import {
-  LCDClient,
+  InterchainLCDClient,
   MnemonicKey,
   MsgExecuteContract,
 } from '@terra-money/station.js';
 
-// const lcd = new LCDClient(...);
+// const lcd = new InterchainLCDClient(...);
 
 const mk = new MnemonicKey({
   mnemonic:
@@ -199,8 +203,11 @@ const cw20Send = new MsgExecuteContract(wallet.key.accAddress, tokenAddress, {
   },
 });
 
-const tx = await wallet.createAndSignTx({ msgs: [cw20Send] });
-const result = await lcd.tx.broadcast(tx);
+const tx = await wallet.createAndSignTx({
+  msgs: [cw20Send],
+  chainID: 'pisco-1',
+});
+const result = await lcd.tx.broadcast(tx, 'pisco-1');
 
 console.log(result);
 ```
@@ -216,10 +223,10 @@ import {
   MsgExecuteContract,
   MnemonicKey,
   Coins,
-  LCDClient,
+  InterchainLCDClient,
 } from '@terra-money/station.js';
 
-// const lcd = new LCDClient(...);
+// const lcd = new InterchainLCDClient(...);
 
 const mk = new MnemonicKey({
   mnemonic:
@@ -258,8 +265,11 @@ const terraSwap = new MsgExecuteContract(
   new Coins({ uluna: '1000000' }),
 );
 
-const tx = await wallet.createAndSignTx({ msgs: [terraSwap] });
-const result = await lcd.tx.broadcast(tx);
+const tx = await wallet.createAndSignTx({
+  msgs: [terraSwap],
+  chainID: 'pisco-1',
+});
+const result = await lcd.tx.broadcast(tx, 'pisco-1');
 
 console.log(result);
 ```
@@ -269,9 +279,9 @@ console.log(result);
 The following code example shows how to decode messages that have been encoded using Protobuf:
 
 ```ts
-import { LCDClient, Tx } from '@terra-money/station.js';
+import { InterchainLCDClient, Tx } from '@terra-money/station.js';
 
-// const lcd = new LCDClient(...);
+// const lcd = new InterchainLCDClient(...);
 
 const blockData = await lcd.tendermint.blockInfo(5923213);
 

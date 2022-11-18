@@ -7,12 +7,12 @@ Users can interact with the blockchain by using the following modes:
 
 ## Connect to a chain
 
-To perform these actions, connect to the blockchain by using an `LCDClient` object, which represents a connection to a node running the light client daemon (LCD). The LCD serves as a RESTful API over HTTP. station.js abstracts away the details of making raw API calls and provide an interface with which you can work.
+To perform these actions, connect to the blockchain by using an `InterchainLCDClient` object, which represents a connection to a node running the light client daemon (LCD). The LCD serves as a RESTful API over HTTP. station.js abstracts away the details of making raw API calls and provide an interface with which you can work.
 
 ```ts
-import { LCDClient } from '@terra-money/station.js';
+import { InterchainLCDClient } from '@terra-money/station.js';
 
-const terra = new LCDClient({
+const terra = new InterchainLCDClient({
   URL: 'https://phoenix-lcd.terra.dev',
   chainID: 'phoenix-1',
 });

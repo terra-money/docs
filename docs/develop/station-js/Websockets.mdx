@@ -95,7 +95,7 @@ The resultant query will be:
 
 ### `subscribeTx`
 
-It is a common use case to subscribe to transactions with a Tendermint query, such as listening for when specific addresses send or receive funds, or when specific events are triggered from within smart contracts. However, it is hard to extract data because the transaction result is encoded in Base64 Amino encoding. If you use `subscribeTx`, station.js will automatically inject the `txhash` into the resultant data value so you can more easily look up the transaction to decode it using `LCDClient`.
+It is a common use case to subscribe to transactions with a Tendermint query, such as listening for when specific addresses send or receive funds, or when specific events are triggered from within smart contracts. However, it is hard to extract data because the transaction result is encoded in Base64 Amino encoding. If you use `subscribeTx`, station.js will automatically inject the `txhash` into the resultant data value so you can more easily look up the transaction to decode it using `InterchainLCDClient`.
 
 ```ts
 // swap tracker

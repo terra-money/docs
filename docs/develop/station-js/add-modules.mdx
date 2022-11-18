@@ -214,9 +214,9 @@ export type ParamChange =
 
 ```
 
-## Add API functionality to the LCDClient
+## Add API functionality to the InterchainLCDClient
 
-If there are API endpoints that exist for the new module, you will need to add this functionality to `LCDClient` so that they are accessible.
+If there are API endpoints that exist for the new module, you will need to add this functionality to `InterchainLCDClient` so that they are accessible.
 
 Assume that the `greeting` module has the following endpoints:
 
@@ -277,7 +277,7 @@ export * from './TxAPI';
 export * from './WasmAPI';
 ```
 
-3. Add the functionality to `src/client/lcd/LCDClient.ts`:
+3. Add the functionality to `src/client/lcd/InterchainLCDClient.ts`:
 
 ```ts
 ...
@@ -298,7 +298,7 @@ import {
 ...
 
 
-export class LCDClient {
+export class InterchainLCDClient {
   public config: LCDClientConfig;
   public apiRequester: APIRequester;
 

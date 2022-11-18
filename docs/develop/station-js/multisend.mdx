@@ -2,7 +2,7 @@
 
 ```js
 import {
-  LCDClient,
+  InterchainLCDClient,
   MnemonicKey,
   MsgMultiSend,
   StdTx,
@@ -15,7 +15,7 @@ const {
 } = process.env;
 
 async function main() {
-  const client = new LCDClient({
+  const client = new InterchainLCDClient({
     URL: TESTNET_LCD_URL,
     chainID: TESTNET_CHAIN_ID,
     gasPrices: "0.15uluna",

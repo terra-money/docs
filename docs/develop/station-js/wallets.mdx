@@ -2,12 +2,12 @@
 
 ## Create a wallet
 
-Use `LCDClient.wallet()` to create a `Wallet` from a `Key`.
+Use `InterchainLCDClient.wallet()` to create a `Wallet` from a `Key`.
 
 ```ts
-import { LCDClient, MnemonicKey } from '@terra-money/station.js';
+import { InterchainLCDClient, MnemonicKey } from '@terra-money/station.js';
 
-const terra = new LCDClient({
+const terra = new InterchainLCDClient({
   URL: 'https://phoenix-lcd.terra.dev',
   chainId: 'phoenix-1',
 });
@@ -56,6 +56,7 @@ You can also use the more convenient `Wallet.createAndSignTx()` function, which 
 const tx = await wallet.createAndSignTx({
   msgs,
   fee,
+  chainID,
   memo: 'this is optional',
 });
 ```

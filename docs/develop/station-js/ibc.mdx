@@ -1,6 +1,6 @@
 # IBC Transfers
 
-Terra has full IBC transfer capabilities through both station.js and Terra Station. Although IBC functionality is not readily exposed through Terra Station’s front end, it can be fully incorporated into any dApp. It is up to a dApp’s front end to initiate IBC transfers.
+Terra has full IBC transfer capabilities through both station.js and Terra Station.
 
 ## MsgTransfer
 
@@ -44,13 +44,13 @@ The following example demonstrates how to send 1 LUNA from Terra to the Osmosis 
 
 ```js
 import {
-  LCDClient,
+  InternchainLCDClient,
   MnemonicKey,
   MsgTransfer,
   Coin,
 } from '@terra-money/station.js';
 
-// const lcd = new LCDClient(...);
+// const lcd = new InterchainLCDClient(...);
 
 const mk = new MnemonicKey({
   mnemonic:
@@ -70,10 +70,13 @@ const transfer = new MsgTransfer(
   (Date.now() + 60 * 1000) * 1e6,
 );
 
-const tx = await wallet.createAndSignTx({ msgs: [transfer] });
-const result = await lcd.tx.broadcast(tx);
+const tx = await wallet.createAndSignTx({
+  msgs: [transfer],
+  chainID: 'pisco-1',
+});
+const result = await lcd.tx.broadcast(tx, 'pisco-1');
 
 console.log(result);
 ```
 
-Instructions for initializing LCDClient can be found [here](https://docs.terra.money/docs/develop/sdks/station-js/common-examples.html#configuring-lcdclient).
+Instructions for initializing InterchainLCDClient can be found [here](https://docs.terra.money/docs/develop/sdks/station-js/common-examples.html#configuring-InterchainLCDClient).
