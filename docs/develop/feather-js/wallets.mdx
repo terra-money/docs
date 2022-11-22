@@ -7,10 +7,7 @@ Use `LCDClient.wallet()` to create a `Wallet` from a `Key`.
 ```ts
 import { LCDClient, MnemonicKey } from '@terra-money/feather.js';
 
-const terra = new LCDClient({
-  URL: 'https://phoenix-lcd.terra.dev',
-  chainId: 'phoenix-1',
-});
+const terra = new LCDClient(...);
 
 const mk = new MnemonicKey();
 const wallet = terra.wallet(mk);
@@ -39,6 +36,7 @@ const fee = Fee(...); // optional fee
 
 const unsignedTx = await wallet.createTx({
   msgs,
+  chainID: 'pisco-1',
   // fee, (optional)
   memo: 'this is optional'
 });
@@ -56,6 +54,7 @@ You can also use the more convenient `Wallet.createAndSignTx()` function, which 
 const tx = await wallet.createAndSignTx({
   msgs,
   fee,
+  chainID: 'pisco-1',
   memo: 'this is optional',
 });
 ```

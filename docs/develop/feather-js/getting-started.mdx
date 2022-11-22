@@ -64,19 +64,17 @@ npm install --save isomorphic-fetch
 2. Open your `index.js` file in a code editor and input the following to initialize the LCD:
 
 ```ts
-import fetch from 'isomorphic-fetch';
-import { Coins, LCDClient } from '@terra-money/feather.js';
-const gasPrices = await fetch('https://pisco-api.terra.dev/gas-prices', {
-  redirect: 'follow',
-});
-const gasPricesJson = await gasPrices.json();
-const gasPricesCoins = new Coins(gasPricesJson);
+import { LCDClient } from '@terra-money/feather.js';
+
 const lcd = new LCDClient({
-  URL: 'https://pisco-lcd.terra.dev', // Use "https://phoenix-lcd.terra.dev" for prod "http://localhost:1317" for localterra.
-  chainID: 'pisco-1', // Use "phoenix-1" for production or "localterra".
-  gasPrices: gasPricesCoins,
-  gasAdjustment: '1.5', // Increase gas price slightly so transactions go through smoothly.
-  gas: 10000000,
+  'pisco-1': {
+    // key must be the chainID
+    lcd: 'https://pisco-lcd.terra.dev',
+    chainID: 'pisco-1',
+    gasAdjustment: 1.75,
+    gasPrices: { uluna: 0.015 },
+    prefix: 'terra', // bech32 prefix, used by the LCD to understand which is the right chain to query
+  },
 });
 ```
 
@@ -162,8 +160,9 @@ const terraSwap = new MsgExecuteContract(
 const tx = await wallet.createAndSignTx({
   msgs: [terraSwap],
   feeDenoms: ['uluna'],
+  chainID: 'pisco-1'
 });
-const result = await lcd.tx.broadcast(tx);
+const result = await lcd.tx.broadcast(tx, chainID: 'pisco-1');
 console.log(result);
 ```
 

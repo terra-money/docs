@@ -200,8 +200,8 @@ const send = new MsgSend(
   { uluna: '1000000' },
 );
 
-const tx = await wallet.createAndSignTx({ msgs: [send] });
-const result = await lcd.tx.broadcast(tx);
+const tx = await wallet.createAndSignTx({ msgs: [send], chainID: 'pisco-1' });
+const result = await lcd.tx.broadcast(tx, chainID: 'pisco-1');
 
 console.log(result);
 ```
@@ -241,8 +241,8 @@ const cw20Send = new MsgExecuteContract(
   },
 );
 
-const tx = await wallet.createAndSignTx({ msgs: [cw20Send] });
-const result = await lcd.tx.broadcast(tx);
+const tx = await wallet.createAndSignTx({ msgs: [cw20Send], chainID: 'pisco-1' });
+const result = await lcd.tx.broadcast(tx, chainID: 'pisco-1');
 
 console.log(result);
 ```
@@ -300,8 +300,8 @@ const terraSwap = new MsgExecuteContract(
   new Coins({ uluna: '1000000' }),
 );
 
-const tx = await wallet.createAndSignTx({ msgs: [terraSwap] });
-const result = await lcd.tx.broadcast(tx);
+const tx = await wallet.createAndSignTx({ msgs: [terraSwap], chainID: 'pisco-1' });
+const result = await lcd.tx.broadcast(tx, chainID: 'pisco-1');
 
 console.log(result);
 ```
@@ -332,47 +332,24 @@ console.log(initMessages);
 
 ## Validate a Terra address
 
-The following code example shows how to do a basic verification on a Terra address.
-
-This is a basic version of the verification, it does not require external libraries as it performs a simple comparison with a regex string. It could give false positives since it doesn't verify the checksum of the address.
+The following code example shows how to do a basic verification on a Terra or other bech32 prefixed addresses.
 
 ```ts
-// basic address validation (no library required)
-function isValid(address) {
-  // check the string format:
-  // - starts with "terra1"
-  // - length == 44 ("terra1" + 38)
-  // - contains only numbers and lower case letters
-  return /(terra1[a-z0-9]{38})/g.test(address);
-}
+import { AccAddress } from '@terra-money/feather.js';
+// validate length, prefix and bech32 checksum. The second parameter is the expected bech32 prefix
+AccAddress.validate('terra1x46rqay4d3cssq8gxxvqz8xt6nwlz4td20k38v', 'terra'); // true
 
-console.log(isValid('terra1dcegyrekltswvyy0xy69ydgxn9x8x32zdtapd8')); // true
-console.log(isValid('terra1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')); // true (even if this doesn't have a valid checksum)
-console.log(isValid('cosmos1zz22dfpvw3zqpeyhvhmx944a588fgcalw744ts')); // false
-console.log(isValid('random string')); // false
-```
+// to check just length and bech32 checksum (if don't know the chain)
+AccAddress.validate('terra1x46rqay4d3cssq8gxxvqz8xt6nwlz4td20k38v'); // true
 
-This is a more advanced verification that requires the bech32 library which is used to verify the checksum.
+// Get the prefix of an address. It will trow an error if the address is invalid
+AccAddress.getPrefix('terra1x46rqay4d3cssq8gxxvqz8xt6nwlz4td20k38v'); // 'terra'
 
-```ts
-import { bech32 } from 'bech32';
-
-// advanced address validation, it also verifies the bech32 checksum
-function isValid(address) {
-  try {
-    const { prefix: decodedPrefix } = bech32.decode(address); // throw error if checksum is invalid
-    // verify address prefix
-    return decodedPrefix === 'terra';
-  } catch {
-    // invalid checksum
-    return false;
-  }
-}
-
-console.log(isValid('terra1dcegyrekltswvyy0xy69ydgxn9x8x32zdtapd8')); // true
-console.log(isValid('terra1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')); // false
-console.log(isValid('cosmos1zz22dfpvw3zqpeyhvhmx944a588fgcalw744ts')); // false
-console.log(isValid('random string')); // false
+// to validate bech32 encoded validator addresses, pubkey, etc. you can use the specific namespace:
+// - ValAddress: for `*valoper...` prefixed validator operator address
+// - ValConsAddress: for `*valcons...` prefixed validator consensus address
+// - AccPubKey: for `*pub...` prefixed account public key
+// - ValPubKey: for `*valoperpub...` prefixed validator public key
 ```
 
 ## Avoid Status 500: timed out waiting for tx to be included in a block
@@ -386,9 +363,9 @@ This is an example to do it in JavaScript:
 ```ts
 // sign the tx
 wallet
-  .createAndSignTx(YOUR_TX_HERE)
+  .createAndSignTx(YOUR_TX_HERE, chainID: YOUR_CHAIN_ID_HERE)
   // use broadcastSync() instead of broadcast()
-  .then((tx) => terra.tx.broadcastSync(tx))
+  .then((tx) => terra.tx.broadcastSync(tx, chainID))
   .then(async (result) => {
     // TODO: use a for or add a timeout to prevent infinite loops
     while (true) {

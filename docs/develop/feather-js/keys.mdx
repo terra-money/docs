@@ -23,7 +23,7 @@ const raw_key = new RawKey(randomBytes(32));
 
 see(raw_key.publicKey); // SimplePublicKey { key: 'AlNdglClnFJMwdeFGlfFTAwbx7rxKxWbgN/lwj5mQ3vw' }
 see(raw_key.privateKey); // <Buffer 53 e2 53 0b 29 c4 9d 54 b3 66 a4 61 7b d3 e2 6e 4c e5 41 cd 12 a6 e9 27 8a 97 61 1c 55 6e cd 4c>
-see(raw_key.accAddress); // terra1ptj88nsljjr9agx07hahu6etv43acksy2q44sd
+see(raw_key.accAddress('terra')); // terra1ptj88nsljjr9agx07hahu6etv43acksy2q44sd
 ```
 
 ## `MnemonicKey`
@@ -44,7 +44,7 @@ const MNE_KEY_RANDOM = new MnemonicKey();
 see(MNE_KEY_RANDOM.mnemonic); // famous { ... } myth world size
 see(MNE_KEY_RANDOM.privateKey); // <Buffer 4f e5 { ... } 51 a4 41 9c>
 see(MNE_KEY_RANDOM.publicKey); // SimplePublicKey { key: 'A8TNSJhn6gGHgY2ohJnkOaZz7Y0FaW/QeytGBaqCLIJU' }
-see(MNE_KEY_RANDOM.accAddress); // terra1l63e8q7yjyd77qanwfgvl43ulagf34a2xzcuv4
+see(MNE_KEY_RANDOM.accAddress('terra')); // terra1l63e8q7yjyd77qanwfgvl43ulagf34a2xzcuv4
 
 const MNE_KEY_EXACT = new MnemonicKey({
   mnemonic:

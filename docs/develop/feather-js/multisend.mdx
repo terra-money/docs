@@ -15,12 +15,15 @@ const {
 } = process.env;
 
 async function main() {
-  const client = new LCDClient({
-    URL: TESTNET_LCD_URL,
-    chainID: TESTNET_CHAIN_ID,
-    gasPrices: "0.15uluna",
-    gasAdjustment: 1.4,
-  });
+const lcd = new LCDClient({
+  'pisco-1': {  // key must be the chainID
+    lcd: 'https://pisco-lcd.terra.dev',
+    chainID: 'pisco-1',
+    gasAdjustment: 1.75,
+    gasPrices: { uluna: 0.015 },
+    prefix: 'terra',  // bech32 prefix, used by the LCD to understand which is the right chain to query
+  },
+});
 
   const keys = {
     test1: new MnemonicKey({
@@ -37,7 +40,7 @@ async function main() {
     }),
   };
 
-  const wallet = client.wallet(keys.test1);
+  const wallet = lcd.wallet(keys.test1);
   const output = new MsgMultiSend.Output(
     "terra199vw7724lzkwz6lf2hsx04lrxfkz09tg8dlp6r",
     "1000000uluna"
@@ -54,12 +57,13 @@ async function main() {
         [output, output, output]
       ),
     ],
+    chainID: 'pisco-1',
   });
 
   const signatures = await Promise.all(
     ["test1", "test2", "test3"].map(async (keyName) => {
       const key = keys[keyName] as MnemonicKey;
-      const acc = (await client.auth.accountInfo(key.accAddress('terra'))) as Account;
+      const acc = (await lcd.auth.accountInfo(key.accAddress('terra'))) as Account;
 
       tx.account_number = acc.account_number;
       tx.sequence = acc.sequence;
@@ -68,10 +72,10 @@ async function main() {
     })
   );
 
-  const stdTx = new StdTx(tx.msgs, tx.fee, signatures, tx.memo);
+  const stdTx = new StdTx(tx.msgs, tx.fee, signatures, tx.memo, chainId);
 
-  await client.tx
-    .broadcastSync(stdTx)
+  await lcd.tx
+    .broadcastSync(stdTx, 'pisco-1')
     .then((result) => {
       console.log(result);
     })

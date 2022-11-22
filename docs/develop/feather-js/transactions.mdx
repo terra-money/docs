@@ -48,13 +48,14 @@ const send = new MsgSend(
 const tx = await wallet.createAndSignTx({
   msgs: [send],
   memo: 'Hello',
+  chainID: 'pisco-1',
 });
 ```
 
 ### Broadcast transaction
 
 ```ts
-const txResult = await terra.tx.broadcast(tx);
+const txResult = await terra.tx.broadcast(tx, 'pisco-1');
 ```
 
 The default broadcast mode is `block`, which waits until the transaction has been included in a block. This will give you the most information about the transaction, including events and errors while processing.
@@ -62,8 +63,8 @@ The default broadcast mode is `block`, which waits until the transaction has bee
 You can also use `sync` or `async` broadcast modes.
 
 ```ts
-// const syncTxResult = await terra.tx.broadcastSync(tx);
-// const asyncTxResult = await terra.tx.broadcastAsync(tx);
+// const syncTxResult = await terra.tx.broadcastSync(tx, 'pisco-1');
+// const asyncTxResult = await terra.tx.broadcastAsync(tx, 'pisco-1');
 ```
 
 ### Check events
@@ -73,7 +74,7 @@ If you broadcasted the transaction with `block`, you can get the events emitted 
 ```ts
 import { isTxError } from '@terra-money/feather.js';
 
-const txResult = terra.tx.broadcast(tx);
+const txResult = terra.tx.broadcast(tx, 'pisco-1');
 
 if (isTxError(txResult)) {
   throw new Error(
