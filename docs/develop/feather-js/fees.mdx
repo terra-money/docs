@@ -21,14 +21,14 @@ You can define the fee estimation parameters when you create your `LCDClient` in
 
 ```ts
 const lcd = new LCDClient({
-  pisco-1": { // key must be the chainID
-    "chainID": "pisco-1",
-    "lcd": "https://pisco-lcd.terra.dev",
-    "gasAdjustment": 1.75,
-    "gasPrices": {
-      "uluna": 0.015
+  'pisco-1':' { // key must be the chainID
+    'chainID': 'pisco-1',
+    'lcd': 'https://pisco-lcd.terra.dev',
+    'gasAdjustment': 1.75,
+    'gasPrices': {
+      'uluna': 0.015
     },
-    "prefix": "terra", // bech32 prefix, used by the LCD to understand which is the right chain to query
+    'prefix': 'terra', // bech32 prefix, used by the LCD to understand which is the right chain to query
   }
 });
 ```

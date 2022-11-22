@@ -52,7 +52,7 @@ const MNE_KEY_EXACT = new MnemonicKey({
 });
 
 const MNE_KEY_RANDOM_WITH_HD_PATH = new MnemonicKey({
-  // mnemonic: "",   // optional, will be random if not provided
+  // mnemonic: '',   // optional, will be random if not provided
   coinType: 330, // optional, default
   account: 0, // optional, default
   index: 0, // optional, default
@@ -71,7 +71,7 @@ const MNE_KEY_FULLY_RESOLVED = new MnemonicKey({
 
 The `MnemonicKey` can be used to recover a wallet with a particular BIP44 HD path: `m/44'/${coinType}'/${account}'/0/${index}`.
 
-<Admonition type="tip" icon="💡" title="HD keys">
+<Admonition type='tip' icon='💡' title='HD keys'>
 
 As per [_Cosmos HD Key Derivation_](https://github.com/confio/cosmos-hd-key-derivation-spec):
 
@@ -90,7 +90,7 @@ const mne_key = new MnemonicKey({
 
 - [BIP-39 Mnemonics](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki)
 
-- Coin Type Numbers `330` and `118` above refer to "coin-types" for `Cosmos` and `Terra` blockchains accordingly. These numbers are defined according to the [BIP044](https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki) standard. You can find more information [here](https://github.com/satoshilabs/slips/blob/master/slip-0044.md).
+- Coin Type Numbers `330` and `118` above refer to 'coin-types' for `Cosmos` and `Terra` blockchains accordingly. These numbers are defined according to the [BIP044](https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki) standard. You can find more information [here](https://github.com/satoshilabs/slips/blob/master/slip-0044.md).
 
 ## Custom key implementation
 

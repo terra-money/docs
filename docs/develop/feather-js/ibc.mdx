@@ -70,8 +70,11 @@ const transfer = new MsgTransfer(
   (Date.now() + 60 * 1000) * 1e6,
 );
 
-const tx = await wallet.createAndSignTx({ msgs: [transfer], chainID: 'pisco-1' });
-const result = await lcd.tx.broadcast(tx, chainID: 'pisco-1');
+const tx = await wallet.createAndSignTx({
+  msgs: [transfer],
+  chainID: 'pisco-1',
+});
+const result = await lcd.tx.broadcast(tx, 'pisco-1');
 
 console.log(result);
 ```

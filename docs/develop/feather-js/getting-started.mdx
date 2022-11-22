@@ -41,7 +41,7 @@ npm install @terra-money/feather.js
 touch index.js
 ```
 
-4. Open the `package.json` file in a code editor and add `"type": "module",`.
+4. Open the `package.json` file in a code editor and add `'type': 'module',`.
 
 ```json
 {
@@ -55,20 +55,14 @@ touch index.js
 
 Terra’s LCD or Light Client Daemon allows users to connect to the blockchain, make queries, create wallets, and submit transactions. It's the main workhorse behind `feather.js`.
 
-1. Install a fetch library to make HTTP requests and dynamically pull recommended gas prices. You can use the one referenced below or choose your favorite.
-
-```sh
-npm install --save isomorphic-fetch
-```
-
-2. Open your `index.js` file in a code editor and input the following to initialize the LCD:
+1. Open your `index.js` file in a code editor and input the following to initialize the LCD:
 
 ```ts
 import { LCDClient } from '@terra-money/feather.js';
 
 const lcd = new LCDClient({
+  // key must be the chainID
   'pisco-1': {
-    // key must be the chainID
     lcd: 'https://pisco-lcd.terra.dev',
     chainID: 'pisco-1',
     gasAdjustment: 1.75,
@@ -78,11 +72,11 @@ const lcd = new LCDClient({
 });
 ```
 
-<Admonition type="note" icon="📝" title="Switching to LocalTerra or the mainnet">
+<Admonition type='note' icon='📝' title='Switching to LocalTerra or the mainnet'>
 
-The previous code block shows how to connect to the pisco testnet. To connect to LocalTerra, change the `URL` to `”http://localhost:1317"`. To connect to the phoenix-1 mainnet for production, use `“https://phoenix-lcd.terra.dev”`.
+The previous code block shows how to connect to the pisco testnet. To connect to LocalTerra, change the `URL` to `http://localhost:1317`. To connect to the phoenix-1 mainnet for production, use `https://phoenix-lcd.terra.dev`.
 
-You will also need to change the `chainID` from `"pisco-1"` to `”localterra”` or `"phoenix-1"`.
+You will also need to change the `chainID` from `pisco-1` to `localterra` or `phoenix-1`.
 
 </Admonition>
 
@@ -102,7 +96,7 @@ const mk = new MnemonicKey({
 const wallet = lcd.wallet(mk);
 ```
 
-<Admonition type="caution" icon="☢️" title="Mnemonic security">
+<Admonition type='caution' icon='☢️' title='Mnemonic security'>
 
 Although this tutorial has you input your mnemonic directly, this practice should be avoided in production.
 For security reasons, it's better to store your mnemonic key data in your environment by using `process.env.SECRET_MNEMONIC` or `process.env.SECRET_PRIV_KEY`. This practice is more secure than a hard-coded string.
@@ -160,9 +154,9 @@ const terraSwap = new MsgExecuteContract(
 const tx = await wallet.createAndSignTx({
   msgs: [terraSwap],
   feeDenoms: ['uluna'],
-  chainID: 'pisco-1'
+  chainID: 'pisco-1',
 });
-const result = await lcd.tx.broadcast(tx, chainID: 'pisco-1');
+const result = await lcd.tx.broadcast(tx, 'pisco-1');
 console.log(result);
 ```
 

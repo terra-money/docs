@@ -4,48 +4,6 @@ import Admonition from '@theme/Admonition';
 
 <Admonition typpe='caution'>
 
-Feather.js no longer supports Classic. For Terra classic support use [terra.js](https://github.com/terra-money/terra.js).
+Feather.js doesn't support Terra Classic Classic. Please use the [Terra Classic docs site](https://classic-docs.terra.money/).
 
 </Admonition>
-
-## LCDClient
-
-```ts
-const gasPrices = await(
-  await fetch('https://columbus-api.terra.dev/gas-prices', {
-    redirect: 'follow',
-  }),
-).json();
-
-const gasPricesCoins = new Coins(gasPrices);
-
-const lcd = new LCDClient({
-  URL: 'https://columbus-lcd.terra.dev/',
-  chainID: 'columbus-5',
-  gasPrices: gasPricesCoins,
-  gasAdjustment: '1.5',
-  gas: 10000000,
-  isClassic: true, // false by default, change to true if you want to interact with Terra Classic
-});
-```
-
-## Conversion Functions
-
-The `isClassic` boolean can also be specified for most unit conversion functions in feather.js. If unspecified, these methods will simply use the Luna version specified in the LCD config. The following are two examples of methods that accept this boolean value.
-
-```ts
-public toAmino(isClassic?: boolean)
-public fromData(isClassic?: boolean)
-```
-
-## Signing Messages with Keys
-
-Wallet objects on Terra contain information about the LCDClient, so they inherit the `isClassic` parameter automatically. However, key objects, such as `MnemonicKey`, `RawKey` or `CLIKey` do not. For example, `createSignatureAmino` is a method where you can specify whether or not you would like to use Terra Classic.
-
-```ts
- public async createSignatureAmino(
-      tx: SignDoc,
-      isClassic?: boolean
-    ): Promise<SignatureV2> { ... }
-
-```
