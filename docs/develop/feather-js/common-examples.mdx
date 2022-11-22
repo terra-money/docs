@@ -91,6 +91,13 @@ TODO;
 ```
 
 If the lcd is configured for multiple chains, you can specify the chainID to query.
+In addition, some queries always require a chainID to be specified.
+
+```ts
+// query the total circulating supply
+const total = lcd.bank.total('phoenix-1');
+console.log(total);
+```
 
 ## Get wallet balance (CW20 tokens)
 
