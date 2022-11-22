@@ -2,15 +2,20 @@ import Admonition from '@theme/Admonition';
 
 # feather.js
 
-feather.js can be used to interact with the Terra blockchain within JavaScript runtimes, such as Node.js and the browser. feather.js enables the following functionalities:
+Feather.js is a fork of terra.js with multi-chain capabilities. It can be used to interact with cosmos blockchains like Terra within JavaScript runtimes, such as Node.js and the browser. feather.js enables the following functionalities:
 
 - Deserializing blockchain data into JavaScript objects with native data types and methods.
 - Serializing objects back into a blockchain-compatible format.
-- Providing access to the Terrad node API (LCD) from a JavaScript-based interface.
+- Providing access to the Terrad node API (LCD) and other compatible feather chains from a JavaScript-based interface.
 - Providing additional utilities, such as hash functions and key-signing algorithms.
 
-<Admonition type="tip" icon="💡" title="Using feather.js on the Terra chain">
+<Admonition type="tip" icon="💡" title="Migrating to feather.js from terra.js">
 
-Outside of the deprecation of the treasury, market, and oracle modules, feather.js functionality remains relatively unchanged. There are a few additions to allow for legacy commands which are explained in the [Using Terra Classic](./terra-classic.mdx) page.
+- New [configuration syntax](./common-examples.html#configuring-lcdclient) for LCDClient to support multiple chains.
+- Need to [specify the chainID](./common-examples.html#sending-native-tokens) when creating or broadcasting a transaction.
+- Queries that require an address with automatically detect the chain based on the bech32 prefix. Otherwise, the query require an extra chainID parameter.
+- `accAddress` on Key objects now are now functions that require the prefix as parameter.
+
+Note that Ledger users will be able to use their existing account in the Terra Ledger app on all the new chains.
 
 </Admonition>
