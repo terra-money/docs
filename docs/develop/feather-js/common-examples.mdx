@@ -151,37 +151,6 @@ TxInfo {
 }
 ```
 
-## Get link to transaction
-
-```js
-const getTransactionLink = (hash, chainID) =>
-  `https://finder.terra.money/${chainID}/tx/${hash}`;
-const hash = 'CAB264B3D92FF3DFE209DADE791A866876DE5DD2A320C1200F9C5EC5F0E7B14B';
-
-console.log(getTransactionLink(hash, 'pisco-1'));
-```
-
-Example response:
-
-```
-https://finder.terra.money/pisco-1/tx/CAB264B3D92FF3DFE209DADE791A866876DE5DD2A320C1200F9C5EC5F0E7B14B
-```
-
-## Get link to wallet address
-
-```js
-const getWalletLink = (address, chainID) =>
-  `https://finder.terra.money/${chainID}/address/${address}`;
-const address = 'terra1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
-console.log(getWalletLink(address, 'pisco-1'));
-```
-
-Example response:
-
-```
-https://finder.terra.money/pisco-1/address/terra1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-```
-
 ## Sending native tokens
 
 The following code example shows how to send native tokens:
