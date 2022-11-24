@@ -1,8 +1,8 @@
 import Admonition from '@theme/Admonition';
 
-# Get started with Terra.js
+# Get started with feather.js
 
-This is an in-depth guide on how to use the `terra.js` SDK.
+This is an in-depth guide on how to use the `feather.js` SDK.
 
 In this tutorial, you'll learn how to:
 
@@ -12,7 +12,7 @@ In this tutorial, you'll learn how to:
 4. [Query a swap contract](#5-query-a-terraswap-contract-and-set-up-the-transaction)
 5. [Create, sign, and broadcast a transaction](#6-broadcast-the-transaction)
 
-By the end of this guide, you'll be able to execute a token swap from your application using Terra.js.
+By the end of this guide, you'll be able to execute a token swap from your application using feather.js.
 
 ## Prerequisites
 
@@ -24,24 +24,24 @@ By the end of this guide, you'll be able to execute a token swap from your appli
 1. Create a new directory for your project:
 
 ```sh
-mkdir my-terra-js-project
+mkdir my-feather-js-project
 ```
 
 2. Enter your new project directory:
 
 ```sh
-cd <my-terra-js-project>
+cd <my-feather-js-project>
 ```
 
-3. Next, initialize npm, install the `terra.js` package, and create an `index.js` file to house the code:
+3. Next, initialize npm, install the `feather.js` package, and create an `index.js` file to house the code:
 
 ```sh
 npm init -y
-npm install @terra-money/terra.js
+npm install @terra-money/feather.js
 touch index.js
 ```
 
-4. Open the `package.json` file in a code editor and add `"type": "module",`.
+4. Open the `package.json` file in a code editor and add `'type': 'module',`.
 
 ```json
 {
@@ -53,38 +53,30 @@ touch index.js
 
 ## 2. Initialize the LCD
 
-Terra’s LCD or Light Client Daemon allows users to connect to the blockchain, make queries, create wallets, and submit transactions. It's the main workhorse behind `terra.js`.
+Terra’s LCD or Light Client Daemon allows users to connect to the blockchain, make queries, create wallets, and submit transactions. It's the main workhorse behind `feather.js`.
 
-1. Install a fetch library to make HTTP requests and dynamically pull recommended gas prices. You can use the one referenced below or choose your favorite.
-
-```sh
-npm install --save isomorphic-fetch
-```
-
-2. Open your `index.js` file in a code editor and input the following to initialize the LCD:
+1. Open your `index.js` file in a code editor and input the following to initialize the LCD:
 
 ```ts
-import fetch from "isomorphic-fetch";
-import { Coins, LCDClient } from "@terra-money/terra.js";
-const gasPrices = await fetch(
-  "https://pisco-api.terra.dev/gas-prices", { redirect: 'follow' }
-);
-const gasPricesJson = await gasPrices.json();
-const gasPricesCoins = new Coins(gasPricesJson);
+import { LCDClient } from '@terra-money/feather.js';
+
 const lcd = new LCDClient({
-  URL: "https://pisco-lcd.terra.dev", // Use "https://phoenix-lcd.terra.dev" for prod "http://localhost:1317" for localterra.
-  chainID: "pisco-1", // Use "phoenix-1" for production or "localterra".
-  gasPrices: gasPricesCoins,
-  gasAdjustment: "1.5", // Increase gas price slightly so transactions go through smoothly.
-  gas: 10000000,
+  // key must be the chainID
+  'pisco-1': {
+    lcd: 'https://pisco-lcd.terra.dev',
+    chainID: 'pisco-1',
+    gasAdjustment: 1.75,
+    gasPrices: { uluna: 0.015 },
+    prefix: 'terra', // bech32 prefix, used by the LCD to understand which is the right chain to query
+  },
 });
 ```
 
-<Admonition type="note" icon="📝" title="Switching to LocalTerra or the mainnet">
+<Admonition type='note' icon='📝' title='Switching to LocalTerra or the mainnet'>
 
-The previous code block shows how to connect to the pisco testnet. To connect to LocalTerra, change the `URL` to `”http://localhost:1317"`. To connect to the phoenix-1 mainnet for production, use `“https://phoenix-lcd.terra.dev”`.
+The previous code block shows how to connect to the pisco testnet. To connect to LocalTerra, change the `URL` to `http://localhost:1317`. To connect to the phoenix-1 mainnet for production, use `https://phoenix-lcd.terra.dev`.
 
-You will also need to change the `chainID` from `"pisco-1"` to `”localterra”` or `"phoenix-1"`.
+You will also need to change the `chainID` from `pisco-1` to `localterra` or `phoenix-1`.
 
 </Admonition>
 
@@ -97,14 +89,14 @@ You will also need to change the `chainID` from `"pisco-1"` to `”localterra”
 3. Add the following code to your `index.js` file and input your mnemonic key:
 
 ```ts
-import { MnemonicKey } from "@terra-money/terra.js";
+import { MnemonicKey } from '@terra-money/feather.js';
 const mk = new MnemonicKey({
-  mnemonic: "//Input your 24-word mnemonic key here//",
+  mnemonic: '//Input your 24-word mnemonic key here//',
 });
 const wallet = lcd.wallet(mk);
 ```
 
-<Admonition type="caution" icon="☢️" title="Mnemonic security">
+<Admonition type='caution' icon='☢️' title='Mnemonic security'>
 
 Although this tutorial has you input your mnemonic directly, this practice should be avoided in production.
 For security reasons, it's better to store your mnemonic key data in your environment by using `process.env.SECRET_MNEMONIC` or `process.env.SECRET_PRIV_KEY`. This practice is more secure than a hard-coded string.
@@ -124,7 +116,7 @@ Before you can perform a swap, you will need a belief price. You can calculate t
 1. Add the following code to your `index.js` file. Make sure the contract address is correct.
 
 ```ts
-const pool = "<INSERT_POOL_ADDRESS>"; // A terraswap contract address on pisco.
+const pool = '<INSERT_POOL_ADDRESS>'; // A terraswap contract address on pisco.
 const { assets } = await lcd.wasm.contractQuery(pool, { pool: {} }); // Fetch the amount of each asset in the pool.
 const beliefPrice = (assets[0].amount / assets[1].amount).toFixed(18); // Calculate belief price using proportion of pool balances.
 ```
@@ -132,26 +124,26 @@ const beliefPrice = (assets[0].amount / assets[1].amount).toFixed(18); // Calcul
 2. Next, generate a message to broadcast to the network:
 
 ```ts
-   import { MsgExecuteContract } from "@terra-money/terra.js";
-   const terraSwap = new MsgExecuteContract(
-     wallet.key.accAddress,
-     pool,
-     {
-       swap: {
-         max_spread: "0.001",
-         offer_asset: {
-           info: {
-             native_token: {
-               denom: "uluna",
-             },
-           },
-           amount: "100000",
-         },
-         belief_price: beliefPrice,
-       },
-     },
-     new Coins({ uluna: "100000" })
-   );
+import { MsgExecuteContract } from '@terra-money/feather.js';
+const terraSwap = new MsgExecuteContract(
+  wallet.key.accAddress('terra'),
+  pool,
+  {
+    swap: {
+      max_spread: '0.001',
+      offer_asset: {
+        info: {
+          native_token: {
+            denom: 'uluna',
+          },
+        },
+        amount: '100000',
+      },
+      belief_price: beliefPrice,
+    },
+  },
+  new Coins({ uluna: '100000' }),
+);
 ```
 
 ## 6. Broadcast the transaction
@@ -159,12 +151,13 @@ const beliefPrice = (assets[0].amount / assets[1].amount).toFixed(18); // Calcul
 1. Add the following code to `index.js` to create, sign, and broadcast the transaction. It's important to specify `uluna` as the fee denomination becuase Luna is the only denomination the faucet sends.
 
 ```ts
-   const tx = await wallet.createAndSignTx({
-     msgs: [terraSwap],
-     feeDenoms: ["uluna"],
-   });
-   const result = await lcd.tx.broadcast(tx);
-   console.log(result);
+const tx = await wallet.createAndSignTx({
+  msgs: [terraSwap],
+  feeDenoms: ['uluna'],
+  chainID: 'pisco-1',
+});
+const result = await lcd.tx.broadcast(tx, 'pisco-1');
+console.log(result);
 ```
 
 2. Run the code in your terminal:
@@ -179,4 +172,4 @@ And that's it! You can find other pool addresses [here](https://app.terraswap.io
 
 ## More examples
 
-View the [Common examples](common-examples.mdx) section for more information on using Terra.js.
+View the [Common examples](common-examples.mdx) section for more information on using feather.js.

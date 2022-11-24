@@ -1,42 +1,54 @@
 # Smart contracts
 
-This document explains how to perform tasks related to working with smart contracts with Terra.js.
+This document explains how to perform tasks related to working with smart contracts with feather.js.
 
 ## Upload code
 
 You will first need a compiled WASM smart contract's binary to upload.
 
 ```ts
-import { LCDClient, MsgStoreCode, MnemonicKey, isTxError } from '@terra-money/terra.js';
+import {
+  LCDClient,
+  MsgStoreCode,
+  MnemonicKey,
+  isTxError,
+} from '@terra-money/feather.js';
 import * as fs from 'fs';
 
 // test1 key from localterra accounts
 const mk = new MnemonicKey({
-  mnemonic: 'notice oak worry limit wrap speak medal online prefer cluster roof addict wrist behave treat actual wasp year salad speed social layer crew genius'
-})
+  mnemonic:
+    'notice oak worry limit wrap speak medal online prefer cluster roof addict wrist behave treat actual wasp year salad speed social layer crew genius',
+});
 
 // connect to localterra
 const terra = new LCDClient({
-  URL: 'http://localhost:1317',
-  chainID: 'localterra'
+  localterra: {
+    lcd: 'http://localhost:1317',
+    chainID: 'localterra',
+    gasAdjustment: 1.75,
+    gasPrices: { uluna: 0.015 },
+    prefix: 'terra', // bech32 prefix
+  },
 });
 
 const wallet = terra.wallet(mk);
 
 const storeCode = new MsgStoreCode(
-  wallet.key.accAddress,
-  fs.readFileSync('contract.wasm').toString('base64')
+  wallet.key.accAddress('terra'),
+  fs.readFileSync('contract.wasm').toString('base64'),
 );
 const storeCodeTx = await wallet.createAndSignTx({
   msgs: [storeCode],
+  chainID: 'pisco-1',
 });
-const storeCodeTxResult = await terra.tx.broadcast(storeCodeTx);
+const storeCodeTxResult = await terra.tx.broadcast(storeCodeTx, 'pisco-1');
 
 console.log(storeCodeTxResult);
 
 if (isTxError(storeCodeTxResult)) {
   throw new Error(
-    `store code failed. code: ${storeCodeTxResult.code}, codespace: ${storeCodeTxResult.codespace}, raw_log: ${storeCodeTxResult.raw_log}`
+    `store code failed. code: ${storeCodeTxResult.code}, codespace: ${storeCodeTxResult.codespace}, raw_log: ${storeCodeTxResult.raw_log}`,
   );
 }
 
@@ -52,29 +64,29 @@ For Terra smart contracts, there is a distinction between uploading contract cod
 To create or instantiate a smart contract, you must first know the code ID of an uploaded code. You will reference it in a `MsgInstantiateContract` alongside the InitMsg to create the contract. Upon successful creation, your contract will be located at an address that you specify.
 
 ```ts
-import { MsgInstantiateContract } from '@terra-money/terra.js';
-
+import { MsgInstantiateContract } from '@terra-money/feather.js';
 
 const instantiate = new MsgInstantiateContract(
-  wallet.key.accAddress,
+  wallet.key.accAddress('terra'),
   code_id[0], // code ID
   {
     count: 0,
   }, // InitMsg
   { uluna: 10000000 }, // init coins
-  false // migratable
+  false, // migratable
 );
 
 const instantiateTx = await wallet.createAndSignTx({
   msgs: [instantiate],
+  chainID: 'pisco-1',
 });
-const instantiateTxResult = await terra.tx.broadcast(instantiateTx);
+const instantiateTxResult = await terra.tx.broadcast(instantiateTx, 'pisco-1');
 
 console.log(instantiateTxResult);
 
 if (isTxError(instantiateTxResult)) {
   throw new Error(
-    `instantiate failed. code: ${instantiateTxResult.code}, codespace: ${instantiateTxResult.codespace}, raw_log: ${instantiateTxResult.raw_log}`
+    `instantiate failed. code: ${instantiateTxResult.code}, codespace: ${instantiateTxResult.codespace}, raw_log: ${instantiateTxResult.raw_log}`,
   );
 }
 
@@ -88,20 +100,21 @@ const {
 Smart contracts respond to JSON messages called **HandleMsg** which can exist as different types. The smart contract writer should provide any end-users of the smart contract with the expected format of all the varieties of HandleMsg the contract is supposed to understand, in the form of a JSON schema. The schema thus provides an analog to Ethereum contracts' ABI.
 
 ```ts
-import { MsgExecuteContract } from '@terra-money/terra.js';
+import { MsgExecuteContract } from '@terra-money/feather.js';
 
 const execute = new MsgExecuteContract(
-  wallet.key.accAddress, // sender
+  wallet.key.accAddress('terra'), // sender
   contract_address[0], // contract account address
   { ...executeMsg }, // handle msg
-  { uluna: 100000 } // coins
+  { uluna: 100000 }, // coins
 );
 
 const executeTx = await wallet.createAndSignTx({
-  msgs: [execute]
+  msgs: [execute],
+  chainID: 'pisco-1',
 });
 
-const executeTxResult = await terra.tx.broadcast(executeTx);
+const executeTxResult = await terra.tx.broadcast(executeTx, 'pisco-1');
 ```
 
 ## Query data from a contract
@@ -111,6 +124,6 @@ A contract can define a query handler, which understands requests for data speci
 ```ts
 const result = await terra.wasm.contractQuery(
   contract_address[0],
-  { query: { queryMsgArguments } } // query msg
+  { query: { queryMsgArguments } }, // query msg
 );
 ```

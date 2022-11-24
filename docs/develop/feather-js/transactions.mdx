@@ -18,12 +18,12 @@ The messages included in a transaction contain the information that will be rout
 You will first want to create a wallet which you can use to sign transactions.
 
 ```ts
-import { MnemonicKey, LCDClient } from "@terra-money/terra.js";
+import { MnemonicKey, LCDClient } from '@terra-money/feather.js';
 
 const mk = new MnemonicKey();
 const terra = new LCDClient({
-  URL: "https://pisco-lcd.terra.dev",
-  chainID: "pisco-1",
+  URL: 'https://pisco-lcd.terra.dev',
+  chainID: 'pisco-1',
 });
 const wallet = terra.wallet(mk);
 ```
@@ -31,11 +31,15 @@ const wallet = terra.wallet(mk);
 ### Create messages
 
 ```ts
-import { MsgSend } from "@terra-money/terra.js";
+import { MsgSend } from '@terra-money/feather.js';
 
-const send = new MsgSend(wallet.key.accAddress, "<random-terra-address>", {
-  uluna: 1000,
-});
+const send = new MsgSend(
+  wallet.key.accAddress('terra'),
+  '<random-terra-address>',
+  {
+    uluna: 1000,
+  },
+);
 ```
 
 ### Create and Sign Transaction
@@ -43,14 +47,15 @@ const send = new MsgSend(wallet.key.accAddress, "<random-terra-address>", {
 ```ts
 const tx = await wallet.createAndSignTx({
   msgs: [send],
-  memo: "Hello",
+  memo: 'Hello',
+  chainID: 'pisco-1',
 });
 ```
 
 ### Broadcast transaction
 
 ```ts
-const txResult = await terra.tx.broadcast(tx);
+const txResult = await terra.tx.broadcast(tx, 'pisco-1');
 ```
 
 The default broadcast mode is `block`, which waits until the transaction has been included in a block. This will give you the most information about the transaction, including events and errors while processing.
@@ -58,8 +63,8 @@ The default broadcast mode is `block`, which waits until the transaction has bee
 You can also use `sync` or `async` broadcast modes.
 
 ```ts
-// const syncTxResult = await terra.tx.broadcastSync(tx);
-// const asyncTxResult = await terra.tx.broadcastAsync(tx);
+// const syncTxResult = await terra.tx.broadcastSync(tx, 'pisco-1');
+// const asyncTxResult = await terra.tx.broadcastAsync(tx, 'pisco-1');
 ```
 
 ### Check events
@@ -67,13 +72,13 @@ You can also use `sync` or `async` broadcast modes.
 If you broadcasted the transaction with `block`, you can get the events emitted by your transaction.
 
 ```ts
-import { isTxError } from "@terra-money/terra.js";
+import { isTxError } from '@terra-money/feather.js';
 
-const txResult = terra.tx.broadcast(tx);
+const txResult = terra.tx.broadcast(tx, 'pisco-1');
 
 if (isTxError(txResult)) {
   throw new Error(
-    `encountered an error while running the transaction: ${txResult.code} ${txResult.codespace}`
+    `encountered an error while running the transaction: ${txResult.code} ${txResult.codespace}`,
   );
 }
 
