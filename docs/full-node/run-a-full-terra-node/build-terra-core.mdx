@@ -14,13 +14,15 @@ Terra Core is the official Golang reference implementation of the Terra node sof
 
 If you are syncing a node from genesis, you will need to use the appropriate core version for the block height of the respective chain you are syncing. Follow the [sync from genesis](./sync.mdx#sync-from-genesis) guide for step-by-step instructions.
 
-| Network       | Type    | Core Version at Genesis | Fork height        | Core version after fork height                                                                             |
-| :---------------| :------ | :------------------------------------------------------------------------------------------------ | :--------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------- |
-| `phoenix-1`     | Mainnet | v2.0.0                      |  890000                                        | v2.1.1             |
-| `pisco-1`       | Testnet | v2.0.0-rc.0                 |  838500                                        | 2.1.0-beta.1       |
+| Network Name | Network Type | Block Height Range  | Core Version |
+| :----------: | :----------: | :-----------------: | :----------: |
+| `phoenix-1`  |   Mainnet    | `genesis` - 890000  |    v2.0.0    |
+|              |              |  89000 - `present`  |    v2.1.1    |
+|  `pisco-1`   |   Testnet    | `genesis` - 838500  | v2.0.0-rc.0  |
+|              |              |  838500 - 2777777   | 2.1.0-beta.1 |
+|              |              | 2777777 - `present` |    v2.2.0    |
 
 </Admonition>
-
 
 1. Use `git` to retrieve [Terra Core](https://github.com/terra-money/core/), and check out the `main` branch, which contains the latest stable release. You can find the latest tag on the [tags page](https://github.com/terra-money/core/tags) or via autocomplete in your terminal: type `git checkout v` and press `<TAB>`.
 
@@ -53,7 +55,6 @@ If you are syncing a node from genesis, you will need to use the appropriate cor
    go: go version go1.18.2 darwin/amd64
    # ...followed by a lot of dependenecies
    ```
-
 
 <Admonition type="tip" icon="💡">
 
