@@ -9,7 +9,7 @@ const learnCards: CardProps[] = [
     summary: 'Learn how Terra works.'
   },
   {
-    href: '/learn/terra-station',
+    href: '/learn/station',
     lightSVG: '/img/icons/station/station.svg',
     darkSVG: '/img/icons/dark/station.svg',
     header: 'Get started with Station',

@@ -1,4 +1,3 @@
-
 import Admonition from '@theme/Admonition';
 
 # Use Terrain with LocalTerra
@@ -10,7 +9,7 @@ LocalTerra is a complete Terra testnet and ecosystem containerized with Docker. 
 - [Docker](https://docs.docker.com/get-docker/)
 - [`docker-compose`](https://docs.docker.com/compose/install/)
 - At least 16 GB of RAM
-- [Terra Station Chrome extension](../../learn/terra-station/Download/terra-station-extension.mdx)
+- [Station Chrome extension](../../learn/station/Download/station-extension.mdx)
 - [Node.js version 16](https://nodejs.org/en/blog/release/v16.16.0/)
 
 <Admonition type="caution" icon="☢️" title="Node version error">
@@ -42,6 +41,7 @@ To default to the LTS version of node when restarting your terminal, run the fol
 ```sh
 nvm alias default <desired-node-version>
 ```
+
 </p>
 
 </details>
@@ -59,6 +59,7 @@ git clone --depth 1 https://github.com/terra-money/localterra
 cd localterra
 docker-compose up
 ```
+
 ---
 
 2. Start LocalTerra.
@@ -66,6 +67,7 @@ docker-compose up
 ```sh install-LocalTerra focus=2:3
 
 ```
+
 ---
 
 3. You will start seeing LocalTerra block activity in your terminal. Keep LocalTerra running while you perform the next steps in a new terminal window.
@@ -82,7 +84,6 @@ To view LocalTerra wallet information, visit the [LocalTerra accounts page](../l
 For more configuration options, visit the [LocalTerra configuration page](../localterra/configure.mdx).
 
 </Admonition>
-
 
 # Counter tutorial
 
@@ -138,10 +139,9 @@ The deploy command performs the following steps automatically.
 
 <Admonition type="tip" icon="💡" title="Increase Docker memory">
 
-If you are running LocalTerra and the previous `deploy` command is not working, try increasing Docker's memory allowance.  You can do this by clicking on the Docker icon, clicking on **Preferences** and then navigating to **Resources**. Increase the memory to at least 4 GB and then click **Apply & Restart**. You can then try running the deploy command again. If you are still having trouble with deploying your dApp, you can try increasing the memory to 6 GB.
+If you are running LocalTerra and the previous `deploy` command is not working, try increasing Docker's memory allowance. You can do this by clicking on the Docker icon, clicking on **Preferences** and then navigating to **Resources**. Increase the memory to at least 4 GB and then click **Apply & Restart**. You can then try running the deploy command again. If you are still having trouble with deploying your dApp, you can try increasing the memory to 6 GB.
 
 </Admonition>
-
 
 ## 3. Generate TypeScript client
 
@@ -168,13 +168,13 @@ terrain console
 2. In the Terrain console, you can increment the counter by running the following command.
 
 ```js
-await lib.increment()
+await lib.increment();
 ```
 
 3. You can also get the current count.
 
 ```js
-await lib.getCountQuery()
+await lib.getCountQuery();
 ```
 
 4. After incrementing once, `await lib.getCountQuery()` should return a count of 1.
@@ -193,7 +193,7 @@ Before proceeding to the next section, exit the terrain console by using "Ctrl +
 
 When you scaffold a template app with Terrain, it will contain a simple front end.
 
-1. Open the [Terra Station Chrome extension](https://chrome.google.com/webstore/detail/terra-station-wallet/aiifbnbfobpmeekipheeijimdpnlpgpp), click the gear icon in the upper right-hand corner, and switch the network to LocalTerra.
+1. Open the [Station Chrome extension](https://chrome.google.com/webstore/detail/station-wallet/aiifbnbfobpmeekipheeijimdpnlpgpp), click the gear icon in the upper right-hand corner, and switch the network to LocalTerra.
 
 2. To use the front end, run the following commands.
 
@@ -202,13 +202,13 @@ cd frontend
 npm start
 ```
 
-3. Open the Terra Station extension and click **Add a wallet**. Click **Recover wallet** and input the following seed phrase to access the sole validator on the LocalTerra network and gain funds to get started with smart contracts:
+3. Open the Station extension and click **Add a wallet**. Click **Recover wallet** and input the following seed phrase to access the sole validator on the LocalTerra network and gain funds to get started with smart contracts:
 
 ```
 satisfy adjust timber high purchase tuition stool faith fine install that you unaware feed domain license impose boss human eager hat rent enjoy dawn
 ```
 
-4. With LocalTerra selected in Terra Station and the local seed phrase imported, you can now increment and reset the counter from the front end.
+4. With LocalTerra selected in Station and the local seed phrase imported, you can now increment and reset the counter from the front end.
 
 ## Demo
 
