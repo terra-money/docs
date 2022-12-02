@@ -62,9 +62,9 @@ Congratulations! You have just created a Station wallet.
 
 1. Purchase your tokens on [an exchange that lists Luna](https://coinmarketcap.com/currencies/terra-luna-v2/markets/).
 
-2. Withdraw any token supported by the Terra network from your exchange. Every exchange will be different and you should visit the web page of their preferred exchange for details on how to withdraw tokens. Use the following steps as a generic guide.
+2. Withdraw any token supported by Station from your exchange. Every exchange will be different and you should visit the web page of their preferred exchange for details on how to withdraw tokens. Use the following steps as a generic guide.
 
-   1. To receive tokens to your wallet, use your wallet address. To copy your wallet address, just click on the name of your wallet in the upper right-hand corner of the app and click on **COPY** just below the address. Your wallet address will take the following form: `terra<random-numbers-and-letters>`
+   1. To receive tokens to your wallet, use your wallet address. To copy your wallet address, just click on the name of your wallet in the upper right-hand corner of the app and click on **COPY** just below the address. Your wallet address will take the following form: `terra<random-numbers-and-letters>`. Note, the prefix will differ if you are sending assets form a different Station-supported chain.
 
    2. Double-check that your submitted address matches the address of the wallet where you would like to receive funds.
 
@@ -78,7 +78,7 @@ When you transfer tokens from an exchange, it will take some time for the tokens
 
 ## Manual Staking
 
-Stake your Luna to a validator to start earning rewards. Before you stake, make sure you have Luna in your wallet. You can transfer Luna from an [exchange](#receive-tokens-from-an-exchange) or [another wallet](../send.mdx).
+Stake your Luna to a validator of your choice to start earning rewards.
 
 1. Open the Station desktop app and navigate to the **Stake** page.
 
@@ -106,15 +106,15 @@ Congratulations, you've just delegated Luna!
 
 ## Quick Staking
 
-Quick staking chooses random validators on your behalf that meet the following criteria:
+Quick staking chooses validators to stake to on your behalf that meet the following criteria:
 
 - Bottom 65% of the validator set by voting power
 - No slashes in last 1,200,000 blocks
 - Commission of 5% or less
 
-To quick stake, follow the steps outlines above but select **Quick Stake** on the **Stake Page**. This will skip the step of having to manually select a validator, as they will.
+To quick stake, follow the steps outlines above but select **Quick Stake** on the **Stake Page**. This will skip the step of having to manually select a validator.
 
-<Admonition type="info" icon="☢️" title="Quick stake validators">
+<Admonition type="info" icon="💡" title="Quick stake validators">
 Delegations of 100 or less will be delegated to 1 validators.
 Delegations of 1000 or less will be split among 2 validators.
 Delegations of 10,000 or less will be split among 4 validators.
@@ -122,11 +122,13 @@ Delegations of 10,000 or more will be split among 5 validators.
 
 </Admonition>
 
+The quick undelegation functionality considers your current delegations and undelegates from them in order from most to least voting power until your desired token amount is met.
+
 ## Staking other native assets
 
-You can stake tokens on other networks supported by Station by selecting a different chain on the staking page. Once you've selected your desired chain, simply follow the same steps as above.
+You can stake tokens on other networks supported by Station by selecting a different chain on the staking page. Once you've selected your desired chain, follow the steps above.
 
-## Withdraw staking rewards
+## Withdraw staking rewards TODO
 
 Rewards start accruing the moment you stake your Luna. Monitor your rewards in the staking section of Station. Once you have sufficient rewards, follow the steps below to withdraw them.
 
@@ -144,19 +146,17 @@ Congratulations, you've just withdrawn your staking rewards!
 
 1. Open the Station desktop app and connect to your wallet.
 
-2. Click **Wallet** in the navigation bar.
-
-3. Click **Send** next to the token you want to send.
+2. Open the wallet sidebar and click **Send**.
 
 <img className="readme-img-lg" src="/img/screens/desktop/send-wallet.png" />
 
-4. Enter the address of the wallet where you would like to send the tokens and the amount you would like to send. You can also add a memo to specify what the transaction is for.
+3. Select your desired asset and source chain and enter the destination address and amount. You can also add a memo to specify what the transaction is for.
 
 <img className="readme-img-lg" src="/img/screens/desktop/send-submit.png" />
 
-7. Verify the recipient address and the amount before submitting the transaction. Remember to always maintain some funds in your wallet for future transactions.
+4. Verify the recipient address and the amount before submitting the transaction. Remember to always maintain some funds in your wallet for future transactions.
 
-8. Enter your password and click **Submit**.
+5. Enter your password and click **Submit**.
 
 After a few moments, the tokens will appear in the recipient's wallet.
 
