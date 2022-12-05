@@ -1,22 +1,28 @@
 import Admonition from '@theme/Admonition';
 
-# Manage staking
+# Staking
 
 This tutorial walks you through how to manage your staking delegations in Station. To learn how to stake or withdraw rewards, check out the Station [desktop](Download/station-desktop.mdx) or [mobile](Download/station-mobile.mdx) tutorials.
 
 If this is your first time using Station, follow the [Station tutorial](Download/station-desktop.mdx) to learn more.
 
-## Stake Luna
+## Manual Staking
 
-Staking Luna to validators is a great way to earn rewards. Before you stake, make sure you have Luna in your wallet. You can transfer Luna from an [exchange](./wallet.mdx) or from [another wallet](./send.mdx).
+Stake your Luna to a validator of your choice to start earning rewards.
 
-1. Open the Station desktop app and click **Stake**.
+1. Open the Station desktop app and navigate to the **Stake** page.
 
-2. Select the Validator with which you would like to stake and click on their name in the **Moniker** column of the validator list.
+2. Click **Manual Stake** and select a Validator and click on their name in the **Moniker** column of the validator list.
 
-3. In the **My delegations** section, click **Delegate** and a new window will appear.
+<img className="readme-img-lg" src="/img/screens/desktop/stake-page.png" />
+
+3. In the **My delegations** section, click **Delegate**. A new window will appear.
+
+<img className="readme-img-sm" src="/img/screens/desktop/stake-validator.png" />
 
 4. In the **Amount** field, specify the amount of Luna you want to delegate.
+
+<img className="readme-img-lg" src="/img/screens/desktop/stake-delegate.png" />
 
 <Admonition type="caution" icon="☢️" title="Maintain funds for transaction fees">
 
@@ -24,11 +30,35 @@ It is recommended to maintain some funds in your wallet for future transactions.
 
 </Admonition>
 
-5. Confirm the transaction details, enter your password, and click **Submit**.
+5. Double-check the amounts and fees, enter your password, and click **Submit**.
 
 Congratulations, you've just delegated Luna!
 
-## Withdraw staking rewards
+## Quick Staking
+
+Quick staking chooses validators to stake to on your behalf that meet the following criteria:
+
+- Bottom 65% of the validator set by voting power
+- No slashes in last 1,200,000 blocks
+- Commission of 5% or less
+
+To quick stake, follow the steps outlines above but select **Quick Stake** on the **Stake Page**. This will skip the step of having to manually select a validator.
+
+<Admonition type="info" icon="💡" title="Quick stake validators">
+Delegations of 100 or less will be delegated to 1 validators.
+Delegations of 1000 or less will be split among 2 validators.
+Delegations of 10,000 or less will be split among 4 validators.
+Delegations of 10,000 or more will be split among 5 validators.
+
+</Admonition>
+
+The quick undelegation functionality considers your current delegations and undelegates from them in order from most to least voting power until your desired token amount is met.
+
+## Staking other native assets
+
+You can stake tokens on other networks supported by Station by selecting a different chain on the staking page. Once you've selected your desired chain, follow the steps above.
+
+## Withdraw staking rewards TODO
 
 Rewards start accruing the moment you stake your Luna. Monitor your rewards in the staking section of Station. Once you have sufficient rewards, follow the steps below to withdraw them.
 
@@ -44,11 +74,11 @@ Congratulations, you've just withdrawn your staking rewards!
 
 ## Redelegate
 
-Redelegating lets you transfer staked Luna from one validator to another instantly, without having to wait for the 21-day unstaking period.
+Redelegating lets you transfer staked tokens from one validator to another instantly, without having to wait for the 21-day unstaking period.
 
 <Admonition type="caution" icon="☢️">
 
-When a user redelegates staked Luna from one validator to another, the validator receiving the staked Luna is barred from making further redelegation transactions for 21 days. This restriction only applies to the wallet that made the redelegation transaction.
+When a user redelegates tokens from one validator to another, the validator receiving the staked tokens is barred from making further redelegation transactions for 21 days. This restriction only applies to the wallet that made the redelegation transaction.
 
 </Admonition>
 
@@ -60,23 +90,23 @@ When a user redelegates staked Luna from one validator to another, the validator
 
 4. Select the validator you would like to redelegate from.
 
-5. Enter the amount of Luna you want to redelegate.
+5. Enter the token amount you want to redelegate.
 
 6. Confirm the transaction details, enter your password, and click **Submit**.
 
-Your staked Luna will be transferred to the new validator.
+Your staked tokens will be transferred to the new validator.
 
 ## Undelegate
 
-To unstake your Luna, you will need to undelegate from the validator to which the funds were originally staked. After undelegating, it will take 21 days for the undelegated funds to be available in your wallet.
+To unstake your tokens, you will need to undelegate from the validator to which the funds were originally staked. After undelegating, it will take 21 days for the undelegated funds to be available in your wallet.
 
 <Admonition type="caution" icon="☢️" title="Undelegation waiting period">
 
-After funds are undelegated, they will be locked for a period of 21 days. Once this process has started, there is no option for reversal. After this period has concluded, the funds will be transferred to your wallet where they will once again be available to carry out transactions with. If you would like to simply stake with another validator, you may utilize the redelegating process which occurs immediately without the need to wait for processing.
+After funds are undelegated, they will be locked for a period of 21 days. Once this process has started, there is no option for reversal. After this period has concluded, the funds will be transferred to your wallet where they will once again be available to carry out transactions with. If you would like to simply stake with another validator, you may use the redelegating process which occurs immediately without the need to wait for processing.
 
 </Admonition>
 
-1. Open Station, connect your wallet, and click **Stake**.
+1. Open Station, connect your wallet, and click **Stake**. TODO
 
 2. Click on the **Delegations** box, located in the top left of the screen.
 
