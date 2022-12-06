@@ -1,6 +1,6 @@
 # Add modules
 
-When a new module is added to Terra Core, you must also add it to several places in Terra.js. To add a module, complete the following steps.
+When a new module is added to Terra Core, you must also add it to several places in feather.js. To add a module, complete the following steps.
 
 ## Create a new folder
 
@@ -17,8 +17,8 @@ For this example, let's assume that you are creating a two new messages, `MsgHel
 `src/core/greeting/msgs/MsgHello.ts`
 
 ```ts
-import { JSONSerializable } from "../../../util/json";
-import { AccAddress } from "../../strings";
+import { JSONSerializable } from '../../../util/json';
+import { AccAddress } from '../../strings';
 
 /**
  * Just a simple greeting on the blockchain.
@@ -38,7 +38,7 @@ export class MsgHello extends JSONSerializable<MsgHello.Data> {
   public toData(): MsgHello.Data {
     const { recipient } = this;
     return {
-      type: "greeting/MsgHello",
+      type: 'greeting/MsgHello',
       value: {
         recipient,
       },
@@ -48,7 +48,7 @@ export class MsgHello extends JSONSerializable<MsgHello.Data> {
 
 export namespace MsgHello {
   export interface Data {
-    type: "greeting/MsgHello";
+    type: 'greeting/MsgHello';
     value: {
       recipient: AccAddress;
     };
@@ -61,11 +61,11 @@ export namespace MsgHello {
 `src/core/greeting/msgs/index.ts`
 
 ```ts
-import { MsgHello } from "./MsgHello";
-import { MsgGoodbye } from "./MsgGoodbye";
+import { MsgHello } from './MsgHello';
+import { MsgGoodbye } from './MsgGoodbye';
 
-export * from "./MsgHello";
-export * from "./MsgGoodbye";
+export * from './MsgHello';
+export * from './MsgGoodbye';
 
 export type GreetingMsg = MsgHello | MsgGoodbye;
 
@@ -137,17 +137,17 @@ export 'greeting/msgs';
 
 5. Add parameter changes.
 
-Terra.js provides an easy way to generate `ParameterChangeProposal`s, which is a proposal for changing the blockchain parameters associated with a module. If your module has parameters that can be changed via proposal, you should create the following files:
+feather.js provides an easy way to generate `ParameterChangeProposal`s, which is a proposal for changing the blockchain parameters associated with a module. If your module has parameters that can be changed via proposal, you should create the following files:
 
 `src/core/greeting/params.ts`
 
 ```ts
-import { ParamChange } from "..";
-import { Convert } from "../../util/convert";
+import { ParamChange } from '..';
+import { Convert } from '../../util/convert';
 
-type MaxHellos = ParamChange.Type<"greeting", "maxhellos", number>;
+type MaxHellos = ParamChange.Type<'greeting', 'maxhellos', number>;
 
-type MaxGoodbyes = ParamChange.Type<"greeting", "maxgoodbyes", number>;
+type MaxGoodbyes = ParamChange.Type<'greeting', 'maxgoodbyes', number>;
 
 export type GreetingParamChange = MaxHellos | MaxGoodbyes;
 
@@ -226,8 +226,8 @@ Assume that the `greeting` module has the following endpoints:
 1. Create `src/client/lcd/api/GreetingAPI.ts` with the following:
 
 ```ts
-import { BaseAPI } from "./BaseAPI";
-import { AccAddress } from "../../../core/strings";
+import { BaseAPI } from './BaseAPI';
+import { AccAddress } from '../../../core/strings';
 
 export interface GreetingParams {
   max_hellos: number;
@@ -263,18 +263,18 @@ export class GreetingAPI extends BaseAPI {
 2. Register the API functionality inside `src/client/lcd/api/index.ts`:
 
 ```ts
-export * from "./AuthAPI";
-export * from "./BankAPI";
-export * from "./DistributionAPI";
-export * from "./GovAPI";
-export * from "./GreetingAPI"; // ADD HERE
-export * from "./MsgAuthAPI";
-export * from "./SlashingAPI";
-export * from "./StakingAPI";
-export * from "./SupplyAPI";
-export * from "./TendermintAPI";
-export * from "./TxAPI";
-export * from "./WasmAPI";
+export * from './AuthAPI';
+export * from './BankAPI';
+export * from './DistributionAPI';
+export * from './GovAPI';
+export * from './GreetingAPI'; // ADD HERE
+export * from './MsgAuthAPI';
+export * from './SlashingAPI';
+export * from './StakingAPI';
+export * from './SupplyAPI';
+export * from './TendermintAPI';
+export * from './TxAPI';
+export * from './WasmAPI';
 ```
 
 3. Add the functionality to `src/client/lcd/LCDClient.ts`:

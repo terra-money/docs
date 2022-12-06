@@ -5,12 +5,9 @@
 Use `LCDClient.wallet()` to create a `Wallet` from a `Key`.
 
 ```ts
-import { LCDClient, MnemonicKey } from "@terra-money/terra.js";
+import { LCDClient, MnemonicKey } from '@terra-money/feather.js';
 
-const terra = new LCDClient({
-  URL: "https://phoenix-lcd.terra.dev",
-  chainId: "phoenix-1",
-});
+const terra = new LCDClient(...);
 
 const mk = new MnemonicKey();
 const wallet = terra.wallet(mk);
@@ -31,7 +28,7 @@ console.log(await wallet.sequence());
 
 ### Creating transactions
 
-A wallet makes it easy to create a transaction by automatically fetching the account number and sequence from the blockchain. The fee parameter is optional -- if you don't include it, Terra.js will automatically use your LCD's fee estimation settings to simulate the transaction within the node and include the resultant fee in your transaction.
+A wallet makes it easy to create a transaction by automatically fetching the account number and sequence from the blockchain. The fee parameter is optional -- if you don't include it, feather.js will automatically use your LCD's fee estimation settings to simulate the transaction within the node and include the resultant fee in your transaction.
 
 ```ts
 const msgs = [ ... ]; // list of messages
@@ -39,6 +36,7 @@ const fee = Fee(...); // optional fee
 
 const unsignedTx = await wallet.createTx({
   msgs,
+  chainID: 'pisco-1',
   // fee, (optional)
   memo: 'this is optional'
 });
@@ -56,6 +54,7 @@ You can also use the more convenient `Wallet.createAndSignTx()` function, which 
 const tx = await wallet.createAndSignTx({
   msgs,
   fee,
-  memo: "this is optional",
+  chainID: 'pisco-1',
+  memo: 'this is optional',
 });
 ```
