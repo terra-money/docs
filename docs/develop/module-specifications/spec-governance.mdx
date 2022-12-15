@@ -273,7 +273,7 @@ The subspace for the Governance module is `gov`.
 ```go
 type DepositParams struct {
 	MinDeposit       sdk.Coins     `json:"min_deposit,omitempty" yaml:"min_deposit,omitempty"`
-	MaxDepositPeriod time.Duration `json:"max_deposit_period,omitempty" yaml:"max_deposit_period,omitempty"` //  Maximum period for Atom holders to deposit on a proposal. Initial value: 2 months
+	MaxDepositPeriod time.Duration `json:"max_deposit_period,omitempty" yaml:"max_deposit_period,omitempty"`
 }
 
 type TallyParams struct {
@@ -286,35 +286,6 @@ type VotingParams struct {
 	VotingPeriod time.Duration `json:"voting_period,omitempty" yaml:"voting_period,omitempty"`
 }
 ```
-
-## Genesis parameters
-
-The genesis parameters for the governance module outlined in the [Genesis Builder Script](https://github.com/terra-money/genesis-tools/blob/main/src/genesis_builder.py#L147) are as follows:
-
-
-```py
-    # Gov: change min deposit to 512 LUNA and deposit period to 7 days
-    genesis['app_state']['gov']['deposit_params'] = {
-        'max_deposit_period': '604800s',  # 7days
-        'min_deposit': [{
-            'denom': DENOM_LUNA,
-            'amount': '512000000'
-        }],
-    }
-
-    # Gov: set tally params quorum to 10%
-    genesis['app_state']['gov']['tally_params'] = {
-        'quorum': '0.100000000000000000',
-        'threshold': '0.500000000000000000',
-        'veto_threshold': '0.334000000000000000'
-    }
-
-    # Gov: set voting period to 7 days
-    genesis['app_state']['gov']['voting_params'] = {
-        'voting_period': '604800s'
-    }
-```
-
 
 ### MinDeposit
 
@@ -335,21 +306,21 @@ The maximum period of time for a proposal to meet the minimum deposit. Currently
 ### Quorum
 
 - type: `Dec`
-- `"quorum": "0.100000000000000000",`
+- `"quorum": "0.300000000000000000",`
 
-The minimum number of votes needed for a proposal to be valid. Currently, 10% of all staked Luna must vote to reach `Quorum`. 
+The minimum number of votes needed for a proposal to be valid. Currently, 30% of all staked Luna must vote to reach `Quorum`. 
 
 ### Threshold
 
 - type: `Dec`
-- default value: 50%
+- value: 50%
 
 The minimum number of `Yes` votes needed for a proposal to pass. Currently, 50% of all votes must be `Yes`. `Abstain` votes are excluded from this tally. 
 
 ### Veto
 
 - type: `Dec`
-- default value: `0.334`
+- value: `0.334`
 
 The minimum value of `NoWithVeto` votes needed for a proposal to be vetoed. If 33.4% or more of the total votes cast are `NoWithVeto`, the proposal fails, and the creator's deposit is not returned. 
 
@@ -358,5 +329,5 @@ The minimum value of `NoWithVeto` votes needed for a proposal to be vetoed. If 3
 - type: `time.Duration` (seconds)
 -  `"voting_period": "604800s"`
 
-Length of the voting period. Currently 1 week.
+The length of the voting period. Currently one week.
 
