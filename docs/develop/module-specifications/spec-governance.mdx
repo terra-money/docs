@@ -35,13 +35,13 @@ Deposits protect against unnecessary proposals and spam.
 
 Deposits get refunded if all of the following conditions are met:
 - The minimum deposit of 512 Luna is reached within the 7-day deposit period.
-- `Quorum` is met: all casted votes represent more than 10% of all staked Luna.
+- `Quorum` is met: all casted votes represent more than 30% of all staked Luna.
 - The total number of `NoWithVeto` votes is less than 33.4% of the total vote.
 - A vote returns a majority of `Yes` or `No` votes.
 
 Deposits are burned under any of the following conditions:
 - The minimum deposit of 512 Luna is not reached within the one-week deposit period.
-- `Quorum` is not met: the number of total votes after the one-week voting period is less than 10% of all staked Luna.
+- `Quorum` is not met: the number of total votes after the one-week voting period is less than 30% of all staked Luna.
 - The number of `NoWithVeto` votes is above 33.4% of the total vote.
 
 ### Voting period
@@ -67,7 +67,7 @@ The logic for tallying votes can be found in the [`tally.go` file](https://githu
 
 For a proposal to pass, the following conditions must be met. 
 
-1. Voter participation must be at least [`quorum` ($Q$)](#quorum). The current `quorum` value is 10% of all staked Luna. 
+1. Voter participation must be at least [`quorum` ($Q$)](#quorum). The current `quorum` value is 30% of all staked Luna. 
 
 $$
 \frac{Yes + No + NoWithVeto + Abstain}{Total Staked Tokens} \ge Q
