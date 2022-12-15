@@ -35,13 +35,13 @@ Deposits protect against unnecessary proposals and spam.
 
 Deposits get refunded if all of the following conditions are met:
 - The minimum deposit of 512 Luna is reached within the 7-day deposit period.
-- `Quorum` is met: all casted votes represent more than 10% of all staked Luna.
+- `Quorum` is met: all casted votes represent more than 30% of all staked Luna.
 - The total number of `NoWithVeto` votes is less than 33.4% of the total vote.
 - A vote returns a majority of `Yes` or `No` votes.
 
 Deposits are burned under any of the following conditions:
 - The minimum deposit of 512 Luna is not reached within the one-week deposit period.
-- `Quorum` is not met: the number of total votes after the one-week voting period is less than 10% of all staked Luna.
+- `Quorum` is not met: the number of total votes after the one-week voting period is less than 30% of all staked Luna.
 - The number of `NoWithVeto` votes is above 33.4% of the total vote.
 
 ### Voting period
@@ -67,7 +67,7 @@ The logic for tallying votes can be found in the [`tally.go` file](https://githu
 
 For a proposal to pass, the following conditions must be met. 
 
-1. Voter participation must be at least [`quorum` ($Q$)](#quorum). The current `quorum` value is 10% of all staked Luna. 
+1. Voter participation must be at least [`quorum` ($Q$)](#quorum). The current `quorum` value is 30% of all staked Luna. 
 
 $$
 \frac{Yes + No + NoWithVeto + Abstain}{Total Staked Tokens} \ge Q
@@ -273,7 +273,7 @@ The subspace for the Governance module is `gov`.
 ```go
 type DepositParams struct {
 	MinDeposit       sdk.Coins     `json:"min_deposit,omitempty" yaml:"min_deposit,omitempty"`
-	MaxDepositPeriod time.Duration `json:"max_deposit_period,omitempty" yaml:"max_deposit_period,omitempty"` //  Maximum period for Atom holders to deposit on a proposal. Initial value: 2 months
+	MaxDepositPeriod time.Duration `json:"max_deposit_period,omitempty" yaml:"max_deposit_period,omitempty"`
 }
 
 type TallyParams struct {
@@ -286,35 +286,6 @@ type VotingParams struct {
 	VotingPeriod time.Duration `json:"voting_period,omitempty" yaml:"voting_period,omitempty"`
 }
 ```
-
-## Genesis parameters
-
-The genesis parameters for the governance module outlined in the [Genesis Builder Script](https://github.com/terra-money/genesis-tools/blob/main/src/genesis_builder.py#L147) are as follows:
-
-
-```py
-    # Gov: change min deposit to 512 LUNA and deposit period to 7 days
-    genesis['app_state']['gov']['deposit_params'] = {
-        'max_deposit_period': '604800s',  # 7days
-        'min_deposit': [{
-            'denom': DENOM_LUNA,
-            'amount': '512000000'
-        }],
-    }
-
-    # Gov: set tally params quorum to 10%
-    genesis['app_state']['gov']['tally_params'] = {
-        'quorum': '0.100000000000000000',
-        'threshold': '0.500000000000000000',
-        'veto_threshold': '0.334000000000000000'
-    }
-
-    # Gov: set voting period to 7 days
-    genesis['app_state']['gov']['voting_params'] = {
-        'voting_period': '604800s'
-    }
-```
-
 
 ### MinDeposit
 
@@ -335,21 +306,21 @@ The maximum period of time for a proposal to meet the minimum deposit. Currently
 ### Quorum
 
 - type: `Dec`
-- `"quorum": "0.100000000000000000",`
+- `"quorum": "0.300000000000000000",`
 
-The minimum number of votes needed for a proposal to be valid. Currently, 10% of all staked Luna must vote to reach `Quorum`. 
+The minimum number of votes needed for a proposal to be valid. As of [Terra governance prop 3547](https://station.terra.money/proposal/3547), 30% of all staked Luna must vote to reach `Quorum`. 
 
 ### Threshold
 
 - type: `Dec`
-- default value: 50%
+- value: 50%
 
 The minimum number of `Yes` votes needed for a proposal to pass. Currently, 50% of all votes must be `Yes`. `Abstain` votes are excluded from this tally. 
 
 ### Veto
 
 - type: `Dec`
-- default value: `0.334`
+- value: `0.334`
 
 The minimum value of `NoWithVeto` votes needed for a proposal to be vetoed. If 33.4% or more of the total votes cast are `NoWithVeto`, the proposal fails, and the creator's deposit is not returned. 
 
@@ -358,5 +329,5 @@ The minimum value of `NoWithVeto` votes needed for a proposal to be vetoed. If 3
 - type: `time.Duration` (seconds)
 -  `"voting_period": "604800s"`
 
-Length of the voting period. Currently 1 week.
+The length of the voting period. Currently one week.
 
