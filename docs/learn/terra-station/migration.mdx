@@ -1,0 +1,69 @@
+import Admonition from '@theme/Admonition';
+
+# Migrate to Interchain Station
+
+Use this guide to import an existing wallet into Station.
+
+## Prerequisites
+
+- Download [Google Chrome](https://www.google.com/chrome/).
+- Download the [Terra Station Chrome extension](Download/terra-station-extension.mdx) and [create a wallet](Download/terra-station-extension.mdx#create-a-wallet).
+- Make sure you have access to your seed phrase.
+
+## Import an Existing Station wallet
+
+To access other chains on Station you'll need to re-add your wallet. If you choose not to you, will still have access to the private key and funds associated with that wallet but you will not be able to interact with other chains.
+
+<Admonition type="caution" icon="ℹ️">
+  Station needs to derive your wallet address for each chain from the same seed
+  phrase. Station must re-load the seed phrase in order to detect tokens held in
+  wallets that were created via the 118 path. Read more
+  [here](../../../docs/develop/feather-js/keys.mdx#mnemonickey).
+</Admonition>
+
+1. Open your extension popup and click on your wallet name in the top navigation bar.
+
+<img className="readme-img-sm" src="/img/screens/extension/connect.png" />
+
+2. Click **Recover Wallet**.
+
+<img className="readme-img-sm" src="/img/screens/extension/switch-wallet.png" />
+
+3. Enter your previous Station seed phrase.
+
+<img className="readme-img-sm" src="/img/screens/extension/recover.png" />
+
+4. Enter your previous Station seed phrase.
+
+<img
+  className="readme-img-sm"
+  src="/img/screens/extension/recover-success.png"
+/>
+
+5. Access your interchain funds.
+
+<img className="readme-img-sm" src="/img/screens/extension/home.png" />
+
+## Import another wallet
+
+To import from Keplr follow [this guide](keplr.mdx), or to import from another cosmos wallet follow the [wallet recovery](wallet.mdx#recover-a-wallet-using-a-seed-phrase) guide.
+
+## Access with Ledger
+
+<Admonition type="caution" icon="☢️">
+  Ledger is only available on Station extension and web app.
+</Admonition>
+
+On the extension:
+
+1. Open your extension popup and click on your wallet name in the top navigation bar.
+
+<img className="readme-img-sm" src="/img/screens/extension/connect.png" />
+
+2. Click **Access with ledger**.
+
+On the webapp:
+
+1. Click **Connect** and select **Access with ledger**.
+
+<img className="readme-img-sm" src="/img/screens/webapp/connect-modal.png" />
