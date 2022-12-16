@@ -7,63 +7,69 @@ Use this guide to import an existing wallet into Station.
 ## Prerequisites
 
 - Download [Google Chrome](https://www.google.com/chrome/).
-- Download the [Terra Station Chrome extension](Download/terra-station-extension.mdx) and [create a wallet](Download/terra-station-extension.mdx#create-a-wallet).
+- Download the [Station Chrome extension](Download/terra-station-extension.mdx) and [create a wallet](Download/terra-station-extension.mdx#create-a-wallet).
 - Make sure you have access to your seed phrase.
 
-## Import an Existing Station wallet
+## Import an existing Station wallet
 
-To access other chains on Station you'll need to re-add your wallet. If you choose not to you, will still have access to the private key and funds associated with that wallet but you will not be able to interact with other chains.
+To access other chains on Station you'll need to re-add your wallet. If you choose not to, you will still have access to the private key and funds associated with your wallet but you will not be able to interact with other chains.
 
 <Admonition type="caution" icon="ℹ️">
-  Station needs to derive your wallet address for each chain from the same seed
-  phrase. Station must re-load the seed phrase in order to detect tokens held in
-  wallets that were created via the 118 path. Read more
-  [here](../../../docs/develop/feather-js/keys.mdx#mnemonickey).
+
+Station needs to derive your wallet address for each chain from the same mnemonic seed phrase. Station must reload the mnemonic seed phrase in order to detect tokens held in wallets that were created via the `118` derivation path. For more info on mnemonic seed phrases, visit the [Keys page](../../../docs/develop/feather-js/keys.mdx#mnemonickey).
+
 </Admonition>
 
-1. Open your extension popup and click on your wallet name in the top navigation bar.
-
-<img className="readme-img-sm" src="/img/screens/extension/connect.png" />
-
-2. Click **Recover Wallet**.
+1. Open the Station extension. 
+    - If this is your first time using Station, continue to step 2. 
+    - If you are already signed in to another wallet, click on your wallet name and then click **Add a wallet**. 
 
 <img className="readme-img-sm" src="/img/screens/extension/switch-wallet.png" />
 
-3. Enter your previous Station seed phrase.
+2. Click **Recover Wallet**. 
+
+<img className="readme-img-sm" src="/img/screens/extension/connect.png" />
+
+3. Enter your wallet's mnemonic seed phrase. 
 
 <img className="readme-img-sm" src="/img/screens/extension/recover.png" />
 
-4. Enter your previous Station seed phrase.
+4. Click **Connect**. 
 
-<img
-  className="readme-img-sm"
-  src="/img/screens/extension/recover-success.png"
-/>
+<img className="readme-img-sm" src="/img/screens/extension/recover-success.png" />
 
-5. Access your interchain funds.
+5. Congratulations, now you can access your interchain funds!
 
 <img className="readme-img-sm" src="/img/screens/extension/home.png" />
 
-## Import another wallet
+## Import an interchain wallet
 
-To import from Keplr follow [this guide](keplr.mdx), or to import from another cosmos wallet follow the [wallet recovery](wallet.mdx#recover-a-wallet-using-a-seed-phrase) guide.
+To import a wallet from Keplr follow [the Keplr wallet](keplr.mdx) guide. To import a wallet from another Cosmos chain, follow the [wallet recovery](wallet.mdx#recover-a-wallet-using-a-seed-phrase) guide.
 
 ## Access with Ledger
 
 <Admonition type="caution" icon="☢️">
-  Ledger is only available on Station extension and web app.
+
+Ledger wallets can only be accessed using the Station extension and Station web app.
+
 </Admonition>
 
 On the extension:
 
-1. Open your extension popup and click on your wallet name in the top navigation bar.
+1. Open the Station extension. 
 
-<img className="readme-img-sm" src="/img/screens/extension/connect.png" />
+    - If this is your first time using Station, continue to step 2. 
+    - If you are already signed in to another wallet, click on your wallet name and then click **Add a wallet**. 
 
 2. Click **Access with ledger**.
 
-On the webapp:
+<img className="readme-img-sm" src="/img/screens/extension/connect.png" />
 
-1. Click **Connect** and select **Access with ledger**.
+3. Sign in using your ledger. 
+
+4. Navigate to the Station web app in your browser and Click **Connect**. Then select **Access with ledger**.
 
 <img className="readme-img-sm" src="/img/screens/webapp/connect-modal.png" />
+
+Congratulations! Now you can access funds on your ledger with Station. 
+
