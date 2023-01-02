@@ -5,6 +5,11 @@
   min-width: 22.875rem;
 }
 
+// No word-wrap for TOC contents
+.table-of-contents__link.toc-highlight {
+  word-wrap: normal;
+}
+
 // MDX image styling
 [class^='readme-img'] {
   margin: auto;
@@ -39,6 +44,7 @@
   }
 }
 
+
 // CodeHike styling
 .ch-scrollycoding-step-content {
   border-radius: 5px;
@@ -62,7 +68,31 @@
 }
 
 .ch-scrollycoding-sticker {
-  flex: 1.5;
+  position: sticky;
+  top: 10vh;
+  display: flex;
+  align-self: start;
+  flex-flow: column;
+  justify-content: center;
+  max-width: 60%;
+  width: unset;
+  min-width:50%;
+  max-height: unset;
+}
+
+.ch-editor-frame {
+height: unset !important;
+max-height: 80vh !important;
+}
+
+.ch-code-scroll-parent {
+ min-height: 100px;
+ height:100%;
+}
+.ch-scrollycoding-content {
+  box-sizing: border-box;
+  flex: 1;
+
 }
 
 /* ================DARK MODE STYLING================ */
