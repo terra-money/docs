@@ -1,10 +1,8 @@
-
 import Admonition from '@theme/Admonition';
-
 
 # Build a CW20 token factory
 
-In this tutorial, you'll build a CW20 token factory. A token factory allows any Cosmos SDK address (including a contract) to mint a new fungible token. 
+In this tutorial, you'll build a CW20 token factory. A token factory allows any Cosmos SDK address (including a contract) to mint a new fungible token.
 
 ## Prerequisites
 
@@ -12,11 +10,11 @@ Use the following guides to set up your environment:
 
 - [Set up Terrain](./initial-setup.mdx)
 - [Set up LocalTerra](./using-terrain-localterra.mdx#install-and-run-localterra)
-- [Set up a Terra Station wallet extension](../../learn/terra-station/Download/terra-station-extension.mdx)
+- [Set up a Terra Station wallet extension](../../learn/station/download/station-extension.mdx)
 
-You'll also need: 
+You'll also need:
 
-- An IDE or text editor of your choice. This tutorial will use Visual Studio Code. 
+- An IDE or text editor of your choice. This tutorial will use Visual Studio Code.
 - A command line interface.
 
 ## Instantiate a new app using Terrain
@@ -25,12 +23,10 @@ You'll also need:
 
 1. Instantiate a [new app using Terrain](https://github.com/terra-money/terrain#terrain-new-name).
 
-
 ```sh Terminal focus=1
 terrain new token_factory
 
 ```
-
 
 ---
 
@@ -55,7 +51,6 @@ generating app token_factory:
 
 1. Navigate to the _`token_factory`_ directory.
 
-
 ```sh Terminal focus=1
 cd token_factory
 
@@ -70,6 +65,7 @@ cd token_factory
 terrain contract:new cw20_factory_token
 
 ```
+
 ---
 
 3. When the contract is generated, the following displays:
@@ -79,6 +75,7 @@ terrain contract:new cw20_factory_token
 generating contract cw20_factory_token:
 - contract... done
 ```
+
 </CH.Scrollycoding>
 
 ## Modify the mnemonic passphrase
@@ -90,8 +87,6 @@ Before editing the smart contracts you created in step 2, modify the mnemonic yo
 ```
 notice oak worry limit wrap speak medal online prefer cluster roof addict wrist behave treat actual wasp year salad speed social layer crew genius
 ```
-
-
 
 <Admonition type="tip" icon="💡">
 
@@ -109,7 +104,7 @@ The `module.exports` section of your `keys.terrain.js` file should now look simi
 module.exports = {
   test: {
     mnemonic:
-      "notice oak worry limit wrap speak medal online prefer cluster roof addict wrist behave treat actual wasp year salad speed social layer crew genius",
+      'notice oak worry limit wrap speak medal online prefer cluster roof addict wrist behave treat actual wasp year salad speed social layer crew genius',
   },
 };
 ```
@@ -178,7 +173,6 @@ cw20-base = {  version = "0.13.2", features = ["library"] }
 
 </CH.Scrollycoding>
 
-
 ### 2. Modify the contract files
 
 Now that you've added the _`CW20 Base`_ to implement the base CW20 token logic, modify the following files:
@@ -213,7 +207,9 @@ use serde::{Deserialize, Serialize};
 #[derive(Serialize, Deserialize, Clone, Debug, PartialEq, JsonSchema)]
 pub struct MigrateMsg {}
 ```
+
 ---
+
 3. Save and close _`msg.rs`_.
 
 </CH.Scrollycoding>
@@ -228,7 +224,9 @@ pub struct MigrateMsg {}
 pub mod contract;
 pub mod msg;
 ```
+
 ---
+
 2. Save and close _`lib.rs`_.
 
 </CH.Scrollycoding>
@@ -357,7 +355,9 @@ pub fn migrate(_deps: DepsMut, _env: Env, _msg: MigrateMsg) -> StdResult<Respons
     Ok(Response::default())
 }
 ```
+
 ---
+
 2. Save and close _`contract.rs`_.
 
 </CH.Scrollycoding>
@@ -387,29 +387,34 @@ fn main() {
     export_schema(&schema_for!(QueryMsg), &out_dir);
 }
 ```
+
 ---
 
 2. Save and close _`schemas.rs`_.
 
 </CH.Scrollycoding>
 
-
 ### 3. Generate and test the schema
 
 <CH.Scrollycoding>
 
 1. Navigate to _`/token_factory/contracts/cw20_factory_token`_.
+
 ```sh Terminal
 cd /token_factory/contracts/cw20_factory_token
 ```
+
 ---
+
 2. Generate the new schema.
 
 ```sh Terminal focus=2
 cd /token_factory/contracts/cw20_factory_token
 cargo schema
 ```
+
 ---
+
 3. Test the schema.
 
 ```sh Terminal focus=3
@@ -446,7 +451,7 @@ cargo test
         }
       }
     }
-  }, // ...
+  } // ...
 }
 ```
 
@@ -531,9 +536,7 @@ To modify the contract files, follow the procedure below:
 
 1. Navigate to _`/token_factory/contracts/token_factory/src`_.
 
-
 2. Open _`error.rs`_ and add the following.
-
 
 ```rust error.rs
 use cosmwasm_std::{StdError, Uint128};
@@ -576,7 +579,9 @@ pub enum ContractError {
 ```
 
 ---
+
 3. Save and close _`error.rs`_.
+
 ---
 
 4. Open _`msg.rs`_ and add the following.
@@ -642,8 +647,11 @@ pub struct MintedTokens {
 #[derive(Serialize, Deserialize, Clone, Debug, PartialEq, JsonSchema)]
 pub struct MigrateMsg {}
 ```
+
 ---
+
 5. Save and close _`msg.rs`_.
+
 ---
 
 6. Open _`state.rs`_ and add the following.
@@ -668,8 +676,11 @@ pub struct Config {
 pub const CONFIG: Item<Config> = Item::new("config");
 pub const MINTED_TOKENS: Item<Vec<String>> = Item::new("minted_tokens");
 ```
+
 ---
+
 7. Save and close _`state.rs`_.
+
 ---
 
 8. Open _`lib.rs`_ and add the following.
@@ -682,8 +693,11 @@ pub mod error;
 mod test;
 pub use crate::error::ContractError;
 ```
+
 ---
+
 9. Save and close _`lib.rs`_.
+
 ---
 
 10. Open _`contract.rs`_ and add the following.
@@ -1302,12 +1316,18 @@ mod tests {
     }
 }
 ```
+
 ---
+
 12. Save and Close _`test.rs`_.
+
 ---
+
 13. Navigate to _`token_factory/contracts/token_factory/examples`_.
+
 ---
-14. Open _`schema.rs`_ and paste the following. 
+
+14. Open _`schema.rs`_ and paste the following.
 
 ```rust schema.rs
 use std::env::current_dir;
@@ -1327,8 +1347,10 @@ fn main() {
     export_schema(&schema_for!(QueryMsg), &out_dir);
 }
 ```
+
 ---
-15. Save and close  _`schema.rs`_.
+
+15. Save and close _`schema.rs`_.
 
 </CH.Scrollycoding>
 
@@ -1343,6 +1365,7 @@ Now that you have modified the _`token_factory`_ contract, generate the schema a
 ```sh Terminal
 cd /token_factory/contracts/token_factory
 ```
+
 ---
 
 2. Generate the schema.
@@ -1351,8 +1374,10 @@ cd /token_factory/contracts/token_factory
 cd /token_factory/contracts/token_factory
 cargo schema
 ```
+
 ---
-3. You should see output similar to the following. 
+
+3. You should see output similar to the following.
 
 ```sh Output
 Finished dev [unoptimized + debuginfo] target(s) in 0.02s
@@ -1364,7 +1389,9 @@ Created ~/Documents/github/token_factory/contracts/token_factory/schema/instanti
 Created ~/Documents/github/token_factory/contracts/token_factory/schema/execute_msg.json
 Created ~/Documents/github/token_factory/contracts/token_factory/schema/query_msg.json
 ```
+
 ---
+
 4. Run the tests.
 
 ```sh Terminal focus=3
@@ -1372,7 +1399,9 @@ cd /token_factory/contracts/token_factory
 cargo schema
 cargo test
 ```
+
 ---
+
 5. You will see output similar to the following.
 
 ```sh Output
@@ -1427,4 +1456,5 @@ terrain deploy token_factory --signer test
 If your code is not working as expected, you can [clone the repo with all changes done until now](https://github.com/emidev98/token-factory/commit/8da7892486704c54e33442b156d63178f5137527).
 
 A hosted website for the token factory can be [found here](http://token_factory.decentryfi.xyz).
+
 </Admonition>
