@@ -2,7 +2,7 @@ import { CardProps } from '../Card';
 
 const terraStationCards: CardProps[] = [
   {
-    href: '/learn/station/Download/terra-station-desktop.html',
+    href: '/learn/station/download/station-desktop.html',
     lightSVG: '/img/icons/station/station.svg',
     darkSVG: '/img/icons/dark/station.svg',
     header: 'Download Station',
