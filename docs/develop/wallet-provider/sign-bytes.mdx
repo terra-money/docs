@@ -4,8 +4,6 @@ import Admonition from '@theme/Admonition';
 
 You can sign arbitrary bytes with [Wallet Provider](https://www.npmjs.com/package/@terra-money/wallet-provider) in a React-based web application. This action is useful for verifying account ownership without having to post a transaction to the chain and is commonly used as a form of simple user authentication.
 
-
-
 <Admonition type="tip" icon="💡">
 
 Not using React? Use the [wallet-controller](https://www.npmjs.com/package/@terra-money/wallet-controller) instead.
@@ -17,13 +15,14 @@ The Wallet Provider comes with a `useConnectedWallet` hook, which lets you trigg
 The `verifyBytes` function then compares the original `TEST_BYTES` against the signature and public key pairing returned by the `SignBytesResult`. If `verifyBytes` returns `true`, then the account is owned by the connected wallet. Likewise, if `verifyBytes` returns `false`, then the account is not owned by the connected wallet. In this way, the owner of the associated wallet is verified without having to produce an on-chain action or pay gas fees.
 
 <Admonition type="tip" icon="💡">
-You can see how the `verifyBytes` function works [here](https://github.com/terra-money/wallet-provider/blob/4e601c2dece7bec92c9ce95991d2314220a2c954/packages/src/%40terra-money/wallet-controller/verifyBytes.ts#L1).
+  You can see how the `verifyBytes` function works
+  [here](https://github.com/terra-money/wallet-provider/blob/4e601c2dece7bec92c9ce95991d2314220a2c954/packages/src/%40terra-money/wallet-controller/verifyBytes.ts#L1).
 </Admonition>
 
 Wallet Provider also supplies useful error types that can be used with a `catch` statement to notify the user whether or not the signing was successful:
 
 ```ts
- import {
+import {
   SignBytesFailed,
   SignBytesResult,
   Timeout,
@@ -48,27 +47,28 @@ export function SignBytesSample() {
     }
 
     try {
-        const signedBytes: SignBytesResult = await connectedWallet.signBytes(TEST_BYTES);
-        setTxResult(signedBytes);
-        setTxError(null);
-        const result = verifyBytes(TEST_BYTES, signedBytes.result);
-        setVerifyResult(result ? 'Verified' : 'Verification failed');
-
+      const signedBytes: SignBytesResult = await connectedWallet.signBytes(
+        TEST_BYTES,
+      );
+      setTxResult(signedBytes);
+      setTxError(null);
+      const result = verifyBytes(TEST_BYTES, signedBytes.result);
+      setVerifyResult(result ? 'Verified' : 'Verification failed');
     } catch (error) {
-        setTxResult(null);
-        setVerifyResult(null);
-        if (error instanceof UserDenied) {
-            setTxError('User Denied');
-        } else if (error instanceof Timeout) {
-            setTxError('Timeout');
-        } else if (error instanceof SignBytesFailed) {
-            setTxError('Sign Bytes Failed');
-        } else {
-            setTxError(
-            'Unknown Error: ' +
-                (error instanceof Error ? error.message : String(error)),
-            );
-        }
+      setTxResult(null);
+      setVerifyResult(null);
+      if (error instanceof UserDenied) {
+        setTxError('User Denied');
+      } else if (error instanceof Timeout) {
+        setTxError('Timeout');
+      } else if (error instanceof SignBytesFailed) {
+        setTxError('Sign Bytes Failed');
+      } else {
+        setTxError(
+          'Unknown Error: ' +
+            (error instanceof Error ? error.message : String(error)),
+        );
+      }
     }
   }, [connectedWallet]);
 
@@ -100,6 +100,7 @@ export function SignBytesSample() {
   );
 }
 ```
+
 You can find this code being used in context [on GitHub](https://github.com/terra-money/wallet-provider/blob/main/templates/create-react-app/src/components/SignBytesSample.tsx).
 
-You can view a working sandbox example of bytes signing with Terra Station on [codesandbox.io](https://codesandbox.io/s/github/terra-money/wallet-provider/tree/main/templates/create-react-app).
+You can view a working sandbox example of bytes signing with Station on [codesandbox.io](https://codesandbox.io/s/github/terra-money/wallet-provider/tree/main/templates/create-react-app).

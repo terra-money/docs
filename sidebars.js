@@ -36,7 +36,7 @@ const sidebars = {
         'learn/protocol',
         {
           type: 'category',
-          label: 'Terra Station',
+          label: 'Station',
           link: { type: 'doc', id: 'landing-pages/station' },
           items: [
             {
