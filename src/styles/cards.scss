@@ -58,6 +58,15 @@ $font-family_1: 'Gotham';
     }
   }
 
+  @media (min-width: 1299px) and (max-width: 1312px) {
+    .text-container,
+    h2,
+    p {
+      max-width: none;
+      width: 200px;
+    }
+  }
+
   @media (min-width: 1640px) {
     .text-container,
     h2,
