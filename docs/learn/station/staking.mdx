@@ -12,7 +12,7 @@ Stake your Luna to a validator of your choice to start earning rewards.
 
 1. Open the Station desktop app and navigate to the **Stake** page.
 
-2. Click **Manual Stake** and select a Validator and click on their name in the **Moniker** column of the validator list.
+2. Click **Manual Stake** and select a Validator by clicking on a name in the **Moniker** column of the validator list.
 
 <img className="readme-img-md" src="/img/screens/desktop/stake-page.png" />
 
@@ -34,25 +34,28 @@ It is recommended to maintain some funds in your wallet for future transactions.
 
 Congratulations, you've just delegated Luna!
 
-## Quick Staking
+## Quick staking
 
-Quick staking chooses validators to stake to on your behalf that meet the following criteria:
+Quick staking chooses validators on your behalf for easy staking. To promote decentralization, quick staking randomly selects validators that meet the following criteria:
 
 - Bottom 65% of the validator set by voting power
-- No slashes in last 1,200,000 blocks
+- No slashes in the last 1,200,000 blocks
 - Commission of 5% or less
 
-To quick stake, follow the steps outlines above but select **Quick Stake** on the **Stake Page**. This will skip the step of having to manually select a validator.
+<Admonition type="info" icon="💡" title="Quick stake distribution">
 
-<Admonition type="info" icon="💡" title="Quick stake validators">
-- Delegations of 100 or less will be delegated to 1 validators.
+- Delegations of 100 or less will be delegated to 1 validator.
 - Delegations of 1000 or less will be split among 2 validators.
 - Delegations of 10,000 or less will be split among 4 validators.
 - Delegations of 10,000 or more will be split among 5 validators.
 
 </Admonition>
 
-The quick undelegation functionality considers your current delegations and undelegates from them in order from most to least voting power until your desired token amount is met.
+1. To quick stake, open Station and select **Stake**. On the Stake page, select **Quick Stake**.
+
+2. Double-check the amounts and fees, enter your password, and click **Submit**
+
+The quick undelegation function considers your current delegations and undelegates from the validators with the highest voting power until your desired token amount is met.
 
 ## Staking other native assets
 
@@ -60,15 +63,15 @@ You can stake tokens on other networks supported by Station by selecting a diffe
 
 ## Withdraw staking rewards
 
-Rewards start accruing the moment you stake your tokens. Monitor your rewards in the staking section of Station. Once you have sufficient rewards, follow the steps below to withdraw them.
+Rewards start accruing the moment you stake. Monitor your rewards in the staking section of Station. Once you have sufficient rewards, follow the steps below to withdraw them.
 
-1. Open Station and click **Stake** in the sidebar.
+1. Open Station and click **Stake**.
 
-2. To claim all available rewards, click **Withdraw all rewards** in the upper right-hand corner of the staking page. To withdraw rewards from a single validator, click on their name in the Validators list and then click on **Withdraw rewards** in their Validator details page.
+2. To claim all rewards, click **Withdraw all rewards** in the upper right corner of the staking page. To withdraw rewards from a single validator, click on **Manual stake**, select their name in the Validators list, and click **Withdraw rewards** on the Validator details page.
 
-3. In the **Validators** list, check the boxes next to the validators from which you would like to withdraw rewards.
+<img className="readme-img-md" src="/img/screens/desktop/stake-page.png" />
 
-4. Review the transaction details, enter your password, and click **Submit**.
+3. Review the amount, enter your password, and click **Submit**.
 
 Congratulations, you've just withdrawn your staking rewards!
 
