@@ -1,30 +1,27 @@
 import Admonition from '@theme/Admonition';
 import { Box, Flex } from 'rebass';
 
-# Terra Station Desktop
+# Station Desktop
 
-This tutorial walks you through how to install and use Terra Station, the official desktop wallet for Terra.
+This tutorial covers installation and basic use of Station, the interchain wallet for Terra.
 
-For more guides on how to use the advanced features of Terra Station, visit the [Terra Station guides](../../station).
+For guides on how advanced features, visit the [Station guides](../../station).
 
-## Install Terra Station
+## Install Station
 
-1. Click the Terra Station download link for your operating system:
+1. Click the Station download link for your operating system:
 
-   - [MacOS](https://github.com/terra-money/station-desktop/releases/download/v1.2.0/Terra.Station-1.2.0.dmg)
-
-   - [MacOS M1](https://github.com/terra-money/station-desktop/releases/download/v1.2.0/Terra.Station-1.2.0-arm64.dmg)
-
-   - [Windows](https://github.com/terra-money/station-desktop/releases/download/v1.2.0/Terra.Station.Setup.1.2.0.exe)
-
-   - [Linux (DEB)](https://github.com/terra-money/station-desktop/releases/download/v1.2.0/Terra.Station_1.2.0_amd64.deb)
-   - [Linux (RPM)](https://github.com/terra-money/station-desktop/releases/download/v1.2.0/Terra.Station-1.2.0.x86_64.rpm)
+   - [MacOS](TODO)
+   - [MacOS M1](TODO)
+   - [Windows](TODO)
+   - [Linux (DEB)](TODO)
+   - [Linux (RPM)](TODO)
 
 2. Open the downloaded file and follow the instructions.
 
 ## Create a wallet
 
-1. Open the Terra Station desktop app and click **Connect**.
+1. Open the Station desktop app and click **Connect**.
 
 2. Click **New Wallet**.
 
@@ -43,8 +40,7 @@ Anyone who gains access to your seed phrase can access the contents of the corre
 - Always write down your seed phrase with a pen and paper.
 - Store the paper with your seed phrase on it somewhere safe.
 - Never give your seed phrase to anyone, not even support staff.
-
-</Admonition>
+  </Admonition>
 
 6. Verify the written seed phrase to ensure every word is spelled correctly and that each word is in the correct order.
 
@@ -60,33 +56,33 @@ Anyone who gains access to your seed phrase can access the contents of the corre
 
 <img className="readme-img-lg" src="/img/screens/desktop/wallet.png" />
 
-Congratulations! You have just created a Terra Station wallet.
+Congratulations! You have just created a Station wallet.
 
 ## Receive tokens from an exchange
 
-1. Purchase your tokens using [an exchange that supports Luna](https://coinmarketcap.com/currencies/terra-luna-v2/markets/).
+1. Purchase your tokens on [an exchange that lists Luna](https://coinmarketcap.com/currencies/terra-luna-v2/markets/).
 
-2. Withdraw any token supported by the Terra network from your exchange. Every exchange will be different and you should visit the web page of their preferred exchange for details on how to withdraw tokens. Use the following steps as a generic guide.
+2. Withdraw any token supported by Station from your exchange. Every exchange will be different and you should visit the web page of their preferred exchange for details on how to withdraw tokens. Use the following steps as a generic guide.
 
-   1. To receive tokens to your wallet, use your wallet address. To copy your wallet address, just click on the name of your wallet in the upper right-hand corner of the app and click on **COPY** just below the address. Your wallet address will take the following form: `terra<random-numbers-and-letters>`
+   1. To receive tokens to your wallet, use your wallet address. To copy your wallet address, just click on the name of your wallet in the upper right-hand corner of the app and click on **COPY** just below the address. Your wallet address will take the following form: `terra<random-numbers-and-letters>`. Note, the prefix will differ if you are sending assets form a different Station-supported chain.
 
    2. Double-check that your submitted address matches the address of the wallet where you would like to receive funds.
 
-   3. Send the tokens from the exchange to your Terra Station wallet address.
+   3. Send the tokens from the exchange to your Station wallet address.
 
 <Admonition type="caution" icon="☢️" title="Transfer wait times">
 
-When you transfer tokens from an exchange to Terra, it will take some time for the tokens to appear in your wallet. Don't panic. This waiting period is normal and varies depending on the exchange used. If a transfer does not appear immediately, check back after some time.
+When you transfer tokens from an exchange, it will take some time for the tokens to appear in your wallet. Don't panic. This waiting period is normal and varies depending on the exchange. If a transfer does not appear immediately, check back after some time.
 
 </Admonition>
 
-## Stake Luna
+## Manual Staking
 
-Stake your Luna to a validator to start earning rewards. Before you stake, make sure you have Luna in your wallet. You can transfer Luna from an [exchange](#receive-tokens-from-an-exchange) or [another wallet](../send.mdx).
+Stake your Luna to a validator of your choice to start earning rewards.
 
-1. Open the Terra Station desktop app and click **Stake**.
+1. Open the Station desktop app and navigate to the **Stake** page.
 
-2. Select a Validator and click on their name in the **Moniker** column of the validator list.
+2. Click **Manual Stake** and select a Validator and click on their name in the **Moniker** column of the validator list.
 
 <img className="readme-img-lg" src="/img/screens/desktop/stake-page.png" />
 
@@ -108,42 +104,64 @@ It is recommended to maintain some funds in your wallet for future transactions.
 
 Congratulations, you've just delegated Luna!
 
+## Quick Staking
+
+Quick staking chooses validators to stake to on your behalf that meet the following criteria:
+
+- Bottom 65% of the validator set by voting power
+- No slashes in last 1,200,000 blocks
+- Commission of 5% or less
+
+To quick stake, follow the steps outlines above but select **Quick Stake** on the **Stake Page**. This will skip the step of having to manually select a validator.
+
+<Admonition type="info" icon="💡" title="Quick stake validators">
+Delegations of 100 or less will be delegated to 1 validators.
+Delegations of 1000 or less will be split among 2 validators.
+Delegations of 10,000 or less will be split among 4 validators.
+Delegations of 10,000 or more will be split among 5 validators.
+
+</Admonition>
+
+The quick undelegation functionality considers your current delegations and undelegates from them in order from most to least voting power until your desired token amount is met.
+
+## Staking other native assets
+
+You can stake tokens on other networks supported by Station by selecting a different chain on the staking page. Once you've selected your desired chain, follow the steps above.
+
 ## Withdraw staking rewards
 
-Rewards start accruing the moment you stake your Luna. Monitor your rewards in the staking section of Terra Station. Once you have sufficient rewards, follow the steps below to withdraw them.
+Rewards start accruing the moment you stake. Monitor your rewards in the staking section of Station. Once you have sufficient rewards, follow the steps below to withdraw them.
 
-1. Open Terra Station and click **Stake**.
+1. Open Station and click **Stake**.
 
-2. To claim all rewards, click **Withdraw all rewards** in the upper right corner of the staking page. To withdraw rewards from a single validator, click on their name in the Validators list and then click on **Withdraw rewards** in the Validator details page.
+2. To claim all rewards, click **Withdraw all rewards** in the upper right corner of the staking page. To withdraw rewards from a single validator, click on **Manual stake**, select their name in the Validators list and click **Withdraw rewards** on the Validator details page.
 
 <img className="readme-img-lg" src="/img/screens/desktop/stake-page.png" />
 
-3. Review the amounts, enter your password, and click **Submit**.
+3. Review the amount, enter your password, and click **Submit**.
 
 Congratulations, you've just withdrawn your staking rewards!
 
 ## Send tokens
 
-1. Open the Terra Station desktop app and connect to your wallet.
+1. Open the Station desktop app and connect to your wallet.
 
-2. Click **Wallet** in the navigation bar.
-
-3. Click **Send** next to the token you want to send.
+2. Open the wallet sidebar and click **Send**.
 
 <img className="readme-img-lg" src="/img/screens/desktop/send-wallet.png" />
 
-4. Enter the address of the wallet where you would like to send the tokens and the amount you would like to send. You can also add a memo to specify what the transaction is for.
+3. Select your desired asset and source chain and enter the destination address and amount. You can also add a memo to specify what the transaction is for.
 
-<img className="readme-img-lg" src="/img/screens/desktop/send-submit.png" />
+<img className="readme-img-lg" src="/img/screens/desktop/send-wallet.png" />
 
-7. Verify the recipient address and the amount before submitting the transaction. Remember to always maintain some funds in your wallet for future transactions.
+4. Verify the recipient address and the amount before submitting the transaction. Remember to always maintain some funds in your wallet for future transactions.
 
-8. Enter your password and click **Submit**.
+5. Enter your password and click **Submit**.
 
 After a few moments, the tokens will appear in the recipient's wallet.
 
 ## Next steps
 
-To begin using any of the various dApps the Terra ecosystem has to offer, check out the [Terra Station Chrome extension](station-extension.mdx) or the [Terra Station Firefox extenstion](station-firefox.mdx). For on-the-go transactions, check out the [Terra Station mobile app](station-mobile.mdx).
+To begin using any of the various dApps the Terra ecosystem has to offer, check out the [Station Chrome extension](station-extension.mdx) or the [Station Firefox extenstion](station-firefox.mdx). For on-the-go transactions, check out the [Station mobile app](station-mobile.mdx).
 
-For more guides on how to use other Station features, visit the [Terra Station guides](../../../learn/station).
+For more guides on how to use other Station features, visit the [Station guides](../../../learn/station).
