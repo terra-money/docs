@@ -6,7 +6,7 @@ const terraStationCards: CardProps[] = [
     lightSVG: '/img/icons/station/station.svg',
     darkSVG: '/img/icons/dark/station.svg',
     header: 'Download Station',
-    summary: "Download Terra Station, Terra's official wallet.",
+    summary: "Download Station, Terra's official wallet.",
   },
   {
     href: '/learn/station/wallet.html',
@@ -21,7 +21,7 @@ const terraStationCards: CardProps[] = [
     darkSVG: '/img/icons/dark/Terrad.svg',
     header: 'Station WebApp',
     summary:
-      'Utilize the Terra Station web application for a more complete experience.',
+      'Utilize the Station web application for a more complete experience.',
   },
   {
     href: '/learn/station/networks.html',

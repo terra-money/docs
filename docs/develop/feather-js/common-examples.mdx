@@ -348,7 +348,6 @@ wallet
   // use broadcastSync() instead of broadcast()
   .then((tx) => terra.tx.broadcastSync(tx, chainID))
   .then(async (result) => {
-    // TODO: use a for or add a timeout to prevent infinite loops
     while (true) {
       // query txhash
       const data = await terra.tx.txInfo(result.txhash).catch(() => {});

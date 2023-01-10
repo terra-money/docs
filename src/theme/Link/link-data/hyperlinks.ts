@@ -3,7 +3,7 @@ import { HyperlinkProps } from '../Hyperlink';
 const hyperlinks: HyperlinkProps[] = [
   {
     href: 'https://station.terra.money/',
-    innerHTML: 'Terra Station',
+    innerHTML: 'Station',
   },
   {
     href: 'https://status.terra.money/',
@@ -17,6 +17,6 @@ const hyperlinks: HyperlinkProps[] = [
     href: 'https://agora.terra.money/',
     innerHTML: 'Terra Agora',
   },
-]
+];
 
 export default hyperlinks;

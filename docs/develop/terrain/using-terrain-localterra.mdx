@@ -9,7 +9,7 @@ LocalTerra is a complete Terra testnet and ecosystem containerized with Docker. 
 - [Docker](https://docs.docker.com/get-docker/)
 - [`docker-compose`](https://docs.docker.com/compose/install/)
 - At least 16 GB of RAM
-- [Terra Station Chrome extension](../../learn/station/download/station-extension.mdx)
+- [Station Classic Chrome extension](../../learn/station/localterra.mdx)
 - [Node.js version 16](https://nodejs.org/en/blog/release/v16.16.0/)
 
 <Admonition type="caution" icon="☢️" title="Node version error">
@@ -49,6 +49,12 @@ nvm alias default <desired-node-version>
 </Admonition>
 
 ## Install and run LocalTerra
+
+<Admonition type="tip" icon="🛰" title="Station Classic for development">
+
+LocalTerra must be used with the Station Classic Developer Extension. To install this extension, follow the [Station Classic for development installation guide](../../learn/station/localterra.mdx). 
+
+</Admonition>
 
 <CH.Scrollycoding>
 
@@ -193,7 +199,7 @@ Before proceeding to the next section, exit the terrain console by using "Ctrl +
 
 When you scaffold a template app with Terrain, it will contain a simple front end.
 
-1. Open the [Terra Station Chrome extension](https://chrome.google.com/webstore/detail/station-wallet/aiifbnbfobpmeekipheeijimdpnlpgpp), click the gear icon in the upper right-hand corner, and switch the network to LocalTerra.
+1. Open the [Station Chrome extension](https://chrome.google.com/webstore/detail/station-wallet/aiifbnbfobpmeekipheeijimdpnlpgpp), click the gear icon in the upper right-hand corner, and switch the network to LocalTerra.
 
 2. To use the front end, run the following commands.
 
@@ -202,13 +208,13 @@ cd frontend
 npm start
 ```
 
-3. Open the Terra Station extension and click **Add a wallet**. Click **Recover wallet** and input the following seed phrase to access the sole validator on the LocalTerra network and gain funds to get started with smart contracts:
+3. Open the Station extension and click **Add a wallet**. Click **Recover wallet** and input the following seed phrase to access the sole validator on the LocalTerra network and gain funds to get started with smart contracts:
 
 ```
 satisfy adjust timber high purchase tuition stool faith fine install that you unaware feed domain license impose boss human eager hat rent enjoy dawn
 ```
 
-4. With LocalTerra selected in Terra Station and the local seed phrase imported, you can now increment and reset the counter from the front end.
+4. With LocalTerra selected in Station and the local seed phrase imported, you can now increment and reset the counter from the front end.
 
 ## Demo
 

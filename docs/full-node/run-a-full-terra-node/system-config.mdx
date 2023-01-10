@@ -6,33 +6,30 @@ import Admonition from '@theme/Admonition';
 
 # System Configuration
 
-
 <Admonition type="caution" icon="☢️" title="Recommended operating systems">
 
 This guide has been tested against Linux distributions only. To ensure a successful production environment setup, consider using a Linux system.
 
 </Admonition>
 
-Running a full Terra node is a resource-intensive process that requires a persistent server. If you want to use Terra without downloading the entire blockchain, use [Terra Station](https://station.terra.money/). If you want to set up a local, WASM-enabled, private testnet for smart contracts, visit [install LocalTerra](../../develop/localterra/README.mdx).
+Running a full Terra node is a resource-intensive process that requires a persistent server. If you want to use Terra without downloading the entire blockchain, use [Station](https://station.terra.money/). If you want to set up a local, WASM-enabled, private testnet for smart contracts, visit [install LocalTerra](../../develop/localterra/README.mdx).
 
 ## Hardware Requirements
 
 The minimum requirements for running a Terra full node are:
 
-| Network                                                                 | CPU cores     | RAM     | Disk                       | BANDWIDTH |
-|-------------------------------------------------------------------------|---------------|---------|----------------------------|-----------|
-| [`phoenix-1`](join-a-network.mdx#join-a-public-network)                  | 4 (+4 threads)| 32 GB   | 2 TB (SSD 2000 MB/s R/W)   | 300 Mbps  |
-| [`pisco-1`](join-a-network.mdx#join-a-public-network)                    | 2 (+2 threads)| 16 GB   | 500 GB (SSD 1000 MB/s R/W) | 150 Mbps  |
-| [`localterra`](https://github.com/terra-money/LocalTerra)               | 2             | 4 GB    | 20 GB (SSD 500 MB/s R/W)   |  N/A      |
-| [`private-network`](join-a-network.mdx#set-up-a-local-private-network) | 1             | 2 GB    | 20 GB (SSD 500 MB/s R/W)   |  N/A      |
-
+| Network                                                                | CPU cores      | RAM   | Disk                       | BANDWIDTH |
+| ---------------------------------------------------------------------- | -------------- | ----- | -------------------------- | --------- |
+| [`phoenix-1`](join-a-network.mdx#join-a-public-network)                | 4 (+4 threads) | 32 GB | 2 TB (SSD 2000 MB/s R/W)   | 300 Mbps  |
+| [`pisco-1`](join-a-network.mdx#join-a-public-network)                  | 2 (+2 threads) | 16 GB | 500 GB (SSD 1000 MB/s R/W) | 150 Mbps  |
+| [`localterra`](https://github.com/terra-money/LocalTerra)              | 2              | 4 GB  | 20 GB (SSD 500 MB/s R/W)   | N/A       |
+| [`private-network`](join-a-network.mdx#set-up-a-local-private-network) | 1              | 2 GB  | 20 GB (SSD 500 MB/s R/W)   | N/A       |
 
 <Admonition type="caution" icon="☢️" title="Storage requirements">
 
-As the network grows, the minimum hardware requirements will also grow. It is recommended that you monitor the system so you can prevent it from running out of resources. 
+As the network grows, the minimum hardware requirements will also grow. It is recommended that you monitor the system so you can prevent it from running out of resources.
 
 </Admonition>
-
 
 ## Prerequisites
 
@@ -42,36 +39,35 @@ As the network grows, the minimum hardware requirements will also grow. It is re
 <summary> Installing Go for MacOS & Linux </summary>
 <p>
 
+Go releases can be found here: [ https://go.dev/dl/ ](https://go.dev/dl/)
 
-  Go releases can be found here: [ https://go.dev/dl/ ](https://go.dev/dl/)
+In your browser, you can right-click the correct release (V1.18) and then click on `Copy Link Address`.
 
-  In your browser, you can right-click the correct release (V1.18) and then click on `Copy Link Address`.
+```bash
+# 1. Download the archive
 
-  ```bash
-  # 1. Download the archive
+wget https://go.dev/dl/go1.18.2.linux-amd64.tar.gz
 
-  wget https://go.dev/dl/go1.18.2.linux-amd64.tar.gz
+# Optional: remove previous /go files:
 
-  # Optional: remove previous /go files:
+sudo rm -rf /usr/local/go
 
-  sudo rm -rf /usr/local/go
+# 2. Unpack:
 
-  # 2. Unpack:
+sudo tar -C /usr/local -xzf go1.18.2.linux-amd64.tar.gz
 
-  sudo tar -C /usr/local -xzf go1.18.2.linux-amd64.tar.gz
+# 3. Add the path to the go-binary to your system path:
+# (for this to persist, add this line to your ~/.profile or ~/.bashrc or  ~/.zshrc)
 
-  # 3. Add the path to the go-binary to your system path:
-  # (for this to persist, add this line to your ~/.profile or ~/.bashrc or  ~/.zshrc)
+export PATH=$PATH:/usr/local/go/bin
 
-  export PATH=$PATH:/usr/local/go/bin
+# 4. Verify your installation:
 
-  # 4. Verify your installation:
+go version
 
-  go version
+# go version go1.18.2 linux/amd64
 
-  # go version go1.18.2 linux/amd64
-
-  ```
+```
 
 </p>
 </details>

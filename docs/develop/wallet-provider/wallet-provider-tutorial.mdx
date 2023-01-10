@@ -2,9 +2,9 @@ import Admonition from '@theme/Admonition';
 
 # Get started with Wallet Provider
 
-[Wallet Provider](https://github.com/terra-money/wallet-provider) makes it easy to build Terra Station (browser extension and mobile) functionality into your React application. It contains custom hooks that drastically simplify common tasks like connecting a wallet and triggering transactions.
+[Wallet Provider](https://github.com/terra-money/wallet-provider) makes it easy to build Station (browser extension and mobile) functionality into your React application. It contains custom hooks that drastically simplify common tasks like connecting a wallet and triggering transactions.
 
-This guide will cover how to set up a React app, integrate Wallet Provider, check the balance of the connected account, and call a token swap. If you want to integrate Terra Station into an existing react app you can skip past the `Project Setup` section.
+This guide will cover how to set up a React app, integrate Wallet Provider, check the balance of the connected account, and call a token swap. If you want to integrate Station into an existing react app you can skip past the `Project Setup` section.
 
 <Admonition type="tip" icon="💡" title="Just want to dive in?">
 
@@ -16,9 +16,15 @@ If you're using a frontend framework other than React you'll need to use [Wallet
 
 ## Prerequisites
 
-- [Terra Station Chrome extension](../../learn/station/download/station-extension.mdx)
+- [Station Classic Chrome extension](../../learn/station/localterra.mdx). 
 - Node.js version 16+
 - [NPM](https://www.npmjs.com/)
+
+<Admonition type="tip" icon="🛰" title="Station Classic for development">
+
+LocalTerra can only be used with the Station Classic Developer Extension. To install this extension, follow the [Station Classic for development installation guide](../../learn/station/localterra.mdx). 
+
+</Admonition>
 
 ## 1. Project Setup
 
@@ -107,7 +113,7 @@ Alternatively, you can configure your webpack to include the necessary fallbacks
 
 ## 3. Put `useWallet` to work
 
-Now that `App.js` has inherited the context of `WalletProvider`, you can start putting your imports to work. You'll use the multi-purpose `useWallet` hook to connect your terra station extension to your web browser.
+Now that `App.js` has inherited the context of `WalletProvider`, you can start putting your imports to work. You'll use the multi-purpose `useWallet` hook to connect your Station extension to your web browser.
 
 1. Create a new file in the `components` directory called `Connect.js`.
 
@@ -169,7 +175,7 @@ Now that `App.js` has inherited the context of `WalletProvider`, you can start p
 
 4. Refresh your browser. There should be some new text and buttons in your browser.
 
-5. Make sure your Terra Station extension is connected to a wallet. Click **Connect EXTENSION** and the app will connect to your wallet.
+5. Make sure your Station extension is connected to a wallet. Click **Connect EXTENSION** and the app will connect to your wallet.
 
 The `status`, `network`, and `wallets` properties in your browser provide useful information about the state of the Terra wallet. Before connecting, the `status` variable will be `WALLET_NOT_CONNECTED` and upon connection the status becomes `WALLET_CONNECTED`. In addition, the `wallets` array now has one entry with the `connectType` and `terraAddress` you used to connect.
 
@@ -247,7 +253,7 @@ You can also create and send transactions to the Terra network while utilizing W
 npm install @terra-money/feather.js
 ```
 
-Before broadcasting this example transaction, ensure you're on the Terra testnet. To change networks click the gear icon in Terra Station and select `testnet`.
+Before broadcasting this example transaction, ensure you're on the Terra testnet. To change networks click the gear icon in Station and select `testnet`.
 
 You can request tesnet funds from the [Terra Testnet Faucet](https://faucet.terra.money/).
 
@@ -357,7 +363,7 @@ Wallet Provider supplies useful error types. This example will handle the `UserD
    export default App;
    ```
 
-4. Refresh your browser. You'll see a new **Send** button. Click the button to send your transaction. Your station extension will ask you to confirm the transaction.
+4. Refresh your browser. You'll see a new **Send** button. Click the button to send your transaction. Your Station extension will ask you to confirm the transaction.
 
 That's all! You can find more examples of `WalletProvider` capabilities in the following example templates:
 

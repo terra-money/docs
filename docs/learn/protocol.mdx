@@ -4,7 +4,7 @@ import Admonition from '@theme/Admonition';
 
 ## What is Terra?
 
-Terra is an [open-source blockchain](https://github.com/terra-money/core) hosting a vibrant ecosystem of decentralized applications (dApps) and top-tier developer tools. Using proof-of-stake consensus and ground-breaking technologies like Mantlemint, Terrain, and Terra Station, the Terra blockchain is one of the fastest chains in existence, giving users an unparalleled DeFi experience. As a permissionless, borderless economy, Terra enables next-generation financial products accessible to anyone with an Internet connection.
+Terra is an [open-source blockchain](https://github.com/terra-money/core) hosting a vibrant ecosystem of decentralized applications (dApps) and top-tier developer tools. Using proof-of-stake consensus and ground-breaking technologies like Mantlemint, Terrain, and Station, the Terra blockchain is one of the fastest chains in existence, giving users an unparalleled DeFi experience. As a permissionless, borderless economy, Terra enables next-generation financial products accessible to anyone with an Internet connection.
 
 ## What is Luna?
 
@@ -12,7 +12,7 @@ Luna is the Terra protocol’s native [staking](./glossary.mdx#staking) token. L
 
 ## A new Terra
 
-On May 25th, 2022, Terra Classic users passed [governance proposal 1623](https://station.terra.money/proposal/1623), which outlined the genesis of a new Terra chain. This proposal also described a genesis distribution of Luna which would be airdropped to users of the Terra Classic chain based on pre-depeg and post-depeg snapshots. Users can find their airdropped Luna by viewing the same wallet address that was present during either snapshot and [switching their Terra Station network](./station/networks.mdx) to the `phoenix-1` mainnet.
+On May 25th, 2022, Terra Classic users passed [governance proposal 1623](https://station.terra.money/proposal/1623), which outlined the genesis of a new Terra chain. This proposal also described a genesis distribution of Luna which would be airdropped to users of the Terra Classic chain based on pre-depeg and post-depeg snapshots. Users can find their airdropped Luna by viewing the same wallet address that was present during either snapshot and [switching their Station network](./station/networks.mdx) to the `phoenix-1` mainnet.
 
 On May 27th, 2022 the `phoenix-1` Terra mainnet launched, ushering in a new era of development by the Terra community.
 
@@ -75,7 +75,7 @@ After six months, a small portion of the remaining 70% of Luna will be released 
 
 Luna that is in the vesting state can still be [delegated, redeleagated, or undelegated](#bonding-staking-and-delegating) from validators.
 
-To learn how to view vesting Luna in your wallet, visit the [Terra Station vesting guide](./station/vesting.mdx).
+To learn how to view vesting Luna in your wallet, visit the [Station vesting guide](./station/vesting.mdx).
 
 To learn more about vesting, visit the [How vesting works](../../docs/develop/vesting.mdx).
 
@@ -104,7 +104,7 @@ Staking is the process of bonding Luna to a validator in exchange for staking re
 
 The Terra protocol only allows the top 130 validators to participate in consensus. A validator's rank is determined by their stake or the total amount of Luna bonded to them. Although validators can bond Luna to themselves, they mainly amass larger stakes from delegators. Validators with larger stakes get chosen more often to propose new blocks and earn proportionally more rewards.
 
-To learn how to stake your Luna and earn staking rewards, visit the [Terra Station staking guide](station/staking.mdx)
+To learn how to stake your Luna and earn staking rewards, visit the [Station staking guide](station/staking.mdx)
 
 ### Delegators
 
@@ -123,18 +123,18 @@ To start receiving rewards, delegators bond their Luna to a validator. The bondi
 Luna exists in the following three phases:
 
 - **Unbonded**: Luna that can be freely traded and is not staked to a validator.
-- **Bonded**: Luna that is staked to a validator. Bonded Luna accrues staking rewards. Luna bonded to validators in Terra Station can’t be traded freely.
+- **Bonded**: Luna that is staked to a validator. Bonded Luna accrues staking rewards. Luna bonded to validators in Station can’t be traded freely.
 - **Unbonding**: Luna that is in the process of becoming unbonded from a validator and does not accrue rewards. This process takes 21 days to complete.
 
 ### Bonding, staking, and delegating
 
 Generally, the terms bonding, staking, and delegating can be used interchangeably, as they happen in the same step. A delegator delegates Luna to a validator, the Luna gets bonded to the validator, and the bonded Luna gets added to the validator's stake.
 
-Delegators can bond Luna to any validator in the [active set](./glossary.mdx#active-set) using the delegate function in Terra Station. Delegators start earning staking rewards the moment they bond or stake to a validator.
+Delegators can bond Luna to any validator in the [active set](./glossary.mdx#active-set) using the delegate function in Station. Delegators start earning staking rewards the moment they bond or stake to a validator.
 
 ### Unbonding
 
-Delegators can unbond or unstake their Luna using the undelegate function in Terra Station. The unbonding process takes 21 days to complete. During this period, the unbonding Luna can't be traded, and no staking rewards accrue.
+Delegators can unbond or unstake their Luna using the [undelegate function in Station](./station/staking.mdx#undelegate). The unbonding process takes 21 days to complete. During this period, the unbonding Luna can't be traded, and no staking rewards accrue.
 
 <Admonition type="caution" icon="☢️">
 
@@ -146,7 +146,7 @@ The 21-day unbonding process assists in the long-term stability of the Terra pro
 
 ### Redelegation
 
-Redelegating instantly sends staked Luna from one validator to another. Instead of waiting for the 21-day unstaking period, a user can redelegate their staked Luna at any time using Terra Station's redelegate function. Validators receiving redelegations are barred from further redelegating any amount of Luna to any validator for 21 days.
+Redelegating instantly sends staked Luna from one validator to another. Instead of waiting for the 21-day unstaking period, a user can redelegate their staked Luna at any time using Station's redelegate function. Validators receiving redelegations are barred from further redelegating any amount of Luna to any validator for 21 days. Follow the [Station redelegation guide](./station/staking.mdx#redelegate) to learn how to redelegate.
 
 <Admonition type="caution" icon="☢️">
 
@@ -190,7 +190,7 @@ For more information on slashing, visit the [slashing module](../develop/module-
 
 The Terra protocol is a decentralized public [blockchain](./glossary.mdx#blockchain) governed by community members. Governance is the democratic process that allows users and validators to make changes to the Terra protocol. Community members submit, vote, and implement proposals.
 
-To learn how to vote with your staked Luna or submit proposals, visit the [Terra Station governance guide](./station/governance.mdx).
+To learn how to vote with your staked Luna or submit proposals, visit the [Station governance guide](./station/governance.mdx).
 
 ### Proposals
 

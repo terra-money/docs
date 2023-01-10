@@ -20,13 +20,13 @@ The Terra Core is powered by the Tendermint consensus. Validators run full nodes
 
 ### What is a full node?
 
-A full node is a program that validates the transactions and blocks of a blockchain. Validators must run full nodes. Full nodes require more resources than light nodes,  which only processes block headers and a small subset of transactions. Running a full node means you are running a non-compromised and up-to-date version of the Terra Core software with low network latency and no downtime.
+A full node is a program that validates the transactions and blocks of a blockchain. Validators must run full nodes. Full nodes require more resources than light nodes, which only processes block headers and a small subset of transactions. Running a full node means you are running a non-compromised and up-to-date version of the Terra Core software with low network latency and no downtime.
 
 It is possible and encouraged for any user to run full nodes even if they do not plan to be validators.
 
 ### What is staking?
 
-***Staking*** occurs when Luna holders delegate their Luna to a validator. Staking increases a validator's weight, which improves the likelihood of being selected to validate blocks, and in return, delegators get rewarded.
+**_Staking_** occurs when Luna holders delegate their Luna to a validator. Staking increases a validator's weight, which improves the likelihood of being selected to validate blocks, and in return, delegators get rewarded.
 
 The Phoenix-1 Mainnet is a public Proof of Stake (PoS) blockchain. This means a validator's weight (total stake) is determined by the amount of staking tokens (Luna) they delegate to themselves plus the Luna bonded to them by external delegators. The weight of a validator determines whether or not they are an active validator and how frequently they can propose a block. Validators with a higher weight will propose blocks more frequently, and in turn generate more revenue.
 
@@ -34,7 +34,7 @@ The active validator set is made up of the top 130 validators who hold the most 
 
 ### What is a delegator?
 
-Delegators are Luna holders who want to receive staking rewards without the responsibility of running a validator. Through Terra Station, a user can delegate Luna to a validator and in exchange receive a part of a validator's revenue. For more detail on how revenue is distributed, see [What are the incentives to stake?](#what-are-the-incentives-to-stake) and [What is a validator's commission?](#what-is-a-validators-commission)
+Delegators are Luna holders who want to receive staking rewards without the responsibility of running a validator. Through Station, a user can delegate Luna to a validator and in exchange receive a part of a validator's revenue. For more detail on how revenue is distributed, see [What are the incentives to stake?](#what-are-the-incentives-to-stake) and [What is a validator's commission?](#what-is-a-validators-commission)
 
 Delegators share the benefits and rewards of staking with their Validator. If a Validator is successful, its delegators will consistently share in the rewards structure. If a Validator is slashed, the delegator’s stake will also be slashed. This is why delegators should perform due-diligence on validators before delegating. Delegators can also diversify by spreading their stake over multiple validators.
 
@@ -85,7 +85,7 @@ terrad tx staking create-validator
 
 Once a validator is created and registered, Luna holders can delegate Luna to them, effectively adding stake to its pool. The total stake of a validator is the total of their self-bonded Luna plus the Luna bonded by external delegators.
 
-**Only the top 130 validators are considered active or *bonded validators***. If a validator's total stake dips below the top 130, the validator loses its validator privileges and no longer serves as part of the active set, entering into **unbonding mode** and eventually becoming **unbonded**, or inactive.
+**Only the top 130 validators are considered active or _bonded validators_**. If a validator's total stake dips below the top 130, the validator loses its validator privileges and no longer serves as part of the active set, entering into **unbonding mode** and eventually becoming **unbonded**, or inactive.
 
 ## Validator keys and states
 
@@ -119,14 +119,13 @@ All Delegators have the same state as their validator.
 
 Delegations are not necessarily bonded. Luna can be delegated and bonded, delegated and unbonding, delegated and unbonded, or liquid.
 
-
 ### What is "self-bonding"? How can I increase my "self-bond"?
 
 A validator operator's "self-bond" refers to the amount of Luna delegated to itself. You can increase your self-bond by delegating more Luna to your validator account.
 
 ### Can I delegate to a validator outside of the active set?
 
-You can still delegate to a validator even if they do not appear on Terra Station. Simply add the terravaloper address of your desired validator to the end of the following URL:
+You can still delegate to a validator even if they do not appear on Station. Simply add the terravaloper address of your desired validator to the end of the following URL:
 
 `https://station.terra.money/validator/<terravaloper-address>`
 
@@ -184,7 +183,7 @@ Validators receive block provisions, block rewards, and fee rewards and share th
 
 <Admonition type="info" icon="ℹ️" title="Delegate safely">
 
-You should always prioritize validators who you trust when staking for reasons such as slashing.  However, you do not need to worry about your delegated funds being stolen as it is impossible for a validator to steal staked funds.
+You should always prioritize validators who you trust when staking for reasons such as slashing. However, you do not need to worry about your delegated funds being stolen as it is impossible for a validator to steal staked funds.
 
 </Admonition>
 
@@ -208,7 +207,7 @@ This total revenue is divided among a validator's staking pool according to each
 
 ### What is the incentive to run a validator?
 
-Validators earn more revenue than their delegators through commission. 
+Validators earn more revenue than their delegators through commission.
 
 ### What is a validator's commission?
 
@@ -233,6 +232,7 @@ Use this simple equation to find the reward $R$ for each validator:
 $$9R ~ + ~ R ~ + ~ 5\%(R) ~ = ~ 1005 ~ \Leftrightarrow ~ R ~ = ~ 1005 ~ / ~ 10.05 ~ = ~ 100$$
 
 - For the validator that proposes a block:
+
   - The pool obtains: $R ~ + ~ 5\%(R) = 105 ~ LUNA$
   - Commission: $105 ~ LUNA ~ * ~ 80\% ~ * ~ 1\% = 0.84 ~ LUNA$
   - Validator's reward: $105 ~ LUNA ~ * ~ 20\% ~ + ~ Commission = 21.84 ~ LUNA$
@@ -254,10 +254,9 @@ If a validator misbehaves, their bonded stake, along with their delegators' stak
 
 <Admonition type="caution" icon="☢️">
 
- Even if a validator does not intentionally misbehave, it can still be slashed if its node crashes, loses connectivity, gets DDoSed, or if its private key is compromised.
+Even if a validator does not intentionally misbehave, it can still be slashed if its node crashes, loses connectivity, gets DDoSed, or if its private key is compromised.
 
 </Admonition>
-
 
 ### Are validators required to self-bond Luna?
 
@@ -267,12 +266,11 @@ Although validators are not required to self-bond Luna, all validators should ha
 
 In order for delegators to have some guarantee about how much `skin-in-the-game` their validator has, validators can signal a minimum amount of self-bonded Luna. If a validator's self-bond goes below the limit that it has predefined, this validator and all of its delegators will unbond.
 
-
 ## Technical Requirements
 
 ### What are the hardware requirements?
 
-Visit the [requirements section](../run-a-full-terra-node/system-config.mdx#hardware-requirements) of the full node guide to learn the current minimum operating requirements. 
+Visit the [requirements section](../run-a-full-terra-node/system-config.mdx#hardware-requirements) of the full node guide to learn the current minimum operating requirements.
 
 ### What are the software requirements?
 
