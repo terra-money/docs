@@ -78,31 +78,57 @@ After starting LocalTerra successfully, you should start seeing simulated blockc
 
 ## 3. Set up your wallet
 
-In order to use your Station wallet with LocalTerra, you will need to configure your wallet to run on your LocalTerra network.
+In order to use your Station wallet with LocalTerra, you will need to configure your wallet to run on your LocalTerra network. The following steps walk you through importing one of [LocalTerra's preconfigured wallets](../localterra/accounts.mdx). 
 
 1. Open the Station extension in your Google Chrome web browser. Click the gear icon in the upper right-hand corner and change the network from **mainnet** to **localterra**.
 
    <img
-     className="readme-img-md"
+     className="readme-img-sm"
      src="/img/nft/extension_localterra.png"
      alt="Switch to LocalTerra"
    />
 
-2. Click **Switch wallet**.
+2. Click on your wallet name in the upper left corner of the extension to enter the wallet manager. 
+
+   <img
+     className="readme-img-sm"
+     src="/img/nft/manage_wallets.png"
+     alt="Switch to LocalTerra"
+   />
+
+3. Click **Add a wallet**.
+
+4. Click **Recover wallet**.
+
+   <img
+     className="readme-img-sm"
+     src="/img/nft/recover_wallet.png"
+     alt="Recover Wallet"
+   />
+
+5. Input the following LocalTerra seed phrase and wallet information into the form and click **Submit**. 
+
+<CH.Code>
+```js Test-wallet-info
+Name: test1
+Password: testwallet
+```
+---
+```js Mnemonic
+notice oak worry limit wrap speak medal online prefer cluster roof addict wrist behave treat actual wasp year salad speed social layer crew genius
+```
+</CH.Code>
 
    <img
      className="readme-img-md"
-     src="/img/nft/switch_wallet.png"
-     alt="Switch Wallet"
+     src="/img/nft/input_wallet.png"
+     alt="Input Wallet"
    />
 
-3. Click **Preconfigured wallets…** and select `test1` from the drop-down list.
 
-   <img
-     className="readme-img-md"
-     src="/img/nft/test_wallet.png"
-     alt="Switch Wallet"
-   />
+
+
+
 
 Now that you have successfully switched to the testing wallet on LocalTerra, you will be able to deploy your smart contract.
 
@@ -110,11 +136,11 @@ Now that you have successfully switched to the testing wallet on LocalTerra, you
 
 Before you can deploy your contract and begin minting your NFT, you will need to change the `config.terrain.json` file in your cloned repository.
 
-1. In your Station extension, open your `test1` wallet and copy the wallet address.
+1. In your Station extension, click on your **test1** in the upper left corner. Click the copy symbol to copy the address. 
 
    <img
-     className="readme-img-md"
-     src="/img/nft/copy_address.png"
+     className="readme-img-sm"
+     src="/img/nft/address.png"
      alt="Switch Wallet"
    />
 
@@ -267,6 +293,8 @@ After a few seconds, the front end webpage will display your NFT.
 
 Congratulations, you have just minted your first NFT!
 
+{/*
+
 ## View Your New NFT
 
 1. Before you can view your NFT, you'll need to locate your contract address. Open the `refs.terrain.json` file located in your cloned repository and copy the contract address listed after `"default"`.
@@ -319,3 +347,5 @@ You've just minted your first NFT on the Terra blockchain! If you have your own 
 LocalTerra is not needed for deployments on the mainnet and is primarily used for local testing and development purposes.
 
 </Admonition>
+
+*/}
