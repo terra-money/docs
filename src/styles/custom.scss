@@ -63,36 +63,39 @@
   }
 }
 
+.ch-scrollycoding {
+
+}
+
 .ch-inline-code > code {
   word-break: break-word;
 }
 
 .ch-scrollycoding-sticker {
   position: sticky;
-  top: 10vh;
+  top: 70px !important;
   display: flex;
   align-self: start;
   flex-flow: column;
   justify-content: center;
-  max-width: 60%;
-  width: unset;
-  min-width:50%;
+  width: 60%;
   max-height: unset;
 }
 
 .ch-editor-frame {
-height: unset !important;
+
+height: fit-content !important;    /* If removed, height is set to largest code block */
+
 max-height: 80vh !important;
 }
 
 .ch-code-scroll-parent {
  min-height: 100px;
- height:100%;
 }
+
 .ch-scrollycoding-content {
   box-sizing: border-box;
   flex: 1;
-
 }
 
 /* ================DARK MODE STYLING================ */
