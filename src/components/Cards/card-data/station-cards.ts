@@ -9,6 +9,13 @@ const terraStationCards: CardProps[] = [
     summary: "Download Station, Terra's official wallet.",
   },
   {
+    href: '/learn/station/migration',
+    lightSVG: '/img/icons/migration.svg',
+    darkSVG: '/img/icons/dark/migration.svg',
+    header: 'Migrate to Station',
+    summary: 'Import your wallet into Station.',
+  },
+  {
     href: '/learn/station/wallet.html',
     lightSVG: '/img/icons/station/wallet.svg',
     darkSVG: '/img/icons/dark/wallet.svg',
@@ -44,13 +51,7 @@ const terraStationCards: CardProps[] = [
     header: 'Stake Luna',
     summary: 'Stake Luna and start earning rewards.',
   },
-  {
-    href: '/learn/station/contracts.html',
-    lightSVG: '/img/icons/smart-contract.svg',
-    darkSVG: '/img/icons/dark/smart-contract.svg',
-    header: 'Smart Contracts',
-    summary: 'Start working with Smart Contracts.',
-  },
+
   {
     href: '/learn/station/governance.html',
     lightSVG: '/img/icons/core/governance_2.svg',
