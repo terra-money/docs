@@ -89,7 +89,7 @@ Example response:
 [{ denom: 'uosmo', amount: '10000' }];
 ```
 
-Queries that can't directly read a the chain from the given address always require a chainID to be specified. See the below example.
+Queries that can't directly read the chain from the given address always require a chainID to be specified. See the below example.
 
 ```ts
 // query the total circulating supply
@@ -322,7 +322,7 @@ AccAddress.validate('terra1x46rqay4d3cssq8gxxvqz8xt6nwlz4td20k38v', 'terra'); //
 // to check just length and bech32 checksum (if don't know the chain)
 AccAddress.validate('terra1x46rqay4d3cssq8gxxvqz8xt6nwlz4td20k38v'); // true
 
-// Get the prefix of an address. It will trow an error if the address is invalid
+// Get the prefix of an address. It will throw an error if the address is invalid
 AccAddress.getPrefix('terra1x46rqay4d3cssq8gxxvqz8xt6nwlz4td20k38v'); // 'terra'
 ```
 
