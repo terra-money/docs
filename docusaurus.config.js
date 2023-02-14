@@ -78,6 +78,7 @@ module.exports = async function config() {
     themeConfig:
       /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
       ({
+        image: 'img/logo_light.png',
         docs: {
           sidebar: {
             hideable: false,
