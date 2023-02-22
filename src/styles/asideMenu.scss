@@ -39,7 +39,9 @@
 }
 
 .theme-doc-sidebar-container {
-  height: calc(100% + 420px);
+  height: 100vh;
+  position: sticky;
+  top: 0;
 }
 
 li[class*=' theme-doc-sidebar-item-'] {
