@@ -144,7 +144,6 @@ const sidebars = {
               collapsed: true,
               items: [
                 'develop/terrad/install-terrad',
-                'develop/terrad/terrad-mac',
                 'develop/terrad/using-terrad',
                 'develop/terrad/commands',
                 'develop/terrad/subcommands',
