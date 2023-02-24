@@ -2,29 +2,29 @@ import Admonition from '@theme/Admonition';
 
 # Install Terrad
 
-Terrad is the command-line interface and daemon that connects to Terra and enables you to interact with the Terra blockchain. Terra Core is the official Golang reference implementation of the Terra node software.
+Terrad is the command-line interface and node daemon that enables you to interact with the Terra blockchain. Terra Core is the official Golang reference implementation of the Terra node software.
 
 This guide is for developers who want to install Terrad and interact with the Terra Core without running a full node. If you want to run a full node or join a network, use the documentation on how to [run a full Terra node](../../full-node/run-a-full-terra-node/README.mdx).
 
 ### Prerequisites
 
 - [Golang v1.18 linux/amd64](https://golang.org/doc/install)
-- Ensure your `GOPATH` and `GOBIN` environment variables are set up correctly.
+- [Ensure your `GOPATH` and `GOBIN` environment variables are set up correctly](#from-source).
 - Linux users: install build-essential.
 
 ## From binary
 
 The easiest way to install Terrad and Terra Core is by downloading a pre-built Linux binary. You can find the latest Linux binaries on the [releases page](https://github.com/terra-money/core/releases). 
 
-Mac users should follow the instructions below. 
+If you are not using Linux, follow the instructions below. 
 
 ## From source
 
 <Admonition type="tip" icon="🛣" title="Set up your Go path">
 
-Before proceeding, make sure your Go path is set up correctly. 
+Before installing Terrad, ensure your Go path is set up correctly. 
 
-1. Open your Bash profile in your code editor. If you use VS Code, you can run the following command to open the file. 
+1. Open your Bash profile in your code editor. If you use VS Code and _'zsh'_, you can run the following command in your terminal to open the file. 
 
 ```sh Terminal
 code ~/.zshrc
