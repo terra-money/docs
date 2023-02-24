@@ -14,41 +14,68 @@ This guide is for developers who want to install Terrad and interact with the Te
 
 ## From binary
 
-The easiest way to install Terrad and Terra Core is by downloading a pre-built Linux binary. You can find the latest binaries on the [releases page](https://github.com/terra-money/core/releases). 
+The easiest way to install Terrad and Terra Core is by downloading a pre-built Linux binary. You can find the latest Linux binaries on the [releases page](https://github.com/terra-money/core/releases). 
 
 Mac users should follow the instructions below. 
 
 ## From source
 
+<Admonition type="tip" icon="🛣" title="Set up your Go path">
+
+Before proceeding, make sure your Go path is set up correctly. 
+
+1. Open your Bash profile in your code editor. If you use VS Code, you can run the following command to open the file. 
+
+```sh Terminal
+code ~/.zshrc
+```
+
+2. Near the bottom of the file, add the following line: 
+
+```sh Editor
+export PATH=$PATH:$(go env GOPATH)/bin
+```
+
+Save the file and open a new terminal before proceeding. 
+
+</Admonition>
+
+<CH.Scrollycoding>
 ### 1. Get the Terra Core source code
 
 Use `git` to retrieve [Terra Core](https://github.com/terra-money/core/) and check out the `main` branch, which contains the latest stable release.
 
-```
+```sh Terminal
 git clone https://github.com/terra-money/core
 cd core
 git checkout [latest version]
 ```
 
+---
+
 ### 2. Build Terra Core from source
 
 Build Terra Core, and install the Terrad executable to your `GOPATH` environment variable.
 
-```bash
+```sh Terminal
 make install
 ```
+
+---
 
 ### 3. Verify your Terra Core installation
 
 Verify that Terra Core is installed correctly.
 
-```bash
+```sh Terminal
 terrad version --long
 ```
 
+---
+
 If Terra Core is installed correctly, you will get the following output:
 
-```bash
+```sh Output
 name: terra
 server_name: terrad
 version: v2.0.0
@@ -56,25 +83,12 @@ commit: ea682c41e7e71ba0b182c9e7f989855fb9595885
 build_tags: netgo,ledger
 go: go version go1.18.2 darwin/amd64
 ```
-
-<Admonition type="tip" icon="💡">
-
-If the `terrad: command not found` error message is returned, confirm that the Go binary path is correctly configured by running the following command:
-
-```
-export PATH=$PATH:$(go env GOPATH)/bin
-```
-
-Then run the _`version`_ command again:
-
-```bash
-terrad version --long
-```
-
-</Admonition>
+</CH.Scrollycoding>
 
 ## Next steps
 
 With Terrad installed, you can set up a local testing environment using [LocalTerra](../localterra/README.mdx).
 
 For more information on Terrad commands and usage, visit [Using Terrad](using-terrad.mdx).
+
+
