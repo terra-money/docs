@@ -1,17 +1,23 @@
+import Admonition from '@theme/Admonition';
+
 # terrad keys export
 
-Export private keys
+Export private keys. 
 
 ## Synopsis
 
 Export a private key from the local keyring in ASCII-armored encrypted format.
 
-When both the --unarmored-hex and --unsafe flags are selected, cryptographic
-private key material is exported in an INSECURE fashion that is designed to
-allow users to import their keys in hot wallets. This feature is for advanced
-users only that are confident about how to handle private keys work and are
-FULLY AWARE OF THE RISKS. If you are unsure, you may want to do some research
-and export your keys in ASCII-armored encrypted format.
+When both the --unarmored-hex and --unsafe flags are selected, cryptographic private key material is exported in an INSECURE fashion that is designed to
+allow users to import their keys in hot wallets. 
+
+<Admonition type="danger">
+
+This feature is for advanced users only that are confident about how to handle private keys work and are FULLY AWARE OF THE RISKS. If you are unsure, you may want to do some research and export your keys in ASCII-armored encrypted format.
+
+</Admonition>
+
+## Usage
 
 ```sh Terrad
 terrad keys export <name> [flags]
@@ -36,6 +42,6 @@ terrad keys export <name> [flags]
 
 ## See also
 
-* [terrad keys](terrad_keys.mdx)	 - Manage your application's keys
+* [terrad keys](./terrad_keys.mdx)	 - Manage your application's keys. 
 
 

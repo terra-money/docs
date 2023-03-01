@@ -1,18 +1,22 @@
+import Admonition from '@theme/Admonition';
+
+
 # terrad keys migrate
 
-Migrate keys from the legacy (db-based) Keybase
+Migrate keys from the legacy (db-based) Keybase. 
 
 ## Synopsis
 
-Migrate key information from the legacy (db-based) Keybase to the new keyring-based Keyring.
-The legacy Keybase used to persist keys in a LevelDB database stored in a 'keys' sub-directory of
-the old client application's home directory, e.g. $HOME/.gaiacli/keys/.
-For each key material entry, the command will prompt if the key should be skipped or not. If the key
-is not to be skipped, the passphrase must be entered. The key will only be migrated if the passphrase
-is correct. Otherwise, the command will exit and migration must be repeated.
+Migrate key information from the legacy (db-based) Keybase to the new keyring-based Keyring. The legacy Keybase used to persist keys in a LevelDB database stored in a 'keys' sub-directory of the old client application's home directory, e.g. `$HOME/.gaiacli/keys/`.
+For each key material entry, the command will prompt if the key should be skipped or not. If the key is not to be skipped, the passphrase must be entered. The key will only be migrated if the passphrase is correct. Otherwise, the command will exit and migration must be repeated.
+
+<Admonition type="caution">
 
 It is recommended to run in 'dry-run' mode first to verify all key migration material.
 
+</Admonition>
+
+## Usage
 
 ```sh Terrad
 terrad keys migrate <old_home_dir> [flags]
@@ -36,6 +40,6 @@ terrad keys migrate <old_home_dir> [flags]
 
 ## See also
 
-* [terrad keys](terrad_keys.mdx)	 - Manage your application's keys
+* [terrad keys](./terrad_keys.mdx)	 - Manage your application's keys. 
 
 
