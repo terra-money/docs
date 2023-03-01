@@ -7,8 +7,8 @@ Grant authorization to an address
 grant authorization to an address to execute a transaction on your behalf:
 
 Examples:
- $ terrad tx authz grant terra1skjw.. send /cosmos.bank.v1beta1.MsgSend --spend-limit=1000stake --from=terra1skl..
- $ terrad tx authz grant terra1skjw.. generic --msg-type=/cosmos.gov.v1beta1.MsgVote --from=terra1sk..
+ terrad tx authz grant terra1skjw.. send /cosmos.bank.v1beta1.MsgSend --spend-limit=1000stake --from=terra1skl..
+ terrad tx authz grant terra1skjw.. generic --msg-type=/cosmos.gov.v1beta1.MsgVote --from=terra1sk..
 
 ```sh Terrad
 terrad tx authz grant <grantee> <authorization_type="send"|"generic"|"delegate"|"unbond"|"redelegate"> --from <granter> [flags]

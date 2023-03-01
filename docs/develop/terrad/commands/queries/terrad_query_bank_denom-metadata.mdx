@@ -1,17 +1,26 @@
 # terrad query bank denom-metadata
 
-Query the client metadata for coin denominations
+Query the client metadata for coin denominations.
 
 ## Synopsis
 
-Query the client metadata for all the registered coin denominations
+Query the client metadata for all the registered coin denominations.
 
-## Example
-  To query for the client metadata of all coin denominations use:
-  $ terrad query bank denom-metadata
+## Examples
 
-To query for the client metadata of a specific coin denomination use:
-  $ terrad query bank denom-metadata --denom=[denom]
+To query for the client metadata of all coin denominations, use the following command:
+
+```sh Terrad
+terrad query bank denom-metadata
+```
+
+To query for the client metadata of a specific coin denomination use the following command:
+
+```sh Terrad
+  terrad query bank denom-metadata --denom=[denom]
+```
+
+## Usage
 
 ```sh Terrad
 terrad query bank denom-metadata [flags]
@@ -35,6 +44,6 @@ terrad query bank denom-metadata [flags]
 
 ## See also
 
-* [terrad query bank](terrad_query_bank.mdx)	 - Querying commands for the bank module
+* [terrad query bank](./terrad_query_bank.mdx)	 - Querying commands for the bank module.
 
 
