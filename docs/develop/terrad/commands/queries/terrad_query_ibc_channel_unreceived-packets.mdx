@@ -1,8 +1,8 @@
-## terrad query ibc channel unreceived-packets
+# terrad query ibc channel unreceived-packets
 
 Query all the unreceived packets associated with a channel
 
-### Synopsis
+## Synopsis
 
 Determine if a packet, given a list of packet commitment sequences, is unreceived.
 
@@ -20,7 +20,7 @@ terrad query ibc channel unreceived-packets [port-id] [channel-id] [flags]
 terrad query ibc channel unreceived-packets [port-id] [channel-id] --sequences=1,2,3
 ```
 
-### Options
+## Options
 
 ```sh Terrad
       --height int             Use a specific height to query state at (this can error if the node is pruning state)
@@ -30,14 +30,14 @@ terrad query ibc channel unreceived-packets [port-id] [channel-id] --sequences=1
       --sequences int64Slice   comma separated list of packet sequence numbers (default [])
 ```
 
-### Options inherited from parent commands
+## Options inherited from parent commands
 
 ```
       --chain-id string   The network chain ID
 ```
 
-### SEE ALSO
+## See also
 
-* [terrad query ibc channel](terrad_query_ibc_channel.md)	 - IBC channel query subcommands
+* [terrad query ibc channel](terrad_query_ibc_channel.mdx)	 - IBC channel query subcommands
 
 

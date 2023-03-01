@@ -1,8 +1,8 @@
-## terrad query tx
+# terrad query tx
 
 Query for a transaction by hash, "<addr>/<seq>" combination or comma-separated signatures in a committed block
 
-### Synopsis
+## Synopsis
 
 Example:
 $ terrad query tx <hash>
@@ -13,7 +13,7 @@ $ terrad query tx --type=signature <sig1_base64>,<sig2_base64...>
 terrad query tx --type=[hash|acc_seq|signature] [hash|acc_seq|signature] [flags]
 ```
 
-### Options
+## Options
 
 ```sh Terrad
       --height int      Use a specific height to query state at (this can error if the node is pruning state)
@@ -23,14 +23,14 @@ terrad query tx --type=[hash|acc_seq|signature] [hash|acc_seq|signature] [flags]
       --type string     The type to be used when querying tx, can be one of "hash", "acc_seq", "signature" (default "hash")
 ```
 
-### Options inherited from parent commands
+## Options inherited from parent commands
 
 ```
       --chain-id string   The network chain ID
 ```
 
-### SEE ALSO
+## See also
 
-* [terrad query](terrad_query.md)	 - Querying subcommands
+* [terrad query](terrad_query.mdx)	 - Querying subcommands
 
 

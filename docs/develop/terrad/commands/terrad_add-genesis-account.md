@@ -2,7 +2,7 @@
 
 Add a genesis account to `genesis.json`.
 
-### Synopsis
+## Synopsis
 
 Add a genesis account to `genesis.json`. The provided account must specify
 the account address or key name and a list of initial coins. If a key name is given,
@@ -14,7 +14,7 @@ contain valid denominations. Accounts may optionally be supplied with vesting pa
 terrad add-genesis-account [address_or_key_name] [coin][,[coin]] [flags]
 ```
 
-### Options
+## Options
 
 ```sh Terradsh Terrad
       --height int               Use a specific height to query state at (this can error if the node is pruning state)
@@ -28,7 +28,7 @@ terrad add-genesis-account [address_or_key_name] [coin][,[coin]] [flags]
       --vesting-start-time int   schedule start time (unix epoch) for vesting accounts
 ```
 
-### SEE ALSO
+## See also
 
 * [terrad](./terrad.mdx)	 - Stargate Terra App
 

@@ -1,8 +1,8 @@
-## terrad query upgrade applied
+# terrad query upgrade applied
 
 block header for height at which a completed upgrade was applied
 
-### Synopsis
+## Synopsis
 
 If upgrade-name was previously executed on the chain, this returns the header for the block at which it was applied.
 This helps a client determine which binary was valid over a given range of blocks, as well as more context to understand past migrations.
@@ -11,7 +11,7 @@ This helps a client determine which binary was valid over a given range of block
 terrad query upgrade applied [upgrade-name] [flags]
 ```
 
-### Options
+## Options
 
 ```sh Terrad
       --height int      Use a specific height to query state at (this can error if the node is pruning state)
@@ -20,14 +20,14 @@ terrad query upgrade applied [upgrade-name] [flags]
   -o, --output string   Output format (text|json) (default "text")
 ```
 
-### Options inherited from parent commands
+## Options inherited from parent commands
 
 ```
       --chain-id string   The network chain ID
 ```
 
-### SEE ALSO
+## See also
 
-* [terrad query upgrade](terrad_query_upgrade.md)	 - Querying commands for the upgrade module
+* [terrad query upgrade](terrad_query_upgrade.mdx)	 - Querying commands for the upgrade module
 
 

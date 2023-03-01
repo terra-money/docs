@@ -1,8 +1,8 @@
-## terrad query ibc channel unreceived-acks
+# terrad query ibc channel unreceived-acks
 
 Query all the unreceived acks associated with a channel
 
-### Synopsis
+## Synopsis
 
 Given a list of acknowledgement sequences from counterparty, determine if an ack on the counterparty chain has been received on the executing chain.
 
@@ -20,7 +20,7 @@ terrad query ibc channel unreceived-acks [port-id] [channel-id] [flags]
 terrad query ibc channel unreceived-acks [port-id] [channel-id] --sequences=1,2,3
 ```
 
-### Options
+## Options
 
 ```sh Terrad
       --height int             Use a specific height to query state at (this can error if the node is pruning state)
@@ -30,14 +30,14 @@ terrad query ibc channel unreceived-acks [port-id] [channel-id] --sequences=1,2,
       --sequences int64Slice   comma separated list of packet sequence numbers (default [])
 ```
 
-### Options inherited from parent commands
+## Options inherited from parent commands
 
 ```
       --chain-id string   The network chain ID
 ```
 
-### SEE ALSO
+## See also
 
-* [terrad query ibc channel](terrad_query_ibc_channel.md)	 - IBC channel query subcommands
+* [terrad query ibc channel](terrad_query_ibc_channel.mdx)	 - IBC channel query subcommands
 
 

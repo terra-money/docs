@@ -1,8 +1,8 @@
-## terrad query txs
+# terrad query txs
 
 Query for paginated transactions that match a set of events
 
-### Synopsis
+## Synopsis
 
 Search for transactions that match the exact given events where results are paginated.
 Each event takes the form of '{eventType}.{eventAttribute}={value}'. Please refer
@@ -16,7 +16,7 @@ $ terrad query txs --events 'message.sender=terra1...&message.action=withdraw_de
 terrad query txs [flags]
 ```
 
-### Options
+## Options
 
 ```sh Terrad
       --events string   list of transaction events in the form of {eventType}.{eventAttribute}={value}
@@ -28,14 +28,14 @@ terrad query txs [flags]
       --page int        Query a specific page of paginated results (default 1)
 ```
 
-### Options inherited from parent commands
+## Options inherited from parent commands
 
 ```
       --chain-id string   The network chain ID
 ```
 
-### SEE ALSO
+## See also
 
-* [terrad query](terrad_query.md)	 - Querying subcommands
+* [terrad query](terrad_query.mdx)	 - Querying subcommands
 
 
