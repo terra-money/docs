@@ -7,7 +7,7 @@ block header for height at which a completed upgrade was applied
 If upgrade-name was previously executed on the chain, this returns the header for the block at which it was applied.
 This helps a client determine which binary was valid over a given range of blocks, as well as more context to understand past migrations.
 
-```
+```sh Terrad
 terrad query upgrade applied [upgrade-name] [flags]
 ```
 
