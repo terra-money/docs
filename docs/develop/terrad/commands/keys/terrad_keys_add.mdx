@@ -1,28 +1,29 @@
 # terrad keys add
 
-Add an encrypted private key (either newly generated or recovered), encrypt it, and save to <name> file
+Add an encrypted private key (either newly generated or recovered), encrypt it, and save to `<name>` file. 
 
 ## Synopsis
 
 Derive a new private key and encrypt to disk.
-Optionally specify a BIP39 mnemonic, a BIP39 passphrase to further secure the mnemonic,
-and a bip32 HD path to derive a specific account. The key will be stored under the given name
-and encrypted with the given password. The only input that is required is the encryption password.
 
-If run with -i, it will prompt the user for BIP44 path, BIP39 mnemonic, and passphrase.
-The flag --recover allows one to recover a key from a seed passphrase.
-If run with --dry-run, a key would be generated (or recovered) but not stored to the
-local keystore.
-Use the --pubkey flag to add arbitrary public keys to the keystore for constructing
-multisig transactions.
+Optionally, you can specify a `BIP39` mnemonic, a `BIP39` passphrase to further secure the mnemonic, and a `BIP32` HD path to derive a specific account. The key will be stored under the given name and encrypted with the given password. The only input that is required is the encryption password.
+If run with `-i`, it will prompt the user for `BIP44` path, `BIP39` mnemonic, and passphrase. 
 
-You can create and store a multisig key by passing the list of key names stored in a keyring
-and the minimum number of signatures required through --multisig-threshold. The keys are
-sorted by address, unless the flag --nosort is set.
-Example:
+The flag `--recover` allows one to recover a key from a seed passphrase.
 
-    keys add mymultisig --multisig "keyname1,keyname2,keyname3" --multisig-threshold 2
+If run with `--dry-run`, a key will be generated (or recovered) but not stored to the local keystore. 
 
+Use the `--pubkey` flag to add arbitrary public keys to the keystore for constructing multisig transactions.
+
+You can create and store a multisig key by passing the list of key names stored in a keyring and the minimum number of signatures required through `--multisig-threshold`. The keys are sorted by address, unless the flag `--nosort` is set.
+
+**Example**:
+
+```sh Terrad
+$ terrad keys add mymultisig --multisig "keyname1,keyname2,keyname3" --multisig-threshold 2
+```
+
+## Usage
 
 ```sh Terrad
 terrad keys add <name> [flags]
@@ -50,7 +51,7 @@ terrad keys add <name> [flags]
 
 ## Options inherited from parent commands
 
-```
+```sh Terradsh Terrad
       --home string              The application home directory (default "terra")
       --keyring-backend string   Select keyring's backend (os|file|test) (default "os")
       --keyring-dir string       The client Keyring directory; if omitted, the default 'home' directory will be used
@@ -59,6 +60,6 @@ terrad keys add <name> [flags]
 
 ## See also
 
-* [terrad keys](terrad_keys.mdx)	 - Manage your application's keys
+* [terrad keys](./terrad_keys.mdx)	 - Manage your application's keys. 
 
 
