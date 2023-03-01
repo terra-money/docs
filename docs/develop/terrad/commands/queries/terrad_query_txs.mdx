@@ -10,7 +10,7 @@ to each module's documentation for the full set of events to query for. Each mod
 documents its respective events under 'xx_events.md'.
 
 Example:
-$ terrad query txs --events 'message.sender=cosmos1...&message.action=withdraw_delegator_reward' --page 1 --limit 30
+$ terrad query txs --events 'message.sender=terra1...&message.action=withdraw_delegator_reward' --page 1 --limit 30
 
 ```sh Terrad
 terrad query txs [flags]
@@ -18,7 +18,7 @@ terrad query txs [flags]
 
 ### Options
 
-```
+```sh Terrad
       --events string   list of transaction events in the form of {eventType}.{eventAttribute}={value}
       --height int      Use a specific height to query state at (this can error if the node is pruning state)
   -h, --help            help for txs

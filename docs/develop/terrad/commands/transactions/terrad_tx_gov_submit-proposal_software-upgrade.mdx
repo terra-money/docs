@@ -6,7 +6,7 @@ Submit a software upgrade proposal
 
 Submit a software upgrade along with an initial deposit.
 Please specify a unique name and height for the upgrade to take effect.
-You may include info to reference a binary download link, in a format compatible with: https://github.com/cosmos/cosmos-sdk/tree/master/cosmovisor
+You may include info to reference a binary download link, in a format compatible with: https://github.com/terra/terra-sdk/tree/master/cosmovisor
 
 ```sh Terrad
 terrad tx gov submit-proposal software-upgrade [name] (--upgrade-height [height]) (--upgrade-info [info]) [flags]
@@ -14,7 +14,7 @@ terrad tx gov submit-proposal software-upgrade [name] (--upgrade-height [height]
 
 ### Options
 
-```
+```sh Terrad
   -a, --account-number uint      The account number of the signing account (offline mode only)
   -b, --broadcast-mode string    Transaction broadcasting mode (sync|async|block) (default "sync")
       --deposit string           deposit of proposal

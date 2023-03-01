@@ -7,8 +7,8 @@ Query proposals with optional filters
 Query for a all paginated proposals that match optional filters:
 
 Example:
-$ terrad query gov proposals --depositor cosmos1skjwj5whet0lpe65qaq4rpq03hjxlwd9nf39lk
-$ terrad query gov proposals --voter cosmos1skjwj5whet0lpe65qaq4rpq03hjxlwd9nf39lk
+$ terrad query gov proposals --depositor terra1skjwj5whet0lpe65qaq4rpq03hjxlwd9nf39lk
+$ terrad query gov proposals --voter terra1skjwj5whet0lpe65qaq4rpq03hjxlwd9nf39lk
 $ terrad query gov proposals --status (DepositPeriod|VotingPeriod|Passed|Rejected)
 $ terrad query gov proposals --page=2 --limit=100
 
@@ -18,7 +18,7 @@ terrad query gov proposals [flags]
 
 ### Options
 
-```
+```sh Terrad
       --count-total        count total number of records in proposals to query for
       --depositor string   (optional) filter by proposals deposited on by depositor
       --height int         Use a specific height to query state at (this can error if the node is pruning state)

@@ -8,9 +8,9 @@ Grant authorization to pay fees from your address. Note, the'--from' flag is
 				ignored as it is implied from [granter].
 
 Examples:
-terrad tx feegrant grant cosmos1skjw... cosmos1skjw... --spend-limit 100stake --expiration 2022-01-30T15:04:05Z or
-terrad tx feegrant grant cosmos1skjw... cosmos1skjw... --spend-limit 100stake --period 3600 --period-limit 10stake --expiration 36000 or
-terrad tx feegrant grant cosmos1skjw... cosmos1skjw... --spend-limit 100stake --expiration 2022-01-30T15:04:05Z 
+terrad tx feegrant grant terra1skjw... terra1skjw... --spend-limit 100stake --expiration 2022-01-30T15:04:05Z or
+terrad tx feegrant grant terra1skjw... terra1skjw... --spend-limit 100stake --period 3600 --period-limit 10stake --expiration 36000 or
+terrad tx feegrant grant terra1skjw... terra1skjw... --spend-limit 100stake --expiration 2022-01-30T15:04:05Z 
 	--allowed-messages "/cosmos.gov.v1beta1.MsgSubmitProposal,/cosmos.gov.v1beta1.MsgVote"
 
 ```sh Terrad
@@ -19,7 +19,7 @@ terrad tx feegrant grant [granter_key_or_address] [grantee] [flags]
 
 ### Options
 
-```
+```sh Terrad
   -a, --account-number uint        The account number of the signing account (offline mode only)
       --allowed-messages strings   Set of allowed messages for fee allowance
   -b, --broadcast-mode string      Transaction broadcasting mode (sync|async|block) (default "sync")
