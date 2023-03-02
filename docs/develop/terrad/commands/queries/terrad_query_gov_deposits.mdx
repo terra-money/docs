@@ -1,14 +1,19 @@
 # terrad query gov deposits
 
-Query deposits on a proposal
-
-## Synopsis
-
 Query details for all deposits on a proposal.
-You can find the proposal-id by running "terrad query gov proposals".
+You can find the proposal-id by running the following:
+
+```sh Terrad
+terrad query gov proposals
+```
 
 ## Example
+
+```sh Terrad
 terrad query gov deposits 1
+```
+
+## Usage
 
 ```sh Terrad
 terrad query gov deposits [proposal-id] [flags]
@@ -37,6 +42,6 @@ terrad query gov deposits [proposal-id] [flags]
 
 ## See also
 
-* [terrad query gov](terrad_query_gov.mdx)	 - Querying commands for the governance module
+* [terrad query gov](./terrad_query_gov.mdx)	 - Querying commands for the governance module.
 
 

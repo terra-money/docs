@@ -1,15 +1,19 @@
 # terrad query gov tally
 
-Get the tally of a proposal vote
+Query tally of votes on a proposal. 
+You can find the proposal-id by running the following:
 
-## Synopsis
-
-Query tally of votes on a proposal. You can find
-the proposal-id by running "terrad query gov proposals".
+```sh Terrad
+terrad query gov proposals
+```
 
 ## Example
-terrad query gov tally 1
 
+```sh Terrad
+terrad query gov tally 1
+```
+
+## Usage
 ```sh Terrad
 terrad query gov tally [proposal-id] [flags]
 ```
@@ -31,6 +35,6 @@ terrad query gov tally [proposal-id] [flags]
 
 ## See also
 
-* [terrad query gov](terrad_query_gov.mdx)	 - Querying commands for the governance module
+* [terrad query gov](./terrad_query_gov.mdx)	 - Querying commands for the governance module.
 
 

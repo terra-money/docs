@@ -1,14 +1,16 @@
 # terrad query gov votes
 
-Query votes on a proposal
-
-## Synopsis
-
 Query vote details for a single proposal by its identifier.
 
 ## Example
+
+```sh Terrad
 terrad query gov votes 1
+
 terrad query gov votes 1 --page=2 --limit=100
+```
+
+## Usage
 
 ```sh Terrad
 terrad query gov votes [proposal-id] [flags]
@@ -37,6 +39,6 @@ terrad query gov votes [proposal-id] [flags]
 
 ## See also
 
-* [terrad query gov](terrad_query_gov.mdx)	 - Querying commands for the governance module
+* [terrad query gov](./terrad_query_gov.mdx)	 - Querying commands for the governance module.
 
 

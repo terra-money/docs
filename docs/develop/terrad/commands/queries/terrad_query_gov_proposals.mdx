@@ -1,16 +1,20 @@
 # terrad query gov proposals
 
-Query proposals with optional filters
+Query for all paginated proposals that match optional filters. 
 
-## Synopsis
+## Examples
 
-Query for a all paginated proposals that match optional filters:
-
-## Example
+```sh Terrad
 terrad query gov proposals --depositor terra1skjwj5whet0lpe65qaq4rpq03hjxlwd9nf39lk
+
 terrad query gov proposals --voter terra1skjwj5whet0lpe65qaq4rpq03hjxlwd9nf39lk
+
 terrad query gov proposals --status (DepositPeriod|VotingPeriod|Passed|Rejected)
+
 terrad query gov proposals --page=2 --limit=100
+```
+
+## Usage
 
 ```sh Terrad
 terrad query gov proposals [flags]
@@ -42,6 +46,6 @@ terrad query gov proposals [flags]
 
 ## See also
 
-* [terrad query gov](terrad_query_gov.mdx)	 - Querying commands for the governance module
+* [terrad query gov](./terrad_query_gov.mdx)	 - Querying commands for the governance module.
 
 
