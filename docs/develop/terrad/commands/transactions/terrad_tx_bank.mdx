@@ -1,6 +1,16 @@
+import Admonition from '@theme/Admonition';
+
 # terrad tx bank
 
-Bank transaction subcommands
+Bank transaction subcommands. 
+
+## Usage
+
+<Admonition type="tip">
+
+In this tx, the _`--from`_ flag is ignored, as it is implied from _`[from_key_or_address]`_. When using `--dry-run`, a key name cannot be used, only a `bech32` address.
+
+</Admonition>
 
 ```sh Terrad
 terrad tx bank [flags]
@@ -20,9 +30,5 @@ terrad tx bank [flags]
 
 ## See also
 
-* [terrad tx](terrad_tx.mdx)	 - Transactions subcommands
+* [terrad tx](./terrad_tx.mdx)	 - Transactions subcommands.
 * [terrad tx bank send](terrad_tx_bank_send.mdx)	 - Send funds from one account to another. 
-		Note, the'--from' flag is ignored as it is implied from [from_key_or_address].
-		When using '--dry-run' a key name cannot be used, only a bech32 address.
-
-

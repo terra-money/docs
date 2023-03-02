@@ -1,17 +1,31 @@
+import Admonition from '@theme/Admonition';
+
 # terrad tx feegrant grant
 
-Grant Fee allowance to an address
+Grant Fee allowance to an address. 
 
 ## Synopsis
 
-Grant authorization to pay fees from your address. Note, the'--from' flag is
-				ignored as it is implied from [granter].
+Grant authorization to pay fees from your address. 
 
-Examples:
+<Admonition type="tip">
+
+The `--from` flag is ignored in this command, as it is implied from `[granter]`.
+
+</Admonition>
+
+## Examples
+
+```sh Terrad
 terrad tx feegrant grant terra1skjw... terra1skjw... --spend-limit 100stake --expiration 2022-01-30T15:04:05Z or
+
 terrad tx feegrant grant terra1skjw... terra1skjw... --spend-limit 100stake --period 3600 --period-limit 10stake --expiration 36000 or
+
 terrad tx feegrant grant terra1skjw... terra1skjw... --spend-limit 100stake --expiration 2022-01-30T15:04:05Z 
 	--allowed-messages "/cosmos.gov.v1beta1.MsgSubmitProposal,/cosmos.gov.v1beta1.MsgVote"
+```
+
+## Usage
 
 ```sh Terrad
 terrad tx feegrant grant [granter_key_or_address] [grantee] [flags]
@@ -26,11 +40,11 @@ terrad tx feegrant grant [granter_key_or_address] [grantee] [flags]
       --dry-run                    ignore the --gas flag and perform a simulation of a transaction, but don't broadcast it (when enabled, the local Keybase is not accessible)
       --expiration string          The RFC 3339 timestamp after which the grant expires for the user
       --fee-account string         Fee account pays fees for the transaction instead of deducting from the signer
-      --fees string                Fees to pay along with transaction; eg: 10uatom
+      --fees string                Fees to pay along with transaction; eg: 10uluna
       --from string                Name or address of private key with which to sign
       --gas string                 gas limit to set per-transaction; set to "auto" to calculate sufficient gas automatically (default 200000)
       --gas-adjustment float       adjustment factor to be multiplied against the estimate returned by the tx simulation; if the gas limit is set manually this flag is ignored  (default 1)
-      --gas-prices string          Gas prices in decimal format to determine the transaction fee (e.g. 0.1uatom)
+      --gas-prices string          Gas prices in decimal format to determine the transaction fee (e.g. 0.1uluna)
       --generate-only              Build an unsigned transaction and write it to STDOUT (when enabled, the local Keybase is not accessible)
   -h, --help                       help for grant
       --keyring-backend string     Select keyring's backend (os|file|kwallet|pass|test|memory) (default "os")
@@ -57,6 +71,6 @@ terrad tx feegrant grant [granter_key_or_address] [grantee] [flags]
 
 ## See also
 
-* [terrad tx feegrant](terrad_tx_feegrant.mdx)	 - Feegrant transactions subcommands
+* [terrad tx feegrant](./terrad_tx_feegrant.mdx)	 - Feegrant transactions subcommands.
 
 

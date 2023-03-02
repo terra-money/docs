@@ -1,14 +1,17 @@
 # terrad tx authz grant
 
-Grant authorization to an address
+Grant authorization to an address to execute a transaction on your behalf. 
 
-## Synopsis
+## Example
 
-grant authorization to an address to execute a transaction on your behalf:
-
-Examples:
+```sh Terrad
  terrad tx authz grant terra1skjw.. send /cosmos.bank.v1beta1.MsgSend --spend-limit=1000stake --from=terra1skl..
+ 
  terrad tx authz grant terra1skjw.. generic --msg-type=/cosmos.gov.v1beta1.MsgVote --from=terra1sk..
+
+```
+
+## Usage
 
 ```sh Terrad
 terrad tx authz grant <grantee> <authorization_type="send"|"generic"|"delegate"|"unbond"|"redelegate"> --from <granter> [flags]
@@ -24,11 +27,11 @@ terrad tx authz grant <grantee> <authorization_type="send"|"generic"|"delegate"|
       --dry-run                      ignore the --gas flag and perform a simulation of a transaction, but don't broadcast it (when enabled, the local Keybase is not accessible)
       --expiration int               The Unix timestamp. Default is one year. (default 1709329777)
       --fee-account string           Fee account pays fees for the transaction instead of deducting from the signer
-      --fees string                  Fees to pay along with transaction; eg: 10uatom
+      --fees string                  Fees to pay along with transaction; eg: 10uluna
       --from string                  Name or address of private key with which to sign
       --gas string                   gas limit to set per-transaction; set to "auto" to calculate sufficient gas automatically (default 200000)
       --gas-adjustment float         adjustment factor to be multiplied against the estimate returned by the tx simulation; if the gas limit is set manually this flag is ignored  (default 1)
-      --gas-prices string            Gas prices in decimal format to determine the transaction fee (e.g. 0.1uatom)
+      --gas-prices string            Gas prices in decimal format to determine the transaction fee (e.g. 0.1uluna)
       --generate-only                Build an unsigned transaction and write it to STDOUT (when enabled, the local Keybase is not accessible)
   -h, --help                         help for grant
       --keyring-backend string       Select keyring's backend (os|file|kwallet|pass|test|memory) (default "os")
@@ -54,6 +57,6 @@ terrad tx authz grant <grantee> <authorization_type="send"|"generic"|"delegate"|
 
 ## See also
 
-* [terrad tx authz](terrad_tx_authz.mdx)	 - Authorization transactions subcommands
+* [terrad tx authz](./terrad_tx_authz.mdx)	 - Authorization transactions subcommands.
 
 

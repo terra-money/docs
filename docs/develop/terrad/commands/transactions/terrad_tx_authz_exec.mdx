@@ -1,13 +1,16 @@
 # terrad tx authz exec
 
-execute tx on behalf of granter account
+Execute a tx on behalf of a granter account. 
 
-## Synopsis
-
-execute tx on behalf of granter account:
 ## Example
+
+```sh Terrad
  terrad tx authz exec tx.json --from grantee
  terrad tx bank send <granter> <recipient> --from <granter> --chain-id <chain-id> --generate-only > tx.json && terrad tx authz exec tx.json --from grantee
+
+```
+
+## Usage
 
 ```sh Terrad
 terrad tx authz exec [msg_tx_json_file] --from [grantee] [flags]
@@ -20,11 +23,11 @@ terrad tx authz exec [msg_tx_json_file] --from [grantee] [flags]
   -b, --broadcast-mode string    Transaction broadcasting mode (sync|async|block) (default "sync")
       --dry-run                  ignore the --gas flag and perform a simulation of a transaction, but don't broadcast it (when enabled, the local Keybase is not accessible)
       --fee-account string       Fee account pays fees for the transaction instead of deducting from the signer
-      --fees string              Fees to pay along with transaction; eg: 10uatom
+      --fees string              Fees to pay along with transaction; eg: 10uluna
       --from string              Name or address of private key with which to sign
       --gas string               gas limit to set per-transaction; set to "auto" to calculate sufficient gas automatically (default 200000)
       --gas-adjustment float     adjustment factor to be multiplied against the estimate returned by the tx simulation; if the gas limit is set manually this flag is ignored  (default 1)
-      --gas-prices string        Gas prices in decimal format to determine the transaction fee (e.g. 0.1uatom)
+      --gas-prices string        Gas prices in decimal format to determine the transaction fee (e.g. 0.1uluna)
       --generate-only            Build an unsigned transaction and write it to STDOUT (when enabled, the local Keybase is not accessible)
   -h, --help                     help for exec
       --keyring-backend string   Select keyring's backend (os|file|kwallet|pass|test|memory) (default "os")
@@ -48,6 +51,6 @@ terrad tx authz exec [msg_tx_json_file] --from [grantee] [flags]
 
 ## See also
 
-* [terrad tx authz](terrad_tx_authz.mdx)	 - Authorization transactions subcommands
+* [terrad tx authz](./terrad_tx_authz.mdx)	 - Authorization transactions subcommands.
 
 
