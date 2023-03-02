@@ -1,22 +1,23 @@
 # terrad query ibc channel unreceived-acks
 
-Query all the unreceived acks associated with a channel
+Query all the unreceived acknowledgements(`ack`) associated with a channel. 
 
 ## Synopsis
 
-Given a list of acknowledgement sequences from counterparty, determine if an ack on the counterparty chain has been received on the executing chain.
+Given a list of acknowledgement sequences from counterparty, determine if an `ack` on the counterparty chain has been received on the executing chain.
 
 The return value represents:
-- Unreceived packet acknowledgement: packet commitment exists on original sending (executing) chain and ack exists on receiving chain.
+- Unreceived packet acknowledgement: packet commitment exists on the original sending (executing) chain and `ack` exists on receiving chain.
 
+## Example
+
+```sh Terrad
+terrad query ibc channel unreceived-acks [port-id] [channel-id] --sequences=1,2,3
+```
+## Usage
 
 ```sh Terrad
 terrad query ibc channel unreceived-acks [port-id] [channel-id] [flags]
-```
-
-## Example
-```sh Terrad
-terrad query ibc channel unreceived-acks [port-id] [channel-id] --sequences=1,2,3
 ```
 
 ## Options

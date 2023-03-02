@@ -1,19 +1,17 @@
 # terrad query ibc client consensus-state
 
-Query the consensus state of a client at a given height
-
-## Synopsis
-
 Query the consensus state for a particular light client at a given height.
-If the '--latest' flag is included, the query returns the latest consensus state, overriding the height argument.
-
-```sh Terrad
-terrad query ibc client consensus-state [client-id] [height] [flags]
-```
+If the `--latest` flag is included, the query returns the latest consensus state, overriding the height argument.
 
 ## Example
 ```sh Terrad
 terrad query ibc client  consensus-state [client-id] [height]
+```
+
+## Usage
+
+```sh Terrad
+terrad query ibc client consensus-state [client-id] [height] [flags]
 ```
 
 ## Options
@@ -35,6 +33,6 @@ terrad query ibc client  consensus-state [client-id] [height]
 
 ## See also
 
-* [terrad query ibc client](terrad_query_ibc_client.mdx)	 - IBC client query subcommands
+* [terrad query ibc client](./terrad_query_ibc_client.mdx)	 - IBC client query subcommands.
 
 

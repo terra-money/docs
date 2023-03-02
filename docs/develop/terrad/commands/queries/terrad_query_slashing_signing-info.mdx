@@ -1,12 +1,18 @@
 # terrad query slashing signing-info
 
-Query a validator's signing information
+Query a validator's signing information.
 
 ## Synopsis
 
-Use a validators' consensus public key to find the signing-info for that validator:
+Use a validators' consensus public key to find the signing-info for a validator. 
 
-$ <appd> query slashing signing-info '{"@type":"/cosmos.crypto.ed25519.PubKey","key":"OauFcTKbN5Lx3fJL689cikXBqe+hcp6Y+x0rYUdR9Jk="}'
+## Example
+
+```sh Terrad
+terrad query slashing signing-info '{"@type":"/cosmos.crypto.ed25519.PubKey","key":"OauFcTKbN5Lx3fJL689cikXBqe+hcp6Y+x0rYUdR9Jk="}'
+```
+
+## Usage
 
 ```sh Terrad
 terrad query slashing signing-info [validator-conspub] [flags]
@@ -29,6 +35,6 @@ terrad query slashing signing-info [validator-conspub] [flags]
 
 ## See also
 
-* [terrad query slashing](terrad_query_slashing.mdx)	 - Querying commands for the slashing module
+* [terrad query slashing](./terrad_query_slashing.mdx)	 - Querying commands for the slashing module.
 
 
