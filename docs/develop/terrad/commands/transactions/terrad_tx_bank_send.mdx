@@ -1,3 +1,7 @@
+---
+title: Bank send
+sidebar_position: 3
+---
 import Admonition from '@theme/Admonition';
 
 # terrad tx bank send
@@ -15,6 +19,10 @@ In this tx, the _`--from`_ flag is ignored, as it is implied from _`[from_key_or
 ```sh Terrad
 terrad tx bank send [from_key_or_address] [to_address] [amount] [flags]
 ```
+
+- `<from-key-or-address>` is either the key name or the address. If the `--generate-only` flag is used, only addresses are accepted.
+- `to-address` is an account address.
+- `<amount>` can be a comma-separated list of coins specified as `<amount><coin-denominator>`. For example, `1000ucoin` or `1000uluna,1000ucoin2`.
 
 ## Options
 

@@ -1,12 +1,16 @@
 # terrad tx wasm instantiate
 
-Instantiate a Wasm contract. 
+Instantiate a new contract by referencing the code ID of a contract that has been uploaded.
+
 
 ## Usage
 
 ```sh Terrad
 terrad tx wasm instantiate [code_id_int64] [json_encoded_init_args] --label [text] --admin [address,optional] --amount [coins,optional] [flags]
 ```
+
+where `[json_encoded_init_args]` is a JSON string containing the `InitMsg` to initialize your contract's state, and `[coins,optional]` is the optional amount of coins specified in a comma-separated list that you want to send to the new contract account.
+
 
 ## Options
 

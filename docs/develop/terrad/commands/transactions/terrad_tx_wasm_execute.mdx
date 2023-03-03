@@ -8,6 +8,9 @@ Execute a command on a Wasm contract.
 terrad tx wasm execute [contract_addr_bech32] [json_encoded_send_args] --amount [coins,optional] [flags]
 ```
 
+Where `[json_encoded_send_args]` is a raw JSON string containing the `HandleMsg` that is parsed and routed to the correct message handling logic in the contract, and `[coins]` is the optional amount of coins specified in a comma-separated list that you want to send with your message, in case the logic requires some fees.
+
+
 ## Options
 
 ```sh Terrad

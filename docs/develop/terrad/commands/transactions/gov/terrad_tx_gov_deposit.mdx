@@ -1,12 +1,19 @@
 # terrad tx gov deposit
 
-Deposit tokens for an active proposal
+Deposit tokens for an active proposal. During the deposit period, users can deposit to the proposal until the `minDeposit` is reached. 
+
+<Admonition type="caution" icon="☢️">
+
+Proposals that don't meet the `minDeposit` requirement are deleted after `MaxDepositPeriod` is reached.
+
+</Admonition>
 
 ## Synopsis
 
 Submit a deposit for an active proposal. 
 
 You can find a proposal-id by running the following.
+
 ```sh Terrad
 terrad query gov proposals
 ```

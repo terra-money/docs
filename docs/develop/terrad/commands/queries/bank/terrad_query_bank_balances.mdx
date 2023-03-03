@@ -1,10 +1,12 @@
+import Admonition from '@theme/Admonition';
+
 # terrad query bank balances
 
 Query for account balances by address.
 
 ## Synopsis
 
-Query the total balance of an account or of a specific denomination.
+Query the total balance of an account or of a specific denomination. This command displays your account balance, account number, and sequence number (nonce).
 
 ## Examples
 
@@ -12,6 +14,16 @@ Query the total balance of an account or of a specific denomination.
   terrad query bank balances [address]
   terrad query bank balances [address] --denom=[denom]
 ```
+
+<Admonition type="note" icon="📝">
+
+When you query an account balance that has zero tokens or you fund an account before your node has fully synced with the chain, this error message is sent:
+
+```
+No account with address <account-address> was found in the state.
+```
+
+</Admonition>
 
 ## Usage
 
