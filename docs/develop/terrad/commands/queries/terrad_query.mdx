@@ -7,8 +7,7 @@ sidebar_position: 1
 
 Querying subcommands.
 
-```js Terminal
-~ terrad query
+```js Terrad
 Querying subcommands
 
 Usage:
@@ -18,28 +17,50 @@ Usage:
 Aliases:
   query, q
 
-Available Commands:
+Available Subcommands (click for more info):
+  // link[3:138] /develop/terrad/commands/queries/terrad_query_account
   account                  Query for account by address
+  // link[3:138] /develop/terrad/commands/queries/auth/terrad_query_auth
   auth                     Querying commands for the auth module
+  // link[3:138] /develop/terrad/commands/queries/authz/terrad_query_authz
   authz                    Querying commands for the authz module
+  // link[3:138] /develop/terrad/commands/queries/bank/terrad_query_bank
   bank                     Querying commands for the bank module
+  // link[3:138] /develop/terrad/commands/queries/terrad_query_block
   block                    Get verified data for a the block at given height
+  // link[3:138] /develop/terrad/commands/queries/distribution/terrad_query_distribution
   distribution             Querying commands for the distribution module
+  // link[3:138] /develop/terrad/commands/queries/terrad_query_evidence
   evidence                 Query for evidence by hash or for all (paginated) submitted evidence
+  // link[3:138] /develop/terrad/commands/queries/feegrant/terrad_query_feegrant
   feegrant                 Querying commands for the feegrant module
+  // link[3:138] /develop/terrad/commands/queries/gov/terrad_query_gov
   gov                      Querying commands for the governance module
+  // link[3:138] /develop/terrad/commands/queries/ibc/terrad_query_ibc
   ibc                      Querying commands for the IBC module
+  // link[3:138] /develop/terrad/commands/queries/terrad_query_ibc-router_params
   ibc-router
+  // link[3:138] /develop/terrad/commands/queries/ibc-transfer/terrad_query_ibc-transfer
   ibc-transfer             IBC fungible token transfer query subcommands
+  // link[3:138] /develop/terrad/commands/queries/interchain-accounts/terrad_query_interchain-accounts
   interchain-accounts      interchain-accounts subcommands
+  // link[3:138] /develop/terrad/commands/queries/mint/terrad_query_mint
   mint                     Querying commands for the minting module
+  // link[3:138] /develop/terrad/commands/queries/terrad_query_params_subspace
   params                   Querying commands for the params module
+  // link[3:138] /develop/terrad/commands/queries/slashing/terrad_query_slashing
   slashing                 Querying commands for the slashing module
+  // link[3:138] /develop/terrad/commands/queries/staking/terrad_query_staking
   staking                  Querying commands for the staking module
+  // link[3:138] /develop/terrad/commands/queries/terrad_query_tendermint-validator-set
   tendermint-validator-set Get the full tendermint validator set at given height
+  // link[3:138] /develop/terrad/commands/queries/terrad_query_tx
   tx                       Query for a transaction by hash, "<addr>/<seq>" combination or comma-separated signatures in a committed block
+  // link[3:138] /develop/terrad/commands/queries/terrad_query_txs
   txs                      Query for paginated transactions that match a set of events
+  // link[3:138] /develop/terrad/commands/queries/upgrade/terrad_query_upgrade
   upgrade                  Querying commands for the upgrade module
+  // link[3:138] /develop/terrad/commands/queries/wasm/terrad_query_wasm
   wasm                     Querying commands for the wasm module
 
 Flags:
@@ -66,26 +87,26 @@ Use "terrad query [command] --help" for more information about a command.
 
 * [terrad](../terrad.mdx)	 - The Terra Blockchain's CLI and node daemon. 
 * [terrad query account](./terrad_query_account.mdx)	 - Query for account by address.
-* [terrad query auth](auth/terrad_query_auth.mdx)	 - Querying commands for the auth module.
-* [terrad query authz](authz/terrad_query_authz.mdx)	 - Querying commands for the authz module.
-* [terrad query bank](bank/terrad_query_bank.mdx)	 - Querying commands for the bank module.
+* [terrad query auth](./auth/terrad_query_auth.mdx)	 - Querying commands for the auth module.
+* [terrad query authz](./authz/terrad_query_authz.mdx)	 - Querying commands for the authz module.
+* [terrad query bank](./bank/terrad_query_bank.mdx)	 - Querying commands for the bank module.
 * [terrad query block](./terrad_query_block.mdx)	 - Get verified data for a the block at given height.
-* [terrad query distribution](distribution/terrad_query_distribution.mdx)	 - Querying commands for the distribution module.
+* [terrad query distribution](./distribution/terrad_query_distribution.mdx)	 - Querying commands for the distribution module.
 * [terrad query evidence](./terrad_query_evidence.mdx)	 - Query for evidence by hash or for all (paginated) submitted evidence.
-* [terrad query feegrant](feegrant/terrad_query_feegrant.mdx)	 - Querying commands for the feegrant module.
-* [terrad query gov](gov/terrad_query_gov.mdx)	 - Querying commands for the governance module.
-* [terrad query ibc](ibc/terrad_query_ibc.mdx)	 - Querying commands for the IBC module.
-* [terrad query ibc-router](IBC-router/terrad_query_ibc-router.mdx)
-* [terrad query ibc-transfer](ibc-transfer/terrad_query_ibc-transfer.mdx)	 - IBC fungible token transfer query subcommands.
-* [terrad query interchain-accounts](interchain-accounts/terrad_query_interchain-accounts.mdx)	 - interchain-accounts subcommands.
-* [terrad query mint](mint/terrad_query_mint.mdx)	 - Querying commands for the minting module.
+* [terrad query feegrant](./feegrant/terrad_query_feegrant.mdx)	 - Querying commands for the feegrant module.
+* [terrad query gov](./gov/terrad_query_gov.mdx)	 - Querying commands for the governance module.
+* [terrad query ibc](./ibc/terrad_query_ibc.mdx)	 - Querying commands for the IBC module.
+* [terrad query ibc-router](./terrad_query_ibc-router.mdx)
+* [terrad query ibc-transfer](./ibc-transfer/terrad_query_ibc-transfer.mdx)	 - IBC fungible token transfer query subcommands.
+* [terrad query interchain-accounts](./interchain-accounts/terrad_query_interchain-accounts.mdx)	 - interchain-accounts subcommands.
+* [terrad query mint](./mint/terrad_query_mint.mdx)	 - Querying commands for the minting module.
 * [terrad query params](./terrad_query_params.mdx)	 - Querying commands for the params module.
-* [terrad query slashing](./terrad_query_slashing.mdx)	 - Querying commands for the slashing module.
-* [terrad query staking](./terrad_query_staking.mdx)	 - Querying commands for the staking module.
+* [terrad query slashing](./slashing/terrad_query_slashing.mdx)	 - Querying commands for the slashing module.
+* [terrad query staking](./staking/terrad_query_staking.mdx)	 - Querying commands for the staking module.
 * [terrad query tendermint-validator-set](./terrad_query_tendermint-validator-set.mdx)	 - Get the full tendermint validator set at given height.
 * [terrad query tx](./terrad_query_tx.mdx)	 - Query for a transaction by hash, `<addr>/<seq>` combination or comma-separated signatures in a committed block.
 * [terrad query txs](./terrad_query_txs.mdx)	 - Query for paginated transactions that match a set of events.
-* [terrad query upgrade](./terrad_query_upgrade.mdx)	 - Querying commands for the upgrade module.
-* [terrad query wasm](./terrad_query_wasm.mdx)	 - Querying commands for the wasm module.
+* [terrad query upgrade](./upgrade/terrad_query_upgrade.mdx)	 - Querying commands for the upgrade module.
+* [terrad query wasm](./wasm/terrad_query_wasm.mdx)	 - Querying commands for the wasm module.
 
 

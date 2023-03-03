@@ -2,13 +2,16 @@ import Admonition from '@theme/Admonition';
 
 # terrad tendermint unsafe-reset-all
 
+(unsafe) Remove all the data and WAL, and reset your node's validator to genesis state.
+
+This command resets the blockchain database, removes address book files, and resets data/priv_validator_state.json to the genesis state.
+
+
 <Admonition type="danger">
 
 This command should never be used in a production environment. This command is recommended for testing purposes only. 
 
 </Admonition>
-
-(unsafe) Remove all the data and WAL, and reset your node's validator to genesis state.
 
 ## Usage
 
