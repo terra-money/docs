@@ -109,7 +109,7 @@ terrad tx bank send \
 
 ### Generating a transaction without sending
 
-To build a transaction and print its JSON format to STDOUT, append `--generate-only` to the list of the command line arguments. This allows you to separate the creation and signing of a transaction with the broadcasting.
+To build a transaction and print its JSON format to STDOUT, append `--generate-only` to the list of the command line arguments. This allows you to separate the creation and signing of a transaction from the broadcasting. The transaction below will create a file called `unsignedSendTx.json` containing the transaction JSON. 
 
 ```bash
 terrad tx bank send \
