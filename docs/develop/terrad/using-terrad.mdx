@@ -2,66 +2,80 @@
 sidebar_position: 2
 ---
 
+import Admonition from '@theme/Admonition';
+
 # Using Terrad
 
-This guide will go over commands which are available on Terrad, the command-line interface that connects to Terra and enables you to interact with the Terra blockchain. Terrad operates as both a client and a server as every active validator and full node runs Terrad and communicates with their node via Terrad. You can use Terrad to interact with the Terra blockchain by uploading contracts, querying data, managing staking activities, working with governance proposals, and more. For more general information, run `terrad --help` in your terminal. For more information about a specific Terrad command, append the `-h` or `--help` flag after the command: `terrad query --help`.
+This guide covers the usage of Terrad, the command-line interface that connects to Terra and enables you to interact with the Terra blockchain. Terrad operates as both a client and a server as every active validator and full node runs Terrad and communicates with their node via Terrad. You can use Terrad to interact with the Terra blockchain by uploading contracts, querying data, managing staking activities, working with governance proposals, and more. For more general information, run [`terrad --help`](./commands/terrad_help.mdx) in your terminal or visit the [Terrad commands page](./commands/terrad.mdx). For more information about a specific Terrad command, append the `-h` or `--help` flag after a command (`terrad query --help`).
 
 ## Accessing a Node
 
-To query state and send transactions, you must connect to a node, which is the access point to the entire network of peer connections. You can either run your own full node or connect to someone else's.
+Installing Terrad is the first step to accessing Terra's network. Full node users can follow the [Full node guide](../../full-node/run-a-full-terra-node/README.mdx). Developers who want to use Terrad without running a node can use the [Terrad installation guide](install-terrad.mdx). 
 
-### Running your own full node
+To query state and send transactions, you must connect to a node, which is the access point to the entire network of peer connections. You can either [run your own full node](#run-your-own-full-node) or [connect to someone else's](#connect-to-a-remote-full-node).
 
-Running your own full node is the most secure option, but it comes with relatively high resource requirements. For more information about the requirements of running your own full node and a tutorial for installing Terrad, check out the [installation guide](../../full-node/run-a-full-terra-node/build-terra-core.mdx). For a tutorial that explains how to connect to an existing Terra network, see [joining a network](../../full-node/run-a-full-terra-node/join-a-network.mdx).
+Terrad can be used with [LocalTerra](../localterra/install-localterra.mdx) for local testing on your machine. Terrad's default node setting is set to work with LocalTerra. 
 
-### Connecting to a remote full node
+### Run your own full node
 
-If you don't want to run your own full node, you can connect to someone else's full node. As you consider your options for operators, it is recommended to prioritize operators that you can trust. Malicious operators might intentionally return incorrect query results or censor your transactions. You shouldn't worry about an operator being able to access your account as long as you have your private key stored in a secure location. Possible options of full node operators include validators, wallet providers, or exchanges.
+Running your own full node is the most secure option, but it comes with relatively high resource requirements. For more information about the requirements of running your own full node, and a tutorial for installing Terrad, check out the [Full node guide](../../full-node/run-a-full-terra-node/build-terra-core.mdx). For a tutorial that explains how to connect to an existing Terra network, see [joining a network](../../full-node/run-a-full-terra-node/join-a-network.mdx).
+
+If you want to use Terrad without running a full node, visit the [Terrad installation guide](install-terrad.mdx). 
+
+### Connect to a remote full node
+
+If you don't want to run your own full node, you can connect to someone else's full node. As you consider your options for operators, it is recommended that you prioritize operators that you can trust. Malicious operators might intentionally return incorrect query results or censor your transactions. You shouldn't worry about an operator being able to access your account as long as you have your private key stored in a secure location. Possible options for full node operators include validators, wallet providers, or exchanges.
 
 To connect to the full node, you need an address in the `https://<host>:<port>` format, for example `https://77.87.106.33:26657`. This address has to be communicated by the full node operator you choose to trust. You will use this address in the following section.
 
-If you are not running a node and would like to communicate through Terrad, lists of public nodes can be found [here](../endpoints.mdx).
+If you are not running a node and would like to communicate through Terrad, lists of public nodes can be found [on the Endpoints page](../endpoints.mdx).
+
 
 ## Configuring Terrad
 
-Terrad enables you to interact with a node that runs on the Terra network, whether you run it yourself or not. To configure Terrad, edit the the `config.toml` file in the `~/.terra/config/` directory.
+To configure Terrad, edit the `config.toml` file in the `~/.terra/config/` directory. For Validator configurations, visit the [Full node general configuration page](../../full-node/run-a-full-terra-node/configure-general-settings.mdx). 
+
+
+## Commands
+
+Terrad uses commands and subcommands to access and convey blockchain data. Flags can be added to the end of commands and subcommands to specify further information. 
+
+```sh Terrad
+terrad [command] [subcommand] [flags]
+```
+The commands page has a [complete list of commands](./commands/terrad.mdx). Click on a command to view its usage details, subcommands, or flags. 
+
+## Keys
+
+The [`terrad keys`](./commands/keys/terrad_keys.mdx) command can be used to add key and account information to your device's keyring, allowing you to sign transactions and access accounts when using Terrad. For more information on key storage, visit the [Keys page](./commands/keys/terrad_keys.mdx). To learn how to add keys to your keyring, visit the [`terrad keys add` page](./commands/keys/keys_add.mdx).
+
+```sh Terrad
+terrad keys add <your-key-name> [flags]
+```
 
 ## Querying Blockchain State
 
-To query all relevant information from the blockchain, such as account balances, amount of bonded tokens, outstanding rewards, and so on, use `terrad query`. The following list shows some of the most useful commands for delegators:
+To query all relevant information from the blockchain, such as account balances, amount of bonded tokens, outstanding rewards, etc, use the [`terrad query`](./commands/queries/terrad_query.mdx) command. For a complete list of available queries, visit the [Terrad query page](./commands/queries/terrad_query.mdx). 
 
-```bash
-# query account balances and other account-related information
-terrad query account <ACCOUNT_ADDRESS>
-# Account address is of the form terra1rEXAMPLE9tEXAMPLEf9cvEXAMPLEss
-# you can find the one for your node by running `terrad keys list`
-
-# query the list of validators
-terrad query staking validators
-
-# query the information of a validator given their address
-terrad query staking validator <validatorAddress>
-
-# query all delegations made from a delegator given their address
-# (note: delegator addresses are regular account addresses)
-terrad query staking delegations <delegatorAddress>
-
-# query a specific delegation made from a delegator to a validator
-terrad query staking delegation <delegatorAddress> <validatorAddress>
-
-# query the rewards of a delegator given a delegator address (e.g. terra10snjt8dmpr5my0h76xj48ty80uzwhraqalu4eg)
-terrad query distr rewards <delegatorAddress>
+```sh Terrad
+terrad query account terra1zf6xze03rv3gvhvmktypvn3xgusy8rnkesnqg6
 ```
 
-## Sending Transactions
+## Transactions
 
-The `terra tx` command can be used to send transactions containing module messages with state-changing directives that get processed and included in blocks.
+The `terra tx` command is used to send transactions containing module messages with state-changing directives that get processed and included in blocks.
 
 ```bash
-terrad tx ...
+terrad tx staking delegate terravaloper1l2rsakp388kuv9k8qzq6lrm9taddae7fpx59wm 100000uluna --from mykey
 ```
 
-To learn more about the different types of transactions you can issue, see the section for each module.
+To learn more about the different types of transactions you can send, visit the [Terrad transactions page](./commands/transactions/terrad_tx.mdx). 
+
+<Admonition type="tip" icon="🗒">
+
+Edit your Terrad transactions in a notepad or code editor before inputting them in your terminal. 
+
+</Admonition>
 
 ### Simulating a transaction
 
@@ -72,6 +86,7 @@ terrad tx bank send \
     <sender_address> \
     <recipient_address> \
     <amount_and_denomination> \
+    --node <node-endpoint> \
     --chain-id=<chain-id> \
     --dry-run
 ```
@@ -82,10 +97,11 @@ terrad tx bank send \
 
 ```bash
 terrad tx bank send \
-    terra1ru2ySENDER-EXAMPLEtf9cva9kp33h0jnsm9ss \
-    terra1rRECIPIENT-EXAMPLEtf9cva9kp33h0jnsm9ss \
-    1uluna \
-    --chain-id=pisco-1 \
+    terra1zf6xze03rv3gvhvmktypvn3xgusy8rnkesnqg6 \
+    terra1nhvjgyga4yfkmzv7ts79vu3w2azj6mes0jhccm \
+    100000uluna \
+    --node https://<your-node>:26657 \
+    --chain-id pisco-1 \
     --dry-run
 ```
 </p>
