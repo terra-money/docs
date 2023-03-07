@@ -47,7 +47,7 @@ The commands page has a [complete list of commands](./commands/terrad.mdx). Clic
 
 ## Keys
 
-The [`terrad keys`](./commands/keys/terrad_keys.mdx) command can be used to add key and account information to your device's keyring, allowing you to sign transactions and access accounts when using Terrad. For more information on key storage, visit the [Keys page](./commands/keys/terrad_keys.mdx). To learn how to add keys to your keyring, visit the [`terrad keys add` page](./commands/keys/keys_add.mdx).
+The [`terrad keys`](./commands/keys/terrad_keys.mdx) command can be used to add key and account information to your device's keyring, allowing you to sign transactions and access accounts when using Terrad. For more information on key storage, visit the [Keys page](./commands/keys/terrad_keys.mdx). To learn how to add keys to your keyring, visit the [`terrad keys add` page](./commands/keys/terrad_keys_add.mdx).
 
 ```sh Terrad
 terrad keys add <your-key-name> [flags]
@@ -190,13 +190,13 @@ A successful transaction response should look similar to the following:
 </p>
 </details>
 
-You can validate the transaction's signatures by executing the [_`validate-signatures`_](./commands/terrad_tx_validate-signatures.mdx) command.
+You can validate the transaction's signatures by executing the [_`validate-signatures`_](./commands/transactions/terrad_tx_validate-signatures.mdx) command.
 
 ```sh Terrad
 terrad tx validate-signatures signedSendTx.json
 ```
 
-You can [broadcast](./commands/terrad_tx_broadcast.mdx) the signed transaction to a node by providing the JSON file to the following command.
+You can [broadcast](./commands/transactions/terrad_tx_broadcast.mdx) the signed transaction to a node by providing the JSON file to the following command.
 
 ```sh Terrad
 terrad tx broadcast --node=<node> signedSendTx.json
