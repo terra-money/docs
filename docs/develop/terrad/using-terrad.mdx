@@ -234,21 +234,13 @@ To use gas prices:
 terrad tx bank send ... --gas-prices=0.015uluna
 ```
 
-### Automatic Fee Estimation
+### Fee Estimation
 
 You may want to cap the maximum gas that can be consumed by the transaction via the `--gas` flag. If you pass `--gas=auto`, the gas will be automatically estimated before executing the transaction.
 
 Gas estimates might be inaccurate as state changes could occur in between the end of the simulation and the actual execution of a transaction. A _`--gas-adjustment`_ is applied on top of the original estimate in order to ensure the transaction is broadcasted successfully.
 
 The adjustment can be controlled via the `--gas-adjustment` flag, which defaults to the value of 1.0.
-
-To get a direct fee estimation from Terrad:
-
-```sh Terrad
-terrad tx estimate-fee ...\
-    --gas-prices=0.015uluna \
-    --gas-adjustment=1.4
-```
 
 To create and send transactions using fee-estimation, use the template below as a format:
 
