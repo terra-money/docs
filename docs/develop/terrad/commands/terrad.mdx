@@ -3,9 +3,17 @@ title: Terrad
 sidebar_position: 1
 ---
 
+import Admonition from '@theme/Admonition'
+
 # Terrad
 
-The Terra Blockchain's CLI and node daemon. 
+Terrad is the Terra Blockchain's CLI and node daemon. This section contains information about Terrad commands and their usage. 
+
+<Admonition type="tip" icon="⚙️" title="Getting started">
+
+To learn how to install Terrad, visit the [Terrad installation guide](../install-terrad.mdx). To learn how to use Terrad, visit [Using Terrad](../using-terrad.mdx).
+
+</Admonition>
 
 ```js Terrad
 Stargate Terra App
@@ -79,8 +87,8 @@ Use "terrad [command] --help" for more information about a command.
 * [terrad query](./queries/terrad_query.mdx)	 - Querying subcommands.
 * [terrad rollback](./terrad_rollback.mdx)	 - rollback terra-sdk and tendermint state by one height.
 * [terrad rosetta](./terrad_rosetta.mdx)	 - spin up a rosetta server.
-* [terrad tendermint show-node-id](./terrad_tendermint_show-node-id.mdx)	 - Show this node's ID.
-* [terrad tendermint show-validator](./terrad_tendermint_show-validator.mdx)	 - Show this node's tendermint validator info
+* [terrad tendermint show-node-id](./tendermint/terrad_tendermint_show-node-id.mdx)	 - Show this node's ID.
+* [terrad tendermint show-validator](./tendermint/terrad_tendermint_show-validator.mdx)	 - Show this node's tendermint validator info
 * [terrad start](./terrad_start.mdx)	 - Run the full node.
 * [terrad status](./terrad_status.mdx)	 - Query remote node for status.
 * [terrad tx](./transactions/terrad_tx.mdx)	 - Transactions subcommands.
