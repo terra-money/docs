@@ -38,6 +38,7 @@
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "2.0.0-rc.1",
+    "@gabrielcsapo/docusaurus-plugin-matomo": "^0.1.2",
     "@typescript-eslint/parser": "^5.0.1",
     "eslint": "^8.7.0",
     "prettier": "^2.5.1",

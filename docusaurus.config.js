@@ -22,7 +22,17 @@ module.exports = async function config() {
       locales: ['en'],
     },
     
-    plugins: ['docusaurus-plugin-sass'],
+    plugins: [
+      'docusaurus-plugin-sass', 
+    [
+      require.resolve("@gabrielcsapo/docusaurus-plugin-matomo"),
+      {
+        siteId: "1",
+        matomoUrl: "https://terradocs.matomo.cloud/",
+        siteUrl: "https://docs.terra.money",
+      },
+    ],
+  ],
     presets: [
       [
         'classic',
