@@ -27,7 +27,7 @@ module.exports = async function config() {
         async: true,
       },
       {
-        src: `//terradocs.matomo.cloud/matomo.php`,
+        src: `//terradocs.matomo.cloud/matomo.php?idsite=1&amp;rec=1`,
         async: true,
       },
     ],
