@@ -21,6 +21,7 @@
     "@mdx-js/react": "^2.1.2",
     "@rebass/preset": "^4.0.5",
     "clsx": "^1.2.1",
+    "docusaurus-plugin-matomo": "^0.0.6",
     "docusaurus-plugin-sass": "^0.2.2",
     "docusaurus-theme-mdx-v2": "^0.1.2",
     "emotion-theming": "^11.0.0",
