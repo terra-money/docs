@@ -23,11 +23,11 @@ module.exports = async function config() {
     },
     scripts: [
       {
-        src: `//https://terradocs.matomo.cloud/matomo.js`,
+        src: `//terradocs.matomo.cloud/matomo.js`,
         async: true,
       },
       {
-        src: `//https://terradocs.matomo.cloud/matomo.php`,
+        src: `//terradocs.matomo.cloud/matomo.php`,
         async: true,
       },
     ],
