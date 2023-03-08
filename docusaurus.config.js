@@ -21,16 +21,6 @@ module.exports = async function config() {
       defaultLocale: 'en',
       locales: ['en'],
     },
-    scripts: [
-      {
-        src: `//terradocs.matomo.cloud/matomo.js`,
-        async: true,
-      },
-      {
-        src: `//terradocs.matomo.cloud/matomo.php?idsite=1&amp;rec=1`,
-        async: true,
-      },
-    ],
     
     plugins: ['docusaurus-plugin-sass'],
     presets: [
@@ -128,6 +118,12 @@ module.exports = async function config() {
         prism: {
           theme: lightCodeTheme,
           darkTheme: darkCodeTheme,
+        },
+        matomo: {
+          matomoUrl: 'https://terradocs.matomo.cloud/',
+          siteId: '1',
+          phpLoader: 'matomo.php',
+          jsLoader: 'matomo.js',
         },
       }),
     stylesheets: [
