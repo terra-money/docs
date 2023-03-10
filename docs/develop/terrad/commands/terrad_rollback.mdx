@@ -5,15 +5,15 @@ sidebar_position: 9
 
 # terrad rollback
 
-Tollback the Terra-sdk and Tendermint state by one height. 
+Tollback the Blockchain and Tendermint state by one height.  
 
 ## Synopsis
 
 A state rollback is performed to recover from an incorrect application state transition,
 when Tendermint has persisted an incorrect app hash and is thus unable to make
-progress. Rollback overwrites a state at height `n` with the state at height `n - 1`.
-The application also roll back to height `n - 1`. No blocks are removed, so upon
-restarting Tendermint the transactions in block `n` will be re-executed against the
+progress. Rollback overwrites a state at height _`n`_ with the state at height _`n - 1`_.
+The application also roll back to height _`n - 1`_. No blocks are removed, so upon
+restarting Tendermint the transactions in block _`n`_ will be re-executed against the
 application.
 
 ## Usage
