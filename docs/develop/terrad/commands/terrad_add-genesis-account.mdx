@@ -4,26 +4,30 @@ sidebar_position: 2
 ---
 # terrad add-genesis-account
 
-Add a genesis account to `genesis.json`.
+Add a genesis account to _`genesis.json`_. 
 
 ## Synopsis
 
-Add a genesis account to `genesis.json`. The provided account must specify
-the account address or key name and a list of initial coins. If a key name is given,
+Add a genesis account to _`genesis.json`_. The provided account must specify
+the account address or key name and a list of initial coins. If a [key name](./keys/terrad_keys.mdx) is given,
 the address will be looked up in the local Keybase. The list of initial tokens must
 contain valid denominations. Accounts may optionally be supplied with vesting parameters.
 
-## Usage
+You can access the _`genesis.json`_ file in Terrad's config folder.  
 
-```sh terrad
-terrad add-genesis-account [address_or_key_name] [coin][,[coin]] [flags]
+```sh Terrad
+code ~/.terra/config/genesis.json
 ```
+
+For more information on Terrad configuration, visit the [Full node general configuration page](../../../full-node/run-a-full-terra-node/configure-general-settings.mdx).
 
 ## Example
 
 ```sh terrad
 terrad add-genesis-account acc1 '200000000uluna'
 ```
+
+In the command above, _`acc1`_ refers to the account name set by the [_`keys`_ command](./keys/terrad_keys_add.mdx). 
 
 ## Options
 
@@ -42,5 +46,7 @@ terrad add-genesis-account acc1 '200000000uluna'
 ## See also
 
 * [terrad](./terrad.mdx)	 - The Terra Blockchain's CLI and node daemon. 
+* [terrad collect-gentxs](./terrad_collect-gentxs.mdx)	 - Collect genesis txs and output a `genesis.json` file.
+* [Full node general configuration page](../../../full-node/run-a-full-terra-node/configure-general-settings.mdx)
 
 
