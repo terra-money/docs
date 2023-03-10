@@ -7,6 +7,12 @@ sidebar_position: 15
 
 Validates the genesis file at the default location or at the location specified.
 
+You can access the _`genesis.json`_ file in Terrad's config folder.  
+
+```sh Terrad
+code ~/.terra/config/genesis.json
+```
+
 ## Usage
 
 ```sh Terrad
@@ -22,5 +28,9 @@ terrad validate-genesis [file] [flags]
 ## See also
 
 * [terrad](terrad.mdx)	 - The Terra Blockchain's CLI and node daemon. 
+* [terrad add-genesis-account](./terrad_add-genesis-account.mdx)	 - Add a genesis account to `genesis.json`.
+* [terrad collect-gentxs](./terrad_collect-gentxs.mdx)	 - Collect genesis txs and output a `genesis.json` file.
+* [terrad gentx](./terrad_gentx.mdx)	 - Generate a genesis tx carrying a self delegation.
+
 
 
