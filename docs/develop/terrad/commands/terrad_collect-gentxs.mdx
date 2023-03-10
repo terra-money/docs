@@ -5,7 +5,15 @@ sidebar_position: 3
 
 # terrad collect-gentxs
 
-Collect genesis txs and output a `genesis.json` file.
+Collect genesis txs and output a _`genesis.json`_ file.
+
+You can access the _`genesis.json`_ file in Terrad's config folder.  
+
+```sh Terrad
+code ~/.terra/config/genesis.json
+```
+
+For more information on Terrad configuration, visit the [Full node general configuration page](../../../full-node/run-a-full-terra-node/configure-general-settings.mdx).
 
 ## Usage
 
@@ -24,5 +32,8 @@ terrad collect-gentxs [flags]
 ## See also
 
 * [terrad](./terrad.mdx)	 - The Terra Blockchain's CLI and node daemon. 
+* [terrad add-genesis-account](./terrad_add-genesis-account.mdx)	 - Add a genesis account to `genesis.json`.
+* [Full node general configuration page](../../../full-node/run-a-full-terra-node/configure-general-settings.mdx)
+
 
 
