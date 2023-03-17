@@ -6,22 +6,22 @@ import Admonition from '@theme/Admonition';
 
 # Using Terrad
 
-This guide covers the usage of Terrad, the command-line interface that connects to Terra and enables you to interact with the Terra blockchain. Terrad operates as both a client and a server as every active validator and full node runs Terrad and communicates with their node via Terrad. You can use Terrad to interact with the Terra blockchain by uploading contracts, querying data, managing staking activities, working with governance proposals, and more. For more general information, run [_`terrad --help`_](./commands/terrad_help.mdx) in your terminal or visit the [Terrad commands page](./commands/terrad.mdx). For more information about a specific Terrad command, append the _`-h`_ or _`--help`_ flag after a command (_`terrad query --help`_).
+This guide covers the usage of Terrad, the CLI and node daemon that enables you to interact with the Terra blockchain. Terrad operates as both a client and a server: every active validator and full node runs Terrad and communicates with their node via Terrad. You can use Terrad to interact with the Terra blockchain by uploading contracts, querying data, managing staking activities, working with governance proposals, and more. For more general information, run [_`terrad --help`_](./commands/terrad_help.mdx) in your terminal or visit the [Terrad commands page](./commands/terrad.mdx). For more information about a specific Terrad command, append the _`-h`_ or _`--help`_ flag after a command (_`terrad query --help`_).
 
 
 ## Install Terrad 
 
-Installing Terrad is the first step to accessing Terra's network. Full node users can follow the [Full node guide](../../full-node/run-a-full-terra-node/README.mdx). Developers who want to use Terrad without running a node can use the [Terrad installation guide](install-terrad.mdx). 
+Installing Terrad is the first step to accessing Terra's network. Full node users can follow the [Full node guide](../../full-node/run-a-full-terra-node/README.mdx). Developers who want to use Terrad without running a node can use the [Terrad installation guide](install-terrad.mdx). If you want to interact with Terra without running a node or using the CLI, use [Station](../../learn/station/README.mdx).
 
 ## Access a Node
 
-To query state and send transactions, you must connect to a node, which is the access point to the entire network of peer connections. You can either [run your own full node](#run-your-own-full-node) or [connect to someone else's](#connect-to-a-remote-full-node).
+To query state and send transactions with Terrad, you must connect to a node, which is the access point to the entire network of peer connections. You can either [run your own full node](#run-your-own-full-node) or [connect to someone else's](#connect-to-a-remote-full-node).
 
 Terrad can be used with [LocalTerra](../localterra/install-localterra.mdx) for local testing on your machine. Terrad's default node setting is set to work with LocalTerra. 
 
 ### Run your own full node
 
-Running your own full node is the most secure option, but it comes with relatively high resource requirements. For more information about the requirements of running your own full node, and a tutorial for installing Terrad, check out the [Full node guide](../../full-node/run-a-full-terra-node/build-terra-core.mdx). For a tutorial that explains how to connect to an existing Terra network, see [joining a network](../../full-node/run-a-full-terra-node/join-a-network.mdx).
+Running your own full node is the most secure option, but it comes with relatively high resource requirements. For more information about running your own full node check out the [Full node guide](../../full-node/run-a-full-terra-node/build-terra-core.mdx). To learn how to connect to an existing Terra network, see [joining a network](../../full-node/run-a-full-terra-node/join-a-network.mdx).
 
 If you want to use Terrad without running a full node, visit the [Terrad installation guide](install-terrad.mdx). 
 
@@ -127,6 +127,7 @@ terrad tx bank send \
     --chain-id=<chain-id> \
     --generate-only > unsignedSendTx.json
 ```
+Use the [sign command](./commands/terrad_tx_sign.mdx) to sign the transaction. 
 
 ```sh Terrad
 terrad tx sign \
@@ -198,7 +199,7 @@ A successful transaction response should look similar to the following:
 </p>
 </details>
 
-You can validate the transaction's signatures by executing the [_`validate-signatures`_](./commands/transactions/terrad_tx_validate-signatures.mdx) command.
+You can validate a multisig transaction's signatures by executing the [_`validate-signatures`_](./commands/transactions/terrad_tx_validate-signatures.mdx) command.
 
 ```sh Terrad
 terrad tx validate-signatures signedSendTx.json
@@ -308,4 +309,4 @@ source $ZSH/oh-my-zsh.sh
 terrad completion --zsh > $(brew --prefix)/share/zsh/site-functions/_terrad
 ```
 
-After opening a new terminal window, you can use your **tab** to autocomplete Terrad commands. 
+After opening a new terminal window, you can use the **tab** key to autocomplete Terrad commands. 
