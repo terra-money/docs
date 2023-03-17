@@ -1,0 +1,39 @@
+# terrad query distribution params
+
+Query distribution module params. 
+
+The parameters are returned in YAML, as shown in the following example:
+
+```yaml
+community_tax: "0.020000000000000000"
+base_proposer_reward: "0.010000000000000000"
+bonus_proposer_reward: "0.040000000000000000"
+withdraw_addr_enabled: true
+```
+
+## Usage
+
+```sh Terrad
+terrad query distribution params [flags]
+```
+
+## Options
+
+```sh Terrad
+      --height int      Use a specific height to query state at (this can error if the node is pruning state)
+  -h, --help            help for params
+      --node string     <host>:<port> to Tendermint RPC interface for this chain (default "tcp://localhost:26657")
+  -o, --output string   Output format (text|json) (default "text")
+```
+
+## Options inherited from parent commands
+
+```sh Terrad
+      --chain-id string   The network chain ID
+```
+
+## See also
+
+* [terrad query distribution](./terrad_query_distribution.mdx)	 - Querying commands for the distribution module.
+
+

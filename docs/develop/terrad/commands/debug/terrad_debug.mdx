@@ -1,0 +1,45 @@
+# terrad debug
+
+A tool to help with app debugging.
+
+```js Terrad
+Debug subcommands
+
+Usage:
+  terrad debug [flags]
+  terrad debug [command]
+
+Available Subcommands (click for more info):
+
+  // link[3:138] /develop/terrad/commands/debug/terrad_debug_addr
+  addr        Convert an address between hex and bech32
+  // link[3:138] /develop/terrad/commands/debug/terrad_debug_pubkey
+  pubkey      Decode a pubkey from proto JSON
+  // link[3:138] /develop/terrad/commands/debug/terrad_debug_raw-bytes
+  raw-bytes   Convert raw bytes output (eg. [10 21 13 255]) to hex
+
+Flags:
+  -h, --help   help for debug
+
+Global Flags:
+      --home string         directory for config and data (default "/Users/evan/.terra")
+      --log_format string   The logging format (json|plain) (default "plain")
+      --log_level string    The logging level (trace|debug|info|warn|error|fatal|panic) (default "info")
+      --trace               print out full stack trace on errors
+
+Use "terrad debug [command] --help" for more information about a command.
+```
+
+## Options
+
+```sh Terrad
+  -h, --help   help for debug
+```
+
+## See also
+
+* [terrad debug addr](./terrad_debug_addr.mdx)	 - Convert an address between hex and bech32. 
+* [terrad debug pubkey](./terrad_debug_pubkey.mdx)	 - Decode a pubkey from proto JSON. 
+* [terrad debug raw-bytes](./terrad_debug_raw-bytes.mdx)	 - Convert raw bytes output (`[10 21 13 255]`) to hex. 
+
+

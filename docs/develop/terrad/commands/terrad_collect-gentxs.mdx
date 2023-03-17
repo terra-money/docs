@@ -1,0 +1,39 @@
+---
+title: Collect gentxs
+sidebar_position: 3
+---
+
+# terrad collect-gentxs
+
+Collect genesis txs and output a _`genesis.json`_ file.
+
+You can access the _`genesis.json`_ file in Terrad's config folder.  
+
+```sh Terrad
+code ~/.terra/config/genesis.json
+```
+
+For more information on Terrad configuration, visit the [Full node general configuration page](../../../full-node/run-a-full-terra-node/configure-general-settings.mdx).
+
+## Usage
+
+```sh Terrad
+terrad collect-gentxs [flags]
+```
+
+## Options
+
+```sh Terrad
+      --gentx-dir string   override default "gentx" directory from which collect and execute genesis transactions; default [--home]/config/gentx/
+  -h, --help               help for collect-gentxs
+      --home string        The application home directory (default "/Users/evan/.terra")
+```
+
+## See also
+
+* [terrad](./terrad.mdx)	 - The Terra Blockchain's CLI and node daemon. 
+* [terrad add-genesis-account](./terrad_add-genesis-account.mdx)	 - Add a genesis account to `genesis.json`.
+* [Full node general configuration page](../../../full-node/run-a-full-terra-node/configure-general-settings.mdx)
+
+
+

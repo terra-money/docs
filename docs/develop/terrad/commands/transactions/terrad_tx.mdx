@@ -1,0 +1,113 @@
+---
+title: Tx
+sidebar_position: 1
+---
+
+# terrad tx
+
+Transactions subcommands.
+
+```js Terrad
+Transactions subcommands
+
+Usage:
+  terrad tx [flags]
+  terrad tx [command]
+
+Available Subcommands (click for more info):
+
+  // link[3:138] /develop/terrad/commands/transactions/authz/terrad_tx_authz
+  authz               Authorization transactions subcommands
+  // link[3:138] /develop/terrad/commands/transactions/terrad_tx_bank_send
+  bank                Bank transaction subcommands
+  // link[3:138] /develop/terrad/commands/transactions/terrad_tx_broadcast
+  broadcast           Broadcast transactions generated offline
+  // link[3:138] /develop/terrad/commands/transactions/terrad_tx_crisis_invariant-broken
+  crisis              Crisis transactions subcommands
+  // link[3:138] /develop/terrad/commands/transactions/terrad_tx_decode
+  decode              Decode a binary encoded transaction string
+  // link[3:138] /develop/terrad/commands/transactions/distribution/terrad_tx_distribution
+  distribution        Distribution transactions subcommands
+  // link[3:138] /develop/terrad/commands/transactions/terrad_tx_encode
+  encode              Encode transactions generated offline
+  // link[3:138] /develop/terrad/commands/transactions/terrad_tx_evidence
+  evidence            Evidence transaction subcommands
+  // link[3:138] /develop/terrad/commands/transactions/feegrant/terrad_tx_feegrant
+  feegrant            Feegrant transactions subcommands
+  // link[3:138] /develop/terrad/commands/transactions/gov/terrad_tx_gov
+  gov                 Governance transactions subcommands
+  // link[3:138] /develop/terrad/commands/transactions/ibc/terrad_tx_ibc
+  ibc                 IBC transaction subcommands
+  // link[3:138] /develop/terrad/commands/transactions/ibc/terrad_tx_ibc-transfer_transfer
+  ibc-transfer        IBC fungible token transfer transaction subcommands
+  // link[3:138] /develop/terrad/commands/transactions/terrad_tx_multisign
+  multisign           Generate multisig signatures for transactions generated offline
+  // link[3:138] /develop/terrad/commands/transactions/terrad_tx_multisign-batch
+  multisign-batch     Assemble multisig transactions in batch from batch signatures
+  // link[3:138] /develop/terrad/commands/transactions/terrad_tx_sign
+  sign                Sign a transaction generated offline
+  // link[3:138] /develop/terrad/commands/transactions/terrad_tx_sign-batch
+  sign-batch          Sign transaction batch files
+  // link[3:138] /develop/terrad/commands/transactions/terrad_tx_slashing_unjail
+  slashing            Slashing transaction subcommands
+  // link[3:138] /develop/terrad/commands/transactions/staking/terrad_tx_staking
+  staking             Staking transaction subcommands
+  // link[3:138] /develop/terrad/commands/transactions/terrad_tx_validate-signatures
+  validate-signatures validate transactions signatures
+  // link[3:138] /develop/terrad/commands/transactions/vesting/terrad_tx_vesting
+  vesting             Vesting transaction subcommands
+  // link[3:138] /develop/terrad/commands/transactions/wasm/terrad_tx_wasm
+  wasm                Wasm transaction subcommands
+
+Flags:
+      --chain-id string   The network chain ID
+  -h, --help              help for tx
+
+Global Flags:
+      --home string         directory for config and data (default "/Users/evan/.terra")
+      --log_format string   The logging format (json|plain) (default "plain")
+      --log_level string    The logging level (trace|debug|info|warn|error|fatal|panic) (default "info")
+      --trace               print out full stack trace on errors
+
+Additional help topics:
+  terrad tx upgrade      Upgrade transaction subcommands
+
+Use "terrad tx [command] --help" for more information about a command.
+
+## Usage
+
+```sh Terrad
+terrad tx [flags]
+```
+
+## Options
+
+```sh Terrad
+      --chain-id string   The network chain ID
+  -h, --help              help for tx
+```
+
+## See also
+
+* [terrad](../terrad.mdx)	 - The Terra Blockchain's CLI and node daemon. 
+* [terrad tx authz](authz/terrad_tx_authz.mdx)	 - Authorization transactions subcommands.
+* [terrad tx bank](./terrad_tx_bank_send.mdx)	 - Bank transaction.
+* [terrad tx broadcast](./terrad_tx_broadcast.mdx)	 - Broadcast transactions generated offline.
+* [terrad tx decode](./terrad_tx_decode.mdx)	 - Decode a binary encoded transaction string.
+* [terrad tx distribution](distribution/terrad_tx_distribution.mdx)	 - Distribution transactions subcommands.
+* [terrad tx encode](./terrad_tx_encode.mdx)	 - Encode transactions generated offline.
+* [terrad tx evidence](./terrad_tx_evidence.mdx)	 - Evidence transaction subcommands.
+* [terrad tx feegrant](feegrant/terrad_tx_feegrant.mdx)	 - Feegrant transactions subcommands.
+* [terrad tx gov](gov/terrad_tx_gov.mdx)	 - Governance transactions subcommands.
+* [terrad tx ibc](ibc/terrad_tx_ibc.mdx)	 - IBC transaction subcommands.
+* [terrad tx ibc-transfer](ibc/terrad_tx_ibc-transfer.mdx)	 - IBC fungible token transfer transaction subcommands.
+* [terrad tx multisign](./terrad_tx_multisign.mdx)	 - Generate multisig signatures for transactions generated offline.
+* [terrad tx multisign-batch](./terrad_tx_multisign-batch.mdx)	 - Assemble multisig transactions in batch from batch signatures.
+* [terrad tx sign](./terrad_tx_sign.mdx)	 - Sign a transaction generated offline.
+* [terrad tx sign-batch](./terrad_tx_sign-batch.mdx)	 - Sign transaction batch files.
+* [terrad tx stak`ing](staking/terrad_tx_staking.mdx)	 - Staking transaction subcommands.
+* [terrad tx validate-signatures](./terrad_tx_validate-signatures.mdx)	 - Validate transactions signatures.
+* [terrad tx vesting](vesting/terrad_tx_vesting.mdx)	 - Vesting transaction subcommands.
+* [terrad tx wasm](wasm/terrad_tx_wasm.mdx)	 - Wasm transaction subcommands.
+
+
