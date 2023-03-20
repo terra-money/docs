@@ -133,6 +133,7 @@ const sidebars = {
               collapsed: true,
               items: [
                 'develop/wallet-provider/wallet-provider-tutorial',
+                'develop/wallet-provider/wallet-provider-legacy',
                 'develop/wallet-provider/station-extension',
                 'develop/wallet-provider/station-mobile',
                 'develop/wallet-provider/sign-bytes',
