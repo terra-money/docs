@@ -125,7 +125,7 @@ Now that `App.js` has inherited the context of `WalletProvider`, you can start p
 
 2. Populate the `Connect.js` file with the following:
 
-   ```js
+   ```ts
    import { useWallet, WalletStatus } from '@terra-money/wallet-provider';
    import React from 'react';
    export default function Connect() {
@@ -168,7 +168,7 @@ Now that `App.js` has inherited the context of `WalletProvider`, you can start p
 
 3. Open `App.js` in your code editor and replace the code with the following:
 
-   ```js
+   ```ts
    import './App.css';
    import Connect from './components/Connect';
 
@@ -203,7 +203,7 @@ Be aware that you will not see any tokens if your wallet is empty.
 
 2. Populate `Query.js` with the following:
 
-   ```js
+   ```ts
    import {
      useConnectedWallet,
      useLCDClient,
@@ -213,7 +213,7 @@ Be aware that you will not see any tokens if your wallet is empty.
    export default function Query() {
      const lcd = useLCDClient(); // LCD stands for Light Client Daemon
      const connectedWallet = useConnectedWallet();
-     const [balance, setBalance] = useState(null);
+     const [balance, setBalance] = useState<null | string>(null);
      const chainID = 'phoenix-1'; // or any other mainnet or testnet chainID supported by station (e.g. osmosis-1)
 
      useEffect(() => {
@@ -284,7 +284,7 @@ Wallet Provider supplies useful error types. This example will handle the `UserD
 
 2. Populate `Tx.js` with the following. To make this example interchain retrieve the `baseAsset` from the network object.
 
-   ```js
+   ```ts
    import { Fee, MsgSend } from '@terra-money/feather.js';
    import {
      useConnectedWallet,
@@ -295,8 +295,8 @@ Wallet Provider supplies useful error types. This example will handle the `UserD
    const TEST_TO_ADDRESS = 'terra12hnhh5vtyg5juqnzm43970nh4fw42pt27nw9g9';
 
    export default function Tx() {
-     const [txResult, setTxResult] = useState(null);
-     const [txError, setTxError] = useState(null);
+     const [txResult, setTxResult] = useState<TxResult | null>(null);
+     const [txError, setTxError] = useState<string | null>(null);
 
      const connectedWallet = useConnectedWallet();
      const chainID = 'phoenix-1';
