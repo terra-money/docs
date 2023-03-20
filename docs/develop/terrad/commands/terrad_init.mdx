@@ -1,0 +1,46 @@
+---
+title: Init
+sidebar_position: 7
+---
+
+# terrad init
+
+Initialize private validator, p2p, genesis, and application configuration files. To learn how to run a full node, visit [the Full node guide](../../../full-node/run-a-full-terra-node/README.mdx). 
+
+You can access Terrad's config files by running the following.  
+
+```sh Terrad
+code ~/.terra/config/genesis.json
+```
+
+## Synopsis
+
+Initialize the validators' and node's configuration files.
+
+## Usage
+
+```sh Terrad
+terrad init [moniker] [flags]
+```
+
+## Example
+
+```sh Terrad
+terrad init myNode
+```
+
+## Options
+
+```sh Terrad
+      --chain-id string   genesis file chain-id, if left blank will be randomly created
+  -h, --help              help for init
+      --home string       node's home directory (default "/Users/evan/.terra")
+  -o, --overwrite         overwrite the genesis.json file
+      --recover           provide seed phrase to recover existing key instead of creating
+```
+
+## See also
+
+* [terrad](./terrad.mdx)	 - The Terra Blockchain's CLI and node daemon. 
+
+

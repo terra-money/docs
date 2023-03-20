@@ -1,0 +1,38 @@
+# terrad query gov param
+
+Query the parameters (`voting|tallying|deposit`) of the governance process.
+
+## Example
+
+```sh Terrad
+terrad query gov param voting
+terrad query gov param tallying
+terrad query gov param deposit
+```
+
+## Usage
+
+```sh Terrad
+terrad query gov param [param-type] [flags]
+```
+
+## Options
+
+```sh Terrad
+      --height int      Use a specific height to query state at (this can error if the node is pruning state)
+  -h, --help            help for param
+      --node string     <host>:<port> to Tendermint RPC interface for this chain (default "tcp://localhost:26657")
+  -o, --output string   Output format (text|json) (default "text")
+```
+
+## Options inherited from parent commands
+
+```sh Terrad
+      --chain-id string   The network chain ID
+```
+
+## See also
+
+* [terrad query gov](./terrad_query_gov.mdx)	 - Querying commands for the governance module.
+
+

@@ -1,0 +1,41 @@
+# terrad query mint params
+
+Query the current minting parameters.
+
+Parameters are returned in the following format:
+
+```yaml
+mint_denom: uluna
+inflation_rate_change: "0.130000000000000000"
+inflation_max: "0.200000000000000000"
+inflation_min: "0.070000000000000000"
+goal_bonded: "0.670000000000000000"
+blocks_per_year: 6311520
+```
+
+## Usage
+
+```sh Terrad
+terrad query mint params [flags]
+```
+
+## Options
+
+```sh Terrad
+      --height int      Use a specific height to query state at (this can error if the node is pruning state)
+  -h, --help            help for params
+      --node string     <host>:<port> to Tendermint RPC interface for this chain (default "tcp://localhost:26657")
+  -o, --output string   Output format (text|json) (default "text")
+```
+
+## Options inherited from parent commands
+
+```sh Terrad
+      --chain-id string   The network chain ID
+```
+
+## See also
+
+* [terrad query mint](./terrad_query_mint.mdx)	 - Querying commands for the minting module.
+
+

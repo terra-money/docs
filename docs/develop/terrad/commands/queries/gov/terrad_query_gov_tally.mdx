@@ -1,0 +1,40 @@
+# terrad query gov tally
+
+Query tally of votes on a proposal. 
+You can find the proposal-id by running the following:
+
+```sh Terrad
+terrad query gov proposals
+```
+
+## Example
+
+```sh Terrad
+terrad query gov tally 1
+```
+
+## Usage
+```sh Terrad
+terrad query gov tally [proposal-id] [flags]
+```
+
+## Options
+
+```sh Terrad
+      --height int      Use a specific height to query state at (this can error if the node is pruning state)
+  -h, --help            help for tally
+      --node string     <host>:<port> to Tendermint RPC interface for this chain (default "tcp://localhost:26657")
+  -o, --output string   Output format (text|json) (default "text")
+```
+
+## Options inherited from parent commands
+
+```sh Terrad
+      --chain-id string   The network chain ID
+```
+
+## See also
+
+* [terrad query gov](./terrad_query_gov.mdx)	 - Querying commands for the governance module.
+
+

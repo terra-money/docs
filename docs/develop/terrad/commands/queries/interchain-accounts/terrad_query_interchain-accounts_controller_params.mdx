@@ -1,0 +1,35 @@
+# terrad query interchain-accounts controller params
+
+Query the current interchain-accounts controller submodule parameters. 
+
+## Usage
+
+```sh Terrad
+terrad query interchain-accounts controller params [flags]
+```
+
+## Example
+```sh Terrad
+terrad query interchain-accounts controller params
+```
+
+## Options
+
+```sh Terrad
+      --height int      Use a specific height to query state at (this can error if the node is pruning state)
+  -h, --help            help for params
+      --node string     <host>:<port> to Tendermint RPC interface for this chain (default "tcp://localhost:26657")
+  -o, --output string   Output format (text|json) (default "text")
+```
+
+## Options inherited from parent commands
+
+```sh Terrad
+      --chain-id string   The network chain ID
+```
+
+## See also
+
+* [terrad query interchain-accounts controller](./terrad_query_interchain-accounts_controller.mdx)	 - interchain-accounts controller subcommands.
+
+

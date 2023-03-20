@@ -1,0 +1,36 @@
+# terrad query gov deposit
+
+Query the details for a single proposal deposit on a proposal by its identifier.
+
+## Example
+
+```sh Terrad
+terrad query gov deposit 1 terra1skjwj5whet0lpe65qaq4rpq03hjxlwd9nf39lk
+```
+
+## Usage
+
+```sh Terrad
+terrad query gov deposit [proposal-id] [depositer-addr] [flags]
+```
+
+## Options
+
+```sh Terrad
+      --height int      Use a specific height to query state at (this can error if the node is pruning state)
+  -h, --help            help for deposit
+      --node string     <host>:<port> to Tendermint RPC interface for this chain (default "tcp://localhost:26657")
+  -o, --output string   Output format (text|json) (default "text")
+```
+
+## Options inherited from parent commands
+
+```sh Terrad
+      --chain-id string   The network chain ID
+```
+
+## See also
+
+* [terrad query gov](./terrad_query_gov.mdx)	 - Querying commands for the governance module.
+
+

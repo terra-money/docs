@@ -1,0 +1,125 @@
+import Admonition from '@theme/Admonition';
+
+
+# terrad keys add
+
+Add an encrypted private key (either newly generated or recovered), encrypt it, and save to `<name>` file. 
+
+This command generates a public and private key pair for an account.
+
+## Example
+
+<Admonition type="caution">
+
+For security purposes, run this command on an offline computer.
+
+</Admonition>
+
+## Usage
+
+```sh Terrad
+terrad keys add <your-key-name> [flags]
+```
+
+Specify `<your-key-name>` as the name of the account. It references the account number used to derive the key pair from the mnemonic. When you want to send a transaction, you will use this name to identify your account.
+
+To specify the path (`0`, `1`, `2`, ...) you want to use to generate your account, you can append the optional `--account` flag. By default, account `0` is generated.
+
+The command generates a 24-word mnemonic and saves the private and public keys for account `0` simultaneously. You are prompted to specify a passphrase that is used to encrypt the private key of account `0` on disk. Each time you want to send a transaction, this password is required. If you lose the password, you can always recover the private key by using the mnemonic phrase.
+
+<Admonition type="danger" icon="🔥">
+
+To prevent theft or loss of funds, ensure that you keep multiple copies of your mnemonic and store it in a secure place and that only you know how to access it. If someone is able to gain access to your mnemonic, they are able to gain access to your private keys and control the accounts associated with them.
+
+</Admonition>
+
+<Admonition type="tip" icon="␡" title="Delete history">
+
+After you have triple-checked your mnemonic and safely stored it, you can delete bash history to ensure no one can retrieve it.
+
+```bash
+history -c
+rm ~/.bash_history
+```
+
+</Admonition>
+
+### Generate more accounts from the same mnemonic
+
+To generate more accounts from the same mnemonic, run:
+
+```bash
+terrad keys add <your-key-name> --recover --account 1
+```
+
+You are prompted to specify a passphrase and your mnemonic. To generate a different account, change the account number.
+
+<Admonition type="danger" icon="🔥">
+
+Do not use the same passphrase for multiple keys. Do not lose or share your mnemonic with anyone.
+
+</Admonition>
+
+### Recover your key
+
+In some cases, you might need to recover your key. If you have the mnemonic that was used to generate your private key, you can recover it and re-register your key. Issuing the following command will prompt you to enter your 24-word mnemonic.
+
+```bash
+terrad keys add <yourKeyName> --recover
+```
+
+### Multisig
+
+```sh Terrad
+terrad keys add mymultisig --multisig "keyname1,keyname2,keyname3" --multisig-threshold 2
+```
+
+For information about generating multisignature accounts and signing transactions, see [Sign with a multisig account](../../../guides/sign-with-multisig.mdx).
+
+
+
+## Options
+
+Optionally, you can specify a `BIP39` mnemonic, a `BIP39` passphrase to further secure the mnemonic, and a `BIP32` HD path to derive a specific account. The key will be stored under the given name and encrypted with the given password. The only input that is required is the encryption password.
+If run with `-i`, it will prompt the user for `BIP44` path, `BIP39` mnemonic, and passphrase. 
+
+The flag `--recover` allows one to recover a key from a seed passphrase.
+
+If run with `--dry-run`, a key will be generated (or recovered) but not stored to the local keystore. 
+
+Use the `--pubkey` flag to add arbitrary public keys to the keystore for constructing multisig transactions.
+
+You can create and store a multisig key by passing the list of key names stored in a keyring and the minimum number of signatures required through `--multisig-threshold`. The keys are sorted by address, unless the flag `--nosort` is set.
+
+```sh Terrad
+      --account uint32           Account number for HD derivation
+      --algo string              Key signing algorithm to generate keys for (default "secp256k1")
+      --coin-type uint32         coin type number for HD derivation (default 330)
+      --dry-run                  Perform action, but don't add key to local keystore
+      --hd-path string           Manual HD Path derivation (overrides BIP44 config)
+  -h, --help                     help for add
+      --index uint32             Address index number for HD derivation
+  -i, --interactive              Interactively prompt user for BIP39 passphrase and mnemonic
+      --ledger                   Store a local reference to a private key on a Ledger device
+      --multisig strings         List of key names stored in keyring to construct a public legacy multisig key
+      --multisig-threshold int   K out of N required signatures. For use in conjunction with --multisig (default 1)
+      --no-backup                Don't print out seed phrase (if others are watching the terminal)
+      --nosort                   Keys passed to --multisig are taken in the order they're supplied
+      --pubkey string            Parse a public key in JSON format and saves key info to <name> file.
+      --recover                  Provide seed phrase to recover existing key instead of creating
+```
+
+## Options inherited from parent commands
+
+```sh Terradsh Terrad
+      --home string              The application home directory (default "terra")
+      --keyring-backend string   Select keyring's backend (os|file|test) (default "os")
+      --keyring-dir string       The client Keyring directory; if omitted, the default 'home' directory will be used
+      --output string            Output format (text|json) (default "text")
+```
+
+## See also
+
+* [terrad keys](./terrad_keys.mdx)	 - Manage your application's keys.
+
+

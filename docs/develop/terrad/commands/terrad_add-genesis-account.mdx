@@ -1,0 +1,52 @@
+---
+title: Add genesis account
+sidebar_position: 2
+---
+# terrad add-genesis-account
+
+Add a genesis account to _`genesis.json`_. 
+
+## Synopsis
+
+Add a genesis account to _`genesis.json`_. The provided account must specify
+the account address or key name and a list of initial coins. If a [key name](./keys/terrad_keys.mdx) is given,
+the address will be looked up in the local Keybase. The list of initial tokens must
+contain valid denominations. Accounts may optionally be supplied with vesting parameters.
+
+You can access the _`genesis.json`_ file in Terrad's config folder.  
+
+```sh Terrad
+code ~/.terra/config/genesis.json
+```
+
+For more information on Terrad configuration, visit the [Full node general configuration page](../../../full-node/run-a-full-terra-node/configure-general-settings.mdx).
+
+## Example
+
+```sh terrad
+terrad add-genesis-account acc1 '200000000uluna'
+```
+
+In the command above, _`acc1`_ refers to the account name set by the [_`keys`_ command](./keys/terrad_keys_add.mdx). 
+
+## Options
+
+```sh Terradsh Terrad
+      --height int               Use a specific height to query state at (this can error if the node is pruning state)
+  -h, --help                     help for add-genesis-account
+      --home string              The application home directory (default "/Users/evan/.terra")
+      --keyring-backend string   Select keyring's backend (os|file|kwallet|pass|test) (default "os")
+      --node string              <host>:<port> to Tendermint RPC interface for this chain (default "tcp://localhost:26657")
+  -o, --output string            Output format (text|json) (default "text")
+      --vesting-amount string    amount of coins for vesting accounts
+      --vesting-end-time int     schedule end time (unix epoch) for vesting accounts
+      --vesting-start-time int   schedule start time (unix epoch) for vesting accounts
+```
+
+## See also
+
+* [terrad](./terrad.mdx)	 - The Terra Blockchain's CLI and node daemon. 
+* [terrad collect-gentxs](./terrad_collect-gentxs.mdx)	 - Collect genesis txs and output a `genesis.json` file.
+* [Full node general configuration page](../../../full-node/run-a-full-terra-node/configure-general-settings.mdx)
+
+
