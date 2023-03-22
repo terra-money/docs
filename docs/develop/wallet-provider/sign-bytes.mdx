@@ -38,38 +38,45 @@ export function SignBytesSample() {
   const [txResult, setTxResult] = useState<SignBytesResult | null>(null);
   const [txError, setTxError] = useState<string | null>(null);
   const [verifyResult, setVerifyResult] = useState<string | null>(null);
+  const chainID = 'phoenix-1';
 
   const connectedWallet = useConnectedWallet();
 
-  const signBytes = useCallback(async () => {
+  const signBytes = useCallback(() => {
     if (!connectedWallet) {
       return;
     }
 
-    try {
-      const signedBytes: SignBytesResult = await connectedWallet.signBytes(
-        TEST_BYTES,
-      );
-      setTxResult(signedBytes);
-      setTxError(null);
-      const result = verifyBytes(TEST_BYTES, signedBytes.result);
-      setVerifyResult(result ? 'Verified' : 'Verification failed');
-    } catch (error) {
-      setTxResult(null);
-      setVerifyResult(null);
-      if (error instanceof UserDenied) {
-        setTxError('User Denied');
-      } else if (error instanceof Timeout) {
-        setTxError('Timeout');
-      } else if (error instanceof SignBytesFailed) {
-        setTxError('Sign Bytes Failed');
-      } else {
-        setTxError(
-          'Unknown Error: ' +
-            (error instanceof Error ? error.message : String(error)),
-        );
-      }
-    }
+    setTxResult(null);
+    setTxError(null);
+    setVerifyResult(null);
+
+    connectedWallet
+      .signBytes(TEST_BYTES)
+      .then((nextSignBytesResult: SignBytesResult) => {
+        setTxResult(nextSignBytesResult);
+        setTxError(null);
+
+        const result = verifyBytes(TEST_BYTES, nextSignBytesResult.result);
+        setVerifyResult(result ? 'Verify OK' : 'Verify failed');
+      })
+      .catch((error) => {
+        setTxResult(null);
+        setVerifyResult(null);
+
+        if (error instanceof UserDenied) {
+          setTxError('User Denied');
+        } else if (error instanceof Timeout) {
+          setTxError('Timeout');
+        } else if (error instanceof SignBytesFailed) {
+          setTxError('Sign Bytes Failed');
+        } else {
+          setTxError(
+            'Unknown Error: ' +
+              (error instanceof Error ? error.message : String(error)),
+          );
+        }
+      });
   }, [connectedWallet]);
 
   return (
@@ -81,7 +88,7 @@ export function SignBytesSample() {
         !txError &&
         !verifyResult && (
           <button onClick={() => signBytes()}>
-            Sign bytes with {connectedWallet.walletAddress}
+            Sign bytes with {connectedWallet.addresses[chainID]}
           </button>
         )}
 
@@ -90,6 +97,18 @@ export function SignBytesSample() {
       {txError && <pre>{txError}</pre>}
 
       {verifyResult && <pre>{verifyResult}</pre>}
+
+      {(!!txResult || !!txError || !!verifyResult) && (
+        <button
+          onClick={() => {
+            setTxResult(null);
+            setTxError(null);
+            setVerifyResult(null);
+          }}
+        >
+          Clear result
+        </button>
+      )}
 
       {!connectedWallet && <p>Wallet not connected!</p>}
 
