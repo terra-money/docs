@@ -1,0 +1,207 @@
+--- 
+hide_table_of_contents: true
+---
+# Terra Core upgrade guide
+
+The Terra Core will be upgraded at the blockcheight specified in the Core Upgrade Governance Proposal. After passing, the chain will halt at the specified height, and validators will need to update their nodes. Once updated, the chain will start again. This process may take some time as this is a major upgrade. 
+
+## Updates
+
+## 1. Upgrade CosmosSDK to v0.46.10
+
+- Spec
+    
+    ## Summary
+    
+    Cosmos SDK will be upgraded to v0.46.10, which includes:
+    
+    - changes to modules
+    - Deprecation of legacy endpoints, replaced with new endpoints:
+        - [https://docs.cosmos.network/v0.45/migrations/rest.html](https://docs.cosmos.network/v0.45/migrations/rest.html)
+    
+    ## Tech Spec
+    
+    ### Modules
+    
+    ### `x/params`
+    
+    - The `x/param` module has been depreacted in favor of each module housing and providing way to modify their parameters. Each module that has parameters that are changable during runtime have an authority, the authority can be a module or user account. The Cosmos-SDK team recommends migrating modules away from using the param module. An example of how this could look like can be found [here](https://github.com/cosmos/cosmos-sdk/pull/12363).
+    - The Param module will be maintained until April 18, 2023. At this point the module will reach end of life and be removed from the Cosmos SDK.
+    
+    ### `x/gov`
+    
+    The `gov` module has been greatly improved. The previous API has been moved to `v1beta1` while the new implementation is called `v1`.
+    
+    In order to submit a proposal with `submit-proposal` you now need to pass a `proposal.json` file. You can still use the old way by using `submit-legacy-proposal`. This is not recommended. More information can be found in the gov module [client documentation](https://docs.cosmos.network/v0.46/modules/gov/07_client.html).
+    
+    - deposits are burned only if the vote returned is `nowithveto`. All other scenarios will refund deposits. Proposals that fail to meet quorum, fail to reach the minimum deposit, or End in a `yes` or `no` vote will get their deposits refunded: ‣
+    
+    ### Overview
+    
+    Update guide: 
+    
+    [https://github.com/cosmos/cosmos-sdk/blob/release/v0.46.x/UPGRADING.md](https://github.com/cosmos/cosmos-sdk/blob/release/v0.46.x/UPGRADING.md)
+    
+    Full changelog:
+    [https://github.com/cosmos/cosmos-sdk/blob/release/v0.46.x/CHANGELOG.md](https://github.com/cosmos/cosmos-sdk/blob/release/v0.46.x/CHANGELOG.md)
+    
+## 2. Update Wasm to  use `[github.com/notional-labs/wasmd](http://github.com/notional-labs/wasmd) v0.30.0-sdk469.4`
+
+- Spec
+
+## 3. Updated `ibc` and `packetfowardingmiddleware` from v3 to v6
+
+- Spec
+
+## 4. Added `ibc-hooks` as a custom module
+
+- Spec
+    
+    [Further Documentation](https://github.com/osmosis-labs/osmosis/blob/main/x/ibc-hooks/README.md)
+    
+    Wasm hooks, an IBC middleware, enable ICS-20 token transfers to initiate contract calls, allowing cross-chain contract calls involving token movement. This is particularly useful for cross-chain swaps, a powerful primitive. The mechanism uses a memo field on every ICS20 transfer packet starting from IBC v3.4.0. If the memo field has a specific format, a wasm contract call is executed.
+    
+    The cosmwasm MsgExecuteContract contains sender, contract, msg, and funds fields, with the sender replaced by an account representing the sender, prefixed by the channel and a wasm module prefix. The contract, msg, and funds fields are obtained from the ICS-20 packet metadata.
+    
+
+## 5. Added the `token-factory` module
+
+- Spec
+    
+    [Further Documentation](https://docs.osmosis.zone/osmosis-core/modules/tokenfactory)
+    
+    The tokenfactory module enables accounts to create new tokens using the format factory/{creator address}/{subdenom}. This approach allows permissionless token minting since tokens are namespaced by creator addresses, eliminating the need to resolve name collisions. Accounts can create multiple denoms by providing a unique subdenom for each.
+    
+    Upon creating a denom, the creator is granted "admin" privileges, empowering them to mint tokens to any account, burn tokens from any account, create transfers between two accounts, and change the admin. Future enhancements may expand admin capabilities. The ChangeAdmin functionality enables changing the master admin account or even removing admin privileges entirely. Admins can also share privileges with others using the authz module.
+    
+
+## 6. Enabled `ica-controller` module
+
+- Spec
+    
+    [Further Documentation](https://tutorials.cosmos.network/academy/3-ibc/6-ica.html)
+    
+    The Interchain Accounts module is a Cosmos SDK implementation of the ICS-27 protocol, enabling cross-chain account management using IBC. Interchain Accounts differ from regular accounts by being controlled programmatically via IBC packets instead of using a private key. 
+    
+    The system involves a Host Chain, where the Interchain Account is registered, and a Controller Chain, which controls the account on the Host Chain. The Authentication Module on the Controller Chain manages the creation and management of Interchain Accounts. The SDK security model assumes that modules on a chain are trustworthy, and the ICS-27 implementation in ibc-go relies on this assumption for its security considerations, expecting other IBC application modules not to bind to ports within the ICS-27 namespace.
+    
+
+## 7. Added `alliance` module
+
+- Spec
+
+
+
+## Endpoint changes
+
+Developers will need to update the following endpoints to maintain compatibility after the upgrade. 
+
+| Deprecated | New |
+| --- | --- |
+| `/node_info` | `/cosmos/base/tendermint/v1beta1/node_info` |
+| `/syncing` | `/cosmos/base/tendermint/v1beta1/syncing` |
+| `/blocks/latest` | `/cosmos/base/tendermint/v1beta1/blocks/latest` |
+| `/blocks/{height}` | `/cosmos/base/tendermint/v1beta1/blocks/{height}` |
+| `/validatorsets/latest` | `/cosmos/base/tendermint/v1beta1/validatorsets/latest` |
+| `/validatorsets/{height}` | `/cosmos/base/tendermint/v1beta1/validatorsets/{height}` |
+| `/txs/{hash}` | `/cosmos/tx/v1beta/txs/{hash}` |
+| `/txs` | `/cosmos/tx/v1beta/txs` |
+| `/txs/encode` | `/cosmos/tx/v1beta/txs/encode` |
+| `/txs/decode` | `/cosmos/tx/v1beta/txs/decode` |
+| `/bank/balances/{address}` | `/cosmos/bank/v1beta/balances/{address}` |
+| `/bank/accounts/{address}/transfers` | `/cosmos/bank/v1beta/accounts/{address}/transfers` |
+| `/bank/total` | `/cosmos/bank/v1beta/total` |
+| `/bank/total/{denomination}` | `/cosmos/bank/v1beta/total/{denomination}` |
+| `/auth/accounts/{address}` | `/cosmos/auth/v1beta/accounts/{address}` |
+| `/staking/delegators/{delegatorAddr}/delegations` | `/cosmos/staking/v1beta/delegators/{delegatorAddr}/delegations` |
+| `/staking/delegators/{delegatorAddr}/delegations/{validatorAddr}` | `/cosmos/staking/v1beta/delegators/{delegatorAddr}/delegations/{validatorAddr}` |
+| `/staking/delegators/{delegatorAddr}/unbonding_delegations` | `/cosmos/staking/v1beta/delegators/{delegatorAddr}/unbonding_delegations` |
+| `/staking/delegators/{delegatorAddr}/unbonding_delegations/{validatorAddr}` | `/cosmos/staking/v1beta/delegators/{delegatorAddr}/unbonding_delegations/{validatorAddr}` |
+| `/staking/redelegations` | `/cosmos/staking/v1beta/redelegations` |
+| `/staking/delegators/{delegatorAddr}/redelegations` | `/cosmos/staking/v1beta/delegators/{delegatorAddr}/redelegations` |
+| `/staking/delegators/{delegatorAddr}/validators` | `/cosmos/staking/v1beta/delegators/{delegatorAddr}/validators` |
+| `/staking/delegators/{delegatorAddr}/validators/{validatorAddr}` | `/cosmos/staking/v1beta/delegators/{delegatorAddr}/validators/{validatorAddr}` |
+| `/staking/validators` | `/cosmos/staking/v1beta/validators` |
+| `/staking/validators/{validatorAddr}` | `/cosmos/staking/v1beta/validators/{validatorAddr}` |
+| `/staking/validators/{validatorAddr}/delegations` | `/cosmos/staking/v1beta/validators/{validatorAddr}/delegations` |
+| `/staking/validators/{validatorAddr}/unbonding_delegations` | `/cosmos/staking/v1beta/validators/{validatorAddr}/unbonding_delegations` |
+| `/staking/pool` | `/cosmos/staking/v1beta/pool` |
+| `/staking/parameters` | `/cosmos/staking/v1beta/parameters` |
+| `/slashing/signing_infos` | `/cosmos/slashing/v1beta/signing_infos` |
+| `/slashing/validators/{validatorAddr}/unjail` | `/cosmos/slashing/v1beta/validators/{validatorAddr}/unjail` |
+| `/slashing/parameters` | `/cosmos/slashing/v1beta/parameters` |
+| `/gov/proposals` | `/cosmos/gov/v1beta/proposals` |
+| `/gov/proposals/param_change` | `/cosmos/gov/v1beta/proposals/param_change` |
+| `/gov/proposals/{proposalId}` | `/cosmos/gov/v1beta/proposals/{proposalId}` |
+| `/gov/proposals/{proposalId}/proposer` | `/cosmos/gov/v1beta/proposals/{proposalId}/proposer` |
+| `/gov/proposals/{proposalId}/deposits` | `/cosmos/gov/v1beta/proposals/{proposalId}/deposits` |
+| `/gov/proposals/{proposalId}/deposits/{depositor}` | `/cosmos/gov/v1beta/proposals/{proposalId}/deposits/{depositor}` |
+| `/gov/proposals/{proposalId}/votes` | `/cosmos/gov/v1beta/proposals/{proposalId}/votes` |
+| `/gov/proposals/{proposalId}/votes/{voter}` | `/cosmos/gov/v1beta/proposals/{proposalId}/votes/{voter}` |
+| `/gov/proposals/{proposalId}/tally` | `/cosmos/gov/v1beta/proposals/{proposalId}/tally` |
+| `/gov/parameters/deposit` | `/cosmos/gov/v1beta/parameters/deposit` |
+| `/gov/parameters/tallying` | `/cosmos/gov/v1beta/parameters/tallying` |
+| `/gov/parameters/voting` | `/cosmos/gov/v1beta/parameters/voting` |
+| `/distribution/delegators/{delegatorAddr}/rewards` | `/cosmos/distribution/v1beta/delegators/{delegatorAddr}/rewards` |
+| `/distribution/delegators/{delegatorAddr}/rewards/{validatorAddr}` | `/cosmos/distribution/v1beta/delegators/{delegatorAddr}/rewards/{validatorAddr}` |
+| `/distribution/delegators/{delegatorAddr}/withdraw_address` | `/cosmos/distribution/v1beta/delegators/{delegatorAddr}/withdraw_address` |
+| `/distribution/validators/{validatorAddr}` | `/cosmos/distribution/v1beta/validators/{validatorAddr}` |
+| `/distribution/validators/{validatorAddr}/outstanding_rewards` | `/cosmos/distribution/v1beta/validators/{validatorAddr}/outstanding_rewards` |
+| `/distribution/validators/{validatorAddr}/rewards` | `/cosmos/distribution/v1beta/validators/{validatorAddr}/rewards` |
+| `/distribution/community_pool` | `/cosmos/distribution/v1beta/community_pool` |
+| `/distribution/parameters` | `/cosmos/distribution/v1beta/parameters` |
+| `/minting/parameters` | `/cosmos/mint/v1beta/parameters` |
+| `/minting/inflation` | `/cosmos/mint/v1beta/inflation` |
+| `/minting/annual-provisions` | `/cosmos/mint/v1beta/annual-provisions` |
+| `/wasm/code` | `/cosmwasm/wasm/v1/code` |
+| `/wasm/code/{codeID}` | `/cosmwasm/wasm/v1/code/{codeID}` |
+| `/wasm/code/{codeID}/contracts` | `/cosmwasm/wasm/v1/code/{codeID}/contracts` |
+| `/wasm/contract/{contractAddr}` | `/cosmwasm/wasm/v1/contract/{contractAddr}` |
+| `/wasm/contract/{contractAddr}/code` | `/cosmwasm/wasm/v1/contract/{contractAddr}/code` |
+| `/wasm/contract/{contractAddr}/admin` | `/cosmwasm/wasm/v1/contract/{contractAddr}/admin` |
+| `/wasm/contract/{contractAddr}/state` | `/cosmwasm/wasm/v1/contract/{contractAddr}/state` |
+| `/wasm/contract/{contractAddr}/smart/{query}` | `/cosmwasm/wasm/v1/contract/{contractAddr}/smart/{query}` |
+| `/wasm/contract/{contractAddr}/raw/{key}` | `/cosmwasm/wasm/v1/contract/{contractAddr}/raw/{key}` |
+| `/wasm/contract/{contractAddr}/history` | `/cosmwasm/wasm/v1/contract/{contractAddr}/history` |
+| `/ibc/client/v1/params` | `/ibc/core/client/v1/params` |
+
+## New endpoints
+
+| Endpoint | Description |
+| --- | --- |
+| `get /osmosis/tokenfactory/v1beta1/params` | Params defines a gRPC query method that returns the `tokenfactory` module's parameters. |
+| `get /osmosis/tokenfactory/v1beta1/denoms_from_creator/{creator}` | `DenomsFromCreator` defines a gRPC query method for fetching all denominations created by a specific admin/creator. |
+| `get /osmosis/tokenfactory/v1beta1/denoms/{denom}/authority_metadata` | `DenomAuthorityMetadata` defines a gRPC query method for fetching `DenomAuthorityMetadata` for a particular `denom`. |
+| `get /terra/alliances/{denom}` | Query a specific alliance by denom |
+| `get /terra/alliances/validators/{validator_addr}` | Query an alliance validator. |
+| `get /terra/alliances/validators` | Query all paginated alliance validators. |
+| `get /terra/alliances/rewards/{delegator_addr}/{validator_addr}/{denom}` | Query for rewards by `delegator_addr`, `validator_addr` and `denom` |
+| `get /terra/alliances/rewards/{delegator_addr}/{validator_addr}/ibc/{hash}` | Query for rewards by delegator `addr`, `validator_addr` and `denom` |
+| `get /terra/alliances/params` | Get params regarding existing alliances |
+| `get /terra/alliances/ibc/{hash}` | Query a specific alliance by ibc hash |
+| `get /terra/alliances/delegations/{delegator_addr}/{validator_addr}/{denom}` | Query a delegation to an alliance by `delegator_addr`, `validator_addr` and `denom` |
+| `get /terra/alliances/delegations/{delegator_addr}/{validator_addr}/ibc/{hash}` | Query a delegation to an alliance by `delegator_addr`, `validator_addr` and `denom` |
+| `get /terra/alliances/delegations/{delegator_addr}/{validator_addr}` | Query all paginated alliance delegations for a `delegator_addr` and `validator_addr` |
+| `get /terra/alliances/delegations/{delegator_addr}` | Query all paginated alliance delegations for a `delegator_addr` |
+| `get /terra/alliances/delegations` | Query all paginated alliance delegations |
+| `get /terra/alliances` | Query paginated alliances |
+| `get /ibc/apps/interchain_accounts/host/v1/params` | Params queries all parameters of the ICA host submodule. |
+| `get /ibc/apps/interchain_accounts/controller/v1/params` | Params queries all parameters of the ICA controller submodule. |
+| `get /ibc/apps/interchain_accounts/controller/v1/owners/{owner}/connections/{connection_id}` | Returns the interchain account address for a given owner address on a given connection |
+| `get /ibc/apps/fee/v1/incentivized_packets` | Returns all incentivized packets and their associated fees |
+| `get /ibc/apps/fee/v1/fee_enabled` | Returns a list of all fee enabled channels |
+| `get /ibc/apps/fee/v1/channels/{packet_id.channel_id}/ports/{packet_id.port_id}/sequences/{packet_id.sequence}/total_timeout_fees` | Returns the total timeout fees for a packet given its identifier |
+| `get /ibc/apps/fee/v1/channels/{packet_id.channel_id}/ports/{packet_id.port_id}/sequences/{packet_id.sequence}/total_recv_fees` | `TotalRecvFees` returns the total receive fees for a packet given its identifier |
+| `get /ibc/apps/fee/v1/channels/{packet_id.channel_id}/ports/{packet_id.port_id}/sequences/{packet_id.sequence}/total_ack_fees` | `TotalAckFees` returns the total acknowledgment fees for a packet given its identifier |
+| `get /ibc/apps/fee/v1/channels/{packet_id.channel_id}/ports/{packet_id.port_id}/sequences/{packet_id.sequence}/incentivized_packet` | `IncentivizedPacket` returns all packet fees for a packet given its identifier |
+| `get /ibc/apps/fee/v1/channels/{channel_id}/relayers/{relayer}/payee` | Payee returns the registered payee address for a specific channel given the relayer address |
+| `get /ibc/apps/fee/v1/channels/{channel_id}/relayers/{relayer}/counterparty_payee` | `CounterpartyPayee` returns the registered counterparty payee for forward relaying |
+| `get /ibc/apps/fee/v1/channels/{channel_id}/ports/{port_id}/incentivized_packets` | Gets all incentivized packets for a specific channel |
+| `get /ibc/apps/fee/v1/channels/{channel_id}/ports/{port_id}/fee_enabled` | `FeeEnabledChannel` returns true if the provided port and channel identifiers belong to a fee-enabled channel |
+| `get /cosmos/auth/v1beta1/address_by_id/{id}` | `AccountAddressByID` returns account address based on account number. |
+| `get /cosmos/bank/v1beta1/denom_owners/{denom}` | `DenomOwners` queries for all account addresses that own a particular token denomination. |
+| `get /ibc/core/connection/v1/params` | `ConnectionParams` queries all parameters of the ibc connection submodule. |
+| `get /ibc/core/client/v1/params` | `ClientParams` queries all parameters of the ibc client submodule. |
+| `get /cosmwasm/wasm/v1/contracts/creator/{creator_address}` | `ContractsByCreator` gets the contracts by creator |
+| `get /cosmwasm/wasm/v1/codes/params` | Params gets the module params |
+| `get /cosmos/base/tendermint/v1beta1/abci_query` | `ABCIQuery` defines a query handler that supports ABCI queries directly to the application, bypassing Tendermint completely. The ABCI query must contain a valid and supported path, including app, custom, p2p, and store. |
