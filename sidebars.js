@@ -232,6 +232,10 @@ const sidebars = {
         },
       ],
     },
+    {
+      type: 'doc',
+      id: 'upgrade',
+    },
   ],
 };
 
