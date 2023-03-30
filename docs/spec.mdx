@@ -1,0 +1,194 @@
+import Admonition from '@theme/Admonition';
+
+# Terra Core v2.3.0 upgrade
+
+[Terra Core v2.3.0](https://github.com/terra-money/core/releases/tag/v2.3.0) is a major upgrade for the Terra blockchain. The main feature of this upgrade is the addition of [the Alliance module](https://alliance.terra.money/), enabling Terra to form economic alliances with other chains. Refer to the specifications below for a full list of changes. 
+
+<Admonition type="tip" icon="🛠" title="Upgrade guide">
+
+Developers should refer to the [Core upgrade guide](./upgrade.mdx) for instructions on updating their applications. 
+
+</Admonition>
+
+## 1. Cosmos-sdk v0.46.10 upgrade
+
+<details> 
+<summary> Details </summary>
+<p>
+
+Cosmos SDK will be upgraded to v0.46.10, which includes:
+
+- [Changes to core modules](#modules)
+- Deprecation of legacy endpoints, replaced with new endpoints:
+    - [https://docs.cosmos.network/v0.45/migrations/rest.html](https://docs.cosmos.network/v0.45/migrations/rest.html)
+- [Terrad changes](#terrad-changes)
+
+### Modules
+
+#### `x/params`
+
+- The `x/param` module has been depreacted in favor of each module housing and providing way to modify their parameters. Each module that has parameters that are changable during runtime have an authority, the authority can be a module or user account. The Cosmos-SDK team recommends migrating modules away from using the param module. An example of how this could look like can be found [here](https://github.com/cosmos/cosmos-sdk/pull/12363).
+- The Param module will be maintained until April 18, 2023. At this point the module will reach end of life and be removed from the Cosmos SDK.
+
+#### `x/gov`
+
+The `gov` module has been greatly improved. The previous API has been moved to `v1beta1` while the new implementation is called `v1`.
+
+In order to submit a proposal with `submit-proposal` you now need to pass a `proposal.json` file. You can still use the old way by using `submit-legacy-proposal`. This is not recommended. More information can be found in the gov module [client documentation](https://docs.cosmos.network/v0.46/modules/gov/07_client.html).
+
+- deposits are burned only if the vote returned is `nowithveto`. All other scenarios will refund deposits. Proposals that fail to meet quorum, fail to reach the minimum deposit, or End in a `yes` or `no` vote will get their deposits refunded: https://github.com/cosmos/cosmos-sdk/pull/11011
+
+### Overview
+
+Update guide: 
+
+[https://github.com/cosmos/cosmos-sdk/blob/release/v0.46.x/UPGRADING.md](https://github.com/cosmos/cosmos-sdk/blob/release/v0.46.x/UPGRADING.md)
+
+Full changelog:
+[https://github.com/cosmos/cosmos-sdk/blob/release/v0.46.x/CHANGELOG.md](https://github.com/cosmos/cosmos-sdk/blob/release/v0.46.x/CHANGELOG.md)
+
+### Terrad changes:
+
+- **make chain-id flag not strictly required for tx commands:** [https://github.com/cosmos/cosmos-sdk/pull/10184](https://github.com/cosmos/cosmos-sdk/pull/10184)
+- [#11313](https://github.com/cosmos/cosmos-sdk/pull/11313) Fixes `--gas auto` when executing CLI transactions in `--generate-only` mode
+- (cli) [#12095](https://github.com/cosmos/cosmos-sdk/pull/12095) Fix running a tx with --dry-run returns an error
+- (cli) [#11313](https://github.com/cosmos/cosmos-sdk/pull/11313) Fixes `-gas auto` when executing CLI transactions in `-generate-only` mode
+- (cli) [#11337](https://github.com/cosmos/cosmos-sdk/pull/11337) Fixes `show-adress` cli cmd
+- [#10842](https://github.com/cosmos/cosmos-sdk/pull/10842) Fix error when `--generate-only`, `--max-msgs` fags set while executing `WithdrawAllRewards` command.
+- [#11558](https://github.com/cosmos/cosmos-sdk/pull/11558) Fix `--dry-run` not working when using tx command.
+- [#11197](https://github.com/cosmos/cosmos-sdk/pull/11197) Signing with multisig now works with multisig address which is not in the keyring.
+- [#11983](https://github.com/cosmos/cosmos-sdk/pull/11983) (x/feegrant, x/authz) rename grants query commands to `grants-by-grantee`, `grants-by-granter` cmds.
+- [#9762](https://github.com/cosmos/cosmos-sdk/pull/9762) The init command uses the chain-id from the client config if --chain-id is not provided
+- (cli) [#11065](https://github.com/cosmos/cosmos-sdk/pull/11065) Ensure the `tendermint-validator-set` query command respects the `-o` output flag.
+- [#11354](https://github.com/cosmos/cosmos-sdk/pull/11355) Added missing pagination flag for `bank q total` query.
+- [#10625](https://github.com/cosmos/cosmos-sdk/pull/10625) Add `--fee-payer` CLI flag
+- • (cli) [#9856](https://github.com/cosmos/cosmos-sdk/pull/9856) Overwrite `--sequence` and `--account-number` flags with default flag values when used with `offline=false` in `sign-batch` command.
+- • [#10379](https://github.com/cosmos/cosmos-sdk/pull/10379) Add validation to `x/upgrade` CLI `software-upgrade` command `--plan-info` value.
+- [#9695](https://github.com/cosmos/cosmos-sdk/pull/9695) `<app> keys migrate` CLI command now takes no arguments.
+- [#9246](https://github.com/cosmos/cosmos-sdk/pull/9246) Removed the CLI flag `-setup-config-only` from the `testnet` command and added the subcommand `init-files`.
+- [#10625](https://github.com/cosmos/cosmos-sdk/pull/10625) Rename `-fee-account` CLI flag to `-fee-granter`
+- [#10684](https://github.com/cosmos/cosmos-sdk/pull/10684) Rename `edit-validator` command's `-moniker` flag to `-new-moniker`
+- (authz)[#11060](https://github.com/cosmos/cosmos-sdk/pull/11060) Changed the default value of the `-expiration` `tx grant` CLI Flag: was now + 1year, update: null (no expire date).
+- (client/keys) [#9407](https://github.com/cosmos/cosmos-sdk/pull/9601) Added `keys rename` CLI command and `Keyring.Rename` interface method to rename a key in the keyring.
+- [#10311](https://github.com/cosmos/cosmos-sdk/pull/10311) Adds cli to use tips transactions. It adds an `--aux` flag to all CLI tx commands to generate the aux signer data (with optional tip), and a new `tx aux-to-fee` subcommand to let the fee payer gather aux signer data and broadcast the tx
+
+</p>
+</details>
+
+## 2. Update Wasm
+
+<details> 
+<summary> Details </summary>
+<p>
+
+`x/wasm` has been upgraded to [github.com/notional-labs/wasmd](http://github.com/notional-labs/wasmd) `v0.30.0-sdk469.4`. 
+
+Wasm can now use Wasmd. Wasmd is a Cosmos zone implementation with WebAssembly (WASM) smart contracts enabled, based on a fork of the `cosmos/gaia` repository. The Wasmd binary functions like gaiad, with the addition of the x/wasm module. It provides compatibility with CosmWasm contracts and supports various interface versions.
+</p>
+</details>
+
+## 3. Update `ibc` and `packetfowardingmiddleware` from v3 to v6
+
+<details> 
+<summary> Details </summary>
+<p>
+### IBC
+    
+#### v3 to v4:
+
+- Moved IBC core modules from **`x/ibc`** to **`core`** package.
+- All client state types now use **`ClientState`** interface.
+- Introduced **`ICS4Wrapper`** interface for handling **`LightClientState`** and **`LightClientConsensusState`** methods.
+- **`CreateClient`** method in testing package now returns created client's **`ClientState`**.
+
+#### v4 to v5:
+
+- Introduced **`UpgradeableClientState`** interface for client types.
+- ICS07 Tendermint client now supports upgrade via **`UpgradeClient`** and **`UpgradeConsensusState`** methods.
+- ICS20 Transfer module now supports unordered channels.
+
+#### v5 to v6:
+
+- Introduced migration for **`27-interchain-accounts`**, transferring ownership of ICS27 channel capabilities from authentication modules to ICS27 controller submodule.
+- ICS27 controller submodule now includes **`MsgServer`**, providing standardized approach to integrating existing forms of authentication.
+- Updated default params in ICS27 host submodule to include **`AllowAllHostMsgs`** wildcard.
+- Removed **`SendTransfer`** function from ICS20, IBC transfers should now be initiated with **`MsgTransfer`** routed to ICS20 **`MsgServer`**.
+- Simplified **`SendPacket`** API in ICS04, callers no longer need to pass pre-constructed packet.
+- Updated **`NewKeeper`** function in ICS29 to remove **`paramSpace`** parameter.
+- Made several changes to IBC testing package, including simplified **`SendPacket`** API.
+
+</p>
+</details>
+
+## 4. Add `ibc-hooks` as a custom module
+
+<details> 
+<summary> Details </summary>
+<p>
+
+[Further Documentation](https://github.com/osmosis-labs/osmosis/blob/main/x/ibc-hooks/README.md)
+    
+Wasm hooks, an IBC middleware, enable ICS-20 token transfers to initiate contract calls, allowing cross-chain contract calls involving token movement. This addition is particularly useful for cross-chain swaps, a powerful primitive. The mechanism uses a memo field on every ICS20 transfer packet starting from IBC v3.4.0. If the memo field has a specific format, a wasm contract call is executed.
+    
+The CosmWasm `MsgExecuteContract` contains sender, contract, msg, and funds fields, with the sender replaced by an account representing the sender, prefixed by the channel and a wasm module prefix. The contract, msg, and funds fields are obtained from the ICS-20 packet metadata.
+
+</p>
+</details>
+
+## 5. Add the `token-factory` module
+
+<details> 
+<summary> Details </summary>
+<p>
+
+[Further Documentation](https://docs.osmosis.zone/osmosis-core/modules/tokenfactory)
+
+The `x/tokenfactory` module enables accounts to create new tokens using the format `factory/{creator address}/{subdenom}`. This approach allows permissionless token minting since tokens are namespaced by creator addresses, eliminating the need to resolve name collisions. Accounts can create multiple `denoms` by providing a unique `subdenom` for each.
+
+Upon creating a `denom`, the creator is granted "admin" privileges, empowering them to mint tokens to any account, burn tokens from any account, create transfers between two accounts, and change the admin. Future enhancements may expand admin capabilities. The `ChangeAdmin` functionality enables changing the master admin account or even removing admin privileges entirely. Admins can also share privileges with others using the `x/authz` module.
+
+</p>
+</details>
+
+## 6. Enable the `ica-controller` module
+
+<details> 
+<summary> Details </summary>
+<p>
+
+[Further Documentation](https://tutorials.cosmos.network/academy/3-ibc/6-ica.html)
+
+The Interchain Accounts module is a Cosmos SDK implementation of the ICS-27 protocol, enabling cross-chain account management using IBC. Interchain Accounts differ from regular accounts by being controlled programmatically via IBC packets instead of using a private key. 
+
+The system involves a Host Chain, where the Interchain Account is registered, and a Controller Chain, which controls the account on the Host Chain. The Authentication Module on the Controller Chain manages the creation and management of Interchain Accounts. The SDK security model assumes that modules on a chain are trustworthy, and the ICS-27 implementation in `ibc-go` relies on this assumption for its security considerations, expecting other IBC application modules not to bind to ports within the ICS-27 namespace.
+
+</p>
+</details>
+
+## 7. 🤝 Add the `alliance` module 
+
+<details> 
+<summary> Details </summary>
+<p>
+
+[Further Documentation](https://alliance.terra.money/)
+
+Alliance is an open-source module based on the Cosmos SDK that fosters economic cooperation among blockchains through interchain staking. It aims to increase innovation, user adoption, and cross-chain collaboration by promoting bilateral economic alliances across Cosmos chains.
+
+The module enables blockchains to trade yield with one another, similar to yield farming for Layer 1 (L1) protocols. Two chains integrate the Alliance module, determining which assets can be staked and assigning a Take Rate and Reward Weight to each asset. Users can then bridge their assets to other chains and stake them to earn Reward Weight.
+
+There are several use cases for Alliance, including:
+
+1. Diversifying and augmenting staking yield: Chains can enhance their native staking yield using Alliance assets. Users can also diversify and boost their yield by staking on one chain and bridging to another.
+2. Attracting users, liquidity, and developers: By setting the Take Rate to 0%, blockchains can draw new users and liquidity from allied chain participants, leading to a positive feedback loop of increasing usage, liquidity, and dApp development.
+3. Incentivizing application developers: Alliance can provide L1 staking yield to app token stakers, rewarding users of promising apps with fees and inflation from the underlying L1.
+
+</p>
+</details>
+
+## Resources
+
+- [The Terra Core upgrade guide](./upgrade.mdx)
+- [Terra Core v2.3.0 PR](https://github.com/terra-money/core/pull/106)
+- [Terra Core v2.3.0 release](https://github.com/terra-money/core/releases/tag/v2.3.0)
+- [Cosmos SDK v0.46.x changelog](https://github.com/cosmos/cosmos-sdk/blob/release/v0.46.x/CHANGELOG.md)

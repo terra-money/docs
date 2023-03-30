@@ -232,6 +232,15 @@ const sidebars = {
         },
       ],
     },
+    {
+      type: 'category',
+      label: 'Terra Core upgrade',
+      link: { type: 'doc', id: 'spec' },
+      items: [
+        'spec',
+        'upgrade',
+      ],
+    },
   ],
 };
 
