@@ -1,0 +1,53 @@
+# terrad query authz grants
+
+Query grants for a granter-grantee pair and optionally a `msg-type-url`. 
+
+## Synopsis
+
+Retrieve all existing authorization grants for a granter-grantee pair. If `msg-type-url` is set, it will select grants only for that msg type.
+
+## Examples 
+
+```sh Terrad
+terrad query authz grants terra1skj.. terra1skjwj..
+```
+
+Additionally, the `grants` command can retrieve the specific grant between a granter and a grantee for a message type by appending the message type URL to the end of the command statement, as shown in the following example:
+
+```sh Terrad
+terrad query authz grants terra1skj.. terra1skjwj..
+terrad query authz grants terra1skjw.. terra1skjwj.. /cosmos.bank.v1beta1.MsgSend
+```
+
+## Usage
+
+```sh Terrad
+terrad query authz grants [granter-addr] [grantee-addr] [msg-type-url]? [flags]
+```
+
+## Options
+
+```sh Terrad
+      --count-total       count the total number of records in grants to query for
+      --height int        Use a specific height to query state at (this can error if the node is pruning state)
+  -h, --help              help for grants
+      --limit uint        pagination limit of grants to query for (default 100)
+      --node string       <host>:<port> to Tendermint RPC interface for this chain (default "tcp://localhost:26657")
+      --offset uint       pagination offset of grants to query for
+  -o, --output string     Output format (text|json) (default "text")
+      --page uint         pagination page of grants to query for. This sets offset to a multiple of limit (default 1)
+      --page-key string   pagination page-key of grants to query for
+      --reverse           results are sorted in descending order
+```
+
+## Options inherited from parent commands
+
+```sh Terrad
+      --chain-id string   The network chain ID
+```
+
+## See also
+
+* [terrad query authz](./terrad_query_authz.mdx)	 - Querying commands for the authz module.
+
+

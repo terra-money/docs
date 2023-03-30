@@ -24,18 +24,17 @@ If you're using a frontend framework other than React you'll need to use [Wallet
 <Admonition type="tip" icon="💡" title="Node version 16">
 
 <details>
-<summary> Most users will need to specify Node version 16 before continuing. You can manage node versions [with NVM](https://github.com/nvm-sh/nvm). </summary>
-```sh
-nvm install 16
-nvm use 16
-```
+  <summary>
+    {' '}
+    Most users will need to specify Node version 16 before continuing. You can manage
+    node versions [with NVM](https://github.com/nvm-sh/nvm).{' '}
+  </summary>
+  ```sh nvm install 16 nvm use 16 ```
 </details>
 
 </Admonition>
 
 ## 1. Project Setup
-
-
 
 1. To get started, you'll need some basic React scaffolding. To generate this, run the following in your terminal:
 
@@ -74,11 +73,6 @@ Next, you'll wrap your `App` with `<WalletProvider>` to give all your components
        document.getElementById('root'),
      );
    });
-
-   // If you want to start measuring performance in your app, pass a function
-   // to log results (for example: reportWebVitals(console.log))
-   // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-   reportWebVitals();
    ```
 
 2. Start the application to make sure it works:
@@ -131,7 +125,7 @@ Now that `App.js` has inherited the context of `WalletProvider`, you can start p
 
 2. Populate the `Connect.js` file with the following:
 
-   ```js
+   ```ts
    import { useWallet, WalletStatus } from '@terra-money/wallet-provider';
    import React from 'react';
    export default function Connect() {
@@ -143,9 +137,15 @@ Now that `App.js` has inherited the context of `WalletProvider`, you can start p
        connect,
        disconnect,
      } = useWallet();
+
+     const chainID = 'phoenix-1'; // or any other mainnet or testnet chainID supported by station (e.g. osmosis-1)
      return (
        <>
-         {JSON.stringify({ status, network, wallets }, null, 2)}
+         {JSON.stringify(
+           { status, network: network[chainID], wallets },
+           null,
+           2,
+         )}
          {status === WalletStatus.WALLET_NOT_CONNECTED && (
            <>
              {availableConnectTypes.map((connectType) => (
@@ -168,7 +168,7 @@ Now that `App.js` has inherited the context of `WalletProvider`, you can start p
 
 3. Open `App.js` in your code editor and replace the code with the following:
 
-   ```js
+   ```ts
    import './App.css';
    import Connect from './components/Connect';
 
@@ -203,7 +203,7 @@ Be aware that you will not see any tokens if your wallet is empty.
 
 2. Populate `Query.js` with the following:
 
-   ```js
+   ```ts
    import {
      useConnectedWallet,
      useLCDClient,
@@ -213,13 +213,16 @@ Be aware that you will not see any tokens if your wallet is empty.
    export default function Query() {
      const lcd = useLCDClient(); // LCD stands for Light Client Daemon
      const connectedWallet = useConnectedWallet();
-     const [balance, setBalance] = useState(null);
+     const [balance, setBalance] = useState<null | string>(null);
+     const chainID = 'phoenix-1'; // or any other mainnet or testnet chainID supported by station (e.g. osmosis-1)
 
      useEffect(() => {
        if (connectedWallet) {
-         lcd.bank.balance(connectedWallet.walletAddress).then(([coins]) => {
-           setBalance(coins.toString());
-         });
+         lcd.bank
+           .balance(connectedWallet.addresses[chainID])
+           .then(([coins]) => {
+             setBalance(coins.toString());
+           });
        } else {
          setBalance(null);
        }
@@ -279,9 +282,9 @@ Wallet Provider supplies useful error types. This example will handle the `UserD
 
 1. Create a file in your `Components` folder named `Tx.js`.
 
-2. Populate `Tx.js` with the following:
+2. Populate `Tx.js` with the following. To make this example interchain retrieve the `baseAsset` from the network object.
 
-   ```js
+   ```ts
    import { Fee, MsgSend } from '@terra-money/feather.js';
    import {
      useConnectedWallet,
@@ -292,16 +295,22 @@ Wallet Provider supplies useful error types. This example will handle the `UserD
    const TEST_TO_ADDRESS = 'terra12hnhh5vtyg5juqnzm43970nh4fw42pt27nw9g9';
 
    export default function Tx() {
-     const [txResult, setTxResult] = useState(null);
-     const [txError, setTxError] = useState(null);
+     const [txResult, setTxResult] = useState<TxResult | null>(null);
+     const [txError, setTxError] = useState<string | null>(null);
 
      const connectedWallet = useConnectedWallet();
+     const chainID = 'phoenix-1';
 
      const testTx = useCallback(async () => {
        if (!connectedWallet) {
          return;
        }
-       if (connectedWallet.network.chainID.startsWith('phoenix')) {
+
+       const isMainnet = Object.keys(connectedWallet.network).some((key) =>
+         key.startsWith('phoenix-'),
+       );
+
+       if (isMainnet) {
          alert(`Please only execute this example on Testnet`);
          return;
        }
@@ -309,9 +318,10 @@ Wallet Provider supplies useful error types. This example will handle the `UserD
        try {
          const transactionMsg = {
            fee: new Fee(1000000, '20000uluna'),
+           chainID,
            msgs: [
-             new MsgSend(connectedWallet.walletAddress, TEST_TO_ADDRESS, {
-               uluna: 1000000,
+             new MsgSend(connectedWallet.addresses[chainID], TEST_TO_ADDRESS, {
+               uluna: 1000000, // parse baseAsset from network object and use here (e.g.`[baseAsset]`)
              }),
            ],
          };

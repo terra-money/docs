@@ -1,0 +1,44 @@
+# terrad query staking pool
+
+Query values for amounts stored in the staking pool.
+
+
+The following information is returned:
+
+- Not-bonded and bonded tokens
+- Token supply
+- Current annual inflation and the block in which the last inflation was processed
+- Last recorded bonded shares
+
+## Example
+
+```sh Terrad
+terrad query staking pool
+```
+
+## Usage
+
+```sh Terrad
+terrad query staking pool [flags]
+```
+
+## Options
+
+```sh Terrad
+      --height int      Use a specific height to query state at (this can error if the node is pruning state)
+  -h, --help            help for pool
+      --node string     <host>:<port> to Tendermint RPC interface for this chain (default "tcp://localhost:26657")
+  -o, --output string   Output format (text|json) (default "text")
+```
+
+## Options inherited from parent commands
+
+```sh Terrad
+      --chain-id string   The network chain ID
+```
+
+## See also
+
+* [terrad query staking](./terrad_query_staking.mdx)	 - Querying commands for the staking module.
+
+

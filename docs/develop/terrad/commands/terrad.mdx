@@ -1,0 +1,97 @@
+---
+title: Terrad
+sidebar_position: 1
+---
+
+import Admonition from '@theme/Admonition'
+
+# Terrad
+
+Terrad is the Terra Blockchain's CLI and node daemon. This section contains information about Terrad commands and their usage. To learn how to run a full node, visit [the Full node guide](../../../full-node/run-a-full-terra-node/README.mdx). 
+
+<Admonition type="tip" icon="⚙️" title="Getting started">
+
+To learn how to install Terrad, visit the [Terrad installation guide](../install-terrad.mdx). To learn how to use Terrad, visit [Using Terrad](../using-terrad.mdx).
+
+</Admonition>
+
+```js Terrad
+Stargate Terra App
+
+Usage:
+  terrad [command]
+
+Available Subcommands (click for more info):
+
+// link[3:138] /develop/terrad/commands/terrad_add-genesis-account
+  add-genesis-account Add a genesis account to genesis.json
+  // link[3:138] /develop/terrad/commands/terrad_collect-gentxs
+  collect-gentxs      Collect genesis txs and output a genesis.json file
+  // link[3:138] /develop/terrad/commands/debug
+  debug               Tool for helping with debugging your application
+  // link[3:138] /develop/terrad/commands/terrad_export
+  export              Export state to JSON
+  // link[3:138] /develop/terrad/commands/terrad_gentx
+  gentx               Generate a genesis tx carrying a self delegation
+  // link[3:138] /develop/terrad/commands/terrad_help
+  help                Help about any command
+  // link[3:138] /develop/terrad/commands/terrad_init
+  init                Initialize private validator, p2p, genesis, and application configuration files
+  // link[3:138] /develop/terrad/commands/keys/terrad_keys
+  keys                Manage your application's keys
+  // link[3:138] /develop/terrad/commands/queries/terrad_query
+  query               Querying subcommands
+  // link[3:138] /develop/terrad/commands/terrad_rollback
+  rollback            rollback cosmos-sdk and tendermint state by one height
+  // link[3:138] /develop/terrad/commands/terrad_rosetta
+  rosetta             spin up a rosetta server
+  // link[3:138] /develop/terrad/commands/terrad_start
+  start               Run the full node
+  // link[3:138] /develop/terrad/commands/terrad_status
+  status              Query remote node for status
+  // link[3:138] /develop/terrad/commands/tendermint/terrad_tendermint_version
+  tendermint          Tendermint subcommands
+  // link[3:138] /develop/terrad/commands/transactions/terrad_tx
+  tx                  Transactions subcommands
+  // link[3:138] /develop/terrad/commands/terrad_validate-genesis
+  validate-genesis    validates the genesis file at the default location or at the location passed as an arg
+  // link[3:138] /develop/terrad/commands/terrad_version
+  version             Print the application binary version information
+
+Flags:
+  -h, --help                help for terrad
+      --home string         directory for config and data (default "/Users/evan/.terra")
+      --log_format string   The logging format (json|plain) (default "plain")
+      --log_level string    The logging level (trace|debug|info|warn|error|fatal|panic) (default "info")
+      --trace               print out full stack trace on errors
+
+Use "terrad [command] --help" for more information about a command.
+```
+
+## Options
+
+```sh Terrad
+  -h, --help   help for terrad
+```
+
+## See also
+
+* [terrad add-genesis-account](./terrad_add-genesis-account.mdx)	 - Add a genesis account to `genesis.json`.
+* [terrad collect-gentxs](./terrad_collect-gentxs.mdx)	 - Collect genesis txs and output a `genesis.json` file.
+* [terrad debug](./debug/terrad_debug.mdx)	 - A tool to help with app debugging.
+* [terrad export](./terrad_export.mdx)	 - Export state to JSON.
+* [terrad gentx](./terrad_gentx.mdx)	 - Generate a genesis tx carrying a self delegation.
+* [terrad init](./terrad_init.mdx)	 - Initialize private validator, p2p, genesis, and application configuration files.
+* [terrad keys](./keys/terrad_keys.mdx)	 - Manage your application's keys. 
+* [terrad query](./queries/terrad_query.mdx)	 - Querying subcommands.
+* [terrad rollback](./terrad_rollback.mdx)	 - rollback blockchain and tendermint state by one height.
+* [terrad rosetta](./terrad_rosetta.mdx)	 - spin up a rosetta server.
+* [terrad tendermint show-node-id](./tendermint/terrad_tendermint_show-node-id.mdx)	 - Show this node's ID.
+* [terrad tendermint show-validator](./tendermint/terrad_tendermint_show-validator.mdx)	 - Show this node's tendermint validator info
+* [terrad start](./terrad_start.mdx)	 - Run the full node.
+* [terrad status](./terrad_status.mdx)	 - Query remote node for status.
+* [terrad tx](./transactions/terrad_tx.mdx)	 - Transactions subcommands.
+* [terrad validate-genesis](./terrad_validate-genesis.mdx)	 - validates the genesis file at the default location or at the location passed as an arg.
+* [terrad version](./terrad_version.mdx)	 - Print tendermint libraries' version.
+
+

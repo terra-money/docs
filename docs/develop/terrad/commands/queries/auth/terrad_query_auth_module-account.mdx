@@ -1,0 +1,36 @@
+# terrad query auth module-account
+
+Query module account info by module name. 
+
+## Usage
+
+```sh Terrad
+terrad query auth module-account [module-name] [flags]
+```
+
+## Example
+
+```sh Terrad
+terrad q auth module-account auth
+```
+
+## Options
+
+```sh Terrad
+      --height int      Use a specific height to query state at (this can error if the node is pruning state)
+  -h, --help            help for module-account
+      --node string     <host>:<port> to Tendermint RPC interface for this chain (default "tcp://localhost:26657")
+  -o, --output string   Output format (text|json) (default "text")
+```
+
+## Options inherited from parent commands
+
+```sh Terrad
+      --chain-id string   The network chain ID
+```
+
+## See also
+
+* [terrad query auth](./terrad_query_auth.mdx)	 - Querying commands for the auth module.
+
+

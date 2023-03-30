@@ -21,7 +21,18 @@ module.exports = async function config() {
       defaultLocale: 'en',
       locales: ['en'],
     },
-    plugins: ['docusaurus-plugin-sass'],
+    
+    plugins: [
+      'docusaurus-plugin-sass', 
+    [
+      require.resolve("@gabrielcsapo/docusaurus-plugin-matomo"),
+      {
+        siteId: "1",
+        matomoUrl: "https://terradocs.matomo.cloud/",
+        siteUrl: "https://docs.terra.money",
+      },
+    ],
+  ],
     presets: [
       [
         'classic',
@@ -57,7 +68,6 @@ module.exports = async function config() {
           },
         }),
       ],
-      ['docusaurus-plugin-matomo', {}],
       [
         'redocusaurus',
         {
@@ -121,7 +131,7 @@ module.exports = async function config() {
         },
         matomo: {
           matomoUrl: 'https://terradocs.matomo.cloud/',
-          siteId: '2',
+          siteId: '1',
           phpLoader: 'matomo.php',
           jsLoader: 'matomo.js',
         },

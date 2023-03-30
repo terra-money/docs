@@ -20,18 +20,18 @@ The process for syncing your full node from genesis will differ between the Pisc
 
 ### Pisco testnet
 
-If you would like to sync your node using the Pisco testnet, you will need to utilize version `v2.0.0-rc.0` of terrad up until the block height of 838,500. To sync your node from block 838,500 until block 2,777,777, you will need to utilize version `v2.1.0-beta.1` of terrad. From block 2,777,777 onwards, utilize version `v2.2.0` of terrad.
+To sync a Pisco testnet node, you will need to use version `v2.0.0-rc.0` of terrad up until the block height of `838,500`. To sync your node from block 838,500 until block 2,777,777, you will need to use version `v2.1.0-beta.1` of terrad. From block 2,777,777 until 4,712,048, use version `v2.2.0` of terrad. From block 4,712,048 onwards, use `v2.3.0-rc.0`
 
 1. To switch to version `v2.0.0-rc.0` of terrad, [change into your `core` directory](./build-terra-core.mdx#get-the-terra-core-source-code) and execute the following commands in your terminal:
 
-```
+```sh Terminal
 git checkout v2.0.0-rc.0
 make install
 ```
 
 After running these commands, make sure that you have switched to the correct version of terrad by running the following command:
 
-```
+```sh Terminal
 terrad version
 ```
 
@@ -39,7 +39,7 @@ The result of this command should be `v2.0.0-rc.0`.
 
 2. After you have the correct terrad version, you will need to download the genesis file for Pisco in the terrad config directory:
 
-```
+```sh Terminal
 wget https://raw.githubusercontent.com/terra-money/testnet/master/pisco-1/genesis.json -O ~/.terra/config/genesis.json
 ```
 
@@ -47,7 +47,7 @@ wget https://raw.githubusercontent.com/terra-money/testnet/master/pisco-1/genesi
 
 4. Now, you can start the syncing process:
 
-```
+```sh Terminal
 terrad start
 ```
 
@@ -61,14 +61,14 @@ Syncing will halt at block 838,500, at which point you will need to change the v
 
 5. To sync your Pisco testnet node from block 838,500 to block 2,777,777, you will need to navigate to the `core` directory and change your terrad version to `v2.1.0-beta.1`.
 
-```
+```sh Terminal
 git checkout v2.1.0-beta.1
 make install
 ```
 
 Again, make sure that you have switched to the correct version of terrad by running the following command:
 
-```
+```sh Terminal
 terrad version
 ```
 
@@ -76,30 +76,53 @@ The result of this command should be `v2.1.0`.
 
 6. Again, you can resume the syncing process:
 
-```
+```sh Terminal
 terrad start
 ```
 
 Syncing will halt at block 2,777,777, at which point you will need to change the version of terrad and then resume the syncing process.
 
-7. To sync your Pisco testnet node from block 2,777,777 to the most recent block, you will need to navigate to the `core` directory and change your terrad version to `v2.2.0`.
+7. To sync your Pisco testnet node from block 2,777,777 to block 4712048, you will need to navigate to the `core` directory and change your terrad version to `v2.2.0`.
 
-```
+```sh Terminal
 git checkout v2.2.0
 make install
 ```
 
 Again, make sure that you have switched to the correct version of terrad by running the following command:
 
-```
+```sh Terminal
 terrad version
 ```
 
 The result of this command should be `v2.2.0`.
 
-8. Now, you can resume and finalize the syncing process:
+8. Now, you can resume the syncing process:
 
+```sh Terminal
+terrad start
 ```
+
+Syncing will halt at block 4712048, at which point you will need to change the version of terrad and then resume the syncing process.
+
+9. To sync your Pisco testnet node from block 4712048 to the most recent block, you will need to navigate to the `core` directory and change your terrad version to `v2.3.0-rc.0`.
+
+```sh Terminal
+git checkout v2.3.0-rc.0
+make install
+```
+
+Again, make sure that you have switched to the correct version of terrad by running the following command:
+
+```sh Terminal
+terrad version
+```
+
+The result of this command should be `v2.3.0-rc.0`.
+
+10. Now, you can resume and finalize the syncing process:
+
+```sh Terminal
 terrad start
 ```
 
@@ -111,14 +134,14 @@ If you would like to sync your node using the Phoenix mainnet, you will need to 
 
 1. To switch to version `v2.0.0` of terrad, [change into your `core` directory](./build-terra-core.mdx#get-the-terra-core-source-code) and execute the following commands in your terminal:
 
-```
+```sh Terminal
 git checkout v2.0.0
 make install
 ```
 
 After running these commands, make sure that you have switched to the correct version of terrad by running the following command:
 
-```
+```sh Terminal
 terrad version
 ```
 
@@ -126,19 +149,19 @@ The result of this command should be `v2.0.0`.
 
 2. After you have the correct terrad version, you will need to download the genesis file for Phoenix in the terrad config directory:
 
-```
+```sh Terminal
 wget https://phoenix-genesis.s3.us-west-1.amazonaws.com/genesis.json -O ~/.terra/config/genesis.json
 ```
 
 3. Next, download the `addrbook.json` file containing a list of stable persistent peers into the `~/.terra/config/` directory:
 
-```
+```sh Terminal
 wget https://snapshots1.polkachu.com/addrbook/terra/addrbook.json -O ~/.terra/config/addrbook.json
 ```
 
 4. Now, you can start the syncing process:
 
-```
+```sh Terminal
 terrad start
 ```
 
@@ -152,14 +175,14 @@ Syncing will halt at block 890,000, at which point you will need to change the v
 
 5. To sync your Phoenix mainnet node from block 890,000 to block 2,979,805, you will need to navigate to the `core` directory and change your terrad version to `v2.1.1`.
 
-```
+```sh Terminal
 git checkout v2.1.1
 make install
 ```
 
 Again, make sure that you have switched to the correct version of terrad by running the following command:
 
-```
+```sh Terminal
 terrad version
 ```
 
@@ -167,7 +190,7 @@ The result of this command should be `v2.1.1`.
 
 6. Again, you can resume the syncing process:
 
-```
+```sh Terminal
 terrad start
 ```
 
@@ -175,14 +198,14 @@ Syncing will halt at block 2,979,805, at which point you will need to change the
 
 7. To sync your Phoenix mainnet node from block 2,979,805 to the most recent block, you will need to navigate to the `core` directory and change your terrad version to `v2.2.0`.
 
-```
+```sh Terminal
 git checkout v2.2.0
 make install
 ```
 
 Again, make sure that you have switched to the correct version of terrad by running the following command:
 
-```
+```sh Terminal
 terrad version
 ```
 
@@ -190,7 +213,7 @@ The result of this command should be `v2.2.0`.
 
 8. Now, you can resume and finalize the syncing process:
 
-```
+```sh Terminal
 terrad start
 ```
 

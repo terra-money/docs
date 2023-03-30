@@ -1,73 +1,98 @@
+---
+sidebar_position: 2
+---
+
+import Admonition from '@theme/Admonition';
+
 # Using Terrad
 
-This guide will go over commands which are available on Terrad, the command-line interface that connects to Terra and enables you to interact with the Terra blockchain. Terrad operates as both a client and a server as every active validator and full node runs Terrad and communicates with their node via Terrad. You can use Terrad to interact with the Terra blockchain by uploading contracts, querying data, managing staking activities, working with governance proposals, and more. For more general information, run `terrad --help` in your terminal. For more information about a specific Terrad command, append the `-h` or `--help` flag after the command: `terrad query --help`.
+This guide covers the usage of Terrad, the CLI and node daemon that enables you to interact with the Terra blockchain. Terrad operates as both a client and a server: every active validator and full node runs Terrad and communicates with their node via Terrad. You can use Terrad to interact with the Terra blockchain by uploading contracts, querying data, managing staking activities, working with governance proposals, and more. For more general information, run [_`terrad --help`_](./commands/terrad_help.mdx) in your terminal or visit the [Terrad commands page](./commands/terrad.mdx). For more information about a specific Terrad command, append the _`-h`_ or _`--help`_ flag after a command (_`terrad query --help`_).
 
-## Accessing a Node
 
-To query state and send transactions, you must connect to a node, which is the access point to the entire network of peer connections. You can either run your own full node or connect to someone else's.
+## Install Terrad 
 
-### Running your own full node
+Installing Terrad is the first step to accessing Terra's network. Full node users can follow the [Full node guide](../../full-node/run-a-full-terra-node/README.mdx). Developers who want to use Terrad without running a node can use the [Terrad installation guide](install-terrad.mdx). If you want to interact with Terra without running a node or using the CLI, use [Station](../../learn/station/).
 
-Running your own full node is the most secure option, but it comes with relatively high resource requirements. For more information about the requirements of running your own full node and a tutorial for installing Terrad, check out the [installation guide](../../full-node/run-a-full-terra-node/build-terra-core.mdx). For a tutorial that explains how to connect to an existing Terra network, see [joining a network](../../full-node/run-a-full-terra-node/join-a-network.mdx).
+## Access a Node
 
-### Connecting to a remote full node
+To query state and send transactions with Terrad, you must connect to a node, which is the access point to the entire network of peer connections. You can either [run your own full node](#run-your-own-full-node) or [connect to someone else's](#connect-to-a-remote-full-node).
 
-If you don't want to run your own full node, you can connect to someone else's full node. As you consider your options for operators, it is recommended to prioritize operators that you can trust. Malicious operators might intentionally return incorrect query results or censor your transactions. You shouldn't worry about an operator being able to access your account as long as you have your private key stored in a secure location. Possible options of full node operators include validators, wallet providers, or exchanges.
+Terrad can be used with [LocalTerra](../localterra/install-localterra.mdx) for local testing on your machine. Terrad's default node setting is set to work with LocalTerra. 
 
-To connect to the full node, you need an address in the `https://<host>:<port>` format, for example `https://77.87.106.33:26657`. This address has to be communicated by the full node operator you choose to trust. You will use this address in the following section.
+### Run your own full node
 
-If you are not running a node and would like to communicate through Terrad, lists of public nodes can be found [here](../endpoints.mdx).
+Running your own full node is the most secure option, but it comes with relatively high resource requirements. For more information about running your own full node check out the [Full node guide](../../full-node/run-a-full-terra-node/build-terra-core.mdx). To learn how to connect to an existing Terra network, see [joining a network](../../full-node/run-a-full-terra-node/join-a-network.mdx).
+
+If you want to use Terrad without running a full node, visit the [Terrad installation guide](install-terrad.mdx). 
+
+### Connect to a remote full node
+
+If you don't want to run your own full node, you can connect to someone else's full node. As you consider your options for operators, it is recommended that you prioritize operators that you can trust. Malicious operators might intentionally return incorrect query results or censor your transactions. You shouldn't worry about an operator being able to access your account as long as you have your private key stored in a secure location. Possible options for full node operators include validators, wallet providers, or exchanges.
+
+To connect to the full node, you need an address in the _`https://<host>:<port>`_ format, for example, _`https://77.87.106.33:26657`_. This address has to be communicated by the full node operator you choose to trust. You will use this address in the following section.
+
+If you are not running a node and would like to communicate through Terrad, lists of public nodes can be found [on the Endpoints page](../endpoints.mdx).
+
 
 ## Configuring Terrad
 
-Terrad enables you to interact with a node that runs on the Terra network, whether you run it yourself or not. To configure Terrad, edit the the `config.toml` file in the `~/.terra/config/` directory.
+To configure Terrad, edit the _`config.toml`_ file in the _`~/.terra/config/`_ directory. For Validator configurations, visit the [Full node general configuration page](../../full-node/run-a-full-terra-node/configure-general-settings.mdx). 
+
+```sh Terrad
+code ~/.terra/config/
+```
+
+## Commands
+
+Terrad uses commands and subcommands to access and convey blockchain data. Flags can be added to the end of commands and subcommands to specify further information. 
+
+```sh Terrad
+terrad [command] [subcommand] [flags]
+```
+The commands page has a [complete list of commands](./commands/terrad.mdx). Click on a command to view its usage details, subcommands, or flags. 
+
+## Keys
+
+The [_`terrad keys`_](./commands/keys/terrad_keys.mdx) command can be used to add key and account information to your device's keyring, allowing you to sign transactions and access accounts when using Terrad. For more information on key storage, visit the [Keys page](./commands/keys/terrad_keys.mdx). To learn how to add keys to your keyring, visit the [_`terrad keys add`_ page](./commands/keys/terrad_keys_add.mdx).
+
+```sh Terrad
+terrad keys add <your-key-name> [flags]
+```
 
 ## Querying Blockchain State
 
-To query all relevant information from the blockchain, such as account balances, amount of bonded tokens, outstanding rewards, and so on, use `terrad query`. The following list shows some of the most useful commands for delegators:
+To query all relevant information from the blockchain, such as account balances, amount of bonded tokens, outstanding rewards, etc, use the [_`terrad query`_](./commands/queries/terrad_query.mdx) command. For a complete list of available queries, visit the [Terrad query page](./commands/queries/terrad_query.mdx). 
 
-```bash
-# query account balances and other account-related information
-terrad query account <ACCOUNT_ADDRESS>
-# Account address is of the form terra1rEXAMPLE9tEXAMPLEf9cvEXAMPLEss
-# you can find the one for your node by running `terrad keys list`
-
-# query the list of validators
-terrad query staking validators
-
-# query the information of a validator given their address
-terrad query staking validator <validatorAddress>
-
-# query all delegations made from a delegator given their address
-# (note: delegator addresses are regular account addresses)
-terrad query staking delegations <delegatorAddress>
-
-# query a specific delegation made from a delegator to a validator
-terrad query staking delegation <delegatorAddress> <validatorAddress>
-
-# query the rewards of a delegator given a delegator address (e.g. terra10snjt8dmpr5my0h76xj48ty80uzwhraqalu4eg)
-terrad query distr rewards <delegatorAddress>
+```sh Terrad
+terrad query account terra1zf6xze03rv3gvhvmktypvn3xgusy8rnkesnqg6
 ```
 
-## Sending Transactions
+## Transactions
 
-The `terra tx` command can be used to send transactions containing module messages with state-changing directives that get processed and included in blocks.
+The _`terra tx`_ command is used to send transactions containing module messages with state-changing directives that get processed and included in blocks. The following transaction will delegate Luna to a validator using the validator's _`terravaloper`_ address. 
 
-```bash
-terrad tx ...
+```sh Terrad
+terrad tx staking delegate terravaloper1l2rsakp388kuv9k8qzq6lrm9taddae7fpx59wm 100000uluna --from mykey
 ```
 
-To learn more about the different types of transactions you can issue, see the section for each module.
+To learn more about the different types of transactions you can send, visit the [Terrad transactions page](./commands/transactions/terrad_tx.mdx). 
+
+<Admonition type="tip" icon="🗒" title="Drafting transactions">
+
+Edit your Terrad transactions in a notepad or code editor before inputting them in your terminal. You can break a command into multiple lines by adding a _`\`_ after any line meant to be joined by the following line. 
+
+</Admonition>
 
 ### Simulating a transaction
 
-To simulate a transaction without actually broadcasting it, append the `--dry-run` flag to the command statement:
+To simulate a transaction without actually broadcasting it, append the _`--dry-run`_ flag to the command statement. The following transaction is the syntax for [the bank send transaction](./commands/transactions/terrad_tx_bank_send.mdx).
 
-```bash
+```sh Terrad
 terrad tx bank send \
     <sender_address> \
     <recipient_address> \
     <amount_and_denomination> \
+    --node <node-endpoint> \
     --chain-id=<chain-id> \
     --dry-run
 ```
@@ -76,22 +101,25 @@ terrad tx bank send \
 <summary> Example: simulate a Luna transfer: </summary>
 <p>
 
-```bash
+```sh Terrad
 terrad tx bank send \
-    terra1ru2ySENDER-EXAMPLEtf9cva9kp33h0jnsm9ss \
-    terra1rRECIPIENT-EXAMPLEtf9cva9kp33h0jnsm9ss \
-    1uluna \
-    --chain-id=pisco-1 \
+    terra1zf6xze03rv3gvhvmktypvn3xgusy8rnkesnqg6 \
+    terra1nhvjgyga4yfkmzv7ts79vu3w2azj6mes0jhccm \
+    100000uluna \
+    --node https://<your-node>:26657 \
+    --chain-id pisco-1 \
     --dry-run
 ```
 </p>
 </details>
 
+The _`--dry-run`_ flag will return an estimated gas amount required for the transaction. Before transmitting a bank or any other transaction to the network, you will need to [specify the transaction fees](#fees). 
+
 ### Generating a transaction without sending
 
-To build a transaction and print its JSON format to STDOUT, append `--generate-only` to the list of the command line arguments. This allows you to separate the creation and signing of a transaction with the broadcasting.
+To build a transaction and print its JSON format to STDOUT, append _`--generate-only`_ to the list of the command line arguments. This allows you to separate the creation and signing of a transaction from the broadcasting. The transaction below will create a file called _`unsignedSendTx.json`_ containing the transaction JSON. 
 
-```bash
+```sh Terrad
 terrad tx bank send \
     <sender_address> \
     <recipient_address> \
@@ -99,8 +127,9 @@ terrad tx bank send \
     --chain-id=<chain-id> \
     --generate-only > unsignedSendTx.json
 ```
+Use the [sign command](./commands/transactions/terrad_tx_sign.mdx) to sign the transaction. 
 
-```bash
+```sh Terrad
 terrad tx sign \
     --chain-id=<chain_id> \
     --from=<address> \
@@ -110,7 +139,7 @@ terrad tx sign \
 <summary> Example: Sign an unsigned transaction </summary>
 <p>
 
-```bash
+```sh Terrad
 terrad tx sign \
     --chain-id=pisco-1 \
     --from=terra1EXAMPLEy09tEXAMPLEtf9EXAMPLE3h0EXAMPLEss unsignedTx.json
@@ -170,15 +199,15 @@ A successful transaction response should look similar to the following:
 </p>
 </details>
 
-You can validate the transaction's signatures by executing the following command:
+You can validate a multisig transaction's signatures by executing the [_`validate-signatures`_](./commands/transactions/terrad_tx_validate-signatures.mdx) command.
 
-```bash
-terrad tx sign --validate-signatures signedSendTx.json
+```sh Terrad
+terrad tx validate-signatures signedSendTx.json
 ```
 
-You can broadcast the signed transaction to a node by providing the JSON file to the following command:
+You can [broadcast](./commands/transactions/terrad_tx_broadcast.mdx) the signed transaction to a node by providing the JSON file to the following command.
 
-```bash
+```sh Terrad
 terrad tx broadcast --node=<node> signedSendTx.json
 ```
 
@@ -188,77 +217,96 @@ Transactions on the Terra Protocol network must include a transaction fee in ord
 
 $$fees = gas * gasPrices$$
 
-The value of `gas` is dependent on the transaction. Different transactions require different amounts of `gas`. The `gas` amount for a transaction is calculated as it is being processed, but there is a way to estimate it beforehand by using the `auto` value for the `gas` flag. Of course, this only gives an estimate. You can adjust this estimate with the flag `--gas-adjustment` \(default `1.0`\) if you want to be sure you provide enough `gas` for the transaction to successfully process.
+The value of _`gas`_ is dependent on the transaction. Different transactions require different amounts of _`gas`_. The _`gas`_ amount for a transaction is calculated as it is being processed, but there is a way to estimate it beforehand by using the _`auto`_ value for the _`gas`_ flag. Of course, this only gives an estimate. You can adjust this estimate with the flag _`--gas-adjustment`_ (default _`1.0`_) if you want to be sure you provide enough `gas` for the transaction to successfully process.
 
-The `gasPrice` is the price of each unit of `gas`. Each validator sets a `min-gas-price` value and will only include transactions that have a `gasPrice` greater than their `min-gas-price`.
+The _`gasPrice`_ is the price of each unit of `gas`. Each validator sets a _`min-gas-price`_ value and will only include transactions that have a _`gasPrice`_ greater than their _`min-gas-price`_. You can find the current gas prices from the following URL: https://phoenix-fcd.terra.dev/v1/txs/gas_prices .
 
-The transaction `fees` are the product of `gas` and `gasPrice`. As a user, you can specify a desired `gasPrice` or `fee` value for a transaction. The higher the value given for `gasPrice` or `fee`, the higher the chance that your transaction will get included in a block.
+The transaction _`fees`_ are the product of _`gas`_ and _`gasPrice`_. As a user, you can specify a desired _`gasPrice`_ or _`fee`_ value for a transaction. The higher the value given for _`gasPrice`_ or _`fee`_, the higher the chance that your transaction will get included in a block.
 
 ### Setting Fees
 
-Each transaction may either supply fees or gas prices, but not both. Most users will typically provide fees as this is the final cost you will end up incurring for the transaction being included in the ledger, where as gas prices will be dynamically calculated depending on the validator.
+Each transaction may either supply fees or gas prices, but not both. Most users will typically provide fees as this is the final cost you will end up incurring for the transaction being included in the ledger, whereas gas prices will be dynamically calculated depending on the validator.
 
-Validators specify a minimum gas price that they use to determine whether or not to include a transaction. The stipulation `gasPrices >= minGasPrices` is checked during the `CheckTx` process. Note, your transaction must supply fees that are greater than or equal to **any** of the denominations the validator requires.
+Validators specify a minimum gas price that they use to determine whether or not to include a transaction. The stipulation _`gasPrices >= minGasPrices`_ is checked during the _`CheckTx`_ process. Note, your transaction must supply fees that are greater than or equal to **any** of the denominations the validator requires.
 
-To directly use fees:
+#### Pay with set fees
 
-```bash
-terrad tx send ... --fees=100000uluna
+To directly use fees, use the _`--fees`_ flag:
+
+```sh Terrad
+terrad tx bank send ... \
+  --fees=100000uluna
 ```
 
-If you use fees, validators will calculate the implied `minGasPrices` by dividing your fee with the estimated gas consumption.
+If you use fees, validators will calculate the implied _`minGasPrices`_ by dividing your fee by the estimated gas consumption.
 
-To use gas prices:
+#### Pay with gas prices
 
-```bash
-terrad tx send ... --gas-prices=0.05uluna
+You can find the current gas prices from the following URL:     
+
+https://phoenix-fcd.terra.dev/v1/txs/gas_prices
+
+To use gas prices, append the following flag:
+
+```sh Terrad
+terrad tx bank send ...\
+  --gas-prices=0.015uluna
 ```
 
-### Automatic Fee Estimation
+### Fee Estimation
 
-You may want to cap the maximum gas that can be consumed by the transaction via the `--gas` flag. If you pass `--gas=auto`, the gas will be automatically estimated before executing the transaction.
+To estimate the fees of a transactions, append the [_`--dry-run`_ flag](#simulate-a-transaction) to the end of the transaction. The output will give you the estimated gas required. 
 
-Gas estimates might be inaccurate as state changes could occur in between the end of the simulation and the actual execution of a transaction, thus an adjustment is applied on top of the original estimate in order to ensure the transaction is broadcasted successfully.
+You may want to cap the maximum gas that can be consumed by the transaction via the _`--gas`_ flag. If you pass _`--gas=auto`_, the gas will be automatically estimated before executing the transaction.
 
-The adjustment can be controlled via the `--gas-adjustment` flag, which defaults to the value of 1.0.
+Gas estimates might be inaccurate as state changes could occur in between the end of the simulation and the actual execution of a transaction. A _`--gas-adjustment`_ is applied on top of the original estimate in order to ensure the transaction is broadcasted successfully.
 
-To get a direct fee estimation from Terrad:
+The adjustment can be controlled via the _`--gas-adjustment`_ flag, which defaults to the value of _`1.0`_.
 
-```bash
-terrad tx estimate-fee ...\
-    --gas-prices=0.01uluna
-    --gas-adjustment=1.4
-```
+To create and send transactions using fee estimation, use the template below as a format:
 
-To create and send transactions using fee-estimation, use the template below as a format:
-
-```bash
-terrad tx send ... \
-    --gas-prices=0.01uluna
-    --gas=auto
+```sh Terrad
+terrad tx bank send \
+    <sender_address> \
+    <recipient_address> \
+    <amount_and_denomination> \
+    --chain-id <chain-id> \
+    --gas-prices=0.015uluna \
+    --gas auto \
     --gas-adjustment=1.4
 ```
 
 ## Shell Autocompletion
 
-Auto-completion scripts for popular UNIX shell interpreters such as `bash` and `zsh` can be generated using the `completion` command. This makes interacting with Terra Core endpoints when using the command-line more convenient.
+Auto-completion scripts for popular UNIX shell interpreters such as _`bash`_ and _`zsh`_ can be generated using the _`completion`_ command. This feature makes interacting with Terra Core endpoints more convenient.
 
-If you want to generate `bash` completion scripts run the following command:
+1. Install the _`bash-completion`_ using brew. 
 
-```bash
-terrad completion > terrad_completion
+```sh Terrad
+brew install bash-completion
 ```
 
-If you want to generate `zsh` completion scripts run the following command:
+2. Open your _`bash`_ or _`zsh`_ profile in a code editor. 
 
-```bash
-terrad completion --zsh > terrad_completion
+```sh Terrad
+code ~/.zshrc
+```
+3. Add the following lines of code above `source $ZSH/oh-my-zsh.sh`. 
+
+```sh Terrad focus=2:4
+...
+
+FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
+
+source $ZSH/oh-my-zsh.sh
+...
 ```
 
-On most UNIX systems, such scripts may be loaded in `.bashrc` or `.bash_profile` to enable Bash autocompletion.
+4. Open a new terminal and run the following.
 
-```bash
-echo '. terrad_completion' >> ~/.bashrc
+```sh Terrad
+terrad completion --zsh > $(brew --prefix)/share/zsh/site-functions/_terrad
 ```
 
-Refer to the user's manual of your operating system's interpreter for information on how to enable shell autocompletion.
+After opening a new terminal window, you can use the **tab** key to autocomplete Terrad commands. 

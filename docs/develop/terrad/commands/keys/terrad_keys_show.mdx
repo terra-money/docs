@@ -1,0 +1,60 @@
+# terrad keys show
+
+Retrieve key information by name or address. 
+
+## Synopsis
+
+Display details of keys. Terra addresses are prefixed by `terra-`. For example, `terra15h6vd5f0wqps26zjlwrc6chah08ryu4hzzdwhc`. 
+
+If multiple names or addresses are provided,
+then an ephemeral multisig key will be created under the name "multi"
+consisting of all the keys provided by name and multisig threshold.
+
+## Usage 
+
+```sh Terrad
+terrad keys show [name_or_address [name_or_address...]] [flags]
+```
+## Examples
+
+```bash
+terrad keys show myAccount
+```
+
+To show a validator's address, append the `--bech=val` flag to the end of the command statement, as shown in the following example:
+
+```bash
+terrad keys show accountExample --bech=val
+```
+
+To show the validator consensus address that is generated when the node is created by `terrad init` and the Tendermint signing key for the node, use the [`tendermint` command](../tendermint/terrad_tendermint_show-validator.mdx), as shown in the following example:
+
+```bash
+terrad tendermint show-address
+```
+
+## Options
+
+```sh Terrad
+  -a, --address                  Output the address only (overrides --output)
+      --bech string              The Bech32 prefix encoding for a key (acc|val|cons) (default "acc")
+  -d, --device                   Output the address in a ledger device
+  -h, --help                     help for show
+      --multisig-threshold int   K out of N required signatures (default 1)
+  -p, --pubkey                   Output the public key only (overrides --output)
+```
+
+## Options inherited from parent commands
+
+```sh Terrad
+      --home string              The application home directory (default "terra")
+      --keyring-backend string   Select keyring's backend (os|file|test) (default "os")
+      --keyring-dir string       The client Keyring directory; if omitted, the default 'home' directory will be used
+      --output string            Output format (text|json) (default "text")
+```
+
+## See also
+
+* [terrad keys](./terrad_keys.mdx)	 - Manage your application's keys. 
+
+
