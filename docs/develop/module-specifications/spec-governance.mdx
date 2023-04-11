@@ -32,18 +32,11 @@ After a proposal is submitted, it enters the deposit period, where it must reach
 
 Deposits protect against unnecessary proposals and spam.
 
-Deposits get refunded if all of the following conditions are met:
+#### Deposit refunds
 
-- The minimum deposit of 512 Luna is reached within the 7-day deposit period.
-- `Quorum` is met: all casted votes represent more than 30% of all staked Luna.
-- The total number of `NoWithVeto` votes is less than 33.4% of the total vote.
-- A vote returns a majority of `Yes` or `No` votes.
+If a proposal fails to meet the minimum deposit amount within the deposit period, the proposal will not enter the voting period, and the deposit will be refunded. 
 
-Deposits are burned under any of the following conditions:
-
-- The minimum deposit of 512 Luna is not reached within the one-week deposit period.
-- `Quorum` is not met: the number of total votes after the one-week voting period is less than 30% of all staked Luna.
-- The number of `NoWithVeto` votes is above 33.4% of the total vote.
+Proposals that meet the minimum deposit requirement and make it to the voting period will be refunded under any vote outcome except `NoWithVeto`. If the number of `NoWithVeto` votes is above 33.4% of the total vote, the deposit will be burned. Deposits will be refunded under any other condition. 
 
 ### Voting period
 
@@ -90,7 +83,7 @@ If a proposal meets all of the previous conditions, it passes. If a proposal fai
 
 <Admonition type="caution" icon="☢️">
 
-Deposits will not be refunded for proposals that are rejected with veto, do not meet quorum, or fail to reach the minimum deposit during the deposit period. Non-refunded deposits are burned.
+Deposits will not be refunded for proposals that are rejected with veto. Non-refunded deposits are burned.
 
 </Admonition>
 
