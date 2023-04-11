@@ -28,7 +28,7 @@ const terraStationCards: CardProps[] = [
     darkSVG: '/img/icons/dark/Terrad.svg',
     header: 'Station WebApp',
     summary:
-      'Utilize the Station web application for a more complete experience.',
+      'Visit the in-browser Station Web App.',
   },
   {
     href: '/learn/station/networks.html',
