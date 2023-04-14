@@ -1,12 +1,115 @@
 <Admonition type="info" icon="ℹ️">
 
-Terra's Token Factory module inherits from 
- This document is a stub and mainly covers important Terra-specific notes on how it is used.
+Terra's Token Factory module is an open-source module created by the Osmosis team. This document is a stub and mainly covers Terra-specific notes on how it is used. Visit the [original documentation](https://docs.osmosis.zone/osmosis-core/modules/tokenfactory/) for more information. 
 
 </Admonition>
 
 # Token Factory
 
-The Token Factory module enables accounts to create new tokens using the format factory/{creator address}/{subdenom}. This approach allows permissionless token minting since tokens are namespaced by creator addresses, eliminating the need to resolve name collisions. Accounts can create multiple denoms by providing a unique subdenom for each.
+The Token Factory module allows any account to create a new token with a specific naming convention: `factory/{creator address}/{subdenom}`. This design ensures that token minting is permissionless as it doesn't require resolving name collisions. The creator of a token automatically receives "admin" privileges, which enable them to mint, burn, transfer tokens, and change the admin of the token. The ChangeAdmin functionality enables changing the master admin account or even removing admin privileges entirely. Admins can also share privileges with others using the authz module.
 
-Upon creating a denom, the creator is granted "admin" privileges, empowering them to mint tokens to any account, burn tokens from any account, create transfers between two accounts, and change the admin. Future enhancements may expand admin capabilities. The ChangeAdmin functionality enables changing the master admin account or even removing admin privileges entirely. Admins can also share privileges with others using the authz module.
+## Naming conflicts
+
+a naming conflict refers to the potential issue of having two or more tokens with the same name (or denomination), which can lead to confusion. 
+
+To avoid naming conflicts, the Token Factory module implements a unique naming structure for tokens that includes the creator's address in the token's name: `factory/{creator address}/{subdenom}`. By namespacing tokens using the creator's address, the module ensures that each token created by an account has a unique identifier, even if different accounts create tokens with the same subdenomination. This approach prevents naming conflicts, allowing for a permissionless token creation process.
+
+For example, if two accounts create tokens with the subdenomination `mytoken`, the resulting denominations would be different due to the inclusion of their respective creator addresses:
+
+```js Denoms
+factory/account1_address/mytoken
+factory/account2_address/mytoken
+```
+
+As a result, even though both tokens share the same subdenomination, they remain distinct and easily identifiable. 
+
+
+## Messages
+
+### CreateDenom
+
+Creates a denom with the `factory/{creator address}/{subdenom}` naming convention. Subdenoms can contain `[a-zA-Z0-9./]`.
+
+```js CreateDenom
+message MsgCreateDenom {
+  string sender = 1 [ (gogoproto.moretags) = "yaml:\"sender\"" ];
+  string subdenom = 2 [ (gogoproto.moretags) = "yaml:\"subdenom\"" ];
+}
+```
+
+- Each denom creation requires a fee, set in the module parameters. This creation fee is sent to the community pool. 
+- The bank keeper sets the `DenomMetaData`.
+- The `AuthorityMetadata` of the denom is stored and is automatically set as the sender of the message. 
+- The denom is added to the `CreatorPrefixStore`, where a set of denoms per creator is kept. 
+
+### Mint
+
+Minting can only be executed by the current admin of the denom, which by default is the creator. 
+
+```js Mint
+message MsgMint {
+  string sender = 1 [ (gogoproto.moretags) = "yaml:\"sender\"" ];
+  cosmos.base.v1beta1.Coin amount = 2 [
+    (gogoproto.moretags) = "yaml:\"amount\"",
+    (gogoproto.nullable) = false
+  ];
+}
+```
+
+- The module checks that the denom being used is a Token Factory denom. 
+- The sender of the message must be the admin of the denom. 
+- The specified mint amount is minted via the bank module. 
+
+### Burn
+
+Burning can only be executed by the admin of the denom, which by default is the creator. 
+
+```js Burn
+message MsgBurn {
+  string sender = 1 [ (gogoproto.moretags) = "yaml:\"sender\"" ];
+  cosmos.base.v1beta1.Coin amount = 2 [
+    (gogoproto.moretags) = "yaml:\"amount\"",
+    (gogoproto.nullable) = false
+  ];
+}
+```
+
+- The module checks that the denom being used is a Token Factory denom. 
+- The sender of the message must be the admin of the denom. 
+- The specified burn amount is burned via the bank module. 
+
+### ChangeAdmin
+
+Changing the admin of a denom can only be executed by the current admin. 
+
+```js ChangeAdmin
+message MsgChangeAdmin {
+  string sender = 1 [ (gogoproto.moretags) = "yaml:\"sender\"" ];
+  string denom = 2 [ (gogoproto.moretags) = "yaml:\"denom\"" ];
+  string newAdmin = 3 [ (gogoproto.moretags) = "yaml:\"new_admin\"" ];
+}
+```
+
+### SetDenomMetadata
+
+Setting the metadata of a denom can only be executed by the current admin. This maction will overwrite the metadata in the bank module. 
+
+```js 
+message MsgSetDenomMetadata {
+  string sender = 1 [ (gogoproto.moretags) = "yaml:\"sender\"" ];
+  cosmos.bank.v1beta1.Metadata metadata = 2 [
+    (gogoproto.moretags) = "yaml:\"metadata\"",
+    (gogoproto.nullable) = false
+  ];
+}
+```
+
+
+State Modifications:
+
+Check that sender of the message is the admin of denom
+Modify AuthorityMetadata state entry to change the admin of the denom
+
+## Parameters
+
+
