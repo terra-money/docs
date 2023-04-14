@@ -1,0 +1,12 @@
+<Admonition type="info" icon="ℹ️">
+
+Terra's Token Factory module inherits from 
+ This document is a stub and mainly covers important Terra-specific notes on how it is used.
+
+</Admonition>
+
+# Token Factory
+
+The Token Factory module enables accounts to create new tokens using the format factory/{creator address}/{subdenom}. This approach allows permissionless token minting since tokens are namespaced by creator addresses, eliminating the need to resolve name collisions. Accounts can create multiple denoms by providing a unique subdenom for each.
+
+Upon creating a denom, the creator is granted "admin" privileges, empowering them to mint tokens to any account, burn tokens from any account, create transfers between two accounts, and change the admin. Future enhancements may expand admin capabilities. The ChangeAdmin functionality enables changing the master admin account or even removing admin privileges entirely. Admins can also share privileges with others using the authz module.
