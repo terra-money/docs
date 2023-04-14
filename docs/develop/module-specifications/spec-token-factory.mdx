@@ -30,7 +30,7 @@ As a result, even though both tokens share the same subdenomination, they remain
 
 Creates a denom with the `factory/{creator address}/{subdenom}` naming convention. Subdenoms can contain `[a-zA-Z0-9./]`.
 
-```js CreateDenom
+```go CreateDenom
 message MsgCreateDenom {
   string sender = 1 [ (gogoproto.moretags) = "yaml:\"sender\"" ];
   string subdenom = 2 [ (gogoproto.moretags) = "yaml:\"subdenom\"" ];
@@ -46,7 +46,7 @@ message MsgCreateDenom {
 
 Minting can only be executed by the current admin of the denom, which by default is the creator. 
 
-```js Mint
+```go Mint
 message MsgMint {
   string sender = 1 [ (gogoproto.moretags) = "yaml:\"sender\"" ];
   cosmos.base.v1beta1.Coin amount = 2 [
@@ -64,7 +64,7 @@ message MsgMint {
 
 Burning can only be executed by the admin of the denom, which by default is the creator. 
 
-```js Burn
+```go Burn
 message MsgBurn {
   string sender = 1 [ (gogoproto.moretags) = "yaml:\"sender\"" ];
   cosmos.base.v1beta1.Coin amount = 2 [
@@ -82,19 +82,21 @@ message MsgBurn {
 
 Changing the admin of a denom can only be executed by the current admin. 
 
-```js ChangeAdmin
+```go ChangeAdmin
 message MsgChangeAdmin {
   string sender = 1 [ (gogoproto.moretags) = "yaml:\"sender\"" ];
   string denom = 2 [ (gogoproto.moretags) = "yaml:\"denom\"" ];
   string newAdmin = 3 [ (gogoproto.moretags) = "yaml:\"new_admin\"" ];
 }
 ```
+- The sender of this message must be the admin. 
+- Modifies `AuthorityMetadata` state entry to change the admin of the denom
 
 ### SetDenomMetadata
 
-Setting the metadata of a denom can only be executed by the current admin. This maction will overwrite the metadata in the bank module. 
+Setting the metadata of a denom can only be executed by the current admin. This action will overwrite the metadata in the bank module. 
 
-```js 
+```go SetDenomMetadata
 message MsgSetDenomMetadata {
   string sender = 1 [ (gogoproto.moretags) = "yaml:\"sender\"" ];
   cosmos.bank.v1beta1.Metadata metadata = 2 [
@@ -103,13 +105,12 @@ message MsgSetDenomMetadata {
   ];
 }
 ```
-
-
-State Modifications:
-
-Check that sender of the message is the admin of denom
-Modify AuthorityMetadata state entry to change the admin of the denom
+- The sender of this message must be the admin. 
+- Updates the `DenomMetaData` via bank keeper.
 
 ## Parameters
+
+The following parameters are set for the Token Factory module at genesis and can be updated via governance. 
+
 
 
