@@ -6,7 +6,7 @@ Terra's Token Factory module is an open-source module created by the Osmosis tea
 
 # Token Factory
 
-The Token Factory module allows any account to create a new token with a specific naming convention: `factory/{creator address}/{subdenom}`. This design ensures that token minting is permissionless as it doesn't require resolving name collisions. The creator of a token automatically receives "admin" privileges, which enable them to mint, burn, transfer tokens, and change the admin of the token. The ChangeAdmin functionality enables changing the master admin account or even removing admin privileges entirely. Admins can also share privileges with others using the authz module.
+The Token Factory module allows any account to create a new token with a specific naming convention: `factory/{creator address}/{subdenom}`. This design ensures that token minting is permissionless as it doesn't require resolving name collisions. The creator of a token automatically receives "admin" privileges, which enable them to mint, burn, transfer tokens, and change the admin of the token. The ChangeAdmin functionality enables changing the master admin account or even removing admin privileges entirely. Admins can also share privileges with others using the [authz](./spec-authz.mdx) module.
 
 ## Naming conflicts
 
