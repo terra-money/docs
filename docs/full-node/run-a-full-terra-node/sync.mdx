@@ -211,7 +211,30 @@ terrad version
 
 The result of this command should be `v2.2.0`.
 
-8. Now, you can resume and finalize the syncing process:
+8. again, you can resume the syncing process:
+
+```sh Terminal
+terrad start
+```
+
+Syncing will halt at block 4,711,800, at which point you will need to change the version of terrad and then resume the syncing process.
+
+9. To sync your Phoenix mainnet node from block 4,711,800 to the most recent block, you will need to navigate to the `core` directory and change your terrad version to `v2.3.0`.
+
+```sh Terminal
+git checkout v2.3.0
+make install
+```
+
+Again, make sure that you have switched to the correct version of terrad by running the following command:
+
+```sh Terminal
+terrad version
+```
+
+The result of this command should be `v2.3.0`.
+
+10. Now, you can resume and finalize the syncing process:
 
 ```sh Terminal
 terrad start
