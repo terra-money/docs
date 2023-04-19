@@ -1,0 +1,66 @@
+# terrad tx interchain-accounts host generate-packet-data
+
+This command accepts a message string and serializes it into packet data which is outputted to _`stdout`_. It can be used in conjunction with _`send-tx`_ which submits pre-built packet data containing messages to be executed on the host chain.
+
+## Usage
+
+```sh Terrad
+  terrad tx interchain-accounts host generate-packet-data [message] [flags]
+```
+
+## Examples
+
+```sh Terrad
+terrad tx interchain-accounts host generate-packet-data '{
+    "@type":"/cosmos.bank.v1beta1.MsgSend",
+    "from_address":"cosmos15ccshhmp0gsx29qpqq6g4zmltnnvgmyu9ueuadh9y2nc5zj0szls5gtddz",
+    "to_address":"cosmos10h9stc5v6ntgeygf5xf945njqq5h32r53uquvw",
+    "amount": [
+        {
+            "denom": "stake",
+            "amount": "1000"
+        }
+    ]
+}' --memo memo
+
+
+terrad tx interchain-accounts host generate-packet-data '[{
+    "@type":"/cosmos.bank.v1beta1.MsgSend",
+    "from_address":"cosmos15ccshhmp0gsx29qpqq6g4zmltnnvgmyu9ueuadh9y2nc5zj0szls5gtddz",
+    "to_address":"cosmos10h9stc5v6ntgeygf5xf945njqq5h32r53uquvw",
+    "amount": [
+        {
+            "denom": "stake",
+            "amount": "1000"
+        }
+    ]
+},
+{
+	"@type": "/cosmos.staking.v1beta1.MsgDelegate",
+	"delegator_address": "cosmos15ccshhmp0gsx29qpqq6g4zmltnnvgmyu9ueuadh9y2nc5zj0szls5gtddz",
+	"validator_address": "cosmosvaloper1qnk2n4nlkpw9xfqntladh74w6ujtulwnmxnh3k",
+	"amount": {
+		"denom": "stake",
+		"amount": "1000"
+	}
+}]'
+```
+
+## Options
+
+```sh Terrad
+Flags:
+  -h, --help          help for generate-packet-data
+      --memo string   an optional memo to be included in the interchain account packet data
+```
+
+## Options inherited from parent commands
+
+```sh Terrad
+Global Flags:
+      --chain-id string     The network chain ID
+      --home string         directory for config and data (default "/Users/.terra")
+      --log_format string   The logging format (json|plain) (default "plain")
+      --log_level string    The logging level (trace|debug|info|warn|error|fatal|panic) (default "info")
+      --trace               print out full stack trace on errors
+```
