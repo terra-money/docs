@@ -1,9 +1,9 @@
 ---
-title: Multisign
+title: multi-sign
 sidebar_position: 13
 ---
 
-# terrad tx multisign
+# terrad tx multi-sign
 
 Generate multisig signatures for transactions generated offline. 
 
@@ -16,7 +16,7 @@ Read one or more signatures from one or more `[signature]` files, generate a mul
 ## Example
 
 ```sh Terrad
-terrad tx multisign transaction.json k1k2k3 k1sig.json k2sig.json k3sig.json
+terrad tx multi-sign transaction.json k1k2k3 k1sig.json k2sig.json k3sig.json
 
 If --signature-only flag is on, output a JSON representation
 of only the generated signature.
@@ -33,7 +33,7 @@ The SIGN_MODE_DIRECT sign mode is not supported.'
 ## Usage
 
 ```sh Terrad
-terrad tx multisign [file] [name] [[signature]...] [flags]
+terrad tx multi-sign [file] [name] [[signature]...] [flags]
 ```
 
 ## Options
@@ -51,7 +51,7 @@ terrad tx multisign [file] [name] [[signature]...] [flags]
       --gas-adjustment float     adjustment factor to be multiplied against the estimate returned by the tx simulation; if the gas limit is set manually this flag is ignored  (default 1)
       --gas-prices string        Gas prices in decimal format to determine the transaction fee (e.g. 0.1uluna)
       --generate-only            Build an unsigned transaction and write it to STDOUT (when enabled, the local Keybase is not accessible)
-  -h, --help                     help for multisign
+  -h, --help                     help for multi-sign
       --keyring-backend string   Select keyring's backend (os|file|kwallet|pass|test|memory) (default "os")
       --keyring-dir string       The client Keyring directory; if omitted, the default 'home' directory will be used
       --ledger                   Use a connected Ledger device

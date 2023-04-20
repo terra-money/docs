@@ -16,6 +16,8 @@ Usage:
 
 Available Subcommands (click for more info):
 
+  // link[3:138] /develop/terrad/commands/transactions/alliance/terrad_tx_alliance
+  alliance            Alliance module subcommands
   // link[3:138] /develop/terrad/commands/transactions/authz/terrad_tx_authz
   authz               Authorization transactions subcommands
   // link[3:138] /develop/terrad/commands/transactions/terrad_tx_bank_send
@@ -38,10 +40,14 @@ Available Subcommands (click for more info):
   gov                 Governance transactions subcommands
   // link[3:138] /develop/terrad/commands/transactions/ibc/terrad_tx_ibc
   ibc                 IBC transaction subcommands
+  // link[3:138] /develop/terrad/commands/transactions/ibc-fee/terrad_tx_ibc-fee
+  ibc-fee             IBC relayer incentivization transaction subcommands
   // link[3:138] /develop/terrad/commands/transactions/ibc/terrad_tx_ibc-transfer_transfer
   ibc-transfer        IBC fungible token transfer transaction subcommands
+  // link[3:138] /develop/terrad/commands/transactions/interchain-accounts
+  interchain-accounts IBC interchain accounts transaction subcommands
   // link[3:138] /develop/terrad/commands/transactions/terrad_tx_multisign
-  multisign           Generate multisig signatures for transactions generated offline
+  multi-sign           Generate multisig signatures for transactions generated offline
   // link[3:138] /develop/terrad/commands/transactions/terrad_tx_multisign-batch
   multisign-batch     Assemble multisig transactions in batch from batch signatures
   // link[3:138] /develop/terrad/commands/transactions/terrad_tx_sign
@@ -64,7 +70,7 @@ Flags:
   -h, --help              help for tx
 
 Global Flags:
-      --home string         directory for config and data (default "/Users/evan/.terra")
+      --home string         directory for config and data (default "/Users/.terra")
       --log_format string   The logging format (json|plain) (default "plain")
       --log_level string    The logging level (trace|debug|info|warn|error|fatal|panic) (default "info")
       --trace               print out full stack trace on errors
@@ -103,7 +109,7 @@ terrad tx [flags]
 * [terrad tx gov](./gov/terrad_tx_gov.mdx)	 - Governance transactions subcommands.
 * [terrad tx ibc](./ibc/terrad_tx_ibc.mdx)	 - IBC transaction subcommands.
 * [terrad tx ibc-transfer](./ibc/terrad_tx_ibc-transfer_transfer.mdx)	 - IBC fungible token transfer transaction subcommands.
-* [terrad tx multisign](./terrad_tx_multisign.mdx)	 - Generate multisig signatures for transactions generated offline.
+* [terrad tx multi-sign](./terrad_tx_multisign.mdx)	 - Generate multisig signatures for transactions generated offline.
 * [terrad tx multisign-batch](./terrad_tx_multisign-batch.mdx)	 - Assemble multisig transactions in batch from batch signatures.
 * [terrad tx sign](./terrad_tx_sign.mdx)	 - Sign a transaction generated offline.
 * [terrad tx sign-batch](./terrad_tx_sign-batch.mdx)	 - Sign transaction batch files.

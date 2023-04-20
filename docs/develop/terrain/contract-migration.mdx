@@ -4,9 +4,9 @@ import Admonition from '@theme/Admonition';
 
 Contracts on Terra can be initialized as [migratable](../module-specifications/spec-wasm.mdx#migration), which allows the administrator to upload a new version of the contract and then send a migrate message to move to the new code.
 
-In this tutorial, you will utilize [Terrain](./README.mdx), a Terra development suite designed to simplify the scaffolding, deployment, and migration of smart contracts. 
+This tutorial uses [Terrain](./README.mdx), a Terra development suite designed to simplify the scaffolding, deployment, and migration of smart contracts. 
 
-If this is your first time using Terrain, visit the [Terrain initial setup](./initial-setup.mdx) guide. 
+If this is your first time using Terrain, visit the [Terrain setup](./initial-setup.mdx) guide. 
 
 ## Overview
 
@@ -57,7 +57,7 @@ If you decide to make changes to the deployed contract, you can migrate to the u
    terrain contract:migrate counter --signer test1
    ```
 
-If you would like to specify the address of the desired administrator for your smart contract, you may utilize the `--admin-address` flag in the deploy command followed by the wallet address of the desired administrator.
+If you would like to specify the address of the desired administrator for your smart contract, use the `--admin-address` flag in the deploy command followed by the wallet address of the desired administrator.
 
   ```
   terrain deploy counter --signer test1 --admin-address <insert-admin-wallet-address>

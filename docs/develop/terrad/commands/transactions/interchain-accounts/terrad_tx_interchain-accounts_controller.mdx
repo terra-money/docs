@@ -1,0 +1,40 @@
+# terrad tx interchain-accounts controller
+
+This command accepts a message string and serializes it into packet data which is outputted to _`stdout`_. It can be used in conjunction with _`send-tx`_ which submits pre-built packet data containing messages to be executed on the host chain.
+
+## Usage
+
+```sh Terrad
+terrad tx interchain-accounts controller [command]
+```
+
+## Subcommands
+
+```sh Terrad
+register    Register an interchain account on the provided connection.
+send-tx     Send an interchain account tx on the provided connection.
+```
+
+## Options
+
+```sh Terrad
+Flags:
+  -h, --help   help for controller
+```
+
+## Options inherited from parent commands
+
+```sh Terrad
+Global Flags:
+      --chain-id string     The network chain ID
+      --home string         directory for config and data (default "/Users/.terra")
+      --log_format string   The logging format (json|plain) (default "plain")
+      --log_level string    The logging level (trace|debug|info|warn|error|fatal|panic) (default "info")
+      --trace               print out full stack trace on errors
+```
+
+## See also
+
+* [terrad tx](../terrad_tx.mdx)	 - Transactions subcommands.
+* [terrad tx interchain-accounts controller register](./terrad_tx_interchain-accounts_controller_register.mdx)	 - Register an interchain account on the provided connection.
+* [terrad tx interchain-accounts controller send-tx](./terrad_tx_interchain-accounts_controller_send-tx.mdx)	 - Send an interchain account tx on the provided connection.

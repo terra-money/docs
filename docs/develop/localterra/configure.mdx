@@ -38,7 +38,7 @@ wal_file = "data/cs.wal/wal"
 + timeout_commit = "200ms"
 ```
 
-Additionally, you can utilize the following command to achieve the same result.
+Additionally, you can use the following command to achieve the same result.
 
 ```sh
 sed -E -i '/timeout_(propose|prevote|precommit|commit)/s/[0-9]+m?s/200ms/' config/config.toml

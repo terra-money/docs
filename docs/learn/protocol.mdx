@@ -138,11 +138,11 @@ Delegators can unbond or unstake their Luna using the [undelegate function in St
 
 <Admonition type="caution" icon="☢️">
 
-After funds are undelegated, they will be locked for a period of 21 days. Once this process has started, there is no option for reversal. After this period has concluded, the funds will be transferred to your wallet where they will once again be available to carry out transactions with. If you would like to simply stake with another validator, you may utilize the redelegating process which occurs immediately without the need to wait for processing.
+After funds are undelegated, they will be locked for a period of 21 days. Once this process has started, there is no option for reversal. After this period has concluded, the funds will be transferred to your wallet where they will once again be available to carry out transactions. Users can redelegate to another validator instantly without waiting for the unbonding period to end. 
 
 </Admonition>
 
-The 21-day unbonding process assists in the long-term stability of the Terra protocol. The unbonding period discourages volatility by locking staked Luna in the system for at least 21 days. In exchange, delegators receive staking rewards, further incentivizing network stability.
+The 21-day unbonding period assists in the long-term stability of Terra. The unbonding period discourages volatility by locking staked Luna in the system for at least 21 days. In exchange, delegators receive staking rewards, further incentivizing network stability.
 
 ### Redelegation
 
@@ -182,7 +182,7 @@ Slashing occurs under the following conditions:
 - **Downtime**: When a validator is unresponsive or can't be reached for a period of time.
 - **Missed votes**: When a validator misses votes in consensus.
 
-Validators monitor each other closely and can submit evidence of misbehaviour. Once discovered, the misbehaving validator will have a small portion of their funds slashed. Offending validators will also be jailed or excluded from consensus for a period of time. Even simple issues such as malfunctions or downtimes from upgrading can lead to slashing.
+Validators monitor each other closely and can submit evidence of misbehavior. Once discovered, the misbehaving validator will have a small portion of their funds slashed. Offending validators will also be jailed or excluded from consensus for a period of time. Even simple issues such as malfunctions or downtimes from upgrading can lead to slashing.
 
 For more information on slashing, visit the [slashing module](../develop/module-specifications/spec-slashing.mdx).
 
@@ -241,15 +241,6 @@ Once accepted, the changes described in a governance proposal are automatically 
 
 Deposits protect against unnecessary proposals and spam. Users can veto any proposal they deem to be spam by voting `NoWithVeto`.
 
-Deposits get refunded if all of the following conditions are met:
+If a proposal fails to meet the minimum deposit amount within the deposit period, the proposal will not enter the voting period, and the deposit will be refunded. 
 
-- The minimum deposit of 512 Luna is reached within the one-week deposit period.
-- `Quorum` is met: the number of total votes is greater than 30% of all staked Luna
-- The total number of `NoWithVeto` votes is less than 33.4% of the total vote.
-- A vote returns a majority of `Yes` or `No` votes.
-
-Deposits are burned under any of the following conditions:
-
-- The minimum deposit of 512 Luna is not reached within the one-week deposit period.
-- `Quorum` is not met: the number of total votes after the one-week voting period is less than 30% of all staked Luna.
-- the number of `NoWithVeto` votes is above 33.4% of the total vote.
+Proposals that meet the minimum deposit requirement and make it to the voting period will be refunded under any vote outcome except `NoWithVeto`. If the number of `NoWithVeto` votes is above 33.4% of the total vote, the deposit will be burned. Deposits will be refunded under any other condition. 
