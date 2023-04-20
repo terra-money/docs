@@ -1,10 +1,14 @@
+import Admonition from '@theme/Admonition';
+
+# Token Factory
+
 <Admonition type="info" icon="ℹ️">
 
 Terra's Token Factory module is an open-source module created by the Osmosis team. This document is a stub and mainly covers Terra-specific notes on how it is used. Visit the [original documentation](https://docs.osmosis.zone/osmosis-core/modules/tokenfactory/) for more information. 
 
 </Admonition>
 
-# Token Factory
+
 
 The Token Factory module allows any account to create a new token with a specific naming convention: `factory/{creator address}/{subdenom}`. This design ensures that token minting is permissionless as it doesn't require resolving name collisions. The creator of a token automatically receives "admin" privileges, which enable them to mint, burn, transfer tokens, and change the admin of the token. The ChangeAdmin functionality enables changing the master admin account or even removing admin privileges entirely. Admins can also share privileges with others using the [authz](./spec-authz.mdx) module.
 
@@ -116,7 +120,7 @@ The following parameter is set for the Token Factory module at genesis and can b
 
 The `DenomCreationFee` parameter determines the fee required to create a new token denomination in the token factory module.
 
-```go 
+```go genesis.go
 tokenFactoryGenState.Params.DenomCreationFee = sdk.NewCoins(sdk.NewCoin(bondDenom, sdk.NewInt(10000000)))
 ```
 
