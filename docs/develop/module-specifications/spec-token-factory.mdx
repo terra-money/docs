@@ -116,12 +116,28 @@ message MsgSetDenomMetadata {
 
 The following parameter is set for the Token Factory module at genesis and can be updated via governance. 
 
+
 ### Denom creation fee
+
 
 The `DenomCreationFee` parameter determines the fee required to create a new token denomination in the token factory module.
 
-```go genesis.go
-tokenFactoryGenState.Params.DenomCreationFee = sdk.NewCoins(sdk.NewCoin(bondDenom, sdk.NewInt(10000000)))
+
+Current value:
+
+https://phoenix-lcd.terra.dev/osmosis/tokenfactory/v1beta1/params
+
+```go DenomCreationFee
+{
+  "params": {
+    "denom_creation_fee": [
+      {
+        "denom": "uluna",
+        "amount": "10000000"
+      }
+    ]
+  }
+}
 ```
 
 This fee is currently set to 10 Luna. 
