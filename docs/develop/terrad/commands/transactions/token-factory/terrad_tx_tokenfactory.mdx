@@ -1,0 +1,37 @@
+# terrad tx tokenfactory
+
+Token factory subcommands. To learn more about the token factory module, visit the [token factory module spec](../../../../module-specifications/spec-token-factory.mdx).
+
+## Available subcommands
+
+```sh Terrad
+burn         Burn tokens from an address. Must have admin authority to do so.
+change-admin Changes the admin address for a factory-created denom. Must have admin authority to do so.
+create-denom create a new denom from an account
+mint         Mint a denom to an address. Must have admin authority to do so.   
+```
+
+## Options
+
+```sh Terrad
+  -h, --help   help for ibc
+```
+
+## Options inherited from parent commands
+
+```sh Terrad
+Global Flags:
+      --chain-id string     The network chain ID
+      --home string         directory for config and data (default "/Users/.terra")
+      --log_format string   The logging format (json|plain) (default "plain")
+      --log_level string    The logging level (trace|debug|info|warn|error|fatal|panic) (default "info")
+      --trace               print out full stack trace on errors
+```
+
+## See also
+
+* [terrad tx](../terrad_tx.mdx)	 - Transactions subcommands.
+* [terrad tx tokenfactory burn](./terrad_tx_tokenfactory_burn.mdx)	 - Burn tokens from an address.
+* [terrad tx tokenfactory change-admin](./terrad_tx_tokenfactory_change-admin.mdx)	 - Changes the admin address for a factory-created denom.
+* [terrad tx tokenfactory create-denom](./terrad_tx_tokenfactory_create-denom.mdx)	 - Create a new denom from an account. 
+* [terrad tx tokenfactory mint](./terrad_tx_tokenfactory_mint.mdx)	 - Mint a denom to an address. 
