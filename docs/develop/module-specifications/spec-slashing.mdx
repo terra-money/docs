@@ -4,7 +4,7 @@ import Admonition from '@theme/Admonition';
 
 <Admonition type="info" icon="ℹ️">
 
-Terra's slashing module inherits from the Cosmos SDK's [`slashing`](https://docs.cosmos.network/master/modules/slashing/) module. This document is a stub and mainly covers important Terra-specific notes on how it is used.
+Terra's slashing module inherits from the Cosmos SDK's [`slashing`](https://docs.cosmos.network/main/modules/slashing/) module. This document is a stub and mainly covers important Terra-specific notes on how it is used.
 
 </Admonition>
 
@@ -102,7 +102,7 @@ signInfo.Tombstoned = true
 SigningInfo.Set(val.Address, signInfo)
 ```
 
-This process ensures that offending validators are punished with the same amount whether they act as a single validator with X stake or as N validators with a collective X stake. The amount slashed for all double-signature infractions committed within a single slashing period is capped. For more information, see [tombstone caps](https://docs.cosmos.network/master/modules/slashing/01_concepts.html#tombstone-caps).
+This process ensures that offending validators are punished with the same amount whether they act as a single validator with X stake or as N validators with a collective X stake. The amount slashed for all double-signature infractions committed within a single slashing period is capped. For more information, see [tombstone caps](https://docs.cosmos.network/main/modules/slashing/01_concepts.html#tombstone-caps).
 
 #### Liveness tracking
 
