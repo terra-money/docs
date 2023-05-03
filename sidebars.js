@@ -61,7 +61,7 @@ const sidebars = {
         {
           type: 'category',
           label: 'Developer tools',
-          collapsed: true,
+          collapsed: false,
           items: [
             {
               type: 'category',
