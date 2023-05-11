@@ -2,17 +2,17 @@ import Admonition from '@theme/Admonition';
 
 # Common examples guide
 
-Use the following common examples to learn how to use feather.js. If this is your first time using feather.js, use the [feather.js installation guide](./getting-started.mdx).
+Use the following common examples to learn how to use feather.js. If this is your first time using feather.js, follow the [feather.js tutorial](./getting-started.mdx).
 
 <Admonition type='tip' icon='💡'>
 
-If you are new to Terra visit the [getting started guide](../../../docs/develop/get-started.mdx).
+If you are new to developing on Terra visit the [getting started guide](../../../docs/develop/get-started.mdx).
 
 </Admonition>
 
 ## Configuring LCDClient
 
-The following code example shows how to initialize the LCDClient with for one or multiple chains. The rest of the examples assume you initialized it by using this example or similar code.
+The following code example shows how to initialize the `LCDClient` for one or multiple chains. The rest of the examples assume that you have initialized the `LCDClient` using this example or similar code.
 
 ```ts
 import {
@@ -60,7 +60,7 @@ const lcd = new LCDClient({
 });
 ```
 
-You can also use the default configration if you only want to connect to Terra.
+You can also use the default configuration if you only want to connect to Terra.
 
 ```ts
 const lcd = LCDClient.fromDefaultConfig('testnet'); // connect to testnet
@@ -89,7 +89,7 @@ Example response:
 [{ denom: 'uosmo', amount: '10000' }];
 ```
 
-Queries that can't directly read the chain from the given address always require a chainID to be specified. See the below example.
+Queries that can't directly read the chain from the given address always require a `chainID` to be specified. See the below example.
 
 ```ts
 // query the total circulating supply
