@@ -6,20 +6,20 @@ Feather.js extends the functionality of Terra.js with interchain capabilities. F
 
 Feather.js enables the following functionalities:
 
-- Deserializing blockchain data into JavaScript objects with native data types and methods.
-- Serializing objects back into a blockchain-compatible format.
-- Providing access to the Terrad node API (LCD) and other compatible feather chains from a JavaScript-based interface.
-- Providing additional utilities, such as hash functions and key-signing algorithms.
+- Deserialization of blockchain data into JavaScript objects with native data types and methods.
+- Serialization of objects back into a blockchain-compatible format.
+- Access to the Terrad node API (LCD) and other compatible Feather chains from a JavaScript-based interface.
+- Additional utilities, such as hash functions and key-signing algorithms.
 
 
 <Admonition type='tip' icon='💡' title='Migrating from Terra.js to Feather.js'>
 
-Use the following information to migrate from Terra.js to Feather.js:
+Use the following information to migrate from Terra.js to Feather.js. 
 
 - New [configuration syntax](./common-examples.mdx#configuring-lcdclient) for `LCDClient` to support multiple chains.
 - With Feather.js, you will need to [specify the chainID](./common-examples.mdx#sending-native-tokens) when creating or broadcasting a transaction.
 - Queries that require an address can automatically detect the chain based on an address' `bech32` prefix. Otherwise, the query requires an extra `chainID` parameter.
-- `accAddress` on Key objects now are now functions that require the prefix as parameter.
+- `accAddress` on Key objects now are now functions that require the prefix as a parameter. 
 
 Ledger users will be able to use their existing account in the Terra Ledger app on all new chains.
 
