@@ -1,6 +1,6 @@
 # Smart contracts
 
-This document explains how to perform tasks related to working with smart contracts with feather.js.
+This document explains how to perform tasks related to working with smart contracts using feather.js.
 
 ## Upload code
 
@@ -59,9 +59,9 @@ const {
 
 ## Create a contract
 
-For Terra smart contracts, there is a distinction between uploading contract code and creating a contract. This allows multiple contracts to share the same code if there are only minor variations in their logic which can be configured at contract creation. This configuration is passed in an **InitMsg** and provides the initial state for the contract.
+For Terra smart contracts, there is a distinction between uploading contract code and instantiating a contract. This separation allows multiple contracts to share the same uploaded code if there are only minor variations in their logic which can be configured at contract creation. This configuration is passed in an _`InitMsg`_ and provides the initial state of the contract.
 
-To create or instantiate a smart contract, you must first know the code ID of an uploaded code. You will reference it in a `MsgInstantiateContract` alongside the InitMsg to create the contract. Upon successful creation, your contract will be located at an address that you specify.
+To create or instantiate a smart contract, you must first know the _`code_id`_ of an uploaded code. You will reference this _`code_id`_ in a _`MsgInstantiateContract`_ alongside the `InitMsg` to create the contract. Upon successful creation, your contract will be located at an address that you specify.
 
 ```ts
 import { MsgInstantiateContract } from '@terra-money/feather.js';
@@ -97,7 +97,7 @@ const {
 
 ## Execute a contract
 
-Smart contracts respond to JSON messages called **HandleMsg** which can exist as different types. The smart contract writer should provide any end-users of the smart contract with the expected format of all the varieties of HandleMsg the contract is supposed to understand, in the form of a JSON schema. The schema thus provides an analog to Ethereum contracts' ABI.
+Smart contracts respond to JSON messages called _`HandleMsg`_ which can exist as different types. The smart contract writer must provide end-users of the smart contract with the expected format of all the varieties of _`HandleMsg`_ the contract is supposed to understand, in the form of a JSON schema. This schema is analogous to Ethereum contracts' ABI. 
 
 ```ts
 import { MsgExecuteContract } from '@terra-money/feather.js';
@@ -119,7 +119,7 @@ const executeTxResult = await terra.tx.broadcast(executeTx, 'pisco-1');
 
 ## Query data from a contract
 
-A contract can define a query handler, which understands requests for data specified in a JSON message called a QueryMsg. Unlike the message handler, the query handler cannot modify the contract's or blockchain's state -- it is a read-only operation. Therefore, querying data from a contract does not use a message and transaction, but works directly through the `LCDClient` API.
+A contract can define a query handler, which understands requests for data specified in a JSON message called a _`QueryMsg`_. Unlike the message handler, the query handler cannot modify the contract's or blockchain's state. Queries are read-only operations. Therefore, querying data from a contract does not use a message and transaction, but works directly through the `LCDClient` API.
 
 ```ts
 const result = await terra.wasm.contractQuery(
