@@ -4,11 +4,11 @@ import Admonition from '@theme/Admonition';
 
 To perform actions using an account and private-public key pairs with feather.js, you need an implementation of the [ _Key_ ](https://github.com/terra-money/feather.js/blob/main/src/key/Key.ts) class, which provides an abstraction around the signing functions of an account. There are multiple implementations available:
 
-- [ _RawKey_ ](https://github.com/terra-money/feather.js/blob/main/src/key/RawKey.ts)
-- [ _MnemonicKey_ ](https://github.com/terra-money/feather.js/blob/main/src/key/MnemonicKey.ts)
-- [ _CLIKey_ ](https://github.com/terra-money/feather.js/blob/main/src/key/CLIKey.ts)
+- [ `RawKey` ](https://github.com/terra-money/feather.js/blob/main/src/key/RawKey.ts)
+- [ `MnemonicKey` ](https://github.com/terra-money/feather.js/blob/main/src/key/MnemonicKey.ts)
+- [ `CLIKey` ](https://github.com/terra-money/feather.js/blob/main/src/key/CLIKey.ts)
 
-You can also create a custom signing solution by extending the base [ _Key_ ](https://github.com/terra-money/feather.js/blob/main/src/key/Key.ts) class.
+You can also create a custom signing solution by extending the base [ `Key` ](https://github.com/terra-money/feather.js/blob/main/src/key/Key.ts) class.
 
 ## `RawKey`
 
@@ -73,7 +73,7 @@ The `MnemonicKey` can be used to recover a wallet with a particular BIP44 HD pat
 
 <Admonition type='tip' icon='💡' title='HD keys'>
 
-As per [_Cosmos HD Key Derivation_](https://github.com/confio/cosmos-hd-key-derivation-spec):
+As per the [Cosmos HD Key Derivation](https://github.com/confio/cosmos-hd-key-derivation-spec) spec:
 
 Cosmos blockchains support hierarchical deterministic key generation (HD keys) for deriving multiple cryptographic keypairs from a single secret value. This allows the user to use different keypairs for different accounts on one blockchain and create accounts on multiple blockchains without having to manage multiple secrets.
 
@@ -90,7 +90,7 @@ const mne_key = new MnemonicKey({
 
 - [BIP-39 Mnemonics](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki)
 
-- Coin Type Numbers `330` and `118` above refer to 'coin-types' for `Cosmos` and `Terra` blockchains accordingly. These numbers are defined according to the [BIP044](https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki) standard. You can find more information [here](https://github.com/satoshilabs/slips/blob/master/slip-0044.md).
+- Coin Type Numbers `330` and `118` above refer to 'coin-types' for the `Terra` and `Cosmos` blockchains respectively. These numbers are defined according to the [BIP044](https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki) standard. You can find more information [here](https://github.com/satoshilabs/slips/blob/master/slip-0044.md).
 
 ## Custom key implementation
 
