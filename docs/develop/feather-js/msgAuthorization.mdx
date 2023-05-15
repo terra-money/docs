@@ -9,9 +9,9 @@ You can use [LocalTerra](../localterra/README.mdx) to run the `MsgAuthorization`
 
 In this code, the following actions are performed: 
 
-1. The `test1` (granter) account creates the `MsgGrantAuthorization` message to grant `MsgSend` authorization to `test2` (the grantee). 
+<CH.Scrollycoding>
 
-2. `test2` creates the `MsgExecAuthorized` message to send `2000000000000uluna` from the `test1` account to the `test3` account.
+1. The `test1` (granter) account creates the `MsgGrantAuthorization` message to grant `MsgSend` authorization to `test2` (the grantee). 
 
 ```ts msgauth.ts
 import {
@@ -127,3 +127,31 @@ async function main() {
 
 main().catch(console.error);
 ```
+
+---
+
+The _`spendLimit`_ is set to _`1000000000000uluna`_. This is a cumulative limit that will decrease for every spend transaction. 
+
+```ts msgauth.ts focus=69:77
+
+```
+
+---
+
+In this example, the grant authorization is set to expire in 10 years. 
+
+```ts msgauth.ts 
+
+```
+
+
+
+---
+
+2. `test2` creates the `MsgExecAuthorized` message to send `2000000000000uluna` from the `test1` account to the `test3` account.
+
+```ts msgauth.ts focus=80:109
+
+```
+
+</CH.Scrollycoding>
