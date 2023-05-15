@@ -5,6 +5,10 @@
   min-width: 22.875rem;
 }
 
+.container:has(.ch-scrollycoding) {
+  max-width: unset;
+}
+
 // No word-wrap for TOC contents
 .table-of-contents__link.toc-highlight {
   word-wrap: normal;
@@ -84,7 +88,6 @@
 
 .ch-editor-frame {
 
-height: fit-content !important;    /* If removed, height is set to largest code block */
 
 max-height: 80vh !important;
 }
