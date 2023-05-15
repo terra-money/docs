@@ -1,11 +1,19 @@
 # MsgAuthorization
 
-The following code snippet requires [LocalTerra](../localterra/README.mdx).
 
-1. `test1` creates MsgGrantAuthorization message to grant MsgSend authorization to grantee `test2`.
-2. `test2` creates MsgExecAuthorized message to send `2000000000000uluna` from the `test1` account to the `test3` account.
+An authorization message is used to authorize an address to perform certain actions or operations. For more information on authorizations, visit the [Authz module spec](../module-specifications/spec-authz.mdx). 
 
-```ts
+## Example 
+
+You can use [LocalTerra](../localterra/README.mdx) to run the `MsgAuthorization` example. 
+
+In this code, the following actions are performed: 
+
+1. The `test1` (granter) account creates the `MsgGrantAuthorization` message to grant `MsgSend` authorization to `test2` (the grantee). 
+
+2. `test2` creates the `MsgExecAuthorized` message to send `2000000000000uluna` from the `test1` account to the `test3` account.
+
+```ts msgauth.ts
 import {
   LCDClient,
   MnemonicKey,
