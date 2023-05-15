@@ -1,10 +1,10 @@
 # IBC Transfers
 
-Terra has full IBC transfer capabilities through both feather.js and Station. Although IBC functionality is not readily exposed through Station’s front end, it can be fully incorporated into any dApp. It is up to a dApp’s front end to initiate IBC transfers.
+Terra has full IBC transfer capability through both Feather.js and Station. Although IBC functionality is not readily exposed through Station’s front end, it can be incorporated into any dApp. It is up to a dApp’s front end to initiate IBC transfers.
 
 ## MsgTransfer
 
-feather.js exports a `MsgTransfer` class that can be used to construct IBC transfers.
+Feather.js exports a `MsgTransfer` class that can be used to construct IBC transfers.
 
 ```js
 new MsgTransfer(
@@ -20,13 +20,13 @@ new MsgTransfer(
 
 ## Supported Channels
 
-Channels are defined when a relayer is set up between Terra and an external chain. For each new connected chain the channel ID is incremented.
+Channels are defined when a relayer is set up between Terra and an external chain. For each new connected chain, the channel ID is incremented.
 
-You can use [Map of Zones](https://mapofzones.com/zone?period=24&source=phoenix-1&tableOrderBy=success&tableOrderSort=desc&testnet=false) to find the available channels and their IDs.
+You can use the [Map of Zones](https://mapofzones.com/zone?period=24&source=phoenix-1&tableOrderBy=success&tableOrderSort=desc&testnet=false) to find the available channels and their IDs.
 
 ## Derive Cosmos chain addresses from a Terra address
 
-Cosmos SDK based blockchains use bech32 to encode the public key for display. Assuming the same private key is used on multiple Cosmos SDK chains it is possible to decode a Terra address and generate the corresponding public key on another chain.
+Cosmos SDK-based blockchains use `bech32` to encode the public key for display. Assuming the same private key is used on multiple Cosmos SDK chains, it is possible to decode a Terra address and generate the corresponding public key on another chain.
 
 Here's a quick example using the [bech32](https://github.com/bitcoinjs/bech32) JavaScript library:
 
@@ -79,4 +79,4 @@ const result = await lcd.tx.broadcast(tx, 'pisco-1');
 console.log(result);
 ```
 
-Instructions for initializing LCDClient can be found [here](https://docs.terra.money/docs/develop/sdks/feather-js/common-examples.html#configuring-lcdclient).
+Instructions for initializing LCDClient can be found in the [common examples](https://docs.terra.money/develop/feather-js/common-examples#configuring-lcdclient) section.
