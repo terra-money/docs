@@ -127,9 +127,17 @@ const sidebars = {
                 },
               ],
             },
+                        {
+              type: 'category',
+              label: 'Wallet Kit (DEPRECATED)',
+              collapsed: true,
+              items: [
+                'develop/wallet-kit/wallet-kit-tutorial',
+              ],
+            },
             {
               type: 'category',
-              label: 'Wallet Provider',
+              label: 'Wallet Provider (DEPRECATED)',
               collapsed: true,
               items: [
                 'develop/wallet-provider/wallet-provider-tutorial',
