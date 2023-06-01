@@ -129,7 +129,7 @@ const sidebars = {
             },
                         {
               type: 'category',
-              label: 'Wallet Kit (DEPRECATED)',
+              label: 'Wallet Kit',
               collapsed: true,
               items: [
                 'develop/wallet-kit/wallet-kit-tutorial',
