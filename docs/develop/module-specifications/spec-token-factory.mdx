@@ -15,7 +15,7 @@ The Token Factory module allows any account to create a new token with a specifi
 
 ## Naming conflicts
 
-a naming conflict refers to the potential issue of having two or more tokens with the same name (or denomination), which can lead to confusion. 
+A naming conflict refers to the potential issue of having two or more tokens with the same name (or denomination), which can lead to confusion. 
 
 To avoid naming conflicts, the Token Factory module implements a unique naming structure for tokens that includes the creator's address in the token's name: `factory/{creator address}/{subdenom}`. By namespacing tokens using the creator's address, the module ensures that each token created by an account has a unique identifier, even if different accounts create tokens with the same subdenomination. This approach prevents naming conflicts, allowing for a permissionless token creation process.
 
