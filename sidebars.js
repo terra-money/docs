@@ -137,7 +137,7 @@ const sidebars = {
             },
             {
               type: 'category',
-              label: 'Wallet Provider (DEPRECATED)',
+              label: 'Wallet Provider',
               collapsed: true,
               items: [
                 'develop/wallet-provider/wallet-provider-tutorial',

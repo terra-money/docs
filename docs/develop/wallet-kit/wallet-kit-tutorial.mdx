@@ -49,7 +49,6 @@ Next, you'll wrap your `App` with `<WalletProvider>` to give all your components
    import ReactDOM from 'react-dom';
    import './index.css';
    import App from './App';
-   import reportWebVitals from './reportWebVitals';
    import { getInitialConfig, WalletProvider } from '@terra-money/wallet-kit';
 
    getInitialConfig().then((defaultNetworks) => {
@@ -81,7 +80,7 @@ To solve these errors, can downgrade `react-scripts`: `4.0.3` in your `package.j
 1.  Navigate to `my-terra-app` in your terminal and run the following:
 
     ```sh
-    npm install react-scripts@4.0.3
+    npm install react-scripts@4.0.3 // its important to specify the version
     ```
 
 2.  Reinstall your dependencies:
@@ -106,7 +105,7 @@ To solve these errors, can downgrade `react-scripts`: `4.0.3` in your `package.j
 
 Now that `App.js` has inherited the context of `WalletProvider`, you can start putting your imports to work. You'll use the multi-purpose `useWallet` and `useConnectedWallet` hooks to connect your Station extension to your web browser.
 
-1. Create a new file in the `components` directory called `Connect.js`.
+1. Create a new component file called `Connect.js`.
 
 2. Populate the `Connect.js` file with the following:
 
@@ -123,10 +122,10 @@ function Connect() {
       <h4>Connect info:</h4>
       {connectedWallet ? (
         <>
+          <button onClick={() => disconnect()}>Disconnect</button>
           <code>
             <pre>{JSON.stringify(connectedWallet, null, 2)}</pre>
           </code>
-          <button onClick={() => disconnect()}>Disconnect</button>
         </>
       ) : (
         availableWallets.map(({ id, name, isInstalled }) => (
@@ -171,7 +170,7 @@ You should be able to see these changes in real-time.
 
 ## 4. Querying a wallet balance
 
-It's common for an app to show the connected user's LUNA balance. To achieve this you'll need two hooks. The first is `useLCDClient`. An `LCDClient` is essentially a REST-based adapter for the Terra blockchain. You can use it to query an account balance. The second is `useConnectedWallet`, which tells you if a wallet is connected and, if so, basic information about that wallet such as its address.
+It's common for an app to show the connected user's LUNA balance. To achieve this you'll need two hooks. The first is `useLcdClient`. An `LCDClient` is essentially a REST-based adapter for the Terra blockchain. You can use it to query an account balance. The second is `useConnectedWallet`, which tells you if a wallet is connected and, if so, basic information about that wallet such as its address.
 
 Be aware that you will not see any tokens if your wallet is empty.
 
@@ -180,13 +179,13 @@ Be aware that you will not see any tokens if your wallet is empty.
 2. Populate `Query.js` with the following:
 
    ```ts
-   import { useConnectedWallet, useLCDClient } from '@terra-money/wallet-kit';
+   import { useConnectedWallet, useLcdClient } from '@terra-money/wallet-kit';
    import React, { useEffect, useState } from 'react';
 
    export default function Query() {
-     const lcd = useLCDClient(); // LCD stands for Light Client Daemon
+     const lcd = useLcdClient(); // LCD stands for Light Client Daemon
      const connected = useConnectedWallet();
-     const [balance, setBalance] = useState<null | string>(null);
+     const [balance, setBalance] = useStat('');
      const chainID = 'phoenix-1'; // or any other mainnet or testnet chainID supported by station (e.g. osmosis-1)
 
      useEffect(() => {
@@ -255,18 +254,19 @@ Wallet Provider supplies useful error types. This example will handle the `UserD
 
 2. Populate `Tx.js` with the following. To make this example interchain retrieve the `baseAsset` from the network object.
 
-   ```ts
-   import { Fee, MsgSend } from '@terra-money/feather.js';
-   import { useConnectedWallet, UserDenied } from '@terra-money/wallet-kit';
+   ```js
+   import { MsgSend } from '@terra-money/feather.js';
+   import { useConnectedWallet, useWallet } from '@terra-money/wallet-kit';
    import React, { useCallback, useState } from 'react';
 
    const TEST_TO_ADDRESS = 'terra12hnhh5vtyg5juqnzm43970nh4fw42pt27nw9g9';
 
-   export default function Tx() {
-     const [txResult, setTxResult] = useState<TxResult | null>(null);
-     const [txError, setTxError] = useState<string | null>(null);
+   function Tx() {
+     const [txResult, setTxResult] = useState(null);
+     const [txError, setTxError] = useState('');
 
      const connectedWallet = useConnectedWallet();
+     const wallet = useWallet();
      const chainID = 'phoenix-1';
 
      const testTx = useCallback(async () => {
@@ -281,44 +281,35 @@ Wallet Provider supplies useful error types. This example will handle the `UserD
 
        try {
          const transactionMsg = {
-           fee: new Fee(1000000, '20000uluna'),
            chainID,
            msgs: [
              new MsgSend(connectedWallet.addresses[chainID], TEST_TO_ADDRESS, {
-               uluna: 1000000, // parse baseAsset from network object and use here (e.g.`[baseAsset]`)
+               uluna: 1, // parse baseAsset from network object and use here (e.g.`[baseAsset]`)
              }),
            ],
          };
 
-         const tx = await connectedWallet.post(transactionMsg);
+         const tx = await wallet.post(transactionMsg);
          setTxResult(tx);
        } catch (error) {
-         if (error instanceof UserDenied) {
-           setTxError('User Denied');
-         } else {
-           setTxError(
-             'Unknown Error: ' +
-               (error instanceof Error ? error.message : String(error)),
-           );
-         }
+         setTxError(
+           'Error: ' + (error instanceof Error ? error.message : String(error)),
+         );
        }
-     }, [connectedWallet]);
+     }, [connectedWallet, wallet]);
 
      return (
        <>
-         {connectedWallet?.availablePost && !txResult && !txError && (
+         {connectedWallet && !txResult && !txError && (
            <button onClick={testTx}>Send 1USD to {TEST_TO_ADDRESS}</button>
          )}
 
          {txResult && <>{JSON.stringify(txResult, null, 2)}</>}
          {txError && <pre>{txError}</pre>}
-
-         {connectedWallet && !connectedWallet.availablePost && (
-           <p>This connection does not support post()</p>
-         )}
        </>
      );
    }
+   export default Tx;
    ```
 
    <Admonition type="note" icon="📝">
