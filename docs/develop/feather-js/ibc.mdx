@@ -15,6 +15,7 @@ new MsgTransfer(
   'osmo1cl4qw7u35uf77l4scjtv0qej8ycevu4mrdpvmg', // Destination address on Osmosis
   undefined, // Timeout block height (optional)
   (Date.now() + 60 * 1000) * 1e6, // Timeout timestamp (in nanoseconds) relative to the current block timestamp.
+  'field can be used to send notes, interact with ibc-hooks, packet-middleware, etc...', // Memo field
 );
 ```
 
@@ -68,6 +69,7 @@ const transfer = new MsgTransfer(
   'osmo1cl4qw7u35uf77l4scjtv0qej8ycevu4mrdpvmg',
   undefined,
   (Date.now() + 60 * 1000) * 1e6,
+  'hello world',
 );
 
 const tx = await wallet.createAndSignTx({
