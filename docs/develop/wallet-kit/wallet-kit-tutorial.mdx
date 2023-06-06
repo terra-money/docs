@@ -4,7 +4,7 @@ import Admonition from '@theme/Admonition';
 
 [Wallet Kit](https://github.com/terra-money/wallet-kit) makes it easy to build Station (browser extension and mobile) functionality into your React application. It contains custom hooks that drastically simplify common tasks like connecting a wallet and triggering transactions.
 
-This guide will cover how to set up a React app, integrating Wallet Kit, checking the balance of the connected account, and call a token swap. If you want to integrate Station into an existing react app you can skip past the `Project Setup` section.
+This guide will cover how to set up a React app, integrate Wallet Kit, check the balance of the connected account, and call a token swap. If you want to integrate Station into an existing React app, jump to the [Wrap your app in `WalletProvider` section](#2-wrap-your-app-in-walletprovider).
 
 ## Prerequisites
 
@@ -20,7 +20,9 @@ This guide will cover how to set up a React app, integrating Wallet Kit, checkin
       Most users will need to specify Node version 16 before continuing. You can
       manage node versions [with NVM](https://github.com/nvm-sh/nvm).{' '}
     </summary>
-    ```sh nvm install 16 nvm use 16 ```
+    ```sh 
+    nvm install 16 nvm use 16
+    ```
   </details>
 </Admonition>
 
@@ -41,7 +43,7 @@ This guide will cover how to set up a React app, integrating Wallet Kit, checkin
 
 ## 2. Wrap your app in `WalletProvider`
 
-Next, you'll wrap your `App` with `<WalletProvider>` to give all your components access to useful data, hooks, and utilities. You'll also need to pass in information about Terra networks, such as the mainnet or chainId, into the provider via `getInitialConfig`.
+Next, you'll wrap your `App` with `<WalletProvider>` to give all your components access to useful data, hooks, and utilities. You'll also need to pass in information about Terra networks, such as the `mainnet` or `chainId`, into the provider via `getInitialConfig`.
 
 1. Navigate to your `Index.js` in a code editor and replace the code with the following:
 
@@ -164,7 +166,7 @@ export default App;
 
 5. Make sure your Station extension is connected to a wallet. Click **Connect EXTENSION** and the app will connect to your wallet.
 
-The `status`, `network`, and `wallets` properties in your browser provide useful information about the state of the Terra wallet. Before connecting, the `status` variable will be `WALLET_NOT_CONNECTED` and upon connection the status becomes `WALLET_CONNECTED`. In addition, the `wallets` array now has one entry with the `connectType` and `terraAddress` you used to connect.
+The `status`, `network`, and `wallets` properties in your browser provide useful information about the state of the Terra wallet. Before connecting, the `status` variable will be `WALLET_NOT_CONNECTED` and upon connection, the status becomes `WALLET_CONNECTED`. In addition, the `wallets` array now has one entry with the `connectType` and `terraAddress` you used to connect.
 
 You should be able to see these changes in real-time.
 
@@ -232,15 +234,15 @@ Be aware that you will not see any tokens if your wallet is empty.
 
 ## 5. Sending a transaction
 
-You can also create and send transactions to the Terra network while using Wallet Kit. You can use `feather.js` to generate a sample transaction:
+You can also create and send transactions to the Terra network while using Wallet Kit. You can use [Feather.js](../feather-js/README.mdx) to generate a sample transaction:
 
 ```sh
 npm install @terra-money/feather.js
 ```
 
-Before broadcasting this example transaction, ensure you're on the Terra testnet. To change networks click the gear icon in Station and select `testnet`.
+Before broadcasting this example transaction, ensure you're on the Terra testnet. To change networks, click the gear icon in your Station extension, click on **Networks**, then select **Testnets**.
 
-You can request tesnet funds from the [Terra Testnet Faucet](https://faucet.terra.money/).
+You can request testnet funds from the [Terra Testnet Faucet](https://faucet.terra.money/).
 
 To transfer LUNA, you will need to supply a message containing the sender address, recipient address, and send amount (in this case 1 LUNA), as well as fee parameters. Once the message is constructed, the `post` method on `connectedWallet` broadcasts it to the network.
 
@@ -252,7 +254,7 @@ Wallet Provider supplies useful error types. This example will handle the `UserD
 
 1. Create a file in your `Components` folder named `Tx.js`.
 
-2. Populate `Tx.js` with the following. To make this example interchain retrieve the `baseAsset` from the network object.
+2. Populate `Tx.js` with the following. To make this example interchain retreive the `baseAsset` from the network object.
 
    ```js
    import { MsgSend } from '@terra-money/feather.js';
@@ -340,4 +342,4 @@ Wallet Provider supplies useful error types. This example will handle the `UserD
    export default App;
    ```
 
-4. Refresh your browser. You'll see a new **Send** button. Click the button to send your transaction. Your Station extension will ask you to confirm the transaction.
+4. After refreshing your browser, you'll see a new **Send** button. Click the button to send your transaction. Your Station extension will ask you to confirm the transaction.
