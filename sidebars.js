@@ -127,6 +127,14 @@ const sidebars = {
                 },
               ],
             },
+                        {
+              type: 'category',
+              label: 'Wallet Kit',
+              collapsed: true,
+              items: [
+                'develop/wallet-kit/wallet-kit-tutorial',
+              ],
+            },
             {
               type: 'category',
               label: 'Wallet Provider',
