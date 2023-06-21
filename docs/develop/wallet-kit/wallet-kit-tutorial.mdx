@@ -187,7 +187,7 @@ Be aware that you will not see any tokens if your wallet is empty.
    export default function Query() {
      const lcd = useLcdClient(); // LCD stands for Light Client Daemon
      const connected = useConnectedWallet();
-     const [balance, setBalance] = useStat('');
+     const [balance, setBalance] = useState('');
      const chainID = 'phoenix-1'; // or any other mainnet or testnet chainID supported by station (e.g. osmosis-1)
 
      useEffect(() => {
