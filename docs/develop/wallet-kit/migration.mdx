@@ -2,7 +2,7 @@ import Admonition from '@theme/Admonition';
 
 # Migration Guide
 
-This guide will cover how to set up a React app, integrate Wallet Kit, check the balance of the connected account, and call a token swap. If you want to integrate Station into an existing React app, jump to the [Wrap your app in `WalletProvider` section](#2-wrap-your-app-in-walletprovider).
+This guide will cover how to set migrate your existing codebase to use Wallet Kit instead of the now deprecated Wallet Provider.
 
 ## Prerequisites
 
@@ -24,7 +24,7 @@ This guide will cover how to set up a React app, integrate Wallet Kit, check the
 
 ## 1. Dependency Setup
 
-1. To get started, install and uninstall the pre-exsisting Station wallet packages.
+1. To get started, and uninstall deprecated Station wallet packages.
 
    ```sh
       npm uninstall @terra-money/use-wallet @terra-money/wallet-controller @terra-money/wallet-provider
@@ -36,9 +36,9 @@ This guide will cover how to set up a React app, integrate Wallet Kit, check the
       npm install @terra-money/wallet-kit @terra-money/terra-station-mobile
    ```
 
-## 2. Change `WalletProvider` setup
+## 2. `WalletProvider` setup changes
 
-1. Navigate to your `index.js` in a code editor and change the following in your `WalletProvider` component. Instead of calling `getChainOptions` use `getInitalConfig` and pass in the `defaultNetworks` as a prop. Its reccomended to also add Station Mobile as shown in the below code sample.
+1. Navigate to your `index.js` in a code editor and change the following in your `WalletProvider` component. Instead of calling `getChainOptions` use `getInitalConfig` and pass in the `defaultNetworks` as a prop. Its reccomended to also add Station Mobile as shown in the code sample below.
 
    ```js
    import ReactDOM from 'react-dom';
@@ -59,7 +59,7 @@ This guide will cover how to set up a React app, integrate Wallet Kit, check the
    });
    ```
 
-## 3. Code tweaks to comply with Wallet Kit API
+## 3. Code changes to comply with Wallet Kit API
 
 1. Fix package imports. Import key Station wallet utility from @terra-money/wallet-kit instead of prior packages.
 
