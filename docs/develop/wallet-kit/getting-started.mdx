@@ -2,10 +2,6 @@ import Admonition from '@theme/Admonition';
 
 # Get Started with Wallet Kit
 
-<Admonition type="tip" icon="💡" title="Mobile Support">
-Wallet Kit does not support mobile. For mobile, use[ Wallet Provider](../wallet-provider/wallet-provider-tutorial.mdx). Mobile support will be coming soon. 
-</Admonition>
-
 [Wallet Kit](https://github.com/terra-money/wallet-kit) makes it easy to build Station (browser extension and mobile) functionality into your React application. It contains custom hooks that drastically simplify common tasks like connecting a wallet and triggering transactions.
 
 This guide will cover how to set up a React app, integrate Wallet Kit, check the balance of the connected account, and call a token swap. If you want to integrate Station into an existing React app, jump to the [Wrap your app in `WalletProvider` section](#2-wrap-your-app-in-walletprovider).
@@ -24,9 +20,7 @@ This guide will cover how to set up a React app, integrate Wallet Kit, check the
       Most users will need to specify Node version 16 before continuing. You can
       manage node versions [with NVM](https://github.com/nvm-sh/nvm).{' '}
     </summary>
-    ```sh 
-    nvm install 16 nvm use 16
-    ```
+    ```sh nvm install 16 nvm use 16 ```
   </details>
 </Admonition>
 
@@ -66,6 +60,45 @@ Next, you'll wrap your `App` with `<WalletProvider>` to give all your components
      );
    });
    ```
+
+<Admonition type="info" title="Station Mobile support">
+<details>
+<summary> How to add support Station Mobile?</summary>
+<p>
+
+To support Station Mobile:
+
+1. Install the `@terra-money/terra-station-mobile` package:
+
+   ```sh
+   npm install @terra-money/terra-station-mobile
+   ```
+
+2. Add `TerraStationMobileWallet` to the `extraWallets` array prop in the `WalletProvider` component.
+
+   ```js
+   import ReactDOM from 'react-dom';
+   import './index.css';
+   import App from './App';
+   import TerraStationMobileWallet from '@terra-money/terra-station-mobile';
+   import { getInitialConfig, WalletProvider } from '@terra-money/wallet-kit';
+
+   getInitialConfig().then((defaultNetworks) => {
+     ReactDOM.render(
+       <WalletProvider
+         extraWallets={[new TerraStationMobileWallet()]}
+         defaultNetworks={defaultNetworks}
+       >
+         <App />
+       </WalletProvider>,
+       document.getElementById('root'),
+     );
+   });
+   ```
+
+</p>
+</details>
+</Admonition>
 
 2. Start the application to make sure it works:
 
