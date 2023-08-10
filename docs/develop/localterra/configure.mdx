@@ -7,6 +7,18 @@ Out of the box, LocalTerra comes with several preconfigured settings such as:
 - Ports defined for RPC (26657), LCD (1317), and FCD (3060).
 - Standard [accounts](accounts.mdx).
 
+## Access config.toml
+
+To access the config file, run the following. 
+
+```sh Terminal
+docker compose run -it terrad vi config/config.toml
+
+# or use the command line options below
+
+docker compose run -it terrad terrad start --help
+```
+
 ## Modify node configuration
 
 You can modify the node configuration of your validator in the `config/config.toml` and `config/app.toml` files.
