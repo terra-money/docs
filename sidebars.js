@@ -132,7 +132,8 @@ const sidebars = {
               label: 'Wallet Kit',
               collapsed: true,
               items: [
-                'develop/wallet-kit/wallet-kit-tutorial',
+                'develop/wallet-kit/getting-started',
+                'develop/wallet-kit/migration',
               ],
             },
             {

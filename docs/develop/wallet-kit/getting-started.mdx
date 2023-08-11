@@ -2,13 +2,9 @@ import Admonition from '@theme/Admonition';
 
 # Get Started with Wallet Kit
 
-<Admonition type="tip" icon="💡" title="Mobile Support">
-Wallet Kit does not support mobile. For mobile, use[ Wallet Provider](../wallet-provider/wallet-provider-tutorial.mdx). Mobile support will be coming soon. 
-</Admonition>
+[Wallet Kit](https://github.com/terra-money/wallet-kit) makes it easy to build Station functionality into your React application. It contains custom hooks that drastically simplify common tasks like connecting a wallet and triggering transactions for both Station mobile and the Station extension.
 
-[Wallet Kit](https://github.com/terra-money/wallet-kit) makes it easy to build Station (browser extension and mobile) functionality into your React application. It contains custom hooks that drastically simplify common tasks like connecting a wallet and triggering transactions.
-
-This guide will cover how to set up a React app, integrate Wallet Kit, check the balance of the connected account, and call a token swap. If you want to integrate Station into an existing React app, jump to the [Wrap your app in `WalletProvider` section](#2-wrap-your-app-in-walletprovider).
+This guide covers how to set up a React app, integrate Wallet Kit, check the balance of the connected account, and call a token swap. If you want to integrate Station into an existing React app, jump to the [Wrap your app in `WalletProvider` section](#2-wrap-your-app-in-walletprovider).
 
 ## Prerequisites
 
@@ -19,13 +15,10 @@ This guide will cover how to set up a React app, integrate Wallet Kit, check the
 
 <Admonition type="tip" icon="💡" title="Node version 16">
   <details>
-    <summary>
-      {' '}
-      Most users will need to specify Node version 16 before continuing. You can
-      manage node versions [with NVM](https://github.com/nvm-sh/nvm).{' '}
-    </summary>
-    ```sh 
-    nvm install 16 nvm use 16
+    <summary> Most users will need to specify Node version 16 before continuing. You can
+      manage node versions [with NVM](https://github.com/nvm-sh/nvm). </summary>
+    ```sh
+    nvm install 16 nvm use 16 
     ```
   </details>
 </Admonition>
@@ -49,7 +42,7 @@ This guide will cover how to set up a React app, integrate Wallet Kit, check the
 
 Next, you'll wrap your `App` with `<WalletProvider>` to give all your components access to useful data, hooks, and utilities. You'll also need to pass in information about Terra networks, such as the `mainnet` or `chainId`, into the provider via `getInitialConfig`.
 
-1. Navigate to your `Index.js` in a code editor and replace the code with the following:
+Navigate to your `Index.js` in a code editor and replace the code with the following:
 
    ```js
    import ReactDOM from 'react-dom';
@@ -67,7 +60,43 @@ Next, you'll wrap your `App` with `<WalletProvider>` to give all your components
    });
    ```
 
-2. Start the application to make sure it works:
+## 3. Add support for station Mobile
+
+To support Station Mobile:
+
+1. Install the `@terra-money/terra-station-mobile` package:
+
+   ```sh
+   npm install @terra-money/terra-station-mobile
+   ```
+
+2. Add `TerraStationMobileWallet` to the `extraWallets` array prop in the `WalletProvider` component.
+
+   ```js
+   import ReactDOM from 'react-dom';
+   import './index.css';
+   import App from './App';
+   import TerraStationMobileWallet from '@terra-money/terra-station-mobile';
+   import { getInitialConfig, WalletProvider } from '@terra-money/wallet-kit';
+
+   getInitialConfig().then((defaultNetworks) => {
+     ReactDOM.render(
+       <WalletProvider
+         extraWallets={[new TerraStationMobileWallet()]}
+         defaultNetworks={defaultNetworks}
+       >
+         <App />
+       </WalletProvider>,
+       document.getElementById('root'),
+     );
+   });
+   ```
+
+
+
+## 4. Start the application
+
+Start the application to make sure it works:
 
    ```sh
    npm start
@@ -107,7 +136,7 @@ To solve these errors, can downgrade `react-scripts`: `4.0.3` in your `package.j
 
 3.  Create a new directory called `components` in the `source` directory. This directory will house components to trigger different actions from our connected wallet.
 
-## 3. Put `useWallet` to work
+## 5. Put `useWallet` to work
 
 Now that `App.js` has inherited the context of `WalletProvider`, you can start putting your imports to work. You'll use the multi-purpose `useWallet` and `useConnectedWallet` hooks to connect your Station extension to your web browser.
 
@@ -174,7 +203,7 @@ The `status`, `network`, and `wallets` properties in your browser provide useful
 
 You should be able to see these changes in real-time.
 
-## 4. Querying a wallet balance
+## 6. Query a wallet balance
 
 It's common for an app to show the connected user's LUNA balance. To achieve this you'll need two hooks. The first is `useLcdClient`. An `LCDClient` is essentially a REST-based adapter for the Terra blockchain. You can use it to query an account balance. The second is `useConnectedWallet`, which tells you if a wallet is connected and, if so, basic information about that wallet such as its address.
 
@@ -236,9 +265,9 @@ Be aware that you will not see any tokens if your wallet is empty.
 
 4. Refresh your browser. Your wallet balance will appear in micro-denominations. Multiply by $10^6$ for an accurate balance.
 
-## 5. Sending a transaction
+## 7. Send a transaction
 
-You can also create and send transactions to the Terra network while using Wallet Kit. You can use [Feather.js](../feather-js/README.mdx) to generate a sample transaction:
+You can also create and send transactions to the Terra network while using Wallet Kit. You can use [Feather.js](../feather-js/getting-started.mdx) to generate a sample transaction:
 
 ```sh
 npm install @terra-money/feather.js
