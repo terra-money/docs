@@ -2,7 +2,7 @@ import Admonition from '@theme/Admonition';
 
 # Migration Guide
 
-This guide will cover how to set migrate your existing codebase to use Wallet Kit instead of the now deprecated Wallet Provider.
+This guide will cover how to migrate your existing codebase to use Wallet Kit instead of the now deprecated Wallet Provider.
 
 ## Prerequisites
 
@@ -13,61 +13,64 @@ This guide will cover how to set migrate your existing codebase to use Wallet Ki
 
 <Admonition type="tip" icon="💡" title="Node version 16">
   <details>
-    <summary>
-      {' '}
-      Most users will need to specify Node version 16 before continuing. You can
-      manage node versions [with NVM](https://github.com/nvm-sh/nvm).{' '}
-    </summary>
-    ```sh nvm install 16 nvm use 16 ```
+    <summary> Most users will need to specify Node version 16 before continuing. You can
+      manage node versions [with NVM](https://github.com/nvm-sh/nvm). </summary>
+
+    ```sh
+    nvm install 16 nvm use 16
+    ```
+
   </details>
 </Admonition>
 
-## 1. Dependency Setup
+## 1. Set up dependencies
 
-1. To get started, and uninstall deprecated Station wallet packages.
+1. To get started, uninstall the deprecated Station wallet packages.
 
-   ```sh
-      npm uninstall @terra-money/use-wallet @terra-money/wallet-controller @terra-money/wallet-provider
-   ```
+```sh
+npm uninstall @terra-money/use-wallet @terra-money/wallet-controller @terra-money/wallet-provider
+```
 
-2. Then, install the `@terra-money/wallet-kit` package:
+2. Install the `@terra-money/wallet-kit` package.
 
-   ```sh
-      npm install @terra-money/wallet-kit @terra-money/terra-station-mobile
-   ```
+```sh
+npm install @terra-money/wallet-kit @terra-money/terra-station-mobile
+```
 
-## 2. `WalletProvider` setup changes
+## 2. Change the `WalletProvider` setup
 
-1. Navigate to your `index.js` in a code editor and change the following in your `WalletProvider` component. Instead of calling `getChainOptions` use `getInitalConfig` and pass in the `defaultNetworks` as a prop. Its reccomended to also add Station Mobile as shown in the code sample below.
+Navigate to `index.js` in a code editor and change the following in the `WalletProvider` component. 
 
-   ```js
-   import ReactDOM from 'react-dom';
-   import App from './App';
-   import TerraStationMobileWallet from '@terra-money/terra-station-mobile';
-   import { getInitialConfig, WalletProvider } from '@terra-money/wallet-kit';
+Instead of calling `getChainOptions`, use `getInitalConfig` and pass in the `defaultNetworks` as a prop. It is recommended to also add Station Mobile, as shown in the code sample below.
 
-   getInitialConfig().then((defaultNetworks) => {
-     ReactDOM.render(
-       <WalletProvider
-         extraWallets={[new TerraStationMobileWallet()]}
-         defaultNetworks={defaultNetworks}
-       >
-         <App />
-       </WalletProvider>,
-       document.getElementById('root'),
-     );
-   });
-   ```
+```js
+import ReactDOM from 'react-dom';
+import App from './App';
+import TerraStationMobileWallet from '@terra-money/terra-station-mobile';
+import { getInitialConfig, WalletProvider } from '@terra-money/wallet-kit';
 
-## 3. Code changes to comply with Wallet Kit API
+getInitialConfig().then((defaultNetworks) => {
+  ReactDOM.render(
+   <WalletProvider
+     extraWallets={[new TerraStationMobileWallet()]}
+     defaultNetworks={defaultNetworks}
+    >
+      <App />
+    </WalletProvider>,
+    document.getElementById('root'),
+ );
+});
+```
 
-1. Fix package imports. Import key Station wallet utility from @terra-money/wallet-kit instead of prior packages.
+## 3.  Comply with the Wallet Kit API
+
+1. Fix the package imports. Import the Station Wallet utility from _`@terra-money/wallet-kit`_ instead of prior packages.
 
 ```js
 import { useWallet, useConnectedWallet } from '@terra-money/wallet-kit';
 ```
 
-2. Fix minor code changes. For example, `WalletStatus` enum now has properties `CONNECTED` instead of `WALLET_CONNECTED`. And `availableConnections` and `availableInstallations` have been consolidated into `availableWallets`.
+2. Fix minor code changes. The `WalletStatus` enum now has the `CONNECTED` property instead of `WALLET_CONNECTED`. `availableConnections` and `availableInstallations` have been consolidated into `availableWallets`.
 
 ```js
 const { connect, availableWallets } = useWallet();
@@ -89,3 +92,4 @@ const list = [
     })),
 ];
 ```
+Congratulations, your migration to Wallet Kit is now complete!
