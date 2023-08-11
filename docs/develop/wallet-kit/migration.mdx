@@ -72,6 +72,8 @@ import { useWallet, useConnectedWallet } from '@terra-money/wallet-kit';
 
 2. Fix minor code changes. The `WalletStatus` enum now has the `CONNECTED` property instead of `WALLET_CONNECTED`. `availableConnections` and `availableInstallations` have been consolidated into `availableWallets`.
 
+You can refer to the [WalletKit README](https://github.com/terra-money/wallet-kit#key-differences-with-wallet-provider) for more information on the WalletKit API. 
+
 ```js
 const { connect, availableWallets } = useWallet();
 
