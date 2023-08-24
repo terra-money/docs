@@ -10,7 +10,7 @@ module.exports = async function config() {
   return {
     title: 'Terra Docs',
     tagline: 'The official docs for the Terra blockchain',
-    url: 'https://docs.terra.money',
+    url: 'https://docs.station.money',
     baseUrl: '/',
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'warn',
@@ -29,7 +29,7 @@ module.exports = async function config() {
       {
         siteId: "1",
         matomoUrl: "https://terradocs.matomo.cloud/",
-        siteUrl: "https://docs.terra.money",
+        siteUrl: "https://docs.station.money",
       },
     ],
   ],

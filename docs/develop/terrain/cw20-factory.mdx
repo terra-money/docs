@@ -146,7 +146,7 @@ To modify the _`cw20_factory_token`_ contract, follow the procedure below.
 First, add the [CW20 Base](https://github.com/CosmWasm/cw-plus/tree/main/contracts/cw20-base), which implements the base CW20 token functionalities. This allows for:
 
 - the smart contract to be easily deployed to LocalTerra.
-- extended functionality using the [migration implementation](https://docs.terra.money/docs/develop/dapp/quick-start/contract-migration.html).
+- extended functionality using the [migration implementation](https://docs.station.money/docs/develop/dapp/quick-start/contract-migration.html).
 
 To add the CW20 Base to the _`cw20_factory_token`_ contract, do the following.
 
@@ -594,11 +594,11 @@ use serde::{Deserialize, Serialize};
 #[derive(Serialize, Deserialize, Clone, Debug, PartialEq, JsonSchema)]
 pub struct InstantiateMsg {
     /* Denomination of the stable asset
-    https://docs.terra.money/docs/develop/module-specifications/spec-market.html#market */
+    https://docs.station.money/docs/develop/module-specifications/spec-market.html#market */
     pub stable_denom: String,
 
     /* Id of the contract uploaded for the first time to the chain
-    https://docs.terra.money/docs/develop/module-specifications/spec-wasm.html#code-id */
+    https://docs.station.money/docs/develop/module-specifications/spec-wasm.html#code-id */
     pub token_contract_code_id: u64,
 }
 
@@ -664,12 +664,12 @@ use cw_storage_plus::Item;
 #[derive(Serialize, Deserialize, Clone, Debug, PartialEq, JsonSchema)]
 pub struct Config {
     /* Denomination of the stable asset
-    https://docs.terra.money/docs/develop/module-specifications/spec-market.html#market */
+    https://docs.station.money/docs/develop/module-specifications/spec-market.html#market */
     pub stable_denom: String,
 
     /* Id of the contract uploaded to the chain used to instantiate
     the different tokens
-    https://docs.terra.money/docs/develop/module-specifications/spec-wasm.html#code-id */
+    https://docs.station.money/docs/develop/module-specifications/spec-wasm.html#code-id */
     pub token_contract_code_id: u64,
 }
 
@@ -1042,7 +1042,7 @@ fn query_minted_tokens(deps: Deps) -> StdResult<MintedTokens> {
 
 /* In case you want to upgrade this contract you can find information about
 how to migrate the contract in the following link:
-https://docs.terra.money/docs/develop/dapp/quick-start/contract-migration.html*/
+https://docs.station.money/docs/develop/dapp/quick-start/contract-migration.html*/
 #[cfg_attr(not(feature = "library"), entry_point)]
 pub fn migrate(_deps: DepsMut, _env: Env, _msg: MigrateMsg) -> StdResult<Response> {
     Ok(Response::default())

@@ -1,7 +1,7 @@
 # Terra Docs
 
 <div align="center">
-  <a href="https://docs.terra.money/">
+  <a href="https://docs.station.money/">
     <img src="./static/img/docs_logo.svg" width=500>
   </a>
 </div>
