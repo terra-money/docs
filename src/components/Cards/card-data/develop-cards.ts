@@ -37,7 +37,7 @@ const developCards: CardProps[] = [
     summary: 'Run a local Terra blockchain in Docker.'
   },
   {
-    href: 'https://faucet.terra.money/',
+    href: 'https://faucet.station.money/',
     lightSVG: '/img/icons/Faucet.svg',
     darkSVG: '/img/icons/dark/Faucet.svg',
     header: 'Terra Testnet Faucet',

@@ -23,7 +23,7 @@ const terraStationCards: CardProps[] = [
     summary: 'Create and manage a wallet.',
   },
   {
-    href: 'https://station.terra.money/',
+    href: 'https://station.station.money/',
     lightSVG: '/img/icons/Terrad.svg',
     darkSVG: '/img/icons/dark/Terrad.svg',
     header: 'Station WebApp',

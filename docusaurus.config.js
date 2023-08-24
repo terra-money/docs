@@ -110,9 +110,9 @@ module.exports = async function config() {
           },
           items: [
             {
-              href: 'https://terra.money', //front-end URL
+              href: 'https://station.money', //front-end URL
               position: 'right',
-              label: 'terra.money',
+              label: 'station.money',
               className: 'header-terra-link',
               'aria-label': 'Terra Money',
             },
