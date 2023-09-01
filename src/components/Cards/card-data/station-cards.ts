@@ -1,12 +1,12 @@
 import { CardProps } from '../Card';
 
-const terraStationCards: CardProps[] = [
+const stationCards: CardProps[] = [
   {
     href: '/learn/station/download/station-desktop.html',
     lightSVG: '/img/icons/station/station.svg',
     darkSVG: '/img/icons/dark/station.svg',
     header: 'Download Station',
-    summary: "Download Station, Terra's official wallet.",
+    summary: "Download Station wallet.",
   },
   {
     href: '/learn/station/migration',
@@ -61,4 +61,4 @@ const terraStationCards: CardProps[] = [
   },
 ];
 
-export default terraStationCards;
+export default stationCards;
