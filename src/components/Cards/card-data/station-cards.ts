@@ -2,7 +2,7 @@ import { CardProps } from '../Card';
 
 const stationCards: CardProps[] = [
   {
-    href: '/learn/station/download/station-desktop.html',
+    href: '/learn/station/download/station-desktop',
     lightSVG: '/img/icons/station/station.svg',
     darkSVG: '/img/icons/dark/station.svg',
     header: 'Download Station',
