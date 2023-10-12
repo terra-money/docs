@@ -8,6 +8,12 @@
 
 ---
 
+Welcome to the official documentation for the Terra blockchain. The Terra Docs are an ever-changing compendium of guides and reference material for learning about, developing on, and running the Terra blockchain. 
+
+To contribute to this documentation, please read the [Code of Conduct](./DOCS_CODE_OF_CONDUCT.md) and the [Terra Docs Style Guide](./DOCS_STYLE_GUIDE.mdx) before opening a pull request. 
+
+The Terra Docs represent years of hard work and upkeep to create industry-leading documentation. Many thanks to all the contributors of this repository. 
+
 ## Setup
 
 ### Installation
@@ -110,3 +116,9 @@ hidden content
 this is a comment in mdx
 */}
 ```
+
+## License
+
+This repository is licensed under the Apache license. See [LICENSE](./LICENSE) for full disclosure.
+
+© 2023 Terraform Labs, PTE
