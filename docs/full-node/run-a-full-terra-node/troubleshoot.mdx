@@ -18,7 +18,7 @@ terrad tendermint unsafe-reset-all
 
 Running this command successfully will produce the following log:
 
-```
+```sh Response
 [ INF ] Removed existing address book file=/home/user/.terra/config/addrbook.json
 [ INF ] Removed all blockchain history dir=/home/user/.terra/data
 [ INF ] Reset private validator file to genesis state keyFile=/home/user/.terra/config/priv_validator_key.json stateFile=/home/user/.terra/data/priv_validator_state.json
@@ -36,7 +36,7 @@ To change the genesis version, delete `~/.terra/config/genesis.json`.
 
 You can recreate a genesis version via the following steps:
 
-```bash
+```bash Terminal
  terrad add-genesis-account $(terrad keys show <account-name> -a) 100000000uluna,1000usd
  terrad gentx <account-name> 10000000uluna --chain-id=<network-name>
  terrad collect-gentxs
