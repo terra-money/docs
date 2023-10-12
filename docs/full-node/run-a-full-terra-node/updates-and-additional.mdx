@@ -20,7 +20,7 @@ Make sure to create a backup of both of these files and then proceed to the next
 
 Remove the outdated files and reset the data:
 
-```bash
+```bash Terminal
 rm ~/.terra/config/genesis.json
 rm ~/.terra/config/addrbook.json
 terrad unsafe-reset-all
@@ -39,7 +39,7 @@ Make sure that every node has a unique `priv_validator.json`. Do not copy the `p
 
 Now it is time to upgrade the software. Go to the project directory and run:
 
-```bash
+```bash Terminal
 git checkout master && git pull
 make
 ```
@@ -60,19 +60,19 @@ Terra can export the entire application state to a JSON file. You can use this f
 
 Export state:
 
-```bash
+```bash Terminal
 terrad export > [filename].json
 ```
 
 You can also export a state from a particular height. The following command will export the state after the block height you specify:
 
-```bash
+```bash Terminal
 terrad export --height [height] > [filename].json
 ```
 
 If you plan to start a new network from the exported state, export with the `--for-zero-height` flag:
 
-```bash
+```bash Terminal
 terrad export --height [height] --for-zero-height > [filename].json
 ```
 
@@ -94,19 +94,19 @@ Jemalloc provides better memory management than linux out of the box. You can le
 
 To install jemalloc, run the following command:
 
-```
+```sh Terminal
 sudo apt-get install -y libjemalloc-dev
 ```
 
 After installation, edit your `terrad.service` to match the following configuration.
 
-```
+```sh Terminal
 
 sudo vim /etc/systemd/system/terrad.service
 
 ```
 
-```
+```sh 
 
 [Unit]
 
@@ -170,6 +170,6 @@ persistent_peers = "id100000000000000000000000000000000@1.2.3.4:26656,id20000000
 
 ### Rosetta
 
-Integrate Terra with Coinbase via the Rosetta API. Rosetta is an open-source API that organizes blockchain data into a standardized format, making it easy for developers to build cross-chain applications. Instead of creating specific code for each chain, Rosetta allows different blockchains to integrate into any exchange that uses the Rosetta API.
+Rosetta is an open-source API that organizes blockchain data into a standardized format, making it easy for developers to build cross-chain applications. Instead of creating specific code for each chain, Rosetta allows different blockchains to integrate into any exchange that uses the Rosetta API.
 
 For more information, visit the [Rosetta docs site](https://www.rosetta-api.org/docs/welcome.html).
