@@ -1,7 +1,51 @@
 import Admonition from '@theme/Admonition';
 
-# Terra Core v2.3.1 upgrade
+# Terra Core upgrade notes
 
+## Current version - v2.5.2
+
+The Terra blockchain was upgraded to Terra Core v2.5.2 on October 18, 2023 at blockheight `7316000`. Refer to the [governance proposal](https://commonwealth.im/terra/discussion/13551-phoenix-software-upgrade-proposal-v25) for more information on the upgrade.  
+
+### Breaking changes
+
+- This upgrade will require the use of IBC relayer [v2.4.0](https://github.com/cosmos/relayer/releases/tag/v2.4.0) or later, or any other relayer compatible with IBC-Go v7
+- Update [@terra-money/feather.js](https://www.npmjs.com/package/@terra-money/feather.js/v/1.1.1-beta.1) to use the latest protobuf additions
+- Update [terra-proto-rs](https://crates.io/crates/terra-proto-rs/4.0.0) to use the latest protobuf additions and extend to implement all message types supported natively by Terra
+- [Terra-sdk python](https://pypi.org/project/terra-sdk): library upgraded to be compatible with Terra Core v2.5. TFL has discontinued the maintenance for this library and has entered it into the public domain under an MIT license
+
+### Core Dependency Upgrades
+
+- Alliance: v0.1.2 => [v0.3.2](https://github.com/terra-money/alliance/releases/tag/v0.3.2)
+- CosmosSDK: v0.46.13-terra.3 => [v0.47.5-terra.2](https://github.com/terra-money/cosmos-sdk/releases/tag/v0.47.5-terra.2)
+- CometBFT: v0.34.27-terra.rc.1 => [v0.37.2](https://github.com/cometbft/cometbft/releases/tag/v0.37.2)
+- CosmWasm: v0.30.0-sdk469.5 => [v0.41.0](https://github.com/CosmWasm/wasmd/releases/tag/v0.41.0)
+- Wasmvm: v1.1.2 => [v1.3.0](https://github.com/CosmWasm/wasmvm/releases/tag/v1.3.0)
+- IBC-Go: v6.1.1 => [v7.3.0](https://github.com/cosmos/ibc-go/releases/tag/v7.3.0)
+- Packet Forward Middleware: v6.0.2 => [v7.0.0](https://github.com/cosmos/ibc-apps/releases/tag/middleware/packet-forward-middleware/v7.0.0)
+- IBC hooks: (Terra Core) v2.4 => [v7.0.0](https://github.com/cosmos/ibc-apps)
+- TokenFactory: v0.30.0-sdk469.5 into Terra Core v2.5 (with smart contract hooks. [More info](https://github.com/terra-money/core/blob/release/v2.5/x/tokenfactory/README.md))
+
+### Bug Fixes
+
+- Fixed an issue with update-client terrad IBC-command (Reported by Synergy Nodes)
+- Fixed: Interchain controller params call returns "UnmarshalJSON cannot decode empty bytes: panic” (Reported by Bretheren on Github)
+- Fixed a vulnerability regarding Packet Forward Middleware interacting with IBC hooks (Reported by SCV)
+- Migrated atlantic-2 IBC channels to increase the unbonding period from 2 days to 5 days (Reported by the Astroport team)
+
+Thank you to the community members for reporting these bugs!
+
+### Fork Updates
+
+Finally, we updated some forks maintained by TFL and partners to use the officially developed libraries. Using officially supported libraries allows Terra to get upstream updates faster and reduces overall maintenance effort on the Core team.
+
+- github.com/terra-money/tendermint => github.com/cometbft/cometbft
+- github.com/terra-money/wasmd => github.com/CosmWasm/wasmd
+- github.com/terra-money/core/v2/x/ibc-hooks => github.com/cosmos/ibc-apps/modules/ibc-hooks
+- github.com/strangelove-ventures/packet-forward-middleware => github.com/cosmos/ibc-apps/middleware/packet-forward-middleware/v7
+
+## Previous upgrades
+
+###  v2.3.1
 [Terra Core v2.3.1](https://github.com/terra-money/core/releases/tag/v2.3.1) is a major upgrade for the Terra blockchain. The main feature of this upgrade is the addition of [the Alliance module](https://alliance.terra.money/), enabling Terra to form economic alliances with other chains. Refer to the specifications below for a full list of changes. 
 
 <Admonition type="tip" icon="🛠" title="Upgrade guide">
@@ -10,7 +54,7 @@ Developers should refer to the [Core upgrade guide](./upgrade.mdx) for instructi
 
 </Admonition>
 
-## 1. Cosmos-sdk v0.46.10 upgrade
+### 1. Cosmos-sdk v0.46.10 upgrade
 
 <details> 
 <summary> Details </summary>
@@ -75,7 +119,7 @@ Full changelog:
 </p>
 </details>
 
-## 2. Update Wasm
+### 2. Update Wasm
 
 <details> 
 <summary> Details </summary>
@@ -87,7 +131,7 @@ Wasm can now use Wasmd. Wasmd is a Cosmos zone implementation with WebAssembly (
 </p>
 </details>
 
-## 3. Update `ibc` and `packetforwardingmiddleware` from v3 to v6
+### 3. Update `ibc` and `packetforwardingmiddleware` from v3 to v6
 
 <details> 
 <summary> Details </summary>
@@ -120,7 +164,7 @@ Wasm can now use Wasmd. Wasmd is a Cosmos zone implementation with WebAssembly (
 </p>
 </details>
 
-## 4. Add `ibc-hooks` as a custom module
+### 4. Add `ibc-hooks` as a custom module
 
 <details> 
 <summary> Details </summary>
@@ -135,7 +179,7 @@ The CosmWasm `MsgExecuteContract` contains sender, contract, msg, and funds fiel
 </p>
 </details>
 
-## 5. Add the `token-factory` module
+### 5. Add the `token-factory` module
 
 <details> 
 <summary> Details </summary>
@@ -150,7 +194,7 @@ Upon creating a `denom`, the creator is granted "admin" privileges, empowering t
 </p>
 </details>
 
-## 6. Enable the `ica-controller` module
+### 6. Enable the `ica-controller` module
 
 <details> 
 <summary> Details </summary>
@@ -165,7 +209,7 @@ The system involves a Host Chain, where the Interchain Account is registered, an
 </p>
 </details>
 
-## 7. 🤝 Add the `alliance` module 
+### 7. 🤝 Add the `alliance` module 
 
 <details> 
 <summary> Details </summary>
@@ -186,7 +230,7 @@ There are several use cases for Alliance, including:
 </p>
 </details>
 
-## Resources
+### Resources
 
 - [The Terra Core upgrade guide](./upgrade.mdx)
 - [Terra Core v2.3.1 release](https://github.com/terra-money/core/releases/tag/v2.3.1)
