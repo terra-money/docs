@@ -47,6 +47,7 @@ const sidebars = {
         },
         'learn/fees',
         'learn/glossary',
+        'learn/vesting-contract',
         'learn/assets',
       ],
     },
