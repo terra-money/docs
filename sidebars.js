@@ -169,6 +169,7 @@ const sidebars = {
           collapsed: true,
           items: [
             'develop/guides/initial',
+            'develop/guides/register-feeshare',
             'develop/guides/sign-with-multisig',
             'develop/guides/start-lcd',
             'develop/vesting',
