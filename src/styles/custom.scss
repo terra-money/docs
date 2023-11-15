@@ -84,10 +84,8 @@
 
 .ch-editor-frame {
 
-height: fit-content !important;    /* If removed, height is set to largest code block */
-
-max-height: 80vh !important;
-}
+  max-height: 80vh !important;
+  }
 
 .ch-code-scroll-parent {
  min-height: 100px;
