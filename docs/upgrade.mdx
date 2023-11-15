@@ -3,18 +3,23 @@ hide_table_of_contents: true
 ---
 # Terra Core upgrade guides
 
-## Current version - v2.5.2
+## Current version - v2.6.1
+
+On November 10th, 2023, a core upgrade proposal[ was passed](https://station.money/proposal/phoenix-1/4792) through governance. On November 15th, 2023, the Terra Core was upgraded to [v2.6.1](https://github.com/terra-money/core/releases/tag/v2.6.1)  at blockheight 7722000. 
+
+## Previous Upgrades
+
+### v2.5.2
 
 The Terra Core will upgrade at blockcheight `7316000`, as specified in the [Core Upgrade Governance Proposal](https://commonwealth.im/terra/discussion/13551-phoenix-software-upgrade-proposal-v25). After passing, the chain will halt at the specified height, and validators will need to update their nodes. Once updated, the chain will start again.
 
-## Previous Upgrades
 
 ### v2.3.1
 The Terra Core will be upgraded at blockcheight `4711800`, as specified in the [Core Upgrade Governance Proposal](https://station.terra.money/proposal/phoenix-1/4717). After passing, the chain will halt at the specified height, and validators will need to update their nodes. Once updated, the chain will start again. This process may take some time as this is a major upgrade. 
 
 Refer to the [Upgrade overview](./spec.mdx) for more information on Terra Core changes. 
 
-### For developers
+#### For developers
 
 There are two main action items for developers to prepare for the upgrade:
 
@@ -25,7 +30,7 @@ There are two main action items for developers to prepare for the upgrade:
 
 In addition, a new rust client has been added so that users can [directly interact with Cosmos SDK modules from a smart contract](https://github.com/terra-money/terra.proto). 
 
-### Endpoint changes
+#### Endpoint changes
 
 Developers will need to update the following endpoints to maintain compatibility after the upgrade. 
 
@@ -98,7 +103,7 @@ Developers will need to update the following endpoints to maintain compatibility
 | `/wasm/contract/{contractAddr}/history` | `/cosmwasm/wasm/v1/contract/{contractAddr}/history` |
 | `/ibc/client/v1/params` | `/ibc/core/client/v1/params` |
 
-### New endpoints
+#### New endpoints
 
 | Endpoint | Description |
 | --- | --- |
