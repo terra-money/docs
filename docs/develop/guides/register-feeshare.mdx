@@ -87,21 +87,10 @@ const contractAddr = "terra1eaxcahzxp0x8wqejqjlqaey53tp06l728qad6z395lyzgl026qkq
 
 </CH.Scrollycoding>
 
-### Register an Enterprise DAO
-
-To register an Enterprise DAO with the FeeShare module, you will need to use the DAO’s contract address on the DAO’s home page.
-
-Because the admin of an Enterprise DAO contract is the DAO itself, any address can be set as the withdrawal address.  This address could be the distributor address, treasury address, or any other address the DAO chooses.
-
-The following example shows a stargate message that can be inserted into an execute proposal to register an Enterprise DAO contract. Note that the payload, including the contract address, deployer address, and withdrawer address need to be encoded into a protobuf to create a stargate message.
-
-```js Example.json
-{“stargate”:{“type_url”:“/juno.feeshare.v1.MsgRegisterFeeShare”,“value”:“CkB0ZXJyYTF1M3o0MmZwY3R1aGg4bXJhbno0dGF0YWNxaHR5NmE4eWs3bDV3dmo3ZHNoc3V5dGNtczJxZGE0ZjV4EkB0ZXJyYTF1M3o0MmZwY3R1aGg4bXJhbno0dGF0YWNxaHR5NmE4eWs3bDV3dmo3ZHNoc3V5dGNtczJxZGE0ZjV4Gix0ZXJyYTF5ZnEyd3dzeHc3YXV4cDA4ZzBjY3ozdXlrdnNjMHM0d2txMHAzbQ==“}}
-```
-
 ## Register a new contract
 
 Use the following example to instantiate your contract and register with the FeeShare module. 
+
 <CH.Scrollycoding>
 
 ### Setup
