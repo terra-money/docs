@@ -1,0 +1,37 @@
+import Admonition from '@theme/Admonition';
+
+# FeeShare
+
+<Admonition type="info" icon="ℹ️">
+
+The FeeShare module is an open-source module created by the Juno network. This document is a stub and mainly covers Terra-specific notes on how it is used. Visit the [original documentation](https://docs.junonetwork.io/developer-guides/juno-modules/feeshare#registering-factory-contracts) for more information. 
+
+</Admonition>
+
+The FeeShare module enables contracts to share in the distribution of fees generated from contract transactions. Whenever a transaction occurs, a gas fee is incurred and distributed to validators via the [Distribution module](./spec-distribution.mdx). With FeeShare, a portion of this fee can be diverted back to an address specified by the contract the transaction originated from. In order to participate in fee sharing, contracts must be registered with the module. 
+
+## Governance parameters
+
+The following parameters can be adjusted by creating a [governance proposal](./spec-governance.mdx). 
+
+| Key                        | Type        | Default Value    |
+| :------------------------- | :---------- | :--------------- |
+| `EnableFeeShare`           | bool        | `true`           |
+| `DeveloperShares`          | sdk.Dec     | `50%`            |
+| `AllowedDenoms`            | []string{}  | `[]string(nil)`  |
+
+### `EnableFeeShare` 
+
+This parameter enables the module. When set to _`false`_, it will disable all feeshare capabilities. 
+
+### `DeveloperShares` 
+
+This parameter denotes the percentage of fees diverted back to a registered contract. When set at 50%, half of all fees generated will be sent to the withdraw address specified by the registered contract. 
+
+### `AllowedDenoms` 
+
+This parameter specifies which denominations will be diverted back to a registered contract. If empty, all denominations available as fees will be diverted.
+
+## Registering a contract
+
+To register a new or existing contract, follow the [FeeShare registration guide](../guides/register-feeshare.mdx). 
