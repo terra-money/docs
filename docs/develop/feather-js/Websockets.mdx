@@ -5,33 +5,31 @@
 Feather.js comes with `WebSocketClient`, which abstracts a subscription to Tendermint RPC's WebSocket endpoint. This requires access to a Terra node's RPC server, which may require privileged access as it exposes functions that can kill a node's operation. With LocalTerra, the WebSocket endpoint can be accessed at `ws://localhost:26657/websocket`.
 
 ```ts
-import { LocalTerra, WebSocketClient } from '@terra-money/feather.js';
-
-const wsclient = new WebSocketClient('ws://localhost:26657/websocket');
-
-const terra = new LocalTerra();
-
-let count = 0;
-wsclient.subscribe('NewBlock', {}, (_) => {
-  console.log(count);
-  count += 1;
-
-  if (count === 3) {
-    wsclient.destroy();
-  }
-});
-
-// send tracker
-wsclient.subscribe(
-  'Tx',
-  { 'message.action': '/cosmos.bank.v1beta1.MsgSend' },
-  (data) => {
-    console.log('Send occured!');
-    console.log(data.value);
-  },
-);
-
-wsclient.start();
+import { TendermintQuery, WebSocketClient } from '@terra-money/terra.js';
+ 
+  const wsclient = new WebSocketClient("ws://localhost:26657/websocket");
+  wsclient.start();
+  wsclient.on('connect', () => {
+    wsclient.subscribe('NewBlock', new TendermintQuery(), (data) => {
+      console.log(data.value);
+ 
+      // close after receiving one block.
+      wsclient.destroy();
+    });
+ 
+    wsclient.subscribe(
+      'Tx',
+      new TendermintQuery()
+        .exact('message.action', 'send')
+        .contains('message.sender', 'terra1...'),
+      (data) => {
+        console.log(data.value);
+ 
+        // close after receiving one send Tx
+        wsclient.destroy();
+      },
+    );
+  });
 ```
 
 ### Supported Events
