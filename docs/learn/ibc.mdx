@@ -1,0 +1,22 @@
+# Common IBC assets
+
+Below is a table of pools, addresses, source chains, and common bridge options for IBC assets on Terra. 
+
+
+
+| Pool               | Source Chain | Source Contract Address                    | Bridged via                                        | Denom Address | Terra Address                                                        |
+| ------------------ | ------------ | ------------------------------------------ | -------------------------------------------------- | ------------- | -------------------------------------------------------------------- |
+| WBTC (from Axelar) | Ethereum     | 0x2260fac5e5542a773aa44fbcfedf7c193bc2c599 | [Squid (Axelar)](https://app.squidrouter.com/)     | wbtc-satoshi  | ibc/05D299885B07905B6886F554B39346EA6761246076A1120B1950049B92B922DD |
+| USDC (From Axelar) | Ethereum     | 0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48 | [Squid (Axelar)](https://app.squidrouter.com/)     | uusdc         | ibc/B3504E092456BA618CC28AC671A71FB08C6CA0FD0BE7C8A5B5A3E2DD933CC9E4 |
+| wETH (From Axelar) | Ethereum     | N.A.                                       | [Satellite (Axelar)](https://satellite.money/)     | weth-wei      | ibc/BC8A77AFBD872FDC32A348D3FB10CC09277C266CFE52081DE341C7EC6752E674 |
+| MKR                | Ethereum     | 0x9f8f72aa9304c8b593d555f12ef6589cc3a579a2 | [Satellite (Axelar)](https://satellite.money/)     | mkr-wei       | ibc/EF21BC562B7EB4D22BBF467D011E3118B7E3AD6D095000A672A9FCECA5ABCF15 |
+| MATIC              | Polygon      | N.A.                                       | [Satellite (Axelar)](https://satellite.money/)     | wmatic-wei    | ibc/14E4FD1AB72DE9BF1D6725CBA18373C406CB9A7DA17955299F3F4DC5C6131A4E |
+| ARB                | Arbitrum     | 0x912ce59144191c1204e64559fe8253a0e49e6548 | [Satellite (Axelar)](https://satellite.money/)     | arb-wei       | ibc/0A31B4B46B4C5F10ED3EF4BFBD1453CE96A270D168FC672436ABCA2DB4CC1401 |
+| TON                | Ethereum     | 0x582d872a1b094fc48f5de31d3b73f2d9be47def1 | [Portal by Wormhole](https://www.portalbridge.com/#/transfer)           | N.A           | terra1vkf48nr8z84xkg6535qqx9pw0se9hjha9dallv2xpfngn776ksyq0gr7e2     |
+| SOL                | Solana       | N.A                                        | [Portal by Wormhole](https://www.portalbridge.com/#/transfer)           | N.A           | terra1ctelwayk6t2zu30a8v9kdg3u2gr0slpjdfny5pjp7m3tuquk32ysugyjdg     |
+| DOGE               | BSC          | 0xbA2aE424d960c26247Dd6c32edC70B295c744C43 | [Portal by Wormhole](https://www.portalbridge.com/#/transfer)           | N.A           | terra1z2cn5r7p7sezmq5ttwrutvqnczqa9244syd4w2uu2tvjarv68dqqlwx48v     |
+| BNB                | BSC          | N.A                                        | [Portal by Wormhole](https://www.portalbridge.com/#/transfer)           | N.A           | terra1xc7ynquupyfcn43sye5pfmnlzjcw2ck9keh0l2w2a4rhjnkp64uq4pr388     |
+
+## Bridging back to a source chain
+
+To bridge an asset back to its source chain, visit the bridge that was used to bring the asset to Terra listed in the table above. In the bridge ui, input Terra as the "From" chain. For the "To" chain, input the asset's source chain. 
