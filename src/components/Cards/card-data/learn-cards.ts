@@ -9,11 +9,11 @@ const learnCards: CardProps[] = [
     summary: 'Learn how Terra works.',
   },
   {
-    href: '/learn/station',
+    href: '/station',
     lightSVG: '/img/icons/station/station.svg',
     darkSVG: '/img/icons/dark/station.svg',
     header: 'Get started with Station',
-    summary: 'Create a wallet and stake Luna for rewards.',
+    summary: 'Download Station and create a wallet.',
   },
   {
     href: '/learn/protocol/#what-is-luna',

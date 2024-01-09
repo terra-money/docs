@@ -9,11 +9,11 @@ const homeCards: CardProps[] = [
     summary: 'Click here to learn how to build on Terra.',
   },
   {
-    href: '/learn/station.html',
+    href: '/station',
     lightSVG: '/img/icons/station/station.svg',
     darkSVG: '/img/icons/dark/station.svg',
     header: 'Get started with Station',
-    summary: 'Create a wallet and stake Luna for rewards.',
+    summary: 'Download Station and create a wallet.',
   },
   {
     href: '/develop/which-tools.html',
