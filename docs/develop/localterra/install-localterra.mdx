@@ -14,7 +14,7 @@ If you are using LocalTerra with Terrain, use the [Terrain with LocalTerra guide
 
 </Admonition>
 
-## Installation
+## Install LocalTerra
 
 1. Run the following command to clone the LocalTerra repository:
 
@@ -23,6 +23,12 @@ If you are using LocalTerra with Terrain, use the [Terrain with LocalTerra guide
    ```
 
 2. Make sure your Docker daemon is running in the background and [`docker-compose`](https://github.com/docker/compose) is installed.
+
+## Install the FCD
+
+1. To run the FCD with LocalTerra, clone the [FCD repo](https://github.com/terra-money/fcd) and follow the README.md instructions to run the FCD with LocalTerra. 
+
+2. After installing and running the [FCD repo](http://www.github.com/terra-money/fcd), it can be accessed at http://localhost:3060. 
 
 ## Using LocalTerra
 
@@ -37,7 +43,7 @@ Your environment now contains:
 
 - [Terrad](http://github.com/terra-money/core) RPC node running on `tcp://localhost:26657`
 - LCD running on http://localhost:1317
-- [FCD](http://www.github.com/terra-money/fcd) running on http://localhost:3060
+
 
 ### Stop
 
@@ -51,6 +57,3 @@ $ docker-compose stop
 $ docker-compose rm
 ```
 
-## FCD
-
-Clone the [FCD repo](https://github.com/terra-money/fcd) and follow the README.md instructions to run the FCD with LocalTerra. 
