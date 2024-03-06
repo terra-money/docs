@@ -42,11 +42,6 @@ const sidebars = {
 
       ],
     },
-      {
-        type: 'link',
-        label: 'Station Docs', // The link label
-        href: 'https://docs.station.money', // The external URL
-      },
     {
       type: 'category',
       label: 'Develop',
@@ -235,6 +230,11 @@ const sidebars = {
           ],
         },
       ],
+    },
+    {
+      type: 'link',
+      label: 'Station Docs', // The link label
+      href: 'https://docs.station.money', // The external URL
     },
   ],
 };
