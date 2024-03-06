@@ -9,7 +9,7 @@ const homeCards: CardProps[] = [
     summary: 'Click here to learn how to build on Terra.',
   },
   {
-    href: '/station',
+    href: 'https://docs.station.money/get-started',
     lightSVG: '/img/icons/station/station.svg',
     darkSVG: '/img/icons/dark/station.svg',
     header: 'Get started with Station',
