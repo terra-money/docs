@@ -4,7 +4,7 @@ import Admonition from '@theme/Admonition';
 
 ## Introduction
 
-The community pool vesting contract was created for the implementation of [Terra governance proposal 4790](https://station.money/proposal/phoenix-1/4790). The contract allows funds to be vested based on the parameters outlined in the proposal. The contract will go into effect with the passing of the proposal. The following section describes the technical details of the contract. 
+The community pool vesting contract was created for the implementation of [Terra governance proposal 4790](https://dashboard.station.money/proposal/phoenix-1/4790). The contract allows funds to be vested based on the parameters outlined in the proposal. The contract will go into effect with the passing of the proposal. The following section describes the technical details of the contract. 
 
 ## About the contract
 
@@ -12,7 +12,7 @@ The community pool vesting contract was created for the implementation of [Terra
 
 The community pool vesting contract is designed to manage the delegation, vesting, and withdrawal of funds based on a configurable vesting schedule. It includes functionality for `owner` and `whitelist` management. The `whitelist` is a set of users who are allowed to withdraw unlocked funds directly to the contract's specified `recipient`. This contract allows the `owner` to delegate, undelegate, redelegate, and withdraw staking rewards at *any* time, regardless of whether the funds are vested or unvested. This functionality gives the contract funds the same permissions as [Luna vesting from a genesis allocation](https://docs.terra.money/learn/protocol#vesting). 
 
-The [instantiating parameters](#instantiatemsg) for the [contract](https://terrasco.pe/mainnet/address/terra19yxffalxzu88n5lnj40trehpryemqsz7pnnwxp8v73hxz0rl2u9q5qqwh4) defined in [governance proposal 4790](https://station.money/proposal/phoenix-1/4790) are as follows:
+The [instantiating parameters](#instantiatemsg) for the [contract](https://terrasco.pe/mainnet/address/terra19yxffalxzu88n5lnj40trehpryemqsz7pnnwxp8v73hxz0rl2u9q5qqwh4) defined in [governance proposal 4790](https://dashboard.station.money/proposal/phoenix-1/4790) are as follows:
 
 - `owner`: "terra159q4e7zl84hzkwy95kl29accklrxpth4zcuz8m87p4nvykpszrtq5qfgfe" (Main TFL Multisig)
 - `recipient`: "terra1yv5fyftazjsy3uslzwrsaqcahn8mht87kf7jzlh50yfnu7mqxymsja06dz" (Liquidity Multisig [initially unlocked funds will be sent here])
