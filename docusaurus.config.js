@@ -132,13 +132,7 @@ module.exports = async function config() {
         prism: {
           theme: lightCodeTheme,
           darkTheme: darkCodeTheme,
-        },
-        matomo: {
-          matomoUrl: 'https://terradocs.matomo.cloud/',
-          siteId: '1',
-          phpLoader: 'matomo.php',
-          jsLoader: 'matomo.js',
-        },
+        }
       }),
     stylesheets: [
       {
